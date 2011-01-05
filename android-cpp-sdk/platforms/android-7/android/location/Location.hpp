@@ -172,8 +172,8 @@ android::location::Location::Location(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(0),
-		android::location::Location::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::location::Location::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -185,8 +185,8 @@ android::location::Location::Location(local_ref< android::location::Location > c
 	call_new_object<
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(1),
-		android::location::Location::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::location::Location::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -198,8 +198,8 @@ void android::location::Location::dump(local_ref< android::util::Printer > const
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(2),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::location::Location::set(local_ref< android::location::Location > const &a0)
@@ -208,8 +208,8 @@ void android::location::Location::set(local_ref< android::location::Location > c
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(3),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::Location::reset()
@@ -218,8 +218,8 @@ void android::location::Location::reset()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(4),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::location::Location::convert(jdouble a0, jint a1)
@@ -228,8 +228,8 @@ local_ref< java::lang::String > android::location::Location::convert(jdouble a0,
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(5),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 jdouble android::location::Location::convert(local_ref< java::lang::String > const &a0)
@@ -238,8 +238,8 @@ jdouble android::location::Location::convert(local_ref< java::lang::String > con
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(6),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(6), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 void android::location::Location::distanceBetween(jdouble a0, jdouble a1, jdouble a2, jdouble a3, local_ref< array<jfloat,1> > const &a4)
@@ -248,8 +248,8 @@ void android::location::Location::distanceBetween(jdouble a0, jdouble a1, jdoubl
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(7),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jfloat android::location::Location::distanceTo(local_ref< android::location::Location > const &a0)
@@ -258,8 +258,8 @@ jfloat android::location::Location::distanceTo(local_ref< android::location::Loc
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(8),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(8), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::location::Location::bearingTo(local_ref< android::location::Location > const &a0)
@@ -268,8 +268,8 @@ jfloat android::location::Location::bearingTo(local_ref< android::location::Loca
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(9),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(9), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::location::Location::getProvider()
@@ -278,8 +278,8 @@ local_ref< java::lang::String > android::location::Location::getProvider()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(10),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::location::Location::setProvider(local_ref< java::lang::String > const &a0)
@@ -288,8 +288,8 @@ void android::location::Location::setProvider(local_ref< java::lang::String > co
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(11),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::location::Location::getTime()
@@ -298,8 +298,8 @@ jlong android::location::Location::getTime()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(12),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::location::Location::setTime(jlong a0)
@@ -308,8 +308,8 @@ void android::location::Location::setTime(jlong a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(13),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jdouble android::location::Location::getLatitude()
@@ -318,8 +318,8 @@ jdouble android::location::Location::getLatitude()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(14),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(14), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 void android::location::Location::setLatitude(jdouble a0)
@@ -328,8 +328,8 @@ void android::location::Location::setLatitude(jdouble a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(15),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jdouble android::location::Location::getLongitude()
@@ -338,8 +338,8 @@ jdouble android::location::Location::getLongitude()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(16),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(16), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 void android::location::Location::setLongitude(jdouble a0)
@@ -348,8 +348,8 @@ void android::location::Location::setLongitude(jdouble a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(17),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::Location::hasAltitude()
@@ -358,8 +358,8 @@ jboolean android::location::Location::hasAltitude()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(18),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jdouble android::location::Location::getAltitude()
@@ -368,8 +368,8 @@ jdouble android::location::Location::getAltitude()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(19),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(19), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 void android::location::Location::setAltitude(jdouble a0)
@@ -378,8 +378,8 @@ void android::location::Location::setAltitude(jdouble a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(20),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::Location::removeAltitude()
@@ -388,8 +388,8 @@ void android::location::Location::removeAltitude()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(21),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::location::Location::hasSpeed()
@@ -398,8 +398,8 @@ jboolean android::location::Location::hasSpeed()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(22),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jfloat android::location::Location::getSpeed()
@@ -408,8 +408,8 @@ jfloat android::location::Location::getSpeed()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(23),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(23), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::location::Location::setSpeed(jfloat a0)
@@ -418,8 +418,8 @@ void android::location::Location::setSpeed(jfloat a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(24),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::Location::removeSpeed()
@@ -428,8 +428,8 @@ void android::location::Location::removeSpeed()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(25),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::location::Location::hasBearing()
@@ -438,8 +438,8 @@ jboolean android::location::Location::hasBearing()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(26),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jfloat android::location::Location::getBearing()
@@ -448,8 +448,8 @@ jfloat android::location::Location::getBearing()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(27),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(27), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::location::Location::setBearing(jfloat a0)
@@ -458,8 +458,8 @@ void android::location::Location::setBearing(jfloat a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(28),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::Location::removeBearing()
@@ -468,8 +468,8 @@ void android::location::Location::removeBearing()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(29),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::location::Location::hasAccuracy()
@@ -478,8 +478,8 @@ jboolean android::location::Location::hasAccuracy()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(30),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jfloat android::location::Location::getAccuracy()
@@ -488,8 +488,8 @@ jfloat android::location::Location::getAccuracy()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(31),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(31), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::location::Location::setAccuracy(jfloat a0)
@@ -498,8 +498,8 @@ void android::location::Location::setAccuracy(jfloat a0)
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(32),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::Location::removeAccuracy()
@@ -508,8 +508,8 @@ void android::location::Location::removeAccuracy()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(33),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::location::Location::getExtras()
@@ -518,8 +518,8 @@ local_ref< android::os::Bundle > android::location::Location::getExtras()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(34),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 void android::location::Location::setExtras(local_ref< android::os::Bundle > const &a0)
@@ -528,8 +528,8 @@ void android::location::Location::setExtras(local_ref< android::os::Bundle > con
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(35),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::location::Location::toString()
@@ -538,8 +538,8 @@ local_ref< java::lang::String > android::location::Location::toString()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(36),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::location::Location::describeContents()
@@ -548,8 +548,8 @@ jint android::location::Location::describeContents()
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(37),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(37), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Location::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -558,8 +558,8 @@ void android::location::Location::writeToParcel(local_ref< android::os::Parcel >
 		android::location::Location::J2CPP_CLASS_NAME,
 		android::location::Location::J2CPP_METHOD_NAME(38),
 		android::location::Location::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

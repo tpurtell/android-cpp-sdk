@@ -81,8 +81,8 @@ local_ref< java::nio::ByteOrder > java::nio::ByteOrder::nativeOrder()
 		java::nio::ByteOrder::J2CPP_CLASS_NAME,
 		java::nio::ByteOrder::J2CPP_METHOD_NAME(1),
 		java::nio::ByteOrder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::ByteOrder > >
-	();
+		local_ref< java::nio::ByteOrder >
+	>();
 }
 
 local_ref< java::lang::String > java::nio::ByteOrder::toString()
@@ -91,8 +91,8 @@ local_ref< java::lang::String > java::nio::ByteOrder::toString()
 		java::nio::ByteOrder::J2CPP_CLASS_NAME,
 		java::nio::ByteOrder::J2CPP_METHOD_NAME(2),
 		java::nio::ByteOrder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -16,6 +16,7 @@ namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Executor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace java { namespace util { namespace concurrent { class
 #include <java/util/Collection.hpp>
 #include <java/util/List.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Executor.hpp>
 #include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
@@ -59,6 +61,7 @@ namespace java { namespace util { namespace concurrent {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::concurrent::ExecutorService>() const;
+		operator local_ref<java::util::concurrent::Executor>() const;
 
 
 		AbstractExecutorService();
@@ -98,14 +101,19 @@ java::util::concurrent::AbstractExecutorService::operator local_ref<java::util::
 	return local_ref<java::util::concurrent::ExecutorService>(get_jobject());
 }
 
+java::util::concurrent::AbstractExecutorService::operator local_ref<java::util::concurrent::Executor>() const
+{
+	return local_ref<java::util::concurrent::Executor>(get_jobject());
+}
+
 
 java::util::concurrent::AbstractExecutorService::AbstractExecutorService()
 : object<java::util::concurrent::AbstractExecutorService>(
 	call_new_object<
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -117,8 +125,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExec
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExecutorService::submit(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -127,8 +135,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExec
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExecutorService::submit(local_ref< java::util::concurrent::Callable > const &a0)
@@ -137,8 +145,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExec
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::AbstractExecutorService::invokeAny(local_ref< java::util::Collection > const &a0)
@@ -147,8 +155,8 @@ local_ref< java::lang::Object > java::util::concurrent::AbstractExecutorService:
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::AbstractExecutorService::invokeAny(local_ref< java::util::Collection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -157,8 +165,8 @@ local_ref< java::lang::Object > java::util::concurrent::AbstractExecutorService:
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::List > java::util::concurrent::AbstractExecutorService::invokeAll(local_ref< java::util::Collection > const &a0)
@@ -167,8 +175,8 @@ local_ref< java::util::List > java::util::concurrent::AbstractExecutorService::i
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::util::concurrent::AbstractExecutorService::invokeAll(local_ref< java::util::Collection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -177,8 +185,8 @@ local_ref< java::util::List > java::util::concurrent::AbstractExecutorService::i
 		java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

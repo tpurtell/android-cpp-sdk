@@ -11,10 +11,10 @@
 #define J2CPP_ORG_XML_SAX_EXT_ENTITYRESOLVER2_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
-namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -85,8 +85,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::get
 		org::xml::sax::ext::EntityResolver2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -95,8 +95,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::res
 		org::xml::sax::ext::EntityResolver2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

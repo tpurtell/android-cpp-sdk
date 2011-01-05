@@ -88,8 +88,8 @@ java::util::zip::Adler32::Adler32()
 	call_new_object<
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(0),
-		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ jlong java::util::zip::Adler32::getValue()
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(1),
 		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::zip::Adler32::reset()
@@ -111,8 +111,8 @@ void java::util::zip::Adler32::reset()
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(2),
 		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::Adler32::update(jint a0)
@@ -121,8 +121,8 @@ void java::util::zip::Adler32::update(jint a0)
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(3),
 		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Adler32::update(local_ref< array<jbyte,1> > const &a0)
@@ -131,8 +131,8 @@ void java::util::zip::Adler32::update(local_ref< array<jbyte,1> > const &a0)
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(4),
 		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Adler32::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -141,8 +141,8 @@ void java::util::zip::Adler32::update(local_ref< array<jbyte,1> > const &a0, jin
 		java::util::zip::Adler32::J2CPP_CLASS_NAME,
 		java::util::zip::Adler32::J2CPP_METHOD_NAME(5),
 		java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -115,8 +115,8 @@ void android::webkit::WebStorage_::QuotaUpdater::updateQuota(jlong a0)
 		android::webkit::WebStorage_::QuotaUpdater::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage_::QuotaUpdater::J2CPP_METHOD_NAME(0),
 		android::webkit::WebStorage_::QuotaUpdater::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -136,8 +136,8 @@ android::webkit::WebStorage::WebStorage()
 	call_new_object<
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(0),
-		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -149,8 +149,8 @@ void android::webkit::WebStorage::getOrigins(local_ref< android::webkit::ValueCa
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(1),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebStorage::getUsageForOrigin(local_ref< java::lang::String > const &a0, local_ref< android::webkit::ValueCallback > const &a1)
@@ -159,8 +159,8 @@ void android::webkit::WebStorage::getUsageForOrigin(local_ref< java::lang::Strin
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(2),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebStorage::getQuotaForOrigin(local_ref< java::lang::String > const &a0, local_ref< android::webkit::ValueCallback > const &a1)
@@ -169,8 +169,8 @@ void android::webkit::WebStorage::getQuotaForOrigin(local_ref< java::lang::Strin
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(3),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebStorage::setQuotaForOrigin(local_ref< java::lang::String > const &a0, jlong a1)
@@ -179,8 +179,8 @@ void android::webkit::WebStorage::setQuotaForOrigin(local_ref< java::lang::Strin
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(4),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebStorage::deleteOrigin(local_ref< java::lang::String > const &a0)
@@ -189,8 +189,8 @@ void android::webkit::WebStorage::deleteOrigin(local_ref< java::lang::String > c
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(5),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebStorage::deleteAllData()
@@ -199,8 +199,8 @@ void android::webkit::WebStorage::deleteAllData()
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(6),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::webkit::WebStorage > android::webkit::WebStorage::getInstance()
@@ -209,8 +209,8 @@ local_ref< android::webkit::WebStorage > android::webkit::WebStorage::getInstanc
 		android::webkit::WebStorage::J2CPP_CLASS_NAME,
 		android::webkit::WebStorage::J2CPP_METHOD_NAME(7),
 		android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::webkit::WebStorage > >
-	();
+		local_ref< android::webkit::WebStorage >
+	>();
 }
 
 

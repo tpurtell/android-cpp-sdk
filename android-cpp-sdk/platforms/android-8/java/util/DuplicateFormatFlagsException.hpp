@@ -12,10 +12,22 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class IllegalArgumentException; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace util { class IllegalFormatException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/IllegalArgumentException.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/util/IllegalFormatException.hpp>
 
 
@@ -40,7 +52,13 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::IllegalArgumentException>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::util::IllegalFormatException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		DuplicateFormatFlagsException(local_ref< java::lang::String > const&);
@@ -64,9 +82,39 @@ namespace j2cpp {
 
 
 
+java::util::DuplicateFormatFlagsException::operator local_ref<java::lang::RuntimeException>() const
+{
+	return local_ref<java::lang::RuntimeException>(get_jobject());
+}
+
+java::util::DuplicateFormatFlagsException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::DuplicateFormatFlagsException::operator local_ref<java::lang::IllegalArgumentException>() const
+{
+	return local_ref<java::lang::IllegalArgumentException>(get_jobject());
+}
+
+java::util::DuplicateFormatFlagsException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::util::DuplicateFormatFlagsException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 java::util::DuplicateFormatFlagsException::operator local_ref<java::util::IllegalFormatException>() const
 {
 	return local_ref<java::util::IllegalFormatException>(get_jobject());
+}
+
+java::util::DuplicateFormatFlagsException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -75,8 +123,8 @@ java::util::DuplicateFormatFlagsException::DuplicateFormatFlagsException(local_r
 	call_new_object<
 		java::util::DuplicateFormatFlagsException::J2CPP_CLASS_NAME,
 		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_NAME(0),
-		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -88,8 +136,8 @@ local_ref< java::lang::String > java::util::DuplicateFormatFlagsException::getFl
 		java::util::DuplicateFormatFlagsException::J2CPP_CLASS_NAME,
 		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_NAME(1),
 		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::DuplicateFormatFlagsException::getMessage()
@@ -98,8 +146,8 @@ local_ref< java::lang::String > java::util::DuplicateFormatFlagsException::getMe
 		java::util::DuplicateFormatFlagsException::J2CPP_CLASS_NAME,
 		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_NAME(2),
 		java::util::DuplicateFormatFlagsException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

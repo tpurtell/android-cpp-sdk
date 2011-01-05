@@ -11,13 +11,17 @@
 #define J2CPP_JAVAX_CRYPTO_CIPHERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace javax { namespace crypto { class Cipher; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <javax/crypto/Cipher.hpp>
 
 
@@ -48,7 +52,10 @@ namespace javax { namespace crypto {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::FilterInputStream>() const;
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		CipherInputStream(local_ref< java::io::InputStream > const&, local_ref< javax::crypto::Cipher > const&);
@@ -77,9 +84,24 @@ namespace j2cpp {
 
 
 
+javax::crypto::CipherInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::crypto::CipherInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
 	return local_ref<java::io::FilterInputStream>(get_jobject());
+}
+
+javax::crypto::CipherInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+javax::crypto::CipherInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -88,8 +110,8 @@ javax::crypto::CipherInputStream::CipherInputStream(local_ref< java::io::InputSt
 	call_new_object<
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(0),
-		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -102,8 +124,8 @@ jint javax::crypto::CipherInputStream::read()
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(2),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::CipherInputStream::read(local_ref< array<jbyte,1> > const &a0)
@@ -112,8 +134,8 @@ jint javax::crypto::CipherInputStream::read(local_ref< array<jbyte,1> > const &a
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(3),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::CipherInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -122,8 +144,8 @@ jint javax::crypto::CipherInputStream::read(local_ref< array<jbyte,1> > const &a
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(4),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong javax::crypto::CipherInputStream::skip(jlong a0)
@@ -132,8 +154,8 @@ jlong javax::crypto::CipherInputStream::skip(jlong a0)
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(5),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::CipherInputStream::available()
@@ -142,8 +164,8 @@ jint javax::crypto::CipherInputStream::available()
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(6),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void javax::crypto::CipherInputStream::close()
@@ -152,8 +174,8 @@ void javax::crypto::CipherInputStream::close()
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(7),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean javax::crypto::CipherInputStream::markSupported()
@@ -162,8 +184,8 @@ jboolean javax::crypto::CipherInputStream::markSupported()
 		javax::crypto::CipherInputStream::J2CPP_CLASS_NAME,
 		javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(8),
 		javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

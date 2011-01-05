@@ -85,8 +85,8 @@ void java::util::concurrent::locks::Lock::lock()
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::Lock::lockInterruptibly()
@@ -95,8 +95,8 @@ void java::util::concurrent::locks::Lock::lockInterruptibly()
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::Lock::tryLock()
@@ -105,8 +105,8 @@ jboolean java::util::concurrent::locks::Lock::tryLock()
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::Lock::tryLock(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -115,8 +115,8 @@ jboolean java::util::concurrent::locks::Lock::tryLock(jlong a0, local_ref< java:
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::locks::Lock::unlock()
@@ -125,8 +125,8 @@ void java::util::concurrent::locks::Lock::unlock()
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::locks::Condition > java::util::concurrent::locks::Lock::newCondition()
@@ -135,8 +135,8 @@ local_ref< java::util::concurrent::locks::Condition > java::util::concurrent::lo
 		java::util::concurrent::locks::Lock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::locks::Lock::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::concurrent::locks::Condition > >
-	(get_jobject());
+		local_ref< java::util::concurrent::locks::Condition >
+	>(get_jobject());
 }
 
 

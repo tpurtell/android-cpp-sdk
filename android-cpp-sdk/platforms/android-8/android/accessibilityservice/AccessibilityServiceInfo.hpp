@@ -63,8 +63,8 @@ namespace android { namespace accessibilityservice {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AccessibilityServiceInfo();
@@ -101,14 +101,14 @@ namespace j2cpp {
 
 
 
-android::accessibilityservice::AccessibilityServiceInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::accessibilityservice::AccessibilityServiceInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::accessibilityservice::AccessibilityServiceInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -117,8 +117,8 @@ android::accessibilityservice::AccessibilityServiceInfo::AccessibilityServiceInf
 	call_new_object<
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_NAME(0),
-		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , eventTypes(get_jobject())
 , packageNames(get_jobject())
@@ -135,8 +135,8 @@ jint android::accessibilityservice::AccessibilityServiceInfo::describeContents()
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_NAME(1),
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::accessibilityservice::AccessibilityServiceInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -145,8 +145,8 @@ void android::accessibilityservice::AccessibilityServiceInfo::writeToParcel(loca
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_NAME(2),
 		android::accessibilityservice::AccessibilityServiceInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

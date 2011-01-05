@@ -81,8 +81,8 @@ android::gesture::GesturePoint::GesturePoint(jfloat a0, jfloat a1, jlong a2)
 	call_new_object<
 		android::gesture::GesturePoint::J2CPP_CLASS_NAME,
 		android::gesture::GesturePoint::J2CPP_METHOD_NAME(0),
-		android::gesture::GesturePoint::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::gesture::GesturePoint::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 , x(get_jobject())
 , y(get_jobject())
@@ -97,8 +97,8 @@ local_ref< java::lang::Object > android::gesture::GesturePoint::clone()
 		android::gesture::GesturePoint::J2CPP_CLASS_NAME,
 		android::gesture::GesturePoint::J2CPP_METHOD_NAME(1),
 		android::gesture::GesturePoint::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

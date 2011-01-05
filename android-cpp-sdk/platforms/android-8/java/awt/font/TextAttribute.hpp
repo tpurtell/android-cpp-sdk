@@ -12,14 +12,18 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Integer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Boolean; } } }
 namespace j2cpp { namespace java { namespace lang { class Float; } } }
 namespace j2cpp { namespace java { namespace text { namespace AttributedCharacterIterator_ { class Attribute; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Boolean.hpp>
 #include <java/lang/Float.hpp>
 #include <java/lang/Integer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/text/AttributedCharacterIterator.hpp>
 
 
@@ -96,7 +100,9 @@ namespace java { namespace awt { namespace font {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 
@@ -171,9 +177,19 @@ namespace j2cpp {
 
 
 
+java::awt::font::TextAttribute::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::awt::font::TextAttribute::operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const
 {
 	return local_ref<java::text::AttributedCharacterIterator_::Attribute>(get_jobject());
+}
+
+java::awt::font::TextAttribute::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 

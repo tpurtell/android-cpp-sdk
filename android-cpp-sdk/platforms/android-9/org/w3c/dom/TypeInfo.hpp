@@ -85,8 +85,8 @@ local_ref< java::lang::String > org::w3c::dom::TypeInfo::getTypeName()
 		org::w3c::dom::TypeInfo::J2CPP_CLASS_NAME,
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::TypeInfo::getTypeNamespace()
@@ -95,8 +95,8 @@ local_ref< java::lang::String > org::w3c::dom::TypeInfo::getTypeNamespace()
 		org::w3c::dom::TypeInfo::J2CPP_CLASS_NAME,
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::w3c::dom::TypeInfo::isDerivedFrom(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -105,8 +105,8 @@ jboolean org::w3c::dom::TypeInfo::isDerivedFrom(local_ref< java::lang::String > 
 		org::w3c::dom::TypeInfo::J2CPP_CLASS_NAME,
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::TypeInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

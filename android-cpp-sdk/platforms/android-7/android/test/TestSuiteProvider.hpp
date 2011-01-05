@@ -71,8 +71,8 @@ local_ref< junit::framework::TestSuite > android::test::TestSuiteProvider::getTe
 		android::test::TestSuiteProvider::J2CPP_CLASS_NAME,
 		android::test::TestSuiteProvider::J2CPP_METHOD_NAME(0),
 		android::test::TestSuiteProvider::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< junit::framework::TestSuite > >
-	(get_jobject());
+		local_ref< junit::framework::TestSuite >
+	>(get_jobject());
 }
 
 

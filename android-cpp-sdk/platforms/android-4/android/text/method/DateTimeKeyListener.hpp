@@ -11,10 +11,20 @@
 #define J2CPP_ANDROID_TEXT_METHOD_DATETIMEKEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class NumberKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/text/InputFilter.hpp>
+#include <android/text/method/BaseKeyListener.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/text/method/NumberKeyListener.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,7 +51,12 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
 		operator local_ref<android::text::method::NumberKeyListener>() const;
+		operator local_ref<android::text::InputFilter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DateTimeKeyListener();
@@ -68,9 +83,34 @@ namespace j2cpp {
 
 
 
+android::text::method::DateTimeKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
+{
+	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
+}
+
+android::text::method::DateTimeKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
+{
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
+}
+
+android::text::method::DateTimeKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
 android::text::method::DateTimeKeyListener::operator local_ref<android::text::method::NumberKeyListener>() const
 {
 	return local_ref<android::text::method::NumberKeyListener>(get_jobject());
+}
+
+android::text::method::DateTimeKeyListener::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
+android::text::method::DateTimeKeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -79,8 +119,8 @@ android::text::method::DateTimeKeyListener::DateTimeKeyListener()
 	call_new_object<
 		android::text::method::DateTimeKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DateTimeKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::DateTimeKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::DateTimeKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -92,8 +132,8 @@ jint android::text::method::DateTimeKeyListener::getInputType()
 		android::text::method::DateTimeKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DateTimeKeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::DateTimeKeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -103,8 +143,8 @@ local_ref< android::text::method::DateTimeKeyListener > android::text::method::D
 		android::text::method::DateTimeKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DateTimeKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::DateTimeKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::method::DateTimeKeyListener > >
-	();
+		local_ref< android::text::method::DateTimeKeyListener >
+	>();
 }
 
 

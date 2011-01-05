@@ -82,8 +82,8 @@ javax::crypto::spec::PBEParameterSpec::PBEParameterSpec(local_ref< array<jbyte,1
 	call_new_object<
 		javax::crypto::spec::PBEParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::PBEParameterSpec::getSalt()
 		javax::crypto::spec::PBEParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::PBEParameterSpec::getIterationCount()
@@ -105,8 +105,8 @@ jint javax::crypto::spec::PBEParameterSpec::getIterationCount()
 		javax::crypto::spec::PBEParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::PBEParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

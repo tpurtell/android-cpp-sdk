@@ -136,8 +136,8 @@ javax::xml::datatype::Duration::Duration()
 	call_new_object<
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(0),
-		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -149,8 +149,8 @@ local_ref< javax::xml::namespace::QName > javax::xml::datatype::Duration::getXML
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(1),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::namespace::QName > >
-	(get_jobject());
+		local_ref< javax::xml::namespace::QName >
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getSign()
@@ -159,8 +159,8 @@ jint javax::xml::datatype::Duration::getSign()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(2),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getYears()
@@ -169,8 +169,8 @@ jint javax::xml::datatype::Duration::getYears()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(3),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getMonths()
@@ -179,8 +179,8 @@ jint javax::xml::datatype::Duration::getMonths()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(4),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getDays()
@@ -189,8 +189,8 @@ jint javax::xml::datatype::Duration::getDays()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(5),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getHours()
@@ -199,8 +199,8 @@ jint javax::xml::datatype::Duration::getHours()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(6),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getMinutes()
@@ -209,8 +209,8 @@ jint javax::xml::datatype::Duration::getMinutes()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(7),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::Duration::getSeconds()
@@ -219,8 +219,8 @@ jint javax::xml::datatype::Duration::getSeconds()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(8),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong javax::xml::datatype::Duration::getTimeInMillis(local_ref< java::util::Calendar > const &a0)
@@ -229,8 +229,8 @@ jlong javax::xml::datatype::Duration::getTimeInMillis(local_ref< java::util::Cal
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(9),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong javax::xml::datatype::Duration::getTimeInMillis(local_ref< java::util::Date > const &a0)
@@ -239,8 +239,8 @@ jlong javax::xml::datatype::Duration::getTimeInMillis(local_ref< java::util::Dat
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(10),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Number > javax::xml::datatype::Duration::getField(local_ref< javax::xml::datatype::DatatypeConstants_::Field > const &a0)
@@ -249,8 +249,8 @@ local_ref< java::lang::Number > javax::xml::datatype::Duration::getField(local_r
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(11),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Number > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Number >
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::datatype::Duration::isSet(local_ref< javax::xml::datatype::DatatypeConstants_::Field > const &a0)
@@ -259,8 +259,8 @@ jboolean javax::xml::datatype::Duration::isSet(local_ref< javax::xml::datatype::
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(12),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::add(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -269,8 +269,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::add(
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(13),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::Duration::addTo(local_ref< java::util::Calendar > const &a0)
@@ -279,8 +279,8 @@ void javax::xml::datatype::Duration::addTo(local_ref< java::util::Calendar > con
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(14),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::Duration::addTo(local_ref< java::util::Date > const &a0)
@@ -289,8 +289,8 @@ void javax::xml::datatype::Duration::addTo(local_ref< java::util::Date > const &
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(15),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::subtract(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -299,8 +299,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::subt
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(16),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::multiply(jint a0)
@@ -309,8 +309,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::mult
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(17),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::multiply(local_ref< java::math::BigDecimal > const &a0)
@@ -319,8 +319,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::mult
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(18),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::negate()
@@ -329,8 +329,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::nega
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(19),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject());
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::normalizeWith(local_ref< java::util::Calendar > const &a0)
@@ -339,8 +339,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::Duration::norm
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(20),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 jint javax::xml::datatype::Duration::compare(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -349,8 +349,8 @@ jint javax::xml::datatype::Duration::compare(local_ref< javax::xml::datatype::Du
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(21),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::datatype::Duration::isLongerThan(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -359,8 +359,8 @@ jboolean javax::xml::datatype::Duration::isLongerThan(local_ref< javax::xml::dat
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(22),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::datatype::Duration::isShorterThan(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -369,8 +369,8 @@ jboolean javax::xml::datatype::Duration::isShorterThan(local_ref< javax::xml::da
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(23),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::datatype::Duration::equals(local_ref< java::lang::Object > const &a0)
@@ -379,8 +379,8 @@ jboolean javax::xml::datatype::Duration::equals(local_ref< java::lang::Object > 
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(24),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::xml::datatype::Duration::hashCode()
@@ -389,8 +389,8 @@ jint javax::xml::datatype::Duration::hashCode()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(25),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::datatype::Duration::toString()
@@ -399,8 +399,8 @@ local_ref< java::lang::String > javax::xml::datatype::Duration::toString()
 		javax::xml::datatype::Duration::J2CPP_CLASS_NAME,
 		javax::xml::datatype::Duration::J2CPP_METHOD_NAME(26),
 		javax::xml::datatype::Duration::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

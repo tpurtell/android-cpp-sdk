@@ -524,8 +524,8 @@ android::opengl::GLES11Ext::GLES11Ext()
 	call_new_object<
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(0),
-		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -537,8 +537,8 @@ void android::opengl::GLES11Ext::glBlendEquationSeparateOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(1),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glBlendFuncSeparateOES(jint a0, jint a1, jint a2, jint a3)
@@ -547,8 +547,8 @@ void android::opengl::GLES11Ext::glBlendFuncSeparateOES(jint a0, jint a1, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(2),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glBlendEquationOES(jint a0)
@@ -557,8 +557,8 @@ void android::opengl::GLES11Ext::glBlendEquationOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(3),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glDrawTexsOES(jshort a0, jshort a1, jshort a2, jshort a3, jshort a4)
@@ -567,8 +567,8 @@ void android::opengl::GLES11Ext::glDrawTexsOES(jshort a0, jshort a1, jshort a2, 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(4),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glDrawTexiOES(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -577,8 +577,8 @@ void android::opengl::GLES11Ext::glDrawTexiOES(jint a0, jint a1, jint a2, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(5),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glDrawTexxOES(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -587,8 +587,8 @@ void android::opengl::GLES11Ext::glDrawTexxOES(jint a0, jint a1, jint a2, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(6),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glDrawTexsvOES(local_ref< array<jshort,1> > const &a0, jint a1)
@@ -597,8 +597,8 @@ void android::opengl::GLES11Ext::glDrawTexsvOES(local_ref< array<jshort,1> > con
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(7),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDrawTexsvOES(local_ref< java::nio::ShortBuffer > const &a0)
@@ -607,8 +607,8 @@ void android::opengl::GLES11Ext::glDrawTexsvOES(local_ref< java::nio::ShortBuffe
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(8),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glDrawTexivOES(local_ref< array<jint,1> > const &a0, jint a1)
@@ -617,8 +617,8 @@ void android::opengl::GLES11Ext::glDrawTexivOES(local_ref< array<jint,1> > const
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(9),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDrawTexivOES(local_ref< java::nio::IntBuffer > const &a0)
@@ -627,8 +627,8 @@ void android::opengl::GLES11Ext::glDrawTexivOES(local_ref< java::nio::IntBuffer 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(10),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glDrawTexxvOES(local_ref< array<jint,1> > const &a0, jint a1)
@@ -637,8 +637,8 @@ void android::opengl::GLES11Ext::glDrawTexxvOES(local_ref< array<jint,1> > const
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(11),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDrawTexxvOES(local_ref< java::nio::IntBuffer > const &a0)
@@ -647,8 +647,8 @@ void android::opengl::GLES11Ext::glDrawTexxvOES(local_ref< java::nio::IntBuffer 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(12),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glDrawTexfOES(jfloat a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4)
@@ -657,8 +657,8 @@ void android::opengl::GLES11Ext::glDrawTexfOES(jfloat a0, jfloat a1, jfloat a2, 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(13),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glDrawTexfvOES(local_ref< array<jfloat,1> > const &a0, jint a1)
@@ -667,8 +667,8 @@ void android::opengl::GLES11Ext::glDrawTexfvOES(local_ref< array<jfloat,1> > con
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(14),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDrawTexfvOES(local_ref< java::nio::FloatBuffer > const &a0)
@@ -677,8 +677,8 @@ void android::opengl::GLES11Ext::glDrawTexfvOES(local_ref< java::nio::FloatBuffe
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(15),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glEGLImageTargetTexture2DOES(jint a0, local_ref< java::nio::Buffer > const &a1)
@@ -687,8 +687,8 @@ void android::opengl::GLES11Ext::glEGLImageTargetTexture2DOES(jint a0, local_ref
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(16),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glEGLImageTargetRenderbufferStorageOES(jint a0, local_ref< java::nio::Buffer > const &a1)
@@ -697,8 +697,8 @@ void android::opengl::GLES11Ext::glEGLImageTargetRenderbufferStorageOES(jint a0,
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(17),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glAlphaFuncxOES(jint a0, jint a1)
@@ -707,8 +707,8 @@ void android::opengl::GLES11Ext::glAlphaFuncxOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(18),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glClearColorxOES(jint a0, jint a1, jint a2, jint a3)
@@ -717,8 +717,8 @@ void android::opengl::GLES11Ext::glClearColorxOES(jint a0, jint a1, jint a2, jin
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(19),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glClearDepthxOES(jint a0)
@@ -727,8 +727,8 @@ void android::opengl::GLES11Ext::glClearDepthxOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(20),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glClipPlanexOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -737,8 +737,8 @@ void android::opengl::GLES11Ext::glClipPlanexOES(jint a0, local_ref< array<jint,
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(21),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glClipPlanexOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -747,8 +747,8 @@ void android::opengl::GLES11Ext::glClipPlanexOES(jint a0, local_ref< java::nio::
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(22),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glColor4xOES(jint a0, jint a1, jint a2, jint a3)
@@ -757,8 +757,8 @@ void android::opengl::GLES11Ext::glColor4xOES(jint a0, jint a1, jint a2, jint a3
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(23),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glDepthRangexOES(jint a0, jint a1)
@@ -767,8 +767,8 @@ void android::opengl::GLES11Ext::glDepthRangexOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(24),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glFogxOES(jint a0, jint a1)
@@ -777,8 +777,8 @@ void android::opengl::GLES11Ext::glFogxOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(25),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glFogxvOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -787,8 +787,8 @@ void android::opengl::GLES11Ext::glFogxvOES(jint a0, local_ref< array<jint,1> > 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(26),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glFogxvOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -797,8 +797,8 @@ void android::opengl::GLES11Ext::glFogxvOES(jint a0, local_ref< java::nio::IntBu
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(27),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glFrustumxOES(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -807,8 +807,8 @@ void android::opengl::GLES11Ext::glFrustumxOES(jint a0, jint a1, jint a2, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(28),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES11Ext::glGetClipPlanexOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -817,8 +817,8 @@ void android::opengl::GLES11Ext::glGetClipPlanexOES(jint a0, local_ref< array<ji
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(29),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetClipPlanexOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -827,8 +827,8 @@ void android::opengl::GLES11Ext::glGetClipPlanexOES(jint a0, local_ref< java::ni
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(30),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glGetFixedvOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -837,8 +837,8 @@ void android::opengl::GLES11Ext::glGetFixedvOES(jint a0, local_ref< array<jint,1
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(31),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetFixedvOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -847,8 +847,8 @@ void android::opengl::GLES11Ext::glGetFixedvOES(jint a0, local_ref< java::nio::I
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(32),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glGetLightxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -857,8 +857,8 @@ void android::opengl::GLES11Ext::glGetLightxvOES(jint a0, jint a1, local_ref< ar
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(33),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetLightxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -867,8 +867,8 @@ void android::opengl::GLES11Ext::glGetLightxvOES(jint a0, jint a1, local_ref< ja
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(34),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetMaterialxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -877,8 +877,8 @@ void android::opengl::GLES11Ext::glGetMaterialxvOES(jint a0, jint a1, local_ref<
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(35),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetMaterialxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -887,8 +887,8 @@ void android::opengl::GLES11Ext::glGetMaterialxvOES(jint a0, jint a1, local_ref<
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(36),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetTexEnvxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -897,8 +897,8 @@ void android::opengl::GLES11Ext::glGetTexEnvxvOES(jint a0, jint a1, local_ref< a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(37),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetTexEnvxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -907,8 +907,8 @@ void android::opengl::GLES11Ext::glGetTexEnvxvOES(jint a0, jint a1, local_ref< j
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(38),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetTexParameterxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -917,8 +917,8 @@ void android::opengl::GLES11Ext::glGetTexParameterxvOES(jint a0, jint a1, local_
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(39),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetTexParameterxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -927,8 +927,8 @@ void android::opengl::GLES11Ext::glGetTexParameterxvOES(jint a0, jint a1, local_
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(40),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glLightModelxOES(jint a0, jint a1)
@@ -937,8 +937,8 @@ void android::opengl::GLES11Ext::glLightModelxOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(41),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glLightModelxvOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -947,8 +947,8 @@ void android::opengl::GLES11Ext::glLightModelxvOES(jint a0, local_ref< array<jin
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(42),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glLightModelxvOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -957,8 +957,8 @@ void android::opengl::GLES11Ext::glLightModelxvOES(jint a0, local_ref< java::nio
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(43),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glLightxOES(jint a0, jint a1, jint a2)
@@ -967,8 +967,8 @@ void android::opengl::GLES11Ext::glLightxOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(44),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glLightxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -977,8 +977,8 @@ void android::opengl::GLES11Ext::glLightxvOES(jint a0, jint a1, local_ref< array
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(45),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glLightxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -987,8 +987,8 @@ void android::opengl::GLES11Ext::glLightxvOES(jint a0, jint a1, local_ref< java:
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(46),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glLineWidthxOES(jint a0)
@@ -997,8 +997,8 @@ void android::opengl::GLES11Ext::glLineWidthxOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(47),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glLoadMatrixxOES(local_ref< array<jint,1> > const &a0, jint a1)
@@ -1007,8 +1007,8 @@ void android::opengl::GLES11Ext::glLoadMatrixxOES(local_ref< array<jint,1> > con
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(48),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glLoadMatrixxOES(local_ref< java::nio::IntBuffer > const &a0)
@@ -1017,8 +1017,8 @@ void android::opengl::GLES11Ext::glLoadMatrixxOES(local_ref< java::nio::IntBuffe
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(49),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glMaterialxOES(jint a0, jint a1, jint a2)
@@ -1027,8 +1027,8 @@ void android::opengl::GLES11Ext::glMaterialxOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(50),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glMaterialxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1037,8 +1037,8 @@ void android::opengl::GLES11Ext::glMaterialxvOES(jint a0, jint a1, local_ref< ar
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(51),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glMaterialxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1047,8 +1047,8 @@ void android::opengl::GLES11Ext::glMaterialxvOES(jint a0, jint a1, local_ref< ja
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(52),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glMultMatrixxOES(local_ref< array<jint,1> > const &a0, jint a1)
@@ -1057,8 +1057,8 @@ void android::opengl::GLES11Ext::glMultMatrixxOES(local_ref< array<jint,1> > con
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(53),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glMultMatrixxOES(local_ref< java::nio::IntBuffer > const &a0)
@@ -1067,8 +1067,8 @@ void android::opengl::GLES11Ext::glMultMatrixxOES(local_ref< java::nio::IntBuffe
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(54),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glMultiTexCoord4xOES(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -1077,8 +1077,8 @@ void android::opengl::GLES11Ext::glMultiTexCoord4xOES(jint a0, jint a1, jint a2,
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(55),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glNormal3xOES(jint a0, jint a1, jint a2)
@@ -1087,8 +1087,8 @@ void android::opengl::GLES11Ext::glNormal3xOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(56),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glOrthoxOES(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -1097,8 +1097,8 @@ void android::opengl::GLES11Ext::glOrthoxOES(jint a0, jint a1, jint a2, jint a3,
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(57),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES11Ext::glPointParameterxOES(jint a0, jint a1)
@@ -1107,8 +1107,8 @@ void android::opengl::GLES11Ext::glPointParameterxOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(58),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glPointParameterxvOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1117,8 +1117,8 @@ void android::opengl::GLES11Ext::glPointParameterxvOES(jint a0, local_ref< array
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(59),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glPointParameterxvOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1127,8 +1127,8 @@ void android::opengl::GLES11Ext::glPointParameterxvOES(jint a0, local_ref< java:
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(60),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glPointSizexOES(jint a0)
@@ -1137,8 +1137,8 @@ void android::opengl::GLES11Ext::glPointSizexOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(61),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glPolygonOffsetxOES(jint a0, jint a1)
@@ -1147,8 +1147,8 @@ void android::opengl::GLES11Ext::glPolygonOffsetxOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(62),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glRotatexOES(jint a0, jint a1, jint a2, jint a3)
@@ -1157,8 +1157,8 @@ void android::opengl::GLES11Ext::glRotatexOES(jint a0, jint a1, jint a2, jint a3
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(63),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glSampleCoveragexOES(jint a0, jboolean a1)
@@ -1167,8 +1167,8 @@ void android::opengl::GLES11Ext::glSampleCoveragexOES(jint a0, jboolean a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(64),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glScalexOES(jint a0, jint a1, jint a2)
@@ -1177,8 +1177,8 @@ void android::opengl::GLES11Ext::glScalexOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(65),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexEnvxOES(jint a0, jint a1, jint a2)
@@ -1187,8 +1187,8 @@ void android::opengl::GLES11Ext::glTexEnvxOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(66),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexEnvxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1197,8 +1197,8 @@ void android::opengl::GLES11Ext::glTexEnvxvOES(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(67),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glTexEnvxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1207,8 +1207,8 @@ void android::opengl::GLES11Ext::glTexEnvxvOES(jint a0, jint a1, local_ref< java
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(68),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexParameterxOES(jint a0, jint a1, jint a2)
@@ -1217,8 +1217,8 @@ void android::opengl::GLES11Ext::glTexParameterxOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(69),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexParameterxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1227,8 +1227,8 @@ void android::opengl::GLES11Ext::glTexParameterxvOES(jint a0, jint a1, local_ref
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(70),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glTexParameterxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1237,8 +1237,8 @@ void android::opengl::GLES11Ext::glTexParameterxvOES(jint a0, jint a1, local_ref
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(71),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTranslatexOES(jint a0, jint a1, jint a2)
@@ -1247,8 +1247,8 @@ void android::opengl::GLES11Ext::glTranslatexOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(72),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::opengl::GLES11Ext::glIsRenderbufferOES(jint a0)
@@ -1257,8 +1257,8 @@ jboolean android::opengl::GLES11Ext::glIsRenderbufferOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(73),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(73), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glBindRenderbufferOES(jint a0, jint a1)
@@ -1267,8 +1267,8 @@ void android::opengl::GLES11Ext::glBindRenderbufferOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(74),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDeleteRenderbuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1277,8 +1277,8 @@ void android::opengl::GLES11Ext::glDeleteRenderbuffersOES(jint a0, local_ref< ar
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(75),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(75), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glDeleteRenderbuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1287,8 +1287,8 @@ void android::opengl::GLES11Ext::glDeleteRenderbuffersOES(jint a0, local_ref< ja
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(76),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glGenRenderbuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1297,8 +1297,8 @@ void android::opengl::GLES11Ext::glGenRenderbuffersOES(jint a0, local_ref< array
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(77),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(77), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGenRenderbuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1307,8 +1307,8 @@ void android::opengl::GLES11Ext::glGenRenderbuffersOES(jint a0, local_ref< java:
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(78),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glRenderbufferStorageOES(jint a0, jint a1, jint a2, jint a3)
@@ -1317,8 +1317,8 @@ void android::opengl::GLES11Ext::glRenderbufferStorageOES(jint a0, jint a1, jint
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(79),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(79), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetRenderbufferParameterivOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1327,8 +1327,8 @@ void android::opengl::GLES11Ext::glGetRenderbufferParameterivOES(jint a0, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(80),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetRenderbufferParameterivOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1337,8 +1337,8 @@ void android::opengl::GLES11Ext::glGetRenderbufferParameterivOES(jint a0, jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(81),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(81), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::opengl::GLES11Ext::glIsFramebufferOES(jint a0)
@@ -1347,8 +1347,8 @@ jboolean android::opengl::GLES11Ext::glIsFramebufferOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(82),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(82), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glBindFramebufferOES(jint a0, jint a1)
@@ -1357,8 +1357,8 @@ void android::opengl::GLES11Ext::glBindFramebufferOES(jint a0, jint a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(83),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(83), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glDeleteFramebuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1367,8 +1367,8 @@ void android::opengl::GLES11Ext::glDeleteFramebuffersOES(jint a0, local_ref< arr
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(84),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glDeleteFramebuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1377,8 +1377,8 @@ void android::opengl::GLES11Ext::glDeleteFramebuffersOES(jint a0, local_ref< jav
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(85),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(85), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glGenFramebuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1387,8 +1387,8 @@ void android::opengl::GLES11Ext::glGenFramebuffersOES(jint a0, local_ref< array<
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(86),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGenFramebuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1397,8 +1397,8 @@ void android::opengl::GLES11Ext::glGenFramebuffersOES(jint a0, local_ref< java::
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(87),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(87), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint android::opengl::GLES11Ext::glCheckFramebufferStatusOES(jint a0)
@@ -1407,8 +1407,8 @@ jint android::opengl::GLES11Ext::glCheckFramebufferStatusOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(88),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(88), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glFramebufferRenderbufferOES(jint a0, jint a1, jint a2, jint a3)
@@ -1417,8 +1417,8 @@ void android::opengl::GLES11Ext::glFramebufferRenderbufferOES(jint a0, jint a1, 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(89),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(89), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glFramebufferTexture2DOES(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -1427,8 +1427,8 @@ void android::opengl::GLES11Ext::glFramebufferTexture2DOES(jint a0, jint a1, jin
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(90),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(90), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glGetFramebufferAttachmentParameterivOES(jint a0, jint a1, jint a2, local_ref< array<jint,1> > const &a3, jint a4)
@@ -1437,8 +1437,8 @@ void android::opengl::GLES11Ext::glGetFramebufferAttachmentParameterivOES(jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(91),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(91), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES11Ext::glGetFramebufferAttachmentParameterivOES(jint a0, jint a1, jint a2, local_ref< java::nio::IntBuffer > const &a3)
@@ -1447,8 +1447,8 @@ void android::opengl::GLES11Ext::glGetFramebufferAttachmentParameterivOES(jint a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(92),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(92), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGenerateMipmapOES(jint a0)
@@ -1457,8 +1457,8 @@ void android::opengl::GLES11Ext::glGenerateMipmapOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(93),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(93), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glCurrentPaletteMatrixOES(jint a0)
@@ -1467,8 +1467,8 @@ void android::opengl::GLES11Ext::glCurrentPaletteMatrixOES(jint a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(94),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(94), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glLoadPaletteFromModelViewMatrixOES()
@@ -1477,8 +1477,8 @@ void android::opengl::GLES11Ext::glLoadPaletteFromModelViewMatrixOES()
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(95),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::opengl::GLES11Ext::glMatrixIndexPointerOES(jint a0, jint a1, jint a2, local_ref< java::nio::Buffer > const &a3)
@@ -1487,8 +1487,8 @@ void android::opengl::GLES11Ext::glMatrixIndexPointerOES(jint a0, jint a1, jint 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(96),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(96), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glWeightPointerOES(jint a0, jint a1, jint a2, local_ref< java::nio::Buffer > const &a3)
@@ -1497,8 +1497,8 @@ void android::opengl::GLES11Ext::glWeightPointerOES(jint a0, jint a1, jint a2, l
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(97),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(97), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glDepthRangefOES(jfloat a0, jfloat a1)
@@ -1507,8 +1507,8 @@ void android::opengl::GLES11Ext::glDepthRangefOES(jfloat a0, jfloat a1)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(98),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(98), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glFrustumfOES(jfloat a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4, jfloat a5)
@@ -1517,8 +1517,8 @@ void android::opengl::GLES11Ext::glFrustumfOES(jfloat a0, jfloat a1, jfloat a2, 
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(99),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(99), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES11Ext::glOrthofOES(jfloat a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4, jfloat a5)
@@ -1527,8 +1527,8 @@ void android::opengl::GLES11Ext::glOrthofOES(jfloat a0, jfloat a1, jfloat a2, jf
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(100),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(100), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES11Ext::glClipPlanefOES(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -1537,8 +1537,8 @@ void android::opengl::GLES11Ext::glClipPlanefOES(jint a0, local_ref< array<jfloa
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(101),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(101), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glClipPlanefOES(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -1547,8 +1547,8 @@ void android::opengl::GLES11Ext::glClipPlanefOES(jint a0, local_ref< java::nio::
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(102),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(102), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glGetClipPlanefOES(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -1557,8 +1557,8 @@ void android::opengl::GLES11Ext::glGetClipPlanefOES(jint a0, local_ref< array<jf
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(103),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(103), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetClipPlanefOES(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -1567,8 +1567,8 @@ void android::opengl::GLES11Ext::glGetClipPlanefOES(jint a0, local_ref< java::ni
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(104),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(104), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES11Ext::glClearDepthfOES(jfloat a0)
@@ -1577,8 +1577,8 @@ void android::opengl::GLES11Ext::glClearDepthfOES(jfloat a0)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(105),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(105), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES11Ext::glTexGenfOES(jint a0, jint a1, jfloat a2)
@@ -1587,8 +1587,8 @@ void android::opengl::GLES11Ext::glTexGenfOES(jint a0, jint a1, jfloat a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(106),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(106), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexGenfvOES(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -1597,8 +1597,8 @@ void android::opengl::GLES11Ext::glTexGenfvOES(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(107),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(107), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glTexGenfvOES(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -1607,8 +1607,8 @@ void android::opengl::GLES11Ext::glTexGenfvOES(jint a0, jint a1, local_ref< java
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(108),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(108), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexGeniOES(jint a0, jint a1, jint a2)
@@ -1617,8 +1617,8 @@ void android::opengl::GLES11Ext::glTexGeniOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(109),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(109), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexGenivOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1627,8 +1627,8 @@ void android::opengl::GLES11Ext::glTexGenivOES(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(110),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(110), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glTexGenivOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1637,8 +1637,8 @@ void android::opengl::GLES11Ext::glTexGenivOES(jint a0, jint a1, local_ref< java
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(111),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(111), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexGenxOES(jint a0, jint a1, jint a2)
@@ -1647,8 +1647,8 @@ void android::opengl::GLES11Ext::glTexGenxOES(jint a0, jint a1, jint a2)
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(112),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(112), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glTexGenxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1657,8 +1657,8 @@ void android::opengl::GLES11Ext::glTexGenxvOES(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(113),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(113), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glTexGenxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1667,8 +1667,8 @@ void android::opengl::GLES11Ext::glTexGenxvOES(jint a0, jint a1, local_ref< java
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(114),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(114), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenfvOES(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -1677,8 +1677,8 @@ void android::opengl::GLES11Ext::glGetTexGenfvOES(jint a0, jint a1, local_ref< a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(115),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(115), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenfvOES(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -1687,8 +1687,8 @@ void android::opengl::GLES11Ext::glGetTexGenfvOES(jint a0, jint a1, local_ref< j
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(116),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(116), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenivOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1697,8 +1697,8 @@ void android::opengl::GLES11Ext::glGetTexGenivOES(jint a0, jint a1, local_ref< a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(117),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(117), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenivOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1707,8 +1707,8 @@ void android::opengl::GLES11Ext::glGetTexGenivOES(jint a0, jint a1, local_ref< j
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(118),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(118), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenxvOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1717,8 +1717,8 @@ void android::opengl::GLES11Ext::glGetTexGenxvOES(jint a0, jint a1, local_ref< a
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(119),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(119), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES11Ext::glGetTexGenxvOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1727,8 +1727,8 @@ void android::opengl::GLES11Ext::glGetTexGenxvOES(jint a0, jint a1, local_ref< j
 		android::opengl::GLES11Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES11Ext::J2CPP_METHOD_NAME(120),
 		android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(120), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 

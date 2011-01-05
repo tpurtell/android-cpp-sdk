@@ -86,8 +86,8 @@ org::apache::http::impl::DefaultConnectionReuseStrategy::DefaultConnectionReuseS
 	call_new_object<
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ jboolean org::apache::http::impl::DefaultConnectionReuseStrategy::keepAlive(loca
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

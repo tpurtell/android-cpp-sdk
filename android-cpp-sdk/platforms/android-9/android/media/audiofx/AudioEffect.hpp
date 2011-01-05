@@ -227,8 +227,8 @@ void android::media::audiofx::AudioEffect_::OnControlStatusChangeListener::onCon
 		android::media::audiofx::AudioEffect_::OnControlStatusChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect_::OnControlStatusChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::AudioEffect_::OnControlStatusChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -247,8 +247,8 @@ void android::media::audiofx::AudioEffect_::OnEnableStatusChangeListener::onEnab
 		android::media::audiofx::AudioEffect_::OnEnableStatusChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect_::OnEnableStatusChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::AudioEffect_::OnEnableStatusChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -267,8 +267,8 @@ android::media::audiofx::AudioEffect_::Descriptor::Descriptor()
 	call_new_object<
 		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , type(get_jobject())
 , uuid(get_jobject())
@@ -285,8 +285,8 @@ android::media::audiofx::AudioEffect_::Descriptor::Descriptor(local_ref< java::l
 	call_new_object<
 		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4)
+		android::media::audiofx::AudioEffect_::Descriptor::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4)
 )
 , type(get_jobject())
 , uuid(get_jobject())
@@ -322,8 +322,8 @@ void android::media::audiofx::AudioEffect::release()
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -333,8 +333,8 @@ local_ref< android::media::audiofx::AudioEffect_::Descriptor > android::media::a
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::media::audiofx::AudioEffect_::Descriptor > >
-	(get_jobject());
+		local_ref< android::media::audiofx::AudioEffect_::Descriptor >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< android::media::audiofx::AudioEffect_::Descriptor >, 1> > android::media::audiofx::AudioEffect::queryEffects()
@@ -343,8 +343,8 @@ local_ref< array< local_ref< android::media::audiofx::AudioEffect_::Descriptor >
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< android::media::audiofx::AudioEffect_::Descriptor >, 1> > >
-	();
+		local_ref< array< local_ref< android::media::audiofx::AudioEffect_::Descriptor >, 1> >
+	>();
 }
 
 jint android::media::audiofx::AudioEffect::setEnabled(jboolean a0)
@@ -353,8 +353,8 @@ jint android::media::audiofx::AudioEffect::setEnabled(jboolean a0)
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::AudioEffect::getId()
@@ -363,8 +363,8 @@ jint android::media::audiofx::AudioEffect::getId()
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::media::audiofx::AudioEffect::getEnabled()
@@ -373,8 +373,8 @@ jboolean android::media::audiofx::AudioEffect::getEnabled()
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(7),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::media::audiofx::AudioEffect::hasControl()
@@ -383,8 +383,8 @@ jboolean android::media::audiofx::AudioEffect::hasControl()
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(8),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::audiofx::AudioEffect::setEnableStatusListener(local_ref< android::media::audiofx::AudioEffect_::OnEnableStatusChangeListener > const &a0)
@@ -393,8 +393,8 @@ void android::media::audiofx::AudioEffect::setEnableStatusListener(local_ref< an
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(9),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::audiofx::AudioEffect::setControlStatusListener(local_ref< android::media::audiofx::AudioEffect_::OnControlStatusChangeListener > const &a0)
@@ -403,8 +403,8 @@ void android::media::audiofx::AudioEffect::setControlStatusListener(local_ref< a
 		android::media::audiofx::AudioEffect::J2CPP_CLASS_NAME,
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_NAME(10),
 		android::media::audiofx::AudioEffect::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

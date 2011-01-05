@@ -84,8 +84,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ContentProvider();
@@ -124,14 +124,14 @@ namespace j2cpp {
 
 
 
-android::content::ContentProvider::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::ContentProvider::operator local_ref<android::content::ComponentCallbacks>() const
 {
 	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::content::ContentProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -140,8 +140,8 @@ android::content::ContentProvider::ContentProvider()
 	call_new_object<
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(0),
-		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -153,8 +153,8 @@ local_ref< android::content::Context > android::content::ContentProvider::getCon
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(1),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 
@@ -164,8 +164,8 @@ local_ref< java::lang::String > android::content::ContentProvider::getReadPermis
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(3),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -175,8 +175,8 @@ local_ref< java::lang::String > android::content::ContentProvider::getWritePermi
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(5),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -186,8 +186,8 @@ local_ref< array< local_ref< android::content::pm::PathPermission >, 1> > androi
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(7),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< android::content::pm::PathPermission >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::content::pm::PathPermission >, 1> >
+	>(get_jobject());
 }
 
 jboolean android::content::ContentProvider::onCreate()
@@ -196,8 +196,8 @@ jboolean android::content::ContentProvider::onCreate()
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(8),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::content::ContentProvider::onConfigurationChanged(local_ref< android::content::res::Configuration > const &a0)
@@ -206,8 +206,8 @@ void android::content::ContentProvider::onConfigurationChanged(local_ref< androi
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(9),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::ContentProvider::onLowMemory()
@@ -216,8 +216,8 @@ void android::content::ContentProvider::onLowMemory()
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(10),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::database::Cursor > android::content::ContentProvider::query(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4)
@@ -226,8 +226,8 @@ local_ref< android::database::Cursor > android::content::ContentProvider::query(
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(11),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::content::ContentProvider::getType(local_ref< android::net::Uri > const &a0)
@@ -236,8 +236,8 @@ local_ref< java::lang::String > android::content::ContentProvider::getType(local
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(12),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::content::ContentProvider::insert(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -246,8 +246,8 @@ local_ref< android::net::Uri > android::content::ContentProvider::insert(local_r
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(13),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentProvider::bulkInsert(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< android::content::ContentValues >, 1> > const &a1)
@@ -256,8 +256,8 @@ jint android::content::ContentProvider::bulkInsert(local_ref< android::net::Uri 
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(14),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentProvider::delete_(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -266,8 +266,8 @@ jint android::content::ContentProvider::delete_(local_ref< android::net::Uri > c
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(15),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::ContentProvider::update(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -276,8 +276,8 @@ jint android::content::ContentProvider::update(local_ref< android::net::Uri > co
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(16),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::os::ParcelFileDescriptor > android::content::ContentProvider::openFile(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -286,8 +286,8 @@ local_ref< android::os::ParcelFileDescriptor > android::content::ContentProvider
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(17),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::os::ParcelFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::ParcelFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::ContentProvider::openAssetFile(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -296,8 +296,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::Conten
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(18),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -308,8 +308,8 @@ void android::content::ContentProvider::attachInfo(local_ref< android::content::
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(21),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > android::content::ContentProvider::applyBatch(local_ref< java::util::ArrayList > const &a0)
@@ -318,8 +318,8 @@ local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > and
 		android::content::ContentProvider::J2CPP_CLASS_NAME,
 		android::content::ContentProvider::J2CPP_METHOD_NAME(22),
 		android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> >
+	>(get_jobject(), a0);
 }
 
 

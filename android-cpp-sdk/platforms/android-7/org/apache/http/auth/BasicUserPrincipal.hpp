@@ -89,8 +89,8 @@ org::apache::http::auth::BasicUserPrincipal::BasicUserPrincipal(local_ref< java:
 	call_new_object<
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_CLASS_NAME,
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_NAME(0),
-		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -102,8 +102,8 @@ local_ref< java::lang::String > org::apache::http::auth::BasicUserPrincipal::get
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_CLASS_NAME,
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_NAME(1),
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::auth::BasicUserPrincipal::hashCode()
@@ -112,8 +112,8 @@ jint org::apache::http::auth::BasicUserPrincipal::hashCode()
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_CLASS_NAME,
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_NAME(2),
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::auth::BasicUserPrincipal::equals(local_ref< java::lang::Object > const &a0)
@@ -122,8 +122,8 @@ jboolean org::apache::http::auth::BasicUserPrincipal::equals(local_ref< java::la
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_CLASS_NAME,
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_NAME(3),
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::auth::BasicUserPrincipal::toString()
@@ -132,8 +132,8 @@ local_ref< java::lang::String > org::apache::http::auth::BasicUserPrincipal::toS
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_CLASS_NAME,
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_NAME(4),
 		org::apache::http::auth::BasicUserPrincipal::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

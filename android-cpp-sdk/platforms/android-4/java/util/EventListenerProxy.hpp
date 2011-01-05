@@ -39,8 +39,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		EventListenerProxy(local_ref< java::util::EventListener > const&);
@@ -63,14 +63,14 @@ namespace j2cpp {
 
 
 
-java::util::EventListenerProxy::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::EventListenerProxy::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+java::util::EventListenerProxy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -79,8 +79,8 @@ java::util::EventListenerProxy::EventListenerProxy(local_ref< java::util::EventL
 	call_new_object<
 		java::util::EventListenerProxy::J2CPP_CLASS_NAME,
 		java::util::EventListenerProxy::J2CPP_METHOD_NAME(0),
-		java::util::EventListenerProxy::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::EventListenerProxy::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -92,8 +92,8 @@ local_ref< java::util::EventListener > java::util::EventListenerProxy::getListen
 		java::util::EventListenerProxy::J2CPP_CLASS_NAME,
 		java::util::EventListenerProxy::J2CPP_METHOD_NAME(1),
 		java::util::EventListenerProxy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::EventListener > >
-	(get_jobject());
+		local_ref< java::util::EventListener >
+	>(get_jobject());
 }
 
 

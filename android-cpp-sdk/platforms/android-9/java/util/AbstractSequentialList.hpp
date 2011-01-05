@@ -11,17 +11,23 @@
 #define J2CPP_JAVA_UTIL_ABSTRACTSEQUENTIALLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ListIterator; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractList.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/List.hpp>
 #include <java/util/ListIterator.hpp>
 
 
@@ -51,7 +57,12 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::List>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
 
 
 		void add(jint, local_ref< java::lang::Object >  const&);
@@ -79,9 +90,34 @@ namespace j2cpp {
 
 
 
+java::util::AbstractSequentialList::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::AbstractSequentialList::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::AbstractSequentialList::operator local_ref<java::util::AbstractList>() const
 {
 	return local_ref<java::util::AbstractList>(get_jobject());
+}
+
+java::util::AbstractSequentialList::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::AbstractSequentialList::operator local_ref<java::util::List>() const
+{
+	return local_ref<java::util::List>(get_jobject());
+}
+
+java::util::AbstractSequentialList::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
 }
 
 
@@ -91,8 +127,8 @@ void java::util::AbstractSequentialList::add(jint a0, local_ref< java::lang::Obj
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(1),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::AbstractSequentialList::addAll(jint a0, local_ref< java::util::Collection > const &a1)
@@ -101,8 +137,8 @@ jboolean java::util::AbstractSequentialList::addAll(jint a0, local_ref< java::ut
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(2),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::AbstractSequentialList::get(jint a0)
@@ -111,8 +147,8 @@ local_ref< java::lang::Object > java::util::AbstractSequentialList::get(jint a0)
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(3),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > java::util::AbstractSequentialList::iterator()
@@ -121,8 +157,8 @@ local_ref< java::util::Iterator > java::util::AbstractSequentialList::iterator()
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(4),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::util::ListIterator > java::util::AbstractSequentialList::listIterator(jint a0)
@@ -131,8 +167,8 @@ local_ref< java::util::ListIterator > java::util::AbstractSequentialList::listIt
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(5),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::ListIterator > >
-	(get_jobject(), a0);
+		local_ref< java::util::ListIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::AbstractSequentialList::remove(jint a0)
@@ -141,8 +177,8 @@ local_ref< java::lang::Object > java::util::AbstractSequentialList::remove(jint 
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(6),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::AbstractSequentialList::set(jint a0, local_ref< java::lang::Object > const &a1)
@@ -151,8 +187,8 @@ local_ref< java::lang::Object > java::util::AbstractSequentialList::set(jint a0,
 		java::util::AbstractSequentialList::J2CPP_CLASS_NAME,
 		java::util::AbstractSequentialList::J2CPP_METHOD_NAME(7),
 		java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

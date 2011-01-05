@@ -98,8 +98,8 @@ javax::xml::namespace::QName::QName(local_ref< java::lang::String > const &a0, l
 	call_new_object<
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(0),
-		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -111,8 +111,8 @@ javax::xml::namespace::QName::QName(local_ref< java::lang::String > const &a0, l
 	call_new_object<
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(1),
-		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -124,8 +124,8 @@ javax::xml::namespace::QName::QName(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(2),
-		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -137,8 +137,8 @@ local_ref< java::lang::String > javax::xml::namespace::QName::getNamespaceURI()
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(3),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::namespace::QName::getLocalPart()
@@ -147,8 +147,8 @@ local_ref< java::lang::String > javax::xml::namespace::QName::getLocalPart()
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(4),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::namespace::QName::getPrefix()
@@ -157,8 +157,8 @@ local_ref< java::lang::String > javax::xml::namespace::QName::getPrefix()
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(5),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean javax::xml::namespace::QName::equals(local_ref< java::lang::Object > const &a0)
@@ -167,8 +167,8 @@ jboolean javax::xml::namespace::QName::equals(local_ref< java::lang::Object > co
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(6),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::xml::namespace::QName::hashCode()
@@ -177,8 +177,8 @@ jint javax::xml::namespace::QName::hashCode()
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(7),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::namespace::QName::toString()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > javax::xml::namespace::QName::toString()
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(8),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::namespace::QName > javax::xml::namespace::QName::valueOf(local_ref< java::lang::String > const &a0)
@@ -197,8 +197,8 @@ local_ref< javax::xml::namespace::QName > javax::xml::namespace::QName::valueOf(
 		javax::xml::namespace::QName::J2CPP_CLASS_NAME,
 		javax::xml::namespace::QName::J2CPP_METHOD_NAME(9),
 		javax::xml::namespace::QName::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< javax::xml::namespace::QName > >
-	(a0);
+		local_ref< javax::xml::namespace::QName >
+	>(a0);
 }
 
 

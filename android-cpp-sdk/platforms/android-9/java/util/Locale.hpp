@@ -89,8 +89,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -160,14 +160,14 @@ namespace j2cpp {
 
 
 
-java::util::Locale::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::Locale::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::Locale::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::Locale::operator local_ref<java::io::Serializable>() const
@@ -181,8 +181,8 @@ java::util::Locale::Locale(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(0),
-		java::util::Locale::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::Locale::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -194,8 +194,8 @@ java::util::Locale::Locale(local_ref< java::lang::String > const &a0, local_ref<
 	call_new_object<
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(1),
-		java::util::Locale::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::Locale::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -207,8 +207,8 @@ java::util::Locale::Locale(local_ref< java::lang::String > const &a0, local_ref<
 	call_new_object<
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(2),
-		java::util::Locale::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		java::util::Locale::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -220,8 +220,8 @@ local_ref< java::lang::Object > java::util::Locale::clone()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(3),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::Locale::equals(local_ref< java::lang::Object > const &a0)
@@ -230,8 +230,8 @@ jboolean java::util::Locale::equals(local_ref< java::lang::Object > const &a0)
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(4),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::util::Locale >, 1> > java::util::Locale::getAvailableLocales()
@@ -240,8 +240,8 @@ local_ref< array< local_ref< java::util::Locale >, 1> > java::util::Locale::getA
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(5),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::util::Locale >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::Locale >, 1> >
+	>();
 }
 
 local_ref< java::lang::String > java::util::Locale::getCountry()
@@ -250,8 +250,8 @@ local_ref< java::lang::String > java::util::Locale::getCountry()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(6),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Locale > java::util::Locale::getDefault()
@@ -260,8 +260,8 @@ local_ref< java::util::Locale > java::util::Locale::getDefault()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(7),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Locale > >
-	();
+		local_ref< java::util::Locale >
+	>();
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayCountry()
@@ -270,8 +270,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayCountry()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(8),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayCountry(local_ref< java::util::Locale > const &a0)
@@ -280,8 +280,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayCountry(local_ref<
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(9),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayLanguage()
@@ -290,8 +290,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayLanguage()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(10),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayLanguage(local_ref< java::util::Locale > const &a0)
@@ -300,8 +300,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayLanguage(local_ref
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(11),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayName()
@@ -310,8 +310,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayName()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(12),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayName(local_ref< java::util::Locale > const &a0)
@@ -320,8 +320,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayName(local_ref< ja
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(13),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayVariant()
@@ -330,8 +330,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayVariant()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(14),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getDisplayVariant(local_ref< java::util::Locale > const &a0)
@@ -340,8 +340,8 @@ local_ref< java::lang::String > java::util::Locale::getDisplayVariant(local_ref<
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(15),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Locale::getISO3Country()
@@ -350,8 +350,8 @@ local_ref< java::lang::String > java::util::Locale::getISO3Country()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(16),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getISO3Language()
@@ -360,8 +360,8 @@ local_ref< java::lang::String > java::util::Locale::getISO3Language()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(17),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::Locale::getISOCountries()
@@ -370,8 +370,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::Locale::getI
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(18),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>();
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::Locale::getISOLanguages()
@@ -380,8 +380,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::Locale::getI
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(19),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>();
 }
 
 local_ref< java::lang::String > java::util::Locale::getLanguage()
@@ -390,8 +390,8 @@ local_ref< java::lang::String > java::util::Locale::getLanguage()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(20),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Locale::getVariant()
@@ -400,8 +400,8 @@ local_ref< java::lang::String > java::util::Locale::getVariant()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(21),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::Locale::hashCode()
@@ -410,8 +410,8 @@ jint java::util::Locale::hashCode()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(22),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::Locale::setDefault(local_ref< java::util::Locale > const &a0)
@@ -420,8 +420,8 @@ void java::util::Locale::setDefault(local_ref< java::util::Locale > const &a0)
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(23),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Locale::toString()
@@ -430,8 +430,8 @@ local_ref< java::lang::String > java::util::Locale::toString()
 		java::util::Locale::J2CPP_CLASS_NAME,
 		java::util::Locale::J2CPP_METHOD_NAME(24),
 		java::util::Locale::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

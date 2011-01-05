@@ -101,8 +101,8 @@ local_ref< java::lang::String > javax::crypto::KeyGenerator::getAlgorithm()
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(1),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > javax::crypto::KeyGenerator::getProvider()
@@ -111,8 +111,8 @@ local_ref< java::security::Provider > javax::crypto::KeyGenerator::getProvider()
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(2),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstance(local_ref< java::lang::String > const &a0)
@@ -121,8 +121,8 @@ local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstanc
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(3),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::KeyGenerator > >
-	(a0);
+		local_ref< javax::crypto::KeyGenerator >
+	>(a0);
 }
 
 local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -131,8 +131,8 @@ local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstanc
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(4),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::KeyGenerator > >
-	(a0, a1);
+		local_ref< javax::crypto::KeyGenerator >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -141,8 +141,8 @@ local_ref< javax::crypto::KeyGenerator > javax::crypto::KeyGenerator::getInstanc
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(5),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::crypto::KeyGenerator > >
-	(a0, a1);
+		local_ref< javax::crypto::KeyGenerator >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::SecretKey > javax::crypto::KeyGenerator::generateKey()
@@ -151,8 +151,8 @@ local_ref< javax::crypto::SecretKey > javax::crypto::KeyGenerator::generateKey()
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(6),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< javax::crypto::SecretKey > >
-	(get_jobject());
+		local_ref< javax::crypto::SecretKey >
+	>(get_jobject());
 }
 
 void javax::crypto::KeyGenerator::init(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0)
@@ -161,8 +161,8 @@ void javax::crypto::KeyGenerator::init(local_ref< java::security::spec::Algorith
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(7),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::KeyGenerator::init(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0, local_ref< java::security::SecureRandom > const &a1)
@@ -171,8 +171,8 @@ void javax::crypto::KeyGenerator::init(local_ref< java::security::spec::Algorith
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(8),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::KeyGenerator::init(jint a0)
@@ -181,8 +181,8 @@ void javax::crypto::KeyGenerator::init(jint a0)
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(9),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::KeyGenerator::init(jint a0, local_ref< java::security::SecureRandom > const &a1)
@@ -191,8 +191,8 @@ void javax::crypto::KeyGenerator::init(jint a0, local_ref< java::security::Secur
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(10),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::KeyGenerator::init(local_ref< java::security::SecureRandom > const &a0)
@@ -201,8 +201,8 @@ void javax::crypto::KeyGenerator::init(local_ref< java::security::SecureRandom >
 		javax::crypto::KeyGenerator::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(11),
 		javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

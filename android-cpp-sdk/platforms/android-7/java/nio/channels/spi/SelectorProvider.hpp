@@ -97,8 +97,8 @@ local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(1),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::spi::SelectorProvider > >
-	();
+		local_ref< java::nio::channels::spi::SelectorProvider >
+	>();
 }
 
 local_ref< java::nio::channels::DatagramChannel > java::nio::channels::spi::SelectorProvider::openDatagramChannel()
@@ -107,8 +107,8 @@ local_ref< java::nio::channels::DatagramChannel > java::nio::channels::spi::Sele
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(2),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::channels::DatagramChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::DatagramChannel >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::Pipe > java::nio::channels::spi::SelectorProvider::openPipe()
@@ -117,8 +117,8 @@ local_ref< java::nio::channels::Pipe > java::nio::channels::spi::SelectorProvide
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(3),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::channels::Pipe > >
-	(get_jobject());
+		local_ref< java::nio::channels::Pipe >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::spi::AbstractSelector > java::nio::channels::spi::SelectorProvider::openSelector()
@@ -127,8 +127,8 @@ local_ref< java::nio::channels::spi::AbstractSelector > java::nio::channels::spi
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(4),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::spi::AbstractSelector > >
-	(get_jobject());
+		local_ref< java::nio::channels::spi::AbstractSelector >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::ServerSocketChannel > java::nio::channels::spi::SelectorProvider::openServerSocketChannel()
@@ -137,8 +137,8 @@ local_ref< java::nio::channels::ServerSocketChannel > java::nio::channels::spi::
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(5),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::nio::channels::ServerSocketChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::ServerSocketChannel >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SocketChannel > java::nio::channels::spi::SelectorProvider::openSocketChannel()
@@ -147,8 +147,8 @@ local_ref< java::nio::channels::SocketChannel > java::nio::channels::spi::Select
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(6),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::channels::SocketChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::SocketChannel >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::Channel > java::nio::channels::spi::SelectorProvider::inheritedChannel()
@@ -157,8 +157,8 @@ local_ref< java::nio::channels::Channel > java::nio::channels::spi::SelectorProv
 		java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(7),
 		java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::nio::channels::Channel > >
-	(get_jobject());
+		local_ref< java::nio::channels::Channel >
+	>(get_jobject());
 }
 
 

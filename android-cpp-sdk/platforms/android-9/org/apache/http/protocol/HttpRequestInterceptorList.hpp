@@ -89,8 +89,8 @@ void org::apache::http::protocol::HttpRequestInterceptorList::addRequestIntercep
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(0),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpRequestInterceptorList::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0, jint a1)
@@ -99,8 +99,8 @@ void org::apache::http::protocol::HttpRequestInterceptorList::addRequestIntercep
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::protocol::HttpRequestInterceptorList::getRequestInterceptorCount()
@@ -109,8 +109,8 @@ jint org::apache::http::protocol::HttpRequestInterceptorList::getRequestIntercep
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::protocol::HttpRequestInterceptorList::getRequestInterceptor(jint a0)
@@ -119,8 +119,8 @@ local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::protoc
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpRequestInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpRequestInterceptor >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpRequestInterceptorList::clearRequestInterceptors()
@@ -129,8 +129,8 @@ void org::apache::http::protocol::HttpRequestInterceptorList::clearRequestInterc
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::HttpRequestInterceptorList::removeRequestInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -139,8 +139,8 @@ void org::apache::http::protocol::HttpRequestInterceptorList::removeRequestInter
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(5),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpRequestInterceptorList::setInterceptors(local_ref< java::util::List > const &a0)
@@ -149,8 +149,8 @@ void org::apache::http::protocol::HttpRequestInterceptorList::setInterceptors(lo
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_NAME(6),
 		org::apache::http::protocol::HttpRequestInterceptorList::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -129,8 +129,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< array< loc
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(1),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< array< local_ref< java::lang::String >, 1> > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -139,8 +139,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< array< loc
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(2),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< array< local_ref< java::lang::String >, 1> > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::io::File > const &a2)
@@ -149,8 +149,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< array< loc
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(3),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang::String > const &a0)
@@ -159,8 +159,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(4),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -169,8 +169,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(5),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::io::File > const &a2)
@@ -179,8 +179,8 @@ local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< java::lang
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(6),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Process > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Process >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::lang::Runtime::exit(jint a0)
@@ -189,8 +189,8 @@ void java::lang::Runtime::exit(jint a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(7),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::lang::Runtime::freeMemory()
@@ -199,8 +199,8 @@ jlong java::lang::Runtime::freeMemory()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(8),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::lang::Runtime::gc()
@@ -209,8 +209,8 @@ void java::lang::Runtime::gc()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(9),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Runtime > java::lang::Runtime::getRuntime()
@@ -219,8 +219,8 @@ local_ref< java::lang::Runtime > java::lang::Runtime::getRuntime()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(10),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Runtime > >
-	();
+		local_ref< java::lang::Runtime >
+	>();
 }
 
 void java::lang::Runtime::load(local_ref< java::lang::String > const &a0)
@@ -229,8 +229,8 @@ void java::lang::Runtime::load(local_ref< java::lang::String > const &a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(11),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Runtime::loadLibrary(local_ref< java::lang::String > const &a0)
@@ -239,8 +239,8 @@ void java::lang::Runtime::loadLibrary(local_ref< java::lang::String > const &a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(12),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Runtime::runFinalization()
@@ -249,8 +249,8 @@ void java::lang::Runtime::runFinalization()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(13),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::Runtime::runFinalizersOnExit(jboolean a0)
@@ -259,8 +259,8 @@ void java::lang::Runtime::runFinalizersOnExit(jboolean a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(14),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jlong java::lang::Runtime::totalMemory()
@@ -269,8 +269,8 @@ jlong java::lang::Runtime::totalMemory()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(15),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(15), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::lang::Runtime::traceInstructions(jboolean a0)
@@ -279,8 +279,8 @@ void java::lang::Runtime::traceInstructions(jboolean a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(16),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Runtime::traceMethodCalls(jboolean a0)
@@ -289,8 +289,8 @@ void java::lang::Runtime::traceMethodCalls(jboolean a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(17),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::lang::Runtime::getLocalizedInputStream(local_ref< java::io::InputStream > const &a0)
@@ -299,8 +299,8 @@ local_ref< java::io::InputStream > java::lang::Runtime::getLocalizedInputStream(
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(18),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::OutputStream > java::lang::Runtime::getLocalizedOutputStream(local_ref< java::io::OutputStream > const &a0)
@@ -309,8 +309,8 @@ local_ref< java::io::OutputStream > java::lang::Runtime::getLocalizedOutputStrea
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(19),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::OutputStream >
+	>(get_jobject(), a0);
 }
 
 void java::lang::Runtime::addShutdownHook(local_ref< java::lang::Thread > const &a0)
@@ -319,8 +319,8 @@ void java::lang::Runtime::addShutdownHook(local_ref< java::lang::Thread > const 
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(20),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::Runtime::removeShutdownHook(local_ref< java::lang::Thread > const &a0)
@@ -329,8 +329,8 @@ jboolean java::lang::Runtime::removeShutdownHook(local_ref< java::lang::Thread >
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(21),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::lang::Runtime::halt(jint a0)
@@ -339,8 +339,8 @@ void java::lang::Runtime::halt(jint a0)
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(22),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Runtime::availableProcessors()
@@ -349,8 +349,8 @@ jint java::lang::Runtime::availableProcessors()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(23),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::lang::Runtime::maxMemory()
@@ -359,8 +359,8 @@ jlong java::lang::Runtime::maxMemory()
 		java::lang::Runtime::J2CPP_CLASS_NAME,
 		java::lang::Runtime::J2CPP_METHOD_NAME(24),
 		java::lang::Runtime::J2CPP_METHOD_SIGNATURE(24), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 

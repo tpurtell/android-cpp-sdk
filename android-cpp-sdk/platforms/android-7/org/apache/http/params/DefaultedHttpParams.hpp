@@ -47,7 +47,9 @@ namespace org { namespace apache { namespace http { namespace params {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::params::AbstractHttpParams>() const;
+		operator local_ref<org::apache::http::params::HttpParams>() const;
 
 
 		DefaultedHttpParams(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -76,9 +78,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::params::DefaultedHttpParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::params::DefaultedHttpParams::operator local_ref<org::apache::http::params::AbstractHttpParams>() const
 {
 	return local_ref<org::apache::http::params::AbstractHttpParams>(get_jobject());
+}
+
+org::apache::http::params::DefaultedHttpParams::operator local_ref<org::apache::http::params::HttpParams>() const
+{
+	return local_ref<org::apache::http::params::HttpParams>(get_jobject());
 }
 
 
@@ -87,8 +99,8 @@ org::apache::http::params::DefaultedHttpParams::DefaultedHttpParams(local_ref< o
 	call_new_object<
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(0),
-		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -100,8 +112,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::De
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::params::DefaultedHttpParams::getParameter(local_ref< java::lang::String > const &a0)
@@ -110,8 +122,8 @@ local_ref< java::lang::Object > org::apache::http::params::DefaultedHttpParams::
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::params::DefaultedHttpParams::removeParameter(local_ref< java::lang::String > const &a0)
@@ -120,8 +132,8 @@ jboolean org::apache::http::params::DefaultedHttpParams::removeParameter(local_r
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::DefaultedHttpParams::setParameter(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -130,8 +142,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::De
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::DefaultedHttpParams::getDefaults()
@@ -140,8 +152,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::De
 		org::apache::http::params::DefaultedHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::DefaultedHttpParams::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 

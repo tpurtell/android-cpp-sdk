@@ -12,13 +12,17 @@
 
 
 namespace j2cpp { namespace android { namespace text { namespace style { class UpdateLayout; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/TextPaint.hpp>
 #include <android/text/style/CharacterStyle.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
 #include <android/text/style/UpdateLayout.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,8 +47,10 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
-		operator local_ref<android::text::style::CharacterStyle>() const;
 		operator local_ref<android::text::style::UpdateLayout>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		MetricAffectingSpan();
@@ -70,14 +76,24 @@ namespace j2cpp {
 
 
 
+android::text::style::MetricAffectingSpan::operator local_ref<android::text::style::UpdateLayout>() const
+{
+	return local_ref<android::text::style::UpdateLayout>(get_jobject());
+}
+
+android::text::style::MetricAffectingSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
 android::text::style::MetricAffectingSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
 	return local_ref<android::text::style::CharacterStyle>(get_jobject());
 }
 
-android::text::style::MetricAffectingSpan::operator local_ref<android::text::style::UpdateLayout>() const
+android::text::style::MetricAffectingSpan::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::text::style::UpdateLayout>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +102,8 @@ android::text::style::MetricAffectingSpan::MetricAffectingSpan()
 	call_new_object<
 		android::text::style::MetricAffectingSpan::J2CPP_CLASS_NAME,
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::MetricAffectingSpan::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::style::MetricAffectingSpan::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +115,8 @@ void android::text::style::MetricAffectingSpan::updateMeasureState(local_ref< an
 		android::text::style::MetricAffectingSpan::J2CPP_CLASS_NAME,
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_NAME(1),
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::style::MetricAffectingSpan > android::text::style::MetricAffectingSpan::getUnderlying()
@@ -109,8 +125,8 @@ local_ref< android::text::style::MetricAffectingSpan > android::text::style::Met
 		android::text::style::MetricAffectingSpan::J2CPP_CLASS_NAME,
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::style::MetricAffectingSpan > >
-	(get_jobject());
+		local_ref< android::text::style::MetricAffectingSpan >
+	>(get_jobject());
 }
 
 local_ref< android::text::style::CharacterStyle > android::text::style::MetricAffectingSpan::getUnderlying_1()
@@ -119,8 +135,8 @@ local_ref< android::text::style::CharacterStyle > android::text::style::MetricAf
 		android::text::style::MetricAffectingSpan::J2CPP_CLASS_NAME,
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::MetricAffectingSpan::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::style::CharacterStyle > >
-	(get_jobject());
+		local_ref< android::text::style::CharacterStyle >
+	>(get_jobject());
 }
 
 

@@ -170,8 +170,8 @@ android::net::sip::SipAudioCall_::Listener::Listener()
 	call_new_object<
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(0),
-		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -183,8 +183,8 @@ void android::net::sip::SipAudioCall_::Listener::onReadyToCall(local_ref< androi
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onCalling(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -193,8 +193,8 @@ void android::net::sip::SipAudioCall_::Listener::onCalling(local_ref< android::n
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onRinging(local_ref< android::net::sip::SipAudioCall > const &a0, local_ref< android::net::sip::SipProfile > const &a1)
@@ -203,8 +203,8 @@ void android::net::sip::SipAudioCall_::Listener::onRinging(local_ref< android::n
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onRingingBack(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -213,8 +213,8 @@ void android::net::sip::SipAudioCall_::Listener::onRingingBack(local_ref< androi
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onCallEstablished(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -223,8 +223,8 @@ void android::net::sip::SipAudioCall_::Listener::onCallEstablished(local_ref< an
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onCallEnded(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -233,8 +233,8 @@ void android::net::sip::SipAudioCall_::Listener::onCallEnded(local_ref< android:
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onCallBusy(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -243,8 +243,8 @@ void android::net::sip::SipAudioCall_::Listener::onCallBusy(local_ref< android::
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onCallHeld(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -253,8 +253,8 @@ void android::net::sip::SipAudioCall_::Listener::onCallHeld(local_ref< android::
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onError(local_ref< android::net::sip::SipAudioCall > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -263,8 +263,8 @@ void android::net::sip::SipAudioCall_::Listener::onError(local_ref< android::net
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipAudioCall_::Listener::onChanged(local_ref< android::net::sip::SipAudioCall > const &a0)
@@ -273,8 +273,8 @@ void android::net::sip::SipAudioCall_::Listener::onChanged(local_ref< android::n
 		android::net::sip::SipAudioCall_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipAudioCall_::Listener::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -304,8 +304,8 @@ android::net::sip::SipAudioCall::SipAudioCall(local_ref< android::content::Conte
 	call_new_object<
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(0),
-		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -317,8 +317,8 @@ void android::net::sip::SipAudioCall::setListener(local_ref< android::net::sip::
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::setListener(local_ref< android::net::sip::SipAudioCall_::Listener > const &a0, jboolean a1)
@@ -327,8 +327,8 @@ void android::net::sip::SipAudioCall::setListener(local_ref< android::net::sip::
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::net::sip::SipAudioCall::isInCall()
@@ -337,8 +337,8 @@ jboolean android::net::sip::SipAudioCall::isInCall()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::sip::SipAudioCall::isOnHold()
@@ -347,8 +347,8 @@ jboolean android::net::sip::SipAudioCall::isOnHold()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::net::sip::SipAudioCall::close()
@@ -357,8 +357,8 @@ void android::net::sip::SipAudioCall::close()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::net::sip::SipProfile > android::net::sip::SipAudioCall::getLocalProfile()
@@ -367,8 +367,8 @@ local_ref< android::net::sip::SipProfile > android::net::sip::SipAudioCall::getL
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::net::sip::SipProfile > >
-	(get_jobject());
+		local_ref< android::net::sip::SipProfile >
+	>(get_jobject());
 }
 
 local_ref< android::net::sip::SipProfile > android::net::sip::SipAudioCall::getPeerProfile()
@@ -377,8 +377,8 @@ local_ref< android::net::sip::SipProfile > android::net::sip::SipAudioCall::getP
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::sip::SipProfile > >
-	(get_jobject());
+		local_ref< android::net::sip::SipProfile >
+	>(get_jobject());
 }
 
 jint android::net::sip::SipAudioCall::getState()
@@ -387,8 +387,8 @@ jint android::net::sip::SipAudioCall::getState()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::sip::SipAudioCall::attachCall(local_ref< android::net::sip::SipSession > const &a0, local_ref< java::lang::String > const &a1)
@@ -397,8 +397,8 @@ void android::net::sip::SipAudioCall::attachCall(local_ref< android::net::sip::S
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipAudioCall::makeCall(local_ref< android::net::sip::SipProfile > const &a0, local_ref< android::net::sip::SipSession > const &a1, jint a2)
@@ -407,8 +407,8 @@ void android::net::sip::SipAudioCall::makeCall(local_ref< android::net::sip::Sip
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipAudioCall::endCall()
@@ -417,8 +417,8 @@ void android::net::sip::SipAudioCall::endCall()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::sip::SipAudioCall::holdCall(jint a0)
@@ -427,8 +427,8 @@ void android::net::sip::SipAudioCall::holdCall(jint a0)
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(12),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::answerCall(jint a0)
@@ -437,8 +437,8 @@ void android::net::sip::SipAudioCall::answerCall(jint a0)
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(13),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::continueCall(jint a0)
@@ -447,8 +447,8 @@ void android::net::sip::SipAudioCall::continueCall(jint a0)
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(14),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::toggleMute()
@@ -457,8 +457,8 @@ void android::net::sip::SipAudioCall::toggleMute()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(15),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::net::sip::SipAudioCall::isMuted()
@@ -467,8 +467,8 @@ jboolean android::net::sip::SipAudioCall::isMuted()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(16),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::net::sip::SipAudioCall::setSpeakerMode(jboolean a0)
@@ -477,8 +477,8 @@ void android::net::sip::SipAudioCall::setSpeakerMode(jboolean a0)
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(17),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::sendDtmf(jint a0)
@@ -487,8 +487,8 @@ void android::net::sip::SipAudioCall::sendDtmf(jint a0)
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(18),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipAudioCall::sendDtmf(jint a0, local_ref< android::os::Message > const &a1)
@@ -497,8 +497,8 @@ void android::net::sip::SipAudioCall::sendDtmf(jint a0, local_ref< android::os::
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(19),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipAudioCall::startAudio()
@@ -507,8 +507,8 @@ void android::net::sip::SipAudioCall::startAudio()
 		android::net::sip::SipAudioCall::J2CPP_CLASS_NAME,
 		android::net::sip::SipAudioCall::J2CPP_METHOD_NAME(20),
 		android::net::sip::SipAudioCall::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

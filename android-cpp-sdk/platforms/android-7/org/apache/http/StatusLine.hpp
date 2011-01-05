@@ -78,8 +78,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::StatusLine::g
 		org::apache::http::StatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::StatusLine::J2CPP_METHOD_NAME(0),
 		org::apache::http::StatusLine::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject());
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject());
 }
 
 jint org::apache::http::StatusLine::getStatusCode()
@@ -88,8 +88,8 @@ jint org::apache::http::StatusLine::getStatusCode()
 		org::apache::http::StatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::StatusLine::J2CPP_METHOD_NAME(1),
 		org::apache::http::StatusLine::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::StatusLine::getReasonPhrase()
@@ -98,8 +98,8 @@ local_ref< java::lang::String > org::apache::http::StatusLine::getReasonPhrase()
 		org::apache::http::StatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::StatusLine::J2CPP_METHOD_NAME(2),
 		org::apache::http::StatusLine::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

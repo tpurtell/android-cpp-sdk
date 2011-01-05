@@ -103,8 +103,8 @@ android::app::LocalActivityManager::LocalActivityManager(local_ref< android::app
 	call_new_object<
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(0),
-		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -116,8 +116,8 @@ local_ref< android::view::Window > android::app::LocalActivityManager::startActi
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(1),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::Window > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::Window >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::Window > android::app::LocalActivityManager::destroyActivity(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -126,8 +126,8 @@ local_ref< android::view::Window > android::app::LocalActivityManager::destroyAc
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(2),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::Window > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::Window >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::Activity > android::app::LocalActivityManager::getCurrentActivity()
@@ -136,8 +136,8 @@ local_ref< android::app::Activity > android::app::LocalActivityManager::getCurre
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(3),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::Activity > >
-	(get_jobject());
+		local_ref< android::app::Activity >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::LocalActivityManager::getCurrentId()
@@ -146,8 +146,8 @@ local_ref< java::lang::String > android::app::LocalActivityManager::getCurrentId
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(4),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::app::Activity > android::app::LocalActivityManager::getActivity(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ local_ref< android::app::Activity > android::app::LocalActivityManager::getActiv
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(5),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0);
 }
 
 void android::app::LocalActivityManager::dispatchCreate(local_ref< android::os::Bundle > const &a0)
@@ -166,8 +166,8 @@ void android::app::LocalActivityManager::dispatchCreate(local_ref< android::os::
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(6),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::app::LocalActivityManager::saveInstanceState()
@@ -176,8 +176,8 @@ local_ref< android::os::Bundle > android::app::LocalActivityManager::saveInstanc
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(7),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 void android::app::LocalActivityManager::dispatchResume()
@@ -186,8 +186,8 @@ void android::app::LocalActivityManager::dispatchResume()
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(8),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::LocalActivityManager::dispatchPause(jboolean a0)
@@ -196,8 +196,8 @@ void android::app::LocalActivityManager::dispatchPause(jboolean a0)
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(9),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::LocalActivityManager::dispatchStop()
@@ -206,8 +206,8 @@ void android::app::LocalActivityManager::dispatchStop()
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(10),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::LocalActivityManager::removeAllActivities()
@@ -216,8 +216,8 @@ void android::app::LocalActivityManager::removeAllActivities()
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(11),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::LocalActivityManager::dispatchDestroy(jboolean a0)
@@ -226,8 +226,8 @@ void android::app::LocalActivityManager::dispatchDestroy(jboolean a0)
 		android::app::LocalActivityManager::J2CPP_CLASS_NAME,
 		android::app::LocalActivityManager::J2CPP_METHOD_NAME(12),
 		android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

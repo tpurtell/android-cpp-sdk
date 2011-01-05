@@ -96,8 +96,8 @@ java::text::AttributedString::AttributedString(local_ref< java::text::Attributed
 	call_new_object<
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(0),
-		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +109,8 @@ java::text::AttributedString::AttributedString(local_ref< java::text::Attributed
 	call_new_object<
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(1),
-		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -122,8 +122,8 @@ java::text::AttributedString::AttributedString(local_ref< java::text::Attributed
 	call_new_object<
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(2),
-		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3)
+		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -135,8 +135,8 @@ java::text::AttributedString::AttributedString(local_ref< java::lang::String > c
 	call_new_object<
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(3),
-		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -148,8 +148,8 @@ java::text::AttributedString::AttributedString(local_ref< java::lang::String > c
 	call_new_object<
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(4),
-		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1)
+		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1)
 )
 {
 }
@@ -161,8 +161,8 @@ void java::text::AttributedString::addAttribute(local_ref< java::text::Attribute
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(5),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::AttributedString::addAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3)
@@ -171,8 +171,8 @@ void java::text::AttributedString::addAttribute(local_ref< java::text::Attribute
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(6),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::text::AttributedString::addAttributes(local_ref< java::util::Map > const &a0, jint a1, jint a2)
@@ -181,8 +181,8 @@ void java::text::AttributedString::addAttributes(local_ref< java::util::Map > co
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(7),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::AttributedString::getIterator()
@@ -191,8 +191,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::AttributedStrin
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(8),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject());
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject());
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::AttributedString::getIterator(local_ref< array< local_ref< java::text::AttributedCharacterIterator_::Attribute >, 1> > const &a0)
@@ -201,8 +201,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::AttributedStrin
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(9),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject(), a0);
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::AttributedString::getIterator(local_ref< array< local_ref< java::text::AttributedCharacterIterator_::Attribute >, 1> > const &a0, jint a1, jint a2)
@@ -211,8 +211,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::AttributedStrin
 		java::text::AttributedString::J2CPP_CLASS_NAME,
 		java::text::AttributedString::J2CPP_METHOD_NAME(10),
 		java::text::AttributedString::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

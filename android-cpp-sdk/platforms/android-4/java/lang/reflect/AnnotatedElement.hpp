@@ -80,8 +80,8 @@ local_ref< java::lang::annotation::Annotation > java::lang::reflect::AnnotatedEl
 		java::lang::reflect::AnnotatedElement::J2CPP_CLASS_NAME,
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::annotation::Annotation > >
-	(get_jobject(), a0);
+		local_ref< java::lang::annotation::Annotation >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::reflect::AnnotatedElement::getAnnotations()
@@ -90,8 +90,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::reflect::AnnotatedElement::J2CPP_CLASS_NAME,
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::reflect::AnnotatedElement::getDeclaredAnnotations()
@@ -100,8 +100,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::reflect::AnnotatedElement::J2CPP_CLASS_NAME,
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 jboolean java::lang::reflect::AnnotatedElement::isAnnotationPresent(local_ref< java::lang::Class > const &a0)
@@ -110,8 +110,8 @@ jboolean java::lang::reflect::AnnotatedElement::isAnnotationPresent(local_ref< j
 		java::lang::reflect::AnnotatedElement::J2CPP_CLASS_NAME,
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::AnnotatedElement::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

@@ -11,9 +11,10 @@
 #define J2CPP_ANDROID_NET_SSLCERTIFICATESOCKETFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 namespace j2cpp { namespace javax { namespace net { class SocketFactory; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace android { namespace net { class SSLSessionCache; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 
 
 #include <android/net/SSLSessionCache.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/Socket.hpp>
@@ -61,6 +63,8 @@ namespace android { namespace net {
 		}
 
 		operator local_ref<javax::net::ssl::SSLSocketFactory>() const;
+		operator local_ref<javax::net::SocketFactory>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SSLCertificateSocketFactory(jint);
@@ -99,14 +103,24 @@ android::net::SSLCertificateSocketFactory::operator local_ref<javax::net::ssl::S
 	return local_ref<javax::net::ssl::SSLSocketFactory>(get_jobject());
 }
 
+android::net::SSLCertificateSocketFactory::operator local_ref<javax::net::SocketFactory>() const
+{
+	return local_ref<javax::net::SocketFactory>(get_jobject());
+}
+
+android::net::SSLCertificateSocketFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::net::SSLCertificateSocketFactory::SSLCertificateSocketFactory(jint a0)
 : object<android::net::SSLCertificateSocketFactory>(
 	call_new_object<
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(0),
-		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -118,8 +132,8 @@ local_ref< javax::net::SocketFactory > android::net::SSLCertificateSocketFactory
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(1),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::SocketFactory > >
-	(a0);
+		local_ref< javax::net::SocketFactory >
+	>(a0);
 }
 
 local_ref< javax::net::ssl::SSLSocketFactory > android::net::SSLCertificateSocketFactory::getDefault(jint a0, local_ref< android::net::SSLSessionCache > const &a1)
@@ -128,8 +142,8 @@ local_ref< javax::net::ssl::SSLSocketFactory > android::net::SSLCertificateSocke
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(2),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::net::ssl::SSLSocketFactory > >
-	(a0, a1);
+		local_ref< javax::net::ssl::SSLSocketFactory >
+	>(a0, a1);
 }
 
 local_ref< javax::net::ssl::SSLSocketFactory > android::net::SSLCertificateSocketFactory::getInsecure(jint a0, local_ref< android::net::SSLSessionCache > const &a1)
@@ -138,8 +152,8 @@ local_ref< javax::net::ssl::SSLSocketFactory > android::net::SSLCertificateSocke
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(3),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::net::ssl::SSLSocketFactory > >
-	(a0, a1);
+		local_ref< javax::net::ssl::SSLSocketFactory >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::conn::ssl::SSLSocketFactory > android::net::SSLCertificateSocketFactory::getHttpSocketFactory(jint a0, local_ref< android::net::SSLSessionCache > const &a1)
@@ -148,8 +162,8 @@ local_ref< org::apache::http::conn::ssl::SSLSocketFactory > android::net::SSLCer
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(4),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::conn::ssl::SSLSocketFactory > >
-	(a0, a1);
+		local_ref< org::apache::http::conn::ssl::SSLSocketFactory >
+	>(a0, a1);
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket(local_ref< java::net::Socket > const &a0, local_ref< java::lang::String > const &a1, jint a2, jboolean a3)
@@ -158,8 +172,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(5),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket()
@@ -168,8 +182,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(6),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::net::Socket > >
-	(get_jobject());
+		local_ref< java::net::Socket >
+	>(get_jobject());
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket(local_ref< java::net::InetAddress > const &a0, jint a1, local_ref< java::net::InetAddress > const &a2, jint a3)
@@ -178,8 +192,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(7),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket(local_ref< java::net::InetAddress > const &a0, jint a1)
@@ -188,8 +202,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(8),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::net::InetAddress > const &a2, jint a3)
@@ -198,8 +212,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(9),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::createSocket(local_ref< java::lang::String > const &a0, jint a1)
@@ -208,8 +222,8 @@ local_ref< java::net::Socket > android::net::SSLCertificateSocketFactory::create
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(10),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::net::SSLCertificateSocketFactory::getDefaultCipherSuites()
@@ -218,8 +232,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::net::SSLCertifi
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(11),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::net::SSLCertificateSocketFactory::getSupportedCipherSuites()
@@ -228,8 +242,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::net::SSLCertifi
 		android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME,
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(12),
 		android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 

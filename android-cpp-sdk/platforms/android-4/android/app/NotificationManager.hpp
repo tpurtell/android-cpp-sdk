@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_APP_NOTIFICATIONMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { class Notification; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class Notification; } } }
 
 
 #include <android/app/Notification.hpp>
@@ -77,8 +77,8 @@ void android::app::NotificationManager::notify(jint a0, local_ref< android::app:
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(1),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::NotificationManager::cancel(jint a0)
@@ -87,8 +87,8 @@ void android::app::NotificationManager::cancel(jint a0)
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(2),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NotificationManager::cancelAll()
@@ -97,8 +97,8 @@ void android::app::NotificationManager::cancelAll()
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(3),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

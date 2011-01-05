@@ -15,13 +15,17 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class AuthSchemeBase; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HttpRequest.hpp>
+#include <org/apache/http/auth/AuthScheme.hpp>
 #include <org/apache/http/auth/Credentials.hpp>
 #include <org/apache/http/impl/auth/AuthSchemeBase.hpp>
 #include <org/apache/http/impl/auth/NTLMEngine.hpp>
@@ -54,6 +58,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		}
 
 		operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const;
+		operator local_ref<org::apache::http::auth::AuthScheme>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		NTLMScheme(local_ref< org::apache::http::impl::auth::NTLMEngine > const&);
@@ -89,14 +95,24 @@ org::apache::http::impl::auth::NTLMScheme::operator local_ref<org::apache::http:
 	return local_ref<org::apache::http::impl::auth::AuthSchemeBase>(get_jobject());
 }
 
+org::apache::http::impl::auth::NTLMScheme::operator local_ref<org::apache::http::auth::AuthScheme>() const
+{
+	return local_ref<org::apache::http::auth::AuthScheme>(get_jobject());
+}
+
+org::apache::http::impl::auth::NTLMScheme::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::impl::auth::NTLMScheme::NTLMScheme(local_ref< org::apache::http::impl::auth::NTLMEngine > const &a0)
 : object<org::apache::http::impl::auth::NTLMScheme>(
 	call_new_object<
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -108,8 +124,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getSc
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getParameter(local_ref< java::lang::String > const &a0)
@@ -118,8 +134,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getPa
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getRealm()
@@ -128,8 +144,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getRe
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::auth::NTLMScheme::isConnectionBased()
@@ -138,8 +154,8 @@ jboolean org::apache::http::impl::auth::NTLMScheme::isConnectionBased()
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -149,8 +165,8 @@ local_ref< org::apache::http::Header > org::apache::http::impl::auth::NTLMScheme
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::impl::auth::NTLMScheme::isComplete()
@@ -159,8 +175,8 @@ jboolean org::apache::http::impl::auth::NTLMScheme::isComplete()
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

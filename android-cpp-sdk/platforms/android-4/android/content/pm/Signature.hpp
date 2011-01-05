@@ -54,8 +54,8 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Signature(local_ref< array<jbyte,1> > const&);
@@ -89,14 +89,14 @@ namespace j2cpp {
 
 
 
-android::content::pm::Signature::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::pm::Signature::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::pm::Signature::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -105,8 +105,8 @@ android::content::pm::Signature::Signature(local_ref< array<jbyte,1> > const &a0
 	call_new_object<
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(0),
-		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -118,8 +118,8 @@ android::content::pm::Signature::Signature(local_ref< java::lang::String > const
 	call_new_object<
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(1),
-		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -131,8 +131,8 @@ local_ref< array<jchar,1> > android::content::pm::Signature::toChars()
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(2),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > android::content::pm::Signature::toChars(local_ref< array<jchar,1> > const &a0, local_ref< array<jint,1> > const &a1)
@@ -141,8 +141,8 @@ local_ref< array<jchar,1> > android::content::pm::Signature::toChars(local_ref< 
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(3),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jchar,1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array<jchar,1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::Signature::toCharsString()
@@ -151,8 +151,8 @@ local_ref< java::lang::String > android::content::pm::Signature::toCharsString()
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(4),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::content::pm::Signature::toByteArray()
@@ -161,8 +161,8 @@ local_ref< array<jbyte,1> > android::content::pm::Signature::toByteArray()
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(5),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean android::content::pm::Signature::equals(local_ref< java::lang::Object > const &a0)
@@ -171,8 +171,8 @@ jboolean android::content::pm::Signature::equals(local_ref< java::lang::Object >
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(6),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::Signature::hashCode()
@@ -181,8 +181,8 @@ jint android::content::pm::Signature::hashCode()
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(7),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::pm::Signature::describeContents()
@@ -191,8 +191,8 @@ jint android::content::pm::Signature::describeContents()
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(8),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::Signature::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -201,8 +201,8 @@ void android::content::pm::Signature::writeToParcel(local_ref< android::os::Parc
 		android::content::pm::Signature::J2CPP_CLASS_NAME,
 		android::content::pm::Signature::J2CPP_METHOD_NAME(9),
 		android::content::pm::Signature::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

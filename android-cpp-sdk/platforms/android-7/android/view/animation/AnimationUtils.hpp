@@ -92,8 +92,8 @@ android::view::animation::AnimationUtils::AnimationUtils()
 	call_new_object<
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(0),
-		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +105,8 @@ jlong android::view::animation::AnimationUtils::currentAnimationTimeMillis()
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(1),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::AnimationUtils::loadAnimation(local_ref< android::content::Context > const &a0, jint a1)
@@ -115,8 +115,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Anima
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(2),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::animation::Animation > >
-	(a0, a1);
+		local_ref< android::view::animation::Animation >
+	>(a0, a1);
 }
 
 local_ref< android::view::animation::LayoutAnimationController > android::view::animation::AnimationUtils::loadLayoutAnimation(local_ref< android::content::Context > const &a0, jint a1)
@@ -125,8 +125,8 @@ local_ref< android::view::animation::LayoutAnimationController > android::view::
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(3),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::animation::LayoutAnimationController > >
-	(a0, a1);
+		local_ref< android::view::animation::LayoutAnimationController >
+	>(a0, a1);
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::AnimationUtils::makeInAnimation(local_ref< android::content::Context > const &a0, jboolean a1)
@@ -135,8 +135,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Anima
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(4),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::animation::Animation > >
-	(a0, a1);
+		local_ref< android::view::animation::Animation >
+	>(a0, a1);
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::AnimationUtils::makeOutAnimation(local_ref< android::content::Context > const &a0, jboolean a1)
@@ -145,8 +145,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Anima
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(5),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::animation::Animation > >
-	(a0, a1);
+		local_ref< android::view::animation::Animation >
+	>(a0, a1);
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::AnimationUtils::makeInChildBottomAnimation(local_ref< android::content::Context > const &a0)
@@ -155,8 +155,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Anima
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(6),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::animation::Animation > >
-	(a0);
+		local_ref< android::view::animation::Animation >
+	>(a0);
 }
 
 local_ref< android::view::animation::Interpolator > android::view::animation::AnimationUtils::loadInterpolator(local_ref< android::content::Context > const &a0, jint a1)
@@ -165,8 +165,8 @@ local_ref< android::view::animation::Interpolator > android::view::animation::An
 		android::view::animation::AnimationUtils::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(7),
 		android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::animation::Interpolator > >
-	(a0, a1);
+		local_ref< android::view::animation::Interpolator >
+	>(a0, a1);
 }
 
 

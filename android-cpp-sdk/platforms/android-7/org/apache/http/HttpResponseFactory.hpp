@@ -80,8 +80,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::HttpResponseFact
 		org::apache::http::HttpResponseFactory::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponseFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpResponseFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::HttpResponseFactory::newHttpResponse(local_ref< org::apache::http::StatusLine > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -90,8 +90,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::HttpResponseFact
 		org::apache::http::HttpResponseFactory::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponseFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpResponseFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -92,8 +92,8 @@ android::os::MemoryFile::MemoryFile(local_ref< java::lang::String > const &a0, j
 	call_new_object<
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(0),
-		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +105,8 @@ void android::os::MemoryFile::close()
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(1),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -116,8 +116,8 @@ jint android::os::MemoryFile::length()
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(3),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::os::MemoryFile::isPurgingAllowed()
@@ -126,8 +126,8 @@ jboolean android::os::MemoryFile::isPurgingAllowed()
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(4),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::os::MemoryFile::allowPurging(jboolean a0)
@@ -136,8 +136,8 @@ jboolean android::os::MemoryFile::allowPurging(jboolean a0)
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(5),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > android::os::MemoryFile::getInputStream()
@@ -146,8 +146,8 @@ local_ref< java::io::InputStream > android::os::MemoryFile::getInputStream()
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(6),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > android::os::MemoryFile::getOutputStream()
@@ -156,8 +156,8 @@ local_ref< java::io::OutputStream > android::os::MemoryFile::getOutputStream()
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(7),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 jint android::os::MemoryFile::readBytes(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jint a3)
@@ -166,8 +166,8 @@ jint android::os::MemoryFile::readBytes(local_ref< array<jbyte,1> > const &a0, j
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(8),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::os::MemoryFile::writeBytes(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jint a3)
@@ -176,8 +176,8 @@ void android::os::MemoryFile::writeBytes(local_ref< array<jbyte,1> > const &a0, 
 		android::os::MemoryFile::J2CPP_CLASS_NAME,
 		android::os::MemoryFile::J2CPP_METHOD_NAME(9),
 		android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

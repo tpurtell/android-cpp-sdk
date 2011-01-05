@@ -107,8 +107,8 @@ jboolean org::apache::commons::logging::Log::isDebugEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(0),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::commons::logging::Log::isErrorEnabled()
@@ -117,8 +117,8 @@ jboolean org::apache::commons::logging::Log::isErrorEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(1),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::commons::logging::Log::isFatalEnabled()
@@ -127,8 +127,8 @@ jboolean org::apache::commons::logging::Log::isFatalEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(2),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::commons::logging::Log::isInfoEnabled()
@@ -137,8 +137,8 @@ jboolean org::apache::commons::logging::Log::isInfoEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(3),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::commons::logging::Log::isTraceEnabled()
@@ -147,8 +147,8 @@ jboolean org::apache::commons::logging::Log::isTraceEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(4),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::commons::logging::Log::isWarnEnabled()
@@ -157,8 +157,8 @@ jboolean org::apache::commons::logging::Log::isWarnEnabled()
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(5),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::commons::logging::Log::trace(local_ref< java::lang::Object > const &a0)
@@ -167,8 +167,8 @@ void org::apache::commons::logging::Log::trace(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(6),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::trace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -177,8 +177,8 @@ void org::apache::commons::logging::Log::trace(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(7),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::commons::logging::Log::debug(local_ref< java::lang::Object > const &a0)
@@ -187,8 +187,8 @@ void org::apache::commons::logging::Log::debug(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(8),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::debug(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -197,8 +197,8 @@ void org::apache::commons::logging::Log::debug(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(9),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::commons::logging::Log::info(local_ref< java::lang::Object > const &a0)
@@ -207,8 +207,8 @@ void org::apache::commons::logging::Log::info(local_ref< java::lang::Object > co
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(10),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::info(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -217,8 +217,8 @@ void org::apache::commons::logging::Log::info(local_ref< java::lang::Object > co
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(11),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::commons::logging::Log::warn(local_ref< java::lang::Object > const &a0)
@@ -227,8 +227,8 @@ void org::apache::commons::logging::Log::warn(local_ref< java::lang::Object > co
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(12),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::warn(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -237,8 +237,8 @@ void org::apache::commons::logging::Log::warn(local_ref< java::lang::Object > co
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(13),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::commons::logging::Log::error(local_ref< java::lang::Object > const &a0)
@@ -247,8 +247,8 @@ void org::apache::commons::logging::Log::error(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(14),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::error(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -257,8 +257,8 @@ void org::apache::commons::logging::Log::error(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(15),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::commons::logging::Log::fatal(local_ref< java::lang::Object > const &a0)
@@ -267,8 +267,8 @@ void org::apache::commons::logging::Log::fatal(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(16),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::commons::logging::Log::fatal(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -277,8 +277,8 @@ void org::apache::commons::logging::Log::fatal(local_ref< java::lang::Object > c
 		org::apache::commons::logging::Log::J2CPP_CLASS_NAME,
 		org::apache::commons::logging::Log::J2CPP_METHOD_NAME(17),
 		org::apache::commons::logging::Log::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

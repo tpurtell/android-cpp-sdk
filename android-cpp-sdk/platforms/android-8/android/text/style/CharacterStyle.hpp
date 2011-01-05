@@ -78,8 +78,8 @@ android::text::style::CharacterStyle::CharacterStyle()
 	call_new_object<
 		android::text::style::CharacterStyle::J2CPP_CLASS_NAME,
 		android::text::style::CharacterStyle::J2CPP_METHOD_NAME(0),
-		android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ void android::text::style::CharacterStyle::updateDrawState(local_ref< android::t
 		android::text::style::CharacterStyle::J2CPP_CLASS_NAME,
 		android::text::style::CharacterStyle::J2CPP_METHOD_NAME(1),
 		android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::style::CharacterStyle > android::text::style::CharacterStyle::wrap(local_ref< android::text::style::CharacterStyle > const &a0)
@@ -101,8 +101,8 @@ local_ref< android::text::style::CharacterStyle > android::text::style::Characte
 		android::text::style::CharacterStyle::J2CPP_CLASS_NAME,
 		android::text::style::CharacterStyle::J2CPP_METHOD_NAME(2),
 		android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::style::CharacterStyle > >
-	(a0);
+		local_ref< android::text::style::CharacterStyle >
+	>(a0);
 }
 
 local_ref< android::text::style::CharacterStyle > android::text::style::CharacterStyle::getUnderlying()
@@ -111,8 +111,8 @@ local_ref< android::text::style::CharacterStyle > android::text::style::Characte
 		android::text::style::CharacterStyle::J2CPP_CLASS_NAME,
 		android::text::style::CharacterStyle::J2CPP_METHOD_NAME(3),
 		android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::style::CharacterStyle > >
-	(get_jobject());
+		local_ref< android::text::style::CharacterStyle >
+	>(get_jobject());
 }
 
 

@@ -57,8 +57,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
 
 
@@ -96,14 +96,14 @@ namespace j2cpp {
 
 
 
-java::util::UUID::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::UUID::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::UUID::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::UUID::operator local_ref<java::lang::Comparable>() const
@@ -117,8 +117,8 @@ java::util::UUID::UUID(jlong a0, jlong a1)
 	call_new_object<
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(0),
-		java::util::UUID::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::UUID::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -130,8 +130,8 @@ local_ref< java::util::UUID > java::util::UUID::randomUUID()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(1),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::UUID > >
-	();
+		local_ref< java::util::UUID >
+	>();
 }
 
 local_ref< java::util::UUID > java::util::UUID::nameUUIDFromBytes(local_ref< array<jbyte,1> > const &a0)
@@ -140,8 +140,8 @@ local_ref< java::util::UUID > java::util::UUID::nameUUIDFromBytes(local_ref< arr
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(2),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::UUID > >
-	(a0);
+		local_ref< java::util::UUID >
+	>(a0);
 }
 
 local_ref< java::util::UUID > java::util::UUID::fromString(local_ref< java::lang::String > const &a0)
@@ -150,8 +150,8 @@ local_ref< java::util::UUID > java::util::UUID::fromString(local_ref< java::lang
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(3),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::UUID > >
-	(a0);
+		local_ref< java::util::UUID >
+	>(a0);
 }
 
 jlong java::util::UUID::getLeastSignificantBits()
@@ -160,8 +160,8 @@ jlong java::util::UUID::getLeastSignificantBits()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(4),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::UUID::getMostSignificantBits()
@@ -170,8 +170,8 @@ jlong java::util::UUID::getMostSignificantBits()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(5),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::util::UUID::version()
@@ -180,8 +180,8 @@ jint java::util::UUID::version()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(6),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::UUID::variant()
@@ -190,8 +190,8 @@ jint java::util::UUID::variant()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(7),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::UUID::timestamp()
@@ -200,8 +200,8 @@ jlong java::util::UUID::timestamp()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(8),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::util::UUID::clockSequence()
@@ -210,8 +210,8 @@ jint java::util::UUID::clockSequence()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(9),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::UUID::node()
@@ -220,8 +220,8 @@ jlong java::util::UUID::node()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(10),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::util::UUID::compareTo(local_ref< java::util::UUID > const &a0)
@@ -230,8 +230,8 @@ jint java::util::UUID::compareTo(local_ref< java::util::UUID > const &a0)
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(11),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::UUID::equals(local_ref< java::lang::Object > const &a0)
@@ -240,8 +240,8 @@ jboolean java::util::UUID::equals(local_ref< java::lang::Object > const &a0)
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(12),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::UUID::hashCode()
@@ -250,8 +250,8 @@ jint java::util::UUID::hashCode()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(13),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::UUID::toString()
@@ -260,8 +260,8 @@ local_ref< java::lang::String > java::util::UUID::toString()
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(14),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::UUID::compareTo(local_ref< java::lang::Object > const &a0)
@@ -270,8 +270,8 @@ jint java::util::UUID::compareTo(local_ref< java::lang::Object > const &a0)
 		java::util::UUID::J2CPP_CLASS_NAME,
 		java::util::UUID::J2CPP_METHOD_NAME(15),
 		java::util::UUID::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

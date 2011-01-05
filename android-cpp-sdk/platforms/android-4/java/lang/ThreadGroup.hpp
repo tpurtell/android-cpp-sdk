@@ -68,8 +68,8 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Thread_::UncaughtExceptionHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ThreadGroup(local_ref< java::lang::String > const&);
@@ -116,14 +116,14 @@ namespace j2cpp {
 
 
 
-java::lang::ThreadGroup::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::ThreadGroup::operator local_ref<java::lang::Thread_::UncaughtExceptionHandler>() const
 {
 	return local_ref<java::lang::Thread_::UncaughtExceptionHandler>(get_jobject());
+}
+
+java::lang::ThreadGroup::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -132,8 +132,8 @@ java::lang::ThreadGroup::ThreadGroup(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(0),
-		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -145,8 +145,8 @@ java::lang::ThreadGroup::ThreadGroup(local_ref< java::lang::ThreadGroup > const 
 	call_new_object<
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(1),
-		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -158,8 +158,8 @@ jint java::lang::ThreadGroup::activeCount()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(2),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::lang::ThreadGroup::activeGroupCount()
@@ -168,8 +168,8 @@ jint java::lang::ThreadGroup::activeGroupCount()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(3),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::lang::ThreadGroup::allowThreadSuspension(jboolean a0)
@@ -178,8 +178,8 @@ jboolean java::lang::ThreadGroup::allowThreadSuspension(jboolean a0)
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(4),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::lang::ThreadGroup::checkAccess()
@@ -188,8 +188,8 @@ void java::lang::ThreadGroup::checkAccess()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(5),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::destroy()
@@ -198,8 +198,8 @@ void java::lang::ThreadGroup::destroy()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(6),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang::Thread >, 1> > const &a0)
@@ -208,8 +208,8 @@ jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang:
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(7),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang::Thread >, 1> > const &a0, jboolean a1)
@@ -218,8 +218,8 @@ jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang:
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(8),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang::ThreadGroup >, 1> > const &a0)
@@ -228,8 +228,8 @@ jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang:
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(9),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang::ThreadGroup >, 1> > const &a0, jboolean a1)
@@ -238,8 +238,8 @@ jint java::lang::ThreadGroup::enumerate(local_ref< array< local_ref< java::lang:
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(10),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::ThreadGroup::getMaxPriority()
@@ -248,8 +248,8 @@ jint java::lang::ThreadGroup::getMaxPriority()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(11),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::ThreadGroup::getName()
@@ -258,8 +258,8 @@ local_ref< java::lang::String > java::lang::ThreadGroup::getName()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(12),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ThreadGroup > java::lang::ThreadGroup::getParent()
@@ -268,8 +268,8 @@ local_ref< java::lang::ThreadGroup > java::lang::ThreadGroup::getParent()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(13),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::ThreadGroup > >
-	(get_jobject());
+		local_ref< java::lang::ThreadGroup >
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::interrupt()
@@ -278,8 +278,8 @@ void java::lang::ThreadGroup::interrupt()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(14),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::lang::ThreadGroup::isDaemon()
@@ -288,8 +288,8 @@ jboolean java::lang::ThreadGroup::isDaemon()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(15),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::ThreadGroup::isDestroyed()
@@ -298,8 +298,8 @@ jboolean java::lang::ThreadGroup::isDestroyed()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(16),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::list()
@@ -308,8 +308,8 @@ void java::lang::ThreadGroup::list()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(17),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::lang::ThreadGroup::parentOf(local_ref< java::lang::ThreadGroup > const &a0)
@@ -318,8 +318,8 @@ jboolean java::lang::ThreadGroup::parentOf(local_ref< java::lang::ThreadGroup > 
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(18),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::lang::ThreadGroup::resume()
@@ -328,8 +328,8 @@ void java::lang::ThreadGroup::resume()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(19),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::setDaemon(jboolean a0)
@@ -338,8 +338,8 @@ void java::lang::ThreadGroup::setDaemon(jboolean a0)
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(20),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::ThreadGroup::setMaxPriority(jint a0)
@@ -348,8 +348,8 @@ void java::lang::ThreadGroup::setMaxPriority(jint a0)
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(21),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::ThreadGroup::stop()
@@ -358,8 +358,8 @@ void java::lang::ThreadGroup::stop()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(22),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::suspend()
@@ -368,8 +368,8 @@ void java::lang::ThreadGroup::suspend()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(23),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::ThreadGroup::toString()
@@ -378,8 +378,8 @@ local_ref< java::lang::String > java::lang::ThreadGroup::toString()
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(24),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::lang::ThreadGroup::uncaughtException(local_ref< java::lang::Thread > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -388,8 +388,8 @@ void java::lang::ThreadGroup::uncaughtException(local_ref< java::lang::Thread > 
 		java::lang::ThreadGroup::J2CPP_CLASS_NAME,
 		java::lang::ThreadGroup::J2CPP_METHOD_NAME(25),
 		java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

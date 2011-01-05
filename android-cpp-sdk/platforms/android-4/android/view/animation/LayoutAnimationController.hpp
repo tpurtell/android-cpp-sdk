@@ -159,8 +159,8 @@ android::view::animation::LayoutAnimationController_::AnimationParameters::Anima
 	call_new_object<
 		android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0),
-		android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , count(get_jobject())
 , index(get_jobject())
@@ -188,8 +188,8 @@ android::view::animation::LayoutAnimationController::LayoutAnimationController(l
 	call_new_object<
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(0),
-		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -201,8 +201,8 @@ android::view::animation::LayoutAnimationController::LayoutAnimationController(l
 	call_new_object<
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(1),
-		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -214,8 +214,8 @@ android::view::animation::LayoutAnimationController::LayoutAnimationController(l
 	call_new_object<
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(2),
-		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -227,8 +227,8 @@ jint android::view::animation::LayoutAnimationController::getOrder()
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(3),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::animation::LayoutAnimationController::setOrder(jint a0)
@@ -237,8 +237,8 @@ void android::view::animation::LayoutAnimationController::setOrder(jint a0)
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(4),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::LayoutAnimationController::setAnimation(local_ref< android::content::Context > const &a0, jint a1)
@@ -247,8 +247,8 @@ void android::view::animation::LayoutAnimationController::setAnimation(local_ref
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(5),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::animation::LayoutAnimationController::setAnimation(local_ref< android::view::animation::Animation > const &a0)
@@ -257,8 +257,8 @@ void android::view::animation::LayoutAnimationController::setAnimation(local_ref
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(6),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::LayoutAnimationController::getAnimation()
@@ -267,8 +267,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Layou
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(7),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::animation::Animation > >
-	(get_jobject());
+		local_ref< android::view::animation::Animation >
+	>(get_jobject());
 }
 
 void android::view::animation::LayoutAnimationController::setInterpolator(local_ref< android::content::Context > const &a0, jint a1)
@@ -277,8 +277,8 @@ void android::view::animation::LayoutAnimationController::setInterpolator(local_
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(8),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::animation::LayoutAnimationController::setInterpolator(local_ref< android::view::animation::Interpolator > const &a0)
@@ -287,8 +287,8 @@ void android::view::animation::LayoutAnimationController::setInterpolator(local_
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(9),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::animation::Interpolator > android::view::animation::LayoutAnimationController::getInterpolator()
@@ -297,8 +297,8 @@ local_ref< android::view::animation::Interpolator > android::view::animation::La
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(10),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::view::animation::Interpolator > >
-	(get_jobject());
+		local_ref< android::view::animation::Interpolator >
+	>(get_jobject());
 }
 
 jfloat android::view::animation::LayoutAnimationController::getDelay()
@@ -307,8 +307,8 @@ jfloat android::view::animation::LayoutAnimationController::getDelay()
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(11),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::view::animation::LayoutAnimationController::setDelay(jfloat a0)
@@ -317,8 +317,8 @@ void android::view::animation::LayoutAnimationController::setDelay(jfloat a0)
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(12),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::animation::LayoutAnimationController::willOverlap()
@@ -327,8 +327,8 @@ jboolean android::view::animation::LayoutAnimationController::willOverlap()
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(13),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::animation::LayoutAnimationController::start()
@@ -337,8 +337,8 @@ void android::view::animation::LayoutAnimationController::start()
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(14),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::view::animation::Animation > android::view::animation::LayoutAnimationController::getAnimationForView(local_ref< android::view::View > const &a0)
@@ -347,8 +347,8 @@ local_ref< android::view::animation::Animation > android::view::animation::Layou
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(15),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::view::animation::Animation > >
-	(get_jobject(), a0);
+		local_ref< android::view::animation::Animation >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::animation::LayoutAnimationController::isDone()
@@ -357,8 +357,8 @@ jboolean android::view::animation::LayoutAnimationController::isDone()
 		android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(16),
 		android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

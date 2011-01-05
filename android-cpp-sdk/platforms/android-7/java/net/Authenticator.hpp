@@ -11,15 +11,19 @@
 #define J2CPP_JAVA_NET_AUTHENTICATOR_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class PasswordAuthentication; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
-namespace j2cpp { namespace java { namespace net { namespace Authenticator_ { class RequestorType; } } } }
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace net { namespace Authenticator_ { class RequestorType; } } } }
+namespace j2cpp { namespace java { namespace net { class PasswordAuthentication; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -57,7 +61,10 @@ namespace java { namespace net {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< java::net::Authenticator_::RequestorType >, 1> > values();
@@ -125,9 +132,24 @@ namespace j2cpp {
 
 
 
+java::net::Authenticator_::RequestorType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::Authenticator_::RequestorType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::Authenticator_::RequestorType::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::net::Authenticator_::RequestorType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< java::net::Authenticator_::RequestorType >, 1> > java::net::Authenticator_::RequestorType::values()
@@ -136,8 +158,8 @@ local_ref< array< local_ref< java::net::Authenticator_::RequestorType >, 1> > ja
 		java::net::Authenticator_::RequestorType::J2CPP_CLASS_NAME,
 		java::net::Authenticator_::RequestorType::J2CPP_METHOD_NAME(0),
 		java::net::Authenticator_::RequestorType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::net::Authenticator_::RequestorType >, 1> > >
-	();
+		local_ref< array< local_ref< java::net::Authenticator_::RequestorType >, 1> >
+	>();
 }
 
 local_ref< java::net::Authenticator_::RequestorType > java::net::Authenticator_::RequestorType::valueOf(local_ref< java::lang::String > const &a0)
@@ -146,8 +168,8 @@ local_ref< java::net::Authenticator_::RequestorType > java::net::Authenticator_:
 		java::net::Authenticator_::RequestorType::J2CPP_CLASS_NAME,
 		java::net::Authenticator_::RequestorType::J2CPP_METHOD_NAME(1),
 		java::net::Authenticator_::RequestorType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::Authenticator_::RequestorType > >
-	(a0);
+		local_ref< java::net::Authenticator_::RequestorType >
+	>(a0);
 }
 
 
@@ -190,8 +212,8 @@ java::net::Authenticator::Authenticator()
 	call_new_object<
 		java::net::Authenticator::J2CPP_CLASS_NAME,
 		java::net::Authenticator::J2CPP_METHOD_NAME(0),
-		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -209,8 +231,8 @@ local_ref< java::net::PasswordAuthentication > java::net::Authenticator::request
 		java::net::Authenticator::J2CPP_CLASS_NAME,
 		java::net::Authenticator::J2CPP_METHOD_NAME(7),
 		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::net::PasswordAuthentication > >
-	(a0, a1, a2, a3, a4);
+		local_ref< java::net::PasswordAuthentication >
+	>(a0, a1, a2, a3, a4);
 }
 
 void java::net::Authenticator::setDefault(local_ref< java::net::Authenticator > const &a0)
@@ -219,8 +241,8 @@ void java::net::Authenticator::setDefault(local_ref< java::net::Authenticator > 
 		java::net::Authenticator::J2CPP_CLASS_NAME,
 		java::net::Authenticator::J2CPP_METHOD_NAME(8),
 		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::net::PasswordAuthentication > java::net::Authenticator::requestPasswordAuthentication(local_ref< java::lang::String > const &a0, local_ref< java::net::InetAddress > const &a1, jint a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4, local_ref< java::lang::String > const &a5)
@@ -229,8 +251,8 @@ local_ref< java::net::PasswordAuthentication > java::net::Authenticator::request
 		java::net::Authenticator::J2CPP_CLASS_NAME,
 		java::net::Authenticator::J2CPP_METHOD_NAME(9),
 		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::net::PasswordAuthentication > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< java::net::PasswordAuthentication >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -240,8 +262,8 @@ local_ref< java::net::PasswordAuthentication > java::net::Authenticator::request
 		java::net::Authenticator::J2CPP_CLASS_NAME,
 		java::net::Authenticator::J2CPP_METHOD_NAME(11),
 		java::net::Authenticator::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::net::PasswordAuthentication > >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< java::net::PasswordAuthentication >
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 

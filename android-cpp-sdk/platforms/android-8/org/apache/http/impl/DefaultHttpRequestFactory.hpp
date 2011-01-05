@@ -46,8 +46,8 @@ namespace org { namespace apache { namespace http { namespace impl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpRequestFactory>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DefaultHttpRequestFactory();
@@ -73,14 +73,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::DefaultHttpRequestFactory::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::DefaultHttpRequestFactory::operator local_ref<org::apache::http::HttpRequestFactory>() const
 {
 	return local_ref<org::apache::http::HttpRequestFactory>(get_jobject());
+}
+
+org::apache::http::impl::DefaultHttpRequestFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +89,8 @@ org::apache::http::impl::DefaultHttpRequestFactory::DefaultHttpRequestFactory()
 	call_new_object<
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +102,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::impl::DefaultHttp
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpRequest > org::apache::http::impl::DefaultHttpRequestFactory::newHttpRequest(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -112,8 +112,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::impl::DefaultHttp
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject(), a0, a1);
 }
 
 

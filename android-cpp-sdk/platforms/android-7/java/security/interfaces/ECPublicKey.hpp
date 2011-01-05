@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_ECPUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class ECKey; } } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class ECPoint; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/security/Key.hpp>
 #include <java/security/PublicKey.hpp>
 #include <java/security/interfaces/ECKey.hpp>
 #include <java/security/spec/ECPoint.hpp>
@@ -43,7 +47,9 @@ namespace java { namespace security { namespace interfaces {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
 		operator local_ref<java::security::PublicKey>() const;
 		operator local_ref<java::security::interfaces::ECKey>() const;
 
@@ -70,9 +76,19 @@ namespace j2cpp {
 
 
 
+java::security::interfaces::ECPublicKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::security::interfaces::ECPublicKey::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::interfaces::ECPublicKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
 }
 
 java::security::interfaces::ECPublicKey::operator local_ref<java::security::PublicKey>() const
@@ -91,8 +107,8 @@ local_ref< java::security::spec::ECPoint > java::security::interfaces::ECPublicK
 		java::security::interfaces::ECPublicKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::ECPublicKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::ECPublicKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::security::spec::ECPoint > >
-	(get_jobject());
+		local_ref< java::security::spec::ECPoint >
+	>(get_jobject());
 }
 
 

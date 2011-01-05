@@ -43,8 +43,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::net::InetAddress > getLocalAddress();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HttpInetConnection::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HttpInetConnection::operator local_ref<org::apache::http::HttpConnection>() const
 {
 	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::HttpInetConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::HttpInetConnection::getLocalAddress()
@@ -86,8 +86,8 @@ local_ref< java::net::InetAddress > org::apache::http::HttpInetConnection::getLo
 		org::apache::http::HttpInetConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::HttpInetConnection::getLocalPort()
@@ -96,8 +96,8 @@ jint org::apache::http::HttpInetConnection::getLocalPort()
 		org::apache::http::HttpInetConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::HttpInetConnection::getRemoteAddress()
@@ -106,8 +106,8 @@ local_ref< java::net::InetAddress > org::apache::http::HttpInetConnection::getRe
 		org::apache::http::HttpInetConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::HttpInetConnection::getRemotePort()
@@ -116,8 +116,8 @@ jint org::apache::http::HttpInetConnection::getRemotePort()
 		org::apache::http::HttpInetConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpInetConnection::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

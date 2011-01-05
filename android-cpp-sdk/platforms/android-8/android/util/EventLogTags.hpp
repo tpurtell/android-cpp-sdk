@@ -130,8 +130,8 @@ android::util::EventLogTags::EventLogTags()
 	call_new_object<
 		android::util::EventLogTags::J2CPP_CLASS_NAME,
 		android::util::EventLogTags::J2CPP_METHOD_NAME(0),
-		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -143,8 +143,8 @@ android::util::EventLogTags::EventLogTags(local_ref< java::io::BufferedReader > 
 	call_new_object<
 		android::util::EventLogTags::J2CPP_CLASS_NAME,
 		android::util::EventLogTags::J2CPP_METHOD_NAME(1),
-		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -156,8 +156,8 @@ local_ref< android::util::EventLogTags_::Description > android::util::EventLogTa
 		android::util::EventLogTags::J2CPP_CLASS_NAME,
 		android::util::EventLogTags::J2CPP_METHOD_NAME(2),
 		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::util::EventLogTags_::Description > >
-	(get_jobject(), a0);
+		local_ref< android::util::EventLogTags_::Description >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::util::EventLogTags_::Description > android::util::EventLogTags::get(jint a0)
@@ -166,8 +166,8 @@ local_ref< android::util::EventLogTags_::Description > android::util::EventLogTa
 		android::util::EventLogTags::J2CPP_CLASS_NAME,
 		android::util::EventLogTags::J2CPP_METHOD_NAME(3),
 		android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::util::EventLogTags_::Description > >
-	(get_jobject(), a0);
+		local_ref< android::util::EventLogTags_::Description >
+	>(get_jobject(), a0);
 }
 
 

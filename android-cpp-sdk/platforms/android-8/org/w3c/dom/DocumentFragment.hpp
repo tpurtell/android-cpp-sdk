@@ -37,8 +37,8 @@ namespace org { namespace w3c { namespace dom {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::w3c::dom::Node>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class DocumentFragment
 
@@ -59,14 +59,14 @@ namespace j2cpp {
 
 
 
-org::w3c::dom::DocumentFragment::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::w3c::dom::DocumentFragment::operator local_ref<org::w3c::dom::Node>() const
 {
 	return local_ref<org::w3c::dom::Node>(get_jobject());
+}
+
+org::w3c::dom::DocumentFragment::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(org::w3c::dom::DocumentFragment,"org/w3c/dom/DocumentFragment")

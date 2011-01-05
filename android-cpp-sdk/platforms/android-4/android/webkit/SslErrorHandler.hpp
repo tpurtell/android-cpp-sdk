@@ -13,10 +13,12 @@
 
 namespace j2cpp { namespace android { namespace os { class Message; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/os/Handler.hpp>
 #include <android/os/Message.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,6 +44,7 @@ namespace android { namespace webkit {
 		}
 
 		operator local_ref<android::os::Handler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void handleMessage(local_ref< android::os::Message >  const&);
@@ -70,6 +73,11 @@ android::webkit::SslErrorHandler::operator local_ref<android::os::Handler>() con
 	return local_ref<android::os::Handler>(get_jobject());
 }
 
+android::webkit::SslErrorHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 void android::webkit::SslErrorHandler::handleMessage(local_ref< android::os::Message > const &a0)
 {
@@ -77,8 +85,8 @@ void android::webkit::SslErrorHandler::handleMessage(local_ref< android::os::Mes
 		android::webkit::SslErrorHandler::J2CPP_CLASS_NAME,
 		android::webkit::SslErrorHandler::J2CPP_METHOD_NAME(1),
 		android::webkit::SslErrorHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::SslErrorHandler::proceed()
@@ -87,8 +95,8 @@ void android::webkit::SslErrorHandler::proceed()
 		android::webkit::SslErrorHandler::J2CPP_CLASS_NAME,
 		android::webkit::SslErrorHandler::J2CPP_METHOD_NAME(2),
 		android::webkit::SslErrorHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::SslErrorHandler::cancel()
@@ -97,8 +105,8 @@ void android::webkit::SslErrorHandler::cancel()
 		android::webkit::SslErrorHandler::J2CPP_CLASS_NAME,
 		android::webkit::SslErrorHandler::J2CPP_METHOD_NAME(3),
 		android::webkit::SslErrorHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

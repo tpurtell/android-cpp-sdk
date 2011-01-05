@@ -15,11 +15,14 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ScheduledExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ThreadFactory; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Executor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ThreadPoolExecutor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class AbstractExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ScheduledFuture; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class RejectedExecutionHandler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -28,8 +31,11 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/List.hpp>
+#include <java/util/concurrent/AbstractExecutorService.hpp>
 #include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Executor.hpp>
+#include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/RejectedExecutionHandler.hpp>
 #include <java/util/concurrent/ScheduledExecutorService.hpp>
@@ -76,8 +82,12 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::util::concurrent::ThreadPoolExecutor>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::concurrent::ScheduledExecutorService>() const;
+		operator local_ref<java::util::concurrent::Executor>() const;
+		operator local_ref<java::util::concurrent::ThreadPoolExecutor>() const;
+		operator local_ref<java::util::concurrent::AbstractExecutorService>() const;
+		operator local_ref<java::util::concurrent::ExecutorService>() const;
 
 
 		ScheduledThreadPoolExecutor(jint);
@@ -118,14 +128,34 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::ThreadPoolExecutor>() const
+java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::concurrent::ThreadPoolExecutor>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::ScheduledExecutorService>() const
 {
 	return local_ref<java::util::concurrent::ScheduledExecutorService>(get_jobject());
+}
+
+java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::Executor>() const
+{
+	return local_ref<java::util::concurrent::Executor>(get_jobject());
+}
+
+java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::ThreadPoolExecutor>() const
+{
+	return local_ref<java::util::concurrent::ThreadPoolExecutor>(get_jobject());
+}
+
+java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::AbstractExecutorService>() const
+{
+	return local_ref<java::util::concurrent::AbstractExecutorService>(get_jobject());
+}
+
+java::util::concurrent::ScheduledThreadPoolExecutor::operator local_ref<java::util::concurrent::ExecutorService>() const
+{
+	return local_ref<java::util::concurrent::ExecutorService>(get_jobject());
 }
 
 
@@ -134,8 +164,8 @@ java::util::concurrent::ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor
 	call_new_object<
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -147,8 +177,8 @@ java::util::concurrent::ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor
 	call_new_object<
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -160,8 +190,8 @@ java::util::concurrent::ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor
 	call_new_object<
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(2),
-		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -173,8 +203,8 @@ java::util::concurrent::ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor
 	call_new_object<
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(3),
-		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -186,8 +216,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledThreadPoolExecutor::schedule(local_ref< java::util::concurrent::Callable > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -196,8 +226,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledThreadPoolExecutor::scheduleAtFixedRate(local_ref< java::lang::Runnable > const &a0, jlong a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -206,8 +236,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledThreadPoolExecutor::scheduleWithFixedDelay(local_ref< java::lang::Runnable > const &a0, jlong a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -216,8 +246,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::util::concurrent::ScheduledThreadPoolExecutor::execute(local_ref< java::lang::Runnable > const &a0)
@@ -226,8 +256,8 @@ void java::util::concurrent::ScheduledThreadPoolExecutor::execute(local_ref< jav
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThreadPoolExecutor::submit(local_ref< java::lang::Runnable > const &a0)
@@ -236,8 +266,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThr
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThreadPoolExecutor::submit(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -246,8 +276,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThr
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThreadPoolExecutor::submit(local_ref< java::util::concurrent::Callable > const &a0)
@@ -256,8 +286,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ScheduledThr
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::ScheduledThreadPoolExecutor::setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean a0)
@@ -266,8 +296,8 @@ void java::util::concurrent::ScheduledThreadPoolExecutor::setContinueExistingPer
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy()
@@ -276,8 +306,8 @@ jboolean java::util::concurrent::ScheduledThreadPoolExecutor::getContinueExistin
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::concurrent::ScheduledThreadPoolExecutor::setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean a0)
@@ -286,8 +316,8 @@ void java::util::concurrent::ScheduledThreadPoolExecutor::setExecuteExistingDela
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy()
@@ -296,8 +326,8 @@ jboolean java::util::concurrent::ScheduledThreadPoolExecutor::getExecuteExisting
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::concurrent::ScheduledThreadPoolExecutor::shutdown()
@@ -306,8 +336,8 @@ void java::util::concurrent::ScheduledThreadPoolExecutor::shutdown()
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::util::concurrent::ScheduledThreadPoolExecutor::shutdownNow()
@@ -316,8 +346,8 @@ local_ref< java::util::List > java::util::concurrent::ScheduledThreadPoolExecuto
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::BlockingQueue > java::util::concurrent::ScheduledThreadPoolExecutor::getQueue()
@@ -326,8 +356,8 @@ local_ref< java::util::concurrent::BlockingQueue > java::util::concurrent::Sched
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::ScheduledThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::concurrent::BlockingQueue > >
-	(get_jobject());
+		local_ref< java::util::concurrent::BlockingQueue >
+	>(get_jobject());
 }
 
 

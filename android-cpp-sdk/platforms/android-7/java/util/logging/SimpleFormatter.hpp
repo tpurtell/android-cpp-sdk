@@ -11,11 +11,13 @@
 #define J2CPP_JAVA_UTIL_LOGGING_SIMPLEFORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Formatter; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/logging/Formatter.hpp>
 #include <java/util/logging/LogRecord.hpp>
@@ -41,6 +43,7 @@ namespace java { namespace util { namespace logging {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::logging::Formatter>() const;
 
 
@@ -65,6 +68,11 @@ namespace j2cpp {
 
 
 
+java::util::logging::SimpleFormatter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::logging::SimpleFormatter::operator local_ref<java::util::logging::Formatter>() const
 {
 	return local_ref<java::util::logging::Formatter>(get_jobject());
@@ -76,8 +84,8 @@ java::util::logging::SimpleFormatter::SimpleFormatter()
 	call_new_object<
 		java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::SimpleFormatter::J2CPP_METHOD_NAME(0),
-		java::util::logging::SimpleFormatter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::logging::SimpleFormatter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -89,8 +97,8 @@ local_ref< java::lang::String > java::util::logging::SimpleFormatter::format(loc
 		java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::SimpleFormatter::J2CPP_METHOD_NAME(1),
 		java::util::logging::SimpleFormatter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

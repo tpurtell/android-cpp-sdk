@@ -13,10 +13,12 @@
 
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/PorterDuff.hpp>
 #include <android/graphics/Xfermode.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,6 +41,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Xfermode>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PorterDuffXfermode(local_ref< android::graphics::PorterDuff_::Mode > const&);
@@ -65,14 +68,19 @@ android::graphics::PorterDuffXfermode::operator local_ref<android::graphics::Xfe
 	return local_ref<android::graphics::Xfermode>(get_jobject());
 }
 
+android::graphics::PorterDuffXfermode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::PorterDuffXfermode::PorterDuffXfermode(local_ref< android::graphics::PorterDuff_::Mode > const &a0)
 : object<android::graphics::PorterDuffXfermode>(
 	call_new_object<
 		android::graphics::PorterDuffXfermode::J2CPP_CLASS_NAME,
 		android::graphics::PorterDuffXfermode::J2CPP_METHOD_NAME(0),
-		android::graphics::PorterDuffXfermode::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::PorterDuffXfermode::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

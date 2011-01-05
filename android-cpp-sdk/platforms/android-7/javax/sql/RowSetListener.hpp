@@ -83,8 +83,8 @@ void javax::sql::RowSetListener::cursorMoved(local_ref< javax::sql::RowSetEvent 
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(0),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::RowSetListener::rowChanged(local_ref< javax::sql::RowSetEvent > const &a0)
@@ -93,8 +93,8 @@ void javax::sql::RowSetListener::rowChanged(local_ref< javax::sql::RowSetEvent >
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(1),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::RowSetListener::rowSetChanged(local_ref< javax::sql::RowSetEvent > const &a0)
@@ -103,8 +103,8 @@ void javax::sql::RowSetListener::rowSetChanged(local_ref< javax::sql::RowSetEven
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(2),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

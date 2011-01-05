@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 
@@ -46,8 +50,10 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<org::apache::http::ProtocolVersion>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<org::apache::http::ProtocolVersion>() const;
 
 
 		HttpVersion(jint, jint);
@@ -76,14 +82,24 @@ namespace j2cpp {
 
 
 
-org::apache::http::HttpVersion::operator local_ref<org::apache::http::ProtocolVersion>() const
+org::apache::http::HttpVersion::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref<org::apache::http::ProtocolVersion>(get_jobject());
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+org::apache::http::HttpVersion::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::HttpVersion::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+org::apache::http::HttpVersion::operator local_ref<org::apache::http::ProtocolVersion>() const
+{
+	return local_ref<org::apache::http::ProtocolVersion>(get_jobject());
 }
 
 
@@ -92,8 +108,8 @@ org::apache::http::HttpVersion::HttpVersion(jint a0, jint a1)
 	call_new_object<
 		org::apache::http::HttpVersion::J2CPP_CLASS_NAME,
 		org::apache::http::HttpVersion::J2CPP_METHOD_NAME(0),
-		org::apache::http::HttpVersion::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::HttpVersion::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +121,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::HttpVersion::
 		org::apache::http::HttpVersion::J2CPP_CLASS_NAME,
 		org::apache::http::HttpVersion::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpVersion::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject(), a0, a1);
 }
 
 

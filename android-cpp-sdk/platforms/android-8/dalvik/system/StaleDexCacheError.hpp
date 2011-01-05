@@ -13,9 +13,17 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class VirtualMachineError; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/lang/VirtualMachineError.hpp>
 
 
@@ -40,6 +48,10 @@ namespace dalvik { namespace system {
 		}
 
 		operator local_ref<java::lang::VirtualMachineError>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		StaleDexCacheError();
@@ -67,14 +79,34 @@ dalvik::system::StaleDexCacheError::operator local_ref<java::lang::VirtualMachin
 	return local_ref<java::lang::VirtualMachineError>(get_jobject());
 }
 
+dalvik::system::StaleDexCacheError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+dalvik::system::StaleDexCacheError::operator local_ref<java::lang::Error>() const
+{
+	return local_ref<java::lang::Error>(get_jobject());
+}
+
+dalvik::system::StaleDexCacheError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+dalvik::system::StaleDexCacheError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 dalvik::system::StaleDexCacheError::StaleDexCacheError()
 : object<dalvik::system::StaleDexCacheError>(
 	call_new_object<
 		dalvik::system::StaleDexCacheError::J2CPP_CLASS_NAME,
 		dalvik::system::StaleDexCacheError::J2CPP_METHOD_NAME(0),
-		dalvik::system::StaleDexCacheError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		dalvik::system::StaleDexCacheError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +118,8 @@ dalvik::system::StaleDexCacheError::StaleDexCacheError(local_ref< java::lang::St
 	call_new_object<
 		dalvik::system::StaleDexCacheError::J2CPP_CLASS_NAME,
 		dalvik::system::StaleDexCacheError::J2CPP_METHOD_NAME(1),
-		dalvik::system::StaleDexCacheError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		dalvik::system::StaleDexCacheError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

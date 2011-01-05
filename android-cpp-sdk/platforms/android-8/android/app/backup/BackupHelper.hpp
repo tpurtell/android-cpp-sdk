@@ -80,8 +80,8 @@ void android::app::backup::BackupHelper::performBackup(local_ref< android::os::P
 		android::app::backup::BackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::BackupHelper::J2CPP_METHOD_NAME(0),
 		android::app::backup::BackupHelper::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::backup::BackupHelper::restoreEntity(local_ref< android::app::backup::BackupDataInputStream > const &a0)
@@ -90,8 +90,8 @@ void android::app::backup::BackupHelper::restoreEntity(local_ref< android::app::
 		android::app::backup::BackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::BackupHelper::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupHelper::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::backup::BackupHelper::writeNewStateDescription(local_ref< android::os::ParcelFileDescriptor > const &a0)
@@ -100,8 +100,8 @@ void android::app::backup::BackupHelper::writeNewStateDescription(local_ref< and
 		android::app::backup::BackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::BackupHelper::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupHelper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

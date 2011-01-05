@@ -113,8 +113,8 @@ jint java::lang::AbstractStringBuilder::capacity()
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(1),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jchar java::lang::AbstractStringBuilder::charAt(jint a0)
@@ -123,8 +123,8 @@ jchar java::lang::AbstractStringBuilder::charAt(jint a0)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(2),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(2), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 void java::lang::AbstractStringBuilder::ensureCapacity(jint a0)
@@ -133,8 +133,8 @@ void java::lang::AbstractStringBuilder::ensureCapacity(jint a0)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(3),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::AbstractStringBuilder::getChars(jint a0, jint a1, local_ref< array<jchar,1> > const &a2, jint a3)
@@ -143,8 +143,8 @@ void java::lang::AbstractStringBuilder::getChars(jint a0, jint a1, local_ref< ar
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(4),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint java::lang::AbstractStringBuilder::length()
@@ -153,8 +153,8 @@ jint java::lang::AbstractStringBuilder::length()
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(5),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::lang::AbstractStringBuilder::setCharAt(jint a0, jchar a1)
@@ -163,8 +163,8 @@ void java::lang::AbstractStringBuilder::setCharAt(jint a0, jchar a1)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(6),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::AbstractStringBuilder::setLength(jint a0)
@@ -173,8 +173,8 @@ void java::lang::AbstractStringBuilder::setLength(jint a0)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(7),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::AbstractStringBuilder::substring(jint a0)
@@ -183,8 +183,8 @@ local_ref< java::lang::String > java::lang::AbstractStringBuilder::substring(jin
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(8),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::AbstractStringBuilder::substring(jint a0, jint a1)
@@ -193,8 +193,8 @@ local_ref< java::lang::String > java::lang::AbstractStringBuilder::substring(jin
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(9),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::AbstractStringBuilder::toString()
@@ -203,8 +203,8 @@ local_ref< java::lang::String > java::lang::AbstractStringBuilder::toString()
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(10),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > java::lang::AbstractStringBuilder::subSequence(jint a0, jint a1)
@@ -213,8 +213,8 @@ local_ref< java::lang::CharSequence > java::lang::AbstractStringBuilder::subSequ
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(11),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::AbstractStringBuilder::indexOf(local_ref< java::lang::String > const &a0)
@@ -223,8 +223,8 @@ jint java::lang::AbstractStringBuilder::indexOf(local_ref< java::lang::String > 
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(12),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::AbstractStringBuilder::indexOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -233,8 +233,8 @@ jint java::lang::AbstractStringBuilder::indexOf(local_ref< java::lang::String > 
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(13),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::AbstractStringBuilder::lastIndexOf(local_ref< java::lang::String > const &a0)
@@ -243,8 +243,8 @@ jint java::lang::AbstractStringBuilder::lastIndexOf(local_ref< java::lang::Strin
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(14),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::AbstractStringBuilder::lastIndexOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -253,8 +253,8 @@ jint java::lang::AbstractStringBuilder::lastIndexOf(local_ref< java::lang::Strin
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(15),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::AbstractStringBuilder::trimToSize()
@@ -263,8 +263,8 @@ void java::lang::AbstractStringBuilder::trimToSize()
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(16),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::lang::AbstractStringBuilder::codePointAt(jint a0)
@@ -273,8 +273,8 @@ jint java::lang::AbstractStringBuilder::codePointAt(jint a0)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(17),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::AbstractStringBuilder::codePointBefore(jint a0)
@@ -283,8 +283,8 @@ jint java::lang::AbstractStringBuilder::codePointBefore(jint a0)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(18),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::AbstractStringBuilder::codePointCount(jint a0, jint a1)
@@ -293,8 +293,8 @@ jint java::lang::AbstractStringBuilder::codePointCount(jint a0, jint a1)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(19),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::AbstractStringBuilder::offsetByCodePoints(jint a0, jint a1)
@@ -303,8 +303,8 @@ jint java::lang::AbstractStringBuilder::offsetByCodePoints(jint a0, jint a1)
 		java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME,
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(20),
 		java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

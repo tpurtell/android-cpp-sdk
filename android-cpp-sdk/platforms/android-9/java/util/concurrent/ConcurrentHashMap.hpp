@@ -73,7 +73,9 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::AbstractMap>() const;
+		operator local_ref<java::util::Map>() const;
 		operator local_ref<java::util::concurrent::ConcurrentMap>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -121,9 +123,19 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::ConcurrentHashMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::concurrent::ConcurrentHashMap::operator local_ref<java::util::AbstractMap>() const
 {
 	return local_ref<java::util::AbstractMap>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentHashMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentHashMap::operator local_ref<java::util::concurrent::ConcurrentMap>() const
@@ -142,8 +154,8 @@ java::util::concurrent::ConcurrentHashMap::ConcurrentHashMap(jint a0, jfloat a1,
 	call_new_object<
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -155,8 +167,8 @@ java::util::concurrent::ConcurrentHashMap::ConcurrentHashMap(jint a0, jfloat a1)
 	call_new_object<
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -168,8 +180,8 @@ java::util::concurrent::ConcurrentHashMap::ConcurrentHashMap(jint a0)
 	call_new_object<
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(2),
-		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -181,8 +193,8 @@ java::util::concurrent::ConcurrentHashMap::ConcurrentHashMap()
 	call_new_object<
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(3),
-		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(3)>
-	()
+		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(3)
+	>()
 )
 {
 }
@@ -194,8 +206,8 @@ java::util::concurrent::ConcurrentHashMap::ConcurrentHashMap(local_ref< java::ut
 	call_new_object<
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(4),
-		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -207,8 +219,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::isEmpty()
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ConcurrentHashMap::size()
@@ -217,8 +229,8 @@ jint java::util::concurrent::ConcurrentHashMap::size()
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::get(local_ref< java::lang::Object > const &a0)
@@ -227,8 +239,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::get(l
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentHashMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -237,8 +249,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::containsKey(local_ref< java:
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentHashMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -247,8 +259,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::containsValue(local_ref< jav
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentHashMap::contains(local_ref< java::lang::Object > const &a0)
@@ -257,8 +269,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::contains(local_ref< java::la
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -267,8 +279,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::put(l
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::putIfAbsent(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -277,8 +289,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::putIf
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::ConcurrentHashMap::putAll(local_ref< java::util::Map > const &a0)
@@ -287,8 +299,8 @@ void java::util::concurrent::ConcurrentHashMap::putAll(local_ref< java::util::Ma
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::remove(local_ref< java::lang::Object > const &a0)
@@ -297,8 +309,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::remov
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentHashMap::remove(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -307,8 +319,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::remove(local_ref< java::lang
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::ConcurrentHashMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -317,8 +329,8 @@ jboolean java::util::concurrent::ConcurrentHashMap::replace(local_ref< java::lan
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -327,8 +339,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentHashMap::repla
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::ConcurrentHashMap::clear()
@@ -337,8 +349,8 @@ void java::util::concurrent::ConcurrentHashMap::clear()
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::concurrent::ConcurrentHashMap::keySet()
@@ -347,8 +359,8 @@ local_ref< java::util::Set > java::util::concurrent::ConcurrentHashMap::keySet()
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::concurrent::ConcurrentHashMap::values()
@@ -357,8 +369,8 @@ local_ref< java::util::Collection > java::util::concurrent::ConcurrentHashMap::v
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::concurrent::ConcurrentHashMap::entrySet()
@@ -367,8 +379,8 @@ local_ref< java::util::Set > java::util::concurrent::ConcurrentHashMap::entrySet
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::util::concurrent::ConcurrentHashMap::keys()
@@ -377,8 +389,8 @@ local_ref< java::util::Enumeration > java::util::concurrent::ConcurrentHashMap::
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::util::concurrent::ConcurrentHashMap::elements()
@@ -387,8 +399,8 @@ local_ref< java::util::Enumeration > java::util::concurrent::ConcurrentHashMap::
 		java::util::concurrent::ConcurrentHashMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::ConcurrentHashMap::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 

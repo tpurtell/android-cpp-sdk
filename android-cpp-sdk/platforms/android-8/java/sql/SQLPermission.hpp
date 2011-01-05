@@ -12,15 +12,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 namespace j2cpp { namespace java { namespace security { class Guard; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/BasicPermission.hpp>
 #include <java/security/Guard.hpp>
+#include <java/security/Permission.hpp>
 
 
 namespace j2cpp {
@@ -43,6 +47,8 @@ namespace java { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Permission>() const;
 		operator local_ref<java::security::BasicPermission>() const;
 		operator local_ref<java::security::Guard>() const;
 		operator local_ref<java::io::Serializable>() const;
@@ -68,6 +74,16 @@ namespace j2cpp {
 
 
 
+java::sql::SQLPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::sql::SQLPermission::operator local_ref<java::security::Permission>() const
+{
+	return local_ref<java::security::Permission>(get_jobject());
+}
+
 java::sql::SQLPermission::operator local_ref<java::security::BasicPermission>() const
 {
 	return local_ref<java::security::BasicPermission>(get_jobject());
@@ -89,8 +105,8 @@ java::sql::SQLPermission::SQLPermission(local_ref< java::lang::String > const &a
 	call_new_object<
 		java::sql::SQLPermission::J2CPP_CLASS_NAME,
 		java::sql::SQLPermission::J2CPP_METHOD_NAME(0),
-		java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -102,8 +118,8 @@ java::sql::SQLPermission::SQLPermission(local_ref< java::lang::String > const &a
 	call_new_object<
 		java::sql::SQLPermission::J2CPP_CLASS_NAME,
 		java::sql::SQLPermission::J2CPP_METHOD_NAME(1),
-		java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }

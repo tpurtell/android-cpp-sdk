@@ -81,8 +81,8 @@ android::webkit::PluginData::PluginData(local_ref< java::io::InputStream > const
 	call_new_object<
 		android::webkit::PluginData::J2CPP_CLASS_NAME,
 		android::webkit::PluginData::J2CPP_METHOD_NAME(0),
-		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -94,8 +94,8 @@ local_ref< java::io::InputStream > android::webkit::PluginData::getInputStream()
 		android::webkit::PluginData::J2CPP_CLASS_NAME,
 		android::webkit::PluginData::J2CPP_METHOD_NAME(1),
 		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jlong android::webkit::PluginData::getContentLength()
@@ -104,8 +104,8 @@ jlong android::webkit::PluginData::getContentLength()
 		android::webkit::PluginData::J2CPP_CLASS_NAME,
 		android::webkit::PluginData::J2CPP_METHOD_NAME(2),
 		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::util::Map > android::webkit::PluginData::getHeaders()
@@ -114,8 +114,8 @@ local_ref< java::util::Map > android::webkit::PluginData::getHeaders()
 		android::webkit::PluginData::J2CPP_CLASS_NAME,
 		android::webkit::PluginData::J2CPP_METHOD_NAME(3),
 		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 jint android::webkit::PluginData::getStatusCode()
@@ -124,8 +124,8 @@ jint android::webkit::PluginData::getStatusCode()
 		android::webkit::PluginData::J2CPP_CLASS_NAME,
 		android::webkit::PluginData::J2CPP_METHOD_NAME(4),
 		android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -91,8 +91,8 @@ local_ref< org::apache::http::conn::scheme::SchemeRegistry > org::apache::http::
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::scheme::SchemeRegistry > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::scheme::SchemeRegistry >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::ClientConnectionRequest > org::apache::http::conn::ClientConnectionManager::requestConnection(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< java::lang::Object > const &a1)
@@ -101,8 +101,8 @@ local_ref< org::apache::http::conn::ClientConnectionRequest > org::apache::http:
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::ClientConnectionRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ClientConnectionRequest >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ClientConnectionManager::releaseConnection(local_ref< org::apache::http::conn::ManagedClientConnection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -111,8 +111,8 @@ void org::apache::http::conn::ClientConnectionManager::releaseConnection(local_r
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::conn::ClientConnectionManager::closeIdleConnections(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -121,8 +121,8 @@ void org::apache::http::conn::ClientConnectionManager::closeIdleConnections(jlon
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ClientConnectionManager::closeExpiredConnections()
@@ -131,8 +131,8 @@ void org::apache::http::conn::ClientConnectionManager::closeExpiredConnections()
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::conn::ClientConnectionManager::shutdown()
@@ -141,8 +141,8 @@ void org::apache::http::conn::ClientConnectionManager::shutdown()
 		org::apache::http::conn::ClientConnectionManager::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::ClientConnectionManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

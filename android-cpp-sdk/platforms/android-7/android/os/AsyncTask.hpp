@@ -11,14 +11,18 @@
 #define J2CPP_ANDROID_OS_ASYNCTASK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace android { namespace os { namespace AsyncTask_ { class Status; } } } }
 
 
 #include <android/os/AsyncTask.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +58,10 @@ namespace android { namespace os {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::os::AsyncTask_::Status >, 1> > values();
@@ -124,9 +131,24 @@ namespace j2cpp {
 
 
 
+android::os::AsyncTask_::Status::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::os::AsyncTask_::Status::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::os::AsyncTask_::Status::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::os::AsyncTask_::Status::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::os::AsyncTask_::Status >, 1> > android::os::AsyncTask_::Status::values()
@@ -135,8 +157,8 @@ local_ref< array< local_ref< android::os::AsyncTask_::Status >, 1> > android::os
 		android::os::AsyncTask_::Status::J2CPP_CLASS_NAME,
 		android::os::AsyncTask_::Status::J2CPP_METHOD_NAME(0),
 		android::os::AsyncTask_::Status::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::os::AsyncTask_::Status >, 1> > >
-	();
+		local_ref< array< local_ref< android::os::AsyncTask_::Status >, 1> >
+	>();
 }
 
 local_ref< android::os::AsyncTask_::Status > android::os::AsyncTask_::Status::valueOf(local_ref< java::lang::String > const &a0)
@@ -145,8 +167,8 @@ local_ref< android::os::AsyncTask_::Status > android::os::AsyncTask_::Status::va
 		android::os::AsyncTask_::Status::J2CPP_CLASS_NAME,
 		android::os::AsyncTask_::Status::J2CPP_METHOD_NAME(1),
 		android::os::AsyncTask_::Status::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::AsyncTask_::Status > >
-	(a0);
+		local_ref< android::os::AsyncTask_::Status >
+	>(a0);
 }
 
 
@@ -197,8 +219,8 @@ android::os::AsyncTask::AsyncTask()
 	call_new_object<
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(0),
-		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -210,8 +232,8 @@ local_ref< android::os::AsyncTask_::Status > android::os::AsyncTask::getStatus()
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(1),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::AsyncTask_::Status > >
-	(get_jobject());
+		local_ref< android::os::AsyncTask_::Status >
+	>(get_jobject());
 }
 
 
@@ -225,8 +247,8 @@ jboolean android::os::AsyncTask::isCancelled()
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(7),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::os::AsyncTask::cancel(jboolean a0)
@@ -235,8 +257,8 @@ jboolean android::os::AsyncTask::cancel(jboolean a0)
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(8),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::os::AsyncTask::get()
@@ -245,8 +267,8 @@ local_ref< java::lang::Object > android::os::AsyncTask::get()
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(9),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::os::AsyncTask::get(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -255,8 +277,8 @@ local_ref< java::lang::Object > android::os::AsyncTask::get(jlong a0, local_ref<
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(10),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::AsyncTask > android::os::AsyncTask::execute(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -265,8 +287,8 @@ local_ref< android::os::AsyncTask > android::os::AsyncTask::execute(local_ref< a
 		android::os::AsyncTask::J2CPP_CLASS_NAME,
 		android::os::AsyncTask::J2CPP_METHOD_NAME(11),
 		android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::os::AsyncTask > >
-	(get_jobject(), a0);
+		local_ref< android::os::AsyncTask >
+	>(get_jobject(), a0);
 }
 
 

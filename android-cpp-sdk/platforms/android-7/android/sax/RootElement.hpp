@@ -11,12 +11,14 @@
 #define J2CPP_ANDROID_SAX_ROOTELEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace android { namespace sax { class Element; } } }
 
 
 #include <android/sax/Element.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/ContentHandler.hpp>
 
@@ -42,6 +44,7 @@ namespace android { namespace sax {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::sax::Element>() const;
 
 
@@ -66,6 +69,11 @@ namespace j2cpp {
 
 
 
+android::sax::RootElement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::sax::RootElement::operator local_ref<android::sax::Element>() const
 {
 	return local_ref<android::sax::Element>(get_jobject());
@@ -77,8 +85,8 @@ android::sax::RootElement::RootElement(local_ref< java::lang::String > const &a0
 	call_new_object<
 		android::sax::RootElement::J2CPP_CLASS_NAME,
 		android::sax::RootElement::J2CPP_METHOD_NAME(0),
-		android::sax::RootElement::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::sax::RootElement::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -90,8 +98,8 @@ android::sax::RootElement::RootElement(local_ref< java::lang::String > const &a0
 	call_new_object<
 		android::sax::RootElement::J2CPP_CLASS_NAME,
 		android::sax::RootElement::J2CPP_METHOD_NAME(1),
-		android::sax::RootElement::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::sax::RootElement::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -103,8 +111,8 @@ local_ref< org::xml::sax::ContentHandler > android::sax::RootElement::getContent
 		android::sax::RootElement::J2CPP_CLASS_NAME,
 		android::sax::RootElement::J2CPP_METHOD_NAME(2),
 		android::sax::RootElement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 

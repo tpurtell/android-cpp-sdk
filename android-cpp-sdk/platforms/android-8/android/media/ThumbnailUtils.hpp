@@ -82,8 +82,8 @@ android::media::ThumbnailUtils::ThumbnailUtils()
 	call_new_object<
 		android::media::ThumbnailUtils::J2CPP_CLASS_NAME,
 		android::media::ThumbnailUtils::J2CPP_METHOD_NAME(0),
-		android::media::ThumbnailUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::ThumbnailUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< android::graphics::Bitmap > android::media::ThumbnailUtils::createVid
 		android::media::ThumbnailUtils::J2CPP_CLASS_NAME,
 		android::media::ThumbnailUtils::J2CPP_METHOD_NAME(1),
 		android::media::ThumbnailUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::media::ThumbnailUtils::extractThumbnail(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2)
@@ -105,8 +105,8 @@ local_ref< android::graphics::Bitmap > android::media::ThumbnailUtils::extractTh
 		android::media::ThumbnailUtils::J2CPP_CLASS_NAME,
 		android::media::ThumbnailUtils::J2CPP_METHOD_NAME(2),
 		android::media::ThumbnailUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::media::ThumbnailUtils::extractThumbnail(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2, jint a3)
@@ -115,8 +115,8 @@ local_ref< android::graphics::Bitmap > android::media::ThumbnailUtils::extractTh
 		android::media::ThumbnailUtils::J2CPP_CLASS_NAME,
 		android::media::ThumbnailUtils::J2CPP_METHOD_NAME(3),
 		android::media::ThumbnailUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 

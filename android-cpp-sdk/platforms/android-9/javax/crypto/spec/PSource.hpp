@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_PSOURCE_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace crypto { namespace spec { namespace PSource_ { class PSpecified; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace crypto { namespace spec { namespace PSource_ { class PSpecified; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -47,6 +47,7 @@ namespace javax { namespace crypto { namespace spec {
 			}
 
 			operator local_ref<javax::crypto::spec::PSource>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			PSpecified(local_ref< array<jbyte,1> > const&);
@@ -103,14 +104,19 @@ javax::crypto::spec::PSource_::PSpecified::operator local_ref<javax::crypto::spe
 	return local_ref<javax::crypto::spec::PSource>(get_jobject());
 }
 
+javax::crypto::spec::PSource_::PSpecified::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 javax::crypto::spec::PSource_::PSpecified::PSpecified(local_ref< array<jbyte,1> > const &a0)
 : object<javax::crypto::spec::PSource_::PSpecified>(
 	call_new_object<
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -122,8 +128,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::PSource_::PSpecified::getValue(
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 
@@ -156,8 +162,8 @@ local_ref< java::lang::String > javax::crypto::spec::PSource::getAlgorithm()
 		javax::crypto::spec::PSource::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::PSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

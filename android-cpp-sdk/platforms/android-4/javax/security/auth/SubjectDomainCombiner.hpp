@@ -11,10 +11,10 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_SUBJECTDOMAINCOMBINER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace auth { class Subject; } } } }
 namespace j2cpp { namespace java { namespace security { class ProtectionDomain; } } }
 namespace j2cpp { namespace java { namespace security { class DomainCombiner; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace security { namespace auth { class Subject; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -44,8 +44,8 @@ namespace javax { namespace security { namespace auth {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::DomainCombiner>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SubjectDomainCombiner(local_ref< javax::security::auth::Subject > const&);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-javax::security::auth::SubjectDomainCombiner::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::security::auth::SubjectDomainCombiner::operator local_ref<java::security::DomainCombiner>() const
 {
 	return local_ref<java::security::DomainCombiner>(get_jobject());
+}
+
+javax::security::auth::SubjectDomainCombiner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ javax::security::auth::SubjectDomainCombiner::SubjectDomainCombiner(local_ref< j
 	call_new_object<
 		javax::security::auth::SubjectDomainCombiner::J2CPP_CLASS_NAME,
 		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_NAME(0),
-		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -99,8 +99,8 @@ local_ref< javax::security::auth::Subject > javax::security::auth::SubjectDomain
 		javax::security::auth::SubjectDomainCombiner::J2CPP_CLASS_NAME,
 		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_NAME(1),
 		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::security::auth::Subject > >
-	(get_jobject());
+		local_ref< javax::security::auth::Subject >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > javax::security::auth::SubjectDomainCombiner::combine(local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > const &a0, local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > const &a1)
@@ -109,8 +109,8 @@ local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > javax::sec
 		javax::security::auth::SubjectDomainCombiner::J2CPP_CLASS_NAME,
 		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_NAME(2),
 		javax::security::auth::SubjectDomainCombiner::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::security::ProtectionDomain >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 

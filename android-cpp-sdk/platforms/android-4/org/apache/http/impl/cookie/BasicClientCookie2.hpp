@@ -11,16 +11,24 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_BASICCLIENTCOOKIE2_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie2; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class BasicClientCookie; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class ClientCookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class BasicClientCookie; } } } } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Date.hpp>
+#include <org/apache/http/cookie/ClientCookie.hpp>
+#include <org/apache/http/cookie/Cookie.hpp>
+#include <org/apache/http/cookie/SetCookie.hpp>
 #include <org/apache/http/cookie/SetCookie2.hpp>
 #include <org/apache/http/impl/cookie/BasicClientCookie.hpp>
 
@@ -52,8 +60,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<org::apache::http::impl::cookie::BasicClientCookie>() const;
+		operator local_ref<org::apache::http::cookie::Cookie>() const;
 		operator local_ref<org::apache::http::cookie::SetCookie2>() const;
+		operator local_ref<org::apache::http::cookie::SetCookie>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::ClientCookie>() const;
+		operator local_ref<org::apache::http::impl::cookie::BasicClientCookie>() const;
 
 
 		BasicClientCookie2(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -86,14 +99,39 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::impl::cookie::BasicClientCookie>() const
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::cookie::Cookie>() const
 {
-	return local_ref<org::apache::http::impl::cookie::BasicClientCookie>(get_jobject());
+	return local_ref<org::apache::http::cookie::Cookie>(get_jobject());
 }
 
 org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::cookie::SetCookie2>() const
 {
 	return local_ref<org::apache::http::cookie::SetCookie2>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::cookie::SetCookie>() const
+{
+	return local_ref<org::apache::http::cookie::SetCookie>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::cookie::ClientCookie>() const
+{
+	return local_ref<org::apache::http::cookie::ClientCookie>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie2::operator local_ref<org::apache::http::impl::cookie::BasicClientCookie>() const
+{
+	return local_ref<org::apache::http::impl::cookie::BasicClientCookie>(get_jobject());
 }
 
 
@@ -102,8 +140,8 @@ org::apache::http::impl::cookie::BasicClientCookie2::BasicClientCookie2(local_re
 	call_new_object<
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -115,8 +153,8 @@ local_ref< array<jint,1> > org::apache::http::impl::cookie::BasicClientCookie2::
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie2::setPorts(local_ref< array<jint,1> > const &a0)
@@ -125,8 +163,8 @@ void org::apache::http::impl::cookie::BasicClientCookie2::setPorts(local_ref< ar
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie2::getCommentURL()
@@ -135,8 +173,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie2::setCommentURL(local_ref< java::lang::String > const &a0)
@@ -145,8 +183,8 @@ void org::apache::http::impl::cookie::BasicClientCookie2::setCommentURL(local_re
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie2::setDiscard(jboolean a0)
@@ -155,8 +193,8 @@ void org::apache::http::impl::cookie::BasicClientCookie2::setDiscard(jboolean a0
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie2::isPersistent()
@@ -165,8 +203,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie2::isPersistent()
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie2::isExpired(local_ref< java::util::Date > const &a0)
@@ -175,8 +213,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie2::isExpired(local_re
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::cookie::BasicClientCookie2::clone()
@@ -185,8 +223,8 @@ local_ref< java::lang::Object > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::cookie::BasicClientCookie2::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

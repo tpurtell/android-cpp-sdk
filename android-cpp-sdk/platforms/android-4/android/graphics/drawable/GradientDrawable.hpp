@@ -11,17 +11,20 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace GradientDrawable_ { class Orientation; } } } } }
-namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
-namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
-namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
-namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
-namespace j2cpp { namespace java { namespace lang { class Enum; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <android/content/res/Resources.hpp>
@@ -31,7 +34,10 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/graphics/drawable/GradientDrawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -70,7 +76,10 @@ namespace android { namespace graphics { namespace drawable {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::drawable::GradientDrawable_::Orientation >, 1> > values();
@@ -138,6 +147,7 @@ namespace android { namespace graphics { namespace drawable {
 		}
 
 		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		GradientDrawable();
@@ -193,9 +203,24 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::GradientDrawable_::Orientation::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::graphics::drawable::GradientDrawable_::Orientation::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::drawable::GradientDrawable_::Orientation::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::drawable::GradientDrawable_::Orientation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::drawable::GradientDrawable_::Orientation >, 1> > android::graphics::drawable::GradientDrawable_::Orientation::values()
@@ -204,8 +229,8 @@ local_ref< array< local_ref< android::graphics::drawable::GradientDrawable_::Ori
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_NAME(0),
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::drawable::GradientDrawable_::Orientation >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::drawable::GradientDrawable_::Orientation >, 1> >
+	>();
 }
 
 local_ref< android::graphics::drawable::GradientDrawable_::Orientation > android::graphics::drawable::GradientDrawable_::Orientation::valueOf(local_ref< java::lang::String > const &a0)
@@ -214,8 +239,8 @@ local_ref< android::graphics::drawable::GradientDrawable_::Orientation > android
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::drawable::GradientDrawable_::Orientation > >
-	(a0);
+		local_ref< android::graphics::drawable::GradientDrawable_::Orientation >
+	>(a0);
 }
 
 
@@ -300,14 +325,19 @@ android::graphics::drawable::GradientDrawable::operator local_ref<android::graph
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
 }
 
+android::graphics::drawable::GradientDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::drawable::GradientDrawable::GradientDrawable()
 : object<android::graphics::drawable::GradientDrawable>(
 	call_new_object<
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -319,8 +349,8 @@ android::graphics::drawable::GradientDrawable::GradientDrawable(local_ref< andro
 	call_new_object<
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(1),
-		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -332,8 +362,8 @@ jboolean android::graphics::drawable::GradientDrawable::getPadding(local_ref< an
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setCornerRadii(local_ref< array<jfloat,1> > const &a0)
@@ -342,8 +372,8 @@ void android::graphics::drawable::GradientDrawable::setCornerRadii(local_ref< ar
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setCornerRadius(jfloat a0)
@@ -352,8 +382,8 @@ void android::graphics::drawable::GradientDrawable::setCornerRadius(jfloat a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setStroke(jint a0, jint a1)
@@ -362,8 +392,8 @@ void android::graphics::drawable::GradientDrawable::setStroke(jint a0, jint a1)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::drawable::GradientDrawable::setStroke(jint a0, jint a1, jfloat a2, jfloat a3)
@@ -372,8 +402,8 @@ void android::graphics::drawable::GradientDrawable::setStroke(jint a0, jint a1, 
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::drawable::GradientDrawable::setSize(jint a0, jint a1)
@@ -382,8 +412,8 @@ void android::graphics::drawable::GradientDrawable::setSize(jint a0, jint a1)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::drawable::GradientDrawable::setShape(jint a0)
@@ -392,8 +422,8 @@ void android::graphics::drawable::GradientDrawable::setShape(jint a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setGradientType(jint a0)
@@ -402,8 +432,8 @@ void android::graphics::drawable::GradientDrawable::setGradientType(jint a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setGradientCenter(jfloat a0, jfloat a1)
@@ -412,8 +442,8 @@ void android::graphics::drawable::GradientDrawable::setGradientCenter(jfloat a0,
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::drawable::GradientDrawable::setGradientRadius(jfloat a0)
@@ -422,8 +452,8 @@ void android::graphics::drawable::GradientDrawable::setGradientRadius(jfloat a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(11),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setUseLevel(jboolean a0)
@@ -432,8 +462,8 @@ void android::graphics::drawable::GradientDrawable::setUseLevel(jboolean a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(12),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -442,8 +472,8 @@ void android::graphics::drawable::GradientDrawable::draw(local_ref< android::gra
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(13),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setColor(jint a0)
@@ -452,8 +482,8 @@ void android::graphics::drawable::GradientDrawable::setColor(jint a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(14),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::GradientDrawable::getChangingConfigurations()
@@ -462,8 +492,8 @@ jint android::graphics::drawable::GradientDrawable::getChangingConfigurations()
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(15),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::GradientDrawable::setAlpha(jint a0)
@@ -472,8 +502,8 @@ void android::graphics::drawable::GradientDrawable::setAlpha(jint a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(16),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setDither(jboolean a0)
@@ -482,8 +512,8 @@ void android::graphics::drawable::GradientDrawable::setDither(jboolean a0)
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(17),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::GradientDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -492,8 +522,8 @@ void android::graphics::drawable::GradientDrawable::setColorFilter(local_ref< an
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(18),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::GradientDrawable::getOpacity()
@@ -502,8 +532,8 @@ jint android::graphics::drawable::GradientDrawable::getOpacity()
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(19),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -514,8 +544,8 @@ void android::graphics::drawable::GradientDrawable::inflate(local_ref< android::
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(22),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::drawable::GradientDrawable::getIntrinsicWidth()
@@ -524,8 +554,8 @@ jint android::graphics::drawable::GradientDrawable::getIntrinsicWidth()
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(23),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::GradientDrawable::getIntrinsicHeight()
@@ -534,8 +564,8 @@ jint android::graphics::drawable::GradientDrawable::getIntrinsicHeight()
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(24),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::GradientDrawable::getConstantState()
@@ -544,8 +574,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(25),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::GradientDrawable::mutate()
@@ -554,8 +584,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(26),
 		android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 

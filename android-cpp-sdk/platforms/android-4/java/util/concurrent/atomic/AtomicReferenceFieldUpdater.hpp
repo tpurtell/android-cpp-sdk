@@ -87,8 +87,8 @@ local_ref< java::util::concurrent::atomic::AtomicReferenceFieldUpdater > java::u
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::atomic::AtomicReferenceFieldUpdater > >
-	(a0, a1, a2);
+		local_ref< java::util::concurrent::atomic::AtomicReferenceFieldUpdater >
+	>(a0, a1, a2);
 }
 
 jboolean java::util::concurrent::atomic::AtomicReferenceFieldUpdater::compareAndSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -97,8 +97,8 @@ jboolean java::util::concurrent::atomic::AtomicReferenceFieldUpdater::compareAnd
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::util::concurrent::atomic::AtomicReferenceFieldUpdater::weakCompareAndSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -107,8 +107,8 @@ jboolean java::util::concurrent::atomic::AtomicReferenceFieldUpdater::weakCompar
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::concurrent::atomic::AtomicReferenceFieldUpdater::set(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -117,8 +117,8 @@ void java::util::concurrent::atomic::AtomicReferenceFieldUpdater::set(local_ref<
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::atomic::AtomicReferenceFieldUpdater::get(local_ref< java::lang::Object > const &a0)
@@ -127,8 +127,8 @@ local_ref< java::lang::Object > java::util::concurrent::atomic::AtomicReferenceF
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::atomic::AtomicReferenceFieldUpdater::getAndSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -137,8 +137,8 @@ local_ref< java::lang::Object > java::util::concurrent::atomic::AtomicReferenceF
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::atomic::AtomicReferenceFieldUpdater::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -72,8 +72,8 @@ local_ref< java::security::interfaces::DSAParams > java::security::interfaces::D
 		java::security::interfaces::DSAKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::DSAKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::DSAKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::security::interfaces::DSAParams > >
-	(get_jobject());
+		local_ref< java::security::interfaces::DSAParams >
+	>(get_jobject());
 }
 
 

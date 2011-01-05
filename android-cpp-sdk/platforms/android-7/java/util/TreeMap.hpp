@@ -73,10 +73,12 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractMap>() const;
-		operator local_ref<java::util::SortedMap>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::util::SortedMap>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::AbstractMap>() const;
 
 
 		TreeMap();
@@ -119,14 +121,14 @@ namespace j2cpp {
 
 
 
-java::util::TreeMap::operator local_ref<java::util::AbstractMap>() const
+java::util::TreeMap::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::util::AbstractMap>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-java::util::TreeMap::operator local_ref<java::util::SortedMap>() const
+java::util::TreeMap::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::SortedMap>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::TreeMap::operator local_ref<java::lang::Cloneable>() const
@@ -134,9 +136,19 @@ java::util::TreeMap::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::TreeMap::operator local_ref<java::io::Serializable>() const
+java::util::TreeMap::operator local_ref<java::util::SortedMap>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::util::SortedMap>(get_jobject());
+}
+
+java::util::TreeMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::util::TreeMap::operator local_ref<java::util::AbstractMap>() const
+{
+	return local_ref<java::util::AbstractMap>(get_jobject());
 }
 
 
@@ -145,8 +157,8 @@ java::util::TreeMap::TreeMap()
 	call_new_object<
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(0),
-		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -158,8 +170,8 @@ java::util::TreeMap::TreeMap(local_ref< java::util::Comparator > const &a0)
 	call_new_object<
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(1),
-		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -171,8 +183,8 @@ java::util::TreeMap::TreeMap(local_ref< java::util::Map > const &a0)
 	call_new_object<
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(2),
-		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -184,8 +196,8 @@ java::util::TreeMap::TreeMap(local_ref< java::util::SortedMap > const &a0)
 	call_new_object<
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(3),
-		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -197,8 +209,8 @@ void java::util::TreeMap::clear()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(4),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::clone()
@@ -207,8 +219,8 @@ local_ref< java::lang::Object > java::util::TreeMap::clone()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(5),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Comparator > java::util::TreeMap::comparator()
@@ -217,8 +229,8 @@ local_ref< java::util::Comparator > java::util::TreeMap::comparator()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(6),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 jboolean java::util::TreeMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -227,8 +239,8 @@ jboolean java::util::TreeMap::containsKey(local_ref< java::lang::Object > const 
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(7),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::TreeMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -237,8 +249,8 @@ jboolean java::util::TreeMap::containsValue(local_ref< java::lang::Object > cons
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(8),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::TreeMap::entrySet()
@@ -247,8 +259,8 @@ local_ref< java::util::Set > java::util::TreeMap::entrySet()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(9),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::firstKey()
@@ -257,8 +269,8 @@ local_ref< java::lang::Object > java::util::TreeMap::firstKey()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(10),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::get(local_ref< java::lang::Object > const &a0)
@@ -267,8 +279,8 @@ local_ref< java::lang::Object > java::util::TreeMap::get(local_ref< java::lang::
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(11),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::SortedMap > java::util::TreeMap::headMap(local_ref< java::lang::Object > const &a0)
@@ -277,8 +289,8 @@ local_ref< java::util::SortedMap > java::util::TreeMap::headMap(local_ref< java:
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(12),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::TreeMap::keySet()
@@ -287,8 +299,8 @@ local_ref< java::util::Set > java::util::TreeMap::keySet()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(13),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::lastKey()
@@ -297,8 +309,8 @@ local_ref< java::lang::Object > java::util::TreeMap::lastKey()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(14),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -307,8 +319,8 @@ local_ref< java::lang::Object > java::util::TreeMap::put(local_ref< java::lang::
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(15),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::TreeMap::putAll(local_ref< java::util::Map > const &a0)
@@ -317,8 +329,8 @@ void java::util::TreeMap::putAll(local_ref< java::util::Map > const &a0)
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(16),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::TreeMap::remove(local_ref< java::lang::Object > const &a0)
@@ -327,8 +339,8 @@ local_ref< java::lang::Object > java::util::TreeMap::remove(local_ref< java::lan
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(17),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::TreeMap::size()
@@ -337,8 +349,8 @@ jint java::util::TreeMap::size()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(18),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedMap > java::util::TreeMap::subMap(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -347,8 +359,8 @@ local_ref< java::util::SortedMap > java::util::TreeMap::subMap(local_ref< java::
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(19),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedMap > java::util::TreeMap::tailMap(local_ref< java::lang::Object > const &a0)
@@ -357,8 +369,8 @@ local_ref< java::util::SortedMap > java::util::TreeMap::tailMap(local_ref< java:
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(20),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::util::TreeMap::values()
@@ -367,8 +379,8 @@ local_ref< java::util::Collection > java::util::TreeMap::values()
 		java::util::TreeMap::J2CPP_CLASS_NAME,
 		java::util::TreeMap::J2CPP_METHOD_NAME(21),
 		java::util::TreeMap::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 

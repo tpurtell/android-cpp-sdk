@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
 
@@ -39,9 +43,11 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::nio::channels::ReadableByteChannel>() const;
 		operator local_ref<java::nio::channels::WritableByteChannel>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 	}; //class ByteChannel
 
@@ -62,9 +68,14 @@ namespace j2cpp {
 
 
 
-java::nio::channels::ByteChannel::operator local_ref<java::lang::Object>() const
+java::nio::channels::ByteChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::nio::channels::WritableByteChannel>(get_jobject());
+}
+
+java::nio::channels::ByteChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
 }
 
 java::nio::channels::ByteChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
@@ -72,9 +83,14 @@ java::nio::channels::ByteChannel::operator local_ref<java::nio::channels::Readab
 	return local_ref<java::nio::channels::ReadableByteChannel>(get_jobject());
 }
 
-java::nio::channels::ByteChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
+java::nio::channels::ByteChannel::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::nio::channels::WritableByteChannel>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::ByteChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(java::nio::channels::ByteChannel,"java/nio/channels/ByteChannel")

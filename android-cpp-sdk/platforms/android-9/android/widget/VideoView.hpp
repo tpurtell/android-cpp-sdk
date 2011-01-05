@@ -12,27 +12,35 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ { class OnErrorListener; } } } }
 namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ { class OnCompletionListener; } } } }
 namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ { class OnPreparedListener; } } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceView; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace widget { class MediaController; } } }
 namespace j2cpp { namespace android { namespace widget { namespace MediaController_ { class MediaPlayerControl; } } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/media/MediaPlayer.hpp>
 #include <android/net/Uri.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/SurfaceView.hpp>
+#include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/MediaController.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -81,7 +89,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::view::SurfaceView>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 		operator local_ref<android::widget::MediaController_::MediaPlayerControl>() const;
 
 
@@ -129,9 +141,29 @@ namespace j2cpp {
 
 
 
+android::widget::VideoView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::VideoView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::VideoView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::VideoView::operator local_ref<android::view::SurfaceView>() const
 {
 	return local_ref<android::view::SurfaceView>(get_jobject());
+}
+
+android::widget::VideoView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
 }
 
 android::widget::VideoView::operator local_ref<android::widget::MediaController_::MediaPlayerControl>() const
@@ -145,8 +177,8 @@ android::widget::VideoView::VideoView(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(0),
-		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -158,8 +190,8 @@ android::widget::VideoView::VideoView(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(1),
-		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -171,8 +203,8 @@ android::widget::VideoView::VideoView(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(2),
-		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -185,8 +217,8 @@ jint android::widget::VideoView::resolveAdjustedSize(jint a0, jint a1)
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(4),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::VideoView::setVideoPath(local_ref< java::lang::String > const &a0)
@@ -195,8 +227,8 @@ void android::widget::VideoView::setVideoPath(local_ref< java::lang::String > co
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(5),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::VideoView::setVideoURI(local_ref< android::net::Uri > const &a0)
@@ -205,8 +237,8 @@ void android::widget::VideoView::setVideoURI(local_ref< android::net::Uri > cons
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(6),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::VideoView::stopPlayback()
@@ -215,8 +247,8 @@ void android::widget::VideoView::stopPlayback()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(7),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::VideoView::setMediaController(local_ref< android::widget::MediaController > const &a0)
@@ -225,8 +257,8 @@ void android::widget::VideoView::setMediaController(local_ref< android::widget::
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(8),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::VideoView::setOnPreparedListener(local_ref< android::media::MediaPlayer_::OnPreparedListener > const &a0)
@@ -235,8 +267,8 @@ void android::widget::VideoView::setOnPreparedListener(local_ref< android::media
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(9),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::VideoView::setOnCompletionListener(local_ref< android::media::MediaPlayer_::OnCompletionListener > const &a0)
@@ -245,8 +277,8 @@ void android::widget::VideoView::setOnCompletionListener(local_ref< android::med
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(10),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::VideoView::setOnErrorListener(local_ref< android::media::MediaPlayer_::OnErrorListener > const &a0)
@@ -255,8 +287,8 @@ void android::widget::VideoView::setOnErrorListener(local_ref< android::media::M
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(11),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::VideoView::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -265,8 +297,8 @@ jboolean android::widget::VideoView::onTouchEvent(local_ref< android::view::Moti
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(12),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::VideoView::onTrackballEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -275,8 +307,8 @@ jboolean android::widget::VideoView::onTrackballEvent(local_ref< android::view::
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(13),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::VideoView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -285,8 +317,8 @@ jboolean android::widget::VideoView::onKeyDown(jint a0, local_ref< android::view
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(14),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::VideoView::start()
@@ -295,8 +327,8 @@ void android::widget::VideoView::start()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(15),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::VideoView::pause()
@@ -305,8 +337,8 @@ void android::widget::VideoView::pause()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(16),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::VideoView::suspend()
@@ -315,8 +347,8 @@ void android::widget::VideoView::suspend()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(17),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::VideoView::resume()
@@ -325,8 +357,8 @@ void android::widget::VideoView::resume()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(18),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::widget::VideoView::getDuration()
@@ -335,8 +367,8 @@ jint android::widget::VideoView::getDuration()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(19),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::VideoView::getCurrentPosition()
@@ -345,8 +377,8 @@ jint android::widget::VideoView::getCurrentPosition()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(20),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::VideoView::seekTo(jint a0)
@@ -355,8 +387,8 @@ void android::widget::VideoView::seekTo(jint a0)
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(21),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::VideoView::isPlaying()
@@ -365,8 +397,8 @@ jboolean android::widget::VideoView::isPlaying()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(22),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::widget::VideoView::getBufferPercentage()
@@ -375,8 +407,8 @@ jint android::widget::VideoView::getBufferPercentage()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(23),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::VideoView::canPause()
@@ -385,8 +417,8 @@ jboolean android::widget::VideoView::canPause()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(24),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::VideoView::canSeekBackward()
@@ -395,8 +427,8 @@ jboolean android::widget::VideoView::canSeekBackward()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(25),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::VideoView::canSeekForward()
@@ -405,8 +437,8 @@ jboolean android::widget::VideoView::canSeekForward()
 		android::widget::VideoView::J2CPP_CLASS_NAME,
 		android::widget::VideoView::J2CPP_METHOD_NAME(26),
 		android::widget::VideoView::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

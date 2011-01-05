@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPABSTRACTPARAMBEAN_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -75,8 +75,8 @@ org::apache::http::params::HttpAbstractParamBean::HttpAbstractParamBean(local_re
 	call_new_object<
 		org::apache::http::params::HttpAbstractParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

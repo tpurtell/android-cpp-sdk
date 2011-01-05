@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace net { class URL; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class Manife
 namespace j2cpp { namespace java { namespace util { namespace jar { class Attributes; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URL.hpp>
 #include <java/net/URLConnection.hpp>
@@ -59,6 +61,7 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::URLConnection>() const;
 
 
@@ -89,6 +92,11 @@ namespace j2cpp {
 
 
 
+java::net::JarURLConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::JarURLConnection::operator local_ref<java::net::URLConnection>() const
 {
 	return local_ref<java::net::URLConnection>(get_jobject());
@@ -101,8 +109,8 @@ local_ref< java::util::jar::Attributes > java::net::JarURLConnection::getAttribu
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(1),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::jar::Attributes > >
-	(get_jobject());
+		local_ref< java::util::jar::Attributes >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::net::JarURLConnection::getCertificates()
@@ -111,8 +119,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::net
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(2),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::JarURLConnection::getEntryName()
@@ -121,8 +129,8 @@ local_ref< java::lang::String > java::net::JarURLConnection::getEntryName()
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(3),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::JarEntry > java::net::JarURLConnection::getJarEntry()
@@ -131,8 +139,8 @@ local_ref< java::util::jar::JarEntry > java::net::JarURLConnection::getJarEntry(
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(4),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::jar::JarEntry > >
-	(get_jobject());
+		local_ref< java::util::jar::JarEntry >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::Manifest > java::net::JarURLConnection::getManifest()
@@ -141,8 +149,8 @@ local_ref< java::util::jar::Manifest > java::net::JarURLConnection::getManifest(
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(5),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::jar::Manifest > >
-	(get_jobject());
+		local_ref< java::util::jar::Manifest >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::JarFile > java::net::JarURLConnection::getJarFile()
@@ -151,8 +159,8 @@ local_ref< java::util::jar::JarFile > java::net::JarURLConnection::getJarFile()
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(6),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::jar::JarFile > >
-	(get_jobject());
+		local_ref< java::util::jar::JarFile >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::net::JarURLConnection::getJarFileURL()
@@ -161,8 +169,8 @@ local_ref< java::net::URL > java::net::JarURLConnection::getJarFileURL()
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(7),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::net::URL > >
-	(get_jobject());
+		local_ref< java::net::URL >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::Attributes > java::net::JarURLConnection::getMainAttributes()
@@ -171,8 +179,8 @@ local_ref< java::util::jar::Attributes > java::net::JarURLConnection::getMainAtt
 		java::net::JarURLConnection::J2CPP_CLASS_NAME,
 		java::net::JarURLConnection::J2CPP_METHOD_NAME(8),
 		java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::jar::Attributes > >
-	(get_jobject());
+		local_ref< java::util::jar::Attributes >
+	>(get_jobject());
 }
 
 

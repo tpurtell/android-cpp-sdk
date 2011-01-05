@@ -12,11 +12,17 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +45,10 @@ namespace junit { namespace framework {
 		{
 		}
 
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		AssertionFailedError();
@@ -62,9 +71,24 @@ namespace j2cpp {
 
 
 
+junit::framework::AssertionFailedError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 junit::framework::AssertionFailedError::operator local_ref<java::lang::Error>() const
 {
 	return local_ref<java::lang::Error>(get_jobject());
+}
+
+junit::framework::AssertionFailedError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+junit::framework::AssertionFailedError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -73,8 +97,8 @@ junit::framework::AssertionFailedError::AssertionFailedError()
 	call_new_object<
 		junit::framework::AssertionFailedError::J2CPP_CLASS_NAME,
 		junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(0),
-		junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +110,8 @@ junit::framework::AssertionFailedError::AssertionFailedError(local_ref< java::la
 	call_new_object<
 		junit::framework::AssertionFailedError::J2CPP_CLASS_NAME,
 		junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(1),
-		junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

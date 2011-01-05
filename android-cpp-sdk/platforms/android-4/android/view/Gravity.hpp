@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_VIEW_GRAVITY_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 
 
 #include <android/graphics/Rect.hpp>
@@ -128,8 +128,8 @@ android::view::Gravity::Gravity()
 	call_new_object<
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(0),
-		android::view::Gravity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::Gravity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -141,8 +141,8 @@ void android::view::Gravity::apply(jint a0, jint a1, jint a2, local_ref< android
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(1),
 		android::view::Gravity::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::view::Gravity::apply(jint a0, jint a1, jint a2, local_ref< android::graphics::Rect > const &a3, jint a4, jint a5, local_ref< android::graphics::Rect > const &a6)
@@ -151,8 +151,8 @@ void android::view::Gravity::apply(jint a0, jint a1, jint a2, local_ref< android
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(2),
 		android::view::Gravity::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::view::Gravity::applyDisplay(jint a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::Rect > const &a2)
@@ -161,8 +161,8 @@ void android::view::Gravity::applyDisplay(jint a0, local_ref< android::graphics:
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(3),
 		android::view::Gravity::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::view::Gravity::isVertical(jint a0)
@@ -171,8 +171,8 @@ jboolean android::view::Gravity::isVertical(jint a0)
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(4),
 		android::view::Gravity::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::view::Gravity::isHorizontal(jint a0)
@@ -181,8 +181,8 @@ jboolean android::view::Gravity::isHorizontal(jint a0)
 		android::view::Gravity::J2CPP_CLASS_NAME,
 		android::view::Gravity::J2CPP_METHOD_NAME(5),
 		android::view::Gravity::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

@@ -153,8 +153,8 @@ void android::test::MoreAsserts::assertAssignableFrom(local_ref< java::lang::Cla
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(1),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertAssignableFrom(local_ref< java::lang::Class > const &a0, local_ref< java::lang::Class > const &a1)
@@ -163,8 +163,8 @@ void android::test::MoreAsserts::assertAssignableFrom(local_ref< java::lang::Cla
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(2),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertNotEqual(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -173,8 +173,8 @@ void android::test::MoreAsserts::assertNotEqual(local_ref< java::lang::String > 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(3),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertNotEqual(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -183,8 +183,8 @@ void android::test::MoreAsserts::assertNotEqual(local_ref< java::lang::Object > 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(4),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1, local_ref< array<jbyte,1> > const &a2)
@@ -193,8 +193,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > co
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(5),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< array<jbyte,1> > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -203,8 +203,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< array<jbyte,1> > const 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(6),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > const &a0, local_ref< array<jint,1> > const &a1, local_ref< array<jint,1> > const &a2)
@@ -213,8 +213,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > co
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(7),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< array<jint,1> > const &a0, local_ref< array<jint,1> > const &a1)
@@ -223,8 +223,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< array<jint,1> > const &
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(8),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > const &a0, local_ref< array<jdouble,1> > const &a1, local_ref< array<jdouble,1> > const &a2)
@@ -233,8 +233,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > co
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(9),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< array<jdouble,1> > const &a0, local_ref< array<jdouble,1> > const &a1)
@@ -243,8 +243,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< array<jdouble,1> > cons
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(10),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2)
@@ -253,8 +253,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > co
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(11),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -263,8 +263,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< array< local_ref< java:
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(12),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > const &a0, local_ref< java::util::Set > const &a1, local_ref< java::util::Set > const &a2)
@@ -273,8 +273,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::lang::String > co
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(13),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertEquals(local_ref< java::util::Set > const &a0, local_ref< java::util::Set > const &a1)
@@ -283,8 +283,8 @@ void android::test::MoreAsserts::assertEquals(local_ref< java::util::Set > const
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(14),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertMatchesRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -293,8 +293,8 @@ local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertMa
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(15),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::regex::MatchResult > >
-	(a0, a1, a2);
+		local_ref< java::util::regex::MatchResult >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertMatchesRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -303,8 +303,8 @@ local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertMa
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(16),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::regex::MatchResult > >
-	(a0, a1);
+		local_ref< java::util::regex::MatchResult >
+	>(a0, a1);
 }
 
 local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertContainsRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -313,8 +313,8 @@ local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertCo
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(17),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::regex::MatchResult > >
-	(a0, a1, a2);
+		local_ref< java::util::regex::MatchResult >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertContainsRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -323,8 +323,8 @@ local_ref< java::util::regex::MatchResult > android::test::MoreAsserts::assertCo
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(18),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::regex::MatchResult > >
-	(a0, a1);
+		local_ref< java::util::regex::MatchResult >
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertNotMatchesRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -333,8 +333,8 @@ void android::test::MoreAsserts::assertNotMatchesRegex(local_ref< java::lang::St
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(19),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertNotMatchesRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -343,8 +343,8 @@ void android::test::MoreAsserts::assertNotMatchesRegex(local_ref< java::lang::St
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(20),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertNotContainsRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -353,8 +353,8 @@ void android::test::MoreAsserts::assertNotContainsRegex(local_ref< java::lang::S
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(21),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertNotContainsRegex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -363,8 +363,8 @@ void android::test::MoreAsserts::assertNotContainsRegex(local_ref< java::lang::S
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(22),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertContentsInOrder(local_ref< java::lang::String > const &a0, local_ref< java::lang::Iterable > const &a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2)
@@ -373,8 +373,8 @@ void android::test::MoreAsserts::assertContentsInOrder(local_ref< java::lang::St
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(23),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertContentsInOrder(local_ref< java::lang::Iterable > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -383,8 +383,8 @@ void android::test::MoreAsserts::assertContentsInOrder(local_ref< java::lang::It
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(24),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertContentsInAnyOrder(local_ref< java::lang::String > const &a0, local_ref< java::lang::Iterable > const &a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2)
@@ -393,8 +393,8 @@ void android::test::MoreAsserts::assertContentsInAnyOrder(local_ref< java::lang:
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(25),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::MoreAsserts::assertContentsInAnyOrder(local_ref< java::lang::Iterable > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -403,8 +403,8 @@ void android::test::MoreAsserts::assertContentsInAnyOrder(local_ref< java::lang:
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(26),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Iterable > const &a1)
@@ -413,8 +413,8 @@ void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::String > con
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(27),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::Iterable > const &a0)
@@ -423,8 +423,8 @@ void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::Iterable > c
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(28),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -433,8 +433,8 @@ void android::test::MoreAsserts::assertEmpty(local_ref< java::lang::String > con
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(29),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertEmpty(local_ref< java::util::Map > const &a0)
@@ -443,8 +443,8 @@ void android::test::MoreAsserts::assertEmpty(local_ref< java::util::Map > const 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(30),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Iterable > const &a1)
@@ -453,8 +453,8 @@ void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::String > 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(31),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::Iterable > const &a0)
@@ -463,8 +463,8 @@ void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::Iterable 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(32),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -473,8 +473,8 @@ void android::test::MoreAsserts::assertNotEmpty(local_ref< java::lang::String > 
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(33),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::MoreAsserts::assertNotEmpty(local_ref< java::util::Map > const &a0)
@@ -483,8 +483,8 @@ void android::test::MoreAsserts::assertNotEmpty(local_ref< java::util::Map > con
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(34),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::test::MoreAsserts::checkEqualsAndHashCodeMethods(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -493,8 +493,8 @@ void android::test::MoreAsserts::checkEqualsAndHashCodeMethods(local_ref< java::
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(35),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::test::MoreAsserts::checkEqualsAndHashCodeMethods(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, jboolean a2)
@@ -503,8 +503,8 @@ void android::test::MoreAsserts::checkEqualsAndHashCodeMethods(local_ref< java::
 		android::test::MoreAsserts::J2CPP_CLASS_NAME,
 		android::test::MoreAsserts::J2CPP_METHOD_NAME(36),
 		android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 

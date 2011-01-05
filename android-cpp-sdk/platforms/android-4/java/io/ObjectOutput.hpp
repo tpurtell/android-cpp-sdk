@@ -43,8 +43,8 @@ namespace java { namespace io {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::DataOutput>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void close();
@@ -71,14 +71,14 @@ namespace j2cpp {
 
 
 
-java::io::ObjectOutput::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::io::ObjectOutput::operator local_ref<java::io::DataOutput>() const
 {
 	return local_ref<java::io::DataOutput>(get_jobject());
+}
+
+java::io::ObjectOutput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::io::ObjectOutput::close()
@@ -87,8 +87,8 @@ void java::io::ObjectOutput::close()
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(0),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::ObjectOutput::flush()
@@ -97,8 +97,8 @@ void java::io::ObjectOutput::flush()
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(1),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::ObjectOutput::write(local_ref< array<jbyte,1> > const &a0)
@@ -107,8 +107,8 @@ void java::io::ObjectOutput::write(local_ref< array<jbyte,1> > const &a0)
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(2),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::ObjectOutput::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -117,8 +117,8 @@ void java::io::ObjectOutput::write(local_ref< array<jbyte,1> > const &a0, jint a
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(3),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::ObjectOutput::write(jint a0)
@@ -127,8 +127,8 @@ void java::io::ObjectOutput::write(jint a0)
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(4),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::ObjectOutput::writeObject(local_ref< java::lang::Object > const &a0)
@@ -137,8 +137,8 @@ void java::io::ObjectOutput::writeObject(local_ref< java::lang::Object > const &
 		java::io::ObjectOutput::J2CPP_CLASS_NAME,
 		java::io::ObjectOutput::J2CPP_METHOD_NAME(5),
 		java::io::ObjectOutput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

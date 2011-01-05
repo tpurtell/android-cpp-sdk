@@ -72,8 +72,8 @@ local_ref< javax::crypto::spec::DHParameterSpec > javax::crypto::interfaces::DHK
 		javax::crypto::interfaces::DHKey::J2CPP_CLASS_NAME,
 		javax::crypto::interfaces::DHKey::J2CPP_METHOD_NAME(0),
 		javax::crypto::interfaces::DHKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::crypto::spec::DHParameterSpec > >
-	(get_jobject());
+		local_ref< javax::crypto::spec::DHParameterSpec >
+	>(get_jobject());
 }
 
 

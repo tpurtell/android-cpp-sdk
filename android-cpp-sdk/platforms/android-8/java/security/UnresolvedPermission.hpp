@@ -16,12 +16,14 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 #include <java/security/cert/Certificate.hpp>
@@ -56,7 +58,9 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::security::Guard>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -89,9 +93,19 @@ namespace j2cpp {
 
 
 
+java::security::UnresolvedPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::UnresolvedPermission::operator local_ref<java::security::Permission>() const
 {
 	return local_ref<java::security::Permission>(get_jobject());
+}
+
+java::security::UnresolvedPermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jobject());
 }
 
 java::security::UnresolvedPermission::operator local_ref<java::io::Serializable>() const
@@ -105,8 +119,8 @@ java::security::UnresolvedPermission::UnresolvedPermission(local_ref< java::lang
 	call_new_object<
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(0),
-		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -118,8 +132,8 @@ jboolean java::security::UnresolvedPermission::equals(local_ref< java::lang::Obj
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(1),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::UnresolvedPermission::hashCode()
@@ -128,8 +142,8 @@ jint java::security::UnresolvedPermission::hashCode()
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(2),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::UnresolvedPermission::getActions()
@@ -138,8 +152,8 @@ local_ref< java::lang::String > java::security::UnresolvedPermission::getActions
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(3),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresolvedName()
@@ -148,8 +162,8 @@ local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresol
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(4),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresolvedActions()
@@ -158,8 +172,8 @@ local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresol
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(5),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresolvedType()
@@ -168,8 +182,8 @@ local_ref< java::lang::String > java::security::UnresolvedPermission::getUnresol
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(6),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::security::UnresolvedPermission::getUnresolvedCerts()
@@ -178,8 +192,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::sec
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(7),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 jboolean java::security::UnresolvedPermission::implies(local_ref< java::security::Permission > const &a0)
@@ -188,8 +202,8 @@ jboolean java::security::UnresolvedPermission::implies(local_ref< java::security
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(8),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::UnresolvedPermission::toString()
@@ -198,8 +212,8 @@ local_ref< java::lang::String > java::security::UnresolvedPermission::toString()
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(9),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::PermissionCollection > java::security::UnresolvedPermission::newPermissionCollection()
@@ -208,8 +222,8 @@ local_ref< java::security::PermissionCollection > java::security::UnresolvedPerm
 		java::security::UnresolvedPermission::J2CPP_CLASS_NAME,
 		java::security::UnresolvedPermission::J2CPP_METHOD_NAME(10),
 		java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 

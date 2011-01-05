@@ -92,8 +92,8 @@ java::security::spec::MGF1ParameterSpec::MGF1ParameterSpec(local_ref< java::lang
 	call_new_object<
 		java::security::spec::MGF1ParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::MGF1ParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::MGF1ParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::MGF1ParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -105,8 +105,8 @@ local_ref< java::lang::String > java::security::spec::MGF1ParameterSpec::getDige
 		java::security::spec::MGF1ParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::MGF1ParameterSpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::MGF1ParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

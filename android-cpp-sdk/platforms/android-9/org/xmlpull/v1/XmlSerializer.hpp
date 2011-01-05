@@ -11,8 +11,8 @@
 #define J2CPP_ORG_XMLPULL_V1_XMLSERIALIZER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Boolean; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
@@ -126,8 +126,8 @@ void org::xmlpull::v1::XmlSerializer::setFeature(local_ref< java::lang::String >
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(0),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xmlpull::v1::XmlSerializer::getFeature(local_ref< java::lang::String > const &a0)
@@ -136,8 +136,8 @@ jboolean org::xmlpull::v1::XmlSerializer::getFeature(local_ref< java::lang::Stri
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(1),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -146,8 +146,8 @@ void org::xmlpull::v1::XmlSerializer::setProperty(local_ref< java::lang::String 
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(2),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xmlpull::v1::XmlSerializer::getProperty(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ local_ref< java::lang::Object > org::xmlpull::v1::XmlSerializer::getProperty(loc
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(3),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::setOutput(local_ref< java::io::OutputStream > const &a0, local_ref< java::lang::String > const &a1)
@@ -166,8 +166,8 @@ void org::xmlpull::v1::XmlSerializer::setOutput(local_ref< java::io::OutputStrea
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(4),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xmlpull::v1::XmlSerializer::setOutput(local_ref< java::io::Writer > const &a0)
@@ -176,8 +176,8 @@ void org::xmlpull::v1::XmlSerializer::setOutput(local_ref< java::io::Writer > co
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(5),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::startDocument(local_ref< java::lang::String > const &a0, local_ref< java::lang::Boolean > const &a1)
@@ -186,8 +186,8 @@ void org::xmlpull::v1::XmlSerializer::startDocument(local_ref< java::lang::Strin
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(6),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xmlpull::v1::XmlSerializer::endDocument()
@@ -196,8 +196,8 @@ void org::xmlpull::v1::XmlSerializer::endDocument()
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(7),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::XmlSerializer::setPrefix(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -206,8 +206,8 @@ void org::xmlpull::v1::XmlSerializer::setPrefix(local_ref< java::lang::String > 
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(8),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getPrefix(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -216,8 +216,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getPrefix(local
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(9),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jint org::xmlpull::v1::XmlSerializer::getDepth()
@@ -226,8 +226,8 @@ jint org::xmlpull::v1::XmlSerializer::getDepth()
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(10),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getNamespace()
@@ -236,8 +236,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getNamespace()
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(11),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getName()
@@ -246,8 +246,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlSerializer::getName()
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(12),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::startTag(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -256,8 +256,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::st
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(13),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::attribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -266,8 +266,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::at
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(14),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::endTag(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -276,8 +276,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::en
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(15),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::text(local_ref< java::lang::String > const &a0)
@@ -286,8 +286,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::te
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(16),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject(), a0);
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::text(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -296,8 +296,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlSerializer::te
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(17),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xmlpull::v1::XmlSerializer::cdsect(local_ref< java::lang::String > const &a0)
@@ -306,8 +306,8 @@ void org::xmlpull::v1::XmlSerializer::cdsect(local_ref< java::lang::String > con
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(18),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::entityRef(local_ref< java::lang::String > const &a0)
@@ -316,8 +316,8 @@ void org::xmlpull::v1::XmlSerializer::entityRef(local_ref< java::lang::String > 
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(19),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::processingInstruction(local_ref< java::lang::String > const &a0)
@@ -326,8 +326,8 @@ void org::xmlpull::v1::XmlSerializer::processingInstruction(local_ref< java::lan
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(20),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::comment(local_ref< java::lang::String > const &a0)
@@ -336,8 +336,8 @@ void org::xmlpull::v1::XmlSerializer::comment(local_ref< java::lang::String > co
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(21),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::docdecl(local_ref< java::lang::String > const &a0)
@@ -346,8 +346,8 @@ void org::xmlpull::v1::XmlSerializer::docdecl(local_ref< java::lang::String > co
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(22),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::ignorableWhitespace(local_ref< java::lang::String > const &a0)
@@ -356,8 +356,8 @@ void org::xmlpull::v1::XmlSerializer::ignorableWhitespace(local_ref< java::lang:
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(23),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlSerializer::flush()
@@ -366,8 +366,8 @@ void org::xmlpull::v1::XmlSerializer::flush()
 		org::xmlpull::v1::XmlSerializer::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_NAME(24),
 		org::xmlpull::v1::XmlSerializer::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

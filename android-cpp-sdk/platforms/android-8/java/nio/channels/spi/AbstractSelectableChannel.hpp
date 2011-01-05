@@ -12,16 +12,24 @@
 
 
 namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectableChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectionKey; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class SelectorProvider; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Selector; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/nio/channels/Channel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
 #include <java/nio/channels/SelectableChannel.hpp>
 #include <java/nio/channels/SelectionKey.hpp>
 #include <java/nio/channels/Selector.hpp>
+#include <java/nio/channels/spi/AbstractInterruptibleChannel.hpp>
 #include <java/nio/channels/spi/SelectorProvider.hpp>
 
 
@@ -55,6 +63,11 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		}
 
 		operator local_ref<java::nio::channels::SelectableChannel>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		local_ref< java::nio::channels::spi::SelectorProvider > provider();
@@ -89,6 +102,31 @@ java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::ni
 	return local_ref<java::nio::channels::SelectableChannel>(get_jobject());
 }
 
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 
 local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi::AbstractSelectableChannel::provider()
 {
@@ -96,8 +134,8 @@ local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::spi::SelectorProvider > >
-	(get_jobject());
+		local_ref< java::nio::channels::spi::SelectorProvider >
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::spi::AbstractSelectableChannel::isRegistered()
@@ -106,8 +144,8 @@ jboolean java::nio::channels::spi::AbstractSelectableChannel::isRegistered()
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(2),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::AbstractSelectableChannel::keyFor(local_ref< java::nio::channels::Selector > const &a0)
@@ -116,8 +154,8 @@ local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::Abstrac
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(3),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::channels::SelectionKey > >
-	(get_jobject(), a0);
+		local_ref< java::nio::channels::SelectionKey >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::AbstractSelectableChannel::register_(local_ref< java::nio::channels::Selector > const &a0, jint a1, local_ref< java::lang::Object > const &a2)
@@ -126,8 +164,8 @@ local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::Abstrac
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(4),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::SelectionKey > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::channels::SelectionKey >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -138,8 +176,8 @@ jboolean java::nio::channels::spi::AbstractSelectableChannel::isBlocking()
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(7),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::nio::channels::spi::AbstractSelectableChannel::blockingLock()
@@ -148,8 +186,8 @@ local_ref< java::lang::Object > java::nio::channels::spi::AbstractSelectableChan
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(8),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SelectableChannel > java::nio::channels::spi::AbstractSelectableChannel::configureBlocking(jboolean a0)
@@ -158,8 +196,8 @@ local_ref< java::nio::channels::SelectableChannel > java::nio::channels::spi::Ab
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(9),
 		java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::nio::channels::SelectableChannel > >
-	(get_jobject(), a0);
+		local_ref< java::nio::channels::SelectableChannel >
+	>(get_jobject(), a0);
 }
 
 

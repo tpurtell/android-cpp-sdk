@@ -43,8 +43,8 @@ namespace android { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::util::Printer>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PrintStreamPrinter(local_ref< java::io::PrintStream > const&);
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-android::util::PrintStreamPrinter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::util::PrintStreamPrinter::operator local_ref<android::util::Printer>() const
 {
 	return local_ref<android::util::Printer>(get_jobject());
+}
+
+android::util::PrintStreamPrinter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -83,8 +83,8 @@ android::util::PrintStreamPrinter::PrintStreamPrinter(local_ref< java::io::Print
 	call_new_object<
 		android::util::PrintStreamPrinter::J2CPP_CLASS_NAME,
 		android::util::PrintStreamPrinter::J2CPP_METHOD_NAME(0),
-		android::util::PrintStreamPrinter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::util::PrintStreamPrinter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -96,8 +96,8 @@ void android::util::PrintStreamPrinter::println(local_ref< java::lang::String > 
 		android::util::PrintStreamPrinter::J2CPP_CLASS_NAME,
 		android::util::PrintStreamPrinter::J2CPP_METHOD_NAME(1),
 		android::util::PrintStreamPrinter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

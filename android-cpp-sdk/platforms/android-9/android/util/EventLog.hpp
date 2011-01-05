@@ -125,8 +125,8 @@ jint android::util::EventLog_::Event::getProcessId()
 		android::util::EventLog_::Event::J2CPP_CLASS_NAME,
 		android::util::EventLog_::Event::J2CPP_METHOD_NAME(1),
 		android::util::EventLog_::Event::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::EventLog_::Event::getThreadId()
@@ -135,8 +135,8 @@ jint android::util::EventLog_::Event::getThreadId()
 		android::util::EventLog_::Event::J2CPP_CLASS_NAME,
 		android::util::EventLog_::Event::J2CPP_METHOD_NAME(2),
 		android::util::EventLog_::Event::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::util::EventLog_::Event::getTimeNanos()
@@ -145,8 +145,8 @@ jlong android::util::EventLog_::Event::getTimeNanos()
 		android::util::EventLog_::Event::J2CPP_CLASS_NAME,
 		android::util::EventLog_::Event::J2CPP_METHOD_NAME(3),
 		android::util::EventLog_::Event::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint android::util::EventLog_::Event::getTag()
@@ -155,8 +155,8 @@ jint android::util::EventLog_::Event::getTag()
 		android::util::EventLog_::Event::J2CPP_CLASS_NAME,
 		android::util::EventLog_::Event::J2CPP_METHOD_NAME(4),
 		android::util::EventLog_::Event::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::util::EventLog_::Event::getData()
@@ -165,8 +165,8 @@ local_ref< java::lang::Object > android::util::EventLog_::Event::getData()
 		android::util::EventLog_::Event::J2CPP_CLASS_NAME,
 		android::util::EventLog_::Event::J2CPP_METHOD_NAME(5),
 		android::util::EventLog_::Event::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -191,8 +191,8 @@ android::util::EventLog::EventLog()
 	call_new_object<
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(0),
-		android::util::EventLog::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::EventLog::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -204,8 +204,8 @@ jint android::util::EventLog::writeEvent(jint a0, jint a1)
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(1),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::EventLog::writeEvent(jint a0, jlong a1)
@@ -214,8 +214,8 @@ jint android::util::EventLog::writeEvent(jint a0, jlong a1)
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(2),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::EventLog::writeEvent(jint a0, local_ref< java::lang::String > const &a1)
@@ -224,8 +224,8 @@ jint android::util::EventLog::writeEvent(jint a0, local_ref< java::lang::String 
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(3),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::EventLog::writeEvent(jint a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -234,8 +234,8 @@ jint android::util::EventLog::writeEvent(jint a0, local_ref< array< local_ref< j
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(4),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::util::EventLog::readEvents(local_ref< array<jint,1> > const &a0, local_ref< java::util::Collection > const &a1)
@@ -244,8 +244,8 @@ void android::util::EventLog::readEvents(local_ref< array<jint,1> > const &a0, l
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(5),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::util::EventLog::getTagName(jint a0)
@@ -254,8 +254,8 @@ local_ref< java::lang::String > android::util::EventLog::getTagName(jint a0)
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(6),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint android::util::EventLog::getTagCode(local_ref< java::lang::String > const &a0)
@@ -264,8 +264,8 @@ jint android::util::EventLog::getTagCode(local_ref< java::lang::String > const &
 		android::util::EventLog::J2CPP_CLASS_NAME,
 		android::util::EventLog::J2CPP_METHOD_NAME(7),
 		android::util::EventLog::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

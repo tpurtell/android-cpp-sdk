@@ -11,12 +11,16 @@
 #define J2CPP_ANDROID_NET_SIP_SIPEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
-namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -43,6 +47,9 @@ namespace android { namespace net { namespace sip {
 		}
 
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		SipException();
@@ -72,14 +79,29 @@ android::net::sip::SipException::operator local_ref<java::lang::Exception>() con
 	return local_ref<java::lang::Exception>(get_jobject());
 }
 
+android::net::sip::SipException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::net::sip::SipException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::net::sip::SipException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 android::net::sip::SipException::SipException()
 : object<android::net::sip::SipException>(
 	call_new_object<
 		android::net::sip::SipException::J2CPP_CLASS_NAME,
 		android::net::sip::SipException::J2CPP_METHOD_NAME(0),
-		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +113,8 @@ android::net::sip::SipException::SipException(local_ref< java::lang::String > co
 	call_new_object<
 		android::net::sip::SipException::J2CPP_CLASS_NAME,
 		android::net::sip::SipException::J2CPP_METHOD_NAME(1),
-		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -104,8 +126,8 @@ android::net::sip::SipException::SipException(local_ref< java::lang::String > co
 	call_new_object<
 		android::net::sip::SipException::J2CPP_CLASS_NAME,
 		android::net::sip::SipException::J2CPP_METHOD_NAME(2),
-		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::net::sip::SipException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }

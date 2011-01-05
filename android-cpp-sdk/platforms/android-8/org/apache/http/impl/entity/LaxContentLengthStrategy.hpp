@@ -41,8 +41,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace e
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::entity::ContentLengthStrategy>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		LaxContentLengthStrategy();
@@ -68,14 +68,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::entity::LaxContentLengthStrategy::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::entity::LaxContentLengthStrategy::operator local_ref<org::apache::http::entity::ContentLengthStrategy>() const
 {
 	return local_ref<org::apache::http::entity::ContentLengthStrategy>(get_jobject());
+}
+
+org::apache::http::impl::entity::LaxContentLengthStrategy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -84,8 +84,8 @@ org::apache::http::impl::entity::LaxContentLengthStrategy::LaxContentLengthStrat
 	call_new_object<
 		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ jlong org::apache::http::impl::entity::LaxContentLengthStrategy::determineLength
 		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::entity::LaxContentLengthStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

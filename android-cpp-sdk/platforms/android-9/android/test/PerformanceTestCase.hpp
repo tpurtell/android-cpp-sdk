@@ -111,8 +111,8 @@ void android::test::PerformanceTestCase_::Intermediates::setInternalIterations(j
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_NAME(0),
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::PerformanceTestCase_::Intermediates::startTiming(jboolean a0)
@@ -121,8 +121,8 @@ void android::test::PerformanceTestCase_::Intermediates::startTiming(jboolean a0
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_NAME(1),
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::PerformanceTestCase_::Intermediates::addIntermediate(local_ref< java::lang::String > const &a0)
@@ -131,8 +131,8 @@ void android::test::PerformanceTestCase_::Intermediates::addIntermediate(local_r
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_NAME(2),
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::PerformanceTestCase_::Intermediates::addIntermediate(local_ref< java::lang::String > const &a0, jlong a1)
@@ -141,8 +141,8 @@ void android::test::PerformanceTestCase_::Intermediates::addIntermediate(local_r
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_NAME(3),
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::PerformanceTestCase_::Intermediates::finishTiming(jboolean a0)
@@ -151,8 +151,8 @@ void android::test::PerformanceTestCase_::Intermediates::finishTiming(jboolean a
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_NAME(4),
 		android::test::PerformanceTestCase_::Intermediates::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -176,8 +176,8 @@ jint android::test::PerformanceTestCase::startPerformance(local_ref< android::te
 		android::test::PerformanceTestCase::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase::J2CPP_METHOD_NAME(0),
 		android::test::PerformanceTestCase::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::PerformanceTestCase::isPerformanceOnly()
@@ -186,8 +186,8 @@ jboolean android::test::PerformanceTestCase::isPerformanceOnly()
 		android::test::PerformanceTestCase::J2CPP_CLASS_NAME,
 		android::test::PerformanceTestCase::J2CPP_METHOD_NAME(1),
 		android::test::PerformanceTestCase::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

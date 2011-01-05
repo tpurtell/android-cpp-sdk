@@ -59,8 +59,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HeaderGroup();
@@ -99,14 +99,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::HeaderGroup::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::HeaderGroup::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+org::apache::http::message::HeaderGroup::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -115,8 +115,8 @@ org::apache::http::message::HeaderGroup::HeaderGroup()
 	call_new_object<
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -128,8 +128,8 @@ void org::apache::http::message::HeaderGroup::clear()
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::message::HeaderGroup::addHeader(local_ref< org::apache::http::Header > const &a0)
@@ -138,8 +138,8 @@ void org::apache::http::message::HeaderGroup::addHeader(local_ref< org::apache::
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::HeaderGroup::removeHeader(local_ref< org::apache::http::Header > const &a0)
@@ -148,8 +148,8 @@ void org::apache::http::message::HeaderGroup::removeHeader(local_ref< org::apach
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::HeaderGroup::updateHeader(local_ref< org::apache::http::Header > const &a0)
@@ -158,8 +158,8 @@ void org::apache::http::message::HeaderGroup::updateHeader(local_ref< org::apach
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::HeaderGroup::setHeaders(local_ref< array< local_ref< org::apache::http::Header >, 1> > const &a0)
@@ -168,8 +168,8 @@ void org::apache::http::message::HeaderGroup::setHeaders(local_ref< array< local
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::getCondensedHeader(local_ref< java::lang::String > const &a0)
@@ -178,8 +178,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http::message::HeaderGroup::getHeaders(local_ref< java::lang::String > const &a0)
@@ -188,8 +188,8 @@ local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< org::apache::http::Header >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< org::apache::http::Header >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::getFirstHeader(local_ref< java::lang::String > const &a0)
@@ -198,8 +198,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(8),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::getLastHeader(local_ref< java::lang::String > const &a0)
@@ -208,8 +208,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::HeaderGroup::
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(9),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http::message::HeaderGroup::getAllHeaders()
@@ -218,8 +218,8 @@ local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< org::apache::http::Header >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::Header >, 1> >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::message::HeaderGroup::containsHeader(local_ref< java::lang::String > const &a0)
@@ -228,8 +228,8 @@ jboolean org::apache::http::message::HeaderGroup::containsHeader(local_ref< java
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(11),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HeaderIterator > org::apache::http::message::HeaderGroup::iterator()
@@ -238,8 +238,8 @@ local_ref< org::apache::http::HeaderIterator > org::apache::http::message::Heade
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(12),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::apache::http::HeaderIterator > >
-	(get_jobject());
+		local_ref< org::apache::http::HeaderIterator >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HeaderIterator > org::apache::http::message::HeaderGroup::iterator(local_ref< java::lang::String > const &a0)
@@ -248,8 +248,8 @@ local_ref< org::apache::http::HeaderIterator > org::apache::http::message::Heade
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(13),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::apache::http::HeaderIterator > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HeaderIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::message::HeaderGroup > org::apache::http::message::HeaderGroup::copy()
@@ -258,8 +258,8 @@ local_ref< org::apache::http::message::HeaderGroup > org::apache::http::message:
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(14),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::apache::http::message::HeaderGroup > >
-	(get_jobject());
+		local_ref< org::apache::http::message::HeaderGroup >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::HeaderGroup::clone()
@@ -268,8 +268,8 @@ local_ref< java::lang::Object > org::apache::http::message::HeaderGroup::clone()
 		org::apache::http::message::HeaderGroup::J2CPP_CLASS_NAME,
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_NAME(15),
 		org::apache::http::message::HeaderGroup::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

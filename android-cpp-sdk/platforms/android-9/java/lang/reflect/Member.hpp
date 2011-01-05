@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_REFLECT_MEMBER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -85,8 +85,8 @@ local_ref< java::lang::Class > java::lang::reflect::Member::getDeclaringClass()
 		java::lang::reflect::Member::J2CPP_CLASS_NAME,
 		java::lang::reflect::Member::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::Member::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 jint java::lang::reflect::Member::getModifiers()
@@ -95,8 +95,8 @@ jint java::lang::reflect::Member::getModifiers()
 		java::lang::reflect::Member::J2CPP_CLASS_NAME,
 		java::lang::reflect::Member::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::Member::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::reflect::Member::getName()
@@ -105,8 +105,8 @@ local_ref< java::lang::String > java::lang::reflect::Member::getName()
 		java::lang::reflect::Member::J2CPP_CLASS_NAME,
 		java::lang::reflect::Member::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::Member::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::lang::reflect::Member::isSynthetic()
@@ -115,8 +115,8 @@ jboolean java::lang::reflect::Member::isSynthetic()
 		java::lang::reflect::Member::J2CPP_CLASS_NAME,
 		java::lang::reflect::Member::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::Member::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

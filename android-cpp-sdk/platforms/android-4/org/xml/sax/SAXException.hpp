@@ -11,12 +11,18 @@
 #define J2CPP_ORG_XML_SAX_SAXEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -44,7 +50,10 @@ namespace org { namespace xml { namespace sax {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SAXException();
@@ -73,9 +82,24 @@ namespace j2cpp {
 
 
 
+org::xml::sax::SAXException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+org::xml::sax::SAXException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 org::xml::sax::SAXException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+org::xml::sax::SAXException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -84,8 +108,8 @@ org::xml::sax::SAXException::SAXException()
 	call_new_object<
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(0),
-		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +121,8 @@ org::xml::sax::SAXException::SAXException(local_ref< java::lang::String > const 
 	call_new_object<
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(1),
-		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -110,8 +134,8 @@ org::xml::sax::SAXException::SAXException(local_ref< java::lang::Exception > con
 	call_new_object<
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(2),
-		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -123,8 +147,8 @@ org::xml::sax::SAXException::SAXException(local_ref< java::lang::String > const 
 	call_new_object<
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(3),
-		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -136,8 +160,8 @@ local_ref< java::lang::String > org::xml::sax::SAXException::getMessage()
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(4),
 		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Exception > org::xml::sax::SAXException::getException()
@@ -146,8 +170,8 @@ local_ref< java::lang::Exception > org::xml::sax::SAXException::getException()
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(5),
 		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Exception > >
-	(get_jobject());
+		local_ref< java::lang::Exception >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::SAXException::toString()
@@ -156,8 +180,8 @@ local_ref< java::lang::String > org::xml::sax::SAXException::toString()
 		org::xml::sax::SAXException::J2CPP_CLASS_NAME,
 		org::xml::sax::SAXException::J2CPP_METHOD_NAME(6),
 		org::xml::sax::SAXException::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

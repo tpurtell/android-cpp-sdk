@@ -84,8 +84,8 @@ org::apache::http::impl::entity::StrictContentLengthStrategy::StrictContentLengt
 	call_new_object<
 		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ jlong org::apache::http::impl::entity::StrictContentLengthStrategy::determineLen
 		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

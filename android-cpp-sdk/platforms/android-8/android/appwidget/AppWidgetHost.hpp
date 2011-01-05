@@ -91,8 +91,8 @@ android::appwidget::AppWidgetHost::AppWidgetHost(local_ref< android::content::Co
 	call_new_object<
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(0),
-		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -104,8 +104,8 @@ void android::appwidget::AppWidgetHost::startListening()
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(1),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::appwidget::AppWidgetHost::stopListening()
@@ -114,8 +114,8 @@ void android::appwidget::AppWidgetHost::stopListening()
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(2),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::appwidget::AppWidgetHost::allocateAppWidgetId()
@@ -124,8 +124,8 @@ jint android::appwidget::AppWidgetHost::allocateAppWidgetId()
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(3),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::appwidget::AppWidgetHost::deleteAppWidgetId(jint a0)
@@ -134,8 +134,8 @@ void android::appwidget::AppWidgetHost::deleteAppWidgetId(jint a0)
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(4),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::appwidget::AppWidgetHost::deleteHost()
@@ -144,8 +144,8 @@ void android::appwidget::AppWidgetHost::deleteHost()
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(5),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::appwidget::AppWidgetHost::deleteAllHosts()
@@ -154,8 +154,8 @@ void android::appwidget::AppWidgetHost::deleteAllHosts()
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(6),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 local_ref< android::appwidget::AppWidgetHostView > android::appwidget::AppWidgetHost::createView(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::appwidget::AppWidgetProviderInfo > const &a2)
@@ -164,8 +164,8 @@ local_ref< android::appwidget::AppWidgetHostView > android::appwidget::AppWidget
 		android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(7),
 		android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::appwidget::AppWidgetHostView > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::appwidget::AppWidgetHostView >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

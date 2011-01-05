@@ -75,8 +75,8 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		WallpaperInfo(local_ref< android::content::Context > const&, local_ref< android::content::pm::ResolveInfo > const&);
@@ -114,14 +114,14 @@ namespace j2cpp {
 
 
 
-android::app::WallpaperInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::WallpaperInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::WallpaperInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -130,8 +130,8 @@ android::app::WallpaperInfo::WallpaperInfo(local_ref< android::content::Context 
 	call_new_object<
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(0),
-		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -143,8 +143,8 @@ local_ref< java::lang::String > android::app::WallpaperInfo::getPackageName()
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(1),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::WallpaperInfo::getServiceName()
@@ -153,8 +153,8 @@ local_ref< java::lang::String > android::app::WallpaperInfo::getServiceName()
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(2),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::content::pm::ServiceInfo > android::app::WallpaperInfo::getServiceInfo()
@@ -163,8 +163,8 @@ local_ref< android::content::pm::ServiceInfo > android::app::WallpaperInfo::getS
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(3),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::pm::ServiceInfo > >
-	(get_jobject());
+		local_ref< android::content::pm::ServiceInfo >
+	>(get_jobject());
 }
 
 local_ref< android::content::ComponentName > android::app::WallpaperInfo::getComponent()
@@ -173,8 +173,8 @@ local_ref< android::content::ComponentName > android::app::WallpaperInfo::getCom
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(4),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject());
+		local_ref< android::content::ComponentName >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadLabel(local_ref< android::content::pm::PackageManager > const &a0)
@@ -183,8 +183,8 @@ local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadLabel(loc
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(5),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperInfo::loadIcon(local_ref< android::content::pm::PackageManager > const &a0)
@@ -193,8 +193,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperInfo::
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(6),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperInfo::loadThumbnail(local_ref< android::content::pm::PackageManager > const &a0)
@@ -203,8 +203,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperInfo::
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(7),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadAuthor(local_ref< android::content::pm::PackageManager > const &a0)
@@ -213,8 +213,8 @@ local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadAuthor(lo
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(8),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadDescription(local_ref< android::content::pm::PackageManager > const &a0)
@@ -223,8 +223,8 @@ local_ref< java::lang::CharSequence > android::app::WallpaperInfo::loadDescripti
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(9),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::app::WallpaperInfo::getSettingsActivity()
@@ -233,8 +233,8 @@ local_ref< java::lang::String > android::app::WallpaperInfo::getSettingsActivity
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(10),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::app::WallpaperInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -243,8 +243,8 @@ void android::app::WallpaperInfo::dump(local_ref< android::util::Printer > const
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(11),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::app::WallpaperInfo::toString()
@@ -253,8 +253,8 @@ local_ref< java::lang::String > android::app::WallpaperInfo::toString()
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(12),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::app::WallpaperInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -263,8 +263,8 @@ void android::app::WallpaperInfo::writeToParcel(local_ref< android::os::Parcel >
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(13),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::WallpaperInfo::describeContents()
@@ -273,8 +273,8 @@ jint android::app::WallpaperInfo::describeContents()
 		android::app::WallpaperInfo::J2CPP_CLASS_NAME,
 		android::app::WallpaperInfo::J2CPP_METHOD_NAME(14),
 		android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

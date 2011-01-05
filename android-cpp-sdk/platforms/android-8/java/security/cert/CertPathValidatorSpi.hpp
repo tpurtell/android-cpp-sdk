@@ -78,8 +78,8 @@ java::security::cert::CertPathValidatorSpi::CertPathValidatorSpi()
 	call_new_object<
 		java::security::cert::CertPathValidatorSpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorSpi::J2CPP_METHOD_NAME(0),
-		java::security::cert::CertPathValidatorSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::cert::CertPathValidatorSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ local_ref< java::security::cert::CertPathValidatorResult > java::security::cert:
 		java::security::cert::CertPathValidatorSpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorSpi::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertPathValidatorSpi::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertPathValidatorResult > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::cert::CertPathValidatorResult >
+	>(get_jobject(), a0, a1);
 }
 
 

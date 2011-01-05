@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_SECURITY_PERMISSIONS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 #include <java/util/Enumeration.hpp>
@@ -45,6 +47,7 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::PermissionCollection>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -71,6 +74,11 @@ namespace j2cpp {
 
 
 
+java::security::Permissions::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::Permissions::operator local_ref<java::security::PermissionCollection>() const
 {
 	return local_ref<java::security::PermissionCollection>(get_jobject());
@@ -87,8 +95,8 @@ java::security::Permissions::Permissions()
 	call_new_object<
 		java::security::Permissions::J2CPP_CLASS_NAME,
 		java::security::Permissions::J2CPP_METHOD_NAME(0),
-		java::security::Permissions::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::Permissions::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +108,8 @@ void java::security::Permissions::add(local_ref< java::security::Permission > co
 		java::security::Permissions::J2CPP_CLASS_NAME,
 		java::security::Permissions::J2CPP_METHOD_NAME(1),
 		java::security::Permissions::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::Permissions::elements()
@@ -110,8 +118,8 @@ local_ref< java::util::Enumeration > java::security::Permissions::elements()
 		java::security::Permissions::J2CPP_CLASS_NAME,
 		java::security::Permissions::J2CPP_METHOD_NAME(2),
 		java::security::Permissions::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jboolean java::security::Permissions::implies(local_ref< java::security::Permission > const &a0)
@@ -120,8 +128,8 @@ jboolean java::security::Permissions::implies(local_ref< java::security::Permiss
 		java::security::Permissions::J2CPP_CLASS_NAME,
 		java::security::Permissions::J2CPP_METHOD_NAME(3),
 		java::security::Permissions::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

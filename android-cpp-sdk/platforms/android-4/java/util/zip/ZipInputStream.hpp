@@ -11,12 +11,18 @@
 #define J2CPP_JAVA_UTIL_ZIP_ZIPINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class InflaterInputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/zip/InflaterInputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
 
@@ -47,7 +53,11 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::util::zip::InflaterInputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ZipInputStream(local_ref< java::io::InputStream > const&);
@@ -76,9 +86,29 @@ namespace j2cpp {
 
 
 
+java::util::zip::ZipInputStream::operator local_ref<java::io::FilterInputStream>() const
+{
+	return local_ref<java::io::FilterInputStream>(get_jobject());
+}
+
+java::util::zip::ZipInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+java::util::zip::ZipInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::util::zip::ZipInputStream::operator local_ref<java::util::zip::InflaterInputStream>() const
 {
 	return local_ref<java::util::zip::InflaterInputStream>(get_jobject());
+}
+
+java::util::zip::ZipInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +117,8 @@ java::util::zip::ZipInputStream::ZipInputStream(local_ref< java::io::InputStream
 	call_new_object<
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(0),
-		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -100,8 +130,8 @@ void java::util::zip::ZipInputStream::close()
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(1),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::ZipInputStream::closeEntry()
@@ -110,8 +140,8 @@ void java::util::zip::ZipInputStream::closeEntry()
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(2),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::zip::ZipEntry > java::util::zip::ZipInputStream::getNextEntry()
@@ -120,8 +150,8 @@ local_ref< java::util::zip::ZipEntry > java::util::zip::ZipInputStream::getNextE
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(3),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::zip::ZipEntry > >
-	(get_jobject());
+		local_ref< java::util::zip::ZipEntry >
+	>(get_jobject());
 }
 
 jint java::util::zip::ZipInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -130,8 +160,8 @@ jint java::util::zip::ZipInputStream::read(local_ref< array<jbyte,1> > const &a0
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(4),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::util::zip::ZipInputStream::skip(jlong a0)
@@ -140,8 +170,8 @@ jlong java::util::zip::ZipInputStream::skip(jlong a0)
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(5),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint java::util::zip::ZipInputStream::available()
@@ -150,8 +180,8 @@ jint java::util::zip::ZipInputStream::available()
 		java::util::zip::ZipInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(6),
 		java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

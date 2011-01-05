@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class PooledConnection; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 namespace j2cpp { namespace java { namespace sql { class PreparedStatement; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/sql/PreparedStatement.hpp>
 #include <java/sql/SQLException.hpp>
 #include <java/util/EventObject.hpp>
@@ -45,7 +49,9 @@ namespace javax { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		StatementEvent(local_ref< javax::sql::PooledConnection > const&, local_ref< java::sql::PreparedStatement > const&, local_ref< java::sql::SQLException > const&);
@@ -70,9 +76,19 @@ namespace j2cpp {
 
 
 
+javax::sql::StatementEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::sql::StatementEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
+}
+
+javax::sql::StatementEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -81,8 +97,8 @@ javax::sql::StatementEvent::StatementEvent(local_ref< javax::sql::PooledConnecti
 	call_new_object<
 		javax::sql::StatementEvent::J2CPP_CLASS_NAME,
 		javax::sql::StatementEvent::J2CPP_METHOD_NAME(0),
-		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -94,8 +110,8 @@ javax::sql::StatementEvent::StatementEvent(local_ref< javax::sql::PooledConnecti
 	call_new_object<
 		javax::sql::StatementEvent::J2CPP_CLASS_NAME,
 		javax::sql::StatementEvent::J2CPP_METHOD_NAME(1),
-		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -107,8 +123,8 @@ local_ref< java::sql::PreparedStatement > javax::sql::StatementEvent::getStateme
 		javax::sql::StatementEvent::J2CPP_CLASS_NAME,
 		javax::sql::StatementEvent::J2CPP_METHOD_NAME(2),
 		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::sql::PreparedStatement > >
-	(get_jobject());
+		local_ref< java::sql::PreparedStatement >
+	>(get_jobject());
 }
 
 local_ref< java::sql::SQLException > javax::sql::StatementEvent::getSQLException()
@@ -117,8 +133,8 @@ local_ref< java::sql::SQLException > javax::sql::StatementEvent::getSQLException
 		javax::sql::StatementEvent::J2CPP_CLASS_NAME,
 		javax::sql::StatementEvent::J2CPP_METHOD_NAME(3),
 		javax::sql::StatementEvent::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::sql::SQLException > >
-	(get_jobject());
+		local_ref< java::sql::SQLException >
+	>(get_jobject());
 }
 
 

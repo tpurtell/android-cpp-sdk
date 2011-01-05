@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_LOGGING_ERRORMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -89,8 +89,8 @@ java::util::logging::ErrorManager::ErrorManager()
 	call_new_object<
 		java::util::logging::ErrorManager::J2CPP_CLASS_NAME,
 		java::util::logging::ErrorManager::J2CPP_METHOD_NAME(0),
-		java::util::logging::ErrorManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::logging::ErrorManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +102,8 @@ void java::util::logging::ErrorManager::error(local_ref< java::lang::String > co
 		java::util::logging::ErrorManager::J2CPP_CLASS_NAME,
 		java::util::logging::ErrorManager::J2CPP_METHOD_NAME(1),
 		java::util::logging::ErrorManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

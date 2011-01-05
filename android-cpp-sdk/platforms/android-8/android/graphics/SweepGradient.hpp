@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Shader.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,6 +40,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Shader>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SweepGradient(jfloat, jfloat, local_ref< array<jint,1> > const&, local_ref< array<jfloat,1> > const&);
@@ -65,14 +68,19 @@ android::graphics::SweepGradient::operator local_ref<android::graphics::Shader>(
 	return local_ref<android::graphics::Shader>(get_jobject());
 }
 
+android::graphics::SweepGradient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::SweepGradient::SweepGradient(jfloat a0, jfloat a1, local_ref< array<jint,1> > const &a2, local_ref< array<jfloat,1> > const &a3)
 : object<android::graphics::SweepGradient>(
 	call_new_object<
 		android::graphics::SweepGradient::J2CPP_CLASS_NAME,
 		android::graphics::SweepGradient::J2CPP_METHOD_NAME(0),
-		android::graphics::SweepGradient::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::graphics::SweepGradient::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -84,8 +92,8 @@ android::graphics::SweepGradient::SweepGradient(jfloat a0, jfloat a1, jint a2, j
 	call_new_object<
 		android::graphics::SweepGradient::J2CPP_CLASS_NAME,
 		android::graphics::SweepGradient::J2CPP_METHOD_NAME(1),
-		android::graphics::SweepGradient::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		android::graphics::SweepGradient::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }

@@ -84,8 +84,8 @@ jint java::util::regex::MatchResult::end()
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(0),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::MatchResult::end(jint a0)
@@ -94,8 +94,8 @@ jint java::util::regex::MatchResult::end(jint a0)
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(1),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::regex::MatchResult::group()
@@ -104,8 +104,8 @@ local_ref< java::lang::String > java::util::regex::MatchResult::group()
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(2),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::regex::MatchResult::group(jint a0)
@@ -114,8 +114,8 @@ local_ref< java::lang::String > java::util::regex::MatchResult::group(jint a0)
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(3),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::util::regex::MatchResult::groupCount()
@@ -124,8 +124,8 @@ jint java::util::regex::MatchResult::groupCount()
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(4),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::MatchResult::start()
@@ -134,8 +134,8 @@ jint java::util::regex::MatchResult::start()
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(5),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::MatchResult::start(jint a0)
@@ -144,8 +144,8 @@ jint java::util::regex::MatchResult::start(jint a0)
 		java::util::regex::MatchResult::J2CPP_CLASS_NAME,
 		java::util::regex::MatchResult::J2CPP_METHOD_NAME(6),
 		java::util::regex::MatchResult::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

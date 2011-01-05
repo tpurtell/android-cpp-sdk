@@ -99,6 +99,7 @@ namespace android { namespace test { namespace mock {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::res::Resources>() const;
 
 
@@ -157,6 +158,11 @@ namespace j2cpp {
 
 
 
+android::test::mock::MockResources::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::test::mock::MockResources::operator local_ref<android::content::res::Resources>() const
 {
 	return local_ref<android::content::res::Resources>(get_jobject());
@@ -168,8 +174,8 @@ android::test::mock::MockResources::MockResources()
 	call_new_object<
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(0),
-		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -181,8 +187,8 @@ void android::test::mock::MockResources::updateConfiguration(local_ref< android:
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(1),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::test::mock::MockResources::getText(jint a0)
@@ -191,8 +197,8 @@ local_ref< java::lang::CharSequence > android::test::mock::MockResources::getTex
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(2),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::test::mock::MockResources::getQuantityText(jint a0, jint a1)
@@ -201,8 +207,8 @@ local_ref< java::lang::CharSequence > android::test::mock::MockResources::getQua
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(3),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getString(jint a0)
@@ -211,8 +217,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getString(ji
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(4),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getString(jint a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -221,8 +227,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getString(ji
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(5),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getQuantityString(jint a0, jint a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2)
@@ -231,8 +237,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getQuantityS
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(6),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getQuantityString(jint a0, jint a1)
@@ -241,8 +247,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getQuantityS
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(7),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::test::mock::MockResources::getText(jint a0, local_ref< java::lang::CharSequence > const &a1)
@@ -251,8 +257,8 @@ local_ref< java::lang::CharSequence > android::test::mock::MockResources::getTex
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(8),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::test::mock::MockResources::getTextArray(jint a0)
@@ -261,8 +267,8 @@ local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::test::moc
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(9),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< java::lang::CharSequence >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::CharSequence >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::test::mock::MockResources::getStringArray(jint a0)
@@ -271,8 +277,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::test::mock::Moc
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(10),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > android::test::mock::MockResources::getIntArray(jint a0)
@@ -281,8 +287,8 @@ local_ref< array<jint,1> > android::test::mock::MockResources::getIntArray(jint 
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(11),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::TypedArray > android::test::mock::MockResources::obtainTypedArray(jint a0)
@@ -291,8 +297,8 @@ local_ref< android::content::res::TypedArray > android::test::mock::MockResource
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(12),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0);
 }
 
 jfloat android::test::mock::MockResources::getDimension(jint a0)
@@ -301,8 +307,8 @@ jfloat android::test::mock::MockResources::getDimension(jint a0)
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(13),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(13), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockResources::getDimensionPixelOffset(jint a0)
@@ -311,8 +317,8 @@ jint android::test::mock::MockResources::getDimensionPixelOffset(jint a0)
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(14),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockResources::getDimensionPixelSize(jint a0)
@@ -321,8 +327,8 @@ jint android::test::mock::MockResources::getDimensionPixelSize(jint a0)
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(15),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::test::mock::MockResources::getDrawable(jint a0)
@@ -331,8 +337,8 @@ local_ref< android::graphics::drawable::Drawable > android::test::mock::MockReso
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(16),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Movie > android::test::mock::MockResources::getMovie(jint a0)
@@ -341,8 +347,8 @@ local_ref< android::graphics::Movie > android::test::mock::MockResources::getMov
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(17),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::graphics::Movie > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Movie >
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockResources::getColor(jint a0)
@@ -351,8 +357,8 @@ jint android::test::mock::MockResources::getColor(jint a0)
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(18),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::ColorStateList > android::test::mock::MockResources::getColorStateList(jint a0)
@@ -361,8 +367,8 @@ local_ref< android::content::res::ColorStateList > android::test::mock::MockReso
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(19),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockResources::getInteger(jint a0)
@@ -371,8 +377,8 @@ jint android::test::mock::MockResources::getInteger(jint a0)
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(20),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::test::mock::MockResources::getLayout(jint a0)
@@ -381,8 +387,8 @@ local_ref< android::content::res::XmlResourceParser > android::test::mock::MockR
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(21),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::test::mock::MockResources::getAnimation(jint a0)
@@ -391,8 +397,8 @@ local_ref< android::content::res::XmlResourceParser > android::test::mock::MockR
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(22),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::test::mock::MockResources::getXml(jint a0)
@@ -401,8 +407,8 @@ local_ref< android::content::res::XmlResourceParser > android::test::mock::MockR
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(23),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > android::test::mock::MockResources::openRawResource(jint a0)
@@ -411,8 +417,8 @@ local_ref< java::io::InputStream > android::test::mock::MockResources::openRawRe
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(24),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::test::mock::MockResources::openRawResourceFd(jint a0)
@@ -421,8 +427,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::test::mock::Moc
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(25),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0);
 }
 
 void android::test::mock::MockResources::getValue(jint a0, local_ref< android::util::TypedValue > const &a1, jboolean a2)
@@ -431,8 +437,8 @@ void android::test::mock::MockResources::getValue(jint a0, local_ref< android::u
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(26),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::test::mock::MockResources::getValue(local_ref< java::lang::String > const &a0, local_ref< android::util::TypedValue > const &a1, jboolean a2)
@@ -441,8 +447,8 @@ void android::test::mock::MockResources::getValue(local_ref< java::lang::String 
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(27),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::content::res::TypedArray > android::test::mock::MockResources::obtainAttributes(local_ref< android::util::AttributeSet > const &a0, local_ref< array<jint,1> > const &a1)
@@ -451,8 +457,8 @@ local_ref< android::content::res::TypedArray > android::test::mock::MockResource
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(28),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::util::DisplayMetrics > android::test::mock::MockResources::getDisplayMetrics()
@@ -461,8 +467,8 @@ local_ref< android::util::DisplayMetrics > android::test::mock::MockResources::g
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(29),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::util::DisplayMetrics > >
-	(get_jobject());
+		local_ref< android::util::DisplayMetrics >
+	>(get_jobject());
 }
 
 local_ref< android::content::res::Configuration > android::test::mock::MockResources::getConfiguration()
@@ -471,8 +477,8 @@ local_ref< android::content::res::Configuration > android::test::mock::MockResou
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(30),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::content::res::Configuration > >
-	(get_jobject());
+		local_ref< android::content::res::Configuration >
+	>(get_jobject());
 }
 
 jint android::test::mock::MockResources::getIdentifier(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -481,8 +487,8 @@ jint android::test::mock::MockResources::getIdentifier(local_ref< java::lang::St
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(31),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getResourceName(jint a0)
@@ -491,8 +497,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getResourceN
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(32),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getResourcePackageName(jint a0)
@@ -501,8 +507,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getResourceP
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(33),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getResourceTypeName(jint a0)
@@ -511,8 +517,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getResourceT
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(34),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockResources::getResourceEntryName(jint a0)
@@ -521,8 +527,8 @@ local_ref< java::lang::String > android::test::mock::MockResources::getResourceE
 		android::test::mock::MockResources::J2CPP_CLASS_NAME,
 		android::test::mock::MockResources::J2CPP_METHOD_NAME(35),
 		android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

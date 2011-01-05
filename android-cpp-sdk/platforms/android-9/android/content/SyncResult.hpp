@@ -135,8 +135,8 @@ android::content::SyncResult::SyncResult()
 	call_new_object<
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(0),
-		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , syncAlreadyInProgress(get_jobject())
 , tooManyDeletions(get_jobject())
@@ -157,8 +157,8 @@ jboolean android::content::SyncResult::hasHardError()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(1),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::content::SyncResult::hasSoftError()
@@ -167,8 +167,8 @@ jboolean android::content::SyncResult::hasSoftError()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(2),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::content::SyncResult::hasError()
@@ -177,8 +177,8 @@ jboolean android::content::SyncResult::hasError()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(3),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::content::SyncResult::madeSomeProgress()
@@ -187,8 +187,8 @@ jboolean android::content::SyncResult::madeSomeProgress()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(4),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::content::SyncResult::clear()
@@ -197,8 +197,8 @@ void android::content::SyncResult::clear()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(5),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::content::SyncResult::describeContents()
@@ -207,8 +207,8 @@ jint android::content::SyncResult::describeContents()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(6),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::SyncResult::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -217,8 +217,8 @@ void android::content::SyncResult::writeToParcel(local_ref< android::os::Parcel 
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(7),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::SyncResult::toString()
@@ -227,8 +227,8 @@ local_ref< java::lang::String > android::content::SyncResult::toString()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(8),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::SyncResult::toDebugString()
@@ -237,8 +237,8 @@ local_ref< java::lang::String > android::content::SyncResult::toDebugString()
 		android::content::SyncResult::J2CPP_CLASS_NAME,
 		android::content::SyncResult::J2CPP_METHOD_NAME(9),
 		android::content::SyncResult::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -12,12 +12,18 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/sql/SQLException.hpp>
 
 
@@ -45,8 +51,11 @@ namespace java { namespace sql {
 		{
 		}
 
-		operator local_ref<java::sql::SQLException>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::sql::SQLException>() const;
 
 
 		SQLWarning();
@@ -73,14 +82,29 @@ namespace j2cpp {
 
 
 
-java::sql::SQLWarning::operator local_ref<java::sql::SQLException>() const
-{
-	return local_ref<java::sql::SQLException>(get_jobject());
-}
-
 java::sql::SQLWarning::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::sql::SQLWarning::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::sql::SQLWarning::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::sql::SQLWarning::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::sql::SQLWarning::operator local_ref<java::sql::SQLException>() const
+{
+	return local_ref<java::sql::SQLException>(get_jobject());
 }
 
 
@@ -89,8 +113,8 @@ java::sql::SQLWarning::SQLWarning()
 	call_new_object<
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(0),
-		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +126,8 @@ java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(1),
-		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -115,8 +139,8 @@ java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0, loc
 	call_new_object<
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(2),
-		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -128,8 +152,8 @@ java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0, loc
 	call_new_object<
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(3),
-		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -141,8 +165,8 @@ local_ref< java::sql::SQLWarning > java::sql::SQLWarning::getNextWarning()
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(4),
 		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::sql::SQLWarning > >
-	(get_jobject());
+		local_ref< java::sql::SQLWarning >
+	>(get_jobject());
 }
 
 void java::sql::SQLWarning::setNextWarning(local_ref< java::sql::SQLWarning > const &a0)
@@ -151,8 +175,8 @@ void java::sql::SQLWarning::setNextWarning(local_ref< java::sql::SQLWarning > co
 		java::sql::SQLWarning::J2CPP_CLASS_NAME,
 		java::sql::SQLWarning::J2CPP_METHOD_NAME(5),
 		java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

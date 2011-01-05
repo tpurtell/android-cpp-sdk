@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_SECURITY_CODESOURCE_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class CodeSigner; } } }
@@ -54,8 +54,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CodeSource(local_ref< java::net::URL > const&, local_ref< array< local_ref< java::security::cert::Certificate >, 1> > const&);
@@ -85,14 +85,14 @@ namespace j2cpp {
 
 
 
-java::security::CodeSource::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::CodeSource::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::CodeSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -101,8 +101,8 @@ java::security::CodeSource::CodeSource(local_ref< java::net::URL > const &a0, lo
 	call_new_object<
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(0),
-		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -114,8 +114,8 @@ java::security::CodeSource::CodeSource(local_ref< java::net::URL > const &a0, lo
 	call_new_object<
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(1),
-		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -127,8 +127,8 @@ jboolean java::security::CodeSource::equals(local_ref< java::lang::Object > cons
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(2),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::security::CodeSource::getCertificates()
@@ -137,8 +137,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::sec
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(3),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::CodeSigner >, 1> > java::security::CodeSource::getCodeSigners()
@@ -147,8 +147,8 @@ local_ref< array< local_ref< java::security::CodeSigner >, 1> > java::security::
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(4),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::security::CodeSigner >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::CodeSigner >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::security::CodeSource::getLocation()
@@ -157,8 +157,8 @@ local_ref< java::net::URL > java::security::CodeSource::getLocation()
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(5),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::URL > >
-	(get_jobject());
+		local_ref< java::net::URL >
+	>(get_jobject());
 }
 
 jint java::security::CodeSource::hashCode()
@@ -167,8 +167,8 @@ jint java::security::CodeSource::hashCode()
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(6),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::security::CodeSource::implies(local_ref< java::security::CodeSource > const &a0)
@@ -177,8 +177,8 @@ jboolean java::security::CodeSource::implies(local_ref< java::security::CodeSour
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(7),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::CodeSource::toString()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > java::security::CodeSource::toString()
 		java::security::CodeSource::J2CPP_CLASS_NAME,
 		java::security::CodeSource::J2CPP_METHOD_NAME(8),
 		java::security::CodeSource::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

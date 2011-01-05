@@ -13,10 +13,12 @@
 
 namespace j2cpp { namespace android { namespace graphics { class ColorMatrix; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/ColorFilter.hpp>
 #include <android/graphics/ColorMatrix.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +42,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::ColorFilter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ColorMatrixColorFilter(local_ref< android::graphics::ColorMatrix > const&);
@@ -67,14 +70,19 @@ android::graphics::ColorMatrixColorFilter::operator local_ref<android::graphics:
 	return local_ref<android::graphics::ColorFilter>(get_jobject());
 }
 
+android::graphics::ColorMatrixColorFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::ColorMatrixColorFilter::ColorMatrixColorFilter(local_ref< android::graphics::ColorMatrix > const &a0)
 : object<android::graphics::ColorMatrixColorFilter>(
 	call_new_object<
 		android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -86,8 +94,8 @@ android::graphics::ColorMatrixColorFilter::ColorMatrixColorFilter(local_ref< arr
 	call_new_object<
 		android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(1),
-		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

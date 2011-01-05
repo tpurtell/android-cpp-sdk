@@ -125,8 +125,8 @@ android::opengl::ETC1Util_::ETC1Texture::ETC1Texture(jint a0, jint a1, local_ref
 	call_new_object<
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_NAME(0),
-		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -138,8 +138,8 @@ jint android::opengl::ETC1Util_::ETC1Texture::getWidth()
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_NAME(1),
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::opengl::ETC1Util_::ETC1Texture::getHeight()
@@ -148,8 +148,8 @@ jint android::opengl::ETC1Util_::ETC1Texture::getHeight()
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_NAME(2),
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > android::opengl::ETC1Util_::ETC1Texture::getData()
@@ -158,8 +158,8 @@ local_ref< java::nio::ByteBuffer > android::opengl::ETC1Util_::ETC1Texture::getD
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_NAME(3),
 		android::opengl::ETC1Util_::ETC1Texture::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject());
 }
 
 
@@ -182,8 +182,8 @@ android::opengl::ETC1Util::ETC1Util()
 	call_new_object<
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(0),
-		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -195,8 +195,8 @@ void android::opengl::ETC1Util::loadTexture(jint a0, jint a1, jint a2, jint a3, 
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(1),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::ETC1Util::loadTexture(jint a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::opengl::ETC1Util_::ETC1Texture > const &a5)
@@ -205,8 +205,8 @@ void android::opengl::ETC1Util::loadTexture(jint a0, jint a1, jint a2, jint a3, 
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(2),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 jboolean android::opengl::ETC1Util::isETC1Supported()
@@ -215,8 +215,8 @@ jboolean android::opengl::ETC1Util::isETC1Supported()
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(3),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 local_ref< android::opengl::ETC1Util_::ETC1Texture > android::opengl::ETC1Util::createTexture(local_ref< java::io::InputStream > const &a0)
@@ -225,8 +225,8 @@ local_ref< android::opengl::ETC1Util_::ETC1Texture > android::opengl::ETC1Util::
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(4),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::opengl::ETC1Util_::ETC1Texture > >
-	(a0);
+		local_ref< android::opengl::ETC1Util_::ETC1Texture >
+	>(a0);
 }
 
 local_ref< android::opengl::ETC1Util_::ETC1Texture > android::opengl::ETC1Util::compressTexture(local_ref< java::nio::Buffer > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -235,8 +235,8 @@ local_ref< android::opengl::ETC1Util_::ETC1Texture > android::opengl::ETC1Util::
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(5),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::opengl::ETC1Util_::ETC1Texture > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::opengl::ETC1Util_::ETC1Texture >
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::ETC1Util::writeTexture(local_ref< android::opengl::ETC1Util_::ETC1Texture > const &a0, local_ref< java::io::OutputStream > const &a1)
@@ -245,8 +245,8 @@ void android::opengl::ETC1Util::writeTexture(local_ref< android::opengl::ETC1Uti
 		android::opengl::ETC1Util::J2CPP_CLASS_NAME,
 		android::opengl::ETC1Util::J2CPP_METHOD_NAME(6),
 		android::opengl::ETC1Util::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

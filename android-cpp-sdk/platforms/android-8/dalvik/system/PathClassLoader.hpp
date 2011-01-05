@@ -12,10 +12,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -45,6 +47,7 @@ namespace dalvik { namespace system {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::ClassLoader>() const;
 
 
@@ -69,6 +72,11 @@ namespace j2cpp {
 
 
 
+dalvik::system::PathClassLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 dalvik::system::PathClassLoader::operator local_ref<java::lang::ClassLoader>() const
 {
 	return local_ref<java::lang::ClassLoader>(get_jobject());
@@ -80,8 +88,8 @@ dalvik::system::PathClassLoader::PathClassLoader(local_ref< java::lang::String >
 	call_new_object<
 		dalvik::system::PathClassLoader::J2CPP_CLASS_NAME,
 		dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(0),
-		dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -93,8 +101,8 @@ dalvik::system::PathClassLoader::PathClassLoader(local_ref< java::lang::String >
 	call_new_object<
 		dalvik::system::PathClassLoader::J2CPP_CLASS_NAME,
 		dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(1),
-		dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -111,8 +119,8 @@ local_ref< java::lang::String > dalvik::system::PathClassLoader::toString()
 		dalvik::system::PathClassLoader::J2CPP_CLASS_NAME,
 		dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(7),
 		dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

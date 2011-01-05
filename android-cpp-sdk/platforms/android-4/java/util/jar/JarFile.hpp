@@ -19,10 +19,12 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipFile; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/File.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
 #include <java/util/jar/JarEntry.hpp>
@@ -62,6 +64,7 @@ namespace java { namespace util { namespace jar {
 		}
 
 		operator local_ref<java::util::zip::ZipFile>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		JarFile(local_ref< java::io::File > const&);
@@ -101,14 +104,19 @@ java::util::jar::JarFile::operator local_ref<java::util::zip::ZipFile>() const
 	return local_ref<java::util::zip::ZipFile>(get_jobject());
 }
 
+java::util::jar::JarFile::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::util::jar::JarFile::JarFile(local_ref< java::io::File > const &a0)
 : object<java::util::jar::JarFile>(
 	call_new_object<
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(0),
-		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -120,8 +128,8 @@ java::util::jar::JarFile::JarFile(local_ref< java::io::File > const &a0, jboolea
 	call_new_object<
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(1),
-		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -133,8 +141,8 @@ java::util::jar::JarFile::JarFile(local_ref< java::io::File > const &a0, jboolea
 	call_new_object<
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(2),
-		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -146,8 +154,8 @@ java::util::jar::JarFile::JarFile(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(3),
-		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -159,8 +167,8 @@ java::util::jar::JarFile::JarFile(local_ref< java::lang::String > const &a0, jbo
 	call_new_object<
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(4),
-		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1)
+		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1)
 )
 {
 }
@@ -172,8 +180,8 @@ local_ref< java::util::Enumeration > java::util::jar::JarFile::entries()
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(5),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::JarEntry > java::util::jar::JarFile::getJarEntry(local_ref< java::lang::String > const &a0)
@@ -182,8 +190,8 @@ local_ref< java::util::jar::JarEntry > java::util::jar::JarFile::getJarEntry(loc
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(6),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::jar::JarEntry > >
-	(get_jobject(), a0);
+		local_ref< java::util::jar::JarEntry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::jar::Manifest > java::util::jar::JarFile::getManifest()
@@ -192,8 +200,8 @@ local_ref< java::util::jar::Manifest > java::util::jar::JarFile::getManifest()
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(7),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::jar::Manifest > >
-	(get_jobject());
+		local_ref< java::util::jar::Manifest >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::util::jar::JarFile::getInputStream(local_ref< java::util::zip::ZipEntry > const &a0)
@@ -202,8 +210,8 @@ local_ref< java::io::InputStream > java::util::jar::JarFile::getInputStream(loca
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(8),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::zip::ZipEntry > java::util::jar::JarFile::getEntry(local_ref< java::lang::String > const &a0)
@@ -212,8 +220,8 @@ local_ref< java::util::zip::ZipEntry > java::util::jar::JarFile::getEntry(local_
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(9),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::zip::ZipEntry > >
-	(get_jobject(), a0);
+		local_ref< java::util::zip::ZipEntry >
+	>(get_jobject(), a0);
 }
 
 void java::util::jar::JarFile::close()
@@ -222,8 +230,8 @@ void java::util::jar::JarFile::close()
 		java::util::jar::JarFile::J2CPP_CLASS_NAME,
 		java::util::jar::JarFile::J2CPP_METHOD_NAME(10),
 		java::util::jar::JarFile::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

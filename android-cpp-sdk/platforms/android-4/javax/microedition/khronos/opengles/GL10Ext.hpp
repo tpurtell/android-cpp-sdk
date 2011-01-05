@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL10EXT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -83,8 +83,8 @@ jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_re
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_NAME(0),
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_ref< java::nio::IntBuffer > const &a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -93,8 +93,8 @@ jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_re
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_NAME(1),
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

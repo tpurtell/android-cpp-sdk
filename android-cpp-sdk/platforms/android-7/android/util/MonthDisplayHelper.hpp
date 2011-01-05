@@ -97,8 +97,8 @@ android::util::MonthDisplayHelper::MonthDisplayHelper(jint a0, jint a1, jint a2)
 	call_new_object<
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(0),
-		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -110,8 +110,8 @@ android::util::MonthDisplayHelper::MonthDisplayHelper(jint a0, jint a1)
 	call_new_object<
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(1),
-		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -123,8 +123,8 @@ jint android::util::MonthDisplayHelper::getYear()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(2),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::MonthDisplayHelper::getMonth()
@@ -133,8 +133,8 @@ jint android::util::MonthDisplayHelper::getMonth()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(3),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::MonthDisplayHelper::getWeekStartDay()
@@ -143,8 +143,8 @@ jint android::util::MonthDisplayHelper::getWeekStartDay()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(4),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::MonthDisplayHelper::getFirstDayOfMonth()
@@ -153,8 +153,8 @@ jint android::util::MonthDisplayHelper::getFirstDayOfMonth()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(5),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::MonthDisplayHelper::getNumberOfDaysInMonth()
@@ -163,8 +163,8 @@ jint android::util::MonthDisplayHelper::getNumberOfDaysInMonth()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(6),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::MonthDisplayHelper::getOffset()
@@ -173,8 +173,8 @@ jint android::util::MonthDisplayHelper::getOffset()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(7),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jint,1> > android::util::MonthDisplayHelper::getDigitsForRow(jint a0)
@@ -183,8 +183,8 @@ local_ref< array<jint,1> > android::util::MonthDisplayHelper::getDigitsForRow(ji
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(8),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 jint android::util::MonthDisplayHelper::getDayAt(jint a0, jint a1)
@@ -193,8 +193,8 @@ jint android::util::MonthDisplayHelper::getDayAt(jint a0, jint a1)
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(9),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::MonthDisplayHelper::getRowOf(jint a0)
@@ -203,8 +203,8 @@ jint android::util::MonthDisplayHelper::getRowOf(jint a0)
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(10),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::MonthDisplayHelper::getColumnOf(jint a0)
@@ -213,8 +213,8 @@ jint android::util::MonthDisplayHelper::getColumnOf(jint a0)
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(11),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::util::MonthDisplayHelper::previousMonth()
@@ -223,8 +223,8 @@ void android::util::MonthDisplayHelper::previousMonth()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(12),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::util::MonthDisplayHelper::nextMonth()
@@ -233,8 +233,8 @@ void android::util::MonthDisplayHelper::nextMonth()
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(13),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::util::MonthDisplayHelper::isWithinCurrentMonth(jint a0, jint a1)
@@ -243,8 +243,8 @@ jboolean android::util::MonthDisplayHelper::isWithinCurrentMonth(jint a0, jint a
 		android::util::MonthDisplayHelper::J2CPP_CLASS_NAME,
 		android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(14),
 		android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

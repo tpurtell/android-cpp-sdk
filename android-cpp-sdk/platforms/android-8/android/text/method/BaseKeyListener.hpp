@@ -16,6 +16,7 @@ namespace j2cpp { namespace android { namespace text { namespace method { class 
 namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/Editable.hpp>
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 #include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -47,8 +49,9 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
-		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
 		operator local_ref<android::text::method::KeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BaseKeyListener();
@@ -74,14 +77,19 @@ namespace j2cpp {
 
 
 
+android::text::method::BaseKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
 android::text::method::BaseKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
 {
 	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
 }
 
-android::text::method::BaseKeyListener::operator local_ref<android::text::method::KeyListener>() const
+android::text::method::BaseKeyListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::text::method::KeyListener>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -90,8 +98,8 @@ android::text::method::BaseKeyListener::BaseKeyListener()
 	call_new_object<
 		android::text::method::BaseKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -103,8 +111,8 @@ jboolean android::text::method::BaseKeyListener::backspace(local_ref< android::v
 		android::text::method::BaseKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::BaseKeyListener::onKeyDown(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -113,8 +121,8 @@ jboolean android::text::method::BaseKeyListener::onKeyDown(local_ref< android::v
 		android::text::method::BaseKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(2),
 		android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::BaseKeyListener::onKeyOther(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -123,8 +131,8 @@ jboolean android::text::method::BaseKeyListener::onKeyOther(local_ref< android::
 		android::text::method::BaseKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -77,8 +77,8 @@ android::os::CountDownTimer::CountDownTimer(jlong a0, jlong a1)
 	call_new_object<
 		android::os::CountDownTimer::J2CPP_CLASS_NAME,
 		android::os::CountDownTimer::J2CPP_METHOD_NAME(0),
-		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -90,8 +90,8 @@ void android::os::CountDownTimer::cancel()
 		android::os::CountDownTimer::J2CPP_CLASS_NAME,
 		android::os::CountDownTimer::J2CPP_METHOD_NAME(1),
 		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::CountDownTimer > android::os::CountDownTimer::start()
@@ -100,8 +100,8 @@ local_ref< android::os::CountDownTimer > android::os::CountDownTimer::start()
 		android::os::CountDownTimer::J2CPP_CLASS_NAME,
 		android::os::CountDownTimer::J2CPP_METHOD_NAME(2),
 		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::CountDownTimer > >
-	(get_jobject());
+		local_ref< android::os::CountDownTimer >
+	>(get_jobject());
 }
 
 void android::os::CountDownTimer::onTick(jlong a0)
@@ -110,8 +110,8 @@ void android::os::CountDownTimer::onTick(jlong a0)
 		android::os::CountDownTimer::J2CPP_CLASS_NAME,
 		android::os::CountDownTimer::J2CPP_METHOD_NAME(3),
 		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::CountDownTimer::onFinish()
@@ -120,8 +120,8 @@ void android::os::CountDownTimer::onFinish()
 		android::os::CountDownTimer::J2CPP_CLASS_NAME,
 		android::os::CountDownTimer::J2CPP_METHOD_NAME(4),
 		android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

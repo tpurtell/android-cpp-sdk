@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_OAEPPARAMETERSPEC_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace crypto { namespace spec { class PSource; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace crypto { namespace spec { class PSource; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
@@ -94,8 +94,8 @@ javax::crypto::spec::OAEPParameterSpec::OAEPParameterSpec(local_ref< java::lang:
 	call_new_object<
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -107,8 +107,8 @@ local_ref< java::lang::String > javax::crypto::spec::OAEPParameterSpec::getDiges
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::crypto::spec::OAEPParameterSpec::getMGFAlgorithm()
@@ -117,8 +117,8 @@ local_ref< java::lang::String > javax::crypto::spec::OAEPParameterSpec::getMGFAl
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::AlgorithmParameterSpec > javax::crypto::spec::OAEPParameterSpec::getMGFParameters()
@@ -127,8 +127,8 @@ local_ref< java::security::spec::AlgorithmParameterSpec > javax::crypto::spec::O
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::spec::AlgorithmParameterSpec > >
-	(get_jobject());
+		local_ref< java::security::spec::AlgorithmParameterSpec >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::spec::PSource > javax::crypto::spec::OAEPParameterSpec::getPSource()
@@ -137,8 +137,8 @@ local_ref< javax::crypto::spec::PSource > javax::crypto::spec::OAEPParameterSpec
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::OAEPParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::spec::PSource > >
-	(get_jobject());
+		local_ref< javax::crypto::spec::PSource >
+	>(get_jobject());
 }
 
 

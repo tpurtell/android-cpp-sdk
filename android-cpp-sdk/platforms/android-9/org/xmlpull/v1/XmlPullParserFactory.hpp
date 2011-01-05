@@ -11,8 +11,8 @@
 #define J2CPP_ORG_XMLPULL_V1_XMLPULLPARSERFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlSerializer; } } } }
@@ -105,8 +105,8 @@ void org::xmlpull::v1::XmlPullParserFactory::setFeature(local_ref< java::lang::S
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(1),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xmlpull::v1::XmlPullParserFactory::getFeature(local_ref< java::lang::String > const &a0)
@@ -115,8 +115,8 @@ jboolean org::xmlpull::v1::XmlPullParserFactory::getFeature(local_ref< java::lan
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(2),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlPullParserFactory::setNamespaceAware(jboolean a0)
@@ -125,8 +125,8 @@ void org::xmlpull::v1::XmlPullParserFactory::setNamespaceAware(jboolean a0)
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(3),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::xmlpull::v1::XmlPullParserFactory::isNamespaceAware()
@@ -135,8 +135,8 @@ jboolean org::xmlpull::v1::XmlPullParserFactory::isNamespaceAware()
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(4),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::XmlPullParserFactory::setValidating(jboolean a0)
@@ -145,8 +145,8 @@ void org::xmlpull::v1::XmlPullParserFactory::setValidating(jboolean a0)
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(5),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::xmlpull::v1::XmlPullParserFactory::isValidating()
@@ -155,8 +155,8 @@ jboolean org::xmlpull::v1::XmlPullParserFactory::isValidating()
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(6),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::xmlpull::v1::XmlPullParser > org::xmlpull::v1::XmlPullParserFactory::newPullParser()
@@ -165,8 +165,8 @@ local_ref< org::xmlpull::v1::XmlPullParser > org::xmlpull::v1::XmlPullParserFact
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(7),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::xmlpull::v1::XmlPullParser > >
-	(get_jobject());
+		local_ref< org::xmlpull::v1::XmlPullParser >
+	>(get_jobject());
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlPullParserFactory::newSerializer()
@@ -175,8 +175,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > org::xmlpull::v1::XmlPullParserFact
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(8),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	(get_jobject());
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>(get_jobject());
 }
 
 local_ref< org::xmlpull::v1::XmlPullParserFactory > org::xmlpull::v1::XmlPullParserFactory::newInstance()
@@ -185,8 +185,8 @@ local_ref< org::xmlpull::v1::XmlPullParserFactory > org::xmlpull::v1::XmlPullPar
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(9),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xmlpull::v1::XmlPullParserFactory > >
-	();
+		local_ref< org::xmlpull::v1::XmlPullParserFactory >
+	>();
 }
 
 local_ref< org::xmlpull::v1::XmlPullParserFactory > org::xmlpull::v1::XmlPullParserFactory::newInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
@@ -195,8 +195,8 @@ local_ref< org::xmlpull::v1::XmlPullParserFactory > org::xmlpull::v1::XmlPullPar
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(10),
 		org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::xmlpull::v1::XmlPullParserFactory > >
-	(a0, a1);
+		local_ref< org::xmlpull::v1::XmlPullParserFactory >
+	>(a0, a1);
 }
 
 

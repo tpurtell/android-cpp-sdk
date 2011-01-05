@@ -179,8 +179,8 @@ void android::preference::PreferenceManager_::OnActivityDestroyListener::onActiv
 		android::preference::PreferenceManager_::OnActivityDestroyListener::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager_::OnActivityDestroyListener::J2CPP_METHOD_NAME(0),
 		android::preference::PreferenceManager_::OnActivityDestroyListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -199,8 +199,8 @@ void android::preference::PreferenceManager_::OnActivityStopListener::onActivity
 		android::preference::PreferenceManager_::OnActivityStopListener::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager_::OnActivityStopListener::J2CPP_METHOD_NAME(0),
 		android::preference::PreferenceManager_::OnActivityStopListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -219,8 +219,8 @@ jboolean android::preference::PreferenceManager_::OnActivityResultListener::onAc
 		android::preference::PreferenceManager_::OnActivityResultListener::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager_::OnActivityResultListener::J2CPP_METHOD_NAME(0),
 		android::preference::PreferenceManager_::OnActivityResultListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -241,8 +241,8 @@ local_ref< android::preference::PreferenceScreen > android::preference::Preferen
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(1),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::preference::PreferenceScreen > >
-	(get_jobject(), a0);
+		local_ref< android::preference::PreferenceScreen >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::preference::PreferenceManager::getSharedPreferencesName()
@@ -251,8 +251,8 @@ local_ref< java::lang::String > android::preference::PreferenceManager::getShare
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(2),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::preference::PreferenceManager::setSharedPreferencesName(local_ref< java::lang::String > const &a0)
@@ -261,8 +261,8 @@ void android::preference::PreferenceManager::setSharedPreferencesName(local_ref<
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(3),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::preference::PreferenceManager::getSharedPreferencesMode()
@@ -271,8 +271,8 @@ jint android::preference::PreferenceManager::getSharedPreferencesMode()
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(4),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::preference::PreferenceManager::setSharedPreferencesMode(jint a0)
@@ -281,8 +281,8 @@ void android::preference::PreferenceManager::setSharedPreferencesMode(jint a0)
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(5),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::SharedPreferences > android::preference::PreferenceManager::getSharedPreferences()
@@ -291,8 +291,8 @@ local_ref< android::content::SharedPreferences > android::preference::Preference
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(6),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::SharedPreferences > >
-	(get_jobject());
+		local_ref< android::content::SharedPreferences >
+	>(get_jobject());
 }
 
 local_ref< android::content::SharedPreferences > android::preference::PreferenceManager::getDefaultSharedPreferences(local_ref< android::content::Context > const &a0)
@@ -301,8 +301,8 @@ local_ref< android::content::SharedPreferences > android::preference::Preference
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(7),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::content::SharedPreferences > >
-	(a0);
+		local_ref< android::content::SharedPreferences >
+	>(a0);
 }
 
 local_ref< android::preference::Preference > android::preference::PreferenceManager::findPreference(local_ref< java::lang::CharSequence > const &a0)
@@ -311,8 +311,8 @@ local_ref< android::preference::Preference > android::preference::PreferenceMana
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(8),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::preference::Preference > >
-	(get_jobject(), a0);
+		local_ref< android::preference::Preference >
+	>(get_jobject(), a0);
 }
 
 void android::preference::PreferenceManager::setDefaultValues(local_ref< android::content::Context > const &a0, jint a1, jboolean a2)
@@ -321,8 +321,8 @@ void android::preference::PreferenceManager::setDefaultValues(local_ref< android
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(9),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::preference::PreferenceManager::setDefaultValues(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, jint a2, jint a3, jboolean a4)
@@ -331,8 +331,8 @@ void android::preference::PreferenceManager::setDefaultValues(local_ref< android
 		android::preference::PreferenceManager::J2CPP_CLASS_NAME,
 		android::preference::PreferenceManager::J2CPP_METHOD_NAME(10),
 		android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 

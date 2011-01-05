@@ -97,8 +97,8 @@ jint android::graphics::Movie::width()
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(1),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Movie::height()
@@ -107,8 +107,8 @@ jint android::graphics::Movie::height()
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(2),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::Movie::isOpaque()
@@ -117,8 +117,8 @@ jboolean android::graphics::Movie::isOpaque()
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(3),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::graphics::Movie::duration()
@@ -127,8 +127,8 @@ jint android::graphics::Movie::duration()
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(4),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::Movie::setTime(jint a0)
@@ -137,8 +137,8 @@ jboolean android::graphics::Movie::setTime(jint a0)
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(5),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Movie::draw(local_ref< android::graphics::Canvas > const &a0, jfloat a1, jfloat a2, local_ref< android::graphics::Paint > const &a3)
@@ -147,8 +147,8 @@ void android::graphics::Movie::draw(local_ref< android::graphics::Canvas > const
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(6),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Movie::draw(local_ref< android::graphics::Canvas > const &a0, jfloat a1, jfloat a2)
@@ -157,8 +157,8 @@ void android::graphics::Movie::draw(local_ref< android::graphics::Canvas > const
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(7),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::Movie > android::graphics::Movie::decodeStream(local_ref< java::io::InputStream > const &a0)
@@ -167,8 +167,8 @@ local_ref< android::graphics::Movie > android::graphics::Movie::decodeStream(loc
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(8),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Movie > >
-	(a0);
+		local_ref< android::graphics::Movie >
+	>(a0);
 }
 
 local_ref< android::graphics::Movie > android::graphics::Movie::decodeByteArray(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -177,8 +177,8 @@ local_ref< android::graphics::Movie > android::graphics::Movie::decodeByteArray(
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(9),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Movie > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Movie >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Movie > android::graphics::Movie::decodeFile(local_ref< java::lang::String > const &a0)
@@ -187,8 +187,8 @@ local_ref< android::graphics::Movie > android::graphics::Movie::decodeFile(local
 		android::graphics::Movie::J2CPP_CLASS_NAME,
 		android::graphics::Movie::J2CPP_METHOD_NAME(10),
 		android::graphics::Movie::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::Movie > >
-	(a0);
+		local_ref< android::graphics::Movie >
+	>(a0);
 }
 
 

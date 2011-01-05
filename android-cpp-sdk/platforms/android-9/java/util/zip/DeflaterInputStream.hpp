@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_UTIL_ZIP_DEFLATERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class Deflater; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/zip/Deflater.hpp>
 
 
@@ -52,6 +56,9 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::InputStream>() const;
 		operator local_ref<java::io::FilterInputStream>() const;
 
 
@@ -86,6 +93,21 @@ namespace j2cpp {
 
 
 
+java::util::zip::DeflaterInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::zip::DeflaterInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::util::zip::DeflaterInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
 java::util::zip::DeflaterInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
 	return local_ref<java::io::FilterInputStream>(get_jobject());
@@ -97,8 +119,8 @@ java::util::zip::DeflaterInputStream::DeflaterInputStream(local_ref< java::io::I
 	call_new_object<
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(0),
-		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -110,8 +132,8 @@ java::util::zip::DeflaterInputStream::DeflaterInputStream(local_ref< java::io::I
 	call_new_object<
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(1),
-		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -123,8 +145,8 @@ java::util::zip::DeflaterInputStream::DeflaterInputStream(local_ref< java::io::I
 	call_new_object<
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(2),
-		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -136,8 +158,8 @@ void java::util::zip::DeflaterInputStream::close()
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(3),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::util::zip::DeflaterInputStream::read()
@@ -146,8 +168,8 @@ jint java::util::zip::DeflaterInputStream::read()
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(4),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::DeflaterInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -156,8 +178,8 @@ jint java::util::zip::DeflaterInputStream::read(local_ref< array<jbyte,1> > cons
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(5),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::util::zip::DeflaterInputStream::skip(jlong a0)
@@ -166,8 +188,8 @@ jlong java::util::zip::DeflaterInputStream::skip(jlong a0)
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(6),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint java::util::zip::DeflaterInputStream::available()
@@ -176,8 +198,8 @@ jint java::util::zip::DeflaterInputStream::available()
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(7),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::zip::DeflaterInputStream::markSupported()
@@ -186,8 +208,8 @@ jboolean java::util::zip::DeflaterInputStream::markSupported()
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(8),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::zip::DeflaterInputStream::mark(jint a0)
@@ -196,8 +218,8 @@ void java::util::zip::DeflaterInputStream::mark(jint a0)
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(9),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::DeflaterInputStream::reset()
@@ -206,8 +228,8 @@ void java::util::zip::DeflaterInputStream::reset()
 		java::util::zip::DeflaterInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_NAME(10),
 		java::util::zip::DeflaterInputStream::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

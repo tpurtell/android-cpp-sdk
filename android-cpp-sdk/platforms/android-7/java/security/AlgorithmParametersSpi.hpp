@@ -76,8 +76,8 @@ java::security::AlgorithmParametersSpi::AlgorithmParametersSpi()
 	call_new_object<
 		java::security::AlgorithmParametersSpi::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParametersSpi::J2CPP_METHOD_NAME(0),
-		java::security::AlgorithmParametersSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::AlgorithmParametersSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

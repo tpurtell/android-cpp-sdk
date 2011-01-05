@@ -12,10 +12,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace webkit { class JsResult; } } }
 
 
 #include <android/webkit/JsResult.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,6 +41,7 @@ namespace android { namespace webkit {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::webkit::JsResult>() const;
 
 
@@ -61,6 +64,11 @@ namespace j2cpp {
 
 
 
+android::webkit::JsPromptResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::JsPromptResult::operator local_ref<android::webkit::JsResult>() const
 {
 	return local_ref<android::webkit::JsResult>(get_jobject());
@@ -73,8 +81,8 @@ void android::webkit::JsPromptResult::confirm(local_ref< java::lang::String > co
 		android::webkit::JsPromptResult::J2CPP_CLASS_NAME,
 		android::webkit::JsPromptResult::J2CPP_METHOD_NAME(1),
 		android::webkit::JsPromptResult::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

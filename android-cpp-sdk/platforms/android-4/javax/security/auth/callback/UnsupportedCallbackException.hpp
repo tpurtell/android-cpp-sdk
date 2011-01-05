@@ -11,13 +11,19 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_CALLBACK_UNSUPPORTEDCALLBACKEXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <javax/security/auth/callback/Callback.hpp>
 
 
@@ -42,7 +48,10 @@ namespace javax { namespace security { namespace auth { namespace callback {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		UnsupportedCallbackException(local_ref< javax::security::auth::callback::Callback > const&);
@@ -68,9 +77,24 @@ namespace j2cpp {
 
 
 
+javax::security::auth::callback::UnsupportedCallbackException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+javax::security::auth::callback::UnsupportedCallbackException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 javax::security::auth::callback::UnsupportedCallbackException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+javax::security::auth::callback::UnsupportedCallbackException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -79,8 +103,8 @@ javax::security::auth::callback::UnsupportedCallbackException::UnsupportedCallba
 	call_new_object<
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_NAME(0),
-		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -92,8 +116,8 @@ javax::security::auth::callback::UnsupportedCallbackException::UnsupportedCallba
 	call_new_object<
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_NAME(1),
-		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +129,8 @@ local_ref< javax::security::auth::callback::Callback > javax::security::auth::ca
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_NAME(2),
 		javax::security::auth::callback::UnsupportedCallbackException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::security::auth::callback::Callback > >
-	(get_jobject());
+		local_ref< javax::security::auth::callback::Callback >
+	>(get_jobject());
 }
 
 

@@ -150,10 +150,10 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
-		operator local_ref<java::lang::Cloneable>() const;
-		operator local_ref<java::lang::Comparable>() const;
 
 
 		void add(jint, jint);
@@ -263,6 +263,16 @@ namespace j2cpp {
 
 
 
+java::util::Calendar::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::util::Calendar::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::util::Calendar::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -273,16 +283,6 @@ java::util::Calendar::operator local_ref<java::io::Serializable>() const
 	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-java::util::Calendar::operator local_ref<java::lang::Cloneable>() const
-{
-	return local_ref<java::lang::Cloneable>(get_jobject());
-}
-
-java::util::Calendar::operator local_ref<java::lang::Comparable>() const
-{
-	return local_ref<java::lang::Comparable>(get_jobject());
-}
-
 
 
 void java::util::Calendar::add(jint a0, jint a1)
@@ -291,8 +291,8 @@ void java::util::Calendar::add(jint a0, jint a1)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(2),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Calendar::after(local_ref< java::lang::Object > const &a0)
@@ -301,8 +301,8 @@ jboolean java::util::Calendar::after(local_ref< java::lang::Object > const &a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(3),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Calendar::before(local_ref< java::lang::Object > const &a0)
@@ -311,8 +311,8 @@ jboolean java::util::Calendar::before(local_ref< java::lang::Object > const &a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(4),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::clear()
@@ -321,8 +321,8 @@ void java::util::Calendar::clear()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(5),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::Calendar::clear(jint a0)
@@ -331,8 +331,8 @@ void java::util::Calendar::clear(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(6),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Calendar::clone()
@@ -341,8 +341,8 @@ local_ref< java::lang::Object > java::util::Calendar::clone()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(7),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -354,8 +354,8 @@ jboolean java::util::Calendar::equals(local_ref< java::lang::Object > const &a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(11),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Calendar::get(jint a0)
@@ -364,8 +364,8 @@ jint java::util::Calendar::get(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(12),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Calendar::getActualMaximum(jint a0)
@@ -374,8 +374,8 @@ jint java::util::Calendar::getActualMaximum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(13),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Calendar::getActualMinimum(jint a0)
@@ -384,8 +384,8 @@ jint java::util::Calendar::getActualMinimum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(14),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::util::Locale >, 1> > java::util::Calendar::getAvailableLocales()
@@ -394,8 +394,8 @@ local_ref< array< local_ref< java::util::Locale >, 1> > java::util::Calendar::ge
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(15),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array< local_ref< java::util::Locale >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::Locale >, 1> >
+	>();
 }
 
 jint java::util::Calendar::getFirstDayOfWeek()
@@ -404,8 +404,8 @@ jint java::util::Calendar::getFirstDayOfWeek()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(16),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Calendar::getGreatestMinimum(jint a0)
@@ -414,8 +414,8 @@ jint java::util::Calendar::getGreatestMinimum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(17),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Calendar > java::util::Calendar::getInstance()
@@ -424,8 +424,8 @@ local_ref< java::util::Calendar > java::util::Calendar::getInstance()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(18),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::Calendar > >
-	();
+		local_ref< java::util::Calendar >
+	>();
 }
 
 local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< java::util::Locale > const &a0)
@@ -434,8 +434,8 @@ local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< j
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(19),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::util::Calendar > >
-	(a0);
+		local_ref< java::util::Calendar >
+	>(a0);
 }
 
 local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< java::util::TimeZone > const &a0)
@@ -444,8 +444,8 @@ local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< j
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(20),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::Calendar > >
-	(a0);
+		local_ref< java::util::Calendar >
+	>(a0);
 }
 
 local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< java::util::TimeZone > const &a0, local_ref< java::util::Locale > const &a1)
@@ -454,8 +454,8 @@ local_ref< java::util::Calendar > java::util::Calendar::getInstance(local_ref< j
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(21),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Calendar > >
-	(a0, a1);
+		local_ref< java::util::Calendar >
+	>(a0, a1);
 }
 
 jint java::util::Calendar::getLeastMaximum(jint a0)
@@ -464,8 +464,8 @@ jint java::util::Calendar::getLeastMaximum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(22),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Calendar::getMaximum(jint a0)
@@ -474,8 +474,8 @@ jint java::util::Calendar::getMaximum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(23),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Calendar::getMinimalDaysInFirstWeek()
@@ -484,8 +484,8 @@ jint java::util::Calendar::getMinimalDaysInFirstWeek()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(24),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Calendar::getMinimum(jint a0)
@@ -494,8 +494,8 @@ jint java::util::Calendar::getMinimum(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(25),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::util::Calendar::getTime()
@@ -504,8 +504,8 @@ local_ref< java::util::Date > java::util::Calendar::getTime()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(26),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 jlong java::util::Calendar::getTimeInMillis()
@@ -514,8 +514,8 @@ jlong java::util::Calendar::getTimeInMillis()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(27),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(27), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::util::TimeZone > java::util::Calendar::getTimeZone()
@@ -524,8 +524,8 @@ local_ref< java::util::TimeZone > java::util::Calendar::getTimeZone()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(28),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::util::TimeZone > >
-	(get_jobject());
+		local_ref< java::util::TimeZone >
+	>(get_jobject());
 }
 
 jint java::util::Calendar::hashCode()
@@ -534,8 +534,8 @@ jint java::util::Calendar::hashCode()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(29),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -545,8 +545,8 @@ jboolean java::util::Calendar::isLenient()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(31),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Calendar::isSet(jint a0)
@@ -555,8 +555,8 @@ jboolean java::util::Calendar::isSet(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(32),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::roll(jint a0, jint a1)
@@ -565,8 +565,8 @@ void java::util::Calendar::roll(jint a0, jint a1)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(33),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Calendar::roll(jint a0, jboolean a1)
@@ -575,8 +575,8 @@ void java::util::Calendar::roll(jint a0, jboolean a1)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(34),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Calendar::set(jint a0, jint a1)
@@ -585,8 +585,8 @@ void java::util::Calendar::set(jint a0, jint a1)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(35),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Calendar::set(jint a0, jint a1, jint a2)
@@ -595,8 +595,8 @@ void java::util::Calendar::set(jint a0, jint a1, jint a2)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(36),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::Calendar::set(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -605,8 +605,8 @@ void java::util::Calendar::set(jint a0, jint a1, jint a2, jint a3, jint a4)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(37),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void java::util::Calendar::set(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -615,8 +615,8 @@ void java::util::Calendar::set(jint a0, jint a1, jint a2, jint a3, jint a4, jint
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(38),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void java::util::Calendar::setFirstDayOfWeek(jint a0)
@@ -625,8 +625,8 @@ void java::util::Calendar::setFirstDayOfWeek(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(39),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::setLenient(jboolean a0)
@@ -635,8 +635,8 @@ void java::util::Calendar::setLenient(jboolean a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(40),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::setMinimalDaysInFirstWeek(jint a0)
@@ -645,8 +645,8 @@ void java::util::Calendar::setMinimalDaysInFirstWeek(jint a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(41),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::setTime(local_ref< java::util::Date > const &a0)
@@ -655,8 +655,8 @@ void java::util::Calendar::setTime(local_ref< java::util::Date > const &a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(42),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::setTimeInMillis(jlong a0)
@@ -665,8 +665,8 @@ void java::util::Calendar::setTimeInMillis(jlong a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(43),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Calendar::setTimeZone(local_ref< java::util::TimeZone > const &a0)
@@ -675,8 +675,8 @@ void java::util::Calendar::setTimeZone(local_ref< java::util::TimeZone > const &
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(44),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Calendar::toString()
@@ -685,8 +685,8 @@ local_ref< java::lang::String > java::util::Calendar::toString()
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(45),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::Calendar::compareTo(local_ref< java::util::Calendar > const &a0)
@@ -695,8 +695,8 @@ jint java::util::Calendar::compareTo(local_ref< java::util::Calendar > const &a0
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(46),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Calendar::getDisplayName(jint a0, jint a1, local_ref< java::util::Locale > const &a2)
@@ -705,8 +705,8 @@ local_ref< java::lang::String > java::util::Calendar::getDisplayName(jint a0, ji
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(47),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::Map > java::util::Calendar::getDisplayNames(jint a0, jint a1, local_ref< java::util::Locale > const &a2)
@@ -715,8 +715,8 @@ local_ref< java::util::Map > java::util::Calendar::getDisplayNames(jint a0, jint
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(48),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::util::Map > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::Map >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint java::util::Calendar::compareTo(local_ref< java::lang::Object > const &a0)
@@ -725,8 +725,8 @@ jint java::util::Calendar::compareTo(local_ref< java::lang::Object > const &a0)
 		java::util::Calendar::J2CPP_CLASS_NAME,
 		java::util::Calendar::J2CPP_METHOD_NAME(49),
 		java::util::Calendar::J2CPP_METHOD_SIGNATURE(49), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

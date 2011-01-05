@@ -70,8 +70,8 @@ android::graphics::Xfermode::Xfermode()
 	call_new_object<
 		android::graphics::Xfermode::J2CPP_CLASS_NAME,
 		android::graphics::Xfermode::J2CPP_METHOD_NAME(0),
-		android::graphics::Xfermode::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Xfermode::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

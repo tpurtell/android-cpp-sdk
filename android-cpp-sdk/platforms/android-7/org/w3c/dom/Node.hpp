@@ -151,8 +151,8 @@ local_ref< java::lang::String > org::w3c::dom::Node::getNodeName()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Node::getNodeValue()
@@ -161,8 +161,8 @@ local_ref< java::lang::String > org::w3c::dom::Node::getNodeValue()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::Node::setNodeValue(local_ref< java::lang::String > const &a0)
@@ -171,8 +171,8 @@ void org::w3c::dom::Node::setNodeValue(local_ref< java::lang::String > const &a0
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort org::w3c::dom::Node::getNodeType()
@@ -181,8 +181,8 @@ jshort org::w3c::dom::Node::getNodeType()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(3), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getParentNode()
@@ -191,8 +191,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getParentNode()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::NodeList > org::w3c::dom::Node::getChildNodes()
@@ -201,8 +201,8 @@ local_ref< org::w3c::dom::NodeList > org::w3c::dom::Node::getChildNodes()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::w3c::dom::NodeList > >
-	(get_jobject());
+		local_ref< org::w3c::dom::NodeList >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getFirstChild()
@@ -211,8 +211,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getFirstChild()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(6),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getLastChild()
@@ -221,8 +221,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getLastChild()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(7),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getPreviousSibling()
@@ -231,8 +231,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getPreviousSibling()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(8),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getNextSibling()
@@ -241,8 +241,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::getNextSibling()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(9),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::Node::getAttributes()
@@ -251,8 +251,8 @@ local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::Node::getAttributes()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(10),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::w3c::dom::NamedNodeMap > >
-	(get_jobject());
+		local_ref< org::w3c::dom::NamedNodeMap >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Document > org::w3c::dom::Node::getOwnerDocument()
@@ -261,8 +261,8 @@ local_ref< org::w3c::dom::Document > org::w3c::dom::Node::getOwnerDocument()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(11),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::insertBefore(local_ref< org::w3c::dom::Node > const &a0, local_ref< org::w3c::dom::Node > const &a1)
@@ -271,8 +271,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::insertBefore(local_ref< or
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(12),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0, a1);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::replaceChild(local_ref< org::w3c::dom::Node > const &a0, local_ref< org::w3c::dom::Node > const &a1)
@@ -281,8 +281,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::replaceChild(local_ref< or
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(13),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0, a1);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::removeChild(local_ref< org::w3c::dom::Node > const &a0)
@@ -291,8 +291,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::removeChild(local_ref< org
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(14),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::appendChild(local_ref< org::w3c::dom::Node > const &a0)
@@ -301,8 +301,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::appendChild(local_ref< org
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(15),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::Node::hasChildNodes()
@@ -311,8 +311,8 @@ jboolean org::w3c::dom::Node::hasChildNodes()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(16),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::Node::cloneNode(jboolean a0)
@@ -321,8 +321,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::Node::cloneNode(jboolean a0)
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(17),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0);
 }
 
 void org::w3c::dom::Node::normalize()
@@ -331,8 +331,8 @@ void org::w3c::dom::Node::normalize()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(18),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::w3c::dom::Node::isSupported(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -341,8 +341,8 @@ jboolean org::w3c::dom::Node::isSupported(local_ref< java::lang::String > const 
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(19),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::w3c::dom::Node::getNamespaceURI()
@@ -351,8 +351,8 @@ local_ref< java::lang::String > org::w3c::dom::Node::getNamespaceURI()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(20),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Node::getPrefix()
@@ -361,8 +361,8 @@ local_ref< java::lang::String > org::w3c::dom::Node::getPrefix()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(21),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::Node::setPrefix(local_ref< java::lang::String > const &a0)
@@ -371,8 +371,8 @@ void org::w3c::dom::Node::setPrefix(local_ref< java::lang::String > const &a0)
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(22),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::Node::getLocalName()
@@ -381,8 +381,8 @@ local_ref< java::lang::String > org::w3c::dom::Node::getLocalName()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(23),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::w3c::dom::Node::hasAttributes()
@@ -391,8 +391,8 @@ jboolean org::w3c::dom::Node::hasAttributes()
 		org::w3c::dom::Node::J2CPP_CLASS_NAME,
 		org::w3c::dom::Node::J2CPP_METHOD_NAME(24),
 		org::w3c::dom::Node::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

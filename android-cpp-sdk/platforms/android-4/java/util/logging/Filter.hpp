@@ -72,8 +72,8 @@ jboolean java::util::logging::Filter::isLoggable(local_ref< java::util::logging:
 		java::util::logging::Filter::J2CPP_CLASS_NAME,
 		java::util::logging::Filter::J2CPP_METHOD_NAME(0),
 		java::util::logging::Filter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

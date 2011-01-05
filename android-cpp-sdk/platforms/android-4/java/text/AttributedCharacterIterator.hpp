@@ -14,6 +14,7 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace text { class CharacterIterator; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace text { namespace AttributedCharacte
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/text/AttributedCharacterIterator.hpp>
@@ -60,8 +62,8 @@ namespace java { namespace text {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			jboolean equals(local_ref< java::lang::Object >  const&);
@@ -99,6 +101,7 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::text::CharacterIterator>() const;
 
@@ -131,14 +134,14 @@ namespace j2cpp {
 
 
 
-java::text::AttributedCharacterIterator_::Attribute::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::text::AttributedCharacterIterator_::Attribute::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::AttributedCharacterIterator_::Attribute::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -148,8 +151,8 @@ jboolean java::text::AttributedCharacterIterator_::Attribute::equals(local_ref< 
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_NAME(1),
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -159,8 +162,8 @@ jint java::text::AttributedCharacterIterator_::Attribute::hashCode()
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_NAME(3),
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -170,8 +173,8 @@ local_ref< java::lang::String > java::text::AttributedCharacterIterator_::Attrib
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_NAME(5),
 		java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -212,6 +215,11 @@ J2CPP_DEFINE_FIELD(java::text::AttributedCharacterIterator_::Attribute,2,"READIN
 
 
 
+java::text::AttributedCharacterIterator::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::text::AttributedCharacterIterator::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -228,8 +236,8 @@ local_ref< java::util::Set > java::text::AttributedCharacterIterator::getAllAttr
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(0),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::text::AttributedCharacterIterator::getAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const &a0)
@@ -238,8 +246,8 @@ local_ref< java::lang::Object > java::text::AttributedCharacterIterator::getAttr
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(1),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map > java::text::AttributedCharacterIterator::getAttributes()
@@ -248,8 +256,8 @@ local_ref< java::util::Map > java::text::AttributedCharacterIterator::getAttribu
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(2),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 jint java::text::AttributedCharacterIterator::getRunLimit()
@@ -258,8 +266,8 @@ jint java::text::AttributedCharacterIterator::getRunLimit()
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(3),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::AttributedCharacterIterator::getRunLimit(local_ref< java::text::AttributedCharacterIterator_::Attribute > const &a0)
@@ -268,8 +276,8 @@ jint java::text::AttributedCharacterIterator::getRunLimit(local_ref< java::text:
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(4),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::AttributedCharacterIterator::getRunLimit(local_ref< java::util::Set > const &a0)
@@ -278,8 +286,8 @@ jint java::text::AttributedCharacterIterator::getRunLimit(local_ref< java::util:
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(5),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::AttributedCharacterIterator::getRunStart()
@@ -288,8 +296,8 @@ jint java::text::AttributedCharacterIterator::getRunStart()
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(6),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::AttributedCharacterIterator::getRunStart(local_ref< java::text::AttributedCharacterIterator_::Attribute > const &a0)
@@ -298,8 +306,8 @@ jint java::text::AttributedCharacterIterator::getRunStart(local_ref< java::text:
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(7),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::AttributedCharacterIterator::getRunStart(local_ref< java::util::Set > const &a0)
@@ -308,8 +316,8 @@ jint java::text::AttributedCharacterIterator::getRunStart(local_ref< java::util:
 		java::text::AttributedCharacterIterator::J2CPP_CLASS_NAME,
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_NAME(8),
 		java::text::AttributedCharacterIterator::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

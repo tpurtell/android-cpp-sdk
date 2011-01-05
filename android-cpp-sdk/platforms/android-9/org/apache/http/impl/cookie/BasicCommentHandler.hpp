@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class AbstractCookieAttributeHandler; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/cookie/CookieAttributeHandler.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
 #include <org/apache/http/impl/cookie/AbstractCookieAttributeHandler.hpp>
 
@@ -41,7 +45,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>() const;
+		operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const;
 
 
 		BasicCommentHandler();
@@ -67,9 +73,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::cookie::BasicCommentHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::cookie::BasicCommentHandler::operator local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>() const
 {
 	return local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicCommentHandler::operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const
+{
+	return local_ref<org::apache::http::cookie::CookieAttributeHandler>(get_jobject());
 }
 
 
@@ -78,8 +94,8 @@ org::apache::http::impl::cookie::BasicCommentHandler::BasicCommentHandler()
 	call_new_object<
 		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +107,8 @@ void org::apache::http::impl::cookie::BasicCommentHandler::parse(local_ref< org:
 		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BasicCommentHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

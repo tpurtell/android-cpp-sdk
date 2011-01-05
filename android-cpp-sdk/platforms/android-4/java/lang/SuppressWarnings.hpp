@@ -40,8 +40,8 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< array< local_ref< java::lang::String >, 1> > value();
@@ -63,14 +63,14 @@ namespace j2cpp {
 
 
 
-java::lang::SuppressWarnings::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::SuppressWarnings::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+java::lang::SuppressWarnings::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::lang::SuppressWarnings::value()
@@ -79,8 +79,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::lang::SuppressWarn
 		java::lang::SuppressWarnings::J2CPP_CLASS_NAME,
 		java::lang::SuppressWarnings::J2CPP_METHOD_NAME(0),
 		java::lang::SuppressWarnings::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 

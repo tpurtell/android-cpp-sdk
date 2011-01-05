@@ -77,8 +77,8 @@ java::net::ContentHandler::ContentHandler()
 	call_new_object<
 		java::net::ContentHandler::J2CPP_CLASS_NAME,
 		java::net::ContentHandler::J2CPP_METHOD_NAME(0),
-		java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +90,8 @@ local_ref< java::lang::Object > java::net::ContentHandler::getContent(local_ref<
 		java::net::ContentHandler::J2CPP_CLASS_NAME,
 		java::net::ContentHandler::J2CPP_METHOD_NAME(1),
 		java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::net::ContentHandler::getContent(local_ref< java::net::URLConnection > const &a0, local_ref< array< local_ref< java::lang::Class >, 1> > const &a1)
@@ -100,8 +100,8 @@ local_ref< java::lang::Object > java::net::ContentHandler::getContent(local_ref<
 		java::net::ContentHandler::J2CPP_CLASS_NAME,
 		java::net::ContentHandler::J2CPP_METHOD_NAME(2),
 		java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

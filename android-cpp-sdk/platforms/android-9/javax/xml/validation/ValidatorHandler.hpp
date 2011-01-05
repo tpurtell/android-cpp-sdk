@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_VALIDATION_VALIDATORHANDLER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace validation { class TypeInfoProvider; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace validation { class TypeInfoProvider; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
@@ -108,8 +108,8 @@ void javax::xml::validation::ValidatorHandler::setContentHandler(local_ref< org:
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(1),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ContentHandler > javax::xml::validation::ValidatorHandler::getContentHandler()
@@ -118,8 +118,8 @@ local_ref< org::xml::sax::ContentHandler > javax::xml::validation::ValidatorHand
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(2),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 void javax::xml::validation::ValidatorHandler::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -128,8 +128,8 @@ void javax::xml::validation::ValidatorHandler::setErrorHandler(local_ref< org::x
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(3),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > javax::xml::validation::ValidatorHandler::getErrorHandler()
@@ -138,8 +138,8 @@ local_ref< org::xml::sax::ErrorHandler > javax::xml::validation::ValidatorHandle
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(4),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void javax::xml::validation::ValidatorHandler::setResourceResolver(local_ref< org::w3c::dom::ls::LSResourceResolver > const &a0)
@@ -148,8 +148,8 @@ void javax::xml::validation::ValidatorHandler::setResourceResolver(local_ref< or
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(5),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::ls::LSResourceResolver > javax::xml::validation::ValidatorHandler::getResourceResolver()
@@ -158,8 +158,8 @@ local_ref< org::w3c::dom::ls::LSResourceResolver > javax::xml::validation::Valid
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(6),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::w3c::dom::ls::LSResourceResolver > >
-	(get_jobject());
+		local_ref< org::w3c::dom::ls::LSResourceResolver >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::validation::TypeInfoProvider > javax::xml::validation::ValidatorHandler::getTypeInfoProvider()
@@ -168,8 +168,8 @@ local_ref< javax::xml::validation::TypeInfoProvider > javax::xml::validation::Va
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(7),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< javax::xml::validation::TypeInfoProvider > >
-	(get_jobject());
+		local_ref< javax::xml::validation::TypeInfoProvider >
+	>(get_jobject());
 }
 
 jboolean javax::xml::validation::ValidatorHandler::getFeature(local_ref< java::lang::String > const &a0)
@@ -178,8 +178,8 @@ jboolean javax::xml::validation::ValidatorHandler::getFeature(local_ref< java::l
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(8),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void javax::xml::validation::ValidatorHandler::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -188,8 +188,8 @@ void javax::xml::validation::ValidatorHandler::setFeature(local_ref< java::lang:
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(9),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::validation::ValidatorHandler::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -198,8 +198,8 @@ void javax::xml::validation::ValidatorHandler::setProperty(local_ref< java::lang
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(10),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > javax::xml::validation::ValidatorHandler::getProperty(local_ref< java::lang::String > const &a0)
@@ -208,8 +208,8 @@ local_ref< java::lang::Object > javax::xml::validation::ValidatorHandler::getPro
 		javax::xml::validation::ValidatorHandler::J2CPP_CLASS_NAME,
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_NAME(11),
 		javax::xml::validation::ValidatorHandler::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

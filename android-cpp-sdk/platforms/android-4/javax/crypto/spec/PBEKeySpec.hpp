@@ -45,8 +45,8 @@ namespace javax { namespace crypto { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PBEKeySpec(local_ref< array<jchar,1> > const&);
@@ -76,14 +76,14 @@ namespace j2cpp {
 
 
 
-javax::crypto::spec::PBEKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::spec::PBEKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+javax::crypto::spec::PBEKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -92,8 +92,8 @@ javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< array<jchar,1> > const &a
 	call_new_object<
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -105,8 +105,8 @@ javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< array<jchar,1> > const &a
 	call_new_object<
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -118,8 +118,8 @@ javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< array<jchar,1> > const &a
 	call_new_object<
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(2),
-		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -131,8 +131,8 @@ void javax::crypto::spec::PBEKeySpec::clearPassword()
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > javax::crypto::spec::PBEKeySpec::getPassword()
@@ -141,8 +141,8 @@ local_ref< array<jchar,1> > javax::crypto::spec::PBEKeySpec::getPassword()
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::crypto::spec::PBEKeySpec::getSalt()
@@ -151,8 +151,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::PBEKeySpec::getSalt()
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(5),
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::PBEKeySpec::getIterationCount()
@@ -161,8 +161,8 @@ jint javax::crypto::spec::PBEKeySpec::getIterationCount()
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(6),
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::PBEKeySpec::getKeyLength()
@@ -171,8 +171,8 @@ jint javax::crypto::spec::PBEKeySpec::getKeyLength()
 		javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(7),
 		javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

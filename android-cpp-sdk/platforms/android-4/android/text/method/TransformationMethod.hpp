@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_TEXT_METHOD_TRANSFORMATIONMETHOD_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 
 
 #include <android/graphics/Rect.hpp>
@@ -78,8 +78,8 @@ local_ref< java::lang::CharSequence > android::text::method::TransformationMetho
 		android::text::method::TransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::TransformationMethod::J2CPP_METHOD_NAME(0),
 		android::text::method::TransformationMethod::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 void android::text::method::TransformationMethod::onFocusChanged(local_ref< android::view::View > const &a0, local_ref< java::lang::CharSequence > const &a1, jboolean a2, jint a3, local_ref< android::graphics::Rect > const &a4)
@@ -88,8 +88,8 @@ void android::text::method::TransformationMethod::onFocusChanged(local_ref< andr
 		android::text::method::TransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::TransformationMethod::J2CPP_METHOD_NAME(1),
 		android::text::method::TransformationMethod::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

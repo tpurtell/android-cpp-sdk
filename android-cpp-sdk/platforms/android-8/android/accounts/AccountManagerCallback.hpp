@@ -71,8 +71,8 @@ void android::accounts::AccountManagerCallback::run(local_ref< android::accounts
 		android::accounts::AccountManagerCallback::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerCallback::J2CPP_METHOD_NAME(0),
 		android::accounts::AccountManagerCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

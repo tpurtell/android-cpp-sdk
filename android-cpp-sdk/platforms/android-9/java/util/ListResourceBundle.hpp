@@ -46,6 +46,7 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::ResourceBundle>() const;
 
 
@@ -70,6 +71,11 @@ namespace j2cpp {
 
 
 
+java::util::ListResourceBundle::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::ListResourceBundle::operator local_ref<java::util::ResourceBundle>() const
 {
 	return local_ref<java::util::ResourceBundle>(get_jobject());
@@ -81,8 +87,8 @@ java::util::ListResourceBundle::ListResourceBundle()
 	call_new_object<
 		java::util::ListResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ListResourceBundle::J2CPP_METHOD_NAME(0),
-		java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +101,8 @@ local_ref< java::util::Enumeration > java::util::ListResourceBundle::getKeys()
 		java::util::ListResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ListResourceBundle::J2CPP_METHOD_NAME(2),
 		java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::ListResourceBundle::handleGetObject(local_ref< java::lang::String > const &a0)
@@ -105,8 +111,8 @@ local_ref< java::lang::Object > java::util::ListResourceBundle::handleGetObject(
 		java::util::ListResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ListResourceBundle::J2CPP_METHOD_NAME(3),
 		java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

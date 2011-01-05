@@ -37,8 +37,8 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class UpdateLayout
 
@@ -59,14 +59,14 @@ namespace j2cpp {
 
 
 
-android::text::style::UpdateLayout::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::style::UpdateLayout::operator local_ref<android::text::style::UpdateAppearance>() const
 {
 	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
+android::text::style::UpdateLayout::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::text::style::UpdateLayout,"android/text/style/UpdateLayout")

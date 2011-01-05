@@ -165,8 +165,8 @@ local_ref< java::lang::String > android::text::util::Linkify_::TransformFilter::
 		android::text::util::Linkify_::TransformFilter::J2CPP_CLASS_NAME,
 		android::text::util::Linkify_::TransformFilter::J2CPP_METHOD_NAME(0),
 		android::text::util::Linkify_::TransformFilter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -185,8 +185,8 @@ jboolean android::text::util::Linkify_::MatchFilter::acceptMatch(local_ref< java
 		android::text::util::Linkify_::MatchFilter::J2CPP_CLASS_NAME,
 		android::text::util::Linkify_::MatchFilter::J2CPP_METHOD_NAME(0),
 		android::text::util::Linkify_::MatchFilter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -206,8 +206,8 @@ android::text::util::Linkify::Linkify()
 	call_new_object<
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(0),
-		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -219,8 +219,8 @@ jboolean android::text::util::Linkify::addLinks(local_ref< android::text::Spanna
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(1),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::util::Linkify::addLinks(local_ref< android::widget::TextView > const &a0, jint a1)
@@ -229,8 +229,8 @@ jboolean android::text::util::Linkify::addLinks(local_ref< android::widget::Text
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(2),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 void android::text::util::Linkify::addLinks(local_ref< android::widget::TextView > const &a0, local_ref< java::util::regex::Pattern > const &a1, local_ref< java::lang::String > const &a2)
@@ -239,8 +239,8 @@ void android::text::util::Linkify::addLinks(local_ref< android::widget::TextView
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(3),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::text::util::Linkify::addLinks(local_ref< android::widget::TextView > const &a0, local_ref< java::util::regex::Pattern > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::text::util::Linkify_::MatchFilter > const &a3, local_ref< android::text::util::Linkify_::TransformFilter > const &a4)
@@ -249,8 +249,8 @@ void android::text::util::Linkify::addLinks(local_ref< android::widget::TextView
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(4),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jboolean android::text::util::Linkify::addLinks(local_ref< android::text::Spannable > const &a0, local_ref< java::util::regex::Pattern > const &a1, local_ref< java::lang::String > const &a2)
@@ -259,8 +259,8 @@ jboolean android::text::util::Linkify::addLinks(local_ref< android::text::Spanna
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(5),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jboolean android::text::util::Linkify::addLinks(local_ref< android::text::Spannable > const &a0, local_ref< java::util::regex::Pattern > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::text::util::Linkify_::MatchFilter > const &a3, local_ref< android::text::util::Linkify_::TransformFilter > const &a4)
@@ -269,8 +269,8 @@ jboolean android::text::util::Linkify::addLinks(local_ref< android::text::Spanna
 		android::text::util::Linkify::J2CPP_CLASS_NAME,
 		android::text::util::Linkify::J2CPP_METHOD_NAME(6),
 		android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0, a1, a2, a3, a4);
+		jboolean
+	>(a0, a1, a2, a3, a4);
 }
 
 

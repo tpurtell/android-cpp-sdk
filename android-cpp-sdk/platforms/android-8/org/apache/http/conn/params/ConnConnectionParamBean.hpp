@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/params/HttpAbstractParamBean.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -40,6 +42,7 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 		}
 
 		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ConnConnectionParamBean(local_ref< org::apache::http::params::HttpParams > const&);
@@ -70,14 +73,19 @@ org::apache::http::conn::params::ConnConnectionParamBean::operator local_ref<org
 	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jobject());
 }
 
+org::apache::http::conn::params::ConnConnectionParamBean::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::conn::params::ConnConnectionParamBean::ConnConnectionParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
 : object<org::apache::http::conn::params::ConnConnectionParamBean>(
 	call_new_object<
 		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +97,8 @@ void org::apache::http::conn::params::ConnConnectionParamBean::setMaxStatusLineG
 		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::params::ConnConnectionParamBean::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

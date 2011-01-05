@@ -85,10 +85,11 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::AbstractStringBuilder>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Appendable>() const;
 		operator local_ref<java::lang::CharSequence>() const;
-		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::AbstractStringBuilder>() const;
 
 
 		StringBuilder();
@@ -147,9 +148,14 @@ namespace j2cpp {
 
 
 
-java::lang::StringBuilder::operator local_ref<java::lang::AbstractStringBuilder>() const
+java::lang::StringBuilder::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::AbstractStringBuilder>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::lang::StringBuilder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::lang::StringBuilder::operator local_ref<java::lang::Appendable>() const
@@ -162,9 +168,9 @@ java::lang::StringBuilder::operator local_ref<java::lang::CharSequence>() const
 	return local_ref<java::lang::CharSequence>(get_jobject());
 }
 
-java::lang::StringBuilder::operator local_ref<java::io::Serializable>() const
+java::lang::StringBuilder::operator local_ref<java::lang::AbstractStringBuilder>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::AbstractStringBuilder>(get_jobject());
 }
 
 
@@ -173,8 +179,8 @@ java::lang::StringBuilder::StringBuilder()
 	call_new_object<
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(0),
-		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -186,8 +192,8 @@ java::lang::StringBuilder::StringBuilder(jint a0)
 	call_new_object<
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(1),
-		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -199,8 +205,8 @@ java::lang::StringBuilder::StringBuilder(local_ref< java::lang::CharSequence > c
 	call_new_object<
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(2),
-		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -212,8 +218,8 @@ java::lang::StringBuilder::StringBuilder(local_ref< java::lang::String > const &
 	call_new_object<
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(3),
-		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -225,8 +231,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jboolea
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(4),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jchar a0)
@@ -235,8 +241,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jchar a
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(5),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jint a0)
@@ -245,8 +251,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(6),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jlong a0)
@@ -255,8 +261,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jlong a
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(7),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jfloat a0)
@@ -265,8 +271,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jfloat 
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(8),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jdouble a0)
@@ -275,8 +281,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(jdouble
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(9),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< java::lang::Object > const &a0)
@@ -285,8 +291,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(10),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< java::lang::String > const &a0)
@@ -295,8 +301,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(11),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< java::lang::StringBuffer > const &a0)
@@ -305,8 +311,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(12),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< array<jchar,1> > const &a0)
@@ -315,8 +321,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(13),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -325,8 +331,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(14),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< java::lang::CharSequence > const &a0)
@@ -335,8 +341,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(15),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -345,8 +351,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(local_r
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(16),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::appendCodePoint(jint a0)
@@ -355,8 +361,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::appendCodePoin
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(17),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::delete_(jint a0, jint a1)
@@ -365,8 +371,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::delete_(jint a
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(18),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::deleteCharAt(jint a0)
@@ -375,8 +381,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::deleteCharAt(j
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(19),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jboolean a1)
@@ -385,8 +391,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(20),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jchar a1)
@@ -395,8 +401,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(21),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jint a1)
@@ -405,8 +411,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(22),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jlong a1)
@@ -415,8 +421,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(23),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jfloat a1)
@@ -425,8 +431,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(24),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, jdouble a1)
@@ -435,8 +441,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(25),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< java::lang::Object > const &a1)
@@ -445,8 +451,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(26),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< java::lang::String > const &a1)
@@ -455,8 +461,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(27),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< array<jchar,1> > const &a1)
@@ -465,8 +471,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(28),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< array<jchar,1> > const &a1, jint a2, jint a3)
@@ -475,8 +481,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(29),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< java::lang::CharSequence > const &a1)
@@ -485,8 +491,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(30),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3)
@@ -495,8 +501,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::insert(jint a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(31),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::replace(jint a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -505,8 +511,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::replace(jint a
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(32),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::reverse()
@@ -515,8 +521,8 @@ local_ref< java::lang::StringBuilder > java::lang::StringBuilder::reverse()
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(33),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::StringBuilder > >
-	(get_jobject());
+		local_ref< java::lang::StringBuilder >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::StringBuilder::toString()
@@ -525,8 +531,8 @@ local_ref< java::lang::String > java::lang::StringBuilder::toString()
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(34),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -535,8 +541,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(local_re
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(35),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(local_ref< java::lang::CharSequence > const &a0)
@@ -545,8 +551,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(local_re
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(36),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(jchar a0)
@@ -555,8 +561,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuilder::append_1(jchar a0
 		java::lang::StringBuilder::J2CPP_CLASS_NAME,
 		java::lang::StringBuilder::J2CPP_METHOD_NAME(37),
 		java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 

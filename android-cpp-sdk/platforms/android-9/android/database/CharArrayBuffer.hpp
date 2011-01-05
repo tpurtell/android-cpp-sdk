@@ -78,8 +78,8 @@ android::database::CharArrayBuffer::CharArrayBuffer(jint a0)
 	call_new_object<
 		android::database::CharArrayBuffer::J2CPP_CLASS_NAME,
 		android::database::CharArrayBuffer::J2CPP_METHOD_NAME(0),
-		android::database::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::database::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , data(get_jobject())
 , sizeCopied(get_jobject())
@@ -93,8 +93,8 @@ android::database::CharArrayBuffer::CharArrayBuffer(local_ref< array<jchar,1> > 
 	call_new_object<
 		android::database::CharArrayBuffer::J2CPP_CLASS_NAME,
 		android::database::CharArrayBuffer::J2CPP_METHOD_NAME(1),
-		android::database::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::database::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , data(get_jobject())
 , sizeCopied(get_jobject())

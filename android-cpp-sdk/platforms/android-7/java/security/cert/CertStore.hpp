@@ -100,8 +100,8 @@ local_ref< java::security::cert::CertStore > java::security::cert::CertStore::ge
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertStore > >
-	(a0, a1);
+		local_ref< java::security::cert::CertStore >
+	>(a0, a1);
 }
 
 local_ref< java::security::cert::CertStore > java::security::cert::CertStore::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::CertStoreParameters > const &a1, local_ref< java::lang::String > const &a2)
@@ -110,8 +110,8 @@ local_ref< java::security::cert::CertStore > java::security::cert::CertStore::ge
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(2),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::cert::CertStore > >
-	(a0, a1, a2);
+		local_ref< java::security::cert::CertStore >
+	>(a0, a1, a2);
 }
 
 local_ref< java::security::cert::CertStore > java::security::cert::CertStore::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::CertStoreParameters > const &a1, local_ref< java::security::Provider > const &a2)
@@ -120,8 +120,8 @@ local_ref< java::security::cert::CertStore > java::security::cert::CertStore::ge
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(3),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::cert::CertStore > >
-	(a0, a1, a2);
+		local_ref< java::security::cert::CertStore >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > java::security::cert::CertStore::getType()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > java::security::cert::CertStore::getType()
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(4),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > java::security::cert::CertStore::getProvider()
@@ -140,8 +140,8 @@ local_ref< java::security::Provider > java::security::cert::CertStore::getProvid
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(5),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::security::cert::CertStoreParameters > java::security::cert::CertStore::getCertStoreParameters()
@@ -150,8 +150,8 @@ local_ref< java::security::cert::CertStoreParameters > java::security::cert::Cer
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(6),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::cert::CertStoreParameters > >
-	(get_jobject());
+		local_ref< java::security::cert::CertStoreParameters >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::security::cert::CertStore::getCertificates(local_ref< java::security::cert::CertSelector > const &a0)
@@ -160,8 +160,8 @@ local_ref< java::util::Collection > java::security::cert::CertStore::getCertific
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(7),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::security::cert::CertStore::getCRLs(local_ref< java::security::cert::CRLSelector > const &a0)
@@ -170,8 +170,8 @@ local_ref< java::util::Collection > java::security::cert::CertStore::getCRLs(loc
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(8),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::CertStore::getDefaultType()
@@ -180,8 +180,8 @@ local_ref< java::lang::String > java::security::cert::CertStore::getDefaultType(
 		java::security::cert::CertStore::J2CPP_CLASS_NAME,
 		java::security::cert::CertStore::J2CPP_METHOD_NAME(9),
 		java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 

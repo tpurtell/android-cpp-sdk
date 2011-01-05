@@ -137,8 +137,8 @@ void android::location::GpsStatus_::NmeaListener::onNmeaReceived(jlong a0, local
 		android::location::GpsStatus_::NmeaListener::J2CPP_CLASS_NAME,
 		android::location::GpsStatus_::NmeaListener::J2CPP_METHOD_NAME(0),
 		android::location::GpsStatus_::NmeaListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -157,8 +157,8 @@ void android::location::GpsStatus_::Listener::onGpsStatusChanged(jint a0)
 		android::location::GpsStatus_::Listener::J2CPP_CLASS_NAME,
 		android::location::GpsStatus_::Listener::J2CPP_METHOD_NAME(0),
 		android::location::GpsStatus_::Listener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -179,8 +179,8 @@ jint android::location::GpsStatus::getTimeToFirstFix()
 		android::location::GpsStatus::J2CPP_CLASS_NAME,
 		android::location::GpsStatus::J2CPP_METHOD_NAME(1),
 		android::location::GpsStatus::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Iterable > android::location::GpsStatus::getSatellites()
@@ -189,8 +189,8 @@ local_ref< java::lang::Iterable > android::location::GpsStatus::getSatellites()
 		android::location::GpsStatus::J2CPP_CLASS_NAME,
 		android::location::GpsStatus::J2CPP_METHOD_NAME(2),
 		android::location::GpsStatus::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Iterable > >
-	(get_jobject());
+		local_ref< java::lang::Iterable >
+	>(get_jobject());
 }
 
 jint android::location::GpsStatus::getMaxSatellites()
@@ -199,8 +199,8 @@ jint android::location::GpsStatus::getMaxSatellites()
 		android::location::GpsStatus::J2CPP_CLASS_NAME,
 		android::location::GpsStatus::J2CPP_METHOD_NAME(3),
 		android::location::GpsStatus::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

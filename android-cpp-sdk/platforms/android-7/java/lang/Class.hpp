@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_CLASS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -123,11 +123,11 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::reflect::AnnotatedElement>() const;
-		operator local_ref<java::lang::reflect::GenericDeclaration>() const;
 		operator local_ref<java::lang::reflect::Type>() const;
+		operator local_ref<java::lang::reflect::GenericDeclaration>() const;
 
 
 		static local_ref< java::lang::Class > forName(local_ref< java::lang::String >  const&);
@@ -205,14 +205,14 @@ namespace j2cpp {
 
 
 
-java::lang::Class::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::Class::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::lang::Class::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::lang::Class::operator local_ref<java::lang::reflect::AnnotatedElement>() const
@@ -220,14 +220,14 @@ java::lang::Class::operator local_ref<java::lang::reflect::AnnotatedElement>() c
 	return local_ref<java::lang::reflect::AnnotatedElement>(get_jobject());
 }
 
-java::lang::Class::operator local_ref<java::lang::reflect::GenericDeclaration>() const
-{
-	return local_ref<java::lang::reflect::GenericDeclaration>(get_jobject());
-}
-
 java::lang::Class::operator local_ref<java::lang::reflect::Type>() const
 {
 	return local_ref<java::lang::reflect::Type>(get_jobject());
+}
+
+java::lang::Class::operator local_ref<java::lang::reflect::GenericDeclaration>() const
+{
+	return local_ref<java::lang::reflect::GenericDeclaration>(get_jobject());
 }
 
 
@@ -237,8 +237,8 @@ local_ref< java::lang::Class > java::lang::Class::forName(local_ref< java::lang:
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(1),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Class > >
-	(a0);
+		local_ref< java::lang::Class >
+	>(a0);
 }
 
 local_ref< java::lang::Class > java::lang::Class::forName(local_ref< java::lang::String > const &a0, jboolean a1, local_ref< java::lang::ClassLoader > const &a2)
@@ -247,8 +247,8 @@ local_ref< java::lang::Class > java::lang::Class::forName(local_ref< java::lang:
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(2),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Class > >
-	(a0, a1, a2);
+		local_ref< java::lang::Class >
+	>(a0, a1, a2);
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getClasses()
@@ -257,8 +257,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getCla
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(3),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::annotation::Annotation > java::lang::Class::getAnnotation(local_ref< java::lang::Class > const &a0)
@@ -267,8 +267,8 @@ local_ref< java::lang::annotation::Annotation > java::lang::Class::getAnnotation
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(4),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::annotation::Annotation > >
-	(get_jobject(), a0);
+		local_ref< java::lang::annotation::Annotation >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::Class::getAnnotations()
@@ -277,8 +277,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(5),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Class::getCanonicalName()
@@ -287,8 +287,8 @@ local_ref< java::lang::String > java::lang::Class::getCanonicalName()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(6),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ClassLoader > java::lang::Class::getClassLoader()
@@ -297,8 +297,8 @@ local_ref< java::lang::ClassLoader > java::lang::Class::getClassLoader()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(7),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::ClassLoader > >
-	(get_jobject());
+		local_ref< java::lang::ClassLoader >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::lang::Class::getComponentType()
@@ -307,8 +307,8 @@ local_ref< java::lang::Class > java::lang::Class::getComponentType()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(8),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Constructor > java::lang::Class::getConstructor(local_ref< array< local_ref< java::lang::Class >, 1> > const &a0)
@@ -317,8 +317,8 @@ local_ref< java::lang::reflect::Constructor > java::lang::Class::getConstructor(
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(9),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::reflect::Constructor > >
-	(get_jobject(), a0);
+		local_ref< java::lang::reflect::Constructor >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > java::lang::Class::getConstructors()
@@ -327,8 +327,8 @@ local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > java::lang
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(10),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::Class::getDeclaredAnnotations()
@@ -337,8 +337,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(11),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getDeclaredClasses()
@@ -347,8 +347,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getDec
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(12),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Constructor > java::lang::Class::getDeclaredConstructor(local_ref< array< local_ref< java::lang::Class >, 1> > const &a0)
@@ -357,8 +357,8 @@ local_ref< java::lang::reflect::Constructor > java::lang::Class::getDeclaredCons
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(13),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::reflect::Constructor > >
-	(get_jobject(), a0);
+		local_ref< java::lang::reflect::Constructor >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > java::lang::Class::getDeclaredConstructors()
@@ -367,8 +367,8 @@ local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > java::lang
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(14),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Constructor >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Field > java::lang::Class::getDeclaredField(local_ref< java::lang::String > const &a0)
@@ -377,8 +377,8 @@ local_ref< java::lang::reflect::Field > java::lang::Class::getDeclaredField(loca
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(15),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::reflect::Field > >
-	(get_jobject(), a0);
+		local_ref< java::lang::reflect::Field >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Field >, 1> > java::lang::Class::getDeclaredFields()
@@ -387,8 +387,8 @@ local_ref< array< local_ref< java::lang::reflect::Field >, 1> > java::lang::Clas
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(16),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array< local_ref< java::lang::reflect::Field >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Field >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Method > java::lang::Class::getDeclaredMethod(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Class >, 1> > const &a1)
@@ -397,8 +397,8 @@ local_ref< java::lang::reflect::Method > java::lang::Class::getDeclaredMethod(lo
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(17),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::reflect::Method > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::reflect::Method >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Method >, 1> > java::lang::Class::getDeclaredMethods()
@@ -407,8 +407,8 @@ local_ref< array< local_ref< java::lang::reflect::Method >, 1> > java::lang::Cla
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(18),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array< local_ref< java::lang::reflect::Method >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Method >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::lang::Class::getDeclaringClass()
@@ -417,8 +417,8 @@ local_ref< java::lang::Class > java::lang::Class::getDeclaringClass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(19),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::lang::Class::getEnclosingClass()
@@ -427,8 +427,8 @@ local_ref< java::lang::Class > java::lang::Class::getEnclosingClass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(20),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Constructor > java::lang::Class::getEnclosingConstructor()
@@ -437,8 +437,8 @@ local_ref< java::lang::reflect::Constructor > java::lang::Class::getEnclosingCon
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(21),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::reflect::Constructor > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Constructor >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Method > java::lang::Class::getEnclosingMethod()
@@ -447,8 +447,8 @@ local_ref< java::lang::reflect::Method > java::lang::Class::getEnclosingMethod()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(22),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::reflect::Method > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Method >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::lang::Class::getEnumConstants()
@@ -457,8 +457,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::lang::Class::getEn
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(23),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Field > java::lang::Class::getField(local_ref< java::lang::String > const &a0)
@@ -467,8 +467,8 @@ local_ref< java::lang::reflect::Field > java::lang::Class::getField(local_ref< j
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(24),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::reflect::Field > >
-	(get_jobject(), a0);
+		local_ref< java::lang::reflect::Field >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Field >, 1> > java::lang::Class::getFields()
@@ -477,8 +477,8 @@ local_ref< array< local_ref< java::lang::reflect::Field >, 1> > java::lang::Clas
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(25),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< array< local_ref< java::lang::reflect::Field >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Field >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::Class::getGenericInterfaces()
@@ -487,8 +487,8 @@ local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::Class
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(26),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Type >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Type > java::lang::Class::getGenericSuperclass()
@@ -497,8 +497,8 @@ local_ref< java::lang::reflect::Type > java::lang::Class::getGenericSuperclass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(27),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::reflect::Type > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Type >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getInterfaces()
@@ -507,8 +507,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > java::lang::Class::getInt
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(28),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Method > java::lang::Class::getMethod(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Class >, 1> > const &a1)
@@ -517,8 +517,8 @@ local_ref< java::lang::reflect::Method > java::lang::Class::getMethod(local_ref<
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(29),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::reflect::Method > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::reflect::Method >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::reflect::Method >, 1> > java::lang::Class::getMethods()
@@ -527,8 +527,8 @@ local_ref< array< local_ref< java::lang::reflect::Method >, 1> > java::lang::Cla
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(30),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< array< local_ref< java::lang::reflect::Method >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Method >, 1> >
+	>(get_jobject());
 }
 
 jint java::lang::Class::getModifiers()
@@ -537,8 +537,8 @@ jint java::lang::Class::getModifiers()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(31),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Class::getName()
@@ -547,8 +547,8 @@ local_ref< java::lang::String > java::lang::Class::getName()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(32),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Class::getSimpleName()
@@ -557,8 +557,8 @@ local_ref< java::lang::String > java::lang::Class::getSimpleName()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(33),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::ProtectionDomain > java::lang::Class::getProtectionDomain()
@@ -567,8 +567,8 @@ local_ref< java::security::ProtectionDomain > java::lang::Class::getProtectionDo
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(34),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::security::ProtectionDomain > >
-	(get_jobject());
+		local_ref< java::security::ProtectionDomain >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::lang::Class::getResource(local_ref< java::lang::String > const &a0)
@@ -577,8 +577,8 @@ local_ref< java::net::URL > java::lang::Class::getResource(local_ref< java::lang
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(35),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::net::URL > >
-	(get_jobject(), a0);
+		local_ref< java::net::URL >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::lang::Class::getResourceAsStream(local_ref< java::lang::String > const &a0)
@@ -587,8 +587,8 @@ local_ref< java::io::InputStream > java::lang::Class::getResourceAsStream(local_
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(36),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::lang::Class::getSigners()
@@ -597,8 +597,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::lang::Class::getSi
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(37),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::lang::Class::getSuperclass()
@@ -607,8 +607,8 @@ local_ref< java::lang::Class > java::lang::Class::getSuperclass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(38),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::reflect::TypeVariable >, 1> > java::lang::Class::getTypeParameters()
@@ -617,8 +617,8 @@ local_ref< array< local_ref< java::lang::reflect::TypeVariable >, 1> > java::lan
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(39),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< array< local_ref< java::lang::reflect::TypeVariable >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::TypeVariable >, 1> >
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isAnnotation()
@@ -627,8 +627,8 @@ jboolean java::lang::Class::isAnnotation()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(40),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isAnnotationPresent(local_ref< java::lang::Class > const &a0)
@@ -637,8 +637,8 @@ jboolean java::lang::Class::isAnnotationPresent(local_ref< java::lang::Class > c
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(41),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::Class::isAnonymousClass()
@@ -647,8 +647,8 @@ jboolean java::lang::Class::isAnonymousClass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(42),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(42), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isArray()
@@ -657,8 +657,8 @@ jboolean java::lang::Class::isArray()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(43),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isAssignableFrom(local_ref< java::lang::Class > const &a0)
@@ -667,8 +667,8 @@ jboolean java::lang::Class::isAssignableFrom(local_ref< java::lang::Class > cons
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(44),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::Class::isEnum()
@@ -677,8 +677,8 @@ jboolean java::lang::Class::isEnum()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(45),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isInstance(local_ref< java::lang::Object > const &a0)
@@ -687,8 +687,8 @@ jboolean java::lang::Class::isInstance(local_ref< java::lang::Object > const &a0
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(46),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(46), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::Class::isInterface()
@@ -697,8 +697,8 @@ jboolean java::lang::Class::isInterface()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(47),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isLocalClass()
@@ -707,8 +707,8 @@ jboolean java::lang::Class::isLocalClass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(48),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(48), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isMemberClass()
@@ -717,8 +717,8 @@ jboolean java::lang::Class::isMemberClass()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(49),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(49), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isPrimitive()
@@ -727,8 +727,8 @@ jboolean java::lang::Class::isPrimitive()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(50),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::isSynthetic()
@@ -737,8 +737,8 @@ jboolean java::lang::Class::isSynthetic()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(51),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::lang::Class::newInstance()
@@ -747,8 +747,8 @@ local_ref< java::lang::Object > java::lang::Class::newInstance()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(52),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Class::toString()
@@ -757,8 +757,8 @@ local_ref< java::lang::String > java::lang::Class::toString()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(53),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Package > java::lang::Class::getPackage()
@@ -767,8 +767,8 @@ local_ref< java::lang::Package > java::lang::Class::getPackage()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(54),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< java::lang::Package > >
-	(get_jobject());
+		local_ref< java::lang::Package >
+	>(get_jobject());
 }
 
 jboolean java::lang::Class::desiredAssertionStatus()
@@ -777,8 +777,8 @@ jboolean java::lang::Class::desiredAssertionStatus()
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(55),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(55), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::lang::Class::asSubclass(local_ref< java::lang::Class > const &a0)
@@ -787,8 +787,8 @@ local_ref< java::lang::Class > java::lang::Class::asSubclass(local_ref< java::la
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(56),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< java::lang::Class > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Class >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::lang::Class::cast(local_ref< java::lang::Object > const &a0)
@@ -797,8 +797,8 @@ local_ref< java::lang::Object > java::lang::Class::cast(local_ref< java::lang::O
 		java::lang::Class::J2CPP_CLASS_NAME,
 		java::lang::Class::J2CPP_METHOD_NAME(57),
 		java::lang::Class::J2CPP_METHOD_SIGNATURE(57), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

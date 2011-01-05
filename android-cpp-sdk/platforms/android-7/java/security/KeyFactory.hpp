@@ -101,8 +101,8 @@ local_ref< java::security::KeyFactory > java::security::KeyFactory::getInstance(
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(1),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::KeyFactory > >
-	(a0);
+		local_ref< java::security::KeyFactory >
+	>(a0);
 }
 
 local_ref< java::security::KeyFactory > java::security::KeyFactory::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -111,8 +111,8 @@ local_ref< java::security::KeyFactory > java::security::KeyFactory::getInstance(
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(2),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::KeyFactory > >
-	(a0, a1);
+		local_ref< java::security::KeyFactory >
+	>(a0, a1);
 }
 
 local_ref< java::security::KeyFactory > java::security::KeyFactory::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -121,8 +121,8 @@ local_ref< java::security::KeyFactory > java::security::KeyFactory::getInstance(
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(3),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::KeyFactory > >
-	(a0, a1);
+		local_ref< java::security::KeyFactory >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::KeyFactory::getProvider()
@@ -131,8 +131,8 @@ local_ref< java::security::Provider > java::security::KeyFactory::getProvider()
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(4),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::KeyFactory::getAlgorithm()
@@ -141,8 +141,8 @@ local_ref< java::lang::String > java::security::KeyFactory::getAlgorithm()
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(5),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::PublicKey > java::security::KeyFactory::generatePublic(local_ref< java::security::spec::KeySpec > const &a0)
@@ -151,8 +151,8 @@ local_ref< java::security::PublicKey > java::security::KeyFactory::generatePubli
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(6),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject(), a0);
+		local_ref< java::security::PublicKey >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PrivateKey > java::security::KeyFactory::generatePrivate(local_ref< java::security::spec::KeySpec > const &a0)
@@ -161,8 +161,8 @@ local_ref< java::security::PrivateKey > java::security::KeyFactory::generatePriv
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(7),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::PrivateKey > >
-	(get_jobject(), a0);
+		local_ref< java::security::PrivateKey >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::spec::KeySpec > java::security::KeyFactory::getKeySpec(local_ref< java::security::Key > const &a0, local_ref< java::lang::Class > const &a1)
@@ -171,8 +171,8 @@ local_ref< java::security::spec::KeySpec > java::security::KeyFactory::getKeySpe
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(8),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::spec::KeySpec > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::spec::KeySpec >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::Key > java::security::KeyFactory::translateKey(local_ref< java::security::Key > const &a0)
@@ -181,8 +181,8 @@ local_ref< java::security::Key > java::security::KeyFactory::translateKey(local_
 		java::security::KeyFactory::J2CPP_CLASS_NAME,
 		java::security::KeyFactory::J2CPP_METHOD_NAME(9),
 		java::security::KeyFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::Key > >
-	(get_jobject(), a0);
+		local_ref< java::security::Key >
+	>(get_jobject(), a0);
 }
 
 

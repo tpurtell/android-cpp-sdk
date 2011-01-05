@@ -41,8 +41,8 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::microedition::khronos::opengles::GL>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint glQueryMatrixxOES(local_ref< array<jint,1> >  const&, jint, local_ref< array<jint,1> >  const&, jint);
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-javax::microedition::khronos::opengles::GL10Ext::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::microedition::khronos::opengles::GL10Ext::operator local_ref<javax::microedition::khronos::opengles::GL>() const
 {
 	return local_ref<javax::microedition::khronos::opengles::GL>(get_jobject());
+}
+
+javax::microedition::khronos::opengles::GL10Ext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_ref< array<jint,1> > const &a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -83,8 +83,8 @@ jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_re
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_NAME(0),
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_ref< java::nio::IntBuffer > const &a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -93,8 +93,8 @@ jint javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_re
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_NAME(1),
 		javax::microedition::khronos::opengles::GL10Ext::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

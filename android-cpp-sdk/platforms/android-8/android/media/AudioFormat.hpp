@@ -154,8 +154,8 @@ android::media::AudioFormat::AudioFormat()
 	call_new_object<
 		android::media::AudioFormat::J2CPP_CLASS_NAME,
 		android::media::AudioFormat::J2CPP_METHOD_NAME(0),
-		android::media::AudioFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::AudioFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

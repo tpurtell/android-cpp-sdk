@@ -83,8 +83,8 @@ android::hardware::GeomagneticField::GeomagneticField(jfloat a0, jfloat a1, jflo
 	call_new_object<
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(0),
-		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -96,8 +96,8 @@ jfloat android::hardware::GeomagneticField::getX()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(1),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getY()
@@ -106,8 +106,8 @@ jfloat android::hardware::GeomagneticField::getY()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(2),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getZ()
@@ -116,8 +116,8 @@ jfloat android::hardware::GeomagneticField::getZ()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(3),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getDeclination()
@@ -126,8 +126,8 @@ jfloat android::hardware::GeomagneticField::getDeclination()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(4),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getInclination()
@@ -136,8 +136,8 @@ jfloat android::hardware::GeomagneticField::getInclination()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(5),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getHorizontalStrength()
@@ -146,8 +146,8 @@ jfloat android::hardware::GeomagneticField::getHorizontalStrength()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(6),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::GeomagneticField::getFieldStrength()
@@ -156,8 +156,8 @@ jfloat android::hardware::GeomagneticField::getFieldStrength()
 		android::hardware::GeomagneticField::J2CPP_CLASS_NAME,
 		android::hardware::GeomagneticField::J2CPP_METHOD_NAME(7),
 		android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 

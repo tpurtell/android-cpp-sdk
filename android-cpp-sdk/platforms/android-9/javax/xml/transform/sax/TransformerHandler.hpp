@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_SAX_TRANSFORMERHANDLER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class Result; } } } }
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class Transformer; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class Transformer; } } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class Result; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class LexicalHandler; } } } } }
@@ -107,8 +107,8 @@ void javax::xml::transform::sax::TransformerHandler::setResult(local_ref< javax:
 		javax::xml::transform::sax::TransformerHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::transform::sax::TransformerHandler::setSystemId(local_ref< java::lang::String > const &a0)
@@ -117,8 +117,8 @@ void javax::xml::transform::sax::TransformerHandler::setSystemId(local_ref< java
 		javax::xml::transform::sax::TransformerHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::sax::TransformerHandler::getSystemId()
@@ -127,8 +127,8 @@ local_ref< java::lang::String > javax::xml::transform::sax::TransformerHandler::
 		javax::xml::transform::sax::TransformerHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_NAME(2),
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::transform::Transformer > javax::xml::transform::sax::TransformerHandler::getTransformer()
@@ -137,8 +137,8 @@ local_ref< javax::xml::transform::Transformer > javax::xml::transform::sax::Tran
 		javax::xml::transform::sax::TransformerHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_NAME(3),
 		javax::xml::transform::sax::TransformerHandler::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::xml::transform::Transformer > >
-	(get_jobject());
+		local_ref< javax::xml::transform::Transformer >
+	>(get_jobject());
 }
 
 

@@ -74,8 +74,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::EntityResolver::resolveEn
 		org::xml::sax::EntityResolver::J2CPP_CLASS_NAME,
 		org::xml::sax::EntityResolver::J2CPP_METHOD_NAME(0),
 		org::xml::sax::EntityResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -12,12 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URLConnection.hpp>
 #include <java/security/Permission.hpp>
@@ -100,6 +102,7 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::URLConnection>() const;
 
 
@@ -174,6 +177,11 @@ namespace j2cpp {
 
 
 
+java::net::HttpURLConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::HttpURLConnection::operator local_ref<java::net::URLConnection>() const
 {
 	return local_ref<java::net::URLConnection>(get_jobject());
@@ -186,8 +194,8 @@ void java::net::HttpURLConnection::disconnect()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(1),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::net::HttpURLConnection::getErrorStream()
@@ -196,8 +204,8 @@ local_ref< java::io::InputStream > java::net::HttpURLConnection::getErrorStream(
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(2),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jboolean java::net::HttpURLConnection::getFollowRedirects()
@@ -206,8 +214,8 @@ jboolean java::net::HttpURLConnection::getFollowRedirects()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(3),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 local_ref< java::security::Permission > java::net::HttpURLConnection::getPermission()
@@ -216,8 +224,8 @@ local_ref< java::security::Permission > java::net::HttpURLConnection::getPermiss
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(4),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Permission > >
-	(get_jobject());
+		local_ref< java::security::Permission >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpURLConnection::getRequestMethod()
@@ -226,8 +234,8 @@ local_ref< java::lang::String > java::net::HttpURLConnection::getRequestMethod()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(5),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::net::HttpURLConnection::getResponseCode()
@@ -236,8 +244,8 @@ jint java::net::HttpURLConnection::getResponseCode()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(6),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpURLConnection::getResponseMessage()
@@ -246,8 +254,8 @@ local_ref< java::lang::String > java::net::HttpURLConnection::getResponseMessage
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(7),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::net::HttpURLConnection::setFollowRedirects(jboolean a0)
@@ -256,8 +264,8 @@ void java::net::HttpURLConnection::setFollowRedirects(jboolean a0)
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(8),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::net::HttpURLConnection::setRequestMethod(local_ref< java::lang::String > const &a0)
@@ -266,8 +274,8 @@ void java::net::HttpURLConnection::setRequestMethod(local_ref< java::lang::Strin
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(9),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::HttpURLConnection::usingProxy()
@@ -276,8 +284,8 @@ jboolean java::net::HttpURLConnection::usingProxy()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(10),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpURLConnection::getContentEncoding()
@@ -286,8 +294,8 @@ local_ref< java::lang::String > java::net::HttpURLConnection::getContentEncoding
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(11),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::HttpURLConnection::getInstanceFollowRedirects()
@@ -296,8 +304,8 @@ jboolean java::net::HttpURLConnection::getInstanceFollowRedirects()
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(12),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::HttpURLConnection::setInstanceFollowRedirects(jboolean a0)
@@ -306,8 +314,8 @@ void java::net::HttpURLConnection::setInstanceFollowRedirects(jboolean a0)
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(13),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::net::HttpURLConnection::getHeaderFieldDate(local_ref< java::lang::String > const &a0, jlong a1)
@@ -316,8 +324,8 @@ jlong java::net::HttpURLConnection::getHeaderFieldDate(local_ref< java::lang::St
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(14),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(14), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::HttpURLConnection::setFixedLengthStreamingMode(jint a0)
@@ -326,8 +334,8 @@ void java::net::HttpURLConnection::setFixedLengthStreamingMode(jint a0)
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(15),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpURLConnection::setChunkedStreamingMode(jint a0)
@@ -336,8 +344,8 @@ void java::net::HttpURLConnection::setChunkedStreamingMode(jint a0)
 		java::net::HttpURLConnection::J2CPP_CLASS_NAME,
 		java::net::HttpURLConnection::J2CPP_METHOD_NAME(16),
 		java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

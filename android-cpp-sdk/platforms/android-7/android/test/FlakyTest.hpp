@@ -77,8 +77,8 @@ jint android::test::FlakyTest::tolerance()
 		android::test::FlakyTest::J2CPP_CLASS_NAME,
 		android::test::FlakyTest::J2CPP_METHOD_NAME(0),
 		android::test::FlakyTest::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

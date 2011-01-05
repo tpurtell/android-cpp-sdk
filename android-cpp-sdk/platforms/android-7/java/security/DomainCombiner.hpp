@@ -71,8 +71,8 @@ local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > java::secu
 		java::security::DomainCombiner::J2CPP_CLASS_NAME,
 		java::security::DomainCombiner::J2CPP_METHOD_NAME(0),
 		java::security::DomainCombiner::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::security::ProtectionDomain >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::security::ProtectionDomain >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -78,8 +78,8 @@ local_ref< java::lang::Object > java::security::cert::CertPathParameters::clone(
 		java::security::cert::CertPathParameters::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathParameters::J2CPP_METHOD_NAME(0),
 		java::security::cert::CertPathParameters::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

@@ -80,8 +80,8 @@ void javax::net::ssl::HandshakeCompletedListener::handshakeCompleted(local_ref< 
 		javax::net::ssl::HandshakeCompletedListener::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedListener::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::HandshakeCompletedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

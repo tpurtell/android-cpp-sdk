@@ -75,8 +75,8 @@ void org::apache::http::util::ExceptionUtils::initCause(local_ref< java::lang::T
 		org::apache::http::util::ExceptionUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::ExceptionUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::ExceptionUtils::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

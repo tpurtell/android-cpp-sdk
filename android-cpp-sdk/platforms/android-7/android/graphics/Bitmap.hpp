@@ -11,9 +11,11 @@
 #define J2CPP_ANDROID_GRAPHICS_BITMAP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
@@ -35,6 +37,8 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/util/DisplayMetrics.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -69,7 +73,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Bitmap_::CompressFormat >, 1> > values();
@@ -102,7 +109,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Bitmap_::Config >, 1> > values();
@@ -239,9 +249,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Bitmap_::CompressFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::graphics::Bitmap_::CompressFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::Bitmap_::CompressFormat::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Bitmap_::CompressFormat::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Bitmap_::CompressFormat >, 1> > android::graphics::Bitmap_::CompressFormat::values()
@@ -250,8 +275,8 @@ local_ref< array< local_ref< android::graphics::Bitmap_::CompressFormat >, 1> > 
 		android::graphics::Bitmap_::CompressFormat::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_NAME(0),
 		android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Bitmap_::CompressFormat >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Bitmap_::CompressFormat >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Bitmap_::CompressFormat > android::graphics::Bitmap_::CompressFormat::valueOf(local_ref< java::lang::String > const &a0)
@@ -260,8 +285,8 @@ local_ref< android::graphics::Bitmap_::CompressFormat > android::graphics::Bitma
 		android::graphics::Bitmap_::CompressFormat::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_NAME(1),
 		android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Bitmap_::CompressFormat > >
-	(a0);
+		local_ref< android::graphics::Bitmap_::CompressFormat >
+	>(a0);
 }
 
 
@@ -292,9 +317,24 @@ J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::CompressFormat,1,"PNG","Landroid/
 J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::CompressFormat,2,"$VALUES","[android.graphics.Bitmap.CompressFormat")
 
 
+android::graphics::Bitmap_::Config::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::graphics::Bitmap_::Config::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::Bitmap_::Config::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Bitmap_::Config::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Bitmap_::Config >, 1> > android::graphics::Bitmap_::Config::values()
@@ -303,8 +343,8 @@ local_ref< array< local_ref< android::graphics::Bitmap_::Config >, 1> > android:
 		android::graphics::Bitmap_::Config::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap_::Config::J2CPP_METHOD_NAME(0),
 		android::graphics::Bitmap_::Config::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Bitmap_::Config >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Bitmap_::Config >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Bitmap_::Config > android::graphics::Bitmap_::Config::valueOf(local_ref< java::lang::String > const &a0)
@@ -313,8 +353,8 @@ local_ref< android::graphics::Bitmap_::Config > android::graphics::Bitmap_::Conf
 		android::graphics::Bitmap_::Config::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap_::Config::J2CPP_METHOD_NAME(1),
 		android::graphics::Bitmap_::Config::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Bitmap_::Config > >
-	(a0);
+		local_ref< android::graphics::Bitmap_::Config >
+	>(a0);
 }
 
 
@@ -379,8 +419,8 @@ jint android::graphics::Bitmap::getDensity()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(1),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Bitmap::setDensity(jint a0)
@@ -389,8 +429,8 @@ void android::graphics::Bitmap::setDensity(jint a0)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(2),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Bitmap::recycle()
@@ -399,8 +439,8 @@ void android::graphics::Bitmap::recycle()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(3),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::graphics::Bitmap::isRecycled()
@@ -409,8 +449,8 @@ jboolean android::graphics::Bitmap::isRecycled()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(4),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Bitmap::copyPixelsToBuffer(local_ref< java::nio::Buffer > const &a0)
@@ -419,8 +459,8 @@ void android::graphics::Bitmap::copyPixelsToBuffer(local_ref< java::nio::Buffer 
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(5),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Bitmap::copyPixelsFromBuffer(local_ref< java::nio::Buffer > const &a0)
@@ -429,8 +469,8 @@ void android::graphics::Bitmap::copyPixelsFromBuffer(local_ref< java::nio::Buffe
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(6),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::copy(local_ref< android::graphics::Bitmap_::Config > const &a0, jboolean a1)
@@ -439,8 +479,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::copy(local_ref
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(7),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject(), a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createScaledBitmap(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2, jboolean a3)
@@ -449,8 +489,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createScaledBi
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(8),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(local_ref< android::graphics::Bitmap > const &a0)
@@ -459,8 +499,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(9),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Bitmap > >
-	(a0);
+		local_ref< android::graphics::Bitmap >
+	>(a0);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -469,8 +509,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(10),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::graphics::Matrix > const &a5, jboolean a6)
@@ -479,8 +519,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(11),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3, a4, a5, a6);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(jint a0, jint a1, local_ref< android::graphics::Bitmap_::Config > const &a2)
@@ -489,8 +529,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(j
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(12),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::graphics::Bitmap_::Config > const &a5)
@@ -499,8 +539,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(13),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(local_ref< array<jint,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::Bitmap_::Config > const &a3)
@@ -509,8 +549,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::createBitmap(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(14),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< array<jbyte,1> > android::graphics::Bitmap::getNinePatchChunk()
@@ -519,8 +559,8 @@ local_ref< array<jbyte,1> > android::graphics::Bitmap::getNinePatchChunk()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(15),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean android::graphics::Bitmap::compress(local_ref< android::graphics::Bitmap_::CompressFormat > const &a0, jint a1, local_ref< java::io::OutputStream > const &a2)
@@ -529,8 +569,8 @@ jboolean android::graphics::Bitmap::compress(local_ref< android::graphics::Bitma
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(16),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Bitmap::isMutable()
@@ -539,8 +579,8 @@ jboolean android::graphics::Bitmap::isMutable()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(17),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::graphics::Bitmap::getWidth()
@@ -549,8 +589,8 @@ jint android::graphics::Bitmap::getWidth()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(18),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Bitmap::getHeight()
@@ -559,8 +599,8 @@ jint android::graphics::Bitmap::getHeight()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(19),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Bitmap::getScaledWidth(local_ref< android::graphics::Canvas > const &a0)
@@ -569,8 +609,8 @@ jint android::graphics::Bitmap::getScaledWidth(local_ref< android::graphics::Can
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(20),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getScaledHeight(local_ref< android::graphics::Canvas > const &a0)
@@ -579,8 +619,8 @@ jint android::graphics::Bitmap::getScaledHeight(local_ref< android::graphics::Ca
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(21),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getScaledWidth(local_ref< android::util::DisplayMetrics > const &a0)
@@ -589,8 +629,8 @@ jint android::graphics::Bitmap::getScaledWidth(local_ref< android::util::Display
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(22),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getScaledHeight(local_ref< android::util::DisplayMetrics > const &a0)
@@ -599,8 +639,8 @@ jint android::graphics::Bitmap::getScaledHeight(local_ref< android::util::Displa
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(23),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getScaledWidth(jint a0)
@@ -609,8 +649,8 @@ jint android::graphics::Bitmap::getScaledWidth(jint a0)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(24),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getScaledHeight(jint a0)
@@ -619,8 +659,8 @@ jint android::graphics::Bitmap::getScaledHeight(jint a0)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(25),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getRowBytes()
@@ -629,8 +669,8 @@ jint android::graphics::Bitmap::getRowBytes()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(26),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap_::Config > android::graphics::Bitmap::getConfig()
@@ -639,8 +679,8 @@ local_ref< android::graphics::Bitmap_::Config > android::graphics::Bitmap::getCo
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(27),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::graphics::Bitmap_::Config > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap_::Config >
+	>(get_jobject());
 }
 
 jboolean android::graphics::Bitmap::hasAlpha()
@@ -649,8 +689,8 @@ jboolean android::graphics::Bitmap::hasAlpha()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(28),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Bitmap::eraseColor(jint a0)
@@ -659,8 +699,8 @@ void android::graphics::Bitmap::eraseColor(jint a0)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(29),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Bitmap::getPixel(jint a0, jint a1)
@@ -669,8 +709,8 @@ jint android::graphics::Bitmap::getPixel(jint a0, jint a1)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(30),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Bitmap::getPixels(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6)
@@ -679,8 +719,8 @@ void android::graphics::Bitmap::getPixels(local_ref< array<jint,1> > const &a0, 
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(31),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::graphics::Bitmap::setPixel(jint a0, jint a1, jint a2)
@@ -689,8 +729,8 @@ void android::graphics::Bitmap::setPixel(jint a0, jint a1, jint a2)
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(32),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Bitmap::setPixels(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6)
@@ -699,8 +739,8 @@ void android::graphics::Bitmap::setPixels(local_ref< array<jint,1> > const &a0, 
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(33),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 jint android::graphics::Bitmap::describeContents()
@@ -709,8 +749,8 @@ jint android::graphics::Bitmap::describeContents()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(34),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Bitmap::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -719,8 +759,8 @@ void android::graphics::Bitmap::writeToParcel(local_ref< android::os::Parcel > c
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(35),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::extractAlpha()
@@ -729,8 +769,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::extractAlpha()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(36),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::Bitmap::extractAlpha(local_ref< android::graphics::Paint > const &a0, local_ref< array<jint,1> > const &a1)
@@ -739,8 +779,8 @@ local_ref< android::graphics::Bitmap > android::graphics::Bitmap::extractAlpha(l
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(37),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject(), a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Bitmap::prepareToDraw()
@@ -749,8 +789,8 @@ void android::graphics::Bitmap::prepareToDraw()
 		android::graphics::Bitmap::J2CPP_CLASS_NAME,
 		android::graphics::Bitmap::J2CPP_METHOD_NAME(38),
 		android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -71,8 +71,8 @@ jboolean com::android::internal::util::Predicate::apply(local_ref< java::lang::O
 		com::android::internal::util::Predicate::J2CPP_CLASS_NAME,
 		com::android::internal::util::Predicate::J2CPP_METHOD_NAME(0),
 		com::android::internal::util::Predicate::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

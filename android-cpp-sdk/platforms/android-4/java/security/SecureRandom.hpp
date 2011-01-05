@@ -11,11 +11,15 @@
 #define J2CPP_JAVA_SECURITY_SECURERANDOM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { class Random; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/util/Random.hpp>
@@ -53,7 +57,9 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::util::Random>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SecureRandom();
@@ -86,9 +92,19 @@ namespace j2cpp {
 
 
 
+java::security::SecureRandom::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::security::SecureRandom::operator local_ref<java::util::Random>() const
 {
 	return local_ref<java::util::Random>(get_jobject());
+}
+
+java::security::SecureRandom::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -97,8 +113,8 @@ java::security::SecureRandom::SecureRandom()
 	call_new_object<
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(0),
-		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -110,8 +126,8 @@ java::security::SecureRandom::SecureRandom(local_ref< array<jbyte,1> > const &a0
 	call_new_object<
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(1),
-		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -124,8 +140,8 @@ local_ref< java::security::SecureRandom > java::security::SecureRandom::getInsta
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(3),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::SecureRandom > >
-	(a0);
+		local_ref< java::security::SecureRandom >
+	>(a0);
 }
 
 local_ref< java::security::SecureRandom > java::security::SecureRandom::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -134,8 +150,8 @@ local_ref< java::security::SecureRandom > java::security::SecureRandom::getInsta
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(4),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::SecureRandom > >
-	(a0, a1);
+		local_ref< java::security::SecureRandom >
+	>(a0, a1);
 }
 
 local_ref< java::security::SecureRandom > java::security::SecureRandom::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -144,8 +160,8 @@ local_ref< java::security::SecureRandom > java::security::SecureRandom::getInsta
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(5),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::SecureRandom > >
-	(a0, a1);
+		local_ref< java::security::SecureRandom >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::SecureRandom::getProvider()
@@ -154,8 +170,8 @@ local_ref< java::security::Provider > java::security::SecureRandom::getProvider(
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(6),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::SecureRandom::getAlgorithm()
@@ -164,8 +180,8 @@ local_ref< java::lang::String > java::security::SecureRandom::getAlgorithm()
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(7),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::SecureRandom::setSeed(local_ref< array<jbyte,1> > const &a0)
@@ -174,8 +190,8 @@ void java::security::SecureRandom::setSeed(local_ref< array<jbyte,1> > const &a0
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(8),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::SecureRandom::setSeed(jlong a0)
@@ -184,8 +200,8 @@ void java::security::SecureRandom::setSeed(jlong a0)
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(9),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::SecureRandom::nextBytes(local_ref< array<jbyte,1> > const &a0)
@@ -194,8 +210,8 @@ void java::security::SecureRandom::nextBytes(local_ref< array<jbyte,1> > const &
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(10),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -205,8 +221,8 @@ local_ref< array<jbyte,1> > java::security::SecureRandom::getSeed(jint a0)
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(12),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< array<jbyte,1> > java::security::SecureRandom::generateSeed(jint a0)
@@ -215,8 +231,8 @@ local_ref< array<jbyte,1> > java::security::SecureRandom::generateSeed(jint a0)
 		java::security::SecureRandom::J2CPP_CLASS_NAME,
 		java::security::SecureRandom::J2CPP_METHOD_NAME(13),
 		java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 

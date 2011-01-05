@@ -92,8 +92,8 @@ org::apache::http::impl::client::DefaultHttpRequestRetryHandler::DefaultHttpRequ
 	call_new_object<
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +105,8 @@ org::apache::http::impl::client::DefaultHttpRequestRetryHandler::DefaultHttpRequ
 	call_new_object<
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(1),
-		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -118,8 +118,8 @@ jboolean org::apache::http::impl::client::DefaultHttpRequestRetryHandler::retryR
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean org::apache::http::impl::client::DefaultHttpRequestRetryHandler::isRequestSentRetryEnabled()
@@ -128,8 +128,8 @@ jboolean org::apache::http::impl::client::DefaultHttpRequestRetryHandler::isRequ
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::client::DefaultHttpRequestRetryHandler::getRetryCount()
@@ -138,8 +138,8 @@ jint org::apache::http::impl::client::DefaultHttpRequestRetryHandler::getRetryCo
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

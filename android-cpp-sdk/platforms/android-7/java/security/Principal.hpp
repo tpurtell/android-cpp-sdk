@@ -77,8 +77,8 @@ jboolean java::security::Principal::equals(local_ref< java::lang::Object > const
 		java::security::Principal::J2CPP_CLASS_NAME,
 		java::security::Principal::J2CPP_METHOD_NAME(0),
 		java::security::Principal::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Principal::getName()
@@ -87,8 +87,8 @@ local_ref< java::lang::String > java::security::Principal::getName()
 		java::security::Principal::J2CPP_CLASS_NAME,
 		java::security::Principal::J2CPP_METHOD_NAME(1),
 		java::security::Principal::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::security::Principal::hashCode()
@@ -97,8 +97,8 @@ jint java::security::Principal::hashCode()
 		java::security::Principal::J2CPP_CLASS_NAME,
 		java::security::Principal::J2CPP_METHOD_NAME(2),
 		java::security::Principal::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Principal::toString()
@@ -107,8 +107,8 @@ local_ref< java::lang::String > java::security::Principal::toString()
 		java::security::Principal::J2CPP_CLASS_NAME,
 		java::security::Principal::J2CPP_METHOD_NAME(3),
 		java::security::Principal::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

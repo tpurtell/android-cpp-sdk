@@ -132,8 +132,8 @@ android::os::Process::Process()
 	call_new_object<
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(0),
-		android::os::Process::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Process::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -145,8 +145,8 @@ jlong android::os::Process::getElapsedCpuTime()
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(1),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jint android::os::Process::myPid()
@@ -155,8 +155,8 @@ jint android::os::Process::myPid()
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(2),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Process::myTid()
@@ -165,8 +165,8 @@ jint android::os::Process::myTid()
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(3),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Process::myUid()
@@ -175,8 +175,8 @@ jint android::os::Process::myUid()
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(4),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Process::getUidForName(local_ref< java::lang::String > const &a0)
@@ -185,8 +185,8 @@ jint android::os::Process::getUidForName(local_ref< java::lang::String > const &
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(5),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::os::Process::getGidForName(local_ref< java::lang::String > const &a0)
@@ -195,8 +195,8 @@ jint android::os::Process::getGidForName(local_ref< java::lang::String > const &
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(6),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::os::Process::setThreadPriority(jint a0, jint a1)
@@ -205,8 +205,8 @@ void android::os::Process::setThreadPriority(jint a0, jint a1)
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(7),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::os::Process::setThreadPriority(jint a0)
@@ -215,8 +215,8 @@ void android::os::Process::setThreadPriority(jint a0)
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(8),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::os::Process::getThreadPriority(jint a0)
@@ -225,8 +225,8 @@ jint android::os::Process::getThreadPriority(jint a0)
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(9),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jboolean android::os::Process::supportsProcesses()
@@ -235,8 +235,8 @@ jboolean android::os::Process::supportsProcesses()
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(10),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 void android::os::Process::killProcess(jint a0)
@@ -245,8 +245,8 @@ void android::os::Process::killProcess(jint a0)
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(11),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::os::Process::sendSignal(jint a0, jint a1)
@@ -255,8 +255,8 @@ void android::os::Process::sendSignal(jint a0, jint a1)
 		android::os::Process::J2CPP_CLASS_NAME,
 		android::os::Process::J2CPP_METHOD_NAME(12),
 		android::os::Process::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

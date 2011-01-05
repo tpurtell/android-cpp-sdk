@@ -118,8 +118,8 @@ android::os::BatteryManager::BatteryManager()
 	call_new_object<
 		android::os::BatteryManager::J2CPP_CLASS_NAME,
 		android::os::BatteryManager::J2CPP_METHOD_NAME(0),
-		android::os::BatteryManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::BatteryManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

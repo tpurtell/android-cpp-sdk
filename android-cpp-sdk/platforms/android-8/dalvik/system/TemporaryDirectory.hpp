@@ -77,8 +77,8 @@ dalvik::system::TemporaryDirectory::TemporaryDirectory()
 	call_new_object<
 		dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME,
 		dalvik::system::TemporaryDirectory::J2CPP_METHOD_NAME(0),
-		dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +90,8 @@ void dalvik::system::TemporaryDirectory::setUpDirectory(local_ref< java::lang::S
 		dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME,
 		dalvik::system::TemporaryDirectory::J2CPP_METHOD_NAME(1),
 		dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void dalvik::system::TemporaryDirectory::setUpDirectory(local_ref< java::io::File > const &a0)
@@ -100,8 +100,8 @@ void dalvik::system::TemporaryDirectory::setUpDirectory(local_ref< java::io::Fil
 		dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME,
 		dalvik::system::TemporaryDirectory::J2CPP_METHOD_NAME(2),
 		dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

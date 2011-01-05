@@ -11,9 +11,15 @@
 #define J2CPP_JAVA_NIO_MAPPEDBYTEBUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
+#include <java/nio/Buffer.hpp>
 #include <java/nio/ByteBuffer.hpp>
 
 
@@ -39,7 +45,10 @@ namespace java { namespace nio {
 		{
 		}
 
+		operator local_ref<java::nio::Buffer>() const;
 		operator local_ref<java::nio::ByteBuffer>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean isLoaded();
@@ -63,9 +72,24 @@ namespace j2cpp {
 
 
 
+java::nio::MappedByteBuffer::operator local_ref<java::nio::Buffer>() const
+{
+	return local_ref<java::nio::Buffer>(get_jobject());
+}
+
 java::nio::MappedByteBuffer::operator local_ref<java::nio::ByteBuffer>() const
 {
 	return local_ref<java::nio::ByteBuffer>(get_jobject());
+}
+
+java::nio::MappedByteBuffer::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::nio::MappedByteBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -75,8 +99,8 @@ jboolean java::nio::MappedByteBuffer::isLoaded()
 		java::nio::MappedByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::MappedByteBuffer::J2CPP_METHOD_NAME(1),
 		java::nio::MappedByteBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::MappedByteBuffer > java::nio::MappedByteBuffer::load()
@@ -85,8 +109,8 @@ local_ref< java::nio::MappedByteBuffer > java::nio::MappedByteBuffer::load()
 		java::nio::MappedByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::MappedByteBuffer::J2CPP_METHOD_NAME(2),
 		java::nio::MappedByteBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::MappedByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::MappedByteBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::MappedByteBuffer > java::nio::MappedByteBuffer::force()
@@ -95,8 +119,8 @@ local_ref< java::nio::MappedByteBuffer > java::nio::MappedByteBuffer::force()
 		java::nio::MappedByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::MappedByteBuffer::J2CPP_METHOD_NAME(3),
 		java::nio::MappedByteBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::MappedByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::MappedByteBuffer >
+	>(get_jobject());
 }
 
 

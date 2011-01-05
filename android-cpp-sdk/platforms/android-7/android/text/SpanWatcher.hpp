@@ -83,8 +83,8 @@ void android::text::SpanWatcher::onSpanAdded(local_ref< android::text::Spannable
 		android::text::SpanWatcher::J2CPP_CLASS_NAME,
 		android::text::SpanWatcher::J2CPP_METHOD_NAME(0),
 		android::text::SpanWatcher::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::SpanWatcher::onSpanRemoved(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3)
@@ -93,8 +93,8 @@ void android::text::SpanWatcher::onSpanRemoved(local_ref< android::text::Spannab
 		android::text::SpanWatcher::J2CPP_CLASS_NAME,
 		android::text::SpanWatcher::J2CPP_METHOD_NAME(1),
 		android::text::SpanWatcher::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::SpanWatcher::onSpanChanged(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3, jint a4, jint a5)
@@ -103,8 +103,8 @@ void android::text::SpanWatcher::onSpanChanged(local_ref< android::text::Spannab
 		android::text::SpanWatcher::J2CPP_CLASS_NAME,
 		android::text::SpanWatcher::J2CPP_METHOD_NAME(2),
 		android::text::SpanWatcher::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

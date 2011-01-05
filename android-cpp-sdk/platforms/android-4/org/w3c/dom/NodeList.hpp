@@ -11,8 +11,8 @@
 #define J2CPP_ORG_W3C_DOM_NODELIST_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -74,8 +74,8 @@ local_ref< org::w3c::dom::Node > org::w3c::dom::NodeList::item(jint a0)
 		org::w3c::dom::NodeList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NodeList::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::NodeList::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::NodeList::getLength()
@@ -84,8 +84,8 @@ jint org::w3c::dom::NodeList::getLength()
 		org::w3c::dom::NodeList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NodeList::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::NodeList::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

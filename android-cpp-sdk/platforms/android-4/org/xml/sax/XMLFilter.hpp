@@ -11,8 +11,8 @@
 #define J2CPP_ORG_XML_SAX_XMLFILTER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -80,8 +80,8 @@ void org::xml::sax::XMLFilter::setParent(local_ref< org::xml::sax::XMLReader > c
 		org::xml::sax::XMLFilter::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLFilter::J2CPP_METHOD_NAME(0),
 		org::xml::sax::XMLFilter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLReader > org::xml::sax::XMLFilter::getParent()
@@ -90,8 +90,8 @@ local_ref< org::xml::sax::XMLReader > org::xml::sax::XMLFilter::getParent()
 		org::xml::sax::XMLFilter::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLFilter::J2CPP_METHOD_NAME(1),
 		org::xml::sax::XMLFilter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::XMLReader > >
-	(get_jobject());
+		local_ref< org::xml::sax::XMLReader >
+	>(get_jobject());
 }
 
 

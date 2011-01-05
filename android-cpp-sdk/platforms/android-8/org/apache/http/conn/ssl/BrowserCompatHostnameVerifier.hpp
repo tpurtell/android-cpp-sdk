@@ -11,12 +11,18 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_SSL_BROWSERCOMPATHOSTNAMEVERIFIER_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace ssl { class X509HostnameVerifier; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace ssl { class AbstractVerifier; } } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class HostnameVerifier; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <javax/net/ssl/HostnameVerifier.hpp>
 #include <org/apache/http/conn/ssl/AbstractVerifier.hpp>
+#include <org/apache/http/conn/ssl/X509HostnameVerifier.hpp>
 
 
 namespace j2cpp {
@@ -40,7 +46,10 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		{
 		}
 
+		operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const;
 		operator local_ref<org::apache::http::conn::ssl::AbstractVerifier>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::HostnameVerifier>() const;
 
 
 		BrowserCompatHostnameVerifier();
@@ -67,9 +76,24 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const
+{
+	return local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>(get_jobject());
+}
+
 org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::operator local_ref<org::apache::http::conn::ssl::AbstractVerifier>() const
 {
 	return local_ref<org::apache::http::conn::ssl::AbstractVerifier>(get_jobject());
+}
+
+org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::operator local_ref<javax::net::ssl::HostnameVerifier>() const
+{
+	return local_ref<javax::net::ssl::HostnameVerifier>(get_jobject());
 }
 
 
@@ -78,8 +102,8 @@ org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::BrowserCompatHostna
 	call_new_object<
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +115,8 @@ void org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::verify(local_r
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::toString()
@@ -101,8 +125,8 @@ local_ref< java::lang::String > org::apache::http::conn::ssl::BrowserCompatHostn
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::ssl::BrowserCompatHostnameVerifier::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

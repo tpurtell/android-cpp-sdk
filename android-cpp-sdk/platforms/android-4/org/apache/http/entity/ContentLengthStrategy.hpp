@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_ENTITY_CONTENTLENGTHSTRATEGY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -78,8 +78,8 @@ jlong org::apache::http::entity::ContentLengthStrategy::determineLength(local_re
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_METHOD_NAME(0),
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

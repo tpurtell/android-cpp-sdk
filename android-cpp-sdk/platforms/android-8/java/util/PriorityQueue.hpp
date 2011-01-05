@@ -12,20 +12,26 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class SortedSet; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Queue.hpp>
 #include <java/util/SortedSet.hpp>
 
 
@@ -62,7 +68,12 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
 		operator local_ref<java::util::AbstractQueue>() const;
+		operator local_ref<java::util::Queue>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -99,9 +110,34 @@ namespace j2cpp {
 
 
 
+java::util::PriorityQueue::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::PriorityQueue::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::PriorityQueue::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::PriorityQueue::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
 java::util::PriorityQueue::operator local_ref<java::util::AbstractQueue>() const
 {
 	return local_ref<java::util::AbstractQueue>(get_jobject());
+}
+
+java::util::PriorityQueue::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jobject());
 }
 
 java::util::PriorityQueue::operator local_ref<java::io::Serializable>() const
@@ -115,8 +151,8 @@ java::util::PriorityQueue::PriorityQueue()
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(0),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -128,8 +164,8 @@ java::util::PriorityQueue::PriorityQueue(jint a0)
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(1),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -141,8 +177,8 @@ java::util::PriorityQueue::PriorityQueue(jint a0, local_ref< java::util::Compara
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(2),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -154,8 +190,8 @@ java::util::PriorityQueue::PriorityQueue(local_ref< java::util::Collection > con
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(3),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -167,8 +203,8 @@ java::util::PriorityQueue::PriorityQueue(local_ref< java::util::PriorityQueue > 
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(4),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -180,8 +216,8 @@ java::util::PriorityQueue::PriorityQueue(local_ref< java::util::SortedSet > cons
 	call_new_object<
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(5),
-		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -193,8 +229,8 @@ local_ref< java::util::Iterator > java::util::PriorityQueue::iterator()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(6),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jint java::util::PriorityQueue::size()
@@ -203,8 +239,8 @@ jint java::util::PriorityQueue::size()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(7),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::PriorityQueue::clear()
@@ -213,8 +249,8 @@ void java::util::PriorityQueue::clear()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(8),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::PriorityQueue::offer(local_ref< java::lang::Object > const &a0)
@@ -223,8 +259,8 @@ jboolean java::util::PriorityQueue::offer(local_ref< java::lang::Object > const 
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(9),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::PriorityQueue::poll()
@@ -233,8 +269,8 @@ local_ref< java::lang::Object > java::util::PriorityQueue::poll()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(10),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::PriorityQueue::peek()
@@ -243,8 +279,8 @@ local_ref< java::lang::Object > java::util::PriorityQueue::peek()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(11),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Comparator > java::util::PriorityQueue::comparator()
@@ -253,8 +289,8 @@ local_ref< java::util::Comparator > java::util::PriorityQueue::comparator()
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(12),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 jboolean java::util::PriorityQueue::remove(local_ref< java::lang::Object > const &a0)
@@ -263,8 +299,8 @@ jboolean java::util::PriorityQueue::remove(local_ref< java::lang::Object > const
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(13),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::PriorityQueue::add(local_ref< java::lang::Object > const &a0)
@@ -273,8 +309,8 @@ jboolean java::util::PriorityQueue::add(local_ref< java::lang::Object > const &a
 		java::util::PriorityQueue::J2CPP_CLASS_NAME,
 		java::util::PriorityQueue::J2CPP_METHOD_NAME(14),
 		java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

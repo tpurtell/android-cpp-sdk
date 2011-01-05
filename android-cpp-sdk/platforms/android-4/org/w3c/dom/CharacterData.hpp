@@ -11,9 +11,9 @@
 #define J2CPP_ORG_W3C_DOM_CHARACTERDATA_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -94,8 +94,8 @@ local_ref< java::lang::String > org::w3c::dom::CharacterData::getData()
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::CharacterData::setData(local_ref< java::lang::String > const &a0)
@@ -104,8 +104,8 @@ void org::w3c::dom::CharacterData::setData(local_ref< java::lang::String > const
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::CharacterData::getLength()
@@ -114,8 +114,8 @@ jint org::w3c::dom::CharacterData::getLength()
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::CharacterData::substringData(jint a0, jint a1)
@@ -124,8 +124,8 @@ local_ref< java::lang::String > org::w3c::dom::CharacterData::substringData(jint
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 void org::w3c::dom::CharacterData::appendData(local_ref< java::lang::String > const &a0)
@@ -134,8 +134,8 @@ void org::w3c::dom::CharacterData::appendData(local_ref< java::lang::String > co
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::w3c::dom::CharacterData::insertData(jint a0, local_ref< java::lang::String > const &a1)
@@ -144,8 +144,8 @@ void org::w3c::dom::CharacterData::insertData(jint a0, local_ref< java::lang::St
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::w3c::dom::CharacterData::deleteData(jint a0, jint a1)
@@ -154,8 +154,8 @@ void org::w3c::dom::CharacterData::deleteData(jint a0, jint a1)
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(6),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::w3c::dom::CharacterData::replaceData(jint a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -164,8 +164,8 @@ void org::w3c::dom::CharacterData::replaceData(jint a0, jint a1, local_ref< java
 		org::w3c::dom::CharacterData::J2CPP_CLASS_NAME,
 		org::w3c::dom::CharacterData::J2CPP_METHOD_NAME(7),
 		org::w3c::dom::CharacterData::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

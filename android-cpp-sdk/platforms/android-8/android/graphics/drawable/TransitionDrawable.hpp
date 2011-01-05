@@ -15,11 +15,13 @@ namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class LayerDrawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/graphics/drawable/LayerDrawable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -47,8 +49,10 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
 		operator local_ref<android::graphics::drawable::LayerDrawable>() const;
 		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		TransitionDrawable(local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> > const&);
@@ -77,6 +81,11 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::TransitionDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
+{
+	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
+}
+
 android::graphics::drawable::TransitionDrawable::operator local_ref<android::graphics::drawable::LayerDrawable>() const
 {
 	return local_ref<android::graphics::drawable::LayerDrawable>(get_jobject());
@@ -87,14 +96,19 @@ android::graphics::drawable::TransitionDrawable::operator local_ref<android::gra
 	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
 }
 
+android::graphics::drawable::TransitionDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::drawable::TransitionDrawable::TransitionDrawable(local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> > const &a0)
 : object<android::graphics::drawable::TransitionDrawable>(
 	call_new_object<
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -106,8 +120,8 @@ void android::graphics::drawable::TransitionDrawable::startTransition(jint a0)
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::TransitionDrawable::resetTransition()
@@ -116,8 +130,8 @@ void android::graphics::drawable::TransitionDrawable::resetTransition()
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::drawable::TransitionDrawable::reverseTransition(jint a0)
@@ -126,8 +140,8 @@ void android::graphics::drawable::TransitionDrawable::reverseTransition(jint a0)
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::TransitionDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -136,8 +150,8 @@ void android::graphics::drawable::TransitionDrawable::draw(local_ref< android::g
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::TransitionDrawable::setCrossFadeEnabled(jboolean a0)
@@ -146,8 +160,8 @@ void android::graphics::drawable::TransitionDrawable::setCrossFadeEnabled(jboole
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::drawable::TransitionDrawable::isCrossFadeEnabled()
@@ -156,8 +170,8 @@ jboolean android::graphics::drawable::TransitionDrawable::isCrossFadeEnabled()
 		android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

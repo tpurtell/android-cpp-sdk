@@ -11,14 +11,28 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_HTTPDELETE_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class AbortableHttpRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpRequestBase; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 
 
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
+#include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/HttpRequest.hpp>
+#include <org/apache/http/client/methods/AbortableHttpRequest.hpp>
 #include <org/apache/http/client/methods/HttpRequestBase.hpp>
+#include <org/apache/http/client/methods/HttpUriRequest.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -44,7 +58,14 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		{
 		}
 
+		operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const;
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
 		operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const;
+		operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 
 
 		HttpDelete();
@@ -74,9 +95,44 @@ namespace j2cpp {
 
 
 
+org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::AbortableHttpRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
+{
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jobject());
+}
+
 org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const
 {
 	return local_ref<org::apache::http::client::methods::HttpRequestBase>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::HttpUriRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<org::apache::http::HttpRequest>() const
+{
+	return local_ref<org::apache::http::HttpRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpDelete::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
 
@@ -85,8 +141,8 @@ org::apache::http::client::methods::HttpDelete::HttpDelete()
 	call_new_object<
 		org::apache::http::client::methods::HttpDelete::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +154,8 @@ org::apache::http::client::methods::HttpDelete::HttpDelete(local_ref< java::net:
 	call_new_object<
 		org::apache::http::client::methods::HttpDelete::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_NAME(1),
-		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -111,8 +167,8 @@ org::apache::http::client::methods::HttpDelete::HttpDelete(local_ref< java::lang
 	call_new_object<
 		org::apache::http::client::methods::HttpDelete::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_NAME(2),
-		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -124,8 +180,8 @@ local_ref< java::lang::String > org::apache::http::client::methods::HttpDelete::
 		org::apache::http::client::methods::HttpDelete::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::methods::HttpDelete::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

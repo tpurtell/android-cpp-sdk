@@ -89,8 +89,8 @@ jint org::apache::http::io::SessionInputBuffer::read(local_ref< array<jbyte,1> >
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(0),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint org::apache::http::io::SessionInputBuffer::read(local_ref< array<jbyte,1> > const &a0)
@@ -99,8 +99,8 @@ jint org::apache::http::io::SessionInputBuffer::read(local_ref< array<jbyte,1> >
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(1),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::io::SessionInputBuffer::read()
@@ -109,8 +109,8 @@ jint org::apache::http::io::SessionInputBuffer::read()
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(2),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::io::SessionInputBuffer::readLine(local_ref< org::apache::http::util::CharArrayBuffer > const &a0)
@@ -119,8 +119,8 @@ jint org::apache::http::io::SessionInputBuffer::readLine(local_ref< org::apache:
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(3),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::io::SessionInputBuffer::readLine()
@@ -129,8 +129,8 @@ local_ref< java::lang::String > org::apache::http::io::SessionInputBuffer::readL
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(4),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::io::SessionInputBuffer::isDataAvailable(jint a0)
@@ -139,8 +139,8 @@ jboolean org::apache::http::io::SessionInputBuffer::isDataAvailable(jint a0)
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(5),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::io::SessionInputBuffer::getMetrics()
@@ -149,8 +149,8 @@ local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::io::
 		org::apache::http::io::SessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_NAME(6),
 		org::apache::http::io::SessionInputBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::io::HttpTransportMetrics > >
-	(get_jobject());
+		local_ref< org::apache::http::io::HttpTransportMetrics >
+	>(get_jobject());
 }
 
 

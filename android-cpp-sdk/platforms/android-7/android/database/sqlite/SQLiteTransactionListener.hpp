@@ -74,8 +74,8 @@ void android::database::sqlite::SQLiteTransactionListener::onBegin()
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_NAME(0),
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteTransactionListener::onCommit()
@@ -84,8 +84,8 @@ void android::database::sqlite::SQLiteTransactionListener::onCommit()
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_NAME(1),
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteTransactionListener::onRollback()
@@ -94,8 +94,8 @@ void android::database::sqlite::SQLiteTransactionListener::onRollback()
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteTransactionListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

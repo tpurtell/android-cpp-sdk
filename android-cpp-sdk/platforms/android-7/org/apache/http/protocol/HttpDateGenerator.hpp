@@ -83,8 +83,8 @@ org::apache::http::protocol::HttpDateGenerator::HttpDateGenerator()
 	call_new_object<
 		org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -96,8 +96,8 @@ local_ref< java::lang::String > org::apache::http::protocol::HttpDateGenerator::
 		org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

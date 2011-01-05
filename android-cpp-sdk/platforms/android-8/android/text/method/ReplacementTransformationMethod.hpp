@@ -48,8 +48,8 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::method::TransformationMethod>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ReplacementTransformationMethod();
@@ -74,14 +74,14 @@ namespace j2cpp {
 
 
 
-android::text::method::ReplacementTransformationMethod::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::method::ReplacementTransformationMethod::operator local_ref<android::text::method::TransformationMethod>() const
 {
 	return local_ref<android::text::method::TransformationMethod>(get_jobject());
+}
+
+android::text::method::ReplacementTransformationMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -90,8 +90,8 @@ android::text::method::ReplacementTransformationMethod::ReplacementTransformatio
 	call_new_object<
 		android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_NAME(0),
-		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +105,8 @@ local_ref< java::lang::CharSequence > android::text::method::ReplacementTransfor
 		android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_NAME(3),
 		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 void android::text::method::ReplacementTransformationMethod::onFocusChanged(local_ref< android::view::View > const &a0, local_ref< java::lang::CharSequence > const &a1, jboolean a2, jint a3, local_ref< android::graphics::Rect > const &a4)
@@ -115,8 +115,8 @@ void android::text::method::ReplacementTransformationMethod::onFocusChanged(loca
 		android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_NAME(4),
 		android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

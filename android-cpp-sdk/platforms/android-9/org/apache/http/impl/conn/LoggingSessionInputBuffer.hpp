@@ -102,8 +102,8 @@ org::apache::http::impl::conn::LoggingSessionInputBuffer::LoggingSessionInputBuf
 	call_new_object<
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -115,8 +115,8 @@ jboolean org::apache::http::impl::conn::LoggingSessionInputBuffer::isDataAvailab
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -125,8 +125,8 @@ jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read(local_ref< a
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read()
@@ -135,8 +135,8 @@ jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read()
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read(local_ref< array<jbyte,1> > const &a0)
@@ -145,8 +145,8 @@ jint org::apache::http::impl::conn::LoggingSessionInputBuffer::read(local_ref< a
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::conn::LoggingSessionInputBuffer::readLine()
@@ -155,8 +155,8 @@ local_ref< java::lang::String > org::apache::http::impl::conn::LoggingSessionInp
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::LoggingSessionInputBuffer::readLine(local_ref< org::apache::http::util::CharArrayBuffer > const &a0)
@@ -165,8 +165,8 @@ jint org::apache::http::impl::conn::LoggingSessionInputBuffer::readLine(local_re
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::impl::conn::LoggingSessionInputBuffer::getMetrics()
@@ -175,8 +175,8 @@ local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::impl
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::LoggingSessionInputBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::io::HttpTransportMetrics > >
-	(get_jobject());
+		local_ref< org::apache::http::io::HttpTransportMetrics >
+	>(get_jobject());
 }
 
 

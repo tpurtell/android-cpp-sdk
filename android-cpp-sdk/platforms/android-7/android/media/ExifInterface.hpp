@@ -132,8 +132,8 @@ android::media::ExifInterface::ExifInterface(local_ref< java::lang::String > con
 	call_new_object<
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(0),
-		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -145,8 +145,8 @@ local_ref< java::lang::String > android::media::ExifInterface::getAttribute(loca
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(1),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint android::media::ExifInterface::getAttributeInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -155,8 +155,8 @@ jint android::media::ExifInterface::getAttributeInt(local_ref< java::lang::Strin
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(2),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::ExifInterface::setAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -165,8 +165,8 @@ void android::media::ExifInterface::setAttribute(local_ref< java::lang::String >
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(3),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::ExifInterface::saveAttributes()
@@ -175,8 +175,8 @@ void android::media::ExifInterface::saveAttributes()
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(4),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::media::ExifInterface::hasThumbnail()
@@ -185,8 +185,8 @@ jboolean android::media::ExifInterface::hasThumbnail()
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(5),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::media::ExifInterface::getThumbnail()
@@ -195,8 +195,8 @@ local_ref< array<jbyte,1> > android::media::ExifInterface::getThumbnail()
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(6),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean android::media::ExifInterface::getLatLong(local_ref< array<jfloat,1> > const &a0)
@@ -205,8 +205,8 @@ jboolean android::media::ExifInterface::getLatLong(local_ref< array<jfloat,1> > 
 		android::media::ExifInterface::J2CPP_CLASS_NAME,
 		android::media::ExifInterface::J2CPP_METHOD_NAME(7),
 		android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

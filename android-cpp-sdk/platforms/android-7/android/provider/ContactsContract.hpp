@@ -236,8 +236,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
-				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 
@@ -261,8 +261,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
-				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 
@@ -306,10 +306,10 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 			static local_ref< android::net::Uri > getLookupUri(local_ref< android::content::ContentResolver >  const&, local_ref< android::net::Uri >  const&);
@@ -381,7 +381,14 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -413,8 +420,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -484,8 +499,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeLabelResource(jint);
@@ -565,8 +588,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeLabelResource(jint);
@@ -617,8 +648,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeLabelResource(jint);
@@ -662,8 +701,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeResource(local_ref< java::lang::Integer >  const&);
@@ -700,8 +747,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -760,8 +815,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeLabelResource(jint);
@@ -812,7 +875,14 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -852,8 +922,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -904,8 +982,16 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
 				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 				static jint getTypeLabelResource(jint);
@@ -941,7 +1027,14 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -975,7 +1068,14 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 
@@ -1175,8 +1275,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
-				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 
@@ -1201,8 +1301,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
-				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 
@@ -1238,10 +1338,11 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::SyncColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const;
 
 
 			static local_ref< android::net::Uri > getContactLookupUri(local_ref< android::content::ContentResolver >  const&, local_ref< android::net::Uri >  const&);
@@ -1343,13 +1444,13 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
 
 		}; //class DataColumnsWithJoins
 
@@ -1411,6 +1512,7 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::SyncStateContract_::Columns>() const;
 
 
@@ -1532,10 +1634,10 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const;
 
 
 
@@ -1563,9 +1665,10 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::SyncColumns>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::GroupsColumns>() const;
-			operator local_ref<android::provider::ContactsContract_::SyncColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const;
 
 
 
@@ -1714,7 +1817,14 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
 
 
 			static local_ref< android::net::Uri > getContactLookupUri(local_ref< android::content::ContentResolver >  const&, local_ref< android::net::Uri >  const&);
@@ -1743,8 +1853,8 @@ namespace android { namespace provider {
 			}
 
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
 
 
@@ -1769,6 +1879,9 @@ namespace android { namespace provider {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::PresenceColumns>() const;
 			operator local_ref<android::provider::ContactsContract_::StatusUpdates>() const;
 
 
@@ -1916,8 +2029,8 @@ android::provider::ContactsContract_::Intents_::Insert::Insert()
 	call_new_object<
 		android::provider::ContactsContract_::Intents_::Insert::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_NAME(0),
-		android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2157,8 +2270,8 @@ android::provider::ContactsContract_::Intents::Intents()
 	call_new_object<
 		android::provider::ContactsContract_::Intents::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Intents::J2CPP_METHOD_NAME(0),
-		android::provider::ContactsContract_::Intents::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::ContactsContract_::Intents::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2262,14 +2375,14 @@ android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<java:
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -2292,14 +2405,14 @@ android::provider::ContactsContract_::Contacts_::Data::operator local_ref<java::
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::Contacts_::Data::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::Contacts_::Data::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Contacts_::Data::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -2323,24 +2436,24 @@ android::provider::ContactsContract_::Contacts::operator local_ref<java::lang::O
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
-android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
-{
-	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -2350,8 +2463,8 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::g
 		android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::getLookupUri(jlong a0, local_ref< java::lang::String > const &a1)
@@ -2360,8 +2473,8 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::g
 		android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::lookupContact(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -2370,8 +2483,8 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::l
 		android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(3),
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 void android::provider::ContactsContract_::Contacts::markAsContacted(local_ref< android::content::ContentResolver > const &a0, jlong a1)
@@ -2380,8 +2493,8 @@ void android::provider::ContactsContract_::Contacts::markAsContacted(local_ref< 
 		android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(4),
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::io::InputStream > android::provider::ContactsContract_::Contacts::openContactPhotoInputStream(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -2390,8 +2503,8 @@ local_ref< java::io::InputStream > android::provider::ContactsContract_::Contact
 		android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(5),
 		android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::InputStream > >
-	(a0, a1);
+		local_ref< java::io::InputStream >
+	>(a0, a1);
 }
 
 
@@ -2542,9 +2655,44 @@ android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operato
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -2583,6 +2731,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -2591,6 +2759,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local
 android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -2678,6 +2866,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<j
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -2688,6 +2896,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<a
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Im::getTypeLabelResource(jint a0)
 {
@@ -2695,8 +2923,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Im::getTypeLabelRes
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::Im::getTypeLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -2705,8 +2933,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Im::getProtocolLabelResource(jint a0)
@@ -2715,8 +2943,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Im::getProtocolLabe
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_NAME(3),
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::Im::getProtocolLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -2725,8 +2953,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_NAME(4),
 		android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -2910,6 +3138,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Organization::operator l
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -2920,6 +3168,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Organization::operator l
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Organization::getTypeLabelResource(jint a0)
 {
@@ -2927,8 +3195,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Organization::getTy
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::Organization::getTypeLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -2937,8 +3205,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -3034,6 +3302,26 @@ android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operat
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3044,6 +3332,26 @@ android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operat
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::getTypeLabelResource(jint a0)
 {
@@ -3051,8 +3359,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::g
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::getTypeLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -3061,8 +3369,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -3192,6 +3500,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_re
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3202,6 +3530,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_re
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Event::getTypeResource(local_ref< java::lang::Integer > const &a0)
 {
@@ -3209,8 +3557,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Event::getTypeResou
 		android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 
@@ -3265,6 +3613,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3273,6 +3641,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_
 android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -3359,6 +3747,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_re
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3369,6 +3777,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_re
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Phone::getTypeLabelResource(jint a0)
 {
@@ -3376,8 +3804,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Phone::getTypeLabel
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::Phone::getTypeLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -3386,8 +3814,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -3605,9 +4033,44 @@ android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -3638,6 +4101,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3646,6 +4129,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local
 android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -3788,6 +4291,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_re
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
@@ -3798,6 +4321,26 @@ android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_re
 	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
+}
+
 
 jint android::provider::ContactsContract_::CommonDataKinds_::Email::getTypeLabelResource(jint a0)
 {
@@ -3805,8 +4348,8 @@ jint android::provider::ContactsContract_::CommonDataKinds_::Email::getTypeLabel
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::ContactsContract_::CommonDataKinds_::Email::getTypeLabel(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -3815,8 +4358,8 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -3914,9 +4457,44 @@ android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_re
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -3947,9 +4525,44 @@ android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -4355,14 +4968,14 @@ android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<j
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -4393,14 +5006,14 @@ android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<jav
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -4424,16 +5037,6 @@ android::provider::ContactsContract_::RawContacts::operator local_ref<java::lang
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
-android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
-{
-	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
@@ -4444,6 +5047,21 @@ android::provider::ContactsContract_::RawContacts::operator local_ref<android::p
 	return local_ref<android::provider::ContactsContract_::SyncColumns>(get_jobject());
 }
 
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::BaseSyncColumns>(get_jobject());
+}
+
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::RawContacts::getContactLookupUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
 {
@@ -4451,8 +5069,8 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::RawContacts
 		android::provider::ContactsContract_::RawContacts::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::RawContacts::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::RawContacts::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -4622,8 +5240,8 @@ android::provider::ContactsContract_::QuickContact::QuickContact()
 	call_new_object<
 		android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_NAME(0),
-		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -4635,8 +5253,8 @@ void android::provider::ContactsContract_::QuickContact::showQuickContact(local_
 		android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::provider::ContactsContract_::QuickContact::showQuickContact(local_ref< android::content::Context > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::net::Uri > const &a2, jint a3, local_ref< array< local_ref< java::lang::String >, 1> > const &a4)
@@ -4645,8 +5263,8 @@ void android::provider::ContactsContract_::QuickContact::showQuickContact(local_
 		android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 
@@ -4686,14 +5304,24 @@ android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<j
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::BaseColumns>() const
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
 {
-	return local_ref<android::provider::BaseColumns>(get_jobject());
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
 }
 
 android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
 }
 
 android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
@@ -4709,16 +5337,6 @@ android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<a
 android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
-}
-
-android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
-{
-	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
-}
-
-android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
-{
-	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::DataColumnsWithJoins,"android/provider/ContactsContract$DataColumnsWithJoins")
@@ -4802,6 +5420,11 @@ android::provider::ContactsContract_::SyncState::operator local_ref<java::lang::
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::SyncState::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::SyncState::operator local_ref<android::provider::SyncStateContract_::Columns>() const
 {
 	return local_ref<android::provider::SyncStateContract_::Columns>(get_jobject());
@@ -4814,8 +5437,8 @@ local_ref< array<jbyte,1> > android::provider::ContactsContract_::SyncState::get
 		android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1);
+		local_ref< array<jbyte,1> >
+	>(a0, a1);
 }
 
 local_ref< android::util::Pair > android::provider::ContactsContract_::SyncState::getWithUri(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::accounts::Account > const &a1)
@@ -4824,8 +5447,8 @@ local_ref< android::util::Pair > android::provider::ContactsContract_::SyncState
 		android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::util::Pair > >
-	(a0, a1);
+		local_ref< android::util::Pair >
+	>(a0, a1);
 }
 
 void android::provider::ContactsContract_::SyncState::set(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< array<jbyte,1> > const &a2)
@@ -4834,8 +5457,8 @@ void android::provider::ContactsContract_::SyncState::set(local_ref< android::co
 		android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_NAME(3),
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< android::content::ContentProviderOperation > android::provider::ContactsContract_::SyncState::newSetOperation(local_ref< android::accounts::Account > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -4844,8 +5467,8 @@ local_ref< android::content::ContentProviderOperation > android::provider::Conta
 		android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_NAME(4),
 		android::provider::ContactsContract_::SyncState::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::ContentProviderOperation > >
-	(a0, a1);
+		local_ref< android::content::ContentProviderOperation >
+	>(a0, a1);
 }
 
 
@@ -5044,14 +5667,14 @@ android::provider::ContactsContract_::PhoneLookup::operator local_ref<java::lang
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
-android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const
-{
-	return local_ref<android::provider::ContactsContract_::PhoneLookupColumns>(get_jobject());
 }
 
 android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
@@ -5059,9 +5682,9 @@ android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::p
 	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
-android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const
 {
-	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+	return local_ref<android::provider::ContactsContract_::PhoneLookupColumns>(get_jobject());
 }
 
 
@@ -5086,6 +5709,11 @@ android::provider::ContactsContract_::Groups::operator local_ref<java::lang::Obj
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::Groups::operator local_ref<android::provider::ContactsContract_::SyncColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::SyncColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::Groups::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -5096,9 +5724,9 @@ android::provider::ContactsContract_::Groups::operator local_ref<android::provid
 	return local_ref<android::provider::ContactsContract_::GroupsColumns>(get_jobject());
 }
 
-android::provider::ContactsContract_::Groups::operator local_ref<android::provider::ContactsContract_::SyncColumns>() const
+android::provider::ContactsContract_::Groups::operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const
 {
-	return local_ref<android::provider::ContactsContract_::SyncColumns>(get_jobject());
+	return local_ref<android::provider::ContactsContract_::BaseSyncColumns>(get_jobject());
 }
 
 
@@ -5303,8 +5931,8 @@ jint android::provider::ContactsContract_::StatusUpdates::getPresenceIconResourc
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::provider::ContactsContract_::StatusUpdates::getPresencePrecedence(jint a0)
@@ -5313,8 +5941,8 @@ jint android::provider::ContactsContract_::StatusUpdates::getPresencePrecedence(
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_NAME(2),
 		android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 
@@ -5356,9 +5984,44 @@ android::provider::ContactsContract_::Data::operator local_ref<java::lang::Objec
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jobject());
 }
 
 
@@ -5368,8 +6031,8 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::Data::getCo
 		android::provider::ContactsContract_::Data::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Data::J2CPP_METHOD_NAME(1),
 		android::provider::ContactsContract_::Data::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -5402,14 +6065,14 @@ android::provider::ContactsContract_::RawContactsEntity::operator local_ref<java
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::BaseColumns>() const
-{
-	return local_ref<android::provider::BaseColumns>(get_jobject());
-}
-
 android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
 {
 	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
@@ -5450,6 +6113,21 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsEntity,1,"CO
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsEntity,2,"DATA_ID","Ljava/lang/String;")
 
 
+android::provider::ContactsContract_::Presence::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::provider::ContactsContract_::Presence::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jobject());
+}
+
+android::provider::ContactsContract_::Presence::operator local_ref<android::provider::ContactsContract_::PresenceColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::PresenceColumns>(get_jobject());
+}
+
 android::provider::ContactsContract_::Presence::operator local_ref<android::provider::ContactsContract_::StatusUpdates>() const
 {
 	return local_ref<android::provider::ContactsContract_::StatusUpdates>(get_jobject());
@@ -5461,8 +6139,8 @@ android::provider::ContactsContract_::Presence::Presence()
 	call_new_object<
 		android::provider::ContactsContract_::Presence::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract_::Presence::J2CPP_METHOD_NAME(0),
-		android::provider::ContactsContract_::Presence::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::ContactsContract_::Presence::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -5567,8 +6245,8 @@ android::provider::ContactsContract::ContactsContract()
 	call_new_object<
 		android::provider::ContactsContract::J2CPP_CLASS_NAME,
 		android::provider::ContactsContract::J2CPP_METHOD_NAME(0),
-		android::provider::ContactsContract::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::ContactsContract::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

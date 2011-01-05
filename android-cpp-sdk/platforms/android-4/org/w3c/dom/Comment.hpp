@@ -11,12 +11,14 @@
 #define J2CPP_ORG_W3C_DOM_COMMENT_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class CharacterData; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class CharacterData; } } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <org/w3c/dom/CharacterData.hpp>
+#include <org/w3c/dom/Node.hpp>
 
 
 namespace j2cpp {
@@ -39,6 +41,7 @@ namespace org { namespace w3c { namespace dom {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::w3c::dom::CharacterData>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
 
 	}; //class Comment
 
@@ -67,6 +70,11 @@ org::w3c::dom::Comment::operator local_ref<java::lang::Object>() const
 org::w3c::dom::Comment::operator local_ref<org::w3c::dom::CharacterData>() const
 {
 	return local_ref<org::w3c::dom::CharacterData>(get_jobject());
+}
+
+org::w3c::dom::Comment::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(org::w3c::dom::Comment,"org/w3c/dom/Comment")

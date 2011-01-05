@@ -160,8 +160,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(0),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::putInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -170,8 +170,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(1),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::putLong(local_ref< java::lang::String > const &a0, jlong a1)
@@ -180,8 +180,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(2),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::putFloat(local_ref< java::lang::String > const &a0, jfloat a1)
@@ -190,8 +190,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(3),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::putBoolean(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -200,8 +200,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(4),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::remove(local_ref< java::lang::String > const &a0)
@@ -210,8 +210,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(5),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject(), a0);
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::clear()
@@ -220,8 +220,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(6),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject());
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject());
 }
 
 jboolean android::content::SharedPreferences_::Editor::commit()
@@ -230,8 +230,8 @@ jboolean android::content::SharedPreferences_::Editor::commit()
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(7),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::content::SharedPreferences_::Editor::apply()
@@ -240,8 +240,8 @@ void android::content::SharedPreferences_::Editor::apply()
 		android::content::SharedPreferences_::Editor::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_NAME(8),
 		android::content::SharedPreferences_::Editor::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -268,8 +268,8 @@ void android::content::SharedPreferences_::OnSharedPreferenceChangeListener::onS
 		android::content::SharedPreferences_::OnSharedPreferenceChangeListener::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences_::OnSharedPreferenceChangeListener::J2CPP_METHOD_NAME(0),
 		android::content::SharedPreferences_::OnSharedPreferenceChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -289,8 +289,8 @@ local_ref< java::util::Map > android::content::SharedPreferences::getAll()
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(0),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::SharedPreferences::getString(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -299,8 +299,8 @@ local_ref< java::lang::String > android::content::SharedPreferences::getString(l
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(1),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::SharedPreferences::getInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -309,8 +309,8 @@ jint android::content::SharedPreferences::getInt(local_ref< java::lang::String >
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(2),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::content::SharedPreferences::getLong(local_ref< java::lang::String > const &a0, jlong a1)
@@ -319,8 +319,8 @@ jlong android::content::SharedPreferences::getLong(local_ref< java::lang::String
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(3),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::content::SharedPreferences::getFloat(local_ref< java::lang::String > const &a0, jfloat a1)
@@ -329,8 +329,8 @@ jfloat android::content::SharedPreferences::getFloat(local_ref< java::lang::Stri
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(4),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::SharedPreferences::getBoolean(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -339,8 +339,8 @@ jboolean android::content::SharedPreferences::getBoolean(local_ref< java::lang::
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(5),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::SharedPreferences::contains(local_ref< java::lang::String > const &a0)
@@ -349,8 +349,8 @@ jboolean android::content::SharedPreferences::contains(local_ref< java::lang::St
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(6),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences::edit()
@@ -359,8 +359,8 @@ local_ref< android::content::SharedPreferences_::Editor > android::content::Shar
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(7),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::content::SharedPreferences_::Editor > >
-	(get_jobject());
+		local_ref< android::content::SharedPreferences_::Editor >
+	>(get_jobject());
 }
 
 void android::content::SharedPreferences::registerOnSharedPreferenceChangeListener(local_ref< android::content::SharedPreferences_::OnSharedPreferenceChangeListener > const &a0)
@@ -369,8 +369,8 @@ void android::content::SharedPreferences::registerOnSharedPreferenceChangeListen
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(8),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::SharedPreferences::unregisterOnSharedPreferenceChangeListener(local_ref< android::content::SharedPreferences_::OnSharedPreferenceChangeListener > const &a0)
@@ -379,8 +379,8 @@ void android::content::SharedPreferences::unregisterOnSharedPreferenceChangeList
 		android::content::SharedPreferences::J2CPP_CLASS_NAME,
 		android::content::SharedPreferences::J2CPP_METHOD_NAME(9),
 		android::content::SharedPreferences::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

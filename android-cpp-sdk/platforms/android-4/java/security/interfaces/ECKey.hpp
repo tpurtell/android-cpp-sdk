@@ -72,8 +72,8 @@ local_ref< java::security::spec::ECParameterSpec > java::security::interfaces::E
 		java::security::interfaces::ECKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::ECKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::ECKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::security::spec::ECParameterSpec > >
-	(get_jobject());
+		local_ref< java::security::spec::ECParameterSpec >
+	>(get_jobject());
 }
 
 

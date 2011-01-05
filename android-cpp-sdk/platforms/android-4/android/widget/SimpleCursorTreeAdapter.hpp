@@ -11,15 +11,25 @@
 #define J2CPP_ANDROID_WIDGET_SIMPLECURSORTREEADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace widget { class CursorTreeAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class ResourceCursorTreeAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
+namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseExpandableListAdapter; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
+#include <android/widget/BaseExpandableListAdapter.hpp>
+#include <android/widget/CursorTreeAdapter.hpp>
+#include <android/widget/ExpandableListAdapter.hpp>
+#include <android/widget/Filterable.hpp>
 #include <android/widget/ResourceCursorTreeAdapter.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,7 +57,12 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::widget::CursorTreeAdapter>() const;
 		operator local_ref<android::widget::ResourceCursorTreeAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+		operator local_ref<android::widget::ExpandableListAdapter>() const;
+		operator local_ref<android::widget::BaseExpandableListAdapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SimpleCursorTreeAdapter(local_ref< android::content::Context > const&, local_ref< android::database::Cursor > const&, jint, jint, local_ref< array< local_ref< java::lang::String >, 1> > const&, local_ref< array<jint,1> > const&, jint, jint, local_ref< array< local_ref< java::lang::String >, 1> > const&, local_ref< array<jint,1> > const&);
@@ -71,9 +86,34 @@ namespace j2cpp {
 
 
 
+android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::CursorTreeAdapter>() const
+{
+	return local_ref<android::widget::CursorTreeAdapter>(get_jobject());
+}
+
 android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::ResourceCursorTreeAdapter>() const
 {
 	return local_ref<android::widget::ResourceCursorTreeAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jobject());
+}
+
+android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::ExpandableListAdapter>() const
+{
+	return local_ref<android::widget::ExpandableListAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::BaseExpandableListAdapter>() const
+{
+	return local_ref<android::widget::BaseExpandableListAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorTreeAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -82,8 +122,8 @@ android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< and
 	call_new_object<
 		android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
+		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
 )
 {
 }
@@ -95,8 +135,8 @@ android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< and
 	call_new_object<
 		android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(1),
-		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8)
+		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8)
 )
 {
 }
@@ -108,8 +148,8 @@ android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< and
 	call_new_object<
 		android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(2),
-		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4, a5, a6, a7)
+		android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4, a5, a6, a7)
 )
 {
 }

@@ -146,8 +146,8 @@ java::net::DatagramSocket::DatagramSocket()
 	call_new_object<
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(0),
-		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -159,8 +159,8 @@ java::net::DatagramSocket::DatagramSocket(jint a0)
 	call_new_object<
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(1),
-		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -172,8 +172,8 @@ java::net::DatagramSocket::DatagramSocket(jint a0, local_ref< java::net::InetAdd
 	call_new_object<
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(2),
-		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -186,8 +186,8 @@ java::net::DatagramSocket::DatagramSocket(local_ref< java::net::SocketAddress > 
 	call_new_object<
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(4),
-		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -199,8 +199,8 @@ void java::net::DatagramSocket::close()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(5),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::net::DatagramSocket::connect(local_ref< java::net::InetAddress > const &a0, jint a1)
@@ -209,8 +209,8 @@ void java::net::DatagramSocket::connect(local_ref< java::net::InetAddress > cons
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(6),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::DatagramSocket::disconnect()
@@ -219,8 +219,8 @@ void java::net::DatagramSocket::disconnect()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(7),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::DatagramSocket::getInetAddress()
@@ -229,8 +229,8 @@ local_ref< java::net::InetAddress > java::net::DatagramSocket::getInetAddress()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(8),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::DatagramSocket::getLocalAddress()
@@ -239,8 +239,8 @@ local_ref< java::net::InetAddress > java::net::DatagramSocket::getLocalAddress()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(9),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint java::net::DatagramSocket::getLocalPort()
@@ -249,8 +249,8 @@ jint java::net::DatagramSocket::getLocalPort()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(10),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::DatagramSocket::getPort()
@@ -259,8 +259,8 @@ jint java::net::DatagramSocket::getPort()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(11),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::DatagramSocket::getReceiveBufferSize()
@@ -269,8 +269,8 @@ jint java::net::DatagramSocket::getReceiveBufferSize()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(12),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::DatagramSocket::getSendBufferSize()
@@ -279,8 +279,8 @@ jint java::net::DatagramSocket::getSendBufferSize()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(13),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::DatagramSocket::getSoTimeout()
@@ -289,8 +289,8 @@ jint java::net::DatagramSocket::getSoTimeout()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(14),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::net::DatagramSocket::receive(local_ref< java::net::DatagramPacket > const &a0)
@@ -299,8 +299,8 @@ void java::net::DatagramSocket::receive(local_ref< java::net::DatagramPacket > c
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(15),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::send(local_ref< java::net::DatagramPacket > const &a0)
@@ -309,8 +309,8 @@ void java::net::DatagramSocket::send(local_ref< java::net::DatagramPacket > cons
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(16),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::setSendBufferSize(jint a0)
@@ -319,8 +319,8 @@ void java::net::DatagramSocket::setSendBufferSize(jint a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(17),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::setReceiveBufferSize(jint a0)
@@ -329,8 +329,8 @@ void java::net::DatagramSocket::setReceiveBufferSize(jint a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(18),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::setSoTimeout(jint a0)
@@ -339,8 +339,8 @@ void java::net::DatagramSocket::setSoTimeout(jint a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(19),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::setDatagramSocketImplFactory(local_ref< java::net::DatagramSocketImplFactory > const &a0)
@@ -349,8 +349,8 @@ void java::net::DatagramSocket::setDatagramSocketImplFactory(local_ref< java::ne
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(20),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::net::DatagramSocket::bind(local_ref< java::net::SocketAddress > const &a0)
@@ -359,8 +359,8 @@ void java::net::DatagramSocket::bind(local_ref< java::net::SocketAddress > const
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(21),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::DatagramSocket::connect(local_ref< java::net::SocketAddress > const &a0)
@@ -369,8 +369,8 @@ void java::net::DatagramSocket::connect(local_ref< java::net::SocketAddress > co
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(22),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::DatagramSocket::isBound()
@@ -379,8 +379,8 @@ jboolean java::net::DatagramSocket::isBound()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(23),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::DatagramSocket::isConnected()
@@ -389,8 +389,8 @@ jboolean java::net::DatagramSocket::isConnected()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(24),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::net::SocketAddress > java::net::DatagramSocket::getRemoteSocketAddress()
@@ -399,8 +399,8 @@ local_ref< java::net::SocketAddress > java::net::DatagramSocket::getRemoteSocket
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(25),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::net::SocketAddress > >
-	(get_jobject());
+		local_ref< java::net::SocketAddress >
+	>(get_jobject());
 }
 
 local_ref< java::net::SocketAddress > java::net::DatagramSocket::getLocalSocketAddress()
@@ -409,8 +409,8 @@ local_ref< java::net::SocketAddress > java::net::DatagramSocket::getLocalSocketA
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(26),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::net::SocketAddress > >
-	(get_jobject());
+		local_ref< java::net::SocketAddress >
+	>(get_jobject());
 }
 
 void java::net::DatagramSocket::setReuseAddress(jboolean a0)
@@ -419,8 +419,8 @@ void java::net::DatagramSocket::setReuseAddress(jboolean a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(27),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::DatagramSocket::getReuseAddress()
@@ -429,8 +429,8 @@ jboolean java::net::DatagramSocket::getReuseAddress()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(28),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::DatagramSocket::setBroadcast(jboolean a0)
@@ -439,8 +439,8 @@ void java::net::DatagramSocket::setBroadcast(jboolean a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(29),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::DatagramSocket::getBroadcast()
@@ -449,8 +449,8 @@ jboolean java::net::DatagramSocket::getBroadcast()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(30),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::DatagramSocket::setTrafficClass(jint a0)
@@ -459,8 +459,8 @@ void java::net::DatagramSocket::setTrafficClass(jint a0)
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(31),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::net::DatagramSocket::getTrafficClass()
@@ -469,8 +469,8 @@ jint java::net::DatagramSocket::getTrafficClass()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(32),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::net::DatagramSocket::isClosed()
@@ -479,8 +479,8 @@ jboolean java::net::DatagramSocket::isClosed()
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(33),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::DatagramChannel > java::net::DatagramSocket::getChannel()
@@ -489,8 +489,8 @@ local_ref< java::nio::channels::DatagramChannel > java::net::DatagramSocket::get
 		java::net::DatagramSocket::J2CPP_CLASS_NAME,
 		java::net::DatagramSocket::J2CPP_METHOD_NAME(34),
 		java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::nio::channels::DatagramChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::DatagramChannel >
+	>(get_jobject());
 }
 
 

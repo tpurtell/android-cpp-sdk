@@ -76,8 +76,8 @@ void javax::xml::transform::ErrorListener::warning(local_ref< javax::xml::transf
 		javax::xml::transform::ErrorListener::J2CPP_CLASS_NAME,
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::transform::ErrorListener::error(local_ref< javax::xml::transform::TransformerException > const &a0)
@@ -86,8 +86,8 @@ void javax::xml::transform::ErrorListener::error(local_ref< javax::xml::transfor
 		javax::xml::transform::ErrorListener::J2CPP_CLASS_NAME,
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::transform::ErrorListener::fatalError(local_ref< javax::xml::transform::TransformerException > const &a0)
@@ -96,8 +96,8 @@ void javax::xml::transform::ErrorListener::fatalError(local_ref< javax::xml::tra
 		javax::xml::transform::ErrorListener::J2CPP_CLASS_NAME,
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_NAME(2),
 		javax::xml::transform::ErrorListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

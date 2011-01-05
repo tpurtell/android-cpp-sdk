@@ -227,8 +227,8 @@ local_ref< java::util::List > java::util::Arrays::asList(local_ref< array< local
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(1),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jbyte,1> > const &a0, jbyte a1)
@@ -237,8 +237,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jbyte,1> > const &a0, jby
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(2),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jchar,1> > const &a0, jchar a1)
@@ -247,8 +247,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jchar,1> > const &a0, jch
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(3),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jdouble,1> > const &a0, jdouble a1)
@@ -257,8 +257,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jdouble,1> > const &a0, j
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(4),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jfloat,1> > const &a0, jfloat a1)
@@ -267,8 +267,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jfloat,1> > const &a0, jf
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(5),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jint,1> > const &a0, jint a1)
@@ -277,8 +277,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jint,1> > const &a0, jint
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(6),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jlong,1> > const &a0, jlong a1)
@@ -287,8 +287,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jlong,1> > const &a0, jlo
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(7),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< java::lang::Object > const &a1)
@@ -297,8 +297,8 @@ jint java::util::Arrays::binarySearch(local_ref< array< local_ref< java::lang::O
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(8),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::util::Comparator > const &a2)
@@ -307,8 +307,8 @@ jint java::util::Arrays::binarySearch(local_ref< array< local_ref< java::lang::O
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(9),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::util::Arrays::binarySearch(local_ref< array<jshort,1> > const &a0, jshort a1)
@@ -317,8 +317,8 @@ jint java::util::Arrays::binarySearch(local_ref< array<jshort,1> > const &a0, js
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(10),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jbyte,1> > const &a0, jbyte a1)
@@ -327,8 +327,8 @@ void java::util::Arrays::fill(local_ref< array<jbyte,1> > const &a0, jbyte a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(11),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jbyte a3)
@@ -337,8 +337,8 @@ void java::util::Arrays::fill(local_ref< array<jbyte,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(12),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jshort,1> > const &a0, jshort a1)
@@ -347,8 +347,8 @@ void java::util::Arrays::fill(local_ref< array<jshort,1> > const &a0, jshort a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(13),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jshort,1> > const &a0, jint a1, jint a2, jshort a3)
@@ -357,8 +357,8 @@ void java::util::Arrays::fill(local_ref< array<jshort,1> > const &a0, jint a1, j
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(14),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jchar,1> > const &a0, jchar a1)
@@ -367,8 +367,8 @@ void java::util::Arrays::fill(local_ref< array<jchar,1> > const &a0, jchar a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(15),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jchar a3)
@@ -377,8 +377,8 @@ void java::util::Arrays::fill(local_ref< array<jchar,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(16),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jint,1> > const &a0, jint a1)
@@ -387,8 +387,8 @@ void java::util::Arrays::fill(local_ref< array<jint,1> > const &a0, jint a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(17),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jint a3)
@@ -397,8 +397,8 @@ void java::util::Arrays::fill(local_ref< array<jint,1> > const &a0, jint a1, jin
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(18),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jlong,1> > const &a0, jlong a1)
@@ -407,8 +407,8 @@ void java::util::Arrays::fill(local_ref< array<jlong,1> > const &a0, jlong a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(19),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jlong,1> > const &a0, jint a1, jint a2, jlong a3)
@@ -417,8 +417,8 @@ void java::util::Arrays::fill(local_ref< array<jlong,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(20),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jfloat,1> > const &a0, jfloat a1)
@@ -427,8 +427,8 @@ void java::util::Arrays::fill(local_ref< array<jfloat,1> > const &a0, jfloat a1)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(21),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2, jfloat a3)
@@ -437,8 +437,8 @@ void java::util::Arrays::fill(local_ref< array<jfloat,1> > const &a0, jint a1, j
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(22),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jdouble,1> > const &a0, jdouble a1)
@@ -447,8 +447,8 @@ void java::util::Arrays::fill(local_ref< array<jdouble,1> > const &a0, jdouble a
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(23),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jdouble,1> > const &a0, jint a1, jint a2, jdouble a3)
@@ -457,8 +457,8 @@ void java::util::Arrays::fill(local_ref< array<jdouble,1> > const &a0, jint a1, 
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(24),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array<jboolean,1> > const &a0, jboolean a1)
@@ -467,8 +467,8 @@ void java::util::Arrays::fill(local_ref< array<jboolean,1> > const &a0, jboolean
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(25),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array<jboolean,1> > const &a0, jint a1, jint a2, jboolean a3)
@@ -477,8 +477,8 @@ void java::util::Arrays::fill(local_ref< array<jboolean,1> > const &a0, jint a1,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(26),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::fill(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< java::lang::Object > const &a1)
@@ -487,8 +487,8 @@ void java::util::Arrays::fill(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(27),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Arrays::fill(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, jint a1, jint a2, local_ref< java::lang::Object > const &a3)
@@ -497,8 +497,8 @@ void java::util::Arrays::fill(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(28),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jboolean,1> > const &a0)
@@ -507,8 +507,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jboolean,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(29),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jint,1> > const &a0)
@@ -517,8 +517,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jint,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(30),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jshort,1> > const &a0)
@@ -527,8 +527,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jshort,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(31),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jchar,1> > const &a0)
@@ -537,8 +537,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jchar,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(32),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jbyte,1> > const &a0)
@@ -547,8 +547,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jbyte,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(33),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jlong,1> > const &a0)
@@ -557,8 +557,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jlong,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(34),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jfloat,1> > const &a0)
@@ -567,8 +567,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jfloat,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(35),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(35), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array<jdouble,1> > const &a0)
@@ -577,8 +577,8 @@ jint java::util::Arrays::hashCode(local_ref< array<jdouble,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(36),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::hashCode(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -587,8 +587,8 @@ jint java::util::Arrays::hashCode(local_ref< array< local_ref< java::lang::Objec
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(37),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(37), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::util::Arrays::deepHashCode(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -597,8 +597,8 @@ jint java::util::Arrays::deepHashCode(local_ref< array< local_ref< java::lang::O
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(38),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(38), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jbyte,1> > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -607,8 +607,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jbyte,1> > const &a0, local
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(39),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(39), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jshort,1> > const &a0, local_ref< array<jshort,1> > const &a1)
@@ -617,8 +617,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jshort,1> > const &a0, loca
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(40),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jchar,1> > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -627,8 +627,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jchar,1> > const &a0, local
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(41),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jint,1> > const &a0, local_ref< array<jint,1> > const &a1)
@@ -637,8 +637,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jint,1> > const &a0, local_
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(42),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(42), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jlong,1> > const &a0, local_ref< array<jlong,1> > const &a1)
@@ -647,8 +647,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jlong,1> > const &a0, local
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(43),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -657,8 +657,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jfloat,1> > const &a0, loca
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(44),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jdouble,1> > const &a0, local_ref< array<jdouble,1> > const &a1)
@@ -667,8 +667,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jdouble,1> > const &a0, loc
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(45),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array<jboolean,1> > const &a0, local_ref< array<jboolean,1> > const &a1)
@@ -677,8 +677,8 @@ jboolean java::util::Arrays::equals(local_ref< array<jboolean,1> > const &a0, lo
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(46),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(46), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::equals(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -687,8 +687,8 @@ jboolean java::util::Arrays::equals(local_ref< array< local_ref< java::lang::Obj
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(47),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Arrays::deepEquals(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -697,8 +697,8 @@ jboolean java::util::Arrays::deepEquals(local_ref< array< local_ref< java::lang:
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(48),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(48), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 void java::util::Arrays::sort(local_ref< array<jbyte,1> > const &a0)
@@ -707,8 +707,8 @@ void java::util::Arrays::sort(local_ref< array<jbyte,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(49),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -717,8 +717,8 @@ void java::util::Arrays::sort(local_ref< array<jbyte,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(50),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jchar,1> > const &a0)
@@ -727,8 +727,8 @@ void java::util::Arrays::sort(local_ref< array<jchar,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(51),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -737,8 +737,8 @@ void java::util::Arrays::sort(local_ref< array<jchar,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(52),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jdouble,1> > const &a0)
@@ -747,8 +747,8 @@ void java::util::Arrays::sort(local_ref< array<jdouble,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(53),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jdouble,1> > const &a0, jint a1, jint a2)
@@ -757,8 +757,8 @@ void java::util::Arrays::sort(local_ref< array<jdouble,1> > const &a0, jint a1, 
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(54),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jfloat,1> > const &a0)
@@ -767,8 +767,8 @@ void java::util::Arrays::sort(local_ref< array<jfloat,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(55),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2)
@@ -777,8 +777,8 @@ void java::util::Arrays::sort(local_ref< array<jfloat,1> > const &a0, jint a1, j
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(56),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jint,1> > const &a0)
@@ -787,8 +787,8 @@ void java::util::Arrays::sort(local_ref< array<jint,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(57),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jint,1> > const &a0, jint a1, jint a2)
@@ -797,8 +797,8 @@ void java::util::Arrays::sort(local_ref< array<jint,1> > const &a0, jint a1, jin
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(58),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jlong,1> > const &a0)
@@ -807,8 +807,8 @@ void java::util::Arrays::sort(local_ref< array<jlong,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(59),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jlong,1> > const &a0, jint a1, jint a2)
@@ -817,8 +817,8 @@ void java::util::Arrays::sort(local_ref< array<jlong,1> > const &a0, jint a1, ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(60),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array<jshort,1> > const &a0)
@@ -827,8 +827,8 @@ void java::util::Arrays::sort(local_ref< array<jshort,1> > const &a0)
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(61),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array<jshort,1> > const &a0, jint a1, jint a2)
@@ -837,8 +837,8 @@ void java::util::Arrays::sort(local_ref< array<jshort,1> > const &a0, jint a1, j
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(62),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -847,8 +847,8 @@ void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(63),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, jint a1, jint a2)
@@ -857,8 +857,8 @@ void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(64),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, jint a1, jint a2, local_ref< java::util::Comparator > const &a3)
@@ -867,8 +867,8 @@ void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(65),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< java::util::Comparator > const &a1)
@@ -877,8 +877,8 @@ void java::util::Arrays::sort(local_ref< array< local_ref< java::lang::Object >,
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(66),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jboolean,1> > const &a0)
@@ -887,8 +887,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jb
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(67),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(67), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jbyte,1> > const &a0)
@@ -897,8 +897,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jb
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(68),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(68), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jchar,1> > const &a0)
@@ -907,8 +907,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jc
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(69),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(69), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jdouble,1> > const &a0)
@@ -917,8 +917,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jd
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(70),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(70), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jfloat,1> > const &a0)
@@ -927,8 +927,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jf
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(71),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(71), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jint,1> > const &a0)
@@ -937,8 +937,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<ji
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(72),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(72), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jlong,1> > const &a0)
@@ -947,8 +947,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jl
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(73),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(73), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<jshort,1> > const &a0)
@@ -957,8 +957,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array<js
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(74),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(74), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -967,8 +967,8 @@ local_ref< java::lang::String > java::util::Arrays::toString(local_ref< array< l
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(75),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(75), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Arrays::deepToString(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -977,8 +977,8 @@ local_ref< java::lang::String > java::util::Arrays::deepToString(local_ref< arra
 		java::util::Arrays::J2CPP_CLASS_NAME,
 		java::util::Arrays::J2CPP_METHOD_NAME(76),
 		java::util::Arrays::J2CPP_METHOD_SIGNATURE(76), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

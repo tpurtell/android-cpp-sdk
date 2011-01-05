@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_HEADERELEMENTITERATOR_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -41,8 +41,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Iterator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean hasNext();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HeaderElementIterator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HeaderElementIterator::operator local_ref<java::util::Iterator>() const
 {
 	return local_ref<java::util::Iterator>(get_jobject());
+}
+
+org::apache::http::HeaderElementIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jboolean org::apache::http::HeaderElementIterator::hasNext()
@@ -82,8 +82,8 @@ jboolean org::apache::http::HeaderElementIterator::hasNext()
 		org::apache::http::HeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_NAME(0),
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::HeaderElementIterator::nextElement()
@@ -92,8 +92,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::HeaderElementIt
 		org::apache::http::HeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_NAME(1),
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HeaderElement > >
-	(get_jobject());
+		local_ref< org::apache::http::HeaderElement >
+	>(get_jobject());
 }
 
 

@@ -11,11 +11,17 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_RETENTIONPOLICY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -45,7 +51,10 @@ namespace java { namespace lang { namespace annotation {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< array< local_ref< java::lang::annotation::RetentionPolicy >, 1> > values();
@@ -73,9 +82,24 @@ namespace j2cpp {
 
 
 
+java::lang::annotation::RetentionPolicy::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::lang::annotation::RetentionPolicy::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::lang::annotation::RetentionPolicy::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::lang::annotation::RetentionPolicy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::annotation::RetentionPolicy >, 1> > java::lang::annotation::RetentionPolicy::values()
@@ -84,8 +108,8 @@ local_ref< array< local_ref< java::lang::annotation::RetentionPolicy >, 1> > jav
 		java::lang::annotation::RetentionPolicy::J2CPP_CLASS_NAME,
 		java::lang::annotation::RetentionPolicy::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::RetentionPolicy::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::annotation::RetentionPolicy >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::annotation::RetentionPolicy >, 1> >
+	>();
 }
 
 local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::RetentionPolicy::valueOf(local_ref< java::lang::String > const &a0)
@@ -94,8 +118,8 @@ local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Ret
 		java::lang::annotation::RetentionPolicy::J2CPP_CLASS_NAME,
 		java::lang::annotation::RetentionPolicy::J2CPP_METHOD_NAME(1),
 		java::lang::annotation::RetentionPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::annotation::RetentionPolicy > >
-	(a0);
+		local_ref< java::lang::annotation::RetentionPolicy >
+	>(a0);
 }
 
 

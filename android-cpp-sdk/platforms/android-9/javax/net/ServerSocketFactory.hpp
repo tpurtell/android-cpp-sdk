@@ -83,8 +83,8 @@ local_ref< javax::net::ServerSocketFactory > javax::net::ServerSocketFactory::ge
 		javax::net::ServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(1),
 		javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ServerSocketFactory > >
-	();
+		local_ref< javax::net::ServerSocketFactory >
+	>();
 }
 
 local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServerSocket()
@@ -93,8 +93,8 @@ local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServ
 		javax::net::ServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(2),
 		javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::ServerSocket > >
-	(get_jobject());
+		local_ref< java::net::ServerSocket >
+	>(get_jobject());
 }
 
 local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServerSocket(jint a0)
@@ -103,8 +103,8 @@ local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServ
 		javax::net::ServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(3),
 		javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::ServerSocket > >
-	(get_jobject(), a0);
+		local_ref< java::net::ServerSocket >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServerSocket(jint a0, jint a1)
@@ -113,8 +113,8 @@ local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServ
 		javax::net::ServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(4),
 		javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::ServerSocket > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::ServerSocket >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServerSocket(jint a0, jint a1, local_ref< java::net::InetAddress > const &a2)
@@ -123,8 +123,8 @@ local_ref< java::net::ServerSocket > javax::net::ServerSocketFactory::createServ
 		javax::net::ServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(5),
 		javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::ServerSocket > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::net::ServerSocket >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

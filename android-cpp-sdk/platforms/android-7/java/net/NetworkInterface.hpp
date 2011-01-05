@@ -93,8 +93,8 @@ local_ref< java::lang::String > java::net::NetworkInterface::getName()
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(1),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::net::NetworkInterface::getInetAddresses()
@@ -103,8 +103,8 @@ local_ref< java::util::Enumeration > java::net::NetworkInterface::getInetAddress
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(2),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::NetworkInterface::getDisplayName()
@@ -113,8 +113,8 @@ local_ref< java::lang::String > java::net::NetworkInterface::getDisplayName()
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(3),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::NetworkInterface > java::net::NetworkInterface::getByName(local_ref< java::lang::String > const &a0)
@@ -123,8 +123,8 @@ local_ref< java::net::NetworkInterface > java::net::NetworkInterface::getByName(
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(4),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::NetworkInterface > >
-	(a0);
+		local_ref< java::net::NetworkInterface >
+	>(a0);
 }
 
 local_ref< java::net::NetworkInterface > java::net::NetworkInterface::getByInetAddress(local_ref< java::net::InetAddress > const &a0)
@@ -133,8 +133,8 @@ local_ref< java::net::NetworkInterface > java::net::NetworkInterface::getByInetA
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(5),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::NetworkInterface > >
-	(a0);
+		local_ref< java::net::NetworkInterface >
+	>(a0);
 }
 
 local_ref< java::util::Enumeration > java::net::NetworkInterface::getNetworkInterfaces()
@@ -143,8 +143,8 @@ local_ref< java::util::Enumeration > java::net::NetworkInterface::getNetworkInte
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(6),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Enumeration > >
-	();
+		local_ref< java::util::Enumeration >
+	>();
 }
 
 jboolean java::net::NetworkInterface::equals(local_ref< java::lang::Object > const &a0)
@@ -153,8 +153,8 @@ jboolean java::net::NetworkInterface::equals(local_ref< java::lang::Object > con
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(7),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::NetworkInterface::hashCode()
@@ -163,8 +163,8 @@ jint java::net::NetworkInterface::hashCode()
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(8),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::NetworkInterface::toString()
@@ -173,8 +173,8 @@ local_ref< java::lang::String > java::net::NetworkInterface::toString()
 		java::net::NetworkInterface::J2CPP_CLASS_NAME,
 		java::net::NetworkInterface::J2CPP_METHOD_NAME(9),
 		java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -19,11 +19,13 @@ namespace j2cpp { namespace android { namespace text { class Layout; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <android/text/Layout.hpp>
 #include <android/text/ParcelableSpan.hpp>
 #include <android/text/style/ParagraphStyle.hpp>
@@ -62,7 +64,9 @@ namespace android { namespace text { namespace style {
 
 			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::text::style::LeadingMarginSpan>() const;
+			operator local_ref<android::text::style::ParagraphStyle>() const;
 			operator local_ref<android::text::ParcelableSpan>() const;
+			operator local_ref<android::os::Parcelable>() const;
 
 
 			Standard(jint, jint);
@@ -130,9 +134,19 @@ android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::
 	return local_ref<android::text::style::LeadingMarginSpan>(get_jobject());
 }
 
+android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
+}
+
 android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::text::ParcelableSpan>() const
 {
 	return local_ref<android::text::ParcelableSpan>(get_jobject());
+}
+
+android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -141,8 +155,8 @@ android::text::style::LeadingMarginSpan_::Standard::Standard(jint a0, jint a1)
 	call_new_object<
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(0),
-		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -154,8 +168,8 @@ android::text::style::LeadingMarginSpan_::Standard::Standard(jint a0)
 	call_new_object<
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(1),
-		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -167,8 +181,8 @@ android::text::style::LeadingMarginSpan_::Standard::Standard(local_ref< android:
 	call_new_object<
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(2),
-		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -180,8 +194,8 @@ jint android::text::style::LeadingMarginSpan_::Standard::getSpanTypeId()
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(3),
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::style::LeadingMarginSpan_::Standard::describeContents()
@@ -190,8 +204,8 @@ jint android::text::style::LeadingMarginSpan_::Standard::describeContents()
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(4),
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::style::LeadingMarginSpan_::Standard::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -200,8 +214,8 @@ void android::text::style::LeadingMarginSpan_::Standard::writeToParcel(local_ref
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(5),
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::text::style::LeadingMarginSpan_::Standard::getLeadingMargin(jboolean a0)
@@ -210,8 +224,8 @@ jint android::text::style::LeadingMarginSpan_::Standard::getLeadingMargin(jboole
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(6),
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::text::style::LeadingMarginSpan_::Standard::drawLeadingMargin(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::lang::CharSequence > const &a7, jint a8, jint a9, jboolean a10, local_ref< android::text::Layout > const &a11)
@@ -220,8 +234,8 @@ void android::text::style::LeadingMarginSpan_::Standard::drawLeadingMargin(local
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(7),
 		android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 
 
@@ -253,8 +267,8 @@ jint android::text::style::LeadingMarginSpan::getLeadingMargin(jboolean a0)
 		android::text::style::LeadingMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan::J2CPP_METHOD_NAME(0),
 		android::text::style::LeadingMarginSpan::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::text::style::LeadingMarginSpan::drawLeadingMargin(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::lang::CharSequence > const &a7, jint a8, jint a9, jboolean a10, local_ref< android::text::Layout > const &a11)
@@ -263,8 +277,8 @@ void android::text::style::LeadingMarginSpan::drawLeadingMargin(local_ref< andro
 		android::text::style::LeadingMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::LeadingMarginSpan::J2CPP_METHOD_NAME(1),
 		android::text::style::LeadingMarginSpan::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 
 

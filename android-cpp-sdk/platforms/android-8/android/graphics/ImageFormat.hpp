@@ -84,8 +84,8 @@ android::graphics::ImageFormat::ImageFormat()
 	call_new_object<
 		android::graphics::ImageFormat::J2CPP_CLASS_NAME,
 		android::graphics::ImageFormat::J2CPP_METHOD_NAME(0),
-		android::graphics::ImageFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::ImageFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ jint android::graphics::ImageFormat::getBitsPerPixel(jint a0)
 		android::graphics::ImageFormat::J2CPP_CLASS_NAME,
 		android::graphics::ImageFormat::J2CPP_METHOD_NAME(1),
 		android::graphics::ImageFormat::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class MaskFilter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/MaskFilter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +39,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::MaskFilter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		EmbossMaskFilter(local_ref< array<jfloat,1> > const&, jfloat, jfloat, jfloat);
@@ -63,14 +66,19 @@ android::graphics::EmbossMaskFilter::operator local_ref<android::graphics::MaskF
 	return local_ref<android::graphics::MaskFilter>(get_jobject());
 }
 
+android::graphics::EmbossMaskFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::EmbossMaskFilter::EmbossMaskFilter(local_ref< array<jfloat,1> > const &a0, jfloat a1, jfloat a2, jfloat a3)
 : object<android::graphics::EmbossMaskFilter>(
 	call_new_object<
 		android::graphics::EmbossMaskFilter::J2CPP_CLASS_NAME,
 		android::graphics::EmbossMaskFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::EmbossMaskFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::graphics::EmbossMaskFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }

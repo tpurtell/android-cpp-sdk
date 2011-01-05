@@ -11,10 +11,12 @@
 #define J2CPP_JAVAX_CRYPTO_SECRETKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/Key.hpp>
 
@@ -38,6 +40,7 @@ namespace javax { namespace crypto {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::Key>() const;
 
@@ -60,6 +63,11 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
+
+javax::crypto::SecretKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
 
 javax::crypto::SecretKey::operator local_ref<java::lang::Object>() const
 {

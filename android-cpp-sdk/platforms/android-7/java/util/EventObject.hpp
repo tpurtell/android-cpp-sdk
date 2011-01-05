@@ -43,8 +43,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		EventObject(local_ref< java::lang::Object > const&);
@@ -69,14 +69,14 @@ namespace j2cpp {
 
 
 
-java::util::EventObject::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::EventObject::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::EventObject::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -85,8 +85,8 @@ java::util::EventObject::EventObject(local_ref< java::lang::Object > const &a0)
 	call_new_object<
 		java::util::EventObject::J2CPP_CLASS_NAME,
 		java::util::EventObject::J2CPP_METHOD_NAME(0),
-		java::util::EventObject::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::EventObject::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::lang::Object > java::util::EventObject::getSource()
 		java::util::EventObject::J2CPP_CLASS_NAME,
 		java::util::EventObject::J2CPP_METHOD_NAME(1),
 		java::util::EventObject::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::EventObject::toString()
@@ -108,8 +108,8 @@ local_ref< java::lang::String > java::util::EventObject::toString()
 		java::util::EventObject::J2CPP_CLASS_NAME,
 		java::util::EventObject::J2CPP_METHOD_NAME(2),
 		java::util::EventObject::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

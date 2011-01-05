@@ -197,6 +197,7 @@ namespace android { namespace view {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::InputEvent>() const;
 		operator local_ref<android::os::Parcelable>() const;
 
@@ -326,8 +327,8 @@ android::view::MotionEvent_::PointerCoords::PointerCoords()
 	call_new_object<
 		android::view::MotionEvent_::PointerCoords::J2CPP_CLASS_NAME,
 		android::view::MotionEvent_::PointerCoords::J2CPP_METHOD_NAME(0),
-		android::view::MotionEvent_::PointerCoords::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::MotionEvent_::PointerCoords::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , x(get_jobject())
 , y(get_jobject())
@@ -358,6 +359,11 @@ J2CPP_DEFINE_FIELD(android::view::MotionEvent_::PointerCoords,8,"orientation","F
 
 
 
+android::view::MotionEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::MotionEvent::operator local_ref<android::view::InputEvent>() const
 {
 	return local_ref<android::view::InputEvent>(get_jobject());
@@ -375,8 +381,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(1),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::MotionEvent > >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+		local_ref< android::view::MotionEvent >
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
 }
 
 local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong a0, jlong a1, jint a2, jfloat a3, jfloat a4, jfloat a5, jfloat a6, jint a7, jfloat a8, jfloat a9, jint a10, jint a11)
@@ -385,8 +391,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(2),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::MotionEvent > >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+		local_ref< android::view::MotionEvent >
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 
 local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong a0, jlong a1, jint a2, jint a3, jfloat a4, jfloat a5, jfloat a6, jfloat a7, jint a8, jfloat a9, jfloat a10, jint a11, jint a12)
@@ -395,8 +401,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(3),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::MotionEvent > >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+		local_ref< android::view::MotionEvent >
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
 }
 
 local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong a0, jlong a1, jint a2, jfloat a3, jfloat a4, jint a5)
@@ -405,8 +411,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(jlong
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(4),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::MotionEvent > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< android::view::MotionEvent >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(local_ref< android::view::MotionEvent > const &a0)
@@ -415,8 +421,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtain(local
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(5),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::MotionEvent > >
-	(a0);
+		local_ref< android::view::MotionEvent >
+	>(a0);
 }
 
 local_ref< android::view::MotionEvent > android::view::MotionEvent::obtainNoHistory(local_ref< android::view::MotionEvent > const &a0)
@@ -425,8 +431,8 @@ local_ref< android::view::MotionEvent > android::view::MotionEvent::obtainNoHist
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(6),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::MotionEvent > >
-	(a0);
+		local_ref< android::view::MotionEvent >
+	>(a0);
 }
 
 void android::view::MotionEvent::recycle()
@@ -435,8 +441,8 @@ void android::view::MotionEvent::recycle()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(7),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getAction()
@@ -445,8 +451,8 @@ jint android::view::MotionEvent::getAction()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(8),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getActionMasked()
@@ -455,8 +461,8 @@ jint android::view::MotionEvent::getActionMasked()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(9),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getActionIndex()
@@ -465,8 +471,8 @@ jint android::view::MotionEvent::getActionIndex()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(10),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getFlags()
@@ -475,8 +481,8 @@ jint android::view::MotionEvent::getFlags()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(11),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::view::MotionEvent::getDownTime()
@@ -485,8 +491,8 @@ jlong android::view::MotionEvent::getDownTime()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(12),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::view::MotionEvent::getEventTime()
@@ -495,8 +501,8 @@ jlong android::view::MotionEvent::getEventTime()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(13),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getX()
@@ -505,8 +511,8 @@ jfloat android::view::MotionEvent::getX()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(14),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(14), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getY()
@@ -515,8 +521,8 @@ jfloat android::view::MotionEvent::getY()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(15),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(15), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getPressure()
@@ -525,8 +531,8 @@ jfloat android::view::MotionEvent::getPressure()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(16),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(16), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getSize()
@@ -535,8 +541,8 @@ jfloat android::view::MotionEvent::getSize()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(17),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(17), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getTouchMajor()
@@ -545,8 +551,8 @@ jfloat android::view::MotionEvent::getTouchMajor()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(18),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(18), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getTouchMinor()
@@ -555,8 +561,8 @@ jfloat android::view::MotionEvent::getTouchMinor()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(19),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(19), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getToolMajor()
@@ -565,8 +571,8 @@ jfloat android::view::MotionEvent::getToolMajor()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(20),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(20), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getToolMinor()
@@ -575,8 +581,8 @@ jfloat android::view::MotionEvent::getToolMinor()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(21),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(21), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getOrientation()
@@ -585,8 +591,8 @@ jfloat android::view::MotionEvent::getOrientation()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(22),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(22), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getPointerCount()
@@ -595,8 +601,8 @@ jint android::view::MotionEvent::getPointerCount()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(23),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getPointerId(jint a0)
@@ -605,8 +611,8 @@ jint android::view::MotionEvent::getPointerId(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(24),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::view::MotionEvent::findPointerIndex(jint a0)
@@ -615,8 +621,8 @@ jint android::view::MotionEvent::findPointerIndex(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(25),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getX(jint a0)
@@ -625,8 +631,8 @@ jfloat android::view::MotionEvent::getX(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(26),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(26), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getY(jint a0)
@@ -635,8 +641,8 @@ jfloat android::view::MotionEvent::getY(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(27),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(27), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getPressure(jint a0)
@@ -645,8 +651,8 @@ jfloat android::view::MotionEvent::getPressure(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(28),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(28), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getSize(jint a0)
@@ -655,8 +661,8 @@ jfloat android::view::MotionEvent::getSize(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(29),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(29), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getTouchMajor(jint a0)
@@ -665,8 +671,8 @@ jfloat android::view::MotionEvent::getTouchMajor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(30),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(30), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getTouchMinor(jint a0)
@@ -675,8 +681,8 @@ jfloat android::view::MotionEvent::getTouchMinor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(31),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(31), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getToolMajor(jint a0)
@@ -685,8 +691,8 @@ jfloat android::view::MotionEvent::getToolMajor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(32),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(32), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getToolMinor(jint a0)
@@ -695,8 +701,8 @@ jfloat android::view::MotionEvent::getToolMinor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(33),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(33), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getOrientation(jint a0)
@@ -705,8 +711,8 @@ jfloat android::view::MotionEvent::getOrientation(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(34),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(34), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 void android::view::MotionEvent::getPointerCoords(jint a0, local_ref< android::view::MotionEvent_::PointerCoords > const &a1)
@@ -715,8 +721,8 @@ void android::view::MotionEvent::getPointerCoords(jint a0, local_ref< android::v
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(35),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::MotionEvent::getMetaState()
@@ -725,8 +731,8 @@ jint android::view::MotionEvent::getMetaState()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(36),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getRawX()
@@ -735,8 +741,8 @@ jfloat android::view::MotionEvent::getRawX()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(37),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(37), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getRawY()
@@ -745,8 +751,8 @@ jfloat android::view::MotionEvent::getRawY()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(38),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(38), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getXPrecision()
@@ -755,8 +761,8 @@ jfloat android::view::MotionEvent::getXPrecision()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(39),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(39), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::MotionEvent::getYPrecision()
@@ -765,8 +771,8 @@ jfloat android::view::MotionEvent::getYPrecision()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(40),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(40), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint android::view::MotionEvent::getHistorySize()
@@ -775,8 +781,8 @@ jint android::view::MotionEvent::getHistorySize()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(41),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(41), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::view::MotionEvent::getHistoricalEventTime(jint a0)
@@ -785,8 +791,8 @@ jlong android::view::MotionEvent::getHistoricalEventTime(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(42),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(42), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalX(jint a0)
@@ -795,8 +801,8 @@ jfloat android::view::MotionEvent::getHistoricalX(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(43),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(43), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalY(jint a0)
@@ -805,8 +811,8 @@ jfloat android::view::MotionEvent::getHistoricalY(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(44),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(44), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalPressure(jint a0)
@@ -815,8 +821,8 @@ jfloat android::view::MotionEvent::getHistoricalPressure(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(45),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(45), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalSize(jint a0)
@@ -825,8 +831,8 @@ jfloat android::view::MotionEvent::getHistoricalSize(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(46),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(46), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalTouchMajor(jint a0)
@@ -835,8 +841,8 @@ jfloat android::view::MotionEvent::getHistoricalTouchMajor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(47),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(47), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalTouchMinor(jint a0)
@@ -845,8 +851,8 @@ jfloat android::view::MotionEvent::getHistoricalTouchMinor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(48),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(48), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalToolMajor(jint a0)
@@ -855,8 +861,8 @@ jfloat android::view::MotionEvent::getHistoricalToolMajor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(49),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(49), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalToolMinor(jint a0)
@@ -865,8 +871,8 @@ jfloat android::view::MotionEvent::getHistoricalToolMinor(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(50),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(50), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalOrientation(jint a0)
@@ -875,8 +881,8 @@ jfloat android::view::MotionEvent::getHistoricalOrientation(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(51),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(51), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::MotionEvent::getHistoricalX(jint a0, jint a1)
@@ -885,8 +891,8 @@ jfloat android::view::MotionEvent::getHistoricalX(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(52),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(52), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalY(jint a0, jint a1)
@@ -895,8 +901,8 @@ jfloat android::view::MotionEvent::getHistoricalY(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(53),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(53), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalPressure(jint a0, jint a1)
@@ -905,8 +911,8 @@ jfloat android::view::MotionEvent::getHistoricalPressure(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(54),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(54), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalSize(jint a0, jint a1)
@@ -915,8 +921,8 @@ jfloat android::view::MotionEvent::getHistoricalSize(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(55),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(55), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalTouchMajor(jint a0, jint a1)
@@ -925,8 +931,8 @@ jfloat android::view::MotionEvent::getHistoricalTouchMajor(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(56),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(56), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalTouchMinor(jint a0, jint a1)
@@ -935,8 +941,8 @@ jfloat android::view::MotionEvent::getHistoricalTouchMinor(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(57),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(57), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalToolMajor(jint a0, jint a1)
@@ -945,8 +951,8 @@ jfloat android::view::MotionEvent::getHistoricalToolMajor(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(58),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(58), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalToolMinor(jint a0, jint a1)
@@ -955,8 +961,8 @@ jfloat android::view::MotionEvent::getHistoricalToolMinor(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(59),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(59), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::view::MotionEvent::getHistoricalOrientation(jint a0, jint a1)
@@ -965,8 +971,8 @@ jfloat android::view::MotionEvent::getHistoricalOrientation(jint a0, jint a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(60),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(60), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::MotionEvent::getHistoricalPointerCoords(jint a0, jint a1, local_ref< android::view::MotionEvent_::PointerCoords > const &a2)
@@ -975,8 +981,8 @@ void android::view::MotionEvent::getHistoricalPointerCoords(jint a0, jint a1, lo
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(61),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::view::MotionEvent::getEdgeFlags()
@@ -985,8 +991,8 @@ jint android::view::MotionEvent::getEdgeFlags()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(62),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(62), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::MotionEvent::setEdgeFlags(jint a0)
@@ -995,8 +1001,8 @@ void android::view::MotionEvent::setEdgeFlags(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(63),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::MotionEvent::setAction(jint a0)
@@ -1005,8 +1011,8 @@ void android::view::MotionEvent::setAction(jint a0)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(64),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::MotionEvent::offsetLocation(jfloat a0, jfloat a1)
@@ -1015,8 +1021,8 @@ void android::view::MotionEvent::offsetLocation(jfloat a0, jfloat a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(65),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::MotionEvent::setLocation(jfloat a0, jfloat a1)
@@ -1025,8 +1031,8 @@ void android::view::MotionEvent::setLocation(jfloat a0, jfloat a1)
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(66),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::MotionEvent::addBatch(jlong a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4, jint a5)
@@ -1035,8 +1041,8 @@ void android::view::MotionEvent::addBatch(jlong a0, jfloat a1, jfloat a2, jfloat
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(67),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::view::MotionEvent::addBatch(jlong a0, local_ref< array< local_ref< android::view::MotionEvent_::PointerCoords >, 1> > const &a1, jint a2)
@@ -1045,8 +1051,8 @@ void android::view::MotionEvent::addBatch(jlong a0, local_ref< array< local_ref<
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(68),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::view::MotionEvent::toString()
@@ -1055,8 +1061,8 @@ local_ref< java::lang::String > android::view::MotionEvent::toString()
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(69),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(69), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::view::MotionEvent::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -1065,8 +1071,8 @@ void android::view::MotionEvent::writeToParcel(local_ref< android::os::Parcel > 
 		android::view::MotionEvent::J2CPP_CLASS_NAME,
 		android::view::MotionEvent::J2CPP_METHOD_NAME(70),
 		android::view::MotionEvent::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

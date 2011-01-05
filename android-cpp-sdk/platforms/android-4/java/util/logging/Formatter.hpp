@@ -84,8 +84,8 @@ local_ref< java::lang::String > java::util::logging::Formatter::format(local_ref
 		java::util::logging::Formatter::J2CPP_CLASS_NAME,
 		java::util::logging::Formatter::J2CPP_METHOD_NAME(1),
 		java::util::logging::Formatter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::Formatter::formatMessage(local_ref< java::util::logging::LogRecord > const &a0)
@@ -94,8 +94,8 @@ local_ref< java::lang::String > java::util::logging::Formatter::formatMessage(lo
 		java::util::logging::Formatter::J2CPP_CLASS_NAME,
 		java::util::logging::Formatter::J2CPP_METHOD_NAME(2),
 		java::util::logging::Formatter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::Formatter::getHead(local_ref< java::util::logging::Handler > const &a0)
@@ -104,8 +104,8 @@ local_ref< java::lang::String > java::util::logging::Formatter::getHead(local_re
 		java::util::logging::Formatter::J2CPP_CLASS_NAME,
 		java::util::logging::Formatter::J2CPP_METHOD_NAME(3),
 		java::util::logging::Formatter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::Formatter::getTail(local_ref< java::util::logging::Handler > const &a0)
@@ -114,8 +114,8 @@ local_ref< java::lang::String > java::util::logging::Formatter::getTail(local_re
 		java::util::logging::Formatter::J2CPP_CLASS_NAME,
 		java::util::logging::Formatter::J2CPP_METHOD_NAME(4),
 		java::util::logging::Formatter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

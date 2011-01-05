@@ -70,8 +70,8 @@ local_ref< java::lang::Object > java::util::concurrent::Callable::call()
 		java::util::concurrent::Callable::J2CPP_CLASS_NAME,
 		java::util::concurrent::Callable::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::Callable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

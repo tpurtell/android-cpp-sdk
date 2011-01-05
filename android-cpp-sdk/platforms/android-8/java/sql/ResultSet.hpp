@@ -400,8 +400,8 @@ jboolean java::sql::ResultSet::absolute(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(0),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::sql::ResultSet::afterLast()
@@ -410,8 +410,8 @@ void java::sql::ResultSet::afterLast()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(1),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::beforeFirst()
@@ -420,8 +420,8 @@ void java::sql::ResultSet::beforeFirst()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(2),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::cancelRowUpdates()
@@ -430,8 +430,8 @@ void java::sql::ResultSet::cancelRowUpdates()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(3),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::clearWarnings()
@@ -440,8 +440,8 @@ void java::sql::ResultSet::clearWarnings()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(4),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::close()
@@ -450,8 +450,8 @@ void java::sql::ResultSet::close()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(5),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::deleteRow()
@@ -460,8 +460,8 @@ void java::sql::ResultSet::deleteRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(6),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::sql::ResultSet::findColumn(local_ref< java::lang::String > const &a0)
@@ -470,8 +470,8 @@ jint java::sql::ResultSet::findColumn(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(7),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSet::first()
@@ -480,8 +480,8 @@ jboolean java::sql::ResultSet::first()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(8),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::sql::Array > java::sql::ResultSet::getArray(jint a0)
@@ -490,8 +490,8 @@ local_ref< java::sql::Array > java::sql::ResultSet::getArray(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(9),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::sql::Array > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Array >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Array > java::sql::ResultSet::getArray(local_ref< java::lang::String > const &a0)
@@ -500,8 +500,8 @@ local_ref< java::sql::Array > java::sql::ResultSet::getArray(local_ref< java::la
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(10),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::sql::Array > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Array >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getAsciiStream(jint a0)
@@ -510,8 +510,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getAsciiStream(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(11),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getAsciiStream(local_ref< java::lang::String > const &a0)
@@ -520,8 +520,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getAsciiStream(local_re
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(12),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(jint a0)
@@ -530,8 +530,8 @@ local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(13),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(jint a0, jint a1)
@@ -540,8 +540,8 @@ local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(jint a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(14),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(local_ref< java::lang::String > const &a0)
@@ -550,8 +550,8 @@ local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(local_re
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(15),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(local_ref< java::lang::String > const &a0, jint a1)
@@ -560,8 +560,8 @@ local_ref< java::math::BigDecimal > java::sql::ResultSet::getBigDecimal(local_re
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(16),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getBinaryStream(jint a0)
@@ -570,8 +570,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getBinaryStream(jint a0
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(17),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getBinaryStream(local_ref< java::lang::String > const &a0)
@@ -580,8 +580,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getBinaryStream(local_r
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(18),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Blob > java::sql::ResultSet::getBlob(jint a0)
@@ -590,8 +590,8 @@ local_ref< java::sql::Blob > java::sql::ResultSet::getBlob(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(19),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::sql::Blob > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Blob >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Blob > java::sql::ResultSet::getBlob(local_ref< java::lang::String > const &a0)
@@ -600,8 +600,8 @@ local_ref< java::sql::Blob > java::sql::ResultSet::getBlob(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(20),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::sql::Blob > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Blob >
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSet::getBoolean(jint a0)
@@ -610,8 +610,8 @@ jboolean java::sql::ResultSet::getBoolean(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(21),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSet::getBoolean(local_ref< java::lang::String > const &a0)
@@ -620,8 +620,8 @@ jboolean java::sql::ResultSet::getBoolean(local_ref< java::lang::String > const 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(22),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jbyte java::sql::ResultSet::getByte(jint a0)
@@ -630,8 +630,8 @@ jbyte java::sql::ResultSet::getByte(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(23),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(23), 
-		jbyte >
-	(get_jobject(), a0);
+		jbyte
+	>(get_jobject(), a0);
 }
 
 jbyte java::sql::ResultSet::getByte(local_ref< java::lang::String > const &a0)
@@ -640,8 +640,8 @@ jbyte java::sql::ResultSet::getByte(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(24),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(24), 
-		jbyte >
-	(get_jobject(), a0);
+		jbyte
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::sql::ResultSet::getBytes(jint a0)
@@ -650,8 +650,8 @@ local_ref< array<jbyte,1> > java::sql::ResultSet::getBytes(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(25),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::sql::ResultSet::getBytes(local_ref< java::lang::String > const &a0)
@@ -660,8 +660,8 @@ local_ref< array<jbyte,1> > java::sql::ResultSet::getBytes(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(26),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Reader > java::sql::ResultSet::getCharacterStream(jint a0)
@@ -670,8 +670,8 @@ local_ref< java::io::Reader > java::sql::ResultSet::getCharacterStream(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(27),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::io::Reader > >
-	(get_jobject(), a0);
+		local_ref< java::io::Reader >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Reader > java::sql::ResultSet::getCharacterStream(local_ref< java::lang::String > const &a0)
@@ -680,8 +680,8 @@ local_ref< java::io::Reader > java::sql::ResultSet::getCharacterStream(local_ref
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(28),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::io::Reader > >
-	(get_jobject(), a0);
+		local_ref< java::io::Reader >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Clob > java::sql::ResultSet::getClob(jint a0)
@@ -690,8 +690,8 @@ local_ref< java::sql::Clob > java::sql::ResultSet::getClob(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(29),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::sql::Clob > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Clob >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Clob > java::sql::ResultSet::getClob(local_ref< java::lang::String > const &a0)
@@ -700,8 +700,8 @@ local_ref< java::sql::Clob > java::sql::ResultSet::getClob(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(30),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::sql::Clob > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Clob >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSet::getConcurrency()
@@ -710,8 +710,8 @@ jint java::sql::ResultSet::getConcurrency()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(31),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::ResultSet::getCursorName()
@@ -720,8 +720,8 @@ local_ref< java::lang::String > java::sql::ResultSet::getCursorName()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(32),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Date > java::sql::ResultSet::getDate(jint a0)
@@ -730,8 +730,8 @@ local_ref< java::sql::Date > java::sql::ResultSet::getDate(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(33),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::sql::Date > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Date >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Date > java::sql::ResultSet::getDate(jint a0, local_ref< java::util::Calendar > const &a1)
@@ -740,8 +740,8 @@ local_ref< java::sql::Date > java::sql::ResultSet::getDate(jint a0, local_ref< j
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(34),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::sql::Date > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Date >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::sql::Date > java::sql::ResultSet::getDate(local_ref< java::lang::String > const &a0)
@@ -750,8 +750,8 @@ local_ref< java::sql::Date > java::sql::ResultSet::getDate(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(35),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::sql::Date > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Date >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Date > java::sql::ResultSet::getDate(local_ref< java::lang::String > const &a0, local_ref< java::util::Calendar > const &a1)
@@ -760,8 +760,8 @@ local_ref< java::sql::Date > java::sql::ResultSet::getDate(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(36),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::sql::Date > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Date >
+	>(get_jobject(), a0, a1);
 }
 
 jdouble java::sql::ResultSet::getDouble(jint a0)
@@ -770,8 +770,8 @@ jdouble java::sql::ResultSet::getDouble(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(37),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(37), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jdouble java::sql::ResultSet::getDouble(local_ref< java::lang::String > const &a0)
@@ -780,8 +780,8 @@ jdouble java::sql::ResultSet::getDouble(local_ref< java::lang::String > const &a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(38),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(38), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSet::getFetchDirection()
@@ -790,8 +790,8 @@ jint java::sql::ResultSet::getFetchDirection()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(39),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::sql::ResultSet::getFetchSize()
@@ -800,8 +800,8 @@ jint java::sql::ResultSet::getFetchSize()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(40),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(40), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat java::sql::ResultSet::getFloat(jint a0)
@@ -810,8 +810,8 @@ jfloat java::sql::ResultSet::getFloat(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(41),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(41), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat java::sql::ResultSet::getFloat(local_ref< java::lang::String > const &a0)
@@ -820,8 +820,8 @@ jfloat java::sql::ResultSet::getFloat(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(42),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(42), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSet::getInt(jint a0)
@@ -830,8 +830,8 @@ jint java::sql::ResultSet::getInt(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(43),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(43), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSet::getInt(local_ref< java::lang::String > const &a0)
@@ -840,8 +840,8 @@ jint java::sql::ResultSet::getInt(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(44),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(44), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong java::sql::ResultSet::getLong(jint a0)
@@ -850,8 +850,8 @@ jlong java::sql::ResultSet::getLong(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(45),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(45), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::sql::ResultSet::getLong(local_ref< java::lang::String > const &a0)
@@ -860,8 +860,8 @@ jlong java::sql::ResultSet::getLong(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(46),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(46), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::ResultSetMetaData > java::sql::ResultSet::getMetaData()
@@ -870,8 +870,8 @@ local_ref< java::sql::ResultSetMetaData > java::sql::ResultSet::getMetaData()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(47),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::sql::ResultSetMetaData > >
-	(get_jobject());
+		local_ref< java::sql::ResultSetMetaData >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::sql::ResultSet::getObject(jint a0)
@@ -880,8 +880,8 @@ local_ref< java::lang::Object > java::sql::ResultSet::getObject(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(48),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::sql::ResultSet::getObject(jint a0, local_ref< java::util::Map > const &a1)
@@ -890,8 +890,8 @@ local_ref< java::lang::Object > java::sql::ResultSet::getObject(jint a0, local_r
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(49),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::sql::ResultSet::getObject(local_ref< java::lang::String > const &a0)
@@ -900,8 +900,8 @@ local_ref< java::lang::Object > java::sql::ResultSet::getObject(local_ref< java:
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(50),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::sql::ResultSet::getObject(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -910,8 +910,8 @@ local_ref< java::lang::Object > java::sql::ResultSet::getObject(local_ref< java:
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(51),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::sql::Ref > java::sql::ResultSet::getRef(jint a0)
@@ -920,8 +920,8 @@ local_ref< java::sql::Ref > java::sql::ResultSet::getRef(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(52),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::sql::Ref > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Ref >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Ref > java::sql::ResultSet::getRef(local_ref< java::lang::String > const &a0)
@@ -930,8 +930,8 @@ local_ref< java::sql::Ref > java::sql::ResultSet::getRef(local_ref< java::lang::
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(53),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< java::sql::Ref > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Ref >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSet::getRow()
@@ -940,8 +940,8 @@ jint java::sql::ResultSet::getRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(54),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(54), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jshort java::sql::ResultSet::getShort(jint a0)
@@ -950,8 +950,8 @@ jshort java::sql::ResultSet::getShort(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(55),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(55), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jshort java::sql::ResultSet::getShort(local_ref< java::lang::String > const &a0)
@@ -960,8 +960,8 @@ jshort java::sql::ResultSet::getShort(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(56),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(56), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Statement > java::sql::ResultSet::getStatement()
@@ -970,8 +970,8 @@ local_ref< java::sql::Statement > java::sql::ResultSet::getStatement()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(57),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(57), 
-		local_ref< java::sql::Statement > >
-	(get_jobject());
+		local_ref< java::sql::Statement >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::ResultSet::getString(jint a0)
@@ -980,8 +980,8 @@ local_ref< java::lang::String > java::sql::ResultSet::getString(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(58),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(58), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSet::getString(local_ref< java::lang::String > const &a0)
@@ -990,8 +990,8 @@ local_ref< java::lang::String > java::sql::ResultSet::getString(local_ref< java:
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(59),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(59), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Time > java::sql::ResultSet::getTime(jint a0)
@@ -1000,8 +1000,8 @@ local_ref< java::sql::Time > java::sql::ResultSet::getTime(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(60),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< java::sql::Time > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Time >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Time > java::sql::ResultSet::getTime(jint a0, local_ref< java::util::Calendar > const &a1)
@@ -1010,8 +1010,8 @@ local_ref< java::sql::Time > java::sql::ResultSet::getTime(jint a0, local_ref< j
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(61),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(61), 
-		local_ref< java::sql::Time > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Time >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::sql::Time > java::sql::ResultSet::getTime(local_ref< java::lang::String > const &a0)
@@ -1020,8 +1020,8 @@ local_ref< java::sql::Time > java::sql::ResultSet::getTime(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(62),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(62), 
-		local_ref< java::sql::Time > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Time >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Time > java::sql::ResultSet::getTime(local_ref< java::lang::String > const &a0, local_ref< java::util::Calendar > const &a1)
@@ -1030,8 +1030,8 @@ local_ref< java::sql::Time > java::sql::ResultSet::getTime(local_ref< java::lang
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(63),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(63), 
-		local_ref< java::sql::Time > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Time >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(jint a0)
@@ -1040,8 +1040,8 @@ local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(64),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(64), 
-		local_ref< java::sql::Timestamp > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Timestamp >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(jint a0, local_ref< java::util::Calendar > const &a1)
@@ -1050,8 +1050,8 @@ local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(jint a0, lo
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(65),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(65), 
-		local_ref< java::sql::Timestamp > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Timestamp >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(local_ref< java::lang::String > const &a0)
@@ -1060,8 +1060,8 @@ local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(local_ref< 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(66),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(66), 
-		local_ref< java::sql::Timestamp > >
-	(get_jobject(), a0);
+		local_ref< java::sql::Timestamp >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(local_ref< java::lang::String > const &a0, local_ref< java::util::Calendar > const &a1)
@@ -1070,8 +1070,8 @@ local_ref< java::sql::Timestamp > java::sql::ResultSet::getTimestamp(local_ref< 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(67),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(67), 
-		local_ref< java::sql::Timestamp > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Timestamp >
+	>(get_jobject(), a0, a1);
 }
 
 jint java::sql::ResultSet::getType()
@@ -1080,8 +1080,8 @@ jint java::sql::ResultSet::getType()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(68),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(68), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getUnicodeStream(jint a0)
@@ -1090,8 +1090,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getUnicodeStream(jint a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(69),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(69), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::sql::ResultSet::getUnicodeStream(local_ref< java::lang::String > const &a0)
@@ -1100,8 +1100,8 @@ local_ref< java::io::InputStream > java::sql::ResultSet::getUnicodeStream(local_
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(70),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(70), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::URL > java::sql::ResultSet::getURL(jint a0)
@@ -1110,8 +1110,8 @@ local_ref< java::net::URL > java::sql::ResultSet::getURL(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(71),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(71), 
-		local_ref< java::net::URL > >
-	(get_jobject(), a0);
+		local_ref< java::net::URL >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::URL > java::sql::ResultSet::getURL(local_ref< java::lang::String > const &a0)
@@ -1120,8 +1120,8 @@ local_ref< java::net::URL > java::sql::ResultSet::getURL(local_ref< java::lang::
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(72),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(72), 
-		local_ref< java::net::URL > >
-	(get_jobject(), a0);
+		local_ref< java::net::URL >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::SQLWarning > java::sql::ResultSet::getWarnings()
@@ -1130,8 +1130,8 @@ local_ref< java::sql::SQLWarning > java::sql::ResultSet::getWarnings()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(73),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(73), 
-		local_ref< java::sql::SQLWarning > >
-	(get_jobject());
+		local_ref< java::sql::SQLWarning >
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::insertRow()
@@ -1140,8 +1140,8 @@ void java::sql::ResultSet::insertRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(74),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::isAfterLast()
@@ -1150,8 +1150,8 @@ jboolean java::sql::ResultSet::isAfterLast()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(75),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(75), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::isBeforeFirst()
@@ -1160,8 +1160,8 @@ jboolean java::sql::ResultSet::isBeforeFirst()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(76),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(76), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::isFirst()
@@ -1170,8 +1170,8 @@ jboolean java::sql::ResultSet::isFirst()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(77),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(77), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::isLast()
@@ -1180,8 +1180,8 @@ jboolean java::sql::ResultSet::isLast()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(78),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(78), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::last()
@@ -1190,8 +1190,8 @@ jboolean java::sql::ResultSet::last()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(79),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(79), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::moveToCurrentRow()
@@ -1200,8 +1200,8 @@ void java::sql::ResultSet::moveToCurrentRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(80),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::moveToInsertRow()
@@ -1210,8 +1210,8 @@ void java::sql::ResultSet::moveToInsertRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(81),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(81), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::next()
@@ -1220,8 +1220,8 @@ jboolean java::sql::ResultSet::next()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(82),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(82), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::previous()
@@ -1230,8 +1230,8 @@ jboolean java::sql::ResultSet::previous()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(83),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(83), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::refreshRow()
@@ -1240,8 +1240,8 @@ void java::sql::ResultSet::refreshRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(84),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::relative(jint a0)
@@ -1250,8 +1250,8 @@ jboolean java::sql::ResultSet::relative(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(85),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(85), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSet::rowDeleted()
@@ -1260,8 +1260,8 @@ jboolean java::sql::ResultSet::rowDeleted()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(86),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(86), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::rowInserted()
@@ -1270,8 +1270,8 @@ jboolean java::sql::ResultSet::rowInserted()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(87),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(87), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::ResultSet::rowUpdated()
@@ -1280,8 +1280,8 @@ jboolean java::sql::ResultSet::rowUpdated()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(88),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(88), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::setFetchDirection(jint a0)
@@ -1290,8 +1290,8 @@ void java::sql::ResultSet::setFetchDirection(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(89),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(89), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::ResultSet::setFetchSize(jint a0)
@@ -1300,8 +1300,8 @@ void java::sql::ResultSet::setFetchSize(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(90),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(90), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::ResultSet::updateArray(jint a0, local_ref< java::sql::Array > const &a1)
@@ -1310,8 +1310,8 @@ void java::sql::ResultSet::updateArray(jint a0, local_ref< java::sql::Array > co
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(91),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(91), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateArray(local_ref< java::lang::String > const &a0, local_ref< java::sql::Array > const &a1)
@@ -1320,8 +1320,8 @@ void java::sql::ResultSet::updateArray(local_ref< java::lang::String > const &a0
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(92),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(92), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateAsciiStream(jint a0, local_ref< java::io::InputStream > const &a1, jint a2)
@@ -1330,8 +1330,8 @@ void java::sql::ResultSet::updateAsciiStream(jint a0, local_ref< java::io::Input
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(93),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(93), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateAsciiStream(local_ref< java::lang::String > const &a0, local_ref< java::io::InputStream > const &a1, jint a2)
@@ -1340,8 +1340,8 @@ void java::sql::ResultSet::updateAsciiStream(local_ref< java::lang::String > con
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(94),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(94), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateBigDecimal(jint a0, local_ref< java::math::BigDecimal > const &a1)
@@ -1350,8 +1350,8 @@ void java::sql::ResultSet::updateBigDecimal(jint a0, local_ref< java::math::BigD
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(95),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBigDecimal(local_ref< java::lang::String > const &a0, local_ref< java::math::BigDecimal > const &a1)
@@ -1360,8 +1360,8 @@ void java::sql::ResultSet::updateBigDecimal(local_ref< java::lang::String > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(96),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(96), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBinaryStream(jint a0, local_ref< java::io::InputStream > const &a1, jint a2)
@@ -1370,8 +1370,8 @@ void java::sql::ResultSet::updateBinaryStream(jint a0, local_ref< java::io::Inpu
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(97),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(97), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateBinaryStream(local_ref< java::lang::String > const &a0, local_ref< java::io::InputStream > const &a1, jint a2)
@@ -1380,8 +1380,8 @@ void java::sql::ResultSet::updateBinaryStream(local_ref< java::lang::String > co
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(98),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(98), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateBlob(jint a0, local_ref< java::sql::Blob > const &a1)
@@ -1390,8 +1390,8 @@ void java::sql::ResultSet::updateBlob(jint a0, local_ref< java::sql::Blob > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(99),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(99), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBlob(local_ref< java::lang::String > const &a0, local_ref< java::sql::Blob > const &a1)
@@ -1400,8 +1400,8 @@ void java::sql::ResultSet::updateBlob(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(100),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(100), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBoolean(jint a0, jboolean a1)
@@ -1410,8 +1410,8 @@ void java::sql::ResultSet::updateBoolean(jint a0, jboolean a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(101),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(101), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBoolean(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -1420,8 +1420,8 @@ void java::sql::ResultSet::updateBoolean(local_ref< java::lang::String > const &
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(102),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(102), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateByte(jint a0, jbyte a1)
@@ -1430,8 +1430,8 @@ void java::sql::ResultSet::updateByte(jint a0, jbyte a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(103),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(103), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateByte(local_ref< java::lang::String > const &a0, jbyte a1)
@@ -1440,8 +1440,8 @@ void java::sql::ResultSet::updateByte(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(104),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(104), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBytes(jint a0, local_ref< array<jbyte,1> > const &a1)
@@ -1450,8 +1450,8 @@ void java::sql::ResultSet::updateBytes(jint a0, local_ref< array<jbyte,1> > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(105),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(105), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateBytes(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -1460,8 +1460,8 @@ void java::sql::ResultSet::updateBytes(local_ref< java::lang::String > const &a0
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(106),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(106), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateCharacterStream(jint a0, local_ref< java::io::Reader > const &a1, jint a2)
@@ -1470,8 +1470,8 @@ void java::sql::ResultSet::updateCharacterStream(jint a0, local_ref< java::io::R
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(107),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(107), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateCharacterStream(local_ref< java::lang::String > const &a0, local_ref< java::io::Reader > const &a1, jint a2)
@@ -1480,8 +1480,8 @@ void java::sql::ResultSet::updateCharacterStream(local_ref< java::lang::String >
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(108),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(108), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateClob(jint a0, local_ref< java::sql::Clob > const &a1)
@@ -1490,8 +1490,8 @@ void java::sql::ResultSet::updateClob(jint a0, local_ref< java::sql::Clob > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(109),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(109), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateClob(local_ref< java::lang::String > const &a0, local_ref< java::sql::Clob > const &a1)
@@ -1500,8 +1500,8 @@ void java::sql::ResultSet::updateClob(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(110),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(110), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateDate(jint a0, local_ref< java::sql::Date > const &a1)
@@ -1510,8 +1510,8 @@ void java::sql::ResultSet::updateDate(jint a0, local_ref< java::sql::Date > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(111),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(111), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateDate(local_ref< java::lang::String > const &a0, local_ref< java::sql::Date > const &a1)
@@ -1520,8 +1520,8 @@ void java::sql::ResultSet::updateDate(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(112),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(112), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateDouble(jint a0, jdouble a1)
@@ -1530,8 +1530,8 @@ void java::sql::ResultSet::updateDouble(jint a0, jdouble a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(113),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(113), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateDouble(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -1540,8 +1540,8 @@ void java::sql::ResultSet::updateDouble(local_ref< java::lang::String > const &a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(114),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(114), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateFloat(jint a0, jfloat a1)
@@ -1550,8 +1550,8 @@ void java::sql::ResultSet::updateFloat(jint a0, jfloat a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(115),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(115), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateFloat(local_ref< java::lang::String > const &a0, jfloat a1)
@@ -1560,8 +1560,8 @@ void java::sql::ResultSet::updateFloat(local_ref< java::lang::String > const &a0
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(116),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(116), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateInt(jint a0, jint a1)
@@ -1570,8 +1570,8 @@ void java::sql::ResultSet::updateInt(jint a0, jint a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(117),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(117), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -1580,8 +1580,8 @@ void java::sql::ResultSet::updateInt(local_ref< java::lang::String > const &a0, 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(118),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(118), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateLong(jint a0, jlong a1)
@@ -1590,8 +1590,8 @@ void java::sql::ResultSet::updateLong(jint a0, jlong a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(119),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(119), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateLong(local_ref< java::lang::String > const &a0, jlong a1)
@@ -1600,8 +1600,8 @@ void java::sql::ResultSet::updateLong(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(120),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(120), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateNull(jint a0)
@@ -1610,8 +1610,8 @@ void java::sql::ResultSet::updateNull(jint a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(121),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(121), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::ResultSet::updateNull(local_ref< java::lang::String > const &a0)
@@ -1620,8 +1620,8 @@ void java::sql::ResultSet::updateNull(local_ref< java::lang::String > const &a0)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(122),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(122), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::ResultSet::updateObject(jint a0, local_ref< java::lang::Object > const &a1)
@@ -1630,8 +1630,8 @@ void java::sql::ResultSet::updateObject(jint a0, local_ref< java::lang::Object >
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(123),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(123), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateObject(jint a0, local_ref< java::lang::Object > const &a1, jint a2)
@@ -1640,8 +1640,8 @@ void java::sql::ResultSet::updateObject(jint a0, local_ref< java::lang::Object >
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(124),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(124), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateObject(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -1650,8 +1650,8 @@ void java::sql::ResultSet::updateObject(local_ref< java::lang::String > const &a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(125),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(125), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateObject(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, jint a2)
@@ -1660,8 +1660,8 @@ void java::sql::ResultSet::updateObject(local_ref< java::lang::String > const &a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(126),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(126), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::sql::ResultSet::updateRef(jint a0, local_ref< java::sql::Ref > const &a1)
@@ -1670,8 +1670,8 @@ void java::sql::ResultSet::updateRef(jint a0, local_ref< java::sql::Ref > const 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(127),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(127), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateRef(local_ref< java::lang::String > const &a0, local_ref< java::sql::Ref > const &a1)
@@ -1680,8 +1680,8 @@ void java::sql::ResultSet::updateRef(local_ref< java::lang::String > const &a0, 
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(128),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(128), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateRow()
@@ -1690,8 +1690,8 @@ void java::sql::ResultSet::updateRow()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(129),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(129), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::sql::ResultSet::updateShort(jint a0, jshort a1)
@@ -1700,8 +1700,8 @@ void java::sql::ResultSet::updateShort(jint a0, jshort a1)
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(130),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(130), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateShort(local_ref< java::lang::String > const &a0, jshort a1)
@@ -1710,8 +1710,8 @@ void java::sql::ResultSet::updateShort(local_ref< java::lang::String > const &a0
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(131),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(131), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateString(jint a0, local_ref< java::lang::String > const &a1)
@@ -1720,8 +1720,8 @@ void java::sql::ResultSet::updateString(jint a0, local_ref< java::lang::String >
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(132),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(132), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateString(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -1730,8 +1730,8 @@ void java::sql::ResultSet::updateString(local_ref< java::lang::String > const &a
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(133),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(133), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateTime(jint a0, local_ref< java::sql::Time > const &a1)
@@ -1740,8 +1740,8 @@ void java::sql::ResultSet::updateTime(jint a0, local_ref< java::sql::Time > cons
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(134),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(134), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateTime(local_ref< java::lang::String > const &a0, local_ref< java::sql::Time > const &a1)
@@ -1750,8 +1750,8 @@ void java::sql::ResultSet::updateTime(local_ref< java::lang::String > const &a0,
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(135),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(135), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateTimestamp(jint a0, local_ref< java::sql::Timestamp > const &a1)
@@ -1760,8 +1760,8 @@ void java::sql::ResultSet::updateTimestamp(jint a0, local_ref< java::sql::Timest
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(136),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(136), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::ResultSet::updateTimestamp(local_ref< java::lang::String > const &a0, local_ref< java::sql::Timestamp > const &a1)
@@ -1770,8 +1770,8 @@ void java::sql::ResultSet::updateTimestamp(local_ref< java::lang::String > const
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(137),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(137), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::sql::ResultSet::wasNull()
@@ -1780,8 +1780,8 @@ jboolean java::sql::ResultSet::wasNull()
 		java::sql::ResultSet::J2CPP_CLASS_NAME,
 		java::sql::ResultSet::J2CPP_METHOD_NAME(138),
 		java::sql::ResultSet::J2CPP_METHOD_SIGNATURE(138), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

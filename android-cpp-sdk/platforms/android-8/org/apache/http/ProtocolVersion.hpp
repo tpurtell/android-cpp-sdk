@@ -58,8 +58,8 @@ namespace org { namespace apache { namespace http {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ProtocolVersion(local_ref< java::lang::String > const&, jint, jint);
@@ -100,14 +100,14 @@ org::apache::http::ProtocolVersion::operator local_ref<java::lang::Object>() con
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::apache::http::ProtocolVersion::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 org::apache::http::ProtocolVersion::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+org::apache::http::ProtocolVersion::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -116,8 +116,8 @@ org::apache::http::ProtocolVersion::ProtocolVersion(local_ref< java::lang::Strin
 	call_new_object<
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(0),
-		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -129,8 +129,8 @@ local_ref< java::lang::String > org::apache::http::ProtocolVersion::getProtocol(
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(1),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::ProtocolVersion::getMajor()
@@ -139,8 +139,8 @@ jint org::apache::http::ProtocolVersion::getMajor()
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(2),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::ProtocolVersion::getMinor()
@@ -149,8 +149,8 @@ jint org::apache::http::ProtocolVersion::getMinor()
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(3),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::ProtocolVersion::forVersion(jint a0, jint a1)
@@ -159,8 +159,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::ProtocolVersi
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(4),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::ProtocolVersion::hashCode()
@@ -169,8 +169,8 @@ jint org::apache::http::ProtocolVersion::hashCode()
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(5),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::ProtocolVersion::equals(local_ref< java::lang::Object > const &a0)
@@ -179,8 +179,8 @@ jboolean org::apache::http::ProtocolVersion::equals(local_ref< java::lang::Objec
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(6),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::ProtocolVersion::isComparable(local_ref< org::apache::http::ProtocolVersion > const &a0)
@@ -189,8 +189,8 @@ jboolean org::apache::http::ProtocolVersion::isComparable(local_ref< org::apache
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(7),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::ProtocolVersion::compareToVersion(local_ref< org::apache::http::ProtocolVersion > const &a0)
@@ -199,8 +199,8 @@ jint org::apache::http::ProtocolVersion::compareToVersion(local_ref< org::apache
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(8),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::ProtocolVersion::greaterEquals(local_ref< org::apache::http::ProtocolVersion > const &a0)
@@ -209,8 +209,8 @@ jboolean org::apache::http::ProtocolVersion::greaterEquals(local_ref< org::apach
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(9),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::ProtocolVersion::lessEquals(local_ref< org::apache::http::ProtocolVersion > const &a0)
@@ -219,8 +219,8 @@ jboolean org::apache::http::ProtocolVersion::lessEquals(local_ref< org::apache::
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(10),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::ProtocolVersion::toString()
@@ -229,8 +229,8 @@ local_ref< java::lang::String > org::apache::http::ProtocolVersion::toString()
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(11),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::ProtocolVersion::clone()
@@ -239,8 +239,8 @@ local_ref< java::lang::Object > org::apache::http::ProtocolVersion::clone()
 		org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME,
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(12),
 		org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

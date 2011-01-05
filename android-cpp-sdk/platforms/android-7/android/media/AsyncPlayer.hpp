@@ -79,8 +79,8 @@ android::media::AsyncPlayer::AsyncPlayer(local_ref< java::lang::String > const &
 	call_new_object<
 		android::media::AsyncPlayer::J2CPP_CLASS_NAME,
 		android::media::AsyncPlayer::J2CPP_METHOD_NAME(0),
-		android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -92,8 +92,8 @@ void android::media::AsyncPlayer::play(local_ref< android::content::Context > co
 		android::media::AsyncPlayer::J2CPP_CLASS_NAME,
 		android::media::AsyncPlayer::J2CPP_METHOD_NAME(1),
 		android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::media::AsyncPlayer::stop()
@@ -102,8 +102,8 @@ void android::media::AsyncPlayer::stop()
 		android::media::AsyncPlayer::J2CPP_CLASS_NAME,
 		android::media::AsyncPlayer::J2CPP_METHOD_NAME(2),
 		android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

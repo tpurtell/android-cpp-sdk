@@ -73,8 +73,8 @@ void android::content::ComponentCallbacks::onConfigurationChanged(local_ref< and
 		android::content::ComponentCallbacks::J2CPP_CLASS_NAME,
 		android::content::ComponentCallbacks::J2CPP_METHOD_NAME(0),
 		android::content::ComponentCallbacks::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::ComponentCallbacks::onLowMemory()
@@ -83,8 +83,8 @@ void android::content::ComponentCallbacks::onLowMemory()
 		android::content::ComponentCallbacks::J2CPP_CLASS_NAME,
 		android::content::ComponentCallbacks::J2CPP_METHOD_NAME(1),
 		android::content::ComponentCallbacks::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

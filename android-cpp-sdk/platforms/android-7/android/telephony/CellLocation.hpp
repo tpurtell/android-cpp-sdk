@@ -73,8 +73,8 @@ android::telephony::CellLocation::CellLocation()
 	call_new_object<
 		android::telephony::CellLocation::J2CPP_CLASS_NAME,
 		android::telephony::CellLocation::J2CPP_METHOD_NAME(0),
-		android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +86,8 @@ void android::telephony::CellLocation::requestLocationUpdate()
 		android::telephony::CellLocation::J2CPP_CLASS_NAME,
 		android::telephony::CellLocation::J2CPP_METHOD_NAME(1),
 		android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	();
+		void
+	>();
 }
 
 local_ref< android::telephony::CellLocation > android::telephony::CellLocation::getEmpty()
@@ -96,8 +96,8 @@ local_ref< android::telephony::CellLocation > android::telephony::CellLocation::
 		android::telephony::CellLocation::J2CPP_CLASS_NAME,
 		android::telephony::CellLocation::J2CPP_METHOD_NAME(2),
 		android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::telephony::CellLocation > >
-	();
+		local_ref< android::telephony::CellLocation >
+	>();
 }
 
 

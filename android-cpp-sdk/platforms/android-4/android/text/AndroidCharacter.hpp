@@ -75,8 +75,8 @@ android::text::AndroidCharacter::AndroidCharacter()
 	call_new_object<
 		android::text::AndroidCharacter::J2CPP_CLASS_NAME,
 		android::text::AndroidCharacter::J2CPP_METHOD_NAME(0),
-		android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +88,8 @@ void android::text::AndroidCharacter::getDirectionalities(local_ref< array<jchar
 		android::text::AndroidCharacter::J2CPP_CLASS_NAME,
 		android::text::AndroidCharacter::J2CPP_METHOD_NAME(1),
 		android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::text::AndroidCharacter::mirror(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -98,8 +98,8 @@ jboolean android::text::AndroidCharacter::mirror(local_ref< array<jchar,1> > con
 		android::text::AndroidCharacter::J2CPP_CLASS_NAME,
 		android::text::AndroidCharacter::J2CPP_METHOD_NAME(2),
 		android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jchar android::text::AndroidCharacter::getMirror(jchar a0)
@@ -108,8 +108,8 @@ jchar android::text::AndroidCharacter::getMirror(jchar a0)
 		android::text::AndroidCharacter::J2CPP_CLASS_NAME,
 		android::text::AndroidCharacter::J2CPP_METHOD_NAME(3),
 		android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(3), 
-		jchar >
-	(a0);
+		jchar
+	>(a0);
 }
 
 

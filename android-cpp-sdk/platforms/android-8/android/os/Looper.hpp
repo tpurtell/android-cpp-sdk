@@ -99,8 +99,8 @@ void android::os::Looper::prepare()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(1),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Looper::prepareMainLooper()
@@ -109,8 +109,8 @@ void android::os::Looper::prepareMainLooper()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(2),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	();
+		void
+	>();
 }
 
 local_ref< android::os::Looper > android::os::Looper::getMainLooper()
@@ -119,8 +119,8 @@ local_ref< android::os::Looper > android::os::Looper::getMainLooper()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(3),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::Looper > >
-	();
+		local_ref< android::os::Looper >
+	>();
 }
 
 void android::os::Looper::loop()
@@ -129,8 +129,8 @@ void android::os::Looper::loop()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(4),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	();
+		void
+	>();
 }
 
 local_ref< android::os::Looper > android::os::Looper::myLooper()
@@ -139,8 +139,8 @@ local_ref< android::os::Looper > android::os::Looper::myLooper()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(5),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::Looper > >
-	();
+		local_ref< android::os::Looper >
+	>();
 }
 
 void android::os::Looper::setMessageLogging(local_ref< android::util::Printer > const &a0)
@@ -149,8 +149,8 @@ void android::os::Looper::setMessageLogging(local_ref< android::util::Printer > 
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(6),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::MessageQueue > android::os::Looper::myQueue()
@@ -159,8 +159,8 @@ local_ref< android::os::MessageQueue > android::os::Looper::myQueue()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(7),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::MessageQueue > >
-	();
+		local_ref< android::os::MessageQueue >
+	>();
 }
 
 void android::os::Looper::quit()
@@ -169,8 +169,8 @@ void android::os::Looper::quit()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(8),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Thread > android::os::Looper::getThread()
@@ -179,8 +179,8 @@ local_ref< java::lang::Thread > android::os::Looper::getThread()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(9),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Thread > >
-	(get_jobject());
+		local_ref< java::lang::Thread >
+	>(get_jobject());
 }
 
 void android::os::Looper::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -189,8 +189,8 @@ void android::os::Looper::dump(local_ref< android::util::Printer > const &a0, lo
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(10),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::os::Looper::toString()
@@ -199,8 +199,8 @@ local_ref< java::lang::String > android::os::Looper::toString()
 		android::os::Looper::J2CPP_CLASS_NAME,
 		android::os::Looper::J2CPP_METHOD_NAME(11),
 		android::os::Looper::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

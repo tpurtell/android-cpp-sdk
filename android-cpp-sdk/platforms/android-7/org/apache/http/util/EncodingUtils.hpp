@@ -85,8 +85,8 @@ local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getStrin
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getString(local_ref< array<jbyte,1> > const &a0, local_ref< java::lang::String > const &a1)
@@ -95,8 +95,8 @@ local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getStrin
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< array<jbyte,1> > org::apache::http::util::EncodingUtils::getBytes(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -105,8 +105,8 @@ local_ref< array<jbyte,1> > org::apache::http::util::EncodingUtils::getBytes(loc
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1);
+		local_ref< array<jbyte,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jbyte,1> > org::apache::http::util::EncodingUtils::getAsciiBytes(local_ref< java::lang::String > const &a0)
@@ -115,8 +115,8 @@ local_ref< array<jbyte,1> > org::apache::http::util::EncodingUtils::getAsciiByte
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getAsciiString(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -125,8 +125,8 @@ local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getAscii
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(5),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getAsciiString(local_ref< array<jbyte,1> > const &a0)
@@ -135,8 +135,8 @@ local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getAscii
 		org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(6),
 		org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

@@ -134,8 +134,8 @@ void android::os::IBinder_::DeathRecipient::binderDied()
 		android::os::IBinder_::DeathRecipient::J2CPP_CLASS_NAME,
 		android::os::IBinder_::DeathRecipient::J2CPP_METHOD_NAME(0),
 		android::os::IBinder_::DeathRecipient::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -155,8 +155,8 @@ local_ref< java::lang::String > android::os::IBinder::getInterfaceDescriptor()
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(0),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::os::IBinder::pingBinder()
@@ -165,8 +165,8 @@ jboolean android::os::IBinder::pingBinder()
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(1),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::os::IBinder::isBinderAlive()
@@ -175,8 +175,8 @@ jboolean android::os::IBinder::isBinderAlive()
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(2),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::os::IInterface > android::os::IBinder::queryLocalInterface(local_ref< java::lang::String > const &a0)
@@ -185,8 +185,8 @@ local_ref< android::os::IInterface > android::os::IBinder::queryLocalInterface(l
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(3),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::IInterface > >
-	(get_jobject(), a0);
+		local_ref< android::os::IInterface >
+	>(get_jobject(), a0);
 }
 
 void android::os::IBinder::dump(local_ref< java::io::FileDescriptor > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -195,8 +195,8 @@ void android::os::IBinder::dump(local_ref< java::io::FileDescriptor > const &a0,
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(4),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::IBinder::transact(jint a0, local_ref< android::os::Parcel > const &a1, local_ref< android::os::Parcel > const &a2, jint a3)
@@ -205,8 +205,8 @@ jboolean android::os::IBinder::transact(jint a0, local_ref< android::os::Parcel 
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(5),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::os::IBinder::linkToDeath(local_ref< android::os::IBinder_::DeathRecipient > const &a0, jint a1)
@@ -215,8 +215,8 @@ void android::os::IBinder::linkToDeath(local_ref< android::os::IBinder_::DeathRe
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(6),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::IBinder::unlinkToDeath(local_ref< android::os::IBinder_::DeathRecipient > const &a0, jint a1)
@@ -225,8 +225,8 @@ jboolean android::os::IBinder::unlinkToDeath(local_ref< android::os::IBinder_::D
 		android::os::IBinder::J2CPP_CLASS_NAME,
 		android::os::IBinder::J2CPP_METHOD_NAME(7),
 		android::os::IBinder::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

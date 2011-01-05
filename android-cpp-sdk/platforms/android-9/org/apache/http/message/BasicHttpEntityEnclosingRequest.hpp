@@ -12,18 +12,26 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class BasicHttpRequest; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
+#include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/RequestLine.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 #include <org/apache/http/message/BasicHttpRequest.hpp>
 
 
@@ -51,8 +59,12 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<org::apache::http::message::BasicHttpRequest>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
+		operator local_ref<org::apache::http::message::BasicHttpRequest>() const;
 
 
 		BasicHttpEntityEnclosingRequest(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -81,14 +93,34 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::message::BasicHttpRequest>() const
+org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<org::apache::http::message::BasicHttpRequest>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const
 {
 	return local_ref<org::apache::http::HttpEntityEnclosingRequest>(get_jobject());
+}
+
+org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::HttpRequest>() const
+{
+	return local_ref<org::apache::http::HttpRequest>(get_jobject());
+}
+
+org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
+org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
+{
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jobject());
+}
+
+org::apache::http::message::BasicHttpEntityEnclosingRequest::operator local_ref<org::apache::http::message::BasicHttpRequest>() const
+{
+	return local_ref<org::apache::http::message::BasicHttpRequest>(get_jobject());
 }
 
 
@@ -97,8 +129,8 @@ org::apache::http::message::BasicHttpEntityEnclosingRequest::BasicHttpEntityEncl
 	call_new_object<
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -110,8 +142,8 @@ org::apache::http::message::BasicHttpEntityEnclosingRequest::BasicHttpEntityEncl
 	call_new_object<
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(1),
-		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -123,8 +155,8 @@ org::apache::http::message::BasicHttpEntityEnclosingRequest::BasicHttpEntityEncl
 	call_new_object<
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(2),
-		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -136,8 +168,8 @@ local_ref< org::apache::http::HttpEntity > org::apache::http::message::BasicHttp
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpEntity > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpEntity >
+	>(get_jobject());
 }
 
 void org::apache::http::message::BasicHttpEntityEnclosingRequest::setEntity(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -146,8 +178,8 @@ void org::apache::http::message::BasicHttpEntityEnclosingRequest::setEntity(loca
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::message::BasicHttpEntityEnclosingRequest::expectContinue()
@@ -156,8 +188,8 @@ jboolean org::apache::http::message::BasicHttpEntityEnclosingRequest::expectCont
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHttpEntityEnclosingRequest::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

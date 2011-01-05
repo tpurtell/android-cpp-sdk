@@ -85,8 +85,8 @@ local_ref< java::lang::String > dalvik::annotation::TestTarget::methodName()
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(0),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > dalvik::annotation::TestTarget::conceptName()
@@ -95,8 +95,8 @@ local_ref< java::lang::String > dalvik::annotation::TestTarget::conceptName()
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(1),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::annotation::TestTarget::methodArgs()
@@ -105,8 +105,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::annotation::TestT
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(2),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(get_jobject());
 }
 
 

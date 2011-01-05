@@ -74,8 +74,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Comparable>() const;
 
@@ -122,14 +122,14 @@ namespace j2cpp {
 
 
 
-android::content::ComponentName::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::ComponentName::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::ComponentName::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::content::ComponentName::operator local_ref<java::lang::Cloneable>() const
@@ -148,8 +148,8 @@ android::content::ComponentName::ComponentName(local_ref< java::lang::String > c
 	call_new_object<
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(0),
-		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -161,8 +161,8 @@ android::content::ComponentName::ComponentName(local_ref< android::content::Cont
 	call_new_object<
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(1),
-		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -174,8 +174,8 @@ android::content::ComponentName::ComponentName(local_ref< android::content::Cont
 	call_new_object<
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(2),
-		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -187,8 +187,8 @@ android::content::ComponentName::ComponentName(local_ref< android::os::Parcel > 
 	call_new_object<
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(3),
-		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -200,8 +200,8 @@ local_ref< android::content::ComponentName > android::content::ComponentName::cl
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(4),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject());
+		local_ref< android::content::ComponentName >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::getPackageName()
@@ -210,8 +210,8 @@ local_ref< java::lang::String > android::content::ComponentName::getPackageName(
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(5),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::getClassName()
@@ -220,8 +220,8 @@ local_ref< java::lang::String > android::content::ComponentName::getClassName()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(6),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::getShortClassName()
@@ -230,8 +230,8 @@ local_ref< java::lang::String > android::content::ComponentName::getShortClassNa
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(7),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::flattenToString()
@@ -240,8 +240,8 @@ local_ref< java::lang::String > android::content::ComponentName::flattenToString
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(8),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::flattenToShortString()
@@ -250,8 +250,8 @@ local_ref< java::lang::String > android::content::ComponentName::flattenToShortS
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(9),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::content::ComponentName > android::content::ComponentName::unflattenFromString(local_ref< java::lang::String > const &a0)
@@ -260,8 +260,8 @@ local_ref< android::content::ComponentName > android::content::ComponentName::un
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(10),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::content::ComponentName > >
-	(a0);
+		local_ref< android::content::ComponentName >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::content::ComponentName::toShortString()
@@ -270,8 +270,8 @@ local_ref< java::lang::String > android::content::ComponentName::toShortString()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(11),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ComponentName::toString()
@@ -280,8 +280,8 @@ local_ref< java::lang::String > android::content::ComponentName::toString()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(12),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::content::ComponentName::equals(local_ref< java::lang::Object > const &a0)
@@ -290,8 +290,8 @@ jboolean android::content::ComponentName::equals(local_ref< java::lang::Object >
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(13),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::content::ComponentName::hashCode()
@@ -300,8 +300,8 @@ jint android::content::ComponentName::hashCode()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(14),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::ComponentName::compareTo(local_ref< android::content::ComponentName > const &a0)
@@ -310,8 +310,8 @@ jint android::content::ComponentName::compareTo(local_ref< android::content::Com
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(15),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::content::ComponentName::describeContents()
@@ -320,8 +320,8 @@ jint android::content::ComponentName::describeContents()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(16),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::ComponentName::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -330,8 +330,8 @@ void android::content::ComponentName::writeToParcel(local_ref< android::os::Parc
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(17),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::ComponentName::writeToParcel(local_ref< android::content::ComponentName > const &a0, local_ref< android::os::Parcel > const &a1)
@@ -340,8 +340,8 @@ void android::content::ComponentName::writeToParcel(local_ref< android::content:
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(18),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::content::ComponentName > android::content::ComponentName::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -350,8 +350,8 @@ local_ref< android::content::ComponentName > android::content::ComponentName::re
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(19),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::content::ComponentName > >
-	(a0);
+		local_ref< android::content::ComponentName >
+	>(a0);
 }
 
 local_ref< java::lang::Object > android::content::ComponentName::clone_1()
@@ -360,8 +360,8 @@ local_ref< java::lang::Object > android::content::ComponentName::clone_1()
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(20),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint android::content::ComponentName::compareTo(local_ref< java::lang::Object > const &a0)
@@ -370,8 +370,8 @@ jint android::content::ComponentName::compareTo(local_ref< java::lang::Object > 
 		android::content::ComponentName::J2CPP_CLASS_NAME,
 		android::content::ComponentName::J2CPP_METHOD_NAME(21),
 		android::content::ComponentName::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

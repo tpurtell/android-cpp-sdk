@@ -114,8 +114,8 @@ android::graphics::PixelFormat::PixelFormat()
 	call_new_object<
 		android::graphics::PixelFormat::J2CPP_CLASS_NAME,
 		android::graphics::PixelFormat::J2CPP_METHOD_NAME(0),
-		android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , bytesPerPixel(get_jobject())
 , bitsPerPixel(get_jobject())
@@ -129,8 +129,8 @@ void android::graphics::PixelFormat::getPixelFormatInfo(jint a0, local_ref< andr
 		android::graphics::PixelFormat::J2CPP_CLASS_NAME,
 		android::graphics::PixelFormat::J2CPP_METHOD_NAME(1),
 		android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean android::graphics::PixelFormat::formatHasAlpha(jint a0)
@@ -139,8 +139,8 @@ jboolean android::graphics::PixelFormat::formatHasAlpha(jint a0)
 		android::graphics::PixelFormat::J2CPP_CLASS_NAME,
 		android::graphics::PixelFormat::J2CPP_METHOD_NAME(2),
 		android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

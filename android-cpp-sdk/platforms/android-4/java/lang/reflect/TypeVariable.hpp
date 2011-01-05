@@ -44,8 +44,8 @@ namespace java { namespace lang { namespace reflect {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::reflect::Type>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > getBounds();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-java::lang::reflect::TypeVariable::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::reflect::TypeVariable::operator local_ref<java::lang::reflect::Type>() const
 {
 	return local_ref<java::lang::reflect::Type>(get_jobject());
+}
+
+java::lang::reflect::TypeVariable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::reflect::TypeVariable::getBounds()
@@ -86,8 +86,8 @@ local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::refle
 		java::lang::reflect::TypeVariable::J2CPP_CLASS_NAME,
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Type >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::GenericDeclaration > java::lang::reflect::TypeVariable::getGenericDeclaration()
@@ -96,8 +96,8 @@ local_ref< java::lang::reflect::GenericDeclaration > java::lang::reflect::TypeVa
 		java::lang::reflect::TypeVariable::J2CPP_CLASS_NAME,
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::reflect::GenericDeclaration > >
-	(get_jobject());
+		local_ref< java::lang::reflect::GenericDeclaration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::reflect::TypeVariable::getName()
@@ -106,8 +106,8 @@ local_ref< java::lang::String > java::lang::reflect::TypeVariable::getName()
 		java::lang::reflect::TypeVariable::J2CPP_CLASS_NAME,
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::TypeVariable::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

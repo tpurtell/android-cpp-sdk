@@ -11,16 +11,18 @@
 #define J2CPP_ANDROID_TEST_INSTRUMENTATIONTESTSUITE_HPP_DECL
 
 
-namespace j2cpp { namespace junit { namespace framework { class Test; } } }
-namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
+namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace android { namespace app { class Instrumentation; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/Instrumentation.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <junit/framework/Test.hpp>
 #include <junit/framework/TestResult.hpp>
@@ -51,6 +53,8 @@ namespace android { namespace test {
 		}
 
 		operator local_ref<junit::framework::TestSuite>() const;
+		operator local_ref<junit::framework::Test>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		InstrumentationTestSuite(local_ref< android::app::Instrumentation > const&);
@@ -81,14 +85,24 @@ android::test::InstrumentationTestSuite::operator local_ref<junit::framework::Te
 	return local_ref<junit::framework::TestSuite>(get_jobject());
 }
 
+android::test::InstrumentationTestSuite::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+android::test::InstrumentationTestSuite::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::test::InstrumentationTestSuite::InstrumentationTestSuite(local_ref< android::app::Instrumentation > const &a0)
 : object<android::test::InstrumentationTestSuite>(
 	call_new_object<
 		android::test::InstrumentationTestSuite::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_NAME(0),
-		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -100,8 +114,8 @@ android::test::InstrumentationTestSuite::InstrumentationTestSuite(local_ref< jav
 	call_new_object<
 		android::test::InstrumentationTestSuite::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_NAME(1),
-		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -113,8 +127,8 @@ android::test::InstrumentationTestSuite::InstrumentationTestSuite(local_ref< jav
 	call_new_object<
 		android::test::InstrumentationTestSuite::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_NAME(2),
-		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +140,8 @@ void android::test::InstrumentationTestSuite::addTestSuite(local_ref< java::lang
 		android::test::InstrumentationTestSuite::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_NAME(3),
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::InstrumentationTestSuite::runTest(local_ref< junit::framework::Test > const &a0, local_ref< junit::framework::TestResult > const &a1)
@@ -136,8 +150,8 @@ void android::test::InstrumentationTestSuite::runTest(local_ref< junit::framewor
 		android::test::InstrumentationTestSuite::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_NAME(4),
 		android::test::InstrumentationTestSuite::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

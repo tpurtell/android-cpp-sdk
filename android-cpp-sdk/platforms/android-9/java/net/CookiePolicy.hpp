@@ -81,8 +81,8 @@ jboolean java::net::CookiePolicy::shouldAccept(local_ref< java::net::URI > const
 		java::net::CookiePolicy::J2CPP_CLASS_NAME,
 		java::net::CookiePolicy::J2CPP_METHOD_NAME(0),
 		java::net::CookiePolicy::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

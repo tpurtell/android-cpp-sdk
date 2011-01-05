@@ -13,14 +13,18 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace telephony { namespace SmsMessage_ { class SubmitPdu; } } } }
 namespace j2cpp { namespace android { namespace telephony { namespace SmsMessage_ { class MessageClass; } } } }
 
 
 #include <android/telephony/SmsMessage.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -86,7 +90,10 @@ namespace android { namespace telephony {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::telephony::SmsMessage_::MessageClass >, 1> > values();
@@ -233,8 +240,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage_::SubmitPdu::toSt
 		android::telephony::SmsMessage_::SubmitPdu::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage_::SubmitPdu::J2CPP_METHOD_NAME(1),
 		android::telephony::SmsMessage_::SubmitPdu::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -246,9 +253,24 @@ J2CPP_DEFINE_FIELD(android::telephony::SmsMessage_::SubmitPdu,0,"encodedScAddres
 J2CPP_DEFINE_FIELD(android::telephony::SmsMessage_::SubmitPdu,1,"encodedMessage","[B")
 
 
+android::telephony::SmsMessage_::MessageClass::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::telephony::SmsMessage_::MessageClass::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::telephony::SmsMessage_::MessageClass::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::telephony::SmsMessage_::MessageClass::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::telephony::SmsMessage_::MessageClass >, 1> > android::telephony::SmsMessage_::MessageClass::values()
@@ -257,8 +279,8 @@ local_ref< array< local_ref< android::telephony::SmsMessage_::MessageClass >, 1>
 		android::telephony::SmsMessage_::MessageClass::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage_::MessageClass::J2CPP_METHOD_NAME(0),
 		android::telephony::SmsMessage_::MessageClass::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::telephony::SmsMessage_::MessageClass >, 1> > >
-	();
+		local_ref< array< local_ref< android::telephony::SmsMessage_::MessageClass >, 1> >
+	>();
 }
 
 local_ref< android::telephony::SmsMessage_::MessageClass > android::telephony::SmsMessage_::MessageClass::valueOf(local_ref< java::lang::String > const &a0)
@@ -267,8 +289,8 @@ local_ref< android::telephony::SmsMessage_::MessageClass > android::telephony::S
 		android::telephony::SmsMessage_::MessageClass::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage_::MessageClass::J2CPP_METHOD_NAME(1),
 		android::telephony::SmsMessage_::MessageClass::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::telephony::SmsMessage_::MessageClass > >
-	(a0);
+		local_ref< android::telephony::SmsMessage_::MessageClass >
+	>(a0);
 }
 
 
@@ -336,8 +358,8 @@ local_ref< android::telephony::SmsMessage > android::telephony::SmsMessage::crea
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(1),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::telephony::SmsMessage > >
-	(a0);
+		local_ref< android::telephony::SmsMessage >
+	>(a0);
 }
 
 jint android::telephony::SmsMessage::getTPLayerLengthForPDU(local_ref< java::lang::String > const &a0)
@@ -346,8 +368,8 @@ jint android::telephony::SmsMessage::getTPLayerLengthForPDU(local_ref< java::lan
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(2),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< array<jint,1> > android::telephony::SmsMessage::calculateLength(local_ref< java::lang::CharSequence > const &a0, jboolean a1)
@@ -356,8 +378,8 @@ local_ref< array<jint,1> > android::telephony::SmsMessage::calculateLength(local
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(3),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jint,1> > >
-	(a0, a1);
+		local_ref< array<jint,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jint,1> > android::telephony::SmsMessage::calculateLength(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -366,8 +388,8 @@ local_ref< array<jint,1> > android::telephony::SmsMessage::calculateLength(local
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(4),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jint,1> > >
-	(a0, a1);
+		local_ref< array<jint,1> >
+	>(a0, a1);
 }
 
 local_ref< android::telephony::SmsMessage_::SubmitPdu > android::telephony::SmsMessage::getSubmitPdu(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, jboolean a3)
@@ -376,8 +398,8 @@ local_ref< android::telephony::SmsMessage_::SubmitPdu > android::telephony::SmsM
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(5),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::telephony::SmsMessage_::SubmitPdu > >
-	(a0, a1, a2, a3);
+		local_ref< android::telephony::SmsMessage_::SubmitPdu >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::telephony::SmsMessage_::SubmitPdu > android::telephony::SmsMessage::getSubmitPdu(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jshort a2, local_ref< array<jbyte,1> > const &a3, jboolean a4)
@@ -386,8 +408,8 @@ local_ref< android::telephony::SmsMessage_::SubmitPdu > android::telephony::SmsM
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(6),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::telephony::SmsMessage_::SubmitPdu > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::telephony::SmsMessage_::SubmitPdu >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getServiceCenterAddress()
@@ -396,8 +418,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getServiceCenter
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(7),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getOriginatingAddress()
@@ -406,8 +428,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getOriginatingAd
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(8),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getDisplayOriginatingAddress()
@@ -416,8 +438,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getDisplayOrigin
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(9),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getMessageBody()
@@ -426,8 +448,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getMessageBody()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(10),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::telephony::SmsMessage_::MessageClass > android::telephony::SmsMessage::getMessageClass()
@@ -436,8 +458,8 @@ local_ref< android::telephony::SmsMessage_::MessageClass > android::telephony::S
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(11),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::telephony::SmsMessage_::MessageClass > >
-	(get_jobject());
+		local_ref< android::telephony::SmsMessage_::MessageClass >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getDisplayMessageBody()
@@ -446,8 +468,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getDisplayMessag
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(12),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getPseudoSubject()
@@ -456,8 +478,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getPseudoSubject
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(13),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong android::telephony::SmsMessage::getTimestampMillis()
@@ -466,8 +488,8 @@ jlong android::telephony::SmsMessage::getTimestampMillis()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(14),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(14), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isEmail()
@@ -476,8 +498,8 @@ jboolean android::telephony::SmsMessage::isEmail()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(15),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getEmailBody()
@@ -486,8 +508,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getEmailBody()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(16),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::SmsMessage::getEmailFrom()
@@ -496,8 +518,8 @@ local_ref< java::lang::String > android::telephony::SmsMessage::getEmailFrom()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(17),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getProtocolIdentifier()
@@ -506,8 +528,8 @@ jint android::telephony::SmsMessage::getProtocolIdentifier()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(18),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isReplace()
@@ -516,8 +538,8 @@ jboolean android::telephony::SmsMessage::isReplace()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(19),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isCphsMwiMessage()
@@ -526,8 +548,8 @@ jboolean android::telephony::SmsMessage::isCphsMwiMessage()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(20),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isMWIClearMessage()
@@ -536,8 +558,8 @@ jboolean android::telephony::SmsMessage::isMWIClearMessage()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(21),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isMWISetMessage()
@@ -546,8 +568,8 @@ jboolean android::telephony::SmsMessage::isMWISetMessage()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(22),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isMwiDontStore()
@@ -556,8 +578,8 @@ jboolean android::telephony::SmsMessage::isMwiDontStore()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(23),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::telephony::SmsMessage::getUserData()
@@ -566,8 +588,8 @@ local_ref< array<jbyte,1> > android::telephony::SmsMessage::getUserData()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(24),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::telephony::SmsMessage::getPdu()
@@ -576,8 +598,8 @@ local_ref< array<jbyte,1> > android::telephony::SmsMessage::getPdu()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(25),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getStatusOnSim()
@@ -586,8 +608,8 @@ jint android::telephony::SmsMessage::getStatusOnSim()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(26),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getStatusOnIcc()
@@ -596,8 +618,8 @@ jint android::telephony::SmsMessage::getStatusOnIcc()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(27),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getIndexOnSim()
@@ -606,8 +628,8 @@ jint android::telephony::SmsMessage::getIndexOnSim()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(28),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getIndexOnIcc()
@@ -616,8 +638,8 @@ jint android::telephony::SmsMessage::getIndexOnIcc()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(29),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SmsMessage::getStatus()
@@ -626,8 +648,8 @@ jint android::telephony::SmsMessage::getStatus()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(30),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isStatusReportMessage()
@@ -636,8 +658,8 @@ jboolean android::telephony::SmsMessage::isStatusReportMessage()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(31),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::telephony::SmsMessage::isReplyPathPresent()
@@ -646,8 +668,8 @@ jboolean android::telephony::SmsMessage::isReplyPathPresent()
 		android::telephony::SmsMessage::J2CPP_CLASS_NAME,
 		android::telephony::SmsMessage::J2CPP_METHOD_NAME(32),
 		android::telephony::SmsMessage::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

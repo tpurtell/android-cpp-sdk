@@ -77,8 +77,8 @@ android::database::ContentObserver::ContentObserver(local_ref< android::os::Hand
 	call_new_object<
 		android::database::ContentObserver::J2CPP_CLASS_NAME,
 		android::database::ContentObserver::J2CPP_METHOD_NAME(0),
-		android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -90,8 +90,8 @@ jboolean android::database::ContentObserver::deliverSelfNotifications()
 		android::database::ContentObserver::J2CPP_CLASS_NAME,
 		android::database::ContentObserver::J2CPP_METHOD_NAME(1),
 		android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::database::ContentObserver::onChange(jboolean a0)
@@ -100,8 +100,8 @@ void android::database::ContentObserver::onChange(jboolean a0)
 		android::database::ContentObserver::J2CPP_CLASS_NAME,
 		android::database::ContentObserver::J2CPP_METHOD_NAME(2),
 		android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::ContentObserver::dispatchChange(jboolean a0)
@@ -110,8 +110,8 @@ void android::database::ContentObserver::dispatchChange(jboolean a0)
 		android::database::ContentObserver::J2CPP_CLASS_NAME,
 		android::database::ContentObserver::J2CPP_METHOD_NAME(3),
 		android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

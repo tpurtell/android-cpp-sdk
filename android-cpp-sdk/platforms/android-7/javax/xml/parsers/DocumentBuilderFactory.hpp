@@ -114,8 +114,8 @@ local_ref< java::lang::Object > javax::xml::parsers::DocumentBuilderFactory::get
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(1),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::getFeature(local_ref< java::lang::String > const &a0)
@@ -124,8 +124,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::getFeature(local_ref< java
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(2),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isCoalescing()
@@ -134,8 +134,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isCoalescing()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(3),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isExpandEntityReferences()
@@ -144,8 +144,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isExpandEntityReferences()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(4),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isIgnoringComments()
@@ -154,8 +154,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isIgnoringComments()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(5),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isIgnoringElementContentWhitespace()
@@ -164,8 +164,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isIgnoringElementContentWh
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(6),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isNamespaceAware()
@@ -174,8 +174,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isNamespaceAware()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(7),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isValidating()
@@ -184,8 +184,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isValidating()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(8),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilderFactory::isXIncludeAware()
@@ -194,8 +194,8 @@ jboolean javax::xml::parsers::DocumentBuilderFactory::isXIncludeAware()
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(9),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< javax::xml::parsers::DocumentBuilder > javax::xml::parsers::DocumentBuilderFactory::newDocumentBuilder()
@@ -204,8 +204,8 @@ local_ref< javax::xml::parsers::DocumentBuilder > javax::xml::parsers::DocumentB
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(10),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< javax::xml::parsers::DocumentBuilder > >
-	(get_jobject());
+		local_ref< javax::xml::parsers::DocumentBuilder >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::parsers::DocumentBuilderFactory > javax::xml::parsers::DocumentBuilderFactory::newInstance()
@@ -214,8 +214,8 @@ local_ref< javax::xml::parsers::DocumentBuilderFactory > javax::xml::parsers::Do
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(11),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< javax::xml::parsers::DocumentBuilderFactory > >
-	();
+		local_ref< javax::xml::parsers::DocumentBuilderFactory >
+	>();
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -224,8 +224,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setAttribute(local_ref< java::
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(12),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setCoalescing(jboolean a0)
@@ -234,8 +234,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setCoalescing(jboolean a0)
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(13),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setExpandEntityReferences(jboolean a0)
@@ -244,8 +244,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setExpandEntityReferences(jboo
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(14),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -254,8 +254,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setFeature(local_ref< java::la
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(15),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setIgnoringComments(jboolean a0)
@@ -264,8 +264,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setIgnoringComments(jboolean a
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(16),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setIgnoringElementContentWhitespace(jboolean a0)
@@ -274,8 +274,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setIgnoringElementContentWhite
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(17),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setNamespaceAware(jboolean a0)
@@ -284,8 +284,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setNamespaceAware(jboolean a0)
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(18),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setValidating(jboolean a0)
@@ -294,8 +294,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setValidating(jboolean a0)
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(19),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilderFactory::setXIncludeAware(jboolean a0)
@@ -304,8 +304,8 @@ void javax::xml::parsers::DocumentBuilderFactory::setXIncludeAware(jboolean a0)
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(20),
 		javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

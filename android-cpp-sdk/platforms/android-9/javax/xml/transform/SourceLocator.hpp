@@ -78,8 +78,8 @@ local_ref< java::lang::String > javax::xml::transform::SourceLocator::getPublicI
 		javax::xml::transform::SourceLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::transform::SourceLocator::getSystemId()
@@ -88,8 +88,8 @@ local_ref< java::lang::String > javax::xml::transform::SourceLocator::getSystemI
 		javax::xml::transform::SourceLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint javax::xml::transform::SourceLocator::getLineNumber()
@@ -98,8 +98,8 @@ jint javax::xml::transform::SourceLocator::getLineNumber()
 		javax::xml::transform::SourceLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_NAME(2),
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::transform::SourceLocator::getColumnNumber()
@@ -108,8 +108,8 @@ jint javax::xml::transform::SourceLocator::getColumnNumber()
 		javax::xml::transform::SourceLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_NAME(3),
 		javax::xml::transform::SourceLocator::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

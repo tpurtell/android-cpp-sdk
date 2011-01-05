@@ -11,15 +11,19 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_HTTPREQUESTPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace io { class AbstractMessageParser; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionInputBuffer; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpMessageParser; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class LineParser; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestFactory; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpRequestFactory.hpp>
 #include <org/apache/http/impl/io/AbstractMessageParser.hpp>
+#include <org/apache/http/io/HttpMessageParser.hpp>
 #include <org/apache/http/io/SessionInputBuffer.hpp>
 #include <org/apache/http/message/LineParser.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -45,7 +49,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::io::AbstractMessageParser>() const;
+		operator local_ref<org::apache::http::io::HttpMessageParser>() const;
 
 
 		HttpRequestParser(local_ref< org::apache::http::io::SessionInputBuffer > const&, local_ref< org::apache::http::message::LineParser > const&, local_ref< org::apache::http::HttpRequestFactory > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -70,9 +76,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::HttpRequestParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::io::HttpRequestParser::operator local_ref<org::apache::http::impl::io::AbstractMessageParser>() const
 {
 	return local_ref<org::apache::http::impl::io::AbstractMessageParser>(get_jobject());
+}
+
+org::apache::http::impl::io::HttpRequestParser::operator local_ref<org::apache::http::io::HttpMessageParser>() const
+{
+	return local_ref<org::apache::http::io::HttpMessageParser>(get_jobject());
 }
 
 
@@ -81,8 +97,8 @@ org::apache::http::impl::io::HttpRequestParser::HttpRequestParser(local_ref< org
 	call_new_object<
 		org::apache::http::impl::io::HttpRequestParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpRequestParser::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::HttpRequestParser::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		org::apache::http::impl::io::HttpRequestParser::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }

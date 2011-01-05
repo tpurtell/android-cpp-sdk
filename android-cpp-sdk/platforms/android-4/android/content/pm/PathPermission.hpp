@@ -13,13 +13,16 @@
 
 namespace j2cpp { namespace android { namespace os { class PatternMatcher; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/os/PatternMatcher.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,6 +52,8 @@ namespace android { namespace content { namespace pm {
 		}
 
 		operator local_ref<android::os::PatternMatcher>() const;
+		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PathPermission(local_ref< java::lang::String > const&, jint, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -82,14 +87,24 @@ android::content::pm::PathPermission::operator local_ref<android::os::PatternMat
 	return local_ref<android::os::PatternMatcher>(get_jobject());
 }
 
+android::content::pm::PathPermission::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::pm::PathPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::content::pm::PathPermission::PathPermission(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
 : object<android::content::pm::PathPermission>(
 	call_new_object<
 		android::content::pm::PathPermission::J2CPP_CLASS_NAME,
 		android::content::pm::PathPermission::J2CPP_METHOD_NAME(0),
-		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -101,8 +116,8 @@ android::content::pm::PathPermission::PathPermission(local_ref< android::os::Par
 	call_new_object<
 		android::content::pm::PathPermission::J2CPP_CLASS_NAME,
 		android::content::pm::PathPermission::J2CPP_METHOD_NAME(1),
-		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -114,8 +129,8 @@ local_ref< java::lang::String > android::content::pm::PathPermission::getReadPer
 		android::content::pm::PathPermission::J2CPP_CLASS_NAME,
 		android::content::pm::PathPermission::J2CPP_METHOD_NAME(2),
 		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::pm::PathPermission::getWritePermission()
@@ -124,8 +139,8 @@ local_ref< java::lang::String > android::content::pm::PathPermission::getWritePe
 		android::content::pm::PathPermission::J2CPP_CLASS_NAME,
 		android::content::pm::PathPermission::J2CPP_METHOD_NAME(3),
 		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::content::pm::PathPermission::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -134,8 +149,8 @@ void android::content::pm::PathPermission::writeToParcel(local_ref< android::os:
 		android::content::pm::PathPermission::J2CPP_CLASS_NAME,
 		android::content::pm::PathPermission::J2CPP_METHOD_NAME(4),
 		android::content::pm::PathPermission::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

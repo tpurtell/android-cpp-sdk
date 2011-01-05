@@ -38,8 +38,8 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SocketAddress();
@@ -61,14 +61,14 @@ namespace j2cpp {
 
 
 
-java::net::SocketAddress::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::net::SocketAddress::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::SocketAddress::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -77,8 +77,8 @@ java::net::SocketAddress::SocketAddress()
 	call_new_object<
 		java::net::SocketAddress::J2CPP_CLASS_NAME,
 		java::net::SocketAddress::J2CPP_METHOD_NAME(0),
-		java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -19,19 +19,27 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/ContextMenu.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/Adapter.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <java/lang/Object.hpp>
@@ -65,8 +73,8 @@ namespace android { namespace widget {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			AdapterContextMenuInfo(local_ref< android::view::View > const&, jint, jlong);
@@ -205,7 +213,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
 		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AdapterView(local_ref< android::content::Context > const&);
@@ -268,14 +282,14 @@ namespace j2cpp {
 
 
 
-android::widget::AdapterView_::AdapterContextMenuInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::widget::AdapterView_::AdapterContextMenuInfo::operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const
 {
 	return local_ref<android::view::ContextMenu_::ContextMenuInfo>(get_jobject());
+}
+
+android::widget::AdapterView_::AdapterContextMenuInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -284,8 +298,8 @@ android::widget::AdapterView_::AdapterContextMenuInfo::AdapterContextMenuInfo(lo
 	call_new_object<
 		android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_CLASS_NAME,
 		android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_NAME(0),
-		android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 , targetView(get_jobject())
 , position(get_jobject())
@@ -314,8 +328,8 @@ void android::widget::AdapterView_::OnItemSelectedListener::onItemSelected(local
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_CLASS_NAME,
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_METHOD_NAME(0),
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::AdapterView_::OnItemSelectedListener::onNothingSelected(local_ref< android::widget::AdapterView > const &a0)
@@ -324,8 +338,8 @@ void android::widget::AdapterView_::OnItemSelectedListener::onNothingSelected(lo
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_CLASS_NAME,
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_METHOD_NAME(1),
 		android::widget::AdapterView_::OnItemSelectedListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -345,8 +359,8 @@ jboolean android::widget::AdapterView_::OnItemLongClickListener::onItemLongClick
 		android::widget::AdapterView_::OnItemLongClickListener::J2CPP_CLASS_NAME,
 		android::widget::AdapterView_::OnItemLongClickListener::J2CPP_METHOD_NAME(0),
 		android::widget::AdapterView_::OnItemLongClickListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -365,8 +379,8 @@ void android::widget::AdapterView_::OnItemClickListener::onItemClick(local_ref< 
 		android::widget::AdapterView_::OnItemClickListener::J2CPP_CLASS_NAME,
 		android::widget::AdapterView_::OnItemClickListener::J2CPP_METHOD_NAME(0),
 		android::widget::AdapterView_::OnItemClickListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -375,9 +389,39 @@ J2CPP_DEFINE_METHOD(android::widget::AdapterView_::OnItemClickListener,0,"onItem
 
 
 
+android::widget::AdapterView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
 android::widget::AdapterView::operator local_ref<android::view::ViewGroup>() const
 {
 	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::AdapterView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::AdapterView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::AdapterView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::AdapterView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::AdapterView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -386,8 +430,8 @@ android::widget::AdapterView::AdapterView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(0),
-		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -399,8 +443,8 @@ android::widget::AdapterView::AdapterView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(1),
-		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -412,8 +456,8 @@ android::widget::AdapterView::AdapterView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(2),
-		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -425,8 +469,8 @@ void android::widget::AdapterView::setOnItemClickListener(local_ref< android::wi
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(3),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget::AdapterView::getOnItemClickListener()
@@ -435,8 +479,8 @@ local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget:
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(4),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::widget::AdapterView_::OnItemClickListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemClickListener >
+	>(get_jobject());
 }
 
 jboolean android::widget::AdapterView::performItemClick(local_ref< android::view::View > const &a0, jint a1, jlong a2)
@@ -445,8 +489,8 @@ jboolean android::widget::AdapterView::performItemClick(local_ref< android::view
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(5),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::AdapterView::setOnItemLongClickListener(local_ref< android::widget::AdapterView_::OnItemLongClickListener > const &a0)
@@ -455,8 +499,8 @@ void android::widget::AdapterView::setOnItemLongClickListener(local_ref< android
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(6),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::AdapterView_::OnItemLongClickListener > android::widget::AdapterView::getOnItemLongClickListener()
@@ -465,8 +509,8 @@ local_ref< android::widget::AdapterView_::OnItemLongClickListener > android::wid
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(7),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::widget::AdapterView_::OnItemLongClickListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemLongClickListener >
+	>(get_jobject());
 }
 
 void android::widget::AdapterView::setOnItemSelectedListener(local_ref< android::widget::AdapterView_::OnItemSelectedListener > const &a0)
@@ -475,8 +519,8 @@ void android::widget::AdapterView::setOnItemSelectedListener(local_ref< android:
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(8),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widget::AdapterView::getOnItemSelectedListener()
@@ -485,8 +529,8 @@ local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widg
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(9),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::widget::AdapterView_::OnItemSelectedListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemSelectedListener >
+	>(get_jobject());
 }
 
 local_ref< android::widget::Adapter > android::widget::AdapterView::getAdapter()
@@ -495,8 +539,8 @@ local_ref< android::widget::Adapter > android::widget::AdapterView::getAdapter()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(10),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::widget::Adapter > >
-	(get_jobject());
+		local_ref< android::widget::Adapter >
+	>(get_jobject());
 }
 
 void android::widget::AdapterView::setAdapter(local_ref< android::widget::Adapter > const &a0)
@@ -505,8 +549,8 @@ void android::widget::AdapterView::setAdapter(local_ref< android::widget::Adapte
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(11),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::addView(local_ref< android::view::View > const &a0)
@@ -515,8 +559,8 @@ void android::widget::AdapterView::addView(local_ref< android::view::View > cons
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(12),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::addView(local_ref< android::view::View > const &a0, jint a1)
@@ -525,8 +569,8 @@ void android::widget::AdapterView::addView(local_ref< android::view::View > cons
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(13),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AdapterView::addView(local_ref< android::view::View > const &a0, local_ref< android::view::ViewGroup_::LayoutParams > const &a1)
@@ -535,8 +579,8 @@ void android::widget::AdapterView::addView(local_ref< android::view::View > cons
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(14),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AdapterView::addView(local_ref< android::view::View > const &a0, jint a1, local_ref< android::view::ViewGroup_::LayoutParams > const &a2)
@@ -545,8 +589,8 @@ void android::widget::AdapterView::addView(local_ref< android::view::View > cons
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(15),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::AdapterView::removeView(local_ref< android::view::View > const &a0)
@@ -555,8 +599,8 @@ void android::widget::AdapterView::removeView(local_ref< android::view::View > c
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(16),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::removeViewAt(jint a0)
@@ -565,8 +609,8 @@ void android::widget::AdapterView::removeViewAt(jint a0)
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(17),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::removeAllViews()
@@ -575,8 +619,8 @@ void android::widget::AdapterView::removeAllViews()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(18),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -586,8 +630,8 @@ jint android::widget::AdapterView::getSelectedItemPosition()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(20),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::widget::AdapterView::getSelectedItemId()
@@ -596,8 +640,8 @@ jlong android::widget::AdapterView::getSelectedItemId()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(21),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::AdapterView::getSelectedView()
@@ -606,8 +650,8 @@ local_ref< android::view::View > android::widget::AdapterView::getSelectedView()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(22),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::widget::AdapterView::getSelectedItem()
@@ -616,8 +660,8 @@ local_ref< java::lang::Object > android::widget::AdapterView::getSelectedItem()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(23),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint android::widget::AdapterView::getCount()
@@ -626,8 +670,8 @@ jint android::widget::AdapterView::getCount()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(24),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AdapterView::getPositionForView(local_ref< android::view::View > const &a0)
@@ -636,8 +680,8 @@ jint android::widget::AdapterView::getPositionForView(local_ref< android::view::
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(25),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AdapterView::getFirstVisiblePosition()
@@ -646,8 +690,8 @@ jint android::widget::AdapterView::getFirstVisiblePosition()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(26),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AdapterView::getLastVisiblePosition()
@@ -656,8 +700,8 @@ jint android::widget::AdapterView::getLastVisiblePosition()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(27),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AdapterView::setSelection(jint a0)
@@ -666,8 +710,8 @@ void android::widget::AdapterView::setSelection(jint a0)
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(28),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::setEmptyView(local_ref< android::view::View > const &a0)
@@ -676,8 +720,8 @@ void android::widget::AdapterView::setEmptyView(local_ref< android::view::View >
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(29),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::AdapterView::getEmptyView()
@@ -686,8 +730,8 @@ local_ref< android::view::View > android::widget::AdapterView::getEmptyView()
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(30),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::AdapterView::setFocusable(jboolean a0)
@@ -696,8 +740,8 @@ void android::widget::AdapterView::setFocusable(jboolean a0)
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(31),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::setFocusableInTouchMode(jboolean a0)
@@ -706,8 +750,8 @@ void android::widget::AdapterView::setFocusableInTouchMode(jboolean a0)
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(32),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::widget::AdapterView::getItemAtPosition(jint a0)
@@ -716,8 +760,8 @@ local_ref< java::lang::Object > android::widget::AdapterView::getItemAtPosition(
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(33),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jlong android::widget::AdapterView::getItemIdAtPosition(jint a0)
@@ -726,8 +770,8 @@ jlong android::widget::AdapterView::getItemIdAtPosition(jint a0)
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(34),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(34), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void android::widget::AdapterView::setOnClickListener(local_ref< android::view::View_::OnClickListener > const &a0)
@@ -736,8 +780,8 @@ void android::widget::AdapterView::setOnClickListener(local_ref< android::view::
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(35),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -748,8 +792,8 @@ jboolean android::widget::AdapterView::dispatchPopulateAccessibilityEvent(local_
 		android::widget::AdapterView::J2CPP_CLASS_NAME,
 		android::widget::AdapterView::J2CPP_METHOD_NAME(38),
 		android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_BASICCREDENTIALSPROVIDER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -94,8 +94,8 @@ org::apache::http::impl::client::BasicCredentialsProvider::BasicCredentialsProvi
 	call_new_object<
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +107,8 @@ void org::apache::http::impl::client::BasicCredentialsProvider::setCredentials(l
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::auth::Credentials > org::apache::http::impl::client::BasicCredentialsProvider::getCredentials(local_ref< org::apache::http::auth::AuthScope > const &a0)
@@ -117,8 +117,8 @@ local_ref< org::apache::http::auth::Credentials > org::apache::http::impl::clien
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::auth::Credentials > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::auth::Credentials >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::client::BasicCredentialsProvider::toString()
@@ -127,8 +127,8 @@ local_ref< java::lang::String > org::apache::http::impl::client::BasicCredential
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::BasicCredentialsProvider::clear()
@@ -137,8 +137,8 @@ void org::apache::http::impl::client::BasicCredentialsProvider::clear()
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::client::BasicCredentialsProvider::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

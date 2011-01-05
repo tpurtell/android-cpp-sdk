@@ -18,15 +18,27 @@ namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/Adapter.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/SpinnerAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -65,6 +77,13 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<android::widget::AdapterView>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AbsSpinner(local_ref< android::content::Context > const&);
@@ -105,14 +124,49 @@ android::widget::AbsSpinner::operator local_ref<android::widget::AdapterView>() 
 	return local_ref<android::widget::AdapterView>(get_jobject());
 }
 
+android::widget::AbsSpinner::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::AbsSpinner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > const &a0)
 : object<android::widget::AbsSpinner>(
 	call_new_object<
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(0),
-		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -124,8 +178,8 @@ android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(1),
-		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -137,8 +191,8 @@ android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(2),
-		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -150,8 +204,8 @@ void android::widget::AbsSpinner::setAdapter(local_ref< android::widget::Spinner
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(3),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -162,8 +216,8 @@ void android::widget::AbsSpinner::setSelection(jint a0, jboolean a1)
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(6),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AbsSpinner::setSelection(jint a0)
@@ -172,8 +226,8 @@ void android::widget::AbsSpinner::setSelection(jint a0)
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(7),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::AbsSpinner::getSelectedView()
@@ -182,8 +236,8 @@ local_ref< android::view::View > android::widget::AbsSpinner::getSelectedView()
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(8),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::AbsSpinner::requestLayout()
@@ -192,8 +246,8 @@ void android::widget::AbsSpinner::requestLayout()
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(9),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::widget::SpinnerAdapter > android::widget::AbsSpinner::getAdapter()
@@ -202,8 +256,8 @@ local_ref< android::widget::SpinnerAdapter > android::widget::AbsSpinner::getAda
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(10),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::widget::SpinnerAdapter > >
-	(get_jobject());
+		local_ref< android::widget::SpinnerAdapter >
+	>(get_jobject());
 }
 
 jint android::widget::AbsSpinner::getCount()
@@ -212,8 +266,8 @@ jint android::widget::AbsSpinner::getCount()
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(11),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AbsSpinner::pointToPosition(jint a0, jint a1)
@@ -222,8 +276,8 @@ jint android::widget::AbsSpinner::pointToPosition(jint a0, jint a1)
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(12),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::Parcelable > android::widget::AbsSpinner::onSaveInstanceState()
@@ -232,8 +286,8 @@ local_ref< android::os::Parcelable > android::widget::AbsSpinner::onSaveInstance
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(13),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::AbsSpinner::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -242,8 +296,8 @@ void android::widget::AbsSpinner::onRestoreInstanceState(local_ref< android::os:
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(14),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsSpinner::setAdapter(local_ref< android::widget::Adapter > const &a0)
@@ -252,8 +306,8 @@ void android::widget::AbsSpinner::setAdapter(local_ref< android::widget::Adapter
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(15),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::Adapter > android::widget::AbsSpinner::getAdapter_1()
@@ -262,8 +316,8 @@ local_ref< android::widget::Adapter > android::widget::AbsSpinner::getAdapter_1(
 		android::widget::AbsSpinner::J2CPP_CLASS_NAME,
 		android::widget::AbsSpinner::J2CPP_METHOD_NAME(16),
 		android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::widget::Adapter > >
-	(get_jobject());
+		local_ref< android::widget::Adapter >
+	>(get_jobject());
 }
 
 

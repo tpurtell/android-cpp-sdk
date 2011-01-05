@@ -74,8 +74,8 @@ void org::xml::sax::DTDHandler::notationDecl(local_ref< java::lang::String > con
 		org::xml::sax::DTDHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::DTDHandler::J2CPP_METHOD_NAME(0),
 		org::xml::sax::DTDHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::DTDHandler::unparsedEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -84,8 +84,8 @@ void org::xml::sax::DTDHandler::unparsedEntityDecl(local_ref< java::lang::String
 		org::xml::sax::DTDHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::DTDHandler::J2CPP_METHOD_NAME(1),
 		org::xml::sax::DTDHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

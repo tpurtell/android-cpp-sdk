@@ -69,8 +69,8 @@ void java::security::Guard::checkGuard(local_ref< java::lang::Object > const &a0
 		java::security::Guard::J2CPP_CLASS_NAME,
 		java::security::Guard::J2CPP_METHOD_NAME(0),
 		java::security::Guard::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

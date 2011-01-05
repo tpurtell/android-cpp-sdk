@@ -66,9 +66,9 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
-			operator local_ref<java::util::concurrent::locks::Condition>() const;
 			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::util::concurrent::locks::Condition>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			ConditionObject(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer > const&);
@@ -129,8 +129,8 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void acquire(jint);
@@ -175,9 +175,9 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::lang::Object>() const
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::util::concurrent::locks::Condition>() const
@@ -185,9 +185,9 @@ java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::ope
 	return local_ref<java::util::concurrent::locks::Condition>(get_jobject());
 }
 
-java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::io::Serializable>() const
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -196,8 +196,8 @@ java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::Con
 	call_new_object<
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -209,8 +209,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::signalAll()
@@ -219,8 +219,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::awaitUninterruptibly()
@@ -229,8 +229,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::await()
@@ -239,8 +239,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::awaitNanos(jlong a0)
@@ -249,8 +249,8 @@ jlong java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObjec
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::awaitUntil(local_ref< java::util::Date > const &a0)
@@ -259,8 +259,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionOb
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::await(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -269,8 +269,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionOb
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -294,14 +294,14 @@ J2CPP_DEFINE_FIELD(java::util::concurrent::locks::AbstractQueuedSynchronizer_::C
 
 
 
-java::util::concurrent::locks::AbstractQueuedSynchronizer::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::concurrent::locks::AbstractQueuedSynchronizer::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -319,8 +319,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquire(jint a0)
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireInterruptibly(jint a0)
@@ -329,8 +329,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireInterrupt
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::tryAcquireNanos(jint a0, jlong a1)
@@ -339,8 +339,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::tryAcquireNa
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::release(jint a0)
@@ -349,8 +349,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::release(jint
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireShared(jint a0)
@@ -359,8 +359,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireShared(ji
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireSharedInterruptibly(jint a0)
@@ -369,8 +369,8 @@ void java::util::concurrent::locks::AbstractQueuedSynchronizer::acquireSharedInt
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::tryAcquireSharedNanos(jint a0, jlong a1)
@@ -379,8 +379,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::tryAcquireSh
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::releaseShared(jint a0)
@@ -389,8 +389,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::releaseShare
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasQueuedThreads()
@@ -399,8 +399,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasQueuedThr
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasContended()
@@ -409,8 +409,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasContended
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Thread > java::util::concurrent::locks::AbstractQueuedSynchronizer::getFirstQueuedThread()
@@ -419,8 +419,8 @@ local_ref< java::lang::Thread > java::util::concurrent::locks::AbstractQueuedSyn
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Thread > >
-	(get_jobject());
+		local_ref< java::lang::Thread >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::isQueued(local_ref< java::lang::Thread > const &a0)
@@ -429,8 +429,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::isQueued(loc
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::locks::AbstractQueuedSynchronizer::getQueueLength()
@@ -439,8 +439,8 @@ jint java::util::concurrent::locks::AbstractQueuedSynchronizer::getQueueLength()
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueuedSynchronizer::getQueuedThreads()
@@ -449,8 +449,8 @@ local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueue
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueuedSynchronizer::getExclusiveQueuedThreads()
@@ -459,8 +459,8 @@ local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueue
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueuedSynchronizer::getSharedQueuedThreads()
@@ -469,8 +469,8 @@ local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueue
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(24),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::concurrent::locks::AbstractQueuedSynchronizer::toString()
@@ -479,8 +479,8 @@ local_ref< java::lang::String > java::util::concurrent::locks::AbstractQueuedSyn
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(25),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::owns(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject > const &a0)
@@ -489,8 +489,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::owns(local_r
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(26),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasWaiters(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject > const &a0)
@@ -499,8 +499,8 @@ jboolean java::util::concurrent::locks::AbstractQueuedSynchronizer::hasWaiters(l
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(27),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::locks::AbstractQueuedSynchronizer::getWaitQueueLength(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject > const &a0)
@@ -509,8 +509,8 @@ jint java::util::concurrent::locks::AbstractQueuedSynchronizer::getWaitQueueLeng
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(28),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueuedSynchronizer::getWaitingThreads(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject > const &a0)
@@ -519,8 +519,8 @@ local_ref< java::util::Collection > java::util::concurrent::locks::AbstractQueue
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(29),
 		java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 

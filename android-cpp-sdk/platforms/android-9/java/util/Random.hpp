@@ -98,8 +98,8 @@ java::util::Random::Random()
 	call_new_object<
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(0),
-		java::util::Random::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Random::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -111,8 +111,8 @@ java::util::Random::Random(jlong a0)
 	call_new_object<
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(1),
-		java::util::Random::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::Random::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -125,8 +125,8 @@ jboolean java::util::Random::nextBoolean()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(3),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::Random::nextBytes(local_ref< array<jbyte,1> > const &a0)
@@ -135,8 +135,8 @@ void java::util::Random::nextBytes(local_ref< array<jbyte,1> > const &a0)
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(4),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jdouble java::util::Random::nextDouble()
@@ -145,8 +145,8 @@ jdouble java::util::Random::nextDouble()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(5),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jfloat java::util::Random::nextFloat()
@@ -155,8 +155,8 @@ jfloat java::util::Random::nextFloat()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(6),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble java::util::Random::nextGaussian()
@@ -165,8 +165,8 @@ jdouble java::util::Random::nextGaussian()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(7),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(7), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jint java::util::Random::nextInt()
@@ -175,8 +175,8 @@ jint java::util::Random::nextInt()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(8),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Random::nextInt(jint a0)
@@ -185,8 +185,8 @@ jint java::util::Random::nextInt(jint a0)
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(9),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong java::util::Random::nextLong()
@@ -195,8 +195,8 @@ jlong java::util::Random::nextLong()
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(10),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::Random::setSeed(jlong a0)
@@ -205,8 +205,8 @@ void java::util::Random::setSeed(jlong a0)
 		java::util::Random::J2CPP_CLASS_NAME,
 		java::util::Random::J2CPP_METHOD_NAME(11),
 		java::util::Random::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

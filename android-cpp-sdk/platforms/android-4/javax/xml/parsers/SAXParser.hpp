@@ -11,15 +11,15 @@
 #define J2CPP_JAVAX_XML_PARSERS_SAXPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Parser; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class DefaultHandler; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class HandlerBase; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
-namespace j2cpp { namespace java { namespace io { class InputStream; } } }
-namespace j2cpp { namespace java { namespace io { class File; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/File.hpp>
@@ -122,8 +122,8 @@ local_ref< org::xml::sax::Parser > javax::xml::parsers::SAXParser::getParser()
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(1),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::Parser > >
-	(get_jobject());
+		local_ref< org::xml::sax::Parser >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > javax::xml::parsers::SAXParser::getProperty(local_ref< java::lang::String > const &a0)
@@ -132,8 +132,8 @@ local_ref< java::lang::Object > javax::xml::parsers::SAXParser::getProperty(loca
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(2),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLReader > javax::xml::parsers::SAXParser::getXMLReader()
@@ -142,8 +142,8 @@ local_ref< org::xml::sax::XMLReader > javax::xml::parsers::SAXParser::getXMLRead
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(3),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::xml::sax::XMLReader > >
-	(get_jobject());
+		local_ref< org::xml::sax::XMLReader >
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::SAXParser::isNamespaceAware()
@@ -152,8 +152,8 @@ jboolean javax::xml::parsers::SAXParser::isNamespaceAware()
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(4),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::SAXParser::isValidating()
@@ -162,8 +162,8 @@ jboolean javax::xml::parsers::SAXParser::isValidating()
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(5),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::SAXParser::isXIncludeAware()
@@ -172,8 +172,8 @@ jboolean javax::xml::parsers::SAXParser::isXIncludeAware()
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(6),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::File > const &a0, local_ref< org::xml::sax::HandlerBase > const &a1)
@@ -182,8 +182,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::File > const &a0
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(7),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::File > const &a0, local_ref< org::xml::sax::helpers::DefaultHandler > const &a1)
@@ -192,8 +192,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::File > const &a0
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(8),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > const &a0, local_ref< org::xml::sax::HandlerBase > const &a1)
@@ -202,8 +202,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > co
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(9),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > const &a0, local_ref< org::xml::sax::HandlerBase > const &a1, local_ref< java::lang::String > const &a2)
@@ -212,8 +212,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > co
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(10),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > const &a0, local_ref< org::xml::sax::helpers::DefaultHandler > const &a1)
@@ -222,8 +222,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > co
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(11),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > const &a0, local_ref< org::xml::sax::helpers::DefaultHandler > const &a1, local_ref< java::lang::String > const &a2)
@@ -232,8 +232,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::io::InputStream > co
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(12),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::HandlerBase > const &a1)
@@ -242,8 +242,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::lang::String > const
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(13),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::helpers::DefaultHandler > const &a1)
@@ -252,8 +252,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< java::lang::String > const
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(14),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< org::xml::sax::InputSource > const &a0, local_ref< org::xml::sax::HandlerBase > const &a1)
@@ -262,8 +262,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< org::xml::sax::InputSource
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(15),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::parse(local_ref< org::xml::sax::InputSource > const &a0, local_ref< org::xml::sax::helpers::DefaultHandler > const &a1)
@@ -272,8 +272,8 @@ void javax::xml::parsers::SAXParser::parse(local_ref< org::xml::sax::InputSource
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(16),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::parsers::SAXParser::reset()
@@ -282,8 +282,8 @@ void javax::xml::parsers::SAXParser::reset()
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(17),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::parsers::SAXParser::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -292,8 +292,8 @@ void javax::xml::parsers::SAXParser::setProperty(local_ref< java::lang::String >
 		javax::xml::parsers::SAXParser::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_NAME(18),
 		javax::xml::parsers::SAXParser::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

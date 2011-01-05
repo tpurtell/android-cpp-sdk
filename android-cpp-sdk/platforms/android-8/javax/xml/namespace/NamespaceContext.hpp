@@ -78,8 +78,8 @@ local_ref< java::lang::String > javax::xml::namespace::NamespaceContext::getName
 		javax::xml::namespace::NamespaceContext::J2CPP_CLASS_NAME,
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_NAME(0),
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::namespace::NamespaceContext::getPrefix(local_ref< java::lang::String > const &a0)
@@ -88,8 +88,8 @@ local_ref< java::lang::String > javax::xml::namespace::NamespaceContext::getPref
 		javax::xml::namespace::NamespaceContext::J2CPP_CLASS_NAME,
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_NAME(1),
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > javax::xml::namespace::NamespaceContext::getPrefixes(local_ref< java::lang::String > const &a0)
@@ -98,8 +98,8 @@ local_ref< java::util::Iterator > javax::xml::namespace::NamespaceContext::getPr
 		javax::xml::namespace::NamespaceContext::J2CPP_CLASS_NAME,
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_NAME(2),
 		javax::xml::namespace::NamespaceContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Iterator > >
-	(get_jobject(), a0);
+		local_ref< java::util::Iterator >
+	>(get_jobject(), a0);
 }
 
 

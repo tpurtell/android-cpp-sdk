@@ -13,10 +13,10 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class OperatedClientConnection; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class OperatedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -85,8 +85,8 @@ local_ref< org::apache::http::conn::OperatedClientConnection > org::apache::http
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::OperatedClientConnection > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::OperatedClientConnection >
+	>(get_jobject());
 }
 
 void org::apache::http::conn::ClientConnectionOperator::openConnection(local_ref< org::apache::http::conn::OperatedClientConnection > const &a0, local_ref< org::apache::http::HttpHost > const &a1, local_ref< java::net::InetAddress > const &a2, local_ref< org::apache::http::protocol::HttpContext > const &a3, local_ref< org::apache::http::params::HttpParams > const &a4)
@@ -95,8 +95,8 @@ void org::apache::http::conn::ClientConnectionOperator::openConnection(local_ref
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void org::apache::http::conn::ClientConnectionOperator::updateSecureConnection(local_ref< org::apache::http::conn::OperatedClientConnection > const &a0, local_ref< org::apache::http::HttpHost > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2, local_ref< org::apache::http::params::HttpParams > const &a3)
@@ -105,8 +105,8 @@ void org::apache::http::conn::ClientConnectionOperator::updateSecureConnection(l
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::ClientConnectionOperator::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

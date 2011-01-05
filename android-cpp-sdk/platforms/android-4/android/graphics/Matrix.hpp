@@ -11,15 +11,19 @@
 #define J2CPP_ANDROID_GRAPHICS_MATRIX_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Matrix_ { class ScaleToFit; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 
 
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/RectF.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -55,7 +59,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Matrix_::ScaleToFit >, 1> > values();
@@ -224,9 +231,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Matrix_::ScaleToFit::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::graphics::Matrix_::ScaleToFit::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Matrix_::ScaleToFit::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Matrix_::ScaleToFit::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Matrix_::ScaleToFit >, 1> > android::graphics::Matrix_::ScaleToFit::values()
@@ -235,8 +257,8 @@ local_ref< array< local_ref< android::graphics::Matrix_::ScaleToFit >, 1> > andr
 		android::graphics::Matrix_::ScaleToFit::J2CPP_CLASS_NAME,
 		android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_NAME(0),
 		android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Matrix_::ScaleToFit >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Matrix_::ScaleToFit >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Matrix_::ScaleToFit > android::graphics::Matrix_::ScaleToFit::valueOf(local_ref< java::lang::String > const &a0)
@@ -245,8 +267,8 @@ local_ref< android::graphics::Matrix_::ScaleToFit > android::graphics::Matrix_::
 		android::graphics::Matrix_::ScaleToFit::J2CPP_CLASS_NAME,
 		android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_NAME(1),
 		android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Matrix_::ScaleToFit > >
-	(a0);
+		local_ref< android::graphics::Matrix_::ScaleToFit >
+	>(a0);
 }
 
 
@@ -305,8 +327,8 @@ android::graphics::Matrix::Matrix()
 	call_new_object<
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(0),
-		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -318,8 +340,8 @@ android::graphics::Matrix::Matrix(local_ref< android::graphics::Matrix > const &
 	call_new_object<
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(1),
-		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -331,8 +353,8 @@ jboolean android::graphics::Matrix::isIdentity()
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(2),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::graphics::Matrix::rectStaysRect()
@@ -341,8 +363,8 @@ jboolean android::graphics::Matrix::rectStaysRect()
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(3),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Matrix::set(local_ref< android::graphics::Matrix > const &a0)
@@ -351,8 +373,8 @@ void android::graphics::Matrix::set(local_ref< android::graphics::Matrix > const
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(4),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::equals(local_ref< java::lang::Object > const &a0)
@@ -361,8 +383,8 @@ jboolean android::graphics::Matrix::equals(local_ref< java::lang::Object > const
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(5),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::reset()
@@ -371,8 +393,8 @@ void android::graphics::Matrix::reset()
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(6),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::Matrix::setTranslate(jfloat a0, jfloat a1)
@@ -381,8 +403,8 @@ void android::graphics::Matrix::setTranslate(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(7),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Matrix::setScale(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -391,8 +413,8 @@ void android::graphics::Matrix::setScale(jfloat a0, jfloat a1, jfloat a2, jfloat
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(8),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Matrix::setScale(jfloat a0, jfloat a1)
@@ -401,8 +423,8 @@ void android::graphics::Matrix::setScale(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(9),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Matrix::setRotate(jfloat a0, jfloat a1, jfloat a2)
@@ -411,8 +433,8 @@ void android::graphics::Matrix::setRotate(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(10),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Matrix::setRotate(jfloat a0)
@@ -421,8 +443,8 @@ void android::graphics::Matrix::setRotate(jfloat a0)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(11),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::setSinCos(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -431,8 +453,8 @@ void android::graphics::Matrix::setSinCos(jfloat a0, jfloat a1, jfloat a2, jfloa
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(12),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Matrix::setSinCos(jfloat a0, jfloat a1)
@@ -441,8 +463,8 @@ void android::graphics::Matrix::setSinCos(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(13),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Matrix::setSkew(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -451,8 +473,8 @@ void android::graphics::Matrix::setSkew(jfloat a0, jfloat a1, jfloat a2, jfloat 
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(14),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Matrix::setSkew(jfloat a0, jfloat a1)
@@ -461,8 +483,8 @@ void android::graphics::Matrix::setSkew(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(15),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::setConcat(local_ref< android::graphics::Matrix > const &a0, local_ref< android::graphics::Matrix > const &a1)
@@ -471,8 +493,8 @@ jboolean android::graphics::Matrix::setConcat(local_ref< android::graphics::Matr
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(16),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::preTranslate(jfloat a0, jfloat a1)
@@ -481,8 +503,8 @@ jboolean android::graphics::Matrix::preTranslate(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(17),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::preScale(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -491,8 +513,8 @@ jboolean android::graphics::Matrix::preScale(jfloat a0, jfloat a1, jfloat a2, jf
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(18),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Matrix::preScale(jfloat a0, jfloat a1)
@@ -501,8 +523,8 @@ jboolean android::graphics::Matrix::preScale(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(19),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::preRotate(jfloat a0, jfloat a1, jfloat a2)
@@ -511,8 +533,8 @@ jboolean android::graphics::Matrix::preRotate(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(20),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Matrix::preRotate(jfloat a0)
@@ -521,8 +543,8 @@ jboolean android::graphics::Matrix::preRotate(jfloat a0)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(21),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::preSkew(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -531,8 +553,8 @@ jboolean android::graphics::Matrix::preSkew(jfloat a0, jfloat a1, jfloat a2, jfl
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(22),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Matrix::preSkew(jfloat a0, jfloat a1)
@@ -541,8 +563,8 @@ jboolean android::graphics::Matrix::preSkew(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(23),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::preConcat(local_ref< android::graphics::Matrix > const &a0)
@@ -551,8 +573,8 @@ jboolean android::graphics::Matrix::preConcat(local_ref< android::graphics::Matr
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(24),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::postTranslate(jfloat a0, jfloat a1)
@@ -561,8 +583,8 @@ jboolean android::graphics::Matrix::postTranslate(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(25),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::postScale(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -571,8 +593,8 @@ jboolean android::graphics::Matrix::postScale(jfloat a0, jfloat a1, jfloat a2, j
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(26),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Matrix::postScale(jfloat a0, jfloat a1)
@@ -581,8 +603,8 @@ jboolean android::graphics::Matrix::postScale(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(27),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::postRotate(jfloat a0, jfloat a1, jfloat a2)
@@ -591,8 +613,8 @@ jboolean android::graphics::Matrix::postRotate(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(28),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Matrix::postRotate(jfloat a0)
@@ -601,8 +623,8 @@ jboolean android::graphics::Matrix::postRotate(jfloat a0)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(29),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::postSkew(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -611,8 +633,8 @@ jboolean android::graphics::Matrix::postSkew(jfloat a0, jfloat a1, jfloat a2, jf
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(30),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Matrix::postSkew(jfloat a0, jfloat a1)
@@ -621,8 +643,8 @@ jboolean android::graphics::Matrix::postSkew(jfloat a0, jfloat a1)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(31),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::postConcat(local_ref< android::graphics::Matrix > const &a0)
@@ -631,8 +653,8 @@ jboolean android::graphics::Matrix::postConcat(local_ref< android::graphics::Mat
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(32),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::setRectToRect(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::RectF > const &a1, local_ref< android::graphics::Matrix_::ScaleToFit > const &a2)
@@ -641,8 +663,8 @@ jboolean android::graphics::Matrix::setRectToRect(local_ref< android::graphics::
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(33),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Matrix::setPolyToPoly(local_ref< array<jfloat,1> > const &a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3, jint a4)
@@ -651,8 +673,8 @@ jboolean android::graphics::Matrix::setPolyToPoly(local_ref< array<jfloat,1> > c
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(34),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::graphics::Matrix::invert(local_ref< android::graphics::Matrix > const &a0)
@@ -661,8 +683,8 @@ jboolean android::graphics::Matrix::invert(local_ref< android::graphics::Matrix 
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(35),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3, jint a4)
@@ -671,8 +693,8 @@ void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(36),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3, jint a4)
@@ -681,8 +703,8 @@ void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(37),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -691,8 +713,8 @@ void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(38),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -701,8 +723,8 @@ void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(39),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0)
@@ -711,8 +733,8 @@ void android::graphics::Matrix::mapPoints(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(40),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a0)
@@ -721,8 +743,8 @@ void android::graphics::Matrix::mapVectors(local_ref< array<jfloat,1> > const &a
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(41),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Matrix::mapRect(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::RectF > const &a1)
@@ -731,8 +753,8 @@ jboolean android::graphics::Matrix::mapRect(local_ref< android::graphics::RectF 
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(42),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(42), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Matrix::mapRect(local_ref< android::graphics::RectF > const &a0)
@@ -741,8 +763,8 @@ jboolean android::graphics::Matrix::mapRect(local_ref< android::graphics::RectF 
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(43),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Matrix::mapRadius(jfloat a0)
@@ -751,8 +773,8 @@ jfloat android::graphics::Matrix::mapRadius(jfloat a0)
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(44),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(44), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::getValues(local_ref< array<jfloat,1> > const &a0)
@@ -761,8 +783,8 @@ void android::graphics::Matrix::getValues(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(45),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Matrix::setValues(local_ref< array<jfloat,1> > const &a0)
@@ -771,8 +793,8 @@ void android::graphics::Matrix::setValues(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(46),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::graphics::Matrix::toString()
@@ -781,8 +803,8 @@ local_ref< java::lang::String > android::graphics::Matrix::toString()
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(47),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::graphics::Matrix::toShortString()
@@ -791,8 +813,8 @@ local_ref< java::lang::String > android::graphics::Matrix::toShortString()
 		android::graphics::Matrix::J2CPP_CLASS_NAME,
 		android::graphics::Matrix::J2CPP_METHOD_NAME(48),
 		android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

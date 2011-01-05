@@ -87,8 +87,8 @@ java::sql::DriverPropertyInfo::DriverPropertyInfo(local_ref< java::lang::String 
 	call_new_object<
 		java::sql::DriverPropertyInfo::J2CPP_CLASS_NAME,
 		java::sql::DriverPropertyInfo::J2CPP_METHOD_NAME(0),
-		java::sql::DriverPropertyInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::sql::DriverPropertyInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , choices(get_jobject())
 , description(get_jobject())

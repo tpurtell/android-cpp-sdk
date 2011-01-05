@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGLCONTEXT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -79,8 +79,8 @@ javax::microedition::khronos::egl::EGLContext::EGLContext()
 	call_new_object<
 		javax::microedition::khronos::egl::EGLContext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_NAME(0),
-		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -92,8 +92,8 @@ local_ref< javax::microedition::khronos::egl::EGL > javax::microedition::khronos
 		javax::microedition::khronos::egl::EGLContext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_NAME(1),
 		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::microedition::khronos::egl::EGL > >
-	();
+		local_ref< javax::microedition::khronos::egl::EGL >
+	>();
 }
 
 local_ref< javax::microedition::khronos::opengles::GL > javax::microedition::khronos::egl::EGLContext::getGL()
@@ -102,8 +102,8 @@ local_ref< javax::microedition::khronos::opengles::GL > javax::microedition::khr
 		javax::microedition::khronos::egl::EGLContext::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_NAME(2),
 		javax::microedition::khronos::egl::EGLContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::microedition::khronos::opengles::GL > >
-	(get_jobject());
+		local_ref< javax::microedition::khronos::opengles::GL >
+	>(get_jobject());
 }
 
 

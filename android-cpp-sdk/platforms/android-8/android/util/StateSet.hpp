@@ -85,8 +85,8 @@ android::util::StateSet::StateSet()
 	call_new_object<
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(0),
-		android::util::StateSet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::StateSet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ jboolean android::util::StateSet::isWildCard(local_ref< array<jint,1> > const &a
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(1),
 		android::util::StateSet::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::util::StateSet::stateSetMatches(local_ref< array<jint,1> > const &a0, local_ref< array<jint,1> > const &a1)
@@ -108,8 +108,8 @@ jboolean android::util::StateSet::stateSetMatches(local_ref< array<jint,1> > con
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(2),
 		android::util::StateSet::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::util::StateSet::stateSetMatches(local_ref< array<jint,1> > const &a0, jint a1)
@@ -118,8 +118,8 @@ jboolean android::util::StateSet::stateSetMatches(local_ref< array<jint,1> > con
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(3),
 		android::util::StateSet::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< array<jint,1> > android::util::StateSet::trimStateSet(local_ref< array<jint,1> > const &a0, jint a1)
@@ -128,8 +128,8 @@ local_ref< array<jint,1> > android::util::StateSet::trimStateSet(local_ref< arra
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(4),
 		android::util::StateSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jint,1> > >
-	(a0, a1);
+		local_ref< array<jint,1> >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::util::StateSet::dump(local_ref< array<jint,1> > const &a0)
@@ -138,8 +138,8 @@ local_ref< java::lang::String > android::util::StateSet::dump(local_ref< array<j
 		android::util::StateSet::J2CPP_CLASS_NAME,
 		android::util::StateSet::J2CPP_METHOD_NAME(5),
 		android::util::StateSet::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

@@ -60,8 +60,8 @@ namespace javax { namespace security { namespace auth { namespace x500 {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::security::Principal>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		X500Principal(local_ref< array<jbyte,1> > const&);
@@ -104,14 +104,14 @@ javax::security::auth::x500::X500Principal::operator local_ref<java::lang::Objec
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-javax::security::auth::x500::X500Principal::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 javax::security::auth::x500::X500Principal::operator local_ref<java::security::Principal>() const
 {
 	return local_ref<java::security::Principal>(get_jobject());
+}
+
+javax::security::auth::x500::X500Principal::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -120,8 +120,8 @@ javax::security::auth::x500::X500Principal::X500Principal(local_ref< array<jbyte
 	call_new_object<
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(0),
-		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -133,8 +133,8 @@ javax::security::auth::x500::X500Principal::X500Principal(local_ref< java::io::I
 	call_new_object<
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(1),
-		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -146,8 +146,8 @@ javax::security::auth::x500::X500Principal::X500Principal(local_ref< java::lang:
 	call_new_object<
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(2),
-		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -159,8 +159,8 @@ javax::security::auth::x500::X500Principal::X500Principal(local_ref< java::lang:
 	call_new_object<
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(3),
-		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -172,8 +172,8 @@ jboolean javax::security::auth::x500::X500Principal::equals(local_ref< java::lan
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(4),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > javax::security::auth::x500::X500Principal::getEncoded()
@@ -182,8 +182,8 @@ local_ref< array<jbyte,1> > javax::security::auth::x500::X500Principal::getEncod
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(5),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getName()
@@ -192,8 +192,8 @@ local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getN
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(6),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getName(local_ref< java::lang::String > const &a0)
@@ -202,8 +202,8 @@ local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getN
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(7),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getName(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -212,8 +212,8 @@ local_ref< java::lang::String > javax::security::auth::x500::X500Principal::getN
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(8),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jint javax::security::auth::x500::X500Principal::hashCode()
@@ -222,8 +222,8 @@ jint javax::security::auth::x500::X500Principal::hashCode()
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(9),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::security::auth::x500::X500Principal::toString()
@@ -232,8 +232,8 @@ local_ref< java::lang::String > javax::security::auth::x500::X500Principal::toSt
 		javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME,
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(10),
 		javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

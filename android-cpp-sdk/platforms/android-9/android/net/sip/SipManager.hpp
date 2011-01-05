@@ -135,8 +135,8 @@ local_ref< android::net::sip::SipManager > android::net::sip::SipManager::newIns
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::sip::SipManager > >
-	(a0);
+		local_ref< android::net::sip::SipManager >
+	>(a0);
 }
 
 jboolean android::net::sip::SipManager::isApiSupported(local_ref< android::content::Context > const &a0)
@@ -145,8 +145,8 @@ jboolean android::net::sip::SipManager::isApiSupported(local_ref< android::conte
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::net::sip::SipManager::isVoipSupported(local_ref< android::content::Context > const &a0)
@@ -155,8 +155,8 @@ jboolean android::net::sip::SipManager::isVoipSupported(local_ref< android::cont
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::net::sip::SipManager::isSipWifiOnly(local_ref< android::content::Context > const &a0)
@@ -165,8 +165,8 @@ jboolean android::net::sip::SipManager::isSipWifiOnly(local_ref< android::conten
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::net::sip::SipManager::open(local_ref< android::net::sip::SipProfile > const &a0)
@@ -175,8 +175,8 @@ void android::net::sip::SipManager::open(local_ref< android::net::sip::SipProfil
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipManager::open(local_ref< android::net::sip::SipProfile > const &a0, local_ref< android::app::PendingIntent > const &a1, local_ref< android::net::sip::SipRegistrationListener > const &a2)
@@ -185,8 +185,8 @@ void android::net::sip::SipManager::open(local_ref< android::net::sip::SipProfil
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipManager::setRegistrationListener(local_ref< java::lang::String > const &a0, local_ref< android::net::sip::SipRegistrationListener > const &a1)
@@ -195,8 +195,8 @@ void android::net::sip::SipManager::setRegistrationListener(local_ref< java::lan
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipManager::close(local_ref< java::lang::String > const &a0)
@@ -205,8 +205,8 @@ void android::net::sip::SipManager::close(local_ref< java::lang::String > const 
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::sip::SipManager::isOpened(local_ref< java::lang::String > const &a0)
@@ -215,8 +215,8 @@ jboolean android::net::sip::SipManager::isOpened(local_ref< java::lang::String >
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::sip::SipManager::isRegistered(local_ref< java::lang::String > const &a0)
@@ -225,8 +225,8 @@ jboolean android::net::sip::SipManager::isRegistered(local_ref< java::lang::Stri
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::makeAudioCall(local_ref< android::net::sip::SipProfile > const &a0, local_ref< android::net::sip::SipProfile > const &a1, local_ref< android::net::sip::SipAudioCall_::Listener > const &a2, jint a3)
@@ -235,8 +235,8 @@ local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::make
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::sip::SipAudioCall > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::net::sip::SipAudioCall >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::makeAudioCall(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::net::sip::SipAudioCall_::Listener > const &a2, jint a3)
@@ -245,8 +245,8 @@ local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::make
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(12),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::net::sip::SipAudioCall > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::net::sip::SipAudioCall >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::takeAudioCall(local_ref< android::content::Intent > const &a0, local_ref< android::net::sip::SipAudioCall_::Listener > const &a1)
@@ -255,8 +255,8 @@ local_ref< android::net::sip::SipAudioCall > android::net::sip::SipManager::take
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(13),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::net::sip::SipAudioCall > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::sip::SipAudioCall >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::net::sip::SipManager::isIncomingCallIntent(local_ref< android::content::Intent > const &a0)
@@ -265,8 +265,8 @@ jboolean android::net::sip::SipManager::isIncomingCallIntent(local_ref< android:
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(14),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::sip::SipManager::getCallId(local_ref< android::content::Intent > const &a0)
@@ -275,8 +275,8 @@ local_ref< java::lang::String > android::net::sip::SipManager::getCallId(local_r
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(15),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::sip::SipManager::getOfferSessionDescription(local_ref< android::content::Intent > const &a0)
@@ -285,8 +285,8 @@ local_ref< java::lang::String > android::net::sip::SipManager::getOfferSessionDe
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(16),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::net::sip::SipManager::register_(local_ref< android::net::sip::SipProfile > const &a0, jint a1, local_ref< android::net::sip::SipRegistrationListener > const &a2)
@@ -295,8 +295,8 @@ void android::net::sip::SipManager::register_(local_ref< android::net::sip::SipP
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(17),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipManager::unregister(local_ref< android::net::sip::SipProfile > const &a0, local_ref< android::net::sip::SipRegistrationListener > const &a1)
@@ -305,8 +305,8 @@ void android::net::sip::SipManager::unregister(local_ref< android::net::sip::Sip
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(18),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::net::sip::SipSession > android::net::sip::SipManager::getSessionFor(local_ref< android::content::Intent > const &a0)
@@ -315,8 +315,8 @@ local_ref< android::net::sip::SipSession > android::net::sip::SipManager::getSes
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(19),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::net::sip::SipSession > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipSession >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipSession > android::net::sip::SipManager::createSipSession(local_ref< android::net::sip::SipProfile > const &a0, local_ref< android::net::sip::SipSession_::Listener > const &a1)
@@ -325,8 +325,8 @@ local_ref< android::net::sip::SipSession > android::net::sip::SipManager::create
 		android::net::sip::SipManager::J2CPP_CLASS_NAME,
 		android::net::sip::SipManager::J2CPP_METHOD_NAME(20),
 		android::net::sip::SipManager::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::net::sip::SipSession > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::sip::SipSession >
+	>(get_jobject(), a0, a1);
 }
 
 

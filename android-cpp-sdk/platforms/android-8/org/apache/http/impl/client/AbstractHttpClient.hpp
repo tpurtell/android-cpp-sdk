@@ -11,14 +11,14 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_ABSTRACTHTTPCLIENT_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class AuthenticationHandler; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class UserTokenHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpClient; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RedirectHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class AuthenticationHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class UserTokenHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class ResponseHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpRequestRetryHandler; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RedirectHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthSchemeRegistry; } } } } }
@@ -152,8 +152,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::client::HttpClient>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::apache::http::params::HttpParams > getParams();
@@ -225,14 +225,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::client::AbstractHttpClient::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::client::AbstractHttpClient::operator local_ref<org::apache::http::client::HttpClient>() const
 {
 	return local_ref<org::apache::http::client::HttpClient>(get_jobject());
+}
+
+org::apache::http::impl::client::AbstractHttpClient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -259,8 +259,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::impl::clie
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(18),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setParams(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -269,8 +269,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setParams(local_ref< o
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(19),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http::impl::client::AbstractHttpClient::getConnectionManager()
@@ -279,8 +279,8 @@ local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(20),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< org::apache::http::conn::ClientConnectionManager > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::ClientConnectionManager >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::protocol::HttpRequestExecutor > org::apache::http::impl::client::AbstractHttpClient::getRequestExecutor()
@@ -289,8 +289,8 @@ local_ref< org::apache::http::protocol::HttpRequestExecutor > org::apache::http:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(21),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< org::apache::http::protocol::HttpRequestExecutor > >
-	(get_jobject());
+		local_ref< org::apache::http::protocol::HttpRequestExecutor >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::auth::AuthSchemeRegistry > org::apache::http::impl::client::AbstractHttpClient::getAuthSchemes()
@@ -299,8 +299,8 @@ local_ref< org::apache::http::auth::AuthSchemeRegistry > org::apache::http::impl
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(22),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< org::apache::http::auth::AuthSchemeRegistry > >
-	(get_jobject());
+		local_ref< org::apache::http::auth::AuthSchemeRegistry >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setAuthSchemes(local_ref< org::apache::http::auth::AuthSchemeRegistry > const &a0)
@@ -309,8 +309,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setAuthSchemes(local_r
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(23),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::cookie::CookieSpecRegistry > org::apache::http::impl::client::AbstractHttpClient::getCookieSpecs()
@@ -319,8 +319,8 @@ local_ref< org::apache::http::cookie::CookieSpecRegistry > org::apache::http::im
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(24),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< org::apache::http::cookie::CookieSpecRegistry > >
-	(get_jobject());
+		local_ref< org::apache::http::cookie::CookieSpecRegistry >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setCookieSpecs(local_ref< org::apache::http::cookie::CookieSpecRegistry > const &a0)
@@ -329,8 +329,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setCookieSpecs(local_r
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(25),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::ConnectionReuseStrategy > org::apache::http::impl::client::AbstractHttpClient::getConnectionReuseStrategy()
@@ -339,8 +339,8 @@ local_ref< org::apache::http::ConnectionReuseStrategy > org::apache::http::impl:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(26),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< org::apache::http::ConnectionReuseStrategy > >
-	(get_jobject());
+		local_ref< org::apache::http::ConnectionReuseStrategy >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setReuseStrategy(local_ref< org::apache::http::ConnectionReuseStrategy > const &a0)
@@ -349,8 +349,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setReuseStrategy(local
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(27),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy > org::apache::http::impl::client::AbstractHttpClient::getConnectionKeepAliveStrategy()
@@ -359,8 +359,8 @@ local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy > org::apache::h
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(28),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setKeepAliveStrategy(local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy > const &a0)
@@ -369,8 +369,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setKeepAliveStrategy(l
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(29),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::HttpRequestRetryHandler > org::apache::http::impl::client::AbstractHttpClient::getHttpRequestRetryHandler()
@@ -379,8 +379,8 @@ local_ref< org::apache::http::client::HttpRequestRetryHandler > org::apache::htt
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(30),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< org::apache::http::client::HttpRequestRetryHandler > >
-	(get_jobject());
+		local_ref< org::apache::http::client::HttpRequestRetryHandler >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setHttpRequestRetryHandler(local_ref< org::apache::http::client::HttpRequestRetryHandler > const &a0)
@@ -389,8 +389,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setHttpRequestRetryHan
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(31),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::RedirectHandler > org::apache::http::impl::client::AbstractHttpClient::getRedirectHandler()
@@ -399,8 +399,8 @@ local_ref< org::apache::http::client::RedirectHandler > org::apache::http::impl:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(32),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< org::apache::http::client::RedirectHandler > >
-	(get_jobject());
+		local_ref< org::apache::http::client::RedirectHandler >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setRedirectHandler(local_ref< org::apache::http::client::RedirectHandler > const &a0)
@@ -409,8 +409,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setRedirectHandler(loc
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(33),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::AuthenticationHandler > org::apache::http::impl::client::AbstractHttpClient::getTargetAuthenticationHandler()
@@ -419,8 +419,8 @@ local_ref< org::apache::http::client::AuthenticationHandler > org::apache::http:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(34),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< org::apache::http::client::AuthenticationHandler > >
-	(get_jobject());
+		local_ref< org::apache::http::client::AuthenticationHandler >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setTargetAuthenticationHandler(local_ref< org::apache::http::client::AuthenticationHandler > const &a0)
@@ -429,8 +429,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setTargetAuthenticatio
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(35),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::AuthenticationHandler > org::apache::http::impl::client::AbstractHttpClient::getProxyAuthenticationHandler()
@@ -439,8 +439,8 @@ local_ref< org::apache::http::client::AuthenticationHandler > org::apache::http:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(36),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< org::apache::http::client::AuthenticationHandler > >
-	(get_jobject());
+		local_ref< org::apache::http::client::AuthenticationHandler >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setProxyAuthenticationHandler(local_ref< org::apache::http::client::AuthenticationHandler > const &a0)
@@ -449,8 +449,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setProxyAuthentication
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(37),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::CookieStore > org::apache::http::impl::client::AbstractHttpClient::getCookieStore()
@@ -459,8 +459,8 @@ local_ref< org::apache::http::client::CookieStore > org::apache::http::impl::cli
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(38),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< org::apache::http::client::CookieStore > >
-	(get_jobject());
+		local_ref< org::apache::http::client::CookieStore >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setCookieStore(local_ref< org::apache::http::client::CookieStore > const &a0)
@@ -469,8 +469,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setCookieStore(local_r
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(39),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::CredentialsProvider > org::apache::http::impl::client::AbstractHttpClient::getCredentialsProvider()
@@ -479,8 +479,8 @@ local_ref< org::apache::http::client::CredentialsProvider > org::apache::http::i
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(40),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< org::apache::http::client::CredentialsProvider > >
-	(get_jobject());
+		local_ref< org::apache::http::client::CredentialsProvider >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setCredentialsProvider(local_ref< org::apache::http::client::CredentialsProvider > const &a0)
@@ -489,8 +489,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setCredentialsProvider
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(41),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::conn::routing::HttpRoutePlanner > org::apache::http::impl::client::AbstractHttpClient::getRoutePlanner()
@@ -499,8 +499,8 @@ local_ref< org::apache::http::conn::routing::HttpRoutePlanner > org::apache::htt
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(42),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< org::apache::http::conn::routing::HttpRoutePlanner > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::HttpRoutePlanner >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setRoutePlanner(local_ref< org::apache::http::conn::routing::HttpRoutePlanner > const &a0)
@@ -509,8 +509,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setRoutePlanner(local_
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(43),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::client::UserTokenHandler > org::apache::http::impl::client::AbstractHttpClient::getUserTokenHandler()
@@ -519,8 +519,8 @@ local_ref< org::apache::http::client::UserTokenHandler > org::apache::http::impl
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(44),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< org::apache::http::client::UserTokenHandler > >
-	(get_jobject());
+		local_ref< org::apache::http::client::UserTokenHandler >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::setUserTokenHandler(local_ref< org::apache::http::client::UserTokenHandler > const &a0)
@@ -529,8 +529,8 @@ void org::apache::http::impl::client::AbstractHttpClient::setUserTokenHandler(lo
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(45),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -540,8 +540,8 @@ void org::apache::http::impl::client::AbstractHttpClient::addResponseInterceptor
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(47),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::addResponseInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0, jint a1)
@@ -550,8 +550,8 @@ void org::apache::http::impl::client::AbstractHttpClient::addResponseInterceptor
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(48),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::impl::client::AbstractHttpClient::getResponseInterceptor(jint a0)
@@ -560,8 +560,8 @@ local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::impl:
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(49),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< org::apache::http::HttpResponseInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponseInterceptor >
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::impl::client::AbstractHttpClient::getResponseInterceptorCount()
@@ -570,8 +570,8 @@ jint org::apache::http::impl::client::AbstractHttpClient::getResponseInterceptor
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(50),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(50), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::clearResponseInterceptors()
@@ -580,8 +580,8 @@ void org::apache::http::impl::client::AbstractHttpClient::clearResponseIntercept
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(51),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::removeResponseInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -590,8 +590,8 @@ void org::apache::http::impl::client::AbstractHttpClient::removeResponseIntercep
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(52),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0)
@@ -600,8 +600,8 @@ void org::apache::http::impl::client::AbstractHttpClient::addRequestInterceptor(
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(53),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0, jint a1)
@@ -610,8 +610,8 @@ void org::apache::http::impl::client::AbstractHttpClient::addRequestInterceptor(
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(54),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::impl::client::AbstractHttpClient::getRequestInterceptor(jint a0)
@@ -620,8 +620,8 @@ local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::impl::
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(55),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< org::apache::http::HttpRequestInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpRequestInterceptor >
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::impl::client::AbstractHttpClient::getRequestInterceptorCount()
@@ -630,8 +630,8 @@ jint org::apache::http::impl::client::AbstractHttpClient::getRequestInterceptorC
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(56),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(56), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::clearRequestInterceptors()
@@ -640,8 +640,8 @@ void org::apache::http::impl::client::AbstractHttpClient::clearRequestIntercepto
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(57),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::AbstractHttpClient::removeRequestInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -650,8 +650,8 @@ void org::apache::http::impl::client::AbstractHttpClient::removeRequestIntercept
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(58),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0)
@@ -660,8 +660,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::Ab
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(59),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(59), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -670,8 +670,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::Ab
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(60),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1)
@@ -680,8 +680,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::Ab
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(61),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(61), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -690,8 +690,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::Ab
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(62),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(62), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -702,8 +702,8 @@ local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpCli
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(65),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(65), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::client::ResponseHandler > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -712,8 +712,8 @@ local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpCli
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(66),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(66), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2)
@@ -722,8 +722,8 @@ local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpCli
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(67),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(67), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2, local_ref< org::apache::http::protocol::HttpContext > const &a3)
@@ -732,8 +732,8 @@ local_ref< java::lang::Object > org::apache::http::impl::client::AbstractHttpCli
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(68),
 		org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(68), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

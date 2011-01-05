@@ -21,6 +21,7 @@ namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
 namespace j2cpp { namespace android { namespace widget { class BaseExpandableListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class FilterQueryProvider; } } }
+namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 
 
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <android/widget/BaseExpandableListAdapter.hpp>
+#include <android/widget/ExpandableListAdapter.hpp>
 #include <android/widget/Filter.hpp>
 #include <android/widget/FilterQueryProvider.hpp>
 #include <android/widget/Filterable.hpp>
@@ -87,7 +89,9 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::widget::BaseExpandableListAdapter>() const;
+		operator local_ref<android::widget::ExpandableListAdapter>() const;
 		operator local_ref<android::widget::Filterable>() const;
 
 
@@ -136,9 +140,19 @@ namespace j2cpp {
 
 
 
+android::widget::CursorTreeAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::widget::CursorTreeAdapter::operator local_ref<android::widget::BaseExpandableListAdapter>() const
 {
 	return local_ref<android::widget::BaseExpandableListAdapter>(get_jobject());
+}
+
+android::widget::CursorTreeAdapter::operator local_ref<android::widget::ExpandableListAdapter>() const
+{
+	return local_ref<android::widget::ExpandableListAdapter>(get_jobject());
 }
 
 android::widget::CursorTreeAdapter::operator local_ref<android::widget::Filterable>() const
@@ -152,8 +166,8 @@ android::widget::CursorTreeAdapter::CursorTreeAdapter(local_ref< android::databa
 	call_new_object<
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -165,8 +179,8 @@ android::widget::CursorTreeAdapter::CursorTreeAdapter(local_ref< android::databa
 	call_new_object<
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(1),
-		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -179,8 +193,8 @@ void android::widget::CursorTreeAdapter::setGroupCursor(local_ref< android::data
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CursorTreeAdapter::setChildrenCursor(jint a0, local_ref< android::database::Cursor > const &a1)
@@ -189,8 +203,8 @@ void android::widget::CursorTreeAdapter::setChildrenCursor(jint a0, local_ref< a
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getChild(jint a0, jint a1)
@@ -199,8 +213,8 @@ local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getCh
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::widget::CursorTreeAdapter::getChildId(jint a0, jint a1)
@@ -209,8 +223,8 @@ jlong android::widget::CursorTreeAdapter::getChildId(jint a0, jint a1)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(6),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::CursorTreeAdapter::getChildrenCount(jint a0)
@@ -219,8 +233,8 @@ jint android::widget::CursorTreeAdapter::getChildrenCount(jint a0)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(7),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getGroup(jint a0)
@@ -229,8 +243,8 @@ local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getGr
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(8),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0);
 }
 
 jint android::widget::CursorTreeAdapter::getGroupCount()
@@ -239,8 +253,8 @@ jint android::widget::CursorTreeAdapter::getGroupCount()
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(9),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::widget::CursorTreeAdapter::getGroupId(jint a0)
@@ -249,8 +263,8 @@ jlong android::widget::CursorTreeAdapter::getGroupId(jint a0)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(10),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::CursorTreeAdapter::getGroupView(jint a0, jboolean a1, local_ref< android::view::View > const &a2, local_ref< android::view::ViewGroup > const &a3)
@@ -259,8 +273,8 @@ local_ref< android::view::View > android::widget::CursorTreeAdapter::getGroupVie
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(11),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -271,8 +285,8 @@ local_ref< android::view::View > android::widget::CursorTreeAdapter::getChildVie
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(14),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 
@@ -283,8 +297,8 @@ jboolean android::widget::CursorTreeAdapter::isChildSelectable(jint a0, jint a1)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(17),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::CursorTreeAdapter::hasStableIds()
@@ -293,8 +307,8 @@ jboolean android::widget::CursorTreeAdapter::hasStableIds()
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(18),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::CursorTreeAdapter::notifyDataSetChanged()
@@ -303,8 +317,8 @@ void android::widget::CursorTreeAdapter::notifyDataSetChanged()
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(19),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::CursorTreeAdapter::notifyDataSetChanged(jboolean a0)
@@ -313,8 +327,8 @@ void android::widget::CursorTreeAdapter::notifyDataSetChanged(jboolean a0)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(20),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CursorTreeAdapter::notifyDataSetInvalidated()
@@ -323,8 +337,8 @@ void android::widget::CursorTreeAdapter::notifyDataSetInvalidated()
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(21),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::CursorTreeAdapter::onGroupCollapsed(jint a0)
@@ -333,8 +347,8 @@ void android::widget::CursorTreeAdapter::onGroupCollapsed(jint a0)
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(22),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::widget::CursorTreeAdapter::convertToString(local_ref< android::database::Cursor > const &a0)
@@ -343,8 +357,8 @@ local_ref< java::lang::String > android::widget::CursorTreeAdapter::convertToStr
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(23),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::runQueryOnBackgroundThread(local_ref< java::lang::CharSequence > const &a0)
@@ -353,8 +367,8 @@ local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::runQu
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(24),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::Filter > android::widget::CursorTreeAdapter::getFilter()
@@ -363,8 +377,8 @@ local_ref< android::widget::Filter > android::widget::CursorTreeAdapter::getFilt
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(25),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::widget::Filter > >
-	(get_jobject());
+		local_ref< android::widget::Filter >
+	>(get_jobject());
 }
 
 local_ref< android::widget::FilterQueryProvider > android::widget::CursorTreeAdapter::getFilterQueryProvider()
@@ -373,8 +387,8 @@ local_ref< android::widget::FilterQueryProvider > android::widget::CursorTreeAda
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(26),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::widget::FilterQueryProvider > >
-	(get_jobject());
+		local_ref< android::widget::FilterQueryProvider >
+	>(get_jobject());
 }
 
 void android::widget::CursorTreeAdapter::setFilterQueryProvider(local_ref< android::widget::FilterQueryProvider > const &a0)
@@ -383,8 +397,8 @@ void android::widget::CursorTreeAdapter::setFilterQueryProvider(local_ref< andro
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(27),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CursorTreeAdapter::changeCursor(local_ref< android::database::Cursor > const &a0)
@@ -393,8 +407,8 @@ void android::widget::CursorTreeAdapter::changeCursor(local_ref< android::databa
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(28),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getCursor()
@@ -403,8 +417,8 @@ local_ref< android::database::Cursor > android::widget::CursorTreeAdapter::getCu
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(29),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::database::Cursor > >
-	(get_jobject());
+		local_ref< android::database::Cursor >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::widget::CursorTreeAdapter::getChild_1(jint a0, jint a1)
@@ -413,8 +427,8 @@ local_ref< java::lang::Object > android::widget::CursorTreeAdapter::getChild_1(j
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(30),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > android::widget::CursorTreeAdapter::getGroup_1(jint a0)
@@ -423,8 +437,8 @@ local_ref< java::lang::Object > android::widget::CursorTreeAdapter::getGroup_1(j
 		android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(31),
 		android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

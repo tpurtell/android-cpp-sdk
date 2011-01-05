@@ -232,8 +232,8 @@ jint android::hardware::SensorManager::getSensors()
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(1),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::hardware::SensorManager::getSensorList(jint a0)
@@ -242,8 +242,8 @@ local_ref< java::util::List > android::hardware::SensorManager::getSensorList(ji
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(2),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::hardware::Sensor > android::hardware::SensorManager::getDefaultSensor(jint a0)
@@ -252,8 +252,8 @@ local_ref< android::hardware::Sensor > android::hardware::SensorManager::getDefa
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(3),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::hardware::Sensor > >
-	(get_jobject(), a0);
+		local_ref< android::hardware::Sensor >
+	>(get_jobject(), a0);
 }
 
 jboolean android::hardware::SensorManager::registerListener(local_ref< android::hardware::SensorListener > const &a0, jint a1)
@@ -262,8 +262,8 @@ jboolean android::hardware::SensorManager::registerListener(local_ref< android::
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(4),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::hardware::SensorManager::registerListener(local_ref< android::hardware::SensorListener > const &a0, jint a1, jint a2)
@@ -272,8 +272,8 @@ jboolean android::hardware::SensorManager::registerListener(local_ref< android::
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(5),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::hardware::SensorManager::unregisterListener(local_ref< android::hardware::SensorListener > const &a0, jint a1)
@@ -282,8 +282,8 @@ void android::hardware::SensorManager::unregisterListener(local_ref< android::ha
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(6),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::hardware::SensorManager::unregisterListener(local_ref< android::hardware::SensorListener > const &a0)
@@ -292,8 +292,8 @@ void android::hardware::SensorManager::unregisterListener(local_ref< android::ha
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(7),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::SensorManager::unregisterListener(local_ref< android::hardware::SensorEventListener > const &a0, local_ref< android::hardware::Sensor > const &a1)
@@ -302,8 +302,8 @@ void android::hardware::SensorManager::unregisterListener(local_ref< android::ha
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(8),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::hardware::SensorManager::unregisterListener(local_ref< android::hardware::SensorEventListener > const &a0)
@@ -312,8 +312,8 @@ void android::hardware::SensorManager::unregisterListener(local_ref< android::ha
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(9),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::hardware::SensorManager::registerListener(local_ref< android::hardware::SensorEventListener > const &a0, local_ref< android::hardware::Sensor > const &a1, jint a2)
@@ -322,8 +322,8 @@ jboolean android::hardware::SensorManager::registerListener(local_ref< android::
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(10),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::hardware::SensorManager::registerListener(local_ref< android::hardware::SensorEventListener > const &a0, local_ref< android::hardware::Sensor > const &a1, jint a2, local_ref< android::os::Handler > const &a3)
@@ -332,8 +332,8 @@ jboolean android::hardware::SensorManager::registerListener(local_ref< android::
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(11),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::hardware::SensorManager::getRotationMatrix(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1, local_ref< array<jfloat,1> > const &a2, local_ref< array<jfloat,1> > const &a3)
@@ -342,8 +342,8 @@ jboolean android::hardware::SensorManager::getRotationMatrix(local_ref< array<jf
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(12),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0, a1, a2, a3);
+		jboolean
+	>(a0, a1, a2, a3);
 }
 
 jfloat android::hardware::SensorManager::getInclination(local_ref< array<jfloat,1> > const &a0)
@@ -352,8 +352,8 @@ jfloat android::hardware::SensorManager::getInclination(local_ref< array<jfloat,
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(13),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(13), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jboolean android::hardware::SensorManager::remapCoordinateSystem(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3)
@@ -362,8 +362,8 @@ jboolean android::hardware::SensorManager::remapCoordinateSystem(local_ref< arra
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(14),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0, a1, a2, a3);
+		jboolean
+	>(a0, a1, a2, a3);
 }
 
 local_ref< array<jfloat,1> > android::hardware::SensorManager::getOrientation(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -372,8 +372,8 @@ local_ref< array<jfloat,1> > android::hardware::SensorManager::getOrientation(lo
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(15),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array<jfloat,1> > >
-	(a0, a1);
+		local_ref< array<jfloat,1> >
+	>(a0, a1);
 }
 
 jfloat android::hardware::SensorManager::getAltitude(jfloat a0, jfloat a1)
@@ -382,8 +382,8 @@ jfloat android::hardware::SensorManager::getAltitude(jfloat a0, jfloat a1)
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(16),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(16), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 void android::hardware::SensorManager::getAngleChange(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1, local_ref< array<jfloat,1> > const &a2)
@@ -392,8 +392,8 @@ void android::hardware::SensorManager::getAngleChange(local_ref< array<jfloat,1>
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(17),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::hardware::SensorManager::getRotationMatrixFromVector(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -402,8 +402,8 @@ void android::hardware::SensorManager::getRotationMatrixFromVector(local_ref< ar
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(18),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::hardware::SensorManager::getQuaternionFromVector(local_ref< array<jfloat,1> > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -412,8 +412,8 @@ void android::hardware::SensorManager::getQuaternionFromVector(local_ref< array<
 		android::hardware::SensorManager::J2CPP_CLASS_NAME,
 		android::hardware::SensorManager::J2CPP_METHOD_NAME(19),
 		android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

@@ -91,8 +91,8 @@ android::os::RemoteCallbackList::RemoteCallbackList()
 	call_new_object<
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(0),
-		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +104,8 @@ jboolean android::os::RemoteCallbackList::register_(local_ref< android::os::IInt
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(1),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::RemoteCallbackList::register_(local_ref< android::os::IInterface > const &a0, local_ref< java::lang::Object > const &a1)
@@ -114,8 +114,8 @@ jboolean android::os::RemoteCallbackList::register_(local_ref< android::os::IInt
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(2),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::RemoteCallbackList::unregister(local_ref< android::os::IInterface > const &a0)
@@ -124,8 +124,8 @@ jboolean android::os::RemoteCallbackList::unregister(local_ref< android::os::IIn
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(3),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::os::RemoteCallbackList::kill()
@@ -134,8 +134,8 @@ void android::os::RemoteCallbackList::kill()
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(4),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::RemoteCallbackList::onCallbackDied(local_ref< android::os::IInterface > const &a0)
@@ -144,8 +144,8 @@ void android::os::RemoteCallbackList::onCallbackDied(local_ref< android::os::IIn
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(5),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::RemoteCallbackList::onCallbackDied(local_ref< android::os::IInterface > const &a0, local_ref< java::lang::Object > const &a1)
@@ -154,8 +154,8 @@ void android::os::RemoteCallbackList::onCallbackDied(local_ref< android::os::IIn
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(6),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::os::RemoteCallbackList::beginBroadcast()
@@ -164,8 +164,8 @@ jint android::os::RemoteCallbackList::beginBroadcast()
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(7),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::os::IInterface > android::os::RemoteCallbackList::getBroadcastItem(jint a0)
@@ -174,8 +174,8 @@ local_ref< android::os::IInterface > android::os::RemoteCallbackList::getBroadca
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(8),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::IInterface > >
-	(get_jobject(), a0);
+		local_ref< android::os::IInterface >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::os::RemoteCallbackList::getBroadcastCookie(jint a0)
@@ -184,8 +184,8 @@ local_ref< java::lang::Object > android::os::RemoteCallbackList::getBroadcastCoo
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(9),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void android::os::RemoteCallbackList::finishBroadcast()
@@ -194,8 +194,8 @@ void android::os::RemoteCallbackList::finishBroadcast()
 		android::os::RemoteCallbackList::J2CPP_CLASS_NAME,
 		android::os::RemoteCallbackList::J2CPP_METHOD_NAME(10),
 		android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

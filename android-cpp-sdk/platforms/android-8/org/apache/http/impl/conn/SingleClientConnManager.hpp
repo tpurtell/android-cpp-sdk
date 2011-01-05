@@ -11,14 +11,19 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_SINGLECLIENTCONNMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractClientConnAdapter; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractPoolEntry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractPooledConnAdapter; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionRequest; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
@@ -27,11 +32,16 @@ namespace j2cpp { namespace java { namespace util { namespace concurrent { class
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
 #include <org/apache/http/conn/ClientConnectionManager.hpp>
 #include <org/apache/http/conn/ClientConnectionRequest.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/conn/scheme/SchemeRegistry.hpp>
+#include <org/apache/http/impl/conn/AbstractClientConnAdapter.hpp>
 #include <org/apache/http/impl/conn/AbstractPoolEntry.hpp>
 #include <org/apache/http/impl/conn/AbstractPooledConnAdapter.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -60,7 +70,14 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 			{
 			}
 
+			operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const;
 			operator local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>() const;
+			operator local_ref<org::apache::http::HttpConnection>() const;
+			operator local_ref<org::apache::http::HttpClientConnection>() const;
+			operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
+			operator local_ref<org::apache::http::conn::ManagedClientConnection>() const;
+			operator local_ref<org::apache::http::HttpInetConnection>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -85,6 +102,7 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 			}
 
 			operator local_ref<org::apache::http::impl::conn::AbstractPoolEntry>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -129,8 +147,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::ClientConnectionManager>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SingleClientConnManager(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const&);
@@ -165,9 +183,44 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const
+{
+	return local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>(get_jobject());
+}
+
 org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>() const
 {
 	return local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::conn::ManagedClientConnection>() const
+{
+	return local_ref<org::apache::http::conn::ManagedClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager_::ConnAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -183,6 +236,11 @@ org::apache::http::impl::conn::SingleClientConnManager_::PoolEntry::operator loc
 	return local_ref<org::apache::http::impl::conn::AbstractPoolEntry>(get_jobject());
 }
 
+org::apache::http::impl::conn::SingleClientConnManager_::PoolEntry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 
 
@@ -196,14 +254,14 @@ J2CPP_DEFINE_FIELD(org::apache::http::impl::conn::SingleClientConnManager_::Pool
 
 
 
-org::apache::http::impl::conn::SingleClientConnManager::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::conn::SingleClientConnManager::operator local_ref<org::apache::http::conn::ClientConnectionManager>() const
 {
 	return local_ref<org::apache::http::conn::ClientConnectionManager>(get_jobject());
+}
+
+org::apache::http::impl::conn::SingleClientConnManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -212,8 +270,8 @@ org::apache::http::impl::conn::SingleClientConnManager::SingleClientConnManager(
 	call_new_object<
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -226,8 +284,8 @@ local_ref< org::apache::http::conn::scheme::SchemeRegistry > org::apache::http::
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::conn::scheme::SchemeRegistry > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::scheme::SchemeRegistry >
+	>(get_jobject());
 }
 
 
@@ -238,8 +296,8 @@ local_ref< org::apache::http::conn::ClientConnectionRequest > org::apache::http:
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::conn::ClientConnectionRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ClientConnectionRequest >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::conn::ManagedClientConnection > org::apache::http::impl::conn::SingleClientConnManager::getConnection(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< java::lang::Object > const &a1)
@@ -248,8 +306,8 @@ local_ref< org::apache::http::conn::ManagedClientConnection > org::apache::http:
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::conn::ManagedClientConnection > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ManagedClientConnection >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::SingleClientConnManager::releaseConnection(local_ref< org::apache::http::conn::ManagedClientConnection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -258,8 +316,8 @@ void org::apache::http::impl::conn::SingleClientConnManager::releaseConnection(l
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::conn::SingleClientConnManager::closeExpiredConnections()
@@ -268,8 +326,8 @@ void org::apache::http::impl::conn::SingleClientConnManager::closeExpiredConnect
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::SingleClientConnManager::closeIdleConnections(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -278,8 +336,8 @@ void org::apache::http::impl::conn::SingleClientConnManager::closeIdleConnection
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::SingleClientConnManager::shutdown()
@@ -288,8 +346,8 @@ void org::apache::http::impl::conn::SingleClientConnManager::shutdown()
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::SingleClientConnManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

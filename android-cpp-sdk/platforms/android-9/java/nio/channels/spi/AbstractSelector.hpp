@@ -11,10 +11,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Selector; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class SelectorProvider; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/channels/Selector.hpp>
 #include <java/nio/channels/spi/SelectorProvider.hpp>
 
@@ -47,6 +49,7 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::nio::channels::Selector>() const;
 
 
@@ -73,6 +76,11 @@ namespace j2cpp {
 
 
 
+java::nio::channels::spi::AbstractSelector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::nio::channels::spi::AbstractSelector::operator local_ref<java::nio::channels::Selector>() const
 {
 	return local_ref<java::nio::channels::Selector>(get_jobject());
@@ -85,8 +93,8 @@ void java::nio::channels::spi::AbstractSelector::close()
 		java::nio::channels::spi::AbstractSelector::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_NAME(1),
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -96,8 +104,8 @@ jboolean java::nio::channels::spi::AbstractSelector::isOpen()
 		java::nio::channels::spi::AbstractSelector::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_NAME(3),
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi::AbstractSelector::provider()
@@ -106,8 +114,8 @@ local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi
 		java::nio::channels::spi::AbstractSelector::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_NAME(4),
 		java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::spi::SelectorProvider > >
-	(get_jobject());
+		local_ref< java::nio::channels::spi::SelectorProvider >
+	>(get_jobject());
 }
 
 

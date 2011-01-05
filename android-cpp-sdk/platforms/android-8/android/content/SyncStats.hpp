@@ -68,8 +68,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SyncStats();
@@ -107,14 +107,14 @@ namespace j2cpp {
 
 
 
-android::content::SyncStats::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::SyncStats::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::SyncStats::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -123,8 +123,8 @@ android::content::SyncStats::SyncStats()
 	call_new_object<
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(0),
-		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , numAuthExceptions(get_jobject())
 , numIoExceptions(get_jobject())
@@ -145,8 +145,8 @@ android::content::SyncStats::SyncStats(local_ref< android::os::Parcel > const &a
 	call_new_object<
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(1),
-		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , numAuthExceptions(get_jobject())
 , numIoExceptions(get_jobject())
@@ -167,8 +167,8 @@ local_ref< java::lang::String > android::content::SyncStats::toString()
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(2),
 		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::content::SyncStats::clear()
@@ -177,8 +177,8 @@ void android::content::SyncStats::clear()
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(3),
 		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::content::SyncStats::describeContents()
@@ -187,8 +187,8 @@ jint android::content::SyncStats::describeContents()
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(4),
 		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::SyncStats::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -197,8 +197,8 @@ void android::content::SyncStats::writeToParcel(local_ref< android::os::Parcel >
 		android::content::SyncStats::J2CPP_CLASS_NAME,
 		android::content::SyncStats::J2CPP_METHOD_NAME(5),
 		android::content::SyncStats::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

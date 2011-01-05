@@ -117,8 +117,8 @@ junit::framework::TestResult::TestResult()
 	call_new_object<
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(0),
-		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -130,8 +130,8 @@ void junit::framework::TestResult::addError(local_ref< junit::framework::Test > 
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(1),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::framework::TestResult::addFailure(local_ref< junit::framework::Test > const &a0, local_ref< junit::framework::AssertionFailedError > const &a1)
@@ -140,8 +140,8 @@ void junit::framework::TestResult::addFailure(local_ref< junit::framework::Test 
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(2),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::framework::TestResult::addListener(local_ref< junit::framework::TestListener > const &a0)
@@ -150,8 +150,8 @@ void junit::framework::TestResult::addListener(local_ref< junit::framework::Test
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(3),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::framework::TestResult::removeListener(local_ref< junit::framework::TestListener > const &a0)
@@ -160,8 +160,8 @@ void junit::framework::TestResult::removeListener(local_ref< junit::framework::T
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(4),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::framework::TestResult::endTest(local_ref< junit::framework::Test > const &a0)
@@ -170,8 +170,8 @@ void junit::framework::TestResult::endTest(local_ref< junit::framework::Test > c
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(5),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint junit::framework::TestResult::errorCount()
@@ -180,8 +180,8 @@ jint junit::framework::TestResult::errorCount()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(6),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > junit::framework::TestResult::errors()
@@ -190,8 +190,8 @@ local_ref< java::util::Enumeration > junit::framework::TestResult::errors()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(7),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jint junit::framework::TestResult::failureCount()
@@ -200,8 +200,8 @@ jint junit::framework::TestResult::failureCount()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(8),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > junit::framework::TestResult::failures()
@@ -210,8 +210,8 @@ local_ref< java::util::Enumeration > junit::framework::TestResult::failures()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(9),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 
@@ -221,8 +221,8 @@ jint junit::framework::TestResult::runCount()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(11),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void junit::framework::TestResult::runProtected(local_ref< junit::framework::Test > const &a0, local_ref< junit::framework::Protectable > const &a1)
@@ -231,8 +231,8 @@ void junit::framework::TestResult::runProtected(local_ref< junit::framework::Tes
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(12),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean junit::framework::TestResult::shouldStop()
@@ -241,8 +241,8 @@ jboolean junit::framework::TestResult::shouldStop()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(13),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void junit::framework::TestResult::startTest(local_ref< junit::framework::Test > const &a0)
@@ -251,8 +251,8 @@ void junit::framework::TestResult::startTest(local_ref< junit::framework::Test >
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(14),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::framework::TestResult::stop()
@@ -261,8 +261,8 @@ void junit::framework::TestResult::stop()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(15),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean junit::framework::TestResult::wasSuccessful()
@@ -271,8 +271,8 @@ jboolean junit::framework::TestResult::wasSuccessful()
 		junit::framework::TestResult::J2CPP_CLASS_NAME,
 		junit::framework::TestResult::J2CPP_METHOD_NAME(16),
 		junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

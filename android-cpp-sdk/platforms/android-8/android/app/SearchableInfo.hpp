@@ -73,8 +73,8 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getSuggestAuthority();
@@ -123,14 +123,14 @@ namespace j2cpp {
 
 
 
-android::app::SearchableInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::SearchableInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::SearchableInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -140,8 +140,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestAuthorit
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(1),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::SearchableInfo::getSuggestPackage()
@@ -150,8 +150,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestPackage(
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(2),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::content::ComponentName > android::app::SearchableInfo::getSearchActivity()
@@ -160,8 +160,8 @@ local_ref< android::content::ComponentName > android::app::SearchableInfo::getSe
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(3),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject());
+		local_ref< android::content::ComponentName >
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::shouldRewriteQueryFromData()
@@ -170,8 +170,8 @@ jboolean android::app::SearchableInfo::shouldRewriteQueryFromData()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(4),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::shouldRewriteQueryFromText()
@@ -180,8 +180,8 @@ jboolean android::app::SearchableInfo::shouldRewriteQueryFromText()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(5),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getSettingsDescriptionId()
@@ -190,8 +190,8 @@ jint android::app::SearchableInfo::getSettingsDescriptionId()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(6),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::SearchableInfo::getSuggestPath()
@@ -200,8 +200,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestPath()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(7),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::SearchableInfo::getSuggestSelection()
@@ -210,8 +210,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestSelectio
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(8),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::SearchableInfo::getSuggestIntentAction()
@@ -220,8 +220,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestIntentAc
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(9),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::SearchableInfo::getSuggestIntentData()
@@ -230,8 +230,8 @@ local_ref< java::lang::String > android::app::SearchableInfo::getSuggestIntentDa
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(10),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getSuggestThreshold()
@@ -240,8 +240,8 @@ jint android::app::SearchableInfo::getSuggestThreshold()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(11),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getHintId()
@@ -250,8 +250,8 @@ jint android::app::SearchableInfo::getHintId()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(12),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::getVoiceSearchEnabled()
@@ -260,8 +260,8 @@ jboolean android::app::SearchableInfo::getVoiceSearchEnabled()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(13),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::getVoiceSearchLaunchWebSearch()
@@ -270,8 +270,8 @@ jboolean android::app::SearchableInfo::getVoiceSearchLaunchWebSearch()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(14),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::getVoiceSearchLaunchRecognizer()
@@ -280,8 +280,8 @@ jboolean android::app::SearchableInfo::getVoiceSearchLaunchRecognizer()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(15),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getVoiceLanguageModeId()
@@ -290,8 +290,8 @@ jint android::app::SearchableInfo::getVoiceLanguageModeId()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(16),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getVoicePromptTextId()
@@ -300,8 +300,8 @@ jint android::app::SearchableInfo::getVoicePromptTextId()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(17),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getVoiceLanguageId()
@@ -310,8 +310,8 @@ jint android::app::SearchableInfo::getVoiceLanguageId()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(18),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getVoiceMaxResults()
@@ -320,8 +320,8 @@ jint android::app::SearchableInfo::getVoiceMaxResults()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(19),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getInputType()
@@ -330,8 +330,8 @@ jint android::app::SearchableInfo::getInputType()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(20),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::getImeOptions()
@@ -340,8 +340,8 @@ jint android::app::SearchableInfo::getImeOptions()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(21),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::shouldIncludeInGlobalSearch()
@@ -350,8 +350,8 @@ jboolean android::app::SearchableInfo::shouldIncludeInGlobalSearch()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(22),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::queryAfterZeroResults()
@@ -360,8 +360,8 @@ jboolean android::app::SearchableInfo::queryAfterZeroResults()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(23),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::SearchableInfo::autoUrlDetect()
@@ -370,8 +370,8 @@ jboolean android::app::SearchableInfo::autoUrlDetect()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(24),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::app::SearchableInfo::describeContents()
@@ -380,8 +380,8 @@ jint android::app::SearchableInfo::describeContents()
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(25),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::SearchableInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -390,8 +390,8 @@ void android::app::SearchableInfo::writeToParcel(local_ref< android::os::Parcel 
 		android::app::SearchableInfo::J2CPP_CLASS_NAME,
 		android::app::SearchableInfo::J2CPP_METHOD_NAME(26),
 		android::app::SearchableInfo::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,9 +11,9 @@
 #define J2CPP_ORG_W3C_DOM_NOTATION_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -82,8 +82,8 @@ local_ref< java::lang::String > org::w3c::dom::Notation::getPublicId()
 		org::w3c::dom::Notation::J2CPP_CLASS_NAME,
 		org::w3c::dom::Notation::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::Notation::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Notation::getSystemId()
@@ -92,8 +92,8 @@ local_ref< java::lang::String > org::w3c::dom::Notation::getSystemId()
 		org::w3c::dom::Notation::J2CPP_CLASS_NAME,
 		org::w3c::dom::Notation::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::Notation::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

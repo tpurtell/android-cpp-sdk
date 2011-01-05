@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_PARAMS_AUTHPARAMS_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -80,8 +80,8 @@ local_ref< java::lang::String > org::apache::http::auth::params::AuthParams::get
 		org::apache::http::auth::params::AuthParams::J2CPP_CLASS_NAME,
 		org::apache::http::auth::params::AuthParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::auth::params::AuthParams::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void org::apache::http::auth::params::AuthParams::setCredentialCharset(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< java::lang::String > const &a1)
@@ -90,8 +90,8 @@ void org::apache::http::auth::params::AuthParams::setCredentialCharset(local_ref
 		org::apache::http::auth::params::AuthParams::J2CPP_CLASS_NAME,
 		org::apache::http::auth::params::AuthParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::auth::params::AuthParams::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

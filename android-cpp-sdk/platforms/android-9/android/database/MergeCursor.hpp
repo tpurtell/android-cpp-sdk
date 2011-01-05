@@ -12,16 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
+namespace j2cpp { namespace android { namespace database { class CrossProcessCursor; } } }
 namespace j2cpp { namespace android { namespace database { class ContentObserver; } } }
 
 
 #include <android/database/AbstractCursor.hpp>
 #include <android/database/ContentObserver.hpp>
+#include <android/database/CrossProcessCursor.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/database/DataSetObserver.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -62,7 +66,10 @@ namespace android { namespace database {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::database::AbstractCursor>() const;
+		operator local_ref<android::database::Cursor>() const;
+		operator local_ref<android::database::CrossProcessCursor>() const;
 
 
 		MergeCursor(local_ref< array< local_ref< android::database::Cursor >, 1> > const&);
@@ -102,9 +109,24 @@ namespace j2cpp {
 
 
 
+android::database::MergeCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::database::MergeCursor::operator local_ref<android::database::AbstractCursor>() const
 {
 	return local_ref<android::database::AbstractCursor>(get_jobject());
+}
+
+android::database::MergeCursor::operator local_ref<android::database::Cursor>() const
+{
+	return local_ref<android::database::Cursor>(get_jobject());
+}
+
+android::database::MergeCursor::operator local_ref<android::database::CrossProcessCursor>() const
+{
+	return local_ref<android::database::CrossProcessCursor>(get_jobject());
 }
 
 
@@ -113,8 +135,8 @@ android::database::MergeCursor::MergeCursor(local_ref< array< local_ref< android
 	call_new_object<
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(0),
-		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -126,8 +148,8 @@ jint android::database::MergeCursor::getCount()
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(1),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::database::MergeCursor::onMove(jint a0, jint a1)
@@ -136,8 +158,8 @@ jboolean android::database::MergeCursor::onMove(jint a0, jint a1)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(2),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::database::MergeCursor::getString(jint a0)
@@ -146,8 +168,8 @@ local_ref< java::lang::String > android::database::MergeCursor::getString(jint a
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(3),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jshort android::database::MergeCursor::getShort(jint a0)
@@ -156,8 +178,8 @@ jshort android::database::MergeCursor::getShort(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(4),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(4), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint android::database::MergeCursor::getInt(jint a0)
@@ -166,8 +188,8 @@ jint android::database::MergeCursor::getInt(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(5),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong android::database::MergeCursor::getLong(jint a0)
@@ -176,8 +198,8 @@ jlong android::database::MergeCursor::getLong(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(6),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jfloat android::database::MergeCursor::getFloat(jint a0)
@@ -186,8 +208,8 @@ jfloat android::database::MergeCursor::getFloat(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(7),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jdouble android::database::MergeCursor::getDouble(jint a0)
@@ -196,8 +218,8 @@ jdouble android::database::MergeCursor::getDouble(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(8),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(8), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::MergeCursor::isNull(jint a0)
@@ -206,8 +228,8 @@ jboolean android::database::MergeCursor::isNull(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(9),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > android::database::MergeCursor::getBlob(jint a0)
@@ -216,8 +238,8 @@ local_ref< array<jbyte,1> > android::database::MergeCursor::getBlob(jint a0)
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(10),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::database::MergeCursor::getColumnNames()
@@ -226,8 +248,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::database::Merge
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(11),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void android::database::MergeCursor::deactivate()
@@ -236,8 +258,8 @@ void android::database::MergeCursor::deactivate()
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(12),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::MergeCursor::close()
@@ -246,8 +268,8 @@ void android::database::MergeCursor::close()
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(13),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::MergeCursor::registerContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -256,8 +278,8 @@ void android::database::MergeCursor::registerContentObserver(local_ref< android:
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(14),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::MergeCursor::unregisterContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -266,8 +288,8 @@ void android::database::MergeCursor::unregisterContentObserver(local_ref< androi
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(15),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::MergeCursor::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -276,8 +298,8 @@ void android::database::MergeCursor::registerDataSetObserver(local_ref< android:
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(16),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::MergeCursor::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -286,8 +308,8 @@ void android::database::MergeCursor::unregisterDataSetObserver(local_ref< androi
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(17),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::MergeCursor::requery()
@@ -296,8 +318,8 @@ jboolean android::database::MergeCursor::requery()
 		android::database::MergeCursor::J2CPP_CLASS_NAME,
 		android::database::MergeCursor::J2CPP_METHOD_NAME(18),
 		android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

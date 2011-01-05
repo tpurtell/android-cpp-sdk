@@ -87,8 +87,8 @@ android::net::LocalServerSocket::LocalServerSocket(local_ref< java::lang::String
 	call_new_object<
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(0),
-		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -100,8 +100,8 @@ android::net::LocalServerSocket::LocalServerSocket(local_ref< java::io::FileDesc
 	call_new_object<
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(1),
-		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -113,8 +113,8 @@ local_ref< android::net::LocalSocketAddress > android::net::LocalServerSocket::g
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(2),
 		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::LocalSocketAddress > >
-	(get_jobject());
+		local_ref< android::net::LocalSocketAddress >
+	>(get_jobject());
 }
 
 local_ref< android::net::LocalSocket > android::net::LocalServerSocket::accept()
@@ -123,8 +123,8 @@ local_ref< android::net::LocalSocket > android::net::LocalServerSocket::accept()
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(3),
 		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::LocalSocket > >
-	(get_jobject());
+		local_ref< android::net::LocalSocket >
+	>(get_jobject());
 }
 
 local_ref< java::io::FileDescriptor > android::net::LocalServerSocket::getFileDescriptor()
@@ -133,8 +133,8 @@ local_ref< java::io::FileDescriptor > android::net::LocalServerSocket::getFileDe
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(4),
 		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::FileDescriptor > >
-	(get_jobject());
+		local_ref< java::io::FileDescriptor >
+	>(get_jobject());
 }
 
 void android::net::LocalServerSocket::close()
@@ -143,8 +143,8 @@ void android::net::LocalServerSocket::close()
 		android::net::LocalServerSocket::J2CPP_CLASS_NAME,
 		android::net::LocalServerSocket::J2CPP_METHOD_NAME(5),
 		android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

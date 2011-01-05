@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_REQUESTDIRECTOR_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -79,8 +79,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::client::RequestD
 		org::apache::http::client::RequestDirector::J2CPP_CLASS_NAME,
 		org::apache::http::client::RequestDirector::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::RequestDirector::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

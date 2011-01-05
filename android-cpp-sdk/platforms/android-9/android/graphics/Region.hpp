@@ -12,8 +12,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
@@ -27,6 +29,8 @@ namespace j2cpp { namespace android { namespace graphics { namespace Region_ { c
 #include <android/graphics/Region.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -64,7 +68,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Region_::Op >, 1> > values();
@@ -189,9 +196,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Region_::Op::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Region_::Op::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Region_::Op::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Region_::Op::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Region_::Op >, 1> > android::graphics::Region_::Op::values()
@@ -200,8 +222,8 @@ local_ref< array< local_ref< android::graphics::Region_::Op >, 1> > android::gra
 		android::graphics::Region_::Op::J2CPP_CLASS_NAME,
 		android::graphics::Region_::Op::J2CPP_METHOD_NAME(0),
 		android::graphics::Region_::Op::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Region_::Op >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Region_::Op >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Region_::Op > android::graphics::Region_::Op::valueOf(local_ref< java::lang::String > const &a0)
@@ -210,8 +232,8 @@ local_ref< android::graphics::Region_::Op > android::graphics::Region_::Op::valu
 		android::graphics::Region_::Op::J2CPP_CLASS_NAME,
 		android::graphics::Region_::Op::J2CPP_METHOD_NAME(1),
 		android::graphics::Region_::Op::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Region_::Op > >
-	(a0);
+		local_ref< android::graphics::Region_::Op >
+	>(a0);
 }
 
 
@@ -291,8 +313,8 @@ android::graphics::Region::Region()
 	call_new_object<
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(0),
-		android::graphics::Region::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Region::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -304,8 +326,8 @@ android::graphics::Region::Region(local_ref< android::graphics::Region > const &
 	call_new_object<
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(1),
-		android::graphics::Region::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::Region::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -317,8 +339,8 @@ android::graphics::Region::Region(local_ref< android::graphics::Rect > const &a0
 	call_new_object<
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(2),
-		android::graphics::Region::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::Region::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -330,8 +352,8 @@ android::graphics::Region::Region(jint a0, jint a1, jint a2, jint a3)
 	call_new_object<
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(3),
-		android::graphics::Region::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3)
+		android::graphics::Region::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -343,8 +365,8 @@ void android::graphics::Region::setEmpty()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(4),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::graphics::Region::set(local_ref< android::graphics::Region > const &a0)
@@ -353,8 +375,8 @@ jboolean android::graphics::Region::set(local_ref< android::graphics::Region > c
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(5),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::set(local_ref< android::graphics::Rect > const &a0)
@@ -363,8 +385,8 @@ jboolean android::graphics::Region::set(local_ref< android::graphics::Rect > con
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(6),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::set(jint a0, jint a1, jint a2, jint a3)
@@ -373,8 +395,8 @@ jboolean android::graphics::Region::set(jint a0, jint a1, jint a2, jint a3)
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(7),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Region::setPath(local_ref< android::graphics::Path > const &a0, local_ref< android::graphics::Region > const &a1)
@@ -383,8 +405,8 @@ jboolean android::graphics::Region::setPath(local_ref< android::graphics::Path >
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(8),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Region::isEmpty()
@@ -393,8 +415,8 @@ jboolean android::graphics::Region::isEmpty()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(9),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::graphics::Region::isRect()
@@ -403,8 +425,8 @@ jboolean android::graphics::Region::isRect()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(10),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::graphics::Region::isComplex()
@@ -413,8 +435,8 @@ jboolean android::graphics::Region::isComplex()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(11),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Rect > android::graphics::Region::getBounds()
@@ -423,8 +445,8 @@ local_ref< android::graphics::Rect > android::graphics::Region::getBounds()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(12),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::graphics::Rect > >
-	(get_jobject());
+		local_ref< android::graphics::Rect >
+	>(get_jobject());
 }
 
 jboolean android::graphics::Region::getBounds(local_ref< android::graphics::Rect > const &a0)
@@ -433,8 +455,8 @@ jboolean android::graphics::Region::getBounds(local_ref< android::graphics::Rect
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(13),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Path > android::graphics::Region::getBoundaryPath()
@@ -443,8 +465,8 @@ local_ref< android::graphics::Path > android::graphics::Region::getBoundaryPath(
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(14),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::graphics::Path > >
-	(get_jobject());
+		local_ref< android::graphics::Path >
+	>(get_jobject());
 }
 
 jboolean android::graphics::Region::getBoundaryPath(local_ref< android::graphics::Path > const &a0)
@@ -453,8 +475,8 @@ jboolean android::graphics::Region::getBoundaryPath(local_ref< android::graphics
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(15),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::contains(jint a0, jint a1)
@@ -463,8 +485,8 @@ jboolean android::graphics::Region::contains(jint a0, jint a1)
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(16),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Region::quickContains(local_ref< android::graphics::Rect > const &a0)
@@ -473,8 +495,8 @@ jboolean android::graphics::Region::quickContains(local_ref< android::graphics::
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(17),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::quickContains(jint a0, jint a1, jint a2, jint a3)
@@ -483,8 +505,8 @@ jboolean android::graphics::Region::quickContains(jint a0, jint a1, jint a2, jin
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(18),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Region::quickReject(local_ref< android::graphics::Rect > const &a0)
@@ -493,8 +515,8 @@ jboolean android::graphics::Region::quickReject(local_ref< android::graphics::Re
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(19),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::quickReject(jint a0, jint a1, jint a2, jint a3)
@@ -503,8 +525,8 @@ jboolean android::graphics::Region::quickReject(jint a0, jint a1, jint a2, jint 
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(20),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Region::quickReject(local_ref< android::graphics::Region > const &a0)
@@ -513,8 +535,8 @@ jboolean android::graphics::Region::quickReject(local_ref< android::graphics::Re
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(21),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Region::translate(jint a0, jint a1)
@@ -523,8 +545,8 @@ void android::graphics::Region::translate(jint a0, jint a1)
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(22),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Region::translate(jint a0, jint a1, local_ref< android::graphics::Region > const &a2)
@@ -533,8 +555,8 @@ void android::graphics::Region::translate(jint a0, jint a1, local_ref< android::
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(23),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Region::union_(local_ref< android::graphics::Rect > const &a0)
@@ -543,8 +565,8 @@ jboolean android::graphics::Region::union_(local_ref< android::graphics::Rect > 
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(24),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Region::op(local_ref< android::graphics::Rect > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -553,8 +575,8 @@ jboolean android::graphics::Region::op(local_ref< android::graphics::Rect > cons
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(25),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Region::op(jint a0, jint a1, jint a2, jint a3, local_ref< android::graphics::Region_::Op > const &a4)
@@ -563,8 +585,8 @@ jboolean android::graphics::Region::op(jint a0, jint a1, jint a2, jint a3, local
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(26),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::graphics::Region::op(local_ref< android::graphics::Region > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -573,8 +595,8 @@ jboolean android::graphics::Region::op(local_ref< android::graphics::Region > co
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(27),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Region::op(local_ref< android::graphics::Rect > const &a0, local_ref< android::graphics::Region > const &a1, local_ref< android::graphics::Region_::Op > const &a2)
@@ -583,8 +605,8 @@ jboolean android::graphics::Region::op(local_ref< android::graphics::Rect > cons
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(28),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::Region::op(local_ref< android::graphics::Region > const &a0, local_ref< android::graphics::Region > const &a1, local_ref< android::graphics::Region_::Op > const &a2)
@@ -593,8 +615,8 @@ jboolean android::graphics::Region::op(local_ref< android::graphics::Region > co
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(29),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::Region::describeContents()
@@ -603,8 +625,8 @@ jint android::graphics::Region::describeContents()
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(30),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Region::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -613,8 +635,8 @@ void android::graphics::Region::writeToParcel(local_ref< android::os::Parcel > c
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(31),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Region::equals(local_ref< java::lang::Object > const &a0)
@@ -623,8 +645,8 @@ jboolean android::graphics::Region::equals(local_ref< java::lang::Object > const
 		android::graphics::Region::J2CPP_CLASS_NAME,
 		android::graphics::Region::J2CPP_METHOD_NAME(32),
 		android::graphics::Region::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

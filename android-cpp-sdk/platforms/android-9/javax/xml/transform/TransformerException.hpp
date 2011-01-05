@@ -11,17 +11,21 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class SourceLocator; } } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
-namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class SourceLocator; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/PrintStream.hpp>
 #include <java/io/PrintWriter.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <javax/xml/transform/SourceLocator.hpp>
@@ -61,6 +65,9 @@ namespace javax { namespace xml { namespace transform {
 		}
 
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		TransformerException(local_ref< java::lang::String > const&);
@@ -102,14 +109,29 @@ javax::xml::transform::TransformerException::operator local_ref<java::lang::Exce
 	return local_ref<java::lang::Exception>(get_jobject());
 }
 
+javax::xml::transform::TransformerException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+javax::xml::transform::TransformerException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+javax::xml::transform::TransformerException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 javax::xml::transform::TransformerException::TransformerException(local_ref< java::lang::String > const &a0)
 : object<javax::xml::transform::TransformerException>(
 	call_new_object<
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -121,8 +143,8 @@ javax::xml::transform::TransformerException::TransformerException(local_ref< jav
 	call_new_object<
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -134,8 +156,8 @@ javax::xml::transform::TransformerException::TransformerException(local_ref< jav
 	call_new_object<
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -147,8 +169,8 @@ javax::xml::transform::TransformerException::TransformerException(local_ref< jav
 	call_new_object<
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(3),
-		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -160,8 +182,8 @@ javax::xml::transform::TransformerException::TransformerException(local_ref< jav
 	call_new_object<
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(4),
-		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1, a2)
+		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1, a2)
 )
 {
 }
@@ -173,8 +195,8 @@ local_ref< javax::xml::transform::SourceLocator > javax::xml::transform::Transfo
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::xml::transform::SourceLocator > >
-	(get_jobject());
+		local_ref< javax::xml::transform::SourceLocator >
+	>(get_jobject());
 }
 
 void javax::xml::transform::TransformerException::setLocator(local_ref< javax::xml::transform::SourceLocator > const &a0)
@@ -183,8 +205,8 @@ void javax::xml::transform::TransformerException::setLocator(local_ref< javax::x
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::getException()
@@ -193,8 +215,8 @@ local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(7),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::getCause()
@@ -203,8 +225,8 @@ local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(8),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::initCause(local_ref< java::lang::Throwable > const &a0)
@@ -213,8 +235,8 @@ local_ref< java::lang::Throwable > javax::xml::transform::TransformerException::
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(9),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Throwable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::TransformerException::getMessageAndLocation()
@@ -223,8 +245,8 @@ local_ref< java::lang::String > javax::xml::transform::TransformerException::get
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(10),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::transform::TransformerException::getLocationAsString()
@@ -233,8 +255,8 @@ local_ref< java::lang::String > javax::xml::transform::TransformerException::get
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(11),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void javax::xml::transform::TransformerException::printStackTrace()
@@ -243,8 +265,8 @@ void javax::xml::transform::TransformerException::printStackTrace()
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(12),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::transform::TransformerException::printStackTrace(local_ref< java::io::PrintStream > const &a0)
@@ -253,8 +275,8 @@ void javax::xml::transform::TransformerException::printStackTrace(local_ref< jav
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(13),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::transform::TransformerException::printStackTrace(local_ref< java::io::PrintWriter > const &a0)
@@ -263,8 +285,8 @@ void javax::xml::transform::TransformerException::printStackTrace(local_ref< jav
 		javax::xml::transform::TransformerException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerException::J2CPP_METHOD_NAME(14),
 		javax::xml::transform::TransformerException::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

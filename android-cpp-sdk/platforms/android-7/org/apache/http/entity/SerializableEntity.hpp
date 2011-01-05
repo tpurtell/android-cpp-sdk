@@ -14,12 +14,16 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class AbstractHttpEntity; } } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/entity/AbstractHttpEntity.hpp>
 
 
@@ -47,6 +51,8 @@ namespace org { namespace apache { namespace http { namespace entity {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpEntity>() const;
 		operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const;
 
 
@@ -76,6 +82,16 @@ namespace j2cpp {
 
 
 
+org::apache::http::entity::SerializableEntity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::entity::SerializableEntity::operator local_ref<org::apache::http::HttpEntity>() const
+{
+	return local_ref<org::apache::http::HttpEntity>(get_jobject());
+}
+
 org::apache::http::entity::SerializableEntity::operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const
 {
 	return local_ref<org::apache::http::entity::AbstractHttpEntity>(get_jobject());
@@ -87,8 +103,8 @@ org::apache::http::entity::SerializableEntity::SerializableEntity(local_ref< jav
 	call_new_object<
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(0),
-		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -100,8 +116,8 @@ local_ref< java::io::InputStream > org::apache::http::entity::SerializableEntity
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(1),
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jlong org::apache::http::entity::SerializableEntity::getContentLength()
@@ -110,8 +126,8 @@ jlong org::apache::http::entity::SerializableEntity::getContentLength()
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(2),
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean org::apache::http::entity::SerializableEntity::isRepeatable()
@@ -120,8 +136,8 @@ jboolean org::apache::http::entity::SerializableEntity::isRepeatable()
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(3),
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::entity::SerializableEntity::isStreaming()
@@ -130,8 +146,8 @@ jboolean org::apache::http::entity::SerializableEntity::isStreaming()
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(4),
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::entity::SerializableEntity::writeTo(local_ref< java::io::OutputStream > const &a0)
@@ -140,8 +156,8 @@ void org::apache::http::entity::SerializableEntity::writeTo(local_ref< java::io:
 		org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(5),
 		org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

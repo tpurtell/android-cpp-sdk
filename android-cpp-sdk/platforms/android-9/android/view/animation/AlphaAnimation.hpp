@@ -11,6 +11,8 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_ALPHAANIMATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Animation; } } } }
@@ -19,6 +21,8 @@ namespace j2cpp { namespace android { namespace view { namespace animation { cla
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/animation/Animation.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -44,6 +48,8 @@ namespace android { namespace view { namespace animation {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::animation::Animation>() const;
 
 
@@ -70,6 +76,16 @@ namespace j2cpp {
 
 
 
+android::view::animation::AlphaAnimation::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::view::animation::AlphaAnimation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::animation::AlphaAnimation::operator local_ref<android::view::animation::Animation>() const
 {
 	return local_ref<android::view::animation::Animation>(get_jobject());
@@ -81,8 +97,8 @@ android::view::animation::AlphaAnimation::AlphaAnimation(local_ref< android::con
 	call_new_object<
 		android::view::animation::AlphaAnimation::J2CPP_CLASS_NAME,
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_NAME(0),
-		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -94,8 +110,8 @@ android::view::animation::AlphaAnimation::AlphaAnimation(jfloat a0, jfloat a1)
 	call_new_object<
 		android::view::animation::AlphaAnimation::J2CPP_CLASS_NAME,
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_NAME(1),
-		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -108,8 +124,8 @@ jboolean android::view::animation::AlphaAnimation::willChangeTransformationMatri
 		android::view::animation::AlphaAnimation::J2CPP_CLASS_NAME,
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_NAME(3),
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::animation::AlphaAnimation::willChangeBounds()
@@ -118,8 +134,8 @@ jboolean android::view::animation::AlphaAnimation::willChangeBounds()
 		android::view::animation::AlphaAnimation::J2CPP_CLASS_NAME,
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_NAME(4),
 		android::view::animation::AlphaAnimation::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

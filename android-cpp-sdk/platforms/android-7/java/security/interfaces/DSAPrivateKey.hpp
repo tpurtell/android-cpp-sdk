@@ -11,14 +11,18 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_DSAPRIVATEKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class DSAKey; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/Key.hpp>
 #include <java/security/PrivateKey.hpp>
 #include <java/security/interfaces/DSAKey.hpp>
 
@@ -43,9 +47,11 @@ namespace java { namespace security { namespace interfaces {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::security::interfaces::DSAKey>() const;
+		operator local_ref<java::security::Key>() const;
 		operator local_ref<java::security::PrivateKey>() const;
+		operator local_ref<java::security::interfaces::DSAKey>() const;
 
 
 		local_ref< java::math::BigInteger > getX();
@@ -70,19 +76,29 @@ namespace j2cpp {
 
 
 
+java::security::interfaces::DSAPrivateKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::security::interfaces::DSAPrivateKey::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::security::interfaces::DSAPrivateKey::operator local_ref<java::security::interfaces::DSAKey>() const
+java::security::interfaces::DSAPrivateKey::operator local_ref<java::security::Key>() const
 {
-	return local_ref<java::security::interfaces::DSAKey>(get_jobject());
+	return local_ref<java::security::Key>(get_jobject());
 }
 
 java::security::interfaces::DSAPrivateKey::operator local_ref<java::security::PrivateKey>() const
 {
 	return local_ref<java::security::PrivateKey>(get_jobject());
+}
+
+java::security::interfaces::DSAPrivateKey::operator local_ref<java::security::interfaces::DSAKey>() const
+{
+	return local_ref<java::security::interfaces::DSAKey>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::DSAPrivateKey::getX()
@@ -91,8 +107,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::DSAPrivateKey::g
 		java::security::interfaces::DSAPrivateKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::DSAPrivateKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::DSAPrivateKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

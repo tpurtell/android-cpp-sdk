@@ -11,9 +11,11 @@
 #define J2CPP_JAVA_LANG_INHERITABLETHREADLOCAL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class ThreadLocal; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/ThreadLocal.hpp>
 
 
@@ -37,6 +39,7 @@ namespace java { namespace lang {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::ThreadLocal>() const;
 
 
@@ -59,6 +62,11 @@ namespace j2cpp {
 
 
 
+java::lang::InheritableThreadLocal::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::lang::InheritableThreadLocal::operator local_ref<java::lang::ThreadLocal>() const
 {
 	return local_ref<java::lang::ThreadLocal>(get_jobject());
@@ -70,8 +78,8 @@ java::lang::InheritableThreadLocal::InheritableThreadLocal()
 	call_new_object<
 		java::lang::InheritableThreadLocal::J2CPP_CLASS_NAME,
 		java::lang::InheritableThreadLocal::J2CPP_METHOD_NAME(0),
-		java::lang::InheritableThreadLocal::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::InheritableThreadLocal::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

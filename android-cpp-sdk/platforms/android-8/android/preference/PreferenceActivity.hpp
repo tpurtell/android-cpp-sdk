@@ -11,20 +11,38 @@
 #define J2CPP_ANDROID_PREFERENCE_PREFERENCEACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace app { class ListActivity; } } }
 namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceManager; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceScreen; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/app/ListActivity.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceManager.hpp>
 #include <android/preference/PreferenceScreen.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -61,7 +79,16 @@ namespace android { namespace preference {
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
 		operator local_ref<android::app::ListActivity>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PreferenceActivity();
@@ -91,9 +118,54 @@ namespace j2cpp {
 
 
 
+android::preference::PreferenceActivity::operator local_ref<android::app::Activity>() const
+{
+	return local_ref<android::app::Activity>(get_jobject());
+}
+
 android::preference::PreferenceActivity::operator local_ref<android::app::ListActivity>() const
 {
 	return local_ref<android::app::ListActivity>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::preference::PreferenceActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -102,8 +174,8 @@ android::preference::PreferenceActivity::PreferenceActivity()
 	call_new_object<
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(0),
-		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -121,8 +193,8 @@ void android::preference::PreferenceActivity::onContentChanged()
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(7),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::preference::PreferenceManager > android::preference::PreferenceActivity::getPreferenceManager()
@@ -131,8 +203,8 @@ local_ref< android::preference::PreferenceManager > android::preference::Prefere
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(8),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::preference::PreferenceManager > >
-	(get_jobject());
+		local_ref< android::preference::PreferenceManager >
+	>(get_jobject());
 }
 
 void android::preference::PreferenceActivity::setPreferenceScreen(local_ref< android::preference::PreferenceScreen > const &a0)
@@ -141,8 +213,8 @@ void android::preference::PreferenceActivity::setPreferenceScreen(local_ref< and
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(9),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::preference::PreferenceScreen > android::preference::PreferenceActivity::getPreferenceScreen()
@@ -151,8 +223,8 @@ local_ref< android::preference::PreferenceScreen > android::preference::Preferen
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(10),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::preference::PreferenceScreen > >
-	(get_jobject());
+		local_ref< android::preference::PreferenceScreen >
+	>(get_jobject());
 }
 
 void android::preference::PreferenceActivity::addPreferencesFromIntent(local_ref< android::content::Intent > const &a0)
@@ -161,8 +233,8 @@ void android::preference::PreferenceActivity::addPreferencesFromIntent(local_ref
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(11),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::PreferenceActivity::addPreferencesFromResource(jint a0)
@@ -171,8 +243,8 @@ void android::preference::PreferenceActivity::addPreferencesFromResource(jint a0
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(12),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::PreferenceActivity::onPreferenceTreeClick(local_ref< android::preference::PreferenceScreen > const &a0, local_ref< android::preference::Preference > const &a1)
@@ -181,8 +253,8 @@ jboolean android::preference::PreferenceActivity::onPreferenceTreeClick(local_re
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(13),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::preference::Preference > android::preference::PreferenceActivity::findPreference(local_ref< java::lang::CharSequence > const &a0)
@@ -191,8 +263,8 @@ local_ref< android::preference::Preference > android::preference::PreferenceActi
 		android::preference::PreferenceActivity::J2CPP_CLASS_NAME,
 		android::preference::PreferenceActivity::J2CPP_METHOD_NAME(14),
 		android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::preference::Preference > >
-	(get_jobject(), a0);
+		local_ref< android::preference::Preference >
+	>(get_jobject(), a0);
 }
 
 

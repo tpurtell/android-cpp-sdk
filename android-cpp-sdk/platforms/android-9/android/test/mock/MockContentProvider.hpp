@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PathPermission; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ProviderInfo; } } } }
@@ -19,10 +20,12 @@ namespace j2cpp { namespace android { namespace content { class ContentValues; }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProviderResult; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 
 
+#include <android/content/ComponentCallbacks.hpp>
 #include <android/content/ContentProvider.hpp>
 #include <android/content/ContentProviderResult.hpp>
 #include <android/content/ContentValues.hpp>
@@ -31,6 +34,7 @@ namespace j2cpp { namespace android { namespace net { class Uri; } } }
 #include <android/content/pm/ProviderInfo.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -65,7 +69,9 @@ namespace android { namespace test { namespace mock {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::ContentProvider>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
 
 
 		MockContentProvider(local_ref< android::content::Context > const&);
@@ -98,9 +104,19 @@ namespace j2cpp {
 
 
 
+android::test::mock::MockContentProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::test::mock::MockContentProvider::operator local_ref<android::content::ContentProvider>() const
 {
 	return local_ref<android::content::ContentProvider>(get_jobject());
+}
+
+android::test::mock::MockContentProvider::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
 }
 
 
@@ -110,8 +126,8 @@ android::test::mock::MockContentProvider::MockContentProvider(local_ref< android
 	call_new_object<
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(1),
-		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -123,8 +139,8 @@ android::test::mock::MockContentProvider::MockContentProvider(local_ref< android
 	call_new_object<
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(2),
-		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3)
+		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -136,8 +152,8 @@ jint android::test::mock::MockContentProvider::delete_(local_ref< android::net::
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(3),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::test::mock::MockContentProvider::getType(local_ref< android::net::Uri > const &a0)
@@ -146,8 +162,8 @@ local_ref< java::lang::String > android::test::mock::MockContentProvider::getTyp
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(4),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::test::mock::MockContentProvider::insert(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -156,8 +172,8 @@ local_ref< android::net::Uri > android::test::mock::MockContentProvider::insert(
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(5),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockContentProvider::onCreate()
@@ -166,8 +182,8 @@ jboolean android::test::mock::MockContentProvider::onCreate()
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(6),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::database::Cursor > android::test::mock::MockContentProvider::query(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4)
@@ -176,8 +192,8 @@ local_ref< android::database::Cursor > android::test::mock::MockContentProvider:
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(7),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint android::test::mock::MockContentProvider::update(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -186,8 +202,8 @@ jint android::test::mock::MockContentProvider::update(local_ref< android::net::U
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(8),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::test::mock::MockContentProvider::bulkInsert(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< android::content::ContentValues >, 1> > const &a1)
@@ -196,8 +212,8 @@ jint android::test::mock::MockContentProvider::bulkInsert(local_ref< android::ne
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(9),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::mock::MockContentProvider::attachInfo(local_ref< android::content::Context > const &a0, local_ref< android::content::pm::ProviderInfo > const &a1)
@@ -206,8 +222,8 @@ void android::test::mock::MockContentProvider::attachInfo(local_ref< android::co
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(10),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > android::test::mock::MockContentProvider::applyBatch(local_ref< java::util::ArrayList > const &a0)
@@ -216,8 +232,8 @@ local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > and
 		android::test::mock::MockContentProvider::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentProvider::J2CPP_METHOD_NAME(11),
 		android::test::mock::MockContentProvider::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> >
+	>(get_jobject(), a0);
 }
 
 

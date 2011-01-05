@@ -80,8 +80,8 @@ jboolean org::w3c::dom::DOMImplementation::hasFeature(local_ref< java::lang::Str
 		org::w3c::dom::DOMImplementation::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::DocumentType > org::w3c::dom::DOMImplementation::createDocumentType(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -90,8 +90,8 @@ local_ref< org::w3c::dom::DocumentType > org::w3c::dom::DOMImplementation::creat
 		org::w3c::dom::DOMImplementation::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::w3c::dom::DocumentType > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::w3c::dom::DocumentType >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< org::w3c::dom::Document > org::w3c::dom::DOMImplementation::createDocument(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< org::w3c::dom::DocumentType > const &a2)
@@ -100,8 +100,8 @@ local_ref< org::w3c::dom::Document > org::w3c::dom::DOMImplementation::createDoc
 		org::w3c::dom::DOMImplementation::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::DOMImplementation::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

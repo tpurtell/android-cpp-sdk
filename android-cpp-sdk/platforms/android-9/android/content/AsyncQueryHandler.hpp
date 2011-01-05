@@ -103,6 +103,7 @@ namespace android { namespace content {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Handler>() const;
 
 
@@ -141,6 +142,7 @@ namespace android { namespace content {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Handler>() const;
 
 
@@ -191,6 +193,11 @@ J2CPP_DEFINE_FIELD(android::content::AsyncQueryHandler_::WorkerArgs,7,"cookie","
 J2CPP_DEFINE_FIELD(android::content::AsyncQueryHandler_::WorkerArgs,8,"values","Landroid/content/ContentValues;")
 
 
+android::content::AsyncQueryHandler_::WorkerHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::content::AsyncQueryHandler_::WorkerHandler::operator local_ref<android::os::Handler>() const
 {
 	return local_ref<android::os::Handler>(get_jobject());
@@ -202,8 +209,8 @@ android::content::AsyncQueryHandler_::WorkerHandler::WorkerHandler(local_ref< an
 	call_new_object<
 		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_METHOD_NAME(0),
-		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -215,8 +222,8 @@ void android::content::AsyncQueryHandler_::WorkerHandler::handleMessage(local_re
 		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_METHOD_NAME(1),
 		android::content::AsyncQueryHandler_::WorkerHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -227,6 +234,11 @@ J2CPP_DEFINE_METHOD(android::content::AsyncQueryHandler_::WorkerHandler,1,"handl
 J2CPP_DEFINE_FIELD(android::content::AsyncQueryHandler_::WorkerHandler,0,"this$0","Landroid/content/AsyncQueryHandler;")
 
 
+
+android::content::AsyncQueryHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::content::AsyncQueryHandler::operator local_ref<android::os::Handler>() const
 {
@@ -239,8 +251,8 @@ android::content::AsyncQueryHandler::AsyncQueryHandler(local_ref< android::conte
 	call_new_object<
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(0),
-		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -253,8 +265,8 @@ void android::content::AsyncQueryHandler::startQuery(jint a0, local_ref< java::l
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(2),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::content::AsyncQueryHandler::cancelOperation(jint a0)
@@ -263,8 +275,8 @@ void android::content::AsyncQueryHandler::cancelOperation(jint a0)
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(3),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::AsyncQueryHandler::startInsert(jint a0, local_ref< java::lang::Object > const &a1, local_ref< android::net::Uri > const &a2, local_ref< android::content::ContentValues > const &a3)
@@ -273,8 +285,8 @@ void android::content::AsyncQueryHandler::startInsert(jint a0, local_ref< java::
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(4),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::content::AsyncQueryHandler::startUpdate(jint a0, local_ref< java::lang::Object > const &a1, local_ref< android::net::Uri > const &a2, local_ref< android::content::ContentValues > const &a3, local_ref< java::lang::String > const &a4, local_ref< array< local_ref< java::lang::String >, 1> > const &a5)
@@ -283,8 +295,8 @@ void android::content::AsyncQueryHandler::startUpdate(jint a0, local_ref< java::
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(5),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::content::AsyncQueryHandler::startDelete(jint a0, local_ref< java::lang::Object > const &a1, local_ref< android::net::Uri > const &a2, local_ref< java::lang::String > const &a3, local_ref< array< local_ref< java::lang::String >, 1> > const &a4)
@@ -293,8 +305,8 @@ void android::content::AsyncQueryHandler::startDelete(jint a0, local_ref< java::
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(6),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 
@@ -307,8 +319,8 @@ void android::content::AsyncQueryHandler::handleMessage(local_ref< android::os::
 		android::content::AsyncQueryHandler::J2CPP_CLASS_NAME,
 		android::content::AsyncQueryHandler::J2CPP_METHOD_NAME(11),
 		android::content::AsyncQueryHandler::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

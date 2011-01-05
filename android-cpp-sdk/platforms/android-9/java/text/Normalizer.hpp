@@ -13,12 +13,16 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace text { namespace Normalizer_ { class Form; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -55,7 +59,10 @@ namespace java { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< java::text::Normalizer_::Form >, 1> > values();
@@ -111,9 +118,24 @@ namespace j2cpp {
 
 
 
+java::text::Normalizer_::Form::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::text::Normalizer_::Form::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::text::Normalizer_::Form::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::Normalizer_::Form::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< java::text::Normalizer_::Form >, 1> > java::text::Normalizer_::Form::values()
@@ -122,8 +144,8 @@ local_ref< array< local_ref< java::text::Normalizer_::Form >, 1> > java::text::N
 		java::text::Normalizer_::Form::J2CPP_CLASS_NAME,
 		java::text::Normalizer_::Form::J2CPP_METHOD_NAME(0),
 		java::text::Normalizer_::Form::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::text::Normalizer_::Form >, 1> > >
-	();
+		local_ref< array< local_ref< java::text::Normalizer_::Form >, 1> >
+	>();
 }
 
 local_ref< java::text::Normalizer_::Form > java::text::Normalizer_::Form::valueOf(local_ref< java::lang::String > const &a0)
@@ -132,8 +154,8 @@ local_ref< java::text::Normalizer_::Form > java::text::Normalizer_::Form::valueO
 		java::text::Normalizer_::Form::J2CPP_CLASS_NAME,
 		java::text::Normalizer_::Form::J2CPP_METHOD_NAME(1),
 		java::text::Normalizer_::Form::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::text::Normalizer_::Form > >
-	(a0);
+		local_ref< java::text::Normalizer_::Form >
+	>(a0);
 }
 
 
@@ -193,8 +215,8 @@ jboolean java::text::Normalizer::isNormalized(local_ref< java::lang::CharSequenc
 		java::text::Normalizer::J2CPP_CLASS_NAME,
 		java::text::Normalizer::J2CPP_METHOD_NAME(1),
 		java::text::Normalizer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::text::Normalizer::normalize(local_ref< java::lang::CharSequence > const &a0, local_ref< java::text::Normalizer_::Form > const &a1)
@@ -203,8 +225,8 @@ local_ref< java::lang::String > java::text::Normalizer::normalize(local_ref< jav
 		java::text::Normalizer::J2CPP_CLASS_NAME,
 		java::text::Normalizer::J2CPP_METHOD_NAME(2),
 		java::text::Normalizer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 

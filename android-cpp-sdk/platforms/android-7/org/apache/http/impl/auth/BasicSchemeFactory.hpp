@@ -86,8 +86,8 @@ org::apache::http::impl::auth::BasicSchemeFactory::BasicSchemeFactory()
 	call_new_object<
 		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ local_ref< org::apache::http::auth::AuthScheme > org::apache::http::impl::auth::
 		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::auth::BasicSchemeFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::auth::AuthScheme > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::auth::AuthScheme >
+	>(get_jobject(), a0);
 }
 
 

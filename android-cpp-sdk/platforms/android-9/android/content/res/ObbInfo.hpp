@@ -107,8 +107,8 @@ local_ref< java::lang::String > android::content::res::ObbInfo::toString()
 		android::content::res::ObbInfo::J2CPP_CLASS_NAME,
 		android::content::res::ObbInfo::J2CPP_METHOD_NAME(1),
 		android::content::res::ObbInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::res::ObbInfo::describeContents()
@@ -117,8 +117,8 @@ jint android::content::res::ObbInfo::describeContents()
 		android::content::res::ObbInfo::J2CPP_CLASS_NAME,
 		android::content::res::ObbInfo::J2CPP_METHOD_NAME(2),
 		android::content::res::ObbInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::res::ObbInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -127,8 +127,8 @@ void android::content::res::ObbInfo::writeToParcel(local_ref< android::os::Parce
 		android::content::res::ObbInfo::J2CPP_CLASS_NAME,
 		android::content::res::ObbInfo::J2CPP_METHOD_NAME(3),
 		android::content::res::ObbInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

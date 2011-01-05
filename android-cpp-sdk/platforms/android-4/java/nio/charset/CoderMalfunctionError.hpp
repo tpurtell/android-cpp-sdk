@@ -11,12 +11,18 @@
 #define J2CPP_JAVA_NIO_CHARSET_CODERMALFUNCTIONERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Error.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -38,7 +44,10 @@ namespace java { namespace nio { namespace charset {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CoderMalfunctionError(local_ref< java::lang::Exception > const&);
@@ -61,9 +70,24 @@ namespace j2cpp {
 
 
 
+java::nio::charset::CoderMalfunctionError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::nio::charset::CoderMalfunctionError::operator local_ref<java::lang::Error>() const
 {
 	return local_ref<java::lang::Error>(get_jobject());
+}
+
+java::nio::charset::CoderMalfunctionError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::nio::charset::CoderMalfunctionError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -72,8 +96,8 @@ java::nio::charset::CoderMalfunctionError::CoderMalfunctionError(local_ref< java
 	call_new_object<
 		java::nio::charset::CoderMalfunctionError::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_NAME(0),
-		java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

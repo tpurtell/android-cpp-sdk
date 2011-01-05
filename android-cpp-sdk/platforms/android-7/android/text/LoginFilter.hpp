@@ -47,6 +47,8 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::InputFilter>() const;
 			operator local_ref<android::text::LoginFilter>() const;
 
 
@@ -72,6 +74,8 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::InputFilter>() const;
 			operator local_ref<android::text::LoginFilter>() const;
 
 
@@ -97,6 +101,8 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::InputFilter>() const;
 			operator local_ref<android::text::LoginFilter>() const;
 
 
@@ -158,6 +164,16 @@ namespace j2cpp {
 
 
 
+android::text::LoginFilter_::UsernameFilterGeneric::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::LoginFilter_::UsernameFilterGeneric::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
 android::text::LoginFilter_::UsernameFilterGeneric::operator local_ref<android::text::LoginFilter>() const
 {
 	return local_ref<android::text::LoginFilter>(get_jobject());
@@ -169,8 +185,8 @@ android::text::LoginFilter_::UsernameFilterGeneric::UsernameFilterGeneric()
 	call_new_object<
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(0),
-		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -182,8 +198,8 @@ android::text::LoginFilter_::UsernameFilterGeneric::UsernameFilterGeneric(jboole
 	call_new_object<
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(1),
-		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -195,8 +211,8 @@ jboolean android::text::LoginFilter_::UsernameFilterGeneric::isAllowed(jchar a0)
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(2),
 		android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -205,6 +221,16 @@ J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,0,"<init>
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,1,"<init>","(Z)V")
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,2,"isAllowed","(C)Z")
 
+
+android::text::LoginFilter_::UsernameFilterGMail::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::LoginFilter_::UsernameFilterGMail::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
 
 android::text::LoginFilter_::UsernameFilterGMail::operator local_ref<android::text::LoginFilter>() const
 {
@@ -217,8 +243,8 @@ android::text::LoginFilter_::UsernameFilterGMail::UsernameFilterGMail()
 	call_new_object<
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(0),
-		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -230,8 +256,8 @@ android::text::LoginFilter_::UsernameFilterGMail::UsernameFilterGMail(jboolean a
 	call_new_object<
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(1),
-		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -243,8 +269,8 @@ jboolean android::text::LoginFilter_::UsernameFilterGMail::isAllowed(jchar a0)
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(2),
 		android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -253,6 +279,16 @@ J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,0,"<init>",
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,1,"<init>","(Z)V")
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,2,"isAllowed","(C)Z")
 
+
+android::text::LoginFilter_::PasswordFilterGMail::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::LoginFilter_::PasswordFilterGMail::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
 
 android::text::LoginFilter_::PasswordFilterGMail::operator local_ref<android::text::LoginFilter>() const
 {
@@ -265,8 +301,8 @@ android::text::LoginFilter_::PasswordFilterGMail::PasswordFilterGMail()
 	call_new_object<
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(0),
-		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -278,8 +314,8 @@ android::text::LoginFilter_::PasswordFilterGMail::PasswordFilterGMail(jboolean a
 	call_new_object<
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(1),
-		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -291,8 +327,8 @@ jboolean android::text::LoginFilter_::PasswordFilterGMail::isAllowed(jchar a0)
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME,
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(2),
 		android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -320,8 +356,8 @@ local_ref< java::lang::CharSequence > android::text::LoginFilter::filter(local_r
 		android::text::LoginFilter::J2CPP_CLASS_NAME,
 		android::text::LoginFilter::J2CPP_METHOD_NAME(1),
 		android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::text::LoginFilter::onStart()
@@ -330,8 +366,8 @@ void android::text::LoginFilter::onStart()
 		android::text::LoginFilter::J2CPP_CLASS_NAME,
 		android::text::LoginFilter::J2CPP_METHOD_NAME(2),
 		android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::text::LoginFilter::onInvalidCharacter(jchar a0)
@@ -340,8 +376,8 @@ void android::text::LoginFilter::onInvalidCharacter(jchar a0)
 		android::text::LoginFilter::J2CPP_CLASS_NAME,
 		android::text::LoginFilter::J2CPP_METHOD_NAME(3),
 		android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::LoginFilter::onStop()
@@ -350,8 +386,8 @@ void android::text::LoginFilter::onStop()
 		android::text::LoginFilter::J2CPP_CLASS_NAME,
 		android::text::LoginFilter::J2CPP_METHOD_NAME(4),
 		android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::text::LoginFilter::isAllowed(jchar a0)
@@ -360,8 +396,8 @@ jboolean android::text::LoginFilter::isAllowed(jchar a0)
 		android::text::LoginFilter::J2CPP_CLASS_NAME,
 		android::text::LoginFilter::J2CPP_METHOD_NAME(5),
 		android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

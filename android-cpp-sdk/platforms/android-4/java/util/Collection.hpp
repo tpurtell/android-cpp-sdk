@@ -107,8 +107,8 @@ jboolean java::util::Collection::add(local_ref< java::lang::Object > const &a0)
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(0),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Collection::addAll(local_ref< java::util::Collection > const &a0)
@@ -117,8 +117,8 @@ jboolean java::util::Collection::addAll(local_ref< java::util::Collection > cons
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(1),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Collection::clear()
@@ -127,8 +127,8 @@ void java::util::Collection::clear()
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(2),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::Collection::contains(local_ref< java::lang::Object > const &a0)
@@ -137,8 +137,8 @@ jboolean java::util::Collection::contains(local_ref< java::lang::Object > const 
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(3),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Collection::containsAll(local_ref< java::util::Collection > const &a0)
@@ -147,8 +147,8 @@ jboolean java::util::Collection::containsAll(local_ref< java::util::Collection >
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(4),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Collection::equals(local_ref< java::lang::Object > const &a0)
@@ -157,8 +157,8 @@ jboolean java::util::Collection::equals(local_ref< java::lang::Object > const &a
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(5),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Collection::hashCode()
@@ -167,8 +167,8 @@ jint java::util::Collection::hashCode()
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(6),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::Collection::isEmpty()
@@ -177,8 +177,8 @@ jboolean java::util::Collection::isEmpty()
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(7),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::Collection::iterator()
@@ -187,8 +187,8 @@ local_ref< java::util::Iterator > java::util::Collection::iterator()
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(8),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean java::util::Collection::remove(local_ref< java::lang::Object > const &a0)
@@ -197,8 +197,8 @@ jboolean java::util::Collection::remove(local_ref< java::lang::Object > const &a
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(9),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Collection::removeAll(local_ref< java::util::Collection > const &a0)
@@ -207,8 +207,8 @@ jboolean java::util::Collection::removeAll(local_ref< java::util::Collection > c
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(10),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Collection::retainAll(local_ref< java::util::Collection > const &a0)
@@ -217,8 +217,8 @@ jboolean java::util::Collection::retainAll(local_ref< java::util::Collection > c
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(11),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Collection::size()
@@ -227,8 +227,8 @@ jint java::util::Collection::size()
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(12),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Collection::toArray()
@@ -237,8 +237,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Collection::
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(13),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Collection::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -247,8 +247,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Collection::
 		java::util::Collection::J2CPP_CLASS_NAME,
 		java::util::Collection::J2CPP_METHOD_NAME(14),
 		java::util::Collection::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 

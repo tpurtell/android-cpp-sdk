@@ -77,8 +77,8 @@ local_ref< org::apache::http::conn::ManagedClientConnection > org::apache::http:
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::ManagedClientConnection > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ManagedClientConnection >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ClientConnectionRequest::abortRequest()
@@ -87,8 +87,8 @@ void org::apache::http::conn::ClientConnectionRequest::abortRequest()
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

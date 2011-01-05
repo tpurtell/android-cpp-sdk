@@ -25,7 +25,9 @@ namespace j2cpp { namespace android { namespace content { namespace DialogInterf
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnKeyListener; } } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Button; } } }
 namespace j2cpp { namespace android { namespace widget { class ListView; } } }
@@ -42,6 +44,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/os/Message.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/Button.hpp>
 #include <android/widget/ListAdapter.hpp>
@@ -184,8 +187,11 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::Dialog>() const;
 		operator local_ref<android::content::DialogInterface>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
 
 
 		local_ref< android::widget::Button > getButton(jint);
@@ -238,8 +244,8 @@ android::app::AlertDialog_::Builder::Builder(local_ref< android::content::Contex
 	call_new_object<
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(0),
-		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -251,8 +257,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(1),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -261,8 +267,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(2),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setCustomTitle(local_ref< android::view::View > const &a0)
@@ -271,8 +277,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(3),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setMessage(jint a0)
@@ -281,8 +287,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(4),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setMessage(local_ref< java::lang::CharSequence > const &a0)
@@ -291,8 +297,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(5),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setIcon(jint a0)
@@ -301,8 +307,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(6),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -311,8 +317,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(7),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setPositiveButton(jint a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -321,8 +327,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(8),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setPositiveButton(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -331,8 +337,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(9),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setNegativeButton(jint a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -341,8 +347,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(10),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setNegativeButton(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -351,8 +357,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(11),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setNeutralButton(jint a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -361,8 +367,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(12),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setNeutralButton(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -371,8 +377,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(13),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setCancelable(jboolean a0)
@@ -381,8 +387,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(14),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setOnCancelListener(local_ref< android::content::DialogInterface_::OnCancelListener > const &a0)
@@ -391,8 +397,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(15),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setOnKeyListener(local_ref< android::content::DialogInterface_::OnKeyListener > const &a0)
@@ -401,8 +407,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(16),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setItems(jint a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -411,8 +417,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(17),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setItems(local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -421,8 +427,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(18),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setAdapter(local_ref< android::widget::ListAdapter > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -431,8 +437,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(19),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setCursor(local_ref< android::database::Cursor > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1, local_ref< java::lang::String > const &a2)
@@ -441,8 +447,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(20),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setMultiChoiceItems(jint a0, local_ref< array<jboolean,1> > const &a1, local_ref< android::content::DialogInterface_::OnMultiChoiceClickListener > const &a2)
@@ -451,8 +457,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(21),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setMultiChoiceItems(local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a0, local_ref< array<jboolean,1> > const &a1, local_ref< android::content::DialogInterface_::OnMultiChoiceClickListener > const &a2)
@@ -461,8 +467,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(22),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setMultiChoiceItems(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::content::DialogInterface_::OnMultiChoiceClickListener > const &a3)
@@ -471,8 +477,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(23),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setSingleChoiceItems(jint a0, jint a1, local_ref< android::content::DialogInterface_::OnClickListener > const &a2)
@@ -481,8 +487,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(24),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setSingleChoiceItems(local_ref< android::database::Cursor > const &a0, jint a1, local_ref< java::lang::String > const &a2, local_ref< android::content::DialogInterface_::OnClickListener > const &a3)
@@ -491,8 +497,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(25),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setSingleChoiceItems(local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a0, jint a1, local_ref< android::content::DialogInterface_::OnClickListener > const &a2)
@@ -501,8 +507,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(26),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setSingleChoiceItems(local_ref< android::widget::ListAdapter > const &a0, jint a1, local_ref< android::content::DialogInterface_::OnClickListener > const &a2)
@@ -511,8 +517,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(27),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setOnItemSelectedListener(local_ref< android::widget::AdapterView_::OnItemSelectedListener > const &a0)
@@ -521,8 +527,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(28),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setView(local_ref< android::view::View > const &a0)
@@ -531,8 +537,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(29),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setInverseBackgroundForced(jboolean a0)
@@ -541,8 +547,8 @@ local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Bui
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(30),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::app::AlertDialog_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::app::AlertDialog_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::AlertDialog > android::app::AlertDialog_::Builder::create()
@@ -551,8 +557,8 @@ local_ref< android::app::AlertDialog > android::app::AlertDialog_::Builder::crea
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(31),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< android::app::AlertDialog > >
-	(get_jobject());
+		local_ref< android::app::AlertDialog >
+	>(get_jobject());
 }
 
 local_ref< android::app::AlertDialog > android::app::AlertDialog_::Builder::show()
@@ -561,8 +567,8 @@ local_ref< android::app::AlertDialog > android::app::AlertDialog_::Builder::show
 		android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME,
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(32),
 		android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< android::app::AlertDialog > >
-	(get_jobject());
+		local_ref< android::app::AlertDialog >
+	>(get_jobject());
 }
 
 
@@ -603,6 +609,11 @@ J2CPP_DEFINE_METHOD(android::app::AlertDialog_::Builder,32,"show","()Landroid/ap
 
 
 
+android::app::AlertDialog::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::AlertDialog::operator local_ref<android::app::Dialog>() const
 {
 	return local_ref<android::app::Dialog>(get_jobject());
@@ -611,6 +622,16 @@ android::app::AlertDialog::operator local_ref<android::app::Dialog>() const
 android::app::AlertDialog::operator local_ref<android::content::DialogInterface>() const
 {
 	return local_ref<android::content::DialogInterface>(get_jobject());
+}
+
+android::app::AlertDialog::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::AlertDialog::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
 }
 
 
@@ -622,8 +643,8 @@ local_ref< android::widget::Button > android::app::AlertDialog::getButton(jint a
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(3),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::widget::Button > >
-	(get_jobject(), a0);
+		local_ref< android::widget::Button >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::ListView > android::app::AlertDialog::getListView()
@@ -632,8 +653,8 @@ local_ref< android::widget::ListView > android::app::AlertDialog::getListView()
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(4),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::widget::ListView > >
-	(get_jobject());
+		local_ref< android::widget::ListView >
+	>(get_jobject());
 }
 
 void android::app::AlertDialog::setTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -642,8 +663,8 @@ void android::app::AlertDialog::setTitle(local_ref< java::lang::CharSequence > c
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(5),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setCustomTitle(local_ref< android::view::View > const &a0)
@@ -652,8 +673,8 @@ void android::app::AlertDialog::setCustomTitle(local_ref< android::view::View > 
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(6),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setMessage(local_ref< java::lang::CharSequence > const &a0)
@@ -662,8 +683,8 @@ void android::app::AlertDialog::setMessage(local_ref< java::lang::CharSequence >
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(7),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setView(local_ref< android::view::View > const &a0)
@@ -672,8 +693,8 @@ void android::app::AlertDialog::setView(local_ref< android::view::View > const &
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(8),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setView(local_ref< android::view::View > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -682,8 +703,8 @@ void android::app::AlertDialog::setView(local_ref< android::view::View > const &
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(9),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::app::AlertDialog::setButton(jint a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::os::Message > const &a2)
@@ -692,8 +713,8 @@ void android::app::AlertDialog::setButton(jint a0, local_ref< java::lang::CharSe
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(10),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::AlertDialog::setButton(jint a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::content::DialogInterface_::OnClickListener > const &a2)
@@ -702,8 +723,8 @@ void android::app::AlertDialog::setButton(jint a0, local_ref< java::lang::CharSe
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(11),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::AlertDialog::setButton(local_ref< java::lang::CharSequence > const &a0, local_ref< android::os::Message > const &a1)
@@ -712,8 +733,8 @@ void android::app::AlertDialog::setButton(local_ref< java::lang::CharSequence > 
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(12),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setButton2(local_ref< java::lang::CharSequence > const &a0, local_ref< android::os::Message > const &a1)
@@ -722,8 +743,8 @@ void android::app::AlertDialog::setButton2(local_ref< java::lang::CharSequence >
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(13),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setButton3(local_ref< java::lang::CharSequence > const &a0, local_ref< android::os::Message > const &a1)
@@ -732,8 +753,8 @@ void android::app::AlertDialog::setButton3(local_ref< java::lang::CharSequence >
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(14),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setButton(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -742,8 +763,8 @@ void android::app::AlertDialog::setButton(local_ref< java::lang::CharSequence > 
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(15),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setButton2(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -752,8 +773,8 @@ void android::app::AlertDialog::setButton2(local_ref< java::lang::CharSequence >
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(16),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setButton3(local_ref< java::lang::CharSequence > const &a0, local_ref< android::content::DialogInterface_::OnClickListener > const &a1)
@@ -762,8 +783,8 @@ void android::app::AlertDialog::setButton3(local_ref< java::lang::CharSequence >
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(17),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::AlertDialog::setIcon(jint a0)
@@ -772,8 +793,8 @@ void android::app::AlertDialog::setIcon(jint a0)
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(18),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -782,8 +803,8 @@ void android::app::AlertDialog::setIcon(local_ref< android::graphics::drawable::
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(19),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlertDialog::setInverseBackgroundForced(jboolean a0)
@@ -792,8 +813,8 @@ void android::app::AlertDialog::setInverseBackgroundForced(jboolean a0)
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(20),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -803,8 +824,8 @@ jboolean android::app::AlertDialog::onKeyDown(jint a0, local_ref< android::view:
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(22),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::app::AlertDialog::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -813,8 +834,8 @@ jboolean android::app::AlertDialog::onKeyUp(jint a0, local_ref< android::view::K
 		android::app::AlertDialog::J2CPP_CLASS_NAME,
 		android::app::AlertDialog::J2CPP_METHOD_NAME(23),
 		android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

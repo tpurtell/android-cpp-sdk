@@ -12,11 +12,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace test { class AssertionFailedError; } } }
 
 
 #include <android/test/AssertionFailedError.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -39,6 +47,10 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<android::test::AssertionFailedError>() const;
 
 
@@ -62,6 +74,26 @@ namespace j2cpp {
 
 
 
+android::test::ComparisonFailure::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::test::ComparisonFailure::operator local_ref<java::lang::Error>() const
+{
+	return local_ref<java::lang::Error>(get_jobject());
+}
+
+android::test::ComparisonFailure::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::test::ComparisonFailure::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 android::test::ComparisonFailure::operator local_ref<android::test::AssertionFailedError>() const
 {
 	return local_ref<android::test::AssertionFailedError>(get_jobject());
@@ -73,8 +105,8 @@ android::test::ComparisonFailure::ComparisonFailure(local_ref< java::lang::Strin
 	call_new_object<
 		android::test::ComparisonFailure::J2CPP_CLASS_NAME,
 		android::test::ComparisonFailure::J2CPP_METHOD_NAME(0),
-		android::test::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::test::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -86,8 +118,8 @@ local_ref< java::lang::String > android::test::ComparisonFailure::getMessage()
 		android::test::ComparisonFailure::J2CPP_CLASS_NAME,
 		android::test::ComparisonFailure::J2CPP_METHOD_NAME(1),
 		android::test::ComparisonFailure::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

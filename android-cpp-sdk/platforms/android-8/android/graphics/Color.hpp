@@ -118,8 +118,8 @@ android::graphics::Color::Color()
 	call_new_object<
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(0),
-		android::graphics::Color::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Color::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -131,8 +131,8 @@ jint android::graphics::Color::alpha(jint a0)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(1),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::graphics::Color::red(jint a0)
@@ -141,8 +141,8 @@ jint android::graphics::Color::red(jint a0)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(2),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::graphics::Color::green(jint a0)
@@ -151,8 +151,8 @@ jint android::graphics::Color::green(jint a0)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(3),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::graphics::Color::blue(jint a0)
@@ -161,8 +161,8 @@ jint android::graphics::Color::blue(jint a0)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(4),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::graphics::Color::rgb(jint a0, jint a1, jint a2)
@@ -171,8 +171,8 @@ jint android::graphics::Color::rgb(jint a0, jint a1, jint a2)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(5),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::graphics::Color::argb(jint a0, jint a1, jint a2, jint a3)
@@ -181,8 +181,8 @@ jint android::graphics::Color::argb(jint a0, jint a1, jint a2, jint a3)
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(6),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0, a1, a2, a3);
+		jint
+	>(a0, a1, a2, a3);
 }
 
 jint android::graphics::Color::parseColor(local_ref< java::lang::String > const &a0)
@@ -191,8 +191,8 @@ jint android::graphics::Color::parseColor(local_ref< java::lang::String > const 
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(7),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::graphics::Color::RGBToHSV(jint a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3)
@@ -201,8 +201,8 @@ void android::graphics::Color::RGBToHSV(jint a0, jint a1, jint a2, local_ref< ar
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(8),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::graphics::Color::colorToHSV(jint a0, local_ref< array<jfloat,1> > const &a1)
@@ -211,8 +211,8 @@ void android::graphics::Color::colorToHSV(jint a0, local_ref< array<jfloat,1> > 
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(9),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint android::graphics::Color::HSVToColor(local_ref< array<jfloat,1> > const &a0)
@@ -221,8 +221,8 @@ jint android::graphics::Color::HSVToColor(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(10),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::graphics::Color::HSVToColor(jint a0, local_ref< array<jfloat,1> > const &a1)
@@ -231,8 +231,8 @@ jint android::graphics::Color::HSVToColor(jint a0, local_ref< array<jfloat,1> > 
 		android::graphics::Color::J2CPP_CLASS_NAME,
 		android::graphics::Color::J2CPP_METHOD_NAME(11),
 		android::graphics::Color::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 

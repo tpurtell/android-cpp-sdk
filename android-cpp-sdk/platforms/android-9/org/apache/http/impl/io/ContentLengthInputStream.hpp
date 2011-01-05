@@ -11,11 +11,15 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_CONTENTLENGTHINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionInputBuffer; } } } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/io/SessionInputBuffer.hpp>
 
 
@@ -43,6 +47,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::InputStream>() const;
 
 
@@ -73,6 +79,16 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::ContentLengthInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::io::ContentLengthInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 org::apache::http::impl::io::ContentLengthInputStream::operator local_ref<java::io::InputStream>() const
 {
 	return local_ref<java::io::InputStream>(get_jobject());
@@ -84,8 +100,8 @@ org::apache::http::impl::io::ContentLengthInputStream::ContentLengthInputStream(
 	call_new_object<
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -97,8 +113,8 @@ void org::apache::http::impl::io::ContentLengthInputStream::close()
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::io::ContentLengthInputStream::read()
@@ -107,8 +123,8 @@ jint org::apache::http::impl::io::ContentLengthInputStream::read()
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::io::ContentLengthInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -117,8 +133,8 @@ jint org::apache::http::impl::io::ContentLengthInputStream::read(local_ref< arra
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint org::apache::http::impl::io::ContentLengthInputStream::read(local_ref< array<jbyte,1> > const &a0)
@@ -127,8 +143,8 @@ jint org::apache::http::impl::io::ContentLengthInputStream::read(local_ref< arra
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong org::apache::http::impl::io::ContentLengthInputStream::skip(jlong a0)
@@ -137,8 +153,8 @@ jlong org::apache::http::impl::io::ContentLengthInputStream::skip(jlong a0)
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::io::ContentLengthInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

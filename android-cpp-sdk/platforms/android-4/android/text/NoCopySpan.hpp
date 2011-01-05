@@ -39,8 +39,8 @@ namespace android { namespace text {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::text::NoCopySpan>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			Concrete();
@@ -84,14 +84,14 @@ namespace j2cpp {
 
 
 
-android::text::NoCopySpan_::Concrete::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::NoCopySpan_::Concrete::operator local_ref<android::text::NoCopySpan>() const
 {
 	return local_ref<android::text::NoCopySpan>(get_jobject());
+}
+
+android::text::NoCopySpan_::Concrete::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -100,8 +100,8 @@ android::text::NoCopySpan_::Concrete::Concrete()
 	call_new_object<
 		android::text::NoCopySpan_::Concrete::J2CPP_CLASS_NAME,
 		android::text::NoCopySpan_::Concrete::J2CPP_METHOD_NAME(0),
-		android::text::NoCopySpan_::Concrete::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::NoCopySpan_::Concrete::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -11,12 +11,26 @@
 #define J2CPP_JAVA_SECURITY_AUTHPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { class Subject; } } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class CallbackHandler; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
+namespace j2cpp { namespace java { namespace util { class Dictionary; } } }
+namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace java { namespace util { class Properties; } } }
+namespace j2cpp { namespace java { namespace util { class Hashtable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/security/Provider.hpp>
+#include <java/util/Dictionary.hpp>
+#include <java/util/Hashtable.hpp>
+#include <java/util/Map.hpp>
+#include <java/util/Properties.hpp>
 #include <javax/security/auth/Subject.hpp>
 #include <javax/security/auth/callback/CallbackHandler.hpp>
 
@@ -43,7 +57,14 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::security::Provider>() const;
+		operator local_ref<java::util::Dictionary>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::Properties>() const;
+		operator local_ref<java::util::Hashtable>() const;
 
 
 		void login(local_ref< javax::security::auth::Subject >  const&, local_ref< javax::security::auth::callback::CallbackHandler >  const&);
@@ -67,9 +88,44 @@ namespace j2cpp {
 
 
 
+java::security::AuthProvider::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::security::AuthProvider::operator local_ref<java::security::Provider>() const
 {
 	return local_ref<java::security::Provider>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::util::Dictionary>() const
+{
+	return local_ref<java::util::Dictionary>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::util::Properties>() const
+{
+	return local_ref<java::util::Properties>(get_jobject());
+}
+
+java::security::AuthProvider::operator local_ref<java::util::Hashtable>() const
+{
+	return local_ref<java::util::Hashtable>(get_jobject());
 }
 
 
@@ -79,8 +135,8 @@ void java::security::AuthProvider::login(local_ref< javax::security::auth::Subje
 		java::security::AuthProvider::J2CPP_CLASS_NAME,
 		java::security::AuthProvider::J2CPP_METHOD_NAME(1),
 		java::security::AuthProvider::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::AuthProvider::logout()
@@ -89,8 +145,8 @@ void java::security::AuthProvider::logout()
 		java::security::AuthProvider::J2CPP_CLASS_NAME,
 		java::security::AuthProvider::J2CPP_METHOD_NAME(2),
 		java::security::AuthProvider::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::security::AuthProvider::setCallbackHandler(local_ref< javax::security::auth::callback::CallbackHandler > const &a0)
@@ -99,8 +155,8 @@ void java::security::AuthProvider::setCallbackHandler(local_ref< javax::security
 		java::security::AuthProvider::J2CPP_CLASS_NAME,
 		java::security::AuthProvider::J2CPP_METHOD_NAME(3),
 		java::security::AuthProvider::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

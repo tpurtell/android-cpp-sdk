@@ -86,8 +86,8 @@ jboolean java::security::acl::Group::addMember(local_ref< java::security::Princi
 		java::security::acl::Group::J2CPP_CLASS_NAME,
 		java::security::acl::Group::J2CPP_METHOD_NAME(0),
 		java::security::acl::Group::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::acl::Group::removeMember(local_ref< java::security::Principal > const &a0)
@@ -96,8 +96,8 @@ jboolean java::security::acl::Group::removeMember(local_ref< java::security::Pri
 		java::security::acl::Group::J2CPP_CLASS_NAME,
 		java::security::acl::Group::J2CPP_METHOD_NAME(1),
 		java::security::acl::Group::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::acl::Group::isMember(local_ref< java::security::Principal > const &a0)
@@ -106,8 +106,8 @@ jboolean java::security::acl::Group::isMember(local_ref< java::security::Princip
 		java::security::acl::Group::J2CPP_CLASS_NAME,
 		java::security::acl::Group::J2CPP_METHOD_NAME(2),
 		java::security::acl::Group::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::acl::Group::members()
@@ -116,8 +116,8 @@ local_ref< java::util::Enumeration > java::security::acl::Group::members()
 		java::security::acl::Group::J2CPP_CLASS_NAME,
 		java::security::acl::Group::J2CPP_METHOD_NAME(3),
 		java::security::acl::Group::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 

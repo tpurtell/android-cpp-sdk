@@ -11,15 +11,25 @@
 #define J2CPP_ANDROID_TEXT_METHOD_DIGITSKEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class NumberKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/text/InputFilter.hpp>
 #include <android/text/Spanned.hpp>
+#include <android/text/method/BaseKeyListener.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/text/method/NumberKeyListener.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,7 +59,12 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
 		operator local_ref<android::text::method::NumberKeyListener>() const;
+		operator local_ref<android::text::InputFilter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DigitsKeyListener();
@@ -78,9 +93,34 @@ namespace j2cpp {
 
 
 
+android::text::method::DigitsKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
+{
+	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
+}
+
+android::text::method::DigitsKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
+{
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
+}
+
+android::text::method::DigitsKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
 android::text::method::DigitsKeyListener::operator local_ref<android::text::method::NumberKeyListener>() const
 {
 	return local_ref<android::text::method::NumberKeyListener>(get_jobject());
+}
+
+android::text::method::DigitsKeyListener::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
+android::text::method::DigitsKeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +129,8 @@ android::text::method::DigitsKeyListener::DigitsKeyListener()
 	call_new_object<
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +142,8 @@ android::text::method::DigitsKeyListener::DigitsKeyListener(jboolean a0, jboolea
 	call_new_object<
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(1),
-		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -116,8 +156,8 @@ local_ref< android::text::method::DigitsKeyListener > android::text::method::Dig
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::method::DigitsKeyListener > >
-	();
+		local_ref< android::text::method::DigitsKeyListener >
+	>();
 }
 
 local_ref< android::text::method::DigitsKeyListener > android::text::method::DigitsKeyListener::getInstance(jboolean a0, jboolean a1)
@@ -126,8 +166,8 @@ local_ref< android::text::method::DigitsKeyListener > android::text::method::Dig
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(4),
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::text::method::DigitsKeyListener > >
-	(a0, a1);
+		local_ref< android::text::method::DigitsKeyListener >
+	>(a0, a1);
 }
 
 local_ref< android::text::method::DigitsKeyListener > android::text::method::DigitsKeyListener::getInstance(local_ref< java::lang::String > const &a0)
@@ -136,8 +176,8 @@ local_ref< android::text::method::DigitsKeyListener > android::text::method::Dig
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(5),
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::text::method::DigitsKeyListener > >
-	(a0);
+		local_ref< android::text::method::DigitsKeyListener >
+	>(a0);
 }
 
 jint android::text::method::DigitsKeyListener::getInputType()
@@ -146,8 +186,8 @@ jint android::text::method::DigitsKeyListener::getInputType()
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(6),
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::text::method::DigitsKeyListener::filter(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, local_ref< android::text::Spanned > const &a3, jint a4, jint a5)
@@ -156,8 +196,8 @@ local_ref< java::lang::CharSequence > android::text::method::DigitsKeyListener::
 		android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(7),
 		android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

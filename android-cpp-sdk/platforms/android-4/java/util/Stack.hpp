@@ -11,11 +11,27 @@
 #define J2CPP_JAVA_UTIL_STACK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
+namespace j2cpp { namespace java { namespace util { class RandomAccess; } } }
 namespace j2cpp { namespace java { namespace util { class Vector; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
+#include <java/util/AbstractList.hpp>
+#include <java/util/Collection.hpp>
+#include <java/util/List.hpp>
+#include <java/util/RandomAccess.hpp>
 #include <java/util/Vector.hpp>
 
 
@@ -43,7 +59,16 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::List>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::RandomAccess>() const;
 		operator local_ref<java::util::Vector>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
 
 
 		Stack();
@@ -70,9 +95,54 @@ namespace j2cpp {
 
 
 
+java::util::Stack::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::util::List>() const
+{
+	return local_ref<java::util::List>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::util::RandomAccess>() const
+{
+	return local_ref<java::util::RandomAccess>(get_jobject());
+}
+
 java::util::Stack::operator local_ref<java::util::Vector>() const
 {
 	return local_ref<java::util::Vector>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::util::AbstractList>() const
+{
+	return local_ref<java::util::AbstractList>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::Stack::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
 }
 
 
@@ -81,8 +151,8 @@ java::util::Stack::Stack()
 	call_new_object<
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(0),
-		java::util::Stack::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Stack::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +164,8 @@ jboolean java::util::Stack::empty()
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(1),
 		java::util::Stack::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Stack::peek()
@@ -104,8 +174,8 @@ local_ref< java::lang::Object > java::util::Stack::peek()
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(2),
 		java::util::Stack::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Stack::pop()
@@ -114,8 +184,8 @@ local_ref< java::lang::Object > java::util::Stack::pop()
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(3),
 		java::util::Stack::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Stack::push(local_ref< java::lang::Object > const &a0)
@@ -124,8 +194,8 @@ local_ref< java::lang::Object > java::util::Stack::push(local_ref< java::lang::O
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(4),
 		java::util::Stack::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Stack::search(local_ref< java::lang::Object > const &a0)
@@ -134,8 +204,8 @@ jint java::util::Stack::search(local_ref< java::lang::Object > const &a0)
 		java::util::Stack::J2CPP_CLASS_NAME,
 		java::util::Stack::J2CPP_METHOD_NAME(5),
 		java::util::Stack::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

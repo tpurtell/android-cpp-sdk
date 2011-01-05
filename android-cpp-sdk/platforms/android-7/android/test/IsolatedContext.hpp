@@ -68,6 +68,8 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::Context>() const;
 		operator local_ref<android::content::ContextWrapper>() const;
 
 
@@ -100,6 +102,16 @@ namespace j2cpp {
 
 
 
+android::test::IsolatedContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::test::IsolatedContext::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
 android::test::IsolatedContext::operator local_ref<android::content::ContextWrapper>() const
 {
 	return local_ref<android::content::ContextWrapper>(get_jobject());
@@ -111,8 +123,8 @@ android::test::IsolatedContext::IsolatedContext(local_ref< android::content::Con
 	call_new_object<
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(0),
-		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -124,8 +136,8 @@ local_ref< java::util::List > android::test::IsolatedContext::getAndClearBroadca
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(1),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< android::content::ContentResolver > android::test::IsolatedContext::getContentResolver()
@@ -134,8 +146,8 @@ local_ref< android::content::ContentResolver > android::test::IsolatedContext::g
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(2),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::ContentResolver > >
-	(get_jobject());
+		local_ref< android::content::ContentResolver >
+	>(get_jobject());
 }
 
 jboolean android::test::IsolatedContext::bindService(local_ref< android::content::Intent > const &a0, local_ref< android::content::ServiceConnection > const &a1, jint a2)
@@ -144,8 +156,8 @@ jboolean android::test::IsolatedContext::bindService(local_ref< android::content
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(3),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::content::Intent > android::test::IsolatedContext::registerReceiver(local_ref< android::content::BroadcastReceiver > const &a0, local_ref< android::content::IntentFilter > const &a1)
@@ -154,8 +166,8 @@ local_ref< android::content::Intent > android::test::IsolatedContext::registerRe
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(4),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::Intent > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::Intent >
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::IsolatedContext::sendBroadcast(local_ref< android::content::Intent > const &a0)
@@ -164,8 +176,8 @@ void android::test::IsolatedContext::sendBroadcast(local_ref< android::content::
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(5),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::IsolatedContext::sendOrderedBroadcast(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1)
@@ -174,8 +186,8 @@ void android::test::IsolatedContext::sendOrderedBroadcast(local_ref< android::co
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(6),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::test::IsolatedContext::checkUriPermission(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, jint a3, jint a4, jint a5)
@@ -184,8 +196,8 @@ jint android::test::IsolatedContext::checkUriPermission(local_ref< android::net:
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(7),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jint android::test::IsolatedContext::checkUriPermission(local_ref< android::net::Uri > const &a0, jint a1, jint a2, jint a3)
@@ -194,8 +206,8 @@ jint android::test::IsolatedContext::checkUriPermission(local_ref< android::net:
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(8),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::Object > android::test::IsolatedContext::getSystemService(local_ref< java::lang::String > const &a0)
@@ -204,8 +216,8 @@ local_ref< java::lang::Object > android::test::IsolatedContext::getSystemService
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(9),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::File > android::test::IsolatedContext::getFilesDir()
@@ -214,8 +226,8 @@ local_ref< java::io::File > android::test::IsolatedContext::getFilesDir()
 		android::test::IsolatedContext::J2CPP_CLASS_NAME,
 		android::test::IsolatedContext::J2CPP_METHOD_NAME(10),
 		android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 

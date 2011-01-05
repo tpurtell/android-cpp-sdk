@@ -16,15 +16,31 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace app { class ListActivity; } } }
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ResolveInfo; } } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/app/ListActivity.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/pm/ResolveInfo.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Bundle.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -130,7 +146,16 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::ListActivity>() const;
+		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
 
 
 		LauncherActivity();
@@ -165,8 +190,8 @@ android::app::LauncherActivity_::IconResizer::IconResizer(local_ref< android::ap
 	call_new_object<
 		android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME,
 		android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_NAME(0),
-		android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -178,8 +203,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::LauncherActivit
 		android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME,
 		android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_NAME(1),
 		android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 
@@ -201,8 +226,8 @@ android::app::LauncherActivity_::ListItem::ListItem()
 	call_new_object<
 		android::app::LauncherActivity_::ListItem::J2CPP_CLASS_NAME,
 		android::app::LauncherActivity_::ListItem::J2CPP_METHOD_NAME(0),
-		android::app::LauncherActivity_::ListItem::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::LauncherActivity_::ListItem::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , resolveInfo(get_jobject())
 , label(get_jobject())
@@ -227,9 +252,54 @@ J2CPP_DEFINE_FIELD(android::app::LauncherActivity_::ListItem,5,"extras","Landroi
 
 
 
+android::app::LauncherActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::LauncherActivity::operator local_ref<android::app::ListActivity>() const
 {
 	return local_ref<android::app::ListActivity>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::app::Activity>() const
+{
+	return local_ref<android::app::Activity>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::app::LauncherActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
 }
 
 
@@ -238,8 +308,8 @@ android::app::LauncherActivity::LauncherActivity()
 	call_new_object<
 		android::app::LauncherActivity::J2CPP_CLASS_NAME,
 		android::app::LauncherActivity::J2CPP_METHOD_NAME(0),
-		android::app::LauncherActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::LauncherActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -258,8 +328,8 @@ local_ref< java::util::List > android::app::LauncherActivity::makeListItems()
 		android::app::LauncherActivity::J2CPP_CLASS_NAME,
 		android::app::LauncherActivity::J2CPP_METHOD_NAME(8),
 		android::app::LauncherActivity::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 

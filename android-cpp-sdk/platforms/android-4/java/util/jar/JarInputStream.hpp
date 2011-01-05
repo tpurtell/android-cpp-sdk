@@ -11,16 +11,24 @@
 #define J2CPP_JAVA_UTIL_JAR_JARINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class JarEntry; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipInputStream; } } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class InflaterInputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/jar/JarEntry.hpp>
 #include <java/util/jar/Manifest.hpp>
+#include <java/util/zip/InflaterInputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
 #include <java/util/zip/ZipInputStream.hpp>
 
@@ -50,7 +58,12 @@ namespace java { namespace util { namespace jar {
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::util::zip::ZipInputStream>() const;
+		operator local_ref<java::util::zip::InflaterInputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		JarInputStream(local_ref< java::io::InputStream > const&, jboolean);
@@ -78,9 +91,34 @@ namespace j2cpp {
 
 
 
+java::util::jar::JarInputStream::operator local_ref<java::io::FilterInputStream>() const
+{
+	return local_ref<java::io::FilterInputStream>(get_jobject());
+}
+
+java::util::jar::JarInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+java::util::jar::JarInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::util::jar::JarInputStream::operator local_ref<java::util::zip::ZipInputStream>() const
 {
 	return local_ref<java::util::zip::ZipInputStream>(get_jobject());
+}
+
+java::util::jar::JarInputStream::operator local_ref<java::util::zip::InflaterInputStream>() const
+{
+	return local_ref<java::util::zip::InflaterInputStream>(get_jobject());
+}
+
+java::util::jar::JarInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +127,8 @@ java::util::jar::JarInputStream::JarInputStream(local_ref< java::io::InputStream
 	call_new_object<
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(0),
-		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -102,8 +140,8 @@ java::util::jar::JarInputStream::JarInputStream(local_ref< java::io::InputStream
 	call_new_object<
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(1),
-		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -115,8 +153,8 @@ local_ref< java::util::jar::Manifest > java::util::jar::JarInputStream::getManif
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(2),
 		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::jar::Manifest > >
-	(get_jobject());
+		local_ref< java::util::jar::Manifest >
+	>(get_jobject());
 }
 
 local_ref< java::util::jar::JarEntry > java::util::jar::JarInputStream::getNextJarEntry()
@@ -125,8 +163,8 @@ local_ref< java::util::jar::JarEntry > java::util::jar::JarInputStream::getNextJ
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(3),
 		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::jar::JarEntry > >
-	(get_jobject());
+		local_ref< java::util::jar::JarEntry >
+	>(get_jobject());
 }
 
 jint java::util::jar::JarInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -135,8 +173,8 @@ jint java::util::jar::JarInputStream::read(local_ref< array<jbyte,1> > const &a0
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(4),
 		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::zip::ZipEntry > java::util::jar::JarInputStream::getNextEntry()
@@ -145,8 +183,8 @@ local_ref< java::util::zip::ZipEntry > java::util::jar::JarInputStream::getNextE
 		java::util::jar::JarInputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarInputStream::J2CPP_METHOD_NAME(5),
 		java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::zip::ZipEntry > >
-	(get_jobject());
+		local_ref< java::util::zip::ZipEntry >
+	>(get_jobject());
 }
 
 

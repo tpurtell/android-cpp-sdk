@@ -11,16 +11,18 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_SECRETKEYSPEC_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Key.hpp>
 #include <java/security/spec/KeySpec.hpp>
 #include <javax/crypto/SecretKey.hpp>
 
@@ -50,10 +52,11 @@ namespace javax { namespace crypto { namespace spec {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::security::Key>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::crypto::SecretKey>() const;
-		operator local_ref<java::security::spec::KeySpec>() const;
-		operator local_ref<java::io::Serializable>() const;
 
 
 		SecretKeySpec(local_ref< array<jbyte,1> > const&, local_ref< java::lang::String > const&);
@@ -82,6 +85,21 @@ namespace j2cpp {
 
 
 
+javax::crypto::spec::SecretKeySpec::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+javax::crypto::spec::SecretKeySpec::operator local_ref<java::security::spec::KeySpec>() const
+{
+	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+javax::crypto::spec::SecretKeySpec::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
+}
+
 javax::crypto::spec::SecretKeySpec::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -92,24 +110,14 @@ javax::crypto::spec::SecretKeySpec::operator local_ref<javax::crypto::SecretKey>
 	return local_ref<javax::crypto::SecretKey>(get_jobject());
 }
 
-javax::crypto::spec::SecretKeySpec::operator local_ref<java::security::spec::KeySpec>() const
-{
-	return local_ref<java::security::spec::KeySpec>(get_jobject());
-}
-
-javax::crypto::spec::SecretKeySpec::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 
 javax::crypto::spec::SecretKeySpec::SecretKeySpec(local_ref< array<jbyte,1> > const &a0, local_ref< java::lang::String > const &a1)
 : object<javax::crypto::spec::SecretKeySpec>(
 	call_new_object<
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -121,8 +129,8 @@ javax::crypto::spec::SecretKeySpec::SecretKeySpec(local_ref< array<jbyte,1> > co
 	call_new_object<
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -134,8 +142,8 @@ local_ref< java::lang::String > javax::crypto::spec::SecretKeySpec::getAlgorithm
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::crypto::spec::SecretKeySpec::getFormat()
@@ -144,8 +152,8 @@ local_ref< java::lang::String > javax::crypto::spec::SecretKeySpec::getFormat()
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::crypto::spec::SecretKeySpec::getEncoded()
@@ -154,8 +162,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::SecretKeySpec::getEncoded()
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::SecretKeySpec::hashCode()
@@ -164,8 +172,8 @@ jint javax::crypto::spec::SecretKeySpec::hashCode()
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(5),
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean javax::crypto::spec::SecretKeySpec::equals(local_ref< java::lang::Object > const &a0)
@@ -174,8 +182,8 @@ jboolean javax::crypto::spec::SecretKeySpec::equals(local_ref< java::lang::Objec
 		javax::crypto::spec::SecretKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_NAME(6),
 		javax::crypto::spec::SecretKeySpec::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

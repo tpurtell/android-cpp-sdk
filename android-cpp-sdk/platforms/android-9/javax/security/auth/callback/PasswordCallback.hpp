@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_CALLBACK_PASSWORDCALLBACK_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
@@ -47,8 +47,8 @@ namespace javax { namespace security { namespace auth { namespace callback {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::security::auth::callback::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -78,14 +78,14 @@ namespace j2cpp {
 
 
 
-javax::security::auth::callback::PasswordCallback::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::security::auth::callback::PasswordCallback::operator local_ref<javax::security::auth::callback::Callback>() const
 {
 	return local_ref<javax::security::auth::callback::Callback>(get_jobject());
+}
+
+javax::security::auth::callback::PasswordCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 javax::security::auth::callback::PasswordCallback::operator local_ref<java::io::Serializable>() const
@@ -99,8 +99,8 @@ javax::security::auth::callback::PasswordCallback::PasswordCallback(local_ref< j
 	call_new_object<
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(0),
-		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +112,8 @@ local_ref< java::lang::String > javax::security::auth::callback::PasswordCallbac
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(1),
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean javax::security::auth::callback::PasswordCallback::isEchoOn()
@@ -122,8 +122,8 @@ jboolean javax::security::auth::callback::PasswordCallback::isEchoOn()
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(2),
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::security::auth::callback::PasswordCallback::setPassword(local_ref< array<jchar,1> > const &a0)
@@ -132,8 +132,8 @@ void javax::security::auth::callback::PasswordCallback::setPassword(local_ref< a
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(3),
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jchar,1> > javax::security::auth::callback::PasswordCallback::getPassword()
@@ -142,8 +142,8 @@ local_ref< array<jchar,1> > javax::security::auth::callback::PasswordCallback::g
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(4),
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 void javax::security::auth::callback::PasswordCallback::clearPassword()
@@ -152,8 +152,8 @@ void javax::security::auth::callback::PasswordCallback::clearPassword()
 		javax::security::auth::callback::PasswordCallback::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_NAME(5),
 		javax::security::auth::callback::PasswordCallback::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

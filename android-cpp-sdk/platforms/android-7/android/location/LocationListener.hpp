@@ -81,8 +81,8 @@ void android::location::LocationListener::onLocationChanged(local_ref< android::
 		android::location::LocationListener::J2CPP_CLASS_NAME,
 		android::location::LocationListener::J2CPP_METHOD_NAME(0),
 		android::location::LocationListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationListener::onStatusChanged(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::os::Bundle > const &a2)
@@ -91,8 +91,8 @@ void android::location::LocationListener::onStatusChanged(local_ref< java::lang:
 		android::location::LocationListener::J2CPP_CLASS_NAME,
 		android::location::LocationListener::J2CPP_METHOD_NAME(1),
 		android::location::LocationListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::location::LocationListener::onProviderEnabled(local_ref< java::lang::String > const &a0)
@@ -101,8 +101,8 @@ void android::location::LocationListener::onProviderEnabled(local_ref< java::lan
 		android::location::LocationListener::J2CPP_CLASS_NAME,
 		android::location::LocationListener::J2CPP_METHOD_NAME(2),
 		android::location::LocationListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationListener::onProviderDisabled(local_ref< java::lang::String > const &a0)
@@ -111,8 +111,8 @@ void android::location::LocationListener::onProviderDisabled(local_ref< java::la
 		android::location::LocationListener::J2CPP_CLASS_NAME,
 		android::location::LocationListener::J2CPP_METHOD_NAME(3),
 		android::location::LocationListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

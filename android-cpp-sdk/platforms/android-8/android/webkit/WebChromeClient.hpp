@@ -167,8 +167,8 @@ void android::webkit::WebChromeClient_::CustomViewCallback::onCustomViewHidden()
 		android::webkit::WebChromeClient_::CustomViewCallback::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient_::CustomViewCallback::J2CPP_METHOD_NAME(0),
 		android::webkit::WebChromeClient_::CustomViewCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -188,8 +188,8 @@ android::webkit::WebChromeClient::WebChromeClient()
 	call_new_object<
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(0),
-		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -201,8 +201,8 @@ void android::webkit::WebChromeClient::onProgressChanged(local_ref< android::web
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(1),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebChromeClient::onReceivedTitle(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1)
@@ -211,8 +211,8 @@ void android::webkit::WebChromeClient::onReceivedTitle(local_ref< android::webki
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(2),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebChromeClient::onReceivedIcon(local_ref< android::webkit::WebView > const &a0, local_ref< android::graphics::Bitmap > const &a1)
@@ -221,8 +221,8 @@ void android::webkit::WebChromeClient::onReceivedIcon(local_ref< android::webkit
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(3),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebChromeClient::onReceivedTouchIconUrl(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -231,8 +231,8 @@ void android::webkit::WebChromeClient::onReceivedTouchIconUrl(local_ref< android
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(4),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::WebChromeClient::onShowCustomView(local_ref< android::view::View > const &a0, local_ref< android::webkit::WebChromeClient_::CustomViewCallback > const &a1)
@@ -241,8 +241,8 @@ void android::webkit::WebChromeClient::onShowCustomView(local_ref< android::view
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(5),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebChromeClient::onHideCustomView()
@@ -251,8 +251,8 @@ void android::webkit::WebChromeClient::onHideCustomView()
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(6),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebChromeClient::onCreateWindow(local_ref< android::webkit::WebView > const &a0, jboolean a1, jboolean a2, local_ref< android::os::Message > const &a3)
@@ -261,8 +261,8 @@ jboolean android::webkit::WebChromeClient::onCreateWindow(local_ref< android::we
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(7),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::webkit::WebChromeClient::onRequestFocus(local_ref< android::webkit::WebView > const &a0)
@@ -271,8 +271,8 @@ void android::webkit::WebChromeClient::onRequestFocus(local_ref< android::webkit
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(8),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebChromeClient::onCloseWindow(local_ref< android::webkit::WebView > const &a0)
@@ -281,8 +281,8 @@ void android::webkit::WebChromeClient::onCloseWindow(local_ref< android::webkit:
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(9),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebChromeClient::onJsAlert(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::webkit::JsResult > const &a3)
@@ -291,8 +291,8 @@ jboolean android::webkit::WebChromeClient::onJsAlert(local_ref< android::webkit:
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(10),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::webkit::WebChromeClient::onJsConfirm(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::webkit::JsResult > const &a3)
@@ -301,8 +301,8 @@ jboolean android::webkit::WebChromeClient::onJsConfirm(local_ref< android::webki
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(11),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::webkit::WebChromeClient::onJsPrompt(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< android::webkit::JsPromptResult > const &a4)
@@ -311,8 +311,8 @@ jboolean android::webkit::WebChromeClient::onJsPrompt(local_ref< android::webkit
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(12),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::webkit::WebChromeClient::onJsBeforeUnload(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::webkit::JsResult > const &a3)
@@ -321,8 +321,8 @@ jboolean android::webkit::WebChromeClient::onJsBeforeUnload(local_ref< android::
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(13),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::webkit::WebChromeClient::onExceededDatabaseQuota(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jlong a2, jlong a3, jlong a4, local_ref< android::webkit::WebStorage_::QuotaUpdater > const &a5)
@@ -331,8 +331,8 @@ void android::webkit::WebChromeClient::onExceededDatabaseQuota(local_ref< java::
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(14),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::webkit::WebChromeClient::onReachedMaxAppCacheSize(jlong a0, jlong a1, local_ref< android::webkit::WebStorage_::QuotaUpdater > const &a2)
@@ -341,8 +341,8 @@ void android::webkit::WebChromeClient::onReachedMaxAppCacheSize(jlong a0, jlong 
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(15),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::WebChromeClient::onGeolocationPermissionsShowPrompt(local_ref< java::lang::String > const &a0, local_ref< android::webkit::GeolocationPermissions_::Callback > const &a1)
@@ -351,8 +351,8 @@ void android::webkit::WebChromeClient::onGeolocationPermissionsShowPrompt(local_
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(16),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebChromeClient::onGeolocationPermissionsHidePrompt()
@@ -361,8 +361,8 @@ void android::webkit::WebChromeClient::onGeolocationPermissionsHidePrompt()
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(17),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebChromeClient::onJsTimeout()
@@ -371,8 +371,8 @@ jboolean android::webkit::WebChromeClient::onJsTimeout()
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(18),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebChromeClient::onConsoleMessage(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -381,8 +381,8 @@ void android::webkit::WebChromeClient::onConsoleMessage(local_ref< java::lang::S
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(19),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::webkit::WebChromeClient::onConsoleMessage(local_ref< android::webkit::ConsoleMessage > const &a0)
@@ -391,8 +391,8 @@ jboolean android::webkit::WebChromeClient::onConsoleMessage(local_ref< android::
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(20),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Bitmap > android::webkit::WebChromeClient::getDefaultVideoPoster()
@@ -401,8 +401,8 @@ local_ref< android::graphics::Bitmap > android::webkit::WebChromeClient::getDefa
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(21),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::webkit::WebChromeClient::getVideoLoadingProgressView()
@@ -411,8 +411,8 @@ local_ref< android::view::View > android::webkit::WebChromeClient::getVideoLoadi
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(22),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::webkit::WebChromeClient::getVisitedHistory(local_ref< android::webkit::ValueCallback > const &a0)
@@ -421,8 +421,8 @@ void android::webkit::WebChromeClient::getVisitedHistory(local_ref< android::web
 		android::webkit::WebChromeClient::J2CPP_CLASS_NAME,
 		android::webkit::WebChromeClient::J2CPP_METHOD_NAME(23),
 		android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

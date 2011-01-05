@@ -11,11 +11,13 @@
 #define J2CPP_JAVA_UTIL_LOGGING_MEMORYHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Handler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Level; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/logging/Handler.hpp>
 #include <java/util/logging/Level.hpp>
 #include <java/util/logging/LogRecord.hpp>
@@ -48,6 +50,7 @@ namespace java { namespace util { namespace logging {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::logging::Handler>() const;
 
 
@@ -79,6 +82,11 @@ namespace j2cpp {
 
 
 
+java::util::logging::MemoryHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::logging::MemoryHandler::operator local_ref<java::util::logging::Handler>() const
 {
 	return local_ref<java::util::logging::Handler>(get_jobject());
@@ -90,8 +98,8 @@ java::util::logging::MemoryHandler::MemoryHandler()
 	call_new_object<
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(0),
-		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -103,8 +111,8 @@ java::util::logging::MemoryHandler::MemoryHandler(local_ref< java::util::logging
 	call_new_object<
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(1),
-		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -116,8 +124,8 @@ void java::util::logging::MemoryHandler::close()
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(2),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::logging::MemoryHandler::flush()
@@ -126,8 +134,8 @@ void java::util::logging::MemoryHandler::flush()
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(3),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::logging::MemoryHandler::publish(local_ref< java::util::logging::LogRecord > const &a0)
@@ -136,8 +144,8 @@ void java::util::logging::MemoryHandler::publish(local_ref< java::util::logging:
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(4),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::logging::Level > java::util::logging::MemoryHandler::getPushLevel()
@@ -146,8 +154,8 @@ local_ref< java::util::logging::Level > java::util::logging::MemoryHandler::getP
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(5),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::logging::Level > >
-	(get_jobject());
+		local_ref< java::util::logging::Level >
+	>(get_jobject());
 }
 
 jboolean java::util::logging::MemoryHandler::isLoggable(local_ref< java::util::logging::LogRecord > const &a0)
@@ -156,8 +164,8 @@ jboolean java::util::logging::MemoryHandler::isLoggable(local_ref< java::util::l
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(6),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::logging::MemoryHandler::push()
@@ -166,8 +174,8 @@ void java::util::logging::MemoryHandler::push()
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(7),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::logging::MemoryHandler::setPushLevel(local_ref< java::util::logging::Level > const &a0)
@@ -176,8 +184,8 @@ void java::util::logging::MemoryHandler::setPushLevel(local_ref< java::util::log
 		java::util::logging::MemoryHandler::J2CPP_CLASS_NAME,
 		java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(8),
 		java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,10 +11,12 @@
 #define J2CPP_ANDROID_UTIL_XML_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlSerializer; } } } }
@@ -27,6 +29,8 @@ namespace j2cpp { namespace android { namespace util { namespace Xml_ { class En
 #include <android/util/Xml.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/Reader.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -65,7 +69,10 @@ namespace android { namespace util {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::util::Xml_::Encoding >, 1> > values();
@@ -135,9 +142,24 @@ namespace j2cpp {
 
 
 
+android::util::Xml_::Encoding::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::util::Xml_::Encoding::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::util::Xml_::Encoding::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::util::Xml_::Encoding::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::util::Xml_::Encoding >, 1> > android::util::Xml_::Encoding::values()
@@ -146,8 +168,8 @@ local_ref< array< local_ref< android::util::Xml_::Encoding >, 1> > android::util
 		android::util::Xml_::Encoding::J2CPP_CLASS_NAME,
 		android::util::Xml_::Encoding::J2CPP_METHOD_NAME(0),
 		android::util::Xml_::Encoding::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::util::Xml_::Encoding >, 1> > >
-	();
+		local_ref< array< local_ref< android::util::Xml_::Encoding >, 1> >
+	>();
 }
 
 local_ref< android::util::Xml_::Encoding > android::util::Xml_::Encoding::valueOf(local_ref< java::lang::String > const &a0)
@@ -156,8 +178,8 @@ local_ref< android::util::Xml_::Encoding > android::util::Xml_::Encoding::valueO
 		android::util::Xml_::Encoding::J2CPP_CLASS_NAME,
 		android::util::Xml_::Encoding::J2CPP_METHOD_NAME(1),
 		android::util::Xml_::Encoding::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::util::Xml_::Encoding > >
-	(a0);
+		local_ref< android::util::Xml_::Encoding >
+	>(a0);
 }
 
 
@@ -216,8 +238,8 @@ android::util::Xml::Xml()
 	call_new_object<
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(0),
-		android::util::Xml::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::Xml::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -229,8 +251,8 @@ void android::util::Xml::parse(local_ref< java::lang::String > const &a0, local_
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(1),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::util::Xml::parse(local_ref< java::io::Reader > const &a0, local_ref< org::xml::sax::ContentHandler > const &a1)
@@ -239,8 +261,8 @@ void android::util::Xml::parse(local_ref< java::io::Reader > const &a0, local_re
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(2),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::util::Xml::parse(local_ref< java::io::InputStream > const &a0, local_ref< android::util::Xml_::Encoding > const &a1, local_ref< org::xml::sax::ContentHandler > const &a2)
@@ -249,8 +271,8 @@ void android::util::Xml::parse(local_ref< java::io::InputStream > const &a0, loc
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(3),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< org::xmlpull::v1::XmlPullParser > android::util::Xml::newPullParser()
@@ -259,8 +281,8 @@ local_ref< org::xmlpull::v1::XmlPullParser > android::util::Xml::newPullParser()
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(4),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::xmlpull::v1::XmlPullParser > >
-	();
+		local_ref< org::xmlpull::v1::XmlPullParser >
+	>();
 }
 
 local_ref< org::xmlpull::v1::XmlSerializer > android::util::Xml::newSerializer()
@@ -269,8 +291,8 @@ local_ref< org::xmlpull::v1::XmlSerializer > android::util::Xml::newSerializer()
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(5),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::xmlpull::v1::XmlSerializer > >
-	();
+		local_ref< org::xmlpull::v1::XmlSerializer >
+	>();
 }
 
 local_ref< android::util::Xml_::Encoding > android::util::Xml::findEncodingByName(local_ref< java::lang::String > const &a0)
@@ -279,8 +301,8 @@ local_ref< android::util::Xml_::Encoding > android::util::Xml::findEncodingByNam
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(6),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::util::Xml_::Encoding > >
-	(a0);
+		local_ref< android::util::Xml_::Encoding >
+	>(a0);
 }
 
 local_ref< android::util::AttributeSet > android::util::Xml::asAttributeSet(local_ref< org::xmlpull::v1::XmlPullParser > const &a0)
@@ -289,8 +311,8 @@ local_ref< android::util::AttributeSet > android::util::Xml::asAttributeSet(loca
 		android::util::Xml::J2CPP_CLASS_NAME,
 		android::util::Xml::J2CPP_METHOD_NAME(7),
 		android::util::Xml::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::util::AttributeSet > >
-	(a0);
+		local_ref< android::util::AttributeSet >
+	>(a0);
 }
 
 

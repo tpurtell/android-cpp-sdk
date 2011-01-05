@@ -43,8 +43,8 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::xml::sax::InputSource > getExternalSubset(local_ref< java::lang::String >  const&, local_ref< java::lang::String >  const&);
@@ -69,14 +69,14 @@ namespace j2cpp {
 
 
 
-org::xml::sax::ext::EntityResolver2::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::xml::sax::ext::EntityResolver2::operator local_ref<org::xml::sax::EntityResolver>() const
 {
 	return local_ref<org::xml::sax::EntityResolver>(get_jobject());
+}
+
+org::xml::sax::ext::EntityResolver2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::getExternalSubset(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -85,8 +85,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::get
 		org::xml::sax::ext::EntityResolver2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -95,8 +95,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::res
 		org::xml::sax::ext::EntityResolver2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::EntityResolver2::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

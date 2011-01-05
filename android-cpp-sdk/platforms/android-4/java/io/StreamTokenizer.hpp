@@ -127,8 +127,8 @@ java::io::StreamTokenizer::StreamTokenizer(local_ref< java::io::InputStream > co
 	call_new_object<
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(0),
-		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , nval(get_jobject())
 , sval(get_jobject())
@@ -143,8 +143,8 @@ java::io::StreamTokenizer::StreamTokenizer(local_ref< java::io::Reader > const &
 	call_new_object<
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(1),
-		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , nval(get_jobject())
 , sval(get_jobject())
@@ -159,8 +159,8 @@ void java::io::StreamTokenizer::commentChar(jint a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(2),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StreamTokenizer::eolIsSignificant(jboolean a0)
@@ -169,8 +169,8 @@ void java::io::StreamTokenizer::eolIsSignificant(jboolean a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(3),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::io::StreamTokenizer::lineno()
@@ -179,8 +179,8 @@ jint java::io::StreamTokenizer::lineno()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(4),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::lowerCaseMode(jboolean a0)
@@ -189,8 +189,8 @@ void java::io::StreamTokenizer::lowerCaseMode(jboolean a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(5),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::io::StreamTokenizer::nextToken()
@@ -199,8 +199,8 @@ jint java::io::StreamTokenizer::nextToken()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(6),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::ordinaryChar(jint a0)
@@ -209,8 +209,8 @@ void java::io::StreamTokenizer::ordinaryChar(jint a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(7),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StreamTokenizer::ordinaryChars(jint a0, jint a1)
@@ -219,8 +219,8 @@ void java::io::StreamTokenizer::ordinaryChars(jint a0, jint a1)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(8),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::io::StreamTokenizer::parseNumbers()
@@ -229,8 +229,8 @@ void java::io::StreamTokenizer::parseNumbers()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(9),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::pushBack()
@@ -239,8 +239,8 @@ void java::io::StreamTokenizer::pushBack()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(10),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::quoteChar(jint a0)
@@ -249,8 +249,8 @@ void java::io::StreamTokenizer::quoteChar(jint a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(11),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StreamTokenizer::resetSyntax()
@@ -259,8 +259,8 @@ void java::io::StreamTokenizer::resetSyntax()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(12),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::slashSlashComments(jboolean a0)
@@ -269,8 +269,8 @@ void java::io::StreamTokenizer::slashSlashComments(jboolean a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(13),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StreamTokenizer::slashStarComments(jboolean a0)
@@ -279,8 +279,8 @@ void java::io::StreamTokenizer::slashStarComments(jboolean a0)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(14),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::io::StreamTokenizer::toString()
@@ -289,8 +289,8 @@ local_ref< java::lang::String > java::io::StreamTokenizer::toString()
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(15),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::io::StreamTokenizer::whitespaceChars(jint a0, jint a1)
@@ -299,8 +299,8 @@ void java::io::StreamTokenizer::whitespaceChars(jint a0, jint a1)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(16),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::io::StreamTokenizer::wordChars(jint a0, jint a1)
@@ -309,8 +309,8 @@ void java::io::StreamTokenizer::wordChars(jint a0, jint a1)
 		java::io::StreamTokenizer::J2CPP_CLASS_NAME,
 		java::io::StreamTokenizer::J2CPP_METHOD_NAME(17),
 		java::io::StreamTokenizer::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,6 +11,8 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_XMLFILTERIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
@@ -21,8 +23,6 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLFilte
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -93,9 +93,10 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::xml::sax::XMLFilter>() const;
-		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::XMLReader>() const;
 		operator local_ref<org::xml::sax::DTDHandler>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::XMLFilter>() const;
 		operator local_ref<org::xml::sax::ContentHandler>() const;
 		operator local_ref<org::xml::sax::ErrorHandler>() const;
 
@@ -160,9 +161,14 @@ org::xml::sax::helpers::XMLFilterImpl::operator local_ref<java::lang::Object>() 
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::XMLFilter>() const
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::XMLReader>() const
 {
-	return local_ref<org::xml::sax::XMLFilter>(get_jobject());
+	return local_ref<org::xml::sax::XMLReader>(get_jobject());
+}
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::DTDHandler>() const
+{
+	return local_ref<org::xml::sax::DTDHandler>(get_jobject());
 }
 
 org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::EntityResolver>() const
@@ -170,9 +176,9 @@ org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::EntityR
 	return local_ref<org::xml::sax::EntityResolver>(get_jobject());
 }
 
-org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::DTDHandler>() const
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::XMLFilter>() const
 {
-	return local_ref<org::xml::sax::DTDHandler>(get_jobject());
+	return local_ref<org::xml::sax::XMLFilter>(get_jobject());
 }
 
 org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::ContentHandler>() const
@@ -191,8 +197,8 @@ org::xml::sax::helpers::XMLFilterImpl::XMLFilterImpl()
 	call_new_object<
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(0),
-		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -204,8 +210,8 @@ org::xml::sax::helpers::XMLFilterImpl::XMLFilterImpl(local_ref< org::xml::sax::X
 	call_new_object<
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(1),
-		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -217,8 +223,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setParent(local_ref< org::xml::sax::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLFilterImpl::getParent()
@@ -227,8 +233,8 @@ local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLFilterImpl::get
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(3),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::xml::sax::XMLReader > >
-	(get_jobject());
+		local_ref< org::xml::sax::XMLReader >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -237,8 +243,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setFeature(local_ref< java::lang::St
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(4),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xml::sax::helpers::XMLFilterImpl::getFeature(local_ref< java::lang::String > const &a0)
@@ -247,8 +253,8 @@ jboolean org::xml::sax::helpers::XMLFilterImpl::getFeature(local_ref< java::lang
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(5),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -257,8 +263,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setProperty(local_ref< java::lang::S
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(6),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xml::sax::helpers::XMLFilterImpl::getProperty(local_ref< java::lang::String > const &a0)
@@ -267,8 +273,8 @@ local_ref< java::lang::Object > org::xml::sax::helpers::XMLFilterImpl::getProper
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(7),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -277,8 +283,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setEntityResolver(local_ref< org::xm
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(8),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::EntityResolver > org::xml::sax::helpers::XMLFilterImpl::getEntityResolver()
@@ -287,8 +293,8 @@ local_ref< org::xml::sax::EntityResolver > org::xml::sax::helpers::XMLFilterImpl
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(9),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xml::sax::EntityResolver > >
-	(get_jobject());
+		local_ref< org::xml::sax::EntityResolver >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -297,8 +303,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setDTDHandler(local_ref< org::xml::s
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(10),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::DTDHandler > org::xml::sax::helpers::XMLFilterImpl::getDTDHandler()
@@ -307,8 +313,8 @@ local_ref< org::xml::sax::DTDHandler > org::xml::sax::helpers::XMLFilterImpl::ge
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(11),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::xml::sax::DTDHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::DTDHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setContentHandler(local_ref< org::xml::sax::ContentHandler > const &a0)
@@ -317,8 +323,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setContentHandler(local_ref< org::xm
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(12),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ContentHandler > org::xml::sax::helpers::XMLFilterImpl::getContentHandler()
@@ -327,8 +333,8 @@ local_ref< org::xml::sax::ContentHandler > org::xml::sax::helpers::XMLFilterImpl
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(13),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -337,8 +343,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setErrorHandler(local_ref< org::xml:
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(14),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > org::xml::sax::helpers::XMLFilterImpl::getErrorHandler()
@@ -347,8 +353,8 @@ local_ref< org::xml::sax::ErrorHandler > org::xml::sax::helpers::XMLFilterImpl::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(15),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -357,8 +363,8 @@ void org::xml::sax::helpers::XMLFilterImpl::parse(local_ref< org::xml::sax::Inpu
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(16),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::parse(local_ref< java::lang::String > const &a0)
@@ -367,8 +373,8 @@ void org::xml::sax::helpers::XMLFilterImpl::parse(local_ref< java::lang::String 
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(17),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::helpers::XMLFilterImpl::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -377,8 +383,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::helpers::XMLFilterImpl::r
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(18),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::notationDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -387,8 +393,8 @@ void org::xml::sax::helpers::XMLFilterImpl::notationDecl(local_ref< java::lang::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(19),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::unparsedEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -397,8 +403,8 @@ void org::xml::sax::helpers::XMLFilterImpl::unparsedEntityDecl(local_ref< java::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(20),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::setDocumentLocator(local_ref< org::xml::sax::Locator > const &a0)
@@ -407,8 +413,8 @@ void org::xml::sax::helpers::XMLFilterImpl::setDocumentLocator(local_ref< org::x
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(21),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::startDocument()
@@ -417,8 +423,8 @@ void org::xml::sax::helpers::XMLFilterImpl::startDocument()
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(22),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::endDocument()
@@ -427,8 +433,8 @@ void org::xml::sax::helpers::XMLFilterImpl::endDocument()
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(23),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::startPrefixMapping(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -437,8 +443,8 @@ void org::xml::sax::helpers::XMLFilterImpl::startPrefixMapping(local_ref< java::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(24),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::endPrefixMapping(local_ref< java::lang::String > const &a0)
@@ -447,8 +453,8 @@ void org::xml::sax::helpers::XMLFilterImpl::endPrefixMapping(local_ref< java::la
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(25),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::startElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< org::xml::sax::Attributes > const &a3)
@@ -457,8 +463,8 @@ void org::xml::sax::helpers::XMLFilterImpl::startElement(local_ref< java::lang::
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(26),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::endElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -467,8 +473,8 @@ void org::xml::sax::helpers::XMLFilterImpl::endElement(local_ref< java::lang::St
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(27),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::characters(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -477,8 +483,8 @@ void org::xml::sax::helpers::XMLFilterImpl::characters(local_ref< array<jchar,1>
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(28),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::ignorableWhitespace(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -487,8 +493,8 @@ void org::xml::sax::helpers::XMLFilterImpl::ignorableWhitespace(local_ref< array
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(29),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::processingInstruction(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -497,8 +503,8 @@ void org::xml::sax::helpers::XMLFilterImpl::processingInstruction(local_ref< jav
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(30),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::skippedEntity(local_ref< java::lang::String > const &a0)
@@ -507,8 +513,8 @@ void org::xml::sax::helpers::XMLFilterImpl::skippedEntity(local_ref< java::lang:
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(31),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::warning(local_ref< org::xml::sax::SAXParseException > const &a0)
@@ -517,8 +523,8 @@ void org::xml::sax::helpers::XMLFilterImpl::warning(local_ref< org::xml::sax::SA
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(32),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::error(local_ref< org::xml::sax::SAXParseException > const &a0)
@@ -527,8 +533,8 @@ void org::xml::sax::helpers::XMLFilterImpl::error(local_ref< org::xml::sax::SAXP
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(33),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLFilterImpl::fatalError(local_ref< org::xml::sax::SAXParseException > const &a0)
@@ -537,8 +543,8 @@ void org::xml::sax::helpers::XMLFilterImpl::fatalError(local_ref< org::xml::sax:
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(34),
 		org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

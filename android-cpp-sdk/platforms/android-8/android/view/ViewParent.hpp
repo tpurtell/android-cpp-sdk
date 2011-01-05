@@ -111,8 +111,8 @@ void android::view::ViewParent::requestLayout()
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(0),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::view::ViewParent::isLayoutRequested()
@@ -121,8 +121,8 @@ jboolean android::view::ViewParent::isLayoutRequested()
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(1),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::ViewParent::requestTransparentRegion(local_ref< android::view::View > const &a0)
@@ -131,8 +131,8 @@ void android::view::ViewParent::requestTransparentRegion(local_ref< android::vie
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(2),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::invalidateChild(local_ref< android::view::View > const &a0, local_ref< android::graphics::Rect > const &a1)
@@ -141,8 +141,8 @@ void android::view::ViewParent::invalidateChild(local_ref< android::view::View >
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(3),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::ViewParent > android::view::ViewParent::invalidateChildInParent(local_ref< array<jint,1> > const &a0, local_ref< android::graphics::Rect > const &a1)
@@ -151,8 +151,8 @@ local_ref< android::view::ViewParent > android::view::ViewParent::invalidateChil
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(4),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::ViewParent > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::ViewParent >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::ViewParent > android::view::ViewParent::getParent()
@@ -161,8 +161,8 @@ local_ref< android::view::ViewParent > android::view::ViewParent::getParent()
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(5),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::ViewParent > >
-	(get_jobject());
+		local_ref< android::view::ViewParent >
+	>(get_jobject());
 }
 
 void android::view::ViewParent::requestChildFocus(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -171,8 +171,8 @@ void android::view::ViewParent::requestChildFocus(local_ref< android::view::View
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(6),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::ViewParent::recomputeViewAttributes(local_ref< android::view::View > const &a0)
@@ -181,8 +181,8 @@ void android::view::ViewParent::recomputeViewAttributes(local_ref< android::view
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(7),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::clearChildFocus(local_ref< android::view::View > const &a0)
@@ -191,8 +191,8 @@ void android::view::ViewParent::clearChildFocus(local_ref< android::view::View >
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(8),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ViewParent::getChildVisibleRect(local_ref< android::view::View > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::Point > const &a2)
@@ -201,8 +201,8 @@ jboolean android::view::ViewParent::getChildVisibleRect(local_ref< android::view
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(9),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::view::ViewParent::focusSearch(local_ref< android::view::View > const &a0, jint a1)
@@ -211,8 +211,8 @@ local_ref< android::view::View > android::view::ViewParent::focusSearch(local_re
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(10),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::ViewParent::bringChildToFront(local_ref< android::view::View > const &a0)
@@ -221,8 +221,8 @@ void android::view::ViewParent::bringChildToFront(local_ref< android::view::View
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(11),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::focusableViewAvailable(local_ref< android::view::View > const &a0)
@@ -231,8 +231,8 @@ void android::view::ViewParent::focusableViewAvailable(local_ref< android::view:
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(12),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ViewParent::showContextMenuForChild(local_ref< android::view::View > const &a0)
@@ -241,8 +241,8 @@ jboolean android::view::ViewParent::showContextMenuForChild(local_ref< android::
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(13),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::createContextMenu(local_ref< android::view::ContextMenu > const &a0)
@@ -251,8 +251,8 @@ void android::view::ViewParent::createContextMenu(local_ref< android::view::Cont
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(14),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::childDrawableStateChanged(local_ref< android::view::View > const &a0)
@@ -261,8 +261,8 @@ void android::view::ViewParent::childDrawableStateChanged(local_ref< android::vi
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(15),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewParent::requestDisallowInterceptTouchEvent(jboolean a0)
@@ -271,8 +271,8 @@ void android::view::ViewParent::requestDisallowInterceptTouchEvent(jboolean a0)
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(16),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ViewParent::requestChildRectangleOnScreen(local_ref< android::view::View > const &a0, local_ref< android::graphics::Rect > const &a1, jboolean a2)
@@ -281,8 +281,8 @@ jboolean android::view::ViewParent::requestChildRectangleOnScreen(local_ref< and
 		android::view::ViewParent::J2CPP_CLASS_NAME,
 		android::view::ViewParent::J2CPP_METHOD_NAME(17),
 		android::view::ViewParent::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

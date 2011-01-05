@@ -13,12 +13,16 @@
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -47,8 +51,10 @@ namespace java { namespace sql {
 		{
 		}
 
-		operator local_ref<java::lang::Exception>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SQLException();
@@ -77,14 +83,24 @@ namespace j2cpp {
 
 
 
+java::sql::SQLException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::sql::SQLException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 java::sql::SQLException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
 }
 
-java::sql::SQLException::operator local_ref<java::io::Serializable>() const
+java::sql::SQLException::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +109,8 @@ java::sql::SQLException::SQLException()
 	call_new_object<
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(0),
-		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -106,8 +122,8 @@ java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(1),
-		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -119,8 +135,8 @@ java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0,
 	call_new_object<
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(2),
-		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -132,8 +148,8 @@ java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0,
 	call_new_object<
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(3),
-		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -145,8 +161,8 @@ jint java::sql::SQLException::getErrorCode()
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(4),
 		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::sql::SQLException > java::sql::SQLException::getNextException()
@@ -155,8 +171,8 @@ local_ref< java::sql::SQLException > java::sql::SQLException::getNextException()
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(5),
 		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::sql::SQLException > >
-	(get_jobject());
+		local_ref< java::sql::SQLException >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::SQLException::getSQLState()
@@ -165,8 +181,8 @@ local_ref< java::lang::String > java::sql::SQLException::getSQLState()
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(6),
 		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::sql::SQLException::setNextException(local_ref< java::sql::SQLException > const &a0)
@@ -175,8 +191,8 @@ void java::sql::SQLException::setNextException(local_ref< java::sql::SQLExceptio
 		java::sql::SQLException::J2CPP_CLASS_NAME,
 		java::sql::SQLException::J2CPP_METHOD_NAME(7),
 		java::sql::SQLException::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

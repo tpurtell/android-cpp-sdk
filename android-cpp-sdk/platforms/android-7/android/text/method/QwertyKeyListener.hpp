@@ -11,11 +11,14 @@
 #define J2CPP_ANDROID_TEXT_METHOD_QWERTYKEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { namespace TextKeyListener_ { class Capitalize; } } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 
@@ -23,9 +26,12 @@ namespace j2cpp { namespace android { namespace text { class Editable; } } }
 #include <android/text/Editable.hpp>
 #include <android/text/Spannable.hpp>
 #include <android/text/method/BaseKeyListener.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/text/method/TextKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,7 +58,10 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
 		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
 
 
 		QwertyKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const&, jboolean);
@@ -79,9 +88,24 @@ namespace j2cpp {
 
 
 
+android::text::method::QwertyKeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::method::QwertyKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
 android::text::method::QwertyKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
 {
 	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
+}
+
+android::text::method::QwertyKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
+{
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
 }
 
 
@@ -90,8 +114,8 @@ android::text::method::QwertyKeyListener::QwertyKeyListener(local_ref< android::
 	call_new_object<
 		android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -103,8 +127,8 @@ local_ref< android::text::method::QwertyKeyListener > android::text::method::Qwe
 		android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::method::QwertyKeyListener > >
-	(a0, a1);
+		local_ref< android::text::method::QwertyKeyListener >
+	>(a0, a1);
 }
 
 jint android::text::method::QwertyKeyListener::getInputType()
@@ -113,8 +137,8 @@ jint android::text::method::QwertyKeyListener::getInputType()
 		android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(2),
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::text::method::QwertyKeyListener::onKeyDown(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -123,8 +147,8 @@ jboolean android::text::method::QwertyKeyListener::onKeyDown(local_ref< android:
 		android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::method::QwertyKeyListener::markAsReplaced(local_ref< android::text::Spannable > const &a0, jint a1, jint a2, local_ref< java::lang::String > const &a3)
@@ -133,8 +157,8 @@ void android::text::method::QwertyKeyListener::markAsReplaced(local_ref< android
 		android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(4),
 		android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 

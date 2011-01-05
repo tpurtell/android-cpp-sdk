@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace android { namespace os { class Looper; } } }
+namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/os/Looper.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Runnable.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 
@@ -45,7 +49,9 @@ namespace android { namespace os {
 		{
 		}
 
+		operator local_ref<java::lang::Runnable>() const;
 		operator local_ref<java::lang::Thread>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HandlerThread(local_ref< java::lang::String > const&);
@@ -71,9 +77,19 @@ namespace j2cpp {
 
 
 
+android::os::HandlerThread::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jobject());
+}
+
 android::os::HandlerThread::operator local_ref<java::lang::Thread>() const
 {
 	return local_ref<java::lang::Thread>(get_jobject());
+}
+
+android::os::HandlerThread::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -82,8 +98,8 @@ android::os::HandlerThread::HandlerThread(local_ref< java::lang::String > const 
 	call_new_object<
 		android::os::HandlerThread::J2CPP_CLASS_NAME,
 		android::os::HandlerThread::J2CPP_METHOD_NAME(0),
-		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +111,8 @@ android::os::HandlerThread::HandlerThread(local_ref< java::lang::String > const 
 	call_new_object<
 		android::os::HandlerThread::J2CPP_CLASS_NAME,
 		android::os::HandlerThread::J2CPP_METHOD_NAME(1),
-		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -109,8 +125,8 @@ void android::os::HandlerThread::run()
 		android::os::HandlerThread::J2CPP_CLASS_NAME,
 		android::os::HandlerThread::J2CPP_METHOD_NAME(3),
 		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::Looper > android::os::HandlerThread::getLooper()
@@ -119,8 +135,8 @@ local_ref< android::os::Looper > android::os::HandlerThread::getLooper()
 		android::os::HandlerThread::J2CPP_CLASS_NAME,
 		android::os::HandlerThread::J2CPP_METHOD_NAME(4),
 		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::Looper > >
-	(get_jobject());
+		local_ref< android::os::Looper >
+	>(get_jobject());
 }
 
 jint android::os::HandlerThread::getThreadId()
@@ -129,8 +145,8 @@ jint android::os::HandlerThread::getThreadId()
 		android::os::HandlerThread::J2CPP_CLASS_NAME,
 		android::os::HandlerThread::J2CPP_METHOD_NAME(5),
 		android::os::HandlerThread::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

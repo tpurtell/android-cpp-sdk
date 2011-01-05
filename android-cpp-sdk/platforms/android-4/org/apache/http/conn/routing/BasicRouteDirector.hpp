@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_BASICROUTEDIRECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class RouteInfo; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRouteDirector; } } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -87,8 +87,8 @@ org::apache::http::conn::routing::BasicRouteDirector::BasicRouteDirector()
 	call_new_object<
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +100,8 @@ jint org::apache::http::conn::routing::BasicRouteDirector::nextStep(local_ref< o
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -102,8 +102,8 @@ org::xml::sax::InputSource::InputSource()
 	call_new_object<
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(0),
-		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -115,8 +115,8 @@ org::xml::sax::InputSource::InputSource(local_ref< java::lang::String > const &a
 	call_new_object<
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(1),
-		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -128,8 +128,8 @@ org::xml::sax::InputSource::InputSource(local_ref< java::io::InputStream > const
 	call_new_object<
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(2),
-		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -141,8 +141,8 @@ org::xml::sax::InputSource::InputSource(local_ref< java::io::Reader > const &a0)
 	call_new_object<
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(3),
-		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -154,8 +154,8 @@ void org::xml::sax::InputSource::setPublicId(local_ref< java::lang::String > con
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(4),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::InputSource::getPublicId()
@@ -164,8 +164,8 @@ local_ref< java::lang::String > org::xml::sax::InputSource::getPublicId()
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(5),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::xml::sax::InputSource::setSystemId(local_ref< java::lang::String > const &a0)
@@ -174,8 +174,8 @@ void org::xml::sax::InputSource::setSystemId(local_ref< java::lang::String > con
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(6),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::InputSource::getSystemId()
@@ -184,8 +184,8 @@ local_ref< java::lang::String > org::xml::sax::InputSource::getSystemId()
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(7),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::xml::sax::InputSource::setByteStream(local_ref< java::io::InputStream > const &a0)
@@ -194,8 +194,8 @@ void org::xml::sax::InputSource::setByteStream(local_ref< java::io::InputStream 
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(8),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > org::xml::sax::InputSource::getByteStream()
@@ -204,8 +204,8 @@ local_ref< java::io::InputStream > org::xml::sax::InputSource::getByteStream()
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(9),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 void org::xml::sax::InputSource::setEncoding(local_ref< java::lang::String > const &a0)
@@ -214,8 +214,8 @@ void org::xml::sax::InputSource::setEncoding(local_ref< java::lang::String > con
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(10),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::InputSource::getEncoding()
@@ -224,8 +224,8 @@ local_ref< java::lang::String > org::xml::sax::InputSource::getEncoding()
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(11),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::xml::sax::InputSource::setCharacterStream(local_ref< java::io::Reader > const &a0)
@@ -234,8 +234,8 @@ void org::xml::sax::InputSource::setCharacterStream(local_ref< java::io::Reader 
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(12),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Reader > org::xml::sax::InputSource::getCharacterStream()
@@ -244,8 +244,8 @@ local_ref< java::io::Reader > org::xml::sax::InputSource::getCharacterStream()
 		org::xml::sax::InputSource::J2CPP_CLASS_NAME,
 		org::xml::sax::InputSource::J2CPP_METHOD_NAME(13),
 		org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 

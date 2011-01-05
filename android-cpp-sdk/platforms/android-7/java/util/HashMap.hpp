@@ -64,10 +64,11 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractMap>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::AbstractMap>() const;
 
 
 		HashMap();
@@ -105,9 +106,14 @@ namespace j2cpp {
 
 
 
-java::util::HashMap::operator local_ref<java::util::AbstractMap>() const
+java::util::HashMap::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::util::AbstractMap>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::HashMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::HashMap::operator local_ref<java::lang::Cloneable>() const
@@ -115,14 +121,14 @@ java::util::HashMap::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::HashMap::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::util::HashMap::operator local_ref<java::util::Map>() const
 {
 	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::util::HashMap::operator local_ref<java::util::AbstractMap>() const
+{
+	return local_ref<java::util::AbstractMap>(get_jobject());
 }
 
 
@@ -131,8 +137,8 @@ java::util::HashMap::HashMap()
 	call_new_object<
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(0),
-		java::util::HashMap::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::HashMap::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -144,8 +150,8 @@ java::util::HashMap::HashMap(jint a0)
 	call_new_object<
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(1),
-		java::util::HashMap::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::HashMap::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -157,8 +163,8 @@ java::util::HashMap::HashMap(jint a0, jfloat a1)
 	call_new_object<
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(2),
-		java::util::HashMap::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::HashMap::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -170,8 +176,8 @@ java::util::HashMap::HashMap(local_ref< java::util::Map > const &a0)
 	call_new_object<
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(3),
-		java::util::HashMap::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::HashMap::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -183,8 +189,8 @@ local_ref< java::lang::Object > java::util::HashMap::clone()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(4),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::HashMap::isEmpty()
@@ -193,8 +199,8 @@ jboolean java::util::HashMap::isEmpty()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(5),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::HashMap::size()
@@ -203,8 +209,8 @@ jint java::util::HashMap::size()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(6),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::HashMap::get(local_ref< java::lang::Object > const &a0)
@@ -213,8 +219,8 @@ local_ref< java::lang::Object > java::util::HashMap::get(local_ref< java::lang::
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(7),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::HashMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -223,8 +229,8 @@ jboolean java::util::HashMap::containsKey(local_ref< java::lang::Object > const 
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(8),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::HashMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -233,8 +239,8 @@ jboolean java::util::HashMap::containsValue(local_ref< java::lang::Object > cons
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(9),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::HashMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -243,8 +249,8 @@ local_ref< java::lang::Object > java::util::HashMap::put(local_ref< java::lang::
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(10),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::HashMap::putAll(local_ref< java::util::Map > const &a0)
@@ -253,8 +259,8 @@ void java::util::HashMap::putAll(local_ref< java::util::Map > const &a0)
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(11),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::HashMap::remove(local_ref< java::lang::Object > const &a0)
@@ -263,8 +269,8 @@ local_ref< java::lang::Object > java::util::HashMap::remove(local_ref< java::lan
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(12),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void java::util::HashMap::clear()
@@ -273,8 +279,8 @@ void java::util::HashMap::clear()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(13),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::HashMap::keySet()
@@ -283,8 +289,8 @@ local_ref< java::util::Set > java::util::HashMap::keySet()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(14),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::HashMap::values()
@@ -293,8 +299,8 @@ local_ref< java::util::Collection > java::util::HashMap::values()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(15),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::HashMap::entrySet()
@@ -303,8 +309,8 @@ local_ref< java::util::Set > java::util::HashMap::entrySet()
 		java::util::HashMap::J2CPP_CLASS_NAME,
 		java::util::HashMap::J2CPP_METHOD_NAME(16),
 		java::util::HashMap::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 

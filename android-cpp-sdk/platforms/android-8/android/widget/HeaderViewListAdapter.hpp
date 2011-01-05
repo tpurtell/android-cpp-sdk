@@ -14,6 +14,7 @@
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace widget { class WrapperListAdapter; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 #include <android/database/DataSetObserver.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/Adapter.hpp>
 #include <android/widget/Filter.hpp>
 #include <android/widget/Filterable.hpp>
 #include <android/widget/ListAdapter.hpp>
@@ -70,9 +72,11 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::widget::WrapperListAdapter>() const;
+		operator local_ref<android::widget::ListAdapter>() const;
 		operator local_ref<android::widget::Filterable>() const;
+		operator local_ref<android::widget::Adapter>() const;
+		operator local_ref<android::widget::WrapperListAdapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HeaderViewListAdapter(local_ref< java::util::ArrayList > const&, local_ref< java::util::ArrayList > const&, local_ref< android::widget::ListAdapter > const&);
@@ -112,9 +116,19 @@ namespace j2cpp {
 
 
 
-android::widget::HeaderViewListAdapter::operator local_ref<java::lang::Object>() const
+android::widget::HeaderViewListAdapter::operator local_ref<android::widget::ListAdapter>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::widget::ListAdapter>(get_jobject());
+}
+
+android::widget::HeaderViewListAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jobject());
+}
+
+android::widget::HeaderViewListAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
 }
 
 android::widget::HeaderViewListAdapter::operator local_ref<android::widget::WrapperListAdapter>() const
@@ -122,9 +136,9 @@ android::widget::HeaderViewListAdapter::operator local_ref<android::widget::Wrap
 	return local_ref<android::widget::WrapperListAdapter>(get_jobject());
 }
 
-android::widget::HeaderViewListAdapter::operator local_ref<android::widget::Filterable>() const
+android::widget::HeaderViewListAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::Filterable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -133,8 +147,8 @@ android::widget::HeaderViewListAdapter::HeaderViewListAdapter(local_ref< java::u
 	call_new_object<
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -146,8 +160,8 @@ jint android::widget::HeaderViewListAdapter::getHeadersCount()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(1),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::HeaderViewListAdapter::getFootersCount()
@@ -156,8 +170,8 @@ jint android::widget::HeaderViewListAdapter::getFootersCount()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(2),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::HeaderViewListAdapter::isEmpty()
@@ -166,8 +180,8 @@ jboolean android::widget::HeaderViewListAdapter::isEmpty()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::HeaderViewListAdapter::removeHeader(local_ref< android::view::View > const &a0)
@@ -176,8 +190,8 @@ jboolean android::widget::HeaderViewListAdapter::removeHeader(local_ref< android
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::HeaderViewListAdapter::removeFooter(local_ref< android::view::View > const &a0)
@@ -186,8 +200,8 @@ jboolean android::widget::HeaderViewListAdapter::removeFooter(local_ref< android
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::widget::HeaderViewListAdapter::getCount()
@@ -196,8 +210,8 @@ jint android::widget::HeaderViewListAdapter::getCount()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(6),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::HeaderViewListAdapter::areAllItemsEnabled()
@@ -206,8 +220,8 @@ jboolean android::widget::HeaderViewListAdapter::areAllItemsEnabled()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(7),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::HeaderViewListAdapter::isEnabled(jint a0)
@@ -216,8 +230,8 @@ jboolean android::widget::HeaderViewListAdapter::isEnabled(jint a0)
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(8),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::widget::HeaderViewListAdapter::getItem(jint a0)
@@ -226,8 +240,8 @@ local_ref< java::lang::Object > android::widget::HeaderViewListAdapter::getItem(
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(9),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jlong android::widget::HeaderViewListAdapter::getItemId(jint a0)
@@ -236,8 +250,8 @@ jlong android::widget::HeaderViewListAdapter::getItemId(jint a0)
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(10),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::HeaderViewListAdapter::hasStableIds()
@@ -246,8 +260,8 @@ jboolean android::widget::HeaderViewListAdapter::hasStableIds()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(11),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::HeaderViewListAdapter::getView(jint a0, local_ref< android::view::View > const &a1, local_ref< android::view::ViewGroup > const &a2)
@@ -256,8 +270,8 @@ local_ref< android::view::View > android::widget::HeaderViewListAdapter::getView
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(12),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::widget::HeaderViewListAdapter::getItemViewType(jint a0)
@@ -266,8 +280,8 @@ jint android::widget::HeaderViewListAdapter::getItemViewType(jint a0)
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(13),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::HeaderViewListAdapter::getViewTypeCount()
@@ -276,8 +290,8 @@ jint android::widget::HeaderViewListAdapter::getViewTypeCount()
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(14),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::HeaderViewListAdapter::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -286,8 +300,8 @@ void android::widget::HeaderViewListAdapter::registerDataSetObserver(local_ref< 
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(15),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::HeaderViewListAdapter::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -296,8 +310,8 @@ void android::widget::HeaderViewListAdapter::unregisterDataSetObserver(local_ref
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(16),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::Filter > android::widget::HeaderViewListAdapter::getFilter()
@@ -306,8 +320,8 @@ local_ref< android::widget::Filter > android::widget::HeaderViewListAdapter::get
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(17),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::widget::Filter > >
-	(get_jobject());
+		local_ref< android::widget::Filter >
+	>(get_jobject());
 }
 
 local_ref< android::widget::ListAdapter > android::widget::HeaderViewListAdapter::getWrappedAdapter()
@@ -316,8 +330,8 @@ local_ref< android::widget::ListAdapter > android::widget::HeaderViewListAdapter
 		android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME,
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(18),
 		android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 

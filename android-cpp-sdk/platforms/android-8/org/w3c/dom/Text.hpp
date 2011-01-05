@@ -11,6 +11,7 @@
 #define J2CPP_ORG_W3C_DOM_TEXT_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class CharacterData; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/CharacterData.hpp>
+#include <org/w3c/dom/Node.hpp>
 
 
 namespace j2cpp {
@@ -43,8 +45,9 @@ namespace org { namespace w3c { namespace dom {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
 		operator local_ref<org::w3c::dom::CharacterData>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::w3c::dom::Text > splitText(jint);
@@ -70,14 +73,19 @@ namespace j2cpp {
 
 
 
-org::w3c::dom::Text::operator local_ref<java::lang::Object>() const
+org::w3c::dom::Text::operator local_ref<org::w3c::dom::Node>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<org::w3c::dom::Node>(get_jobject());
 }
 
 org::w3c::dom::Text::operator local_ref<org::w3c::dom::CharacterData>() const
 {
 	return local_ref<org::w3c::dom::CharacterData>(get_jobject());
+}
+
+org::w3c::dom::Text::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Text > org::w3c::dom::Text::splitText(jint a0)
@@ -86,8 +94,8 @@ local_ref< org::w3c::dom::Text > org::w3c::dom::Text::splitText(jint a0)
 		org::w3c::dom::Text::J2CPP_CLASS_NAME,
 		org::w3c::dom::Text::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::Text::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::Text > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Text >
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::Text::isElementContentWhitespace()
@@ -96,8 +104,8 @@ jboolean org::w3c::dom::Text::isElementContentWhitespace()
 		org::w3c::dom::Text::J2CPP_CLASS_NAME,
 		org::w3c::dom::Text::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::Text::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Text::getWholeText()
@@ -106,8 +114,8 @@ local_ref< java::lang::String > org::w3c::dom::Text::getWholeText()
 		org::w3c::dom::Text::J2CPP_CLASS_NAME,
 		org::w3c::dom::Text::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::Text::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Text > org::w3c::dom::Text::replaceWholeText(local_ref< java::lang::String > const &a0)
@@ -116,8 +124,8 @@ local_ref< org::w3c::dom::Text > org::w3c::dom::Text::replaceWholeText(local_ref
 		org::w3c::dom::Text::J2CPP_CLASS_NAME,
 		org::w3c::dom::Text::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::Text::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::w3c::dom::Text > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Text >
+	>(get_jobject(), a0);
 }
 
 

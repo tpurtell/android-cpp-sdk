@@ -18,6 +18,7 @@ namespace j2cpp { namespace android { namespace app { namespace backup { class B
 namespace j2cpp { namespace android { namespace app { namespace backup { class BackupHelper; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/backup/BackupDataInputStream.hpp>
@@ -26,6 +27,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <android/app/backup/FileBackupHelperBase.hpp>
 #include <android/content/Context.hpp>
 #include <android/os/ParcelFileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,6 +54,7 @@ namespace android { namespace app { namespace backup {
 
 		operator local_ref<android::app::backup::FileBackupHelperBase>() const;
 		operator local_ref<android::app::backup::BackupHelper>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SharedPreferencesBackupHelper(local_ref< android::content::Context > const&, local_ref< array< local_ref< java::lang::String >, 1> > const&);
@@ -86,14 +89,19 @@ android::app::backup::SharedPreferencesBackupHelper::operator local_ref<android:
 	return local_ref<android::app::backup::BackupHelper>(get_jobject());
 }
 
+android::app::backup::SharedPreferencesBackupHelper::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::app::backup::SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(local_ref< android::content::Context > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
 : object<android::app::backup::SharedPreferencesBackupHelper>(
 	call_new_object<
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_NAME(0),
-		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +113,8 @@ void android::app::backup::SharedPreferencesBackupHelper::performBackup(local_re
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_NAME(1),
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::backup::SharedPreferencesBackupHelper::restoreEntity(local_ref< android::app::backup::BackupDataInputStream > const &a0)
@@ -115,8 +123,8 @@ void android::app::backup::SharedPreferencesBackupHelper::restoreEntity(local_re
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_NAME(2),
 		android::app::backup::SharedPreferencesBackupHelper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -134,8 +134,8 @@ namespace android { namespace content { namespace res {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
 
 
@@ -233,14 +233,14 @@ namespace j2cpp {
 
 
 
-android::content::res::Configuration::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::res::Configuration::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::res::Configuration::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::content::res::Configuration::operator local_ref<java::lang::Comparable>() const
@@ -254,8 +254,8 @@ android::content::res::Configuration::Configuration()
 	call_new_object<
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(0),
-		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , fontScale(get_jobject())
 , mcc(get_jobject())
@@ -280,8 +280,8 @@ android::content::res::Configuration::Configuration(local_ref< android::content:
 	call_new_object<
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(1),
-		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , fontScale(get_jobject())
 , mcc(get_jobject())
@@ -306,8 +306,8 @@ void android::content::res::Configuration::setTo(local_ref< android::content::re
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(2),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::res::Configuration::toString()
@@ -316,8 +316,8 @@ local_ref< java::lang::String > android::content::res::Configuration::toString()
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(3),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::content::res::Configuration::setToDefaults()
@@ -326,8 +326,8 @@ void android::content::res::Configuration::setToDefaults()
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(4),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::content::res::Configuration::updateFrom(local_ref< android::content::res::Configuration > const &a0)
@@ -336,8 +336,8 @@ jint android::content::res::Configuration::updateFrom(local_ref< android::conten
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(5),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::content::res::Configuration::diff(local_ref< android::content::res::Configuration > const &a0)
@@ -346,8 +346,8 @@ jint android::content::res::Configuration::diff(local_ref< android::content::res
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(6),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::Configuration::needNewResources(jint a0, jint a1)
@@ -356,8 +356,8 @@ jboolean android::content::res::Configuration::needNewResources(jint a0, jint a1
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(7),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jint android::content::res::Configuration::describeContents()
@@ -366,8 +366,8 @@ jint android::content::res::Configuration::describeContents()
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(8),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::res::Configuration::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -376,8 +376,8 @@ void android::content::res::Configuration::writeToParcel(local_ref< android::os:
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(9),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::res::Configuration::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -386,8 +386,8 @@ void android::content::res::Configuration::readFromParcel(local_ref< android::os
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(10),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::res::Configuration::compareTo(local_ref< android::content::res::Configuration > const &a0)
@@ -396,8 +396,8 @@ jint android::content::res::Configuration::compareTo(local_ref< android::content
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(11),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::Configuration::equals(local_ref< android::content::res::Configuration > const &a0)
@@ -406,8 +406,8 @@ jboolean android::content::res::Configuration::equals(local_ref< android::conten
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(12),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::Configuration::equals(local_ref< java::lang::Object > const &a0)
@@ -416,8 +416,8 @@ jboolean android::content::res::Configuration::equals(local_ref< java::lang::Obj
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(13),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::content::res::Configuration::hashCode()
@@ -426,8 +426,8 @@ jint android::content::res::Configuration::hashCode()
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(14),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::res::Configuration::compareTo(local_ref< java::lang::Object > const &a0)
@@ -436,8 +436,8 @@ jint android::content::res::Configuration::compareTo(local_ref< java::lang::Obje
 		android::content::res::Configuration::J2CPP_CLASS_NAME,
 		android::content::res::Configuration::J2CPP_METHOD_NAME(15),
 		android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

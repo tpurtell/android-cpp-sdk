@@ -71,8 +71,8 @@ android::util::DebugUtils::DebugUtils()
 	call_new_object<
 		android::util::DebugUtils::J2CPP_CLASS_NAME,
 		android::util::DebugUtils::J2CPP_METHOD_NAME(0),
-		android::util::DebugUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::DebugUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -84,8 +84,8 @@ jboolean android::util::DebugUtils::isObjectSelected(local_ref< java::lang::Obje
 		android::util::DebugUtils::J2CPP_CLASS_NAME,
 		android::util::DebugUtils::J2CPP_METHOD_NAME(1),
 		android::util::DebugUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

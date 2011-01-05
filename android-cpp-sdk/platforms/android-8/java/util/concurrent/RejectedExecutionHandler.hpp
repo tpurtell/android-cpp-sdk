@@ -74,8 +74,8 @@ void java::util::concurrent::RejectedExecutionHandler::rejectedExecution(local_r
 		java::util::concurrent::RejectedExecutionHandler::J2CPP_CLASS_NAME,
 		java::util::concurrent::RejectedExecutionHandler::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::RejectedExecutionHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

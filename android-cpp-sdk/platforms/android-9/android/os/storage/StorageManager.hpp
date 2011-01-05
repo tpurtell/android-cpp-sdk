@@ -82,8 +82,8 @@ jboolean android::os::storage::StorageManager::mountObb(local_ref< java::lang::S
 		android::os::storage::StorageManager::J2CPP_CLASS_NAME,
 		android::os::storage::StorageManager::J2CPP_METHOD_NAME(1),
 		android::os::storage::StorageManager::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::os::storage::StorageManager::unmountObb(local_ref< java::lang::String > const &a0, jboolean a1, local_ref< android::os::storage::OnObbStateChangeListener > const &a2)
@@ -92,8 +92,8 @@ jboolean android::os::storage::StorageManager::unmountObb(local_ref< java::lang:
 		android::os::storage::StorageManager::J2CPP_CLASS_NAME,
 		android::os::storage::StorageManager::J2CPP_METHOD_NAME(2),
 		android::os::storage::StorageManager::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::os::storage::StorageManager::isObbMounted(local_ref< java::lang::String > const &a0)
@@ -102,8 +102,8 @@ jboolean android::os::storage::StorageManager::isObbMounted(local_ref< java::lan
 		android::os::storage::StorageManager::J2CPP_CLASS_NAME,
 		android::os::storage::StorageManager::J2CPP_METHOD_NAME(3),
 		android::os::storage::StorageManager::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::os::storage::StorageManager::getMountedObbPath(local_ref< java::lang::String > const &a0)
@@ -112,8 +112,8 @@ local_ref< java::lang::String > android::os::storage::StorageManager::getMounted
 		android::os::storage::StorageManager::J2CPP_CLASS_NAME,
 		android::os::storage::StorageManager::J2CPP_METHOD_NAME(4),
 		android::os::storage::StorageManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

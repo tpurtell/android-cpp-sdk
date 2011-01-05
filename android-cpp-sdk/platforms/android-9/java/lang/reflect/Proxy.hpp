@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_REFLECT_PROXY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class InvocationHandler; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
@@ -94,8 +94,8 @@ local_ref< java::lang::Class > java::lang::reflect::Proxy::getProxyClass(local_r
 		java::lang::reflect::Proxy::J2CPP_CLASS_NAME,
 		java::lang::reflect::Proxy::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::Proxy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Class > >
-	(a0, a1);
+		local_ref< java::lang::Class >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::lang::reflect::Proxy::newProxyInstance(local_ref< java::lang::ClassLoader > const &a0, local_ref< array< local_ref< java::lang::Class >, 1> > const &a1, local_ref< java::lang::reflect::InvocationHandler > const &a2)
@@ -104,8 +104,8 @@ local_ref< java::lang::Object > java::lang::reflect::Proxy::newProxyInstance(loc
 		java::lang::reflect::Proxy::J2CPP_CLASS_NAME,
 		java::lang::reflect::Proxy::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::Proxy::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(a0, a1, a2);
 }
 
 jboolean java::lang::reflect::Proxy::isProxyClass(local_ref< java::lang::Class > const &a0)
@@ -114,8 +114,8 @@ jboolean java::lang::reflect::Proxy::isProxyClass(local_ref< java::lang::Class >
 		java::lang::reflect::Proxy::J2CPP_CLASS_NAME,
 		java::lang::reflect::Proxy::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::Proxy::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::reflect::InvocationHandler > java::lang::reflect::Proxy::getInvocationHandler(local_ref< java::lang::Object > const &a0)
@@ -124,8 +124,8 @@ local_ref< java::lang::reflect::InvocationHandler > java::lang::reflect::Proxy::
 		java::lang::reflect::Proxy::J2CPP_CLASS_NAME,
 		java::lang::reflect::Proxy::J2CPP_METHOD_NAME(4),
 		java::lang::reflect::Proxy::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::reflect::InvocationHandler > >
-	(a0);
+		local_ref< java::lang::reflect::InvocationHandler >
+	>(a0);
 }
 
 

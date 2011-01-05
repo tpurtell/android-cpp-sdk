@@ -11,16 +11,16 @@
 #define J2CPP_JAVAX_NET_SSL_SSLCONTEXT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLServerSocketFactory; } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngine; } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class TrustManager; } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionContext; } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLServerSocketFactory; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class TrustManager; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngine; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionContext; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -112,8 +112,8 @@ local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstanc
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLContext > >
-	(a0);
+		local_ref< javax::net::ssl::SSLContext >
+	>(a0);
 }
 
 local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -122,8 +122,8 @@ local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstanc
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::net::ssl::SSLContext > >
-	(a0, a1);
+		local_ref< javax::net::ssl::SSLContext >
+	>(a0, a1);
 }
 
 local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -132,8 +132,8 @@ local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstanc
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::net::ssl::SSLContext > >
-	(a0, a1);
+		local_ref< javax::net::ssl::SSLContext >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > javax::net::ssl::SSLContext::getProtocol()
@@ -142,8 +142,8 @@ local_ref< java::lang::String > javax::net::ssl::SSLContext::getProtocol()
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > javax::net::ssl::SSLContext::getProvider()
@@ -152,8 +152,8 @@ local_ref< java::security::Provider > javax::net::ssl::SSLContext::getProvider()
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLContext::init(local_ref< array< local_ref< javax::net::ssl::KeyManager >, 1> > const &a0, local_ref< array< local_ref< javax::net::ssl::TrustManager >, 1> > const &a1, local_ref< java::security::SecureRandom > const &a2)
@@ -162,8 +162,8 @@ void javax::net::ssl::SSLContext::init(local_ref< array< local_ref< javax::net::
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(6),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::SSLContext::getSocketFactory()
@@ -172,8 +172,8 @@ local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::SSLContext::getS
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(7),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< javax::net::ssl::SSLSocketFactory > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSocketFactory >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLServerSocketFactory > javax::net::ssl::SSLContext::getServerSocketFactory()
@@ -182,8 +182,8 @@ local_ref< javax::net::ssl::SSLServerSocketFactory > javax::net::ssl::SSLContext
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(8),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< javax::net::ssl::SSLServerSocketFactory > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLServerSocketFactory >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLEngine > javax::net::ssl::SSLContext::createSSLEngine()
@@ -192,8 +192,8 @@ local_ref< javax::net::ssl::SSLEngine > javax::net::ssl::SSLContext::createSSLEn
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(9),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< javax::net::ssl::SSLEngine > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLEngine >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLEngine > javax::net::ssl::SSLContext::createSSLEngine(local_ref< java::lang::String > const &a0, jint a1)
@@ -202,8 +202,8 @@ local_ref< javax::net::ssl::SSLEngine > javax::net::ssl::SSLContext::createSSLEn
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(10),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< javax::net::ssl::SSLEngine > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::net::ssl::SSLEngine >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLContext::getServerSessionContext()
@@ -212,8 +212,8 @@ local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLContext::get
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(11),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< javax::net::ssl::SSLSessionContext > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSessionContext >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLContext::getClientSessionContext()
@@ -222,8 +222,8 @@ local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLContext::get
 		javax::net::ssl::SSLContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(12),
 		javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< javax::net::ssl::SSLSessionContext > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSessionContext >
+	>(get_jobject());
 }
 
 

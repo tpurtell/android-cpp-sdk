@@ -92,8 +92,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::HttpServerConnect
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpServerConnection::receiveRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const &a0)
@@ -102,8 +102,8 @@ void org::apache::http::HttpServerConnection::receiveRequestEntity(local_ref< or
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::sendResponseHeader(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -112,8 +112,8 @@ void org::apache::http::HttpServerConnection::sendResponseHeader(local_ref< org:
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::sendResponseEntity(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -122,8 +122,8 @@ void org::apache::http::HttpServerConnection::sendResponseEntity(local_ref< org:
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::flush()
@@ -132,8 +132,8 @@ void org::apache::http::HttpServerConnection::flush()
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

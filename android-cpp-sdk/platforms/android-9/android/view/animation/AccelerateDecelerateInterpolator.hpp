@@ -86,8 +86,8 @@ android::view::animation::AccelerateDecelerateInterpolator::AccelerateDecelerate
 	call_new_object<
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(0),
-		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ android::view::animation::AccelerateDecelerateInterpolator::AccelerateDecelerate
 	call_new_object<
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(1),
-		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +112,8 @@ jfloat android::view::animation::AccelerateDecelerateInterpolator::getInterpolat
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(2),
 		android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 

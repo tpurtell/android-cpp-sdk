@@ -12,14 +12,22 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Readable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStreamReader; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/File.hpp>
 #include <java/io/FileDescriptor.hpp>
 #include <java/io/InputStreamReader.hpp>
+#include <java/io/Reader.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Readable.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,6 +52,10 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Readable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Reader>() const;
 		operator local_ref<java::io::InputStreamReader>() const;
 
 
@@ -68,6 +80,26 @@ namespace j2cpp {
 
 
 
+java::io::FileReader::operator local_ref<java::lang::Readable>() const
+{
+	return local_ref<java::lang::Readable>(get_jobject());
+}
+
+java::io::FileReader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::FileReader::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::io::FileReader::operator local_ref<java::io::Reader>() const
+{
+	return local_ref<java::io::Reader>(get_jobject());
+}
+
 java::io::FileReader::operator local_ref<java::io::InputStreamReader>() const
 {
 	return local_ref<java::io::InputStreamReader>(get_jobject());
@@ -79,8 +111,8 @@ java::io::FileReader::FileReader(local_ref< java::io::File > const &a0)
 	call_new_object<
 		java::io::FileReader::J2CPP_CLASS_NAME,
 		java::io::FileReader::J2CPP_METHOD_NAME(0),
-		java::io::FileReader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::FileReader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -92,8 +124,8 @@ java::io::FileReader::FileReader(local_ref< java::io::FileDescriptor > const &a0
 	call_new_object<
 		java::io::FileReader::J2CPP_CLASS_NAME,
 		java::io::FileReader::J2CPP_METHOD_NAME(1),
-		java::io::FileReader::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::io::FileReader::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -105,8 +137,8 @@ java::io::FileReader::FileReader(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::io::FileReader::J2CPP_CLASS_NAME,
 		java::io::FileReader::J2CPP_METHOD_NAME(2),
-		java::io::FileReader::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::io::FileReader::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }

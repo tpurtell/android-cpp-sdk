@@ -40,8 +40,8 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jlong getDelay(local_ref< java::util::concurrent::TimeUnit >  const&);
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::Delayed::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::concurrent::Delayed::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::util::concurrent::Delayed::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jlong java::util::concurrent::Delayed::getDelay(local_ref< java::util::concurrent::TimeUnit > const &a0)
@@ -80,8 +80,8 @@ jlong java::util::concurrent::Delayed::getDelay(local_ref< java::util::concurren
 		java::util::concurrent::Delayed::J2CPP_CLASS_NAME,
 		java::util::concurrent::Delayed::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::Delayed::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

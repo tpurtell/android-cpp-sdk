@@ -11,12 +11,14 @@
 #define J2CPP_ORG_XML_SAX_EXT_ATTRIBUTES2IMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class AttributesImpl; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class Attributes2; } } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Attributes.hpp>
 #include <org/xml/sax/ext/Attributes2.hpp>
@@ -54,6 +56,8 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Attributes>() const;
 		operator local_ref<org::xml::sax::helpers::AttributesImpl>() const;
 		operator local_ref<org::xml::sax::ext::Attributes2>() const;
 
@@ -91,6 +95,16 @@ namespace j2cpp {
 
 
 
+org::xml::sax::ext::Attributes2Impl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::xml::sax::ext::Attributes2Impl::operator local_ref<org::xml::sax::Attributes>() const
+{
+	return local_ref<org::xml::sax::Attributes>(get_jobject());
+}
+
 org::xml::sax::ext::Attributes2Impl::operator local_ref<org::xml::sax::helpers::AttributesImpl>() const
 {
 	return local_ref<org::xml::sax::helpers::AttributesImpl>(get_jobject());
@@ -107,8 +121,8 @@ org::xml::sax::ext::Attributes2Impl::Attributes2Impl()
 	call_new_object<
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(0),
-		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -120,8 +134,8 @@ org::xml::sax::ext::Attributes2Impl::Attributes2Impl(local_ref< org::xml::sax::A
 	call_new_object<
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(1),
-		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -133,8 +147,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isDeclared(jint a0)
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(2),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::xml::sax::ext::Attributes2Impl::isDeclared(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -143,8 +157,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isDeclared(local_ref< java::lang::
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(3),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xml::sax::ext::Attributes2Impl::isDeclared(local_ref< java::lang::String > const &a0)
@@ -153,8 +167,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isDeclared(local_ref< java::lang::
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(4),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(jint a0)
@@ -163,8 +177,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(jint a0)
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(5),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -173,8 +187,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(local_ref< java::lang:
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(6),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(local_ref< java::lang::String > const &a0)
@@ -183,8 +197,8 @@ jboolean org::xml::sax::ext::Attributes2Impl::isSpecified(local_ref< java::lang:
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(7),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::Attributes2Impl::setAttributes(local_ref< org::xml::sax::Attributes > const &a0)
@@ -193,8 +207,8 @@ void org::xml::sax::ext::Attributes2Impl::setAttributes(local_ref< org::xml::sax
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(8),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::Attributes2Impl::addAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -203,8 +217,8 @@ void org::xml::sax::ext::Attributes2Impl::addAttribute(local_ref< java::lang::St
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(9),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void org::xml::sax::ext::Attributes2Impl::removeAttribute(jint a0)
@@ -213,8 +227,8 @@ void org::xml::sax::ext::Attributes2Impl::removeAttribute(jint a0)
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(10),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::Attributes2Impl::setDeclared(jint a0, jboolean a1)
@@ -223,8 +237,8 @@ void org::xml::sax::ext::Attributes2Impl::setDeclared(jint a0, jboolean a1)
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(11),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::ext::Attributes2Impl::setSpecified(jint a0, jboolean a1)
@@ -233,8 +247,8 @@ void org::xml::sax::ext::Attributes2Impl::setSpecified(jint a0, jboolean a1)
 		org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(12),
 		org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

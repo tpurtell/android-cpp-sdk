@@ -109,8 +109,8 @@ local_ref< java::lang::Object > java::nio::channels::SelectionKey::attach(local_
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(1),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::nio::channels::SelectionKey::attachment()
@@ -119,8 +119,8 @@ local_ref< java::lang::Object > java::nio::channels::SelectionKey::attachment()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(2),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::nio::channels::SelectionKey::cancel()
@@ -129,8 +129,8 @@ void java::nio::channels::SelectionKey::cancel()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(3),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SelectableChannel > java::nio::channels::SelectionKey::channel()
@@ -139,8 +139,8 @@ local_ref< java::nio::channels::SelectableChannel > java::nio::channels::Selecti
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(4),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::SelectableChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::SelectableChannel >
+	>(get_jobject());
 }
 
 jint java::nio::channels::SelectionKey::interestOps()
@@ -149,8 +149,8 @@ jint java::nio::channels::SelectionKey::interestOps()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(5),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SelectionKey > java::nio::channels::SelectionKey::interestOps(jint a0)
@@ -159,8 +159,8 @@ local_ref< java::nio::channels::SelectionKey > java::nio::channels::SelectionKey
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(6),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::channels::SelectionKey > >
-	(get_jobject(), a0);
+		local_ref< java::nio::channels::SelectionKey >
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::channels::SelectionKey::isAcceptable()
@@ -169,8 +169,8 @@ jboolean java::nio::channels::SelectionKey::isAcceptable()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(7),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SelectionKey::isConnectable()
@@ -179,8 +179,8 @@ jboolean java::nio::channels::SelectionKey::isConnectable()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(8),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SelectionKey::isReadable()
@@ -189,8 +189,8 @@ jboolean java::nio::channels::SelectionKey::isReadable()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(9),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SelectionKey::isValid()
@@ -199,8 +199,8 @@ jboolean java::nio::channels::SelectionKey::isValid()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(10),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SelectionKey::isWritable()
@@ -209,8 +209,8 @@ jboolean java::nio::channels::SelectionKey::isWritable()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(11),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::channels::SelectionKey::readyOps()
@@ -219,8 +219,8 @@ jint java::nio::channels::SelectionKey::readyOps()
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(12),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::Selector > java::nio::channels::SelectionKey::selector()
@@ -229,8 +229,8 @@ local_ref< java::nio::channels::Selector > java::nio::channels::SelectionKey::se
 		java::nio::channels::SelectionKey::J2CPP_CLASS_NAME,
 		java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(13),
 		java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::nio::channels::Selector > >
-	(get_jobject());
+		local_ref< java::nio::channels::Selector >
+	>(get_jobject());
 }
 
 

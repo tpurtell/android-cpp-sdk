@@ -51,8 +51,8 @@ namespace org { namespace apache { namespace http { namespace auth {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::auth::Credentials>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		NTCredentials(local_ref< java::lang::String > const&);
@@ -85,14 +85,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::auth::NTCredentials::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::auth::NTCredentials::operator local_ref<org::apache::http::auth::Credentials>() const
 {
 	return local_ref<org::apache::http::auth::Credentials>(get_jobject());
+}
+
+org::apache::http::auth::NTCredentials::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -101,8 +101,8 @@ org::apache::http::auth::NTCredentials::NTCredentials(local_ref< java::lang::Str
 	call_new_object<
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(0),
-		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -114,8 +114,8 @@ org::apache::http::auth::NTCredentials::NTCredentials(local_ref< java::lang::Str
 	call_new_object<
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(1),
-		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -127,8 +127,8 @@ local_ref< java::security::Principal > org::apache::http::auth::NTCredentials::g
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(2),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getUserName()
@@ -137,8 +137,8 @@ local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getUserN
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(3),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getPassword()
@@ -147,8 +147,8 @@ local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getPassw
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(4),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getDomain()
@@ -157,8 +157,8 @@ local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getDomai
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(5),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getWorkstation()
@@ -167,8 +167,8 @@ local_ref< java::lang::String > org::apache::http::auth::NTCredentials::getWorks
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(6),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::auth::NTCredentials::hashCode()
@@ -177,8 +177,8 @@ jint org::apache::http::auth::NTCredentials::hashCode()
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(7),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::auth::NTCredentials::equals(local_ref< java::lang::Object > const &a0)
@@ -187,8 +187,8 @@ jboolean org::apache::http::auth::NTCredentials::equals(local_ref< java::lang::O
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(8),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::auth::NTCredentials::toString()
@@ -197,8 +197,8 @@ local_ref< java::lang::String > org::apache::http::auth::NTCredentials::toString
 		org::apache::http::auth::NTCredentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_NAME(9),
 		org::apache::http::auth::NTCredentials::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

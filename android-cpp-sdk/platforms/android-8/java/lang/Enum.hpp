@@ -55,8 +55,8 @@ namespace java { namespace lang {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		local_ref< java::lang::String > name();
@@ -91,14 +91,14 @@ java::lang::Enum::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::lang::Enum::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::lang::Enum::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Enum::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -108,8 +108,8 @@ local_ref< java::lang::String > java::lang::Enum::name()
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(1),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::lang::Enum::ordinal()
@@ -118,8 +118,8 @@ jint java::lang::Enum::ordinal()
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(2),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Enum::toString()
@@ -128,8 +128,8 @@ local_ref< java::lang::String > java::lang::Enum::toString()
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(3),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::lang::Enum::equals(local_ref< java::lang::Object > const &a0)
@@ -138,8 +138,8 @@ jboolean java::lang::Enum::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(4),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Enum::hashCode()
@@ -148,8 +148,8 @@ jint java::lang::Enum::hashCode()
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(5),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -159,8 +159,8 @@ jint java::lang::Enum::compareTo(local_ref< java::lang::Enum > const &a0)
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(7),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Class > java::lang::Enum::getDeclaringClass()
@@ -169,8 +169,8 @@ local_ref< java::lang::Class > java::lang::Enum::getDeclaringClass()
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(8),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Enum > java::lang::Enum::valueOf(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
@@ -179,8 +179,8 @@ local_ref< java::lang::Enum > java::lang::Enum::valueOf(local_ref< java::lang::C
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(9),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Enum > >
-	(a0, a1);
+		local_ref< java::lang::Enum >
+	>(a0, a1);
 }
 
 jint java::lang::Enum::compareTo(local_ref< java::lang::Object > const &a0)
@@ -189,8 +189,8 @@ jint java::lang::Enum::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Enum::J2CPP_CLASS_NAME,
 		java::lang::Enum::J2CPP_METHOD_NAME(10),
 		java::lang::Enum::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

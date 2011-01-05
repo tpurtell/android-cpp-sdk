@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_UTIL_CHARARRAYBUFFER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class ByteArrayBuffer; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class ByteArrayBuffer; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -121,8 +121,8 @@ org::apache::http::util::CharArrayBuffer::CharArrayBuffer(jint a0)
 	call_new_object<
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -134,8 +134,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< array<jchar,1> 
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< java::lang::String > const &a0)
@@ -144,8 +144,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< java::lang::Str
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, jint a1, jint a2)
@@ -154,8 +154,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::ht
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::http::util::CharArrayBuffer > const &a0)
@@ -164,8 +164,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::ht
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(jchar a0)
@@ -174,8 +174,8 @@ void org::apache::http::util::CharArrayBuffer::append(jchar a0)
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(5),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -184,8 +184,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< array<jbyte,1> 
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(6),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::http::util::ByteArrayBuffer > const &a0, jint a1, jint a2)
@@ -194,8 +194,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< org::apache::ht
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(7),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< java::lang::Object > const &a0)
@@ -204,8 +204,8 @@ void org::apache::http::util::CharArrayBuffer::append(local_ref< java::lang::Obj
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(8),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::CharArrayBuffer::clear()
@@ -214,8 +214,8 @@ void org::apache::http::util::CharArrayBuffer::clear()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(9),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > org::apache::http::util::CharArrayBuffer::toCharArray()
@@ -224,8 +224,8 @@ local_ref< array<jchar,1> > org::apache::http::util::CharArrayBuffer::toCharArra
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(10),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 jchar org::apache::http::util::CharArrayBuffer::charAt(jint a0)
@@ -234,8 +234,8 @@ jchar org::apache::http::util::CharArrayBuffer::charAt(jint a0)
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(11),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(11), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jchar,1> > org::apache::http::util::CharArrayBuffer::buffer()
@@ -244,8 +244,8 @@ local_ref< array<jchar,1> > org::apache::http::util::CharArrayBuffer::buffer()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(12),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 jint org::apache::http::util::CharArrayBuffer::capacity()
@@ -254,8 +254,8 @@ jint org::apache::http::util::CharArrayBuffer::capacity()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(13),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::util::CharArrayBuffer::length()
@@ -264,8 +264,8 @@ jint org::apache::http::util::CharArrayBuffer::length()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(14),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::util::CharArrayBuffer::ensureCapacity(jint a0)
@@ -274,8 +274,8 @@ void org::apache::http::util::CharArrayBuffer::ensureCapacity(jint a0)
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(15),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::CharArrayBuffer::setLength(jint a0)
@@ -284,8 +284,8 @@ void org::apache::http::util::CharArrayBuffer::setLength(jint a0)
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(16),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::util::CharArrayBuffer::isEmpty()
@@ -294,8 +294,8 @@ jboolean org::apache::http::util::CharArrayBuffer::isEmpty()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(17),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::util::CharArrayBuffer::isFull()
@@ -304,8 +304,8 @@ jboolean org::apache::http::util::CharArrayBuffer::isFull()
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(18),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint org::apache::http::util::CharArrayBuffer::indexOf(jint a0, jint a1, jint a2)
@@ -314,8 +314,8 @@ jint org::apache::http::util::CharArrayBuffer::indexOf(jint a0, jint a1, jint a2
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(19),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint org::apache::http::util::CharArrayBuffer::indexOf(jint a0)
@@ -324,8 +324,8 @@ jint org::apache::http::util::CharArrayBuffer::indexOf(jint a0)
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(20),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::substring(jint a0, jint a1)
@@ -334,8 +334,8 @@ local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::substr
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(21),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::substringTrimmed(jint a0, jint a1)
@@ -344,8 +344,8 @@ local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::substr
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(22),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::toString()
@@ -354,8 +354,8 @@ local_ref< java::lang::String > org::apache::http::util::CharArrayBuffer::toStri
 		org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(23),
 		org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -89,8 +89,8 @@ local_ref< org::w3c::dom::DOMConfiguration > org::w3c::dom::ls::LSSerializer::ge
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::DOMConfiguration > >
-	(get_jobject());
+		local_ref< org::w3c::dom::DOMConfiguration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSSerializer::getNewLine()
@@ -99,8 +99,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSSerializer::getNewLine()
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSSerializer::setNewLine(local_ref< java::lang::String > const &a0)
@@ -109,8 +109,8 @@ void org::w3c::dom::ls::LSSerializer::setNewLine(local_ref< java::lang::String >
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::ls::LSSerializer::write(local_ref< org::w3c::dom::Node > const &a0, local_ref< org::w3c::dom::ls::LSOutput > const &a1)
@@ -119,8 +119,8 @@ jboolean org::w3c::dom::ls::LSSerializer::write(local_ref< org::w3c::dom::Node >
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::w3c::dom::ls::LSSerializer::writeToURI(local_ref< org::w3c::dom::Node > const &a0, local_ref< java::lang::String > const &a1)
@@ -129,8 +129,8 @@ jboolean org::w3c::dom::ls::LSSerializer::writeToURI(local_ref< org::w3c::dom::N
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSSerializer::writeToString(local_ref< org::w3c::dom::Node > const &a0)
@@ -139,8 +139,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSSerializer::writeToString(l
 		org::w3c::dom::ls::LSSerializer::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::ls::LSSerializer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

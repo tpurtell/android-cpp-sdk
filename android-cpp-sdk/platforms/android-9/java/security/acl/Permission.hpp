@@ -74,8 +74,8 @@ jboolean java::security::acl::Permission::equals(local_ref< java::lang::Object >
 		java::security::acl::Permission::J2CPP_CLASS_NAME,
 		java::security::acl::Permission::J2CPP_METHOD_NAME(0),
 		java::security::acl::Permission::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::acl::Permission::toString()
@@ -84,8 +84,8 @@ local_ref< java::lang::String > java::security::acl::Permission::toString()
 		java::security::acl::Permission::J2CPP_CLASS_NAME,
 		java::security::acl::Permission::J2CPP_METHOD_NAME(1),
 		java::security::acl::Permission::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

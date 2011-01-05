@@ -79,8 +79,8 @@ local_ref< java::lang::String > java::sql::SQLData::getSQLTypeName()
 		java::sql::SQLData::J2CPP_CLASS_NAME,
 		java::sql::SQLData::J2CPP_METHOD_NAME(0),
 		java::sql::SQLData::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::sql::SQLData::readSQL(local_ref< java::sql::SQLInput > const &a0, local_ref< java::lang::String > const &a1)
@@ -89,8 +89,8 @@ void java::sql::SQLData::readSQL(local_ref< java::sql::SQLInput > const &a0, loc
 		java::sql::SQLData::J2CPP_CLASS_NAME,
 		java::sql::SQLData::J2CPP_METHOD_NAME(1),
 		java::sql::SQLData::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::sql::SQLData::writeSQL(local_ref< java::sql::SQLOutput > const &a0)
@@ -99,8 +99,8 @@ void java::sql::SQLData::writeSQL(local_ref< java::sql::SQLOutput > const &a0)
 		java::sql::SQLData::J2CPP_CLASS_NAME,
 		java::sql::SQLData::J2CPP_METHOD_NAME(2),
 		java::sql::SQLData::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

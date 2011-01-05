@@ -113,8 +113,8 @@ java::lang::Throwable::Throwable()
 	call_new_object<
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(0),
-		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +126,8 @@ java::lang::Throwable::Throwable(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(1),
-		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -139,8 +139,8 @@ java::lang::Throwable::Throwable(local_ref< java::lang::String > const &a0, loca
 	call_new_object<
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(2),
-		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -152,8 +152,8 @@ java::lang::Throwable::Throwable(local_ref< java::lang::Throwable > const &a0)
 	call_new_object<
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(3),
-		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -165,8 +165,8 @@ local_ref< java::lang::Throwable > java::lang::Throwable::fillInStackTrace()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(4),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Throwable::getMessage()
@@ -175,8 +175,8 @@ local_ref< java::lang::String > java::lang::Throwable::getMessage()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(5),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Throwable::getLocalizedMessage()
@@ -185,8 +185,8 @@ local_ref< java::lang::String > java::lang::Throwable::getLocalizedMessage()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(6),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > java::lang::Throwable::getStackTrace()
@@ -195,8 +195,8 @@ local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > java::lang::T
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(7),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::StackTraceElement >, 1> >
+	>(get_jobject());
 }
 
 void java::lang::Throwable::setStackTrace(local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > const &a0)
@@ -205,8 +205,8 @@ void java::lang::Throwable::setStackTrace(local_ref< array< local_ref< java::lan
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(8),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Throwable::printStackTrace()
@@ -215,8 +215,8 @@ void java::lang::Throwable::printStackTrace()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(9),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::Throwable::printStackTrace(local_ref< java::io::PrintStream > const &a0)
@@ -225,8 +225,8 @@ void java::lang::Throwable::printStackTrace(local_ref< java::io::PrintStream > c
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(10),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Throwable::printStackTrace(local_ref< java::io::PrintWriter > const &a0)
@@ -235,8 +235,8 @@ void java::lang::Throwable::printStackTrace(local_ref< java::io::PrintWriter > c
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(11),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::Throwable::toString()
@@ -245,8 +245,8 @@ local_ref< java::lang::String > java::lang::Throwable::toString()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(12),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Throwable > java::lang::Throwable::initCause(local_ref< java::lang::Throwable > const &a0)
@@ -255,8 +255,8 @@ local_ref< java::lang::Throwable > java::lang::Throwable::initCause(local_ref< j
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(13),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Throwable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Throwable > java::lang::Throwable::getCause()
@@ -265,8 +265,8 @@ local_ref< java::lang::Throwable > java::lang::Throwable::getCause()
 		java::lang::Throwable::J2CPP_CLASS_NAME,
 		java::lang::Throwable::J2CPP_METHOD_NAME(14),
 		java::lang::Throwable::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 

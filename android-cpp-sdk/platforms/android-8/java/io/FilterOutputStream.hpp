@@ -11,10 +11,16 @@
 #define J2CPP_JAVA_IO_FILTEROUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,6 +48,9 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
 		operator local_ref<java::io::OutputStream>() const;
 
 
@@ -70,6 +79,21 @@ namespace j2cpp {
 
 
 
+java::io::FilterOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::FilterOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::io::FilterOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
 java::io::FilterOutputStream::operator local_ref<java::io::OutputStream>() const
 {
 	return local_ref<java::io::OutputStream>(get_jobject());
@@ -81,8 +105,8 @@ java::io::FilterOutputStream::FilterOutputStream(local_ref< java::io::OutputStre
 	call_new_object<
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(0),
-		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -94,8 +118,8 @@ void java::io::FilterOutputStream::close()
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(1),
 		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::FilterOutputStream::flush()
@@ -104,8 +128,8 @@ void java::io::FilterOutputStream::flush()
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(2),
 		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::FilterOutputStream::write(local_ref< array<jbyte,1> > const &a0)
@@ -114,8 +138,8 @@ void java::io::FilterOutputStream::write(local_ref< array<jbyte,1> > const &a0)
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(3),
 		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::FilterOutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -124,8 +148,8 @@ void java::io::FilterOutputStream::write(local_ref< array<jbyte,1> > const &a0, 
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(4),
 		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::FilterOutputStream::write(jint a0)
@@ -134,8 +158,8 @@ void java::io::FilterOutputStream::write(jint a0)
 		java::io::FilterOutputStream::J2CPP_CLASS_NAME,
 		java::io::FilterOutputStream::J2CPP_METHOD_NAME(5),
 		java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -64,8 +64,8 @@ namespace android { namespace content { namespace pm {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::util::Comparator>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			DisplayNameComparator(local_ref< android::content::pm::PackageManager > const&);
@@ -122,8 +122,8 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ResolveInfo();
@@ -167,14 +167,14 @@ namespace j2cpp {
 
 
 
-android::content::pm::ResolveInfo_::DisplayNameComparator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::pm::ResolveInfo_::DisplayNameComparator::operator local_ref<java::util::Comparator>() const
 {
 	return local_ref<java::util::Comparator>(get_jobject());
+}
+
+android::content::pm::ResolveInfo_::DisplayNameComparator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -183,8 +183,8 @@ android::content::pm::ResolveInfo_::DisplayNameComparator::DisplayNameComparator
 	call_new_object<
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(0),
-		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -196,8 +196,8 @@ jint android::content::pm::ResolveInfo_::DisplayNameComparator::compare(local_re
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(1),
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::pm::ResolveInfo_::DisplayNameComparator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -206,8 +206,8 @@ jint android::content::pm::ResolveInfo_::DisplayNameComparator::compare(local_re
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(2),
 		android::content::pm::ResolveInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -218,14 +218,14 @@ J2CPP_DEFINE_METHOD(android::content::pm::ResolveInfo_::DisplayNameComparator,2,
 
 
 
-android::content::pm::ResolveInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::pm::ResolveInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::pm::ResolveInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -234,8 +234,8 @@ android::content::pm::ResolveInfo::ResolveInfo()
 	call_new_object<
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , activityInfo(get_jobject())
 , serviceInfo(get_jobject())
@@ -258,8 +258,8 @@ local_ref< java::lang::CharSequence > android::content::pm::ResolveInfo::loadLab
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(1),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::ResolveInfo::loadIcon(local_ref< android::content::pm::PackageManager > const &a0)
@@ -268,8 +268,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Resolve
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::ResolveInfo::getIconResource()
@@ -278,8 +278,8 @@ jint android::content::pm::ResolveInfo::getIconResource()
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::ResolveInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -288,8 +288,8 @@ void android::content::pm::ResolveInfo::dump(local_ref< android::util::Printer >
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::ResolveInfo::toString()
@@ -298,8 +298,8 @@ local_ref< java::lang::String > android::content::pm::ResolveInfo::toString()
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::ResolveInfo::describeContents()
@@ -308,8 +308,8 @@ jint android::content::pm::ResolveInfo::describeContents()
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(6),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::ResolveInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -318,8 +318,8 @@ void android::content::pm::ResolveInfo::writeToParcel(local_ref< android::os::Pa
 		android::content::pm::ResolveInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ResolveInfo::J2CPP_METHOD_NAME(7),
 		android::content::pm::ResolveInfo::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

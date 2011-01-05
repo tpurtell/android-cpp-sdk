@@ -105,8 +105,8 @@ java::math::MathContext::MathContext(jint a0)
 	call_new_object<
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(0),
-		java::math::MathContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::math::MathContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -118,8 +118,8 @@ java::math::MathContext::MathContext(jint a0, local_ref< java::math::RoundingMod
 	call_new_object<
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(1),
-		java::math::MathContext::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::math::MathContext::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -131,8 +131,8 @@ java::math::MathContext::MathContext(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(2),
-		java::math::MathContext::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::math::MathContext::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -144,8 +144,8 @@ jint java::math::MathContext::getPrecision()
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(3),
 		java::math::MathContext::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::RoundingMode > java::math::MathContext::getRoundingMode()
@@ -154,8 +154,8 @@ local_ref< java::math::RoundingMode > java::math::MathContext::getRoundingMode()
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(4),
 		java::math::MathContext::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::math::RoundingMode > >
-	(get_jobject());
+		local_ref< java::math::RoundingMode >
+	>(get_jobject());
 }
 
 jboolean java::math::MathContext::equals(local_ref< java::lang::Object > const &a0)
@@ -164,8 +164,8 @@ jboolean java::math::MathContext::equals(local_ref< java::lang::Object > const &
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(5),
 		java::math::MathContext::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::math::MathContext::hashCode()
@@ -174,8 +174,8 @@ jint java::math::MathContext::hashCode()
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(6),
 		java::math::MathContext::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::math::MathContext::toString()
@@ -184,8 +184,8 @@ local_ref< java::lang::String > java::math::MathContext::toString()
 		java::math::MathContext::J2CPP_CLASS_NAME,
 		java::math::MathContext::J2CPP_METHOD_NAME(7),
 		java::math::MathContext::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -11,11 +11,15 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_RFC2617SCHEME_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class AuthSchemeBase; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class AuthSchemeBase; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/auth/AuthScheme.hpp>
 #include <org/apache/http/impl/auth/AuthSchemeBase.hpp>
 
 
@@ -42,6 +46,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		{
 		}
 
+		operator local_ref<org::apache::http::auth::AuthScheme>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const;
 
 
@@ -69,6 +75,16 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::auth::RFC2617Scheme::operator local_ref<org::apache::http::auth::AuthScheme>() const
+{
+	return local_ref<org::apache::http::auth::AuthScheme>(get_jobject());
+}
+
+org::apache::http::impl::auth::RFC2617Scheme::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::auth::RFC2617Scheme::operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const
 {
 	return local_ref<org::apache::http::impl::auth::AuthSchemeBase>(get_jobject());
@@ -80,8 +96,8 @@ org::apache::http::impl::auth::RFC2617Scheme::RFC2617Scheme()
 	call_new_object<
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +111,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::RFC2617Scheme::ge
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::auth::RFC2617Scheme::getRealm()
@@ -105,8 +121,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::RFC2617Scheme::ge
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

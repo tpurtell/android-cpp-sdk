@@ -11,6 +11,9 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITECURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace database { class Cursor; } } }
+namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
+namespace j2cpp { namespace android { namespace database { class CrossProcessCursor; } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteDatabase; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteCursorDriver; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteQuery; } } } }
@@ -18,14 +21,19 @@ namespace j2cpp { namespace android { namespace database { class AbstractWindowe
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/database/AbstractCursor.hpp>
 #include <android/database/AbstractWindowedCursor.hpp>
+#include <android/database/CrossProcessCursor.hpp>
+#include <android/database/Cursor.hpp>
 #include <android/database/CursorWindow.hpp>
 #include <android/database/DataSetObserver.hpp>
 #include <android/database/sqlite/SQLiteCursorDriver.hpp>
 #include <android/database/sqlite/SQLiteDatabase.hpp>
 #include <android/database/sqlite/SQLiteQuery.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -60,7 +68,11 @@ namespace android { namespace database { namespace sqlite {
 		{
 		}
 
+		operator local_ref<android::database::Cursor>() const;
+		operator local_ref<android::database::AbstractCursor>() const;
+		operator local_ref<android::database::CrossProcessCursor>() const;
 		operator local_ref<android::database::AbstractWindowedCursor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SQLiteCursor(local_ref< android::database::sqlite::SQLiteDatabase > const&, local_ref< android::database::sqlite::SQLiteCursorDriver > const&, local_ref< java::lang::String > const&, local_ref< android::database::sqlite::SQLiteQuery > const&);
@@ -94,9 +106,29 @@ namespace j2cpp {
 
 
 
+android::database::sqlite::SQLiteCursor::operator local_ref<android::database::Cursor>() const
+{
+	return local_ref<android::database::Cursor>(get_jobject());
+}
+
+android::database::sqlite::SQLiteCursor::operator local_ref<android::database::AbstractCursor>() const
+{
+	return local_ref<android::database::AbstractCursor>(get_jobject());
+}
+
+android::database::sqlite::SQLiteCursor::operator local_ref<android::database::CrossProcessCursor>() const
+{
+	return local_ref<android::database::CrossProcessCursor>(get_jobject());
+}
+
 android::database::sqlite::SQLiteCursor::operator local_ref<android::database::AbstractWindowedCursor>() const
 {
 	return local_ref<android::database::AbstractWindowedCursor>(get_jobject());
+}
+
+android::database::sqlite::SQLiteCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -105,8 +137,8 @@ android::database::sqlite::SQLiteCursor::SQLiteCursor(local_ref< android::databa
 	call_new_object<
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(0),
-		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -118,8 +150,8 @@ void android::database::sqlite::SQLiteCursor::registerDataSetObserver(local_ref<
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(1),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteCursor::getDatabase()
@@ -128,8 +160,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(get_jobject());
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteCursor::onMove(jint a0, jint a1)
@@ -138,8 +170,8 @@ jboolean android::database::sqlite::SQLiteCursor::onMove(jint a0, jint a1)
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jint android::database::sqlite::SQLiteCursor::getCount()
@@ -148,8 +180,8 @@ jint android::database::sqlite::SQLiteCursor::getCount()
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::database::sqlite::SQLiteCursor::getColumnIndex(local_ref< java::lang::String > const &a0)
@@ -158,8 +190,8 @@ jint android::database::sqlite::SQLiteCursor::getColumnIndex(local_ref< java::la
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(5),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::database::sqlite::SQLiteCursor::getColumnNames()
@@ -168,8 +200,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::database::sqlit
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(6),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteCursor::deactivate()
@@ -178,8 +210,8 @@ void android::database::sqlite::SQLiteCursor::deactivate()
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(7),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteCursor::close()
@@ -188,8 +220,8 @@ void android::database::sqlite::SQLiteCursor::close()
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(8),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteCursor::requery()
@@ -198,8 +230,8 @@ jboolean android::database::sqlite::SQLiteCursor::requery()
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(9),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteCursor::setWindow(local_ref< android::database::CursorWindow > const &a0)
@@ -208,8 +240,8 @@ void android::database::sqlite::SQLiteCursor::setWindow(local_ref< android::data
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(10),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteCursor::setSelectionArguments(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -218,8 +250,8 @@ void android::database::sqlite::SQLiteCursor::setSelectionArguments(local_ref< a
 		android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(11),
 		android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

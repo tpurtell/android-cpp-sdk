@@ -11,10 +11,14 @@
 #define J2CPP_ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class TransformationMethod; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class ReplacementTransformationMethod; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/method/ReplacementTransformationMethod.hpp>
+#include <android/text/method/TransformationMethod.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +43,9 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
+		operator local_ref<android::text::method::TransformationMethod>() const;
 		operator local_ref<android::text::method::ReplacementTransformationMethod>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HideReturnsTransformationMethod();
@@ -63,9 +69,19 @@ namespace j2cpp {
 
 
 
+android::text::method::HideReturnsTransformationMethod::operator local_ref<android::text::method::TransformationMethod>() const
+{
+	return local_ref<android::text::method::TransformationMethod>(get_jobject());
+}
+
 android::text::method::HideReturnsTransformationMethod::operator local_ref<android::text::method::ReplacementTransformationMethod>() const
 {
 	return local_ref<android::text::method::ReplacementTransformationMethod>(get_jobject());
+}
+
+android::text::method::HideReturnsTransformationMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -74,8 +90,8 @@ android::text::method::HideReturnsTransformationMethod::HideReturnsTransformatio
 	call_new_object<
 		android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_NAME(0),
-		android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -89,8 +105,8 @@ local_ref< android::text::method::HideReturnsTransformationMethod > android::tex
 		android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME,
 		android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_NAME(3),
 		android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::method::HideReturnsTransformationMethod > >
-	();
+		local_ref< android::text::method::HideReturnsTransformationMethod >
+	>();
 }
 
 

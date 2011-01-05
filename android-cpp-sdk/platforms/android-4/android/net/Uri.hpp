@@ -150,9 +150,9 @@ namespace android { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean isHierarchical();
@@ -225,8 +225,8 @@ android::net::Uri_::Builder::Builder()
 	call_new_object<
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(0),
-		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -238,8 +238,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::scheme(loc
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(1),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::opaquePart(local_ref< java::lang::String > const &a0)
@@ -248,8 +248,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::opaquePart
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(2),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedOpaquePart(local_ref< java::lang::String > const &a0)
@@ -258,8 +258,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedOpa
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(3),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::authority(local_ref< java::lang::String > const &a0)
@@ -268,8 +268,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::authority(
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(4),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedAuthority(local_ref< java::lang::String > const &a0)
@@ -278,8 +278,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedAut
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(5),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::path(local_ref< java::lang::String > const &a0)
@@ -288,8 +288,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::path(local
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(6),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedPath(local_ref< java::lang::String > const &a0)
@@ -298,8 +298,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedPat
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(7),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendPath(local_ref< java::lang::String > const &a0)
@@ -308,8 +308,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendPath
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(8),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendEncodedPath(local_ref< java::lang::String > const &a0)
@@ -318,8 +318,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendEnco
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(9),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::query(local_ref< java::lang::String > const &a0)
@@ -328,8 +328,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::query(loca
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(10),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedQuery(local_ref< java::lang::String > const &a0)
@@ -338,8 +338,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedQue
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(11),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::fragment(local_ref< java::lang::String > const &a0)
@@ -348,8 +348,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::fragment(l
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(12),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedFragment(local_ref< java::lang::String > const &a0)
@@ -358,8 +358,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::encodedFra
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(13),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendQueryParameter(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -368,8 +368,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::appendQuer
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(14),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::net::Uri > android::net::Uri_::Builder::build()
@@ -378,8 +378,8 @@ local_ref< android::net::Uri > android::net::Uri_::Builder::build()
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(15),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::net::Uri > >
-	(get_jobject());
+		local_ref< android::net::Uri >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri_::Builder::toString()
@@ -388,8 +388,8 @@ local_ref< java::lang::String > android::net::Uri_::Builder::toString()
 		android::net::Uri_::Builder::J2CPP_CLASS_NAME,
 		android::net::Uri_::Builder::J2CPP_METHOD_NAME(16),
 		android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -414,11 +414,6 @@ J2CPP_DEFINE_METHOD(android::net::Uri_::Builder,16,"toString","()Ljava/lang/Stri
 
 
 
-android::net::Uri::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::net::Uri::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
@@ -429,6 +424,11 @@ android::net::Uri::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
+android::net::Uri::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 jboolean android::net::Uri::isHierarchical()
 {
@@ -436,8 +436,8 @@ jboolean android::net::Uri::isHierarchical()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(1),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::Uri::isOpaque()
@@ -446,8 +446,8 @@ jboolean android::net::Uri::isOpaque()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(2),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::Uri::isRelative()
@@ -456,8 +456,8 @@ jboolean android::net::Uri::isRelative()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(3),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::Uri::isAbsolute()
@@ -466,8 +466,8 @@ jboolean android::net::Uri::isAbsolute()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(4),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getScheme()
@@ -476,8 +476,8 @@ local_ref< java::lang::String > android::net::Uri::getScheme()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(5),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getSchemeSpecificPart()
@@ -486,8 +486,8 @@ local_ref< java::lang::String > android::net::Uri::getSchemeSpecificPart()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(6),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedSchemeSpecificPart()
@@ -496,8 +496,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedSchemeSpecificPart(
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(7),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getAuthority()
@@ -506,8 +506,8 @@ local_ref< java::lang::String > android::net::Uri::getAuthority()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(8),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedAuthority()
@@ -516,8 +516,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedAuthority()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(9),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getUserInfo()
@@ -526,8 +526,8 @@ local_ref< java::lang::String > android::net::Uri::getUserInfo()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(10),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedUserInfo()
@@ -536,8 +536,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedUserInfo()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(11),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getHost()
@@ -546,8 +546,8 @@ local_ref< java::lang::String > android::net::Uri::getHost()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(12),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::Uri::getPort()
@@ -556,8 +556,8 @@ jint android::net::Uri::getPort()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(13),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getPath()
@@ -566,8 +566,8 @@ local_ref< java::lang::String > android::net::Uri::getPath()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(14),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedPath()
@@ -576,8 +576,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedPath()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(15),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getQuery()
@@ -586,8 +586,8 @@ local_ref< java::lang::String > android::net::Uri::getQuery()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(16),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedQuery()
@@ -596,8 +596,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedQuery()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(17),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getFragment()
@@ -606,8 +606,8 @@ local_ref< java::lang::String > android::net::Uri::getFragment()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(18),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getEncodedFragment()
@@ -616,8 +616,8 @@ local_ref< java::lang::String > android::net::Uri::getEncodedFragment()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(19),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::net::Uri::getPathSegments()
@@ -626,8 +626,8 @@ local_ref< java::util::List > android::net::Uri::getPathSegments()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(20),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::Uri::getLastPathSegment()
@@ -636,8 +636,8 @@ local_ref< java::lang::String > android::net::Uri::getLastPathSegment()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(21),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::net::Uri::equals(local_ref< java::lang::Object > const &a0)
@@ -646,8 +646,8 @@ jboolean android::net::Uri::equals(local_ref< java::lang::Object > const &a0)
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(22),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::net::Uri::hashCode()
@@ -656,8 +656,8 @@ jint android::net::Uri::hashCode()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(23),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::net::Uri::compareTo(local_ref< android::net::Uri > const &a0)
@@ -666,8 +666,8 @@ jint android::net::Uri::compareTo(local_ref< android::net::Uri > const &a0)
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(24),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::net::Uri::toString()
@@ -676,8 +676,8 @@ local_ref< java::lang::String > android::net::Uri::toString()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(25),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::net::Uri_::Builder > android::net::Uri::buildUpon()
@@ -686,8 +686,8 @@ local_ref< android::net::Uri_::Builder > android::net::Uri::buildUpon()
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(26),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::net::Uri_::Builder > >
-	(get_jobject());
+		local_ref< android::net::Uri_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::net::Uri > android::net::Uri::parse(local_ref< java::lang::String > const &a0)
@@ -696,8 +696,8 @@ local_ref< android::net::Uri > android::net::Uri::parse(local_ref< java::lang::S
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(27),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 local_ref< android::net::Uri > android::net::Uri::fromFile(local_ref< java::io::File > const &a0)
@@ -706,8 +706,8 @@ local_ref< android::net::Uri > android::net::Uri::fromFile(local_ref< java::io::
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(28),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 local_ref< android::net::Uri > android::net::Uri::fromParts(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -716,8 +716,8 @@ local_ref< android::net::Uri > android::net::Uri::fromParts(local_ref< java::lan
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(29),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::net::Uri > >
-	(a0, a1, a2);
+		local_ref< android::net::Uri >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::List > android::net::Uri::getQueryParameters(local_ref< java::lang::String > const &a0)
@@ -726,8 +726,8 @@ local_ref< java::util::List > android::net::Uri::getQueryParameters(local_ref< j
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(30),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::net::Uri::getQueryParameter(local_ref< java::lang::String > const &a0)
@@ -736,8 +736,8 @@ local_ref< java::lang::String > android::net::Uri::getQueryParameter(local_ref< 
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(31),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::net::Uri::writeToParcel(local_ref< android::os::Parcel > const &a0, local_ref< android::net::Uri > const &a1)
@@ -746,8 +746,8 @@ void android::net::Uri::writeToParcel(local_ref< android::os::Parcel > const &a0
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(32),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::net::Uri::encode(local_ref< java::lang::String > const &a0)
@@ -756,8 +756,8 @@ local_ref< java::lang::String > android::net::Uri::encode(local_ref< java::lang:
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(33),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::Uri::encode(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -766,8 +766,8 @@ local_ref< java::lang::String > android::net::Uri::encode(local_ref< java::lang:
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(34),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::net::Uri::decode(local_ref< java::lang::String > const &a0)
@@ -776,8 +776,8 @@ local_ref< java::lang::String > android::net::Uri::decode(local_ref< java::lang:
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(35),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< android::net::Uri > android::net::Uri::withAppendedPath(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -786,8 +786,8 @@ local_ref< android::net::Uri > android::net::Uri::withAppendedPath(local_ref< an
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(36),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 jint android::net::Uri::compareTo(local_ref< java::lang::Object > const &a0)
@@ -796,8 +796,8 @@ jint android::net::Uri::compareTo(local_ref< java::lang::Object > const &a0)
 		android::net::Uri::J2CPP_CLASS_NAME,
 		android::net::Uri::J2CPP_METHOD_NAME(37),
 		android::net::Uri::J2CPP_METHOD_SIGNATURE(37), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

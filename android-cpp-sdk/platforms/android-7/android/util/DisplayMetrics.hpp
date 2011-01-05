@@ -107,8 +107,8 @@ android::util::DisplayMetrics::DisplayMetrics()
 	call_new_object<
 		android::util::DisplayMetrics::J2CPP_CLASS_NAME,
 		android::util::DisplayMetrics::J2CPP_METHOD_NAME(0),
-		android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , widthPixels(get_jobject())
 , heightPixels(get_jobject())
@@ -127,8 +127,8 @@ void android::util::DisplayMetrics::setTo(local_ref< android::util::DisplayMetri
 		android::util::DisplayMetrics::J2CPP_CLASS_NAME,
 		android::util::DisplayMetrics::J2CPP_METHOD_NAME(1),
 		android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::DisplayMetrics::setToDefaults()
@@ -137,8 +137,8 @@ void android::util::DisplayMetrics::setToDefaults()
 		android::util::DisplayMetrics::J2CPP_CLASS_NAME,
 		android::util::DisplayMetrics::J2CPP_METHOD_NAME(2),
 		android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::util::DisplayMetrics::toString()
@@ -147,8 +147,8 @@ local_ref< java::lang::String > android::util::DisplayMetrics::toString()
 		android::util::DisplayMetrics::J2CPP_CLASS_NAME,
 		android::util::DisplayMetrics::J2CPP_METHOD_NAME(3),
 		android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

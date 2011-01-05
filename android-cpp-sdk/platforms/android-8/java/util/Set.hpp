@@ -12,10 +12,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
@@ -55,6 +57,7 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::util::Collection>() const;
 
 
@@ -96,6 +99,11 @@ java::util::Set::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::util::Set::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::Set::operator local_ref<java::util::Collection>() const
 {
 	return local_ref<java::util::Collection>(get_jobject());
@@ -107,8 +115,8 @@ jboolean java::util::Set::add(local_ref< java::lang::Object > const &a0)
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(0),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Set::addAll(local_ref< java::util::Collection > const &a0)
@@ -117,8 +125,8 @@ jboolean java::util::Set::addAll(local_ref< java::util::Collection > const &a0)
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(1),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Set::clear()
@@ -127,8 +135,8 @@ void java::util::Set::clear()
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(2),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::Set::contains(local_ref< java::lang::Object > const &a0)
@@ -137,8 +145,8 @@ jboolean java::util::Set::contains(local_ref< java::lang::Object > const &a0)
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(3),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Set::containsAll(local_ref< java::util::Collection > const &a0)
@@ -147,8 +155,8 @@ jboolean java::util::Set::containsAll(local_ref< java::util::Collection > const 
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(4),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Set::equals(local_ref< java::lang::Object > const &a0)
@@ -157,8 +165,8 @@ jboolean java::util::Set::equals(local_ref< java::lang::Object > const &a0)
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(5),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Set::hashCode()
@@ -167,8 +175,8 @@ jint java::util::Set::hashCode()
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(6),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::Set::isEmpty()
@@ -177,8 +185,8 @@ jboolean java::util::Set::isEmpty()
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(7),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::Set::iterator()
@@ -187,8 +195,8 @@ local_ref< java::util::Iterator > java::util::Set::iterator()
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(8),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean java::util::Set::remove(local_ref< java::lang::Object > const &a0)
@@ -197,8 +205,8 @@ jboolean java::util::Set::remove(local_ref< java::lang::Object > const &a0)
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(9),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Set::removeAll(local_ref< java::util::Collection > const &a0)
@@ -207,8 +215,8 @@ jboolean java::util::Set::removeAll(local_ref< java::util::Collection > const &a
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(10),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Set::retainAll(local_ref< java::util::Collection > const &a0)
@@ -217,8 +225,8 @@ jboolean java::util::Set::retainAll(local_ref< java::util::Collection > const &a
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(11),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Set::size()
@@ -227,8 +235,8 @@ jint java::util::Set::size()
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(12),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Set::toArray()
@@ -237,8 +245,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Set::toArray
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(13),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Set::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -247,8 +255,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Set::toArray
 		java::util::Set::J2CPP_CLASS_NAME,
 		java::util::Set::J2CPP_METHOD_NAME(14),
 		java::util::Set::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 

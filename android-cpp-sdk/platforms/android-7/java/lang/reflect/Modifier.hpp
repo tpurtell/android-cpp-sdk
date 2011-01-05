@@ -123,8 +123,8 @@ java::lang::reflect::Modifier::Modifier()
 	call_new_object<
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(0),
-		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -136,8 +136,8 @@ jboolean java::lang::reflect::Modifier::isAbstract(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isFinal(jint a0)
@@ -146,8 +146,8 @@ jboolean java::lang::reflect::Modifier::isFinal(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isInterface(jint a0)
@@ -156,8 +156,8 @@ jboolean java::lang::reflect::Modifier::isInterface(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isNative(jint a0)
@@ -166,8 +166,8 @@ jboolean java::lang::reflect::Modifier::isNative(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(4),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isPrivate(jint a0)
@@ -176,8 +176,8 @@ jboolean java::lang::reflect::Modifier::isPrivate(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(5),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isProtected(jint a0)
@@ -186,8 +186,8 @@ jboolean java::lang::reflect::Modifier::isProtected(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(6),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isPublic(jint a0)
@@ -196,8 +196,8 @@ jboolean java::lang::reflect::Modifier::isPublic(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(7),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isStatic(jint a0)
@@ -206,8 +206,8 @@ jboolean java::lang::reflect::Modifier::isStatic(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(8),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isStrict(jint a0)
@@ -216,8 +216,8 @@ jboolean java::lang::reflect::Modifier::isStrict(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(9),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isSynchronized(jint a0)
@@ -226,8 +226,8 @@ jboolean java::lang::reflect::Modifier::isSynchronized(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(10),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isTransient(jint a0)
@@ -236,8 +236,8 @@ jboolean java::lang::reflect::Modifier::isTransient(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(11),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::reflect::Modifier::isVolatile(jint a0)
@@ -246,8 +246,8 @@ jboolean java::lang::reflect::Modifier::isVolatile(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(12),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::reflect::Modifier::toString(jint a0)
@@ -256,8 +256,8 @@ local_ref< java::lang::String > java::lang::reflect::Modifier::toString(jint a0)
 		java::lang::reflect::Modifier::J2CPP_CLASS_NAME,
 		java::lang::reflect::Modifier::J2CPP_METHOD_NAME(13),
 		java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

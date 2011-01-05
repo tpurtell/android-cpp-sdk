@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Xfermode.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +39,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Xfermode>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PixelXorXfermode(jint);
@@ -63,14 +66,19 @@ android::graphics::PixelXorXfermode::operator local_ref<android::graphics::Xferm
 	return local_ref<android::graphics::Xfermode>(get_jobject());
 }
 
+android::graphics::PixelXorXfermode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::PixelXorXfermode::PixelXorXfermode(jint a0)
 : object<android::graphics::PixelXorXfermode>(
 	call_new_object<
 		android::graphics::PixelXorXfermode::J2CPP_CLASS_NAME,
 		android::graphics::PixelXorXfermode::J2CPP_METHOD_NAME(0),
-		android::graphics::PixelXorXfermode::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::PixelXorXfermode::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

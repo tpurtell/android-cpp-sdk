@@ -80,8 +80,8 @@ local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> > java::l
 		java::lang::annotation::Target::J2CPP_CLASS_NAME,
 		java::lang::annotation::Target::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::Target::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> >
+	>(get_jobject());
 }
 
 

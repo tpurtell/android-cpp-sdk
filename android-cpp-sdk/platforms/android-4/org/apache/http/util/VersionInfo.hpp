@@ -103,8 +103,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::getPackage
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::getModule()
@@ -113,8 +113,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::getModule(
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::getRelease()
@@ -123,8 +123,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::getRelease
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::getTimestamp()
@@ -133,8 +133,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::getTimesta
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::getClassloader()
@@ -143,8 +143,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::getClasslo
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(5),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::toString()
@@ -153,8 +153,8 @@ local_ref< java::lang::String > org::apache::http::util::VersionInfo::toString()
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(6),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::util::VersionInfo >, 1> > org::apache::http::util::VersionInfo::loadVersionInfo(local_ref< array< local_ref< java::lang::String >, 1> > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -163,8 +163,8 @@ local_ref< array< local_ref< org::apache::http::util::VersionInfo >, 1> > org::a
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(7),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< org::apache::http::util::VersionInfo >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< org::apache::http::util::VersionInfo >, 1> >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::util::VersionInfo > org::apache::http::util::VersionInfo::loadVersionInfo(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -173,8 +173,8 @@ local_ref< org::apache::http::util::VersionInfo > org::apache::http::util::Versi
 		org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME,
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(8),
 		org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::util::VersionInfo > >
-	(a0, a1);
+		local_ref< org::apache::http::util::VersionInfo >
+	>(a0, a1);
 }
 
 

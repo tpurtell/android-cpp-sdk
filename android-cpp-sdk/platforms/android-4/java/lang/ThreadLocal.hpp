@@ -76,8 +76,8 @@ java::lang::ThreadLocal::ThreadLocal()
 	call_new_object<
 		java::lang::ThreadLocal::J2CPP_CLASS_NAME,
 		java::lang::ThreadLocal::J2CPP_METHOD_NAME(0),
-		java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -89,8 +89,8 @@ local_ref< java::lang::Object > java::lang::ThreadLocal::get()
 		java::lang::ThreadLocal::J2CPP_CLASS_NAME,
 		java::lang::ThreadLocal::J2CPP_METHOD_NAME(1),
 		java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -100,8 +100,8 @@ void java::lang::ThreadLocal::set(local_ref< java::lang::Object > const &a0)
 		java::lang::ThreadLocal::J2CPP_CLASS_NAME,
 		java::lang::ThreadLocal::J2CPP_METHOD_NAME(3),
 		java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::ThreadLocal::remove()
@@ -110,8 +110,8 @@ void java::lang::ThreadLocal::remove()
 		java::lang::ThreadLocal::J2CPP_CLASS_NAME,
 		java::lang::ThreadLocal::J2CPP_METHOD_NAME(4),
 		java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

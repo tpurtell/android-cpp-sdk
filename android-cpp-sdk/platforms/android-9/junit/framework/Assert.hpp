@@ -139,8 +139,8 @@ void junit::framework::Assert::assertTrue(local_ref< java::lang::String > const 
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(1),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertTrue(jboolean a0)
@@ -149,8 +149,8 @@ void junit::framework::Assert::assertTrue(jboolean a0)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(2),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void junit::framework::Assert::assertFalse(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -159,8 +159,8 @@ void junit::framework::Assert::assertFalse(local_ref< java::lang::String > const
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(3),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertFalse(jboolean a0)
@@ -169,8 +169,8 @@ void junit::framework::Assert::assertFalse(jboolean a0)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(4),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void junit::framework::Assert::fail(local_ref< java::lang::String > const &a0)
@@ -179,8 +179,8 @@ void junit::framework::Assert::fail(local_ref< java::lang::String > const &a0)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(5),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void junit::framework::Assert::fail()
@@ -189,8 +189,8 @@ void junit::framework::Assert::fail()
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(6),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -199,8 +199,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(7),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -209,8 +209,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::Object > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(8),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -219,8 +219,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(9),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -229,8 +229,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(10),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jdouble a1, jdouble a2, jdouble a3)
@@ -239,8 +239,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(11),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void junit::framework::Assert::assertEquals(jdouble a0, jdouble a1, jdouble a2)
@@ -249,8 +249,8 @@ void junit::framework::Assert::assertEquals(jdouble a0, jdouble a1, jdouble a2)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(12),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jfloat a1, jfloat a2, jfloat a3)
@@ -259,8 +259,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(13),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void junit::framework::Assert::assertEquals(jfloat a0, jfloat a1, jfloat a2)
@@ -269,8 +269,8 @@ void junit::framework::Assert::assertEquals(jfloat a0, jfloat a1, jfloat a2)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(14),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jlong a1, jlong a2)
@@ -279,8 +279,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(15),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jlong a0, jlong a1)
@@ -289,8 +289,8 @@ void junit::framework::Assert::assertEquals(jlong a0, jlong a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(16),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jboolean a1, jboolean a2)
@@ -299,8 +299,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(17),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jboolean a0, jboolean a1)
@@ -309,8 +309,8 @@ void junit::framework::Assert::assertEquals(jboolean a0, jboolean a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(18),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jbyte a1, jbyte a2)
@@ -319,8 +319,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(19),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jbyte a0, jbyte a1)
@@ -329,8 +329,8 @@ void junit::framework::Assert::assertEquals(jbyte a0, jbyte a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(20),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jchar a1, jchar a2)
@@ -339,8 +339,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(21),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jchar a0, jchar a1)
@@ -349,8 +349,8 @@ void junit::framework::Assert::assertEquals(jchar a0, jchar a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(22),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jshort a1, jshort a2)
@@ -359,8 +359,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(23),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jshort a0, jshort a1)
@@ -369,8 +369,8 @@ void junit::framework::Assert::assertEquals(jshort a0, jshort a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(24),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertEquals(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -379,8 +379,8 @@ void junit::framework::Assert::assertEquals(local_ref< java::lang::String > cons
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(25),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertEquals(jint a0, jint a1)
@@ -389,8 +389,8 @@ void junit::framework::Assert::assertEquals(jint a0, jint a1)
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(26),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertNotNull(local_ref< java::lang::Object > const &a0)
@@ -399,8 +399,8 @@ void junit::framework::Assert::assertNotNull(local_ref< java::lang::Object > con
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(27),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void junit::framework::Assert::assertNotNull(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -409,8 +409,8 @@ void junit::framework::Assert::assertNotNull(local_ref< java::lang::String > con
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(28),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertNull(local_ref< java::lang::Object > const &a0)
@@ -419,8 +419,8 @@ void junit::framework::Assert::assertNull(local_ref< java::lang::Object > const 
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(29),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void junit::framework::Assert::assertNull(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -429,8 +429,8 @@ void junit::framework::Assert::assertNull(local_ref< java::lang::String > const 
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(30),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertSame(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -439,8 +439,8 @@ void junit::framework::Assert::assertSame(local_ref< java::lang::String > const 
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(31),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertSame(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -449,8 +449,8 @@ void junit::framework::Assert::assertSame(local_ref< java::lang::Object > const 
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(32),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void junit::framework::Assert::assertNotSame(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -459,8 +459,8 @@ void junit::framework::Assert::assertNotSame(local_ref< java::lang::String > con
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(33),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void junit::framework::Assert::assertNotSame(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -469,8 +469,8 @@ void junit::framework::Assert::assertNotSame(local_ref< java::lang::Object > con
 		junit::framework::Assert::J2CPP_CLASS_NAME,
 		junit::framework::Assert::J2CPP_METHOD_NAME(34),
 		junit::framework::Assert::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

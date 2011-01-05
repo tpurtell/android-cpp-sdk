@@ -15,9 +15,13 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class Attrib
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace security { class CodeSigner; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/CodeSigner.hpp>
 #include <java/security/cert/Certificate.hpp>
@@ -50,6 +54,8 @@ namespace java { namespace util { namespace jar {
 		}
 
 		operator local_ref<java::util::zip::ZipEntry>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		JarEntry(local_ref< java::lang::String > const&);
@@ -82,14 +88,24 @@ java::util::jar::JarEntry::operator local_ref<java::util::zip::ZipEntry>() const
 	return local_ref<java::util::zip::ZipEntry>(get_jobject());
 }
 
+java::util::jar::JarEntry::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::jar::JarEntry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::util::jar::JarEntry::JarEntry(local_ref< java::lang::String > const &a0)
 : object<java::util::jar::JarEntry>(
 	call_new_object<
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(0),
-		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -101,8 +117,8 @@ java::util::jar::JarEntry::JarEntry(local_ref< java::util::zip::ZipEntry > const
 	call_new_object<
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(1),
-		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -114,8 +130,8 @@ java::util::jar::JarEntry::JarEntry(local_ref< java::util::jar::JarEntry > const
 	call_new_object<
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(2),
-		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -127,8 +143,8 @@ local_ref< java::util::jar::Attributes > java::util::jar::JarEntry::getAttribute
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(3),
 		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::jar::Attributes > >
-	(get_jobject());
+		local_ref< java::util::jar::Attributes >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::util::jar::JarEntry::getCertificates()
@@ -137,8 +153,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::uti
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(4),
 		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::CodeSigner >, 1> > java::util::jar::JarEntry::getCodeSigners()
@@ -147,8 +163,8 @@ local_ref< array< local_ref< java::security::CodeSigner >, 1> > java::util::jar:
 		java::util::jar::JarEntry::J2CPP_CLASS_NAME,
 		java::util::jar::JarEntry::J2CPP_METHOD_NAME(5),
 		java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::security::CodeSigner >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::CodeSigner >, 1> >
+	>(get_jobject());
 }
 
 

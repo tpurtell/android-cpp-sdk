@@ -11,19 +11,21 @@
 #define J2CPP_ANDROID_TEST_ANDROIDTESTRUNNER_HPP_DECL
 
 
-namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace runner { class BaseTestRunner; } } }
 namespace j2cpp { namespace android { namespace app { class Instrumentation; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <android/app/Instrumentation.hpp>
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <java/util/List.hpp>
@@ -70,7 +72,9 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<junit::framework::TestListener>() const;
 		operator local_ref<junit::runner::BaseTestRunner>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AndroidTestRunner();
@@ -107,9 +111,19 @@ namespace j2cpp {
 
 
 
+android::test::AndroidTestRunner::operator local_ref<junit::framework::TestListener>() const
+{
+	return local_ref<junit::framework::TestListener>(get_jobject());
+}
+
 android::test::AndroidTestRunner::operator local_ref<junit::runner::BaseTestRunner>() const
 {
 	return local_ref<junit::runner::BaseTestRunner>(get_jobject());
+}
+
+android::test::AndroidTestRunner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -118,8 +132,8 @@ android::test::AndroidTestRunner::AndroidTestRunner()
 	call_new_object<
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(0),
-		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -131,8 +145,8 @@ void android::test::AndroidTestRunner::setTestClassName(local_ref< java::lang::S
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(1),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::AndroidTestRunner::setTest(local_ref< junit::framework::Test > const &a0)
@@ -141,8 +155,8 @@ void android::test::AndroidTestRunner::setTest(local_ref< junit::framework::Test
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(2),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::clearTestListeners()
@@ -151,8 +165,8 @@ void android::test::AndroidTestRunner::clearTestListeners()
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(3),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::test::AndroidTestRunner::addTestListener(local_ref< junit::framework::TestListener > const &a0)
@@ -161,8 +175,8 @@ void android::test::AndroidTestRunner::addTestListener(local_ref< junit::framewo
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(4),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -172,8 +186,8 @@ local_ref< java::util::List > android::test::AndroidTestRunner::getTestCases()
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(6),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::test::AndroidTestRunner::getTestClassName()
@@ -182,8 +196,8 @@ local_ref< java::lang::String > android::test::AndroidTestRunner::getTestClassNa
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(7),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< junit::framework::TestResult > android::test::AndroidTestRunner::getTestResult()
@@ -192,8 +206,8 @@ local_ref< junit::framework::TestResult > android::test::AndroidTestRunner::getT
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(8),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< junit::framework::TestResult > >
-	(get_jobject());
+		local_ref< junit::framework::TestResult >
+	>(get_jobject());
 }
 
 void android::test::AndroidTestRunner::runTest()
@@ -202,8 +216,8 @@ void android::test::AndroidTestRunner::runTest()
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(9),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::test::AndroidTestRunner::runTest(local_ref< junit::framework::TestResult > const &a0)
@@ -212,8 +226,8 @@ void android::test::AndroidTestRunner::runTest(local_ref< junit::framework::Test
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(10),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::setContext(local_ref< android::content::Context > const &a0)
@@ -222,8 +236,8 @@ void android::test::AndroidTestRunner::setContext(local_ref< android::content::C
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(11),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::setInstrumentation(local_ref< android::app::Instrumentation > const &a0)
@@ -232,8 +246,8 @@ void android::test::AndroidTestRunner::setInstrumentation(local_ref< android::ap
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(12),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::setInstrumentaiton(local_ref< android::app::Instrumentation > const &a0)
@@ -242,8 +256,8 @@ void android::test::AndroidTestRunner::setInstrumentaiton(local_ref< android::ap
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(13),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -253,8 +267,8 @@ void android::test::AndroidTestRunner::testStarted(local_ref< java::lang::String
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(15),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::testEnded(local_ref< java::lang::String > const &a0)
@@ -263,8 +277,8 @@ void android::test::AndroidTestRunner::testEnded(local_ref< java::lang::String >
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(16),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::AndroidTestRunner::testFailed(jint a0, local_ref< junit::framework::Test > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -273,8 +287,8 @@ void android::test::AndroidTestRunner::testFailed(jint a0, local_ref< junit::fra
 		android::test::AndroidTestRunner::J2CPP_CLASS_NAME,
 		android::test::AndroidTestRunner::J2CPP_METHOD_NAME(17),
 		android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

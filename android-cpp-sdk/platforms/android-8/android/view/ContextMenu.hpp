@@ -73,8 +73,8 @@ namespace android { namespace view {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::Menu>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::view::ContextMenu > setHeaderTitle(jint);
@@ -111,14 +111,14 @@ J2CPP_DEFINE_CLASS(android::view::ContextMenu_::ContextMenuInfo,"android/view/Co
 
 
 
-android::view::ContextMenu::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::ContextMenu::operator local_ref<android::view::Menu>() const
 {
 	return local_ref<android::view::Menu>(get_jobject());
+}
+
+android::view::ContextMenu::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderTitle(jint a0)
@@ -127,8 +127,8 @@ local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderTit
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(0),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::ContextMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::ContextMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -137,8 +137,8 @@ local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderTit
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(1),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::ContextMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::ContextMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderIcon(jint a0)
@@ -147,8 +147,8 @@ local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderIco
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(2),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::ContextMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::ContextMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -157,8 +157,8 @@ local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderIco
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(3),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::ContextMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::ContextMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderView(local_ref< android::view::View > const &a0)
@@ -167,8 +167,8 @@ local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderVie
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(4),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::ContextMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::ContextMenu >
+	>(get_jobject(), a0);
 }
 
 void android::view::ContextMenu::clearHeader()
@@ -177,8 +177,8 @@ void android::view::ContextMenu::clearHeader()
 		android::view::ContextMenu::J2CPP_CLASS_NAME,
 		android::view::ContextMenu::J2CPP_METHOD_NAME(5),
 		android::view::ContextMenu::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

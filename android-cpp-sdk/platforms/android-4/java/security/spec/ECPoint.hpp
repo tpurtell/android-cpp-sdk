@@ -84,8 +84,8 @@ java::security::spec::ECPoint::ECPoint(local_ref< java::math::BigInteger > const
 	call_new_object<
 		java::security::spec::ECPoint::J2CPP_CLASS_NAME,
 		java::security::spec::ECPoint::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -97,8 +97,8 @@ local_ref< java::math::BigInteger > java::security::spec::ECPoint::getAffineX()
 		java::security::spec::ECPoint::J2CPP_CLASS_NAME,
 		java::security::spec::ECPoint::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::ECPoint::getAffineY()
@@ -107,8 +107,8 @@ local_ref< java::math::BigInteger > java::security::spec::ECPoint::getAffineY()
 		java::security::spec::ECPoint::J2CPP_CLASS_NAME,
 		java::security::spec::ECPoint::J2CPP_METHOD_NAME(2),
 		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jboolean java::security::spec::ECPoint::equals(local_ref< java::lang::Object > const &a0)
@@ -117,8 +117,8 @@ jboolean java::security::spec::ECPoint::equals(local_ref< java::lang::Object > c
 		java::security::spec::ECPoint::J2CPP_CLASS_NAME,
 		java::security::spec::ECPoint::J2CPP_METHOD_NAME(3),
 		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::spec::ECPoint::hashCode()
@@ -127,8 +127,8 @@ jint java::security::spec::ECPoint::hashCode()
 		java::security::spec::ECPoint::J2CPP_CLASS_NAME,
 		java::security::spec::ECPoint::J2CPP_METHOD_NAME(4),
 		java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

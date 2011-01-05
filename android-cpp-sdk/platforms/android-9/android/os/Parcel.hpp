@@ -11,9 +11,9 @@
 #define J2CPP_ANDROID_OS_PARCEL_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class HashMap; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
@@ -306,8 +306,8 @@ local_ref< android::os::Parcel > android::os::Parcel::obtain()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(1),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::Parcel > >
-	();
+		local_ref< android::os::Parcel >
+	>();
 }
 
 void android::os::Parcel::recycle()
@@ -316,8 +316,8 @@ void android::os::Parcel::recycle()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(2),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::os::Parcel::dataSize()
@@ -326,8 +326,8 @@ jint android::os::Parcel::dataSize()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(3),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Parcel::dataAvail()
@@ -336,8 +336,8 @@ jint android::os::Parcel::dataAvail()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(4),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Parcel::dataPosition()
@@ -346,8 +346,8 @@ jint android::os::Parcel::dataPosition()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(5),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Parcel::dataCapacity()
@@ -356,8 +356,8 @@ jint android::os::Parcel::dataCapacity()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(6),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::Parcel::setDataSize(jint a0)
@@ -366,8 +366,8 @@ void android::os::Parcel::setDataSize(jint a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(7),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::setDataPosition(jint a0)
@@ -376,8 +376,8 @@ void android::os::Parcel::setDataPosition(jint a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(8),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::setDataCapacity(jint a0)
@@ -386,8 +386,8 @@ void android::os::Parcel::setDataCapacity(jint a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(9),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > android::os::Parcel::marshall()
@@ -396,8 +396,8 @@ local_ref< array<jbyte,1> > android::os::Parcel::marshall()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(10),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::unmarshall(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -406,8 +406,8 @@ void android::os::Parcel::unmarshall(local_ref< array<jbyte,1> > const &a0, jint
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(11),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::os::Parcel::appendFrom(local_ref< android::os::Parcel > const &a0, jint a1, jint a2)
@@ -416,8 +416,8 @@ void android::os::Parcel::appendFrom(local_ref< android::os::Parcel > const &a0,
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(12),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::os::Parcel::hasFileDescriptors()
@@ -426,8 +426,8 @@ jboolean android::os::Parcel::hasFileDescriptors()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(13),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::os::Parcel::writeInterfaceToken(local_ref< java::lang::String > const &a0)
@@ -436,8 +436,8 @@ void android::os::Parcel::writeInterfaceToken(local_ref< java::lang::String > co
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(14),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::enforceInterface(local_ref< java::lang::String > const &a0)
@@ -446,8 +446,8 @@ void android::os::Parcel::enforceInterface(local_ref< java::lang::String > const
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(15),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeByteArray(local_ref< array<jbyte,1> > const &a0)
@@ -456,8 +456,8 @@ void android::os::Parcel::writeByteArray(local_ref< array<jbyte,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(16),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeByteArray(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -466,8 +466,8 @@ void android::os::Parcel::writeByteArray(local_ref< array<jbyte,1> > const &a0, 
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(17),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::os::Parcel::writeInt(jint a0)
@@ -476,8 +476,8 @@ void android::os::Parcel::writeInt(jint a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(18),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeLong(jlong a0)
@@ -486,8 +486,8 @@ void android::os::Parcel::writeLong(jlong a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(19),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeFloat(jfloat a0)
@@ -496,8 +496,8 @@ void android::os::Parcel::writeFloat(jfloat a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(20),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeDouble(jdouble a0)
@@ -506,8 +506,8 @@ void android::os::Parcel::writeDouble(jdouble a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(21),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeString(local_ref< java::lang::String > const &a0)
@@ -516,8 +516,8 @@ void android::os::Parcel::writeString(local_ref< java::lang::String > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(22),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeStrongBinder(local_ref< android::os::IBinder > const &a0)
@@ -526,8 +526,8 @@ void android::os::Parcel::writeStrongBinder(local_ref< android::os::IBinder > co
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(23),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeStrongInterface(local_ref< android::os::IInterface > const &a0)
@@ -536,8 +536,8 @@ void android::os::Parcel::writeStrongInterface(local_ref< android::os::IInterfac
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(24),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeFileDescriptor(local_ref< java::io::FileDescriptor > const &a0)
@@ -546,8 +546,8 @@ void android::os::Parcel::writeFileDescriptor(local_ref< java::io::FileDescripto
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(25),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeByte(jbyte a0)
@@ -556,8 +556,8 @@ void android::os::Parcel::writeByte(jbyte a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(26),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeMap(local_ref< java::util::Map > const &a0)
@@ -566,8 +566,8 @@ void android::os::Parcel::writeMap(local_ref< java::util::Map > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(27),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeBundle(local_ref< android::os::Bundle > const &a0)
@@ -576,8 +576,8 @@ void android::os::Parcel::writeBundle(local_ref< android::os::Bundle > const &a0
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(28),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeList(local_ref< java::util::List > const &a0)
@@ -586,8 +586,8 @@ void android::os::Parcel::writeList(local_ref< java::util::List > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(29),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -596,8 +596,8 @@ void android::os::Parcel::writeArray(local_ref< array< local_ref< java::lang::Ob
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(30),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeSparseArray(local_ref< android::util::SparseArray > const &a0)
@@ -606,8 +606,8 @@ void android::os::Parcel::writeSparseArray(local_ref< android::util::SparseArray
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(31),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeSparseBooleanArray(local_ref< android::util::SparseBooleanArray > const &a0)
@@ -616,8 +616,8 @@ void android::os::Parcel::writeSparseBooleanArray(local_ref< android::util::Spar
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(32),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeBooleanArray(local_ref< array<jboolean,1> > const &a0)
@@ -626,8 +626,8 @@ void android::os::Parcel::writeBooleanArray(local_ref< array<jboolean,1> > const
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(33),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jboolean,1> > android::os::Parcel::createBooleanArray()
@@ -636,8 +636,8 @@ local_ref< array<jboolean,1> > android::os::Parcel::createBooleanArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(34),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< array<jboolean,1> > >
-	(get_jobject());
+		local_ref< array<jboolean,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readBooleanArray(local_ref< array<jboolean,1> > const &a0)
@@ -646,8 +646,8 @@ void android::os::Parcel::readBooleanArray(local_ref< array<jboolean,1> > const 
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(35),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeCharArray(local_ref< array<jchar,1> > const &a0)
@@ -656,8 +656,8 @@ void android::os::Parcel::writeCharArray(local_ref< array<jchar,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(36),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jchar,1> > android::os::Parcel::createCharArray()
@@ -666,8 +666,8 @@ local_ref< array<jchar,1> > android::os::Parcel::createCharArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(37),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readCharArray(local_ref< array<jchar,1> > const &a0)
@@ -676,8 +676,8 @@ void android::os::Parcel::readCharArray(local_ref< array<jchar,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(38),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeIntArray(local_ref< array<jint,1> > const &a0)
@@ -686,8 +686,8 @@ void android::os::Parcel::writeIntArray(local_ref< array<jint,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(39),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > android::os::Parcel::createIntArray()
@@ -696,8 +696,8 @@ local_ref< array<jint,1> > android::os::Parcel::createIntArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(40),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readIntArray(local_ref< array<jint,1> > const &a0)
@@ -706,8 +706,8 @@ void android::os::Parcel::readIntArray(local_ref< array<jint,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(41),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeLongArray(local_ref< array<jlong,1> > const &a0)
@@ -716,8 +716,8 @@ void android::os::Parcel::writeLongArray(local_ref< array<jlong,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(42),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jlong,1> > android::os::Parcel::createLongArray()
@@ -726,8 +726,8 @@ local_ref< array<jlong,1> > android::os::Parcel::createLongArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(43),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< array<jlong,1> > >
-	(get_jobject());
+		local_ref< array<jlong,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readLongArray(local_ref< array<jlong,1> > const &a0)
@@ -736,8 +736,8 @@ void android::os::Parcel::readLongArray(local_ref< array<jlong,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(44),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeFloatArray(local_ref< array<jfloat,1> > const &a0)
@@ -746,8 +746,8 @@ void android::os::Parcel::writeFloatArray(local_ref< array<jfloat,1> > const &a0
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(45),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jfloat,1> > android::os::Parcel::createFloatArray()
@@ -756,8 +756,8 @@ local_ref< array<jfloat,1> > android::os::Parcel::createFloatArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(46),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< array<jfloat,1> > >
-	(get_jobject());
+		local_ref< array<jfloat,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readFloatArray(local_ref< array<jfloat,1> > const &a0)
@@ -766,8 +766,8 @@ void android::os::Parcel::readFloatArray(local_ref< array<jfloat,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(47),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeDoubleArray(local_ref< array<jdouble,1> > const &a0)
@@ -776,8 +776,8 @@ void android::os::Parcel::writeDoubleArray(local_ref< array<jdouble,1> > const &
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(48),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jdouble,1> > android::os::Parcel::createDoubleArray()
@@ -786,8 +786,8 @@ local_ref< array<jdouble,1> > android::os::Parcel::createDoubleArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(49),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< array<jdouble,1> > >
-	(get_jobject());
+		local_ref< array<jdouble,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readDoubleArray(local_ref< array<jdouble,1> > const &a0)
@@ -796,8 +796,8 @@ void android::os::Parcel::readDoubleArray(local_ref< array<jdouble,1> > const &a
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(50),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeStringArray(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -806,8 +806,8 @@ void android::os::Parcel::writeStringArray(local_ref< array< local_ref< java::la
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(51),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::os::Parcel::createStringArray()
@@ -816,8 +816,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::os::Parcel::cre
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(52),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readStringArray(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -826,8 +826,8 @@ void android::os::Parcel::readStringArray(local_ref< array< local_ref< java::lan
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(53),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeBinderArray(local_ref< array< local_ref< android::os::IBinder >, 1> > const &a0)
@@ -836,8 +836,8 @@ void android::os::Parcel::writeBinderArray(local_ref< array< local_ref< android:
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(54),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< android::os::IBinder >, 1> > android::os::Parcel::createBinderArray()
@@ -846,8 +846,8 @@ local_ref< array< local_ref< android::os::IBinder >, 1> > android::os::Parcel::c
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(55),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< array< local_ref< android::os::IBinder >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::os::IBinder >, 1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readBinderArray(local_ref< array< local_ref< android::os::IBinder >, 1> > const &a0)
@@ -856,8 +856,8 @@ void android::os::Parcel::readBinderArray(local_ref< array< local_ref< android::
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(56),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeTypedList(local_ref< java::util::List > const &a0)
@@ -866,8 +866,8 @@ void android::os::Parcel::writeTypedList(local_ref< java::util::List > const &a0
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(57),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeStringList(local_ref< java::util::List > const &a0)
@@ -876,8 +876,8 @@ void android::os::Parcel::writeStringList(local_ref< java::util::List > const &a
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(58),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeBinderList(local_ref< java::util::List > const &a0)
@@ -886,8 +886,8 @@ void android::os::Parcel::writeBinderList(local_ref< java::util::List > const &a
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(59),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeTypedArray(local_ref< array< local_ref< android::os::Parcelable >, 1> > const &a0, jint a1)
@@ -896,8 +896,8 @@ void android::os::Parcel::writeTypedArray(local_ref< array< local_ref< android::
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(60),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Parcel::writeValue(local_ref< java::lang::Object > const &a0)
@@ -906,8 +906,8 @@ void android::os::Parcel::writeValue(local_ref< java::lang::Object > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(61),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeParcelable(local_ref< android::os::Parcelable > const &a0, jint a1)
@@ -916,8 +916,8 @@ void android::os::Parcel::writeParcelable(local_ref< android::os::Parcelable > c
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(62),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Parcel::writeSerializable(local_ref< java::io::Serializable > const &a0)
@@ -926,8 +926,8 @@ void android::os::Parcel::writeSerializable(local_ref< java::io::Serializable > 
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(63),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeException(local_ref< java::lang::Exception > const &a0)
@@ -936,8 +936,8 @@ void android::os::Parcel::writeException(local_ref< java::lang::Exception > cons
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(64),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::writeNoException()
@@ -946,8 +946,8 @@ void android::os::Parcel::writeNoException()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(65),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::Parcel::readException()
@@ -956,8 +956,8 @@ void android::os::Parcel::readException()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(66),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::Parcel::readException(jint a0, local_ref< java::lang::String > const &a1)
@@ -966,8 +966,8 @@ void android::os::Parcel::readException(jint a0, local_ref< java::lang::String >
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(67),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::os::Parcel::readInt()
@@ -976,8 +976,8 @@ jint android::os::Parcel::readInt()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(68),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(68), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::os::Parcel::readLong()
@@ -986,8 +986,8 @@ jlong android::os::Parcel::readLong()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(69),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(69), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat android::os::Parcel::readFloat()
@@ -996,8 +996,8 @@ jfloat android::os::Parcel::readFloat()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(70),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(70), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble android::os::Parcel::readDouble()
@@ -1006,8 +1006,8 @@ jdouble android::os::Parcel::readDouble()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(71),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(71), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::os::Parcel::readString()
@@ -1016,8 +1016,8 @@ local_ref< java::lang::String > android::os::Parcel::readString()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(72),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(72), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::os::Parcel::readStrongBinder()
@@ -1026,8 +1026,8 @@ local_ref< android::os::IBinder > android::os::Parcel::readStrongBinder()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(73),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(73), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 local_ref< android::os::ParcelFileDescriptor > android::os::Parcel::readFileDescriptor()
@@ -1036,8 +1036,8 @@ local_ref< android::os::ParcelFileDescriptor > android::os::Parcel::readFileDesc
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(74),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(74), 
-		local_ref< android::os::ParcelFileDescriptor > >
-	(get_jobject());
+		local_ref< android::os::ParcelFileDescriptor >
+	>(get_jobject());
 }
 
 jbyte android::os::Parcel::readByte()
@@ -1046,8 +1046,8 @@ jbyte android::os::Parcel::readByte()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(75),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(75), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 void android::os::Parcel::readMap(local_ref< java::util::Map > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -1056,8 +1056,8 @@ void android::os::Parcel::readMap(local_ref< java::util::Map > const &a0, local_
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(76),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Parcel::readList(local_ref< java::util::List > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -1066,8 +1066,8 @@ void android::os::Parcel::readList(local_ref< java::util::List > const &a0, loca
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(77),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(77), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::HashMap > android::os::Parcel::readHashMap(local_ref< java::lang::ClassLoader > const &a0)
@@ -1076,8 +1076,8 @@ local_ref< java::util::HashMap > android::os::Parcel::readHashMap(local_ref< jav
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(78),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(78), 
-		local_ref< java::util::HashMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::HashMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::os::Parcel::readBundle()
@@ -1086,8 +1086,8 @@ local_ref< android::os::Bundle > android::os::Parcel::readBundle()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(79),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(79), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::os::Parcel::readBundle(local_ref< java::lang::ClassLoader > const &a0)
@@ -1096,8 +1096,8 @@ local_ref< android::os::Bundle > android::os::Parcel::readBundle(local_ref< java
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(80),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(80), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > android::os::Parcel::createByteArray()
@@ -1106,8 +1106,8 @@ local_ref< array<jbyte,1> > android::os::Parcel::createByteArray()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(81),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(81), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readByteArray(local_ref< array<jbyte,1> > const &a0)
@@ -1116,8 +1116,8 @@ void android::os::Parcel::readByteArray(local_ref< array<jbyte,1> > const &a0)
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(82),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(82), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::ArrayList > android::os::Parcel::readArrayList(local_ref< java::lang::ClassLoader > const &a0)
@@ -1126,8 +1126,8 @@ local_ref< java::util::ArrayList > android::os::Parcel::readArrayList(local_ref<
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(83),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(83), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject(), a0);
+		local_ref< java::util::ArrayList >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcel::readArray(local_ref< java::lang::ClassLoader > const &a0)
@@ -1136,8 +1136,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcel::rea
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(84),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(84), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::util::SparseArray > android::os::Parcel::readSparseArray(local_ref< java::lang::ClassLoader > const &a0)
@@ -1146,8 +1146,8 @@ local_ref< android::util::SparseArray > android::os::Parcel::readSparseArray(loc
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(85),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(85), 
-		local_ref< android::util::SparseArray > >
-	(get_jobject(), a0);
+		local_ref< android::util::SparseArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::util::SparseBooleanArray > android::os::Parcel::readSparseBooleanArray()
@@ -1156,8 +1156,8 @@ local_ref< android::util::SparseBooleanArray > android::os::Parcel::readSparseBo
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(86),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(86), 
-		local_ref< android::util::SparseBooleanArray > >
-	(get_jobject());
+		local_ref< android::util::SparseBooleanArray >
+	>(get_jobject());
 }
 
 local_ref< java::util::ArrayList > android::os::Parcel::createTypedArrayList(local_ref< android::os::Parcelable_::Creator > const &a0)
@@ -1166,8 +1166,8 @@ local_ref< java::util::ArrayList > android::os::Parcel::createTypedArrayList(loc
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(87),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(87), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject(), a0);
+		local_ref< java::util::ArrayList >
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::readTypedList(local_ref< java::util::List > const &a0, local_ref< android::os::Parcelable_::Creator > const &a1)
@@ -1176,8 +1176,8 @@ void android::os::Parcel::readTypedList(local_ref< java::util::List > const &a0,
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(88),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(88), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::ArrayList > android::os::Parcel::createStringArrayList()
@@ -1186,8 +1186,8 @@ local_ref< java::util::ArrayList > android::os::Parcel::createStringArrayList()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(89),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(89), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject());
+		local_ref< java::util::ArrayList >
+	>(get_jobject());
 }
 
 local_ref< java::util::ArrayList > android::os::Parcel::createBinderArrayList()
@@ -1196,8 +1196,8 @@ local_ref< java::util::ArrayList > android::os::Parcel::createBinderArrayList()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(90),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(90), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject());
+		local_ref< java::util::ArrayList >
+	>(get_jobject());
 }
 
 void android::os::Parcel::readStringList(local_ref< java::util::List > const &a0)
@@ -1206,8 +1206,8 @@ void android::os::Parcel::readStringList(local_ref< java::util::List > const &a0
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(91),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(91), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::readBinderList(local_ref< java::util::List > const &a0)
@@ -1216,8 +1216,8 @@ void android::os::Parcel::readBinderList(local_ref< java::util::List > const &a0
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(92),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(92), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcel::createTypedArray(local_ref< android::os::Parcelable_::Creator > const &a0)
@@ -1226,8 +1226,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcel::cre
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(93),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(93), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 void android::os::Parcel::readTypedArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< android::os::Parcelable_::Creator > const &a1)
@@ -1236,8 +1236,8 @@ void android::os::Parcel::readTypedArray(local_ref< array< local_ref< java::lang
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(94),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(94), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Parcel::writeParcelableArray(local_ref< array< local_ref< android::os::Parcelable >, 1> > const &a0, jint a1)
@@ -1246,8 +1246,8 @@ void android::os::Parcel::writeParcelableArray(local_ref< array< local_ref< andr
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(95),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > android::os::Parcel::readValue(local_ref< java::lang::ClassLoader > const &a0)
@@ -1256,8 +1256,8 @@ local_ref< java::lang::Object > android::os::Parcel::readValue(local_ref< java::
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(96),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(96), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Parcelable > android::os::Parcel::readParcelable(local_ref< java::lang::ClassLoader > const &a0)
@@ -1266,8 +1266,8 @@ local_ref< android::os::Parcelable > android::os::Parcel::readParcelable(local_r
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(97),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(97), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject(), a0);
+		local_ref< android::os::Parcelable >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< android::os::Parcelable >, 1> > android::os::Parcel::readParcelableArray(local_ref< java::lang::ClassLoader > const &a0)
@@ -1276,8 +1276,8 @@ local_ref< array< local_ref< android::os::Parcelable >, 1> > android::os::Parcel
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(98),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(98), 
-		local_ref< array< local_ref< android::os::Parcelable >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::os::Parcelable >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Serializable > android::os::Parcel::readSerializable()
@@ -1286,8 +1286,8 @@ local_ref< java::io::Serializable > android::os::Parcel::readSerializable()
 		android::os::Parcel::J2CPP_CLASS_NAME,
 		android::os::Parcel::J2CPP_METHOD_NAME(99),
 		android::os::Parcel::J2CPP_METHOD_SIGNATURE(99), 
-		local_ref< java::io::Serializable > >
-	(get_jobject());
+		local_ref< java::io::Serializable >
+	>(get_jobject());
 }
 
 

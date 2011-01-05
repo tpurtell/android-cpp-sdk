@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_JAR_PACK200_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class JarFile; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class JarInputStream; } } } }
@@ -210,8 +210,8 @@ local_ref< java::util::SortedMap > java::util::jar::Pack200_::Packer::properties
 		java::util::jar::Pack200_::Packer::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_NAME(0),
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject());
+		local_ref< java::util::SortedMap >
+	>(get_jobject());
 }
 
 void java::util::jar::Pack200_::Packer::pack(local_ref< java::util::jar::JarFile > const &a0, local_ref< java::io::OutputStream > const &a1)
@@ -220,8 +220,8 @@ void java::util::jar::Pack200_::Packer::pack(local_ref< java::util::jar::JarFile
 		java::util::jar::Pack200_::Packer::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_NAME(1),
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::jar::Pack200_::Packer::pack(local_ref< java::util::jar::JarInputStream > const &a0, local_ref< java::io::OutputStream > const &a1)
@@ -230,8 +230,8 @@ void java::util::jar::Pack200_::Packer::pack(local_ref< java::util::jar::JarInpu
 		java::util::jar::Pack200_::Packer::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_NAME(2),
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::jar::Pack200_::Packer::addPropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -240,8 +240,8 @@ void java::util::jar::Pack200_::Packer::addPropertyChangeListener(local_ref< jav
 		java::util::jar::Pack200_::Packer::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_NAME(3),
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::jar::Pack200_::Packer::removePropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -250,8 +250,8 @@ void java::util::jar::Pack200_::Packer::removePropertyChangeListener(local_ref< 
 		java::util::jar::Pack200_::Packer::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_NAME(4),
 		java::util::jar::Pack200_::Packer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -427,8 +427,8 @@ local_ref< java::util::SortedMap > java::util::jar::Pack200_::Unpacker::properti
 		java::util::jar::Pack200_::Unpacker::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_NAME(0),
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject());
+		local_ref< java::util::SortedMap >
+	>(get_jobject());
 }
 
 void java::util::jar::Pack200_::Unpacker::unpack(local_ref< java::io::InputStream > const &a0, local_ref< java::util::jar::JarOutputStream > const &a1)
@@ -437,8 +437,8 @@ void java::util::jar::Pack200_::Unpacker::unpack(local_ref< java::io::InputStrea
 		java::util::jar::Pack200_::Unpacker::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_NAME(1),
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::jar::Pack200_::Unpacker::unpack(local_ref< java::io::File > const &a0, local_ref< java::util::jar::JarOutputStream > const &a1)
@@ -447,8 +447,8 @@ void java::util::jar::Pack200_::Unpacker::unpack(local_ref< java::io::File > con
 		java::util::jar::Pack200_::Unpacker::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_NAME(2),
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::jar::Pack200_::Unpacker::addPropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -457,8 +457,8 @@ void java::util::jar::Pack200_::Unpacker::addPropertyChangeListener(local_ref< j
 		java::util::jar::Pack200_::Unpacker::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_NAME(3),
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::jar::Pack200_::Unpacker::removePropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -467,8 +467,8 @@ void java::util::jar::Pack200_::Unpacker::removePropertyChangeListener(local_ref
 		java::util::jar::Pack200_::Unpacker::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_NAME(4),
 		java::util::jar::Pack200_::Unpacker::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -534,8 +534,8 @@ local_ref< java::util::jar::Pack200_::Packer > java::util::jar::Pack200::newPack
 		java::util::jar::Pack200::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200::J2CPP_METHOD_NAME(1),
 		java::util::jar::Pack200::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::jar::Pack200_::Packer > >
-	();
+		local_ref< java::util::jar::Pack200_::Packer >
+	>();
 }
 
 local_ref< java::util::jar::Pack200_::Unpacker > java::util::jar::Pack200::newUnpacker()
@@ -544,8 +544,8 @@ local_ref< java::util::jar::Pack200_::Unpacker > java::util::jar::Pack200::newUn
 		java::util::jar::Pack200::J2CPP_CLASS_NAME,
 		java::util::jar::Pack200::J2CPP_METHOD_NAME(2),
 		java::util::jar::Pack200::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::jar::Pack200_::Unpacker > >
-	();
+		local_ref< java::util::jar::Pack200_::Unpacker >
+	>();
 }
 
 

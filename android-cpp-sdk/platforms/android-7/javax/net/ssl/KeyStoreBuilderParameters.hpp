@@ -44,8 +44,8 @@ namespace javax { namespace net { namespace ssl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		KeyStoreBuilderParameters(local_ref< java::security::KeyStore_::Builder > const&);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-javax::net::ssl::KeyStoreBuilderParameters::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::net::ssl::KeyStoreBuilderParameters::operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const
 {
 	return local_ref<javax::net::ssl::ManagerFactoryParameters>(get_jobject());
+}
+
+javax::net::ssl::KeyStoreBuilderParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref<
 	call_new_object<
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -99,8 +99,8 @@ javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref<
 	call_new_object<
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(1),
-		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -112,8 +112,8 @@ local_ref< java::util::List > javax::net::ssl::KeyStoreBuilderParameters::getPar
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 

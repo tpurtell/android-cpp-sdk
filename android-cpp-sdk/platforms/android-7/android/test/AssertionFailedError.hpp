@@ -11,12 +11,18 @@
 #define J2CPP_ANDROID_TEST_ASSERTIONFAILEDERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +45,10 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
 
 
 		AssertionFailedError();
@@ -62,9 +71,24 @@ namespace j2cpp {
 
 
 
+android::test::AssertionFailedError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::test::AssertionFailedError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::test::AssertionFailedError::operator local_ref<java::lang::Error>() const
 {
 	return local_ref<java::lang::Error>(get_jobject());
+}
+
+android::test::AssertionFailedError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
 }
 
 
@@ -73,8 +97,8 @@ android::test::AssertionFailedError::AssertionFailedError()
 	call_new_object<
 		android::test::AssertionFailedError::J2CPP_CLASS_NAME,
 		android::test::AssertionFailedError::J2CPP_METHOD_NAME(0),
-		android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +110,8 @@ android::test::AssertionFailedError::AssertionFailedError(local_ref< java::lang:
 	call_new_object<
 		android::test::AssertionFailedError::J2CPP_CLASS_NAME,
 		android::test::AssertionFailedError::J2CPP_METHOD_NAME(1),
-		android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

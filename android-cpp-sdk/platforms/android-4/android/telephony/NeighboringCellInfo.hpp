@@ -56,8 +56,8 @@ namespace android { namespace telephony {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		NeighboringCellInfo();
@@ -92,14 +92,14 @@ namespace j2cpp {
 
 
 
-android::telephony::NeighboringCellInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::telephony::NeighboringCellInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::telephony::NeighboringCellInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -108,8 +108,8 @@ android::telephony::NeighboringCellInfo::NeighboringCellInfo()
 	call_new_object<
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(0),
-		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -121,8 +121,8 @@ android::telephony::NeighboringCellInfo::NeighboringCellInfo(jint a0, jint a1)
 	call_new_object<
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(1),
-		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -134,8 +134,8 @@ android::telephony::NeighboringCellInfo::NeighboringCellInfo(local_ref< android:
 	call_new_object<
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(2),
-		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -147,8 +147,8 @@ jint android::telephony::NeighboringCellInfo::getRssi()
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(3),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::NeighboringCellInfo::getCid()
@@ -157,8 +157,8 @@ jint android::telephony::NeighboringCellInfo::getCid()
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(4),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::telephony::NeighboringCellInfo::setCid(jint a0)
@@ -167,8 +167,8 @@ void android::telephony::NeighboringCellInfo::setCid(jint a0)
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(5),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::NeighboringCellInfo::setRssi(jint a0)
@@ -177,8 +177,8 @@ void android::telephony::NeighboringCellInfo::setRssi(jint a0)
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(6),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::telephony::NeighboringCellInfo::toString()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > android::telephony::NeighboringCellInfo::toStrin
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(7),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::telephony::NeighboringCellInfo::describeContents()
@@ -197,8 +197,8 @@ jint android::telephony::NeighboringCellInfo::describeContents()
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(8),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::telephony::NeighboringCellInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -207,8 +207,8 @@ void android::telephony::NeighboringCellInfo::writeToParcel(local_ref< android::
 		android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME,
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(9),
 		android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

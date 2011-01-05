@@ -97,8 +97,8 @@ org::apache::http::impl::conn::tsccm::RefQueueWorker::RefQueueWorker(local_ref< 
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -110,8 +110,8 @@ void org::apache::http::impl::conn::tsccm::RefQueueWorker::run()
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::RefQueueWorker::shutdown()
@@ -120,8 +120,8 @@ void org::apache::http::impl::conn::tsccm::RefQueueWorker::shutdown()
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::conn::tsccm::RefQueueWorker::toString()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > org::apache::http::impl::conn::tsccm::RefQueueWo
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

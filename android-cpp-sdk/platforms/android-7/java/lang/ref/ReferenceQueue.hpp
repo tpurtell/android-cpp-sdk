@@ -78,8 +78,8 @@ java::lang::ref::ReferenceQueue::ReferenceQueue()
 	call_new_object<
 		java::lang::ref::ReferenceQueue::J2CPP_CLASS_NAME,
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_NAME(0),
-		java::lang::ref::ReferenceQueue::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::ref::ReferenceQueue::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ local_ref< java::lang::ref::Reference > java::lang::ref::ReferenceQueue::poll()
 		java::lang::ref::ReferenceQueue::J2CPP_CLASS_NAME,
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_NAME(1),
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::ref::Reference > >
-	(get_jobject());
+		local_ref< java::lang::ref::Reference >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ref::Reference > java::lang::ref::ReferenceQueue::remove()
@@ -101,8 +101,8 @@ local_ref< java::lang::ref::Reference > java::lang::ref::ReferenceQueue::remove(
 		java::lang::ref::ReferenceQueue::J2CPP_CLASS_NAME,
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_NAME(2),
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::ref::Reference > >
-	(get_jobject());
+		local_ref< java::lang::ref::Reference >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ref::Reference > java::lang::ref::ReferenceQueue::remove(jlong a0)
@@ -111,8 +111,8 @@ local_ref< java::lang::ref::Reference > java::lang::ref::ReferenceQueue::remove(
 		java::lang::ref::ReferenceQueue::J2CPP_CLASS_NAME,
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_NAME(3),
 		java::lang::ref::ReferenceQueue::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::ref::Reference > >
-	(get_jobject(), a0);
+		local_ref< java::lang::ref::Reference >
+	>(get_jobject(), a0);
 }
 
 

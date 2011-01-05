@@ -80,8 +80,8 @@ void org::w3c::dom::DOMConfiguration::setParameter(local_ref< java::lang::String
 		org::w3c::dom::DOMConfiguration::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::w3c::dom::DOMConfiguration::getParameter(local_ref< java::lang::String > const &a0)
@@ -90,8 +90,8 @@ local_ref< java::lang::Object > org::w3c::dom::DOMConfiguration::getParameter(lo
 		org::w3c::dom::DOMConfiguration::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::DOMConfiguration::canSetParameter(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -100,8 +100,8 @@ jboolean org::w3c::dom::DOMConfiguration::canSetParameter(local_ref< java::lang:
 		org::w3c::dom::DOMConfiguration::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::DOMStringList > org::w3c::dom::DOMConfiguration::getParameterNames()
@@ -110,8 +110,8 @@ local_ref< org::w3c::dom::DOMStringList > org::w3c::dom::DOMConfiguration::getPa
 		org::w3c::dom::DOMConfiguration::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::DOMConfiguration::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::w3c::dom::DOMStringList > >
-	(get_jobject());
+		local_ref< org::w3c::dom::DOMStringList >
+	>(get_jobject());
 }
 
 

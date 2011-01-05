@@ -106,8 +106,8 @@ android::os::PatternMatcher::PatternMatcher(local_ref< java::lang::String > cons
 	call_new_object<
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(0),
-		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -119,8 +119,8 @@ android::os::PatternMatcher::PatternMatcher(local_ref< android::os::Parcel > con
 	call_new_object<
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(1),
-		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -132,8 +132,8 @@ local_ref< java::lang::String > android::os::PatternMatcher::getPath()
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(2),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::os::PatternMatcher::getType()
@@ -142,8 +142,8 @@ jint android::os::PatternMatcher::getType()
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(3),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::os::PatternMatcher::match(local_ref< java::lang::String > const &a0)
@@ -152,8 +152,8 @@ jboolean android::os::PatternMatcher::match(local_ref< java::lang::String > cons
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(4),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::os::PatternMatcher::toString()
@@ -162,8 +162,8 @@ local_ref< java::lang::String > android::os::PatternMatcher::toString()
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(5),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::os::PatternMatcher::describeContents()
@@ -172,8 +172,8 @@ jint android::os::PatternMatcher::describeContents()
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(6),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::PatternMatcher::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -182,8 +182,8 @@ void android::os::PatternMatcher::writeToParcel(local_ref< android::os::Parcel >
 		android::os::PatternMatcher::J2CPP_CLASS_NAME,
 		android::os::PatternMatcher::J2CPP_METHOD_NAME(7),
 		android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

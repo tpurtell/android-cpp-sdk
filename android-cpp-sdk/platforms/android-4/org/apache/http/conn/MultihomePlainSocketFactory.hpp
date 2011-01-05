@@ -11,12 +11,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_MULTIHOMEPLAINSOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SocketFactory; } } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SocketFactory; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -99,8 +99,8 @@ local_ref< org::apache::http::conn::MultihomePlainSocketFactory > org::apache::h
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::MultihomePlainSocketFactory > >
-	();
+		local_ref< org::apache::http::conn::MultihomePlainSocketFactory >
+	>();
 }
 
 local_ref< java::net::Socket > org::apache::http::conn::MultihomePlainSocketFactory::createSocket()
@@ -109,8 +109,8 @@ local_ref< java::net::Socket > org::apache::http::conn::MultihomePlainSocketFact
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::Socket > >
-	(get_jobject());
+		local_ref< java::net::Socket >
+	>(get_jobject());
 }
 
 local_ref< java::net::Socket > org::apache::http::conn::MultihomePlainSocketFactory::connectSocket(local_ref< java::net::Socket > const &a0, local_ref< java::lang::String > const &a1, jint a2, local_ref< java::net::InetAddress > const &a3, jint a4, local_ref< org::apache::http::params::HttpParams > const &a5)
@@ -119,8 +119,8 @@ local_ref< java::net::Socket > org::apache::http::conn::MultihomePlainSocketFact
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jboolean org::apache::http::conn::MultihomePlainSocketFactory::isSecure(local_ref< java::net::Socket > const &a0)
@@ -129,8 +129,8 @@ jboolean org::apache::http::conn::MultihomePlainSocketFactory::isSecure(local_re
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::conn::MultihomePlainSocketFactory::equals(local_ref< java::lang::Object > const &a0)
@@ -139,8 +139,8 @@ jboolean org::apache::http::conn::MultihomePlainSocketFactory::equals(local_ref<
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::conn::MultihomePlainSocketFactory::hashCode()
@@ -149,8 +149,8 @@ jint org::apache::http::conn::MultihomePlainSocketFactory::hashCode()
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::MultihomePlainSocketFactory::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

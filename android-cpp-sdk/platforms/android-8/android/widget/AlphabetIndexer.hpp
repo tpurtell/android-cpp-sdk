@@ -54,8 +54,9 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<android::database::DataSetObserver>() const;
 		operator local_ref<android::widget::SectionIndexer>() const;
+		operator local_ref<android::database::DataSetObserver>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AlphabetIndexer(local_ref< android::database::Cursor > const&, jint, local_ref< java::lang::CharSequence > const&);
@@ -84,14 +85,19 @@ namespace j2cpp {
 
 
 
+android::widget::AlphabetIndexer::operator local_ref<android::widget::SectionIndexer>() const
+{
+	return local_ref<android::widget::SectionIndexer>(get_jobject());
+}
+
 android::widget::AlphabetIndexer::operator local_ref<android::database::DataSetObserver>() const
 {
 	return local_ref<android::database::DataSetObserver>(get_jobject());
 }
 
-android::widget::AlphabetIndexer::operator local_ref<android::widget::SectionIndexer>() const
+android::widget::AlphabetIndexer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::SectionIndexer>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -100,8 +106,8 @@ android::widget::AlphabetIndexer::AlphabetIndexer(local_ref< android::database::
 	call_new_object<
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(0),
-		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -113,8 +119,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::widget::Alphabe
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(1),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 void android::widget::AlphabetIndexer::setCursor(local_ref< android::database::Cursor > const &a0)
@@ -123,8 +129,8 @@ void android::widget::AlphabetIndexer::setCursor(local_ref< android::database::C
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(2),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -134,8 +140,8 @@ jint android::widget::AlphabetIndexer::getPositionForSection(jint a0)
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(4),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AlphabetIndexer::getSectionForPosition(jint a0)
@@ -144,8 +150,8 @@ jint android::widget::AlphabetIndexer::getSectionForPosition(jint a0)
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(5),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::widget::AlphabetIndexer::onChanged()
@@ -154,8 +160,8 @@ void android::widget::AlphabetIndexer::onChanged()
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(6),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::AlphabetIndexer::onInvalidated()
@@ -164,8 +170,8 @@ void android::widget::AlphabetIndexer::onInvalidated()
 		android::widget::AlphabetIndexer::J2CPP_CLASS_NAME,
 		android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(7),
 		android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

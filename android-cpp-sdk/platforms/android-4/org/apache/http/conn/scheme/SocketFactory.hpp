@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_SCHEME_SOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -84,8 +84,8 @@ local_ref< java::net::Socket > org::apache::http::conn::scheme::SocketFactory::c
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::Socket > >
-	(get_jobject());
+		local_ref< java::net::Socket >
+	>(get_jobject());
 }
 
 local_ref< java::net::Socket > org::apache::http::conn::scheme::SocketFactory::connectSocket(local_ref< java::net::Socket > const &a0, local_ref< java::lang::String > const &a1, jint a2, local_ref< java::net::InetAddress > const &a3, jint a4, local_ref< org::apache::http::params::HttpParams > const &a5)
@@ -94,8 +94,8 @@ local_ref< java::net::Socket > org::apache::http::conn::scheme::SocketFactory::c
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jboolean org::apache::http::conn::scheme::SocketFactory::isSecure(local_ref< java::net::Socket > const &a0)
@@ -104,8 +104,8 @@ jboolean org::apache::http::conn::scheme::SocketFactory::isSecure(local_ref< jav
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::scheme::SocketFactory::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

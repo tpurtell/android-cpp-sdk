@@ -60,8 +60,8 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			Words();
@@ -127,14 +127,14 @@ namespace j2cpp {
 
 
 
-android::provider::UserDictionary_::Words::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::UserDictionary_::Words::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::UserDictionary_::Words::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -143,8 +143,8 @@ android::provider::UserDictionary_::Words::Words()
 	call_new_object<
 		android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME,
 		android::provider::UserDictionary_::Words::J2CPP_METHOD_NAME(0),
-		android::provider::UserDictionary_::Words::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::UserDictionary_::Words::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -156,8 +156,8 @@ void android::provider::UserDictionary_::Words::addWord(local_ref< android::cont
 		android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME,
 		android::provider::UserDictionary_::Words::J2CPP_METHOD_NAME(1),
 		android::provider::UserDictionary_::Words::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 
@@ -269,8 +269,8 @@ android::provider::UserDictionary::UserDictionary()
 	call_new_object<
 		android::provider::UserDictionary::J2CPP_CLASS_NAME,
 		android::provider::UserDictionary::J2CPP_METHOD_NAME(0),
-		android::provider::UserDictionary::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::UserDictionary::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

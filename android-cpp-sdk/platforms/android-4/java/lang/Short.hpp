@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_LANG_SHORT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Comparable.hpp>
 #include <java/lang/Number.hpp>
@@ -69,8 +71,10 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Short(local_ref< java::lang::String > const&);
@@ -117,14 +121,24 @@ namespace j2cpp {
 
 
 
-java::lang::Short::operator local_ref<java::lang::Number>() const
+java::lang::Short::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Number>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::lang::Short::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Short::operator local_ref<java::lang::Number>() const
+{
+	return local_ref<java::lang::Number>(get_jobject());
+}
+
+java::lang::Short::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -133,8 +147,8 @@ java::lang::Short::Short(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(0),
-		java::lang::Short::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Short::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -146,8 +160,8 @@ java::lang::Short::Short(jshort a0)
 	call_new_object<
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(1),
-		java::lang::Short::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Short::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -159,8 +173,8 @@ jbyte java::lang::Short::byteValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(2),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(2), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jint java::lang::Short::compareTo(local_ref< java::lang::Short > const &a0)
@@ -169,8 +183,8 @@ jint java::lang::Short::compareTo(local_ref< java::lang::Short > const &a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(3),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Short > java::lang::Short::decode(local_ref< java::lang::String > const &a0)
@@ -179,8 +193,8 @@ local_ref< java::lang::Short > java::lang::Short::decode(local_ref< java::lang::
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(4),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Short > >
-	(a0);
+		local_ref< java::lang::Short >
+	>(a0);
 }
 
 jdouble java::lang::Short::doubleValue()
@@ -189,8 +203,8 @@ jdouble java::lang::Short::doubleValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(5),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jboolean java::lang::Short::equals(local_ref< java::lang::Object > const &a0)
@@ -199,8 +213,8 @@ jboolean java::lang::Short::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(6),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat java::lang::Short::floatValue()
@@ -209,8 +223,8 @@ jfloat java::lang::Short::floatValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(7),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint java::lang::Short::hashCode()
@@ -219,8 +233,8 @@ jint java::lang::Short::hashCode()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(8),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::lang::Short::intValue()
@@ -229,8 +243,8 @@ jint java::lang::Short::intValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(9),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::lang::Short::longValue()
@@ -239,8 +253,8 @@ jlong java::lang::Short::longValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(10),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jshort java::lang::Short::parseShort(local_ref< java::lang::String > const &a0)
@@ -249,8 +263,8 @@ jshort java::lang::Short::parseShort(local_ref< java::lang::String > const &a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(11),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(11), 
-		jshort >
-	(a0);
+		jshort
+	>(a0);
 }
 
 jshort java::lang::Short::parseShort(local_ref< java::lang::String > const &a0, jint a1)
@@ -259,8 +273,8 @@ jshort java::lang::Short::parseShort(local_ref< java::lang::String > const &a0, 
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(12),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(12), 
-		jshort >
-	(a0, a1);
+		jshort
+	>(a0, a1);
 }
 
 jshort java::lang::Short::shortValue()
@@ -269,8 +283,8 @@ jshort java::lang::Short::shortValue()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(13),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(13), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Short::toString()
@@ -279,8 +293,8 @@ local_ref< java::lang::String > java::lang::Short::toString()
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(14),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Short::toString(jshort a0)
@@ -289,8 +303,8 @@ local_ref< java::lang::String > java::lang::Short::toString(jshort a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(15),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::Short > java::lang::Short::valueOf(local_ref< java::lang::String > const &a0)
@@ -299,8 +313,8 @@ local_ref< java::lang::Short > java::lang::Short::valueOf(local_ref< java::lang:
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(16),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Short > >
-	(a0);
+		local_ref< java::lang::Short >
+	>(a0);
 }
 
 local_ref< java::lang::Short > java::lang::Short::valueOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -309,8 +323,8 @@ local_ref< java::lang::Short > java::lang::Short::valueOf(local_ref< java::lang:
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(17),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Short > >
-	(a0, a1);
+		local_ref< java::lang::Short >
+	>(a0, a1);
 }
 
 jshort java::lang::Short::reverseBytes(jshort a0)
@@ -319,8 +333,8 @@ jshort java::lang::Short::reverseBytes(jshort a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(18),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(18), 
-		jshort >
-	(a0);
+		jshort
+	>(a0);
 }
 
 local_ref< java::lang::Short > java::lang::Short::valueOf(jshort a0)
@@ -329,8 +343,8 @@ local_ref< java::lang::Short > java::lang::Short::valueOf(jshort a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(19),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Short > >
-	(a0);
+		local_ref< java::lang::Short >
+	>(a0);
 }
 
 jint java::lang::Short::compareTo(local_ref< java::lang::Object > const &a0)
@@ -339,8 +353,8 @@ jint java::lang::Short::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Short::J2CPP_CLASS_NAME,
 		java::lang::Short::J2CPP_METHOD_NAME(20),
 		java::lang::Short::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

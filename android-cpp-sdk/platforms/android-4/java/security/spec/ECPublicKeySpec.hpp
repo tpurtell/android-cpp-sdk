@@ -44,8 +44,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ECPublicKeySpec(local_ref< java::security::spec::ECPoint > const&, local_ref< java::security::spec::ECParameterSpec > const&);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::ECPublicKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::ECPublicKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+java::security::spec::ECPublicKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ java::security::spec::ECPublicKeySpec::ECPublicKeySpec(local_ref< java::security
 	call_new_object<
 		java::security::spec::ECPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -99,8 +99,8 @@ local_ref< java::security::spec::ECParameterSpec > java::security::spec::ECPubli
 		java::security::spec::ECPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::spec::ECParameterSpec > >
-	(get_jobject());
+		local_ref< java::security::spec::ECParameterSpec >
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::ECPoint > java::security::spec::ECPublicKeySpec::getW()
@@ -109,8 +109,8 @@ local_ref< java::security::spec::ECPoint > java::security::spec::ECPublicKeySpec
 		java::security::spec::ECPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::ECPublicKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::spec::ECPoint > >
-	(get_jobject());
+		local_ref< java::security::spec::ECPoint >
+	>(get_jobject());
 }
 
 

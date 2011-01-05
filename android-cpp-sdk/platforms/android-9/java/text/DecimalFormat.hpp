@@ -11,19 +11,24 @@
 #define J2CPP_JAVA_TEXT_DECIMALFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Currency; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 namespace j2cpp { namespace java { namespace text { class NumberFormat; } } }
 namespace j2cpp { namespace java { namespace text { class DecimalFormatSymbols; } } }
+namespace j2cpp { namespace java { namespace text { class Format; } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace math { class RoundingMode; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -32,6 +37,7 @@ namespace j2cpp { namespace java { namespace math { class RoundingMode; } } }
 #include <java/text/AttributedCharacterIterator.hpp>
 #include <java/text/DecimalFormatSymbols.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/Format.hpp>
 #include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 #include <java/util/Currency.hpp>
@@ -100,7 +106,11 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::text::NumberFormat>() const;
+		operator local_ref<java::text::Format>() const;
 
 
 		DecimalFormat();
@@ -166,9 +176,29 @@ namespace j2cpp {
 
 
 
+java::text::DecimalFormat::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::text::DecimalFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::DecimalFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::text::DecimalFormat::operator local_ref<java::text::NumberFormat>() const
 {
 	return local_ref<java::text::NumberFormat>(get_jobject());
+}
+
+java::text::DecimalFormat::operator local_ref<java::text::Format>() const
+{
+	return local_ref<java::text::Format>(get_jobject());
 }
 
 
@@ -177,8 +207,8 @@ java::text::DecimalFormat::DecimalFormat()
 	call_new_object<
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(0),
-		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -190,8 +220,8 @@ java::text::DecimalFormat::DecimalFormat(local_ref< java::lang::String > const &
 	call_new_object<
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(1),
-		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -203,8 +233,8 @@ java::text::DecimalFormat::DecimalFormat(local_ref< java::lang::String > const &
 	call_new_object<
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(2),
-		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -216,8 +246,8 @@ void java::text::DecimalFormat::applyLocalizedPattern(local_ref< java::lang::Str
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(3),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::applyPattern(local_ref< java::lang::String > const &a0)
@@ -226,8 +256,8 @@ void java::text::DecimalFormat::applyPattern(local_ref< java::lang::String > con
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(4),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::text::DecimalFormat::clone()
@@ -236,8 +266,8 @@ local_ref< java::lang::Object > java::text::DecimalFormat::clone()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(5),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::DecimalFormat::equals(local_ref< java::lang::Object > const &a0)
@@ -246,8 +276,8 @@ jboolean java::text::DecimalFormat::equals(local_ref< java::lang::Object > const
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(6),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::DecimalFormat::formatToCharacterIterator(local_ref< java::lang::Object > const &a0)
@@ -256,8 +286,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::DecimalFormat::
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(7),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject(), a0);
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(jdouble a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -266,8 +296,8 @@ local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(jdouble 
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(8),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(jlong a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -276,8 +306,8 @@ local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(jlong a0
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(9),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(local_ref< java::lang::Object > const &a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -286,8 +316,8 @@ local_ref< java::lang::StringBuffer > java::text::DecimalFormat::format(local_re
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(10),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::text::DecimalFormatSymbols > java::text::DecimalFormat::getDecimalFormatSymbols()
@@ -296,8 +326,8 @@ local_ref< java::text::DecimalFormatSymbols > java::text::DecimalFormat::getDeci
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(11),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::text::DecimalFormatSymbols > >
-	(get_jobject());
+		local_ref< java::text::DecimalFormatSymbols >
+	>(get_jobject());
 }
 
 local_ref< java::util::Currency > java::text::DecimalFormat::getCurrency()
@@ -306,8 +336,8 @@ local_ref< java::util::Currency > java::text::DecimalFormat::getCurrency()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(12),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Currency > >
-	(get_jobject());
+		local_ref< java::util::Currency >
+	>(get_jobject());
 }
 
 jint java::text::DecimalFormat::getGroupingSize()
@@ -316,8 +346,8 @@ jint java::text::DecimalFormat::getGroupingSize()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(13),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::DecimalFormat::getMultiplier()
@@ -326,8 +356,8 @@ jint java::text::DecimalFormat::getMultiplier()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(14),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::getNegativePrefix()
@@ -336,8 +366,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::getNegativePrefix()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(15),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::getNegativeSuffix()
@@ -346,8 +376,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::getNegativeSuffix()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(16),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::getPositivePrefix()
@@ -356,8 +386,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::getPositivePrefix()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(17),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::getPositiveSuffix()
@@ -366,8 +396,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::getPositiveSuffix()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(18),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::text::DecimalFormat::hashCode()
@@ -376,8 +406,8 @@ jint java::text::DecimalFormat::hashCode()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(19),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::text::DecimalFormat::isDecimalSeparatorAlwaysShown()
@@ -386,8 +416,8 @@ jboolean java::text::DecimalFormat::isDecimalSeparatorAlwaysShown()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(20),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::text::DecimalFormat::isParseBigDecimal()
@@ -396,8 +426,8 @@ jboolean java::text::DecimalFormat::isParseBigDecimal()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(21),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::text::DecimalFormat::setParseIntegerOnly(jboolean a0)
@@ -406,8 +436,8 @@ void java::text::DecimalFormat::setParseIntegerOnly(jboolean a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(22),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::text::DecimalFormat::isParseIntegerOnly()
@@ -416,8 +446,8 @@ jboolean java::text::DecimalFormat::isParseIntegerOnly()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(23),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Number > java::text::DecimalFormat::parse(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -426,8 +456,8 @@ local_ref< java::lang::Number > java::text::DecimalFormat::parse(local_ref< java
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(24),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::Number > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Number >
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::DecimalFormat::setDecimalFormatSymbols(local_ref< java::text::DecimalFormatSymbols > const &a0)
@@ -436,8 +466,8 @@ void java::text::DecimalFormat::setDecimalFormatSymbols(local_ref< java::text::D
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(25),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setCurrency(local_ref< java::util::Currency > const &a0)
@@ -446,8 +476,8 @@ void java::text::DecimalFormat::setCurrency(local_ref< java::util::Currency > co
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(26),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean a0)
@@ -456,8 +486,8 @@ void java::text::DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(27),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setGroupingSize(jint a0)
@@ -466,8 +496,8 @@ void java::text::DecimalFormat::setGroupingSize(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(28),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setGroupingUsed(jboolean a0)
@@ -476,8 +506,8 @@ void java::text::DecimalFormat::setGroupingUsed(jboolean a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(29),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::text::DecimalFormat::isGroupingUsed()
@@ -486,8 +516,8 @@ jboolean java::text::DecimalFormat::isGroupingUsed()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(30),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::text::DecimalFormat::setMaximumFractionDigits(jint a0)
@@ -496,8 +526,8 @@ void java::text::DecimalFormat::setMaximumFractionDigits(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(31),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setMaximumIntegerDigits(jint a0)
@@ -506,8 +536,8 @@ void java::text::DecimalFormat::setMaximumIntegerDigits(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(32),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setMinimumFractionDigits(jint a0)
@@ -516,8 +546,8 @@ void java::text::DecimalFormat::setMinimumFractionDigits(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(33),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setMinimumIntegerDigits(jint a0)
@@ -526,8 +556,8 @@ void java::text::DecimalFormat::setMinimumIntegerDigits(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(34),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setMultiplier(jint a0)
@@ -536,8 +566,8 @@ void java::text::DecimalFormat::setMultiplier(jint a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(35),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setNegativePrefix(local_ref< java::lang::String > const &a0)
@@ -546,8 +576,8 @@ void java::text::DecimalFormat::setNegativePrefix(local_ref< java::lang::String 
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(36),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setNegativeSuffix(local_ref< java::lang::String > const &a0)
@@ -556,8 +586,8 @@ void java::text::DecimalFormat::setNegativeSuffix(local_ref< java::lang::String 
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(37),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setPositivePrefix(local_ref< java::lang::String > const &a0)
@@ -566,8 +596,8 @@ void java::text::DecimalFormat::setPositivePrefix(local_ref< java::lang::String 
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(38),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setPositiveSuffix(local_ref< java::lang::String > const &a0)
@@ -576,8 +606,8 @@ void java::text::DecimalFormat::setPositiveSuffix(local_ref< java::lang::String 
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(39),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormat::setParseBigDecimal(jboolean a0)
@@ -586,8 +616,8 @@ void java::text::DecimalFormat::setParseBigDecimal(jboolean a0)
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(40),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::toLocalizedPattern()
@@ -596,8 +626,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::toLocalizedPattern()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(41),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormat::toPattern()
@@ -606,8 +636,8 @@ local_ref< java::lang::String > java::text::DecimalFormat::toPattern()
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(42),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::math::RoundingMode > java::text::DecimalFormat::getRoundingMode()
@@ -616,8 +646,8 @@ local_ref< java::math::RoundingMode > java::text::DecimalFormat::getRoundingMode
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(43),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::math::RoundingMode > >
-	(get_jobject());
+		local_ref< java::math::RoundingMode >
+	>(get_jobject());
 }
 
 void java::text::DecimalFormat::setRoundingMode(local_ref< java::math::RoundingMode > const &a0)
@@ -626,8 +656,8 @@ void java::text::DecimalFormat::setRoundingMode(local_ref< java::math::RoundingM
 		java::text::DecimalFormat::J2CPP_CLASS_NAME,
 		java::text::DecimalFormat::J2CPP_METHOD_NAME(44),
 		java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

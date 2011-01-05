@@ -41,8 +41,8 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Object > clone();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-java::security::cert::CertPathBuilderResult::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::CertPathBuilderResult::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::CertPathBuilderResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::cert::CertPathBuilderResult::clone()
@@ -82,8 +82,8 @@ local_ref< java::lang::Object > java::security::cert::CertPathBuilderResult::clo
 		java::security::cert::CertPathBuilderResult::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathBuilderResult::J2CPP_METHOD_NAME(0),
 		java::security::cert::CertPathBuilderResult::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::security::cert::CertPath > java::security::cert::CertPathBuilderResult::getCertPath()
@@ -92,8 +92,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::CertPathBuilde
 		java::security::cert::CertPathBuilderResult::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathBuilderResult::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertPathBuilderResult::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject());
 }
 
 

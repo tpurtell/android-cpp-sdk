@@ -234,8 +234,8 @@ android::database::DatabaseUtils_::InsertHelper::InsertHelper(local_ref< android
 	call_new_object<
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(0),
-		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -247,8 +247,8 @@ jint android::database::DatabaseUtils_::InsertHelper::getColumnIndex(local_ref< 
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(1),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jdouble a1)
@@ -257,8 +257,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jdouble a1)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(2),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jfloat a1)
@@ -267,8 +267,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jfloat a1)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(3),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jlong a1)
@@ -277,8 +277,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jlong a1)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(4),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jint a1)
@@ -287,8 +287,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jint a1)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(5),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jboolean a1)
@@ -297,8 +297,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, jboolean a1)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(6),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bindNull(jint a0)
@@ -307,8 +307,8 @@ void android::database::DatabaseUtils_::InsertHelper::bindNull(jint a0)
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(7),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, local_ref< array<jbyte,1> > const &a1)
@@ -317,8 +317,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, local_ref< a
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(8),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, local_ref< java::lang::String > const &a1)
@@ -327,8 +327,8 @@ void android::database::DatabaseUtils_::InsertHelper::bind(jint a0, local_ref< j
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(9),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::database::DatabaseUtils_::InsertHelper::insert(local_ref< android::content::ContentValues > const &a0)
@@ -337,8 +337,8 @@ jlong android::database::DatabaseUtils_::InsertHelper::insert(local_ref< android
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(10),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong android::database::DatabaseUtils_::InsertHelper::execute()
@@ -347,8 +347,8 @@ jlong android::database::DatabaseUtils_::InsertHelper::execute()
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(11),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::database::DatabaseUtils_::InsertHelper::prepareForInsert()
@@ -357,8 +357,8 @@ void android::database::DatabaseUtils_::InsertHelper::prepareForInsert()
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(12),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::DatabaseUtils_::InsertHelper::prepareForReplace()
@@ -367,8 +367,8 @@ void android::database::DatabaseUtils_::InsertHelper::prepareForReplace()
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(13),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong android::database::DatabaseUtils_::InsertHelper::replace(local_ref< android::content::ContentValues > const &a0)
@@ -377,8 +377,8 @@ jlong android::database::DatabaseUtils_::InsertHelper::replace(local_ref< androi
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(14),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(14), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void android::database::DatabaseUtils_::InsertHelper::close()
@@ -387,8 +387,8 @@ void android::database::DatabaseUtils_::InsertHelper::close()
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(15),
 		android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -432,8 +432,8 @@ android::database::DatabaseUtils::DatabaseUtils()
 	call_new_object<
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(0),
-		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -445,8 +445,8 @@ void android::database::DatabaseUtils::writeExceptionToParcel(local_ref< android
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(1),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::database::DatabaseUtils::readExceptionFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -455,8 +455,8 @@ void android::database::DatabaseUtils::readExceptionFromParcel(local_ref< androi
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(2),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::database::DatabaseUtils::readExceptionWithFileNotFoundExceptionFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -465,8 +465,8 @@ void android::database::DatabaseUtils::readExceptionWithFileNotFoundExceptionFro
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(3),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::database::DatabaseUtils::readExceptionWithOperationApplicationExceptionFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -475,8 +475,8 @@ void android::database::DatabaseUtils::readExceptionWithOperationApplicationExce
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(4),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::database::DatabaseUtils::bindObjectToProgram(local_ref< android::database::sqlite::SQLiteProgram > const &a0, jint a1, local_ref< java::lang::Object > const &a2)
@@ -485,8 +485,8 @@ void android::database::DatabaseUtils::bindObjectToProgram(local_ref< android::d
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(5),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::appendEscapedSQLString(local_ref< java::lang::StringBuilder > const &a0, local_ref< java::lang::String > const &a1)
@@ -495,8 +495,8 @@ void android::database::DatabaseUtils::appendEscapedSQLString(local_ref< java::l
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(6),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::sqlEscapeString(local_ref< java::lang::String > const &a0)
@@ -505,8 +505,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::sqlEscapeStrin
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(7),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::database::DatabaseUtils::appendValueToSql(local_ref< java::lang::StringBuilder > const &a0, local_ref< java::lang::Object > const &a1)
@@ -515,8 +515,8 @@ void android::database::DatabaseUtils::appendValueToSql(local_ref< java::lang::S
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(8),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::getCollationKey(local_ref< java::lang::String > const &a0)
@@ -525,8 +525,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::getCollationKe
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(9),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::getHexCollationKey(local_ref< java::lang::String > const &a0)
@@ -535,8 +535,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::getHexCollatio
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(10),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::Cursor > const &a0)
@@ -545,8 +545,8 @@ void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(11),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::Cursor > const &a0, local_ref< java::io::PrintStream > const &a1)
@@ -555,8 +555,8 @@ void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(12),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::StringBuilder > const &a1)
@@ -565,8 +565,8 @@ void android::database::DatabaseUtils::dumpCursor(local_ref< android::database::
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(13),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::dumpCursorToString(local_ref< android::database::Cursor > const &a0)
@@ -575,8 +575,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::dumpCursorToSt
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(14),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::database::Cursor > const &a0)
@@ -585,8 +585,8 @@ void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::databa
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(15),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::database::Cursor > const &a0, local_ref< java::io::PrintStream > const &a1)
@@ -595,8 +595,8 @@ void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::databa
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(16),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::StringBuilder > const &a1)
@@ -605,8 +605,8 @@ void android::database::DatabaseUtils::dumpCurrentRow(local_ref< android::databa
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(17),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::dumpCurrentRowToString(local_ref< android::database::Cursor > const &a0)
@@ -615,8 +615,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::dumpCurrentRow
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(18),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::database::DatabaseUtils::cursorStringToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -625,8 +625,8 @@ void android::database::DatabaseUtils::cursorStringToContentValues(local_ref< an
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(19),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorStringToInsertHelper(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::database::DatabaseUtils_::InsertHelper > const &a2, jint a3)
@@ -635,8 +635,8 @@ void android::database::DatabaseUtils::cursorStringToInsertHelper(local_ref< and
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(20),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::database::DatabaseUtils::cursorStringToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2, local_ref< java::lang::String > const &a3)
@@ -645,8 +645,8 @@ void android::database::DatabaseUtils::cursorStringToContentValues(local_ref< an
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(21),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::database::DatabaseUtils::cursorIntToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -655,8 +655,8 @@ void android::database::DatabaseUtils::cursorIntToContentValues(local_ref< andro
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(22),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorIntToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2, local_ref< java::lang::String > const &a3)
@@ -665,8 +665,8 @@ void android::database::DatabaseUtils::cursorIntToContentValues(local_ref< andro
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(23),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::database::DatabaseUtils::cursorLongToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -675,8 +675,8 @@ void android::database::DatabaseUtils::cursorLongToContentValues(local_ref< andr
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(24),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorLongToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2, local_ref< java::lang::String > const &a3)
@@ -685,8 +685,8 @@ void android::database::DatabaseUtils::cursorLongToContentValues(local_ref< andr
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(25),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::database::DatabaseUtils::cursorDoubleToCursorValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -695,8 +695,8 @@ void android::database::DatabaseUtils::cursorDoubleToCursorValues(local_ref< and
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(26),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorDoubleToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2, local_ref< java::lang::String > const &a3)
@@ -705,8 +705,8 @@ void android::database::DatabaseUtils::cursorDoubleToContentValues(local_ref< an
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(27),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::database::DatabaseUtils::cursorRowToContentValues(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -715,8 +715,8 @@ void android::database::DatabaseUtils::cursorRowToContentValues(local_ref< andro
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(28),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jlong android::database::DatabaseUtils::queryNumEntries(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< java::lang::String > const &a1)
@@ -725,8 +725,8 @@ jlong android::database::DatabaseUtils::queryNumEntries(local_ref< android::data
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(29),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(29), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jlong android::database::DatabaseUtils::longForQuery(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -735,8 +735,8 @@ jlong android::database::DatabaseUtils::longForQuery(local_ref< android::databas
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(30),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(30), 
-		jlong >
-	(a0, a1, a2);
+		jlong
+	>(a0, a1, a2);
 }
 
 jlong android::database::DatabaseUtils::longForQuery(local_ref< android::database::sqlite::SQLiteStatement > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -745,8 +745,8 @@ jlong android::database::DatabaseUtils::longForQuery(local_ref< android::databas
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(31),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(31), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::stringForQuery(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -755,8 +755,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::stringForQuery
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(32),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::database::DatabaseUtils::stringForQuery(local_ref< android::database::sqlite::SQLiteStatement > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -765,8 +765,8 @@ local_ref< java::lang::String > android::database::DatabaseUtils::stringForQuery
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(33),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 void android::database::DatabaseUtils::cursorStringToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -775,8 +775,8 @@ void android::database::DatabaseUtils::cursorStringToContentValuesIfPresent(loca
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(34),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorLongToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -785,8 +785,8 @@ void android::database::DatabaseUtils::cursorLongToContentValuesIfPresent(local_
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(35),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorShortToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -795,8 +795,8 @@ void android::database::DatabaseUtils::cursorShortToContentValuesIfPresent(local
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(36),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorIntToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -805,8 +805,8 @@ void android::database::DatabaseUtils::cursorIntToContentValuesIfPresent(local_r
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(37),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorFloatToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -815,8 +815,8 @@ void android::database::DatabaseUtils::cursorFloatToContentValuesIfPresent(local
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(38),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::cursorDoubleToContentValuesIfPresent(local_ref< android::database::Cursor > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2)
@@ -825,8 +825,8 @@ void android::database::DatabaseUtils::cursorDoubleToContentValuesIfPresent(loca
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(39),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::database::DatabaseUtils::createDbFromSqlStatements(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, jint a2, local_ref< java::lang::String > const &a3)
@@ -835,8 +835,8 @@ void android::database::DatabaseUtils::createDbFromSqlStatements(local_ref< andr
 		android::database::DatabaseUtils::J2CPP_CLASS_NAME,
 		android::database::DatabaseUtils::J2CPP_METHOD_NAME(40),
 		android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 

@@ -84,8 +84,8 @@ org::apache::http::protocol::UriPatternMatcher::UriPatternMatcher()
 	call_new_object<
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ void org::apache::http::protocol::UriPatternMatcher::register_(local_ref< java::
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::protocol::UriPatternMatcher::unregister(local_ref< java::lang::String > const &a0)
@@ -107,8 +107,8 @@ void org::apache::http::protocol::UriPatternMatcher::unregister(local_ref< java:
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::UriPatternMatcher::setHandlers(local_ref< java::util::Map > const &a0)
@@ -117,8 +117,8 @@ void org::apache::http::protocol::UriPatternMatcher::setHandlers(local_ref< java
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::apache::http::protocol::UriPatternMatcher::lookup(local_ref< java::lang::String > const &a0)
@@ -127,8 +127,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::UriPatternMatcher::
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

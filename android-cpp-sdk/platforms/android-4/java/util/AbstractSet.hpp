@@ -15,8 +15,10 @@ namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/AbstractCollection.hpp>
 #include <java/util/Collection.hpp>
@@ -45,8 +47,11 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractCollection>() const;
 		operator local_ref<java::util::Set>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
 
 
 		jboolean equals(local_ref< java::lang::Object >  const&);
@@ -70,14 +75,29 @@ namespace j2cpp {
 
 
 
+java::util::AbstractSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
+}
+
 java::util::AbstractSet::operator local_ref<java::util::AbstractCollection>() const
 {
 	return local_ref<java::util::AbstractCollection>(get_jobject());
 }
 
-java::util::AbstractSet::operator local_ref<java::util::Set>() const
+java::util::AbstractSet::operator local_ref<java::util::Collection>() const
 {
-	return local_ref<java::util::Set>(get_jobject());
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::AbstractSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::AbstractSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
 }
 
 
@@ -87,8 +107,8 @@ jboolean java::util::AbstractSet::equals(local_ref< java::lang::Object > const &
 		java::util::AbstractSet::J2CPP_CLASS_NAME,
 		java::util::AbstractSet::J2CPP_METHOD_NAME(1),
 		java::util::AbstractSet::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::AbstractSet::hashCode()
@@ -97,8 +117,8 @@ jint java::util::AbstractSet::hashCode()
 		java::util::AbstractSet::J2CPP_CLASS_NAME,
 		java::util::AbstractSet::J2CPP_METHOD_NAME(2),
 		java::util::AbstractSet::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::AbstractSet::removeAll(local_ref< java::util::Collection > const &a0)
@@ -107,8 +127,8 @@ jboolean java::util::AbstractSet::removeAll(local_ref< java::util::Collection > 
 		java::util::AbstractSet::J2CPP_CLASS_NAME,
 		java::util::AbstractSet::J2CPP_METHOD_NAME(3),
 		java::util::AbstractSet::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

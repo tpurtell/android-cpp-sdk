@@ -108,8 +108,8 @@ android::os::Messenger::Messenger(local_ref< android::os::Handler > const &a0)
 	call_new_object<
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(0),
-		android::os::Messenger::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::Messenger::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -121,8 +121,8 @@ android::os::Messenger::Messenger(local_ref< android::os::IBinder > const &a0)
 	call_new_object<
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(1),
-		android::os::Messenger::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::Messenger::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -134,8 +134,8 @@ void android::os::Messenger::send(local_ref< android::os::Message > const &a0)
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(2),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::IBinder > android::os::Messenger::getBinder()
@@ -144,8 +144,8 @@ local_ref< android::os::IBinder > android::os::Messenger::getBinder()
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(3),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 jboolean android::os::Messenger::equals(local_ref< java::lang::Object > const &a0)
@@ -154,8 +154,8 @@ jboolean android::os::Messenger::equals(local_ref< java::lang::Object > const &a
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(4),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::os::Messenger::hashCode()
@@ -164,8 +164,8 @@ jint android::os::Messenger::hashCode()
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(5),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Messenger::describeContents()
@@ -174,8 +174,8 @@ jint android::os::Messenger::describeContents()
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(6),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::Messenger::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -184,8 +184,8 @@ void android::os::Messenger::writeToParcel(local_ref< android::os::Parcel > cons
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(7),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Messenger::writeMessengerOrNullToParcel(local_ref< android::os::Messenger > const &a0, local_ref< android::os::Parcel > const &a1)
@@ -194,8 +194,8 @@ void android::os::Messenger::writeMessengerOrNullToParcel(local_ref< android::os
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(8),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::os::Messenger > android::os::Messenger::readMessengerOrNullFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -204,8 +204,8 @@ local_ref< android::os::Messenger > android::os::Messenger::readMessengerOrNullF
 		android::os::Messenger::J2CPP_CLASS_NAME,
 		android::os::Messenger::J2CPP_METHOD_NAME(9),
 		android::os::Messenger::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::os::Messenger > >
-	(a0);
+		local_ref< android::os::Messenger >
+	>(a0);
 }
 
 

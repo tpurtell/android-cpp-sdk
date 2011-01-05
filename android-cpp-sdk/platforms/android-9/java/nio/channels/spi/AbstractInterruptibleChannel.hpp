@@ -14,8 +14,10 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/InterruptibleChannel.hpp>
@@ -48,6 +50,7 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::nio::channels::Channel>() const;
 		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		jboolean isOpen();
@@ -87,6 +90,11 @@ java::nio::channels::spi::AbstractInterruptibleChannel::operator local_ref<java:
 	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
 }
 
+java::nio::channels::spi::AbstractInterruptibleChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 
 jboolean java::nio::channels::spi::AbstractInterruptibleChannel::isOpen()
 {
@@ -94,8 +102,8 @@ jboolean java::nio::channels::spi::AbstractInterruptibleChannel::isOpen()
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::nio::channels::spi::AbstractInterruptibleChannel::close()
@@ -104,8 +112,8 @@ void java::nio::channels::spi::AbstractInterruptibleChannel::close()
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_NAME(2),
 		java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

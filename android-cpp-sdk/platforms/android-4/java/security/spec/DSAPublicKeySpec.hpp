@@ -44,8 +44,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DSAPublicKeySpec(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
@@ -72,14 +72,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::DSAPublicKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::DSAPublicKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+java::security::spec::DSAPublicKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -88,8 +88,8 @@ java::security::spec::DSAPublicKeySpec::DSAPublicKeySpec(local_ref< java::math::
 	call_new_object<
 		java::security::spec::DSAPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -101,8 +101,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getG
 		java::security::spec::DSAPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getP()
@@ -111,8 +111,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getP
 		java::security::spec::DSAPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getQ()
@@ -121,8 +121,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getQ
 		java::security::spec::DSAPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_NAME(3),
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getY()
@@ -131,8 +131,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAPublicKeySpec::getY
 		java::security::spec::DSAPublicKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_NAME(4),
 		java::security::spec::DSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

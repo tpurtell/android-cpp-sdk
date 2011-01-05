@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace net { class ServerSocket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/ServerSocket.hpp>
 
@@ -56,6 +58,7 @@ namespace javax { namespace net { namespace ssl {
 		}
 
 		operator local_ref<java::net::ServerSocket>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< array< local_ref< java::lang::String >, 1> > getEnabledCipherSuites();
@@ -96,6 +99,11 @@ javax::net::ssl::SSLServerSocket::operator local_ref<java::net::ServerSocket>() 
 	return local_ref<java::net::ServerSocket>(get_jobject());
 }
 
+javax::net::ssl::SSLServerSocket::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 
 
@@ -106,8 +114,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLServerSocket::setEnabledCipherSuites(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -116,8 +124,8 @@ void javax::net::ssl::SSLServerSocket::setEnabledCipherSuites(local_ref< array< 
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServerSocket::getSupportedCipherSuites()
@@ -126,8 +134,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(6),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServerSocket::getSupportedProtocols()
@@ -136,8 +144,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(7),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServerSocket::getEnabledProtocols()
@@ -146,8 +154,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(8),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLServerSocket::setEnabledProtocols(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -156,8 +164,8 @@ void javax::net::ssl::SSLServerSocket::setEnabledProtocols(local_ref< array< loc
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(9),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::net::ssl::SSLServerSocket::setNeedClientAuth(jboolean a0)
@@ -166,8 +174,8 @@ void javax::net::ssl::SSLServerSocket::setNeedClientAuth(jboolean a0)
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(10),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::net::ssl::SSLServerSocket::getNeedClientAuth()
@@ -176,8 +184,8 @@ jboolean javax::net::ssl::SSLServerSocket::getNeedClientAuth()
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(11),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLServerSocket::setWantClientAuth(jboolean a0)
@@ -186,8 +194,8 @@ void javax::net::ssl::SSLServerSocket::setWantClientAuth(jboolean a0)
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(12),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::net::ssl::SSLServerSocket::getWantClientAuth()
@@ -196,8 +204,8 @@ jboolean javax::net::ssl::SSLServerSocket::getWantClientAuth()
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(13),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLServerSocket::setUseClientMode(jboolean a0)
@@ -206,8 +214,8 @@ void javax::net::ssl::SSLServerSocket::setUseClientMode(jboolean a0)
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(14),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::net::ssl::SSLServerSocket::getUseClientMode()
@@ -216,8 +224,8 @@ jboolean javax::net::ssl::SSLServerSocket::getUseClientMode()
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(15),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLServerSocket::setEnableSessionCreation(jboolean a0)
@@ -226,8 +234,8 @@ void javax::net::ssl::SSLServerSocket::setEnableSessionCreation(jboolean a0)
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(16),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::net::ssl::SSLServerSocket::getEnableSessionCreation()
@@ -236,8 +244,8 @@ jboolean javax::net::ssl::SSLServerSocket::getEnableSessionCreation()
 		javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(17),
 		javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

@@ -11,13 +11,19 @@
 #define J2CPP_JAVA_UTIL_ZIP_CHECKEDOUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class Checksum; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterOutputStream.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/zip/Checksum.hpp>
 
 
@@ -43,7 +49,11 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
 		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::io::OutputStream>() const;
 
 
 		CheckedOutputStream(local_ref< java::io::OutputStream > const&, local_ref< java::util::zip::Checksum > const&);
@@ -69,9 +79,29 @@ namespace j2cpp {
 
 
 
+java::util::zip::CheckedOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::zip::CheckedOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::util::zip::CheckedOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
 java::util::zip::CheckedOutputStream::operator local_ref<java::io::FilterOutputStream>() const
 {
 	return local_ref<java::io::FilterOutputStream>(get_jobject());
+}
+
+java::util::zip::CheckedOutputStream::operator local_ref<java::io::OutputStream>() const
+{
+	return local_ref<java::io::OutputStream>(get_jobject());
 }
 
 
@@ -80,8 +110,8 @@ java::util::zip::CheckedOutputStream::CheckedOutputStream(local_ref< java::io::O
 	call_new_object<
 		java::util::zip::CheckedOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_NAME(0),
-		java::util::zip::CheckedOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::zip::CheckedOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -93,8 +123,8 @@ local_ref< java::util::zip::Checksum > java::util::zip::CheckedOutputStream::get
 		java::util::zip::CheckedOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_NAME(1),
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::zip::Checksum > >
-	(get_jobject());
+		local_ref< java::util::zip::Checksum >
+	>(get_jobject());
 }
 
 void java::util::zip::CheckedOutputStream::write(jint a0)
@@ -103,8 +133,8 @@ void java::util::zip::CheckedOutputStream::write(jint a0)
 		java::util::zip::CheckedOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_NAME(2),
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::CheckedOutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -113,8 +143,8 @@ void java::util::zip::CheckedOutputStream::write(local_ref< array<jbyte,1> > con
 		java::util::zip::CheckedOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_NAME(3),
 		java::util::zip::CheckedOutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -170,8 +170,8 @@ local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref<
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(1),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::crypto::Cipher > >
-	(a0);
+		local_ref< javax::crypto::Cipher >
+	>(a0);
 }
 
 local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -180,8 +180,8 @@ local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref<
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(2),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::crypto::Cipher > >
-	(a0, a1);
+		local_ref< javax::crypto::Cipher >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -190,8 +190,8 @@ local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref<
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(3),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::Cipher > >
-	(a0, a1);
+		local_ref< javax::crypto::Cipher >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > javax::crypto::Cipher::getProvider()
@@ -200,8 +200,8 @@ local_ref< java::security::Provider > javax::crypto::Cipher::getProvider()
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(4),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::crypto::Cipher::getAlgorithm()
@@ -210,8 +210,8 @@ local_ref< java::lang::String > javax::crypto::Cipher::getAlgorithm()
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(5),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint javax::crypto::Cipher::getBlockSize()
@@ -220,8 +220,8 @@ jint javax::crypto::Cipher::getBlockSize()
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(6),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::Cipher::getOutputSize(jint a0)
@@ -230,8 +230,8 @@ jint javax::crypto::Cipher::getOutputSize(jint a0)
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(7),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::getIV()
@@ -240,8 +240,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::getIV()
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(8),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::AlgorithmParameters > javax::crypto::Cipher::getParameters()
@@ -250,8 +250,8 @@ local_ref< java::security::AlgorithmParameters > javax::crypto::Cipher::getParam
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(9),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::AlgorithmParameters > >
-	(get_jobject());
+		local_ref< java::security::AlgorithmParameters >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::ExemptionMechanism > javax::crypto::Cipher::getExemptionMechanism()
@@ -260,8 +260,8 @@ local_ref< javax::crypto::ExemptionMechanism > javax::crypto::Cipher::getExempti
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(10),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< javax::crypto::ExemptionMechanism > >
-	(get_jobject());
+		local_ref< javax::crypto::ExemptionMechanism >
+	>(get_jobject());
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1)
@@ -270,8 +270,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(11),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1, local_ref< java::security::SecureRandom > const &a2)
@@ -280,8 +280,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(12),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1, local_ref< java::security::spec::AlgorithmParameterSpec > const &a2)
@@ -290,8 +290,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(13),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1, local_ref< java::security::spec::AlgorithmParameterSpec > const &a2, local_ref< java::security::SecureRandom > const &a3)
@@ -300,8 +300,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(14),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1, local_ref< java::security::AlgorithmParameters > const &a2)
@@ -310,8 +310,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(15),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const &a1, local_ref< java::security::AlgorithmParameters > const &a2, local_ref< java::security::SecureRandom > const &a3)
@@ -320,8 +320,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::Key > const
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(16),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::cert::Certificate > const &a1)
@@ -330,8 +330,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::cert::Certi
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(17),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::Cipher::init(jint a0, local_ref< java::security::cert::Certificate > const &a1, local_ref< java::security::SecureRandom > const &a2)
@@ -340,8 +340,8 @@ void javax::crypto::Cipher::init(jint a0, local_ref< java::security::cert::Certi
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(18),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0)
@@ -350,8 +350,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::update(local_ref< array<jbyte
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(19),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -360,8 +360,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::update(local_ref< array<jbyte
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(20),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, local_ref< array<jbyte,1> > const &a3)
@@ -370,8 +370,8 @@ jint javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0, jint a
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(21),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, local_ref< array<jbyte,1> > const &a3, jint a4)
@@ -380,8 +380,8 @@ jint javax::crypto::Cipher::update(local_ref< array<jbyte,1> > const &a0, jint a
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(22),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint javax::crypto::Cipher::update(local_ref< java::nio::ByteBuffer > const &a0, local_ref< java::nio::ByteBuffer > const &a1)
@@ -390,8 +390,8 @@ jint javax::crypto::Cipher::update(local_ref< java::nio::ByteBuffer > const &a0,
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(23),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal()
@@ -400,8 +400,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal()
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(24),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -410,8 +410,8 @@ jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint 
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(25),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0)
@@ -420,8 +420,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal(local_ref< array<jbyt
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(26),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -430,8 +430,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::doFinal(local_ref< array<jbyt
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(27),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, local_ref< array<jbyte,1> > const &a3)
@@ -440,8 +440,8 @@ jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint 
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(28),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, local_ref< array<jbyte,1> > const &a3, jint a4)
@@ -450,8 +450,8 @@ jint javax::crypto::Cipher::doFinal(local_ref< array<jbyte,1> > const &a0, jint 
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(29),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint javax::crypto::Cipher::doFinal(local_ref< java::nio::ByteBuffer > const &a0, local_ref< java::nio::ByteBuffer > const &a1)
@@ -460,8 +460,8 @@ jint javax::crypto::Cipher::doFinal(local_ref< java::nio::ByteBuffer > const &a0
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(30),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Cipher::wrap(local_ref< java::security::Key > const &a0)
@@ -470,8 +470,8 @@ local_ref< array<jbyte,1> > javax::crypto::Cipher::wrap(local_ref< java::securit
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(31),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::Key > javax::crypto::Cipher::unwrap(local_ref< array<jbyte,1> > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -480,8 +480,8 @@ local_ref< java::security::Key > javax::crypto::Cipher::unwrap(local_ref< array<
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(32),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::security::Key > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::security::Key >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint javax::crypto::Cipher::getMaxAllowedKeyLength(local_ref< java::lang::String > const &a0)
@@ -490,8 +490,8 @@ jint javax::crypto::Cipher::getMaxAllowedKeyLength(local_ref< java::lang::String
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(33),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::security::spec::AlgorithmParameterSpec > javax::crypto::Cipher::getMaxAllowedParameterSpec(local_ref< java::lang::String > const &a0)
@@ -500,8 +500,8 @@ local_ref< java::security::spec::AlgorithmParameterSpec > javax::crypto::Cipher:
 		javax::crypto::Cipher::J2CPP_CLASS_NAME,
 		javax::crypto::Cipher::J2CPP_METHOD_NAME(34),
 		javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::security::spec::AlgorithmParameterSpec > >
-	(a0);
+		local_ref< java::security::spec::AlgorithmParameterSpec >
+	>(a0);
 }
 
 

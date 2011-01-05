@@ -82,8 +82,8 @@ android::test::mock::MockDialogInterface::MockDialogInterface()
 	call_new_object<
 		android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME,
 		android::test::mock::MockDialogInterface::J2CPP_METHOD_NAME(0),
-		android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +95,8 @@ void android::test::mock::MockDialogInterface::cancel()
 		android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME,
 		android::test::mock::MockDialogInterface::J2CPP_METHOD_NAME(1),
 		android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::test::mock::MockDialogInterface::dismiss()
@@ -105,8 +105,8 @@ void android::test::mock::MockDialogInterface::dismiss()
 		android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME,
 		android::test::mock::MockDialogInterface::J2CPP_METHOD_NAME(2),
 		android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -44,8 +44,8 @@ namespace java { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint compareTo(local_ref< java::text::CollationKey >  const&);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-java::text::CollationKey::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::text::CollationKey::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::text::CollationKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +87,8 @@ jint java::text::CollationKey::compareTo(local_ref< java::text::CollationKey > c
 		java::text::CollationKey::J2CPP_CLASS_NAME,
 		java::text::CollationKey::J2CPP_METHOD_NAME(1),
 		java::text::CollationKey::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::CollationKey::getSourceString()
@@ -97,8 +97,8 @@ local_ref< java::lang::String > java::text::CollationKey::getSourceString()
 		java::text::CollationKey::J2CPP_CLASS_NAME,
 		java::text::CollationKey::J2CPP_METHOD_NAME(2),
 		java::text::CollationKey::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::text::CollationKey::toByteArray()
@@ -107,8 +107,8 @@ local_ref< array<jbyte,1> > java::text::CollationKey::toByteArray()
 		java::text::CollationKey::J2CPP_CLASS_NAME,
 		java::text::CollationKey::J2CPP_METHOD_NAME(3),
 		java::text::CollationKey::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint java::text::CollationKey::compareTo(local_ref< java::lang::Object > const &a0)
@@ -117,8 +117,8 @@ jint java::text::CollationKey::compareTo(local_ref< java::lang::Object > const &
 		java::text::CollationKey::J2CPP_CLASS_NAME,
 		java::text::CollationKey::J2CPP_METHOD_NAME(4),
 		java::text::CollationKey::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

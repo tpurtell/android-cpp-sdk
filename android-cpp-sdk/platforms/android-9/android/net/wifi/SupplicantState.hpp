@@ -12,14 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -60,7 +66,10 @@ namespace android { namespace net { namespace wifi {
 		{
 		}
 
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<android::os::Parcelable>() const;
 
 
@@ -100,9 +109,24 @@ namespace j2cpp {
 
 
 
+android::net::wifi::SupplicantState::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::net::wifi::SupplicantState::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::net::wifi::SupplicantState::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::net::wifi::SupplicantState::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 android::net::wifi::SupplicantState::operator local_ref<android::os::Parcelable>() const
@@ -116,8 +140,8 @@ local_ref< array< local_ref< android::net::wifi::SupplicantState >, 1> > android
 		android::net::wifi::SupplicantState::J2CPP_CLASS_NAME,
 		android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(0),
 		android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::net::wifi::SupplicantState >, 1> > >
-	();
+		local_ref< array< local_ref< android::net::wifi::SupplicantState >, 1> >
+	>();
 }
 
 local_ref< android::net::wifi::SupplicantState > android::net::wifi::SupplicantState::valueOf(local_ref< java::lang::String > const &a0)
@@ -126,8 +150,8 @@ local_ref< android::net::wifi::SupplicantState > android::net::wifi::SupplicantS
 		android::net::wifi::SupplicantState::J2CPP_CLASS_NAME,
 		android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(1),
 		android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::wifi::SupplicantState > >
-	(a0);
+		local_ref< android::net::wifi::SupplicantState >
+	>(a0);
 }
 
 
@@ -137,8 +161,8 @@ jboolean android::net::wifi::SupplicantState::isValidState(local_ref< android::n
 		android::net::wifi::SupplicantState::J2CPP_CLASS_NAME,
 		android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(3),
 		android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::net::wifi::SupplicantState::describeContents()
@@ -147,8 +171,8 @@ jint android::net::wifi::SupplicantState::describeContents()
 		android::net::wifi::SupplicantState::J2CPP_CLASS_NAME,
 		android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(4),
 		android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::wifi::SupplicantState::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -157,8 +181,8 @@ void android::net::wifi::SupplicantState::writeToParcel(local_ref< android::os::
 		android::net::wifi::SupplicantState::J2CPP_CLASS_NAME,
 		android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(5),
 		android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

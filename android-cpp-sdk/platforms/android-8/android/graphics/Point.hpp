@@ -96,8 +96,8 @@ android::graphics::Point::Point()
 	call_new_object<
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(0),
-		android::graphics::Point::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Point::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , x(get_jobject())
 , y(get_jobject())
@@ -111,8 +111,8 @@ android::graphics::Point::Point(jint a0, jint a1)
 	call_new_object<
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(1),
-		android::graphics::Point::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::graphics::Point::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 , x(get_jobject())
 , y(get_jobject())
@@ -126,8 +126,8 @@ android::graphics::Point::Point(local_ref< android::graphics::Point > const &a0)
 	call_new_object<
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(2),
-		android::graphics::Point::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::Point::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , x(get_jobject())
 , y(get_jobject())
@@ -141,8 +141,8 @@ void android::graphics::Point::set(jint a0, jint a1)
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(3),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Point::negate()
@@ -151,8 +151,8 @@ void android::graphics::Point::negate()
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(4),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::Point::offset(jint a0, jint a1)
@@ -161,8 +161,8 @@ void android::graphics::Point::offset(jint a0, jint a1)
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(5),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Point::equals(jint a0, jint a1)
@@ -171,8 +171,8 @@ jboolean android::graphics::Point::equals(jint a0, jint a1)
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(6),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Point::equals(local_ref< java::lang::Object > const &a0)
@@ -181,8 +181,8 @@ jboolean android::graphics::Point::equals(local_ref< java::lang::Object > const 
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(7),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Point::hashCode()
@@ -191,8 +191,8 @@ jint android::graphics::Point::hashCode()
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(8),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::graphics::Point::toString()
@@ -201,8 +201,8 @@ local_ref< java::lang::String > android::graphics::Point::toString()
 		android::graphics::Point::J2CPP_CLASS_NAME,
 		android::graphics::Point::J2CPP_METHOD_NAME(9),
 		android::graphics::Point::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

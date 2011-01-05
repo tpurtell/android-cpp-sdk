@@ -65,8 +65,8 @@ namespace android { namespace os {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::IBinder>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Binder();
@@ -103,14 +103,14 @@ namespace j2cpp {
 
 
 
-android::os::Binder::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::os::Binder::operator local_ref<android::os::IBinder>() const
 {
 	return local_ref<android::os::IBinder>(get_jobject());
+}
+
+android::os::Binder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -119,8 +119,8 @@ android::os::Binder::Binder()
 	call_new_object<
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(0),
-		android::os::Binder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Binder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -132,8 +132,8 @@ jint android::os::Binder::getCallingPid()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(1),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Binder::getCallingUid()
@@ -142,8 +142,8 @@ jint android::os::Binder::getCallingUid()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(2),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jlong android::os::Binder::clearCallingIdentity()
@@ -152,8 +152,8 @@ jlong android::os::Binder::clearCallingIdentity()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(3),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 void android::os::Binder::restoreCallingIdentity(jlong a0)
@@ -162,8 +162,8 @@ void android::os::Binder::restoreCallingIdentity(jlong a0)
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(4),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::os::Binder::flushPendingCommands()
@@ -172,8 +172,8 @@ void android::os::Binder::flushPendingCommands()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(5),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Binder::joinThreadPool()
@@ -182,8 +182,8 @@ void android::os::Binder::joinThreadPool()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(6),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Binder::attachInterface(local_ref< android::os::IInterface > const &a0, local_ref< java::lang::String > const &a1)
@@ -192,8 +192,8 @@ void android::os::Binder::attachInterface(local_ref< android::os::IInterface > c
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(7),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::os::Binder::getInterfaceDescriptor()
@@ -202,8 +202,8 @@ local_ref< java::lang::String > android::os::Binder::getInterfaceDescriptor()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(8),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::os::Binder::pingBinder()
@@ -212,8 +212,8 @@ jboolean android::os::Binder::pingBinder()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(9),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::os::Binder::isBinderAlive()
@@ -222,8 +222,8 @@ jboolean android::os::Binder::isBinderAlive()
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(10),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::os::IInterface > android::os::Binder::queryLocalInterface(local_ref< java::lang::String > const &a0)
@@ -232,8 +232,8 @@ local_ref< android::os::IInterface > android::os::Binder::queryLocalInterface(lo
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(11),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::os::IInterface > >
-	(get_jobject(), a0);
+		local_ref< android::os::IInterface >
+	>(get_jobject(), a0);
 }
 
 
@@ -243,8 +243,8 @@ void android::os::Binder::dump(local_ref< java::io::FileDescriptor > const &a0, 
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(13),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -254,8 +254,8 @@ jboolean android::os::Binder::transact(jint a0, local_ref< android::os::Parcel >
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(15),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::os::Binder::linkToDeath(local_ref< android::os::IBinder_::DeathRecipient > const &a0, jint a1)
@@ -264,8 +264,8 @@ void android::os::Binder::linkToDeath(local_ref< android::os::IBinder_::DeathRec
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(16),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Binder::unlinkToDeath(local_ref< android::os::IBinder_::DeathRecipient > const &a0, jint a1)
@@ -274,8 +274,8 @@ jboolean android::os::Binder::unlinkToDeath(local_ref< android::os::IBinder_::De
 		android::os::Binder::J2CPP_CLASS_NAME,
 		android::os::Binder::J2CPP_METHOD_NAME(17),
 		android::os::Binder::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

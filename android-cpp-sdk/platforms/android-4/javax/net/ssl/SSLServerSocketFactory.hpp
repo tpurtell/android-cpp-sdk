@@ -11,10 +11,12 @@
 #define J2CPP_JAVAX_NET_SSL_SSLSERVERSOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { class ServerSocketFactory; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { class ServerSocketFactory; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/net/ServerSocketFactory.hpp>
 
@@ -41,6 +43,7 @@ namespace javax { namespace net { namespace ssl {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::net::ServerSocketFactory>() const;
 
 
@@ -66,6 +69,11 @@ namespace j2cpp {
 
 
 
+javax::net::ssl::SSLServerSocketFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::net::ssl::SSLServerSocketFactory::operator local_ref<javax::net::ServerSocketFactory>() const
 {
 	return local_ref<javax::net::ServerSocketFactory>(get_jobject());
@@ -78,8 +86,8 @@ local_ref< javax::net::ServerSocketFactory > javax::net::ssl::SSLServerSocketFac
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ServerSocketFactory > >
-	();
+		local_ref< javax::net::ServerSocketFactory >
+	>();
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServerSocketFactory::getDefaultCipherSuites()
@@ -88,8 +96,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServerSocketFactory::getSupportedCipherSuites()
@@ -98,8 +106,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLServ
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 

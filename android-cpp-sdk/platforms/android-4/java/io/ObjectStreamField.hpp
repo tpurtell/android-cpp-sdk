@@ -53,8 +53,8 @@ namespace java { namespace io {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ObjectStreamField(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&);
@@ -86,14 +86,14 @@ namespace j2cpp {
 
 
 
-java::io::ObjectStreamField::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::io::ObjectStreamField::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::io::ObjectStreamField::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -102,8 +102,8 @@ java::io::ObjectStreamField::ObjectStreamField(local_ref< java::lang::String > c
 	call_new_object<
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(0),
-		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -115,8 +115,8 @@ java::io::ObjectStreamField::ObjectStreamField(local_ref< java::lang::String > c
 	call_new_object<
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(1),
-		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -128,8 +128,8 @@ jint java::io::ObjectStreamField::compareTo(local_ref< java::lang::Object > cons
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(2),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::io::ObjectStreamField::getName()
@@ -138,8 +138,8 @@ local_ref< java::lang::String > java::io::ObjectStreamField::getName()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(3),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::io::ObjectStreamField::getOffset()
@@ -148,8 +148,8 @@ jint java::io::ObjectStreamField::getOffset()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(4),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > java::io::ObjectStreamField::getType()
@@ -158,8 +158,8 @@ local_ref< java::lang::Class > java::io::ObjectStreamField::getType()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(5),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 jchar java::io::ObjectStreamField::getTypeCode()
@@ -168,8 +168,8 @@ jchar java::io::ObjectStreamField::getTypeCode()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(6),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(6), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::ObjectStreamField::getTypeString()
@@ -178,8 +178,8 @@ local_ref< java::lang::String > java::io::ObjectStreamField::getTypeString()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(7),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::io::ObjectStreamField::isPrimitive()
@@ -188,8 +188,8 @@ jboolean java::io::ObjectStreamField::isPrimitive()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(8),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -199,8 +199,8 @@ local_ref< java::lang::String > java::io::ObjectStreamField::toString()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(10),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::io::ObjectStreamField::isUnshared()
@@ -209,8 +209,8 @@ jboolean java::io::ObjectStreamField::isUnshared()
 		java::io::ObjectStreamField::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamField::J2CPP_METHOD_NAME(11),
 		java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

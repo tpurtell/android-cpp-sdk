@@ -11,12 +11,14 @@
 #define J2CPP_ANDROID_GRAPHICS_LAYERRASTERIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rasterizer; } } }
 
 
 #include <android/graphics/Paint.hpp>
 #include <android/graphics/Rasterizer.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +42,7 @@ namespace android { namespace graphics {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::Rasterizer>() const;
 
 
@@ -64,6 +67,11 @@ namespace j2cpp {
 
 
 
+android::graphics::LayerRasterizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::LayerRasterizer::operator local_ref<android::graphics::Rasterizer>() const
 {
 	return local_ref<android::graphics::Rasterizer>(get_jobject());
@@ -75,8 +83,8 @@ android::graphics::LayerRasterizer::LayerRasterizer()
 	call_new_object<
 		android::graphics::LayerRasterizer::J2CPP_CLASS_NAME,
 		android::graphics::LayerRasterizer::J2CPP_METHOD_NAME(0),
-		android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +96,8 @@ void android::graphics::LayerRasterizer::addLayer(local_ref< android::graphics::
 		android::graphics::LayerRasterizer::J2CPP_CLASS_NAME,
 		android::graphics::LayerRasterizer::J2CPP_METHOD_NAME(1),
 		android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::LayerRasterizer::addLayer(local_ref< android::graphics::Paint > const &a0)
@@ -98,8 +106,8 @@ void android::graphics::LayerRasterizer::addLayer(local_ref< android::graphics::
 		android::graphics::LayerRasterizer::J2CPP_CLASS_NAME,
 		android::graphics::LayerRasterizer::J2CPP_METHOD_NAME(2),
 		android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -79,8 +79,8 @@ jboolean android::accounts::AccountManagerFuture::cancel(jboolean a0)
 		android::accounts::AccountManagerFuture::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_NAME(0),
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::accounts::AccountManagerFuture::isCancelled()
@@ -89,8 +89,8 @@ jboolean android::accounts::AccountManagerFuture::isCancelled()
 		android::accounts::AccountManagerFuture::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_NAME(1),
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::accounts::AccountManagerFuture::isDone()
@@ -99,8 +99,8 @@ jboolean android::accounts::AccountManagerFuture::isDone()
 		android::accounts::AccountManagerFuture::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_NAME(2),
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::accounts::AccountManagerFuture::getResult()
@@ -109,8 +109,8 @@ local_ref< java::lang::Object > android::accounts::AccountManagerFuture::getResu
 		android::accounts::AccountManagerFuture::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_NAME(3),
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::accounts::AccountManagerFuture::getResult(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -119,8 +119,8 @@ local_ref< java::lang::Object > android::accounts::AccountManagerFuture::getResu
 		android::accounts::AccountManagerFuture::J2CPP_CLASS_NAME,
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_NAME(4),
 		android::accounts::AccountManagerFuture::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

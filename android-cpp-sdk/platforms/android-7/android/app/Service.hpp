@@ -11,11 +11,13 @@
 #define J2CPP_ANDROID_APP_SERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace app { class Notification; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
@@ -23,10 +25,12 @@ namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 #include <android/app/Application.hpp>
 #include <android/app/Notification.hpp>
 #include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
 #include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/content/res/Configuration.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -73,8 +77,10 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
 
 
 		Service();
@@ -120,14 +126,24 @@ namespace j2cpp {
 
 
 
-android::app::Service::operator local_ref<android::content::ContextWrapper>() const
+android::app::Service::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::content::ContextWrapper>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::app::Service::operator local_ref<android::content::ComponentCallbacks>() const
 {
 	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::Service::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::Service::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
 }
 
 
@@ -136,8 +152,8 @@ android::app::Service::Service()
 	call_new_object<
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(0),
-		android::app::Service::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::Service::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -149,8 +165,8 @@ local_ref< android::app::Application > android::app::Service::getApplication()
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(1),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::Application > >
-	(get_jobject());
+		local_ref< android::app::Application >
+	>(get_jobject());
 }
 
 void android::app::Service::onCreate()
@@ -159,8 +175,8 @@ void android::app::Service::onCreate()
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(2),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Service::onStart(local_ref< android::content::Intent > const &a0, jint a1)
@@ -169,8 +185,8 @@ void android::app::Service::onStart(local_ref< android::content::Intent > const 
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(3),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::Service::onStartCommand(local_ref< android::content::Intent > const &a0, jint a1, jint a2)
@@ -179,8 +195,8 @@ jint android::app::Service::onStartCommand(local_ref< android::content::Intent >
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(4),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::Service::onDestroy()
@@ -189,8 +205,8 @@ void android::app::Service::onDestroy()
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(5),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Service::onConfigurationChanged(local_ref< android::content::res::Configuration > const &a0)
@@ -199,8 +215,8 @@ void android::app::Service::onConfigurationChanged(local_ref< android::content::
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(6),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Service::onLowMemory()
@@ -209,8 +225,8 @@ void android::app::Service::onLowMemory()
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(7),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::app::Service::onBind(local_ref< android::content::Intent > const &a0)
@@ -219,8 +235,8 @@ local_ref< android::os::IBinder > android::app::Service::onBind(local_ref< andro
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(8),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::Service::onUnbind(local_ref< android::content::Intent > const &a0)
@@ -229,8 +245,8 @@ jboolean android::app::Service::onUnbind(local_ref< android::content::Intent > c
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(9),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::app::Service::onRebind(local_ref< android::content::Intent > const &a0)
@@ -239,8 +255,8 @@ void android::app::Service::onRebind(local_ref< android::content::Intent > const
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(10),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Service::stopSelf()
@@ -249,8 +265,8 @@ void android::app::Service::stopSelf()
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(11),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Service::stopSelf(jint a0)
@@ -259,8 +275,8 @@ void android::app::Service::stopSelf(jint a0)
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(12),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::Service::stopSelfResult(jint a0)
@@ -269,8 +285,8 @@ jboolean android::app::Service::stopSelfResult(jint a0)
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(13),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::app::Service::setForeground(jboolean a0)
@@ -279,8 +295,8 @@ void android::app::Service::setForeground(jboolean a0)
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(14),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Service::startForeground(jint a0, local_ref< android::app::Notification > const &a1)
@@ -289,8 +305,8 @@ void android::app::Service::startForeground(jint a0, local_ref< android::app::No
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(15),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Service::stopForeground(jboolean a0)
@@ -299,8 +315,8 @@ void android::app::Service::stopForeground(jboolean a0)
 		android::app::Service::J2CPP_CLASS_NAME,
 		android::app::Service::J2CPP_METHOD_NAME(16),
 		android::app::Service::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -184,8 +184,8 @@ void org::xmlpull::v1::XmlPullParser::setFeature(local_ref< java::lang::String >
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(0),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xmlpull::v1::XmlPullParser::getFeature(local_ref< java::lang::String > const &a0)
@@ -194,8 +194,8 @@ jboolean org::xmlpull::v1::XmlPullParser::getFeature(local_ref< java::lang::Stri
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(1),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlPullParser::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -204,8 +204,8 @@ void org::xmlpull::v1::XmlPullParser::setProperty(local_ref< java::lang::String 
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(2),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xmlpull::v1::XmlPullParser::getProperty(local_ref< java::lang::String > const &a0)
@@ -214,8 +214,8 @@ local_ref< java::lang::Object > org::xmlpull::v1::XmlPullParser::getProperty(loc
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(3),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlPullParser::setInput(local_ref< java::io::Reader > const &a0)
@@ -224,8 +224,8 @@ void org::xmlpull::v1::XmlPullParser::setInput(local_ref< java::io::Reader > con
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(4),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::XmlPullParser::setInput(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
@@ -234,8 +234,8 @@ void org::xmlpull::v1::XmlPullParser::setInput(local_ref< java::io::InputStream 
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(5),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getInputEncoding()
@@ -244,8 +244,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getInputEncodin
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(6),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::XmlPullParser::defineEntityReplacementText(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -254,8 +254,8 @@ void org::xmlpull::v1::XmlPullParser::defineEntityReplacementText(local_ref< jav
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(7),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint org::xmlpull::v1::XmlPullParser::getNamespaceCount(jint a0)
@@ -264,8 +264,8 @@ jint org::xmlpull::v1::XmlPullParser::getNamespaceCount(jint a0)
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(8),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespacePrefix(jint a0)
@@ -274,8 +274,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespacePre
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(9),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespaceUri(jint a0)
@@ -284,8 +284,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespaceUri
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(10),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespace(local_ref< java::lang::String > const &a0)
@@ -294,8 +294,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespace(lo
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(11),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint org::xmlpull::v1::XmlPullParser::getDepth()
@@ -304,8 +304,8 @@ jint org::xmlpull::v1::XmlPullParser::getDepth()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(12),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getPositionDescription()
@@ -314,8 +314,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getPositionDesc
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(13),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::getLineNumber()
@@ -324,8 +324,8 @@ jint org::xmlpull::v1::XmlPullParser::getLineNumber()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(14),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::getColumnNumber()
@@ -334,8 +334,8 @@ jint org::xmlpull::v1::XmlPullParser::getColumnNumber()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(15),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::xmlpull::v1::XmlPullParser::isWhitespace()
@@ -344,8 +344,8 @@ jboolean org::xmlpull::v1::XmlPullParser::isWhitespace()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(16),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getText()
@@ -354,8 +354,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getText()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(17),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > org::xmlpull::v1::XmlPullParser::getTextCharacters(local_ref< array<jint,1> > const &a0)
@@ -364,8 +364,8 @@ local_ref< array<jchar,1> > org::xmlpull::v1::XmlPullParser::getTextCharacters(l
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(18),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array<jchar,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jchar,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespace()
@@ -374,8 +374,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getNamespace()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(19),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getName()
@@ -384,8 +384,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getName()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(20),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getPrefix()
@@ -394,8 +394,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getPrefix()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(21),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::xmlpull::v1::XmlPullParser::isEmptyElementTag()
@@ -404,8 +404,8 @@ jboolean org::xmlpull::v1::XmlPullParser::isEmptyElementTag()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(22),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::getAttributeCount()
@@ -414,8 +414,8 @@ jint org::xmlpull::v1::XmlPullParser::getAttributeCount()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(23),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeNamespace(jint a0)
@@ -424,8 +424,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeNam
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(24),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeName(jint a0)
@@ -434,8 +434,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeNam
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(25),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributePrefix(jint a0)
@@ -444,8 +444,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributePre
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(26),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeType(jint a0)
@@ -454,8 +454,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeTyp
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(27),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean org::xmlpull::v1::XmlPullParser::isAttributeDefault(jint a0)
@@ -464,8 +464,8 @@ jboolean org::xmlpull::v1::XmlPullParser::isAttributeDefault(jint a0)
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(28),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeValue(jint a0)
@@ -474,8 +474,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeVal
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(29),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -484,8 +484,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::getAttributeVal
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(30),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jint org::xmlpull::v1::XmlPullParser::getEventType()
@@ -494,8 +494,8 @@ jint org::xmlpull::v1::XmlPullParser::getEventType()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(31),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::next()
@@ -504,8 +504,8 @@ jint org::xmlpull::v1::XmlPullParser::next()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(32),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::nextToken()
@@ -514,8 +514,8 @@ jint org::xmlpull::v1::XmlPullParser::nextToken()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(33),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::XmlPullParser::require(jint a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -524,8 +524,8 @@ void org::xmlpull::v1::XmlPullParser::require(jint a0, local_ref< java::lang::St
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(34),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::nextText()
@@ -534,8 +534,8 @@ local_ref< java::lang::String > org::xmlpull::v1::XmlPullParser::nextText()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(35),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParser::nextTag()
@@ -544,8 +544,8 @@ jint org::xmlpull::v1::XmlPullParser::nextTag()
 		org::xmlpull::v1::XmlPullParser::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_NAME(36),
 		org::xmlpull::v1::XmlPullParser::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

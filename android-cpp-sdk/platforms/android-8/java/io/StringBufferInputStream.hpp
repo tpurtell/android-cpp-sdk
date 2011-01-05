@@ -12,10 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,7 +50,9 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		StringBufferInputStream(local_ref< java::lang::String > const&);
@@ -74,9 +80,19 @@ namespace j2cpp {
 
 
 
+java::io::StringBufferInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::io::StringBufferInputStream::operator local_ref<java::io::InputStream>() const
 {
 	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+java::io::StringBufferInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -85,8 +101,8 @@ java::io::StringBufferInputStream::StringBufferInputStream(local_ref< java::lang
 	call_new_object<
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(0),
-		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -98,8 +114,8 @@ jint java::io::StringBufferInputStream::available()
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(1),
 		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::StringBufferInputStream::read()
@@ -108,8 +124,8 @@ jint java::io::StringBufferInputStream::read()
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(2),
 		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::StringBufferInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -118,8 +134,8 @@ jint java::io::StringBufferInputStream::read(local_ref< array<jbyte,1> > const &
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(3),
 		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::StringBufferInputStream::reset()
@@ -128,8 +144,8 @@ void java::io::StringBufferInputStream::reset()
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(4),
 		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong java::io::StringBufferInputStream::skip(jlong a0)
@@ -138,8 +154,8 @@ jlong java::io::StringBufferInputStream::skip(jlong a0)
 		java::io::StringBufferInputStream::J2CPP_CLASS_NAME,
 		java::io::StringBufferInputStream::J2CPP_METHOD_NAME(5),
 		java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

@@ -87,8 +87,8 @@ local_ref< android::webkit::WebViewDatabase > android::webkit::WebViewDatabase::
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(1),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebViewDatabase > >
-	(a0);
+		local_ref< android::webkit::WebViewDatabase >
+	>(a0);
 }
 
 jboolean android::webkit::WebViewDatabase::hasUsernamePassword()
@@ -97,8 +97,8 @@ jboolean android::webkit::WebViewDatabase::hasUsernamePassword()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(2),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebViewDatabase::clearUsernamePassword()
@@ -107,8 +107,8 @@ void android::webkit::WebViewDatabase::clearUsernamePassword()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(3),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebViewDatabase::hasHttpAuthUsernamePassword()
@@ -117,8 +117,8 @@ jboolean android::webkit::WebViewDatabase::hasHttpAuthUsernamePassword()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(4),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebViewDatabase::clearHttpAuthUsernamePassword()
@@ -127,8 +127,8 @@ void android::webkit::WebViewDatabase::clearHttpAuthUsernamePassword()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(5),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebViewDatabase::hasFormData()
@@ -137,8 +137,8 @@ jboolean android::webkit::WebViewDatabase::hasFormData()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(6),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebViewDatabase::clearFormData()
@@ -147,8 +147,8 @@ void android::webkit::WebViewDatabase::clearFormData()
 		android::webkit::WebViewDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(7),
 		android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

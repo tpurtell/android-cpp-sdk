@@ -12,12 +12,16 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Interpolator_ { class Result; } } } }
 
 
 #include <android/graphics/Interpolator.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -52,7 +56,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Interpolator_::Result >, 1> > values();
@@ -125,9 +132,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Interpolator_::Result::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Interpolator_::Result::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Interpolator_::Result::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Interpolator_::Result::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Interpolator_::Result >, 1> > android::graphics::Interpolator_::Result::values()
@@ -136,8 +158,8 @@ local_ref< array< local_ref< android::graphics::Interpolator_::Result >, 1> > an
 		android::graphics::Interpolator_::Result::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator_::Result::J2CPP_METHOD_NAME(0),
 		android::graphics::Interpolator_::Result::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Interpolator_::Result >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Interpolator_::Result >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpolator_::Result::valueOf(local_ref< java::lang::String > const &a0)
@@ -146,8 +168,8 @@ local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpo
 		android::graphics::Interpolator_::Result::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator_::Result::J2CPP_METHOD_NAME(1),
 		android::graphics::Interpolator_::Result::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Interpolator_::Result > >
-	(a0);
+		local_ref< android::graphics::Interpolator_::Result >
+	>(a0);
 }
 
 
@@ -198,8 +220,8 @@ android::graphics::Interpolator::Interpolator(jint a0)
 	call_new_object<
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(0),
-		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -211,8 +233,8 @@ android::graphics::Interpolator::Interpolator(jint a0, jint a1)
 	call_new_object<
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(1),
-		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -224,8 +246,8 @@ void android::graphics::Interpolator::reset(jint a0)
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(2),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Interpolator::reset(jint a0, jint a1)
@@ -234,8 +256,8 @@ void android::graphics::Interpolator::reset(jint a0, jint a1)
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(3),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::graphics::Interpolator::getKeyFrameCount()
@@ -244,8 +266,8 @@ jint android::graphics::Interpolator::getKeyFrameCount()
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(4),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Interpolator::getValueCount()
@@ -254,8 +276,8 @@ jint android::graphics::Interpolator::getValueCount()
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(5),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Interpolator::setKeyFrame(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2)
@@ -264,8 +286,8 @@ void android::graphics::Interpolator::setKeyFrame(jint a0, jint a1, local_ref< a
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(6),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Interpolator::setKeyFrame(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, local_ref< array<jfloat,1> > const &a3)
@@ -274,8 +296,8 @@ void android::graphics::Interpolator::setKeyFrame(jint a0, jint a1, local_ref< a
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(7),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Interpolator::setRepeatMirror(jfloat a0, jboolean a1)
@@ -284,8 +306,8 @@ void android::graphics::Interpolator::setRepeatMirror(jfloat a0, jboolean a1)
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(8),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpolator::timeToValues(local_ref< array<jfloat,1> > const &a0)
@@ -294,8 +316,8 @@ local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpo
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(9),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Interpolator_::Result > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Interpolator_::Result >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpolator::timeToValues(jint a0, local_ref< array<jfloat,1> > const &a1)
@@ -304,8 +326,8 @@ local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpo
 		android::graphics::Interpolator::J2CPP_CLASS_NAME,
 		android::graphics::Interpolator::J2CPP_METHOD_NAME(10),
 		android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::Interpolator_::Result > >
-	(get_jobject(), a0, a1);
+		local_ref< android::graphics::Interpolator_::Result >
+	>(get_jobject(), a0, a1);
 }
 
 

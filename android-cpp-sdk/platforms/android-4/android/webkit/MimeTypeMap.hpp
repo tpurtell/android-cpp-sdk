@@ -83,8 +83,8 @@ local_ref< java::lang::String > android::webkit::MimeTypeMap::getFileExtensionFr
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(1),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jboolean android::webkit::MimeTypeMap::hasMimeType(local_ref< java::lang::String > const &a0)
@@ -93,8 +93,8 @@ jboolean android::webkit::MimeTypeMap::hasMimeType(local_ref< java::lang::String
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(2),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::MimeTypeMap::getMimeTypeFromExtension(local_ref< java::lang::String > const &a0)
@@ -103,8 +103,8 @@ local_ref< java::lang::String > android::webkit::MimeTypeMap::getMimeTypeFromExt
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(3),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::MimeTypeMap::hasExtension(local_ref< java::lang::String > const &a0)
@@ -113,8 +113,8 @@ jboolean android::webkit::MimeTypeMap::hasExtension(local_ref< java::lang::Strin
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(4),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::MimeTypeMap::getExtensionFromMimeType(local_ref< java::lang::String > const &a0)
@@ -123,8 +123,8 @@ local_ref< java::lang::String > android::webkit::MimeTypeMap::getExtensionFromMi
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(5),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::MimeTypeMap > android::webkit::MimeTypeMap::getSingleton()
@@ -133,8 +133,8 @@ local_ref< android::webkit::MimeTypeMap > android::webkit::MimeTypeMap::getSingl
 		android::webkit::MimeTypeMap::J2CPP_CLASS_NAME,
 		android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(6),
 		android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::webkit::MimeTypeMap > >
-	();
+		local_ref< android::webkit::MimeTypeMap >
+	>();
 }
 
 

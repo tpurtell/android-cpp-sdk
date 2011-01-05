@@ -100,9 +100,10 @@ namespace java { namespace math {
 		{
 		}
 
-		operator local_ref<java::lang::Number>() const;
-		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BigInteger(jint, local_ref< java::util::Random > const&);
@@ -178,9 +179,9 @@ namespace j2cpp {
 
 
 
-java::math::BigInteger::operator local_ref<java::lang::Number>() const
+java::math::BigInteger::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Number>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::math::BigInteger::operator local_ref<java::lang::Comparable>() const
@@ -188,9 +189,14 @@ java::math::BigInteger::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
-java::math::BigInteger::operator local_ref<java::io::Serializable>() const
+java::math::BigInteger::operator local_ref<java::lang::Number>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Number>(get_jobject());
+}
+
+java::math::BigInteger::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -199,8 +205,8 @@ java::math::BigInteger::BigInteger(jint a0, local_ref< java::util::Random > cons
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(0),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -212,8 +218,8 @@ java::math::BigInteger::BigInteger(jint a0, jint a1, local_ref< java::util::Rand
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(1),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -225,8 +231,8 @@ java::math::BigInteger::BigInteger(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(2),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -238,8 +244,8 @@ java::math::BigInteger::BigInteger(local_ref< java::lang::String > const &a0, ji
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(3),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -251,8 +257,8 @@ java::math::BigInteger::BigInteger(jint a0, local_ref< array<jbyte,1> > const &a
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(4),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1)
 )
 {
 }
@@ -264,8 +270,8 @@ java::math::BigInteger::BigInteger(local_ref< array<jbyte,1> > const &a0)
 	call_new_object<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(5),
-		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -277,8 +283,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::valueOf(jlong a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(6),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::math::BigInteger > >
-	(a0);
+		local_ref< java::math::BigInteger >
+	>(a0);
 }
 
 local_ref< array<jbyte,1> > java::math::BigInteger::toByteArray()
@@ -287,8 +293,8 @@ local_ref< array<jbyte,1> > java::math::BigInteger::toByteArray()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(7),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::abs()
@@ -297,8 +303,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::abs()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(8),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::negate()
@@ -307,8 +313,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::negate()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(9),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::add(local_ref< java::math::BigInteger > const &a0)
@@ -317,8 +323,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::add(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(10),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::subtract(local_ref< java::math::BigInteger > const &a0)
@@ -327,8 +333,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::subtract(local_ref< 
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(11),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigInteger::signum()
@@ -337,8 +343,8 @@ jint java::math::BigInteger::signum()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(12),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::shiftRight(jint a0)
@@ -347,8 +353,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::shiftRight(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(13),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::shiftLeft(jint a0)
@@ -357,8 +363,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::shiftLeft(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(14),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigInteger::bitLength()
@@ -367,8 +373,8 @@ jint java::math::BigInteger::bitLength()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(15),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::math::BigInteger::testBit(jint a0)
@@ -377,8 +383,8 @@ jboolean java::math::BigInteger::testBit(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(16),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::setBit(jint a0)
@@ -387,8 +393,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::setBit(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(17),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::clearBit(jint a0)
@@ -397,8 +403,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::clearBit(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(18),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::flipBit(jint a0)
@@ -407,8 +413,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::flipBit(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(19),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigInteger::getLowestSetBit()
@@ -417,8 +423,8 @@ jint java::math::BigInteger::getLowestSetBit()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(20),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::math::BigInteger::bitCount()
@@ -427,8 +433,8 @@ jint java::math::BigInteger::bitCount()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(21),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::not()
@@ -437,8 +443,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::not()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(22),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::and_(local_ref< java::math::BigInteger > const &a0)
@@ -447,8 +453,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::and_(local_ref< java
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(23),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::or_(local_ref< java::math::BigInteger > const &a0)
@@ -457,8 +463,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::or_(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(24),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::xor_(local_ref< java::math::BigInteger > const &a0)
@@ -467,8 +473,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::xor_(local_ref< java
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(25),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::andNot(local_ref< java::math::BigInteger > const &a0)
@@ -477,8 +483,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::andNot(local_ref< ja
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(26),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigInteger::intValue()
@@ -487,8 +493,8 @@ jint java::math::BigInteger::intValue()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(27),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::math::BigInteger::longValue()
@@ -497,8 +503,8 @@ jlong java::math::BigInteger::longValue()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(28),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(28), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat java::math::BigInteger::floatValue()
@@ -507,8 +513,8 @@ jfloat java::math::BigInteger::floatValue()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(29),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(29), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble java::math::BigInteger::doubleValue()
@@ -517,8 +523,8 @@ jdouble java::math::BigInteger::doubleValue()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(30),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(30), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jint java::math::BigInteger::compareTo(local_ref< java::math::BigInteger > const &a0)
@@ -527,8 +533,8 @@ jint java::math::BigInteger::compareTo(local_ref< java::math::BigInteger > const
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(31),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::min(local_ref< java::math::BigInteger > const &a0)
@@ -537,8 +543,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::min(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(32),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::max(local_ref< java::math::BigInteger > const &a0)
@@ -547,8 +553,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::max(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(33),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigInteger::hashCode()
@@ -557,8 +563,8 @@ jint java::math::BigInteger::hashCode()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(34),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::math::BigInteger::equals(local_ref< java::lang::Object > const &a0)
@@ -567,8 +573,8 @@ jboolean java::math::BigInteger::equals(local_ref< java::lang::Object > const &a
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(35),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::math::BigInteger::toString()
@@ -577,8 +583,8 @@ local_ref< java::lang::String > java::math::BigInteger::toString()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(36),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::math::BigInteger::toString(jint a0)
@@ -587,8 +593,8 @@ local_ref< java::lang::String > java::math::BigInteger::toString(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(37),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::gcd(local_ref< java::math::BigInteger > const &a0)
@@ -597,8 +603,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::gcd(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(38),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::multiply(local_ref< java::math::BigInteger > const &a0)
@@ -607,8 +613,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::multiply(local_ref< 
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(39),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::pow(jint a0)
@@ -617,8 +623,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::pow(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(40),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::math::BigInteger >, 1> > java::math::BigInteger::divideAndRemainder(local_ref< java::math::BigInteger > const &a0)
@@ -627,8 +633,8 @@ local_ref< array< local_ref< java::math::BigInteger >, 1> > java::math::BigInteg
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(41),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< array< local_ref< java::math::BigInteger >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::math::BigInteger >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::divide(local_ref< java::math::BigInteger > const &a0)
@@ -637,8 +643,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::divide(local_ref< ja
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(42),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::remainder(local_ref< java::math::BigInteger > const &a0)
@@ -647,8 +653,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::remainder(local_ref<
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(43),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::modInverse(local_ref< java::math::BigInteger > const &a0)
@@ -657,8 +663,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::modInverse(local_ref
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(44),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::modPow(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
@@ -667,8 +673,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::modPow(local_ref< ja
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(45),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::mod(local_ref< java::math::BigInteger > const &a0)
@@ -677,8 +683,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::mod(local_ref< java:
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(46),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jboolean java::math::BigInteger::isProbablePrime(jint a0)
@@ -687,8 +693,8 @@ jboolean java::math::BigInteger::isProbablePrime(jint a0)
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(47),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::nextProbablePrime()
@@ -697,8 +703,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::nextProbablePrime()
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(48),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigInteger::probablePrime(jint a0, local_ref< java::util::Random > const &a1)
@@ -707,8 +713,8 @@ local_ref< java::math::BigInteger > java::math::BigInteger::probablePrime(jint a
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(49),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::math::BigInteger > >
-	(a0, a1);
+		local_ref< java::math::BigInteger >
+	>(a0, a1);
 }
 
 jint java::math::BigInteger::compareTo(local_ref< java::lang::Object > const &a0)
@@ -717,8 +723,8 @@ jint java::math::BigInteger::compareTo(local_ref< java::lang::Object > const &a0
 		java::math::BigInteger::J2CPP_CLASS_NAME,
 		java::math::BigInteger::J2CPP_METHOD_NAME(50),
 		java::math::BigInteger::J2CPP_METHOD_SIGNATURE(50), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

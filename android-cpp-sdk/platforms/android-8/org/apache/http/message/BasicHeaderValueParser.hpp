@@ -61,8 +61,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::message::HeaderValueParser>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicHeaderValueParser();
@@ -97,14 +97,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicHeaderValueParser::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::BasicHeaderValueParser::operator local_ref<org::apache::http::message::HeaderValueParser>() const
 {
 	return local_ref<org::apache::http::message::HeaderValueParser>(get_jobject());
+}
+
+org::apache::http::message::BasicHeaderValueParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -113,8 +113,8 @@ org::apache::http::message::BasicHeaderValueParser::BasicHeaderValueParser()
 	call_new_object<
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +126,8 @@ local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apach
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apache::http::message::BasicHeaderValueParser::parseElements(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -136,8 +136,8 @@ local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apach
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicHeaderValueParser::parseHeaderElement(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::message::HeaderValueParser > const &a1)
@@ -146,8 +146,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HeaderElement > >
-	(a0, a1);
+		local_ref< org::apache::http::HeaderElement >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicHeaderValueParser::parseHeaderElement(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -156,8 +156,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::HeaderElement > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HeaderElement >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -167,8 +167,8 @@ local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apach
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apache::http::message::BasicHeaderValueParser::parseParameters(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -177,8 +177,8 @@ local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apach
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicHeaderValueParser::parseNameValuePair(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::message::HeaderValueParser > const &a1)
@@ -187,8 +187,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(8),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::NameValuePair > >
-	(a0, a1);
+		local_ref< org::apache::http::NameValuePair >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicHeaderValueParser::parseNameValuePair(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -197,8 +197,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(9),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicHeaderValueParser::parseNameValuePair(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1, local_ref< array<jchar,1> > const &a2)
@@ -207,8 +207,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

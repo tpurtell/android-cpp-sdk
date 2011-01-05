@@ -69,8 +69,8 @@ void java::io::Flushable::flush()
 		java::io::Flushable::J2CPP_CLASS_NAME,
 		java::io::Flushable::J2CPP_METHOD_NAME(0),
 		java::io::Flushable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

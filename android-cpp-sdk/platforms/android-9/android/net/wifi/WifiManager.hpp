@@ -256,8 +256,8 @@ void android::net::wifi::WifiManager_::MulticastLock::acquire()
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(1),
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiManager_::MulticastLock::release()
@@ -266,8 +266,8 @@ void android::net::wifi::WifiManager_::MulticastLock::release()
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(2),
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiManager_::MulticastLock::setReferenceCounted(jboolean a0)
@@ -276,8 +276,8 @@ void android::net::wifi::WifiManager_::MulticastLock::setReferenceCounted(jboole
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(3),
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::wifi::WifiManager_::MulticastLock::isHeld()
@@ -286,8 +286,8 @@ jboolean android::net::wifi::WifiManager_::MulticastLock::isHeld()
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(4),
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::wifi::WifiManager_::MulticastLock::toString()
@@ -296,8 +296,8 @@ local_ref< java::lang::String > android::net::wifi::WifiManager_::MulticastLock:
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(5),
 		android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -326,8 +326,8 @@ void android::net::wifi::WifiManager_::WifiLock::acquire()
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(1),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiManager_::WifiLock::release()
@@ -336,8 +336,8 @@ void android::net::wifi::WifiManager_::WifiLock::release()
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(2),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiManager_::WifiLock::setReferenceCounted(jboolean a0)
@@ -346,8 +346,8 @@ void android::net::wifi::WifiManager_::WifiLock::setReferenceCounted(jboolean a0
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(3),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::wifi::WifiManager_::WifiLock::isHeld()
@@ -356,8 +356,8 @@ jboolean android::net::wifi::WifiManager_::WifiLock::isHeld()
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(4),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiManager_::WifiLock::setWorkSource(local_ref< android::os::WorkSource > const &a0)
@@ -366,8 +366,8 @@ void android::net::wifi::WifiManager_::WifiLock::setWorkSource(local_ref< androi
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(5),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::net::wifi::WifiManager_::WifiLock::toString()
@@ -376,8 +376,8 @@ local_ref< java::lang::String > android::net::wifi::WifiManager_::WifiLock::toSt
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(6),
 		android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -408,8 +408,8 @@ local_ref< java::util::List > android::net::wifi::WifiManager::getConfiguredNetw
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(1),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiManager::addNetwork(local_ref< android::net::wifi::WifiConfiguration > const &a0)
@@ -418,8 +418,8 @@ jint android::net::wifi::WifiManager::addNetwork(local_ref< android::net::wifi::
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(2),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::net::wifi::WifiManager::updateNetwork(local_ref< android::net::wifi::WifiConfiguration > const &a0)
@@ -428,8 +428,8 @@ jint android::net::wifi::WifiManager::updateNetwork(local_ref< android::net::wif
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(3),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::wifi::WifiManager::removeNetwork(jint a0)
@@ -438,8 +438,8 @@ jboolean android::net::wifi::WifiManager::removeNetwork(jint a0)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(4),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::wifi::WifiManager::enableNetwork(jint a0, jboolean a1)
@@ -448,8 +448,8 @@ jboolean android::net::wifi::WifiManager::enableNetwork(jint a0, jboolean a1)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(5),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::net::wifi::WifiManager::disableNetwork(jint a0)
@@ -458,8 +458,8 @@ jboolean android::net::wifi::WifiManager::disableNetwork(jint a0)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(6),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::wifi::WifiManager::disconnect()
@@ -468,8 +468,8 @@ jboolean android::net::wifi::WifiManager::disconnect()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(7),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::reconnect()
@@ -478,8 +478,8 @@ jboolean android::net::wifi::WifiManager::reconnect()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(8),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::reassociate()
@@ -488,8 +488,8 @@ jboolean android::net::wifi::WifiManager::reassociate()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(9),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::pingSupplicant()
@@ -498,8 +498,8 @@ jboolean android::net::wifi::WifiManager::pingSupplicant()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(10),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::startScan()
@@ -508,8 +508,8 @@ jboolean android::net::wifi::WifiManager::startScan()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(11),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::net::wifi::WifiInfo > android::net::wifi::WifiManager::getConnectionInfo()
@@ -518,8 +518,8 @@ local_ref< android::net::wifi::WifiInfo > android::net::wifi::WifiManager::getCo
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(12),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::net::wifi::WifiInfo > >
-	(get_jobject());
+		local_ref< android::net::wifi::WifiInfo >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::net::wifi::WifiManager::getScanResults()
@@ -528,8 +528,8 @@ local_ref< java::util::List > android::net::wifi::WifiManager::getScanResults()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(13),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::saveConfiguration()
@@ -538,8 +538,8 @@ jboolean android::net::wifi::WifiManager::saveConfiguration()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(14),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::net::DhcpInfo > android::net::wifi::WifiManager::getDhcpInfo()
@@ -548,8 +548,8 @@ local_ref< android::net::DhcpInfo > android::net::wifi::WifiManager::getDhcpInfo
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(15),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::net::DhcpInfo > >
-	(get_jobject());
+		local_ref< android::net::DhcpInfo >
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::setWifiEnabled(jboolean a0)
@@ -558,8 +558,8 @@ jboolean android::net::wifi::WifiManager::setWifiEnabled(jboolean a0)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(16),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::net::wifi::WifiManager::getWifiState()
@@ -568,8 +568,8 @@ jint android::net::wifi::WifiManager::getWifiState()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(17),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiManager::isWifiEnabled()
@@ -578,8 +578,8 @@ jboolean android::net::wifi::WifiManager::isWifiEnabled()
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(18),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiManager::calculateSignalLevel(jint a0, jint a1)
@@ -588,8 +588,8 @@ jint android::net::wifi::WifiManager::calculateSignalLevel(jint a0, jint a1)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(19),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::net::wifi::WifiManager::compareSignalLevel(jint a0, jint a1)
@@ -598,8 +598,8 @@ jint android::net::wifi::WifiManager::compareSignalLevel(jint a0, jint a1)
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(20),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 local_ref< android::net::wifi::WifiManager_::WifiLock > android::net::wifi::WifiManager::createWifiLock(jint a0, local_ref< java::lang::String > const &a1)
@@ -608,8 +608,8 @@ local_ref< android::net::wifi::WifiManager_::WifiLock > android::net::wifi::Wifi
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(21),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::net::wifi::WifiManager_::WifiLock > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::wifi::WifiManager_::WifiLock >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::net::wifi::WifiManager_::WifiLock > android::net::wifi::WifiManager::createWifiLock(local_ref< java::lang::String > const &a0)
@@ -618,8 +618,8 @@ local_ref< android::net::wifi::WifiManager_::WifiLock > android::net::wifi::Wifi
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(22),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::net::wifi::WifiManager_::WifiLock > >
-	(get_jobject(), a0);
+		local_ref< android::net::wifi::WifiManager_::WifiLock >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::wifi::WifiManager_::MulticastLock > android::net::wifi::WifiManager::createMulticastLock(local_ref< java::lang::String > const &a0)
@@ -628,8 +628,8 @@ local_ref< android::net::wifi::WifiManager_::MulticastLock > android::net::wifi:
 		android::net::wifi::WifiManager::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiManager::J2CPP_METHOD_NAME(23),
 		android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::net::wifi::WifiManager_::MulticastLock > >
-	(get_jobject(), a0);
+		local_ref< android::net::wifi::WifiManager_::MulticastLock >
+	>(get_jobject(), a0);
 }
 
 

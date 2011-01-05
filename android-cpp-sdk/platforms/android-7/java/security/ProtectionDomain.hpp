@@ -95,8 +95,8 @@ java::security::ProtectionDomain::ProtectionDomain(local_ref< java::security::Co
 	call_new_object<
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(0),
-		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -108,8 +108,8 @@ java::security::ProtectionDomain::ProtectionDomain(local_ref< java::security::Co
 	call_new_object<
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(1),
-		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -121,8 +121,8 @@ local_ref< java::lang::ClassLoader > java::security::ProtectionDomain::getClassL
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(2),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::ClassLoader > >
-	(get_jobject());
+		local_ref< java::lang::ClassLoader >
+	>(get_jobject());
 }
 
 local_ref< java::security::CodeSource > java::security::ProtectionDomain::getCodeSource()
@@ -131,8 +131,8 @@ local_ref< java::security::CodeSource > java::security::ProtectionDomain::getCod
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(3),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::CodeSource > >
-	(get_jobject());
+		local_ref< java::security::CodeSource >
+	>(get_jobject());
 }
 
 local_ref< java::security::PermissionCollection > java::security::ProtectionDomain::getPermissions()
@@ -141,8 +141,8 @@ local_ref< java::security::PermissionCollection > java::security::ProtectionDoma
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(4),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::Principal >, 1> > java::security::ProtectionDomain::getPrincipals()
@@ -151,8 +151,8 @@ local_ref< array< local_ref< java::security::Principal >, 1> > java::security::P
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(5),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::security::Principal >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::Principal >, 1> >
+	>(get_jobject());
 }
 
 jboolean java::security::ProtectionDomain::implies(local_ref< java::security::Permission > const &a0)
@@ -161,8 +161,8 @@ jboolean java::security::ProtectionDomain::implies(local_ref< java::security::Pe
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(6),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::ProtectionDomain::toString()
@@ -171,8 +171,8 @@ local_ref< java::lang::String > java::security::ProtectionDomain::toString()
 		java::security::ProtectionDomain::J2CPP_CLASS_NAME,
 		java::security::ProtectionDomain::J2CPP_METHOD_NAME(7),
 		java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

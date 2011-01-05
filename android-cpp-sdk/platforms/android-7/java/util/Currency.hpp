@@ -49,8 +49,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::util::Currency > getInstance(local_ref< java::lang::String >  const&);
@@ -78,14 +78,14 @@ namespace j2cpp {
 
 
 
-java::util::Currency::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::Currency::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::Currency::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -95,8 +95,8 @@ local_ref< java::util::Currency > java::util::Currency::getInstance(local_ref< j
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(1),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Currency > >
-	(a0);
+		local_ref< java::util::Currency >
+	>(a0);
 }
 
 local_ref< java::util::Currency > java::util::Currency::getInstance(local_ref< java::util::Locale > const &a0)
@@ -105,8 +105,8 @@ local_ref< java::util::Currency > java::util::Currency::getInstance(local_ref< j
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(2),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Currency > >
-	(a0);
+		local_ref< java::util::Currency >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::Currency::getCurrencyCode()
@@ -115,8 +115,8 @@ local_ref< java::lang::String > java::util::Currency::getCurrencyCode()
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(3),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Currency::getSymbol()
@@ -125,8 +125,8 @@ local_ref< java::lang::String > java::util::Currency::getSymbol()
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(4),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Currency::getSymbol(local_ref< java::util::Locale > const &a0)
@@ -135,8 +135,8 @@ local_ref< java::lang::String > java::util::Currency::getSymbol(local_ref< java:
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(5),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Currency::getDefaultFractionDigits()
@@ -145,8 +145,8 @@ jint java::util::Currency::getDefaultFractionDigits()
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(6),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Currency::toString()
@@ -155,8 +155,8 @@ local_ref< java::lang::String > java::util::Currency::toString()
 		java::util::Currency::J2CPP_CLASS_NAME,
 		java::util::Currency::J2CPP_METHOD_NAME(7),
 		java::util::Currency::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

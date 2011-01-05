@@ -129,8 +129,8 @@ android::view::ViewConfiguration::ViewConfiguration()
 	call_new_object<
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(0),
-		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -142,8 +142,8 @@ local_ref< android::view::ViewConfiguration > android::view::ViewConfiguration::
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(1),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::ViewConfiguration > >
-	(a0);
+		local_ref< android::view::ViewConfiguration >
+	>(a0);
 }
 
 jint android::view::ViewConfiguration::getScrollBarSize()
@@ -152,8 +152,8 @@ jint android::view::ViewConfiguration::getScrollBarSize()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(2),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledScrollBarSize()
@@ -162,8 +162,8 @@ jint android::view::ViewConfiguration::getScaledScrollBarSize()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(3),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getScrollBarFadeDuration()
@@ -172,8 +172,8 @@ jint android::view::ViewConfiguration::getScrollBarFadeDuration()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(4),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScrollDefaultDelay()
@@ -182,8 +182,8 @@ jint android::view::ViewConfiguration::getScrollDefaultDelay()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(5),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getFadingEdgeLength()
@@ -192,8 +192,8 @@ jint android::view::ViewConfiguration::getFadingEdgeLength()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(6),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledFadingEdgeLength()
@@ -202,8 +202,8 @@ jint android::view::ViewConfiguration::getScaledFadingEdgeLength()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(7),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getPressedStateDuration()
@@ -212,8 +212,8 @@ jint android::view::ViewConfiguration::getPressedStateDuration()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(8),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getLongPressTimeout()
@@ -222,8 +222,8 @@ jint android::view::ViewConfiguration::getLongPressTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(9),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getTapTimeout()
@@ -232,8 +232,8 @@ jint android::view::ViewConfiguration::getTapTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(10),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getJumpTapTimeout()
@@ -242,8 +242,8 @@ jint android::view::ViewConfiguration::getJumpTapTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(11),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getDoubleTapTimeout()
@@ -252,8 +252,8 @@ jint android::view::ViewConfiguration::getDoubleTapTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(12),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getEdgeSlop()
@@ -262,8 +262,8 @@ jint android::view::ViewConfiguration::getEdgeSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(13),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledEdgeSlop()
@@ -272,8 +272,8 @@ jint android::view::ViewConfiguration::getScaledEdgeSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(14),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getTouchSlop()
@@ -282,8 +282,8 @@ jint android::view::ViewConfiguration::getTouchSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(15),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledTouchSlop()
@@ -292,8 +292,8 @@ jint android::view::ViewConfiguration::getScaledTouchSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(16),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getScaledPagingTouchSlop()
@@ -302,8 +302,8 @@ jint android::view::ViewConfiguration::getScaledPagingTouchSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(17),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getScaledDoubleTapSlop()
@@ -312,8 +312,8 @@ jint android::view::ViewConfiguration::getScaledDoubleTapSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(18),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getWindowTouchSlop()
@@ -322,8 +322,8 @@ jint android::view::ViewConfiguration::getWindowTouchSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(19),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledWindowTouchSlop()
@@ -332,8 +332,8 @@ jint android::view::ViewConfiguration::getScaledWindowTouchSlop()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(20),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getMinimumFlingVelocity()
@@ -342,8 +342,8 @@ jint android::view::ViewConfiguration::getMinimumFlingVelocity()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(21),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledMinimumFlingVelocity()
@@ -352,8 +352,8 @@ jint android::view::ViewConfiguration::getScaledMinimumFlingVelocity()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(22),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getMaximumFlingVelocity()
@@ -362,8 +362,8 @@ jint android::view::ViewConfiguration::getMaximumFlingVelocity()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(23),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledMaximumFlingVelocity()
@@ -372,8 +372,8 @@ jint android::view::ViewConfiguration::getScaledMaximumFlingVelocity()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(24),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::ViewConfiguration::getMaximumDrawingCacheSize()
@@ -382,8 +382,8 @@ jint android::view::ViewConfiguration::getMaximumDrawingCacheSize()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(25),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::view::ViewConfiguration::getScaledMaximumDrawingCacheSize()
@@ -392,8 +392,8 @@ jint android::view::ViewConfiguration::getScaledMaximumDrawingCacheSize()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(26),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::view::ViewConfiguration::getZoomControlsTimeout()
@@ -402,8 +402,8 @@ jlong android::view::ViewConfiguration::getZoomControlsTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(27),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(27), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::view::ViewConfiguration::getGlobalActionKeyTimeout()
@@ -412,8 +412,8 @@ jlong android::view::ViewConfiguration::getGlobalActionKeyTimeout()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(28),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(28), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jfloat android::view::ViewConfiguration::getScrollFriction()
@@ -422,8 +422,8 @@ jfloat android::view::ViewConfiguration::getScrollFriction()
 		android::view::ViewConfiguration::J2CPP_CLASS_NAME,
 		android::view::ViewConfiguration::J2CPP_METHOD_NAME(29),
 		android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(29), 
-		jfloat >
-	();
+		jfloat
+	>();
 }
 
 

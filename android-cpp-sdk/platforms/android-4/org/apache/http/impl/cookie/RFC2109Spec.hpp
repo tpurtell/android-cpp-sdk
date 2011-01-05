@@ -13,17 +13,23 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class CookieSpecBase; } } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class CookieSpecBase; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class AbstractCookieSpec; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
+#include <org/apache/http/cookie/CookieSpec.hpp>
+#include <org/apache/http/impl/cookie/AbstractCookieSpec.hpp>
 #include <org/apache/http/impl/cookie/CookieSpecBase.hpp>
 
 
@@ -54,7 +60,10 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::CookieSpec>() const;
 		operator local_ref<org::apache::http::impl::cookie::CookieSpecBase>() const;
+		operator local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>() const;
 
 
 		RFC2109Spec(local_ref< array< local_ref< java::lang::String >, 1> > const&, jboolean);
@@ -85,9 +94,24 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::cookie::RFC2109Spec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::cookie::RFC2109Spec::operator local_ref<org::apache::http::cookie::CookieSpec>() const
+{
+	return local_ref<org::apache::http::cookie::CookieSpec>(get_jobject());
+}
+
 org::apache::http::impl::cookie::RFC2109Spec::operator local_ref<org::apache::http::impl::cookie::CookieSpecBase>() const
 {
 	return local_ref<org::apache::http::impl::cookie::CookieSpecBase>(get_jobject());
+}
+
+org::apache::http::impl::cookie::RFC2109Spec::operator local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>() const
+{
+	return local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>(get_jobject());
 }
 
 
@@ -96,8 +120,8 @@ org::apache::http::impl::cookie::RFC2109Spec::RFC2109Spec(local_ref< array< loca
 	call_new_object<
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -109,8 +133,8 @@ org::apache::http::impl::cookie::RFC2109Spec::RFC2109Spec()
 	call_new_object<
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(1),
-		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -122,8 +146,8 @@ local_ref< java::util::List > org::apache::http::impl::cookie::RFC2109Spec::pars
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::cookie::RFC2109Spec::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -132,8 +156,8 @@ void org::apache::http::impl::cookie::RFC2109Spec::validate(local_ref< org::apac
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > org::apache::http::impl::cookie::RFC2109Spec::formatCookies(local_ref< java::util::List > const &a0)
@@ -142,8 +166,8 @@ local_ref< java::util::List > org::apache::http::impl::cookie::RFC2109Spec::form
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 
@@ -154,8 +178,8 @@ jint org::apache::http::impl::cookie::RFC2109Spec::getVersion()
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::impl::cookie::RFC2109Spec::getVersionHeader()
@@ -164,8 +188,8 @@ local_ref< org::apache::http::Header > org::apache::http::impl::cookie::RFC2109S
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::cookie::RFC2109Spec::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 

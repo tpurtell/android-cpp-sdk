@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_ROTATEDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPu
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -72,6 +74,7 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::drawable::Drawable>() const;
 		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 
@@ -113,6 +116,11 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::RotateDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::drawable::RotateDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
@@ -129,8 +137,8 @@ android::graphics::drawable::RotateDrawable::RotateDrawable()
 	call_new_object<
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -142,8 +150,8 @@ void android::graphics::drawable::RotateDrawable::draw(local_ref< android::graph
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::RotateDrawable::getDrawable()
@@ -152,8 +160,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::RotateDrawable::getChangingConfigurations()
@@ -162,8 +170,8 @@ jint android::graphics::drawable::RotateDrawable::getChangingConfigurations()
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::RotateDrawable::setAlpha(jint a0)
@@ -172,8 +180,8 @@ void android::graphics::drawable::RotateDrawable::setAlpha(jint a0)
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::RotateDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -182,8 +190,8 @@ void android::graphics::drawable::RotateDrawable::setColorFilter(local_ref< andr
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::RotateDrawable::getOpacity()
@@ -192,8 +200,8 @@ jint android::graphics::drawable::RotateDrawable::getOpacity()
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::RotateDrawable::invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -202,8 +210,8 @@ void android::graphics::drawable::RotateDrawable::invalidateDrawable(local_ref< 
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::RotateDrawable::scheduleDrawable(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::Runnable > const &a1, jlong a2)
@@ -212,8 +220,8 @@ void android::graphics::drawable::RotateDrawable::scheduleDrawable(local_ref< an
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::drawable::RotateDrawable::unscheduleDrawable(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::Runnable > const &a1)
@@ -222,8 +230,8 @@ void android::graphics::drawable::RotateDrawable::unscheduleDrawable(local_ref< 
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::drawable::RotateDrawable::getPadding(local_ref< android::graphics::Rect > const &a0)
@@ -232,8 +240,8 @@ jboolean android::graphics::drawable::RotateDrawable::getPadding(local_ref< andr
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::drawable::RotateDrawable::setVisible(jboolean a0, jboolean a1)
@@ -242,8 +250,8 @@ jboolean android::graphics::drawable::RotateDrawable::setVisible(jboolean a0, jb
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(11),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::drawable::RotateDrawable::isStateful()
@@ -252,8 +260,8 @@ jboolean android::graphics::drawable::RotateDrawable::isStateful()
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(12),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -265,8 +273,8 @@ jint android::graphics::drawable::RotateDrawable::getIntrinsicWidth()
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(16),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::RotateDrawable::getIntrinsicHeight()
@@ -275,8 +283,8 @@ jint android::graphics::drawable::RotateDrawable::getIntrinsicHeight()
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(17),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::RotateDrawable::getConstantState()
@@ -285,8 +293,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(18),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 void android::graphics::drawable::RotateDrawable::inflate(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< android::util::AttributeSet > const &a2)
@@ -295,8 +303,8 @@ void android::graphics::drawable::RotateDrawable::inflate(local_ref< android::co
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(19),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::RotateDrawable::mutate()
@@ -305,8 +313,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(20),
 		android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 

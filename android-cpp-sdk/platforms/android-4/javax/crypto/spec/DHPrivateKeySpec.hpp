@@ -43,8 +43,8 @@ namespace javax { namespace crypto { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DHPrivateKeySpec(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-javax::crypto::spec::DHPrivateKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::spec::DHPrivateKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+javax::crypto::spec::DHPrivateKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ javax::crypto::spec::DHPrivateKeySpec::DHPrivateKeySpec(local_ref< java::math::B
 	call_new_object<
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -99,8 +99,8 @@ local_ref< java::math::BigInteger > javax::crypto::spec::DHPrivateKeySpec::getX(
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > javax::crypto::spec::DHPrivateKeySpec::getP()
@@ -109,8 +109,8 @@ local_ref< java::math::BigInteger > javax::crypto::spec::DHPrivateKeySpec::getP(
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > javax::crypto::spec::DHPrivateKeySpec::getG()
@@ -119,8 +119,8 @@ local_ref< java::math::BigInteger > javax::crypto::spec::DHPrivateKeySpec::getG(
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::DHPrivateKeySpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

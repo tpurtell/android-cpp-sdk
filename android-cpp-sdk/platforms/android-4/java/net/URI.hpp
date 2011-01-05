@@ -78,9 +78,9 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		URI(local_ref< java::lang::String > const&);
@@ -136,9 +136,9 @@ namespace j2cpp {
 
 
 
-java::net::URI::operator local_ref<java::lang::Object>() const
+java::net::URI::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::net::URI::operator local_ref<java::lang::Comparable>() const
@@ -146,9 +146,9 @@ java::net::URI::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
-java::net::URI::operator local_ref<java::io::Serializable>() const
+java::net::URI::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -157,8 +157,8 @@ java::net::URI::URI(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(0),
-		java::net::URI::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::net::URI::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -170,8 +170,8 @@ java::net::URI::URI(local_ref< java::lang::String > const &a0, local_ref< java::
 	call_new_object<
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(1),
-		java::net::URI::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::net::URI::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -183,8 +183,8 @@ java::net::URI::URI(local_ref< java::lang::String > const &a0, local_ref< java::
 	call_new_object<
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(2),
-		java::net::URI::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		java::net::URI::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }
@@ -196,8 +196,8 @@ java::net::URI::URI(local_ref< java::lang::String > const &a0, local_ref< java::
 	call_new_object<
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(3),
-		java::net::URI::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3)
+		java::net::URI::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -209,8 +209,8 @@ java::net::URI::URI(local_ref< java::lang::String > const &a0, local_ref< java::
 	call_new_object<
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(4),
-		java::net::URI::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1, a2, a3, a4)
+		java::net::URI::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -222,8 +222,8 @@ jint java::net::URI::compareTo(local_ref< java::net::URI > const &a0)
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(5),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::URI > java::net::URI::create(local_ref< java::lang::String > const &a0)
@@ -232,8 +232,8 @@ local_ref< java::net::URI > java::net::URI::create(local_ref< java::lang::String
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(6),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::net::URI > >
-	(a0);
+		local_ref< java::net::URI >
+	>(a0);
 }
 
 jboolean java::net::URI::equals(local_ref< java::lang::Object > const &a0)
@@ -242,8 +242,8 @@ jboolean java::net::URI::equals(local_ref< java::lang::Object > const &a0)
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(7),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::net::URI::getAuthority()
@@ -252,8 +252,8 @@ local_ref< java::lang::String > java::net::URI::getAuthority()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(8),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getFragment()
@@ -262,8 +262,8 @@ local_ref< java::lang::String > java::net::URI::getFragment()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(9),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getHost()
@@ -272,8 +272,8 @@ local_ref< java::lang::String > java::net::URI::getHost()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(10),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getPath()
@@ -282,8 +282,8 @@ local_ref< java::lang::String > java::net::URI::getPath()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(11),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::net::URI::getPort()
@@ -292,8 +292,8 @@ jint java::net::URI::getPort()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(12),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getQuery()
@@ -302,8 +302,8 @@ local_ref< java::lang::String > java::net::URI::getQuery()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(13),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawAuthority()
@@ -312,8 +312,8 @@ local_ref< java::lang::String > java::net::URI::getRawAuthority()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(14),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawFragment()
@@ -322,8 +322,8 @@ local_ref< java::lang::String > java::net::URI::getRawFragment()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(15),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawPath()
@@ -332,8 +332,8 @@ local_ref< java::lang::String > java::net::URI::getRawPath()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(16),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawQuery()
@@ -342,8 +342,8 @@ local_ref< java::lang::String > java::net::URI::getRawQuery()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(17),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawSchemeSpecificPart()
@@ -352,8 +352,8 @@ local_ref< java::lang::String > java::net::URI::getRawSchemeSpecificPart()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(18),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getRawUserInfo()
@@ -362,8 +362,8 @@ local_ref< java::lang::String > java::net::URI::getRawUserInfo()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(19),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getScheme()
@@ -372,8 +372,8 @@ local_ref< java::lang::String > java::net::URI::getScheme()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(20),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getSchemeSpecificPart()
@@ -382,8 +382,8 @@ local_ref< java::lang::String > java::net::URI::getSchemeSpecificPart()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(21),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::getUserInfo()
@@ -392,8 +392,8 @@ local_ref< java::lang::String > java::net::URI::getUserInfo()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(22),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::net::URI::hashCode()
@@ -402,8 +402,8 @@ jint java::net::URI::hashCode()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(23),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::net::URI::isAbsolute()
@@ -412,8 +412,8 @@ jboolean java::net::URI::isAbsolute()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(24),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::URI::isOpaque()
@@ -422,8 +422,8 @@ jboolean java::net::URI::isOpaque()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(25),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::net::URI > java::net::URI::normalize()
@@ -432,8 +432,8 @@ local_ref< java::net::URI > java::net::URI::normalize()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(26),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::net::URI > >
-	(get_jobject());
+		local_ref< java::net::URI >
+	>(get_jobject());
 }
 
 local_ref< java::net::URI > java::net::URI::parseServerAuthority()
@@ -442,8 +442,8 @@ local_ref< java::net::URI > java::net::URI::parseServerAuthority()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(27),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::net::URI > >
-	(get_jobject());
+		local_ref< java::net::URI >
+	>(get_jobject());
 }
 
 local_ref< java::net::URI > java::net::URI::relativize(local_ref< java::net::URI > const &a0)
@@ -452,8 +452,8 @@ local_ref< java::net::URI > java::net::URI::relativize(local_ref< java::net::URI
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(28),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::net::URI > >
-	(get_jobject(), a0);
+		local_ref< java::net::URI >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::URI > java::net::URI::resolve(local_ref< java::net::URI > const &a0)
@@ -462,8 +462,8 @@ local_ref< java::net::URI > java::net::URI::resolve(local_ref< java::net::URI > 
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(29),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::net::URI > >
-	(get_jobject(), a0);
+		local_ref< java::net::URI >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::URI > java::net::URI::resolve(local_ref< java::lang::String > const &a0)
@@ -472,8 +472,8 @@ local_ref< java::net::URI > java::net::URI::resolve(local_ref< java::lang::Strin
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(30),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::net::URI > >
-	(get_jobject(), a0);
+		local_ref< java::net::URI >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::net::URI::toASCIIString()
@@ -482,8 +482,8 @@ local_ref< java::lang::String > java::net::URI::toASCIIString()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(31),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::URI::toString()
@@ -492,8 +492,8 @@ local_ref< java::lang::String > java::net::URI::toString()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(32),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::net::URI::toURL()
@@ -502,8 +502,8 @@ local_ref< java::net::URL > java::net::URI::toURL()
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(33),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::net::URL > >
-	(get_jobject());
+		local_ref< java::net::URL >
+	>(get_jobject());
 }
 
 jint java::net::URI::compareTo(local_ref< java::lang::Object > const &a0)
@@ -512,8 +512,8 @@ jint java::net::URI::compareTo(local_ref< java::lang::Object > const &a0)
 		java::net::URI::J2CPP_CLASS_NAME,
 		java::net::URI::J2CPP_METHOD_NAME(34),
 		java::net::URI::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

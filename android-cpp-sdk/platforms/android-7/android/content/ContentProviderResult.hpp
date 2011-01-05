@@ -106,8 +106,8 @@ android::content::ContentProviderResult::ContentProviderResult(local_ref< androi
 	call_new_object<
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(0),
-		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , uri(get_jobject())
 , count(get_jobject())
@@ -121,8 +121,8 @@ android::content::ContentProviderResult::ContentProviderResult(jint a0)
 	call_new_object<
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(1),
-		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , uri(get_jobject())
 , count(get_jobject())
@@ -136,8 +136,8 @@ android::content::ContentProviderResult::ContentProviderResult(local_ref< androi
 	call_new_object<
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(2),
-		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , uri(get_jobject())
 , count(get_jobject())
@@ -151,8 +151,8 @@ void android::content::ContentProviderResult::writeToParcel(local_ref< android::
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(3),
 		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentProviderResult::describeContents()
@@ -161,8 +161,8 @@ jint android::content::ContentProviderResult::describeContents()
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(4),
 		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::ContentProviderResult::toString()
@@ -171,8 +171,8 @@ local_ref< java::lang::String > android::content::ContentProviderResult::toStrin
 		android::content::ContentProviderResult::J2CPP_CLASS_NAME,
 		android::content::ContentProviderResult::J2CPP_METHOD_NAME(5),
 		android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -81,8 +81,8 @@ android::util::Config::Config()
 	call_new_object<
 		android::util::Config::J2CPP_CLASS_NAME,
 		android::util::Config::J2CPP_METHOD_NAME(0),
-		android::util::Config::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::Config::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

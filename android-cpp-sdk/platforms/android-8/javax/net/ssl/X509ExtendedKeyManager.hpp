@@ -15,12 +15,14 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngine; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class X509KeyManager; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
+#include <javax/net/ssl/KeyManager.hpp>
 #include <javax/net/ssl/SSLEngine.hpp>
 #include <javax/net/ssl/X509KeyManager.hpp>
 
@@ -47,6 +49,7 @@ namespace javax { namespace net { namespace ssl {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::KeyManager>() const;
 		operator local_ref<javax::net::ssl::X509KeyManager>() const;
 
 
@@ -76,6 +79,11 @@ javax::net::ssl::X509ExtendedKeyManager::operator local_ref<java::lang::Object>(
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+javax::net::ssl::X509ExtendedKeyManager::operator local_ref<javax::net::ssl::KeyManager>() const
+{
+	return local_ref<javax::net::ssl::KeyManager>(get_jobject());
+}
+
 javax::net::ssl::X509ExtendedKeyManager::operator local_ref<javax::net::ssl::X509KeyManager>() const
 {
 	return local_ref<javax::net::ssl::X509KeyManager>(get_jobject());
@@ -88,8 +96,8 @@ local_ref< java::lang::String > javax::net::ssl::X509ExtendedKeyManager::chooseE
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > javax::net::ssl::X509ExtendedKeyManager::chooseEngineServerAlias(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::security::Principal >, 1> > const &a1, local_ref< javax::net::ssl::SSLEngine > const &a2)
@@ -98,8 +106,8 @@ local_ref< java::lang::String > javax::net::ssl::X509ExtendedKeyManager::chooseE
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -11,7 +11,6 @@
 #define J2CPP_ANDROID_APP_NOTIFICATION_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
@@ -21,6 +20,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 
 
 #include <android/app/PendingIntent.hpp>
@@ -104,8 +104,8 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Notification();
@@ -162,14 +162,14 @@ namespace j2cpp {
 
 
 
-android::app::Notification::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::Notification::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::Notification::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -178,8 +178,8 @@ android::app::Notification::Notification()
 	call_new_object<
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(0),
-		android::app::Notification::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::Notification::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , when(get_jobject())
 , icon(get_jobject())
@@ -207,8 +207,8 @@ android::app::Notification::Notification(jint a0, local_ref< java::lang::CharSeq
 	call_new_object<
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(1),
-		android::app::Notification::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::app::Notification::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 , when(get_jobject())
 , icon(get_jobject())
@@ -236,8 +236,8 @@ android::app::Notification::Notification(local_ref< android::os::Parcel > const 
 	call_new_object<
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(2),
-		android::app::Notification::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::app::Notification::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , when(get_jobject())
 , icon(get_jobject())
@@ -265,8 +265,8 @@ jint android::app::Notification::describeContents()
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(3),
 		android::app::Notification::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::Notification::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -275,8 +275,8 @@ void android::app::Notification::writeToParcel(local_ref< android::os::Parcel > 
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(4),
 		android::app::Notification::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Notification::setLatestEventInfo(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< java::lang::CharSequence > const &a2, local_ref< android::app::PendingIntent > const &a3)
@@ -285,8 +285,8 @@ void android::app::Notification::setLatestEventInfo(local_ref< android::content:
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(5),
 		android::app::Notification::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::app::Notification::toString()
@@ -295,8 +295,8 @@ local_ref< java::lang::String > android::app::Notification::toString()
 		android::app::Notification::J2CPP_CLASS_NAME,
 		android::app::Notification::J2CPP_METHOD_NAME(6),
 		android::app::Notification::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

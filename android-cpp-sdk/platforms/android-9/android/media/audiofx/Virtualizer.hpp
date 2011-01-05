@@ -108,6 +108,7 @@ namespace android { namespace media { namespace audiofx {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::media::audiofx::AudioEffect>() const;
 
 
@@ -152,8 +153,8 @@ android::media::audiofx::Virtualizer_::Settings::Settings()
 	call_new_object<
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , strength(get_jobject())
 {
@@ -166,8 +167,8 @@ android::media::audiofx::Virtualizer_::Settings::Settings(local_ref< java::lang:
 	call_new_object<
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , strength(get_jobject())
 {
@@ -180,8 +181,8 @@ local_ref< java::lang::String > android::media::audiofx::Virtualizer_::Settings:
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::Virtualizer_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -204,8 +205,8 @@ void android::media::audiofx::Virtualizer_::OnParameterChangeListener::onParamet
 		android::media::audiofx::Virtualizer_::OnParameterChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer_::OnParameterChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::Virtualizer_::OnParameterChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -213,6 +214,11 @@ J2CPP_DEFINE_CLASS(android::media::audiofx::Virtualizer_::OnParameterChangeListe
 J2CPP_DEFINE_METHOD(android::media::audiofx::Virtualizer_::OnParameterChangeListener,0,"onParameterChange","(Landroid/media/audiofx/Virtualizer;IIS)V")
 
 
+
+android::media::audiofx::Virtualizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::media::audiofx::Virtualizer::operator local_ref<android::media::audiofx::AudioEffect>() const
 {
@@ -225,8 +231,8 @@ android::media::audiofx::Virtualizer::Virtualizer(jint a0, jint a1)
 	call_new_object<
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -238,8 +244,8 @@ jboolean android::media::audiofx::Virtualizer::getStrengthSupported()
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::audiofx::Virtualizer::setStrength(jshort a0)
@@ -248,8 +254,8 @@ void android::media::audiofx::Virtualizer::setStrength(jshort a0)
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::Virtualizer::getRoundedStrength()
@@ -258,8 +264,8 @@ jshort android::media::audiofx::Virtualizer::getRoundedStrength()
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(3), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::Virtualizer::setParameterListener(local_ref< android::media::audiofx::Virtualizer_::OnParameterChangeListener > const &a0)
@@ -268,8 +274,8 @@ void android::media::audiofx::Virtualizer::setParameterListener(local_ref< andro
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::audiofx::Virtualizer_::Settings > android::media::audiofx::Virtualizer::getProperties()
@@ -278,8 +284,8 @@ local_ref< android::media::audiofx::Virtualizer_::Settings > android::media::aud
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::media::audiofx::Virtualizer_::Settings > >
-	(get_jobject());
+		local_ref< android::media::audiofx::Virtualizer_::Settings >
+	>(get_jobject());
 }
 
 void android::media::audiofx::Virtualizer::setProperties(local_ref< android::media::audiofx::Virtualizer_::Settings > const &a0)
@@ -288,8 +294,8 @@ void android::media::audiofx::Virtualizer::setProperties(local_ref< android::med
 		android::media::audiofx::Virtualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::Virtualizer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

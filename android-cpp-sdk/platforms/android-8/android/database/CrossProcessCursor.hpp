@@ -42,8 +42,8 @@ namespace android { namespace database {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::database::Cursor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::database::CursorWindow > getWindow();
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-android::database::CrossProcessCursor::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::database::CrossProcessCursor::operator local_ref<android::database::Cursor>() const
 {
 	return local_ref<android::database::Cursor>(get_jobject());
+}
+
+android::database::CrossProcessCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< android::database::CursorWindow > android::database::CrossProcessCursor::getWindow()
@@ -83,8 +83,8 @@ local_ref< android::database::CursorWindow > android::database::CrossProcessCurs
 		android::database::CrossProcessCursor::J2CPP_CLASS_NAME,
 		android::database::CrossProcessCursor::J2CPP_METHOD_NAME(0),
 		android::database::CrossProcessCursor::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::database::CursorWindow > >
-	(get_jobject());
+		local_ref< android::database::CursorWindow >
+	>(get_jobject());
 }
 
 void android::database::CrossProcessCursor::fillWindow(jint a0, local_ref< android::database::CursorWindow > const &a1)
@@ -93,8 +93,8 @@ void android::database::CrossProcessCursor::fillWindow(jint a0, local_ref< andro
 		android::database::CrossProcessCursor::J2CPP_CLASS_NAME,
 		android::database::CrossProcessCursor::J2CPP_METHOD_NAME(1),
 		android::database::CrossProcessCursor::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::database::CrossProcessCursor::onMove(jint a0, jint a1)
@@ -103,8 +103,8 @@ jboolean android::database::CrossProcessCursor::onMove(jint a0, jint a1)
 		android::database::CrossProcessCursor::J2CPP_CLASS_NAME,
 		android::database::CrossProcessCursor::J2CPP_METHOD_NAME(2),
 		android::database::CrossProcessCursor::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

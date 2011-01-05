@@ -136,8 +136,8 @@ jboolean org::apache::http::protocol::HTTP::isWhitespace(jchar a0)
 		org::apache::http::protocol::HTTP::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HTTP::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HTTP::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

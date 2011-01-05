@@ -107,8 +107,8 @@ android::os::FileObserver::FileObserver(local_ref< java::lang::String > const &a
 	call_new_object<
 		android::os::FileObserver::J2CPP_CLASS_NAME,
 		android::os::FileObserver::J2CPP_METHOD_NAME(0),
-		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -120,8 +120,8 @@ android::os::FileObserver::FileObserver(local_ref< java::lang::String > const &a
 	call_new_object<
 		android::os::FileObserver::J2CPP_CLASS_NAME,
 		android::os::FileObserver::J2CPP_METHOD_NAME(1),
-		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -134,8 +134,8 @@ void android::os::FileObserver::startWatching()
 		android::os::FileObserver::J2CPP_CLASS_NAME,
 		android::os::FileObserver::J2CPP_METHOD_NAME(3),
 		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::FileObserver::stopWatching()
@@ -144,8 +144,8 @@ void android::os::FileObserver::stopWatching()
 		android::os::FileObserver::J2CPP_CLASS_NAME,
 		android::os::FileObserver::J2CPP_METHOD_NAME(4),
 		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::FileObserver::onEvent(jint a0, local_ref< java::lang::String > const &a1)
@@ -154,8 +154,8 @@ void android::os::FileObserver::onEvent(jint a0, local_ref< java::lang::String >
 		android::os::FileObserver::J2CPP_CLASS_NAME,
 		android::os::FileObserver::J2CPP_METHOD_NAME(5),
 		android::os::FileObserver::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

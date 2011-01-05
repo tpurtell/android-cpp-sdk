@@ -96,8 +96,8 @@ javax::xml::XMLConstants::XMLConstants()
 	call_new_object<
 		javax::xml::XMLConstants::J2CPP_CLASS_NAME,
 		javax::xml::XMLConstants::J2CPP_METHOD_NAME(0),
-		javax::xml::XMLConstants::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::XMLConstants::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

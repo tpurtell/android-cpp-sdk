@@ -73,8 +73,8 @@ jlong org::apache::http::io::HttpTransportMetrics::getBytesTransferred()
 		org::apache::http::io::HttpTransportMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::io::HttpTransportMetrics::J2CPP_METHOD_NAME(0),
 		org::apache::http::io::HttpTransportMetrics::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void org::apache::http::io::HttpTransportMetrics::reset()
@@ -83,8 +83,8 @@ void org::apache::http::io::HttpTransportMetrics::reset()
 		org::apache::http::io::HttpTransportMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::io::HttpTransportMetrics::J2CPP_METHOD_NAME(1),
 		org::apache::http::io::HttpTransportMetrics::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

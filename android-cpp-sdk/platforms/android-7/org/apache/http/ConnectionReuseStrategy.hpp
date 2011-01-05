@@ -74,8 +74,8 @@ jboolean org::apache::http::ConnectionReuseStrategy::keepAlive(local_ref< org::a
 		org::apache::http::ConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::ConnectionReuseStrategy::J2CPP_METHOD_NAME(0),
 		org::apache::http::ConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

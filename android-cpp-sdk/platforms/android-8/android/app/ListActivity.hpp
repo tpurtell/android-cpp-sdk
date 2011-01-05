@@ -14,11 +14,27 @@
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace widget { class ListView; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/Activity.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <android/widget/ListView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -51,6 +67,14 @@ namespace android { namespace app {
 		}
 
 		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ListActivity();
@@ -84,14 +108,54 @@ android::app::ListActivity::operator local_ref<android::app::Activity>() const
 	return local_ref<android::app::Activity>(get_jobject());
 }
 
+android::app::ListActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::app::ListActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::app::ListActivity::ListActivity()
 : object<android::app::ListActivity>(
 	call_new_object<
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(0),
-		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -106,8 +170,8 @@ void android::app::ListActivity::onContentChanged()
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(4),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::ListActivity::setListAdapter(local_ref< android::widget::ListAdapter > const &a0)
@@ -116,8 +180,8 @@ void android::app::ListActivity::setListAdapter(local_ref< android::widget::List
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(5),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ListActivity::setSelection(jint a0)
@@ -126,8 +190,8 @@ void android::app::ListActivity::setSelection(jint a0)
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(6),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::app::ListActivity::getSelectedItemPosition()
@@ -136,8 +200,8 @@ jint android::app::ListActivity::getSelectedItemPosition()
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(7),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::app::ListActivity::getSelectedItemId()
@@ -146,8 +210,8 @@ jlong android::app::ListActivity::getSelectedItemId()
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(8),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< android::widget::ListView > android::app::ListActivity::getListView()
@@ -156,8 +220,8 @@ local_ref< android::widget::ListView > android::app::ListActivity::getListView()
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(9),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::widget::ListView > >
-	(get_jobject());
+		local_ref< android::widget::ListView >
+	>(get_jobject());
 }
 
 local_ref< android::widget::ListAdapter > android::app::ListActivity::getListAdapter()
@@ -166,8 +230,8 @@ local_ref< android::widget::ListAdapter > android::app::ListActivity::getListAda
 		android::app::ListActivity::J2CPP_CLASS_NAME,
 		android::app::ListActivity::J2CPP_METHOD_NAME(10),
 		android::app::ListActivity::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 

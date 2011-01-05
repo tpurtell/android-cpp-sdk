@@ -84,8 +84,8 @@ void android::text::style::LineBackgroundSpan::drawBackground(local_ref< android
 		android::text::style::LineBackgroundSpan::J2CPP_CLASS_NAME,
 		android::text::style::LineBackgroundSpan::J2CPP_METHOD_NAME(0),
 		android::text::style::LineBackgroundSpan::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 

@@ -99,8 +99,8 @@ local_ref< java::lang::String > android::util::Patterns::concatGroups(local_ref<
 		android::util::Patterns::J2CPP_CLASS_NAME,
 		android::util::Patterns::J2CPP_METHOD_NAME(1),
 		android::util::Patterns::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::util::Patterns::digitsAndPlusOnly(local_ref< java::util::regex::Matcher > const &a0)
@@ -109,8 +109,8 @@ local_ref< java::lang::String > android::util::Patterns::digitsAndPlusOnly(local
 		android::util::Patterns::J2CPP_CLASS_NAME,
 		android::util::Patterns::J2CPP_METHOD_NAME(2),
 		android::util::Patterns::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

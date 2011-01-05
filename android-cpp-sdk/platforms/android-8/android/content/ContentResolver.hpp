@@ -222,8 +222,8 @@ android::content::ContentResolver::ContentResolver(local_ref< android::content::
 	call_new_object<
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(0),
-		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -235,8 +235,8 @@ local_ref< java::lang::String > android::content::ContentResolver::getType(local
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(1),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::content::ContentResolver::query(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4)
@@ -245,8 +245,8 @@ local_ref< android::database::Cursor > android::content::ContentResolver::query(
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(2),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< java::io::InputStream > android::content::ContentResolver::openInputStream(local_ref< android::net::Uri > const &a0)
@@ -255,8 +255,8 @@ local_ref< java::io::InputStream > android::content::ContentResolver::openInputS
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(3),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::OutputStream > android::content::ContentResolver::openOutputStream(local_ref< android::net::Uri > const &a0)
@@ -265,8 +265,8 @@ local_ref< java::io::OutputStream > android::content::ContentResolver::openOutpu
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(4),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::OutputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::OutputStream > android::content::ContentResolver::openOutputStream(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -275,8 +275,8 @@ local_ref< java::io::OutputStream > android::content::ContentResolver::openOutpu
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(5),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::OutputStream >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::ParcelFileDescriptor > android::content::ContentResolver::openFileDescriptor(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -285,8 +285,8 @@ local_ref< android::os::ParcelFileDescriptor > android::content::ContentResolver
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(6),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::ParcelFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::ParcelFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::ContentResolver::openAssetFileDescriptor(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -295,8 +295,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::Conten
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(7),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::net::Uri > android::content::ContentResolver::insert(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -305,8 +305,8 @@ local_ref< android::net::Uri > android::content::ContentResolver::insert(local_r
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(8),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > android::content::ContentResolver::applyBatch(local_ref< java::lang::String > const &a0, local_ref< java::util::ArrayList > const &a1)
@@ -315,8 +315,8 @@ local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > and
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(9),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentResolver::bulkInsert(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< android::content::ContentValues >, 1> > const &a1)
@@ -325,8 +325,8 @@ jint android::content::ContentResolver::bulkInsert(local_ref< android::net::Uri 
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(10),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentResolver::delete_(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -335,8 +335,8 @@ jint android::content::ContentResolver::delete_(local_ref< android::net::Uri > c
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(11),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::ContentResolver::update(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -345,8 +345,8 @@ jint android::content::ContentResolver::update(local_ref< android::net::Uri > co
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(12),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::content::ContentProviderClient > android::content::ContentResolver::acquireContentProviderClient(local_ref< android::net::Uri > const &a0)
@@ -355,8 +355,8 @@ local_ref< android::content::ContentProviderClient > android::content::ContentRe
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(13),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::content::ContentProviderClient > >
-	(get_jobject(), a0);
+		local_ref< android::content::ContentProviderClient >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::ContentProviderClient > android::content::ContentResolver::acquireContentProviderClient(local_ref< java::lang::String > const &a0)
@@ -365,8 +365,8 @@ local_ref< android::content::ContentProviderClient > android::content::ContentRe
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(14),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::content::ContentProviderClient > >
-	(get_jobject(), a0);
+		local_ref< android::content::ContentProviderClient >
+	>(get_jobject(), a0);
 }
 
 void android::content::ContentResolver::registerContentObserver(local_ref< android::net::Uri > const &a0, jboolean a1, local_ref< android::database::ContentObserver > const &a2)
@@ -375,8 +375,8 @@ void android::content::ContentResolver::registerContentObserver(local_ref< andro
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(15),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::ContentResolver::unregisterContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -385,8 +385,8 @@ void android::content::ContentResolver::unregisterContentObserver(local_ref< and
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(16),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::ContentResolver::notifyChange(local_ref< android::net::Uri > const &a0, local_ref< android::database::ContentObserver > const &a1)
@@ -395,8 +395,8 @@ void android::content::ContentResolver::notifyChange(local_ref< android::net::Ur
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(17),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::ContentResolver::notifyChange(local_ref< android::net::Uri > const &a0, local_ref< android::database::ContentObserver > const &a1, jboolean a2)
@@ -405,8 +405,8 @@ void android::content::ContentResolver::notifyChange(local_ref< android::net::Ur
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(18),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::ContentResolver::startSync(local_ref< android::net::Uri > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -415,8 +415,8 @@ void android::content::ContentResolver::startSync(local_ref< android::net::Uri >
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(19),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::ContentResolver::requestSync(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -425,8 +425,8 @@ void android::content::ContentResolver::requestSync(local_ref< android::accounts
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(20),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::content::ContentResolver::validateSyncExtrasBundle(local_ref< android::os::Bundle > const &a0)
@@ -435,8 +435,8 @@ void android::content::ContentResolver::validateSyncExtrasBundle(local_ref< andr
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(21),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::content::ContentResolver::cancelSync(local_ref< android::net::Uri > const &a0)
@@ -445,8 +445,8 @@ void android::content::ContentResolver::cancelSync(local_ref< android::net::Uri 
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(22),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::ContentResolver::cancelSync(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -455,8 +455,8 @@ void android::content::ContentResolver::cancelSync(local_ref< android::accounts:
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(23),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< android::content::SyncAdapterType >, 1> > android::content::ContentResolver::getSyncAdapterTypes()
@@ -465,8 +465,8 @@ local_ref< array< local_ref< android::content::SyncAdapterType >, 1> > android::
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(24),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< array< local_ref< android::content::SyncAdapterType >, 1> > >
-	();
+		local_ref< array< local_ref< android::content::SyncAdapterType >, 1> >
+	>();
 }
 
 jboolean android::content::ContentResolver::getSyncAutomatically(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -475,8 +475,8 @@ jboolean android::content::ContentResolver::getSyncAutomatically(local_ref< andr
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(25),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 void android::content::ContentResolver::setSyncAutomatically(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -485,8 +485,8 @@ void android::content::ContentResolver::setSyncAutomatically(local_ref< android:
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(26),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::content::ContentResolver::addPeriodicSync(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2, jlong a3)
@@ -495,8 +495,8 @@ void android::content::ContentResolver::addPeriodicSync(local_ref< android::acco
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(27),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::content::ContentResolver::removePeriodicSync(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -505,8 +505,8 @@ void android::content::ContentResolver::removePeriodicSync(local_ref< android::a
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(28),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::List > android::content::ContentResolver::getPeriodicSyncs(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -515,8 +515,8 @@ local_ref< java::util::List > android::content::ContentResolver::getPeriodicSync
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(29),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::List > >
-	(a0, a1);
+		local_ref< java::util::List >
+	>(a0, a1);
 }
 
 jint android::content::ContentResolver::getIsSyncable(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -525,8 +525,8 @@ jint android::content::ContentResolver::getIsSyncable(local_ref< android::accoun
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(30),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::content::ContentResolver::setIsSyncable(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -535,8 +535,8 @@ void android::content::ContentResolver::setIsSyncable(local_ref< android::accoun
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(31),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::content::ContentResolver::getMasterSyncAutomatically()
@@ -545,8 +545,8 @@ jboolean android::content::ContentResolver::getMasterSyncAutomatically()
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(32),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 void android::content::ContentResolver::setMasterSyncAutomatically(jboolean a0)
@@ -555,8 +555,8 @@ void android::content::ContentResolver::setMasterSyncAutomatically(jboolean a0)
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(33),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::content::ContentResolver::isSyncActive(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -565,8 +565,8 @@ jboolean android::content::ContentResolver::isSyncActive(local_ref< android::acc
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(34),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< android::content::SyncInfo > android::content::ContentResolver::getCurrentSync()
@@ -575,8 +575,8 @@ local_ref< android::content::SyncInfo > android::content::ContentResolver::getCu
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(35),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< android::content::SyncInfo > >
-	();
+		local_ref< android::content::SyncInfo >
+	>();
 }
 
 jboolean android::content::ContentResolver::isSyncPending(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -585,8 +585,8 @@ jboolean android::content::ContentResolver::isSyncPending(local_ref< android::ac
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(36),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > android::content::ContentResolver::addStatusChangeListener(jint a0, local_ref< android::content::SyncStatusObserver > const &a1)
@@ -595,8 +595,8 @@ local_ref< java::lang::Object > android::content::ContentResolver::addStatusChan
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(37),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 void android::content::ContentResolver::removeStatusChangeListener(local_ref< java::lang::Object > const &a0)
@@ -605,8 +605,8 @@ void android::content::ContentResolver::removeStatusChangeListener(local_ref< ja
 		android::content::ContentResolver::J2CPP_CLASS_NAME,
 		android::content::ContentResolver::J2CPP_METHOD_NAME(38),
 		android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

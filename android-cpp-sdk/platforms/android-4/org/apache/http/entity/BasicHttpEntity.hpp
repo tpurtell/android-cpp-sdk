@@ -11,13 +11,17 @@
 #define J2CPP_ORG_APACHE_HTTP_ENTITY_BASICHTTPENTITY_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class AbstractHttpEntity; } } } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/entity/AbstractHttpEntity.hpp>
 
 
@@ -48,7 +52,9 @@ namespace org { namespace apache { namespace http { namespace entity {
 		{
 		}
 
+		operator local_ref<org::apache::http::HttpEntity>() const;
 		operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicHttpEntity();
@@ -80,9 +86,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::entity::BasicHttpEntity::operator local_ref<org::apache::http::HttpEntity>() const
+{
+	return local_ref<org::apache::http::HttpEntity>(get_jobject());
+}
+
 org::apache::http::entity::BasicHttpEntity::operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const
 {
 	return local_ref<org::apache::http::entity::AbstractHttpEntity>(get_jobject());
+}
+
+org::apache::http::entity::BasicHttpEntity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -91,8 +107,8 @@ org::apache::http::entity::BasicHttpEntity::BasicHttpEntity()
 	call_new_object<
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(0),
-		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +120,8 @@ jlong org::apache::http::entity::BasicHttpEntity::getContentLength()
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(1),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > org::apache::http::entity::BasicHttpEntity::getContent()
@@ -114,8 +130,8 @@ local_ref< java::io::InputStream > org::apache::http::entity::BasicHttpEntity::g
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(2),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::entity::BasicHttpEntity::isRepeatable()
@@ -124,8 +140,8 @@ jboolean org::apache::http::entity::BasicHttpEntity::isRepeatable()
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(3),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::entity::BasicHttpEntity::setContentLength(jlong a0)
@@ -134,8 +150,8 @@ void org::apache::http::entity::BasicHttpEntity::setContentLength(jlong a0)
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(4),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::BasicHttpEntity::setContent(local_ref< java::io::InputStream > const &a0)
@@ -144,8 +160,8 @@ void org::apache::http::entity::BasicHttpEntity::setContent(local_ref< java::io:
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(5),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::BasicHttpEntity::writeTo(local_ref< java::io::OutputStream > const &a0)
@@ -154,8 +170,8 @@ void org::apache::http::entity::BasicHttpEntity::writeTo(local_ref< java::io::Ou
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(6),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::entity::BasicHttpEntity::isStreaming()
@@ -164,8 +180,8 @@ jboolean org::apache::http::entity::BasicHttpEntity::isStreaming()
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(7),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::entity::BasicHttpEntity::consumeContent()
@@ -174,8 +190,8 @@ void org::apache::http::entity::BasicHttpEntity::consumeContent()
 		org::apache::http::entity::BasicHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_NAME(8),
 		org::apache::http::entity::BasicHttpEntity::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

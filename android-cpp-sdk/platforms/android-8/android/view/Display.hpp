@@ -90,8 +90,8 @@ jint android::view::Display::getDisplayId()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(1),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::Display::getWidth()
@@ -100,8 +100,8 @@ jint android::view::Display::getWidth()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(2),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::Display::getHeight()
@@ -110,8 +110,8 @@ jint android::view::Display::getHeight()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(3),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::Display::getRotation()
@@ -120,8 +120,8 @@ jint android::view::Display::getRotation()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(4),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::Display::getOrientation()
@@ -130,8 +130,8 @@ jint android::view::Display::getOrientation()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(5),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::Display::getPixelFormat()
@@ -140,8 +140,8 @@ jint android::view::Display::getPixelFormat()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(6),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::view::Display::getRefreshRate()
@@ -150,8 +150,8 @@ jfloat android::view::Display::getRefreshRate()
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(7),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::view::Display::getMetrics(local_ref< android::util::DisplayMetrics > const &a0)
@@ -160,8 +160,8 @@ void android::view::Display::getMetrics(local_ref< android::util::DisplayMetrics
 		android::view::Display::J2CPP_CLASS_NAME,
 		android::view::Display::J2CPP_METHOD_NAME(8),
 		android::view::Display::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

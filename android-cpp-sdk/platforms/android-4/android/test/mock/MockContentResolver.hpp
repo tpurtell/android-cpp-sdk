@@ -16,12 +16,14 @@ namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/ContentProvider.hpp>
 #include <android/content/ContentResolver.hpp>
 #include <android/database/ContentObserver.hpp>
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,6 +49,7 @@ namespace android { namespace test { namespace mock {
 		}
 
 		operator local_ref<android::content::ContentResolver>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		MockContentResolver();
@@ -76,14 +79,19 @@ android::test::mock::MockContentResolver::operator local_ref<android::content::C
 	return local_ref<android::content::ContentResolver>(get_jobject());
 }
 
+android::test::mock::MockContentResolver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::test::mock::MockContentResolver::MockContentResolver()
 : object<android::test::mock::MockContentResolver>(
 	call_new_object<
 		android::test::mock::MockContentResolver::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentResolver::J2CPP_METHOD_NAME(0),
-		android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +103,8 @@ void android::test::mock::MockContentResolver::addProvider(local_ref< java::lang
 		android::test::mock::MockContentResolver::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentResolver::J2CPP_METHOD_NAME(1),
 		android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::mock::MockContentResolver::notifyChange(local_ref< android::net::Uri > const &a0, local_ref< android::database::ContentObserver > const &a1, jboolean a2)
@@ -105,8 +113,8 @@ void android::test::mock::MockContentResolver::notifyChange(local_ref< android::
 		android::test::mock::MockContentResolver::J2CPP_CLASS_NAME,
 		android::test::mock::MockContentResolver::J2CPP_METHOD_NAME(2),
 		android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

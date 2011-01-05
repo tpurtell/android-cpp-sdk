@@ -11,6 +11,13 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_NINEPATCHDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
+namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
@@ -19,12 +26,6 @@ namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { class NinePatch; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
-namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
-namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
-namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
-namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
-namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <android/content/res/Resources.hpp>
@@ -38,6 +39,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/util/DisplayMetrics.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -84,6 +86,7 @@ namespace android { namespace graphics { namespace drawable {
 		}
 
 		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		NinePatchDrawable(local_ref< android::graphics::Bitmap > const&, local_ref< array<jbyte,1> > const&, local_ref< android::graphics::Rect > const&, local_ref< java::lang::String > const&);
@@ -133,14 +136,19 @@ android::graphics::drawable::NinePatchDrawable::operator local_ref<android::grap
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
 }
 
+android::graphics::drawable::NinePatchDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< android::graphics::Bitmap > const &a0, local_ref< array<jbyte,1> > const &a1, local_ref< android::graphics::Rect > const &a2, local_ref< java::lang::String > const &a3)
 : object<android::graphics::drawable::NinePatchDrawable>(
 	call_new_object<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -152,8 +160,8 @@ android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< and
 	call_new_object<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(1),
-		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4)
+		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -165,8 +173,8 @@ android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< and
 	call_new_object<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(2),
-		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -178,8 +186,8 @@ android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< and
 	call_new_object<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(3),
-		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -191,8 +199,8 @@ void android::graphics::drawable::NinePatchDrawable::setTargetDensity(local_ref<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::setTargetDensity(local_ref< android::util::DisplayMetrics > const &a0)
@@ -201,8 +209,8 @@ void android::graphics::drawable::NinePatchDrawable::setTargetDensity(local_ref<
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::setTargetDensity(jint a0)
@@ -211,8 +219,8 @@ void android::graphics::drawable::NinePatchDrawable::setTargetDensity(jint a0)
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -221,8 +229,8 @@ void android::graphics::drawable::NinePatchDrawable::draw(local_ref< android::gr
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getChangingConfigurations()
@@ -231,8 +239,8 @@ jint android::graphics::drawable::NinePatchDrawable::getChangingConfigurations()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::drawable::NinePatchDrawable::getPadding(local_ref< android::graphics::Rect > const &a0)
@@ -241,8 +249,8 @@ jboolean android::graphics::drawable::NinePatchDrawable::getPadding(local_ref< a
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::setAlpha(jint a0)
@@ -251,8 +259,8 @@ void android::graphics::drawable::NinePatchDrawable::setAlpha(jint a0)
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -261,8 +269,8 @@ void android::graphics::drawable::NinePatchDrawable::setColorFilter(local_ref< a
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(11),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::setDither(jboolean a0)
@@ -271,8 +279,8 @@ void android::graphics::drawable::NinePatchDrawable::setDither(jboolean a0)
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(12),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::NinePatchDrawable::inflate(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< android::util::AttributeSet > const &a2)
@@ -281,8 +289,8 @@ void android::graphics::drawable::NinePatchDrawable::inflate(local_ref< android:
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(13),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::Paint > android::graphics::drawable::NinePatchDrawable::getPaint()
@@ -291,8 +299,8 @@ local_ref< android::graphics::Paint > android::graphics::drawable::NinePatchDraw
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(14),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::graphics::Paint > >
-	(get_jobject());
+		local_ref< android::graphics::Paint >
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getIntrinsicWidth()
@@ -301,8 +309,8 @@ jint android::graphics::drawable::NinePatchDrawable::getIntrinsicWidth()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(15),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getIntrinsicHeight()
@@ -311,8 +319,8 @@ jint android::graphics::drawable::NinePatchDrawable::getIntrinsicHeight()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(16),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getMinimumWidth()
@@ -321,8 +329,8 @@ jint android::graphics::drawable::NinePatchDrawable::getMinimumWidth()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(17),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getMinimumHeight()
@@ -331,8 +339,8 @@ jint android::graphics::drawable::NinePatchDrawable::getMinimumHeight()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(18),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::NinePatchDrawable::getOpacity()
@@ -341,8 +349,8 @@ jint android::graphics::drawable::NinePatchDrawable::getOpacity()
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(19),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Region > android::graphics::drawable::NinePatchDrawable::getTransparentRegion()
@@ -351,8 +359,8 @@ local_ref< android::graphics::Region > android::graphics::drawable::NinePatchDra
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(20),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::graphics::Region > >
-	(get_jobject());
+		local_ref< android::graphics::Region >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::NinePatchDrawable::getConstantState()
@@ -361,8 +369,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(21),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::NinePatchDrawable::mutate()
@@ -371,8 +379,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(22),
 		android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 

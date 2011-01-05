@@ -122,8 +122,8 @@ local_ref< android::appwidget::AppWidgetManager > android::appwidget::AppWidgetM
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(1),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::appwidget::AppWidgetManager > >
-	(a0);
+		local_ref< android::appwidget::AppWidgetManager >
+	>(a0);
 }
 
 void android::appwidget::AppWidgetManager::updateAppWidget(local_ref< array<jint,1> > const &a0, local_ref< android::widget::RemoteViews > const &a1)
@@ -132,8 +132,8 @@ void android::appwidget::AppWidgetManager::updateAppWidget(local_ref< array<jint
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(2),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::appwidget::AppWidgetManager::updateAppWidget(jint a0, local_ref< android::widget::RemoteViews > const &a1)
@@ -142,8 +142,8 @@ void android::appwidget::AppWidgetManager::updateAppWidget(jint a0, local_ref< a
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(3),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::appwidget::AppWidgetManager::updateAppWidget(local_ref< android::content::ComponentName > const &a0, local_ref< android::widget::RemoteViews > const &a1)
@@ -152,8 +152,8 @@ void android::appwidget::AppWidgetManager::updateAppWidget(local_ref< android::c
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(4),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::appwidget::AppWidgetManager::getInstalledProviders()
@@ -162,8 +162,8 @@ local_ref< java::util::List > android::appwidget::AppWidgetManager::getInstalled
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(5),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< android::appwidget::AppWidgetProviderInfo > android::appwidget::AppWidgetManager::getAppWidgetInfo(jint a0)
@@ -172,8 +172,8 @@ local_ref< android::appwidget::AppWidgetProviderInfo > android::appwidget::AppWi
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(6),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::appwidget::AppWidgetProviderInfo > >
-	(get_jobject(), a0);
+		local_ref< android::appwidget::AppWidgetProviderInfo >
+	>(get_jobject(), a0);
 }
 
 void android::appwidget::AppWidgetManager::bindAppWidgetId(jint a0, local_ref< android::content::ComponentName > const &a1)
@@ -182,8 +182,8 @@ void android::appwidget::AppWidgetManager::bindAppWidgetId(jint a0, local_ref< a
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(7),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jint,1> > android::appwidget::AppWidgetManager::getAppWidgetIds(local_ref< android::content::ComponentName > const &a0)
@@ -192,8 +192,8 @@ local_ref< array<jint,1> > android::appwidget::AppWidgetManager::getAppWidgetIds
 		android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(8),
 		android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 

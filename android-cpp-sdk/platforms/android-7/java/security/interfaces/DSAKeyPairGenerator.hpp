@@ -76,8 +76,8 @@ void java::security::interfaces::DSAKeyPairGenerator::initialize(local_ref< java
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::interfaces::DSAKeyPairGenerator::initialize(jint a0, jboolean a1, local_ref< java::security::SecureRandom > const &a2)
@@ -86,8 +86,8 @@ void java::security::interfaces::DSAKeyPairGenerator::initialize(jint a0, jboole
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_METHOD_NAME(1),
 		java::security::interfaces::DSAKeyPairGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

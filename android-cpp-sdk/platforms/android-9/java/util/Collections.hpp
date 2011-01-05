@@ -207,8 +207,8 @@ jint java::util::Collections::binarySearch(local_ref< java::util::List > const &
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(1),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Collections::binarySearch(local_ref< java::util::List > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::util::Comparator > const &a2)
@@ -217,8 +217,8 @@ jint java::util::Collections::binarySearch(local_ref< java::util::List > const &
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(2),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 void java::util::Collections::copy(local_ref< java::util::List > const &a0, local_ref< java::util::List > const &a1)
@@ -227,8 +227,8 @@ void java::util::Collections::copy(local_ref< java::util::List > const &a0, loca
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(3),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::util::Enumeration > java::util::Collections::enumeration(local_ref< java::util::Collection > const &a0)
@@ -237,8 +237,8 @@ local_ref< java::util::Enumeration > java::util::Collections::enumeration(local_
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(4),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Enumeration > >
-	(a0);
+		local_ref< java::util::Enumeration >
+	>(a0);
 }
 
 void java::util::Collections::fill(local_ref< java::util::List > const &a0, local_ref< java::lang::Object > const &a1)
@@ -247,8 +247,8 @@ void java::util::Collections::fill(local_ref< java::util::List > const &a0, loca
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(5),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::Collections::max(local_ref< java::util::Collection > const &a0)
@@ -257,8 +257,8 @@ local_ref< java::lang::Object > java::util::Collections::max(local_ref< java::ut
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(6),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::Object > java::util::Collections::max(local_ref< java::util::Collection > const &a0, local_ref< java::util::Comparator > const &a1)
@@ -267,8 +267,8 @@ local_ref< java::lang::Object > java::util::Collections::max(local_ref< java::ut
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(7),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::Collections::min(local_ref< java::util::Collection > const &a0)
@@ -277,8 +277,8 @@ local_ref< java::lang::Object > java::util::Collections::min(local_ref< java::ut
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(8),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::Object > java::util::Collections::min(local_ref< java::util::Collection > const &a0, local_ref< java::util::Comparator > const &a1)
@@ -287,8 +287,8 @@ local_ref< java::lang::Object > java::util::Collections::min(local_ref< java::ut
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(9),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 local_ref< java::util::List > java::util::Collections::nCopies(jint a0, local_ref< java::lang::Object > const &a1)
@@ -297,8 +297,8 @@ local_ref< java::util::List > java::util::Collections::nCopies(jint a0, local_re
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(10),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::List > >
-	(a0, a1);
+		local_ref< java::util::List >
+	>(a0, a1);
 }
 
 void java::util::Collections::reverse(local_ref< java::util::List > const &a0)
@@ -307,8 +307,8 @@ void java::util::Collections::reverse(local_ref< java::util::List > const &a0)
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(11),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::util::Comparator > java::util::Collections::reverseOrder()
@@ -317,8 +317,8 @@ local_ref< java::util::Comparator > java::util::Collections::reverseOrder()
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(12),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Comparator > >
-	();
+		local_ref< java::util::Comparator >
+	>();
 }
 
 local_ref< java::util::Comparator > java::util::Collections::reverseOrder(local_ref< java::util::Comparator > const &a0)
@@ -327,8 +327,8 @@ local_ref< java::util::Comparator > java::util::Collections::reverseOrder(local_
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(13),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::Comparator > >
-	(a0);
+		local_ref< java::util::Comparator >
+	>(a0);
 }
 
 void java::util::Collections::shuffle(local_ref< java::util::List > const &a0)
@@ -337,8 +337,8 @@ void java::util::Collections::shuffle(local_ref< java::util::List > const &a0)
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(14),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Collections::shuffle(local_ref< java::util::List > const &a0, local_ref< java::util::Random > const &a1)
@@ -347,8 +347,8 @@ void java::util::Collections::shuffle(local_ref< java::util::List > const &a0, l
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(15),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::util::Set > java::util::Collections::singleton(local_ref< java::lang::Object > const &a0)
@@ -357,8 +357,8 @@ local_ref< java::util::Set > java::util::Collections::singleton(local_ref< java:
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(16),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Set > >
-	(a0);
+		local_ref< java::util::Set >
+	>(a0);
 }
 
 local_ref< java::util::List > java::util::Collections::singletonList(local_ref< java::lang::Object > const &a0)
@@ -367,8 +367,8 @@ local_ref< java::util::List > java::util::Collections::singletonList(local_ref< 
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(17),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 local_ref< java::util::Map > java::util::Collections::singletonMap(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -377,8 +377,8 @@ local_ref< java::util::Map > java::util::Collections::singletonMap(local_ref< ja
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(18),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::Map > >
-	(a0, a1);
+		local_ref< java::util::Map >
+	>(a0, a1);
 }
 
 void java::util::Collections::sort(local_ref< java::util::List > const &a0)
@@ -387,8 +387,8 @@ void java::util::Collections::sort(local_ref< java::util::List > const &a0)
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(19),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::Collections::sort(local_ref< java::util::List > const &a0, local_ref< java::util::Comparator > const &a1)
@@ -397,8 +397,8 @@ void java::util::Collections::sort(local_ref< java::util::List > const &a0, loca
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(20),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::Collections::swap(local_ref< java::util::List > const &a0, jint a1, jint a2)
@@ -407,8 +407,8 @@ void java::util::Collections::swap(local_ref< java::util::List > const &a0, jint
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(21),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean java::util::Collections::replaceAll(local_ref< java::util::List > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -417,8 +417,8 @@ jboolean java::util::Collections::replaceAll(local_ref< java::util::List > const
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(22),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 void java::util::Collections::rotate(local_ref< java::util::List > const &a0, jint a1)
@@ -427,8 +427,8 @@ void java::util::Collections::rotate(local_ref< java::util::List > const &a0, ji
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(23),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint java::util::Collections::indexOfSubList(local_ref< java::util::List > const &a0, local_ref< java::util::List > const &a1)
@@ -437,8 +437,8 @@ jint java::util::Collections::indexOfSubList(local_ref< java::util::List > const
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(24),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::util::Collections::lastIndexOfSubList(local_ref< java::util::List > const &a0, local_ref< java::util::List > const &a1)
@@ -447,8 +447,8 @@ jint java::util::Collections::lastIndexOfSubList(local_ref< java::util::List > c
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(25),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 local_ref< java::util::ArrayList > java::util::Collections::list(local_ref< java::util::Enumeration > const &a0)
@@ -457,8 +457,8 @@ local_ref< java::util::ArrayList > java::util::Collections::list(local_ref< java
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(26),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::util::ArrayList > >
-	(a0);
+		local_ref< java::util::ArrayList >
+	>(a0);
 }
 
 local_ref< java::util::Collection > java::util::Collections::synchronizedCollection(local_ref< java::util::Collection > const &a0)
@@ -467,8 +467,8 @@ local_ref< java::util::Collection > java::util::Collections::synchronizedCollect
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(27),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::Collection > >
-	(a0);
+		local_ref< java::util::Collection >
+	>(a0);
 }
 
 local_ref< java::util::List > java::util::Collections::synchronizedList(local_ref< java::util::List > const &a0)
@@ -477,8 +477,8 @@ local_ref< java::util::List > java::util::Collections::synchronizedList(local_re
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(28),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 local_ref< java::util::Map > java::util::Collections::synchronizedMap(local_ref< java::util::Map > const &a0)
@@ -487,8 +487,8 @@ local_ref< java::util::Map > java::util::Collections::synchronizedMap(local_ref<
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(29),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::Map > >
-	(a0);
+		local_ref< java::util::Map >
+	>(a0);
 }
 
 local_ref< java::util::Set > java::util::Collections::synchronizedSet(local_ref< java::util::Set > const &a0)
@@ -497,8 +497,8 @@ local_ref< java::util::Set > java::util::Collections::synchronizedSet(local_ref<
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(30),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::Set > >
-	(a0);
+		local_ref< java::util::Set >
+	>(a0);
 }
 
 local_ref< java::util::SortedMap > java::util::Collections::synchronizedSortedMap(local_ref< java::util::SortedMap > const &a0)
@@ -507,8 +507,8 @@ local_ref< java::util::SortedMap > java::util::Collections::synchronizedSortedMa
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(31),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::util::SortedMap > >
-	(a0);
+		local_ref< java::util::SortedMap >
+	>(a0);
 }
 
 local_ref< java::util::SortedSet > java::util::Collections::synchronizedSortedSet(local_ref< java::util::SortedSet > const &a0)
@@ -517,8 +517,8 @@ local_ref< java::util::SortedSet > java::util::Collections::synchronizedSortedSe
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(32),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::util::SortedSet > >
-	(a0);
+		local_ref< java::util::SortedSet >
+	>(a0);
 }
 
 local_ref< java::util::Collection > java::util::Collections::unmodifiableCollection(local_ref< java::util::Collection > const &a0)
@@ -527,8 +527,8 @@ local_ref< java::util::Collection > java::util::Collections::unmodifiableCollect
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(33),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::Collection > >
-	(a0);
+		local_ref< java::util::Collection >
+	>(a0);
 }
 
 local_ref< java::util::List > java::util::Collections::unmodifiableList(local_ref< java::util::List > const &a0)
@@ -537,8 +537,8 @@ local_ref< java::util::List > java::util::Collections::unmodifiableList(local_re
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(34),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 local_ref< java::util::Map > java::util::Collections::unmodifiableMap(local_ref< java::util::Map > const &a0)
@@ -547,8 +547,8 @@ local_ref< java::util::Map > java::util::Collections::unmodifiableMap(local_ref<
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(35),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::util::Map > >
-	(a0);
+		local_ref< java::util::Map >
+	>(a0);
 }
 
 local_ref< java::util::Set > java::util::Collections::unmodifiableSet(local_ref< java::util::Set > const &a0)
@@ -557,8 +557,8 @@ local_ref< java::util::Set > java::util::Collections::unmodifiableSet(local_ref<
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(36),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::util::Set > >
-	(a0);
+		local_ref< java::util::Set >
+	>(a0);
 }
 
 local_ref< java::util::SortedMap > java::util::Collections::unmodifiableSortedMap(local_ref< java::util::SortedMap > const &a0)
@@ -567,8 +567,8 @@ local_ref< java::util::SortedMap > java::util::Collections::unmodifiableSortedMa
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(37),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::util::SortedMap > >
-	(a0);
+		local_ref< java::util::SortedMap >
+	>(a0);
 }
 
 local_ref< java::util::SortedSet > java::util::Collections::unmodifiableSortedSet(local_ref< java::util::SortedSet > const &a0)
@@ -577,8 +577,8 @@ local_ref< java::util::SortedSet > java::util::Collections::unmodifiableSortedSe
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(38),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::util::SortedSet > >
-	(a0);
+		local_ref< java::util::SortedSet >
+	>(a0);
 }
 
 jint java::util::Collections::frequency(local_ref< java::util::Collection > const &a0, local_ref< java::lang::Object > const &a1)
@@ -587,8 +587,8 @@ jint java::util::Collections::frequency(local_ref< java::util::Collection > cons
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(39),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 local_ref< java::util::List > java::util::Collections::emptyList()
@@ -597,8 +597,8 @@ local_ref< java::util::List > java::util::Collections::emptyList()
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(40),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::util::List > >
-	();
+		local_ref< java::util::List >
+	>();
 }
 
 local_ref< java::util::Set > java::util::Collections::emptySet()
@@ -607,8 +607,8 @@ local_ref< java::util::Set > java::util::Collections::emptySet()
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(41),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::util::Set > >
-	();
+		local_ref< java::util::Set >
+	>();
 }
 
 local_ref< java::util::Map > java::util::Collections::emptyMap()
@@ -617,8 +617,8 @@ local_ref< java::util::Map > java::util::Collections::emptyMap()
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(42),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::util::Map > >
-	();
+		local_ref< java::util::Map >
+	>();
 }
 
 local_ref< java::util::Collection > java::util::Collections::checkedCollection(local_ref< java::util::Collection > const &a0, local_ref< java::lang::Class > const &a1)
@@ -627,8 +627,8 @@ local_ref< java::util::Collection > java::util::Collections::checkedCollection(l
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(43),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::util::Collection > >
-	(a0, a1);
+		local_ref< java::util::Collection >
+	>(a0, a1);
 }
 
 local_ref< java::util::Map > java::util::Collections::checkedMap(local_ref< java::util::Map > const &a0, local_ref< java::lang::Class > const &a1, local_ref< java::lang::Class > const &a2)
@@ -637,8 +637,8 @@ local_ref< java::util::Map > java::util::Collections::checkedMap(local_ref< java
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(44),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::util::Map > >
-	(a0, a1, a2);
+		local_ref< java::util::Map >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::List > java::util::Collections::checkedList(local_ref< java::util::List > const &a0, local_ref< java::lang::Class > const &a1)
@@ -647,8 +647,8 @@ local_ref< java::util::List > java::util::Collections::checkedList(local_ref< ja
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(45),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::util::List > >
-	(a0, a1);
+		local_ref< java::util::List >
+	>(a0, a1);
 }
 
 local_ref< java::util::Set > java::util::Collections::checkedSet(local_ref< java::util::Set > const &a0, local_ref< java::lang::Class > const &a1)
@@ -657,8 +657,8 @@ local_ref< java::util::Set > java::util::Collections::checkedSet(local_ref< java
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(46),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::util::Set > >
-	(a0, a1);
+		local_ref< java::util::Set >
+	>(a0, a1);
 }
 
 local_ref< java::util::SortedMap > java::util::Collections::checkedSortedMap(local_ref< java::util::SortedMap > const &a0, local_ref< java::lang::Class > const &a1, local_ref< java::lang::Class > const &a2)
@@ -667,8 +667,8 @@ local_ref< java::util::SortedMap > java::util::Collections::checkedSortedMap(loc
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(47),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::util::SortedMap > >
-	(a0, a1, a2);
+		local_ref< java::util::SortedMap >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::SortedSet > java::util::Collections::checkedSortedSet(local_ref< java::util::SortedSet > const &a0, local_ref< java::lang::Class > const &a1)
@@ -677,8 +677,8 @@ local_ref< java::util::SortedSet > java::util::Collections::checkedSortedSet(loc
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(48),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::util::SortedSet > >
-	(a0, a1);
+		local_ref< java::util::SortedSet >
+	>(a0, a1);
 }
 
 jboolean java::util::Collections::addAll(local_ref< java::util::Collection > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -687,8 +687,8 @@ jboolean java::util::Collections::addAll(local_ref< java::util::Collection > con
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(49),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(49), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean java::util::Collections::disjoint(local_ref< java::util::Collection > const &a0, local_ref< java::util::Collection > const &a1)
@@ -697,8 +697,8 @@ jboolean java::util::Collections::disjoint(local_ref< java::util::Collection > c
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(50),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::util::Set > java::util::Collections::newSetFromMap(local_ref< java::util::Map > const &a0)
@@ -707,8 +707,8 @@ local_ref< java::util::Set > java::util::Collections::newSetFromMap(local_ref< j
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(51),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::util::Set > >
-	(a0);
+		local_ref< java::util::Set >
+	>(a0);
 }
 
 local_ref< java::util::Queue > java::util::Collections::asLifoQueue(local_ref< java::util::Deque > const &a0)
@@ -717,8 +717,8 @@ local_ref< java::util::Queue > java::util::Collections::asLifoQueue(local_ref< j
 		java::util::Collections::J2CPP_CLASS_NAME,
 		java::util::Collections::J2CPP_METHOD_NAME(52),
 		java::util::Collections::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::util::Queue > >
-	(a0);
+		local_ref< java::util::Queue >
+	>(a0);
 }
 
 

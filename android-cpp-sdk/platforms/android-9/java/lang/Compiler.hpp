@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_COMPILER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -83,8 +83,8 @@ local_ref< java::lang::Object > java::lang::Compiler::command(local_ref< java::l
 		java::lang::Compiler::J2CPP_CLASS_NAME,
 		java::lang::Compiler::J2CPP_METHOD_NAME(1),
 		java::lang::Compiler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 jboolean java::lang::Compiler::compileClass(local_ref< java::lang::Class > const &a0)
@@ -93,8 +93,8 @@ jboolean java::lang::Compiler::compileClass(local_ref< java::lang::Class > const
 		java::lang::Compiler::J2CPP_CLASS_NAME,
 		java::lang::Compiler::J2CPP_METHOD_NAME(2),
 		java::lang::Compiler::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Compiler::compileClasses(local_ref< java::lang::String > const &a0)
@@ -103,8 +103,8 @@ jboolean java::lang::Compiler::compileClasses(local_ref< java::lang::String > co
 		java::lang::Compiler::J2CPP_CLASS_NAME,
 		java::lang::Compiler::J2CPP_METHOD_NAME(3),
 		java::lang::Compiler::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void java::lang::Compiler::disable()
@@ -113,8 +113,8 @@ void java::lang::Compiler::disable()
 		java::lang::Compiler::J2CPP_CLASS_NAME,
 		java::lang::Compiler::J2CPP_METHOD_NAME(4),
 		java::lang::Compiler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	();
+		void
+	>();
 }
 
 void java::lang::Compiler::enable()
@@ -123,8 +123,8 @@ void java::lang::Compiler::enable()
 		java::lang::Compiler::J2CPP_CLASS_NAME,
 		java::lang::Compiler::J2CPP_METHOD_NAME(5),
 		java::lang::Compiler::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	();
+		void
+	>();
 }
 
 

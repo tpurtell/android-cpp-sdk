@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_TEST_SUITEBUILDER_TESTMETHOD_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Method; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -100,8 +100,8 @@ android::test::suitebuilder::TestMethod::TestMethod(local_ref< java::lang::refle
 	call_new_object<
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(0),
-		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -113,8 +113,8 @@ android::test::suitebuilder::TestMethod::TestMethod(local_ref< java::lang::Strin
 	call_new_object<
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(1),
-		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +126,8 @@ android::test::suitebuilder::TestMethod::TestMethod(local_ref< junit::framework:
 	call_new_object<
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(2),
-		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -139,8 +139,8 @@ local_ref< java::lang::String > android::test::suitebuilder::TestMethod::getName
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(3),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::test::suitebuilder::TestMethod::getEnclosingClassname()
@@ -149,8 +149,8 @@ local_ref< java::lang::String > android::test::suitebuilder::TestMethod::getEncl
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(4),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::annotation::Annotation > android::test::suitebuilder::TestMethod::getAnnotation(local_ref< java::lang::Class > const &a0)
@@ -159,8 +159,8 @@ local_ref< java::lang::annotation::Annotation > android::test::suitebuilder::Tes
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(5),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::annotation::Annotation > >
-	(get_jobject(), a0);
+		local_ref< java::lang::annotation::Annotation >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Class > android::test::suitebuilder::TestMethod::getEnclosingClass()
@@ -169,8 +169,8 @@ local_ref< java::lang::Class > android::test::suitebuilder::TestMethod::getEnclo
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(6),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< junit::framework::TestCase > android::test::suitebuilder::TestMethod::createTest()
@@ -179,8 +179,8 @@ local_ref< junit::framework::TestCase > android::test::suitebuilder::TestMethod:
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(7),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< junit::framework::TestCase > >
-	(get_jobject());
+		local_ref< junit::framework::TestCase >
+	>(get_jobject());
 }
 
 jboolean android::test::suitebuilder::TestMethod::equals(local_ref< java::lang::Object > const &a0)
@@ -189,8 +189,8 @@ jboolean android::test::suitebuilder::TestMethod::equals(local_ref< java::lang::
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(8),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::test::suitebuilder::TestMethod::hashCode()
@@ -199,8 +199,8 @@ jint android::test::suitebuilder::TestMethod::hashCode()
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(9),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::test::suitebuilder::TestMethod::toString()
@@ -209,8 +209,8 @@ local_ref< java::lang::String > android::test::suitebuilder::TestMethod::toStrin
 		android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(10),
 		android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

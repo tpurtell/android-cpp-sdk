@@ -95,8 +95,8 @@ android::gesture::GestureStroke::GestureStroke(local_ref< java::util::ArrayList 
 	call_new_object<
 		android::gesture::GestureStroke::J2CPP_CLASS_NAME,
 		android::gesture::GestureStroke::J2CPP_METHOD_NAME(0),
-		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , boundingBox(get_jobject())
 , length(get_jobject())
@@ -111,8 +111,8 @@ local_ref< android::graphics::Path > android::gesture::GestureStroke::getPath()
 		android::gesture::GestureStroke::J2CPP_CLASS_NAME,
 		android::gesture::GestureStroke::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Path > >
-	(get_jobject());
+		local_ref< android::graphics::Path >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Path > android::gesture::GestureStroke::toPath(jfloat a0, jfloat a1, jint a2)
@@ -121,8 +121,8 @@ local_ref< android::graphics::Path > android::gesture::GestureStroke::toPath(jfl
 		android::gesture::GestureStroke::J2CPP_CLASS_NAME,
 		android::gesture::GestureStroke::J2CPP_METHOD_NAME(2),
 		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Path > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::graphics::Path >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::gesture::GestureStroke::clearPath()
@@ -131,8 +131,8 @@ void android::gesture::GestureStroke::clearPath()
 		android::gesture::GestureStroke::J2CPP_CLASS_NAME,
 		android::gesture::GestureStroke::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureStroke::computeOrientedBoundingBox()
@@ -141,8 +141,8 @@ local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureStro
 		android::gesture::GestureStroke::J2CPP_CLASS_NAME,
 		android::gesture::GestureStroke::J2CPP_METHOD_NAME(4),
 		android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::gesture::OrientedBoundingBox > >
-	(get_jobject());
+		local_ref< android::gesture::OrientedBoundingBox >
+	>(get_jobject());
 }
 
 

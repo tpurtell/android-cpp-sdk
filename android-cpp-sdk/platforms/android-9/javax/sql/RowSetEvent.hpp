@@ -12,11 +12,13 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class RowSet; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/EventObject.hpp>
 #include <javax/sql/RowSet.hpp>
 
@@ -40,6 +42,7 @@ namespace javax { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -63,6 +66,11 @@ namespace j2cpp {
 
 
 
+javax::sql::RowSetEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::sql::RowSetEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
@@ -79,8 +87,8 @@ javax::sql::RowSetEvent::RowSetEvent(local_ref< javax::sql::RowSet > const &a0)
 	call_new_object<
 		javax::sql::RowSetEvent::J2CPP_CLASS_NAME,
 		javax::sql::RowSetEvent::J2CPP_METHOD_NAME(0),
-		javax::sql::RowSetEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::sql::RowSetEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

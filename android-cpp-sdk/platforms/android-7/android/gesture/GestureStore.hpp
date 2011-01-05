@@ -120,8 +120,8 @@ android::gesture::GestureStore::GestureStore()
 	call_new_object<
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(0),
-		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -133,8 +133,8 @@ void android::gesture::GestureStore::setOrientationStyle(jint a0)
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::gesture::GestureStore::getOrientationStyle()
@@ -143,8 +143,8 @@ jint android::gesture::GestureStore::getOrientationStyle()
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(2),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::gesture::GestureStore::setSequenceType(jint a0)
@@ -153,8 +153,8 @@ void android::gesture::GestureStore::setSequenceType(jint a0)
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::gesture::GestureStore::getSequenceType()
@@ -163,8 +163,8 @@ jint android::gesture::GestureStore::getSequenceType()
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(4),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > android::gesture::GestureStore::getGestureEntries()
@@ -173,8 +173,8 @@ local_ref< java::util::Set > android::gesture::GestureStore::getGestureEntries()
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(5),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::ArrayList > android::gesture::GestureStore::recognize(local_ref< android::gesture::Gesture > const &a0)
@@ -183,8 +183,8 @@ local_ref< java::util::ArrayList > android::gesture::GestureStore::recognize(loc
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(6),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject(), a0);
+		local_ref< java::util::ArrayList >
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureStore::addGesture(local_ref< java::lang::String > const &a0, local_ref< android::gesture::Gesture > const &a1)
@@ -193,8 +193,8 @@ void android::gesture::GestureStore::addGesture(local_ref< java::lang::String > 
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(7),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureStore::removeGesture(local_ref< java::lang::String > const &a0, local_ref< android::gesture::Gesture > const &a1)
@@ -203,8 +203,8 @@ void android::gesture::GestureStore::removeGesture(local_ref< java::lang::String
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(8),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureStore::removeEntry(local_ref< java::lang::String > const &a0)
@@ -213,8 +213,8 @@ void android::gesture::GestureStore::removeEntry(local_ref< java::lang::String >
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(9),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::ArrayList > android::gesture::GestureStore::getGestures(local_ref< java::lang::String > const &a0)
@@ -223,8 +223,8 @@ local_ref< java::util::ArrayList > android::gesture::GestureStore::getGestures(l
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(10),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject(), a0);
+		local_ref< java::util::ArrayList >
+	>(get_jobject(), a0);
 }
 
 jboolean android::gesture::GestureStore::hasChanged()
@@ -233,8 +233,8 @@ jboolean android::gesture::GestureStore::hasChanged()
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(11),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::gesture::GestureStore::save(local_ref< java::io::OutputStream > const &a0)
@@ -243,8 +243,8 @@ void android::gesture::GestureStore::save(local_ref< java::io::OutputStream > co
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(12),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureStore::save(local_ref< java::io::OutputStream > const &a0, jboolean a1)
@@ -253,8 +253,8 @@ void android::gesture::GestureStore::save(local_ref< java::io::OutputStream > co
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(13),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureStore::load(local_ref< java::io::InputStream > const &a0)
@@ -263,8 +263,8 @@ void android::gesture::GestureStore::load(local_ref< java::io::InputStream > con
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(14),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureStore::load(local_ref< java::io::InputStream > const &a0, jboolean a1)
@@ -273,8 +273,8 @@ void android::gesture::GestureStore::load(local_ref< java::io::InputStream > con
 		android::gesture::GestureStore::J2CPP_CLASS_NAME,
 		android::gesture::GestureStore::J2CPP_METHOD_NAME(15),
 		android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

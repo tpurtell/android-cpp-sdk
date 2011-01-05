@@ -91,8 +91,8 @@ local_ref< android::webkit::CookieManager > android::webkit::CookieManager::getI
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(2),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::webkit::CookieManager > >
-	();
+		local_ref< android::webkit::CookieManager >
+	>();
 }
 
 void android::webkit::CookieManager::setAcceptCookie(jboolean a0)
@@ -101,8 +101,8 @@ void android::webkit::CookieManager::setAcceptCookie(jboolean a0)
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(3),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::CookieManager::acceptCookie()
@@ -111,8 +111,8 @@ jboolean android::webkit::CookieManager::acceptCookie()
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(4),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::CookieManager::setCookie(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -121,8 +121,8 @@ void android::webkit::CookieManager::setCookie(local_ref< java::lang::String > c
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(5),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::webkit::CookieManager::getCookie(local_ref< java::lang::String > const &a0)
@@ -131,8 +131,8 @@ local_ref< java::lang::String > android::webkit::CookieManager::getCookie(local_
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(6),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CookieManager::removeSessionCookie()
@@ -141,8 +141,8 @@ void android::webkit::CookieManager::removeSessionCookie()
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(7),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CookieManager::removeAllCookie()
@@ -151,8 +151,8 @@ void android::webkit::CookieManager::removeAllCookie()
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(8),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::CookieManager::hasCookies()
@@ -161,8 +161,8 @@ jboolean android::webkit::CookieManager::hasCookies()
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(9),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::CookieManager::removeExpiredCookie()
@@ -171,8 +171,8 @@ void android::webkit::CookieManager::removeExpiredCookie()
 		android::webkit::CookieManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieManager::J2CPP_METHOD_NAME(10),
 		android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

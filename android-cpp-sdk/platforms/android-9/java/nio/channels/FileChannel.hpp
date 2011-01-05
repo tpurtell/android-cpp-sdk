@@ -20,19 +20,25 @@ namespace j2cpp { namespace java { namespace nio { namespace channels { class Sc
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileLock; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace FileChannel_ { class MapMode; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/nio/MappedByteBuffer.hpp>
 #include <java/nio/channels/ByteChannel.hpp>
+#include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/FileChannel.hpp>
 #include <java/nio/channels/FileLock.hpp>
 #include <java/nio/channels/GatheringByteChannel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
 #include <java/nio/channels/ScatteringByteChannel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
@@ -114,10 +120,16 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
-		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
-		operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::WritableByteChannel>() const;
 		operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+		operator local_ref<java::nio::channels::GatheringByteChannel>() const;
 		operator local_ref<java::nio::channels::ByteChannel>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		void force(jboolean);
@@ -172,8 +184,8 @@ local_ref< java::lang::String > java::nio::channels::FileChannel_::MapMode::toSt
 		java::nio::channels::FileChannel_::MapMode::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel_::MapMode::J2CPP_METHOD_NAME(1),
 		java::nio::channels::FileChannel_::MapMode::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -210,14 +222,14 @@ J2CPP_DEFINE_FIELD(java::nio::channels::FileChannel_::MapMode,2,"READ_WRITE","Lj
 
 
 
-java::nio::channels::FileChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
+java::nio::channels::FileChannel::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::nio::channels::FileChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
 {
-	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
+	return local_ref<java::nio::channels::WritableByteChannel>(get_jobject());
 }
 
 java::nio::channels::FileChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
@@ -225,9 +237,39 @@ java::nio::channels::FileChannel::operator local_ref<java::nio::channels::Scatte
 	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jobject());
 }
 
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+{
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
+}
+
 java::nio::channels::FileChannel::operator local_ref<java::nio::channels::ByteChannel>() const
 {
 	return local_ref<java::nio::channels::ByteChannel>(get_jobject());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
+{
+	return local_ref<java::nio::channels::ReadableByteChannel>(get_jobject());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -237,8 +279,8 @@ void java::nio::channels::FileChannel::force(jboolean a0)
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::lock()
@@ -247,8 +289,8 @@ local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::loc
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(2),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::channels::FileLock > >
-	(get_jobject());
+		local_ref< java::nio::channels::FileLock >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::lock(jlong a0, jlong a1, jboolean a2)
@@ -257,8 +299,8 @@ local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::loc
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(3),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::channels::FileLock > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::channels::FileLock >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::nio::MappedByteBuffer > java::nio::channels::FileChannel::map(local_ref< java::nio::channels::FileChannel_::MapMode > const &a0, jlong a1, jlong a2)
@@ -267,8 +309,8 @@ local_ref< java::nio::MappedByteBuffer > java::nio::channels::FileChannel::map(l
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(4),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::MappedByteBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::MappedByteBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::nio::channels::FileChannel::position()
@@ -277,8 +319,8 @@ jlong java::nio::channels::FileChannel::position()
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(5),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::FileChannel > java::nio::channels::FileChannel::position(jlong a0)
@@ -287,8 +329,8 @@ local_ref< java::nio::channels::FileChannel > java::nio::channels::FileChannel::
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(6),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::channels::FileChannel > >
-	(get_jobject(), a0);
+		local_ref< java::nio::channels::FileChannel >
+	>(get_jobject(), a0);
 }
 
 jint java::nio::channels::FileChannel::read(local_ref< java::nio::ByteBuffer > const &a0)
@@ -297,8 +339,8 @@ jint java::nio::channels::FileChannel::read(local_ref< java::nio::ByteBuffer > c
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(7),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::nio::channels::FileChannel::read(local_ref< java::nio::ByteBuffer > const &a0, jlong a1)
@@ -307,8 +349,8 @@ jint java::nio::channels::FileChannel::read(local_ref< java::nio::ByteBuffer > c
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(8),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::nio::channels::FileChannel::read(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0)
@@ -317,8 +359,8 @@ jlong java::nio::channels::FileChannel::read(local_ref< array< local_ref< java::
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(9),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::channels::FileChannel::read(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0, jint a1, jint a2)
@@ -327,8 +369,8 @@ jlong java::nio::channels::FileChannel::read(local_ref< array< local_ref< java::
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(10),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::nio::channels::FileChannel::size()
@@ -337,8 +379,8 @@ jlong java::nio::channels::FileChannel::size()
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(11),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::nio::channels::FileChannel::transferFrom(local_ref< java::nio::channels::ReadableByteChannel > const &a0, jlong a1, jlong a2)
@@ -347,8 +389,8 @@ jlong java::nio::channels::FileChannel::transferFrom(local_ref< java::nio::chann
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(12),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::nio::channels::FileChannel::transferTo(jlong a0, jlong a1, local_ref< java::nio::channels::WritableByteChannel > const &a2)
@@ -357,8 +399,8 @@ jlong java::nio::channels::FileChannel::transferTo(jlong a0, jlong a1, local_ref
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(13),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::nio::channels::FileChannel > java::nio::channels::FileChannel::truncate(jlong a0)
@@ -367,8 +409,8 @@ local_ref< java::nio::channels::FileChannel > java::nio::channels::FileChannel::
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(14),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::nio::channels::FileChannel > >
-	(get_jobject(), a0);
+		local_ref< java::nio::channels::FileChannel >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::tryLock()
@@ -377,8 +419,8 @@ local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::try
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(15),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::nio::channels::FileLock > >
-	(get_jobject());
+		local_ref< java::nio::channels::FileLock >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::tryLock(jlong a0, jlong a1, jboolean a2)
@@ -387,8 +429,8 @@ local_ref< java::nio::channels::FileLock > java::nio::channels::FileChannel::try
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(16),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::nio::channels::FileLock > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::channels::FileLock >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint java::nio::channels::FileChannel::write(local_ref< java::nio::ByteBuffer > const &a0)
@@ -397,8 +439,8 @@ jint java::nio::channels::FileChannel::write(local_ref< java::nio::ByteBuffer > 
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(17),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::nio::channels::FileChannel::write(local_ref< java::nio::ByteBuffer > const &a0, jlong a1)
@@ -407,8 +449,8 @@ jint java::nio::channels::FileChannel::write(local_ref< java::nio::ByteBuffer > 
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(18),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::nio::channels::FileChannel::write(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0)
@@ -417,8 +459,8 @@ jlong java::nio::channels::FileChannel::write(local_ref< array< local_ref< java:
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(19),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(19), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::channels::FileChannel::write(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0, jint a1, jint a2)
@@ -427,8 +469,8 @@ jlong java::nio::channels::FileChannel::write(local_ref< array< local_ref< java:
 		java::nio::channels::FileChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::FileChannel::J2CPP_METHOD_NAME(20),
 		java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(20), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 

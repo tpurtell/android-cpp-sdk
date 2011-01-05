@@ -63,8 +63,8 @@ namespace android { namespace view { namespace inputmethod {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ExtractedText();
@@ -100,14 +100,14 @@ namespace j2cpp {
 
 
 
-android::view::inputmethod::ExtractedText::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::inputmethod::ExtractedText::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::view::inputmethod::ExtractedText::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -116,8 +116,8 @@ android::view::inputmethod::ExtractedText::ExtractedText()
 	call_new_object<
 		android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME,
 		android::view::inputmethod::ExtractedText::J2CPP_METHOD_NAME(0),
-		android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , text(get_jobject())
 , startOffset(get_jobject())
@@ -136,8 +136,8 @@ void android::view::inputmethod::ExtractedText::writeToParcel(local_ref< android
 		android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME,
 		android::view::inputmethod::ExtractedText::J2CPP_METHOD_NAME(1),
 		android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::inputmethod::ExtractedText::describeContents()
@@ -146,8 +146,8 @@ jint android::view::inputmethod::ExtractedText::describeContents()
 		android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME,
 		android::view::inputmethod::ExtractedText::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

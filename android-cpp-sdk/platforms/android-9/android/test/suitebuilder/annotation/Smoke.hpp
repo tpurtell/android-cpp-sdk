@@ -37,8 +37,8 @@ namespace android { namespace test { namespace suitebuilder { namespace annotati
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class Smoke
 
@@ -60,14 +60,14 @@ namespace j2cpp {
 
 
 
-android::test::suitebuilder::annotation::Smoke::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::test::suitebuilder::annotation::Smoke::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+android::test::suitebuilder::annotation::Smoke::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::test::suitebuilder::annotation::Smoke,"android/test/suitebuilder/annotation/Smoke")

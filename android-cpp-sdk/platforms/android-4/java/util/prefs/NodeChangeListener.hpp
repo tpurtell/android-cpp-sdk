@@ -41,8 +41,8 @@ namespace java { namespace util { namespace prefs {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void childAdded(local_ref< java::util::prefs::NodeChangeEvent >  const&);
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-java::util::prefs::NodeChangeListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::prefs::NodeChangeListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+java::util::prefs::NodeChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::util::prefs::NodeChangeListener::childAdded(local_ref< java::util::prefs::NodeChangeEvent > const &a0)
@@ -82,8 +82,8 @@ void java::util::prefs::NodeChangeListener::childAdded(local_ref< java::util::pr
 		java::util::prefs::NodeChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_NAME(0),
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::NodeChangeListener::childRemoved(local_ref< java::util::prefs::NodeChangeEvent > const &a0)
@@ -92,8 +92,8 @@ void java::util::prefs::NodeChangeListener::childRemoved(local_ref< java::util::
 		java::util::prefs::NodeChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_NAME(1),
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

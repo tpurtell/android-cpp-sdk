@@ -73,8 +73,8 @@ java::security::PolicySpi::PolicySpi()
 	call_new_object<
 		java::security::PolicySpi::J2CPP_CLASS_NAME,
 		java::security::PolicySpi::J2CPP_METHOD_NAME(0),
-		java::security::PolicySpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::PolicySpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

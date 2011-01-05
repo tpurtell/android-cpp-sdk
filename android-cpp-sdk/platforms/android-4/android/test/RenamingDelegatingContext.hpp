@@ -20,6 +20,7 @@ namespace j2cpp { namespace java { namespace io { class FileInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FileOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 
 
@@ -31,6 +32,7 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 #include <java/io/FileInputStream.hpp>
 #include <java/io/FileOutputStream.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -67,6 +69,8 @@ namespace android { namespace test {
 		}
 
 		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RenamingDelegatingContext(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&);
@@ -106,14 +110,24 @@ android::test::RenamingDelegatingContext::operator local_ref<android::content::C
 	return local_ref<android::content::ContextWrapper>(get_jobject());
 }
 
+android::test::RenamingDelegatingContext::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::test::RenamingDelegatingContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::test::RenamingDelegatingContext::RenamingDelegatingContext(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1)
 : object<android::test::RenamingDelegatingContext>(
 	call_new_object<
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(0),
-		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -125,8 +139,8 @@ android::test::RenamingDelegatingContext::RenamingDelegatingContext(local_ref< a
 	call_new_object<
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(1),
-		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -138,8 +152,8 @@ local_ref< android::content::ContentProvider > android::test::RenamingDelegating
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(2),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::ContentProvider > >
-	(a0, a1, a2);
+		local_ref< android::content::ContentProvider >
+	>(a0, a1, a2);
 }
 
 local_ref< android::content::ContentProvider > android::test::RenamingDelegatingContext::providerWithRenamedContext(local_ref< java::lang::Class > const &a0, local_ref< android::content::Context > const &a1, local_ref< java::lang::String > const &a2, jboolean a3)
@@ -148,8 +162,8 @@ local_ref< android::content::ContentProvider > android::test::RenamingDelegating
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(3),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::ContentProvider > >
-	(a0, a1, a2, a3);
+		local_ref< android::content::ContentProvider >
+	>(a0, a1, a2, a3);
 }
 
 void android::test::RenamingDelegatingContext::makeExistingFilesAndDbsAccessible()
@@ -158,8 +172,8 @@ void android::test::RenamingDelegatingContext::makeExistingFilesAndDbsAccessible
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(4),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::test::RenamingDelegatingContext::getDatabasePrefix()
@@ -168,8 +182,8 @@ local_ref< java::lang::String > android::test::RenamingDelegatingContext::getDat
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(5),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::test::RenamingDelegatingContext::openOrCreateDatabase(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a2)
@@ -178,8 +192,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::test::RenamingDe
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(6),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::test::RenamingDelegatingContext::deleteDatabase(local_ref< java::lang::String > const &a0)
@@ -188,8 +202,8 @@ jboolean android::test::RenamingDelegatingContext::deleteDatabase(local_ref< jav
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(7),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::test::RenamingDelegatingContext::databaseList()
@@ -198,8 +212,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::test::RenamingD
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(8),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::io::FileInputStream > android::test::RenamingDelegatingContext::openFileInput(local_ref< java::lang::String > const &a0)
@@ -208,8 +222,8 @@ local_ref< java::io::FileInputStream > android::test::RenamingDelegatingContext:
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(9),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::io::FileInputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::FileInputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::FileOutputStream > android::test::RenamingDelegatingContext::openFileOutput(local_ref< java::lang::String > const &a0, jint a1)
@@ -218,8 +232,8 @@ local_ref< java::io::FileOutputStream > android::test::RenamingDelegatingContext
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(10),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::io::FileOutputStream > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::FileOutputStream >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::File > android::test::RenamingDelegatingContext::getFileStreamPath(local_ref< java::lang::String > const &a0)
@@ -228,8 +242,8 @@ local_ref< java::io::File > android::test::RenamingDelegatingContext::getFileStr
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(11),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::io::File > >
-	(get_jobject(), a0);
+		local_ref< java::io::File >
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::RenamingDelegatingContext::deleteFile(local_ref< java::lang::String > const &a0)
@@ -238,8 +252,8 @@ jboolean android::test::RenamingDelegatingContext::deleteFile(local_ref< java::l
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(12),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::test::RenamingDelegatingContext::fileList()
@@ -248,8 +262,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::test::RenamingD
 		android::test::RenamingDelegatingContext::J2CPP_CLASS_NAME,
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_NAME(13),
 		android::test::RenamingDelegatingContext::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 

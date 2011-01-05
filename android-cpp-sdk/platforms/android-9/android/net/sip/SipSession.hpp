@@ -199,8 +199,8 @@ android::net::sip::SipSession_::Listener::Listener()
 	call_new_object<
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(0),
-		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -212,8 +212,8 @@ void android::net::sip::SipSession_::Listener::onCalling(local_ref< android::net
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession_::Listener::onRinging(local_ref< android::net::sip::SipSession > const &a0, local_ref< android::net::sip::SipProfile > const &a1, local_ref< java::lang::String > const &a2)
@@ -222,8 +222,8 @@ void android::net::sip::SipSession_::Listener::onRinging(local_ref< android::net
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipSession_::Listener::onRingingBack(local_ref< android::net::sip::SipSession > const &a0)
@@ -232,8 +232,8 @@ void android::net::sip::SipSession_::Listener::onRingingBack(local_ref< android:
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession_::Listener::onCallEstablished(local_ref< android::net::sip::SipSession > const &a0, local_ref< java::lang::String > const &a1)
@@ -242,8 +242,8 @@ void android::net::sip::SipSession_::Listener::onCallEstablished(local_ref< andr
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipSession_::Listener::onCallEnded(local_ref< android::net::sip::SipSession > const &a0)
@@ -252,8 +252,8 @@ void android::net::sip::SipSession_::Listener::onCallEnded(local_ref< android::n
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession_::Listener::onCallBusy(local_ref< android::net::sip::SipSession > const &a0)
@@ -262,8 +262,8 @@ void android::net::sip::SipSession_::Listener::onCallBusy(local_ref< android::ne
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession_::Listener::onError(local_ref< android::net::sip::SipSession > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -272,8 +272,8 @@ void android::net::sip::SipSession_::Listener::onError(local_ref< android::net::
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipSession_::Listener::onCallChangeFailed(local_ref< android::net::sip::SipSession > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -282,8 +282,8 @@ void android::net::sip::SipSession_::Listener::onCallChangeFailed(local_ref< and
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipSession_::Listener::onRegistering(local_ref< android::net::sip::SipSession > const &a0)
@@ -292,8 +292,8 @@ void android::net::sip::SipSession_::Listener::onRegistering(local_ref< android:
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession_::Listener::onRegistrationDone(local_ref< android::net::sip::SipSession > const &a0, jint a1)
@@ -302,8 +302,8 @@ void android::net::sip::SipSession_::Listener::onRegistrationDone(local_ref< and
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipSession_::Listener::onRegistrationFailed(local_ref< android::net::sip::SipSession > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -312,8 +312,8 @@ void android::net::sip::SipSession_::Listener::onRegistrationFailed(local_ref< a
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipSession_::Listener::onRegistrationTimeout(local_ref< android::net::sip::SipSession > const &a0)
@@ -322,8 +322,8 @@ void android::net::sip::SipSession_::Listener::onRegistrationTimeout(local_ref< 
 		android::net::sip::SipSession_::Listener::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_NAME(12),
 		android::net::sip::SipSession_::Listener::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -355,8 +355,8 @@ local_ref< java::lang::String > android::net::sip::SipSession_::State::toString(
 		android::net::sip::SipSession_::State::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession_::State::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipSession_::State::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 
@@ -467,8 +467,8 @@ local_ref< java::lang::String > android::net::sip::SipSession::getLocalIp()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::net::sip::SipProfile > android::net::sip::SipSession::getLocalProfile()
@@ -477,8 +477,8 @@ local_ref< android::net::sip::SipProfile > android::net::sip::SipSession::getLoc
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::sip::SipProfile > >
-	(get_jobject());
+		local_ref< android::net::sip::SipProfile >
+	>(get_jobject());
 }
 
 local_ref< android::net::sip::SipProfile > android::net::sip::SipSession::getPeerProfile()
@@ -487,8 +487,8 @@ local_ref< android::net::sip::SipProfile > android::net::sip::SipSession::getPee
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::sip::SipProfile > >
-	(get_jobject());
+		local_ref< android::net::sip::SipProfile >
+	>(get_jobject());
 }
 
 jint android::net::sip::SipSession::getState()
@@ -497,8 +497,8 @@ jint android::net::sip::SipSession::getState()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::net::sip::SipSession::isInCall()
@@ -507,8 +507,8 @@ jboolean android::net::sip::SipSession::isInCall()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipSession::getCallId()
@@ -517,8 +517,8 @@ local_ref< java::lang::String > android::net::sip::SipSession::getCallId()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::net::sip::SipSession::setListener(local_ref< android::net::sip::SipSession_::Listener > const &a0)
@@ -527,8 +527,8 @@ void android::net::sip::SipSession::setListener(local_ref< android::net::sip::Si
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession::register_(jint a0)
@@ -537,8 +537,8 @@ void android::net::sip::SipSession::register_(jint a0)
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipSession::unregister()
@@ -547,8 +547,8 @@ void android::net::sip::SipSession::unregister()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::sip::SipSession::makeCall(local_ref< android::net::sip::SipProfile > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -557,8 +557,8 @@ void android::net::sip::SipSession::makeCall(local_ref< android::net::sip::SipPr
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::net::sip::SipSession::answerCall(local_ref< java::lang::String > const &a0, jint a1)
@@ -567,8 +567,8 @@ void android::net::sip::SipSession::answerCall(local_ref< java::lang::String > c
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipSession::endCall()
@@ -577,8 +577,8 @@ void android::net::sip::SipSession::endCall()
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(12),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::net::sip::SipSession::changeCall(local_ref< java::lang::String > const &a0, jint a1)
@@ -587,8 +587,8 @@ void android::net::sip::SipSession::changeCall(local_ref< java::lang::String > c
 		android::net::sip::SipSession::J2CPP_CLASS_NAME,
 		android::net::sip::SipSession::J2CPP_METHOD_NAME(13),
 		android::net::sip::SipSession::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

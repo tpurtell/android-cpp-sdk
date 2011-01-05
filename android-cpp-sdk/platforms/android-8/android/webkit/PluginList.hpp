@@ -85,8 +85,8 @@ android::webkit::PluginList::PluginList()
 	call_new_object<
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(0),
-		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::util::List > android::webkit::PluginList::getList()
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(1),
 		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void android::webkit::PluginList::addPlugin(local_ref< android::webkit::Plugin > const &a0)
@@ -108,8 +108,8 @@ void android::webkit::PluginList::addPlugin(local_ref< android::webkit::Plugin >
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(2),
 		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::PluginList::removePlugin(local_ref< android::webkit::Plugin > const &a0)
@@ -118,8 +118,8 @@ void android::webkit::PluginList::removePlugin(local_ref< android::webkit::Plugi
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(3),
 		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::PluginList::clear()
@@ -128,8 +128,8 @@ void android::webkit::PluginList::clear()
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(4),
 		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::PluginList::pluginClicked(local_ref< android::content::Context > const &a0, jint a1)
@@ -138,8 +138,8 @@ void android::webkit::PluginList::pluginClicked(local_ref< android::content::Con
 		android::webkit::PluginList::J2CPP_CLASS_NAME,
 		android::webkit::PluginList::J2CPP_METHOD_NAME(5),
 		android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

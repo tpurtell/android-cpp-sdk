@@ -11,10 +11,6 @@
 #define J2CPP_ANDROID_APP_INSTRUMENTATION_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { namespace Instrumentation_ { class ActivityResult; } } } }
-namespace j2cpp { namespace android { namespace app { class Application; } } }
-namespace j2cpp { namespace android { namespace app { class Activity; } } }
-namespace j2cpp { namespace android { namespace app { namespace Instrumentation_ { class ActivityMonitor; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
@@ -31,6 +27,10 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace android { namespace app { namespace Instrumentation_ { class ActivityResult; } } } }
+namespace j2cpp { namespace android { namespace app { class Application; } } }
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
+namespace j2cpp { namespace android { namespace app { namespace Instrumentation_ { class ActivityMonitor; } } } }
 
 
 #include <android/app/Activity.hpp>
@@ -295,8 +295,8 @@ android::app::Instrumentation_::ActivityResult::ActivityResult(jint a0, local_re
 	call_new_object<
 		android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_NAME(0),
-		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -308,8 +308,8 @@ jint android::app::Instrumentation_::ActivityResult::getResultCode()
 		android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_NAME(1),
 		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::content::Intent > android::app::Instrumentation_::ActivityResult::getResultData()
@@ -318,8 +318,8 @@ local_ref< android::content::Intent > android::app::Instrumentation_::ActivityRe
 		android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_NAME(2),
 		android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::Intent > >
-	(get_jobject());
+		local_ref< android::content::Intent >
+	>(get_jobject());
 }
 
 
@@ -340,8 +340,8 @@ android::app::Instrumentation_::ActivityMonitor::ActivityMonitor(local_ref< andr
 	call_new_object<
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(0),
-		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -353,8 +353,8 @@ android::app::Instrumentation_::ActivityMonitor::ActivityMonitor(local_ref< java
 	call_new_object<
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(1),
-		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -366,8 +366,8 @@ local_ref< android::content::IntentFilter > android::app::Instrumentation_::Acti
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(2),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::IntentFilter > >
-	(get_jobject());
+		local_ref< android::content::IntentFilter >
+	>(get_jobject());
 }
 
 local_ref< android::app::Instrumentation_::ActivityResult > android::app::Instrumentation_::ActivityMonitor::getResult()
@@ -376,8 +376,8 @@ local_ref< android::app::Instrumentation_::ActivityResult > android::app::Instru
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(3),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::Instrumentation_::ActivityResult > >
-	(get_jobject());
+		local_ref< android::app::Instrumentation_::ActivityResult >
+	>(get_jobject());
 }
 
 jboolean android::app::Instrumentation_::ActivityMonitor::isBlocking()
@@ -386,8 +386,8 @@ jboolean android::app::Instrumentation_::ActivityMonitor::isBlocking()
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(4),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::app::Instrumentation_::ActivityMonitor::getHits()
@@ -396,8 +396,8 @@ jint android::app::Instrumentation_::ActivityMonitor::getHits()
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(5),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMonitor::getLastActivity()
@@ -406,8 +406,8 @@ local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMoni
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(6),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::app::Activity > >
-	(get_jobject());
+		local_ref< android::app::Activity >
+	>(get_jobject());
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMonitor::waitForActivity()
@@ -416,8 +416,8 @@ local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMoni
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(7),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::app::Activity > >
-	(get_jobject());
+		local_ref< android::app::Activity >
+	>(get_jobject());
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMonitor::waitForActivityWithTimeout(jlong a0)
@@ -426,8 +426,8 @@ local_ref< android::app::Activity > android::app::Instrumentation_::ActivityMoni
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME,
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(8),
 		android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0);
 }
 
 
@@ -455,8 +455,8 @@ android::app::Instrumentation::Instrumentation()
 	call_new_object<
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(0),
-		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -468,8 +468,8 @@ void android::app::Instrumentation::onCreate(local_ref< android::os::Bundle > co
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(1),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::start()
@@ -478,8 +478,8 @@ void android::app::Instrumentation::start()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(2),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::onStart()
@@ -488,8 +488,8 @@ void android::app::Instrumentation::onStart()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(3),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::app::Instrumentation::onException(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -498,8 +498,8 @@ jboolean android::app::Instrumentation::onException(local_ref< java::lang::Objec
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(4),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::sendStatus(jint a0, local_ref< android::os::Bundle > const &a1)
@@ -508,8 +508,8 @@ void android::app::Instrumentation::sendStatus(jint a0, local_ref< android::os::
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(5),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::finish(jint a0, local_ref< android::os::Bundle > const &a1)
@@ -518,8 +518,8 @@ void android::app::Instrumentation::finish(jint a0, local_ref< android::os::Bund
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(6),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::setAutomaticPerformanceSnapshots()
@@ -528,8 +528,8 @@ void android::app::Instrumentation::setAutomaticPerformanceSnapshots()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(7),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::startPerformanceSnapshot()
@@ -538,8 +538,8 @@ void android::app::Instrumentation::startPerformanceSnapshot()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(8),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::endPerformanceSnapshot()
@@ -548,8 +548,8 @@ void android::app::Instrumentation::endPerformanceSnapshot()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(9),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::onDestroy()
@@ -558,8 +558,8 @@ void android::app::Instrumentation::onDestroy()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(10),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::content::Context > android::app::Instrumentation::getContext()
@@ -568,8 +568,8 @@ local_ref< android::content::Context > android::app::Instrumentation::getContext
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(11),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 local_ref< android::content::ComponentName > android::app::Instrumentation::getComponentName()
@@ -578,8 +578,8 @@ local_ref< android::content::ComponentName > android::app::Instrumentation::getC
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(12),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject());
+		local_ref< android::content::ComponentName >
+	>(get_jobject());
 }
 
 local_ref< android::content::Context > android::app::Instrumentation::getTargetContext()
@@ -588,8 +588,8 @@ local_ref< android::content::Context > android::app::Instrumentation::getTargetC
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(13),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 jboolean android::app::Instrumentation::isProfiling()
@@ -598,8 +598,8 @@ jboolean android::app::Instrumentation::isProfiling()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(14),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::startProfiling()
@@ -608,8 +608,8 @@ void android::app::Instrumentation::startProfiling()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(15),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::stopProfiling()
@@ -618,8 +618,8 @@ void android::app::Instrumentation::stopProfiling()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(16),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::setInTouchMode(jboolean a0)
@@ -628,8 +628,8 @@ void android::app::Instrumentation::setInTouchMode(jboolean a0)
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(17),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::waitForIdle(local_ref< java::lang::Runnable > const &a0)
@@ -638,8 +638,8 @@ void android::app::Instrumentation::waitForIdle(local_ref< java::lang::Runnable 
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(18),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::waitForIdleSync()
@@ -648,8 +648,8 @@ void android::app::Instrumentation::waitForIdleSync()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(19),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::runOnMainSync(local_ref< java::lang::Runnable > const &a0)
@@ -658,8 +658,8 @@ void android::app::Instrumentation::runOnMainSync(local_ref< java::lang::Runnabl
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(20),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation::startActivitySync(local_ref< android::content::Intent > const &a0)
@@ -668,8 +668,8 @@ local_ref< android::app::Activity > android::app::Instrumentation::startActivity
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(21),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::addMonitor(local_ref< android::app::Instrumentation_::ActivityMonitor > const &a0)
@@ -678,8 +678,8 @@ void android::app::Instrumentation::addMonitor(local_ref< android::app::Instrume
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(22),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Instrumentation_::ActivityMonitor > android::app::Instrumentation::addMonitor(local_ref< android::content::IntentFilter > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, jboolean a2)
@@ -688,8 +688,8 @@ local_ref< android::app::Instrumentation_::ActivityMonitor > android::app::Instr
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(23),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::app::Instrumentation_::ActivityMonitor > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::Instrumentation_::ActivityMonitor >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::Instrumentation_::ActivityMonitor > android::app::Instrumentation::addMonitor(local_ref< java::lang::String > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, jboolean a2)
@@ -698,8 +698,8 @@ local_ref< android::app::Instrumentation_::ActivityMonitor > android::app::Instr
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(24),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::app::Instrumentation_::ActivityMonitor > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::Instrumentation_::ActivityMonitor >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::app::Instrumentation::checkMonitorHit(local_ref< android::app::Instrumentation_::ActivityMonitor > const &a0, jint a1)
@@ -708,8 +708,8 @@ jboolean android::app::Instrumentation::checkMonitorHit(local_ref< android::app:
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(25),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation::waitForMonitor(local_ref< android::app::Instrumentation_::ActivityMonitor > const &a0)
@@ -718,8 +718,8 @@ local_ref< android::app::Activity > android::app::Instrumentation::waitForMonito
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(26),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation::waitForMonitorWithTimeout(local_ref< android::app::Instrumentation_::ActivityMonitor > const &a0, jlong a1)
@@ -728,8 +728,8 @@ local_ref< android::app::Activity > android::app::Instrumentation::waitForMonito
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(27),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::removeMonitor(local_ref< android::app::Instrumentation_::ActivityMonitor > const &a0)
@@ -738,8 +738,8 @@ void android::app::Instrumentation::removeMonitor(local_ref< android::app::Instr
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(28),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::Instrumentation::invokeMenuActionSync(local_ref< android::app::Activity > const &a0, jint a1, jint a2)
@@ -748,8 +748,8 @@ jboolean android::app::Instrumentation::invokeMenuActionSync(local_ref< android:
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(29),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::app::Instrumentation::invokeContextMenuAction(local_ref< android::app::Activity > const &a0, jint a1, jint a2)
@@ -758,8 +758,8 @@ jboolean android::app::Instrumentation::invokeContextMenuAction(local_ref< andro
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(30),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::Instrumentation::sendStringSync(local_ref< java::lang::String > const &a0)
@@ -768,8 +768,8 @@ void android::app::Instrumentation::sendStringSync(local_ref< java::lang::String
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(31),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::sendKeySync(local_ref< android::view::KeyEvent > const &a0)
@@ -778,8 +778,8 @@ void android::app::Instrumentation::sendKeySync(local_ref< android::view::KeyEve
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(32),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::sendKeyDownUpSync(jint a0)
@@ -788,8 +788,8 @@ void android::app::Instrumentation::sendKeyDownUpSync(jint a0)
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(33),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::sendCharacterSync(jint a0)
@@ -798,8 +798,8 @@ void android::app::Instrumentation::sendCharacterSync(jint a0)
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(34),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::sendPointerSync(local_ref< android::view::MotionEvent > const &a0)
@@ -808,8 +808,8 @@ void android::app::Instrumentation::sendPointerSync(local_ref< android::view::Mo
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(35),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::sendTrackballEventSync(local_ref< android::view::MotionEvent > const &a0)
@@ -818,8 +818,8 @@ void android::app::Instrumentation::sendTrackballEventSync(local_ref< android::v
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(36),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Application > android::app::Instrumentation::newApplication(local_ref< java::lang::ClassLoader > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::Context > const &a2)
@@ -828,8 +828,8 @@ local_ref< android::app::Application > android::app::Instrumentation::newApplica
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(37),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< android::app::Application > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::Application >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::Application > android::app::Instrumentation::newApplication(local_ref< java::lang::Class > const &a0, local_ref< android::content::Context > const &a1)
@@ -838,8 +838,8 @@ local_ref< android::app::Application > android::app::Instrumentation::newApplica
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(38),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< android::app::Application > >
-	(a0, a1);
+		local_ref< android::app::Application >
+	>(a0, a1);
 }
 
 void android::app::Instrumentation::callApplicationOnCreate(local_ref< android::app::Application > const &a0)
@@ -848,8 +848,8 @@ void android::app::Instrumentation::callApplicationOnCreate(local_ref< android::
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(39),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation::newActivity(local_ref< java::lang::Class > const &a0, local_ref< android::content::Context > const &a1, local_ref< android::os::IBinder > const &a2, local_ref< android::app::Application > const &a3, local_ref< android::content::Intent > const &a4, local_ref< android::content::pm::ActivityInfo > const &a5, local_ref< java::lang::CharSequence > const &a6, local_ref< android::app::Activity > const &a7, local_ref< java::lang::String > const &a8, local_ref< java::lang::Object > const &a9)
@@ -858,8 +858,8 @@ local_ref< android::app::Activity > android::app::Instrumentation::newActivity(l
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(40),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 local_ref< android::app::Activity > android::app::Instrumentation::newActivity(local_ref< java::lang::ClassLoader > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::Intent > const &a2)
@@ -868,8 +868,8 @@ local_ref< android::app::Activity > android::app::Instrumentation::newActivity(l
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(41),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< android::app::Activity > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::Activity >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::Instrumentation::callActivityOnCreate(local_ref< android::app::Activity > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -878,8 +878,8 @@ void android::app::Instrumentation::callActivityOnCreate(local_ref< android::app
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(42),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::callActivityOnDestroy(local_ref< android::app::Activity > const &a0)
@@ -888,8 +888,8 @@ void android::app::Instrumentation::callActivityOnDestroy(local_ref< android::ap
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(43),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnRestoreInstanceState(local_ref< android::app::Activity > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -898,8 +898,8 @@ void android::app::Instrumentation::callActivityOnRestoreInstanceState(local_ref
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(44),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::callActivityOnPostCreate(local_ref< android::app::Activity > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -908,8 +908,8 @@ void android::app::Instrumentation::callActivityOnPostCreate(local_ref< android:
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(45),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::callActivityOnNewIntent(local_ref< android::app::Activity > const &a0, local_ref< android::content::Intent > const &a1)
@@ -918,8 +918,8 @@ void android::app::Instrumentation::callActivityOnNewIntent(local_ref< android::
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(46),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::callActivityOnStart(local_ref< android::app::Activity > const &a0)
@@ -928,8 +928,8 @@ void android::app::Instrumentation::callActivityOnStart(local_ref< android::app:
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(47),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnRestart(local_ref< android::app::Activity > const &a0)
@@ -938,8 +938,8 @@ void android::app::Instrumentation::callActivityOnRestart(local_ref< android::ap
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(48),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnResume(local_ref< android::app::Activity > const &a0)
@@ -948,8 +948,8 @@ void android::app::Instrumentation::callActivityOnResume(local_ref< android::app
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(49),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnStop(local_ref< android::app::Activity > const &a0)
@@ -958,8 +958,8 @@ void android::app::Instrumentation::callActivityOnStop(local_ref< android::app::
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(50),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnSaveInstanceState(local_ref< android::app::Activity > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -968,8 +968,8 @@ void android::app::Instrumentation::callActivityOnSaveInstanceState(local_ref< a
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(51),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::Instrumentation::callActivityOnPause(local_ref< android::app::Activity > const &a0)
@@ -978,8 +978,8 @@ void android::app::Instrumentation::callActivityOnPause(local_ref< android::app:
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(52),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::callActivityOnUserLeaving(local_ref< android::app::Activity > const &a0)
@@ -988,8 +988,8 @@ void android::app::Instrumentation::callActivityOnUserLeaving(local_ref< android
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(53),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::Instrumentation::startAllocCounting()
@@ -998,8 +998,8 @@ void android::app::Instrumentation::startAllocCounting()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(54),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::Instrumentation::stopAllocCounting()
@@ -1008,8 +1008,8 @@ void android::app::Instrumentation::stopAllocCounting()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(55),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::app::Instrumentation::getAllocCounts()
@@ -1018,8 +1018,8 @@ local_ref< android::os::Bundle > android::app::Instrumentation::getAllocCounts()
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(56),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::app::Instrumentation::getBinderCounts()
@@ -1028,8 +1028,8 @@ local_ref< android::os::Bundle > android::app::Instrumentation::getBinderCounts(
 		android::app::Instrumentation::J2CPP_CLASS_NAME,
 		android::app::Instrumentation::J2CPP_METHOD_NAME(57),
 		android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(57), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 

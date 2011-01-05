@@ -12,13 +12,17 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class MessageDigest; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/MessageDigest.hpp>
 
@@ -50,6 +54,9 @@ namespace java { namespace security {
 		}
 
 		operator local_ref<java::io::FilterInputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DigestInputStream(local_ref< java::io::InputStream > const&, local_ref< java::security::MessageDigest > const&);
@@ -83,14 +90,29 @@ java::security::DigestInputStream::operator local_ref<java::io::FilterInputStrea
 	return local_ref<java::io::FilterInputStream>(get_jobject());
 }
 
+java::security::DigestInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::security::DigestInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+java::security::DigestInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::security::DigestInputStream::DigestInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::security::MessageDigest > const &a1)
 : object<java::security::DigestInputStream>(
 	call_new_object<
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(0),
-		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -102,8 +124,8 @@ local_ref< java::security::MessageDigest > java::security::DigestInputStream::ge
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(1),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::MessageDigest > >
-	(get_jobject());
+		local_ref< java::security::MessageDigest >
+	>(get_jobject());
 }
 
 void java::security::DigestInputStream::setMessageDigest(local_ref< java::security::MessageDigest > const &a0)
@@ -112,8 +134,8 @@ void java::security::DigestInputStream::setMessageDigest(local_ref< java::securi
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(2),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::security::DigestInputStream::read()
@@ -122,8 +144,8 @@ jint java::security::DigestInputStream::read()
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(3),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::security::DigestInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -132,8 +154,8 @@ jint java::security::DigestInputStream::read(local_ref< array<jbyte,1> > const &
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(4),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::DigestInputStream::on(jboolean a0)
@@ -142,8 +164,8 @@ void java::security::DigestInputStream::on(jboolean a0)
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(5),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::DigestInputStream::toString()
@@ -152,8 +174,8 @@ local_ref< java::lang::String > java::security::DigestInputStream::toString()
 		java::security::DigestInputStream::J2CPP_CLASS_NAME,
 		java::security::DigestInputStream::J2CPP_METHOD_NAME(6),
 		java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

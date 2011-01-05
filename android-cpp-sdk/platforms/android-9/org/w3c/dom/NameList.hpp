@@ -80,8 +80,8 @@ local_ref< java::lang::String > org::w3c::dom::NameList::getName(jint a0)
 		org::w3c::dom::NameList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NameList::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::NameList::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::NameList::getNamespaceURI(jint a0)
@@ -90,8 +90,8 @@ local_ref< java::lang::String > org::w3c::dom::NameList::getNamespaceURI(jint a0
 		org::w3c::dom::NameList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NameList::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::NameList::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::NameList::getLength()
@@ -100,8 +100,8 @@ jint org::w3c::dom::NameList::getLength()
 		org::w3c::dom::NameList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NameList::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::NameList::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::w3c::dom::NameList::contains(local_ref< java::lang::String > const &a0)
@@ -110,8 +110,8 @@ jboolean org::w3c::dom::NameList::contains(local_ref< java::lang::String > const
 		org::w3c::dom::NameList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NameList::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::NameList::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::NameList::containsNS(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -120,8 +120,8 @@ jboolean org::w3c::dom::NameList::containsNS(local_ref< java::lang::String > con
 		org::w3c::dom::NameList::J2CPP_CLASS_NAME,
 		org::w3c::dom::NameList::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::NameList::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -80,8 +80,8 @@ local_ref< java::util::Set > java::security::cert::X509Extension::getCriticalExt
 		java::security::cert::X509Extension::J2CPP_CLASS_NAME,
 		java::security::cert::X509Extension::J2CPP_METHOD_NAME(0),
 		java::security::cert::X509Extension::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509Extension::getExtensionValue(local_ref< java::lang::String > const &a0)
@@ -90,8 +90,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509Extension::getExtensionVal
 		java::security::cert::X509Extension::J2CPP_CLASS_NAME,
 		java::security::cert::X509Extension::J2CPP_METHOD_NAME(1),
 		java::security::cert::X509Extension::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::security::cert::X509Extension::getNonCriticalExtensionOIDs()
@@ -100,8 +100,8 @@ local_ref< java::util::Set > java::security::cert::X509Extension::getNonCritical
 		java::security::cert::X509Extension::J2CPP_CLASS_NAME,
 		java::security::cert::X509Extension::J2CPP_METHOD_NAME(2),
 		java::security::cert::X509Extension::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::X509Extension::hasUnsupportedCriticalExtension()
@@ -110,8 +110,8 @@ jboolean java::security::cert::X509Extension::hasUnsupportedCriticalExtension()
 		java::security::cert::X509Extension::J2CPP_CLASS_NAME,
 		java::security::cert::X509Extension::J2CPP_METHOD_NAME(3),
 		java::security::cert::X509Extension::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

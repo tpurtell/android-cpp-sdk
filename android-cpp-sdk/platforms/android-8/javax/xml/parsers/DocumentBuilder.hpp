@@ -116,8 +116,8 @@ void javax::xml::parsers::DocumentBuilder::reset()
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(1),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse(local_ref< java::io::InputStream > const &a0)
@@ -126,8 +126,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(2),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
@@ -136,8 +136,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(3),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0, a1);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse(local_ref< java::lang::String > const &a0)
@@ -146,8 +146,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(4),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse(local_ref< java::io::File > const &a0)
@@ -156,8 +156,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(5),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -166,8 +166,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::parse
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(6),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::parsers::DocumentBuilder::isNamespaceAware()
@@ -176,8 +176,8 @@ jboolean javax::xml::parsers::DocumentBuilder::isNamespaceAware()
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(7),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilder::isValidating()
@@ -186,8 +186,8 @@ jboolean javax::xml::parsers::DocumentBuilder::isValidating()
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(8),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::xml::parsers::DocumentBuilder::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -196,8 +196,8 @@ void javax::xml::parsers::DocumentBuilder::setEntityResolver(local_ref< org::xml
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(9),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::DocumentBuilder::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -206,8 +206,8 @@ void javax::xml::parsers::DocumentBuilder::setErrorHandler(local_ref< org::xml::
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(10),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::newDocument()
@@ -216,8 +216,8 @@ local_ref< org::w3c::dom::Document > javax::xml::parsers::DocumentBuilder::newDo
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(11),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::w3c::dom::Document > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Document >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::DOMImplementation > javax::xml::parsers::DocumentBuilder::getDOMImplementation()
@@ -226,8 +226,8 @@ local_ref< org::w3c::dom::DOMImplementation > javax::xml::parsers::DocumentBuild
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(12),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::w3c::dom::DOMImplementation > >
-	(get_jobject());
+		local_ref< org::w3c::dom::DOMImplementation >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::parsers::DocumentBuilder::getSchema()
@@ -236,8 +236,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::parsers::DocumentBuilder
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(13),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject());
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::DocumentBuilder::isXIncludeAware()
@@ -246,8 +246,8 @@ jboolean javax::xml::parsers::DocumentBuilder::isXIncludeAware()
 		javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME,
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(14),
 		javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

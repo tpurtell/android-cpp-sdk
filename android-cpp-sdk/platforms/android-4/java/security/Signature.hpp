@@ -84,6 +84,7 @@ namespace java { namespace security {
 		}
 
 		operator local_ref<java::security::SignatureSpi>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::security::Signature > getInstance(local_ref< java::lang::String >  const&);
@@ -133,6 +134,11 @@ java::security::Signature::operator local_ref<java::security::SignatureSpi>() co
 	return local_ref<java::security::SignatureSpi>(get_jobject());
 }
 
+java::security::Signature::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< java::security::Signature > java::security::Signature::getInstance(local_ref< java::lang::String > const &a0)
 {
@@ -140,8 +146,8 @@ local_ref< java::security::Signature > java::security::Signature::getInstance(lo
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(1),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::Signature > >
-	(a0);
+		local_ref< java::security::Signature >
+	>(a0);
 }
 
 local_ref< java::security::Signature > java::security::Signature::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -150,8 +156,8 @@ local_ref< java::security::Signature > java::security::Signature::getInstance(lo
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(2),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Signature > >
-	(a0, a1);
+		local_ref< java::security::Signature >
+	>(a0, a1);
 }
 
 local_ref< java::security::Signature > java::security::Signature::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -160,8 +166,8 @@ local_ref< java::security::Signature > java::security::Signature::getInstance(lo
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(3),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::Signature > >
-	(a0, a1);
+		local_ref< java::security::Signature >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::Signature::getProvider()
@@ -170,8 +176,8 @@ local_ref< java::security::Provider > java::security::Signature::getProvider()
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(4),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Signature::getAlgorithm()
@@ -180,8 +186,8 @@ local_ref< java::lang::String > java::security::Signature::getAlgorithm()
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(5),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::Signature::initVerify(local_ref< java::security::PublicKey > const &a0)
@@ -190,8 +196,8 @@ void java::security::Signature::initVerify(local_ref< java::security::PublicKey 
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(6),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Signature::initVerify(local_ref< java::security::cert::Certificate > const &a0)
@@ -200,8 +206,8 @@ void java::security::Signature::initVerify(local_ref< java::security::cert::Cert
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(7),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Signature::initSign(local_ref< java::security::PrivateKey > const &a0)
@@ -210,8 +216,8 @@ void java::security::Signature::initSign(local_ref< java::security::PrivateKey >
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(8),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Signature::initSign(local_ref< java::security::PrivateKey > const &a0, local_ref< java::security::SecureRandom > const &a1)
@@ -220,8 +226,8 @@ void java::security::Signature::initSign(local_ref< java::security::PrivateKey >
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(9),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > java::security::Signature::sign()
@@ -230,8 +236,8 @@ local_ref< array<jbyte,1> > java::security::Signature::sign()
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(10),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint java::security::Signature::sign(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -240,8 +246,8 @@ jint java::security::Signature::sign(local_ref< array<jbyte,1> > const &a0, jint
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(11),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::security::Signature::verify(local_ref< array<jbyte,1> > const &a0)
@@ -250,8 +256,8 @@ jboolean java::security::Signature::verify(local_ref< array<jbyte,1> > const &a0
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(12),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::Signature::verify(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -260,8 +266,8 @@ jboolean java::security::Signature::verify(local_ref< array<jbyte,1> > const &a0
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(13),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::Signature::update(jbyte a0)
@@ -270,8 +276,8 @@ void java::security::Signature::update(jbyte a0)
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(14),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Signature::update(local_ref< array<jbyte,1> > const &a0)
@@ -280,8 +286,8 @@ void java::security::Signature::update(local_ref< array<jbyte,1> > const &a0)
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(15),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Signature::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -290,8 +296,8 @@ void java::security::Signature::update(local_ref< array<jbyte,1> > const &a0, ji
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(16),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::Signature::update(local_ref< java::nio::ByteBuffer > const &a0)
@@ -300,8 +306,8 @@ void java::security::Signature::update(local_ref< java::nio::ByteBuffer > const 
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(17),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Signature::toString()
@@ -310,8 +316,8 @@ local_ref< java::lang::String > java::security::Signature::toString()
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(18),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::Signature::setParameter(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -320,8 +326,8 @@ void java::security::Signature::setParameter(local_ref< java::lang::String > con
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(19),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::Signature::setParameter(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0)
@@ -330,8 +336,8 @@ void java::security::Signature::setParameter(local_ref< java::security::spec::Al
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(20),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::AlgorithmParameters > java::security::Signature::getParameters()
@@ -340,8 +346,8 @@ local_ref< java::security::AlgorithmParameters > java::security::Signature::getP
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(21),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::security::AlgorithmParameters > >
-	(get_jobject());
+		local_ref< java::security::AlgorithmParameters >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::Signature::getParameter(local_ref< java::lang::String > const &a0)
@@ -350,8 +356,8 @@ local_ref< java::lang::Object > java::security::Signature::getParameter(local_re
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(22),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::security::Signature::clone()
@@ -360,8 +366,8 @@ local_ref< java::lang::Object > java::security::Signature::clone()
 		java::security::Signature::J2CPP_CLASS_NAME,
 		java::security::Signature::J2CPP_METHOD_NAME(23),
 		java::security::Signature::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

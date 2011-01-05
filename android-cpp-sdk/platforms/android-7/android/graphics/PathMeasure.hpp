@@ -95,8 +95,8 @@ android::graphics::PathMeasure::PathMeasure()
 	call_new_object<
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(0),
-		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ android::graphics::PathMeasure::PathMeasure(local_ref< android::graphics::Path >
 	call_new_object<
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(1),
-		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -121,8 +121,8 @@ void android::graphics::PathMeasure::setPath(local_ref< android::graphics::Path 
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(2),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::graphics::PathMeasure::getLength()
@@ -131,8 +131,8 @@ jfloat android::graphics::PathMeasure::getLength()
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(3),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jboolean android::graphics::PathMeasure::getPosTan(jfloat a0, local_ref< array<jfloat,1> > const &a1, local_ref< array<jfloat,1> > const &a2)
@@ -141,8 +141,8 @@ jboolean android::graphics::PathMeasure::getPosTan(jfloat a0, local_ref< array<j
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(4),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::PathMeasure::getMatrix(jfloat a0, local_ref< android::graphics::Matrix > const &a1, jint a2)
@@ -151,8 +151,8 @@ jboolean android::graphics::PathMeasure::getMatrix(jfloat a0, local_ref< android
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(5),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::graphics::PathMeasure::getSegment(jfloat a0, jfloat a1, local_ref< android::graphics::Path > const &a2, jboolean a3)
@@ -161,8 +161,8 @@ jboolean android::graphics::PathMeasure::getSegment(jfloat a0, jfloat a1, local_
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(6),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::PathMeasure::isClosed()
@@ -171,8 +171,8 @@ jboolean android::graphics::PathMeasure::isClosed()
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(7),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::graphics::PathMeasure::nextContour()
@@ -181,8 +181,8 @@ jboolean android::graphics::PathMeasure::nextContour()
 		android::graphics::PathMeasure::J2CPP_CLASS_NAME,
 		android::graphics::PathMeasure::J2CPP_METHOD_NAME(8),
 		android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

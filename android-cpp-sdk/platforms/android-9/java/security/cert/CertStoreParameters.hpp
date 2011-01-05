@@ -38,8 +38,8 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Object > clone();
@@ -62,14 +62,14 @@ namespace j2cpp {
 
 
 
-java::security::cert::CertStoreParameters::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::CertStoreParameters::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::CertStoreParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::cert::CertStoreParameters::clone()
@@ -78,8 +78,8 @@ local_ref< java::lang::Object > java::security::cert::CertStoreParameters::clone
 		java::security::cert::CertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::CertStoreParameters::J2CPP_METHOD_NAME(0),
 		java::security::cert::CertStoreParameters::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

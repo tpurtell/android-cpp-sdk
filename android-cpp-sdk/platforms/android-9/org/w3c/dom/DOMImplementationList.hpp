@@ -74,8 +74,8 @@ local_ref< org::w3c::dom::DOMImplementation > org::w3c::dom::DOMImplementationLi
 		org::w3c::dom::DOMImplementationList::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMImplementationList::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMImplementationList::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::DOMImplementation > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::DOMImplementation >
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::DOMImplementationList::getLength()
@@ -84,8 +84,8 @@ jint org::w3c::dom::DOMImplementationList::getLength()
 		org::w3c::dom::DOMImplementationList::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMImplementationList::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DOMImplementationList::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -98,8 +98,8 @@ void android::view::InputQueue_::Callback::onInputQueueCreated(local_ref< androi
 		android::view::InputQueue_::Callback::J2CPP_CLASS_NAME,
 		android::view::InputQueue_::Callback::J2CPP_METHOD_NAME(0),
 		android::view::InputQueue_::Callback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::InputQueue_::Callback::onInputQueueDestroyed(local_ref< android::view::InputQueue > const &a0)
@@ -108,8 +108,8 @@ void android::view::InputQueue_::Callback::onInputQueueDestroyed(local_ref< andr
 		android::view::InputQueue_::Callback::J2CPP_CLASS_NAME,
 		android::view::InputQueue_::Callback::J2CPP_METHOD_NAME(1),
 		android::view::InputQueue_::Callback::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -45,8 +45,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::util::Comparator > comparator();
@@ -73,14 +73,14 @@ namespace j2cpp {
 
 
 
-java::util::SortedMap::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::SortedMap::operator local_ref<java::util::Map>() const
 {
 	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::util::SortedMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::util::Comparator > java::util::SortedMap::comparator()
@@ -89,8 +89,8 @@ local_ref< java::util::Comparator > java::util::SortedMap::comparator()
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(0),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::SortedMap::firstKey()
@@ -99,8 +99,8 @@ local_ref< java::lang::Object > java::util::SortedMap::firstKey()
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(1),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedMap > java::util::SortedMap::headMap(local_ref< java::lang::Object > const &a0)
@@ -109,8 +109,8 @@ local_ref< java::util::SortedMap > java::util::SortedMap::headMap(local_ref< jav
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(2),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::SortedMap::lastKey()
@@ -119,8 +119,8 @@ local_ref< java::lang::Object > java::util::SortedMap::lastKey()
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(3),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedMap > java::util::SortedMap::subMap(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -129,8 +129,8 @@ local_ref< java::util::SortedMap > java::util::SortedMap::subMap(local_ref< java
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(4),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedMap > java::util::SortedMap::tailMap(local_ref< java::lang::Object > const &a0)
@@ -139,8 +139,8 @@ local_ref< java::util::SortedMap > java::util::SortedMap::tailMap(local_ref< jav
 		java::util::SortedMap::J2CPP_CLASS_NAME,
 		java::util::SortedMap::J2CPP_METHOD_NAME(5),
 		java::util::SortedMap::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 

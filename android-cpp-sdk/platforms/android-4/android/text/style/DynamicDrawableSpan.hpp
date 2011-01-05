@@ -11,19 +11,29 @@
 #define J2CPP_ANDROID_TEXT_STYLE_DYNAMICDRAWABLESPAN_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
-namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { class FontMetricsInt; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class ReplacementSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateLayout; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class MetricAffectingSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
+namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/text/style/CharacterStyle.hpp>
+#include <android/text/style/MetricAffectingSpan.hpp>
 #include <android/text/style/ReplacementSpan.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
+#include <android/text/style/UpdateLayout.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -54,6 +64,11 @@ namespace android { namespace text { namespace style {
 		}
 
 		operator local_ref<android::text::style::ReplacementSpan>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::style::UpdateLayout>() const;
+		operator local_ref<android::text::style::MetricAffectingSpan>() const;
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DynamicDrawableSpan();
@@ -88,14 +103,39 @@ android::text::style::DynamicDrawableSpan::operator local_ref<android::text::sty
 	return local_ref<android::text::style::ReplacementSpan>(get_jobject());
 }
 
+android::text::style::DynamicDrawableSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
+android::text::style::DynamicDrawableSpan::operator local_ref<android::text::style::UpdateLayout>() const
+{
+	return local_ref<android::text::style::UpdateLayout>(get_jobject());
+}
+
+android::text::style::DynamicDrawableSpan::operator local_ref<android::text::style::MetricAffectingSpan>() const
+{
+	return local_ref<android::text::style::MetricAffectingSpan>(get_jobject());
+}
+
+android::text::style::DynamicDrawableSpan::operator local_ref<android::text::style::CharacterStyle>() const
+{
+	return local_ref<android::text::style::CharacterStyle>(get_jobject());
+}
+
+android::text::style::DynamicDrawableSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::text::style::DynamicDrawableSpan::DynamicDrawableSpan()
 : object<android::text::style::DynamicDrawableSpan>(
 	call_new_object<
 		android::text::style::DynamicDrawableSpan::J2CPP_CLASS_NAME,
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +148,8 @@ jint android::text::style::DynamicDrawableSpan::getVerticalAlignment()
 		android::text::style::DynamicDrawableSpan::J2CPP_CLASS_NAME,
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::text::style::DynamicDrawableSpan::getDrawable()
@@ -118,8 +158,8 @@ local_ref< android::graphics::drawable::Drawable > android::text::style::Dynamic
 		android::text::style::DynamicDrawableSpan::J2CPP_CLASS_NAME,
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 jint android::text::style::DynamicDrawableSpan::getSize(local_ref< android::graphics::Paint > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3, local_ref< android::graphics::Paint_::FontMetricsInt > const &a4)
@@ -128,8 +168,8 @@ jint android::text::style::DynamicDrawableSpan::getSize(local_ref< android::grap
 		android::text::style::DynamicDrawableSpan::J2CPP_CLASS_NAME,
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_NAME(4),
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::text::style::DynamicDrawableSpan::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3, jfloat a4, jint a5, jint a6, jint a7, local_ref< android::graphics::Paint > const &a8)
@@ -138,8 +178,8 @@ void android::text::style::DynamicDrawableSpan::draw(local_ref< android::graphic
 		android::text::style::DynamicDrawableSpan::J2CPP_CLASS_NAME,
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_NAME(5),
 		android::text::style::DynamicDrawableSpan::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 

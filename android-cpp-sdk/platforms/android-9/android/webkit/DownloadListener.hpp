@@ -71,8 +71,8 @@ void android::webkit::DownloadListener::onDownloadStart(local_ref< java::lang::S
 		android::webkit::DownloadListener::J2CPP_CLASS_NAME,
 		android::webkit::DownloadListener::J2CPP_METHOD_NAME(0),
 		android::webkit::DownloadListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

@@ -107,8 +107,8 @@ org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > co
 	call_new_object<
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(0),
-		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -120,8 +120,8 @@ org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > co
 	call_new_object<
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(1),
-		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -133,8 +133,8 @@ org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > co
 	call_new_object<
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(2),
-		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -146,8 +146,8 @@ org::apache::http::auth::AuthScope::AuthScope(local_ref< org::apache::http::auth
 	call_new_object<
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(3),
-		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -159,8 +159,8 @@ local_ref< java::lang::String > org::apache::http::auth::AuthScope::getHost()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(4),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::auth::AuthScope::getPort()
@@ -169,8 +169,8 @@ jint org::apache::http::auth::AuthScope::getPort()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(5),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::AuthScope::getRealm()
@@ -179,8 +179,8 @@ local_ref< java::lang::String > org::apache::http::auth::AuthScope::getRealm()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(6),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::AuthScope::getScheme()
@@ -189,8 +189,8 @@ local_ref< java::lang::String > org::apache::http::auth::AuthScope::getScheme()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(7),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::auth::AuthScope::match(local_ref< org::apache::http::auth::AuthScope > const &a0)
@@ -199,8 +199,8 @@ jint org::apache::http::auth::AuthScope::match(local_ref< org::apache::http::aut
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(8),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::auth::AuthScope::equals(local_ref< java::lang::Object > const &a0)
@@ -209,8 +209,8 @@ jboolean org::apache::http::auth::AuthScope::equals(local_ref< java::lang::Objec
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(9),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::auth::AuthScope::toString()
@@ -219,8 +219,8 @@ local_ref< java::lang::String > org::apache::http::auth::AuthScope::toString()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(10),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::auth::AuthScope::hashCode()
@@ -229,8 +229,8 @@ jint org::apache::http::auth::AuthScope::hashCode()
 		org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(11),
 		org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

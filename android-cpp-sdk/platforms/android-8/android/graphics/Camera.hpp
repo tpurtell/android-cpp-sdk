@@ -92,8 +92,8 @@ android::graphics::Camera::Camera()
 	call_new_object<
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(0),
-		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +105,8 @@ void android::graphics::Camera::save()
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(1),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::Camera::restore()
@@ -115,8 +115,8 @@ void android::graphics::Camera::restore()
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(2),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::Camera::translate(jfloat a0, jfloat a1, jfloat a2)
@@ -125,8 +125,8 @@ void android::graphics::Camera::translate(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(3),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Camera::rotateX(jfloat a0)
@@ -135,8 +135,8 @@ void android::graphics::Camera::rotateX(jfloat a0)
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(4),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Camera::rotateY(jfloat a0)
@@ -145,8 +145,8 @@ void android::graphics::Camera::rotateY(jfloat a0)
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(5),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Camera::rotateZ(jfloat a0)
@@ -155,8 +155,8 @@ void android::graphics::Camera::rotateZ(jfloat a0)
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(6),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Camera::getMatrix(local_ref< android::graphics::Matrix > const &a0)
@@ -165,8 +165,8 @@ void android::graphics::Camera::getMatrix(local_ref< android::graphics::Matrix >
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(7),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Camera::applyToCanvas(local_ref< android::graphics::Canvas > const &a0)
@@ -175,8 +175,8 @@ void android::graphics::Camera::applyToCanvas(local_ref< android::graphics::Canv
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(8),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Camera::dotWithNormal(jfloat a0, jfloat a1, jfloat a2)
@@ -185,8 +185,8 @@ jfloat android::graphics::Camera::dotWithNormal(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Camera::J2CPP_CLASS_NAME,
 		android::graphics::Camera::J2CPP_METHOD_NAME(9),
 		android::graphics::Camera::J2CPP_METHOD_SIGNATURE(9), 
-		jfloat >
-	(get_jobject(), a0, a1, a2);
+		jfloat
+	>(get_jobject(), a0, a1, a2);
 }
 
 

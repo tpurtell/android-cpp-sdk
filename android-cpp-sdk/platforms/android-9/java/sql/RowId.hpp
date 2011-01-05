@@ -77,8 +77,8 @@ jboolean java::sql::RowId::equals(local_ref< java::lang::Object > const &a0)
 		java::sql::RowId::J2CPP_CLASS_NAME,
 		java::sql::RowId::J2CPP_METHOD_NAME(0),
 		java::sql::RowId::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::sql::RowId::getBytes()
@@ -87,8 +87,8 @@ local_ref< array<jbyte,1> > java::sql::RowId::getBytes()
 		java::sql::RowId::J2CPP_CLASS_NAME,
 		java::sql::RowId::J2CPP_METHOD_NAME(1),
 		java::sql::RowId::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::RowId::toString()
@@ -97,8 +97,8 @@ local_ref< java::lang::String > java::sql::RowId::toString()
 		java::sql::RowId::J2CPP_CLASS_NAME,
 		java::sql::RowId::J2CPP_METHOD_NAME(2),
 		java::sql::RowId::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::sql::RowId::hashCode()
@@ -107,8 +107,8 @@ jint java::sql::RowId::hashCode()
 		java::sql::RowId::J2CPP_CLASS_NAME,
 		java::sql::RowId::J2CPP_METHOD_NAME(3),
 		java::sql::RowId::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

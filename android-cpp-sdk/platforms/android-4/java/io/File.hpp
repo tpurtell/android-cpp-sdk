@@ -98,9 +98,9 @@ namespace java { namespace io {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		File(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
@@ -170,11 +170,6 @@ namespace j2cpp {
 
 
 
-java::io::File::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::io::File::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
@@ -185,14 +180,19 @@ java::io::File::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
+java::io::File::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::io::File::File(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
 : object<java::io::File>(
 	call_new_object<
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(0),
-		java::io::File::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::io::File::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -204,8 +204,8 @@ java::io::File::File(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(1),
-		java::io::File::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::io::File::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -217,8 +217,8 @@ java::io::File::File(local_ref< java::lang::String > const &a0, local_ref< java:
 	call_new_object<
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(2),
-		java::io::File::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::io::File::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -230,8 +230,8 @@ java::io::File::File(local_ref< java::net::URI > const &a0)
 	call_new_object<
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(3),
-		java::io::File::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::io::File::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -243,8 +243,8 @@ local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listRoots()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(4),
 		java::io::File::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::io::File >, 1> > >
-	();
+		local_ref< array< local_ref< java::io::File >, 1> >
+	>();
 }
 
 jboolean java::io::File::canRead()
@@ -253,8 +253,8 @@ jboolean java::io::File::canRead()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(5),
 		java::io::File::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::canWrite()
@@ -263,8 +263,8 @@ jboolean java::io::File::canWrite()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(6),
 		java::io::File::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::io::File::compareTo(local_ref< java::io::File > const &a0)
@@ -273,8 +273,8 @@ jint java::io::File::compareTo(local_ref< java::io::File > const &a0)
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(7),
 		java::io::File::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::File::delete_()
@@ -283,8 +283,8 @@ jboolean java::io::File::delete_()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(8),
 		java::io::File::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::io::File::deleteOnExit()
@@ -293,8 +293,8 @@ void java::io::File::deleteOnExit()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(9),
 		java::io::File::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::io::File::equals(local_ref< java::lang::Object > const &a0)
@@ -303,8 +303,8 @@ jboolean java::io::File::equals(local_ref< java::lang::Object > const &a0)
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(10),
 		java::io::File::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::File::exists()
@@ -313,8 +313,8 @@ jboolean java::io::File::exists()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(11),
 		java::io::File::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::File::getAbsolutePath()
@@ -323,8 +323,8 @@ local_ref< java::lang::String > java::io::File::getAbsolutePath()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(12),
 		java::io::File::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::io::File > java::io::File::getAbsoluteFile()
@@ -333,8 +333,8 @@ local_ref< java::io::File > java::io::File::getAbsoluteFile()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(13),
 		java::io::File::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::File::getCanonicalPath()
@@ -343,8 +343,8 @@ local_ref< java::lang::String > java::io::File::getCanonicalPath()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(14),
 		java::io::File::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::io::File > java::io::File::getCanonicalFile()
@@ -353,8 +353,8 @@ local_ref< java::io::File > java::io::File::getCanonicalFile()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(15),
 		java::io::File::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::File::getName()
@@ -363,8 +363,8 @@ local_ref< java::lang::String > java::io::File::getName()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(16),
 		java::io::File::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::File::getParent()
@@ -373,8 +373,8 @@ local_ref< java::lang::String > java::io::File::getParent()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(17),
 		java::io::File::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::io::File > java::io::File::getParentFile()
@@ -383,8 +383,8 @@ local_ref< java::io::File > java::io::File::getParentFile()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(18),
 		java::io::File::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::File::getPath()
@@ -393,8 +393,8 @@ local_ref< java::lang::String > java::io::File::getPath()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(19),
 		java::io::File::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::io::File::hashCode()
@@ -403,8 +403,8 @@ jint java::io::File::hashCode()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(20),
 		java::io::File::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::io::File::isAbsolute()
@@ -413,8 +413,8 @@ jboolean java::io::File::isAbsolute()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(21),
 		java::io::File::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::isDirectory()
@@ -423,8 +423,8 @@ jboolean java::io::File::isDirectory()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(22),
 		java::io::File::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::isFile()
@@ -433,8 +433,8 @@ jboolean java::io::File::isFile()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(23),
 		java::io::File::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::isHidden()
@@ -443,8 +443,8 @@ jboolean java::io::File::isHidden()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(24),
 		java::io::File::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jlong java::io::File::lastModified()
@@ -453,8 +453,8 @@ jlong java::io::File::lastModified()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(25),
 		java::io::File::J2CPP_METHOD_SIGNATURE(25), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean java::io::File::setLastModified(jlong a0)
@@ -463,8 +463,8 @@ jboolean java::io::File::setLastModified(jlong a0)
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(26),
 		java::io::File::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::File::setReadOnly()
@@ -473,8 +473,8 @@ jboolean java::io::File::setReadOnly()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(27),
 		java::io::File::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jlong java::io::File::length()
@@ -483,8 +483,8 @@ jlong java::io::File::length()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(28),
 		java::io::File::J2CPP_METHOD_SIGNATURE(28), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::io::File::list()
@@ -493,8 +493,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::io::File::list()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(29),
 		java::io::File::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles()
@@ -503,8 +503,8 @@ local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(30),
 		java::io::File::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< array< local_ref< java::io::File >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::io::File >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles(local_ref< java::io::FilenameFilter > const &a0)
@@ -513,8 +513,8 @@ local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles(lo
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(31),
 		java::io::File::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< array< local_ref< java::io::File >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::io::File >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles(local_ref< java::io::FileFilter > const &a0)
@@ -523,8 +523,8 @@ local_ref< array< local_ref< java::io::File >, 1> > java::io::File::listFiles(lo
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(32),
 		java::io::File::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< array< local_ref< java::io::File >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::io::File >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::io::File::list(local_ref< java::io::FilenameFilter > const &a0)
@@ -533,8 +533,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::io::File::list(loc
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(33),
 		java::io::File::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::File::mkdir()
@@ -543,8 +543,8 @@ jboolean java::io::File::mkdir()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(34),
 		java::io::File::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::mkdirs()
@@ -553,8 +553,8 @@ jboolean java::io::File::mkdirs()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(35),
 		java::io::File::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::io::File::createNewFile()
@@ -563,8 +563,8 @@ jboolean java::io::File::createNewFile()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(36),
 		java::io::File::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::io::File > java::io::File::createTempFile(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -573,8 +573,8 @@ local_ref< java::io::File > java::io::File::createTempFile(local_ref< java::lang
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(37),
 		java::io::File::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::io::File > >
-	(a0, a1);
+		local_ref< java::io::File >
+	>(a0, a1);
 }
 
 local_ref< java::io::File > java::io::File::createTempFile(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::io::File > const &a2)
@@ -583,8 +583,8 @@ local_ref< java::io::File > java::io::File::createTempFile(local_ref< java::lang
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(38),
 		java::io::File::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::io::File > >
-	(a0, a1, a2);
+		local_ref< java::io::File >
+	>(a0, a1, a2);
 }
 
 jboolean java::io::File::renameTo(local_ref< java::io::File > const &a0)
@@ -593,8 +593,8 @@ jboolean java::io::File::renameTo(local_ref< java::io::File > const &a0)
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(39),
 		java::io::File::J2CPP_METHOD_SIGNATURE(39), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::io::File::toString()
@@ -603,8 +603,8 @@ local_ref< java::lang::String > java::io::File::toString()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(40),
 		java::io::File::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::URI > java::io::File::toURI()
@@ -613,8 +613,8 @@ local_ref< java::net::URI > java::io::File::toURI()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(41),
 		java::io::File::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::net::URI > >
-	(get_jobject());
+		local_ref< java::net::URI >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::io::File::toURL()
@@ -623,8 +623,8 @@ local_ref< java::net::URL > java::io::File::toURL()
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(42),
 		java::io::File::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::net::URL > >
-	(get_jobject());
+		local_ref< java::net::URL >
+	>(get_jobject());
 }
 
 jint java::io::File::compareTo(local_ref< java::lang::Object > const &a0)
@@ -633,8 +633,8 @@ jint java::io::File::compareTo(local_ref< java::lang::Object > const &a0)
 		java::io::File::J2CPP_CLASS_NAME,
 		java::io::File::J2CPP_METHOD_NAME(43),
 		java::io::File::J2CPP_METHOD_SIGNATURE(43), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

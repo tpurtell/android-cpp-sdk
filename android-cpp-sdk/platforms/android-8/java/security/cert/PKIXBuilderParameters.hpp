@@ -12,14 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace security { class KeyStore; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertSelector; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class PKIXParameters; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyStore.hpp>
+#include <java/security/cert/CertPathParameters.hpp>
 #include <java/security/cert/CertSelector.hpp>
 #include <java/security/cert/PKIXParameters.hpp>
 #include <java/util/Set.hpp>
@@ -48,6 +54,9 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::security::cert::CertPathParameters>() const;
 		operator local_ref<java::security::cert::PKIXParameters>() const;
 
 
@@ -75,6 +84,21 @@ namespace j2cpp {
 
 
 
+java::security::cert::PKIXBuilderParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::cert::PKIXBuilderParameters::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::PKIXBuilderParameters::operator local_ref<java::security::cert::CertPathParameters>() const
+{
+	return local_ref<java::security::cert::CertPathParameters>(get_jobject());
+}
+
 java::security::cert::PKIXBuilderParameters::operator local_ref<java::security::cert::PKIXParameters>() const
 {
 	return local_ref<java::security::cert::PKIXParameters>(get_jobject());
@@ -86,8 +110,8 @@ java::security::cert::PKIXBuilderParameters::PKIXBuilderParameters(local_ref< ja
 	call_new_object<
 		java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(0),
-		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -99,8 +123,8 @@ java::security::cert::PKIXBuilderParameters::PKIXBuilderParameters(local_ref< ja
 	call_new_object<
 		java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(1),
-		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +136,8 @@ jint java::security::cert::PKIXBuilderParameters::getMaxPathLength()
 		java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(2),
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXBuilderParameters::setMaxPathLength(jint a0)
@@ -122,8 +146,8 @@ void java::security::cert::PKIXBuilderParameters::setMaxPathLength(jint a0)
 		java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(3),
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::PKIXBuilderParameters::toString()
@@ -132,8 +156,8 @@ local_ref< java::lang::String > java::security::cert::PKIXBuilderParameters::toS
 		java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(4),
 		java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

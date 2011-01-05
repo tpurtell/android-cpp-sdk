@@ -80,8 +80,8 @@ local_ref< java::lang::String > android::gesture::Prediction::toString()
 		android::gesture::Prediction::J2CPP_CLASS_NAME,
 		android::gesture::Prediction::J2CPP_METHOD_NAME(1),
 		android::gesture::Prediction::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

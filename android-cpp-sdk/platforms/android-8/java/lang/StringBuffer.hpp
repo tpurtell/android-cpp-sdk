@@ -98,10 +98,11 @@ namespace java { namespace lang {
 		{
 		}
 
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::AbstractStringBuilder>() const;
 		operator local_ref<java::lang::Appendable>() const;
 		operator local_ref<java::io::Serializable>() const;
-		operator local_ref<java::lang::CharSequence>() const;
 
 
 		StringBuffer();
@@ -175,6 +176,16 @@ namespace j2cpp {
 
 
 
+java::lang::StringBuffer::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jobject());
+}
+
+java::lang::StringBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::lang::StringBuffer::operator local_ref<java::lang::AbstractStringBuilder>() const
 {
 	return local_ref<java::lang::AbstractStringBuilder>(get_jobject());
@@ -190,19 +201,14 @@ java::lang::StringBuffer::operator local_ref<java::io::Serializable>() const
 	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-java::lang::StringBuffer::operator local_ref<java::lang::CharSequence>() const
-{
-	return local_ref<java::lang::CharSequence>(get_jobject());
-}
-
 
 java::lang::StringBuffer::StringBuffer()
 : object<java::lang::StringBuffer>(
 	call_new_object<
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(0),
-		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -214,8 +220,8 @@ java::lang::StringBuffer::StringBuffer(jint a0)
 	call_new_object<
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(1),
-		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -227,8 +233,8 @@ java::lang::StringBuffer::StringBuffer(local_ref< java::lang::String > const &a0
 	call_new_object<
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(2),
-		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -240,8 +246,8 @@ java::lang::StringBuffer::StringBuffer(local_ref< java::lang::CharSequence > con
 	call_new_object<
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(3),
-		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -253,8 +259,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jboolean 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(4),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jchar a0)
@@ -263,8 +269,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jchar a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(5),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jdouble a0)
@@ -273,8 +279,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jdouble a
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(6),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jfloat a0)
@@ -283,8 +289,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jfloat a0
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(7),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jint a0)
@@ -293,8 +299,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(8),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jlong a0)
@@ -303,8 +309,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(jlong a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(9),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< java::lang::Object > const &a0)
@@ -313,8 +319,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(10),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< java::lang::String > const &a0)
@@ -323,8 +329,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(11),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< java::lang::StringBuffer > const &a0)
@@ -333,8 +339,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(12),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< array<jchar,1> > const &a0)
@@ -343,8 +349,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(13),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -353,8 +359,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(14),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< java::lang::CharSequence > const &a0)
@@ -363,8 +369,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(15),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -373,8 +379,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(16),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::appendCodePoint(jint a0)
@@ -383,8 +389,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::appendCodePoint(
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(17),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 jchar java::lang::StringBuffer::charAt(jint a0)
@@ -393,8 +399,8 @@ jchar java::lang::StringBuffer::charAt(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(18),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(18), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jint java::lang::StringBuffer::codePointAt(jint a0)
@@ -403,8 +409,8 @@ jint java::lang::StringBuffer::codePointAt(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(19),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::StringBuffer::codePointBefore(jint a0)
@@ -413,8 +419,8 @@ jint java::lang::StringBuffer::codePointBefore(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(20),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::StringBuffer::codePointCount(jint a0, jint a1)
@@ -423,8 +429,8 @@ jint java::lang::StringBuffer::codePointCount(jint a0, jint a1)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(21),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::delete_(jint a0, jint a1)
@@ -433,8 +439,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::delete_(jint a0,
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(22),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::deleteCharAt(jint a0)
@@ -443,8 +449,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::deleteCharAt(jin
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(23),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 void java::lang::StringBuffer::ensureCapacity(jint a0)
@@ -453,8 +459,8 @@ void java::lang::StringBuffer::ensureCapacity(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(24),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::StringBuffer::getChars(jint a0, jint a1, local_ref< array<jchar,1> > const &a2, jint a3)
@@ -463,8 +469,8 @@ void java::lang::StringBuffer::getChars(jint a0, jint a1, local_ref< array<jchar
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(25),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint java::lang::StringBuffer::indexOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -473,8 +479,8 @@ jint java::lang::StringBuffer::indexOf(local_ref< java::lang::String > const &a0
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(26),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jchar a1)
@@ -483,8 +489,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(27),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jboolean a1)
@@ -493,8 +499,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(28),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jint a1)
@@ -503,8 +509,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(29),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jlong a1)
@@ -513,8 +519,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(30),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jdouble a1)
@@ -523,8 +529,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(31),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, jfloat a1)
@@ -533,8 +539,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(32),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< java::lang::Object > const &a1)
@@ -543,8 +549,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(33),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< java::lang::String > const &a1)
@@ -553,8 +559,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(34),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< array<jchar,1> > const &a1)
@@ -563,8 +569,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(35),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< array<jchar,1> > const &a1, jint a2, jint a3)
@@ -573,8 +579,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(36),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< java::lang::CharSequence > const &a1)
@@ -583,8 +589,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(37),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3)
@@ -593,8 +599,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::insert(jint a0, 
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(38),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint java::lang::StringBuffer::lastIndexOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -603,8 +609,8 @@ jint java::lang::StringBuffer::lastIndexOf(local_ref< java::lang::String > const
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(39),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::lang::StringBuffer::offsetByCodePoints(jint a0, jint a1)
@@ -613,8 +619,8 @@ jint java::lang::StringBuffer::offsetByCodePoints(jint a0, jint a1)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(40),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(40), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::replace(jint a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -623,8 +629,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::replace(jint a0,
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(41),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::reverse()
@@ -633,8 +639,8 @@ local_ref< java::lang::StringBuffer > java::lang::StringBuffer::reverse()
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(42),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject());
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject());
 }
 
 void java::lang::StringBuffer::setCharAt(jint a0, jchar a1)
@@ -643,8 +649,8 @@ void java::lang::StringBuffer::setCharAt(jint a0, jchar a1)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(43),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::StringBuffer::setLength(jint a0)
@@ -653,8 +659,8 @@ void java::lang::StringBuffer::setLength(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(44),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > java::lang::StringBuffer::subSequence(jint a0, jint a1)
@@ -663,8 +669,8 @@ local_ref< java::lang::CharSequence > java::lang::StringBuffer::subSequence(jint
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(45),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::StringBuffer::substring(jint a0)
@@ -673,8 +679,8 @@ local_ref< java::lang::String > java::lang::StringBuffer::substring(jint a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(46),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::StringBuffer::substring(jint a0, jint a1)
@@ -683,8 +689,8 @@ local_ref< java::lang::String > java::lang::StringBuffer::substring(jint a0, jin
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(47),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::StringBuffer::toString()
@@ -693,8 +699,8 @@ local_ref< java::lang::String > java::lang::StringBuffer::toString()
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(48),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::lang::StringBuffer::trimToSize()
@@ -703,8 +709,8 @@ void java::lang::StringBuffer::trimToSize()
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(49),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -713,8 +719,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(50),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(local_ref< java::lang::CharSequence > const &a0)
@@ -723,8 +729,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(local_ref
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(51),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(jchar a0)
@@ -733,8 +739,8 @@ local_ref< java::lang::Appendable > java::lang::StringBuffer::append_1(jchar a0)
 		java::lang::StringBuffer::J2CPP_CLASS_NAME,
 		java::lang::StringBuffer::J2CPP_METHOD_NAME(52),
 		java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 

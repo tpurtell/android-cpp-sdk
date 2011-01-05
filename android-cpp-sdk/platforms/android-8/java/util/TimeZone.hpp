@@ -69,8 +69,8 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		TimeZone();
@@ -120,14 +120,14 @@ java::util::TimeZone::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::util::TimeZone::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::util::TimeZone::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::TimeZone::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -136,8 +136,8 @@ java::util::TimeZone::TimeZone()
 	call_new_object<
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(0),
-		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -149,8 +149,8 @@ local_ref< java::lang::Object > java::util::TimeZone::clone()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(1),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::TimeZone::getAvailableIDs()
@@ -159,8 +159,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::TimeZone::ge
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(2),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>();
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::TimeZone::getAvailableIDs(jint a0)
@@ -169,8 +169,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::TimeZone::ge
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(3),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(a0);
 }
 
 local_ref< java::util::TimeZone > java::util::TimeZone::getDefault()
@@ -179,8 +179,8 @@ local_ref< java::util::TimeZone > java::util::TimeZone::getDefault()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(4),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::TimeZone > >
-	();
+		local_ref< java::util::TimeZone >
+	>();
 }
 
 local_ref< java::lang::String > java::util::TimeZone::getDisplayName()
@@ -189,8 +189,8 @@ local_ref< java::lang::String > java::util::TimeZone::getDisplayName()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(5),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::TimeZone::getDisplayName(local_ref< java::util::Locale > const &a0)
@@ -199,8 +199,8 @@ local_ref< java::lang::String > java::util::TimeZone::getDisplayName(local_ref< 
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(6),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::TimeZone::getDisplayName(jboolean a0, jint a1)
@@ -209,8 +209,8 @@ local_ref< java::lang::String > java::util::TimeZone::getDisplayName(jboolean a0
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(7),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::util::TimeZone::getDisplayName(jboolean a0, jint a1, local_ref< java::util::Locale > const &a2)
@@ -219,8 +219,8 @@ local_ref< java::lang::String > java::util::TimeZone::getDisplayName(jboolean a0
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(8),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > java::util::TimeZone::getID()
@@ -229,8 +229,8 @@ local_ref< java::lang::String > java::util::TimeZone::getID()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(9),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::TimeZone::getDSTSavings()
@@ -239,8 +239,8 @@ jint java::util::TimeZone::getDSTSavings()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(10),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::TimeZone::getOffset(jlong a0)
@@ -249,8 +249,8 @@ jint java::util::TimeZone::getOffset(jlong a0)
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(11),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::TimeZone::getOffset(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -259,8 +259,8 @@ jint java::util::TimeZone::getOffset(jint a0, jint a1, jint a2, jint a3, jint a4
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(12),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jint java::util::TimeZone::getRawOffset()
@@ -269,8 +269,8 @@ jint java::util::TimeZone::getRawOffset()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(13),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::TimeZone > java::util::TimeZone::getTimeZone(local_ref< java::lang::String > const &a0)
@@ -279,8 +279,8 @@ local_ref< java::util::TimeZone > java::util::TimeZone::getTimeZone(local_ref< j
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(14),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::TimeZone > >
-	(a0);
+		local_ref< java::util::TimeZone >
+	>(a0);
 }
 
 jboolean java::util::TimeZone::hasSameRules(local_ref< java::util::TimeZone > const &a0)
@@ -289,8 +289,8 @@ jboolean java::util::TimeZone::hasSameRules(local_ref< java::util::TimeZone > co
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(15),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::TimeZone::inDaylightTime(local_ref< java::util::Date > const &a0)
@@ -299,8 +299,8 @@ jboolean java::util::TimeZone::inDaylightTime(local_ref< java::util::Date > cons
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(16),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::TimeZone::setDefault(local_ref< java::util::TimeZone > const &a0)
@@ -309,8 +309,8 @@ void java::util::TimeZone::setDefault(local_ref< java::util::TimeZone > const &a
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(17),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::TimeZone::setID(local_ref< java::lang::String > const &a0)
@@ -319,8 +319,8 @@ void java::util::TimeZone::setID(local_ref< java::lang::String > const &a0)
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(18),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::TimeZone::setRawOffset(jint a0)
@@ -329,8 +329,8 @@ void java::util::TimeZone::setRawOffset(jint a0)
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(19),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::TimeZone::useDaylightTime()
@@ -339,8 +339,8 @@ jboolean java::util::TimeZone::useDaylightTime()
 		java::util::TimeZone::J2CPP_CLASS_NAME,
 		java::util::TimeZone::J2CPP_METHOD_NAME(20),
 		java::util::TimeZone::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

@@ -14,8 +14,10 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ThreadFactory; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Executor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class AbstractExecutorService; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class RejectedExecutionHandler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -26,6 +28,8 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/util/List.hpp>
 #include <java/util/concurrent/AbstractExecutorService.hpp>
 #include <java/util/concurrent/BlockingQueue.hpp>
+#include <java/util/concurrent/Executor.hpp>
+#include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/RejectedExecutionHandler.hpp>
 #include <java/util/concurrent/ThreadFactory.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
@@ -189,7 +193,10 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::Executor>() const;
 		operator local_ref<java::util::concurrent::AbstractExecutorService>() const;
+		operator local_ref<java::util::concurrent::ExecutorService>() const;
 
 
 		ThreadPoolExecutor(jint, jint, jlong, local_ref< java::util::concurrent::TimeUnit > const&, local_ref< java::util::concurrent::BlockingQueue > const&);
@@ -259,8 +266,8 @@ java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::AbortPolicy()
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -272,8 +279,8 @@ void java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::rejectedExecution
 		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ThreadPoolExecutor_::AbortPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -298,8 +305,8 @@ java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::DiscardPolicy()
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -311,8 +318,8 @@ void java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::rejectedExecuti
 		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ThreadPoolExecutor_::DiscardPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -337,8 +344,8 @@ java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::DiscardOldestP
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -350,8 +357,8 @@ void java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::rejectedE
 		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ThreadPoolExecutor_::DiscardOldestPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -376,8 +383,8 @@ java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::CallerRunsPolicy(
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -389,8 +396,8 @@ void java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::rejectedExec
 		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -400,9 +407,24 @@ J2CPP_DEFINE_METHOD(java::util::concurrent::ThreadPoolExecutor_::CallerRunsPolic
 
 
 
+java::util::concurrent::ThreadPoolExecutor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::ThreadPoolExecutor::operator local_ref<java::util::concurrent::Executor>() const
+{
+	return local_ref<java::util::concurrent::Executor>(get_jobject());
+}
+
 java::util::concurrent::ThreadPoolExecutor::operator local_ref<java::util::concurrent::AbstractExecutorService>() const
 {
 	return local_ref<java::util::concurrent::AbstractExecutorService>(get_jobject());
+}
+
+java::util::concurrent::ThreadPoolExecutor::operator local_ref<java::util::concurrent::ExecutorService>() const
+{
+	return local_ref<java::util::concurrent::ExecutorService>(get_jobject());
 }
 
 
@@ -411,8 +433,8 @@ java::util::concurrent::ThreadPoolExecutor::ThreadPoolExecutor(jint a0, jint a1,
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -424,8 +446,8 @@ java::util::concurrent::ThreadPoolExecutor::ThreadPoolExecutor(jint a0, jint a1,
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5)
+		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -437,8 +459,8 @@ java::util::concurrent::ThreadPoolExecutor::ThreadPoolExecutor(jint a0, jint a1,
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(2),
-		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4, a5)
+		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -450,8 +472,8 @@ java::util::concurrent::ThreadPoolExecutor::ThreadPoolExecutor(jint a0, jint a1,
 	call_new_object<
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(3),
-		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }
@@ -463,8 +485,8 @@ void java::util::concurrent::ThreadPoolExecutor::execute(local_ref< java::lang::
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::ThreadPoolExecutor::shutdown()
@@ -473,8 +495,8 @@ void java::util::concurrent::ThreadPoolExecutor::shutdown()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::util::concurrent::ThreadPoolExecutor::shutdownNow()
@@ -483,8 +505,8 @@ local_ref< java::util::List > java::util::concurrent::ThreadPoolExecutor::shutdo
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::isShutdown()
@@ -493,8 +515,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::isShutdown()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::isTerminating()
@@ -503,8 +525,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::isTerminating()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::isTerminated()
@@ -513,8 +535,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::isTerminated()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::awaitTermination(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -523,8 +545,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::awaitTermination(jlong a0, 
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -534,8 +556,8 @@ void java::util::concurrent::ThreadPoolExecutor::setThreadFactory(local_ref< jav
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::ThreadPoolExecutor::getThreadFactory()
@@ -544,8 +566,8 @@ local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::Threa
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::concurrent::ThreadFactory > >
-	(get_jobject());
+		local_ref< java::util::concurrent::ThreadFactory >
+	>(get_jobject());
 }
 
 void java::util::concurrent::ThreadPoolExecutor::setRejectedExecutionHandler(local_ref< java::util::concurrent::RejectedExecutionHandler > const &a0)
@@ -554,8 +576,8 @@ void java::util::concurrent::ThreadPoolExecutor::setRejectedExecutionHandler(loc
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::RejectedExecutionHandler > java::util::concurrent::ThreadPoolExecutor::getRejectedExecutionHandler()
@@ -564,8 +586,8 @@ local_ref< java::util::concurrent::RejectedExecutionHandler > java::util::concur
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::concurrent::RejectedExecutionHandler > >
-	(get_jobject());
+		local_ref< java::util::concurrent::RejectedExecutionHandler >
+	>(get_jobject());
 }
 
 void java::util::concurrent::ThreadPoolExecutor::setCorePoolSize(jint a0)
@@ -574,8 +596,8 @@ void java::util::concurrent::ThreadPoolExecutor::setCorePoolSize(jint a0)
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::getCorePoolSize()
@@ -584,8 +606,8 @@ jint java::util::concurrent::ThreadPoolExecutor::getCorePoolSize()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::prestartCoreThread()
@@ -594,8 +616,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::prestartCoreThread()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::prestartAllCoreThreads()
@@ -604,8 +626,8 @@ jint java::util::concurrent::ThreadPoolExecutor::prestartAllCoreThreads()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::concurrent::ThreadPoolExecutor::setMaximumPoolSize(jint a0)
@@ -614,8 +636,8 @@ void java::util::concurrent::ThreadPoolExecutor::setMaximumPoolSize(jint a0)
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::getMaximumPoolSize()
@@ -624,8 +646,8 @@ jint java::util::concurrent::ThreadPoolExecutor::getMaximumPoolSize()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::concurrent::ThreadPoolExecutor::setKeepAliveTime(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -634,8 +656,8 @@ void java::util::concurrent::ThreadPoolExecutor::setKeepAliveTime(jlong a0, loca
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::util::concurrent::ThreadPoolExecutor::getKeepAliveTime(local_ref< java::util::concurrent::TimeUnit > const &a0)
@@ -644,8 +666,8 @@ jlong java::util::concurrent::ThreadPoolExecutor::getKeepAliveTime(local_ref< ja
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(23), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::BlockingQueue > java::util::concurrent::ThreadPoolExecutor::getQueue()
@@ -654,8 +676,8 @@ local_ref< java::util::concurrent::BlockingQueue > java::util::concurrent::Threa
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(24),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::concurrent::BlockingQueue > >
-	(get_jobject());
+		local_ref< java::util::concurrent::BlockingQueue >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ThreadPoolExecutor::remove(local_ref< java::lang::Runnable > const &a0)
@@ -664,8 +686,8 @@ jboolean java::util::concurrent::ThreadPoolExecutor::remove(local_ref< java::lan
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(25),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::ThreadPoolExecutor::purge()
@@ -674,8 +696,8 @@ void java::util::concurrent::ThreadPoolExecutor::purge()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(26),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::getPoolSize()
@@ -684,8 +706,8 @@ jint java::util::concurrent::ThreadPoolExecutor::getPoolSize()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(27),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::getActiveCount()
@@ -694,8 +716,8 @@ jint java::util::concurrent::ThreadPoolExecutor::getActiveCount()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(28),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ThreadPoolExecutor::getLargestPoolSize()
@@ -704,8 +726,8 @@ jint java::util::concurrent::ThreadPoolExecutor::getLargestPoolSize()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(29),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::ThreadPoolExecutor::getTaskCount()
@@ -714,8 +736,8 @@ jlong java::util::concurrent::ThreadPoolExecutor::getTaskCount()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(30),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(30), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::ThreadPoolExecutor::getCompletedTaskCount()
@@ -724,8 +746,8 @@ jlong java::util::concurrent::ThreadPoolExecutor::getCompletedTaskCount()
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_NAME(31),
 		java::util::concurrent::ThreadPoolExecutor::J2CPP_METHOD_SIGNATURE(31), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 

@@ -152,8 +152,8 @@ void android::media::MediaScannerConnection_::OnScanCompletedListener::onScanCom
 		android::media::MediaScannerConnection_::OnScanCompletedListener::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection_::OnScanCompletedListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaScannerConnection_::OnScanCompletedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -177,8 +177,8 @@ void android::media::MediaScannerConnection_::MediaScannerConnectionClient::onMe
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_METHOD_NAME(0),
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaScannerConnection_::MediaScannerConnectionClient::onScanCompleted(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1)
@@ -187,8 +187,8 @@ void android::media::MediaScannerConnection_::MediaScannerConnectionClient::onSc
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_METHOD_NAME(1),
 		android::media::MediaScannerConnection_::MediaScannerConnectionClient::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -214,8 +214,8 @@ android::media::MediaScannerConnection::MediaScannerConnection(local_ref< androi
 	call_new_object<
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(0),
-		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -227,8 +227,8 @@ void android::media::MediaScannerConnection::connect()
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(1),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaScannerConnection::disconnect()
@@ -237,8 +237,8 @@ void android::media::MediaScannerConnection::disconnect()
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(2),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::media::MediaScannerConnection::isConnected()
@@ -247,8 +247,8 @@ jboolean android::media::MediaScannerConnection::isConnected()
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(3),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::MediaScannerConnection::scanFile(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -257,8 +257,8 @@ void android::media::MediaScannerConnection::scanFile(local_ref< java::lang::Str
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(4),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaScannerConnection::scanFile(local_ref< android::content::Context > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< android::media::MediaScannerConnection_::OnScanCompletedListener > const &a3)
@@ -267,8 +267,8 @@ void android::media::MediaScannerConnection::scanFile(local_ref< android::conten
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(5),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::media::MediaScannerConnection::onServiceConnected(local_ref< android::content::ComponentName > const &a0, local_ref< android::os::IBinder > const &a1)
@@ -277,8 +277,8 @@ void android::media::MediaScannerConnection::onServiceConnected(local_ref< andro
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(6),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaScannerConnection::onServiceDisconnected(local_ref< android::content::ComponentName > const &a0)
@@ -287,8 +287,8 @@ void android::media::MediaScannerConnection::onServiceDisconnected(local_ref< an
 		android::media::MediaScannerConnection::J2CPP_CLASS_NAME,
 		android::media::MediaScannerConnection::J2CPP_METHOD_NAME(7),
 		android::media::MediaScannerConnection::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

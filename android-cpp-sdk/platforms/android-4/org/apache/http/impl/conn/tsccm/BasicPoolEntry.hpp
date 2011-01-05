@@ -11,12 +11,14 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_BASICPOOLENTRY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractPoolEntry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionOperator; } } } } }
-namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/ref/ReferenceQueue.hpp>
 #include <org/apache/http/conn/ClientConnectionOperator.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
@@ -45,6 +47,7 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::conn::AbstractPoolEntry>() const;
 
 
@@ -71,6 +74,11 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::conn::tsccm::BasicPoolEntry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::conn::tsccm::BasicPoolEntry::operator local_ref<org::apache::http::impl::conn::AbstractPoolEntry>() const
 {
 	return local_ref<org::apache::http::impl::conn::AbstractPoolEntry>(get_jobject());
@@ -82,8 +90,8 @@ org::apache::http::impl::conn::tsccm::BasicPoolEntry::BasicPoolEntry(local_ref< 
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }

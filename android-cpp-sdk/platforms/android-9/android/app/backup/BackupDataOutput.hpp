@@ -76,8 +76,8 @@ jint android::app::backup::BackupDataOutput::writeEntityHeader(local_ref< java::
 		android::app::backup::BackupDataOutput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataOutput::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupDataOutput::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::backup::BackupDataOutput::writeEntityData(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -86,8 +86,8 @@ jint android::app::backup::BackupDataOutput::writeEntityData(local_ref< array<jb
 		android::app::backup::BackupDataOutput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataOutput::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupDataOutput::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

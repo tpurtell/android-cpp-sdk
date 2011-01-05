@@ -13,17 +13,21 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewStub_ { class OnInflateListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/graphics/Canvas.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewStub.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -86,7 +90,10 @@ namespace android { namespace view {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 
 
 		ViewStub(local_ref< android::content::Context > const&);
@@ -131,8 +138,8 @@ void android::view::ViewStub_::OnInflateListener::onInflate(local_ref< android::
 		android::view::ViewStub_::OnInflateListener::J2CPP_CLASS_NAME,
 		android::view::ViewStub_::OnInflateListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewStub_::OnInflateListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -141,9 +148,24 @@ J2CPP_DEFINE_METHOD(android::view::ViewStub_::OnInflateListener,0,"onInflate","(
 
 
 
+android::view::ViewStub::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::view::ViewStub::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
 android::view::ViewStub::operator local_ref<android::view::View>() const
 {
 	return local_ref<android::view::View>(get_jobject());
+}
+
+android::view::ViewStub::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
 }
 
 
@@ -152,8 +174,8 @@ android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &
 	call_new_object<
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(0),
-		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -165,8 +187,8 @@ android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &
 	call_new_object<
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(1),
-		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -178,8 +200,8 @@ android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &
 	call_new_object<
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(2),
-		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -191,8 +213,8 @@ android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &
 	call_new_object<
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(3),
-		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -204,8 +226,8 @@ jint android::view::ViewStub::getInflatedId()
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(4),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::ViewStub::setInflatedId(jint a0)
@@ -214,8 +236,8 @@ void android::view::ViewStub::setInflatedId(jint a0)
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(5),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::ViewStub::getLayoutResource()
@@ -224,8 +246,8 @@ jint android::view::ViewStub::getLayoutResource()
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(6),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::ViewStub::setLayoutResource(jint a0)
@@ -234,8 +256,8 @@ void android::view::ViewStub::setLayoutResource(jint a0)
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(7),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -245,8 +267,8 @@ void android::view::ViewStub::draw(local_ref< android::graphics::Canvas > const 
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(9),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -256,8 +278,8 @@ void android::view::ViewStub::setVisibility(jint a0)
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(11),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::view::ViewStub::inflate()
@@ -266,8 +288,8 @@ local_ref< android::view::View > android::view::ViewStub::inflate()
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(12),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::view::ViewStub::setOnInflateListener(local_ref< android::view::ViewStub_::OnInflateListener > const &a0)
@@ -276,8 +298,8 @@ void android::view::ViewStub::setOnInflateListener(local_ref< android::view::Vie
 		android::view::ViewStub::J2CPP_CLASS_NAME,
 		android::view::ViewStub::J2CPP_METHOD_NAME(13),
 		android::view::ViewStub::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

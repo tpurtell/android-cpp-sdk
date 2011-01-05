@@ -160,6 +160,7 @@ namespace android { namespace media { namespace audiofx {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::media::audiofx::AudioEffect>() const;
 
 
@@ -229,8 +230,8 @@ android::media::audiofx::EnvironmentalReverb_::Settings::Settings()
 	call_new_object<
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , roomLevel(get_jobject())
 , roomHFLevel(get_jobject())
@@ -252,8 +253,8 @@ android::media::audiofx::EnvironmentalReverb_::Settings::Settings(local_ref< jav
 	call_new_object<
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , roomLevel(get_jobject())
 , roomHFLevel(get_jobject())
@@ -275,8 +276,8 @@ local_ref< java::lang::String > android::media::audiofx::EnvironmentalReverb_::S
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::EnvironmentalReverb_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -308,8 +309,8 @@ void android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener::o
 		android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -317,6 +318,11 @@ J2CPP_DEFINE_CLASS(android::media::audiofx::EnvironmentalReverb_::OnParameterCha
 J2CPP_DEFINE_METHOD(android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener,0,"onParameterChange","(Landroid/media/audiofx/EnvironmentalReverb;III)V")
 
 
+
+android::media::audiofx::EnvironmentalReverb::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::media::audiofx::EnvironmentalReverb::operator local_ref<android::media::audiofx::AudioEffect>() const
 {
@@ -329,8 +335,8 @@ android::media::audiofx::EnvironmentalReverb::EnvironmentalReverb(jint a0, jint 
 	call_new_object<
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -342,8 +348,8 @@ void android::media::audiofx::EnvironmentalReverb::setRoomLevel(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getRoomLevel()
@@ -352,8 +358,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getRoomLevel()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(2), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setRoomHFLevel(jshort a0)
@@ -362,8 +368,8 @@ void android::media::audiofx::EnvironmentalReverb::setRoomHFLevel(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getRoomHFLevel()
@@ -372,8 +378,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getRoomHFLevel()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(4), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setDecayTime(jint a0)
@@ -382,8 +388,8 @@ void android::media::audiofx::EnvironmentalReverb::setDecayTime(jint a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::EnvironmentalReverb::getDecayTime()
@@ -392,8 +398,8 @@ jint android::media::audiofx::EnvironmentalReverb::getDecayTime()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setDecayHFRatio(jshort a0)
@@ -402,8 +408,8 @@ void android::media::audiofx::EnvironmentalReverb::setDecayHFRatio(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(7),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getDecayHFRatio()
@@ -412,8 +418,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getDecayHFRatio()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(8),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(8), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setReflectionsLevel(jshort a0)
@@ -422,8 +428,8 @@ void android::media::audiofx::EnvironmentalReverb::setReflectionsLevel(jshort a0
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(9),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getReflectionsLevel()
@@ -432,8 +438,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getReflectionsLevel()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(10),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(10), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setReflectionsDelay(jint a0)
@@ -442,8 +448,8 @@ void android::media::audiofx::EnvironmentalReverb::setReflectionsDelay(jint a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(11),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::EnvironmentalReverb::getReflectionsDelay()
@@ -452,8 +458,8 @@ jint android::media::audiofx::EnvironmentalReverb::getReflectionsDelay()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(12),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setReverbLevel(jshort a0)
@@ -462,8 +468,8 @@ void android::media::audiofx::EnvironmentalReverb::setReverbLevel(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(13),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getReverbLevel()
@@ -472,8 +478,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getReverbLevel()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(14),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(14), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setReverbDelay(jint a0)
@@ -482,8 +488,8 @@ void android::media::audiofx::EnvironmentalReverb::setReverbDelay(jint a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(15),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::EnvironmentalReverb::getReverbDelay()
@@ -492,8 +498,8 @@ jint android::media::audiofx::EnvironmentalReverb::getReverbDelay()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(16),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setDiffusion(jshort a0)
@@ -502,8 +508,8 @@ void android::media::audiofx::EnvironmentalReverb::setDiffusion(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(17),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getDiffusion()
@@ -512,8 +518,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getDiffusion()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(18),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(18), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setDensity(jshort a0)
@@ -522,8 +528,8 @@ void android::media::audiofx::EnvironmentalReverb::setDensity(jshort a0)
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(19),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::EnvironmentalReverb::getDensity()
@@ -532,8 +538,8 @@ jshort android::media::audiofx::EnvironmentalReverb::getDensity()
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(20),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(20), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setParameterListener(local_ref< android::media::audiofx::EnvironmentalReverb_::OnParameterChangeListener > const &a0)
@@ -542,8 +548,8 @@ void android::media::audiofx::EnvironmentalReverb::setParameterListener(local_re
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(21),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::audiofx::EnvironmentalReverb_::Settings > android::media::audiofx::EnvironmentalReverb::getProperties()
@@ -552,8 +558,8 @@ local_ref< android::media::audiofx::EnvironmentalReverb_::Settings > android::me
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(22),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::media::audiofx::EnvironmentalReverb_::Settings > >
-	(get_jobject());
+		local_ref< android::media::audiofx::EnvironmentalReverb_::Settings >
+	>(get_jobject());
 }
 
 void android::media::audiofx::EnvironmentalReverb::setProperties(local_ref< android::media::audiofx::EnvironmentalReverb_::Settings > const &a0)
@@ -562,8 +568,8 @@ void android::media::audiofx::EnvironmentalReverb::setProperties(local_ref< andr
 		android::media::audiofx::EnvironmentalReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_NAME(23),
 		android::media::audiofx::EnvironmentalReverb::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -88,8 +88,8 @@ jshort org::w3c::dom::ls::LSParserFilter::startElement(local_ref< org::w3c::dom:
 		org::w3c::dom::ls::LSParserFilter::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_SIGNATURE(0), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jshort org::w3c::dom::ls::LSParserFilter::acceptNode(local_ref< org::w3c::dom::Node > const &a0)
@@ -98,8 +98,8 @@ jshort org::w3c::dom::ls::LSParserFilter::acceptNode(local_ref< org::w3c::dom::N
 		org::w3c::dom::ls::LSParserFilter::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_SIGNATURE(1), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::ls::LSParserFilter::getWhatToShow()
@@ -108,8 +108,8 @@ jint org::w3c::dom::ls::LSParserFilter::getWhatToShow()
 		org::w3c::dom::ls::LSParserFilter::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ls::LSParserFilter::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

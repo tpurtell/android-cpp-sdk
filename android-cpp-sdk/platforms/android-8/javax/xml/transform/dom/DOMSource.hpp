@@ -98,8 +98,8 @@ javax::xml::transform::dom::DOMSource::DOMSource()
 	call_new_object<
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -111,8 +111,8 @@ javax::xml::transform::dom::DOMSource::DOMSource(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -124,8 +124,8 @@ javax::xml::transform::dom::DOMSource::DOMSource(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -137,8 +137,8 @@ void javax::xml::transform::dom::DOMSource::setNode(local_ref< org::w3c::dom::No
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(3),
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMSource::getNode()
@@ -147,8 +147,8 @@ local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMSource::getNode(
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(4),
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 void javax::xml::transform::dom::DOMSource::setSystemId(local_ref< java::lang::String > const &a0)
@@ -157,8 +157,8 @@ void javax::xml::transform::dom::DOMSource::setSystemId(local_ref< java::lang::S
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::dom::DOMSource::getSystemId()
@@ -167,8 +167,8 @@ local_ref< java::lang::String > javax::xml::transform::dom::DOMSource::getSystem
 		javax::xml::transform::dom::DOMSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::dom::DOMSource::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

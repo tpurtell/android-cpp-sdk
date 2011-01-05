@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_LANG_BYTE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Comparable.hpp>
 #include <java/lang/Number.hpp>
@@ -68,8 +70,10 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Number>() const;
 
 
 		Byte(jbyte);
@@ -115,14 +119,24 @@ namespace j2cpp {
 
 
 
-java::lang::Byte::operator local_ref<java::lang::Number>() const
+java::lang::Byte::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Number>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::lang::Byte::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::lang::Byte::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Byte::operator local_ref<java::lang::Number>() const
+{
+	return local_ref<java::lang::Number>(get_jobject());
 }
 
 
@@ -131,8 +145,8 @@ java::lang::Byte::Byte(jbyte a0)
 	call_new_object<
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(0),
-		java::lang::Byte::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Byte::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -144,8 +158,8 @@ java::lang::Byte::Byte(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(1),
-		java::lang::Byte::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Byte::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -157,8 +171,8 @@ jbyte java::lang::Byte::byteValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(2),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(2), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jint java::lang::Byte::compareTo(local_ref< java::lang::Byte > const &a0)
@@ -167,8 +181,8 @@ jint java::lang::Byte::compareTo(local_ref< java::lang::Byte > const &a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(3),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Byte > java::lang::Byte::decode(local_ref< java::lang::String > const &a0)
@@ -177,8 +191,8 @@ local_ref< java::lang::Byte > java::lang::Byte::decode(local_ref< java::lang::St
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(4),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Byte > >
-	(a0);
+		local_ref< java::lang::Byte >
+	>(a0);
 }
 
 jdouble java::lang::Byte::doubleValue()
@@ -187,8 +201,8 @@ jdouble java::lang::Byte::doubleValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(5),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jboolean java::lang::Byte::equals(local_ref< java::lang::Object > const &a0)
@@ -197,8 +211,8 @@ jboolean java::lang::Byte::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(6),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat java::lang::Byte::floatValue()
@@ -207,8 +221,8 @@ jfloat java::lang::Byte::floatValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(7),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint java::lang::Byte::hashCode()
@@ -217,8 +231,8 @@ jint java::lang::Byte::hashCode()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(8),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::lang::Byte::intValue()
@@ -227,8 +241,8 @@ jint java::lang::Byte::intValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(9),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::lang::Byte::longValue()
@@ -237,8 +251,8 @@ jlong java::lang::Byte::longValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(10),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jbyte java::lang::Byte::parseByte(local_ref< java::lang::String > const &a0)
@@ -247,8 +261,8 @@ jbyte java::lang::Byte::parseByte(local_ref< java::lang::String > const &a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(11),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(11), 
-		jbyte >
-	(a0);
+		jbyte
+	>(a0);
 }
 
 jbyte java::lang::Byte::parseByte(local_ref< java::lang::String > const &a0, jint a1)
@@ -257,8 +271,8 @@ jbyte java::lang::Byte::parseByte(local_ref< java::lang::String > const &a0, jin
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(12),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(12), 
-		jbyte >
-	(a0, a1);
+		jbyte
+	>(a0, a1);
 }
 
 jshort java::lang::Byte::shortValue()
@@ -267,8 +281,8 @@ jshort java::lang::Byte::shortValue()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(13),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(13), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Byte::toString()
@@ -277,8 +291,8 @@ local_ref< java::lang::String > java::lang::Byte::toString()
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(14),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Byte::toString(jbyte a0)
@@ -287,8 +301,8 @@ local_ref< java::lang::String > java::lang::Byte::toString(jbyte a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(15),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::Byte > java::lang::Byte::valueOf(local_ref< java::lang::String > const &a0)
@@ -297,8 +311,8 @@ local_ref< java::lang::Byte > java::lang::Byte::valueOf(local_ref< java::lang::S
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(16),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Byte > >
-	(a0);
+		local_ref< java::lang::Byte >
+	>(a0);
 }
 
 local_ref< java::lang::Byte > java::lang::Byte::valueOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -307,8 +321,8 @@ local_ref< java::lang::Byte > java::lang::Byte::valueOf(local_ref< java::lang::S
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(17),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Byte > >
-	(a0, a1);
+		local_ref< java::lang::Byte >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Byte > java::lang::Byte::valueOf(jbyte a0)
@@ -317,8 +331,8 @@ local_ref< java::lang::Byte > java::lang::Byte::valueOf(jbyte a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(18),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::Byte > >
-	(a0);
+		local_ref< java::lang::Byte >
+	>(a0);
 }
 
 jint java::lang::Byte::compareTo(local_ref< java::lang::Object > const &a0)
@@ -327,8 +341,8 @@ jint java::lang::Byte::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Byte::J2CPP_CLASS_NAME,
 		java::lang::Byte::J2CPP_METHOD_NAME(19),
 		java::lang::Byte::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

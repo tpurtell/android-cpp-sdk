@@ -11,17 +11,19 @@
 #define J2CPP_ANDROID_TEXT_SPANNABLESTRING_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class GetChars; } } }
 namespace j2cpp { namespace android { namespace text { class SpannableStringInternal; } } }
+namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 
 
 #include <android/text/GetChars.hpp>
 #include <android/text/Spannable.hpp>
 #include <android/text/SpannableStringInternal.hpp>
+#include <android/text/Spanned.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Object.hpp>
@@ -55,10 +57,12 @@ namespace android { namespace text {
 		{
 		}
 
-		operator local_ref<android::text::SpannableStringInternal>() const;
 		operator local_ref<java::lang::CharSequence>() const;
-		operator local_ref<android::text::GetChars>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::Spannable>() const;
+		operator local_ref<android::text::GetChars>() const;
+		operator local_ref<android::text::SpannableStringInternal>() const;
+		operator local_ref<android::text::Spanned>() const;
 
 
 		SpannableString(local_ref< java::lang::CharSequence > const&);
@@ -89,14 +93,19 @@ namespace j2cpp {
 
 
 
-android::text::SpannableString::operator local_ref<android::text::SpannableStringInternal>() const
-{
-	return local_ref<android::text::SpannableStringInternal>(get_jobject());
-}
-
 android::text::SpannableString::operator local_ref<java::lang::CharSequence>() const
 {
 	return local_ref<java::lang::CharSequence>(get_jobject());
+}
+
+android::text::SpannableString::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::SpannableString::operator local_ref<android::text::Spannable>() const
+{
+	return local_ref<android::text::Spannable>(get_jobject());
 }
 
 android::text::SpannableString::operator local_ref<android::text::GetChars>() const
@@ -104,9 +113,14 @@ android::text::SpannableString::operator local_ref<android::text::GetChars>() co
 	return local_ref<android::text::GetChars>(get_jobject());
 }
 
-android::text::SpannableString::operator local_ref<android::text::Spannable>() const
+android::text::SpannableString::operator local_ref<android::text::SpannableStringInternal>() const
 {
-	return local_ref<android::text::Spannable>(get_jobject());
+	return local_ref<android::text::SpannableStringInternal>(get_jobject());
+}
+
+android::text::SpannableString::operator local_ref<android::text::Spanned>() const
+{
+	return local_ref<android::text::Spanned>(get_jobject());
 }
 
 
@@ -115,8 +129,8 @@ android::text::SpannableString::SpannableString(local_ref< java::lang::CharSeque
 	call_new_object<
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(0),
-		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -128,8 +142,8 @@ local_ref< android::text::SpannableString > android::text::SpannableString::valu
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(1),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::SpannableString > >
-	(a0);
+		local_ref< android::text::SpannableString >
+	>(a0);
 }
 
 void android::text::SpannableString::setSpan(local_ref< java::lang::Object > const &a0, jint a1, jint a2, jint a3)
@@ -138,8 +152,8 @@ void android::text::SpannableString::setSpan(local_ref< java::lang::Object > con
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(2),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::SpannableString::removeSpan(local_ref< java::lang::Object > const &a0)
@@ -148,8 +162,8 @@ void android::text::SpannableString::removeSpan(local_ref< java::lang::Object > 
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(3),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::text::SpannableString::subSequence(jint a0, jint a1)
@@ -158,8 +172,8 @@ local_ref< java::lang::CharSequence > android::text::SpannableString::subSequenc
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(4),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::text::SpannableString::nextSpanTransition(jint a0, jint a1, local_ref< java::lang::Class > const &a2)
@@ -168,8 +182,8 @@ jint android::text::SpannableString::nextSpanTransition(jint a0, jint a1, local_
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(5),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > android::text::SpannableString::getSpans(jint a0, jint a1, local_ref< java::lang::Class > const &a2)
@@ -178,8 +192,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::text::Spannable
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(6),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::text::SpannableString::getSpanFlags(local_ref< java::lang::Object > const &a0)
@@ -188,8 +202,8 @@ jint android::text::SpannableString::getSpanFlags(local_ref< java::lang::Object 
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(7),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::SpannableString::getSpanEnd(local_ref< java::lang::Object > const &a0)
@@ -198,8 +212,8 @@ jint android::text::SpannableString::getSpanEnd(local_ref< java::lang::Object > 
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(8),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::SpannableString::getSpanStart(local_ref< java::lang::Object > const &a0)
@@ -208,8 +222,8 @@ jint android::text::SpannableString::getSpanStart(local_ref< java::lang::Object 
 		android::text::SpannableString::J2CPP_CLASS_NAME,
 		android::text::SpannableString::J2CPP_METHOD_NAME(9),
 		android::text::SpannableString::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

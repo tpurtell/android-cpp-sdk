@@ -81,8 +81,8 @@ void javax::sql::ConnectionEventListener::connectionClosed(local_ref< javax::sql
 		javax::sql::ConnectionEventListener::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_NAME(0),
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::ConnectionEventListener::connectionErrorOccurred(local_ref< javax::sql::ConnectionEvent > const &a0)
@@ -91,8 +91,8 @@ void javax::sql::ConnectionEventListener::connectionErrorOccurred(local_ref< jav
 		javax::sql::ConnectionEventListener::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_NAME(1),
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

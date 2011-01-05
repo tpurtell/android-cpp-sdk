@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_NET_PROXYSELECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
-namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
@@ -85,8 +85,8 @@ java::net::ProxySelector::ProxySelector()
 	call_new_object<
 		java::net::ProxySelector::J2CPP_CLASS_NAME,
 		java::net::ProxySelector::J2CPP_METHOD_NAME(0),
-		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::net::ProxySelector > java::net::ProxySelector::getDefault()
 		java::net::ProxySelector::J2CPP_CLASS_NAME,
 		java::net::ProxySelector::J2CPP_METHOD_NAME(1),
 		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::ProxySelector > >
-	();
+		local_ref< java::net::ProxySelector >
+	>();
 }
 
 void java::net::ProxySelector::setDefault(local_ref< java::net::ProxySelector > const &a0)
@@ -108,8 +108,8 @@ void java::net::ProxySelector::setDefault(local_ref< java::net::ProxySelector > 
 		java::net::ProxySelector::J2CPP_CLASS_NAME,
 		java::net::ProxySelector::J2CPP_METHOD_NAME(2),
 		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::util::List > java::net::ProxySelector::select(local_ref< java::net::URI > const &a0)
@@ -118,8 +118,8 @@ local_ref< java::util::List > java::net::ProxySelector::select(local_ref< java::
 		java::net::ProxySelector::J2CPP_CLASS_NAME,
 		java::net::ProxySelector::J2CPP_METHOD_NAME(3),
 		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 void java::net::ProxySelector::connectFailed(local_ref< java::net::URI > const &a0, local_ref< java::net::SocketAddress > const &a1, local_ref< java::io::IOException > const &a2)
@@ -128,8 +128,8 @@ void java::net::ProxySelector::connectFailed(local_ref< java::net::URI > const &
 		java::net::ProxySelector::J2CPP_CLASS_NAME,
 		java::net::ProxySelector::J2CPP_METHOD_NAME(4),
 		java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

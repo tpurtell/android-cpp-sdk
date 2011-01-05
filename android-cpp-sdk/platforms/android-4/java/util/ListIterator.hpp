@@ -46,8 +46,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Iterator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void add(local_ref< java::lang::Object >  const&);
@@ -77,14 +77,14 @@ namespace j2cpp {
 
 
 
-java::util::ListIterator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::ListIterator::operator local_ref<java::util::Iterator>() const
 {
 	return local_ref<java::util::Iterator>(get_jobject());
+}
+
+java::util::ListIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::util::ListIterator::add(local_ref< java::lang::Object > const &a0)
@@ -93,8 +93,8 @@ void java::util::ListIterator::add(local_ref< java::lang::Object > const &a0)
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(0),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::ListIterator::hasNext()
@@ -103,8 +103,8 @@ jboolean java::util::ListIterator::hasNext()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(1),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::ListIterator::hasPrevious()
@@ -113,8 +113,8 @@ jboolean java::util::ListIterator::hasPrevious()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(2),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::ListIterator::next()
@@ -123,8 +123,8 @@ local_ref< java::lang::Object > java::util::ListIterator::next()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(3),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::ListIterator::nextIndex()
@@ -133,8 +133,8 @@ jint java::util::ListIterator::nextIndex()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(4),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::ListIterator::previous()
@@ -143,8 +143,8 @@ local_ref< java::lang::Object > java::util::ListIterator::previous()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(5),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::ListIterator::previousIndex()
@@ -153,8 +153,8 @@ jint java::util::ListIterator::previousIndex()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(6),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::ListIterator::remove()
@@ -163,8 +163,8 @@ void java::util::ListIterator::remove()
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(7),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::ListIterator::set(local_ref< java::lang::Object > const &a0)
@@ -173,8 +173,8 @@ void java::util::ListIterator::set(local_ref< java::lang::Object > const &a0)
 		java::util::ListIterator::J2CPP_CLASS_NAME,
 		java::util::ListIterator::J2CPP_METHOD_NAME(8),
 		java::util::ListIterator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -75,8 +75,8 @@ java::text::Annotation::Annotation(local_ref< java::lang::Object > const &a0)
 	call_new_object<
 		java::text::Annotation::J2CPP_CLASS_NAME,
 		java::text::Annotation::J2CPP_METHOD_NAME(0),
-		java::text::Annotation::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::text::Annotation::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -88,8 +88,8 @@ local_ref< java::lang::Object > java::text::Annotation::getValue()
 		java::text::Annotation::J2CPP_CLASS_NAME,
 		java::text::Annotation::J2CPP_METHOD_NAME(1),
 		java::text::Annotation::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::Annotation::toString()
@@ -98,8 +98,8 @@ local_ref< java::lang::String > java::text::Annotation::toString()
 		java::text::Annotation::J2CPP_CLASS_NAME,
 		java::text::Annotation::J2CPP_METHOD_NAME(2),
 		java::text::Annotation::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

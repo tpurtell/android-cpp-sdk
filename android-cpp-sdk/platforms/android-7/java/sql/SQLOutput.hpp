@@ -141,8 +141,8 @@ void java::sql::SQLOutput::writeString(local_ref< java::lang::String > const &a0
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(0),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeBoolean(jboolean a0)
@@ -151,8 +151,8 @@ void java::sql::SQLOutput::writeBoolean(jboolean a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(1),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeByte(jbyte a0)
@@ -161,8 +161,8 @@ void java::sql::SQLOutput::writeByte(jbyte a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(2),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeShort(jshort a0)
@@ -171,8 +171,8 @@ void java::sql::SQLOutput::writeShort(jshort a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(3),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeInt(jint a0)
@@ -181,8 +181,8 @@ void java::sql::SQLOutput::writeInt(jint a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(4),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeLong(jlong a0)
@@ -191,8 +191,8 @@ void java::sql::SQLOutput::writeLong(jlong a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(5),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeFloat(jfloat a0)
@@ -201,8 +201,8 @@ void java::sql::SQLOutput::writeFloat(jfloat a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(6),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeDouble(jdouble a0)
@@ -211,8 +211,8 @@ void java::sql::SQLOutput::writeDouble(jdouble a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(7),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeBigDecimal(local_ref< java::math::BigDecimal > const &a0)
@@ -221,8 +221,8 @@ void java::sql::SQLOutput::writeBigDecimal(local_ref< java::math::BigDecimal > c
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(8),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeBytes(local_ref< array<jbyte,1> > const &a0)
@@ -231,8 +231,8 @@ void java::sql::SQLOutput::writeBytes(local_ref< array<jbyte,1> > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(9),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeDate(local_ref< java::sql::Date > const &a0)
@@ -241,8 +241,8 @@ void java::sql::SQLOutput::writeDate(local_ref< java::sql::Date > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(10),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeTime(local_ref< java::sql::Time > const &a0)
@@ -251,8 +251,8 @@ void java::sql::SQLOutput::writeTime(local_ref< java::sql::Time > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(11),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeTimestamp(local_ref< java::sql::Timestamp > const &a0)
@@ -261,8 +261,8 @@ void java::sql::SQLOutput::writeTimestamp(local_ref< java::sql::Timestamp > cons
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(12),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeCharacterStream(local_ref< java::io::Reader > const &a0)
@@ -271,8 +271,8 @@ void java::sql::SQLOutput::writeCharacterStream(local_ref< java::io::Reader > co
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(13),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeAsciiStream(local_ref< java::io::InputStream > const &a0)
@@ -281,8 +281,8 @@ void java::sql::SQLOutput::writeAsciiStream(local_ref< java::io::InputStream > c
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(14),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeBinaryStream(local_ref< java::io::InputStream > const &a0)
@@ -291,8 +291,8 @@ void java::sql::SQLOutput::writeBinaryStream(local_ref< java::io::InputStream > 
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(15),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeObject(local_ref< java::sql::SQLData > const &a0)
@@ -301,8 +301,8 @@ void java::sql::SQLOutput::writeObject(local_ref< java::sql::SQLData > const &a0
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(16),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeRef(local_ref< java::sql::Ref > const &a0)
@@ -311,8 +311,8 @@ void java::sql::SQLOutput::writeRef(local_ref< java::sql::Ref > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(17),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeBlob(local_ref< java::sql::Blob > const &a0)
@@ -321,8 +321,8 @@ void java::sql::SQLOutput::writeBlob(local_ref< java::sql::Blob > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(18),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeClob(local_ref< java::sql::Clob > const &a0)
@@ -331,8 +331,8 @@ void java::sql::SQLOutput::writeClob(local_ref< java::sql::Clob > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(19),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeStruct(local_ref< java::sql::Struct > const &a0)
@@ -341,8 +341,8 @@ void java::sql::SQLOutput::writeStruct(local_ref< java::sql::Struct > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(20),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeArray(local_ref< java::sql::Array > const &a0)
@@ -351,8 +351,8 @@ void java::sql::SQLOutput::writeArray(local_ref< java::sql::Array > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(21),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::SQLOutput::writeURL(local_ref< java::net::URL > const &a0)
@@ -361,8 +361,8 @@ void java::sql::SQLOutput::writeURL(local_ref< java::net::URL > const &a0)
 		java::sql::SQLOutput::J2CPP_CLASS_NAME,
 		java::sql::SQLOutput::J2CPP_METHOD_NAME(22),
 		java::sql::SQLOutput::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -146,8 +146,8 @@ local_ref< android::view::MenuItem > android::view::Menu::add(local_ref< java::l
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(0),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::MenuItem > android::view::Menu::add(jint a0)
@@ -156,8 +156,8 @@ local_ref< android::view::MenuItem > android::view::Menu::add(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(1),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::MenuItem > android::view::Menu::add(jint a0, jint a1, jint a2, local_ref< java::lang::CharSequence > const &a3)
@@ -166,8 +166,8 @@ local_ref< android::view::MenuItem > android::view::Menu::add(jint a0, jint a1, 
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(2),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::view::MenuItem > android::view::Menu::add(jint a0, jint a1, jint a2, jint a3)
@@ -176,8 +176,8 @@ local_ref< android::view::MenuItem > android::view::Menu::add(jint a0, jint a1, 
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(3),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(local_ref< java::lang::CharSequence > const &a0)
@@ -186,8 +186,8 @@ local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(local_ref< j
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(4),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0)
@@ -196,8 +196,8 @@ local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(5),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0, jint a1, jint a2, local_ref< java::lang::CharSequence > const &a3)
@@ -206,8 +206,8 @@ local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0, jin
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(6),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0, jint a1, jint a2, jint a3)
@@ -216,8 +216,8 @@ local_ref< android::view::SubMenu > android::view::Menu::addSubMenu(jint a0, jin
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(7),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::view::Menu::addIntentOptions(jint a0, jint a1, jint a2, local_ref< android::content::ComponentName > const &a3, local_ref< array< local_ref< android::content::Intent >, 1> > const &a4, local_ref< android::content::Intent > const &a5, jint a6, local_ref< array< local_ref< android::view::MenuItem >, 1> > const &a7)
@@ -226,8 +226,8 @@ jint android::view::Menu::addIntentOptions(jint a0, jint a1, jint a2, local_ref<
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(8),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::view::Menu::removeItem(jint a0)
@@ -236,8 +236,8 @@ void android::view::Menu::removeItem(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(9),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Menu::removeGroup(jint a0)
@@ -246,8 +246,8 @@ void android::view::Menu::removeGroup(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(10),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Menu::clear()
@@ -256,8 +256,8 @@ void android::view::Menu::clear()
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(11),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::Menu::setGroupCheckable(jint a0, jboolean a1, jboolean a2)
@@ -266,8 +266,8 @@ void android::view::Menu::setGroupCheckable(jint a0, jboolean a1, jboolean a2)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(12),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::view::Menu::setGroupVisible(jint a0, jboolean a1)
@@ -276,8 +276,8 @@ void android::view::Menu::setGroupVisible(jint a0, jboolean a1)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(13),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::Menu::setGroupEnabled(jint a0, jboolean a1)
@@ -286,8 +286,8 @@ void android::view::Menu::setGroupEnabled(jint a0, jboolean a1)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(14),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::Menu::hasVisibleItems()
@@ -296,8 +296,8 @@ jboolean android::view::Menu::hasVisibleItems()
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(15),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::Menu::findItem(jint a0)
@@ -306,8 +306,8 @@ local_ref< android::view::MenuItem > android::view::Menu::findItem(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(16),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jint android::view::Menu::size()
@@ -316,8 +316,8 @@ jint android::view::Menu::size()
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(17),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::Menu::getItem(jint a0)
@@ -326,8 +326,8 @@ local_ref< android::view::MenuItem > android::view::Menu::getItem(jint a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(18),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 void android::view::Menu::close()
@@ -336,8 +336,8 @@ void android::view::Menu::close()
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(19),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::view::Menu::performShortcut(jint a0, local_ref< android::view::KeyEvent > const &a1, jint a2)
@@ -346,8 +346,8 @@ jboolean android::view::Menu::performShortcut(jint a0, local_ref< android::view:
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(20),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::view::Menu::isShortcutKey(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -356,8 +356,8 @@ jboolean android::view::Menu::isShortcutKey(jint a0, local_ref< android::view::K
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(21),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::Menu::performIdentifierAction(jint a0, jint a1)
@@ -366,8 +366,8 @@ jboolean android::view::Menu::performIdentifierAction(jint a0, jint a1)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(22),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::Menu::setQwertyMode(jboolean a0)
@@ -376,8 +376,8 @@ void android::view::Menu::setQwertyMode(jboolean a0)
 		android::view::Menu::J2CPP_CLASS_NAME,
 		android::view::Menu::J2CPP_METHOD_NAME(23),
 		android::view::Menu::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

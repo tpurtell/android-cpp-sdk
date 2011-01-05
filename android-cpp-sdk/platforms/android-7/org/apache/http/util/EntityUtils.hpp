@@ -83,8 +83,8 @@ local_ref< array<jbyte,1> > org::apache::http::util::EntityUtils::toByteArray(lo
 		org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EntityUtils::getContentCharSet(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -93,8 +93,8 @@ local_ref< java::lang::String > org::apache::http::util::EntityUtils::getContent
 		org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EntityUtils::toString(local_ref< org::apache::http::HttpEntity > const &a0, local_ref< java::lang::String > const &a1)
@@ -103,8 +103,8 @@ local_ref< java::lang::String > org::apache::http::util::EntityUtils::toString(l
 		org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::util::EntityUtils::toString(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -113,8 +113,8 @@ local_ref< java::lang::String > org::apache::http::util::EntityUtils::toString(l
 		org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::EntityUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

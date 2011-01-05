@@ -103,8 +103,8 @@ android::webkit::URLUtil::URLUtil()
 	call_new_object<
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(0),
-		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -116,8 +116,8 @@ local_ref< java::lang::String > android::webkit::URLUtil::guessUrl(local_ref< ja
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(1),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::webkit::URLUtil::composeSearchUrl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -126,8 +126,8 @@ local_ref< java::lang::String > android::webkit::URLUtil::composeSearchUrl(local
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(2),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< array<jbyte,1> > android::webkit::URLUtil::decode(local_ref< array<jbyte,1> > const &a0)
@@ -136,8 +136,8 @@ local_ref< array<jbyte,1> > android::webkit::URLUtil::decode(local_ref< array<jb
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(3),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isAssetUrl(local_ref< java::lang::String > const &a0)
@@ -146,8 +146,8 @@ jboolean android::webkit::URLUtil::isAssetUrl(local_ref< java::lang::String > co
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(4),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isCookielessProxyUrl(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ jboolean android::webkit::URLUtil::isCookielessProxyUrl(local_ref< java::lang::S
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(5),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isFileUrl(local_ref< java::lang::String > const &a0)
@@ -166,8 +166,8 @@ jboolean android::webkit::URLUtil::isFileUrl(local_ref< java::lang::String > con
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(6),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isAboutUrl(local_ref< java::lang::String > const &a0)
@@ -176,8 +176,8 @@ jboolean android::webkit::URLUtil::isAboutUrl(local_ref< java::lang::String > co
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(7),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isDataUrl(local_ref< java::lang::String > const &a0)
@@ -186,8 +186,8 @@ jboolean android::webkit::URLUtil::isDataUrl(local_ref< java::lang::String > con
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(8),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isJavaScriptUrl(local_ref< java::lang::String > const &a0)
@@ -196,8 +196,8 @@ jboolean android::webkit::URLUtil::isJavaScriptUrl(local_ref< java::lang::String
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(9),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isHttpUrl(local_ref< java::lang::String > const &a0)
@@ -206,8 +206,8 @@ jboolean android::webkit::URLUtil::isHttpUrl(local_ref< java::lang::String > con
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(10),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isHttpsUrl(local_ref< java::lang::String > const &a0)
@@ -216,8 +216,8 @@ jboolean android::webkit::URLUtil::isHttpsUrl(local_ref< java::lang::String > co
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(11),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isNetworkUrl(local_ref< java::lang::String > const &a0)
@@ -226,8 +226,8 @@ jboolean android::webkit::URLUtil::isNetworkUrl(local_ref< java::lang::String > 
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(12),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isContentUrl(local_ref< java::lang::String > const &a0)
@@ -236,8 +236,8 @@ jboolean android::webkit::URLUtil::isContentUrl(local_ref< java::lang::String > 
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(13),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::URLUtil::isValidUrl(local_ref< java::lang::String > const &a0)
@@ -246,8 +246,8 @@ jboolean android::webkit::URLUtil::isValidUrl(local_ref< java::lang::String > co
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(14),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > android::webkit::URLUtil::stripAnchor(local_ref< java::lang::String > const &a0)
@@ -256,8 +256,8 @@ local_ref< java::lang::String > android::webkit::URLUtil::stripAnchor(local_ref<
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(15),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::webkit::URLUtil::guessFileName(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -266,8 +266,8 @@ local_ref< java::lang::String > android::webkit::URLUtil::guessFileName(local_re
 		android::webkit::URLUtil::J2CPP_CLASS_NAME,
 		android::webkit::URLUtil::J2CPP_METHOD_NAME(16),
 		android::webkit::URLUtil::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 

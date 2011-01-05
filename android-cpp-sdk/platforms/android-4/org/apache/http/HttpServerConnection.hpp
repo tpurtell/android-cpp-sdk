@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPSERVERCONNECTION_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -48,8 +48,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::apache::http::HttpRequest > receiveRequestHeader();
@@ -76,14 +76,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HttpServerConnection::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HttpServerConnection::operator local_ref<org::apache::http::HttpConnection>() const
 {
 	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::HttpServerConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpRequest > org::apache::http::HttpServerConnection::receiveRequestHeader()
@@ -92,8 +92,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::HttpServerConnect
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpServerConnection::receiveRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const &a0)
@@ -102,8 +102,8 @@ void org::apache::http::HttpServerConnection::receiveRequestEntity(local_ref< or
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::sendResponseHeader(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -112,8 +112,8 @@ void org::apache::http::HttpServerConnection::sendResponseHeader(local_ref< org:
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::sendResponseEntity(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -122,8 +122,8 @@ void org::apache::http::HttpServerConnection::sendResponseEntity(local_ref< org:
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpServerConnection::flush()
@@ -132,8 +132,8 @@ void org::apache::http::HttpServerConnection::flush()
 		org::apache::http::HttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpServerConnection::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

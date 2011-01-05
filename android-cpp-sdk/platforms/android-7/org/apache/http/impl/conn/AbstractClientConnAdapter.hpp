@@ -17,8 +17,12 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
@@ -26,10 +30,14 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <java/net/InetAddress.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpConnectionMetrics.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
 
 
@@ -81,7 +89,11 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
 		operator local_ref<org::apache::http::conn::ManagedClientConnection>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
 
 
 		jboolean isOpen();
@@ -133,9 +145,29 @@ org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<jav
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jobject());
+}
+
 org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::conn::ManagedClientConnection>() const
 {
 	return local_ref<org::apache::http::conn::ManagedClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
 }
 
 
@@ -150,8 +182,8 @@ jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isOpen()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isStale()
@@ -160,8 +192,8 @@ jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isStale()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::setSocketTimeout(jint a0)
@@ -170,8 +202,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::setSocketTimeout(
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::impl::conn::AbstractClientConnAdapter::getSocketTimeout()
@@ -180,8 +212,8 @@ jint org::apache::http::impl::conn::AbstractClientConnAdapter::getSocketTimeout(
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpConnectionMetrics > org::apache::http::impl::conn::AbstractClientConnAdapter::getMetrics()
@@ -190,8 +222,8 @@ local_ref< org::apache::http::HttpConnectionMetrics > org::apache::http::impl::c
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::apache::http::HttpConnectionMetrics > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpConnectionMetrics >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::flush()
@@ -200,8 +232,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::flush()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isResponseAvailable(jint a0)
@@ -210,8 +242,8 @@ jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isResponseAva
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(12),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::receiveResponseEntity(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -220,8 +252,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::receiveResponseEn
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(13),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::conn::AbstractClientConnAdapter::receiveResponseHeader()
@@ -230,8 +262,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::conn::Abst
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(14),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::sendRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const &a0)
@@ -240,8 +272,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::sendRequestEntity
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(15),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::sendRequestHeader(local_ref< org::apache::http::HttpRequest > const &a0)
@@ -250,8 +282,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::sendRequestHeader
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(16),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::InetAddress > org::apache::http::impl::conn::AbstractClientConnAdapter::getLocalAddress()
@@ -260,8 +292,8 @@ local_ref< java::net::InetAddress > org::apache::http::impl::conn::AbstractClien
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(17),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::AbstractClientConnAdapter::getLocalPort()
@@ -270,8 +302,8 @@ jint org::apache::http::impl::conn::AbstractClientConnAdapter::getLocalPort()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(18),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::impl::conn::AbstractClientConnAdapter::getRemoteAddress()
@@ -280,8 +312,8 @@ local_ref< java::net::InetAddress > org::apache::http::impl::conn::AbstractClien
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(19),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::AbstractClientConnAdapter::getRemotePort()
@@ -290,8 +322,8 @@ jint org::apache::http::impl::conn::AbstractClientConnAdapter::getRemotePort()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(20),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isSecure()
@@ -300,8 +332,8 @@ jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isSecure()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(21),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLSession > org::apache::http::impl::conn::AbstractClientConnAdapter::getSSLSession()
@@ -310,8 +342,8 @@ local_ref< javax::net::ssl::SSLSession > org::apache::http::impl::conn::Abstract
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(22),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< javax::net::ssl::SSLSession > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSession >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::markReusable()
@@ -320,8 +352,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::markReusable()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(23),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::unmarkReusable()
@@ -330,8 +362,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::unmarkReusable()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(24),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isMarkedReusable()
@@ -340,8 +372,8 @@ jboolean org::apache::http::impl::conn::AbstractClientConnAdapter::isMarkedReusa
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(25),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::setIdleDuration(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -350,8 +382,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::setIdleDuration(j
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(26),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::releaseConnection()
@@ -360,8 +392,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::releaseConnection
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(27),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractClientConnAdapter::abortConnection()
@@ -370,8 +402,8 @@ void org::apache::http::impl::conn::AbstractClientConnAdapter::abortConnection()
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(28),
 		org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

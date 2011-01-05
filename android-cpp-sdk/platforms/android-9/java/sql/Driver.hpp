@@ -87,8 +87,8 @@ jboolean java::sql::Driver::acceptsURL(local_ref< java::lang::String > const &a0
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(0),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::sql::Connection > java::sql::Driver::connect(local_ref< java::lang::String > const &a0, local_ref< java::util::Properties > const &a1)
@@ -97,8 +97,8 @@ local_ref< java::sql::Connection > java::sql::Driver::connect(local_ref< java::l
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(1),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::sql::Connection > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Connection >
+	>(get_jobject(), a0, a1);
 }
 
 jint java::sql::Driver::getMajorVersion()
@@ -107,8 +107,8 @@ jint java::sql::Driver::getMajorVersion()
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(2),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::sql::Driver::getMinorVersion()
@@ -117,8 +117,8 @@ jint java::sql::Driver::getMinorVersion()
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(3),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::sql::DriverPropertyInfo >, 1> > java::sql::Driver::getPropertyInfo(local_ref< java::lang::String > const &a0, local_ref< java::util::Properties > const &a1)
@@ -127,8 +127,8 @@ local_ref< array< local_ref< java::sql::DriverPropertyInfo >, 1> > java::sql::Dr
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(4),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::sql::DriverPropertyInfo >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::sql::DriverPropertyInfo >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::sql::Driver::jdbcCompliant()
@@ -137,8 +137,8 @@ jboolean java::sql::Driver::jdbcCompliant()
 		java::sql::Driver::J2CPP_CLASS_NAME,
 		java::sql::Driver::J2CPP_METHOD_NAME(5),
 		java::sql::Driver::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

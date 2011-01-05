@@ -12,14 +12,14 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class RouteInfo; } } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class LayerType; } } } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class TunnelType; } } } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class RouteInfo; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class LayerType; } } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class TunnelType; } } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 
 
 #include <java/lang/Cloneable.hpp>
@@ -72,9 +72,9 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::routing::RouteInfo>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 
 
 		RouteTracker(local_ref< org::apache::http::HttpHost > const&, local_ref< java::net::InetAddress > const&);
@@ -121,6 +121,11 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::routing::RouteTracker::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 org::apache::http::conn::routing::RouteTracker::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -131,19 +136,14 @@ org::apache::http::conn::routing::RouteTracker::operator local_ref<org::apache::
 	return local_ref<org::apache::http::conn::routing::RouteInfo>(get_jobject());
 }
 
-org::apache::http::conn::routing::RouteTracker::operator local_ref<java::lang::Cloneable>() const
-{
-	return local_ref<java::lang::Cloneable>(get_jobject());
-}
-
 
 org::apache::http::conn::routing::RouteTracker::RouteTracker(local_ref< org::apache::http::HttpHost > const &a0, local_ref< java::net::InetAddress > const &a1)
 : object<org::apache::http::conn::routing::RouteTracker>(
 	call_new_object<
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -155,8 +155,8 @@ org::apache::http::conn::routing::RouteTracker::RouteTracker(local_ref< org::apa
 	call_new_object<
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(1),
-		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -168,8 +168,8 @@ void org::apache::http::conn::routing::RouteTracker::connectTarget(jboolean a0)
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::conn::routing::RouteTracker::connectProxy(local_ref< org::apache::http::HttpHost > const &a0, jboolean a1)
@@ -178,8 +178,8 @@ void org::apache::http::conn::routing::RouteTracker::connectProxy(local_ref< org
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::routing::RouteTracker::tunnelTarget(jboolean a0)
@@ -188,8 +188,8 @@ void org::apache::http::conn::routing::RouteTracker::tunnelTarget(jboolean a0)
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::conn::routing::RouteTracker::tunnelProxy(local_ref< org::apache::http::HttpHost > const &a0, jboolean a1)
@@ -198,8 +198,8 @@ void org::apache::http::conn::routing::RouteTracker::tunnelProxy(local_ref< org:
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::routing::RouteTracker::layerProtocol(jboolean a0)
@@ -208,8 +208,8 @@ void org::apache::http::conn::routing::RouteTracker::layerProtocol(jboolean a0)
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteTracker::getTargetHost()
@@ -218,8 +218,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(7),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::conn::routing::RouteTracker::getLocalAddress()
@@ -228,8 +228,8 @@ local_ref< java::net::InetAddress > org::apache::http::conn::routing::RouteTrack
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(8),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::conn::routing::RouteTracker::getHopCount()
@@ -238,8 +238,8 @@ jint org::apache::http::conn::routing::RouteTracker::getHopCount()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(9),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteTracker::getHopTarget(jint a0)
@@ -248,8 +248,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(10),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteTracker::getProxyHost()
@@ -258,8 +258,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(11),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteTracker::isConnected()
@@ -268,8 +268,8 @@ jboolean org::apache::http::conn::routing::RouteTracker::isConnected()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(12),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apache::http::conn::routing::RouteTracker::getTunnelType()
@@ -278,8 +278,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apach
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(13),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteTracker::isTunnelled()
@@ -288,8 +288,8 @@ jboolean org::apache::http::conn::routing::RouteTracker::isTunnelled()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(14),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache::http::conn::routing::RouteTracker::getLayerType()
@@ -298,8 +298,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(15),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteTracker::isLayered()
@@ -308,8 +308,8 @@ jboolean org::apache::http::conn::routing::RouteTracker::isLayered()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(16),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteTracker::isSecure()
@@ -318,8 +318,8 @@ jboolean org::apache::http::conn::routing::RouteTracker::isSecure()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(17),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::conn::routing::RouteTracker::toRoute()
@@ -328,8 +328,8 @@ local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::conn
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(18),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< org::apache::http::conn::routing::HttpRoute > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::HttpRoute >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteTracker::equals(local_ref< java::lang::Object > const &a0)
@@ -338,8 +338,8 @@ jboolean org::apache::http::conn::routing::RouteTracker::equals(local_ref< java:
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(19),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::conn::routing::RouteTracker::hashCode()
@@ -348,8 +348,8 @@ jint org::apache::http::conn::routing::RouteTracker::hashCode()
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(20),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::conn::routing::RouteTracker::toString()
@@ -358,8 +358,8 @@ local_ref< java::lang::String > org::apache::http::conn::routing::RouteTracker::
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(21),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::conn::routing::RouteTracker::clone()
@@ -368,8 +368,8 @@ local_ref< java::lang::Object > org::apache::http::conn::routing::RouteTracker::
 		org::apache::http::conn::routing::RouteTracker::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_NAME(22),
 		org::apache::http::conn::routing::RouteTracker::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

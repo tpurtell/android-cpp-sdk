@@ -11,8 +11,6 @@
 #define J2CPP_ANDROID_APP_ACTIVITYMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { namespace ActivityManager_ { class MemoryInfo; } } } }
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
@@ -23,6 +21,8 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { namespace ActivityManager_ { class MemoryInfo; } } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/app/ActivityManager.hpp>
@@ -81,8 +81,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			RunningAppProcessInfo();
@@ -130,8 +130,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			MemoryInfo();
@@ -185,8 +185,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			RunningServiceInfo();
@@ -241,8 +241,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			RunningTaskInfo();
@@ -286,8 +286,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			RecentTaskInfo();
@@ -340,8 +340,8 @@ namespace android { namespace app {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			ProcessErrorStateInfo();
@@ -427,14 +427,14 @@ namespace j2cpp {
 
 
 
-android::app::ActivityManager_::RunningAppProcessInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::RunningAppProcessInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::RunningAppProcessInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -443,8 +443,8 @@ android::app::ActivityManager_::RunningAppProcessInfo::RunningAppProcessInfo()
 	call_new_object<
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , processName(get_jobject())
 , pid(get_jobject())
@@ -461,8 +461,8 @@ android::app::ActivityManager_::RunningAppProcessInfo::RunningAppProcessInfo(loc
 	call_new_object<
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_NAME(1),
-		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 , processName(get_jobject())
 , pid(get_jobject())
@@ -479,8 +479,8 @@ jint android::app::ActivityManager_::RunningAppProcessInfo::describeContents()
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::RunningAppProcessInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -489,8 +489,8 @@ void android::app::ActivityManager_::RunningAppProcessInfo::writeToParcel(local_
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::RunningAppProcessInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -499,8 +499,8 @@ void android::app::ActivityManager_::RunningAppProcessInfo::readFromParcel(local
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_NAME(4),
 		android::app::ActivityManager_::RunningAppProcessInfo::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -568,14 +568,14 @@ J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningAppProcessInfo,9,"lru"
 J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningAppProcessInfo,10,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-android::app::ActivityManager_::MemoryInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::MemoryInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::MemoryInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -584,8 +584,8 @@ android::app::ActivityManager_::MemoryInfo::MemoryInfo()
 	call_new_object<
 		android::app::ActivityManager_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , availMem(get_jobject())
 , threshold(get_jobject())
@@ -600,8 +600,8 @@ jint android::app::ActivityManager_::MemoryInfo::describeContents()
 		android::app::ActivityManager_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::MemoryInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -610,8 +610,8 @@ void android::app::ActivityManager_::MemoryInfo::writeToParcel(local_ref< androi
 		android::app::ActivityManager_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::MemoryInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -620,8 +620,8 @@ void android::app::ActivityManager_::MemoryInfo::readFromParcel(local_ref< andro
 		android::app::ActivityManager_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::MemoryInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -646,14 +646,14 @@ J2CPP_DEFINE_FIELD(android::app::ActivityManager_::MemoryInfo,2,"lowMemory","Z")
 J2CPP_DEFINE_FIELD(android::app::ActivityManager_::MemoryInfo,3,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-android::app::ActivityManager_::RunningServiceInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::RunningServiceInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::RunningServiceInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -662,8 +662,8 @@ android::app::ActivityManager_::RunningServiceInfo::RunningServiceInfo()
 	call_new_object<
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , service(get_jobject())
 , pid(get_jobject())
@@ -685,8 +685,8 @@ jint android::app::ActivityManager_::RunningServiceInfo::describeContents()
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::RunningServiceInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -695,8 +695,8 @@ void android::app::ActivityManager_::RunningServiceInfo::writeToParcel(local_ref
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::RunningServiceInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -705,8 +705,8 @@ void android::app::ActivityManager_::RunningServiceInfo::readFromParcel(local_re
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::RunningServiceInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -738,14 +738,14 @@ J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningServiceInfo,9,"restart
 J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningServiceInfo,10,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-android::app::ActivityManager_::RunningTaskInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::RunningTaskInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::RunningTaskInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -754,8 +754,8 @@ android::app::ActivityManager_::RunningTaskInfo::RunningTaskInfo()
 	call_new_object<
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , id(get_jobject())
 , baseActivity(get_jobject())
@@ -774,8 +774,8 @@ jint android::app::ActivityManager_::RunningTaskInfo::describeContents()
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::RunningTaskInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -784,8 +784,8 @@ void android::app::ActivityManager_::RunningTaskInfo::writeToParcel(local_ref< a
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::RunningTaskInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -794,8 +794,8 @@ void android::app::ActivityManager_::RunningTaskInfo::readFromParcel(local_ref< 
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::RunningTaskInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -824,14 +824,14 @@ J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningTaskInfo,6,"numRunning
 J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RunningTaskInfo,7,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-android::app::ActivityManager_::RecentTaskInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::RecentTaskInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::RecentTaskInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -840,8 +840,8 @@ android::app::ActivityManager_::RecentTaskInfo::RecentTaskInfo()
 	call_new_object<
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , id(get_jobject())
 , baseIntent(get_jobject())
@@ -856,8 +856,8 @@ jint android::app::ActivityManager_::RecentTaskInfo::describeContents()
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::RecentTaskInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -866,8 +866,8 @@ void android::app::ActivityManager_::RecentTaskInfo::writeToParcel(local_ref< an
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::RecentTaskInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -876,8 +876,8 @@ void android::app::ActivityManager_::RecentTaskInfo::readFromParcel(local_ref< a
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::RecentTaskInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -902,14 +902,14 @@ J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RecentTaskInfo,2,"origActivit
 J2CPP_DEFINE_FIELD(android::app::ActivityManager_::RecentTaskInfo,3,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-android::app::ActivityManager_::ProcessErrorStateInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::ActivityManager_::ProcessErrorStateInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::ActivityManager_::ProcessErrorStateInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -918,8 +918,8 @@ android::app::ActivityManager_::ProcessErrorStateInfo::ProcessErrorStateInfo()
 	call_new_object<
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_NAME(0),
-		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , condition(get_jobject())
 , processName(get_jobject())
@@ -939,8 +939,8 @@ jint android::app::ActivityManager_::ProcessErrorStateInfo::describeContents()
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ActivityManager_::ProcessErrorStateInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -949,8 +949,8 @@ void android::app::ActivityManager_::ProcessErrorStateInfo::writeToParcel(local_
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::ActivityManager_::ProcessErrorStateInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -959,8 +959,8 @@ void android::app::ActivityManager_::ProcessErrorStateInfo::readFromParcel(local
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_CLASS_NAME,
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager_::ProcessErrorStateInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1027,8 +1027,8 @@ local_ref< java::util::List > android::app::ActivityManager::getRecentTasks(jint
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(1),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::app::ActivityManager::getRunningTasks(jint a0)
@@ -1037,8 +1037,8 @@ local_ref< java::util::List > android::app::ActivityManager::getRunningTasks(jin
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(2),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::app::ActivityManager::getRunningServices(jint a0)
@@ -1047,8 +1047,8 @@ local_ref< java::util::List > android::app::ActivityManager::getRunningServices(
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(3),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 void android::app::ActivityManager::getMemoryInfo(local_ref< android::app::ActivityManager_::MemoryInfo > const &a0)
@@ -1057,8 +1057,8 @@ void android::app::ActivityManager::getMemoryInfo(local_ref< android::app::Activ
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(4),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::app::ActivityManager::getProcessesInErrorState()
@@ -1067,8 +1067,8 @@ local_ref< java::util::List > android::app::ActivityManager::getProcessesInError
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(5),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::app::ActivityManager::getRunningAppProcesses()
@@ -1077,8 +1077,8 @@ local_ref< java::util::List > android::app::ActivityManager::getRunningAppProces
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(6),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void android::app::ActivityManager::restartPackage(local_ref< java::lang::String > const &a0)
@@ -1087,8 +1087,8 @@ void android::app::ActivityManager::restartPackage(local_ref< java::lang::String
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(7),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::pm::ConfigurationInfo > android::app::ActivityManager::getDeviceConfigurationInfo()
@@ -1097,8 +1097,8 @@ local_ref< android::content::pm::ConfigurationInfo > android::app::ActivityManag
 		android::app::ActivityManager::J2CPP_CLASS_NAME,
 		android::app::ActivityManager::J2CPP_METHOD_NAME(8),
 		android::app::ActivityManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::pm::ConfigurationInfo > >
-	(get_jobject());
+		local_ref< android::content::pm::ConfigurationInfo >
+	>(get_jobject());
 }
 
 

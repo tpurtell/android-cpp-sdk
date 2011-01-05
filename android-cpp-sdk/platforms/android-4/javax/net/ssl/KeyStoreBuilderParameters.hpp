@@ -11,10 +11,10 @@
 #define J2CPP_JAVAX_NET_SSL_KEYSTOREBUILDERPARAMETERS_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyStore_ { class Builder; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -86,8 +86,8 @@ javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref<
 	call_new_object<
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -99,8 +99,8 @@ javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref<
 	call_new_object<
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(1),
-		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -112,8 +112,8 @@ local_ref< java::util::List > javax::net::ssl::KeyStoreBuilderParameters::getPar
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 

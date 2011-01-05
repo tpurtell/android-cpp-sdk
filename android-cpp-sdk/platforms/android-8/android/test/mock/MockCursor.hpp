@@ -106,8 +106,8 @@ namespace android { namespace test { namespace mock {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::database::Cursor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		MockCursor();
@@ -182,14 +182,14 @@ namespace j2cpp {
 
 
 
-android::test::mock::MockCursor::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::test::mock::MockCursor::operator local_ref<android::database::Cursor>() const
 {
 	return local_ref<android::database::Cursor>(get_jobject());
+}
+
+android::test::mock::MockCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -198,8 +198,8 @@ android::test::mock::MockCursor::MockCursor()
 	call_new_object<
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(0),
-		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -211,8 +211,8 @@ jint android::test::mock::MockCursor::getColumnCount()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(1),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::test::mock::MockCursor::getColumnIndex(local_ref< java::lang::String > const &a0)
@@ -221,8 +221,8 @@ jint android::test::mock::MockCursor::getColumnIndex(local_ref< java::lang::Stri
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(2),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockCursor::getColumnIndexOrThrow(local_ref< java::lang::String > const &a0)
@@ -231,8 +231,8 @@ jint android::test::mock::MockCursor::getColumnIndexOrThrow(local_ref< java::lan
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(3),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockCursor::getColumnName(jint a0)
@@ -241,8 +241,8 @@ local_ref< java::lang::String > android::test::mock::MockCursor::getColumnName(j
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(4),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::test::mock::MockCursor::getColumnNames()
@@ -251,8 +251,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::test::mock::Moc
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(5),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 jint android::test::mock::MockCursor::getCount()
@@ -261,8 +261,8 @@ jint android::test::mock::MockCursor::getCount()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(6),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isNull(jint a0)
@@ -271,8 +271,8 @@ jboolean android::test::mock::MockCursor::isNull(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(7),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::test::mock::MockCursor::getInt(jint a0)
@@ -281,8 +281,8 @@ jint android::test::mock::MockCursor::getInt(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(8),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong android::test::mock::MockCursor::getLong(jint a0)
@@ -291,8 +291,8 @@ jlong android::test::mock::MockCursor::getLong(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(9),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jshort android::test::mock::MockCursor::getShort(jint a0)
@@ -301,8 +301,8 @@ jshort android::test::mock::MockCursor::getShort(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(10),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(10), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jfloat android::test::mock::MockCursor::getFloat(jint a0)
@@ -311,8 +311,8 @@ jfloat android::test::mock::MockCursor::getFloat(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(11),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jdouble android::test::mock::MockCursor::getDouble(jint a0)
@@ -321,8 +321,8 @@ jdouble android::test::mock::MockCursor::getDouble(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(12),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(12), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > android::test::mock::MockCursor::getBlob(jint a0)
@@ -331,8 +331,8 @@ local_ref< array<jbyte,1> > android::test::mock::MockCursor::getBlob(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(13),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::test::mock::MockCursor::getString(jint a0)
@@ -341,8 +341,8 @@ local_ref< java::lang::String > android::test::mock::MockCursor::getString(jint 
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(14),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::test::mock::MockCursor::getExtras()
@@ -351,8 +351,8 @@ local_ref< android::os::Bundle > android::test::mock::MockCursor::getExtras()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(15),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 jint android::test::mock::MockCursor::getPosition()
@@ -361,8 +361,8 @@ jint android::test::mock::MockCursor::getPosition()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(16),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isAfterLast()
@@ -371,8 +371,8 @@ jboolean android::test::mock::MockCursor::isAfterLast()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(17),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isBeforeFirst()
@@ -381,8 +381,8 @@ jboolean android::test::mock::MockCursor::isBeforeFirst()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(18),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isFirst()
@@ -391,8 +391,8 @@ jboolean android::test::mock::MockCursor::isFirst()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(19),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isLast()
@@ -401,8 +401,8 @@ jboolean android::test::mock::MockCursor::isLast()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(20),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::move(jint a0)
@@ -411,8 +411,8 @@ jboolean android::test::mock::MockCursor::move(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(21),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::mock::MockCursor::moveToFirst()
@@ -421,8 +421,8 @@ jboolean android::test::mock::MockCursor::moveToFirst()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(22),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::moveToLast()
@@ -431,8 +431,8 @@ jboolean android::test::mock::MockCursor::moveToLast()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(23),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::moveToNext()
@@ -441,8 +441,8 @@ jboolean android::test::mock::MockCursor::moveToNext()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(24),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::moveToPrevious()
@@ -451,8 +451,8 @@ jboolean android::test::mock::MockCursor::moveToPrevious()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(25),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::moveToPosition(jint a0)
@@ -461,8 +461,8 @@ jboolean android::test::mock::MockCursor::moveToPosition(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(26),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::test::mock::MockCursor::copyStringToBuffer(jint a0, local_ref< android::database::CharArrayBuffer > const &a1)
@@ -471,8 +471,8 @@ void android::test::mock::MockCursor::copyStringToBuffer(jint a0, local_ref< and
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(27),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::mock::MockCursor::deactivate()
@@ -481,8 +481,8 @@ void android::test::mock::MockCursor::deactivate()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(28),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::test::mock::MockCursor::close()
@@ -491,8 +491,8 @@ void android::test::mock::MockCursor::close()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(29),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::isClosed()
@@ -501,8 +501,8 @@ jboolean android::test::mock::MockCursor::isClosed()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(30),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::requery()
@@ -511,8 +511,8 @@ jboolean android::test::mock::MockCursor::requery()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(31),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::test::mock::MockCursor::registerContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -521,8 +521,8 @@ void android::test::mock::MockCursor::registerContentObserver(local_ref< android
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(32),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::mock::MockCursor::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -531,8 +531,8 @@ void android::test::mock::MockCursor::registerDataSetObserver(local_ref< android
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(33),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::test::mock::MockCursor::respond(local_ref< android::os::Bundle > const &a0)
@@ -541,8 +541,8 @@ local_ref< android::os::Bundle > android::test::mock::MockCursor::respond(local_
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(34),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::mock::MockCursor::getWantsAllOnMoveCalls()
@@ -551,8 +551,8 @@ jboolean android::test::mock::MockCursor::getWantsAllOnMoveCalls()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(35),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::commitUpdates()
@@ -561,8 +561,8 @@ jboolean android::test::mock::MockCursor::commitUpdates()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(36),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::commitUpdates(local_ref< java::util::Map > const &a0)
@@ -571,8 +571,8 @@ jboolean android::test::mock::MockCursor::commitUpdates(local_ref< java::util::M
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(37),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(37), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::mock::MockCursor::hasUpdates()
@@ -581,8 +581,8 @@ jboolean android::test::mock::MockCursor::hasUpdates()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(38),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::test::mock::MockCursor::setNotificationUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -591,8 +591,8 @@ void android::test::mock::MockCursor::setNotificationUri(local_ref< android::con
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(39),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::supportsUpdates()
@@ -601,8 +601,8 @@ jboolean android::test::mock::MockCursor::supportsUpdates()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(40),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::test::mock::MockCursor::deleteRow()
@@ -611,8 +611,8 @@ jboolean android::test::mock::MockCursor::deleteRow()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(41),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::test::mock::MockCursor::unregisterContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -621,8 +621,8 @@ void android::test::mock::MockCursor::unregisterContentObserver(local_ref< andro
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(42),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::mock::MockCursor::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -631,8 +631,8 @@ void android::test::mock::MockCursor::unregisterDataSetObserver(local_ref< andro
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(43),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::test::mock::MockCursor::updateBlob(jint a0, local_ref< array<jbyte,1> > const &a1)
@@ -641,8 +641,8 @@ jboolean android::test::mock::MockCursor::updateBlob(jint a0, local_ref< array<j
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(44),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateDouble(jint a0, jdouble a1)
@@ -651,8 +651,8 @@ jboolean android::test::mock::MockCursor::updateDouble(jint a0, jdouble a1)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(45),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateFloat(jint a0, jfloat a1)
@@ -661,8 +661,8 @@ jboolean android::test::mock::MockCursor::updateFloat(jint a0, jfloat a1)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(46),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(46), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateInt(jint a0, jint a1)
@@ -671,8 +671,8 @@ jboolean android::test::mock::MockCursor::updateInt(jint a0, jint a1)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(47),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateLong(jint a0, jlong a1)
@@ -681,8 +681,8 @@ jboolean android::test::mock::MockCursor::updateLong(jint a0, jlong a1)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(48),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(48), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateShort(jint a0, jshort a1)
@@ -691,8 +691,8 @@ jboolean android::test::mock::MockCursor::updateShort(jint a0, jshort a1)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(49),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(49), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateString(jint a0, local_ref< java::lang::String > const &a1)
@@ -701,8 +701,8 @@ jboolean android::test::mock::MockCursor::updateString(jint a0, local_ref< java:
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(50),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::test::mock::MockCursor::updateToNull(jint a0)
@@ -711,8 +711,8 @@ jboolean android::test::mock::MockCursor::updateToNull(jint a0)
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(51),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::test::mock::MockCursor::abortUpdates()
@@ -721,8 +721,8 @@ void android::test::mock::MockCursor::abortUpdates()
 		android::test::mock::MockCursor::J2CPP_CLASS_NAME,
 		android::test::mock::MockCursor::J2CPP_METHOD_NAME(52),
 		android::test::mock::MockCursor::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

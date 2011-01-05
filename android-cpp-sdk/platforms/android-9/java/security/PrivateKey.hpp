@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/Key.hpp>
 
@@ -40,6 +42,7 @@ namespace java { namespace security {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::Key>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), jlong > serialVersionUID;
@@ -69,6 +72,11 @@ java::security::PrivateKey::operator local_ref<java::lang::Object>() const
 java::security::PrivateKey::operator local_ref<java::security::Key>() const
 {
 	return local_ref<java::security::Key>(get_jobject());
+}
+
+java::security::PrivateKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 static_field<

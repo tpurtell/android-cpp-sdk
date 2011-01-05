@@ -41,8 +41,8 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::xml::sax::Locator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getXMLVersion();
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-org::xml::sax::ext::Locator2::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::xml::sax::ext::Locator2::operator local_ref<org::xml::sax::Locator>() const
 {
 	return local_ref<org::xml::sax::Locator>(get_jobject());
+}
+
+org::xml::sax::ext::Locator2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::ext::Locator2::getXMLVersion()
@@ -83,8 +83,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2::getXMLVersion()
 		org::xml::sax::ext::Locator2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::ext::Locator2::getEncoding()
@@ -93,8 +93,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2::getEncoding()
 		org::xml::sax::ext::Locator2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

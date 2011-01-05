@@ -12,18 +12,30 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace widget { namespace LinearLayout_ { class LayoutParams; } } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/LinearLayout.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -58,7 +70,9 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const;
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
 
 
 			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
@@ -114,7 +128,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::View>() const;
 		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 
 
 		LinearLayout(local_ref< android::content::Context > const&);
@@ -155,9 +175,19 @@ namespace j2cpp {
 
 
 
+android::widget::LinearLayout_::LayoutParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::widget::LinearLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const
 {
 	return local_ref<android::view::ViewGroup_::MarginLayoutParams>(get_jobject());
+}
+
+android::widget::LinearLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jobject());
 }
 
 
@@ -166,8 +196,8 @@ android::widget::LinearLayout_::LayoutParams::LayoutParams(local_ref< android::c
 	call_new_object<
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(0),
-		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , weight(get_jobject())
 , gravity(get_jobject())
@@ -181,8 +211,8 @@ android::widget::LinearLayout_::LayoutParams::LayoutParams(jint a0, jint a1)
 	call_new_object<
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(1),
-		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 , weight(get_jobject())
 , gravity(get_jobject())
@@ -196,8 +226,8 @@ android::widget::LinearLayout_::LayoutParams::LayoutParams(jint a0, jint a1, jfl
 	call_new_object<
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(2),
-		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 , weight(get_jobject())
 , gravity(get_jobject())
@@ -211,8 +241,8 @@ android::widget::LinearLayout_::LayoutParams::LayoutParams(local_ref< android::v
 	call_new_object<
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(3),
-		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 , weight(get_jobject())
 , gravity(get_jobject())
@@ -226,8 +256,8 @@ android::widget::LinearLayout_::LayoutParams::LayoutParams(local_ref< android::v
 	call_new_object<
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(4),
-		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 , weight(get_jobject())
 , gravity(get_jobject())
@@ -241,8 +271,8 @@ local_ref< java::lang::String > android::widget::LinearLayout_::LayoutParams::de
 		android::widget::LinearLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_NAME(5),
 		android::widget::LinearLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 
@@ -259,9 +289,39 @@ J2CPP_DEFINE_FIELD(android::widget::LinearLayout_::LayoutParams,1,"gravity","I")
 
 
 
+android::widget::LinearLayout::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::LinearLayout::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::LinearLayout::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
 android::widget::LinearLayout::operator local_ref<android::view::ViewGroup>() const
 {
 	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::LinearLayout::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::LinearLayout::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::LinearLayout::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
 }
 
 
@@ -270,8 +330,8 @@ android::widget::LinearLayout::LinearLayout(local_ref< android::content::Context
 	call_new_object<
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(0),
-		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -283,8 +343,8 @@ android::widget::LinearLayout::LinearLayout(local_ref< android::content::Context
 	call_new_object<
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(1),
-		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -296,8 +356,8 @@ jboolean android::widget::LinearLayout::isBaselineAligned()
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(2),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::LinearLayout::setBaselineAligned(jboolean a0)
@@ -306,8 +366,8 @@ void android::widget::LinearLayout::setBaselineAligned(jboolean a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(3),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::LinearLayout::getBaseline()
@@ -316,8 +376,8 @@ jint android::widget::LinearLayout::getBaseline()
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(4),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::LinearLayout::getBaselineAlignedChildIndex()
@@ -326,8 +386,8 @@ jint android::widget::LinearLayout::getBaselineAlignedChildIndex()
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(5),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::LinearLayout::setBaselineAlignedChildIndex(jint a0)
@@ -336,8 +396,8 @@ void android::widget::LinearLayout::setBaselineAlignedChildIndex(jint a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(6),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::widget::LinearLayout::getWeightSum()
@@ -346,8 +406,8 @@ jfloat android::widget::LinearLayout::getWeightSum()
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(7),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::widget::LinearLayout::setWeightSum(jfloat a0)
@@ -356,8 +416,8 @@ void android::widget::LinearLayout::setWeightSum(jfloat a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(8),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -368,8 +428,8 @@ void android::widget::LinearLayout::setOrientation(jint a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(11),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::LinearLayout::getOrientation()
@@ -378,8 +438,8 @@ jint android::widget::LinearLayout::getOrientation()
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(12),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::LinearLayout::setGravity(jint a0)
@@ -388,8 +448,8 @@ void android::widget::LinearLayout::setGravity(jint a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(13),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::LinearLayout::setHorizontalGravity(jint a0)
@@ -398,8 +458,8 @@ void android::widget::LinearLayout::setHorizontalGravity(jint a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(14),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::LinearLayout::setVerticalGravity(jint a0)
@@ -408,8 +468,8 @@ void android::widget::LinearLayout::setVerticalGravity(jint a0)
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(15),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::LinearLayout_::LayoutParams > android::widget::LinearLayout::generateLayoutParams(local_ref< android::util::AttributeSet > const &a0)
@@ -418,8 +478,8 @@ local_ref< android::widget::LinearLayout_::LayoutParams > android::widget::Linea
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(16),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::widget::LinearLayout_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::LinearLayout_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -433,8 +493,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::widget::LinearLayo
 		android::widget::LinearLayout::J2CPP_CLASS_NAME,
 		android::widget::LinearLayout::J2CPP_METHOD_NAME(22),
 		android::widget::LinearLayout::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

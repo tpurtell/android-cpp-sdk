@@ -16,9 +16,11 @@ namespace j2cpp { namespace android { namespace text { namespace Layout_ { class
 namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <android/text/Layout.hpp>
 #include <android/text/ParcelableSpan.hpp>
 #include <android/text/style/ParagraphStyle.hpp>
@@ -54,7 +56,9 @@ namespace android { namespace text { namespace style {
 
 			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::text::style::AlignmentSpan>() const;
+			operator local_ref<android::text::style::ParagraphStyle>() const;
 			operator local_ref<android::text::ParcelableSpan>() const;
+			operator local_ref<android::os::Parcelable>() const;
 
 
 			Standard(local_ref< android::text::Layout_::Alignment > const&);
@@ -118,9 +122,19 @@ android::text::style::AlignmentSpan_::Standard::operator local_ref<android::text
 	return local_ref<android::text::style::AlignmentSpan>(get_jobject());
 }
 
+android::text::style::AlignmentSpan_::Standard::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
+}
+
 android::text::style::AlignmentSpan_::Standard::operator local_ref<android::text::ParcelableSpan>() const
 {
 	return local_ref<android::text::ParcelableSpan>(get_jobject());
+}
+
+android::text::style::AlignmentSpan_::Standard::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -129,8 +143,8 @@ android::text::style::AlignmentSpan_::Standard::Standard(local_ref< android::tex
 	call_new_object<
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(0),
-		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -142,8 +156,8 @@ android::text::style::AlignmentSpan_::Standard::Standard(local_ref< android::os:
 	call_new_object<
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(1),
-		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -155,8 +169,8 @@ jint android::text::style::AlignmentSpan_::Standard::getSpanTypeId()
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(2),
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::style::AlignmentSpan_::Standard::describeContents()
@@ -165,8 +179,8 @@ jint android::text::style::AlignmentSpan_::Standard::describeContents()
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(3),
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::style::AlignmentSpan_::Standard::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -175,8 +189,8 @@ void android::text::style::AlignmentSpan_::Standard::writeToParcel(local_ref< an
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(4),
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::text::Layout_::Alignment > android::text::style::AlignmentSpan_::Standard::getAlignment()
@@ -185,8 +199,8 @@ local_ref< android::text::Layout_::Alignment > android::text::style::AlignmentSp
 		android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(5),
 		android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::text::Layout_::Alignment > >
-	(get_jobject());
+		local_ref< android::text::Layout_::Alignment >
+	>(get_jobject());
 }
 
 
@@ -216,8 +230,8 @@ local_ref< android::text::Layout_::Alignment > android::text::style::AlignmentSp
 		android::text::style::AlignmentSpan::J2CPP_CLASS_NAME,
 		android::text::style::AlignmentSpan::J2CPP_METHOD_NAME(0),
 		android::text::style::AlignmentSpan::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::text::Layout_::Alignment > >
-	(get_jobject());
+		local_ref< android::text::Layout_::Alignment >
+	>(get_jobject());
 }
 
 

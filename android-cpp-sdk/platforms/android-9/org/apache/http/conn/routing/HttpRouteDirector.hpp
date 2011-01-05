@@ -89,8 +89,8 @@ jint org::apache::http::conn::routing::HttpRouteDirector::nextStep(local_ref< or
 		org::apache::http::conn::routing::HttpRouteDirector::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::HttpRouteDirector::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::routing::HttpRouteDirector::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

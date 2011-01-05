@@ -11,9 +11,9 @@
 #define J2CPP_ORG_XML_SAX_ENTITYRESOLVER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -74,8 +74,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::EntityResolver::resolveEn
 		org::xml::sax::EntityResolver::J2CPP_CLASS_NAME,
 		org::xml::sax::EntityResolver::J2CPP_METHOD_NAME(0),
 		org::xml::sax::EntityResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 

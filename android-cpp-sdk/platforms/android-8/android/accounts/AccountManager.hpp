@@ -194,8 +194,8 @@ local_ref< android::accounts::AccountManager > android::accounts::AccountManager
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(1),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::accounts::AccountManager > >
-	(a0);
+		local_ref< android::accounts::AccountManager >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::accounts::AccountManager::getPassword(local_ref< android::accounts::Account > const &a0)
@@ -204,8 +204,8 @@ local_ref< java::lang::String > android::accounts::AccountManager::getPassword(l
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(2),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::accounts::AccountManager::getUserData(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -214,8 +214,8 @@ local_ref< java::lang::String > android::accounts::AccountManager::getUserData(l
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(3),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::accounts::AuthenticatorDescription >, 1> > android::accounts::AccountManager::getAuthenticatorTypes()
@@ -224,8 +224,8 @@ local_ref< array< local_ref< android::accounts::AuthenticatorDescription >, 1> >
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(4),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< android::accounts::AuthenticatorDescription >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::accounts::AuthenticatorDescription >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< android::accounts::Account >, 1> > android::accounts::AccountManager::getAccounts()
@@ -234,8 +234,8 @@ local_ref< array< local_ref< android::accounts::Account >, 1> > android::account
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(5),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< android::accounts::Account >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::accounts::Account >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< android::accounts::Account >, 1> > android::accounts::AccountManager::getAccountsByType(local_ref< java::lang::String > const &a0)
@@ -244,8 +244,8 @@ local_ref< array< local_ref< android::accounts::Account >, 1> > android::account
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(6),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< android::accounts::Account >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::accounts::Account >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::hasFeatures(local_ref< android::accounts::Account > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< android::accounts::AccountManagerCallback > const &a2, local_ref< android::os::Handler > const &a3)
@@ -254,8 +254,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(7),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::getAccountsByTypeAndFeatures(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< android::accounts::AccountManagerCallback > const &a2, local_ref< android::os::Handler > const &a3)
@@ -264,8 +264,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(8),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::accounts::AccountManager::addAccountExplicitly(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -274,8 +274,8 @@ jboolean android::accounts::AccountManager::addAccountExplicitly(local_ref< andr
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(9),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::removeAccount(local_ref< android::accounts::Account > const &a0, local_ref< android::accounts::AccountManagerCallback > const &a1, local_ref< android::os::Handler > const &a2)
@@ -284,8 +284,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(10),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::accounts::AccountManager::invalidateAuthToken(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -294,8 +294,8 @@ void android::accounts::AccountManager::invalidateAuthToken(local_ref< java::lan
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(11),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::accounts::AccountManager::peekAuthToken(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -304,8 +304,8 @@ local_ref< java::lang::String > android::accounts::AccountManager::peekAuthToken
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(12),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 void android::accounts::AccountManager::setPassword(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1)
@@ -314,8 +314,8 @@ void android::accounts::AccountManager::setPassword(local_ref< android::accounts
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(13),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::accounts::AccountManager::clearPassword(local_ref< android::accounts::Account > const &a0)
@@ -324,8 +324,8 @@ void android::accounts::AccountManager::clearPassword(local_ref< android::accoun
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(14),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::accounts::AccountManager::setUserData(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -334,8 +334,8 @@ void android::accounts::AccountManager::setUserData(local_ref< android::accounts
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(15),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::accounts::AccountManager::setAuthToken(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -344,8 +344,8 @@ void android::accounts::AccountManager::setAuthToken(local_ref< android::account
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(16),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::accounts::AccountManager::blockingGetAuthToken(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -354,8 +354,8 @@ local_ref< java::lang::String > android::accounts::AccountManager::blockingGetAu
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(17),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::getAuthToken(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2, local_ref< android::app::Activity > const &a3, local_ref< android::accounts::AccountManagerCallback > const &a4, local_ref< android::os::Handler > const &a5)
@@ -364,8 +364,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(18),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::getAuthToken(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, jboolean a2, local_ref< android::accounts::AccountManagerCallback > const &a3, local_ref< android::os::Handler > const &a4)
@@ -374,8 +374,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(19),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::addAccount(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< android::os::Bundle > const &a3, local_ref< android::app::Activity > const &a4, local_ref< android::accounts::AccountManagerCallback > const &a5, local_ref< android::os::Handler > const &a6)
@@ -384,8 +384,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(20),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::confirmCredentials(local_ref< android::accounts::Account > const &a0, local_ref< android::os::Bundle > const &a1, local_ref< android::app::Activity > const &a2, local_ref< android::accounts::AccountManagerCallback > const &a3, local_ref< android::os::Handler > const &a4)
@@ -394,8 +394,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(21),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::updateCredentials(local_ref< android::accounts::Account > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2, local_ref< android::app::Activity > const &a3, local_ref< android::accounts::AccountManagerCallback > const &a4, local_ref< android::os::Handler > const &a5)
@@ -404,8 +404,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(22),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::editProperties(local_ref< java::lang::String > const &a0, local_ref< android::app::Activity > const &a1, local_ref< android::accounts::AccountManagerCallback > const &a2, local_ref< android::os::Handler > const &a3)
@@ -414,8 +414,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(23),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountManager::getAuthTokenByFeatures(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< android::app::Activity > const &a3, local_ref< android::os::Bundle > const &a4, local_ref< android::os::Bundle > const &a5, local_ref< android::accounts::AccountManagerCallback > const &a6, local_ref< android::os::Handler > const &a7)
@@ -424,8 +424,8 @@ local_ref< android::accounts::AccountManagerFuture > android::accounts::AccountM
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(24),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::accounts::AccountManagerFuture > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< android::accounts::AccountManagerFuture >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::accounts::AccountManager::addOnAccountsUpdatedListener(local_ref< android::accounts::OnAccountsUpdateListener > const &a0, local_ref< android::os::Handler > const &a1, jboolean a2)
@@ -434,8 +434,8 @@ void android::accounts::AccountManager::addOnAccountsUpdatedListener(local_ref< 
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(25),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::accounts::AccountManager::removeOnAccountsUpdatedListener(local_ref< android::accounts::OnAccountsUpdateListener > const &a0)
@@ -444,8 +444,8 @@ void android::accounts::AccountManager::removeOnAccountsUpdatedListener(local_re
 		android::accounts::AccountManager::J2CPP_CLASS_NAME,
 		android::accounts::AccountManager::J2CPP_METHOD_NAME(26),
 		android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

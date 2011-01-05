@@ -12,12 +12,14 @@
 
 
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <android/text/ParcelableSpan.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -48,8 +50,9 @@ namespace android { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
 		operator local_ref<android::text::ParcelableSpan>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Annotation(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -77,14 +80,19 @@ namespace j2cpp {
 
 
 
-android::text::Annotation::operator local_ref<java::lang::Object>() const
+android::text::Annotation::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 android::text::Annotation::operator local_ref<android::text::ParcelableSpan>() const
 {
 	return local_ref<android::text::ParcelableSpan>(get_jobject());
+}
+
+android::text::Annotation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +101,8 @@ android::text::Annotation::Annotation(local_ref< java::lang::String > const &a0,
 	call_new_object<
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(0),
-		android::text::Annotation::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::text::Annotation::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +114,8 @@ android::text::Annotation::Annotation(local_ref< android::os::Parcel > const &a0
 	call_new_object<
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(1),
-		android::text::Annotation::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::Annotation::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -119,8 +127,8 @@ jint android::text::Annotation::getSpanTypeId()
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(2),
 		android::text::Annotation::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::Annotation::describeContents()
@@ -129,8 +137,8 @@ jint android::text::Annotation::describeContents()
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(3),
 		android::text::Annotation::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::Annotation::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -139,8 +147,8 @@ void android::text::Annotation::writeToParcel(local_ref< android::os::Parcel > c
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(4),
 		android::text::Annotation::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::text::Annotation::getKey()
@@ -149,8 +157,8 @@ local_ref< java::lang::String > android::text::Annotation::getKey()
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(5),
 		android::text::Annotation::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::Annotation::getValue()
@@ -159,8 +167,8 @@ local_ref< java::lang::String > android::text::Annotation::getValue()
 		android::text::Annotation::J2CPP_CLASS_NAME,
 		android::text::Annotation::J2CPP_METHOD_NAME(6),
 		android::text::Annotation::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

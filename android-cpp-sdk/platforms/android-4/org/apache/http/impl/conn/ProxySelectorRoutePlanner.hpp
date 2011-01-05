@@ -13,12 +13,12 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
+namespace j2cpp { namespace java { namespace net { class ProxySelector; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoutePlanner; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
-namespace j2cpp { namespace java { namespace net { class ProxySelector; } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -104,8 +104,8 @@ org::apache::http::impl::conn::ProxySelectorRoutePlanner::ProxySelectorRoutePlan
 	call_new_object<
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -117,8 +117,8 @@ local_ref< java::net::ProxySelector > org::apache::http::impl::conn::ProxySelect
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::ProxySelector > >
-	(get_jobject());
+		local_ref< java::net::ProxySelector >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::ProxySelectorRoutePlanner::setProxySelector(local_ref< java::net::ProxySelector > const &a0)
@@ -127,8 +127,8 @@ void org::apache::http::impl::conn::ProxySelectorRoutePlanner::setProxySelector(
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl::conn::ProxySelectorRoutePlanner::determineRoute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -137,8 +137,8 @@ local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::ProxySelectorRoutePlanner::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::conn::routing::HttpRoute > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::conn::routing::HttpRoute >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

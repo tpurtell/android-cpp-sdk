@@ -11,9 +11,9 @@
 #define J2CPP_ORG_XML_SAX_EXT_LOCATOR2_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -83,8 +83,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2::getXMLVersion()
 		org::xml::sax::ext::Locator2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::ext::Locator2::getEncoding()
@@ -93,8 +93,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2::getEncoding()
 		org::xml::sax::ext::Locator2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::Locator2::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

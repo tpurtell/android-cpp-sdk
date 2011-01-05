@@ -73,8 +73,8 @@ local_ref< java::net::ContentHandler > java::net::ContentHandlerFactory::createC
 		java::net::ContentHandlerFactory::J2CPP_CLASS_NAME,
 		java::net::ContentHandlerFactory::J2CPP_METHOD_NAME(0),
 		java::net::ContentHandlerFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::ContentHandler > >
-	(get_jobject(), a0);
+		local_ref< java::net::ContentHandler >
+	>(get_jobject(), a0);
 }
 
 

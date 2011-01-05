@@ -94,8 +94,8 @@ org::apache::http::protocol::HttpRequestHandlerRegistry::HttpRequestHandlerRegis
 	call_new_object<
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +107,8 @@ void org::apache::http::protocol::HttpRequestHandlerRegistry::register_(local_re
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::protocol::HttpRequestHandlerRegistry::unregister(local_ref< java::lang::String > const &a0)
@@ -117,8 +117,8 @@ void org::apache::http::protocol::HttpRequestHandlerRegistry::unregister(local_r
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpRequestHandlerRegistry::setHandlers(local_ref< java::util::Map > const &a0)
@@ -127,8 +127,8 @@ void org::apache::http::protocol::HttpRequestHandlerRegistry::setHandlers(local_
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::protocol::HttpRequestHandler > org::apache::http::protocol::HttpRequestHandlerRegistry::lookup(local_ref< java::lang::String > const &a0)
@@ -137,8 +137,8 @@ local_ref< org::apache::http::protocol::HttpRequestHandler > org::apache::http::
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::HttpRequestHandlerRegistry::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::protocol::HttpRequestHandler > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::protocol::HttpRequestHandler >
+	>(get_jobject(), a0);
 }
 
 

@@ -95,8 +95,8 @@ local_ref< java::lang::String > javax::crypto::SecretKeyFactory::getAlgorithm()
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(1),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > javax::crypto::SecretKeyFactory::getProvider()
@@ -105,8 +105,8 @@ local_ref< java::security::Provider > javax::crypto::SecretKeyFactory::getProvid
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(2),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::getInstance(local_ref< java::lang::String > const &a0)
@@ -115,8 +115,8 @@ local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::ge
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(3),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::SecretKeyFactory > >
-	(a0);
+		local_ref< javax::crypto::SecretKeyFactory >
+	>(a0);
 }
 
 local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -125,8 +125,8 @@ local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::ge
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(4),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::SecretKeyFactory > >
-	(a0, a1);
+		local_ref< javax::crypto::SecretKeyFactory >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -135,8 +135,8 @@ local_ref< javax::crypto::SecretKeyFactory > javax::crypto::SecretKeyFactory::ge
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(5),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::crypto::SecretKeyFactory > >
-	(a0, a1);
+		local_ref< javax::crypto::SecretKeyFactory >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::SecretKey > javax::crypto::SecretKeyFactory::generateSecret(local_ref< java::security::spec::KeySpec > const &a0)
@@ -145,8 +145,8 @@ local_ref< javax::crypto::SecretKey > javax::crypto::SecretKeyFactory::generateS
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(6),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< javax::crypto::SecretKey > >
-	(get_jobject(), a0);
+		local_ref< javax::crypto::SecretKey >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::spec::KeySpec > javax::crypto::SecretKeyFactory::getKeySpec(local_ref< javax::crypto::SecretKey > const &a0, local_ref< java::lang::Class > const &a1)
@@ -155,8 +155,8 @@ local_ref< java::security::spec::KeySpec > javax::crypto::SecretKeyFactory::getK
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(7),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::spec::KeySpec > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::spec::KeySpec >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< javax::crypto::SecretKey > javax::crypto::SecretKeyFactory::translateKey(local_ref< javax::crypto::SecretKey > const &a0)
@@ -165,8 +165,8 @@ local_ref< javax::crypto::SecretKey > javax::crypto::SecretKeyFactory::translate
 		javax::crypto::SecretKeyFactory::J2CPP_CLASS_NAME,
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_NAME(8),
 		javax::crypto::SecretKeyFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< javax::crypto::SecretKey > >
-	(get_jobject(), a0);
+		local_ref< javax::crypto::SecretKey >
+	>(get_jobject(), a0);
 }
 
 

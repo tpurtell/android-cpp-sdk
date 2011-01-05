@@ -87,8 +87,8 @@ void android::speech::RecognitionListener::onReadyForSpeech(local_ref< android::
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(0),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onBeginningOfSpeech()
@@ -97,8 +97,8 @@ void android::speech::RecognitionListener::onBeginningOfSpeech()
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(1),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::RecognitionListener::onRmsChanged(jfloat a0)
@@ -107,8 +107,8 @@ void android::speech::RecognitionListener::onRmsChanged(jfloat a0)
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(2),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onBufferReceived(local_ref< array<jbyte,1> > const &a0)
@@ -117,8 +117,8 @@ void android::speech::RecognitionListener::onBufferReceived(local_ref< array<jby
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(3),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onEndOfSpeech()
@@ -127,8 +127,8 @@ void android::speech::RecognitionListener::onEndOfSpeech()
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(4),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::RecognitionListener::onError(jint a0)
@@ -137,8 +137,8 @@ void android::speech::RecognitionListener::onError(jint a0)
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(5),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onResults(local_ref< android::os::Bundle > const &a0)
@@ -147,8 +147,8 @@ void android::speech::RecognitionListener::onResults(local_ref< android::os::Bun
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(6),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onPartialResults(local_ref< android::os::Bundle > const &a0)
@@ -157,8 +157,8 @@ void android::speech::RecognitionListener::onPartialResults(local_ref< android::
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(7),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionListener::onEvent(jint a0, local_ref< android::os::Bundle > const &a1)
@@ -167,8 +167,8 @@ void android::speech::RecognitionListener::onEvent(jint a0, local_ref< android::
 		android::speech::RecognitionListener::J2CPP_CLASS_NAME,
 		android::speech::RecognitionListener::J2CPP_METHOD_NAME(8),
 		android::speech::RecognitionListener::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

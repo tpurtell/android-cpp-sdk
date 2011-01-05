@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_COLORDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPu
 #include <android/graphics/ColorFilter.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Object.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
 
@@ -56,6 +58,7 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::drawable::Drawable>() const;
 
 
@@ -88,6 +91,11 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::ColorDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::drawable::ColorDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
@@ -99,8 +107,8 @@ android::graphics::drawable::ColorDrawable::ColorDrawable()
 	call_new_object<
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -112,8 +120,8 @@ android::graphics::drawable::ColorDrawable::ColorDrawable(jint a0)
 	call_new_object<
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(1),
-		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -125,8 +133,8 @@ jint android::graphics::drawable::ColorDrawable::getChangingConfigurations()
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::ColorDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -135,8 +143,8 @@ void android::graphics::drawable::ColorDrawable::draw(local_ref< android::graphi
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::ColorDrawable::getAlpha()
@@ -145,8 +153,8 @@ jint android::graphics::drawable::ColorDrawable::getAlpha()
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::ColorDrawable::setAlpha(jint a0)
@@ -155,8 +163,8 @@ void android::graphics::drawable::ColorDrawable::setAlpha(jint a0)
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::ColorDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -165,8 +173,8 @@ void android::graphics::drawable::ColorDrawable::setColorFilter(local_ref< andro
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::ColorDrawable::getOpacity()
@@ -175,8 +183,8 @@ jint android::graphics::drawable::ColorDrawable::getOpacity()
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::ColorDrawable::inflate(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< android::util::AttributeSet > const &a2)
@@ -185,8 +193,8 @@ void android::graphics::drawable::ColorDrawable::inflate(local_ref< android::con
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::ColorDrawable::getConstantState()
@@ -195,8 +203,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::ColorDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::ColorDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 

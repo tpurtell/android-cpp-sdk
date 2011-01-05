@@ -109,8 +109,8 @@ void android::test::ViewAsserts::assertOnScreen(local_ref< android::view::View >
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(1),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertOffScreenBelow(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -119,8 +119,8 @@ void android::test::ViewAsserts::assertOffScreenBelow(local_ref< android::view::
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(2),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertOffScreenAbove(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -129,8 +129,8 @@ void android::test::ViewAsserts::assertOffScreenAbove(local_ref< android::view::
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(3),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertHasScreenCoordinates(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1, jint a2, jint a3)
@@ -139,8 +139,8 @@ void android::test::ViewAsserts::assertHasScreenCoordinates(local_ref< android::
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(4),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::test::ViewAsserts::assertBaselineAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -149,8 +149,8 @@ void android::test::ViewAsserts::assertBaselineAligned(local_ref< android::view:
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(5),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertRightAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -159,8 +159,8 @@ void android::test::ViewAsserts::assertRightAligned(local_ref< android::view::Vi
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(6),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertRightAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1, jint a2)
@@ -169,8 +169,8 @@ void android::test::ViewAsserts::assertRightAligned(local_ref< android::view::Vi
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(7),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::ViewAsserts::assertLeftAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -179,8 +179,8 @@ void android::test::ViewAsserts::assertLeftAligned(local_ref< android::view::Vie
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(8),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertLeftAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1, jint a2)
@@ -189,8 +189,8 @@ void android::test::ViewAsserts::assertLeftAligned(local_ref< android::view::Vie
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(9),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::ViewAsserts::assertBottomAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -199,8 +199,8 @@ void android::test::ViewAsserts::assertBottomAligned(local_ref< android::view::V
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(10),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertBottomAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1, jint a2)
@@ -209,8 +209,8 @@ void android::test::ViewAsserts::assertBottomAligned(local_ref< android::view::V
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(11),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::ViewAsserts::assertTopAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -219,8 +219,8 @@ void android::test::ViewAsserts::assertTopAligned(local_ref< android::view::View
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(12),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertTopAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1, jint a2)
@@ -229,8 +229,8 @@ void android::test::ViewAsserts::assertTopAligned(local_ref< android::view::View
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(13),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::test::ViewAsserts::assertHorizontalCenterAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -239,8 +239,8 @@ void android::test::ViewAsserts::assertHorizontalCenterAligned(local_ref< androi
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(14),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertVerticalCenterAligned(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -249,8 +249,8 @@ void android::test::ViewAsserts::assertVerticalCenterAligned(local_ref< android:
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(15),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertGroupIntegrity(local_ref< android::view::ViewGroup > const &a0)
@@ -259,8 +259,8 @@ void android::test::ViewAsserts::assertGroupIntegrity(local_ref< android::view::
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(16),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::test::ViewAsserts::assertGroupContains(local_ref< android::view::ViewGroup > const &a0, local_ref< android::view::View > const &a1)
@@ -269,8 +269,8 @@ void android::test::ViewAsserts::assertGroupContains(local_ref< android::view::V
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(17),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::test::ViewAsserts::assertGroupNotContains(local_ref< android::view::ViewGroup > const &a0, local_ref< android::view::View > const &a1)
@@ -279,8 +279,8 @@ void android::test::ViewAsserts::assertGroupNotContains(local_ref< android::view
 		android::test::ViewAsserts::J2CPP_CLASS_NAME,
 		android::test::ViewAsserts::J2CPP_METHOD_NAME(18),
 		android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

@@ -44,6 +44,7 @@ namespace android { namespace database {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::database::Observable>() const;
 
 
@@ -70,6 +71,11 @@ namespace j2cpp {
 
 
 
+android::database::ContentObservable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::database::ContentObservable::operator local_ref<android::database::Observable>() const
 {
 	return local_ref<android::database::Observable>(get_jobject());
@@ -81,8 +87,8 @@ android::database::ContentObservable::ContentObservable()
 	call_new_object<
 		android::database::ContentObservable::J2CPP_CLASS_NAME,
 		android::database::ContentObservable::J2CPP_METHOD_NAME(0),
-		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +100,8 @@ void android::database::ContentObservable::registerObserver(local_ref< android::
 		android::database::ContentObservable::J2CPP_CLASS_NAME,
 		android::database::ContentObservable::J2CPP_METHOD_NAME(1),
 		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::ContentObservable::dispatchChange(jboolean a0)
@@ -104,8 +110,8 @@ void android::database::ContentObservable::dispatchChange(jboolean a0)
 		android::database::ContentObservable::J2CPP_CLASS_NAME,
 		android::database::ContentObservable::J2CPP_METHOD_NAME(2),
 		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::ContentObservable::notifyChange(jboolean a0)
@@ -114,8 +120,8 @@ void android::database::ContentObservable::notifyChange(jboolean a0)
 		android::database::ContentObservable::J2CPP_CLASS_NAME,
 		android::database::ContentObservable::J2CPP_METHOD_NAME(3),
 		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::ContentObservable::registerObserver(local_ref< java::lang::Object > const &a0)
@@ -124,8 +130,8 @@ void android::database::ContentObservable::registerObserver(local_ref< java::lan
 		android::database::ContentObservable::J2CPP_CLASS_NAME,
 		android::database::ContentObservable::J2CPP_METHOD_NAME(4),
 		android::database::ContentObservable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

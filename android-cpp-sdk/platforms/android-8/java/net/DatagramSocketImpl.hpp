@@ -99,8 +99,8 @@ java::net::DatagramSocketImpl::DatagramSocketImpl()
 	call_new_object<
 		java::net::DatagramSocketImpl::J2CPP_CLASS_NAME,
 		java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(0),
-		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

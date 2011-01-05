@@ -42,6 +42,7 @@ namespace java { namespace lang { namespace ref {
 		}
 
 		operator local_ref<java::lang::ref::Reference>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PhantomReference(local_ref< java::lang::Object > const&, local_ref< java::lang::ref::ReferenceQueue > const&);
@@ -70,14 +71,19 @@ java::lang::ref::PhantomReference::operator local_ref<java::lang::ref::Reference
 	return local_ref<java::lang::ref::Reference>(get_jobject());
 }
 
+java::lang::ref::PhantomReference::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::lang::ref::PhantomReference::PhantomReference(local_ref< java::lang::Object > const &a0, local_ref< java::lang::ref::ReferenceQueue > const &a1)
 : object<java::lang::ref::PhantomReference>(
 	call_new_object<
 		java::lang::ref::PhantomReference::J2CPP_CLASS_NAME,
 		java::lang::ref::PhantomReference::J2CPP_METHOD_NAME(0),
-		java::lang::ref::PhantomReference::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::lang::ref::PhantomReference::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -89,8 +95,8 @@ local_ref< java::lang::Object > java::lang::ref::PhantomReference::get()
 		java::lang::ref::PhantomReference::J2CPP_CLASS_NAME,
 		java::lang::ref::PhantomReference::J2CPP_METHOD_NAME(1),
 		java::lang::ref::PhantomReference::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

@@ -122,8 +122,8 @@ jfloat java::nio::charset::CharsetEncoder::averageBytesPerChar()
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(2),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::CharsetEncoder::canEncode(jchar a0)
@@ -132,8 +132,8 @@ jboolean java::nio::charset::CharsetEncoder::canEncode(jchar a0)
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(3),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::charset::CharsetEncoder::canEncode(local_ref< java::lang::CharSequence > const &a0)
@@ -142,8 +142,8 @@ jboolean java::nio::charset::CharsetEncoder::canEncode(local_ref< java::lang::Ch
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(4),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::Charset > java::nio::charset::CharsetEncoder::charset()
@@ -152,8 +152,8 @@ local_ref< java::nio::charset::Charset > java::nio::charset::CharsetEncoder::cha
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(5),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::nio::charset::Charset > >
-	(get_jobject());
+		local_ref< java::nio::charset::Charset >
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::charset::CharsetEncoder::encode(local_ref< java::nio::CharBuffer > const &a0)
@@ -162,8 +162,8 @@ local_ref< java::nio::ByteBuffer > java::nio::charset::CharsetEncoder::encode(lo
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(6),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::CoderResult > java::nio::charset::CharsetEncoder::encode(local_ref< java::nio::CharBuffer > const &a0, local_ref< java::nio::ByteBuffer > const &a1, jboolean a2)
@@ -172,8 +172,8 @@ local_ref< java::nio::charset::CoderResult > java::nio::charset::CharsetEncoder:
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(7),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::nio::charset::CoderResult > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::charset::CoderResult >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -183,8 +183,8 @@ local_ref< java::nio::charset::CoderResult > java::nio::charset::CharsetEncoder:
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(9),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::nio::charset::CoderResult > >
-	(get_jobject(), a0);
+		local_ref< java::nio::charset::CoderResult >
+	>(get_jobject(), a0);
 }
 
 
@@ -198,8 +198,8 @@ jboolean java::nio::charset::CharsetEncoder::isLegalReplacement(local_ref< array
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(15),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::CodingErrorAction > java::nio::charset::CharsetEncoder::malformedInputAction()
@@ -208,8 +208,8 @@ local_ref< java::nio::charset::CodingErrorAction > java::nio::charset::CharsetEn
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(16),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::nio::charset::CodingErrorAction > >
-	(get_jobject());
+		local_ref< java::nio::charset::CodingErrorAction >
+	>(get_jobject());
 }
 
 jfloat java::nio::charset::CharsetEncoder::maxBytesPerChar()
@@ -218,8 +218,8 @@ jfloat java::nio::charset::CharsetEncoder::maxBytesPerChar()
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(17),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(17), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncoder::onMalformedInput(local_ref< java::nio::charset::CodingErrorAction > const &a0)
@@ -228,8 +228,8 @@ local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncod
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(18),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::nio::charset::CharsetEncoder > >
-	(get_jobject(), a0);
+		local_ref< java::nio::charset::CharsetEncoder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncoder::onUnmappableCharacter(local_ref< java::nio::charset::CodingErrorAction > const &a0)
@@ -238,8 +238,8 @@ local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncod
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(19),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::nio::charset::CharsetEncoder > >
-	(get_jobject(), a0);
+		local_ref< java::nio::charset::CharsetEncoder >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::nio::charset::CharsetEncoder::replacement()
@@ -248,8 +248,8 @@ local_ref< array<jbyte,1> > java::nio::charset::CharsetEncoder::replacement()
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(20),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncoder::replaceWith(local_ref< array<jbyte,1> > const &a0)
@@ -258,8 +258,8 @@ local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncod
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(21),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::nio::charset::CharsetEncoder > >
-	(get_jobject(), a0);
+		local_ref< java::nio::charset::CharsetEncoder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncoder::reset()
@@ -268,8 +268,8 @@ local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::CharsetEncod
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(22),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::nio::charset::CharsetEncoder > >
-	(get_jobject());
+		local_ref< java::nio::charset::CharsetEncoder >
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::CodingErrorAction > java::nio::charset::CharsetEncoder::unmappableCharacterAction()
@@ -278,8 +278,8 @@ local_ref< java::nio::charset::CodingErrorAction > java::nio::charset::CharsetEn
 		java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME,
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(23),
 		java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::nio::charset::CodingErrorAction > >
-	(get_jobject());
+		local_ref< java::nio::charset::CodingErrorAction >
+	>(get_jobject());
 }
 
 

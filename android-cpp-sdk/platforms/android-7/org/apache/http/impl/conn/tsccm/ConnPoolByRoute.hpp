@@ -17,6 +17,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class AbstractConnPool; } } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RefQueueHandler; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class PoolEntryRequest; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
@@ -28,6 +29,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/impl/conn/tsccm/AbstractConnPool.hpp>
 #include <org/apache/http/impl/conn/tsccm/BasicPoolEntry.hpp>
 #include <org/apache/http/impl/conn/tsccm/PoolEntryRequest.hpp>
+#include <org/apache/http/impl/conn/tsccm/RefQueueHandler.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -73,7 +75,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>() const;
+		operator local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>() const;
 
 
 		ConnPoolByRoute(local_ref< org::apache::http::conn::ClientConnectionOperator > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -105,9 +109,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::conn::tsccm::ConnPoolByRoute::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::conn::tsccm::ConnPoolByRoute::operator local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>() const
 {
 	return local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::ConnPoolByRoute::operator local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>() const
+{
+	return local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>(get_jobject());
 }
 
 
@@ -116,8 +130,8 @@ org::apache::http::impl::conn::tsccm::ConnPoolByRoute::ConnPoolByRoute(local_ref
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -135,8 +149,8 @@ jint org::apache::http::impl::conn::tsccm::ConnPoolByRoute::getConnectionsInPool
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > org::apache::http::impl::conn::tsccm::ConnPoolByRoute::requestPoolEntry(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< java::lang::Object > const &a1)
@@ -145,8 +159,8 @@ local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > org::apache:
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -156,8 +170,8 @@ void org::apache::http::impl::conn::tsccm::ConnPoolByRoute::freeEntry(local_ref<
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -172,8 +186,8 @@ void org::apache::http::impl::conn::tsccm::ConnPoolByRoute::deleteClosedConnecti
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(17),
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::ConnPoolByRoute::shutdown()
@@ -182,8 +196,8 @@ void org::apache::http::impl::conn::tsccm::ConnPoolByRoute::shutdown()
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(18),
 		org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

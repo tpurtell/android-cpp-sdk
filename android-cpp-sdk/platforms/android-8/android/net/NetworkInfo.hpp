@@ -18,11 +18,15 @@ namespace j2cpp { namespace android { namespace net { namespace NetworkInfo_ { c
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <android/net/NetworkInfo.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -65,6 +69,9 @@ namespace android { namespace net {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::net::NetworkInfo_::DetailedState >, 1> > values();
@@ -108,6 +115,9 @@ namespace android { namespace net {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::net::NetworkInfo_::State >, 1> > values();
@@ -156,8 +166,8 @@ namespace android { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint getType();
@@ -200,14 +210,29 @@ android::net::NetworkInfo_::DetailedState::operator local_ref<java::lang::Enum>(
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::net::NetworkInfo_::DetailedState::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::net::NetworkInfo_::DetailedState::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::net::NetworkInfo_::DetailedState::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::net::NetworkInfo_::DetailedState >, 1> > android::net::NetworkInfo_::DetailedState::values()
 {
 	return call_static_method<
 		android::net::NetworkInfo_::DetailedState::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_NAME(0),
 		android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::net::NetworkInfo_::DetailedState >, 1> > >
-	();
+		local_ref< array< local_ref< android::net::NetworkInfo_::DetailedState >, 1> >
+	>();
 }
 
 local_ref< android::net::NetworkInfo_::DetailedState > android::net::NetworkInfo_::DetailedState::valueOf(local_ref< java::lang::String > const &a0)
@@ -216,8 +241,8 @@ local_ref< android::net::NetworkInfo_::DetailedState > android::net::NetworkInfo
 		android::net::NetworkInfo_::DetailedState::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_NAME(1),
 		android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::NetworkInfo_::DetailedState > >
-	(a0);
+		local_ref< android::net::NetworkInfo_::DetailedState >
+	>(a0);
 }
 
 
@@ -317,14 +342,29 @@ android::net::NetworkInfo_::State::operator local_ref<java::lang::Enum>() const
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::net::NetworkInfo_::State::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::net::NetworkInfo_::State::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::net::NetworkInfo_::State::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::net::NetworkInfo_::State >, 1> > android::net::NetworkInfo_::State::values()
 {
 	return call_static_method<
 		android::net::NetworkInfo_::State::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo_::State::J2CPP_METHOD_NAME(0),
 		android::net::NetworkInfo_::State::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::net::NetworkInfo_::State >, 1> > >
-	();
+		local_ref< array< local_ref< android::net::NetworkInfo_::State >, 1> >
+	>();
 }
 
 local_ref< android::net::NetworkInfo_::State > android::net::NetworkInfo_::State::valueOf(local_ref< java::lang::String > const &a0)
@@ -333,8 +373,8 @@ local_ref< android::net::NetworkInfo_::State > android::net::NetworkInfo_::State
 		android::net::NetworkInfo_::State::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo_::State::J2CPP_METHOD_NAME(1),
 		android::net::NetworkInfo_::State::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::NetworkInfo_::State > >
-	(a0);
+		local_ref< android::net::NetworkInfo_::State >
+	>(a0);
 }
 
 
@@ -398,14 +438,14 @@ J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::State,6,"$VALUES","[android.net.N
 
 
 
-android::net::NetworkInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::net::NetworkInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::net::NetworkInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -415,8 +455,8 @@ jint android::net::NetworkInfo::getType()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(1),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::net::NetworkInfo::getSubtype()
@@ -425,8 +465,8 @@ jint android::net::NetworkInfo::getSubtype()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(2),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::NetworkInfo::getTypeName()
@@ -435,8 +475,8 @@ local_ref< java::lang::String > android::net::NetworkInfo::getTypeName()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(3),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::NetworkInfo::getSubtypeName()
@@ -445,8 +485,8 @@ local_ref< java::lang::String > android::net::NetworkInfo::getSubtypeName()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(4),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::net::NetworkInfo::isConnectedOrConnecting()
@@ -455,8 +495,8 @@ jboolean android::net::NetworkInfo::isConnectedOrConnecting()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(5),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::NetworkInfo::isConnected()
@@ -465,8 +505,8 @@ jboolean android::net::NetworkInfo::isConnected()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(6),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::NetworkInfo::isAvailable()
@@ -475,8 +515,8 @@ jboolean android::net::NetworkInfo::isAvailable()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(7),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::NetworkInfo::isFailover()
@@ -485,8 +525,8 @@ jboolean android::net::NetworkInfo::isFailover()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(8),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::NetworkInfo::isRoaming()
@@ -495,8 +535,8 @@ jboolean android::net::NetworkInfo::isRoaming()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(9),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::net::NetworkInfo_::State > android::net::NetworkInfo::getState()
@@ -505,8 +545,8 @@ local_ref< android::net::NetworkInfo_::State > android::net::NetworkInfo::getSta
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(10),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::NetworkInfo_::State > >
-	(get_jobject());
+		local_ref< android::net::NetworkInfo_::State >
+	>(get_jobject());
 }
 
 local_ref< android::net::NetworkInfo_::DetailedState > android::net::NetworkInfo::getDetailedState()
@@ -515,8 +555,8 @@ local_ref< android::net::NetworkInfo_::DetailedState > android::net::NetworkInfo
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(11),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::NetworkInfo_::DetailedState > >
-	(get_jobject());
+		local_ref< android::net::NetworkInfo_::DetailedState >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::NetworkInfo::getReason()
@@ -525,8 +565,8 @@ local_ref< java::lang::String > android::net::NetworkInfo::getReason()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(12),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::NetworkInfo::getExtraInfo()
@@ -535,8 +575,8 @@ local_ref< java::lang::String > android::net::NetworkInfo::getExtraInfo()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(13),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::NetworkInfo::toString()
@@ -545,8 +585,8 @@ local_ref< java::lang::String > android::net::NetworkInfo::toString()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(14),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::NetworkInfo::describeContents()
@@ -555,8 +595,8 @@ jint android::net::NetworkInfo::describeContents()
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(15),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::NetworkInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -565,8 +605,8 @@ void android::net::NetworkInfo::writeToParcel(local_ref< android::os::Parcel > c
 		android::net::NetworkInfo::J2CPP_CLASS_NAME,
 		android::net::NetworkInfo::J2CPP_METHOD_NAME(16),
 		android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -14,19 +14,25 @@
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/Editable.hpp>
 #include <android/text/InputFilter.hpp>
 #include <android/text/Spanned.hpp>
 #include <android/text/method/BaseKeyListener.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -53,8 +59,11 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
-		operator local_ref<android::text::method::BaseKeyListener>() const;
 		operator local_ref<android::text::InputFilter>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		NumberKeyListener();
@@ -79,14 +88,29 @@ namespace j2cpp {
 
 
 
+android::text::method::NumberKeyListener::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
+android::text::method::NumberKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
+android::text::method::NumberKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
+{
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
+}
+
 android::text::method::NumberKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
 {
 	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
 }
 
-android::text::method::NumberKeyListener::operator local_ref<android::text::InputFilter>() const
+android::text::method::NumberKeyListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::text::InputFilter>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -95,8 +119,8 @@ android::text::method::NumberKeyListener::NumberKeyListener()
 	call_new_object<
 		android::text::method::NumberKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::NumberKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -110,8 +134,8 @@ local_ref< java::lang::CharSequence > android::text::method::NumberKeyListener::
 		android::text::method::NumberKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::NumberKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -121,8 +145,8 @@ jboolean android::text::method::NumberKeyListener::onKeyDown(local_ref< android:
 		android::text::method::NumberKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::NumberKeyListener::J2CPP_METHOD_NAME(5),
 		android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

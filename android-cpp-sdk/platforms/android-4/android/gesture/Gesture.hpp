@@ -11,15 +11,15 @@
 #define J2CPP_ANDROID_GESTURE_GESTURE_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Path; } } }
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
-namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace gesture { class GestureStroke; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Path; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
+namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 
 
 #include <android/gesture/GestureStroke.hpp>
@@ -67,8 +67,8 @@ namespace android { namespace gesture {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Gesture();
@@ -106,14 +106,14 @@ namespace j2cpp {
 
 
 
-android::gesture::Gesture::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::gesture::Gesture::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::gesture::Gesture::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -122,8 +122,8 @@ android::gesture::Gesture::Gesture()
 	call_new_object<
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(0),
-		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -135,8 +135,8 @@ local_ref< java::util::ArrayList > android::gesture::Gesture::getStrokes()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(1),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject());
+		local_ref< java::util::ArrayList >
+	>(get_jobject());
 }
 
 jint android::gesture::Gesture::getStrokesCount()
@@ -145,8 +145,8 @@ jint android::gesture::Gesture::getStrokesCount()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(2),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::gesture::Gesture::addStroke(local_ref< android::gesture::GestureStroke > const &a0)
@@ -155,8 +155,8 @@ void android::gesture::Gesture::addStroke(local_ref< android::gesture::GestureSt
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(3),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::gesture::Gesture::getLength()
@@ -165,8 +165,8 @@ jfloat android::gesture::Gesture::getLength()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(4),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 local_ref< android::graphics::RectF > android::gesture::Gesture::getBoundingBox()
@@ -175,8 +175,8 @@ local_ref< android::graphics::RectF > android::gesture::Gesture::getBoundingBox(
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(5),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::RectF > >
-	(get_jobject());
+		local_ref< android::graphics::RectF >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Path > android::gesture::Gesture::toPath()
@@ -185,8 +185,8 @@ local_ref< android::graphics::Path > android::gesture::Gesture::toPath()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(6),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::Path > >
-	(get_jobject());
+		local_ref< android::graphics::Path >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Path > android::gesture::Gesture::toPath(local_ref< android::graphics::Path > const &a0)
@@ -195,8 +195,8 @@ local_ref< android::graphics::Path > android::gesture::Gesture::toPath(local_ref
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(7),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Path > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Path >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Path > android::gesture::Gesture::toPath(jint a0, jint a1, jint a2, jint a3)
@@ -205,8 +205,8 @@ local_ref< android::graphics::Path > android::gesture::Gesture::toPath(jint a0, 
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(8),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Path > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::graphics::Path >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::graphics::Path > android::gesture::Gesture::toPath(local_ref< android::graphics::Path > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -215,8 +215,8 @@ local_ref< android::graphics::Path > android::gesture::Gesture::toPath(local_ref
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(9),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Path > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::graphics::Path >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jlong android::gesture::Gesture::getID()
@@ -225,8 +225,8 @@ jlong android::gesture::Gesture::getID()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(10),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::gesture::Gesture::toBitmap(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -235,8 +235,8 @@ local_ref< android::graphics::Bitmap > android::gesture::Gesture::toBitmap(jint 
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(11),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< android::graphics::Bitmap > android::gesture::Gesture::toBitmap(jint a0, jint a1, jint a2, jint a3)
@@ -245,8 +245,8 @@ local_ref< android::graphics::Bitmap > android::gesture::Gesture::toBitmap(jint 
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(12),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::gesture::Gesture::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -255,8 +255,8 @@ void android::gesture::Gesture::writeToParcel(local_ref< android::os::Parcel > c
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(13),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::gesture::Gesture::describeContents()
@@ -265,8 +265,8 @@ jint android::gesture::Gesture::describeContents()
 		android::gesture::Gesture::J2CPP_CLASS_NAME,
 		android::gesture::Gesture::J2CPP_METHOD_NAME(14),
 		android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_XPATH_XPATHEXPRESSION_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace namespace { class QName; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace namespace { class QName; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 
@@ -82,8 +82,8 @@ local_ref< java::lang::Object > javax::xml::xpath::XPathExpression::evaluate(loc
 		javax::xml::xpath::XPathExpression::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_NAME(0),
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > javax::xml::xpath::XPathExpression::evaluate(local_ref< java::lang::Object > const &a0)
@@ -92,8 +92,8 @@ local_ref< java::lang::String > javax::xml::xpath::XPathExpression::evaluate(loc
 		javax::xml::xpath::XPathExpression::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_NAME(1),
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > javax::xml::xpath::XPathExpression::evaluate(local_ref< org::xml::sax::InputSource > const &a0, local_ref< javax::xml::namespace::QName > const &a1)
@@ -102,8 +102,8 @@ local_ref< java::lang::Object > javax::xml::xpath::XPathExpression::evaluate(loc
 		javax::xml::xpath::XPathExpression::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_NAME(2),
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > javax::xml::xpath::XPathExpression::evaluate(local_ref< org::xml::sax::InputSource > const &a0)
@@ -112,8 +112,8 @@ local_ref< java::lang::String > javax::xml::xpath::XPathExpression::evaluate(loc
 		javax::xml::xpath::XPathExpression::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_NAME(3),
 		javax::xml::xpath::XPathExpression::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

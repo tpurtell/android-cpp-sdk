@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/widget/Adapter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <java/lang/Object.hpp>
 
@@ -38,8 +40,9 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::Adapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::widget::ListAdapter > getWrappedAdapter();
@@ -61,14 +64,19 @@ namespace j2cpp {
 
 
 
-android::widget::WrapperListAdapter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::widget::WrapperListAdapter::operator local_ref<android::widget::ListAdapter>() const
 {
 	return local_ref<android::widget::ListAdapter>(get_jobject());
+}
+
+android::widget::WrapperListAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
+android::widget::WrapperListAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< android::widget::ListAdapter > android::widget::WrapperListAdapter::getWrappedAdapter()
@@ -77,8 +85,8 @@ local_ref< android::widget::ListAdapter > android::widget::WrapperListAdapter::g
 		android::widget::WrapperListAdapter::J2CPP_CLASS_NAME,
 		android::widget::WrapperListAdapter::J2CPP_METHOD_NAME(0),
 		android::widget::WrapperListAdapter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 

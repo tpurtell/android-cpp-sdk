@@ -11,10 +11,10 @@
 #define J2CPP_ORG_W3C_DOM_DOCUMENTTYPE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class NamedNodeMap; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class NamedNodeMap; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -92,8 +92,8 @@ local_ref< java::lang::String > org::w3c::dom::DocumentType::getName()
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::DocumentType::getEntities()
@@ -102,8 +102,8 @@ local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::DocumentType::getEntitie
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::w3c::dom::NamedNodeMap > >
-	(get_jobject());
+		local_ref< org::w3c::dom::NamedNodeMap >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::DocumentType::getNotations()
@@ -112,8 +112,8 @@ local_ref< org::w3c::dom::NamedNodeMap > org::w3c::dom::DocumentType::getNotatio
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::w3c::dom::NamedNodeMap > >
-	(get_jobject());
+		local_ref< org::w3c::dom::NamedNodeMap >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::DocumentType::getPublicId()
@@ -122,8 +122,8 @@ local_ref< java::lang::String > org::w3c::dom::DocumentType::getPublicId()
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::DocumentType::getSystemId()
@@ -132,8 +132,8 @@ local_ref< java::lang::String > org::w3c::dom::DocumentType::getSystemId()
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::DocumentType::getInternalSubset()
@@ -142,8 +142,8 @@ local_ref< java::lang::String > org::w3c::dom::DocumentType::getInternalSubset()
 		org::w3c::dom::DocumentType::J2CPP_CLASS_NAME,
 		org::w3c::dom::DocumentType::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::DocumentType::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

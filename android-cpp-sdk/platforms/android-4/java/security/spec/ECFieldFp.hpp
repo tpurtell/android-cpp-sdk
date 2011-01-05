@@ -44,8 +44,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::ECField>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ECFieldFp(local_ref< java::math::BigInteger > const&);
@@ -72,14 +72,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::ECFieldFp::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::ECFieldFp::operator local_ref<java::security::spec::ECField>() const
 {
 	return local_ref<java::security::spec::ECField>(get_jobject());
+}
+
+java::security::spec::ECFieldFp::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -88,8 +88,8 @@ java::security::spec::ECFieldFp::ECFieldFp(local_ref< java::math::BigInteger > c
 	call_new_object<
 		java::security::spec::ECFieldFp::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -101,8 +101,8 @@ jint java::security::spec::ECFieldFp::getFieldSize()
 		java::security::spec::ECFieldFp::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::ECFieldFp::getP()
@@ -111,8 +111,8 @@ local_ref< java::math::BigInteger > java::security::spec::ECFieldFp::getP()
 		java::security::spec::ECFieldFp::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(2),
 		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jboolean java::security::spec::ECFieldFp::equals(local_ref< java::lang::Object > const &a0)
@@ -121,8 +121,8 @@ jboolean java::security::spec::ECFieldFp::equals(local_ref< java::lang::Object >
 		java::security::spec::ECFieldFp::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(3),
 		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::spec::ECFieldFp::hashCode()
@@ -131,8 +131,8 @@ jint java::security::spec::ECFieldFp::hashCode()
 		java::security::spec::ECFieldFp::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(4),
 		java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

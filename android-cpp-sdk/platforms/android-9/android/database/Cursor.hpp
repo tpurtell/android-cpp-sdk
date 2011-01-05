@@ -157,8 +157,8 @@ jint android::database::Cursor::getCount()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(0),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::database::Cursor::getPosition()
@@ -167,8 +167,8 @@ jint android::database::Cursor::getPosition()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(1),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::move(jint a0)
@@ -177,8 +177,8 @@ jboolean android::database::Cursor::move(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(2),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::Cursor::moveToPosition(jint a0)
@@ -187,8 +187,8 @@ jboolean android::database::Cursor::moveToPosition(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(3),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::Cursor::moveToFirst()
@@ -197,8 +197,8 @@ jboolean android::database::Cursor::moveToFirst()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(4),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::moveToLast()
@@ -207,8 +207,8 @@ jboolean android::database::Cursor::moveToLast()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(5),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::moveToNext()
@@ -217,8 +217,8 @@ jboolean android::database::Cursor::moveToNext()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(6),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::moveToPrevious()
@@ -227,8 +227,8 @@ jboolean android::database::Cursor::moveToPrevious()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(7),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::isFirst()
@@ -237,8 +237,8 @@ jboolean android::database::Cursor::isFirst()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(8),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::isLast()
@@ -247,8 +247,8 @@ jboolean android::database::Cursor::isLast()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(9),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::isBeforeFirst()
@@ -257,8 +257,8 @@ jboolean android::database::Cursor::isBeforeFirst()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(10),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::isAfterLast()
@@ -267,8 +267,8 @@ jboolean android::database::Cursor::isAfterLast()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(11),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::database::Cursor::getColumnIndex(local_ref< java::lang::String > const &a0)
@@ -277,8 +277,8 @@ jint android::database::Cursor::getColumnIndex(local_ref< java::lang::String > c
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(12),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::database::Cursor::getColumnIndexOrThrow(local_ref< java::lang::String > const &a0)
@@ -287,8 +287,8 @@ jint android::database::Cursor::getColumnIndexOrThrow(local_ref< java::lang::Str
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(13),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::database::Cursor::getColumnName(jint a0)
@@ -297,8 +297,8 @@ local_ref< java::lang::String > android::database::Cursor::getColumnName(jint a0
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(14),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::database::Cursor::getColumnNames()
@@ -307,8 +307,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::database::Curso
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(15),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 jint android::database::Cursor::getColumnCount()
@@ -317,8 +317,8 @@ jint android::database::Cursor::getColumnCount()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(16),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::database::Cursor::getBlob(jint a0)
@@ -327,8 +327,8 @@ local_ref< array<jbyte,1> > android::database::Cursor::getBlob(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(17),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::database::Cursor::getString(jint a0)
@@ -337,8 +337,8 @@ local_ref< java::lang::String > android::database::Cursor::getString(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(18),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::copyStringToBuffer(jint a0, local_ref< android::database::CharArrayBuffer > const &a1)
@@ -347,8 +347,8 @@ void android::database::Cursor::copyStringToBuffer(jint a0, local_ref< android::
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(19),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jshort android::database::Cursor::getShort(jint a0)
@@ -357,8 +357,8 @@ jshort android::database::Cursor::getShort(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(20),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(20), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint android::database::Cursor::getInt(jint a0)
@@ -367,8 +367,8 @@ jint android::database::Cursor::getInt(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(21),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong android::database::Cursor::getLong(jint a0)
@@ -377,8 +377,8 @@ jlong android::database::Cursor::getLong(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(22),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(22), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jfloat android::database::Cursor::getFloat(jint a0)
@@ -387,8 +387,8 @@ jfloat android::database::Cursor::getFloat(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(23),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(23), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jdouble android::database::Cursor::getDouble(jint a0)
@@ -397,8 +397,8 @@ jdouble android::database::Cursor::getDouble(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(24),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(24), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::Cursor::isNull(jint a0)
@@ -407,8 +407,8 @@ jboolean android::database::Cursor::isNull(jint a0)
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(25),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::deactivate()
@@ -417,8 +417,8 @@ void android::database::Cursor::deactivate()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(26),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::requery()
@@ -427,8 +427,8 @@ jboolean android::database::Cursor::requery()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(27),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::database::Cursor::close()
@@ -437,8 +437,8 @@ void android::database::Cursor::close()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(28),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::database::Cursor::isClosed()
@@ -447,8 +447,8 @@ jboolean android::database::Cursor::isClosed()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(29),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::database::Cursor::registerContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -457,8 +457,8 @@ void android::database::Cursor::registerContentObserver(local_ref< android::data
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(30),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::unregisterContentObserver(local_ref< android::database::ContentObserver > const &a0)
@@ -467,8 +467,8 @@ void android::database::Cursor::unregisterContentObserver(local_ref< android::da
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(31),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -477,8 +477,8 @@ void android::database::Cursor::registerDataSetObserver(local_ref< android::data
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(32),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -487,8 +487,8 @@ void android::database::Cursor::unregisterDataSetObserver(local_ref< android::da
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(33),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Cursor::setNotificationUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -497,8 +497,8 @@ void android::database::Cursor::setNotificationUri(local_ref< android::content::
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(34),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::database::Cursor::getWantsAllOnMoveCalls()
@@ -507,8 +507,8 @@ jboolean android::database::Cursor::getWantsAllOnMoveCalls()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(35),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::database::Cursor::getExtras()
@@ -517,8 +517,8 @@ local_ref< android::os::Bundle > android::database::Cursor::getExtras()
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(36),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::database::Cursor::respond(local_ref< android::os::Bundle > const &a0)
@@ -527,8 +527,8 @@ local_ref< android::os::Bundle > android::database::Cursor::respond(local_ref< a
 		android::database::Cursor::J2CPP_CLASS_NAME,
 		android::database::Cursor::J2CPP_METHOD_NAME(37),
 		android::database::Cursor::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0);
 }
 
 

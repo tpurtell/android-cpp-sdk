@@ -15,7 +15,9 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class Layout; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class LeadingMarginSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class WrapTogetherSpan; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class LineHeightSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -28,6 +30,8 @@ namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { cl
 #include <android/text/Layout.hpp>
 #include <android/text/style/LeadingMarginSpan.hpp>
 #include <android/text/style/LineHeightSpan.hpp>
+#include <android/text/style/ParagraphStyle.hpp>
+#include <android/text/style/WrapTogetherSpan.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 
@@ -57,7 +61,9 @@ namespace android { namespace text { namespace style {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::LeadingMarginSpan>() const;
+		operator local_ref<android::text::style::WrapTogetherSpan>() const;
 		operator local_ref<android::text::style::LineHeightSpan>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
 
 
 		DrawableMarginSpan(local_ref< android::graphics::drawable::Drawable > const&);
@@ -94,9 +100,19 @@ android::text::style::DrawableMarginSpan::operator local_ref<android::text::styl
 	return local_ref<android::text::style::LeadingMarginSpan>(get_jobject());
 }
 
+android::text::style::DrawableMarginSpan::operator local_ref<android::text::style::WrapTogetherSpan>() const
+{
+	return local_ref<android::text::style::WrapTogetherSpan>(get_jobject());
+}
+
 android::text::style::DrawableMarginSpan::operator local_ref<android::text::style::LineHeightSpan>() const
 {
 	return local_ref<android::text::style::LineHeightSpan>(get_jobject());
+}
+
+android::text::style::DrawableMarginSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
 }
 
 
@@ -105,8 +121,8 @@ android::text::style::DrawableMarginSpan::DrawableMarginSpan(local_ref< android:
 	call_new_object<
 		android::text::style::DrawableMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -118,8 +134,8 @@ android::text::style::DrawableMarginSpan::DrawableMarginSpan(local_ref< android:
 	call_new_object<
 		android::text::style::DrawableMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_NAME(1),
-		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -131,8 +147,8 @@ jint android::text::style::DrawableMarginSpan::getLeadingMargin(jboolean a0)
 		android::text::style::DrawableMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::text::style::DrawableMarginSpan::drawLeadingMargin(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::lang::CharSequence > const &a7, jint a8, jint a9, jboolean a10, local_ref< android::text::Layout > const &a11)
@@ -141,8 +157,8 @@ void android::text::style::DrawableMarginSpan::drawLeadingMargin(local_ref< andr
 		android::text::style::DrawableMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 
 void android::text::style::DrawableMarginSpan::chooseHeight(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::graphics::Paint_::FontMetricsInt > const &a5)
@@ -151,8 +167,8 @@ void android::text::style::DrawableMarginSpan::chooseHeight(local_ref< java::lan
 		android::text::style::DrawableMarginSpan::J2CPP_CLASS_NAME,
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_NAME(4),
 		android::text::style::DrawableMarginSpan::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

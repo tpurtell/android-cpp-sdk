@@ -12,10 +12,10 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class AuthenticationHandler; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class UserTokenHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RequestDirector; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RedirectHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class UserTokenHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpRequestRetryHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RedirectHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
@@ -87,8 +87,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::client::RequestDirector>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DefaultRequestDirector(local_ref< org::apache::http::protocol::HttpRequestExecutor > const&, local_ref< org::apache::http::conn::ClientConnectionManager > const&, local_ref< org::apache::http::ConnectionReuseStrategy > const&, local_ref< org::apache::http::conn::ConnectionKeepAliveStrategy > const&, local_ref< org::apache::http::conn::routing::HttpRoutePlanner > const&, local_ref< org::apache::http::protocol::HttpProcessor > const&, local_ref< org::apache::http::client::HttpRequestRetryHandler > const&, local_ref< org::apache::http::client::RedirectHandler > const&, local_ref< org::apache::http::client::AuthenticationHandler > const&, local_ref< org::apache::http::client::AuthenticationHandler > const&, local_ref< org::apache::http::client::UserTokenHandler > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -115,14 +115,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::client::DefaultRequestDirector::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::client::DefaultRequestDirector::operator local_ref<org::apache::http::client::RequestDirector>() const
 {
 	return local_ref<org::apache::http::client::RequestDirector>(get_jobject());
+}
+
+org::apache::http::impl::client::DefaultRequestDirector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -131,8 +131,8 @@ org::apache::http::impl::client::DefaultRequestDirector::DefaultRequestDirector(
 	call_new_object<
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
 )
 {
 }
@@ -145,8 +145,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::De
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

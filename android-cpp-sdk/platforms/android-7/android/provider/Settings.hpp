@@ -11,8 +11,11 @@
 #define J2CPP_ANDROID_PROVIDER_SETTINGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace provider { namespace Settings_ { class NameValueTable; } } } }
 namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
@@ -27,8 +30,11 @@ namespace j2cpp { namespace android { namespace util { class AndroidException; }
 #include <android/provider/BaseColumns.hpp>
 #include <android/provider/Settings.hpp>
 #include <android/util/AndroidException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -83,6 +89,10 @@ namespace android { namespace provider {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::lang::Exception>() const;
 			operator local_ref<android::util::AndroidException>() const;
 
 
@@ -166,7 +176,9 @@ namespace android { namespace provider {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::Settings_::NameValueTable>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 
 
 			Secure();
@@ -367,7 +379,9 @@ namespace android { namespace provider {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::Settings_::NameValueTable>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 
 
 			System();
@@ -606,8 +620,8 @@ android::provider::Settings_::NameValueTable::NameValueTable()
 	call_new_object<
 		android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME,
 		android::provider::Settings_::NameValueTable::J2CPP_METHOD_NAME(0),
-		android::provider::Settings_::NameValueTable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Settings_::NameValueTable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -620,8 +634,8 @@ local_ref< android::net::Uri > android::provider::Settings_::NameValueTable::get
 		android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME,
 		android::provider::Settings_::NameValueTable::J2CPP_METHOD_NAME(2),
 		android::provider::Settings_::NameValueTable::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -648,6 +662,26 @@ J2CPP_DEFINE_FIELD(android::provider::Settings_::NameValueTable,0,"NAME","Ljava/
 J2CPP_DEFINE_FIELD(android::provider::Settings_::NameValueTable,1,"VALUE","Ljava/lang/String;")
 
 
+android::provider::Settings_::SettingNotFoundException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::provider::Settings_::SettingNotFoundException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::provider::Settings_::SettingNotFoundException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::provider::Settings_::SettingNotFoundException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
 android::provider::Settings_::SettingNotFoundException::operator local_ref<android::util::AndroidException>() const
 {
 	return local_ref<android::util::AndroidException>(get_jobject());
@@ -659,8 +693,8 @@ android::provider::Settings_::SettingNotFoundException::SettingNotFoundException
 	call_new_object<
 		android::provider::Settings_::SettingNotFoundException::J2CPP_CLASS_NAME,
 		android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_NAME(0),
-		android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -671,9 +705,19 @@ J2CPP_DEFINE_CLASS(android::provider::Settings_::SettingNotFoundException,"andro
 J2CPP_DEFINE_METHOD(android::provider::Settings_::SettingNotFoundException,0,"<init>","(Ljava/lang/String;)V")
 
 
+android::provider::Settings_::Secure::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::provider::Settings_::Secure::operator local_ref<android::provider::Settings_::NameValueTable>() const
 {
 	return local_ref<android::provider::Settings_::NameValueTable>(get_jobject());
+}
+
+android::provider::Settings_::Secure::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -682,8 +726,8 @@ android::provider::Settings_::Secure::Secure()
 	call_new_object<
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(0),
-		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -695,8 +739,8 @@ local_ref< java::lang::String > android::provider::Settings_::Secure::getString(
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(1),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::Secure::putString(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -705,8 +749,8 @@ jboolean android::provider::Settings_::Secure::putString(local_ref< android::con
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(2),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 local_ref< android::net::Uri > android::provider::Settings_::Secure::getUriFor(local_ref< java::lang::String > const &a0)
@@ -715,8 +759,8 @@ local_ref< android::net::Uri > android::provider::Settings_::Secure::getUriFor(l
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(3),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 jint android::provider::Settings_::Secure::getInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -725,8 +769,8 @@ jint android::provider::Settings_::Secure::getInt(local_ref< android::content::C
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(4),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::provider::Settings_::Secure::getInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -735,8 +779,8 @@ jint android::provider::Settings_::Secure::getInt(local_ref< android::content::C
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(5),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::Secure::putInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -745,8 +789,8 @@ jboolean android::provider::Settings_::Secure::putInt(local_ref< android::conten
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(6),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jlong android::provider::Settings_::Secure::getLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jlong a2)
@@ -755,8 +799,8 @@ jlong android::provider::Settings_::Secure::getLong(local_ref< android::content:
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(7),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(a0, a1, a2);
+		jlong
+	>(a0, a1, a2);
 }
 
 jlong android::provider::Settings_::Secure::getLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -765,8 +809,8 @@ jlong android::provider::Settings_::Secure::getLong(local_ref< android::content:
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(8),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::Secure::putLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jlong a2)
@@ -775,8 +819,8 @@ jboolean android::provider::Settings_::Secure::putLong(local_ref< android::conte
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(9),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jfloat android::provider::Settings_::Secure::getFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -785,8 +829,8 @@ jfloat android::provider::Settings_::Secure::getFloat(local_ref< android::conten
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(10),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(a0, a1, a2);
+		jfloat
+	>(a0, a1, a2);
 }
 
 jfloat android::provider::Settings_::Secure::getFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -795,8 +839,8 @@ jfloat android::provider::Settings_::Secure::getFloat(local_ref< android::conten
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(11),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::Secure::putFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -805,8 +849,8 @@ jboolean android::provider::Settings_::Secure::putFloat(local_ref< android::cont
 		android::provider::Settings_::Secure::J2CPP_CLASS_NAME,
 		android::provider::Settings_::Secure::J2CPP_METHOD_NAME(12),
 		android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 
@@ -1221,9 +1265,19 @@ J2CPP_DEFINE_FIELD(android::provider::Settings_::Secure,47,"WIFI_MOBILE_DATA_TRA
 J2CPP_DEFINE_FIELD(android::provider::Settings_::Secure,48,"BACKGROUND_DATA","Ljava/lang/String;")
 
 
+android::provider::Settings_::System::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::provider::Settings_::System::operator local_ref<android::provider::Settings_::NameValueTable>() const
 {
 	return local_ref<android::provider::Settings_::NameValueTable>(get_jobject());
+}
+
+android::provider::Settings_::System::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 
@@ -1232,8 +1286,8 @@ android::provider::Settings_::System::System()
 	call_new_object<
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(0),
-		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1245,8 +1299,8 @@ local_ref< java::lang::String > android::provider::Settings_::System::getString(
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(1),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::putString(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -1255,8 +1309,8 @@ jboolean android::provider::Settings_::System::putString(local_ref< android::con
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(2),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 local_ref< android::net::Uri > android::provider::Settings_::System::getUriFor(local_ref< java::lang::String > const &a0)
@@ -1265,8 +1319,8 @@ local_ref< android::net::Uri > android::provider::Settings_::System::getUriFor(l
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(3),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 jint android::provider::Settings_::System::getInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -1275,8 +1329,8 @@ jint android::provider::Settings_::System::getInt(local_ref< android::content::C
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(4),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::provider::Settings_::System::getInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -1285,8 +1339,8 @@ jint android::provider::Settings_::System::getInt(local_ref< android::content::C
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(5),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::putInt(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -1295,8 +1349,8 @@ jboolean android::provider::Settings_::System::putInt(local_ref< android::conten
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(6),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jlong android::provider::Settings_::System::getLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jlong a2)
@@ -1305,8 +1359,8 @@ jlong android::provider::Settings_::System::getLong(local_ref< android::content:
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(7),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(a0, a1, a2);
+		jlong
+	>(a0, a1, a2);
 }
 
 jlong android::provider::Settings_::System::getLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -1315,8 +1369,8 @@ jlong android::provider::Settings_::System::getLong(local_ref< android::content:
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(8),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::putLong(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jlong a2)
@@ -1325,8 +1379,8 @@ jboolean android::provider::Settings_::System::putLong(local_ref< android::conte
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(9),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jfloat android::provider::Settings_::System::getFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -1335,8 +1389,8 @@ jfloat android::provider::Settings_::System::getFloat(local_ref< android::conten
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(10),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(a0, a1, a2);
+		jfloat
+	>(a0, a1, a2);
 }
 
 jfloat android::provider::Settings_::System::getFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -1345,8 +1399,8 @@ jfloat android::provider::Settings_::System::getFloat(local_ref< android::conten
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(11),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::putFloat(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -1355,8 +1409,8 @@ jboolean android::provider::Settings_::System::putFloat(local_ref< android::cont
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(12),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 void android::provider::Settings_::System::getConfiguration(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::res::Configuration > const &a1)
@@ -1365,8 +1419,8 @@ void android::provider::Settings_::System::getConfiguration(local_ref< android::
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(13),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::putConfiguration(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::res::Configuration > const &a1)
@@ -1375,8 +1429,8 @@ jboolean android::provider::Settings_::System::putConfiguration(local_ref< andro
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(14),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::provider::Settings_::System::getShowGTalkServiceStatus(local_ref< android::content::ContentResolver > const &a0)
@@ -1385,8 +1439,8 @@ jboolean android::provider::Settings_::System::getShowGTalkServiceStatus(local_r
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(15),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::provider::Settings_::System::setShowGTalkServiceStatus(local_ref< android::content::ContentResolver > const &a0, jboolean a1)
@@ -1395,8 +1449,8 @@ void android::provider::Settings_::System::setShowGTalkServiceStatus(local_ref< 
 		android::provider::Settings_::System::J2CPP_CLASS_NAME,
 		android::provider::Settings_::System::J2CPP_METHOD_NAME(16),
 		android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 
@@ -2243,8 +2297,8 @@ android::provider::Settings::Settings()
 	call_new_object<
 		android::provider::Settings::J2CPP_CLASS_NAME,
 		android::provider::Settings::J2CPP_METHOD_NAME(0),
-		android::provider::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

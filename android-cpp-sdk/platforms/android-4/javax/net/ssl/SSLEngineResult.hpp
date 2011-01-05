@@ -11,13 +11,17 @@
 #define J2CPP_JAVAX_NET_SSL_SSLENGINERESULT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { namespace SSLEngineResult_ { class Status; } } } } }
-namespace j2cpp { namespace javax { namespace net { namespace ssl { namespace SSLEngineResult_ { class HandshakeStatus; } } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { namespace SSLEngineResult_ { class Status; } } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { namespace SSLEngineResult_ { class HandshakeStatus; } } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +58,10 @@ namespace javax { namespace net { namespace ssl {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::Status >, 1> > values();
@@ -90,7 +97,10 @@ namespace javax { namespace net { namespace ssl {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >, 1> > values();
@@ -156,9 +166,24 @@ namespace j2cpp {
 
 
 
+javax::net::ssl::SSLEngineResult_::Status::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+javax::net::ssl::SSLEngineResult_::Status::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 javax::net::ssl::SSLEngineResult_::Status::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+javax::net::ssl::SSLEngineResult_::Status::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::Status >, 1> > javax::net::ssl::SSLEngineResult_::Status::values()
@@ -167,8 +192,8 @@ local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::Status >, 1> > j
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::Status >, 1> > >
-	();
+		local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::Status >, 1> >
+	>();
 }
 
 local_ref< javax::net::ssl::SSLEngineResult_::Status > javax::net::ssl::SSLEngineResult_::Status::valueOf(local_ref< java::lang::String > const &a0)
@@ -177,8 +202,8 @@ local_ref< javax::net::ssl::SSLEngineResult_::Status > javax::net::ssl::SSLEngin
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLEngineResult_::Status::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLEngineResult_::Status > >
-	(a0);
+		local_ref< javax::net::ssl::SSLEngineResult_::Status >
+	>(a0);
 }
 
 
@@ -225,9 +250,24 @@ J2CPP_DEFINE_FIELD(javax::net::ssl::SSLEngineResult_::Status,3,"OK","Ljavax/net/
 J2CPP_DEFINE_FIELD(javax::net::ssl::SSLEngineResult_::Status,4,"$VALUES","[javax.net.ssl.SSLEngineResult.Status")
 
 
+javax::net::ssl::SSLEngineResult_::HandshakeStatus::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+javax::net::ssl::SSLEngineResult_::HandshakeStatus::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 javax::net::ssl::SSLEngineResult_::HandshakeStatus::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+javax::net::ssl::SSLEngineResult_::HandshakeStatus::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >, 1> > javax::net::ssl::SSLEngineResult_::HandshakeStatus::values()
@@ -236,8 +276,8 @@ local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus 
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >, 1> > >
-	();
+		local_ref< array< local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >, 1> >
+	>();
 }
 
 local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > javax::net::ssl::SSLEngineResult_::HandshakeStatus::valueOf(local_ref< java::lang::String > const &a0)
@@ -246,8 +286,8 @@ local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > javax::net::ssl:
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLEngineResult_::HandshakeStatus::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > >
-	(a0);
+		local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >
+	>(a0);
 }
 
 
@@ -314,8 +354,8 @@ javax::net::ssl::SSLEngineResult::SSLEngineResult(local_ref< javax::net::ssl::SS
 	call_new_object<
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -327,8 +367,8 @@ local_ref< javax::net::ssl::SSLEngineResult_::Status > javax::net::ssl::SSLEngin
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLEngineResult_::Status > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLEngineResult_::Status >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > javax::net::ssl::SSLEngineResult::getHandshakeStatus()
@@ -337,8 +377,8 @@ local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > javax::net::ssl:
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLEngineResult_::HandshakeStatus >
+	>(get_jobject());
 }
 
 jint javax::net::ssl::SSLEngineResult::bytesConsumed()
@@ -347,8 +387,8 @@ jint javax::net::ssl::SSLEngineResult::bytesConsumed()
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::net::ssl::SSLEngineResult::bytesProduced()
@@ -357,8 +397,8 @@ jint javax::net::ssl::SSLEngineResult::bytesProduced()
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::net::ssl::SSLEngineResult::toString()
@@ -367,8 +407,8 @@ local_ref< java::lang::String > javax::net::ssl::SSLEngineResult::toString()
 		javax::net::ssl::SSLEngineResult::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::SSLEngineResult::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

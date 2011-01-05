@@ -148,8 +148,8 @@ void android::media::audiofx::Visualizer_::OnDataCaptureListener::onWaveFormData
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::audiofx::Visualizer_::OnDataCaptureListener::onFftDataCapture(local_ref< android::media::audiofx::Visualizer > const &a0, local_ref< array<jbyte,1> > const &a1, jint a2)
@@ -158,8 +158,8 @@ void android::media::audiofx::Visualizer_::OnDataCaptureListener::onFftDataCaptu
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::Visualizer_::OnDataCaptureListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -180,8 +180,8 @@ android::media::audiofx::Visualizer::Visualizer(jint a0)
 	call_new_object<
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -193,8 +193,8 @@ void android::media::audiofx::Visualizer::release()
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -204,8 +204,8 @@ jint android::media::audiofx::Visualizer::setEnabled(jboolean a0)
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::audiofx::Visualizer::getEnabled()
@@ -214,8 +214,8 @@ jboolean android::media::audiofx::Visualizer::getEnabled()
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< array<jint,1> > android::media::audiofx::Visualizer::getCaptureSizeRange()
@@ -224,8 +224,8 @@ local_ref< array<jint,1> > android::media::audiofx::Visualizer::getCaptureSizeRa
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jint,1> > >
-	();
+		local_ref< array<jint,1> >
+	>();
 }
 
 jint android::media::audiofx::Visualizer::getMaxCaptureRate()
@@ -234,8 +234,8 @@ jint android::media::audiofx::Visualizer::getMaxCaptureRate()
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::media::audiofx::Visualizer::setCaptureSize(jint a0)
@@ -244,8 +244,8 @@ jint android::media::audiofx::Visualizer::setCaptureSize(jint a0)
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(7),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::Visualizer::getCaptureSize()
@@ -254,8 +254,8 @@ jint android::media::audiofx::Visualizer::getCaptureSize()
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(8),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::audiofx::Visualizer::getSamplingRate()
@@ -264,8 +264,8 @@ jint android::media::audiofx::Visualizer::getSamplingRate()
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(9),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::audiofx::Visualizer::getWaveForm(local_ref< array<jbyte,1> > const &a0)
@@ -274,8 +274,8 @@ jint android::media::audiofx::Visualizer::getWaveForm(local_ref< array<jbyte,1> 
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(10),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::Visualizer::getFft(local_ref< array<jbyte,1> > const &a0)
@@ -284,8 +284,8 @@ jint android::media::audiofx::Visualizer::getFft(local_ref< array<jbyte,1> > con
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(11),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::Visualizer::setDataCaptureListener(local_ref< android::media::audiofx::Visualizer_::OnDataCaptureListener > const &a0, jint a1, jboolean a2, jboolean a3)
@@ -294,8 +294,8 @@ jint android::media::audiofx::Visualizer::setDataCaptureListener(local_ref< andr
 		android::media::audiofx::Visualizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Visualizer::J2CPP_METHOD_NAME(12),
 		android::media::audiofx::Visualizer::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

@@ -11,11 +11,11 @@
 #define J2CPP_ANDROID_TEXT_STYLE_LINEBACKGROUNDSPAN_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
-namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
+namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/graphics/Canvas.hpp>
@@ -44,8 +44,8 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::ParagraphStyle>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void drawBackground(local_ref< android::graphics::Canvas >  const&, local_ref< android::graphics::Paint >  const&, jint, jint, jint, jint, jint, local_ref< java::lang::CharSequence >  const&, jint, jint, jint);
@@ -68,14 +68,14 @@ namespace j2cpp {
 
 
 
-android::text::style::LineBackgroundSpan::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::style::LineBackgroundSpan::operator local_ref<android::text::style::ParagraphStyle>() const
 {
 	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
+}
+
+android::text::style::LineBackgroundSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void android::text::style::LineBackgroundSpan::drawBackground(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::lang::CharSequence > const &a7, jint a8, jint a9, jint a10)
@@ -84,8 +84,8 @@ void android::text::style::LineBackgroundSpan::drawBackground(local_ref< android
 		android::text::style::LineBackgroundSpan::J2CPP_CLASS_NAME,
 		android::text::style::LineBackgroundSpan::J2CPP_METHOD_NAME(0),
 		android::text::style::LineBackgroundSpan::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 

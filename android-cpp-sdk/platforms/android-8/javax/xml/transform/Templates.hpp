@@ -76,8 +76,8 @@ local_ref< javax::xml::transform::Transformer > javax::xml::transform::Templates
 		javax::xml::transform::Templates::J2CPP_CLASS_NAME,
 		javax::xml::transform::Templates::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::Templates::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::xml::transform::Transformer > >
-	(get_jobject());
+		local_ref< javax::xml::transform::Transformer >
+	>(get_jobject());
 }
 
 local_ref< java::util::Properties > javax::xml::transform::Templates::getOutputProperties()
@@ -86,8 +86,8 @@ local_ref< java::util::Properties > javax::xml::transform::Templates::getOutputP
 		javax::xml::transform::Templates::J2CPP_CLASS_NAME,
 		javax::xml::transform::Templates::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::Templates::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Properties > >
-	(get_jobject());
+		local_ref< java::util::Properties >
+	>(get_jobject());
 }
 
 

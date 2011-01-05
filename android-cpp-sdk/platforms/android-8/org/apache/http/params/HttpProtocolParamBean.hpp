@@ -15,8 +15,10 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HttpVersion.hpp>
 #include <org/apache/http/params/HttpAbstractParamBean.hpp>
@@ -48,6 +50,7 @@ namespace org { namespace apache { namespace http { namespace params {
 		}
 
 		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HttpProtocolParamBean(local_ref< org::apache::http::params::HttpParams > const&);
@@ -81,14 +84,19 @@ org::apache::http::params::HttpProtocolParamBean::operator local_ref<org::apache
 	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jobject());
 }
 
+org::apache::http::params::HttpProtocolParamBean::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::params::HttpProtocolParamBean::HttpProtocolParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
 : object<org::apache::http::params::HttpProtocolParamBean>(
 	call_new_object<
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -100,8 +108,8 @@ void org::apache::http::params::HttpProtocolParamBean::setHttpElementCharset(loc
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::params::HttpProtocolParamBean::setContentCharset(local_ref< java::lang::String > const &a0)
@@ -110,8 +118,8 @@ void org::apache::http::params::HttpProtocolParamBean::setContentCharset(local_r
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::params::HttpProtocolParamBean::setVersion(local_ref< org::apache::http::HttpVersion > const &a0)
@@ -120,8 +128,8 @@ void org::apache::http::params::HttpProtocolParamBean::setVersion(local_ref< org
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::params::HttpProtocolParamBean::setUserAgent(local_ref< java::lang::String > const &a0)
@@ -130,8 +138,8 @@ void org::apache::http::params::HttpProtocolParamBean::setUserAgent(local_ref< j
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::params::HttpProtocolParamBean::setUseExpectContinue(jboolean a0)
@@ -140,8 +148,8 @@ void org::apache::http::params::HttpProtocolParamBean::setUseExpectContinue(jboo
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::HttpProtocolParamBean::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

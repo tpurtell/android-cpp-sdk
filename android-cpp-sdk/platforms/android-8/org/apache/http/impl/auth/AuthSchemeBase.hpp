@@ -43,8 +43,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::auth::AuthScheme>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AuthSchemeBase();
@@ -71,14 +71,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::auth::AuthSchemeBase::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::auth::AuthSchemeBase::operator local_ref<org::apache::http::auth::AuthScheme>() const
 {
 	return local_ref<org::apache::http::auth::AuthScheme>(get_jobject());
+}
+
+org::apache::http::impl::auth::AuthSchemeBase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +87,8 @@ org::apache::http::impl::auth::AuthSchemeBase::AuthSchemeBase()
 	call_new_object<
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +100,8 @@ void org::apache::http::impl::auth::AuthSchemeBase::processChallenge(local_ref< 
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -111,8 +111,8 @@ jboolean org::apache::http::impl::auth::AuthSchemeBase::isProxy()
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::auth::AuthSchemeBase::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

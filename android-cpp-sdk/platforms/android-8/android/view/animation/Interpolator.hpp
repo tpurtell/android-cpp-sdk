@@ -70,8 +70,8 @@ jfloat android::view::animation::Interpolator::getInterpolation(jfloat a0)
 		android::view::animation::Interpolator::J2CPP_CLASS_NAME,
 		android::view::animation::Interpolator::J2CPP_METHOD_NAME(0),
 		android::view::animation::Interpolator::J2CPP_METHOD_SIGNATURE(0), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 

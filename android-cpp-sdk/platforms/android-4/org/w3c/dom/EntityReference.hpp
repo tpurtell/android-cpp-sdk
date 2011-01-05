@@ -11,8 +11,8 @@
 #define J2CPP_ORG_W3C_DOM_ENTITYREFERENCE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>

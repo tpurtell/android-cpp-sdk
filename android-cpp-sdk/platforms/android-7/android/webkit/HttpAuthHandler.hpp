@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_WEBKIT_HTTPAUTHHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { class Message; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 
 #include <android/os/Handler.hpp>
 #include <android/os/Message.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,6 +46,7 @@ namespace android { namespace webkit {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Handler>() const;
 
 
@@ -69,6 +72,11 @@ namespace j2cpp {
 
 
 
+android::webkit::HttpAuthHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::HttpAuthHandler::operator local_ref<android::os::Handler>() const
 {
 	return local_ref<android::os::Handler>(get_jobject());
@@ -81,8 +89,8 @@ void android::webkit::HttpAuthHandler::handleMessage(local_ref< android::os::Mes
 		android::webkit::HttpAuthHandler::J2CPP_CLASS_NAME,
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_NAME(1),
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::HttpAuthHandler::proceed(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -91,8 +99,8 @@ void android::webkit::HttpAuthHandler::proceed(local_ref< java::lang::String > c
 		android::webkit::HttpAuthHandler::J2CPP_CLASS_NAME,
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_NAME(2),
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::HttpAuthHandler::cancel()
@@ -101,8 +109,8 @@ void android::webkit::HttpAuthHandler::cancel()
 		android::webkit::HttpAuthHandler::J2CPP_CLASS_NAME,
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_NAME(3),
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::HttpAuthHandler::useHttpAuthUsernamePassword()
@@ -111,8 +119,8 @@ jboolean android::webkit::HttpAuthHandler::useHttpAuthUsernamePassword()
 		android::webkit::HttpAuthHandler::J2CPP_CLASS_NAME,
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_NAME(4),
 		android::webkit::HttpAuthHandler::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

@@ -11,15 +11,25 @@
 #define J2CPP_ORG_XML_SAX_EXT_DEFAULTHANDLER2_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class EntityResolver2; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class LexicalHandler; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class DeclHandler; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class DefaultHandler; } } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/xml/sax/ContentHandler.hpp>
+#include <org/xml/sax/DTDHandler.hpp>
+#include <org/xml/sax/EntityResolver.hpp>
+#include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/ext/DeclHandler.hpp>
 #include <org/xml/sax/ext/EntityResolver2.hpp>
@@ -60,10 +70,15 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		{
 		}
 
-		operator local_ref<org::xml::sax::helpers::DefaultHandler>() const;
+		operator local_ref<org::xml::sax::ErrorHandler>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::ext::EntityResolver2>() const;
 		operator local_ref<org::xml::sax::ext::LexicalHandler>() const;
 		operator local_ref<org::xml::sax::ext::DeclHandler>() const;
-		operator local_ref<org::xml::sax::ext::EntityResolver2>() const;
+		operator local_ref<org::xml::sax::helpers::DefaultHandler>() const;
+		operator local_ref<org::xml::sax::DTDHandler>() const;
+		operator local_ref<org::xml::sax::ContentHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DefaultHandler2();
@@ -101,9 +116,19 @@ namespace j2cpp {
 
 
 
-org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::helpers::DefaultHandler>() const
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ErrorHandler>() const
 {
-	return local_ref<org::xml::sax::helpers::DefaultHandler>(get_jobject());
+	return local_ref<org::xml::sax::ErrorHandler>(get_jobject());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::EntityResolver>() const
+{
+	return local_ref<org::xml::sax::EntityResolver>(get_jobject());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::EntityResolver2>() const
+{
+	return local_ref<org::xml::sax::ext::EntityResolver2>(get_jobject());
 }
 
 org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::LexicalHandler>() const
@@ -116,9 +141,24 @@ org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::Decl
 	return local_ref<org::xml::sax::ext::DeclHandler>(get_jobject());
 }
 
-org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::EntityResolver2>() const
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::helpers::DefaultHandler>() const
 {
-	return local_ref<org::xml::sax::ext::EntityResolver2>(get_jobject());
+	return local_ref<org::xml::sax::helpers::DefaultHandler>(get_jobject());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::DTDHandler>() const
+{
+	return local_ref<org::xml::sax::DTDHandler>(get_jobject());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ContentHandler>() const
+{
+	return local_ref<org::xml::sax::ContentHandler>(get_jobject());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -127,8 +167,8 @@ org::xml::sax::ext::DefaultHandler2::DefaultHandler2()
 	call_new_object<
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(0),
-		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -140,8 +180,8 @@ void org::xml::sax::ext::DefaultHandler2::startCDATA()
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::ext::DefaultHandler2::endCDATA()
@@ -150,8 +190,8 @@ void org::xml::sax::ext::DefaultHandler2::endCDATA()
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(2),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::ext::DefaultHandler2::startDTD(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -160,8 +200,8 @@ void org::xml::sax::ext::DefaultHandler2::startDTD(local_ref< java::lang::String
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(3),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::ext::DefaultHandler2::endDTD()
@@ -170,8 +210,8 @@ void org::xml::sax::ext::DefaultHandler2::endDTD()
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(4),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::ext::DefaultHandler2::startEntity(local_ref< java::lang::String > const &a0)
@@ -180,8 +220,8 @@ void org::xml::sax::ext::DefaultHandler2::startEntity(local_ref< java::lang::Str
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(5),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::DefaultHandler2::endEntity(local_ref< java::lang::String > const &a0)
@@ -190,8 +230,8 @@ void org::xml::sax::ext::DefaultHandler2::endEntity(local_ref< java::lang::Strin
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(6),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::DefaultHandler2::comment(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -200,8 +240,8 @@ void org::xml::sax::ext::DefaultHandler2::comment(local_ref< array<jchar,1> > co
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(7),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::ext::DefaultHandler2::attributeDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -210,8 +250,8 @@ void org::xml::sax::ext::DefaultHandler2::attributeDecl(local_ref< java::lang::S
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(8),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void org::xml::sax::ext::DefaultHandler2::elementDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -220,8 +260,8 @@ void org::xml::sax::ext::DefaultHandler2::elementDecl(local_ref< java::lang::Str
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(9),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::ext::DefaultHandler2::externalEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -230,8 +270,8 @@ void org::xml::sax::ext::DefaultHandler2::externalEntityDecl(local_ref< java::la
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(10),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::ext::DefaultHandler2::internalEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -240,8 +280,8 @@ void org::xml::sax::ext::DefaultHandler2::internalEntityDecl(local_ref< java::la
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(11),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::getExternalSubset(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -250,8 +290,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::get
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(12),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -260,8 +300,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::res
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(13),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -270,8 +310,8 @@ local_ref< org::xml::sax::InputSource > org::xml::sax::ext::DefaultHandler2::res
 		org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(14),
 		org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject(), a0, a1);
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject(), a0, a1);
 }
 
 

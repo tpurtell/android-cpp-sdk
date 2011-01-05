@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_RESOURCEBUNDLE_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { namespace ResourceBundle_ { class Control; } } } }
@@ -178,8 +178,8 @@ local_ref< java::util::ResourceBundle_::Control > java::util::ResourceBundle_::C
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(1),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::ResourceBundle_::Control > >
-	(a0);
+		local_ref< java::util::ResourceBundle_::Control >
+	>(a0);
 }
 
 local_ref< java::util::ResourceBundle_::Control > java::util::ResourceBundle_::Control::getNoFallbackControl(local_ref< java::util::List > const &a0)
@@ -188,8 +188,8 @@ local_ref< java::util::ResourceBundle_::Control > java::util::ResourceBundle_::C
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(2),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::ResourceBundle_::Control > >
-	(a0);
+		local_ref< java::util::ResourceBundle_::Control >
+	>(a0);
 }
 
 local_ref< java::util::List > java::util::ResourceBundle_::Control::getCandidateLocales(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
@@ -198,8 +198,8 @@ local_ref< java::util::List > java::util::ResourceBundle_::Control::getCandidate
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(3),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > java::util::ResourceBundle_::Control::getFormats(local_ref< java::lang::String > const &a0)
@@ -208,8 +208,8 @@ local_ref< java::util::List > java::util::ResourceBundle_::Control::getFormats(l
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(4),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Locale > java::util::ResourceBundle_::Control::getFallbackLocale(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
@@ -218,8 +218,8 @@ local_ref< java::util::Locale > java::util::ResourceBundle_::Control::getFallbac
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(5),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Locale > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Locale >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle_::Control::newBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::ClassLoader > const &a3, jboolean a4)
@@ -228,8 +228,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle_::Control::ne
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(6),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::ResourceBundle > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< java::util::ResourceBundle >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jlong java::util::ResourceBundle_::Control::getTimeToLive(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
@@ -238,8 +238,8 @@ jlong java::util::ResourceBundle_::Control::getTimeToLive(local_ref< java::lang:
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(7),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::ResourceBundle_::Control::needsReload(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::ClassLoader > const &a3, local_ref< java::util::ResourceBundle > const &a4, jlong a5)
@@ -248,8 +248,8 @@ jboolean java::util::ResourceBundle_::Control::needsReload(local_ref< java::lang
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(8),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< java::lang::String > java::util::ResourceBundle_::Control::toBundleName(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
@@ -258,8 +258,8 @@ local_ref< java::lang::String > java::util::ResourceBundle_::Control::toBundleNa
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(9),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::util::ResourceBundle_::Control::toResourceName(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -268,8 +268,8 @@ local_ref< java::lang::String > java::util::ResourceBundle_::Control::toResource
 		java::util::ResourceBundle_::Control::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_NAME(10),
 		java::util::ResourceBundle_::Control::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -342,8 +342,8 @@ java::util::ResourceBundle::ResourceBundle()
 	call_new_object<
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(0),
-		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -355,8 +355,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(1),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::ResourceBundle > >
-	(a0);
+		local_ref< java::util::ResourceBundle >
+	>(a0);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
@@ -365,8 +365,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(2),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::ResourceBundle > >
-	(a0, a1);
+		local_ref< java::util::ResourceBundle >
+	>(a0, a1);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1, local_ref< java::lang::ClassLoader > const &a2)
@@ -375,8 +375,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(3),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::ResourceBundle > >
-	(a0, a1, a2);
+		local_ref< java::util::ResourceBundle >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::ResourceBundle_::Control > const &a1)
@@ -385,8 +385,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(4),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::ResourceBundle > >
-	(a0, a1);
+		local_ref< java::util::ResourceBundle >
+	>(a0, a1);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1, local_ref< java::util::ResourceBundle_::Control > const &a2)
@@ -395,8 +395,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(5),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::ResourceBundle > >
-	(a0, a1, a2);
+		local_ref< java::util::ResourceBundle >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1, local_ref< java::lang::ClassLoader > const &a2, local_ref< java::util::ResourceBundle_::Control > const &a3)
@@ -405,8 +405,8 @@ local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(lo
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(6),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::ResourceBundle > >
-	(a0, a1, a2, a3);
+		local_ref< java::util::ResourceBundle >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::util::Enumeration > java::util::ResourceBundle::getKeys()
@@ -415,8 +415,8 @@ local_ref< java::util::Enumeration > java::util::ResourceBundle::getKeys()
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(7),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::Locale > java::util::ResourceBundle::getLocale()
@@ -425,8 +425,8 @@ local_ref< java::util::Locale > java::util::ResourceBundle::getLocale()
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(8),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::ResourceBundle::getObject(local_ref< java::lang::String > const &a0)
@@ -435,8 +435,8 @@ local_ref< java::lang::Object > java::util::ResourceBundle::getObject(local_ref<
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(9),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::ResourceBundle::getString(local_ref< java::lang::String > const &a0)
@@ -445,8 +445,8 @@ local_ref< java::lang::String > java::util::ResourceBundle::getString(local_ref<
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(10),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::ResourceBundle::getStringArray(local_ref< java::lang::String > const &a0)
@@ -455,8 +455,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::ResourceBund
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(11),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 
@@ -467,8 +467,8 @@ void java::util::ResourceBundle::clearCache()
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(14),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	();
+		void
+	>();
 }
 
 void java::util::ResourceBundle::clearCache(local_ref< java::lang::ClassLoader > const &a0)
@@ -477,8 +477,8 @@ void java::util::ResourceBundle::clearCache(local_ref< java::lang::ClassLoader >
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(15),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean java::util::ResourceBundle::containsKey(local_ref< java::lang::String > const &a0)
@@ -487,8 +487,8 @@ jboolean java::util::ResourceBundle::containsKey(local_ref< java::lang::String >
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(16),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::ResourceBundle::keySet()
@@ -497,8 +497,8 @@ local_ref< java::util::Set > java::util::ResourceBundle::keySet()
 		java::util::ResourceBundle::J2CPP_CLASS_NAME,
 		java::util::ResourceBundle::J2CPP_METHOD_NAME(17),
 		java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 

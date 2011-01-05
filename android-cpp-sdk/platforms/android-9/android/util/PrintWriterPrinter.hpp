@@ -83,8 +83,8 @@ android::util::PrintWriterPrinter::PrintWriterPrinter(local_ref< java::io::Print
 	call_new_object<
 		android::util::PrintWriterPrinter::J2CPP_CLASS_NAME,
 		android::util::PrintWriterPrinter::J2CPP_METHOD_NAME(0),
-		android::util::PrintWriterPrinter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::util::PrintWriterPrinter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -96,8 +96,8 @@ void android::util::PrintWriterPrinter::println(local_ref< java::lang::String > 
 		android::util::PrintWriterPrinter::J2CPP_CLASS_NAME,
 		android::util::PrintWriterPrinter::J2CPP_METHOD_NAME(1),
 		android::util::PrintWriterPrinter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

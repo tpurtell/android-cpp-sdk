@@ -79,8 +79,8 @@ local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLReaderFactory::
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_NAME(1),
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::XMLReader > >
-	();
+		local_ref< org::xml::sax::XMLReader >
+	>();
 }
 
 local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLReaderFactory::createXMLReader(local_ref< java::lang::String > const &a0)
@@ -89,8 +89,8 @@ local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLReaderFactory::
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::xml::sax::XMLReader > >
-	(a0);
+		local_ref< org::xml::sax::XMLReader >
+	>(a0);
 }
 
 

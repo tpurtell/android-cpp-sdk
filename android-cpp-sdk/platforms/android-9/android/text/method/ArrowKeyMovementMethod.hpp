@@ -104,8 +104,8 @@ android::text::method::ArrowKeyMovementMethod::ArrowKeyMovementMethod()
 	call_new_object<
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(0),
-		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -117,8 +117,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::onKeyDown(local_ref< and
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(1),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::ArrowKeyMovementMethod::onKeyUp(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -127,8 +127,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::onKeyUp(local_ref< andro
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(2),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::ArrowKeyMovementMethod::onKeyOther(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -137,8 +137,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::onKeyOther(local_ref< an
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(3),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::ArrowKeyMovementMethod::onTrackballEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -147,8 +147,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::onTrackballEvent(local_r
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(4),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::ArrowKeyMovementMethod::onTouchEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -157,8 +157,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::onTouchEvent(local_ref< 
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(5),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::ArrowKeyMovementMethod::canSelectArbitrarily()
@@ -167,8 +167,8 @@ jboolean android::text::method::ArrowKeyMovementMethod::canSelectArbitrarily()
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(6),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::text::method::ArrowKeyMovementMethod::initialize(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
@@ -177,8 +177,8 @@ void android::text::method::ArrowKeyMovementMethod::initialize(local_ref< androi
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(7),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::text::method::ArrowKeyMovementMethod::onTakeFocus(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2)
@@ -187,8 +187,8 @@ void android::text::method::ArrowKeyMovementMethod::onTakeFocus(local_ref< andro
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(8),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::method::MovementMethod > android::text::method::ArrowKeyMovementMethod::getInstance()
@@ -197,8 +197,8 @@ local_ref< android::text::method::MovementMethod > android::text::method::ArrowK
 		android::text::method::ArrowKeyMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_NAME(9),
 		android::text::method::ArrowKeyMovementMethod::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::text::method::MovementMethod > >
-	();
+		local_ref< android::text::method::MovementMethod >
+	>();
 }
 
 

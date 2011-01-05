@@ -71,8 +71,8 @@ void android::hardware::SensorListener::onSensorChanged(jint a0, local_ref< arra
 		android::hardware::SensorListener::J2CPP_CLASS_NAME,
 		android::hardware::SensorListener::J2CPP_METHOD_NAME(0),
 		android::hardware::SensorListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::hardware::SensorListener::onAccuracyChanged(jint a0, jint a1)
@@ -81,8 +81,8 @@ void android::hardware::SensorListener::onAccuracyChanged(jint a0, jint a1)
 		android::hardware::SensorListener::J2CPP_CLASS_NAME,
 		android::hardware::SensorListener::J2CPP_METHOD_NAME(1),
 		android::hardware::SensorListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

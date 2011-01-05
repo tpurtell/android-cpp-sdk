@@ -76,8 +76,8 @@ void android::webkit::JsResult::cancel()
 		android::webkit::JsResult::J2CPP_CLASS_NAME,
 		android::webkit::JsResult::J2CPP_METHOD_NAME(1),
 		android::webkit::JsResult::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::JsResult::confirm()
@@ -86,8 +86,8 @@ void android::webkit::JsResult::confirm()
 		android::webkit::JsResult::J2CPP_CLASS_NAME,
 		android::webkit::JsResult::J2CPP_METHOD_NAME(2),
 		android::webkit::JsResult::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

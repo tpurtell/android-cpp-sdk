@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_SQL_ROWSETLISTENER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace sql { class RowSetEvent; } } }
 namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace sql { class RowSetEvent; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -42,8 +42,8 @@ namespace javax { namespace sql {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void cursorMoved(local_ref< javax::sql::RowSetEvent >  const&);
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-javax::sql::RowSetListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::sql::RowSetListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+javax::sql::RowSetListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void javax::sql::RowSetListener::cursorMoved(local_ref< javax::sql::RowSetEvent > const &a0)
@@ -83,8 +83,8 @@ void javax::sql::RowSetListener::cursorMoved(local_ref< javax::sql::RowSetEvent 
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(0),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::RowSetListener::rowChanged(local_ref< javax::sql::RowSetEvent > const &a0)
@@ -93,8 +93,8 @@ void javax::sql::RowSetListener::rowChanged(local_ref< javax::sql::RowSetEvent >
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(1),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::RowSetListener::rowSetChanged(local_ref< javax::sql::RowSetEvent > const &a0)
@@ -103,8 +103,8 @@ void javax::sql::RowSetListener::rowSetChanged(local_ref< javax::sql::RowSetEven
 		javax::sql::RowSetListener::J2CPP_CLASS_NAME,
 		javax::sql::RowSetListener::J2CPP_METHOD_NAME(2),
 		javax::sql::RowSetListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

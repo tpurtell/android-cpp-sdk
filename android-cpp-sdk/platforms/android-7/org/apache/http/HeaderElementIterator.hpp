@@ -82,8 +82,8 @@ jboolean org::apache::http::HeaderElementIterator::hasNext()
 		org::apache::http::HeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_NAME(0),
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::HeaderElementIterator::nextElement()
@@ -92,8 +92,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::HeaderElementIt
 		org::apache::http::HeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_NAME(1),
 		org::apache::http::HeaderElementIterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HeaderElement > >
-	(get_jobject());
+		local_ref< org::apache::http::HeaderElement >
+	>(get_jobject());
 }
 
 

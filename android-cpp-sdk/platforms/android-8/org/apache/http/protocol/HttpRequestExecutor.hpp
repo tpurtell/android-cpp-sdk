@@ -90,8 +90,8 @@ org::apache::http::protocol::HttpRequestExecutor::HttpRequestExecutor()
 	call_new_object<
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +104,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::protocol::HttpRe
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::protocol::HttpRequestExecutor::preProcess(local_ref< org::apache::http::HttpRequest > const &a0, local_ref< org::apache::http::protocol::HttpProcessor > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -114,8 +114,8 @@ void org::apache::http::protocol::HttpRequestExecutor::preProcess(local_ref< org
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -126,8 +126,8 @@ void org::apache::http::protocol::HttpRequestExecutor::postProcess(local_ref< or
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(6),
 		org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

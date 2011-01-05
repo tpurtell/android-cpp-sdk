@@ -14,19 +14,25 @@
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace app { class AlertDialog; } } }
 namespace j2cpp { namespace android { namespace app { namespace TimePickerDialog_ { class OnTimeSetListener; } } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace widget { class TimePicker; } } }
 namespace j2cpp { namespace android { namespace widget { namespace TimePicker_ { class OnTimeChangedListener; } } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/AlertDialog.hpp>
+#include <android/app/Dialog.hpp>
 #include <android/app/TimePickerDialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/os/Bundle.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/TimePicker.hpp>
 #include <java/lang/Object.hpp>
 
@@ -84,8 +90,13 @@ namespace android { namespace app {
 		}
 
 		operator local_ref<android::app::AlertDialog>() const;
-		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<android::app::Dialog>() const;
 		operator local_ref<android::widget::TimePicker_::OnTimeChangedListener>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		TimePickerDialog(local_ref< android::content::Context > const&, local_ref< android::app::TimePickerDialog_::OnTimeSetListener > const&, jint, jint, jboolean);
@@ -125,8 +136,8 @@ void android::app::TimePickerDialog_::OnTimeSetListener::onTimeSet(local_ref< an
 		android::app::TimePickerDialog_::OnTimeSetListener::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog_::OnTimeSetListener::J2CPP_METHOD_NAME(0),
 		android::app::TimePickerDialog_::OnTimeSetListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -140,14 +151,39 @@ android::app::TimePickerDialog::operator local_ref<android::app::AlertDialog>() 
 	return local_ref<android::app::AlertDialog>(get_jobject());
 }
 
-android::app::TimePickerDialog::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
+android::app::TimePickerDialog::operator local_ref<android::app::Dialog>() const
 {
-	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jobject());
+	return local_ref<android::app::Dialog>(get_jobject());
 }
 
 android::app::TimePickerDialog::operator local_ref<android::widget::TimePicker_::OnTimeChangedListener>() const
 {
 	return local_ref<android::widget::TimePicker_::OnTimeChangedListener>(get_jobject());
+}
+
+android::app::TimePickerDialog::operator local_ref<android::content::DialogInterface>() const
+{
+	return local_ref<android::content::DialogInterface>(get_jobject());
+}
+
+android::app::TimePickerDialog::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jobject());
+}
+
+android::app::TimePickerDialog::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::TimePickerDialog::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::TimePickerDialog::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -156,8 +192,8 @@ android::app::TimePickerDialog::TimePickerDialog(local_ref< android::content::Co
 	call_new_object<
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(0),
-		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -169,8 +205,8 @@ android::app::TimePickerDialog::TimePickerDialog(local_ref< android::content::Co
 	call_new_object<
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(1),
-		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5)
+		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -182,8 +218,8 @@ void android::app::TimePickerDialog::onClick(local_ref< android::content::Dialog
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(2),
 		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::TimePickerDialog::onTimeChanged(local_ref< android::widget::TimePicker > const &a0, jint a1, jint a2)
@@ -192,8 +228,8 @@ void android::app::TimePickerDialog::onTimeChanged(local_ref< android::widget::T
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(3),
 		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::TimePickerDialog::updateTime(jint a0, jint a1)
@@ -202,8 +238,8 @@ void android::app::TimePickerDialog::updateTime(jint a0, jint a1)
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(4),
 		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::Bundle > android::app::TimePickerDialog::onSaveInstanceState()
@@ -212,8 +248,8 @@ local_ref< android::os::Bundle > android::app::TimePickerDialog::onSaveInstanceS
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(5),
 		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 void android::app::TimePickerDialog::onRestoreInstanceState(local_ref< android::os::Bundle > const &a0)
@@ -222,8 +258,8 @@ void android::app::TimePickerDialog::onRestoreInstanceState(local_ref< android::
 		android::app::TimePickerDialog::J2CPP_CLASS_NAME,
 		android::app::TimePickerDialog::J2CPP_METHOD_NAME(6),
 		android::app::TimePickerDialog::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

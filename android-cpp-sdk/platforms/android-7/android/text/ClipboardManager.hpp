@@ -77,8 +77,8 @@ local_ref< java::lang::CharSequence > android::text::ClipboardManager::getText()
 		android::text::ClipboardManager::J2CPP_CLASS_NAME,
 		android::text::ClipboardManager::J2CPP_METHOD_NAME(1),
 		android::text::ClipboardManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::text::ClipboardManager::setText(local_ref< java::lang::CharSequence > const &a0)
@@ -87,8 +87,8 @@ void android::text::ClipboardManager::setText(local_ref< java::lang::CharSequenc
 		android::text::ClipboardManager::J2CPP_CLASS_NAME,
 		android::text::ClipboardManager::J2CPP_METHOD_NAME(2),
 		android::text::ClipboardManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::ClipboardManager::hasText()
@@ -97,8 +97,8 @@ jboolean android::text::ClipboardManager::hasText()
 		android::text::ClipboardManager::J2CPP_CLASS_NAME,
 		android::text::ClipboardManager::J2CPP_METHOD_NAME(3),
 		android::text::ClipboardManager::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

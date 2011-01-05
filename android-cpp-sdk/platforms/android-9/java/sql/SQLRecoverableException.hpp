@@ -11,11 +11,19 @@
 #define J2CPP_JAVA_SQL_SQLRECOVERABLEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Iterable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <java/sql/SQLException.hpp>
@@ -47,7 +55,12 @@ namespace java { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::sql::SQLException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		SQLRecoverableException();
@@ -76,9 +89,34 @@ namespace j2cpp {
 
 
 
+java::sql::SQLRecoverableException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::sql::SQLRecoverableException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::sql::SQLRecoverableException::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::sql::SQLRecoverableException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::sql::SQLRecoverableException::operator local_ref<java::sql::SQLException>() const
 {
 	return local_ref<java::sql::SQLException>(get_jobject());
+}
+
+java::sql::SQLRecoverableException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -87,8 +125,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException()
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(0),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +138,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(1),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -113,8 +151,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(2),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +164,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(3),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -139,8 +177,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(4),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -152,8 +190,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(5),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -165,8 +203,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(6),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1, a2)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1, a2)
 )
 {
 }
@@ -178,8 +216,8 @@ java::sql::SQLRecoverableException::SQLRecoverableException(local_ref< java::lan
 	call_new_object<
 		java::sql::SQLRecoverableException::J2CPP_CLASS_NAME,
 		java::sql::SQLRecoverableException::J2CPP_METHOD_NAME(7),
-		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1, a2, a3)
+		java::sql::SQLRecoverableException::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1, a2, a3)
 )
 {
 }

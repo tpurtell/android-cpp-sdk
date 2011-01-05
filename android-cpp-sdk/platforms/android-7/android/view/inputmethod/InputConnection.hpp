@@ -123,8 +123,8 @@ local_ref< java::lang::CharSequence > android::view::inputmethod::InputConnectio
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(0),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::view::inputmethod::InputConnection::getTextAfterCursor(jint a0, jint a1)
@@ -133,8 +133,8 @@ local_ref< java::lang::CharSequence > android::view::inputmethod::InputConnectio
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(1),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::inputmethod::InputConnection::getCursorCapsMode(jint a0)
@@ -143,8 +143,8 @@ jint android::view::inputmethod::InputConnection::getCursorCapsMode(jint a0)
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::inputmethod::ExtractedText > android::view::inputmethod::InputConnection::getExtractedText(local_ref< android::view::inputmethod::ExtractedTextRequest > const &a0, jint a1)
@@ -153,8 +153,8 @@ local_ref< android::view::inputmethod::ExtractedText > android::view::inputmetho
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(3),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::inputmethod::ExtractedText > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::inputmethod::ExtractedText >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::inputmethod::InputConnection::deleteSurroundingText(jint a0, jint a1)
@@ -163,8 +163,8 @@ jboolean android::view::inputmethod::InputConnection::deleteSurroundingText(jint
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(4),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::inputmethod::InputConnection::setComposingText(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -173,8 +173,8 @@ jboolean android::view::inputmethod::InputConnection::setComposingText(local_ref
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(5),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::inputmethod::InputConnection::finishComposingText()
@@ -183,8 +183,8 @@ jboolean android::view::inputmethod::InputConnection::finishComposingText()
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(6),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::inputmethod::InputConnection::commitText(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -193,8 +193,8 @@ jboolean android::view::inputmethod::InputConnection::commitText(local_ref< java
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(7),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::inputmethod::InputConnection::commitCompletion(local_ref< android::view::inputmethod::CompletionInfo > const &a0)
@@ -203,8 +203,8 @@ jboolean android::view::inputmethod::InputConnection::commitCompletion(local_ref
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(8),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::setSelection(jint a0, jint a1)
@@ -213,8 +213,8 @@ jboolean android::view::inputmethod::InputConnection::setSelection(jint a0, jint
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(9),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::view::inputmethod::InputConnection::performEditorAction(jint a0)
@@ -223,8 +223,8 @@ jboolean android::view::inputmethod::InputConnection::performEditorAction(jint a
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(10),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::performContextMenuAction(jint a0)
@@ -233,8 +233,8 @@ jboolean android::view::inputmethod::InputConnection::performContextMenuAction(j
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(11),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::beginBatchEdit()
@@ -243,8 +243,8 @@ jboolean android::view::inputmethod::InputConnection::beginBatchEdit()
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(12),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::inputmethod::InputConnection::endBatchEdit()
@@ -253,8 +253,8 @@ jboolean android::view::inputmethod::InputConnection::endBatchEdit()
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(13),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::inputmethod::InputConnection::sendKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -263,8 +263,8 @@ jboolean android::view::inputmethod::InputConnection::sendKeyEvent(local_ref< an
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(14),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::clearMetaKeyStates(jint a0)
@@ -273,8 +273,8 @@ jboolean android::view::inputmethod::InputConnection::clearMetaKeyStates(jint a0
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(15),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::reportFullscreenMode(jboolean a0)
@@ -283,8 +283,8 @@ jboolean android::view::inputmethod::InputConnection::reportFullscreenMode(jbool
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(16),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::inputmethod::InputConnection::performPrivateCommand(local_ref< java::lang::String > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -293,8 +293,8 @@ jboolean android::view::inputmethod::InputConnection::performPrivateCommand(loca
 		android::view::inputmethod::InputConnection::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_NAME(17),
 		android::view::inputmethod::InputConnection::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

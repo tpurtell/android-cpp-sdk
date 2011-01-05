@@ -68,8 +68,8 @@ namespace android { namespace os {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::os::Parcelable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			Entry(local_ref< java::lang::String > const&, jlong);
@@ -146,14 +146,14 @@ namespace j2cpp {
 
 
 
-android::os::DropBoxManager_::Entry::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::os::DropBoxManager_::Entry::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::os::DropBoxManager_::Entry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -162,8 +162,8 @@ android::os::DropBoxManager_::Entry::Entry(local_ref< java::lang::String > const
 	call_new_object<
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(0),
-		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -175,8 +175,8 @@ android::os::DropBoxManager_::Entry::Entry(local_ref< java::lang::String > const
 	call_new_object<
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(1),
-		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -188,8 +188,8 @@ android::os::DropBoxManager_::Entry::Entry(local_ref< java::lang::String > const
 	call_new_object<
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(2),
-		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3)
+		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -201,8 +201,8 @@ android::os::DropBoxManager_::Entry::Entry(local_ref< java::lang::String > const
 	call_new_object<
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(3),
-		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3)
+		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -214,8 +214,8 @@ android::os::DropBoxManager_::Entry::Entry(local_ref< java::lang::String > const
 	call_new_object<
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(4),
-		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1, a2, a3)
+		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -227,8 +227,8 @@ void android::os::DropBoxManager_::Entry::close()
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(5),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::os::DropBoxManager_::Entry::getTag()
@@ -237,8 +237,8 @@ local_ref< java::lang::String > android::os::DropBoxManager_::Entry::getTag()
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(6),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong android::os::DropBoxManager_::Entry::getTimeMillis()
@@ -247,8 +247,8 @@ jlong android::os::DropBoxManager_::Entry::getTimeMillis()
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(7),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint android::os::DropBoxManager_::Entry::getFlags()
@@ -257,8 +257,8 @@ jint android::os::DropBoxManager_::Entry::getFlags()
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(8),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::os::DropBoxManager_::Entry::getText(jint a0)
@@ -267,8 +267,8 @@ local_ref< java::lang::String > android::os::DropBoxManager_::Entry::getText(jin
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(9),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > android::os::DropBoxManager_::Entry::getInputStream()
@@ -277,8 +277,8 @@ local_ref< java::io::InputStream > android::os::DropBoxManager_::Entry::getInput
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(10),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jint android::os::DropBoxManager_::Entry::describeContents()
@@ -287,8 +287,8 @@ jint android::os::DropBoxManager_::Entry::describeContents()
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(11),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::DropBoxManager_::Entry::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -297,8 +297,8 @@ void android::os::DropBoxManager_::Entry::writeToParcel(local_ref< android::os::
 		android::os::DropBoxManager_::Entry::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_NAME(12),
 		android::os::DropBoxManager_::Entry::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -342,8 +342,8 @@ void android::os::DropBoxManager::addText(local_ref< java::lang::String > const 
 		android::os::DropBoxManager::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager::J2CPP_METHOD_NAME(1),
 		android::os::DropBoxManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::DropBoxManager::addData(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1, jint a2)
@@ -352,8 +352,8 @@ void android::os::DropBoxManager::addData(local_ref< java::lang::String > const 
 		android::os::DropBoxManager::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager::J2CPP_METHOD_NAME(2),
 		android::os::DropBoxManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::os::DropBoxManager::addFile(local_ref< java::lang::String > const &a0, local_ref< java::io::File > const &a1, jint a2)
@@ -362,8 +362,8 @@ void android::os::DropBoxManager::addFile(local_ref< java::lang::String > const 
 		android::os::DropBoxManager::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager::J2CPP_METHOD_NAME(3),
 		android::os::DropBoxManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::os::DropBoxManager::isTagEnabled(local_ref< java::lang::String > const &a0)
@@ -372,8 +372,8 @@ jboolean android::os::DropBoxManager::isTagEnabled(local_ref< java::lang::String
 		android::os::DropBoxManager::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager::J2CPP_METHOD_NAME(4),
 		android::os::DropBoxManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::DropBoxManager_::Entry > android::os::DropBoxManager::getNextEntry(local_ref< java::lang::String > const &a0, jlong a1)
@@ -382,8 +382,8 @@ local_ref< android::os::DropBoxManager_::Entry > android::os::DropBoxManager::ge
 		android::os::DropBoxManager::J2CPP_CLASS_NAME,
 		android::os::DropBoxManager::J2CPP_METHOD_NAME(5),
 		android::os::DropBoxManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::DropBoxManager_::Entry > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::DropBoxManager_::Entry >
+	>(get_jobject(), a0, a1);
 }
 
 

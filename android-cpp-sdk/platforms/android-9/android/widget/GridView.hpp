@@ -11,20 +11,45 @@
 #define J2CPP_ANDROID_WIDGET_GRIDVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalLayoutListener; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace widget { class AbsListView; } } }
+namespace j2cpp { namespace android { namespace widget { namespace Filter_ { class FilterListener; } } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
+#include <android/text/NoCopySpan.hpp>
+#include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/AbsListView.hpp>
 #include <android/widget/Adapter.hpp>
+#include <android/widget/AdapterView.hpp>
+#include <android/widget/Filter.hpp>
 #include <android/widget/ListAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -75,7 +100,20 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::TextWatcher>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::widget::AdapterView>() const;
 		operator local_ref<android::widget::AbsListView>() const;
+		operator local_ref<android::widget::Filter_::FilterListener>() const;
 
 
 		GridView(local_ref< android::content::Context > const&);
@@ -120,9 +158,74 @@ namespace j2cpp {
 
 
 
+android::widget::GridView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::text::TextWatcher>() const
+{
+	return local_ref<android::text::TextWatcher>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::widget::AdapterView>() const
+{
+	return local_ref<android::widget::AdapterView>(get_jobject());
+}
+
 android::widget::GridView::operator local_ref<android::widget::AbsListView>() const
 {
 	return local_ref<android::widget::AbsListView>(get_jobject());
+}
+
+android::widget::GridView::operator local_ref<android::widget::Filter_::FilterListener>() const
+{
+	return local_ref<android::widget::Filter_::FilterListener>(get_jobject());
 }
 
 
@@ -131,8 +234,8 @@ android::widget::GridView::GridView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(0),
-		android::widget::GridView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::GridView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -144,8 +247,8 @@ android::widget::GridView::GridView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(1),
-		android::widget::GridView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::GridView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -157,8 +260,8 @@ android::widget::GridView::GridView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(2),
-		android::widget::GridView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::GridView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -170,8 +273,8 @@ local_ref< android::widget::ListAdapter > android::widget::GridView::getAdapter(
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(3),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 void android::widget::GridView::setAdapter(local_ref< android::widget::ListAdapter > const &a0)
@@ -180,8 +283,8 @@ void android::widget::GridView::setAdapter(local_ref< android::widget::ListAdapt
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(4),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -193,8 +296,8 @@ void android::widget::GridView::setSelection(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(8),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::GridView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -203,8 +306,8 @@ jboolean android::widget::GridView::onKeyDown(jint a0, local_ref< android::view:
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(9),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::GridView::onKeyMultiple(jint a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -213,8 +316,8 @@ jboolean android::widget::GridView::onKeyMultiple(jint a0, jint a1, local_ref< a
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(10),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::widget::GridView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -223,8 +326,8 @@ jboolean android::widget::GridView::onKeyUp(jint a0, local_ref< android::view::K
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(11),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -234,8 +337,8 @@ void android::widget::GridView::setGravity(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(13),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::GridView::setHorizontalSpacing(jint a0)
@@ -244,8 +347,8 @@ void android::widget::GridView::setHorizontalSpacing(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(14),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::GridView::setVerticalSpacing(jint a0)
@@ -254,8 +357,8 @@ void android::widget::GridView::setVerticalSpacing(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(15),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::GridView::setStretchMode(jint a0)
@@ -264,8 +367,8 @@ void android::widget::GridView::setStretchMode(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(16),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::GridView::getStretchMode()
@@ -274,8 +377,8 @@ jint android::widget::GridView::getStretchMode()
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(17),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::GridView::setColumnWidth(jint a0)
@@ -284,8 +387,8 @@ void android::widget::GridView::setColumnWidth(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(18),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::GridView::setNumColumns(jint a0)
@@ -294,8 +397,8 @@ void android::widget::GridView::setNumColumns(jint a0)
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(19),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -307,8 +410,8 @@ void android::widget::GridView::setAdapter(local_ref< android::widget::Adapter >
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(23),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::Adapter > android::widget::GridView::getAdapter_1()
@@ -317,8 +420,8 @@ local_ref< android::widget::Adapter > android::widget::GridView::getAdapter_1()
 		android::widget::GridView::J2CPP_CLASS_NAME,
 		android::widget::GridView::J2CPP_METHOD_NAME(24),
 		android::widget::GridView::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::widget::Adapter > >
-	(get_jobject());
+		local_ref< android::widget::Adapter >
+	>(get_jobject());
 }
 
 

@@ -77,8 +77,8 @@ java::net::SocketAddress::SocketAddress()
 	call_new_object<
 		java::net::SocketAddress::J2CPP_CLASS_NAME,
 		java::net::SocketAddress::J2CPP_METHOD_NAME(0),
-		java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_GRAPHICS_COMPOSESHADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_
 #include <android/graphics/PorterDuff.hpp>
 #include <android/graphics/Shader.hpp>
 #include <android/graphics/Xfermode.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,6 +43,7 @@ namespace android { namespace graphics {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::Shader>() const;
 
 
@@ -64,6 +67,11 @@ namespace j2cpp {
 
 
 
+android::graphics::ComposeShader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::ComposeShader::operator local_ref<android::graphics::Shader>() const
 {
 	return local_ref<android::graphics::Shader>(get_jobject());
@@ -75,8 +83,8 @@ android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Sh
 	call_new_object<
 		android::graphics::ComposeShader::J2CPP_CLASS_NAME,
 		android::graphics::ComposeShader::J2CPP_METHOD_NAME(0),
-		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -88,8 +96,8 @@ android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Sh
 	call_new_object<
 		android::graphics::ComposeShader::J2CPP_CLASS_NAME,
 		android::graphics::ComposeShader::J2CPP_METHOD_NAME(1),
-		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }

@@ -90,8 +90,8 @@ junit::framework::TestFailure::TestFailure(local_ref< junit::framework::Test > c
 	call_new_object<
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(0),
-		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -103,8 +103,8 @@ local_ref< junit::framework::Test > junit::framework::TestFailure::failedTest()
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(1),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< junit::framework::Test > >
-	(get_jobject());
+		local_ref< junit::framework::Test >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Throwable > junit::framework::TestFailure::thrownException()
@@ -113,8 +113,8 @@ local_ref< java::lang::Throwable > junit::framework::TestFailure::thrownExceptio
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(2),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > junit::framework::TestFailure::toString()
@@ -123,8 +123,8 @@ local_ref< java::lang::String > junit::framework::TestFailure::toString()
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(3),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > junit::framework::TestFailure::trace()
@@ -133,8 +133,8 @@ local_ref< java::lang::String > junit::framework::TestFailure::trace()
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(4),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > junit::framework::TestFailure::exceptionMessage()
@@ -143,8 +143,8 @@ local_ref< java::lang::String > junit::framework::TestFailure::exceptionMessage(
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(5),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean junit::framework::TestFailure::isFailure()
@@ -153,8 +153,8 @@ jboolean junit::framework::TestFailure::isFailure()
 		junit::framework::TestFailure::J2CPP_CLASS_NAME,
 		junit::framework::TestFailure::J2CPP_METHOD_NAME(6),
 		junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

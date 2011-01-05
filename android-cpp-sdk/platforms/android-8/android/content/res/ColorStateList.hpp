@@ -58,8 +58,8 @@ namespace android { namespace content { namespace res {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ColorStateList(local_ref< array<jint,2> > const&, local_ref< array<jint,1> > const&);
@@ -93,14 +93,14 @@ namespace j2cpp {
 
 
 
-android::content::res::ColorStateList::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::res::ColorStateList::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::res::ColorStateList::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -109,8 +109,8 @@ android::content::res::ColorStateList::ColorStateList(local_ref< array<jint,2> >
 	call_new_object<
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(0),
-		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -122,8 +122,8 @@ local_ref< android::content::res::ColorStateList > android::content::res::ColorS
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(1),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::res::ColorStateList > >
-	(a0);
+		local_ref< android::content::res::ColorStateList >
+	>(a0);
 }
 
 local_ref< android::content::res::ColorStateList > android::content::res::ColorStateList::createFromXml(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1)
@@ -132,8 +132,8 @@ local_ref< android::content::res::ColorStateList > android::content::res::ColorS
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(2),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::res::ColorStateList > >
-	(a0, a1);
+		local_ref< android::content::res::ColorStateList >
+	>(a0, a1);
 }
 
 local_ref< android::content::res::ColorStateList > android::content::res::ColorStateList::withAlpha(jint a0)
@@ -142,8 +142,8 @@ local_ref< android::content::res::ColorStateList > android::content::res::ColorS
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(3),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::ColorStateList::isStateful()
@@ -152,8 +152,8 @@ jboolean android::content::res::ColorStateList::isStateful()
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(4),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::content::res::ColorStateList::getColorForState(local_ref< array<jint,1> > const &a0, jint a1)
@@ -162,8 +162,8 @@ jint android::content::res::ColorStateList::getColorForState(local_ref< array<ji
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(5),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::ColorStateList::getDefaultColor()
@@ -172,8 +172,8 @@ jint android::content::res::ColorStateList::getDefaultColor()
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(6),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::res::ColorStateList::toString()
@@ -182,8 +182,8 @@ local_ref< java::lang::String > android::content::res::ColorStateList::toString(
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(7),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::res::ColorStateList::describeContents()
@@ -192,8 +192,8 @@ jint android::content::res::ColorStateList::describeContents()
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(8),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::res::ColorStateList::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -202,8 +202,8 @@ void android::content::res::ColorStateList::writeToParcel(local_ref< android::os
 		android::content::res::ColorStateList::J2CPP_CLASS_NAME,
 		android::content::res::ColorStateList::J2CPP_METHOD_NAME(9),
 		android::content::res::ColorStateList::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

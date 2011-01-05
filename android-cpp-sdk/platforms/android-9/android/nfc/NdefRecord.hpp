@@ -128,8 +128,8 @@ android::nfc::NdefRecord::NdefRecord(jshort a0, local_ref< array<jbyte,1> > cons
 	call_new_object<
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(0),
-		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -141,8 +141,8 @@ android::nfc::NdefRecord::NdefRecord(local_ref< array<jbyte,1> > const &a0)
 	call_new_object<
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(1),
-		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -154,8 +154,8 @@ jshort android::nfc::NdefRecord::getTnf()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(2),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(2), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::nfc::NdefRecord::getType()
@@ -164,8 +164,8 @@ local_ref< array<jbyte,1> > android::nfc::NdefRecord::getType()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(3),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::nfc::NdefRecord::getId()
@@ -174,8 +174,8 @@ local_ref< array<jbyte,1> > android::nfc::NdefRecord::getId()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(4),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::nfc::NdefRecord::getPayload()
@@ -184,8 +184,8 @@ local_ref< array<jbyte,1> > android::nfc::NdefRecord::getPayload()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(5),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::nfc::NdefRecord::toByteArray()
@@ -194,8 +194,8 @@ local_ref< array<jbyte,1> > android::nfc::NdefRecord::toByteArray()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(6),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint android::nfc::NdefRecord::describeContents()
@@ -204,8 +204,8 @@ jint android::nfc::NdefRecord::describeContents()
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(7),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::nfc::NdefRecord::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -214,8 +214,8 @@ void android::nfc::NdefRecord::writeToParcel(local_ref< android::os::Parcel > co
 		android::nfc::NdefRecord::J2CPP_CLASS_NAME,
 		android::nfc::NdefRecord::J2CPP_METHOD_NAME(8),
 		android::nfc::NdefRecord::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

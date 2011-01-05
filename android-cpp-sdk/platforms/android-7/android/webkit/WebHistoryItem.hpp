@@ -93,8 +93,8 @@ jint android::webkit::WebHistoryItem::getId()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(1),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getUrl()
@@ -103,8 +103,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getUrl()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(2),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getOriginalUrl()
@@ -113,8 +113,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getOriginalUrl(
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(3),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getTitle()
@@ -123,8 +123,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getTitle()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(4),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::webkit::WebHistoryItem::getFavicon()
@@ -133,8 +133,8 @@ local_ref< android::graphics::Bitmap > android::webkit::WebHistoryItem::getFavic
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(5),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 

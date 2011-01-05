@@ -13,9 +13,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class SortedSet; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
@@ -23,11 +26,14 @@ namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Set.hpp>
 #include <java/util/SortedSet.hpp>
 
 
@@ -68,9 +74,14 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractSet>() const;
-		operator local_ref<java::util::SortedSet>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::Set>() const;
+		operator local_ref<java::util::SortedSet>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -111,19 +122,44 @@ namespace j2cpp {
 
 
 
-java::util::TreeSet::operator local_ref<java::util::AbstractSet>() const
+java::util::TreeSet::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::AbstractSet>(get_jobject());
-}
-
-java::util::TreeSet::operator local_ref<java::util::SortedSet>() const
-{
-	return local_ref<java::util::SortedSet>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::TreeSet::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::util::AbstractSet>() const
+{
+	return local_ref<java::util::AbstractSet>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
+}
+
+java::util::TreeSet::operator local_ref<java::util::SortedSet>() const
+{
+	return local_ref<java::util::SortedSet>(get_jobject());
 }
 
 java::util::TreeSet::operator local_ref<java::io::Serializable>() const
@@ -137,8 +173,8 @@ java::util::TreeSet::TreeSet()
 	call_new_object<
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(0),
-		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -150,8 +186,8 @@ java::util::TreeSet::TreeSet(local_ref< java::util::Collection > const &a0)
 	call_new_object<
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(1),
-		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -163,8 +199,8 @@ java::util::TreeSet::TreeSet(local_ref< java::util::Comparator > const &a0)
 	call_new_object<
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(2),
-		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -176,8 +212,8 @@ java::util::TreeSet::TreeSet(local_ref< java::util::SortedSet > const &a0)
 	call_new_object<
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(3),
-		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -189,8 +225,8 @@ jboolean java::util::TreeSet::add(local_ref< java::lang::Object > const &a0)
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(4),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::TreeSet::addAll(local_ref< java::util::Collection > const &a0)
@@ -199,8 +235,8 @@ jboolean java::util::TreeSet::addAll(local_ref< java::util::Collection > const &
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(5),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::TreeSet::clear()
@@ -209,8 +245,8 @@ void java::util::TreeSet::clear()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(6),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeSet::clone()
@@ -219,8 +255,8 @@ local_ref< java::lang::Object > java::util::TreeSet::clone()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(7),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Comparator > java::util::TreeSet::comparator()
@@ -229,8 +265,8 @@ local_ref< java::util::Comparator > java::util::TreeSet::comparator()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(8),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 jboolean java::util::TreeSet::contains(local_ref< java::lang::Object > const &a0)
@@ -239,8 +275,8 @@ jboolean java::util::TreeSet::contains(local_ref< java::lang::Object > const &a0
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(9),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::TreeSet::first()
@@ -249,8 +285,8 @@ local_ref< java::lang::Object > java::util::TreeSet::first()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(10),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedSet > java::util::TreeSet::headSet(local_ref< java::lang::Object > const &a0)
@@ -259,8 +295,8 @@ local_ref< java::util::SortedSet > java::util::TreeSet::headSet(local_ref< java:
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(11),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::TreeSet::isEmpty()
@@ -269,8 +305,8 @@ jboolean java::util::TreeSet::isEmpty()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(12),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::TreeSet::iterator()
@@ -279,8 +315,8 @@ local_ref< java::util::Iterator > java::util::TreeSet::iterator()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(13),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::TreeSet::last()
@@ -289,8 +325,8 @@ local_ref< java::lang::Object > java::util::TreeSet::last()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(14),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::TreeSet::remove(local_ref< java::lang::Object > const &a0)
@@ -299,8 +335,8 @@ jboolean java::util::TreeSet::remove(local_ref< java::lang::Object > const &a0)
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(15),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::TreeSet::size()
@@ -309,8 +345,8 @@ jint java::util::TreeSet::size()
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(16),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedSet > java::util::TreeSet::subSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -319,8 +355,8 @@ local_ref< java::util::SortedSet > java::util::TreeSet::subSet(local_ref< java::
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(17),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedSet > java::util::TreeSet::tailSet(local_ref< java::lang::Object > const &a0)
@@ -329,8 +365,8 @@ local_ref< java::util::SortedSet > java::util::TreeSet::tailSet(local_ref< java:
 		java::util::TreeSet::J2CPP_CLASS_NAME,
 		java::util::TreeSet::J2CPP_METHOD_NAME(18),
 		java::util::TreeSet::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 

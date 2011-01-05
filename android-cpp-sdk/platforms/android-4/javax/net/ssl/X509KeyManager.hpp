@@ -11,13 +11,13 @@
 #define J2CPP_JAVAX_NET_SSL_X509KEYMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -98,8 +98,8 @@ local_ref< java::lang::String > javax::net::ssl::X509KeyManager::chooseClientAli
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > javax::net::ssl::X509KeyManager::chooseServerAlias(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::security::Principal >, 1> > const &a1, local_ref< java::net::Socket > const &a2)
@@ -108,8 +108,8 @@ local_ref< java::lang::String > javax::net::ssl::X509KeyManager::chooseServerAli
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > javax::net::ssl::X509KeyManager::getCertificateChain(local_ref< java::lang::String > const &a0)
@@ -118,8 +118,8 @@ local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > javax
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::X509KeyManager::getClientAliases(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::security::Principal >, 1> > const &a1)
@@ -128,8 +128,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::X509Key
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::X509KeyManager::getServerAliases(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::security::Principal >, 1> > const &a1)
@@ -138,8 +138,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::X509Key
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::PrivateKey > javax::net::ssl::X509KeyManager::getPrivateKey(local_ref< java::lang::String > const &a0)
@@ -148,8 +148,8 @@ local_ref< java::security::PrivateKey > javax::net::ssl::X509KeyManager::getPriv
 		javax::net::ssl::X509KeyManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::X509KeyManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::PrivateKey > >
-	(get_jobject(), a0);
+		local_ref< java::security::PrivateKey >
+	>(get_jobject(), a0);
 }
 
 

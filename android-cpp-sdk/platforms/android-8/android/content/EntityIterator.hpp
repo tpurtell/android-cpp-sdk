@@ -79,8 +79,8 @@ void android::content::EntityIterator::reset()
 		android::content::EntityIterator::J2CPP_CLASS_NAME,
 		android::content::EntityIterator::J2CPP_METHOD_NAME(0),
 		android::content::EntityIterator::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::content::EntityIterator::close()
@@ -89,8 +89,8 @@ void android::content::EntityIterator::close()
 		android::content::EntityIterator::J2CPP_CLASS_NAME,
 		android::content::EntityIterator::J2CPP_METHOD_NAME(1),
 		android::content::EntityIterator::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

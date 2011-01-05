@@ -119,8 +119,8 @@ jint android::text::Selection::getSelectionStart(local_ref< java::lang::CharSequ
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(1),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::text::Selection::getSelectionEnd(local_ref< java::lang::CharSequence > const &a0)
@@ -129,8 +129,8 @@ jint android::text::Selection::getSelectionEnd(local_ref< java::lang::CharSequen
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(2),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::text::Selection::setSelection(local_ref< android::text::Spannable > const &a0, jint a1, jint a2)
@@ -139,8 +139,8 @@ void android::text::Selection::setSelection(local_ref< android::text::Spannable 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(3),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::text::Selection::setSelection(local_ref< android::text::Spannable > const &a0, jint a1)
@@ -149,8 +149,8 @@ void android::text::Selection::setSelection(local_ref< android::text::Spannable 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(4),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::text::Selection::selectAll(local_ref< android::text::Spannable > const &a0)
@@ -159,8 +159,8 @@ void android::text::Selection::selectAll(local_ref< android::text::Spannable > c
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(5),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::text::Selection::extendSelection(local_ref< android::text::Spannable > const &a0, jint a1)
@@ -169,8 +169,8 @@ void android::text::Selection::extendSelection(local_ref< android::text::Spannab
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(6),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::text::Selection::removeSelection(local_ref< android::text::Spannable > const &a0)
@@ -179,8 +179,8 @@ void android::text::Selection::removeSelection(local_ref< android::text::Spannab
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(7),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::text::Selection::moveUp(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -189,8 +189,8 @@ jboolean android::text::Selection::moveUp(local_ref< android::text::Spannable > 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(8),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::moveDown(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -199,8 +199,8 @@ jboolean android::text::Selection::moveDown(local_ref< android::text::Spannable 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(9),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::moveLeft(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -209,8 +209,8 @@ jboolean android::text::Selection::moveLeft(local_ref< android::text::Spannable 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(10),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::moveRight(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -219,8 +219,8 @@ jboolean android::text::Selection::moveRight(local_ref< android::text::Spannable
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(11),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendUp(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -229,8 +229,8 @@ jboolean android::text::Selection::extendUp(local_ref< android::text::Spannable 
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(12),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendDown(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -239,8 +239,8 @@ jboolean android::text::Selection::extendDown(local_ref< android::text::Spannabl
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(13),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendLeft(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -249,8 +249,8 @@ jboolean android::text::Selection::extendLeft(local_ref< android::text::Spannabl
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(14),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendRight(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -259,8 +259,8 @@ jboolean android::text::Selection::extendRight(local_ref< android::text::Spannab
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(15),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendToLeftEdge(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -269,8 +269,8 @@ jboolean android::text::Selection::extendToLeftEdge(local_ref< android::text::Sp
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(16),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::extendToRightEdge(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -279,8 +279,8 @@ jboolean android::text::Selection::extendToRightEdge(local_ref< android::text::S
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(17),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::moveToLeftEdge(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -289,8 +289,8 @@ jboolean android::text::Selection::moveToLeftEdge(local_ref< android::text::Span
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(18),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::Selection::moveToRightEdge(local_ref< android::text::Spannable > const &a0, local_ref< android::text::Layout > const &a1)
@@ -299,8 +299,8 @@ jboolean android::text::Selection::moveToRightEdge(local_ref< android::text::Spa
 		android::text::Selection::J2CPP_CLASS_NAME,
 		android::text::Selection::J2CPP_METHOD_NAME(19),
 		android::text::Selection::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 

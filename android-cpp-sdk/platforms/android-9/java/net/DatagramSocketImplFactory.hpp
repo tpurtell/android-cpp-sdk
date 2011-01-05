@@ -71,8 +71,8 @@ local_ref< java::net::DatagramSocketImpl > java::net::DatagramSocketImplFactory:
 		java::net::DatagramSocketImplFactory::J2CPP_CLASS_NAME,
 		java::net::DatagramSocketImplFactory::J2CPP_METHOD_NAME(0),
 		java::net::DatagramSocketImplFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::DatagramSocketImpl > >
-	(get_jobject());
+		local_ref< java::net::DatagramSocketImpl >
+	>(get_jobject());
 }
 
 

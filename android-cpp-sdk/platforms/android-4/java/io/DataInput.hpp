@@ -99,8 +99,8 @@ jboolean java::io::DataInput::readBoolean()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(0),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jbyte java::io::DataInput::readByte()
@@ -109,8 +109,8 @@ jbyte java::io::DataInput::readByte()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(1),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(1), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jchar java::io::DataInput::readChar()
@@ -119,8 +119,8 @@ jchar java::io::DataInput::readChar()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(2),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(2), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jdouble java::io::DataInput::readDouble()
@@ -129,8 +129,8 @@ jdouble java::io::DataInput::readDouble()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(3),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(3), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jfloat java::io::DataInput::readFloat()
@@ -139,8 +139,8 @@ jfloat java::io::DataInput::readFloat()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(4),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void java::io::DataInput::readFully(local_ref< array<jbyte,1> > const &a0)
@@ -149,8 +149,8 @@ void java::io::DataInput::readFully(local_ref< array<jbyte,1> > const &a0)
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(5),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataInput::readFully(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -159,8 +159,8 @@ void java::io::DataInput::readFully(local_ref< array<jbyte,1> > const &a0, jint 
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(6),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint java::io::DataInput::readInt()
@@ -169,8 +169,8 @@ jint java::io::DataInput::readInt()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(7),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::DataInput::readLine()
@@ -179,8 +179,8 @@ local_ref< java::lang::String > java::io::DataInput::readLine()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(8),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong java::io::DataInput::readLong()
@@ -189,8 +189,8 @@ jlong java::io::DataInput::readLong()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(9),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jshort java::io::DataInput::readShort()
@@ -199,8 +199,8 @@ jshort java::io::DataInput::readShort()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(10),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(10), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 jint java::io::DataInput::readUnsignedByte()
@@ -209,8 +209,8 @@ jint java::io::DataInput::readUnsignedByte()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(11),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::DataInput::readUnsignedShort()
@@ -219,8 +219,8 @@ jint java::io::DataInput::readUnsignedShort()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(12),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::DataInput::readUTF()
@@ -229,8 +229,8 @@ local_ref< java::lang::String > java::io::DataInput::readUTF()
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(13),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::io::DataInput::skipBytes(jint a0)
@@ -239,8 +239,8 @@ jint java::io::DataInput::skipBytes(jint a0)
 		java::io::DataInput::J2CPP_CLASS_NAME,
 		java::io::DataInput::J2CPP_METHOD_NAME(14),
 		java::io::DataInput::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

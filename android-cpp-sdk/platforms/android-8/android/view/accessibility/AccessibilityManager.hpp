@@ -82,8 +82,8 @@ jboolean android::view::accessibility::AccessibilityManager::isEnabled()
 		android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_NAME(1),
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityManager::sendAccessibilityEvent(local_ref< android::view::accessibility::AccessibilityEvent > const &a0)
@@ -92,8 +92,8 @@ void android::view::accessibility::AccessibilityManager::sendAccessibilityEvent(
 		android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_NAME(2),
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::accessibility::AccessibilityManager::interrupt()
@@ -102,8 +102,8 @@ void android::view::accessibility::AccessibilityManager::interrupt()
 		android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_NAME(3),
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::view::accessibility::AccessibilityManager::getAccessibilityServiceList()
@@ -112,8 +112,8 @@ local_ref< java::util::List > android::view::accessibility::AccessibilityManager
 		android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_NAME(4),
 		android::view::accessibility::AccessibilityManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 

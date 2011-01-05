@@ -93,8 +93,8 @@ void android::bluetooth::BluetoothSocket::connect()
 		android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(1),
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::bluetooth::BluetoothSocket::close()
@@ -103,8 +103,8 @@ void android::bluetooth::BluetoothSocket::close()
 		android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(2),
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::bluetooth::BluetoothDevice > android::bluetooth::BluetoothSocket::getRemoteDevice()
@@ -113,8 +113,8 @@ local_ref< android::bluetooth::BluetoothDevice > android::bluetooth::BluetoothSo
 		android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(3),
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::bluetooth::BluetoothDevice > >
-	(get_jobject());
+		local_ref< android::bluetooth::BluetoothDevice >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > android::bluetooth::BluetoothSocket::getInputStream()
@@ -123,8 +123,8 @@ local_ref< java::io::InputStream > android::bluetooth::BluetoothSocket::getInput
 		android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(4),
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > android::bluetooth::BluetoothSocket::getOutputStream()
@@ -133,8 +133,8 @@ local_ref< java::io::OutputStream > android::bluetooth::BluetoothSocket::getOutp
 		android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(5),
 		android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 

@@ -49,8 +49,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CodeSigner(local_ref< java::security::cert::CertPath > const&, local_ref< java::security::Timestamp > const&);
@@ -77,14 +77,14 @@ namespace j2cpp {
 
 
 
-java::security::CodeSigner::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::CodeSigner::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::CodeSigner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +93,8 @@ java::security::CodeSigner::CodeSigner(local_ref< java::security::cert::CertPath
 	call_new_object<
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(0),
-		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +106,8 @@ jboolean java::security::CodeSigner::equals(local_ref< java::lang::Object > cons
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(1),
 		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CertPath > java::security::CodeSigner::getSignerCertPath()
@@ -116,8 +116,8 @@ local_ref< java::security::cert::CertPath > java::security::CodeSigner::getSigne
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(2),
 		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject());
 }
 
 local_ref< java::security::Timestamp > java::security::CodeSigner::getTimestamp()
@@ -126,8 +126,8 @@ local_ref< java::security::Timestamp > java::security::CodeSigner::getTimestamp(
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(3),
 		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::Timestamp > >
-	(get_jobject());
+		local_ref< java::security::Timestamp >
+	>(get_jobject());
 }
 
 jint java::security::CodeSigner::hashCode()
@@ -136,8 +136,8 @@ jint java::security::CodeSigner::hashCode()
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(4),
 		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::CodeSigner::toString()
@@ -146,8 +146,8 @@ local_ref< java::lang::String > java::security::CodeSigner::toString()
 		java::security::CodeSigner::J2CPP_CLASS_NAME,
 		java::security::CodeSigner::J2CPP_METHOD_NAME(5),
 		java::security::CodeSigner::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

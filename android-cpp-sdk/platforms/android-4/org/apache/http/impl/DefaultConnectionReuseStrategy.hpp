@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_DEFAULTCONNECTIONREUSESTRATEGY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -44,8 +44,8 @@ namespace org { namespace apache { namespace http { namespace impl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::ConnectionReuseStrategy>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DefaultConnectionReuseStrategy();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::DefaultConnectionReuseStrategy::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::DefaultConnectionReuseStrategy::operator local_ref<org::apache::http::ConnectionReuseStrategy>() const
 {
 	return local_ref<org::apache::http::ConnectionReuseStrategy>(get_jobject());
+}
+
+org::apache::http::impl::DefaultConnectionReuseStrategy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ org::apache::http::impl::DefaultConnectionReuseStrategy::DefaultConnectionReuseS
 	call_new_object<
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ jboolean org::apache::http::impl::DefaultConnectionReuseStrategy::keepAlive(loca
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::DefaultConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

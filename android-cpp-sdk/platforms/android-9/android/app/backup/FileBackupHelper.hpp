@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace app { namespace backup { class BackupDataOutput; } } } }
 namespace j2cpp { namespace android { namespace app { namespace backup { class BackupDataInputStream; } } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor;
 #include <android/app/backup/FileBackupHelperBase.hpp>
 #include <android/content/Context.hpp>
 #include <android/os/ParcelFileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,8 +53,9 @@ namespace android { namespace app { namespace backup {
 		{
 		}
 
-		operator local_ref<android::app::backup::FileBackupHelperBase>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::backup::BackupHelper>() const;
+		operator local_ref<android::app::backup::FileBackupHelperBase>() const;
 
 
 		FileBackupHelper(local_ref< android::content::Context > const&, local_ref< array< local_ref< java::lang::String >, 1> > const&);
@@ -78,14 +81,19 @@ namespace j2cpp {
 
 
 
-android::app::backup::FileBackupHelper::operator local_ref<android::app::backup::FileBackupHelperBase>() const
+android::app::backup::FileBackupHelper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::app::backup::FileBackupHelperBase>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::app::backup::FileBackupHelper::operator local_ref<android::app::backup::BackupHelper>() const
 {
 	return local_ref<android::app::backup::BackupHelper>(get_jobject());
+}
+
+android::app::backup::FileBackupHelper::operator local_ref<android::app::backup::FileBackupHelperBase>() const
+{
+	return local_ref<android::app::backup::FileBackupHelperBase>(get_jobject());
 }
 
 
@@ -94,8 +102,8 @@ android::app::backup::FileBackupHelper::FileBackupHelper(local_ref< android::con
 	call_new_object<
 		android::app::backup::FileBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_NAME(0),
-		android::app::backup::FileBackupHelper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::backup::FileBackupHelper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -107,8 +115,8 @@ void android::app::backup::FileBackupHelper::performBackup(local_ref< android::o
 		android::app::backup::FileBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_NAME(1),
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::backup::FileBackupHelper::restoreEntity(local_ref< android::app::backup::BackupDataInputStream > const &a0)
@@ -117,8 +125,8 @@ void android::app::backup::FileBackupHelper::restoreEntity(local_ref< android::a
 		android::app::backup::FileBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_NAME(2),
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::backup::FileBackupHelper::writeNewStateDescription(local_ref< android::os::ParcelFileDescriptor > const &a0)
@@ -127,8 +135,8 @@ void android::app::backup::FileBackupHelper::writeNewStateDescription(local_ref<
 		android::app::backup::FileBackupHelper::J2CPP_CLASS_NAME,
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_NAME(3),
 		android::app::backup::FileBackupHelper::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

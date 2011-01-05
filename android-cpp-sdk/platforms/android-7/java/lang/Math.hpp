@@ -162,8 +162,8 @@ jdouble java::lang::Math::abs(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(1),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(1), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jfloat java::lang::Math::abs(jfloat a0)
@@ -172,8 +172,8 @@ jfloat java::lang::Math::abs(jfloat a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(2),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jint java::lang::Math::abs(jint a0)
@@ -182,8 +182,8 @@ jint java::lang::Math::abs(jint a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(3),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jlong java::lang::Math::abs(jlong a0)
@@ -192,8 +192,8 @@ jlong java::lang::Math::abs(jlong a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(4),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 jdouble java::lang::Math::acos(jdouble a0)
@@ -202,8 +202,8 @@ jdouble java::lang::Math::acos(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(5),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::asin(jdouble a0)
@@ -212,8 +212,8 @@ jdouble java::lang::Math::asin(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(6),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(6), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::atan(jdouble a0)
@@ -222,8 +222,8 @@ jdouble java::lang::Math::atan(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(7),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(7), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::atan2(jdouble a0, jdouble a1)
@@ -232,8 +232,8 @@ jdouble java::lang::Math::atan2(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(8),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(8), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::cbrt(jdouble a0)
@@ -242,8 +242,8 @@ jdouble java::lang::Math::cbrt(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(9),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(9), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::ceil(jdouble a0)
@@ -252,8 +252,8 @@ jdouble java::lang::Math::ceil(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(10),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(10), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::cos(jdouble a0)
@@ -262,8 +262,8 @@ jdouble java::lang::Math::cos(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(11),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(11), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::cosh(jdouble a0)
@@ -272,8 +272,8 @@ jdouble java::lang::Math::cosh(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(12),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(12), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::exp(jdouble a0)
@@ -282,8 +282,8 @@ jdouble java::lang::Math::exp(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(13),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(13), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::expm1(jdouble a0)
@@ -292,8 +292,8 @@ jdouble java::lang::Math::expm1(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(14),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(14), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::floor(jdouble a0)
@@ -302,8 +302,8 @@ jdouble java::lang::Math::floor(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(15),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(15), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::hypot(jdouble a0, jdouble a1)
@@ -312,8 +312,8 @@ jdouble java::lang::Math::hypot(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(16),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(16), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::IEEEremainder(jdouble a0, jdouble a1)
@@ -322,8 +322,8 @@ jdouble java::lang::Math::IEEEremainder(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(17),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(17), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::log(jdouble a0)
@@ -332,8 +332,8 @@ jdouble java::lang::Math::log(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(18),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(18), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::log10(jdouble a0)
@@ -342,8 +342,8 @@ jdouble java::lang::Math::log10(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(19),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(19), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::log1p(jdouble a0)
@@ -352,8 +352,8 @@ jdouble java::lang::Math::log1p(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(20),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(20), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::max(jdouble a0, jdouble a1)
@@ -362,8 +362,8 @@ jdouble java::lang::Math::max(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(21),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(21), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jfloat java::lang::Math::max(jfloat a0, jfloat a1)
@@ -372,8 +372,8 @@ jfloat java::lang::Math::max(jfloat a0, jfloat a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(22),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(22), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jint java::lang::Math::max(jint a0, jint a1)
@@ -382,8 +382,8 @@ jint java::lang::Math::max(jint a0, jint a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(23),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jlong java::lang::Math::max(jlong a0, jlong a1)
@@ -392,8 +392,8 @@ jlong java::lang::Math::max(jlong a0, jlong a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(24),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(24), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::min(jdouble a0, jdouble a1)
@@ -402,8 +402,8 @@ jdouble java::lang::Math::min(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(25),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(25), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jfloat java::lang::Math::min(jfloat a0, jfloat a1)
@@ -412,8 +412,8 @@ jfloat java::lang::Math::min(jfloat a0, jfloat a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(26),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(26), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jint java::lang::Math::min(jint a0, jint a1)
@@ -422,8 +422,8 @@ jint java::lang::Math::min(jint a0, jint a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(27),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jlong java::lang::Math::min(jlong a0, jlong a1)
@@ -432,8 +432,8 @@ jlong java::lang::Math::min(jlong a0, jlong a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(28),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(28), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::pow(jdouble a0, jdouble a1)
@@ -442,8 +442,8 @@ jdouble java::lang::Math::pow(jdouble a0, jdouble a1)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(29),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(29), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jdouble java::lang::Math::rint(jdouble a0)
@@ -452,8 +452,8 @@ jdouble java::lang::Math::rint(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(30),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(30), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jlong java::lang::Math::round(jdouble a0)
@@ -462,8 +462,8 @@ jlong java::lang::Math::round(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(31),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(31), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 jint java::lang::Math::round(jfloat a0)
@@ -472,8 +472,8 @@ jint java::lang::Math::round(jfloat a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(32),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jdouble java::lang::Math::signum(jdouble a0)
@@ -482,8 +482,8 @@ jdouble java::lang::Math::signum(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(33),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(33), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jfloat java::lang::Math::signum(jfloat a0)
@@ -492,8 +492,8 @@ jfloat java::lang::Math::signum(jfloat a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(34),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(34), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jdouble java::lang::Math::sin(jdouble a0)
@@ -502,8 +502,8 @@ jdouble java::lang::Math::sin(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(35),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(35), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::sinh(jdouble a0)
@@ -512,8 +512,8 @@ jdouble java::lang::Math::sinh(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(36),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(36), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::sqrt(jdouble a0)
@@ -522,8 +522,8 @@ jdouble java::lang::Math::sqrt(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(37),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(37), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::tan(jdouble a0)
@@ -532,8 +532,8 @@ jdouble java::lang::Math::tan(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(38),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(38), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::tanh(jdouble a0)
@@ -542,8 +542,8 @@ jdouble java::lang::Math::tanh(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(39),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(39), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::random()
@@ -552,8 +552,8 @@ jdouble java::lang::Math::random()
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(40),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(40), 
-		jdouble >
-	();
+		jdouble
+	>();
 }
 
 jdouble java::lang::Math::toRadians(jdouble a0)
@@ -562,8 +562,8 @@ jdouble java::lang::Math::toRadians(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(41),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(41), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::toDegrees(jdouble a0)
@@ -572,8 +572,8 @@ jdouble java::lang::Math::toDegrees(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(42),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(42), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::lang::Math::ulp(jdouble a0)
@@ -582,8 +582,8 @@ jdouble java::lang::Math::ulp(jdouble a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(43),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(43), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jfloat java::lang::Math::ulp(jfloat a0)
@@ -592,8 +592,8 @@ jfloat java::lang::Math::ulp(jfloat a0)
 		java::lang::Math::J2CPP_CLASS_NAME,
 		java::lang::Math::J2CPP_METHOD_NAME(44),
 		java::lang::Math::J2CPP_METHOD_SIGNATURE(44), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 

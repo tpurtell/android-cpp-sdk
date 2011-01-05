@@ -104,8 +104,8 @@ local_ref< java::lang::String > android::hardware::Sensor::getName()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(1),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::hardware::Sensor::getVendor()
@@ -114,8 +114,8 @@ local_ref< java::lang::String > android::hardware::Sensor::getVendor()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(2),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::hardware::Sensor::getType()
@@ -124,8 +124,8 @@ jint android::hardware::Sensor::getType()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(3),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::hardware::Sensor::getVersion()
@@ -134,8 +134,8 @@ jint android::hardware::Sensor::getVersion()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(4),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::hardware::Sensor::getMaximumRange()
@@ -144,8 +144,8 @@ jfloat android::hardware::Sensor::getMaximumRange()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(5),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::Sensor::getResolution()
@@ -154,8 +154,8 @@ jfloat android::hardware::Sensor::getResolution()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(6),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::hardware::Sensor::getPower()
@@ -164,8 +164,8 @@ jfloat android::hardware::Sensor::getPower()
 		android::hardware::Sensor::J2CPP_CLASS_NAME,
 		android::hardware::Sensor::J2CPP_METHOD_NAME(7),
 		android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 

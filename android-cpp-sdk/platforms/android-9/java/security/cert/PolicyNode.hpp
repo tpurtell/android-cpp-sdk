@@ -88,8 +88,8 @@ local_ref< java::util::Iterator > java::security::cert::PolicyNode::getChildren(
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(0),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jint java::security::cert::PolicyNode::getDepth()
@@ -98,8 +98,8 @@ jint java::security::cert::PolicyNode::getDepth()
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(1),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::security::cert::PolicyNode::getExpectedPolicies()
@@ -108,8 +108,8 @@ local_ref< java::util::Set > java::security::cert::PolicyNode::getExpectedPolici
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(2),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::security::cert::PolicyNode > java::security::cert::PolicyNode::getParent()
@@ -118,8 +118,8 @@ local_ref< java::security::cert::PolicyNode > java::security::cert::PolicyNode::
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(3),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::cert::PolicyNode > >
-	(get_jobject());
+		local_ref< java::security::cert::PolicyNode >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::security::cert::PolicyNode::getPolicyQualifiers()
@@ -128,8 +128,8 @@ local_ref< java::util::Set > java::security::cert::PolicyNode::getPolicyQualifie
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(4),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::PolicyNode::getValidPolicy()
@@ -138,8 +138,8 @@ local_ref< java::lang::String > java::security::cert::PolicyNode::getValidPolicy
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(5),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::PolicyNode::isCritical()
@@ -148,8 +148,8 @@ jboolean java::security::cert::PolicyNode::isCritical()
 		java::security::cert::PolicyNode::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyNode::J2CPP_METHOD_NAME(6),
 		java::security::cert::PolicyNode::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

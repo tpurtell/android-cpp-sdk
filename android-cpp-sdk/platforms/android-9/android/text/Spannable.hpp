@@ -74,6 +74,7 @@ namespace android { namespace text {
 		{
 		}
 
+		operator local_ref<java::lang::CharSequence>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::Spanned>() const;
 
@@ -110,8 +111,8 @@ android::text::Spannable_::Factory::Factory()
 	call_new_object<
 		android::text::Spannable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Spannable_::Factory::J2CPP_METHOD_NAME(0),
-		android::text::Spannable_::Factory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::Spannable_::Factory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -123,8 +124,8 @@ local_ref< android::text::Spannable_::Factory > android::text::Spannable_::Facto
 		android::text::Spannable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Spannable_::Factory::J2CPP_METHOD_NAME(1),
 		android::text::Spannable_::Factory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::Spannable_::Factory > >
-	();
+		local_ref< android::text::Spannable_::Factory >
+	>();
 }
 
 local_ref< android::text::Spannable > android::text::Spannable_::Factory::newSpannable(local_ref< java::lang::CharSequence > const &a0)
@@ -133,8 +134,8 @@ local_ref< android::text::Spannable > android::text::Spannable_::Factory::newSpa
 		android::text::Spannable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Spannable_::Factory::J2CPP_METHOD_NAME(2),
 		android::text::Spannable_::Factory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::Spannable > >
-	(get_jobject(), a0);
+		local_ref< android::text::Spannable >
+	>(get_jobject(), a0);
 }
 
 
@@ -144,6 +145,11 @@ J2CPP_DEFINE_METHOD(android::text::Spannable_::Factory,1,"getInstance","()Landro
 J2CPP_DEFINE_METHOD(android::text::Spannable_::Factory,2,"newSpannable","(Ljava/lang/CharSequence;)Landroid/text/Spannable;")
 
 
+
+android::text::Spannable::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jobject());
+}
 
 android::text::Spannable::operator local_ref<java::lang::Object>() const
 {
@@ -161,8 +167,8 @@ void android::text::Spannable::setSpan(local_ref< java::lang::Object > const &a0
 		android::text::Spannable::J2CPP_CLASS_NAME,
 		android::text::Spannable::J2CPP_METHOD_NAME(0),
 		android::text::Spannable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::Spannable::removeSpan(local_ref< java::lang::Object > const &a0)
@@ -171,8 +177,8 @@ void android::text::Spannable::removeSpan(local_ref< java::lang::Object > const 
 		android::text::Spannable::J2CPP_CLASS_NAME,
 		android::text::Spannable::J2CPP_METHOD_NAME(1),
 		android::text::Spannable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

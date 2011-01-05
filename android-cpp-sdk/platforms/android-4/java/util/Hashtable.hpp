@@ -75,10 +75,11 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::Dictionary>() const;
-		operator local_ref<java::util::Map>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::Dictionary>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Hashtable();
@@ -122,9 +123,9 @@ namespace j2cpp {
 
 
 
-java::util::Hashtable::operator local_ref<java::util::Dictionary>() const
+java::util::Hashtable::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::util::Dictionary>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::util::Hashtable::operator local_ref<java::util::Map>() const
@@ -132,14 +133,19 @@ java::util::Hashtable::operator local_ref<java::util::Map>() const
 	return local_ref<java::util::Map>(get_jobject());
 }
 
+java::util::Hashtable::operator local_ref<java::util::Dictionary>() const
+{
+	return local_ref<java::util::Dictionary>(get_jobject());
+}
+
 java::util::Hashtable::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::Hashtable::operator local_ref<java::io::Serializable>() const
+java::util::Hashtable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -148,8 +154,8 @@ java::util::Hashtable::Hashtable()
 	call_new_object<
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(0),
-		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -161,8 +167,8 @@ java::util::Hashtable::Hashtable(jint a0)
 	call_new_object<
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(1),
-		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -174,8 +180,8 @@ java::util::Hashtable::Hashtable(jint a0, jfloat a1)
 	call_new_object<
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(2),
-		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -187,8 +193,8 @@ java::util::Hashtable::Hashtable(local_ref< java::util::Map > const &a0)
 	call_new_object<
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(3),
-		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -200,8 +206,8 @@ void java::util::Hashtable::clear()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(4),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Hashtable::clone()
@@ -210,8 +216,8 @@ local_ref< java::lang::Object > java::util::Hashtable::clone()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(5),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::Hashtable::contains(local_ref< java::lang::Object > const &a0)
@@ -220,8 +226,8 @@ jboolean java::util::Hashtable::contains(local_ref< java::lang::Object > const &
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(6),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Hashtable::containsKey(local_ref< java::lang::Object > const &a0)
@@ -230,8 +236,8 @@ jboolean java::util::Hashtable::containsKey(local_ref< java::lang::Object > cons
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(7),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Hashtable::containsValue(local_ref< java::lang::Object > const &a0)
@@ -240,8 +246,8 @@ jboolean java::util::Hashtable::containsValue(local_ref< java::lang::Object > co
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(8),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::util::Hashtable::elements()
@@ -250,8 +256,8 @@ local_ref< java::util::Enumeration > java::util::Hashtable::elements()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(9),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::Hashtable::entrySet()
@@ -260,8 +266,8 @@ local_ref< java::util::Set > java::util::Hashtable::entrySet()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(10),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 jboolean java::util::Hashtable::equals(local_ref< java::lang::Object > const &a0)
@@ -270,8 +276,8 @@ jboolean java::util::Hashtable::equals(local_ref< java::lang::Object > const &a0
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(11),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Hashtable::get(local_ref< java::lang::Object > const &a0)
@@ -280,8 +286,8 @@ local_ref< java::lang::Object > java::util::Hashtable::get(local_ref< java::lang
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(12),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Hashtable::hashCode()
@@ -290,8 +296,8 @@ jint java::util::Hashtable::hashCode()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(13),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::Hashtable::isEmpty()
@@ -300,8 +306,8 @@ jboolean java::util::Hashtable::isEmpty()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(14),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::util::Hashtable::keys()
@@ -310,8 +316,8 @@ local_ref< java::util::Enumeration > java::util::Hashtable::keys()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(15),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::Hashtable::keySet()
@@ -320,8 +326,8 @@ local_ref< java::util::Set > java::util::Hashtable::keySet()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(16),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Hashtable::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -330,8 +336,8 @@ local_ref< java::lang::Object > java::util::Hashtable::put(local_ref< java::lang
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(17),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Hashtable::putAll(local_ref< java::util::Map > const &a0)
@@ -340,8 +346,8 @@ void java::util::Hashtable::putAll(local_ref< java::util::Map > const &a0)
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(18),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -351,8 +357,8 @@ local_ref< java::lang::Object > java::util::Hashtable::remove(local_ref< java::l
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(20),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Hashtable::size()
@@ -361,8 +367,8 @@ jint java::util::Hashtable::size()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(21),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Hashtable::toString()
@@ -371,8 +377,8 @@ local_ref< java::lang::String > java::util::Hashtable::toString()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(22),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::Hashtable::values()
@@ -381,8 +387,8 @@ local_ref< java::util::Collection > java::util::Hashtable::values()
 		java::util::Hashtable::J2CPP_CLASS_NAME,
 		java::util::Hashtable::J2CPP_METHOD_NAME(23),
 		java::util::Hashtable::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 

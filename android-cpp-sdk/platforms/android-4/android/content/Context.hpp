@@ -11,7 +11,6 @@
 #define J2CPP_ANDROID_CONTENT_CONTEXT_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
@@ -41,6 +40,7 @@ namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/content/BroadcastReceiver.hpp>
@@ -326,8 +326,8 @@ android::content::Context::Context()
 	call_new_object<
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(0),
-		android::content::Context::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::Context::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -339,8 +339,8 @@ local_ref< android::content::res::AssetManager > android::content::Context::getA
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(1),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::res::AssetManager > >
-	(get_jobject());
+		local_ref< android::content::res::AssetManager >
+	>(get_jobject());
 }
 
 local_ref< android::content::res::Resources > android::content::Context::getResources()
@@ -349,8 +349,8 @@ local_ref< android::content::res::Resources > android::content::Context::getReso
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(2),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::res::Resources > >
-	(get_jobject());
+		local_ref< android::content::res::Resources >
+	>(get_jobject());
 }
 
 local_ref< android::content::pm::PackageManager > android::content::Context::getPackageManager()
@@ -359,8 +359,8 @@ local_ref< android::content::pm::PackageManager > android::content::Context::get
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(3),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::pm::PackageManager > >
-	(get_jobject());
+		local_ref< android::content::pm::PackageManager >
+	>(get_jobject());
 }
 
 local_ref< android::content::ContentResolver > android::content::Context::getContentResolver()
@@ -369,8 +369,8 @@ local_ref< android::content::ContentResolver > android::content::Context::getCon
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(4),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::ContentResolver > >
-	(get_jobject());
+		local_ref< android::content::ContentResolver >
+	>(get_jobject());
 }
 
 local_ref< android::os::Looper > android::content::Context::getMainLooper()
@@ -379,8 +379,8 @@ local_ref< android::os::Looper > android::content::Context::getMainLooper()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(5),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::Looper > >
-	(get_jobject());
+		local_ref< android::os::Looper >
+	>(get_jobject());
 }
 
 local_ref< android::content::Context > android::content::Context::getApplicationContext()
@@ -389,8 +389,8 @@ local_ref< android::content::Context > android::content::Context::getApplication
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(6),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::content::Context::getText(jint a0)
@@ -399,8 +399,8 @@ local_ref< java::lang::CharSequence > android::content::Context::getText(jint a0
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(7),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::Context::getString(jint a0)
@@ -409,8 +409,8 @@ local_ref< java::lang::String > android::content::Context::getString(jint a0)
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(8),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::Context::getString(jint a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -419,8 +419,8 @@ local_ref< java::lang::String > android::content::Context::getString(jint a0, lo
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(9),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::Context::setTheme(jint a0)
@@ -429,8 +429,8 @@ void android::content::Context::setTheme(jint a0)
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(10),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::Resources_::Theme > android::content::Context::getTheme()
@@ -439,8 +439,8 @@ local_ref< android::content::res::Resources_::Theme > android::content::Context:
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(11),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::content::res::Resources_::Theme > >
-	(get_jobject());
+		local_ref< android::content::res::Resources_::Theme >
+	>(get_jobject());
 }
 
 local_ref< android::content::res::TypedArray > android::content::Context::obtainStyledAttributes(local_ref< array<jint,1> > const &a0)
@@ -449,8 +449,8 @@ local_ref< android::content::res::TypedArray > android::content::Context::obtain
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(12),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::TypedArray > android::content::Context::obtainStyledAttributes(jint a0, local_ref< array<jint,1> > const &a1)
@@ -459,8 +459,8 @@ local_ref< android::content::res::TypedArray > android::content::Context::obtain
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(13),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::TypedArray > android::content::Context::obtainStyledAttributes(local_ref< android::util::AttributeSet > const &a0, local_ref< array<jint,1> > const &a1)
@@ -469,8 +469,8 @@ local_ref< android::content::res::TypedArray > android::content::Context::obtain
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(14),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::TypedArray > android::content::Context::obtainStyledAttributes(local_ref< android::util::AttributeSet > const &a0, local_ref< array<jint,1> > const &a1, jint a2, jint a3)
@@ -479,8 +479,8 @@ local_ref< android::content::res::TypedArray > android::content::Context::obtain
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(15),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::content::res::TypedArray > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::content::res::TypedArray >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::ClassLoader > android::content::Context::getClassLoader()
@@ -489,8 +489,8 @@ local_ref< java::lang::ClassLoader > android::content::Context::getClassLoader()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(16),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::ClassLoader > >
-	(get_jobject());
+		local_ref< java::lang::ClassLoader >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::Context::getPackageName()
@@ -499,8 +499,8 @@ local_ref< java::lang::String > android::content::Context::getPackageName()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(17),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::content::pm::ApplicationInfo > android::content::Context::getApplicationInfo()
@@ -509,8 +509,8 @@ local_ref< android::content::pm::ApplicationInfo > android::content::Context::ge
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(18),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::content::pm::ApplicationInfo > >
-	(get_jobject());
+		local_ref< android::content::pm::ApplicationInfo >
+	>(get_jobject());
 }
 
 local_ref< android::content::SharedPreferences > android::content::Context::getSharedPreferences(local_ref< java::lang::String > const &a0, jint a1)
@@ -519,8 +519,8 @@ local_ref< android::content::SharedPreferences > android::content::Context::getS
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(19),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::content::SharedPreferences > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::SharedPreferences >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::FileInputStream > android::content::Context::openFileInput(local_ref< java::lang::String > const &a0)
@@ -529,8 +529,8 @@ local_ref< java::io::FileInputStream > android::content::Context::openFileInput(
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(20),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::io::FileInputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::FileInputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::FileOutputStream > android::content::Context::openFileOutput(local_ref< java::lang::String > const &a0, jint a1)
@@ -539,8 +539,8 @@ local_ref< java::io::FileOutputStream > android::content::Context::openFileOutpu
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(21),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::io::FileOutputStream > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::FileOutputStream >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::Context::deleteFile(local_ref< java::lang::String > const &a0)
@@ -549,8 +549,8 @@ jboolean android::content::Context::deleteFile(local_ref< java::lang::String > c
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(22),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::File > android::content::Context::getFileStreamPath(local_ref< java::lang::String > const &a0)
@@ -559,8 +559,8 @@ local_ref< java::io::File > android::content::Context::getFileStreamPath(local_r
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(23),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::io::File > >
-	(get_jobject(), a0);
+		local_ref< java::io::File >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::File > android::content::Context::getFilesDir()
@@ -569,8 +569,8 @@ local_ref< java::io::File > android::content::Context::getFilesDir()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(24),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< java::io::File > android::content::Context::getCacheDir()
@@ -579,8 +579,8 @@ local_ref< java::io::File > android::content::Context::getCacheDir()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(25),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::Context::fileList()
@@ -589,8 +589,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::Contex
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(26),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::io::File > android::content::Context::getDir(local_ref< java::lang::String > const &a0, jint a1)
@@ -599,8 +599,8 @@ local_ref< java::io::File > android::content::Context::getDir(local_ref< java::l
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(27),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::io::File > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::File >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::content::Context::openOrCreateDatabase(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a2)
@@ -609,8 +609,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::content::Context
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(28),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::content::Context::deleteDatabase(local_ref< java::lang::String > const &a0)
@@ -619,8 +619,8 @@ jboolean android::content::Context::deleteDatabase(local_ref< java::lang::String
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(29),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::File > android::content::Context::getDatabasePath(local_ref< java::lang::String > const &a0)
@@ -629,8 +629,8 @@ local_ref< java::io::File > android::content::Context::getDatabasePath(local_ref
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(30),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::io::File > >
-	(get_jobject(), a0);
+		local_ref< java::io::File >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::Context::databaseList()
@@ -639,8 +639,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::Contex
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(31),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::Context::getWallpaper()
@@ -649,8 +649,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::Context::ge
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(32),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::Context::peekWallpaper()
@@ -659,8 +659,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::Context::pe
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(33),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 jint android::content::Context::getWallpaperDesiredMinimumWidth()
@@ -669,8 +669,8 @@ jint android::content::Context::getWallpaperDesiredMinimumWidth()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(34),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::Context::getWallpaperDesiredMinimumHeight()
@@ -679,8 +679,8 @@ jint android::content::Context::getWallpaperDesiredMinimumHeight()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(35),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(35), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::Context::setWallpaper(local_ref< android::graphics::Bitmap > const &a0)
@@ -689,8 +689,8 @@ void android::content::Context::setWallpaper(local_ref< android::graphics::Bitma
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(36),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::setWallpaper(local_ref< java::io::InputStream > const &a0)
@@ -699,8 +699,8 @@ void android::content::Context::setWallpaper(local_ref< java::io::InputStream > 
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(37),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::clearWallpaper()
@@ -709,8 +709,8 @@ void android::content::Context::clearWallpaper()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(38),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::content::Context::startActivity(local_ref< android::content::Intent > const &a0)
@@ -719,8 +719,8 @@ void android::content::Context::startActivity(local_ref< android::content::Inten
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(39),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::sendBroadcast(local_ref< android::content::Intent > const &a0)
@@ -729,8 +729,8 @@ void android::content::Context::sendBroadcast(local_ref< android::content::Inten
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(40),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::sendBroadcast(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1)
@@ -739,8 +739,8 @@ void android::content::Context::sendBroadcast(local_ref< android::content::Inten
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(41),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::Context::sendOrderedBroadcast(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1)
@@ -749,8 +749,8 @@ void android::content::Context::sendOrderedBroadcast(local_ref< android::content
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(42),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::Context::sendOrderedBroadcast(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::BroadcastReceiver > const &a2, local_ref< android::os::Handler > const &a3, jint a4, local_ref< java::lang::String > const &a5, local_ref< android::os::Bundle > const &a6)
@@ -759,8 +759,8 @@ void android::content::Context::sendOrderedBroadcast(local_ref< android::content
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(43),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::content::Context::sendStickyBroadcast(local_ref< android::content::Intent > const &a0)
@@ -769,8 +769,8 @@ void android::content::Context::sendStickyBroadcast(local_ref< android::content:
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(44),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::removeStickyBroadcast(local_ref< android::content::Intent > const &a0)
@@ -779,8 +779,8 @@ void android::content::Context::removeStickyBroadcast(local_ref< android::conten
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(45),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::Intent > android::content::Context::registerReceiver(local_ref< android::content::BroadcastReceiver > const &a0, local_ref< android::content::IntentFilter > const &a1)
@@ -789,8 +789,8 @@ local_ref< android::content::Intent > android::content::Context::registerReceive
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(46),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< android::content::Intent > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::Intent >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::Intent > android::content::Context::registerReceiver(local_ref< android::content::BroadcastReceiver > const &a0, local_ref< android::content::IntentFilter > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::os::Handler > const &a3)
@@ -799,8 +799,8 @@ local_ref< android::content::Intent > android::content::Context::registerReceive
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(47),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< android::content::Intent > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::content::Intent >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::content::Context::unregisterReceiver(local_ref< android::content::BroadcastReceiver > const &a0)
@@ -809,8 +809,8 @@ void android::content::Context::unregisterReceiver(local_ref< android::content::
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(48),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::ComponentName > android::content::Context::startService(local_ref< android::content::Intent > const &a0)
@@ -819,8 +819,8 @@ local_ref< android::content::ComponentName > android::content::Context::startSer
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(49),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject(), a0);
+		local_ref< android::content::ComponentName >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::Context::stopService(local_ref< android::content::Intent > const &a0)
@@ -829,8 +829,8 @@ jboolean android::content::Context::stopService(local_ref< android::content::Int
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(50),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::Context::bindService(local_ref< android::content::Intent > const &a0, local_ref< android::content::ServiceConnection > const &a1, jint a2)
@@ -839,8 +839,8 @@ jboolean android::content::Context::bindService(local_ref< android::content::Int
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(51),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::Context::unbindService(local_ref< android::content::ServiceConnection > const &a0)
@@ -849,8 +849,8 @@ void android::content::Context::unbindService(local_ref< android::content::Servi
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(52),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::Context::startInstrumentation(local_ref< android::content::ComponentName > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -859,8 +859,8 @@ jboolean android::content::Context::startInstrumentation(local_ref< android::con
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(53),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(53), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > android::content::Context::getSystemService(local_ref< java::lang::String > const &a0)
@@ -869,8 +869,8 @@ local_ref< java::lang::Object > android::content::Context::getSystemService(loca
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(54),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint android::content::Context::checkPermission(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -879,8 +879,8 @@ jint android::content::Context::checkPermission(local_ref< java::lang::String > 
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(55),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(55), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::Context::checkCallingPermission(local_ref< java::lang::String > const &a0)
@@ -889,8 +889,8 @@ jint android::content::Context::checkCallingPermission(local_ref< java::lang::St
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(56),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(56), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::content::Context::checkCallingOrSelfPermission(local_ref< java::lang::String > const &a0)
@@ -899,8 +899,8 @@ jint android::content::Context::checkCallingOrSelfPermission(local_ref< java::la
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(57),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(57), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::content::Context::enforcePermission(local_ref< java::lang::String > const &a0, jint a1, jint a2, local_ref< java::lang::String > const &a3)
@@ -909,8 +909,8 @@ void android::content::Context::enforcePermission(local_ref< java::lang::String 
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(58),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::content::Context::enforceCallingPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -919,8 +919,8 @@ void android::content::Context::enforceCallingPermission(local_ref< java::lang::
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(59),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::Context::enforceCallingOrSelfPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -929,8 +929,8 @@ void android::content::Context::enforceCallingOrSelfPermission(local_ref< java::
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(60),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::Context::grantUriPermission(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1, jint a2)
@@ -939,8 +939,8 @@ void android::content::Context::grantUriPermission(local_ref< java::lang::String
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(61),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::Context::revokeUriPermission(local_ref< android::net::Uri > const &a0, jint a1)
@@ -949,8 +949,8 @@ void android::content::Context::revokeUriPermission(local_ref< android::net::Uri
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(62),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::Context::checkUriPermission(local_ref< android::net::Uri > const &a0, jint a1, jint a2, jint a3)
@@ -959,8 +959,8 @@ jint android::content::Context::checkUriPermission(local_ref< android::net::Uri 
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(63),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(63), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::content::Context::checkCallingUriPermission(local_ref< android::net::Uri > const &a0, jint a1)
@@ -969,8 +969,8 @@ jint android::content::Context::checkCallingUriPermission(local_ref< android::ne
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(64),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(64), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::Context::checkCallingOrSelfUriPermission(local_ref< android::net::Uri > const &a0, jint a1)
@@ -979,8 +979,8 @@ jint android::content::Context::checkCallingOrSelfUriPermission(local_ref< andro
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(65),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(65), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::Context::checkUriPermission(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, jint a3, jint a4, jint a5)
@@ -989,8 +989,8 @@ jint android::content::Context::checkUriPermission(local_ref< android::net::Uri 
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(66),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(66), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::content::Context::enforceUriPermission(local_ref< android::net::Uri > const &a0, jint a1, jint a2, jint a3, local_ref< java::lang::String > const &a4)
@@ -999,8 +999,8 @@ void android::content::Context::enforceUriPermission(local_ref< android::net::Ur
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(67),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::content::Context::enforceCallingUriPermission(local_ref< android::net::Uri > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -1009,8 +1009,8 @@ void android::content::Context::enforceCallingUriPermission(local_ref< android::
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(68),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::Context::enforceCallingOrSelfUriPermission(local_ref< android::net::Uri > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -1019,8 +1019,8 @@ void android::content::Context::enforceCallingOrSelfUriPermission(local_ref< and
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(69),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::Context::enforceUriPermission(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, jint a3, jint a4, jint a5, local_ref< java::lang::String > const &a6)
@@ -1029,8 +1029,8 @@ void android::content::Context::enforceUriPermission(local_ref< android::net::Ur
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(70),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< android::content::Context > android::content::Context::createPackageContext(local_ref< java::lang::String > const &a0, jint a1)
@@ -1039,8 +1039,8 @@ local_ref< android::content::Context > android::content::Context::createPackageC
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(71),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(71), 
-		local_ref< android::content::Context > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::Context >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::Context::isRestricted()
@@ -1049,8 +1049,8 @@ jboolean android::content::Context::isRestricted()
 		android::content::Context::J2CPP_CLASS_NAME,
 		android::content::Context::J2CPP_METHOD_NAME(72),
 		android::content::Context::J2CPP_METHOD_SIGNATURE(72), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

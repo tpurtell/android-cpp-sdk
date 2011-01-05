@@ -11,16 +11,20 @@
 #define J2CPP_JAVAX_XML_DATATYPE_DATATYPECONFIGURATIONEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
-namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/PrintStream.hpp>
 #include <java/io/PrintWriter.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -51,6 +55,9 @@ namespace javax { namespace xml { namespace datatype {
 		}
 
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		DatatypeConfigurationException();
@@ -84,14 +91,29 @@ javax::xml::datatype::DatatypeConfigurationException::operator local_ref<java::l
 	return local_ref<java::lang::Exception>(get_jobject());
 }
 
+javax::xml::datatype::DatatypeConfigurationException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+javax::xml::datatype::DatatypeConfigurationException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+javax::xml::datatype::DatatypeConfigurationException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 javax::xml::datatype::DatatypeConfigurationException::DatatypeConfigurationException()
 : object<javax::xml::datatype::DatatypeConfigurationException>(
 	call_new_object<
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(0),
-		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -103,8 +125,8 @@ javax::xml::datatype::DatatypeConfigurationException::DatatypeConfigurationExcep
 	call_new_object<
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(1),
-		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -116,8 +138,8 @@ javax::xml::datatype::DatatypeConfigurationException::DatatypeConfigurationExcep
 	call_new_object<
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(2),
-		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -129,8 +151,8 @@ javax::xml::datatype::DatatypeConfigurationException::DatatypeConfigurationExcep
 	call_new_object<
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(3),
-		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -142,8 +164,8 @@ void javax::xml::datatype::DatatypeConfigurationException::printStackTrace()
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(4),
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::datatype::DatatypeConfigurationException::printStackTrace(local_ref< java::io::PrintStream > const &a0)
@@ -152,8 +174,8 @@ void javax::xml::datatype::DatatypeConfigurationException::printStackTrace(local
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(5),
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::DatatypeConfigurationException::printStackTrace(local_ref< java::io::PrintWriter > const &a0)
@@ -162,8 +184,8 @@ void javax::xml::datatype::DatatypeConfigurationException::printStackTrace(local
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_NAME(6),
 		javax::xml::datatype::DatatypeConfigurationException::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -88,8 +88,8 @@ local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::createUR
 		org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::URI > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< java::net::URI >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::rewriteURI(local_ref< java::net::URI > const &a0, local_ref< org::apache::http::HttpHost > const &a1, jboolean a2)
@@ -98,8 +98,8 @@ local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::rewriteU
 		org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::URI > >
-	(a0, a1, a2);
+		local_ref< java::net::URI >
+	>(a0, a1, a2);
 }
 
 local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::rewriteURI(local_ref< java::net::URI > const &a0, local_ref< org::apache::http::HttpHost > const &a1)
@@ -108,8 +108,8 @@ local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::rewriteU
 		org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::URI > >
-	(a0, a1);
+		local_ref< java::net::URI >
+	>(a0, a1);
 }
 
 local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::resolve(local_ref< java::net::URI > const &a0, local_ref< java::lang::String > const &a1)
@@ -118,8 +118,8 @@ local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::resolve(
 		org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::URI > >
-	(a0, a1);
+		local_ref< java::net::URI >
+	>(a0, a1);
 }
 
 local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::resolve(local_ref< java::net::URI > const &a0, local_ref< java::net::URI > const &a1)
@@ -128,8 +128,8 @@ local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::resolve(
 		org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::URI > >
-	(a0, a1);
+		local_ref< java::net::URI >
+	>(a0, a1);
 }
 
 

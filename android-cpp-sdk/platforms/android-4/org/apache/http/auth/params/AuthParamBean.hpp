@@ -11,11 +11,13 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_PARAMS_AUTHPARAMBEAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/params/HttpAbstractParamBean.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -41,6 +43,7 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
 
 
@@ -67,6 +70,11 @@ namespace j2cpp {
 
 
 
+org::apache::http::auth::params::AuthParamBean::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::auth::params::AuthParamBean::operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const
 {
 	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jobject());
@@ -78,8 +86,8 @@ org::apache::http::auth::params::AuthParamBean::AuthParamBean(local_ref< org::ap
 	call_new_object<
 		org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -91,8 +99,8 @@ void org::apache::http::auth::params::AuthParamBean::setCredentialCharset(local_
 		org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_NAME(1),
 		org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

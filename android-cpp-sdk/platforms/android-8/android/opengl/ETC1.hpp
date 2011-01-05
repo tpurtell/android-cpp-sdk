@@ -98,8 +98,8 @@ android::opengl::ETC1::ETC1()
 	call_new_object<
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(0),
-		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -111,8 +111,8 @@ void android::opengl::ETC1::encodeBlock(local_ref< java::nio::Buffer > const &a0
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(1),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::ETC1::decodeBlock(local_ref< java::nio::Buffer > const &a0, local_ref< java::nio::Buffer > const &a1)
@@ -121,8 +121,8 @@ void android::opengl::ETC1::decodeBlock(local_ref< java::nio::Buffer > const &a0
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(2),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint android::opengl::ETC1::getEncodedDataSize(jint a0, jint a1)
@@ -131,8 +131,8 @@ jint android::opengl::ETC1::getEncodedDataSize(jint a0, jint a1)
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(3),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::opengl::ETC1::encodeImage(local_ref< java::nio::Buffer > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< java::nio::Buffer > const &a5)
@@ -141,8 +141,8 @@ void android::opengl::ETC1::encodeImage(local_ref< java::nio::Buffer > const &a0
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(4),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::ETC1::decodeImage(local_ref< java::nio::Buffer > const &a0, local_ref< java::nio::Buffer > const &a1, jint a2, jint a3, jint a4, jint a5)
@@ -151,8 +151,8 @@ void android::opengl::ETC1::decodeImage(local_ref< java::nio::Buffer > const &a0
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(5),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::ETC1::formatHeader(local_ref< java::nio::Buffer > const &a0, jint a1, jint a2)
@@ -161,8 +161,8 @@ void android::opengl::ETC1::formatHeader(local_ref< java::nio::Buffer > const &a
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(6),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::opengl::ETC1::isValid(local_ref< java::nio::Buffer > const &a0)
@@ -171,8 +171,8 @@ jboolean android::opengl::ETC1::isValid(local_ref< java::nio::Buffer > const &a0
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(7),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::opengl::ETC1::getWidth(local_ref< java::nio::Buffer > const &a0)
@@ -181,8 +181,8 @@ jint android::opengl::ETC1::getWidth(local_ref< java::nio::Buffer > const &a0)
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(8),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::opengl::ETC1::getHeight(local_ref< java::nio::Buffer > const &a0)
@@ -191,8 +191,8 @@ jint android::opengl::ETC1::getHeight(local_ref< java::nio::Buffer > const &a0)
 		android::opengl::ETC1::J2CPP_CLASS_NAME,
 		android::opengl::ETC1::J2CPP_METHOD_NAME(9),
 		android::opengl::ETC1::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

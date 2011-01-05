@@ -162,8 +162,8 @@ local_ref< java::util::List > android::location::LocationManager::getAllProvider
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(1),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::location::LocationManager::getProviders(jboolean a0)
@@ -172,8 +172,8 @@ local_ref< java::util::List > android::location::LocationManager::getProviders(j
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(2),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::location::LocationProvider > android::location::LocationManager::getProvider(local_ref< java::lang::String > const &a0)
@@ -182,8 +182,8 @@ local_ref< android::location::LocationProvider > android::location::LocationMana
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(3),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::location::LocationProvider > >
-	(get_jobject(), a0);
+		local_ref< android::location::LocationProvider >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::location::LocationManager::getProviders(local_ref< android::location::Criteria > const &a0, jboolean a1)
@@ -192,8 +192,8 @@ local_ref< java::util::List > android::location::LocationManager::getProviders(l
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(4),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::location::LocationManager::getBestProvider(local_ref< android::location::Criteria > const &a0, jboolean a1)
@@ -202,8 +202,8 @@ local_ref< java::lang::String > android::location::LocationManager::getBestProvi
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(5),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 void android::location::LocationManager::requestLocationUpdates(local_ref< java::lang::String > const &a0, jlong a1, jfloat a2, local_ref< android::location::LocationListener > const &a3)
@@ -212,8 +212,8 @@ void android::location::LocationManager::requestLocationUpdates(local_ref< java:
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(6),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::location::LocationManager::requestLocationUpdates(local_ref< java::lang::String > const &a0, jlong a1, jfloat a2, local_ref< android::location::LocationListener > const &a3, local_ref< android::os::Looper > const &a4)
@@ -222,8 +222,8 @@ void android::location::LocationManager::requestLocationUpdates(local_ref< java:
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(7),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::location::LocationManager::requestLocationUpdates(local_ref< java::lang::String > const &a0, jlong a1, jfloat a2, local_ref< android::app::PendingIntent > const &a3)
@@ -232,8 +232,8 @@ void android::location::LocationManager::requestLocationUpdates(local_ref< java:
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(8),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::location::LocationManager::removeUpdates(local_ref< android::location::LocationListener > const &a0)
@@ -242,8 +242,8 @@ void android::location::LocationManager::removeUpdates(local_ref< android::locat
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(9),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::removeUpdates(local_ref< android::app::PendingIntent > const &a0)
@@ -252,8 +252,8 @@ void android::location::LocationManager::removeUpdates(local_ref< android::app::
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(10),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::addProximityAlert(jdouble a0, jdouble a1, jfloat a2, jlong a3, local_ref< android::app::PendingIntent > const &a4)
@@ -262,8 +262,8 @@ void android::location::LocationManager::addProximityAlert(jdouble a0, jdouble a
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(11),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::location::LocationManager::removeProximityAlert(local_ref< android::app::PendingIntent > const &a0)
@@ -272,8 +272,8 @@ void android::location::LocationManager::removeProximityAlert(local_ref< android
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(12),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::LocationManager::isProviderEnabled(local_ref< java::lang::String > const &a0)
@@ -282,8 +282,8 @@ jboolean android::location::LocationManager::isProviderEnabled(local_ref< java::
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(13),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::location::Location > android::location::LocationManager::getLastKnownLocation(local_ref< java::lang::String > const &a0)
@@ -292,8 +292,8 @@ local_ref< android::location::Location > android::location::LocationManager::get
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(14),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::location::Location > >
-	(get_jobject(), a0);
+		local_ref< android::location::Location >
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::addTestProvider(local_ref< java::lang::String > const &a0, jboolean a1, jboolean a2, jboolean a3, jboolean a4, jboolean a5, jboolean a6, jboolean a7, jint a8, jint a9)
@@ -302,8 +302,8 @@ void android::location::LocationManager::addTestProvider(local_ref< java::lang::
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(15),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 void android::location::LocationManager::removeTestProvider(local_ref< java::lang::String > const &a0)
@@ -312,8 +312,8 @@ void android::location::LocationManager::removeTestProvider(local_ref< java::lan
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(16),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::setTestProviderLocation(local_ref< java::lang::String > const &a0, local_ref< android::location::Location > const &a1)
@@ -322,8 +322,8 @@ void android::location::LocationManager::setTestProviderLocation(local_ref< java
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(17),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::location::LocationManager::clearTestProviderLocation(local_ref< java::lang::String > const &a0)
@@ -332,8 +332,8 @@ void android::location::LocationManager::clearTestProviderLocation(local_ref< ja
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(18),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::setTestProviderEnabled(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -342,8 +342,8 @@ void android::location::LocationManager::setTestProviderEnabled(local_ref< java:
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(19),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::location::LocationManager::clearTestProviderEnabled(local_ref< java::lang::String > const &a0)
@@ -352,8 +352,8 @@ void android::location::LocationManager::clearTestProviderEnabled(local_ref< jav
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(20),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::setTestProviderStatus(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::os::Bundle > const &a2, jlong a3)
@@ -362,8 +362,8 @@ void android::location::LocationManager::setTestProviderStatus(local_ref< java::
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(21),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::location::LocationManager::clearTestProviderStatus(local_ref< java::lang::String > const &a0)
@@ -372,8 +372,8 @@ void android::location::LocationManager::clearTestProviderStatus(local_ref< java
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(22),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::LocationManager::addGpsStatusListener(local_ref< android::location::GpsStatus_::Listener > const &a0)
@@ -382,8 +382,8 @@ jboolean android::location::LocationManager::addGpsStatusListener(local_ref< and
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(23),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::removeGpsStatusListener(local_ref< android::location::GpsStatus_::Listener > const &a0)
@@ -392,8 +392,8 @@ void android::location::LocationManager::removeGpsStatusListener(local_ref< andr
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(24),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::LocationManager::addNmeaListener(local_ref< android::location::GpsStatus_::NmeaListener > const &a0)
@@ -402,8 +402,8 @@ jboolean android::location::LocationManager::addNmeaListener(local_ref< android:
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(25),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::location::LocationManager::removeNmeaListener(local_ref< android::location::GpsStatus_::NmeaListener > const &a0)
@@ -412,8 +412,8 @@ void android::location::LocationManager::removeNmeaListener(local_ref< android::
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(26),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::location::GpsStatus > android::location::LocationManager::getGpsStatus(local_ref< android::location::GpsStatus > const &a0)
@@ -422,8 +422,8 @@ local_ref< android::location::GpsStatus > android::location::LocationManager::ge
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(27),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::location::GpsStatus > >
-	(get_jobject(), a0);
+		local_ref< android::location::GpsStatus >
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::LocationManager::sendExtraCommand(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -432,8 +432,8 @@ jboolean android::location::LocationManager::sendExtraCommand(local_ref< java::l
 		android::location::LocationManager::J2CPP_CLASS_NAME,
 		android::location::LocationManager::J2CPP_METHOD_NAME(28),
 		android::location::LocationManager::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

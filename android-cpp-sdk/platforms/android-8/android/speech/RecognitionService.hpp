@@ -14,12 +14,18 @@
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace app { class Service; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/Service.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
@@ -98,6 +104,10 @@ namespace android { namespace speech {
 		}
 
 		operator local_ref<android::app::Service>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RecognitionService();
@@ -137,8 +147,8 @@ void android::speech::RecognitionService_::Callback::beginningOfSpeech()
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(1),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::RecognitionService_::Callback::bufferReceived(local_ref< array<jbyte,1> > const &a0)
@@ -147,8 +157,8 @@ void android::speech::RecognitionService_::Callback::bufferReceived(local_ref< a
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(2),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService_::Callback::endOfSpeech()
@@ -157,8 +167,8 @@ void android::speech::RecognitionService_::Callback::endOfSpeech()
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(3),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::RecognitionService_::Callback::error(jint a0)
@@ -167,8 +177,8 @@ void android::speech::RecognitionService_::Callback::error(jint a0)
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(4),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService_::Callback::partialResults(local_ref< android::os::Bundle > const &a0)
@@ -177,8 +187,8 @@ void android::speech::RecognitionService_::Callback::partialResults(local_ref< a
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(5),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService_::Callback::readyForSpeech(local_ref< android::os::Bundle > const &a0)
@@ -187,8 +197,8 @@ void android::speech::RecognitionService_::Callback::readyForSpeech(local_ref< a
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(6),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService_::Callback::results(local_ref< android::os::Bundle > const &a0)
@@ -197,8 +207,8 @@ void android::speech::RecognitionService_::Callback::results(local_ref< android:
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(7),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService_::Callback::rmsChanged(jfloat a0)
@@ -207,8 +217,8 @@ void android::speech::RecognitionService_::Callback::rmsChanged(jfloat a0)
 		android::speech::RecognitionService_::Callback::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_NAME(8),
 		android::speech::RecognitionService_::Callback::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -232,14 +242,34 @@ android::speech::RecognitionService::operator local_ref<android::app::Service>()
 	return local_ref<android::app::Service>(get_jobject());
 }
 
+android::speech::RecognitionService::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::speech::RecognitionService::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::speech::RecognitionService::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::speech::RecognitionService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::speech::RecognitionService::RecognitionService()
 : object<android::speech::RecognitionService>(
 	call_new_object<
 		android::speech::RecognitionService::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService::J2CPP_METHOD_NAME(0),
-		android::speech::RecognitionService::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::speech::RecognitionService::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -254,8 +284,8 @@ local_ref< android::os::IBinder > android::speech::RecognitionService::onBind(lo
 		android::speech::RecognitionService::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService::J2CPP_METHOD_NAME(4),
 		android::speech::RecognitionService::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0);
 }
 
 void android::speech::RecognitionService::onDestroy()
@@ -264,8 +294,8 @@ void android::speech::RecognitionService::onDestroy()
 		android::speech::RecognitionService::J2CPP_CLASS_NAME,
 		android::speech::RecognitionService::J2CPP_METHOD_NAME(5),
 		android::speech::RecognitionService::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

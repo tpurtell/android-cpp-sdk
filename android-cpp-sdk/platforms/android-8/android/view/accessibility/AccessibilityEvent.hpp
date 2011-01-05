@@ -99,8 +99,8 @@ namespace android { namespace view { namespace accessibility {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean isChecked();
@@ -174,14 +174,14 @@ namespace j2cpp {
 
 
 
-android::view::accessibility::AccessibilityEvent::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::accessibility::AccessibilityEvent::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::view::accessibility::AccessibilityEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -191,8 +191,8 @@ jboolean android::view::accessibility::AccessibilityEvent::isChecked()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(1),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setChecked(jboolean a0)
@@ -201,8 +201,8 @@ void android::view::accessibility::AccessibilityEvent::setChecked(jboolean a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(2),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::accessibility::AccessibilityEvent::isEnabled()
@@ -211,8 +211,8 @@ jboolean android::view::accessibility::AccessibilityEvent::isEnabled()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(3),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setEnabled(jboolean a0)
@@ -221,8 +221,8 @@ void android::view::accessibility::AccessibilityEvent::setEnabled(jboolean a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(4),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::accessibility::AccessibilityEvent::isPassword()
@@ -231,8 +231,8 @@ jboolean android::view::accessibility::AccessibilityEvent::isPassword()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(5),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setPassword(jboolean a0)
@@ -241,8 +241,8 @@ void android::view::accessibility::AccessibilityEvent::setPassword(jboolean a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(6),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::accessibility::AccessibilityEvent::setFullScreen(jboolean a0)
@@ -251,8 +251,8 @@ void android::view::accessibility::AccessibilityEvent::setFullScreen(jboolean a0
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(7),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::accessibility::AccessibilityEvent::isFullScreen()
@@ -261,8 +261,8 @@ jboolean android::view::accessibility::AccessibilityEvent::isFullScreen()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(8),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::view::accessibility::AccessibilityEvent::getEventType()
@@ -271,8 +271,8 @@ jint android::view::accessibility::AccessibilityEvent::getEventType()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(9),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setEventType(jint a0)
@@ -281,8 +281,8 @@ void android::view::accessibility::AccessibilityEvent::setEventType(jint a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(10),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::accessibility::AccessibilityEvent::getItemCount()
@@ -291,8 +291,8 @@ jint android::view::accessibility::AccessibilityEvent::getItemCount()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(11),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setItemCount(jint a0)
@@ -301,8 +301,8 @@ void android::view::accessibility::AccessibilityEvent::setItemCount(jint a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(12),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::accessibility::AccessibilityEvent::getCurrentItemIndex()
@@ -311,8 +311,8 @@ jint android::view::accessibility::AccessibilityEvent::getCurrentItemIndex()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(13),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setCurrentItemIndex(jint a0)
@@ -321,8 +321,8 @@ void android::view::accessibility::AccessibilityEvent::setCurrentItemIndex(jint 
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(14),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::accessibility::AccessibilityEvent::getFromIndex()
@@ -331,8 +331,8 @@ jint android::view::accessibility::AccessibilityEvent::getFromIndex()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(15),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setFromIndex(jint a0)
@@ -341,8 +341,8 @@ void android::view::accessibility::AccessibilityEvent::setFromIndex(jint a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(16),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::accessibility::AccessibilityEvent::getAddedCount()
@@ -351,8 +351,8 @@ jint android::view::accessibility::AccessibilityEvent::getAddedCount()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(17),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setAddedCount(jint a0)
@@ -361,8 +361,8 @@ void android::view::accessibility::AccessibilityEvent::setAddedCount(jint a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(18),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::accessibility::AccessibilityEvent::getRemovedCount()
@@ -371,8 +371,8 @@ jint android::view::accessibility::AccessibilityEvent::getRemovedCount()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(19),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setRemovedCount(jint a0)
@@ -381,8 +381,8 @@ void android::view::accessibility::AccessibilityEvent::setRemovedCount(jint a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(20),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::view::accessibility::AccessibilityEvent::getEventTime()
@@ -391,8 +391,8 @@ jlong android::view::accessibility::AccessibilityEvent::getEventTime()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(21),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setEventTime(jlong a0)
@@ -401,8 +401,8 @@ void android::view::accessibility::AccessibilityEvent::setEventTime(jlong a0)
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(22),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::view::accessibility::AccessibilityEvent::getClassName()
@@ -411,8 +411,8 @@ local_ref< java::lang::CharSequence > android::view::accessibility::Accessibilit
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(23),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setClassName(local_ref< java::lang::CharSequence > const &a0)
@@ -421,8 +421,8 @@ void android::view::accessibility::AccessibilityEvent::setClassName(local_ref< j
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(24),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::view::accessibility::AccessibilityEvent::getPackageName()
@@ -431,8 +431,8 @@ local_ref< java::lang::CharSequence > android::view::accessibility::Accessibilit
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(25),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setPackageName(local_ref< java::lang::CharSequence > const &a0)
@@ -441,8 +441,8 @@ void android::view::accessibility::AccessibilityEvent::setPackageName(local_ref<
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(26),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::view::accessibility::AccessibilityEvent::getText()
@@ -451,8 +451,8 @@ local_ref< java::util::List > android::view::accessibility::AccessibilityEvent::
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(27),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::view::accessibility::AccessibilityEvent::getBeforeText()
@@ -461,8 +461,8 @@ local_ref< java::lang::CharSequence > android::view::accessibility::Accessibilit
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(28),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setBeforeText(local_ref< java::lang::CharSequence > const &a0)
@@ -471,8 +471,8 @@ void android::view::accessibility::AccessibilityEvent::setBeforeText(local_ref< 
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(29),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::view::accessibility::AccessibilityEvent::getContentDescription()
@@ -481,8 +481,8 @@ local_ref< java::lang::CharSequence > android::view::accessibility::Accessibilit
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(30),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setContentDescription(local_ref< java::lang::CharSequence > const &a0)
@@ -491,8 +491,8 @@ void android::view::accessibility::AccessibilityEvent::setContentDescription(loc
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(31),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Parcelable > android::view::accessibility::AccessibilityEvent::getParcelableData()
@@ -501,8 +501,8 @@ local_ref< android::os::Parcelable > android::view::accessibility::Accessibility
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(32),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::setParcelableData(local_ref< android::os::Parcelable > const &a0)
@@ -511,8 +511,8 @@ void android::view::accessibility::AccessibilityEvent::setParcelableData(local_r
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(33),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::accessibility::AccessibilityEvent > android::view::accessibility::AccessibilityEvent::obtain(jint a0)
@@ -521,8 +521,8 @@ local_ref< android::view::accessibility::AccessibilityEvent > android::view::acc
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(34),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::view::accessibility::AccessibilityEvent > >
-	(a0);
+		local_ref< android::view::accessibility::AccessibilityEvent >
+	>(a0);
 }
 
 local_ref< android::view::accessibility::AccessibilityEvent > android::view::accessibility::AccessibilityEvent::obtain()
@@ -531,8 +531,8 @@ local_ref< android::view::accessibility::AccessibilityEvent > android::view::acc
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(35),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< android::view::accessibility::AccessibilityEvent > >
-	();
+		local_ref< android::view::accessibility::AccessibilityEvent >
+	>();
 }
 
 void android::view::accessibility::AccessibilityEvent::recycle()
@@ -541,8 +541,8 @@ void android::view::accessibility::AccessibilityEvent::recycle()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(36),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::accessibility::AccessibilityEvent::initFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -551,8 +551,8 @@ void android::view::accessibility::AccessibilityEvent::initFromParcel(local_ref<
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(37),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::accessibility::AccessibilityEvent::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -561,8 +561,8 @@ void android::view::accessibility::AccessibilityEvent::writeToParcel(local_ref< 
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(38),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::accessibility::AccessibilityEvent::describeContents()
@@ -571,8 +571,8 @@ jint android::view::accessibility::AccessibilityEvent::describeContents()
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(39),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::accessibility::AccessibilityEvent::toString()
@@ -581,8 +581,8 @@ local_ref< java::lang::String > android::view::accessibility::AccessibilityEvent
 		android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(40),
 		android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

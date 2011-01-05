@@ -11,21 +11,35 @@
 #define J2CPP_ANDROID_WIDGET_DIALERFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
 namespace j2cpp { namespace android { namespace widget { class RelativeLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/RelativeLayout.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -71,6 +85,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::RelativeLayout>() const;
 
 
@@ -114,6 +135,41 @@ namespace j2cpp {
 
 
 
+android::widget::DialerFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::DialerFilter::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::DialerFilter::operator local_ref<android::widget::RelativeLayout>() const
 {
 	return local_ref<android::widget::RelativeLayout>(get_jobject());
@@ -125,8 +181,8 @@ android::widget::DialerFilter::DialerFilter(local_ref< android::content::Context
 	call_new_object<
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(0),
-		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -138,8 +194,8 @@ android::widget::DialerFilter::DialerFilter(local_ref< android::content::Context
 	call_new_object<
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(1),
-		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -153,8 +209,8 @@ jboolean android::widget::DialerFilter::isQwertyKeyboard()
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(4),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::DialerFilter::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -163,8 +219,8 @@ jboolean android::widget::DialerFilter::onKeyDown(jint a0, local_ref< android::v
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(5),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::DialerFilter::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -173,8 +229,8 @@ jboolean android::widget::DialerFilter::onKeyUp(jint a0, local_ref< android::vie
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(6),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::DialerFilter::getMode()
@@ -183,8 +239,8 @@ jint android::widget::DialerFilter::getMode()
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(7),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::DialerFilter::setMode(jint a0)
@@ -193,8 +249,8 @@ void android::widget::DialerFilter::setMode(jint a0)
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(8),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::DialerFilter::getLetters()
@@ -203,8 +259,8 @@ local_ref< java::lang::CharSequence > android::widget::DialerFilter::getLetters(
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(9),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::widget::DialerFilter::getDigits()
@@ -213,8 +269,8 @@ local_ref< java::lang::CharSequence > android::widget::DialerFilter::getDigits()
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(10),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::widget::DialerFilter::getFilterText()
@@ -223,8 +279,8 @@ local_ref< java::lang::CharSequence > android::widget::DialerFilter::getFilterTe
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(11),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::widget::DialerFilter::append(local_ref< java::lang::String > const &a0)
@@ -233,8 +289,8 @@ void android::widget::DialerFilter::append(local_ref< java::lang::String > const
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(12),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::DialerFilter::clearText()
@@ -243,8 +299,8 @@ void android::widget::DialerFilter::clearText()
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(13),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::DialerFilter::setLettersWatcher(local_ref< android::text::TextWatcher > const &a0)
@@ -253,8 +309,8 @@ void android::widget::DialerFilter::setLettersWatcher(local_ref< android::text::
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(14),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::DialerFilter::setDigitsWatcher(local_ref< android::text::TextWatcher > const &a0)
@@ -263,8 +319,8 @@ void android::widget::DialerFilter::setDigitsWatcher(local_ref< android::text::T
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(15),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::DialerFilter::setFilterWatcher(local_ref< android::text::TextWatcher > const &a0)
@@ -273,8 +329,8 @@ void android::widget::DialerFilter::setFilterWatcher(local_ref< android::text::T
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(16),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::DialerFilter::removeFilterWatcher(local_ref< android::text::TextWatcher > const &a0)
@@ -283,8 +339,8 @@ void android::widget::DialerFilter::removeFilterWatcher(local_ref< android::text
 		android::widget::DialerFilter::J2CPP_CLASS_NAME,
 		android::widget::DialerFilter::J2CPP_METHOD_NAME(17),
 		android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

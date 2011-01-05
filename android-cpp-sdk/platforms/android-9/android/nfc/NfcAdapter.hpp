@@ -82,8 +82,8 @@ local_ref< android::nfc::NfcAdapter > android::nfc::NfcAdapter::getDefaultAdapte
 		android::nfc::NfcAdapter::J2CPP_CLASS_NAME,
 		android::nfc::NfcAdapter::J2CPP_METHOD_NAME(1),
 		android::nfc::NfcAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::nfc::NfcAdapter > >
-	();
+		local_ref< android::nfc::NfcAdapter >
+	>();
 }
 
 jboolean android::nfc::NfcAdapter::isEnabled()
@@ -92,8 +92,8 @@ jboolean android::nfc::NfcAdapter::isEnabled()
 		android::nfc::NfcAdapter::J2CPP_CLASS_NAME,
 		android::nfc::NfcAdapter::J2CPP_METHOD_NAME(2),
 		android::nfc::NfcAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

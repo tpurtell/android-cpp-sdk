@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_GRAPHICS_PICTURE_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/graphics/Canvas.hpp>
@@ -92,8 +92,8 @@ android::graphics::Picture::Picture()
 	call_new_object<
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(0),
-		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +105,8 @@ android::graphics::Picture::Picture(local_ref< android::graphics::Picture > cons
 	call_new_object<
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(1),
-		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -118,8 +118,8 @@ local_ref< android::graphics::Canvas > android::graphics::Picture::beginRecordin
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(2),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Canvas > >
-	(get_jobject(), a0, a1);
+		local_ref< android::graphics::Canvas >
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Picture::endRecording()
@@ -128,8 +128,8 @@ void android::graphics::Picture::endRecording()
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(3),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::graphics::Picture::getWidth()
@@ -138,8 +138,8 @@ jint android::graphics::Picture::getWidth()
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(4),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Picture::getHeight()
@@ -148,8 +148,8 @@ jint android::graphics::Picture::getHeight()
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(5),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Picture::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -158,8 +158,8 @@ void android::graphics::Picture::draw(local_ref< android::graphics::Canvas > con
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(6),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Picture > android::graphics::Picture::createFromStream(local_ref< java::io::InputStream > const &a0)
@@ -168,8 +168,8 @@ local_ref< android::graphics::Picture > android::graphics::Picture::createFromSt
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(7),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Picture > >
-	(a0);
+		local_ref< android::graphics::Picture >
+	>(a0);
 }
 
 void android::graphics::Picture::writeToStream(local_ref< java::io::OutputStream > const &a0)
@@ -178,8 +178,8 @@ void android::graphics::Picture::writeToStream(local_ref< java::io::OutputStream
 		android::graphics::Picture::J2CPP_CLASS_NAME,
 		android::graphics::Picture::J2CPP_METHOD_NAME(8),
 		android::graphics::Picture::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

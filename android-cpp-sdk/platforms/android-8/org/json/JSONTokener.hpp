@@ -103,8 +103,8 @@ org::json::JSONTokener::JSONTokener(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(0),
-		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -116,8 +116,8 @@ local_ref< java::lang::Object > org::json::JSONTokener::nextValue()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(1),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::json::JSONTokener::nextString(jchar a0)
@@ -126,8 +126,8 @@ local_ref< java::lang::String > org::json::JSONTokener::nextString(jchar a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(2),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONException > org::json::JSONTokener::syntaxError(local_ref< java::lang::String > const &a0)
@@ -136,8 +136,8 @@ local_ref< org::json::JSONException > org::json::JSONTokener::syntaxError(local_
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(3),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::json::JSONException > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONException >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONTokener::toString()
@@ -146,8 +146,8 @@ local_ref< java::lang::String > org::json::JSONTokener::toString()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(4),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::json::JSONTokener::more()
@@ -156,8 +156,8 @@ jboolean org::json::JSONTokener::more()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(5),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jchar org::json::JSONTokener::next()
@@ -166,8 +166,8 @@ jchar org::json::JSONTokener::next()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(6),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(6), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar org::json::JSONTokener::next(jchar a0)
@@ -176,8 +176,8 @@ jchar org::json::JSONTokener::next(jchar a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(7),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(7), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jchar org::json::JSONTokener::nextClean()
@@ -186,8 +186,8 @@ jchar org::json::JSONTokener::nextClean()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(8),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(8), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::json::JSONTokener::next(jint a0)
@@ -196,8 +196,8 @@ local_ref< java::lang::String > org::json::JSONTokener::next(jint a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(9),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONTokener::nextTo(local_ref< java::lang::String > const &a0)
@@ -206,8 +206,8 @@ local_ref< java::lang::String > org::json::JSONTokener::nextTo(local_ref< java::
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(10),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONTokener::nextTo(jchar a0)
@@ -216,8 +216,8 @@ local_ref< java::lang::String > org::json::JSONTokener::nextTo(jchar a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(11),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void org::json::JSONTokener::skipPast(local_ref< java::lang::String > const &a0)
@@ -226,8 +226,8 @@ void org::json::JSONTokener::skipPast(local_ref< java::lang::String > const &a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(12),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jchar org::json::JSONTokener::skipTo(jchar a0)
@@ -236,8 +236,8 @@ jchar org::json::JSONTokener::skipTo(jchar a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(13),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(13), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 void org::json::JSONTokener::back()
@@ -246,8 +246,8 @@ void org::json::JSONTokener::back()
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(14),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint org::json::JSONTokener::dehexchar(jchar a0)
@@ -256,8 +256,8 @@ jint org::json::JSONTokener::dehexchar(jchar a0)
 		org::json::JSONTokener::J2CPP_CLASS_NAME,
 		org::json::JSONTokener::J2CPP_METHOD_NAME(15),
 		org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

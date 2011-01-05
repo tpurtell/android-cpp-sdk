@@ -96,8 +96,8 @@ void org::xml::sax::Parser::setLocale(local_ref< java::util::Locale > const &a0)
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(0),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -106,8 +106,8 @@ void org::xml::sax::Parser::setEntityResolver(local_ref< org::xml::sax::EntityRe
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(1),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -116,8 +116,8 @@ void org::xml::sax::Parser::setDTDHandler(local_ref< org::xml::sax::DTDHandler >
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(2),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::setDocumentHandler(local_ref< org::xml::sax::DocumentHandler > const &a0)
@@ -126,8 +126,8 @@ void org::xml::sax::Parser::setDocumentHandler(local_ref< org::xml::sax::Documen
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(3),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -136,8 +136,8 @@ void org::xml::sax::Parser::setErrorHandler(local_ref< org::xml::sax::ErrorHandl
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(4),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -146,8 +146,8 @@ void org::xml::sax::Parser::parse(local_ref< org::xml::sax::InputSource > const 
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(5),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::Parser::parse(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ void org::xml::sax::Parser::parse(local_ref< java::lang::String > const &a0)
 		org::xml::sax::Parser::J2CPP_CLASS_NAME,
 		org::xml::sax::Parser::J2CPP_METHOD_NAME(6),
 		org::xml::sax::Parser::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

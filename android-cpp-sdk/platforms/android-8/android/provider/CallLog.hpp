@@ -65,8 +65,8 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			Calls();
@@ -137,14 +137,14 @@ namespace j2cpp {
 
 
 
-android::provider::CallLog_::Calls::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::CallLog_::Calls::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::CallLog_::Calls::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -153,8 +153,8 @@ android::provider::CallLog_::Calls::Calls()
 	call_new_object<
 		android::provider::CallLog_::Calls::J2CPP_CLASS_NAME,
 		android::provider::CallLog_::Calls::J2CPP_METHOD_NAME(0),
-		android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -166,8 +166,8 @@ local_ref< java::lang::String > android::provider::CallLog_::Calls::getLastOutgo
 		android::provider::CallLog_::Calls::J2CPP_CLASS_NAME,
 		android::provider::CallLog_::Calls::J2CPP_METHOD_NAME(1),
 		android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 
@@ -319,8 +319,8 @@ android::provider::CallLog::CallLog()
 	call_new_object<
 		android::provider::CallLog::J2CPP_CLASS_NAME,
 		android::provider::CallLog::J2CPP_METHOD_NAME(0),
-		android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -73,8 +73,8 @@ local_ref< java::lang::String > junit::runner::Version::id()
 		junit::runner::Version::J2CPP_CLASS_NAME,
 		junit::runner::Version::J2CPP_METHOD_NAME(1),
 		junit::runner::Version::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 

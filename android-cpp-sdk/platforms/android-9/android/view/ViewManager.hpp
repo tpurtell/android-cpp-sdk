@@ -77,8 +77,8 @@ void android::view::ViewManager::addView(local_ref< android::view::View > const 
 		android::view::ViewManager::J2CPP_CLASS_NAME,
 		android::view::ViewManager::J2CPP_METHOD_NAME(0),
 		android::view::ViewManager::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::ViewManager::updateViewLayout(local_ref< android::view::View > const &a0, local_ref< android::view::ViewGroup_::LayoutParams > const &a1)
@@ -87,8 +87,8 @@ void android::view::ViewManager::updateViewLayout(local_ref< android::view::View
 		android::view::ViewManager::J2CPP_CLASS_NAME,
 		android::view::ViewManager::J2CPP_METHOD_NAME(1),
 		android::view::ViewManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::ViewManager::removeView(local_ref< android::view::View > const &a0)
@@ -97,8 +97,8 @@ void android::view::ViewManager::removeView(local_ref< android::view::View > con
 		android::view::ViewManager::J2CPP_CLASS_NAME,
 		android::view::ViewManager::J2CPP_METHOD_NAME(2),
 		android::view::ViewManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

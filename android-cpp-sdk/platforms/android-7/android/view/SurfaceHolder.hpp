@@ -11,9 +11,12 @@
 #define J2CPP_ANDROID_VIEW_SURFACEHOLDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { namespace SurfaceHolder_ { class Callback; } } } }
@@ -24,9 +27,12 @@ namespace j2cpp { namespace android { namespace view { class Surface; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/Surface.hpp>
 #include <android/view/SurfaceHolder.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -77,7 +83,11 @@ namespace android { namespace view {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::RuntimeException>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::lang::Exception>() const;
 
 
 			BadSurfaceTypeException();
@@ -170,8 +180,8 @@ void android::view::SurfaceHolder_::Callback::surfaceCreated(local_ref< android:
 		android::view::SurfaceHolder_::Callback::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_NAME(0),
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceHolder_::Callback::surfaceChanged(local_ref< android::view::SurfaceHolder > const &a0, jint a1, jint a2, jint a3)
@@ -180,8 +190,8 @@ void android::view::SurfaceHolder_::Callback::surfaceChanged(local_ref< android:
 		android::view::SurfaceHolder_::Callback::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_NAME(1),
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::view::SurfaceHolder_::Callback::surfaceDestroyed(local_ref< android::view::SurfaceHolder > const &a0)
@@ -190,8 +200,8 @@ void android::view::SurfaceHolder_::Callback::surfaceDestroyed(local_ref< androi
 		android::view::SurfaceHolder_::Callback::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_NAME(2),
 		android::view::SurfaceHolder_::Callback::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -201,9 +211,29 @@ J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::Callback,1,"surfaceChanged","
 J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::Callback,2,"surfaceDestroyed","(Landroid/view/SurfaceHolder;)V")
 
 
+android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::lang::RuntimeException>() const
 {
 	return local_ref<java::lang::RuntimeException>(get_jobject());
+}
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
 }
 
 
@@ -212,8 +242,8 @@ android::view::SurfaceHolder_::BadSurfaceTypeException::BadSurfaceTypeException(
 	call_new_object<
 		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(0),
-		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -225,8 +255,8 @@ android::view::SurfaceHolder_::BadSurfaceTypeException::BadSurfaceTypeException(
 	call_new_object<
 		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(1),
-		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -250,8 +280,8 @@ void android::view::SurfaceHolder::addCallback(local_ref< android::view::Surface
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(0),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceHolder::removeCallback(local_ref< android::view::SurfaceHolder_::Callback > const &a0)
@@ -260,8 +290,8 @@ void android::view::SurfaceHolder::removeCallback(local_ref< android::view::Surf
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(1),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::SurfaceHolder::isCreating()
@@ -270,8 +300,8 @@ jboolean android::view::SurfaceHolder::isCreating()
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(2),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::SurfaceHolder::setType(jint a0)
@@ -280,8 +310,8 @@ void android::view::SurfaceHolder::setType(jint a0)
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(3),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceHolder::setFixedSize(jint a0, jint a1)
@@ -290,8 +320,8 @@ void android::view::SurfaceHolder::setFixedSize(jint a0, jint a1)
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(4),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::SurfaceHolder::setSizeFromLayout()
@@ -300,8 +330,8 @@ void android::view::SurfaceHolder::setSizeFromLayout()
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(5),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::SurfaceHolder::setFormat(jint a0)
@@ -310,8 +340,8 @@ void android::view::SurfaceHolder::setFormat(jint a0)
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(6),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceHolder::setKeepScreenOn(jboolean a0)
@@ -320,8 +350,8 @@ void android::view::SurfaceHolder::setKeepScreenOn(jboolean a0)
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(7),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Canvas > android::view::SurfaceHolder::lockCanvas()
@@ -330,8 +360,8 @@ local_ref< android::graphics::Canvas > android::view::SurfaceHolder::lockCanvas(
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(8),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Canvas > >
-	(get_jobject());
+		local_ref< android::graphics::Canvas >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Canvas > android::view::SurfaceHolder::lockCanvas(local_ref< android::graphics::Rect > const &a0)
@@ -340,8 +370,8 @@ local_ref< android::graphics::Canvas > android::view::SurfaceHolder::lockCanvas(
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(9),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Canvas > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Canvas >
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceHolder::unlockCanvasAndPost(local_ref< android::graphics::Canvas > const &a0)
@@ -350,8 +380,8 @@ void android::view::SurfaceHolder::unlockCanvasAndPost(local_ref< android::graph
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(10),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Rect > android::view::SurfaceHolder::getSurfaceFrame()
@@ -360,8 +390,8 @@ local_ref< android::graphics::Rect > android::view::SurfaceHolder::getSurfaceFra
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(11),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::graphics::Rect > >
-	(get_jobject());
+		local_ref< android::graphics::Rect >
+	>(get_jobject());
 }
 
 local_ref< android::view::Surface > android::view::SurfaceHolder::getSurface()
@@ -370,8 +400,8 @@ local_ref< android::view::Surface > android::view::SurfaceHolder::getSurface()
 		android::view::SurfaceHolder::J2CPP_CLASS_NAME,
 		android::view::SurfaceHolder::J2CPP_METHOD_NAME(12),
 		android::view::SurfaceHolder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::view::Surface > >
-	(get_jobject());
+		local_ref< android::view::Surface >
+	>(get_jobject());
 }
 
 

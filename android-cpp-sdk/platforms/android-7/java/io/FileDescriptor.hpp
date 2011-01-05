@@ -81,8 +81,8 @@ java::io::FileDescriptor::FileDescriptor()
 	call_new_object<
 		java::io::FileDescriptor::J2CPP_CLASS_NAME,
 		java::io::FileDescriptor::J2CPP_METHOD_NAME(0),
-		java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +94,8 @@ void java::io::FileDescriptor::sync()
 		java::io::FileDescriptor::J2CPP_CLASS_NAME,
 		java::io::FileDescriptor::J2CPP_METHOD_NAME(1),
 		java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::io::FileDescriptor::valid()
@@ -104,8 +104,8 @@ jboolean java::io::FileDescriptor::valid()
 		java::io::FileDescriptor::J2CPP_CLASS_NAME,
 		java::io::FileDescriptor::J2CPP_METHOD_NAME(2),
 		java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

@@ -82,8 +82,8 @@ jboolean android::app::backup::BackupDataInput::readNextHeader()
 		android::app::backup::BackupDataInput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInput::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupDataInput::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::backup::BackupDataInput::getKey()
@@ -92,8 +92,8 @@ local_ref< java::lang::String > android::app::backup::BackupDataInput::getKey()
 		android::app::backup::BackupDataInput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInput::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupDataInput::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::app::backup::BackupDataInput::getDataSize()
@@ -102,8 +102,8 @@ jint android::app::backup::BackupDataInput::getDataSize()
 		android::app::backup::BackupDataInput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInput::J2CPP_METHOD_NAME(3),
 		android::app::backup::BackupDataInput::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::backup::BackupDataInput::readEntityData(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -112,8 +112,8 @@ jint android::app::backup::BackupDataInput::readEntityData(local_ref< array<jbyt
 		android::app::backup::BackupDataInput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInput::J2CPP_METHOD_NAME(4),
 		android::app::backup::BackupDataInput::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::backup::BackupDataInput::skipEntityData()
@@ -122,8 +122,8 @@ void android::app::backup::BackupDataInput::skipEntityData()
 		android::app::backup::BackupDataInput::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInput::J2CPP_METHOD_NAME(5),
 		android::app::backup::BackupDataInput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

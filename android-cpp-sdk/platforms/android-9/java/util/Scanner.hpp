@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_SCANNER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Readable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Readable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
@@ -225,8 +225,8 @@ java::util::Scanner::Scanner(local_ref< java::io::File > const &a0)
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(0),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -238,8 +238,8 @@ java::util::Scanner::Scanner(local_ref< java::io::File > const &a0, local_ref< j
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(1),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -251,8 +251,8 @@ java::util::Scanner::Scanner(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(2),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -264,8 +264,8 @@ java::util::Scanner::Scanner(local_ref< java::io::InputStream > const &a0)
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(3),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -277,8 +277,8 @@ java::util::Scanner::Scanner(local_ref< java::io::InputStream > const &a0, local
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(4),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1)
 )
 {
 }
@@ -290,8 +290,8 @@ java::util::Scanner::Scanner(local_ref< java::lang::Readable > const &a0)
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(5),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -303,8 +303,8 @@ java::util::Scanner::Scanner(local_ref< java::nio::channels::ReadableByteChannel
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(6),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(6)>
-	(a0)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(6)
+	>(a0)
 )
 {
 }
@@ -316,8 +316,8 @@ java::util::Scanner::Scanner(local_ref< java::nio::channels::ReadableByteChannel
 	call_new_object<
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(7),
-		java::util::Scanner::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1)
+		java::util::Scanner::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1)
 )
 {
 }
@@ -329,8 +329,8 @@ void java::util::Scanner::close()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(8),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Pattern > java::util::Scanner::delimiter()
@@ -339,8 +339,8 @@ local_ref< java::util::regex::Pattern > java::util::Scanner::delimiter()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(9),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::regex::Pattern > >
-	(get_jobject());
+		local_ref< java::util::regex::Pattern >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Scanner::findInLine(local_ref< java::util::regex::Pattern > const &a0)
@@ -349,8 +349,8 @@ local_ref< java::lang::String > java::util::Scanner::findInLine(local_ref< java:
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(10),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Scanner::findInLine(local_ref< java::lang::String > const &a0)
@@ -359,8 +359,8 @@ local_ref< java::lang::String > java::util::Scanner::findInLine(local_ref< java:
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(11),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Scanner::findWithinHorizon(local_ref< java::util::regex::Pattern > const &a0, jint a1)
@@ -369,8 +369,8 @@ local_ref< java::lang::String > java::util::Scanner::findWithinHorizon(local_ref
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(12),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::util::Scanner::findWithinHorizon(local_ref< java::lang::String > const &a0, jint a1)
@@ -379,8 +379,8 @@ local_ref< java::lang::String > java::util::Scanner::findWithinHorizon(local_ref
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(13),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Scanner::hasNext()
@@ -389,8 +389,8 @@ jboolean java::util::Scanner::hasNext()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(14),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNext(local_ref< java::util::regex::Pattern > const &a0)
@@ -399,8 +399,8 @@ jboolean java::util::Scanner::hasNext(local_ref< java::util::regex::Pattern > co
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(15),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNext(local_ref< java::lang::String > const &a0)
@@ -409,8 +409,8 @@ jboolean java::util::Scanner::hasNext(local_ref< java::lang::String > const &a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(16),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNextBigDecimal()
@@ -419,8 +419,8 @@ jboolean java::util::Scanner::hasNextBigDecimal()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(17),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextBigInteger()
@@ -429,8 +429,8 @@ jboolean java::util::Scanner::hasNextBigInteger()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(18),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextBigInteger(jint a0)
@@ -439,8 +439,8 @@ jboolean java::util::Scanner::hasNextBigInteger(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(19),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNextBoolean()
@@ -449,8 +449,8 @@ jboolean java::util::Scanner::hasNextBoolean()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(20),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextByte()
@@ -459,8 +459,8 @@ jboolean java::util::Scanner::hasNextByte()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(21),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextByte(jint a0)
@@ -469,8 +469,8 @@ jboolean java::util::Scanner::hasNextByte(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(22),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNextDouble()
@@ -479,8 +479,8 @@ jboolean java::util::Scanner::hasNextDouble()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(23),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextFloat()
@@ -489,8 +489,8 @@ jboolean java::util::Scanner::hasNextFloat()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(24),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextInt()
@@ -499,8 +499,8 @@ jboolean java::util::Scanner::hasNextInt()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(25),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextInt(jint a0)
@@ -509,8 +509,8 @@ jboolean java::util::Scanner::hasNextInt(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(26),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNextLine()
@@ -519,8 +519,8 @@ jboolean java::util::Scanner::hasNextLine()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(27),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextLong()
@@ -529,8 +529,8 @@ jboolean java::util::Scanner::hasNextLong()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(28),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextLong(jint a0)
@@ -539,8 +539,8 @@ jboolean java::util::Scanner::hasNextLong(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(29),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::hasNextShort()
@@ -549,8 +549,8 @@ jboolean java::util::Scanner::hasNextShort()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(30),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::Scanner::hasNextShort(jint a0)
@@ -559,8 +559,8 @@ jboolean java::util::Scanner::hasNextShort(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(31),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::IOException > java::util::Scanner::ioException()
@@ -569,8 +569,8 @@ local_ref< java::io::IOException > java::util::Scanner::ioException()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(32),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::io::IOException > >
-	(get_jobject());
+		local_ref< java::io::IOException >
+	>(get_jobject());
 }
 
 local_ref< java::util::Locale > java::util::Scanner::locale()
@@ -579,8 +579,8 @@ local_ref< java::util::Locale > java::util::Scanner::locale()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(33),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::MatchResult > java::util::Scanner::match()
@@ -589,8 +589,8 @@ local_ref< java::util::regex::MatchResult > java::util::Scanner::match()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(34),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::util::regex::MatchResult > >
-	(get_jobject());
+		local_ref< java::util::regex::MatchResult >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Scanner::next()
@@ -599,8 +599,8 @@ local_ref< java::lang::String > java::util::Scanner::next()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(35),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Scanner::next(local_ref< java::util::regex::Pattern > const &a0)
@@ -609,8 +609,8 @@ local_ref< java::lang::String > java::util::Scanner::next(local_ref< java::util:
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(36),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Scanner::next(local_ref< java::lang::String > const &a0)
@@ -619,8 +619,8 @@ local_ref< java::lang::String > java::util::Scanner::next(local_ref< java::lang:
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(37),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::util::Scanner::nextBigDecimal()
@@ -629,8 +629,8 @@ local_ref< java::math::BigDecimal > java::util::Scanner::nextBigDecimal()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(38),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::util::Scanner::nextBigInteger()
@@ -639,8 +639,8 @@ local_ref< java::math::BigInteger > java::util::Scanner::nextBigInteger()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(39),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::util::Scanner::nextBigInteger(jint a0)
@@ -649,8 +649,8 @@ local_ref< java::math::BigInteger > java::util::Scanner::nextBigInteger(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(40),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigInteger >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Scanner::nextBoolean()
@@ -659,8 +659,8 @@ jboolean java::util::Scanner::nextBoolean()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(41),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jbyte java::util::Scanner::nextByte()
@@ -669,8 +669,8 @@ jbyte java::util::Scanner::nextByte()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(42),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(42), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jbyte java::util::Scanner::nextByte(jint a0)
@@ -679,8 +679,8 @@ jbyte java::util::Scanner::nextByte(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(43),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(43), 
-		jbyte >
-	(get_jobject(), a0);
+		jbyte
+	>(get_jobject(), a0);
 }
 
 jdouble java::util::Scanner::nextDouble()
@@ -689,8 +689,8 @@ jdouble java::util::Scanner::nextDouble()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(44),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(44), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jfloat java::util::Scanner::nextFloat()
@@ -699,8 +699,8 @@ jfloat java::util::Scanner::nextFloat()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(45),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(45), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint java::util::Scanner::nextInt()
@@ -709,8 +709,8 @@ jint java::util::Scanner::nextInt()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(46),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Scanner::nextInt(jint a0)
@@ -719,8 +719,8 @@ jint java::util::Scanner::nextInt(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(47),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(47), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Scanner::nextLine()
@@ -729,8 +729,8 @@ local_ref< java::lang::String > java::util::Scanner::nextLine()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(48),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong java::util::Scanner::nextLong()
@@ -739,8 +739,8 @@ jlong java::util::Scanner::nextLong()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(49),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(49), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::Scanner::nextLong(jint a0)
@@ -749,8 +749,8 @@ jlong java::util::Scanner::nextLong(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(50),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(50), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jshort java::util::Scanner::nextShort()
@@ -759,8 +759,8 @@ jshort java::util::Scanner::nextShort()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(51),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(51), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 jshort java::util::Scanner::nextShort(jint a0)
@@ -769,8 +769,8 @@ jshort java::util::Scanner::nextShort(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(52),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(52), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint java::util::Scanner::radix()
@@ -779,8 +779,8 @@ jint java::util::Scanner::radix()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(53),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(53), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::skip(local_ref< java::util::regex::Pattern > const &a0)
@@ -789,8 +789,8 @@ local_ref< java::util::Scanner > java::util::Scanner::skip(local_ref< java::util
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(54),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::skip(local_ref< java::lang::String > const &a0)
@@ -799,8 +799,8 @@ local_ref< java::util::Scanner > java::util::Scanner::skip(local_ref< java::lang
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(55),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Scanner::toString()
@@ -809,8 +809,8 @@ local_ref< java::lang::String > java::util::Scanner::toString()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(56),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::useDelimiter(local_ref< java::util::regex::Pattern > const &a0)
@@ -819,8 +819,8 @@ local_ref< java::util::Scanner > java::util::Scanner::useDelimiter(local_ref< ja
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(57),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(57), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::useDelimiter(local_ref< java::lang::String > const &a0)
@@ -829,8 +829,8 @@ local_ref< java::util::Scanner > java::util::Scanner::useDelimiter(local_ref< ja
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(58),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(58), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::useLocale(local_ref< java::util::Locale > const &a0)
@@ -839,8 +839,8 @@ local_ref< java::util::Scanner > java::util::Scanner::useLocale(local_ref< java:
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(59),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(59), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::useRadix(jint a0)
@@ -849,8 +849,8 @@ local_ref< java::util::Scanner > java::util::Scanner::useRadix(jint a0)
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(60),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< java::util::Scanner > >
-	(get_jobject(), a0);
+		local_ref< java::util::Scanner >
+	>(get_jobject(), a0);
 }
 
 void java::util::Scanner::remove()
@@ -859,8 +859,8 @@ void java::util::Scanner::remove()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(61),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Scanner > java::util::Scanner::reset()
@@ -869,8 +869,8 @@ local_ref< java::util::Scanner > java::util::Scanner::reset()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(62),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(62), 
-		local_ref< java::util::Scanner > >
-	(get_jobject());
+		local_ref< java::util::Scanner >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Scanner::next_1()
@@ -879,8 +879,8 @@ local_ref< java::lang::Object > java::util::Scanner::next_1()
 		java::util::Scanner::J2CPP_CLASS_NAME,
 		java::util::Scanner::J2CPP_METHOD_NAME(63),
 		java::util::Scanner::J2CPP_METHOD_SIGNATURE(63), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

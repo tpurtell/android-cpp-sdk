@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_UTIL_BYTEARRAYBUFFER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -99,8 +99,8 @@ org::apache::http::util::ByteArrayBuffer::ByteArrayBuffer(jint a0)
 	call_new_object<
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -112,8 +112,8 @@ void org::apache::http::util::ByteArrayBuffer::append(local_ref< array<jbyte,1> 
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::ByteArrayBuffer::append(jint a0)
@@ -122,8 +122,8 @@ void org::apache::http::util::ByteArrayBuffer::append(jint a0)
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::util::ByteArrayBuffer::append(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -132,8 +132,8 @@ void org::apache::http::util::ByteArrayBuffer::append(local_ref< array<jchar,1> 
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::ByteArrayBuffer::append(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, jint a1, jint a2)
@@ -142,8 +142,8 @@ void org::apache::http::util::ByteArrayBuffer::append(local_ref< org::apache::ht
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::util::ByteArrayBuffer::clear()
@@ -152,8 +152,8 @@ void org::apache::http::util::ByteArrayBuffer::clear()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(5),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > org::apache::http::util::ByteArrayBuffer::toByteArray()
@@ -162,8 +162,8 @@ local_ref< array<jbyte,1> > org::apache::http::util::ByteArrayBuffer::toByteArra
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(6),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint org::apache::http::util::ByteArrayBuffer::byteAt(jint a0)
@@ -172,8 +172,8 @@ jint org::apache::http::util::ByteArrayBuffer::byteAt(jint a0)
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(7),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::util::ByteArrayBuffer::capacity()
@@ -182,8 +182,8 @@ jint org::apache::http::util::ByteArrayBuffer::capacity()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(8),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::util::ByteArrayBuffer::length()
@@ -192,8 +192,8 @@ jint org::apache::http::util::ByteArrayBuffer::length()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(9),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > org::apache::http::util::ByteArrayBuffer::buffer()
@@ -202,8 +202,8 @@ local_ref< array<jbyte,1> > org::apache::http::util::ByteArrayBuffer::buffer()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(10),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void org::apache::http::util::ByteArrayBuffer::setLength(jint a0)
@@ -212,8 +212,8 @@ void org::apache::http::util::ByteArrayBuffer::setLength(jint a0)
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(11),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::util::ByteArrayBuffer::isEmpty()
@@ -222,8 +222,8 @@ jboolean org::apache::http::util::ByteArrayBuffer::isEmpty()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(12),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::util::ByteArrayBuffer::isFull()
@@ -232,8 +232,8 @@ jboolean org::apache::http::util::ByteArrayBuffer::isFull()
 		org::apache::http::util::ByteArrayBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_NAME(13),
 		org::apache::http::util::ByteArrayBuffer::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

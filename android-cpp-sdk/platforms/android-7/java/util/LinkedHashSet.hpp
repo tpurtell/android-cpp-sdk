@@ -12,14 +12,22 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class HashSet; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
+#include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
+#include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/HashSet.hpp>
 #include <java/util/Set.hpp>
@@ -47,10 +55,15 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::HashSet>() const;
-		operator local_ref<java::util::Set>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::util::Set>() const;
+		operator local_ref<java::util::HashSet>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Collection>() const;
 
 
 		LinkedHashSet();
@@ -75,14 +88,19 @@ namespace j2cpp {
 
 
 
-java::util::LinkedHashSet::operator local_ref<java::util::HashSet>() const
+java::util::LinkedHashSet::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::util::HashSet>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-java::util::LinkedHashSet::operator local_ref<java::util::Set>() const
+java::util::LinkedHashSet::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::Set>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::LinkedHashSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
 }
 
 java::util::LinkedHashSet::operator local_ref<java::lang::Cloneable>() const
@@ -90,9 +108,29 @@ java::util::LinkedHashSet::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::LinkedHashSet::operator local_ref<java::io::Serializable>() const
+java::util::LinkedHashSet::operator local_ref<java::util::Set>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::util::Set>(get_jobject());
+}
+
+java::util::LinkedHashSet::operator local_ref<java::util::HashSet>() const
+{
+	return local_ref<java::util::HashSet>(get_jobject());
+}
+
+java::util::LinkedHashSet::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::LinkedHashSet::operator local_ref<java::util::AbstractSet>() const
+{
+	return local_ref<java::util::AbstractSet>(get_jobject());
+}
+
+java::util::LinkedHashSet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
 }
 
 
@@ -101,8 +139,8 @@ java::util::LinkedHashSet::LinkedHashSet()
 	call_new_object<
 		java::util::LinkedHashSet::J2CPP_CLASS_NAME,
 		java::util::LinkedHashSet::J2CPP_METHOD_NAME(0),
-		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -114,8 +152,8 @@ java::util::LinkedHashSet::LinkedHashSet(jint a0)
 	call_new_object<
 		java::util::LinkedHashSet::J2CPP_CLASS_NAME,
 		java::util::LinkedHashSet::J2CPP_METHOD_NAME(1),
-		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -127,8 +165,8 @@ java::util::LinkedHashSet::LinkedHashSet(jint a0, jfloat a1)
 	call_new_object<
 		java::util::LinkedHashSet::J2CPP_CLASS_NAME,
 		java::util::LinkedHashSet::J2CPP_METHOD_NAME(2),
-		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -140,8 +178,8 @@ java::util::LinkedHashSet::LinkedHashSet(local_ref< java::util::Collection > con
 	call_new_object<
 		java::util::LinkedHashSet::J2CPP_CLASS_NAME,
 		java::util::LinkedHashSet::J2CPP_METHOD_NAME(3),
-		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::LinkedHashSet::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }

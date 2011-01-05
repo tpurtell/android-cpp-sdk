@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_VALIDATION_SCHEMAFACTORYLOADER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace validation { class SchemaFactory; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace validation { class SchemaFactory; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -76,8 +76,8 @@ local_ref< javax::xml::validation::SchemaFactory > javax::xml::validation::Schem
 		javax::xml::validation::SchemaFactoryLoader::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactoryLoader::J2CPP_METHOD_NAME(1),
 		javax::xml::validation::SchemaFactoryLoader::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::validation::SchemaFactory > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::validation::SchemaFactory >
+	>(get_jobject(), a0);
 }
 
 

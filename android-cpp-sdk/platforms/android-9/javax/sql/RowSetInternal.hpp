@@ -83,8 +83,8 @@ local_ref< java::sql::Connection > javax::sql::RowSetInternal::getConnection()
 		javax::sql::RowSetInternal::J2CPP_CLASS_NAME,
 		javax::sql::RowSetInternal::J2CPP_METHOD_NAME(0),
 		javax::sql::RowSetInternal::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::sql::Connection > >
-	(get_jobject());
+		local_ref< java::sql::Connection >
+	>(get_jobject());
 }
 
 local_ref< java::sql::ResultSet > javax::sql::RowSetInternal::getOriginal()
@@ -93,8 +93,8 @@ local_ref< java::sql::ResultSet > javax::sql::RowSetInternal::getOriginal()
 		javax::sql::RowSetInternal::J2CPP_CLASS_NAME,
 		javax::sql::RowSetInternal::J2CPP_METHOD_NAME(1),
 		javax::sql::RowSetInternal::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::sql::ResultSet > >
-	(get_jobject());
+		local_ref< java::sql::ResultSet >
+	>(get_jobject());
 }
 
 local_ref< java::sql::ResultSet > javax::sql::RowSetInternal::getOriginalRow()
@@ -103,8 +103,8 @@ local_ref< java::sql::ResultSet > javax::sql::RowSetInternal::getOriginalRow()
 		javax::sql::RowSetInternal::J2CPP_CLASS_NAME,
 		javax::sql::RowSetInternal::J2CPP_METHOD_NAME(2),
 		javax::sql::RowSetInternal::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::sql::ResultSet > >
-	(get_jobject());
+		local_ref< java::sql::ResultSet >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > javax::sql::RowSetInternal::getParams()
@@ -113,8 +113,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > javax::sql::RowSetIntern
 		javax::sql::RowSetInternal::J2CPP_CLASS_NAME,
 		javax::sql::RowSetInternal::J2CPP_METHOD_NAME(3),
 		javax::sql::RowSetInternal::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 void javax::sql::RowSetInternal::setMetaData(local_ref< javax::sql::RowSetMetaData > const &a0)
@@ -123,8 +123,8 @@ void javax::sql::RowSetInternal::setMetaData(local_ref< javax::sql::RowSetMetaDa
 		javax::sql::RowSetInternal::J2CPP_CLASS_NAME,
 		javax::sql::RowSetInternal::J2CPP_METHOD_NAME(4),
 		javax::sql::RowSetInternal::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

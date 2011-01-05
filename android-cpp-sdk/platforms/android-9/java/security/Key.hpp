@@ -86,8 +86,8 @@ local_ref< java::lang::String > java::security::Key::getAlgorithm()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(0),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Key::getFormat()
@@ -96,8 +96,8 @@ local_ref< java::lang::String > java::security::Key::getFormat()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(1),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::Key::getEncoded()
@@ -106,8 +106,8 @@ local_ref< array<jbyte,1> > java::security::Key::getEncoded()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(2),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 

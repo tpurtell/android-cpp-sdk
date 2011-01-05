@@ -14,13 +14,21 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace widget { class ProgressBar; } } }
 namespace j2cpp { namespace android { namespace widget { class AbsSeekBar; } } }
 namespace j2cpp { namespace android { namespace widget { namespace RatingBar_ { class OnRatingBarChangeListener; } } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/AbsSeekBar.hpp>
+#include <android/widget/ProgressBar.hpp>
 #include <android/widget/RatingBar.hpp>
 #include <java/lang/Object.hpp>
 
@@ -85,6 +93,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::widget::ProgressBar>() const;
 		operator local_ref<android::widget::AbsSeekBar>() const;
 
 
@@ -132,8 +145,8 @@ void android::widget::RatingBar_::OnRatingBarChangeListener::onRatingChanged(loc
 		android::widget::RatingBar_::OnRatingBarChangeListener::J2CPP_CLASS_NAME,
 		android::widget::RatingBar_::OnRatingBarChangeListener::J2CPP_METHOD_NAME(0),
 		android::widget::RatingBar_::OnRatingBarChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -141,6 +154,31 @@ J2CPP_DEFINE_CLASS(android::widget::RatingBar_::OnRatingBarChangeListener,"andro
 J2CPP_DEFINE_METHOD(android::widget::RatingBar_::OnRatingBarChangeListener,0,"onRatingChanged","(Landroid/widget/RatingBar;FZ)V")
 
 
+
+android::widget::RatingBar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::RatingBar::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::RatingBar::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::RatingBar::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::RatingBar::operator local_ref<android::widget::ProgressBar>() const
+{
+	return local_ref<android::widget::ProgressBar>(get_jobject());
+}
 
 android::widget::RatingBar::operator local_ref<android::widget::AbsSeekBar>() const
 {
@@ -153,8 +191,8 @@ android::widget::RatingBar::RatingBar(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(0),
-		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -166,8 +204,8 @@ android::widget::RatingBar::RatingBar(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(1),
-		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -179,8 +217,8 @@ android::widget::RatingBar::RatingBar(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(2),
-		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -192,8 +230,8 @@ void android::widget::RatingBar::setOnRatingBarChangeListener(local_ref< android
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(3),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > android::widget::RatingBar::getOnRatingBarChangeListener()
@@ -202,8 +240,8 @@ local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > android::wid
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(4),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > >
-	(get_jobject());
+		local_ref< android::widget::RatingBar_::OnRatingBarChangeListener >
+	>(get_jobject());
 }
 
 void android::widget::RatingBar::setIsIndicator(jboolean a0)
@@ -212,8 +250,8 @@ void android::widget::RatingBar::setIsIndicator(jboolean a0)
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(5),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::RatingBar::isIndicator()
@@ -222,8 +260,8 @@ jboolean android::widget::RatingBar::isIndicator()
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(6),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::RatingBar::setNumStars(jint a0)
@@ -232,8 +270,8 @@ void android::widget::RatingBar::setNumStars(jint a0)
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(7),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::RatingBar::getNumStars()
@@ -242,8 +280,8 @@ jint android::widget::RatingBar::getNumStars()
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(8),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::RatingBar::setRating(jfloat a0)
@@ -252,8 +290,8 @@ void android::widget::RatingBar::setRating(jfloat a0)
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(9),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::widget::RatingBar::getRating()
@@ -262,8 +300,8 @@ jfloat android::widget::RatingBar::getRating()
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(10),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::widget::RatingBar::setStepSize(jfloat a0)
@@ -272,8 +310,8 @@ void android::widget::RatingBar::setStepSize(jfloat a0)
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(11),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::widget::RatingBar::getStepSize()
@@ -282,8 +320,8 @@ jfloat android::widget::RatingBar::getStepSize()
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(12),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(12), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 
@@ -293,8 +331,8 @@ void android::widget::RatingBar::setMax(jint a0)
 		android::widget::RatingBar::J2CPP_CLASS_NAME,
 		android::widget::RatingBar::J2CPP_METHOD_NAME(14),
 		android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

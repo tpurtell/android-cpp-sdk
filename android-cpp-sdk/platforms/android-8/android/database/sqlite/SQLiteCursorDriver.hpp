@@ -84,8 +84,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteCursorDr
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_NAME(0),
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::sqlite::SQLiteCursorDriver::cursorDeactivated()
@@ -94,8 +94,8 @@ void android::database::sqlite::SQLiteCursorDriver::cursorDeactivated()
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_NAME(1),
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteCursorDriver::cursorRequeried(local_ref< android::database::Cursor > const &a0)
@@ -104,8 +104,8 @@ void android::database::sqlite::SQLiteCursorDriver::cursorRequeried(local_ref< a
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteCursorDriver::cursorClosed()
@@ -114,8 +114,8 @@ void android::database::sqlite::SQLiteCursorDriver::cursorClosed()
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteCursorDriver::setBindArguments(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -124,8 +124,8 @@ void android::database::sqlite::SQLiteCursorDriver::setBindArguments(local_ref< 
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteCursorDriver::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

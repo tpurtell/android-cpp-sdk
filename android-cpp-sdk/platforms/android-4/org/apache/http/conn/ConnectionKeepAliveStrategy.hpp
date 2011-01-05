@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CONNECTIONKEEPALIVESTRATEGY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -75,8 +75,8 @@ jlong org::apache::http::conn::ConnectionKeepAliveStrategy::getKeepAliveDuration
 		org::apache::http::conn::ConnectionKeepAliveStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ConnectionKeepAliveStrategy::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ConnectionKeepAliveStrategy::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 

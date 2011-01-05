@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_IO_OBJECTSTREAMCLASS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectStreamField; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
@@ -103,8 +103,8 @@ local_ref< java::lang::Class > java::io::ObjectStreamClass::forClass()
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(1),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 local_ref< java::io::ObjectStreamField > java::io::ObjectStreamClass::getField(local_ref< java::lang::String > const &a0)
@@ -113,8 +113,8 @@ local_ref< java::io::ObjectStreamField > java::io::ObjectStreamClass::getField(l
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(2),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::ObjectStreamField > >
-	(get_jobject(), a0);
+		local_ref< java::io::ObjectStreamField >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::io::ObjectStreamField >, 1> > java::io::ObjectStreamClass::getFields()
@@ -123,8 +123,8 @@ local_ref< array< local_ref< java::io::ObjectStreamField >, 1> > java::io::Objec
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(3),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::io::ObjectStreamField >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::io::ObjectStreamField >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::ObjectStreamClass::getName()
@@ -133,8 +133,8 @@ local_ref< java::lang::String > java::io::ObjectStreamClass::getName()
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(4),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong java::io::ObjectStreamClass::getSerialVersionUID()
@@ -143,8 +143,8 @@ jlong java::io::ObjectStreamClass::getSerialVersionUID()
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(5),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::io::ObjectStreamClass > java::io::ObjectStreamClass::lookup(local_ref< java::lang::Class > const &a0)
@@ -153,8 +153,8 @@ local_ref< java::io::ObjectStreamClass > java::io::ObjectStreamClass::lookup(loc
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(6),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::ObjectStreamClass > >
-	(a0);
+		local_ref< java::io::ObjectStreamClass >
+	>(a0);
 }
 
 local_ref< java::io::ObjectStreamClass > java::io::ObjectStreamClass::lookupAny(local_ref< java::lang::Class > const &a0)
@@ -163,8 +163,8 @@ local_ref< java::io::ObjectStreamClass > java::io::ObjectStreamClass::lookupAny(
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(7),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::io::ObjectStreamClass > >
-	(a0);
+		local_ref< java::io::ObjectStreamClass >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::io::ObjectStreamClass::toString()
@@ -173,8 +173,8 @@ local_ref< java::lang::String > java::io::ObjectStreamClass::toString()
 		java::io::ObjectStreamClass::J2CPP_CLASS_NAME,
 		java::io::ObjectStreamClass::J2CPP_METHOD_NAME(8),
 		java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

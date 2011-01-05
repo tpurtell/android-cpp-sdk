@@ -11,8 +11,10 @@
 #define J2CPP_ANDROID_WEBKIT_WEBSETTINGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ { class LayoutAlgorithm; } } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ { class RenderPriority; } } } }
@@ -21,6 +23,8 @@ namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ 
 
 
 #include <android/webkit/WebSettings.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -55,7 +59,10 @@ namespace android { namespace webkit {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::webkit::WebSettings_::LayoutAlgorithm >, 1> > values();
@@ -88,7 +95,10 @@ namespace android { namespace webkit {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::webkit::WebSettings_::RenderPriority >, 1> > values();
@@ -121,7 +131,10 @@ namespace android { namespace webkit {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::webkit::WebSettings_::ZoomDensity >, 1> > values();
@@ -156,7 +169,10 @@ namespace android { namespace webkit {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< android::webkit::WebSettings_::TextSize >, 1> > values();
@@ -385,9 +401,24 @@ namespace j2cpp {
 
 
 
+android::webkit::WebSettings_::LayoutAlgorithm::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::webkit::WebSettings_::LayoutAlgorithm::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::WebSettings_::LayoutAlgorithm::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::webkit::WebSettings_::LayoutAlgorithm::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::webkit::WebSettings_::LayoutAlgorithm >, 1> > android::webkit::WebSettings_::LayoutAlgorithm::values()
@@ -396,8 +427,8 @@ local_ref< array< local_ref< android::webkit::WebSettings_::LayoutAlgorithm >, 1
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_NAME(0),
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::webkit::WebSettings_::LayoutAlgorithm >, 1> > >
-	();
+		local_ref< array< local_ref< android::webkit::WebSettings_::LayoutAlgorithm >, 1> >
+	>();
 }
 
 local_ref< android::webkit::WebSettings_::LayoutAlgorithm > android::webkit::WebSettings_::LayoutAlgorithm::valueOf(local_ref< java::lang::String > const &a0)
@@ -406,8 +437,8 @@ local_ref< android::webkit::WebSettings_::LayoutAlgorithm > android::webkit::Web
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_NAME(1),
 		android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebSettings_::LayoutAlgorithm > >
-	(a0);
+		local_ref< android::webkit::WebSettings_::LayoutAlgorithm >
+	>(a0);
 }
 
 
@@ -446,9 +477,24 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::LayoutAlgorithm,2,"SINGLE_COLU
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::LayoutAlgorithm,3,"$VALUES","[android.webkit.WebSettings.LayoutAlgorithm")
 
 
+android::webkit::WebSettings_::RenderPriority::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::webkit::WebSettings_::RenderPriority::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::WebSettings_::RenderPriority::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::webkit::WebSettings_::RenderPriority::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::webkit::WebSettings_::RenderPriority >, 1> > android::webkit::WebSettings_::RenderPriority::values()
@@ -457,8 +503,8 @@ local_ref< array< local_ref< android::webkit::WebSettings_::RenderPriority >, 1>
 		android::webkit::WebSettings_::RenderPriority::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_NAME(0),
 		android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::webkit::WebSettings_::RenderPriority >, 1> > >
-	();
+		local_ref< array< local_ref< android::webkit::WebSettings_::RenderPriority >, 1> >
+	>();
 }
 
 local_ref< android::webkit::WebSettings_::RenderPriority > android::webkit::WebSettings_::RenderPriority::valueOf(local_ref< java::lang::String > const &a0)
@@ -467,8 +513,8 @@ local_ref< android::webkit::WebSettings_::RenderPriority > android::webkit::WebS
 		android::webkit::WebSettings_::RenderPriority::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_NAME(1),
 		android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebSettings_::RenderPriority > >
-	(a0);
+		local_ref< android::webkit::WebSettings_::RenderPriority >
+	>(a0);
 }
 
 
@@ -507,9 +553,24 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::RenderPriority,2,"NORMAL","Lan
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::RenderPriority,3,"$VALUES","[android.webkit.WebSettings.RenderPriority")
 
 
+android::webkit::WebSettings_::ZoomDensity::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::webkit::WebSettings_::ZoomDensity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::WebSettings_::ZoomDensity::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::webkit::WebSettings_::ZoomDensity::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::webkit::WebSettings_::ZoomDensity >, 1> > android::webkit::WebSettings_::ZoomDensity::values()
@@ -518,8 +579,8 @@ local_ref< array< local_ref< android::webkit::WebSettings_::ZoomDensity >, 1> > 
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_NAME(0),
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::webkit::WebSettings_::ZoomDensity >, 1> > >
-	();
+		local_ref< array< local_ref< android::webkit::WebSettings_::ZoomDensity >, 1> >
+	>();
 }
 
 local_ref< android::webkit::WebSettings_::ZoomDensity > android::webkit::WebSettings_::ZoomDensity::valueOf(local_ref< java::lang::String > const &a0)
@@ -528,8 +589,8 @@ local_ref< android::webkit::WebSettings_::ZoomDensity > android::webkit::WebSett
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_NAME(1),
 		android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebSettings_::ZoomDensity > >
-	(a0);
+		local_ref< android::webkit::WebSettings_::ZoomDensity >
+	>(a0);
 }
 
 
@@ -568,9 +629,24 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::ZoomDensity,2,"MEDIUM","Landro
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::ZoomDensity,3,"$VALUES","[android.webkit.WebSettings.ZoomDensity")
 
 
+android::webkit::WebSettings_::TextSize::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::webkit::WebSettings_::TextSize::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::WebSettings_::TextSize::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::webkit::WebSettings_::TextSize::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::webkit::WebSettings_::TextSize >, 1> > android::webkit::WebSettings_::TextSize::values()
@@ -579,8 +655,8 @@ local_ref< array< local_ref< android::webkit::WebSettings_::TextSize >, 1> > and
 		android::webkit::WebSettings_::TextSize::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::TextSize::J2CPP_METHOD_NAME(0),
 		android::webkit::WebSettings_::TextSize::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::webkit::WebSettings_::TextSize >, 1> > >
-	();
+		local_ref< array< local_ref< android::webkit::WebSettings_::TextSize >, 1> >
+	>();
 }
 
 local_ref< android::webkit::WebSettings_::TextSize > android::webkit::WebSettings_::TextSize::valueOf(local_ref< java::lang::String > const &a0)
@@ -589,8 +665,8 @@ local_ref< android::webkit::WebSettings_::TextSize > android::webkit::WebSetting
 		android::webkit::WebSettings_::TextSize::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings_::TextSize::J2CPP_METHOD_NAME(1),
 		android::webkit::WebSettings_::TextSize::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebSettings_::TextSize > >
-	(a0);
+		local_ref< android::webkit::WebSettings_::TextSize >
+	>(a0);
 }
 
 
@@ -658,8 +734,8 @@ void android::webkit::WebSettings::setNavDump(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(1),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getNavDump()
@@ -668,8 +744,8 @@ jboolean android::webkit::WebSettings::getNavDump()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(2),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSupportZoom(jboolean a0)
@@ -678,8 +754,8 @@ void android::webkit::WebSettings::setSupportZoom(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(3),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::supportZoom()
@@ -688,8 +764,8 @@ jboolean android::webkit::WebSettings::supportZoom()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(4),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setBuiltInZoomControls(jboolean a0)
@@ -698,8 +774,8 @@ void android::webkit::WebSettings::setBuiltInZoomControls(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(5),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getBuiltInZoomControls()
@@ -708,8 +784,8 @@ jboolean android::webkit::WebSettings::getBuiltInZoomControls()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(6),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setAllowFileAccess(jboolean a0)
@@ -718,8 +794,8 @@ void android::webkit::WebSettings::setAllowFileAccess(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(7),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getAllowFileAccess()
@@ -728,8 +804,8 @@ jboolean android::webkit::WebSettings::getAllowFileAccess()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(8),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setLoadWithOverviewMode(jboolean a0)
@@ -738,8 +814,8 @@ void android::webkit::WebSettings::setLoadWithOverviewMode(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(9),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getLoadWithOverviewMode()
@@ -748,8 +824,8 @@ jboolean android::webkit::WebSettings::getLoadWithOverviewMode()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(10),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSaveFormData(jboolean a0)
@@ -758,8 +834,8 @@ void android::webkit::WebSettings::setSaveFormData(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(11),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getSaveFormData()
@@ -768,8 +844,8 @@ jboolean android::webkit::WebSettings::getSaveFormData()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(12),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSavePassword(jboolean a0)
@@ -778,8 +854,8 @@ void android::webkit::WebSettings::setSavePassword(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(13),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getSavePassword()
@@ -788,8 +864,8 @@ jboolean android::webkit::WebSettings::getSavePassword()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(14),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setTextSize(local_ref< android::webkit::WebSettings_::TextSize > const &a0)
@@ -798,8 +874,8 @@ void android::webkit::WebSettings::setTextSize(local_ref< android::webkit::WebSe
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(15),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebSettings_::TextSize > android::webkit::WebSettings::getTextSize()
@@ -808,8 +884,8 @@ local_ref< android::webkit::WebSettings_::TextSize > android::webkit::WebSetting
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(16),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::webkit::WebSettings_::TextSize > >
-	(get_jobject());
+		local_ref< android::webkit::WebSettings_::TextSize >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setDefaultZoom(local_ref< android::webkit::WebSettings_::ZoomDensity > const &a0)
@@ -818,8 +894,8 @@ void android::webkit::WebSettings::setDefaultZoom(local_ref< android::webkit::We
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(17),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebSettings_::ZoomDensity > android::webkit::WebSettings::getDefaultZoom()
@@ -828,8 +904,8 @@ local_ref< android::webkit::WebSettings_::ZoomDensity > android::webkit::WebSett
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(18),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::webkit::WebSettings_::ZoomDensity > >
-	(get_jobject());
+		local_ref< android::webkit::WebSettings_::ZoomDensity >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setLightTouchEnabled(jboolean a0)
@@ -838,8 +914,8 @@ void android::webkit::WebSettings::setLightTouchEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(19),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getLightTouchEnabled()
@@ -848,8 +924,8 @@ jboolean android::webkit::WebSettings::getLightTouchEnabled()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(20),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setUseDoubleTree(jboolean a0)
@@ -858,8 +934,8 @@ void android::webkit::WebSettings::setUseDoubleTree(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(21),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getUseDoubleTree()
@@ -868,8 +944,8 @@ jboolean android::webkit::WebSettings::getUseDoubleTree()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(22),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setUserAgent(jint a0)
@@ -878,8 +954,8 @@ void android::webkit::WebSettings::setUserAgent(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(23),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getUserAgent()
@@ -888,8 +964,8 @@ jint android::webkit::WebSettings::getUserAgent()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(24),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setUseWideViewPort(jboolean a0)
@@ -898,8 +974,8 @@ void android::webkit::WebSettings::setUseWideViewPort(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(25),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getUseWideViewPort()
@@ -908,8 +984,8 @@ jboolean android::webkit::WebSettings::getUseWideViewPort()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(26),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSupportMultipleWindows(jboolean a0)
@@ -918,8 +994,8 @@ void android::webkit::WebSettings::setSupportMultipleWindows(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(27),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::supportMultipleWindows()
@@ -928,8 +1004,8 @@ jboolean android::webkit::WebSettings::supportMultipleWindows()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(28),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setLayoutAlgorithm(local_ref< android::webkit::WebSettings_::LayoutAlgorithm > const &a0)
@@ -938,8 +1014,8 @@ void android::webkit::WebSettings::setLayoutAlgorithm(local_ref< android::webkit
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(29),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebSettings_::LayoutAlgorithm > android::webkit::WebSettings::getLayoutAlgorithm()
@@ -948,8 +1024,8 @@ local_ref< android::webkit::WebSettings_::LayoutAlgorithm > android::webkit::Web
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(30),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::webkit::WebSettings_::LayoutAlgorithm > >
-	(get_jobject());
+		local_ref< android::webkit::WebSettings_::LayoutAlgorithm >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setStandardFontFamily(local_ref< java::lang::String > const &a0)
@@ -958,8 +1034,8 @@ void android::webkit::WebSettings::setStandardFontFamily(local_ref< java::lang::
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(31),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getStandardFontFamily()
@@ -968,8 +1044,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getStandardFontFam
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(32),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setFixedFontFamily(local_ref< java::lang::String > const &a0)
@@ -978,8 +1054,8 @@ void android::webkit::WebSettings::setFixedFontFamily(local_ref< java::lang::Str
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(33),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getFixedFontFamily()
@@ -988,8 +1064,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getFixedFontFamily
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(34),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSansSerifFontFamily(local_ref< java::lang::String > const &a0)
@@ -998,8 +1074,8 @@ void android::webkit::WebSettings::setSansSerifFontFamily(local_ref< java::lang:
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(35),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getSansSerifFontFamily()
@@ -1008,8 +1084,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getSansSerifFontFa
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(36),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setSerifFontFamily(local_ref< java::lang::String > const &a0)
@@ -1018,8 +1094,8 @@ void android::webkit::WebSettings::setSerifFontFamily(local_ref< java::lang::Str
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(37),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getSerifFontFamily()
@@ -1028,8 +1104,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getSerifFontFamily
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(38),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setCursiveFontFamily(local_ref< java::lang::String > const &a0)
@@ -1038,8 +1114,8 @@ void android::webkit::WebSettings::setCursiveFontFamily(local_ref< java::lang::S
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(39),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getCursiveFontFamily()
@@ -1048,8 +1124,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getCursiveFontFami
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(40),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setFantasyFontFamily(local_ref< java::lang::String > const &a0)
@@ -1058,8 +1134,8 @@ void android::webkit::WebSettings::setFantasyFontFamily(local_ref< java::lang::S
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(41),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getFantasyFontFamily()
@@ -1068,8 +1144,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getFantasyFontFami
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(42),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setMinimumFontSize(jint a0)
@@ -1078,8 +1154,8 @@ void android::webkit::WebSettings::setMinimumFontSize(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(43),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getMinimumFontSize()
@@ -1088,8 +1164,8 @@ jint android::webkit::WebSettings::getMinimumFontSize()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(44),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(44), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setMinimumLogicalFontSize(jint a0)
@@ -1098,8 +1174,8 @@ void android::webkit::WebSettings::setMinimumLogicalFontSize(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(45),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getMinimumLogicalFontSize()
@@ -1108,8 +1184,8 @@ jint android::webkit::WebSettings::getMinimumLogicalFontSize()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(46),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setDefaultFontSize(jint a0)
@@ -1118,8 +1194,8 @@ void android::webkit::WebSettings::setDefaultFontSize(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(47),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getDefaultFontSize()
@@ -1128,8 +1204,8 @@ jint android::webkit::WebSettings::getDefaultFontSize()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(48),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(48), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setDefaultFixedFontSize(jint a0)
@@ -1138,8 +1214,8 @@ void android::webkit::WebSettings::setDefaultFixedFontSize(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(49),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getDefaultFixedFontSize()
@@ -1148,8 +1224,8 @@ jint android::webkit::WebSettings::getDefaultFixedFontSize()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(50),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(50), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setLoadsImagesAutomatically(jboolean a0)
@@ -1158,8 +1234,8 @@ void android::webkit::WebSettings::setLoadsImagesAutomatically(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(51),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getLoadsImagesAutomatically()
@@ -1168,8 +1244,8 @@ jboolean android::webkit::WebSettings::getLoadsImagesAutomatically()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(52),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(52), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setBlockNetworkImage(jboolean a0)
@@ -1178,8 +1254,8 @@ void android::webkit::WebSettings::setBlockNetworkImage(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(53),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getBlockNetworkImage()
@@ -1188,8 +1264,8 @@ jboolean android::webkit::WebSettings::getBlockNetworkImage()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(54),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(54), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setJavaScriptEnabled(jboolean a0)
@@ -1198,8 +1274,8 @@ void android::webkit::WebSettings::setJavaScriptEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(55),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setPluginsEnabled(jboolean a0)
@@ -1208,8 +1284,8 @@ void android::webkit::WebSettings::setPluginsEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(56),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setPluginsPath(local_ref< java::lang::String > const &a0)
@@ -1218,8 +1294,8 @@ void android::webkit::WebSettings::setPluginsPath(local_ref< java::lang::String 
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(57),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setDatabasePath(local_ref< java::lang::String > const &a0)
@@ -1228,8 +1304,8 @@ void android::webkit::WebSettings::setDatabasePath(local_ref< java::lang::String
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(58),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setGeolocationDatabasePath(local_ref< java::lang::String > const &a0)
@@ -1238,8 +1314,8 @@ void android::webkit::WebSettings::setGeolocationDatabasePath(local_ref< java::l
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(59),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setAppCacheEnabled(jboolean a0)
@@ -1248,8 +1324,8 @@ void android::webkit::WebSettings::setAppCacheEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(60),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setAppCachePath(local_ref< java::lang::String > const &a0)
@@ -1258,8 +1334,8 @@ void android::webkit::WebSettings::setAppCachePath(local_ref< java::lang::String
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(61),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setAppCacheMaxSize(jlong a0)
@@ -1268,8 +1344,8 @@ void android::webkit::WebSettings::setAppCacheMaxSize(jlong a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(62),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setDatabaseEnabled(jboolean a0)
@@ -1278,8 +1354,8 @@ void android::webkit::WebSettings::setDatabaseEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(63),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setDomStorageEnabled(jboolean a0)
@@ -1288,8 +1364,8 @@ void android::webkit::WebSettings::setDomStorageEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(64),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getDomStorageEnabled()
@@ -1298,8 +1374,8 @@ jboolean android::webkit::WebSettings::getDomStorageEnabled()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(65),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(65), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getDatabasePath()
@@ -1308,8 +1384,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getDatabasePath()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(66),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(66), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebSettings::getDatabaseEnabled()
@@ -1318,8 +1394,8 @@ jboolean android::webkit::WebSettings::getDatabaseEnabled()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(67),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(67), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setGeolocationEnabled(jboolean a0)
@@ -1328,8 +1404,8 @@ void android::webkit::WebSettings::setGeolocationEnabled(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(68),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getJavaScriptEnabled()
@@ -1338,8 +1414,8 @@ jboolean android::webkit::WebSettings::getJavaScriptEnabled()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(69),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(69), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebSettings::getPluginsEnabled()
@@ -1348,8 +1424,8 @@ jboolean android::webkit::WebSettings::getPluginsEnabled()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(70),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(70), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getPluginsPath()
@@ -1358,8 +1434,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getPluginsPath()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(71),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(71), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboolean a0)
@@ -1368,8 +1444,8 @@ void android::webkit::WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboo
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(72),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebSettings::getJavaScriptCanOpenWindowsAutomatically()
@@ -1378,8 +1454,8 @@ jboolean android::webkit::WebSettings::getJavaScriptCanOpenWindowsAutomatically(
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(73),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(73), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setDefaultTextEncodingName(local_ref< java::lang::String > const &a0)
@@ -1388,8 +1464,8 @@ void android::webkit::WebSettings::setDefaultTextEncodingName(local_ref< java::l
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(74),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getDefaultTextEncodingName()
@@ -1398,8 +1474,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getDefaultTextEnco
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(75),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(75), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setUserAgentString(local_ref< java::lang::String > const &a0)
@@ -1408,8 +1484,8 @@ void android::webkit::WebSettings::setUserAgentString(local_ref< java::lang::Str
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(76),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebSettings::getUserAgentString()
@@ -1418,8 +1494,8 @@ local_ref< java::lang::String > android::webkit::WebSettings::getUserAgentString
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(77),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(77), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::WebSettings::setNeedInitialFocus(jboolean a0)
@@ -1428,8 +1504,8 @@ void android::webkit::WebSettings::setNeedInitialFocus(jboolean a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(78),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setRenderPriority(local_ref< android::webkit::WebSettings_::RenderPriority > const &a0)
@@ -1438,8 +1514,8 @@ void android::webkit::WebSettings::setRenderPriority(local_ref< android::webkit:
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(79),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(79), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebSettings::setCacheMode(jint a0)
@@ -1448,8 +1524,8 @@ void android::webkit::WebSettings::setCacheMode(jint a0)
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(80),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebSettings::getCacheMode()
@@ -1458,8 +1534,8 @@ jint android::webkit::WebSettings::getCacheMode()
 		android::webkit::WebSettings::J2CPP_CLASS_NAME,
 		android::webkit::WebSettings::J2CPP_METHOD_NAME(81),
 		android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(81), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

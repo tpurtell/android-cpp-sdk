@@ -12,10 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,6 +47,8 @@ namespace android { namespace app { namespace backup {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::InputStream>() const;
 
 
@@ -70,6 +76,16 @@ namespace j2cpp {
 
 
 
+android::app::backup::BackupDataInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::app::backup::BackupDataInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 android::app::backup::BackupDataInputStream::operator local_ref<java::io::InputStream>() const
 {
 	return local_ref<java::io::InputStream>(get_jobject());
@@ -82,8 +98,8 @@ jint android::app::backup::BackupDataInputStream::read()
 		android::app::backup::BackupDataInputStream::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::backup::BackupDataInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -92,8 +108,8 @@ jint android::app::backup::BackupDataInputStream::read(local_ref< array<jbyte,1>
 		android::app::backup::BackupDataInputStream::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::app::backup::BackupDataInputStream::read(local_ref< array<jbyte,1> > const &a0)
@@ -102,8 +118,8 @@ jint android::app::backup::BackupDataInputStream::read(local_ref< array<jbyte,1>
 		android::app::backup::BackupDataInputStream::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_NAME(3),
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::app::backup::BackupDataInputStream::getKey()
@@ -112,8 +128,8 @@ local_ref< java::lang::String > android::app::backup::BackupDataInputStream::get
 		android::app::backup::BackupDataInputStream::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_NAME(4),
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::app::backup::BackupDataInputStream::size()
@@ -122,8 +138,8 @@ jint android::app::backup::BackupDataInputStream::size()
 		android::app::backup::BackupDataInputStream::J2CPP_CLASS_NAME,
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_NAME(5),
 		android::app::backup::BackupDataInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

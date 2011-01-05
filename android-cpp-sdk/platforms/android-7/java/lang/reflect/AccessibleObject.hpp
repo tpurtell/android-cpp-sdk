@@ -96,8 +96,8 @@ void java::lang::reflect::AccessibleObject::setAccessible(local_ref< array< loca
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean java::lang::reflect::AccessibleObject::isAccessible()
@@ -106,8 +106,8 @@ jboolean java::lang::reflect::AccessibleObject::isAccessible()
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::lang::reflect::AccessibleObject::setAccessible(jboolean a0)
@@ -116,8 +116,8 @@ void java::lang::reflect::AccessibleObject::setAccessible(jboolean a0)
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::reflect::AccessibleObject::isAnnotationPresent(local_ref< java::lang::Class > const &a0)
@@ -126,8 +126,8 @@ jboolean java::lang::reflect::AccessibleObject::isAnnotationPresent(local_ref< j
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(4),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::reflect::AccessibleObject::getDeclaredAnnotations()
@@ -136,8 +136,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(5),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::reflect::AccessibleObject::getAnnotations()
@@ -146,8 +146,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(6),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::annotation::Annotation > java::lang::reflect::AccessibleObject::getAnnotation(local_ref< java::lang::Class > const &a0)
@@ -156,8 +156,8 @@ local_ref< java::lang::annotation::Annotation > java::lang::reflect::AccessibleO
 		java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME,
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(7),
 		java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::annotation::Annotation > >
-	(get_jobject(), a0);
+		local_ref< java::lang::annotation::Annotation >
+	>(get_jobject(), a0);
 }
 
 

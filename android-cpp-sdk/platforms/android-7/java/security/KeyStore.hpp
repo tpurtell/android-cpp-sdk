@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_SECURITY_KEYSTORE_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class CallbackHandler; } } } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { class Destroyable; } } } }
+namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -224,9 +224,9 @@ namespace java { namespace security {
 			{
 			}
 
+			operator local_ref<javax::security::auth::Destroyable>() const;
 			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::security::KeyStore_::ProtectionParameter>() const;
-			operator local_ref<javax::security::auth::Destroyable>() const;
 
 
 			PasswordProtection(local_ref< array<jchar,1> > const&);
@@ -392,8 +392,8 @@ local_ref< java::security::KeyStore_::ProtectionParameter > java::security::KeyS
 		java::security::KeyStore_::LoadStoreParameter::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::LoadStoreParameter::J2CPP_METHOD_NAME(0),
 		java::security::KeyStore_::LoadStoreParameter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::security::KeyStore_::ProtectionParameter > >
-	(get_jobject());
+		local_ref< java::security::KeyStore_::ProtectionParameter >
+	>(get_jobject());
 }
 
 
@@ -425,8 +425,8 @@ java::security::KeyStore_::PrivateKeyEntry::PrivateKeyEntry(local_ref< java::sec
 	call_new_object<
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_NAME(0),
-		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -438,8 +438,8 @@ local_ref< java::security::PrivateKey > java::security::KeyStore_::PrivateKeyEnt
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::PrivateKey > >
-	(get_jobject());
+		local_ref< java::security::PrivateKey >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::security::KeyStore_::PrivateKeyEntry::getCertificateChain()
@@ -448,8 +448,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::sec
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::cert::Certificate > java::security::KeyStore_::PrivateKeyEntry::getCertificate()
@@ -458,8 +458,8 @@ local_ref< java::security::cert::Certificate > java::security::KeyStore_::Privat
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_NAME(3),
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::cert::Certificate > >
-	(get_jobject());
+		local_ref< java::security::cert::Certificate >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::KeyStore_::PrivateKeyEntry::toString()
@@ -468,8 +468,8 @@ local_ref< java::lang::String > java::security::KeyStore_::PrivateKeyEntry::toSt
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_NAME(4),
 		java::security::KeyStore_::PrivateKeyEntry::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -497,8 +497,8 @@ java::security::KeyStore_::CallbackHandlerProtection::CallbackHandlerProtection(
 	call_new_object<
 		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_METHOD_NAME(0),
-		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -510,8 +510,8 @@ local_ref< javax::security::auth::callback::CallbackHandler > java::security::Ke
 		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::CallbackHandlerProtection::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::security::auth::callback::CallbackHandler > >
-	(get_jobject());
+		local_ref< javax::security::auth::callback::CallbackHandler >
+	>(get_jobject());
 }
 
 
@@ -536,8 +536,8 @@ java::security::KeyStore_::TrustedCertificateEntry::TrustedCertificateEntry(loca
 	call_new_object<
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_NAME(0),
-		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -549,8 +549,8 @@ local_ref< java::security::cert::Certificate > java::security::KeyStore_::Truste
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::Certificate > >
-	(get_jobject());
+		local_ref< java::security::cert::Certificate >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::KeyStore_::TrustedCertificateEntry::toString()
@@ -559,8 +559,8 @@ local_ref< java::lang::String > java::security::KeyStore_::TrustedCertificateEnt
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore_::TrustedCertificateEntry::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -582,8 +582,8 @@ local_ref< java::security::KeyStore > java::security::KeyStore_::Builder::getKey
 		java::security::KeyStore_::Builder::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::Builder::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::Builder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::KeyStore > >
-	(get_jobject());
+		local_ref< java::security::KeyStore >
+	>(get_jobject());
 }
 
 local_ref< java::security::KeyStore_::ProtectionParameter > java::security::KeyStore_::Builder::getProtectionParameter(local_ref< java::lang::String > const &a0)
@@ -592,8 +592,8 @@ local_ref< java::security::KeyStore_::ProtectionParameter > java::security::KeyS
 		java::security::KeyStore_::Builder::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::Builder::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore_::Builder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::KeyStore_::ProtectionParameter > >
-	(get_jobject(), a0);
+		local_ref< java::security::KeyStore_::ProtectionParameter >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Builder::newInstance(local_ref< java::security::KeyStore > const &a0, local_ref< java::security::KeyStore_::ProtectionParameter > const &a1)
@@ -602,8 +602,8 @@ local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Build
 		java::security::KeyStore_::Builder::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::Builder::J2CPP_METHOD_NAME(3),
 		java::security::KeyStore_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::KeyStore_::Builder > >
-	(a0, a1);
+		local_ref< java::security::KeyStore_::Builder >
+	>(a0, a1);
 }
 
 local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Builder::newInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::io::File > const &a2, local_ref< java::security::KeyStore_::ProtectionParameter > const &a3)
@@ -612,8 +612,8 @@ local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Build
 		java::security::KeyStore_::Builder::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::Builder::J2CPP_METHOD_NAME(4),
 		java::security::KeyStore_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::KeyStore_::Builder > >
-	(a0, a1, a2, a3);
+		local_ref< java::security::KeyStore_::Builder >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Builder::newInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::security::KeyStore_::ProtectionParameter > const &a2)
@@ -622,8 +622,8 @@ local_ref< java::security::KeyStore_::Builder > java::security::KeyStore_::Build
 		java::security::KeyStore_::Builder::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::Builder::J2CPP_METHOD_NAME(5),
 		java::security::KeyStore_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::KeyStore_::Builder > >
-	(a0, a1, a2);
+		local_ref< java::security::KeyStore_::Builder >
+	>(a0, a1, a2);
 }
 
 
@@ -636,6 +636,11 @@ J2CPP_DEFINE_METHOD(java::security::KeyStore_::Builder,4,"newInstance","(Ljava/l
 J2CPP_DEFINE_METHOD(java::security::KeyStore_::Builder,5,"newInstance","(Ljava/lang/String;Ljava/security/Provider;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;")
 
 
+java::security::KeyStore_::PasswordProtection::operator local_ref<javax::security::auth::Destroyable>() const
+{
+	return local_ref<javax::security::auth::Destroyable>(get_jobject());
+}
+
 java::security::KeyStore_::PasswordProtection::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -646,19 +651,14 @@ java::security::KeyStore_::PasswordProtection::operator local_ref<java::security
 	return local_ref<java::security::KeyStore_::ProtectionParameter>(get_jobject());
 }
 
-java::security::KeyStore_::PasswordProtection::operator local_ref<javax::security::auth::Destroyable>() const
-{
-	return local_ref<javax::security::auth::Destroyable>(get_jobject());
-}
-
 
 java::security::KeyStore_::PasswordProtection::PasswordProtection(local_ref< array<jchar,1> > const &a0)
 : object<java::security::KeyStore_::PasswordProtection>(
 	call_new_object<
 		java::security::KeyStore_::PasswordProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_NAME(0),
-		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -670,8 +670,8 @@ local_ref< array<jchar,1> > java::security::KeyStore_::PasswordProtection::getPa
 		java::security::KeyStore_::PasswordProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 void java::security::KeyStore_::PasswordProtection::destroy()
@@ -680,8 +680,8 @@ void java::security::KeyStore_::PasswordProtection::destroy()
 		java::security::KeyStore_::PasswordProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::security::KeyStore_::PasswordProtection::isDestroyed()
@@ -690,8 +690,8 @@ jboolean java::security::KeyStore_::PasswordProtection::isDestroyed()
 		java::security::KeyStore_::PasswordProtection::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_NAME(3),
 		java::security::KeyStore_::PasswordProtection::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -718,8 +718,8 @@ java::security::KeyStore_::SecretKeyEntry::SecretKeyEntry(local_ref< javax::cryp
 	call_new_object<
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_NAME(0),
-		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -731,8 +731,8 @@ local_ref< javax::crypto::SecretKey > java::security::KeyStore_::SecretKeyEntry:
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::crypto::SecretKey > >
-	(get_jobject());
+		local_ref< javax::crypto::SecretKey >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::KeyStore_::SecretKeyEntry::toString()
@@ -741,8 +741,8 @@ local_ref< java::lang::String > java::security::KeyStore_::SecretKeyEntry::toStr
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_CLASS_NAME,
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore_::SecretKeyEntry::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -773,8 +773,8 @@ local_ref< java::security::KeyStore > java::security::KeyStore::getInstance(loca
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(1),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::KeyStore > >
-	(a0);
+		local_ref< java::security::KeyStore >
+	>(a0);
 }
 
 local_ref< java::security::KeyStore > java::security::KeyStore::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -783,8 +783,8 @@ local_ref< java::security::KeyStore > java::security::KeyStore::getInstance(loca
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(2),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::KeyStore > >
-	(a0, a1);
+		local_ref< java::security::KeyStore >
+	>(a0, a1);
 }
 
 local_ref< java::security::KeyStore > java::security::KeyStore::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -793,8 +793,8 @@ local_ref< java::security::KeyStore > java::security::KeyStore::getInstance(loca
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(3),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::KeyStore > >
-	(a0, a1);
+		local_ref< java::security::KeyStore >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::security::KeyStore::getDefaultType()
@@ -803,8 +803,8 @@ local_ref< java::lang::String > java::security::KeyStore::getDefaultType()
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(4),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 local_ref< java::security::Provider > java::security::KeyStore::getProvider()
@@ -813,8 +813,8 @@ local_ref< java::security::Provider > java::security::KeyStore::getProvider()
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(5),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::KeyStore::getType()
@@ -823,8 +823,8 @@ local_ref< java::lang::String > java::security::KeyStore::getType()
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(6),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Key > java::security::KeyStore::getKey(local_ref< java::lang::String > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -833,8 +833,8 @@ local_ref< java::security::Key > java::security::KeyStore::getKey(local_ref< jav
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(7),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::Key > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::Key >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::security::KeyStore::getCertificateChain(local_ref< java::lang::String > const &a0)
@@ -843,8 +843,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::sec
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(8),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::Certificate > java::security::KeyStore::getCertificate(local_ref< java::lang::String > const &a0)
@@ -853,8 +853,8 @@ local_ref< java::security::cert::Certificate > java::security::KeyStore::getCert
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(9),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::cert::Certificate > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::Certificate >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::security::KeyStore::getCreationDate(local_ref< java::lang::String > const &a0)
@@ -863,8 +863,8 @@ local_ref< java::util::Date > java::security::KeyStore::getCreationDate(local_re
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(10),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Date > >
-	(get_jobject(), a0);
+		local_ref< java::util::Date >
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStore::setKeyEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::Key > const &a1, local_ref< array<jchar,1> > const &a2, local_ref< array< local_ref< java::security::cert::Certificate >, 1> > const &a3)
@@ -873,8 +873,8 @@ void java::security::KeyStore::setKeyEntry(local_ref< java::lang::String > const
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(11),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::security::KeyStore::setKeyEntry(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1, local_ref< array< local_ref< java::security::cert::Certificate >, 1> > const &a2)
@@ -883,8 +883,8 @@ void java::security::KeyStore::setKeyEntry(local_ref< java::lang::String > const
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(12),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::KeyStore::setCertificateEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::Certificate > const &a1)
@@ -893,8 +893,8 @@ void java::security::KeyStore::setCertificateEntry(local_ref< java::lang::String
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(13),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStore::deleteEntry(local_ref< java::lang::String > const &a0)
@@ -903,8 +903,8 @@ void java::security::KeyStore::deleteEntry(local_ref< java::lang::String > const
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(14),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::KeyStore::aliases()
@@ -913,8 +913,8 @@ local_ref< java::util::Enumeration > java::security::KeyStore::aliases()
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(15),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jboolean java::security::KeyStore::containsAlias(local_ref< java::lang::String > const &a0)
@@ -923,8 +923,8 @@ jboolean java::security::KeyStore::containsAlias(local_ref< java::lang::String >
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(16),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::KeyStore::size()
@@ -933,8 +933,8 @@ jint java::security::KeyStore::size()
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(17),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::security::KeyStore::isKeyEntry(local_ref< java::lang::String > const &a0)
@@ -943,8 +943,8 @@ jboolean java::security::KeyStore::isKeyEntry(local_ref< java::lang::String > co
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(18),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::KeyStore::isCertificateEntry(local_ref< java::lang::String > const &a0)
@@ -953,8 +953,8 @@ jboolean java::security::KeyStore::isCertificateEntry(local_ref< java::lang::Str
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(19),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::KeyStore::getCertificateAlias(local_ref< java::security::cert::Certificate > const &a0)
@@ -963,8 +963,8 @@ local_ref< java::lang::String > java::security::KeyStore::getCertificateAlias(lo
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(20),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStore::store(local_ref< java::io::OutputStream > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -973,8 +973,8 @@ void java::security::KeyStore::store(local_ref< java::io::OutputStream > const &
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(21),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStore::store(local_ref< java::security::KeyStore_::LoadStoreParameter > const &a0)
@@ -983,8 +983,8 @@ void java::security::KeyStore::store(local_ref< java::security::KeyStore_::LoadS
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(22),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStore::load(local_ref< java::io::InputStream > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -993,8 +993,8 @@ void java::security::KeyStore::load(local_ref< java::io::InputStream > const &a0
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(23),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStore::load(local_ref< java::security::KeyStore_::LoadStoreParameter > const &a0)
@@ -1003,8 +1003,8 @@ void java::security::KeyStore::load(local_ref< java::security::KeyStore_::LoadSt
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(24),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::KeyStore_::Entry > java::security::KeyStore::getEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore_::ProtectionParameter > const &a1)
@@ -1013,8 +1013,8 @@ local_ref< java::security::KeyStore_::Entry > java::security::KeyStore::getEntry
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(25),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::security::KeyStore_::Entry > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::KeyStore_::Entry >
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStore::setEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore_::Entry > const &a1, local_ref< java::security::KeyStore_::ProtectionParameter > const &a2)
@@ -1023,8 +1023,8 @@ void java::security::KeyStore::setEntry(local_ref< java::lang::String > const &a
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(26),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::security::KeyStore::entryInstanceOf(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
@@ -1033,8 +1033,8 @@ jboolean java::security::KeyStore::entryInstanceOf(local_ref< java::lang::String
 		java::security::KeyStore::J2CPP_CLASS_NAME,
 		java::security::KeyStore::J2CPP_METHOD_NAME(27),
 		java::security::KeyStore::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

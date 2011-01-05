@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_CRYPTO_KEYAGREEMENT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
@@ -107,8 +107,8 @@ local_ref< java::lang::String > javax::crypto::KeyAgreement::getAlgorithm()
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(1),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > javax::crypto::KeyAgreement::getProvider()
@@ -117,8 +117,8 @@ local_ref< java::security::Provider > javax::crypto::KeyAgreement::getProvider()
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(2),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstance(local_ref< java::lang::String > const &a0)
@@ -127,8 +127,8 @@ local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstanc
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(3),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::KeyAgreement > >
-	(a0);
+		local_ref< javax::crypto::KeyAgreement >
+	>(a0);
 }
 
 local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -137,8 +137,8 @@ local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstanc
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(4),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::KeyAgreement > >
-	(a0, a1);
+		local_ref< javax::crypto::KeyAgreement >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -147,8 +147,8 @@ local_ref< javax::crypto::KeyAgreement > javax::crypto::KeyAgreement::getInstanc
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(5),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::crypto::KeyAgreement > >
-	(a0, a1);
+		local_ref< javax::crypto::KeyAgreement >
+	>(a0, a1);
 }
 
 void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a0)
@@ -157,8 +157,8 @@ void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(6),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a0, local_ref< java::security::SecureRandom > const &a1)
@@ -167,8 +167,8 @@ void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(7),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a0, local_ref< java::security::spec::AlgorithmParameterSpec > const &a1)
@@ -177,8 +177,8 @@ void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(8),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a0, local_ref< java::security::spec::AlgorithmParameterSpec > const &a1, local_ref< java::security::SecureRandom > const &a2)
@@ -187,8 +187,8 @@ void javax::crypto::KeyAgreement::init(local_ref< java::security::Key > const &a
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(9),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::security::Key > javax::crypto::KeyAgreement::doPhase(local_ref< java::security::Key > const &a0, jboolean a1)
@@ -197,8 +197,8 @@ local_ref< java::security::Key > javax::crypto::KeyAgreement::doPhase(local_ref<
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(10),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::security::Key > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::Key >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::KeyAgreement::generateSecret()
@@ -207,8 +207,8 @@ local_ref< array<jbyte,1> > javax::crypto::KeyAgreement::generateSecret()
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(11),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::KeyAgreement::generateSecret(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -217,8 +217,8 @@ jint javax::crypto::KeyAgreement::generateSecret(local_ref< array<jbyte,1> > con
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(12),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< javax::crypto::SecretKey > javax::crypto::KeyAgreement::generateSecret(local_ref< java::lang::String > const &a0)
@@ -227,8 +227,8 @@ local_ref< javax::crypto::SecretKey > javax::crypto::KeyAgreement::generateSecre
 		javax::crypto::KeyAgreement::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(13),
 		javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::crypto::SecretKey > >
-	(get_jobject(), a0);
+		local_ref< javax::crypto::SecretKey >
+	>(get_jobject(), a0);
 }
 
 

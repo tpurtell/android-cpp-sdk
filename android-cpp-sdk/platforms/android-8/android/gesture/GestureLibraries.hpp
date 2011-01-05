@@ -85,8 +85,8 @@ local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries
 		android::gesture::GestureLibraries::J2CPP_CLASS_NAME,
 		android::gesture::GestureLibraries::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureLibraries::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::gesture::GestureLibrary > >
-	(a0);
+		local_ref< android::gesture::GestureLibrary >
+	>(a0);
 }
 
 local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries::fromFile(local_ref< java::io::File > const &a0)
@@ -95,8 +95,8 @@ local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries
 		android::gesture::GestureLibraries::J2CPP_CLASS_NAME,
 		android::gesture::GestureLibraries::J2CPP_METHOD_NAME(2),
 		android::gesture::GestureLibraries::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::gesture::GestureLibrary > >
-	(a0);
+		local_ref< android::gesture::GestureLibrary >
+	>(a0);
 }
 
 local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries::fromPrivateFile(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1)
@@ -105,8 +105,8 @@ local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries
 		android::gesture::GestureLibraries::J2CPP_CLASS_NAME,
 		android::gesture::GestureLibraries::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureLibraries::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::gesture::GestureLibrary > >
-	(a0, a1);
+		local_ref< android::gesture::GestureLibrary >
+	>(a0, a1);
 }
 
 local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries::fromRawResource(local_ref< android::content::Context > const &a0, jint a1)
@@ -115,8 +115,8 @@ local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries
 		android::gesture::GestureLibraries::J2CPP_CLASS_NAME,
 		android::gesture::GestureLibraries::J2CPP_METHOD_NAME(4),
 		android::gesture::GestureLibraries::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::gesture::GestureLibrary > >
-	(a0, a1);
+		local_ref< android::gesture::GestureLibrary >
+	>(a0, a1);
 }
 
 

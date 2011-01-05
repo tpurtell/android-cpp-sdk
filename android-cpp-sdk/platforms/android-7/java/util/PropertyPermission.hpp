@@ -11,16 +11,20 @@
 #define J2CPP_JAVA_UTIL_PROPERTYPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/BasicPermission.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 
@@ -49,7 +53,11 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::BasicPermission>() const;
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::security::Guard>() const;
 
 
 		PropertyPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -76,9 +84,29 @@ namespace j2cpp {
 
 
 
+java::util::PropertyPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::PropertyPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::PropertyPermission::operator local_ref<java::security::BasicPermission>() const
 {
 	return local_ref<java::security::BasicPermission>(get_jobject());
+}
+
+java::util::PropertyPermission::operator local_ref<java::security::Permission>() const
+{
+	return local_ref<java::security::Permission>(get_jobject());
+}
+
+java::util::PropertyPermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jobject());
 }
 
 
@@ -87,8 +115,8 @@ java::util::PropertyPermission::PropertyPermission(local_ref< java::lang::String
 	call_new_object<
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(0),
-		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -100,8 +128,8 @@ jboolean java::util::PropertyPermission::equals(local_ref< java::lang::Object > 
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(1),
 		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::PropertyPermission::getActions()
@@ -110,8 +138,8 @@ local_ref< java::lang::String > java::util::PropertyPermission::getActions()
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(2),
 		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::PropertyPermission::hashCode()
@@ -120,8 +148,8 @@ jint java::util::PropertyPermission::hashCode()
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(3),
 		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::PropertyPermission::implies(local_ref< java::security::Permission > const &a0)
@@ -130,8 +158,8 @@ jboolean java::util::PropertyPermission::implies(local_ref< java::security::Perm
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(4),
 		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PermissionCollection > java::util::PropertyPermission::newPermissionCollection()
@@ -140,8 +168,8 @@ local_ref< java::security::PermissionCollection > java::util::PropertyPermission
 		java::util::PropertyPermission::J2CPP_CLASS_NAME,
 		java::util::PropertyPermission::J2CPP_METHOD_NAME(5),
 		java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 

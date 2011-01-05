@@ -89,8 +89,8 @@ jint java::io::ObjectInput::available()
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(0),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::io::ObjectInput::close()
@@ -99,8 +99,8 @@ void java::io::ObjectInput::close()
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(1),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::io::ObjectInput::read()
@@ -109,8 +109,8 @@ jint java::io::ObjectInput::read()
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(2),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::ObjectInput::read(local_ref< array<jbyte,1> > const &a0)
@@ -119,8 +119,8 @@ jint java::io::ObjectInput::read(local_ref< array<jbyte,1> > const &a0)
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(3),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::io::ObjectInput::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -129,8 +129,8 @@ jint java::io::ObjectInput::read(local_ref< array<jbyte,1> > const &a0, jint a1,
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(4),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::io::ObjectInput::readObject()
@@ -139,8 +139,8 @@ local_ref< java::lang::Object > java::io::ObjectInput::readObject()
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(5),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jlong java::io::ObjectInput::skip(jlong a0)
@@ -149,8 +149,8 @@ jlong java::io::ObjectInput::skip(jlong a0)
 		java::io::ObjectInput::J2CPP_CLASS_NAME,
 		java::io::ObjectInput::J2CPP_METHOD_NAME(6),
 		java::io::ObjectInput::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

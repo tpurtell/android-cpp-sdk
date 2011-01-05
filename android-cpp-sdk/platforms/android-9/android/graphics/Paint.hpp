@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { class Style; } } } }
@@ -42,7 +44,9 @@ namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 #include <android/graphics/Shader.hpp>
 #include <android/graphics/Typeface.hpp>
 #include <android/graphics/Xfermode.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -77,7 +81,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Paint_::Style >, 1> > values();
@@ -110,7 +117,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Paint_::Align >, 1> > values();
@@ -143,7 +153,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Paint_::Cap >, 1> > values();
@@ -176,7 +189,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Paint_::Join >, 1> > values();
@@ -497,9 +513,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Paint_::Style::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Paint_::Style::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Paint_::Style::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Paint_::Style::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Paint_::Style >, 1> > android::graphics::Paint_::Style::values()
@@ -508,8 +539,8 @@ local_ref< array< local_ref< android::graphics::Paint_::Style >, 1> > android::g
 		android::graphics::Paint_::Style::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Style::J2CPP_METHOD_NAME(0),
 		android::graphics::Paint_::Style::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Paint_::Style >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Paint_::Style >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Paint_::Style > android::graphics::Paint_::Style::valueOf(local_ref< java::lang::String > const &a0)
@@ -518,8 +549,8 @@ local_ref< android::graphics::Paint_::Style > android::graphics::Paint_::Style::
 		android::graphics::Paint_::Style::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Style::J2CPP_METHOD_NAME(1),
 		android::graphics::Paint_::Style::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Paint_::Style > >
-	(a0);
+		local_ref< android::graphics::Paint_::Style >
+	>(a0);
 }
 
 
@@ -558,9 +589,24 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Style,2,"STROKE","Landroid/graphic
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Style,3,"$VALUES","[android.graphics.Paint.Style")
 
 
+android::graphics::Paint_::Align::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Paint_::Align::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Paint_::Align::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Paint_::Align::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Paint_::Align >, 1> > android::graphics::Paint_::Align::values()
@@ -569,8 +615,8 @@ local_ref< array< local_ref< android::graphics::Paint_::Align >, 1> > android::g
 		android::graphics::Paint_::Align::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Align::J2CPP_METHOD_NAME(0),
 		android::graphics::Paint_::Align::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Paint_::Align >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Paint_::Align >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Paint_::Align > android::graphics::Paint_::Align::valueOf(local_ref< java::lang::String > const &a0)
@@ -579,8 +625,8 @@ local_ref< android::graphics::Paint_::Align > android::graphics::Paint_::Align::
 		android::graphics::Paint_::Align::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Align::J2CPP_METHOD_NAME(1),
 		android::graphics::Paint_::Align::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Paint_::Align > >
-	(a0);
+		local_ref< android::graphics::Paint_::Align >
+	>(a0);
 }
 
 
@@ -619,9 +665,24 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Align,2,"RIGHT","Landroid/graphics
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Align,3,"$VALUES","[android.graphics.Paint.Align")
 
 
+android::graphics::Paint_::Cap::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Paint_::Cap::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Paint_::Cap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Paint_::Cap::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Paint_::Cap >, 1> > android::graphics::Paint_::Cap::values()
@@ -630,8 +691,8 @@ local_ref< array< local_ref< android::graphics::Paint_::Cap >, 1> > android::gra
 		android::graphics::Paint_::Cap::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Cap::J2CPP_METHOD_NAME(0),
 		android::graphics::Paint_::Cap::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Paint_::Cap >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Paint_::Cap >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Paint_::Cap > android::graphics::Paint_::Cap::valueOf(local_ref< java::lang::String > const &a0)
@@ -640,8 +701,8 @@ local_ref< android::graphics::Paint_::Cap > android::graphics::Paint_::Cap::valu
 		android::graphics::Paint_::Cap::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Cap::J2CPP_METHOD_NAME(1),
 		android::graphics::Paint_::Cap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Paint_::Cap > >
-	(a0);
+		local_ref< android::graphics::Paint_::Cap >
+	>(a0);
 }
 
 
@@ -680,9 +741,24 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Cap,2,"SQUARE","Landroid/graphics/
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Cap,3,"$VALUES","[android.graphics.Paint.Cap")
 
 
+android::graphics::Paint_::Join::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Paint_::Join::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Paint_::Join::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Paint_::Join::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Paint_::Join >, 1> > android::graphics::Paint_::Join::values()
@@ -691,8 +767,8 @@ local_ref< array< local_ref< android::graphics::Paint_::Join >, 1> > android::gr
 		android::graphics::Paint_::Join::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Join::J2CPP_METHOD_NAME(0),
 		android::graphics::Paint_::Join::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Paint_::Join >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Paint_::Join >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Paint_::Join > android::graphics::Paint_::Join::valueOf(local_ref< java::lang::String > const &a0)
@@ -701,8 +777,8 @@ local_ref< android::graphics::Paint_::Join > android::graphics::Paint_::Join::va
 		android::graphics::Paint_::Join::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::Join::J2CPP_METHOD_NAME(1),
 		android::graphics::Paint_::Join::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Paint_::Join > >
-	(a0);
+		local_ref< android::graphics::Paint_::Join >
+	>(a0);
 }
 
 
@@ -752,8 +828,8 @@ android::graphics::Paint_::FontMetricsInt::FontMetricsInt()
 	call_new_object<
 		android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_NAME(0),
-		android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , top(get_jobject())
 , ascent(get_jobject())
@@ -770,8 +846,8 @@ local_ref< java::lang::String > android::graphics::Paint_::FontMetricsInt::toStr
 		android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_NAME(1),
 		android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -797,8 +873,8 @@ android::graphics::Paint_::FontMetrics::FontMetrics()
 	call_new_object<
 		android::graphics::Paint_::FontMetrics::J2CPP_CLASS_NAME,
 		android::graphics::Paint_::FontMetrics::J2CPP_METHOD_NAME(0),
-		android::graphics::Paint_::FontMetrics::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Paint_::FontMetrics::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , top(get_jobject())
 , ascent(get_jobject())
@@ -832,8 +908,8 @@ android::graphics::Paint::Paint()
 	call_new_object<
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(0),
-		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -845,8 +921,8 @@ android::graphics::Paint::Paint(jint a0)
 	call_new_object<
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(1),
-		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -858,8 +934,8 @@ android::graphics::Paint::Paint(local_ref< android::graphics::Paint > const &a0)
 	call_new_object<
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(2),
-		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -871,8 +947,8 @@ void android::graphics::Paint::reset()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(3),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::Paint::set(local_ref< android::graphics::Paint > const &a0)
@@ -881,8 +957,8 @@ void android::graphics::Paint::set(local_ref< android::graphics::Paint > const &
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(4),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Paint::getFlags()
@@ -891,8 +967,8 @@ jint android::graphics::Paint::getFlags()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(5),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setFlags(jint a0)
@@ -901,8 +977,8 @@ void android::graphics::Paint::setFlags(jint a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(6),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isAntiAlias()
@@ -911,8 +987,8 @@ jboolean android::graphics::Paint::isAntiAlias()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(7),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setAntiAlias(jboolean a0)
@@ -921,8 +997,8 @@ void android::graphics::Paint::setAntiAlias(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(8),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isDither()
@@ -931,8 +1007,8 @@ jboolean android::graphics::Paint::isDither()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(9),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setDither(jboolean a0)
@@ -941,8 +1017,8 @@ void android::graphics::Paint::setDither(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(10),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isLinearText()
@@ -951,8 +1027,8 @@ jboolean android::graphics::Paint::isLinearText()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(11),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setLinearText(jboolean a0)
@@ -961,8 +1037,8 @@ void android::graphics::Paint::setLinearText(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(12),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isSubpixelText()
@@ -971,8 +1047,8 @@ jboolean android::graphics::Paint::isSubpixelText()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(13),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setSubpixelText(jboolean a0)
@@ -981,8 +1057,8 @@ void android::graphics::Paint::setSubpixelText(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(14),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isUnderlineText()
@@ -991,8 +1067,8 @@ jboolean android::graphics::Paint::isUnderlineText()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(15),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setUnderlineText(jboolean a0)
@@ -1001,8 +1077,8 @@ void android::graphics::Paint::setUnderlineText(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(16),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isStrikeThruText()
@@ -1011,8 +1087,8 @@ jboolean android::graphics::Paint::isStrikeThruText()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(17),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStrikeThruText(jboolean a0)
@@ -1021,8 +1097,8 @@ void android::graphics::Paint::setStrikeThruText(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(18),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isFakeBoldText()
@@ -1031,8 +1107,8 @@ jboolean android::graphics::Paint::isFakeBoldText()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(19),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setFakeBoldText(jboolean a0)
@@ -1041,8 +1117,8 @@ void android::graphics::Paint::setFakeBoldText(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(20),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::isFilterBitmap()
@@ -1051,8 +1127,8 @@ jboolean android::graphics::Paint::isFilterBitmap()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(21),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setFilterBitmap(jboolean a0)
@@ -1061,8 +1137,8 @@ void android::graphics::Paint::setFilterBitmap(jboolean a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(22),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Paint_::Style > android::graphics::Paint::getStyle()
@@ -1071,8 +1147,8 @@ local_ref< android::graphics::Paint_::Style > android::graphics::Paint::getStyle
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(23),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::graphics::Paint_::Style > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::Style >
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStyle(local_ref< android::graphics::Paint_::Style > const &a0)
@@ -1081,8 +1157,8 @@ void android::graphics::Paint::setStyle(local_ref< android::graphics::Paint_::St
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(24),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Paint::getColor()
@@ -1091,8 +1167,8 @@ jint android::graphics::Paint::getColor()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(25),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setColor(jint a0)
@@ -1101,8 +1177,8 @@ void android::graphics::Paint::setColor(jint a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(26),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Paint::getAlpha()
@@ -1111,8 +1187,8 @@ jint android::graphics::Paint::getAlpha()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(27),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setAlpha(jint a0)
@@ -1121,8 +1197,8 @@ void android::graphics::Paint::setAlpha(jint a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(28),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Paint::setARGB(jint a0, jint a1, jint a2, jint a3)
@@ -1131,8 +1207,8 @@ void android::graphics::Paint::setARGB(jint a0, jint a1, jint a2, jint a3)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(29),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jfloat android::graphics::Paint::getStrokeWidth()
@@ -1141,8 +1217,8 @@ jfloat android::graphics::Paint::getStrokeWidth()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(30),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(30), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStrokeWidth(jfloat a0)
@@ -1151,8 +1227,8 @@ void android::graphics::Paint::setStrokeWidth(jfloat a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(31),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::getStrokeMiter()
@@ -1161,8 +1237,8 @@ jfloat android::graphics::Paint::getStrokeMiter()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(32),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(32), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStrokeMiter(jfloat a0)
@@ -1171,8 +1247,8 @@ void android::graphics::Paint::setStrokeMiter(jfloat a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(33),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Paint_::Cap > android::graphics::Paint::getStrokeCap()
@@ -1181,8 +1257,8 @@ local_ref< android::graphics::Paint_::Cap > android::graphics::Paint::getStrokeC
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(34),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::graphics::Paint_::Cap > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::Cap >
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStrokeCap(local_ref< android::graphics::Paint_::Cap > const &a0)
@@ -1191,8 +1267,8 @@ void android::graphics::Paint::setStrokeCap(local_ref< android::graphics::Paint_
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(35),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Paint_::Join > android::graphics::Paint::getStrokeJoin()
@@ -1201,8 +1277,8 @@ local_ref< android::graphics::Paint_::Join > android::graphics::Paint::getStroke
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(36),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::graphics::Paint_::Join > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::Join >
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setStrokeJoin(local_ref< android::graphics::Paint_::Join > const &a0)
@@ -1211,8 +1287,8 @@ void android::graphics::Paint::setStrokeJoin(local_ref< android::graphics::Paint
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(37),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Paint::getFillPath(local_ref< android::graphics::Path > const &a0, local_ref< android::graphics::Path > const &a1)
@@ -1221,8 +1297,8 @@ jboolean android::graphics::Paint::getFillPath(local_ref< android::graphics::Pat
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(38),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::Shader > android::graphics::Paint::getShader()
@@ -1231,8 +1307,8 @@ local_ref< android::graphics::Shader > android::graphics::Paint::getShader()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(39),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< android::graphics::Shader > >
-	(get_jobject());
+		local_ref< android::graphics::Shader >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Shader > android::graphics::Paint::setShader(local_ref< android::graphics::Shader > const &a0)
@@ -1241,8 +1317,8 @@ local_ref< android::graphics::Shader > android::graphics::Paint::setShader(local
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(40),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< android::graphics::Shader > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Shader >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::ColorFilter > android::graphics::Paint::getColorFilter()
@@ -1251,8 +1327,8 @@ local_ref< android::graphics::ColorFilter > android::graphics::Paint::getColorFi
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(41),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< android::graphics::ColorFilter > >
-	(get_jobject());
+		local_ref< android::graphics::ColorFilter >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::ColorFilter > android::graphics::Paint::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -1261,8 +1337,8 @@ local_ref< android::graphics::ColorFilter > android::graphics::Paint::setColorFi
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(42),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< android::graphics::ColorFilter > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::ColorFilter >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Xfermode > android::graphics::Paint::getXfermode()
@@ -1271,8 +1347,8 @@ local_ref< android::graphics::Xfermode > android::graphics::Paint::getXfermode()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(43),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< android::graphics::Xfermode > >
-	(get_jobject());
+		local_ref< android::graphics::Xfermode >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Xfermode > android::graphics::Paint::setXfermode(local_ref< android::graphics::Xfermode > const &a0)
@@ -1281,8 +1357,8 @@ local_ref< android::graphics::Xfermode > android::graphics::Paint::setXfermode(l
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(44),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< android::graphics::Xfermode > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Xfermode >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::PathEffect > android::graphics::Paint::getPathEffect()
@@ -1291,8 +1367,8 @@ local_ref< android::graphics::PathEffect > android::graphics::Paint::getPathEffe
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(45),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< android::graphics::PathEffect > >
-	(get_jobject());
+		local_ref< android::graphics::PathEffect >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::PathEffect > android::graphics::Paint::setPathEffect(local_ref< android::graphics::PathEffect > const &a0)
@@ -1301,8 +1377,8 @@ local_ref< android::graphics::PathEffect > android::graphics::Paint::setPathEffe
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(46),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< android::graphics::PathEffect > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::PathEffect >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::MaskFilter > android::graphics::Paint::getMaskFilter()
@@ -1311,8 +1387,8 @@ local_ref< android::graphics::MaskFilter > android::graphics::Paint::getMaskFilt
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(47),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< android::graphics::MaskFilter > >
-	(get_jobject());
+		local_ref< android::graphics::MaskFilter >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::MaskFilter > android::graphics::Paint::setMaskFilter(local_ref< android::graphics::MaskFilter > const &a0)
@@ -1321,8 +1397,8 @@ local_ref< android::graphics::MaskFilter > android::graphics::Paint::setMaskFilt
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(48),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< android::graphics::MaskFilter > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::MaskFilter >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Paint::getTypeface()
@@ -1331,8 +1407,8 @@ local_ref< android::graphics::Typeface > android::graphics::Paint::getTypeface()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(49),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< android::graphics::Typeface > >
-	(get_jobject());
+		local_ref< android::graphics::Typeface >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Paint::setTypeface(local_ref< android::graphics::Typeface > const &a0)
@@ -1341,8 +1417,8 @@ local_ref< android::graphics::Typeface > android::graphics::Paint::setTypeface(l
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(50),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< android::graphics::Typeface > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Typeface >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Rasterizer > android::graphics::Paint::getRasterizer()
@@ -1351,8 +1427,8 @@ local_ref< android::graphics::Rasterizer > android::graphics::Paint::getRasteriz
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(51),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< android::graphics::Rasterizer > >
-	(get_jobject());
+		local_ref< android::graphics::Rasterizer >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Rasterizer > android::graphics::Paint::setRasterizer(local_ref< android::graphics::Rasterizer > const &a0)
@@ -1361,8 +1437,8 @@ local_ref< android::graphics::Rasterizer > android::graphics::Paint::setRasteriz
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(52),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< android::graphics::Rasterizer > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Rasterizer >
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Paint::setShadowLayer(jfloat a0, jfloat a1, jfloat a2, jint a3)
@@ -1371,8 +1447,8 @@ void android::graphics::Paint::setShadowLayer(jfloat a0, jfloat a1, jfloat a2, j
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(53),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Paint::clearShadowLayer()
@@ -1381,8 +1457,8 @@ void android::graphics::Paint::clearShadowLayer()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(54),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Paint_::Align > android::graphics::Paint::getTextAlign()
@@ -1391,8 +1467,8 @@ local_ref< android::graphics::Paint_::Align > android::graphics::Paint::getTextA
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(55),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< android::graphics::Paint_::Align > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::Align >
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setTextAlign(local_ref< android::graphics::Paint_::Align > const &a0)
@@ -1401,8 +1477,8 @@ void android::graphics::Paint::setTextAlign(local_ref< android::graphics::Paint_
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(56),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::getTextSize()
@@ -1411,8 +1487,8 @@ jfloat android::graphics::Paint::getTextSize()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(57),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(57), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setTextSize(jfloat a0)
@@ -1421,8 +1497,8 @@ void android::graphics::Paint::setTextSize(jfloat a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(58),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::getTextScaleX()
@@ -1431,8 +1507,8 @@ jfloat android::graphics::Paint::getTextScaleX()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(59),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(59), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setTextScaleX(jfloat a0)
@@ -1441,8 +1517,8 @@ void android::graphics::Paint::setTextScaleX(jfloat a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(60),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::getTextSkewX()
@@ -1451,8 +1527,8 @@ jfloat android::graphics::Paint::getTextSkewX()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(61),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(61), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::Paint::setTextSkewX(jfloat a0)
@@ -1461,8 +1537,8 @@ void android::graphics::Paint::setTextSkewX(jfloat a0)
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(62),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::ascent()
@@ -1471,8 +1547,8 @@ jfloat android::graphics::Paint::ascent()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(63),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(63), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::graphics::Paint::descent()
@@ -1481,8 +1557,8 @@ jfloat android::graphics::Paint::descent()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(64),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(64), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::graphics::Paint::getFontMetrics(local_ref< android::graphics::Paint_::FontMetrics > const &a0)
@@ -1491,8 +1567,8 @@ jfloat android::graphics::Paint::getFontMetrics(local_ref< android::graphics::Pa
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(65),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(65), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Paint_::FontMetrics > android::graphics::Paint::getFontMetrics()
@@ -1501,8 +1577,8 @@ local_ref< android::graphics::Paint_::FontMetrics > android::graphics::Paint::ge
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(66),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(66), 
-		local_ref< android::graphics::Paint_::FontMetrics > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::FontMetrics >
+	>(get_jobject());
 }
 
 jint android::graphics::Paint::getFontMetricsInt(local_ref< android::graphics::Paint_::FontMetricsInt > const &a0)
@@ -1511,8 +1587,8 @@ jint android::graphics::Paint::getFontMetricsInt(local_ref< android::graphics::P
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(67),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(67), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Paint_::FontMetricsInt > android::graphics::Paint::getFontMetricsInt()
@@ -1521,8 +1597,8 @@ local_ref< android::graphics::Paint_::FontMetricsInt > android::graphics::Paint:
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(68),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(68), 
-		local_ref< android::graphics::Paint_::FontMetricsInt > >
-	(get_jobject());
+		local_ref< android::graphics::Paint_::FontMetricsInt >
+	>(get_jobject());
 }
 
 jfloat android::graphics::Paint::getFontSpacing()
@@ -1531,8 +1607,8 @@ jfloat android::graphics::Paint::getFontSpacing()
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(69),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(69), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::graphics::Paint::measureText(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -1541,8 +1617,8 @@ jfloat android::graphics::Paint::measureText(local_ref< array<jchar,1> > const &
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(70),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(70), 
-		jfloat >
-	(get_jobject(), a0, a1, a2);
+		jfloat
+	>(get_jobject(), a0, a1, a2);
 }
 
 jfloat android::graphics::Paint::measureText(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -1551,8 +1627,8 @@ jfloat android::graphics::Paint::measureText(local_ref< java::lang::String > con
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(71),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(71), 
-		jfloat >
-	(get_jobject(), a0, a1, a2);
+		jfloat
+	>(get_jobject(), a0, a1, a2);
 }
 
 jfloat android::graphics::Paint::measureText(local_ref< java::lang::String > const &a0)
@@ -1561,8 +1637,8 @@ jfloat android::graphics::Paint::measureText(local_ref< java::lang::String > con
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(72),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(72), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::graphics::Paint::measureText(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -1571,8 +1647,8 @@ jfloat android::graphics::Paint::measureText(local_ref< java::lang::CharSequence
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(73),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(73), 
-		jfloat >
-	(get_jobject(), a0, a1, a2);
+		jfloat
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::Paint::breakText(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jfloat a3, local_ref< array<jfloat,1> > const &a4)
@@ -1581,8 +1657,8 @@ jint android::graphics::Paint::breakText(local_ref< array<jchar,1> > const &a0, 
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(74),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(74), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint android::graphics::Paint::breakText(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jboolean a3, jfloat a4, local_ref< array<jfloat,1> > const &a5)
@@ -1591,8 +1667,8 @@ jint android::graphics::Paint::breakText(local_ref< java::lang::CharSequence > c
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(75),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(75), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jint android::graphics::Paint::breakText(local_ref< java::lang::String > const &a0, jboolean a1, jfloat a2, local_ref< array<jfloat,1> > const &a3)
@@ -1601,8 +1677,8 @@ jint android::graphics::Paint::breakText(local_ref< java::lang::String > const &
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(76),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(76), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::graphics::Paint::getTextWidths(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3)
@@ -1611,8 +1687,8 @@ jint android::graphics::Paint::getTextWidths(local_ref< array<jchar,1> > const &
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(77),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(77), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::graphics::Paint::getTextWidths(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3)
@@ -1621,8 +1697,8 @@ jint android::graphics::Paint::getTextWidths(local_ref< java::lang::CharSequence
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(78),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(78), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::graphics::Paint::getTextWidths(local_ref< java::lang::String > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3)
@@ -1631,8 +1707,8 @@ jint android::graphics::Paint::getTextWidths(local_ref< java::lang::String > con
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(79),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(79), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::graphics::Paint::getTextWidths(local_ref< java::lang::String > const &a0, local_ref< array<jfloat,1> > const &a1)
@@ -1641,8 +1717,8 @@ jint android::graphics::Paint::getTextWidths(local_ref< java::lang::String > con
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(80),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(80), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Paint::getTextPath(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, local_ref< android::graphics::Path > const &a5)
@@ -1651,8 +1727,8 @@ void android::graphics::Paint::getTextPath(local_ref< array<jchar,1> > const &a0
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(81),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(81), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Paint::getTextPath(local_ref< java::lang::String > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, local_ref< android::graphics::Path > const &a5)
@@ -1661,8 +1737,8 @@ void android::graphics::Paint::getTextPath(local_ref< java::lang::String > const
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(82),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(82), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Paint::getTextBounds(local_ref< java::lang::String > const &a0, jint a1, jint a2, local_ref< android::graphics::Rect > const &a3)
@@ -1671,8 +1747,8 @@ void android::graphics::Paint::getTextBounds(local_ref< java::lang::String > con
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(83),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(83), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Paint::getTextBounds(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::Rect > const &a3)
@@ -1681,8 +1757,8 @@ void android::graphics::Paint::getTextBounds(local_ref< array<jchar,1> > const &
 		android::graphics::Paint::J2CPP_CLASS_NAME,
 		android::graphics::Paint::J2CPP_METHOD_NAME(84),
 		android::graphics::Paint::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

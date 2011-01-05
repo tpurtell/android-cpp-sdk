@@ -71,8 +71,8 @@ local_ref< android::widget::Filter > android::widget::Filterable::getFilter()
 		android::widget::Filterable::J2CPP_CLASS_NAME,
 		android::widget::Filterable::J2CPP_METHOD_NAME(0),
 		android::widget::Filterable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::widget::Filter > >
-	(get_jobject());
+		local_ref< android::widget::Filter >
+	>(get_jobject());
 }
 
 

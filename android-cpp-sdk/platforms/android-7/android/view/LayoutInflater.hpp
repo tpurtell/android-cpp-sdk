@@ -161,8 +161,8 @@ local_ref< android::view::View > android::view::LayoutInflater_::Factory::onCrea
 		android::view::LayoutInflater_::Factory::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater_::Factory::J2CPP_METHOD_NAME(0),
 		android::view::LayoutInflater_::Factory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -181,8 +181,8 @@ jboolean android::view::LayoutInflater_::Filter::onLoadClass(local_ref< java::la
 		android::view::LayoutInflater_::Filter::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater_::Filter::J2CPP_METHOD_NAME(0),
 		android::view::LayoutInflater_::Filter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -204,8 +204,8 @@ local_ref< android::view::LayoutInflater > android::view::LayoutInflater::from(l
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(2),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::LayoutInflater > >
-	(a0);
+		local_ref< android::view::LayoutInflater >
+	>(a0);
 }
 
 local_ref< android::view::LayoutInflater > android::view::LayoutInflater::cloneInContext(local_ref< android::content::Context > const &a0)
@@ -214,8 +214,8 @@ local_ref< android::view::LayoutInflater > android::view::LayoutInflater::cloneI
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(3),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::LayoutInflater > >
-	(get_jobject(), a0);
+		local_ref< android::view::LayoutInflater >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::Context > android::view::LayoutInflater::getContext()
@@ -224,8 +224,8 @@ local_ref< android::content::Context > android::view::LayoutInflater::getContext
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(4),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 local_ref< android::view::LayoutInflater_::Factory > android::view::LayoutInflater::getFactory()
@@ -234,8 +234,8 @@ local_ref< android::view::LayoutInflater_::Factory > android::view::LayoutInflat
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(5),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::LayoutInflater_::Factory > >
-	(get_jobject());
+		local_ref< android::view::LayoutInflater_::Factory >
+	>(get_jobject());
 }
 
 void android::view::LayoutInflater::setFactory(local_ref< android::view::LayoutInflater_::Factory > const &a0)
@@ -244,8 +244,8 @@ void android::view::LayoutInflater::setFactory(local_ref< android::view::LayoutI
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(6),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::LayoutInflater_::Filter > android::view::LayoutInflater::getFilter()
@@ -254,8 +254,8 @@ local_ref< android::view::LayoutInflater_::Filter > android::view::LayoutInflate
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(7),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::LayoutInflater_::Filter > >
-	(get_jobject());
+		local_ref< android::view::LayoutInflater_::Filter >
+	>(get_jobject());
 }
 
 void android::view::LayoutInflater::setFilter(local_ref< android::view::LayoutInflater_::Filter > const &a0)
@@ -264,8 +264,8 @@ void android::view::LayoutInflater::setFilter(local_ref< android::view::LayoutIn
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(8),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::view::LayoutInflater::inflate(jint a0, local_ref< android::view::ViewGroup > const &a1)
@@ -274,8 +274,8 @@ local_ref< android::view::View > android::view::LayoutInflater::inflate(jint a0,
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(9),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::View > android::view::LayoutInflater::inflate(local_ref< org::xmlpull::v1::XmlPullParser > const &a0, local_ref< android::view::ViewGroup > const &a1)
@@ -284,8 +284,8 @@ local_ref< android::view::View > android::view::LayoutInflater::inflate(local_re
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(10),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::View > android::view::LayoutInflater::inflate(jint a0, local_ref< android::view::ViewGroup > const &a1, jboolean a2)
@@ -294,8 +294,8 @@ local_ref< android::view::View > android::view::LayoutInflater::inflate(jint a0,
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(11),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::view::LayoutInflater::inflate(local_ref< org::xmlpull::v1::XmlPullParser > const &a0, local_ref< android::view::ViewGroup > const &a1, jboolean a2)
@@ -304,8 +304,8 @@ local_ref< android::view::View > android::view::LayoutInflater::inflate(local_re
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(12),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::view::LayoutInflater::createView(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::util::AttributeSet > const &a2)
@@ -314,8 +314,8 @@ local_ref< android::view::View > android::view::LayoutInflater::createView(local
 		android::view::LayoutInflater::J2CPP_CLASS_NAME,
 		android::view::LayoutInflater::J2CPP_METHOD_NAME(13),
 		android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

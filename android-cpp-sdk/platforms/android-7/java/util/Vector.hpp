@@ -13,9 +13,11 @@
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 namespace j2cpp { namespace java { namespace util { class RandomAccess; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
@@ -24,8 +26,10 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractList.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Enumeration.hpp>
@@ -100,11 +104,15 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractList>() const;
-		operator local_ref<java::util::List>() const;
-		operator local_ref<java::util::RandomAccess>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::RandomAccess>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::List>() const;
 
 
 		Vector();
@@ -171,19 +179,19 @@ namespace j2cpp {
 
 
 
-java::util::Vector::operator local_ref<java::util::AbstractList>() const
+java::util::Vector::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::util::AbstractList>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-java::util::Vector::operator local_ref<java::util::List>() const
+java::util::Vector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::List>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::util::Vector::operator local_ref<java::util::RandomAccess>() const
+java::util::Vector::operator local_ref<java::lang::Iterable>() const
 {
-	return local_ref<java::util::RandomAccess>(get_jobject());
+	return local_ref<java::lang::Iterable>(get_jobject());
 }
 
 java::util::Vector::operator local_ref<java::lang::Cloneable>() const
@@ -191,9 +199,29 @@ java::util::Vector::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::Vector::operator local_ref<java::io::Serializable>() const
+java::util::Vector::operator local_ref<java::util::AbstractList>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::util::AbstractList>(get_jobject());
+}
+
+java::util::Vector::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::Vector::operator local_ref<java::util::RandomAccess>() const
+{
+	return local_ref<java::util::RandomAccess>(get_jobject());
+}
+
+java::util::Vector::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::Vector::operator local_ref<java::util::List>() const
+{
+	return local_ref<java::util::List>(get_jobject());
 }
 
 
@@ -202,8 +230,8 @@ java::util::Vector::Vector()
 	call_new_object<
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(0),
-		java::util::Vector::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Vector::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -215,8 +243,8 @@ java::util::Vector::Vector(jint a0)
 	call_new_object<
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(1),
-		java::util::Vector::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::Vector::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -228,8 +256,8 @@ java::util::Vector::Vector(jint a0, jint a1)
 	call_new_object<
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(2),
-		java::util::Vector::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::Vector::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -241,8 +269,8 @@ java::util::Vector::Vector(local_ref< java::util::Collection > const &a0)
 	call_new_object<
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(3),
-		java::util::Vector::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::Vector::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -254,8 +282,8 @@ void java::util::Vector::add(jint a0, local_ref< java::lang::Object > const &a1)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(4),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Vector::add(local_ref< java::lang::Object > const &a0)
@@ -264,8 +292,8 @@ jboolean java::util::Vector::add(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(5),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Vector::addAll(jint a0, local_ref< java::util::Collection > const &a1)
@@ -274,8 +302,8 @@ jboolean java::util::Vector::addAll(jint a0, local_ref< java::util::Collection >
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(6),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Vector::addAll(local_ref< java::util::Collection > const &a0)
@@ -284,8 +312,8 @@ jboolean java::util::Vector::addAll(local_ref< java::util::Collection > const &a
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(7),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Vector::addElement(local_ref< java::lang::Object > const &a0)
@@ -294,8 +322,8 @@ void java::util::Vector::addElement(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(8),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::Vector::capacity()
@@ -304,8 +332,8 @@ jint java::util::Vector::capacity()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(9),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::Vector::clear()
@@ -314,8 +342,8 @@ void java::util::Vector::clear()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(10),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Vector::clone()
@@ -324,8 +352,8 @@ local_ref< java::lang::Object > java::util::Vector::clone()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(11),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::Vector::contains(local_ref< java::lang::Object > const &a0)
@@ -334,8 +362,8 @@ jboolean java::util::Vector::contains(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(12),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Vector::containsAll(local_ref< java::util::Collection > const &a0)
@@ -344,8 +372,8 @@ jboolean java::util::Vector::containsAll(local_ref< java::util::Collection > con
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(13),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Vector::copyInto(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -354,8 +382,8 @@ void java::util::Vector::copyInto(local_ref< array< local_ref< java::lang::Objec
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(14),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Vector::elementAt(jint a0)
@@ -364,8 +392,8 @@ local_ref< java::lang::Object > java::util::Vector::elementAt(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(15),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::util::Vector::elements()
@@ -374,8 +402,8 @@ local_ref< java::util::Enumeration > java::util::Vector::elements()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(16),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 void java::util::Vector::ensureCapacity(jint a0)
@@ -384,8 +412,8 @@ void java::util::Vector::ensureCapacity(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(17),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Vector::equals(local_ref< java::lang::Object > const &a0)
@@ -394,8 +422,8 @@ jboolean java::util::Vector::equals(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(18),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Vector::firstElement()
@@ -404,8 +432,8 @@ local_ref< java::lang::Object > java::util::Vector::firstElement()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(19),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Vector::get(jint a0)
@@ -414,8 +442,8 @@ local_ref< java::lang::Object > java::util::Vector::get(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(20),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Vector::hashCode()
@@ -424,8 +452,8 @@ jint java::util::Vector::hashCode()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(21),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Vector::indexOf(local_ref< java::lang::Object > const &a0)
@@ -434,8 +462,8 @@ jint java::util::Vector::indexOf(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(22),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Vector::indexOf(local_ref< java::lang::Object > const &a0, jint a1)
@@ -444,8 +472,8 @@ jint java::util::Vector::indexOf(local_ref< java::lang::Object > const &a0, jint
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(23),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Vector::insertElementAt(local_ref< java::lang::Object > const &a0, jint a1)
@@ -454,8 +482,8 @@ void java::util::Vector::insertElementAt(local_ref< java::lang::Object > const &
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(24),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Vector::isEmpty()
@@ -464,8 +492,8 @@ jboolean java::util::Vector::isEmpty()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(25),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Vector::lastElement()
@@ -474,8 +502,8 @@ local_ref< java::lang::Object > java::util::Vector::lastElement()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(26),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::Vector::lastIndexOf(local_ref< java::lang::Object > const &a0)
@@ -484,8 +512,8 @@ jint java::util::Vector::lastIndexOf(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(27),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::Vector::lastIndexOf(local_ref< java::lang::Object > const &a0, jint a1)
@@ -494,8 +522,8 @@ jint java::util::Vector::lastIndexOf(local_ref< java::lang::Object > const &a0, 
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(28),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::Vector::remove(jint a0)
@@ -504,8 +532,8 @@ local_ref< java::lang::Object > java::util::Vector::remove(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(29),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Vector::remove(local_ref< java::lang::Object > const &a0)
@@ -514,8 +542,8 @@ jboolean java::util::Vector::remove(local_ref< java::lang::Object > const &a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(30),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Vector::removeAll(local_ref< java::util::Collection > const &a0)
@@ -524,8 +552,8 @@ jboolean java::util::Vector::removeAll(local_ref< java::util::Collection > const
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(31),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Vector::removeAllElements()
@@ -534,8 +562,8 @@ void java::util::Vector::removeAllElements()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(32),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::Vector::removeElement(local_ref< java::lang::Object > const &a0)
@@ -544,8 +572,8 @@ jboolean java::util::Vector::removeElement(local_ref< java::lang::Object > const
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(33),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Vector::removeElementAt(jint a0)
@@ -554,8 +582,8 @@ void java::util::Vector::removeElementAt(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(34),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -565,8 +593,8 @@ jboolean java::util::Vector::retainAll(local_ref< java::util::Collection > const
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(36),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Vector::set(jint a0, local_ref< java::lang::Object > const &a1)
@@ -575,8 +603,8 @@ local_ref< java::lang::Object > java::util::Vector::set(jint a0, local_ref< java
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(37),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Vector::setElementAt(local_ref< java::lang::Object > const &a0, jint a1)
@@ -585,8 +613,8 @@ void java::util::Vector::setElementAt(local_ref< java::lang::Object > const &a0,
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(38),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Vector::setSize(jint a0)
@@ -595,8 +623,8 @@ void java::util::Vector::setSize(jint a0)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(39),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::Vector::size()
@@ -605,8 +633,8 @@ jint java::util::Vector::size()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(40),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(40), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::util::Vector::subList(jint a0, jint a1)
@@ -615,8 +643,8 @@ local_ref< java::util::List > java::util::Vector::subList(jint a0, jint a1)
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(41),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Vector::toArray()
@@ -625,8 +653,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Vector::toAr
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(42),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Vector::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -635,8 +663,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::Vector::toAr
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(43),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Vector::toString()
@@ -645,8 +673,8 @@ local_ref< java::lang::String > java::util::Vector::toString()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(44),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::Vector::trimToSize()
@@ -655,8 +683,8 @@ void java::util::Vector::trimToSize()
 		java::util::Vector::J2CPP_CLASS_NAME,
 		java::util::Vector::J2CPP_METHOD_NAME(45),
 		java::util::Vector::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

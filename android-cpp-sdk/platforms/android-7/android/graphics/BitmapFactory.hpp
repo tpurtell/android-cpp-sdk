@@ -184,8 +184,8 @@ android::graphics::BitmapFactory_::Options::Options()
 	call_new_object<
 		android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory_::Options::J2CPP_METHOD_NAME(0),
-		android::graphics::BitmapFactory_::Options::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::BitmapFactory_::Options::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , inJustDecodeBounds(get_jobject())
 , inSampleSize(get_jobject())
@@ -212,8 +212,8 @@ void android::graphics::BitmapFactory_::Options::requestCancelDecode()
 		android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory_::Options::J2CPP_METHOD_NAME(1),
 		android::graphics::BitmapFactory_::Options::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -250,8 +250,8 @@ android::graphics::BitmapFactory::BitmapFactory()
 	call_new_object<
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(0),
-		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -263,8 +263,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeF
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(1),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeFile(local_ref< java::lang::String > const &a0)
@@ -273,8 +273,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeF
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(2),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Bitmap > >
-	(a0);
+		local_ref< android::graphics::Bitmap >
+	>(a0);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeResourceStream(local_ref< android::content::res::Resources > const &a0, local_ref< android::util::TypedValue > const &a1, local_ref< java::io::InputStream > const &a2, local_ref< android::graphics::Rect > const &a3, local_ref< android::graphics::BitmapFactory_::Options > const &a4)
@@ -283,8 +283,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeR
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(3),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeResource(local_ref< android::content::res::Resources > const &a0, jint a1, local_ref< android::graphics::BitmapFactory_::Options > const &a2)
@@ -293,8 +293,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeR
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(4),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeResource(local_ref< android::content::res::Resources > const &a0, jint a1)
@@ -303,8 +303,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeR
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(5),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeByteArray(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::BitmapFactory_::Options > const &a3)
@@ -313,8 +313,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeB
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(6),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeByteArray(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -323,8 +323,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeB
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(7),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeStream(local_ref< java::io::InputStream > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::BitmapFactory_::Options > const &a2)
@@ -333,8 +333,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeS
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(8),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeStream(local_ref< java::io::InputStream > const &a0)
@@ -343,8 +343,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeS
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(9),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Bitmap > >
-	(a0);
+		local_ref< android::graphics::Bitmap >
+	>(a0);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeFileDescriptor(local_ref< java::io::FileDescriptor > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::BitmapFactory_::Options > const &a2)
@@ -353,8 +353,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeF
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(10),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2);
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeFileDescriptor(local_ref< java::io::FileDescriptor > const &a0)
@@ -363,8 +363,8 @@ local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeF
 		android::graphics::BitmapFactory::J2CPP_CLASS_NAME,
 		android::graphics::BitmapFactory::J2CPP_METHOD_NAME(11),
 		android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::graphics::Bitmap > >
-	(a0);
+		local_ref< android::graphics::Bitmap >
+	>(a0);
 }
 
 

@@ -13,12 +13,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderIterator; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class TokenIterator; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/Iterator.hpp>
 #include <org/apache/http/HeaderIterator.hpp>
 #include <org/apache/http/TokenIterator.hpp>
 
@@ -61,6 +63,7 @@ namespace org { namespace apache { namespace http { namespace message {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
 		operator local_ref<org::apache::http::TokenIterator>() const;
 
 
@@ -96,6 +99,11 @@ org::apache::http::message::BasicTokenIterator::operator local_ref<java::lang::O
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::apache::http::message::BasicTokenIterator::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jobject());
+}
+
 org::apache::http::message::BasicTokenIterator::operator local_ref<org::apache::http::TokenIterator>() const
 {
 	return local_ref<org::apache::http::TokenIterator>(get_jobject());
@@ -107,8 +115,8 @@ org::apache::http::message::BasicTokenIterator::BasicTokenIterator(local_ref< or
 	call_new_object<
 		org::apache::http::message::BasicTokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -120,8 +128,8 @@ jboolean org::apache::http::message::BasicTokenIterator::hasNext()
 		org::apache::http::message::BasicTokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicTokenIterator::nextToken()
@@ -130,8 +138,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicTokenIterator::
 		org::apache::http::message::BasicTokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicTokenIterator::next()
@@ -140,8 +148,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicTokenIterator::
 		org::apache::http::message::BasicTokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void org::apache::http::message::BasicTokenIterator::remove()
@@ -150,8 +158,8 @@ void org::apache::http::message::BasicTokenIterator::remove()
 		org::apache::http::message::BasicTokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicTokenIterator::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

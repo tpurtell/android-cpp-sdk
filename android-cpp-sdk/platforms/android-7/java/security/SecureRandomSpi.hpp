@@ -41,8 +41,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SecureRandomSpi();
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::security::SecureRandomSpi::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::SecureRandomSpi::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::SecureRandomSpi::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -80,8 +80,8 @@ java::security::SecureRandomSpi::SecureRandomSpi()
 	call_new_object<
 		java::security::SecureRandomSpi::J2CPP_CLASS_NAME,
 		java::security::SecureRandomSpi::J2CPP_METHOD_NAME(0),
-		java::security::SecureRandomSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::SecureRandomSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

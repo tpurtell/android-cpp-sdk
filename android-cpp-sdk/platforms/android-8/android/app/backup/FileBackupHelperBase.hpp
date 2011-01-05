@@ -76,8 +76,8 @@ void android::app::backup::FileBackupHelperBase::writeNewStateDescription(local_
 		android::app::backup::FileBackupHelperBase::J2CPP_CLASS_NAME,
 		android::app::backup::FileBackupHelperBase::J2CPP_METHOD_NAME(2),
 		android::app::backup::FileBackupHelperBase::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

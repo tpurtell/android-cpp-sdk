@@ -104,8 +104,8 @@ local_ref< java::io::InputStream > java::nio::channels::Channels::newInputStream
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(1),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(a0);
+		local_ref< java::io::InputStream >
+	>(a0);
 }
 
 local_ref< java::io::OutputStream > java::nio::channels::Channels::newOutputStream(local_ref< java::nio::channels::WritableByteChannel > const &a0)
@@ -114,8 +114,8 @@ local_ref< java::io::OutputStream > java::nio::channels::Channels::newOutputStre
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(2),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::OutputStream > >
-	(a0);
+		local_ref< java::io::OutputStream >
+	>(a0);
 }
 
 local_ref< java::nio::channels::ReadableByteChannel > java::nio::channels::Channels::newChannel(local_ref< java::io::InputStream > const &a0)
@@ -124,8 +124,8 @@ local_ref< java::nio::channels::ReadableByteChannel > java::nio::channels::Chann
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(3),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::channels::ReadableByteChannel > >
-	(a0);
+		local_ref< java::nio::channels::ReadableByteChannel >
+	>(a0);
 }
 
 local_ref< java::nio::channels::WritableByteChannel > java::nio::channels::Channels::newChannel(local_ref< java::io::OutputStream > const &a0)
@@ -134,8 +134,8 @@ local_ref< java::nio::channels::WritableByteChannel > java::nio::channels::Chann
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(4),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::WritableByteChannel > >
-	(a0);
+		local_ref< java::nio::channels::WritableByteChannel >
+	>(a0);
 }
 
 local_ref< java::io::Reader > java::nio::channels::Channels::newReader(local_ref< java::nio::channels::ReadableByteChannel > const &a0, local_ref< java::nio::charset::CharsetDecoder > const &a1, jint a2)
@@ -144,8 +144,8 @@ local_ref< java::io::Reader > java::nio::channels::Channels::newReader(local_ref
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(5),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::Reader > >
-	(a0, a1, a2);
+		local_ref< java::io::Reader >
+	>(a0, a1, a2);
 }
 
 local_ref< java::io::Reader > java::nio::channels::Channels::newReader(local_ref< java::nio::channels::ReadableByteChannel > const &a0, local_ref< java::lang::String > const &a1)
@@ -154,8 +154,8 @@ local_ref< java::io::Reader > java::nio::channels::Channels::newReader(local_ref
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(6),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::Reader > >
-	(a0, a1);
+		local_ref< java::io::Reader >
+	>(a0, a1);
 }
 
 local_ref< java::io::Writer > java::nio::channels::Channels::newWriter(local_ref< java::nio::channels::WritableByteChannel > const &a0, local_ref< java::nio::charset::CharsetEncoder > const &a1, jint a2)
@@ -164,8 +164,8 @@ local_ref< java::io::Writer > java::nio::channels::Channels::newWriter(local_ref
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(7),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::io::Writer > >
-	(a0, a1, a2);
+		local_ref< java::io::Writer >
+	>(a0, a1, a2);
 }
 
 local_ref< java::io::Writer > java::nio::channels::Channels::newWriter(local_ref< java::nio::channels::WritableByteChannel > const &a0, local_ref< java::lang::String > const &a1)
@@ -174,8 +174,8 @@ local_ref< java::io::Writer > java::nio::channels::Channels::newWriter(local_ref
 		java::nio::channels::Channels::J2CPP_CLASS_NAME,
 		java::nio::channels::Channels::J2CPP_METHOD_NAME(8),
 		java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::io::Writer > >
-	(a0, a1);
+		local_ref< java::io::Writer >
+	>(a0, a1);
 }
 
 

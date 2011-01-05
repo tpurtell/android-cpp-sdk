@@ -103,8 +103,8 @@ org::xml::sax::helpers::AttributeListImpl::AttributeListImpl()
 	call_new_object<
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(0),
-		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -116,8 +116,8 @@ org::xml::sax::helpers::AttributeListImpl::AttributeListImpl(local_ref< org::xml
 	call_new_object<
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(1),
-		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -129,8 +129,8 @@ void org::xml::sax::helpers::AttributeListImpl::setAttributeList(local_ref< org:
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::AttributeListImpl::addAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -139,8 +139,8 @@ void org::xml::sax::helpers::AttributeListImpl::addAttribute(local_ref< java::la
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(3),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::AttributeListImpl::removeAttribute(local_ref< java::lang::String > const &a0)
@@ -149,8 +149,8 @@ void org::xml::sax::helpers::AttributeListImpl::removeAttribute(local_ref< java:
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(4),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::AttributeListImpl::clear()
@@ -159,8 +159,8 @@ void org::xml::sax::helpers::AttributeListImpl::clear()
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(5),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint org::xml::sax::helpers::AttributeListImpl::getLength()
@@ -169,8 +169,8 @@ jint org::xml::sax::helpers::AttributeListImpl::getLength()
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(6),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getName(jint a0)
@@ -179,8 +179,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getNa
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(7),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getType(jint a0)
@@ -189,8 +189,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getTy
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(8),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getValue(jint a0)
@@ -199,8 +199,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getVa
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(9),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getType(local_ref< java::lang::String > const &a0)
@@ -209,8 +209,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getTy
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(10),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getValue(local_ref< java::lang::String > const &a0)
@@ -219,8 +219,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::AttributeListImpl::getVa
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_NAME(11),
 		org::xml::sax::helpers::AttributeListImpl::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

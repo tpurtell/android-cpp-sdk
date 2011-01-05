@@ -147,8 +147,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::appendReplac
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(1),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::reset(local_ref< java::lang::CharSequence > const &a0)
@@ -157,8 +157,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::reset(local_
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(2),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::reset()
@@ -167,8 +167,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::reset()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(3),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject());
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::region(jint a0, jint a1)
@@ -177,8 +177,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::region(jint 
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(4),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::StringBuffer > java::util::regex::Matcher::appendTail(local_ref< java::lang::StringBuffer > const &a0)
@@ -187,8 +187,8 @@ local_ref< java::lang::StringBuffer > java::util::regex::Matcher::appendTail(loc
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(5),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::regex::Matcher::replaceFirst(local_ref< java::lang::String > const &a0)
@@ -197,8 +197,8 @@ local_ref< java::lang::String > java::util::regex::Matcher::replaceFirst(local_r
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(6),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::regex::Matcher::replaceAll(local_ref< java::lang::String > const &a0)
@@ -207,8 +207,8 @@ local_ref< java::lang::String > java::util::regex::Matcher::replaceAll(local_ref
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(7),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::regex::Pattern > java::util::regex::Matcher::pattern()
@@ -217,8 +217,8 @@ local_ref< java::util::regex::Pattern > java::util::regex::Matcher::pattern()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(8),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::regex::Pattern > >
-	(get_jobject());
+		local_ref< java::util::regex::Pattern >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::regex::Matcher::group(jint a0)
@@ -227,8 +227,8 @@ local_ref< java::lang::String > java::util::regex::Matcher::group(jint a0)
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(9),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::regex::Matcher::group()
@@ -237,8 +237,8 @@ local_ref< java::lang::String > java::util::regex::Matcher::group()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(10),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::util::regex::Matcher::find(jint a0)
@@ -247,8 +247,8 @@ jboolean java::util::regex::Matcher::find(jint a0)
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(11),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::regex::Matcher::find()
@@ -257,8 +257,8 @@ jboolean java::util::regex::Matcher::find()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(12),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::start(jint a0)
@@ -267,8 +267,8 @@ jint java::util::regex::Matcher::start(jint a0)
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(13),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::regex::Matcher::end(jint a0)
@@ -277,8 +277,8 @@ jint java::util::regex::Matcher::end(jint a0)
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(14),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::regex::Matcher::matches()
@@ -287,8 +287,8 @@ jboolean java::util::regex::Matcher::matches()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(15),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::regex::Matcher::quoteReplacement(local_ref< java::lang::String > const &a0)
@@ -297,8 +297,8 @@ local_ref< java::lang::String > java::util::regex::Matcher::quoteReplacement(loc
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(16),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jboolean java::util::regex::Matcher::lookingAt()
@@ -307,8 +307,8 @@ jboolean java::util::regex::Matcher::lookingAt()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(17),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::start()
@@ -317,8 +317,8 @@ jint java::util::regex::Matcher::start()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(18),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::groupCount()
@@ -327,8 +327,8 @@ jint java::util::regex::Matcher::groupCount()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(19),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::end()
@@ -337,8 +337,8 @@ jint java::util::regex::Matcher::end()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(20),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::MatchResult > java::util::regex::Matcher::toMatchResult()
@@ -347,8 +347,8 @@ local_ref< java::util::regex::MatchResult > java::util::regex::Matcher::toMatchR
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(21),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::regex::MatchResult > >
-	(get_jobject());
+		local_ref< java::util::regex::MatchResult >
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::useAnchoringBounds(jboolean a0)
@@ -357,8 +357,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::useAnchoring
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(22),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::regex::Matcher::hasAnchoringBounds()
@@ -367,8 +367,8 @@ jboolean java::util::regex::Matcher::hasAnchoringBounds()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(23),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::useTransparentBounds(jboolean a0)
@@ -377,8 +377,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::useTranspare
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(24),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::regex::Matcher::hasTransparentBounds()
@@ -387,8 +387,8 @@ jboolean java::util::regex::Matcher::hasTransparentBounds()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(25),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::regionStart()
@@ -397,8 +397,8 @@ jint java::util::regex::Matcher::regionStart()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(26),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::regex::Matcher::regionEnd()
@@ -407,8 +407,8 @@ jint java::util::regex::Matcher::regionEnd()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(27),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::regex::Matcher::requireEnd()
@@ -417,8 +417,8 @@ jboolean java::util::regex::Matcher::requireEnd()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(28),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::regex::Matcher::hitEnd()
@@ -427,8 +427,8 @@ jboolean java::util::regex::Matcher::hitEnd()
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(29),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::usePattern(local_ref< java::util::regex::Pattern > const &a0)
@@ -437,8 +437,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Matcher::usePattern(l
 		java::util::regex::Matcher::J2CPP_CLASS_NAME,
 		java::util::regex::Matcher::J2CPP_METHOD_NAME(30),
 		java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0);
 }
 
 

@@ -92,8 +92,8 @@ jint android::view::InputEvent::getDeviceId()
 		android::view::InputEvent::J2CPP_CLASS_NAME,
 		android::view::InputEvent::J2CPP_METHOD_NAME(1),
 		android::view::InputEvent::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::view::InputDevice > android::view::InputEvent::getDevice()
@@ -102,8 +102,8 @@ local_ref< android::view::InputDevice > android::view::InputEvent::getDevice()
 		android::view::InputEvent::J2CPP_CLASS_NAME,
 		android::view::InputEvent::J2CPP_METHOD_NAME(2),
 		android::view::InputEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::InputDevice > >
-	(get_jobject());
+		local_ref< android::view::InputDevice >
+	>(get_jobject());
 }
 
 jint android::view::InputEvent::getSource()
@@ -112,8 +112,8 @@ jint android::view::InputEvent::getSource()
 		android::view::InputEvent::J2CPP_CLASS_NAME,
 		android::view::InputEvent::J2CPP_METHOD_NAME(3),
 		android::view::InputEvent::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::InputEvent::describeContents()
@@ -122,8 +122,8 @@ jint android::view::InputEvent::describeContents()
 		android::view::InputEvent::J2CPP_CLASS_NAME,
 		android::view::InputEvent::J2CPP_METHOD_NAME(4),
 		android::view::InputEvent::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

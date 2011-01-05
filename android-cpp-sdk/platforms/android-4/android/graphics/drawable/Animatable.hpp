@@ -74,8 +74,8 @@ void android::graphics::drawable::Animatable::start()
 		android::graphics::drawable::Animatable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::Animatable::J2CPP_METHOD_NAME(0),
 		android::graphics::drawable::Animatable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::drawable::Animatable::stop()
@@ -84,8 +84,8 @@ void android::graphics::drawable::Animatable::stop()
 		android::graphics::drawable::Animatable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::Animatable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::Animatable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::graphics::drawable::Animatable::isRunning()
@@ -94,8 +94,8 @@ jboolean android::graphics::drawable::Animatable::isRunning()
 		android::graphics::drawable::Animatable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::Animatable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::Animatable::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

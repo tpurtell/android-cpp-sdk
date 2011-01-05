@@ -11,10 +11,12 @@
 #define J2CPP_ANDROID_GRAPHICS_PAINTFLAGSDRAWFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class DrawFilter; } } }
 
 
 #include <android/graphics/DrawFilter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,6 +38,7 @@ namespace android { namespace graphics {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::DrawFilter>() const;
 
 
@@ -58,6 +61,11 @@ namespace j2cpp {
 
 
 
+android::graphics::PaintFlagsDrawFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::PaintFlagsDrawFilter::operator local_ref<android::graphics::DrawFilter>() const
 {
 	return local_ref<android::graphics::DrawFilter>(get_jobject());
@@ -69,8 +77,8 @@ android::graphics::PaintFlagsDrawFilter::PaintFlagsDrawFilter(jint a0, jint a1)
 	call_new_object<
 		android::graphics::PaintFlagsDrawFilter::J2CPP_CLASS_NAME,
 		android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }

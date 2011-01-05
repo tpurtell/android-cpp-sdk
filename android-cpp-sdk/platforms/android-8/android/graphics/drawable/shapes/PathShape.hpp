@@ -16,12 +16,14 @@ namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class Shape; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/graphics/Path.hpp>
 #include <android/graphics/drawable/shapes/Shape.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -50,6 +52,8 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		}
 
 		operator local_ref<android::graphics::drawable::shapes::Shape>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 
 
 		PathShape(local_ref< android::graphics::Path > const&, jfloat, jfloat);
@@ -82,14 +86,24 @@ android::graphics::drawable::shapes::PathShape::operator local_ref<android::grap
 	return local_ref<android::graphics::drawable::shapes::Shape>(get_jobject());
 }
 
+android::graphics::drawable::shapes::PathShape::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::drawable::shapes::PathShape::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 
 android::graphics::drawable::shapes::PathShape::PathShape(local_ref< android::graphics::Path > const &a0, jfloat a1, jfloat a2)
 : object<android::graphics::drawable::shapes::PathShape>(
 	call_new_object<
 		android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -101,8 +115,8 @@ void android::graphics::drawable::shapes::PathShape::draw(local_ref< android::gr
 		android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -112,8 +126,8 @@ local_ref< android::graphics::drawable::shapes::PathShape > android::graphics::d
 		android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::graphics::drawable::shapes::PathShape > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::shapes::PathShape >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::shapes::Shape > android::graphics::drawable::shapes::PathShape::clone_1()
@@ -122,8 +136,8 @@ local_ref< android::graphics::drawable::shapes::Shape > android::graphics::drawa
 		android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::drawable::shapes::Shape > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::shapes::Shape >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::graphics::drawable::shapes::PathShape::clone_2()
@@ -132,8 +146,8 @@ local_ref< java::lang::Object > android::graphics::drawable::shapes::PathShape::
 		android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

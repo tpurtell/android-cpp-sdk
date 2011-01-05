@@ -11,10 +11,14 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_PAINTDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class ShapeDrawable; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/graphics/drawable/ShapeDrawable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,7 +44,9 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
 		operator local_ref<android::graphics::drawable::ShapeDrawable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PaintDrawable();
@@ -66,9 +72,19 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::PaintDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
+{
+	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
+}
+
 android::graphics::drawable::PaintDrawable::operator local_ref<android::graphics::drawable::ShapeDrawable>() const
 {
 	return local_ref<android::graphics::drawable::ShapeDrawable>(get_jobject());
+}
+
+android::graphics::drawable::PaintDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -77,8 +93,8 @@ android::graphics::drawable::PaintDrawable::PaintDrawable()
 	call_new_object<
 		android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +106,8 @@ android::graphics::drawable::PaintDrawable::PaintDrawable(jint a0)
 	call_new_object<
 		android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(1),
-		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -103,8 +119,8 @@ void android::graphics::drawable::PaintDrawable::setCornerRadius(jfloat a0)
 		android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::PaintDrawable::setCornerRadii(local_ref< array<jfloat,1> > const &a0)
@@ -113,8 +129,8 @@ void android::graphics::drawable::PaintDrawable::setCornerRadii(local_ref< array
 		android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

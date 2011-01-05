@@ -13,11 +13,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Number.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -58,6 +60,7 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		}
 
 		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -104,6 +107,11 @@ java::util::concurrent::atomic::AtomicLong::operator local_ref<java::lang::Numbe
 	return local_ref<java::lang::Number>(get_jobject());
 }
 
+java::util::concurrent::atomic::AtomicLong::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::concurrent::atomic::AtomicLong::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
@@ -115,8 +123,8 @@ java::util::concurrent::atomic::AtomicLong::AtomicLong(jlong a0)
 	call_new_object<
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -128,8 +136,8 @@ java::util::concurrent::atomic::AtomicLong::AtomicLong()
 	call_new_object<
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -141,8 +149,8 @@ jlong java::util::concurrent::atomic::AtomicLong::get()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::concurrent::atomic::AtomicLong::set(jlong a0)
@@ -151,8 +159,8 @@ void java::util::concurrent::atomic::AtomicLong::set(jlong a0)
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::getAndSet(jlong a0)
@@ -161,8 +169,8 @@ jlong java::util::concurrent::atomic::AtomicLong::getAndSet(jlong a0)
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::atomic::AtomicLong::compareAndSet(jlong a0, jlong a1)
@@ -171,8 +179,8 @@ jboolean java::util::concurrent::atomic::AtomicLong::compareAndSet(jlong a0, jlo
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::atomic::AtomicLong::weakCompareAndSet(jlong a0, jlong a1)
@@ -181,8 +189,8 @@ jboolean java::util::concurrent::atomic::AtomicLong::weakCompareAndSet(jlong a0,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::getAndIncrement()
@@ -191,8 +199,8 @@ jlong java::util::concurrent::atomic::AtomicLong::getAndIncrement()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::getAndDecrement()
@@ -201,8 +209,8 @@ jlong java::util::concurrent::atomic::AtomicLong::getAndDecrement()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::getAndAdd(jlong a0)
@@ -211,8 +219,8 @@ jlong java::util::concurrent::atomic::AtomicLong::getAndAdd(jlong a0)
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::incrementAndGet()
@@ -221,8 +229,8 @@ jlong java::util::concurrent::atomic::AtomicLong::incrementAndGet()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::decrementAndGet()
@@ -231,8 +239,8 @@ jlong java::util::concurrent::atomic::AtomicLong::decrementAndGet()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::addAndGet(jlong a0)
@@ -241,8 +249,8 @@ jlong java::util::concurrent::atomic::AtomicLong::addAndGet(jlong a0)
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::concurrent::atomic::AtomicLong::toString()
@@ -251,8 +259,8 @@ local_ref< java::lang::String > java::util::concurrent::atomic::AtomicLong::toSt
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::concurrent::atomic::AtomicLong::intValue()
@@ -261,8 +269,8 @@ jint java::util::concurrent::atomic::AtomicLong::intValue()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::atomic::AtomicLong::longValue()
@@ -271,8 +279,8 @@ jlong java::util::concurrent::atomic::AtomicLong::longValue()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(15), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat java::util::concurrent::atomic::AtomicLong::floatValue()
@@ -281,8 +289,8 @@ jfloat java::util::concurrent::atomic::AtomicLong::floatValue()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(16), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble java::util::concurrent::atomic::AtomicLong::doubleValue()
@@ -291,8 +299,8 @@ jdouble java::util::concurrent::atomic::AtomicLong::doubleValue()
 		java::util::concurrent::atomic::AtomicLong::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::atomic::AtomicLong::J2CPP_METHOD_SIGNATURE(17), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 

@@ -11,12 +11,18 @@
 #define J2CPP_ANDROID_NFC_FORMATEXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +46,9 @@ namespace android { namespace nfc {
 		}
 
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		FormatException();
@@ -67,14 +76,29 @@ android::nfc::FormatException::operator local_ref<java::lang::Exception>() const
 	return local_ref<java::lang::Exception>(get_jobject());
 }
 
+android::nfc::FormatException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::nfc::FormatException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::nfc::FormatException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 android::nfc::FormatException::FormatException()
 : object<android::nfc::FormatException>(
 	call_new_object<
 		android::nfc::FormatException::J2CPP_CLASS_NAME,
 		android::nfc::FormatException::J2CPP_METHOD_NAME(0),
-		android::nfc::FormatException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::nfc::FormatException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +110,8 @@ android::nfc::FormatException::FormatException(local_ref< java::lang::String > c
 	call_new_object<
 		android::nfc::FormatException::J2CPP_CLASS_NAME,
 		android::nfc::FormatException::J2CPP_METHOD_NAME(1),
-		android::nfc::FormatException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::nfc::FormatException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

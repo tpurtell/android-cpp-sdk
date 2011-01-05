@@ -77,8 +77,8 @@ local_ref< java::lang::String > java::sql::Struct::getSQLTypeName()
 		java::sql::Struct::J2CPP_CLASS_NAME,
 		java::sql::Struct::J2CPP_METHOD_NAME(0),
 		java::sql::Struct::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::sql::Struct::getAttributes()
@@ -87,8 +87,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::sql::Struct::getAt
 		java::sql::Struct::J2CPP_CLASS_NAME,
 		java::sql::Struct::J2CPP_METHOD_NAME(1),
 		java::sql::Struct::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::sql::Struct::getAttributes(local_ref< java::util::Map > const &a0)
@@ -97,8 +97,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::sql::Struct::getAt
 		java::sql::Struct::J2CPP_CLASS_NAME,
 		java::sql::Struct::J2CPP_METHOD_NAME(2),
 		java::sql::Struct::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 

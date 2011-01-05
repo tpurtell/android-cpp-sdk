@@ -73,8 +73,8 @@ javax::crypto::KeyGeneratorSpi::KeyGeneratorSpi()
 	call_new_object<
 		javax::crypto::KeyGeneratorSpi::J2CPP_CLASS_NAME,
 		javax::crypto::KeyGeneratorSpi::J2CPP_METHOD_NAME(0),
-		javax::crypto::KeyGeneratorSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::KeyGeneratorSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

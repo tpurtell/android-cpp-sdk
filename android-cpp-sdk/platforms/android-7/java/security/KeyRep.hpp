@@ -14,11 +14,13 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyRep_ { class Type; } } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +56,10 @@ namespace java { namespace security {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< java::security::KeyRep_::Type >, 1> > values();
@@ -84,8 +89,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		KeyRep(local_ref< java::security::KeyRep_::Type > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< array<jbyte,1> > const&);
@@ -108,9 +113,24 @@ namespace j2cpp {
 
 
 
+java::security::KeyRep_::Type::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::KeyRep_::Type::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::KeyRep_::Type::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::security::KeyRep_::Type::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::KeyRep_::Type >, 1> > java::security::KeyRep_::Type::values()
@@ -119,8 +139,8 @@ local_ref< array< local_ref< java::security::KeyRep_::Type >, 1> > java::securit
 		java::security::KeyRep_::Type::J2CPP_CLASS_NAME,
 		java::security::KeyRep_::Type::J2CPP_METHOD_NAME(0),
 		java::security::KeyRep_::Type::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::security::KeyRep_::Type >, 1> > >
-	();
+		local_ref< array< local_ref< java::security::KeyRep_::Type >, 1> >
+	>();
 }
 
 local_ref< java::security::KeyRep_::Type > java::security::KeyRep_::Type::valueOf(local_ref< java::lang::String > const &a0)
@@ -129,8 +149,8 @@ local_ref< java::security::KeyRep_::Type > java::security::KeyRep_::Type::valueO
 		java::security::KeyRep_::Type::J2CPP_CLASS_NAME,
 		java::security::KeyRep_::Type::J2CPP_METHOD_NAME(1),
 		java::security::KeyRep_::Type::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::KeyRep_::Type > >
-	(a0);
+		local_ref< java::security::KeyRep_::Type >
+	>(a0);
 }
 
 
@@ -170,14 +190,14 @@ J2CPP_DEFINE_FIELD(java::security::KeyRep_::Type,3,"$VALUES","[java.security.Key
 
 
 
-java::security::KeyRep::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::KeyRep::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::KeyRep::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -186,8 +206,8 @@ java::security::KeyRep::KeyRep(local_ref< java::security::KeyRep_::Type > const 
 	call_new_object<
 		java::security::KeyRep::J2CPP_CLASS_NAME,
 		java::security::KeyRep::J2CPP_METHOD_NAME(0),
-		java::security::KeyRep::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::KeyRep::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }

@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPPROCESSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestInterceptor; } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -40,8 +40,8 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::apache::http::HttpRequestInterceptor>() const;
 		operator local_ref<org::apache::http::HttpResponseInterceptor>() const;
+		operator local_ref<org::apache::http::HttpRequestInterceptor>() const;
 
 	}; //class HttpProcessor
 
@@ -68,14 +68,14 @@ org::apache::http::protocol::HttpProcessor::operator local_ref<java::lang::Objec
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::apache::http::protocol::HttpProcessor::operator local_ref<org::apache::http::HttpRequestInterceptor>() const
-{
-	return local_ref<org::apache::http::HttpRequestInterceptor>(get_jobject());
-}
-
 org::apache::http::protocol::HttpProcessor::operator local_ref<org::apache::http::HttpResponseInterceptor>() const
 {
 	return local_ref<org::apache::http::HttpResponseInterceptor>(get_jobject());
+}
+
+org::apache::http::protocol::HttpProcessor::operator local_ref<org::apache::http::HttpRequestInterceptor>() const
+{
+	return local_ref<org::apache::http::HttpRequestInterceptor>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(org::apache::http::protocol::HttpProcessor,"org/apache/http/protocol/HttpProcessor")

@@ -44,8 +44,8 @@ namespace android { namespace view { namespace animation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::animation::Interpolator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CycleInterpolator(jfloat);
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-android::view::animation::CycleInterpolator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::animation::CycleInterpolator::operator local_ref<android::view::animation::Interpolator>() const
 {
 	return local_ref<android::view::animation::Interpolator>(get_jobject());
+}
+
+android::view::animation::CycleInterpolator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ android::view::animation::CycleInterpolator::CycleInterpolator(jfloat a0)
 	call_new_object<
 		android::view::animation::CycleInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::CycleInterpolator::J2CPP_METHOD_NAME(0),
-		android::view::animation::CycleInterpolator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::view::animation::CycleInterpolator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -99,8 +99,8 @@ android::view::animation::CycleInterpolator::CycleInterpolator(local_ref< androi
 	call_new_object<
 		android::view::animation::CycleInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::CycleInterpolator::J2CPP_METHOD_NAME(1),
-		android::view::animation::CycleInterpolator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::animation::CycleInterpolator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +112,8 @@ jfloat android::view::animation::CycleInterpolator::getInterpolation(jfloat a0)
 		android::view::animation::CycleInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::CycleInterpolator::J2CPP_METHOD_NAME(2),
 		android::view::animation::CycleInterpolator::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 

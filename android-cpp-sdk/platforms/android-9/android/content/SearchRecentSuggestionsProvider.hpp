@@ -12,16 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 
 
+#include <android/content/ComponentCallbacks.hpp>
 #include <android/content/ContentProvider.hpp>
 #include <android/content/ContentValues.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,7 +57,9 @@ namespace android { namespace content {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::ContentProvider>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
 
 
 		SearchRecentSuggestionsProvider();
@@ -84,9 +90,19 @@ namespace j2cpp {
 
 
 
+android::content::SearchRecentSuggestionsProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::content::SearchRecentSuggestionsProvider::operator local_ref<android::content::ContentProvider>() const
 {
 	return local_ref<android::content::ContentProvider>(get_jobject());
+}
+
+android::content::SearchRecentSuggestionsProvider::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
 }
 
 
@@ -95,8 +111,8 @@ android::content::SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvid
 	call_new_object<
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(0),
-		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -109,8 +125,8 @@ jint android::content::SearchRecentSuggestionsProvider::delete_(local_ref< andro
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(2),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::content::SearchRecentSuggestionsProvider::getType(local_ref< android::net::Uri > const &a0)
@@ -119,8 +135,8 @@ local_ref< java::lang::String > android::content::SearchRecentSuggestionsProvide
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(3),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::content::SearchRecentSuggestionsProvider::insert(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -129,8 +145,8 @@ local_ref< android::net::Uri > android::content::SearchRecentSuggestionsProvider
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(4),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::SearchRecentSuggestionsProvider::onCreate()
@@ -139,8 +155,8 @@ jboolean android::content::SearchRecentSuggestionsProvider::onCreate()
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(5),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::database::Cursor > android::content::SearchRecentSuggestionsProvider::query(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4)
@@ -149,8 +165,8 @@ local_ref< android::database::Cursor > android::content::SearchRecentSuggestions
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(6),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint android::content::SearchRecentSuggestionsProvider::update(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -159,8 +175,8 @@ jint android::content::SearchRecentSuggestionsProvider::update(local_ref< androi
 		android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME,
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(7),
 		android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

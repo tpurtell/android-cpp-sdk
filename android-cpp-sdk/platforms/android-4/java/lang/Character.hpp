@@ -209,6 +209,7 @@ namespace java { namespace lang {
 			}
 
 			operator local_ref<java::lang::Character_::Subset>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< java::lang::Character_::UnicodeBlock > forName(local_ref< java::lang::String >  const&);
@@ -506,9 +507,9 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Character(jchar);
@@ -687,8 +688,8 @@ jboolean java::lang::Character_::Subset::equals(local_ref< java::lang::Object > 
 		java::lang::Character_::Subset::J2CPP_CLASS_NAME,
 		java::lang::Character_::Subset::J2CPP_METHOD_NAME(1),
 		java::lang::Character_::Subset::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Character_::Subset::hashCode()
@@ -697,8 +698,8 @@ jint java::lang::Character_::Subset::hashCode()
 		java::lang::Character_::Subset::J2CPP_CLASS_NAME,
 		java::lang::Character_::Subset::J2CPP_METHOD_NAME(2),
 		java::lang::Character_::Subset::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Character_::Subset::toString()
@@ -707,8 +708,8 @@ local_ref< java::lang::String > java::lang::Character_::Subset::toString()
 		java::lang::Character_::Subset::J2CPP_CLASS_NAME,
 		java::lang::Character_::Subset::J2CPP_METHOD_NAME(3),
 		java::lang::Character_::Subset::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -724,6 +725,11 @@ java::lang::Character_::UnicodeBlock::operator local_ref<java::lang::Character_:
 	return local_ref<java::lang::Character_::Subset>(get_jobject());
 }
 
+java::lang::Character_::UnicodeBlock::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::UnicodeBlock::forName(local_ref< java::lang::String > const &a0)
 {
@@ -731,8 +737,8 @@ local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::Unicod
 		java::lang::Character_::UnicodeBlock::J2CPP_CLASS_NAME,
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_NAME(1),
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Character_::UnicodeBlock > >
-	(a0);
+		local_ref< java::lang::Character_::UnicodeBlock >
+	>(a0);
 }
 
 local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::UnicodeBlock::of(jchar a0)
@@ -741,8 +747,8 @@ local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::Unicod
 		java::lang::Character_::UnicodeBlock::J2CPP_CLASS_NAME,
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_NAME(2),
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Character_::UnicodeBlock > >
-	(a0);
+		local_ref< java::lang::Character_::UnicodeBlock >
+	>(a0);
 }
 
 local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::UnicodeBlock::of(jint a0)
@@ -751,8 +757,8 @@ local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::Unicod
 		java::lang::Character_::UnicodeBlock::J2CPP_CLASS_NAME,
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_NAME(3),
 		java::lang::Character_::UnicodeBlock::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Character_::UnicodeBlock > >
-	(a0);
+		local_ref< java::lang::Character_::UnicodeBlock >
+	>(a0);
 }
 
 
@@ -1775,11 +1781,6 @@ J2CPP_DEFINE_FIELD(java::lang::Character_::UnicodeBlock,125,"SUPPLEMENTARY_PRIVA
 
 
 
-java::lang::Character::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::Character::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
@@ -1790,14 +1791,19 @@ java::lang::Character::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
+java::lang::Character::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::lang::Character::Character(jchar a0)
 : object<java::lang::Character>(
 	call_new_object<
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(0),
-		java::lang::Character::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Character::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -1809,8 +1815,8 @@ jchar java::lang::Character::charValue()
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(1),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(1), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jint java::lang::Character::compareTo(local_ref< java::lang::Character > const &a0)
@@ -1819,8 +1825,8 @@ jint java::lang::Character::compareTo(local_ref< java::lang::Character > const &
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(2),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Character > java::lang::Character::valueOf(jchar a0)
@@ -1829,8 +1835,8 @@ local_ref< java::lang::Character > java::lang::Character::valueOf(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(3),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Character > >
-	(a0);
+		local_ref< java::lang::Character >
+	>(a0);
 }
 
 jboolean java::lang::Character::isValidCodePoint(jint a0)
@@ -1839,8 +1845,8 @@ jboolean java::lang::Character::isValidCodePoint(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(4),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isSupplementaryCodePoint(jint a0)
@@ -1849,8 +1855,8 @@ jboolean java::lang::Character::isSupplementaryCodePoint(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(5),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isHighSurrogate(jchar a0)
@@ -1859,8 +1865,8 @@ jboolean java::lang::Character::isHighSurrogate(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(6),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLowSurrogate(jchar a0)
@@ -1869,8 +1875,8 @@ jboolean java::lang::Character::isLowSurrogate(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(7),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isSurrogatePair(jchar a0, jchar a1)
@@ -1879,8 +1885,8 @@ jboolean java::lang::Character::isSurrogatePair(jchar a0, jchar a1)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(8),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jint java::lang::Character::charCount(jint a0)
@@ -1889,8 +1895,8 @@ jint java::lang::Character::charCount(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(9),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Character::toCodePoint(jchar a0, jchar a1)
@@ -1899,8 +1905,8 @@ jint java::lang::Character::toCodePoint(jchar a0, jchar a1)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(10),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::codePointAt(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -1909,8 +1915,8 @@ jint java::lang::Character::codePointAt(local_ref< java::lang::CharSequence > co
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(11),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::codePointAt(local_ref< array<jchar,1> > const &a0, jint a1)
@@ -1919,8 +1925,8 @@ jint java::lang::Character::codePointAt(local_ref< array<jchar,1> > const &a0, j
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(12),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::codePointAt(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -1929,8 +1935,8 @@ jint java::lang::Character::codePointAt(local_ref< array<jchar,1> > const &a0, j
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(13),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::lang::Character::codePointBefore(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -1939,8 +1945,8 @@ jint java::lang::Character::codePointBefore(local_ref< java::lang::CharSequence 
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(14),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::codePointBefore(local_ref< array<jchar,1> > const &a0, jint a1)
@@ -1949,8 +1955,8 @@ jint java::lang::Character::codePointBefore(local_ref< array<jchar,1> > const &a
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(15),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::codePointBefore(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -1959,8 +1965,8 @@ jint java::lang::Character::codePointBefore(local_ref< array<jchar,1> > const &a
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(16),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::lang::Character::toChars(jint a0, local_ref< array<jchar,1> > const &a1, jint a2)
@@ -1969,8 +1975,8 @@ jint java::lang::Character::toChars(jint a0, local_ref< array<jchar,1> > const &
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(17),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 local_ref< array<jchar,1> > java::lang::Character::toChars(jint a0)
@@ -1979,8 +1985,8 @@ local_ref< array<jchar,1> > java::lang::Character::toChars(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(18),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array<jchar,1> > >
-	(a0);
+		local_ref< array<jchar,1> >
+	>(a0);
 }
 
 jint java::lang::Character::codePointCount(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -1989,8 +1995,8 @@ jint java::lang::Character::codePointCount(local_ref< java::lang::CharSequence >
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(19),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::lang::Character::codePointCount(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -1999,8 +2005,8 @@ jint java::lang::Character::codePointCount(local_ref< array<jchar,1> > const &a0
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(20),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::lang::Character::offsetByCodePoints(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -2009,8 +2015,8 @@ jint java::lang::Character::offsetByCodePoints(local_ref< java::lang::CharSequen
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(21),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint java::lang::Character::offsetByCodePoints(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -2019,8 +2025,8 @@ jint java::lang::Character::offsetByCodePoints(local_ref< array<jchar,1> > const
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(22),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(a0, a1, a2, a3, a4);
+		jint
+	>(a0, a1, a2, a3, a4);
 }
 
 jint java::lang::Character::digit(jchar a0, jint a1)
@@ -2029,8 +2035,8 @@ jint java::lang::Character::digit(jchar a0, jint a1)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(23),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Character::digit(jint a0, jint a1)
@@ -2039,8 +2045,8 @@ jint java::lang::Character::digit(jint a0, jint a1)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(24),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean java::lang::Character::equals(local_ref< java::lang::Object > const &a0)
@@ -2049,8 +2055,8 @@ jboolean java::lang::Character::equals(local_ref< java::lang::Object > const &a0
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(25),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jchar java::lang::Character::forDigit(jint a0, jint a1)
@@ -2059,8 +2065,8 @@ jchar java::lang::Character::forDigit(jint a0, jint a1)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(26),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(26), 
-		jchar >
-	(a0, a1);
+		jchar
+	>(a0, a1);
 }
 
 jint java::lang::Character::getNumericValue(jchar a0)
@@ -2069,8 +2075,8 @@ jint java::lang::Character::getNumericValue(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(27),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Character::getNumericValue(jint a0)
@@ -2079,8 +2085,8 @@ jint java::lang::Character::getNumericValue(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(28),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Character::getType(jchar a0)
@@ -2089,8 +2095,8 @@ jint java::lang::Character::getType(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(29),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Character::getType(jint a0)
@@ -2099,8 +2105,8 @@ jint java::lang::Character::getType(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(30),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jbyte java::lang::Character::getDirectionality(jchar a0)
@@ -2109,8 +2115,8 @@ jbyte java::lang::Character::getDirectionality(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(31),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(31), 
-		jbyte >
-	(a0);
+		jbyte
+	>(a0);
 }
 
 jbyte java::lang::Character::getDirectionality(jint a0)
@@ -2119,8 +2125,8 @@ jbyte java::lang::Character::getDirectionality(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(32),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(32), 
-		jbyte >
-	(a0);
+		jbyte
+	>(a0);
 }
 
 jboolean java::lang::Character::isMirrored(jchar a0)
@@ -2129,8 +2135,8 @@ jboolean java::lang::Character::isMirrored(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(33),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isMirrored(jint a0)
@@ -2139,8 +2145,8 @@ jboolean java::lang::Character::isMirrored(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(34),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint java::lang::Character::hashCode()
@@ -2149,8 +2155,8 @@ jint java::lang::Character::hashCode()
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(35),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(35), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::lang::Character::isDefined(jchar a0)
@@ -2159,8 +2165,8 @@ jboolean java::lang::Character::isDefined(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(36),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isDefined(jint a0)
@@ -2169,8 +2175,8 @@ jboolean java::lang::Character::isDefined(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(37),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(37), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isDigit(jchar a0)
@@ -2179,8 +2185,8 @@ jboolean java::lang::Character::isDigit(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(38),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isDigit(jint a0)
@@ -2189,8 +2195,8 @@ jboolean java::lang::Character::isDigit(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(39),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(39), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isIdentifierIgnorable(jchar a0)
@@ -2199,8 +2205,8 @@ jboolean java::lang::Character::isIdentifierIgnorable(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(40),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isIdentifierIgnorable(jint a0)
@@ -2209,8 +2215,8 @@ jboolean java::lang::Character::isIdentifierIgnorable(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(41),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isISOControl(jchar a0)
@@ -2219,8 +2225,8 @@ jboolean java::lang::Character::isISOControl(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(42),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(42), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isISOControl(jint a0)
@@ -2229,8 +2235,8 @@ jboolean java::lang::Character::isISOControl(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(43),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaIdentifierPart(jchar a0)
@@ -2239,8 +2245,8 @@ jboolean java::lang::Character::isJavaIdentifierPart(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(44),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaIdentifierPart(jint a0)
@@ -2249,8 +2255,8 @@ jboolean java::lang::Character::isJavaIdentifierPart(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(45),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaIdentifierStart(jchar a0)
@@ -2259,8 +2265,8 @@ jboolean java::lang::Character::isJavaIdentifierStart(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(46),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(46), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaIdentifierStart(jint a0)
@@ -2269,8 +2275,8 @@ jboolean java::lang::Character::isJavaIdentifierStart(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(47),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaLetter(jchar a0)
@@ -2279,8 +2285,8 @@ jboolean java::lang::Character::isJavaLetter(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(48),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(48), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isJavaLetterOrDigit(jchar a0)
@@ -2289,8 +2295,8 @@ jboolean java::lang::Character::isJavaLetterOrDigit(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(49),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(49), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLetter(jchar a0)
@@ -2299,8 +2305,8 @@ jboolean java::lang::Character::isLetter(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(50),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLetter(jint a0)
@@ -2309,8 +2315,8 @@ jboolean java::lang::Character::isLetter(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(51),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLetterOrDigit(jchar a0)
@@ -2319,8 +2325,8 @@ jboolean java::lang::Character::isLetterOrDigit(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(52),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(52), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLetterOrDigit(jint a0)
@@ -2329,8 +2335,8 @@ jboolean java::lang::Character::isLetterOrDigit(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(53),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(53), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLowerCase(jchar a0)
@@ -2339,8 +2345,8 @@ jboolean java::lang::Character::isLowerCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(54),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(54), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isLowerCase(jint a0)
@@ -2349,8 +2355,8 @@ jboolean java::lang::Character::isLowerCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(55),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(55), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isSpace(jchar a0)
@@ -2359,8 +2365,8 @@ jboolean java::lang::Character::isSpace(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(56),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(56), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isSpaceChar(jchar a0)
@@ -2369,8 +2375,8 @@ jboolean java::lang::Character::isSpaceChar(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(57),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(57), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isSpaceChar(jint a0)
@@ -2379,8 +2385,8 @@ jboolean java::lang::Character::isSpaceChar(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(58),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(58), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isTitleCase(jchar a0)
@@ -2389,8 +2395,8 @@ jboolean java::lang::Character::isTitleCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(59),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(59), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isTitleCase(jint a0)
@@ -2399,8 +2405,8 @@ jboolean java::lang::Character::isTitleCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(60),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(60), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUnicodeIdentifierPart(jchar a0)
@@ -2409,8 +2415,8 @@ jboolean java::lang::Character::isUnicodeIdentifierPart(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(61),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(61), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUnicodeIdentifierPart(jint a0)
@@ -2419,8 +2425,8 @@ jboolean java::lang::Character::isUnicodeIdentifierPart(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(62),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(62), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUnicodeIdentifierStart(jchar a0)
@@ -2429,8 +2435,8 @@ jboolean java::lang::Character::isUnicodeIdentifierStart(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(63),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(63), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUnicodeIdentifierStart(jint a0)
@@ -2439,8 +2445,8 @@ jboolean java::lang::Character::isUnicodeIdentifierStart(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(64),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(64), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUpperCase(jchar a0)
@@ -2449,8 +2455,8 @@ jboolean java::lang::Character::isUpperCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(65),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(65), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isUpperCase(jint a0)
@@ -2459,8 +2465,8 @@ jboolean java::lang::Character::isUpperCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(66),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(66), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isWhitespace(jchar a0)
@@ -2469,8 +2475,8 @@ jboolean java::lang::Character::isWhitespace(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(67),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(67), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Character::isWhitespace(jint a0)
@@ -2479,8 +2485,8 @@ jboolean java::lang::Character::isWhitespace(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(68),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(68), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jchar java::lang::Character::reverseBytes(jchar a0)
@@ -2489,8 +2495,8 @@ jchar java::lang::Character::reverseBytes(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(69),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(69), 
-		jchar >
-	(a0);
+		jchar
+	>(a0);
 }
 
 jchar java::lang::Character::toLowerCase(jchar a0)
@@ -2499,8 +2505,8 @@ jchar java::lang::Character::toLowerCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(70),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(70), 
-		jchar >
-	(a0);
+		jchar
+	>(a0);
 }
 
 jint java::lang::Character::toLowerCase(jint a0)
@@ -2509,8 +2515,8 @@ jint java::lang::Character::toLowerCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(71),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(71), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Character::toString()
@@ -2519,8 +2525,8 @@ local_ref< java::lang::String > java::lang::Character::toString()
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(72),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(72), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Character::toString(jchar a0)
@@ -2529,8 +2535,8 @@ local_ref< java::lang::String > java::lang::Character::toString(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(73),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(73), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jchar java::lang::Character::toTitleCase(jchar a0)
@@ -2539,8 +2545,8 @@ jchar java::lang::Character::toTitleCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(74),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(74), 
-		jchar >
-	(a0);
+		jchar
+	>(a0);
 }
 
 jint java::lang::Character::toTitleCase(jint a0)
@@ -2549,8 +2555,8 @@ jint java::lang::Character::toTitleCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(75),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(75), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jchar java::lang::Character::toUpperCase(jchar a0)
@@ -2559,8 +2565,8 @@ jchar java::lang::Character::toUpperCase(jchar a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(76),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(76), 
-		jchar >
-	(a0);
+		jchar
+	>(a0);
 }
 
 jint java::lang::Character::toUpperCase(jint a0)
@@ -2569,8 +2575,8 @@ jint java::lang::Character::toUpperCase(jint a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(77),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(77), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Character::compareTo(local_ref< java::lang::Object > const &a0)
@@ -2579,8 +2585,8 @@ jint java::lang::Character::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Character::J2CPP_CLASS_NAME,
 		java::lang::Character::J2CPP_METHOD_NAME(78),
 		java::lang::Character::J2CPP_METHOD_SIGNATURE(78), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

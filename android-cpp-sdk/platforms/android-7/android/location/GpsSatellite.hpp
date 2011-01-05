@@ -83,8 +83,8 @@ jint android::location::GpsSatellite::getPrn()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(1),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::location::GpsSatellite::getSnr()
@@ -93,8 +93,8 @@ jfloat android::location::GpsSatellite::getSnr()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(2),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::location::GpsSatellite::getElevation()
@@ -103,8 +103,8 @@ jfloat android::location::GpsSatellite::getElevation()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(3),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::location::GpsSatellite::getAzimuth()
@@ -113,8 +113,8 @@ jfloat android::location::GpsSatellite::getAzimuth()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(4),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jboolean android::location::GpsSatellite::hasEphemeris()
@@ -123,8 +123,8 @@ jboolean android::location::GpsSatellite::hasEphemeris()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(5),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::GpsSatellite::hasAlmanac()
@@ -133,8 +133,8 @@ jboolean android::location::GpsSatellite::hasAlmanac()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(6),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::GpsSatellite::usedInFix()
@@ -143,8 +143,8 @@ jboolean android::location::GpsSatellite::usedInFix()
 		android::location::GpsSatellite::J2CPP_CLASS_NAME,
 		android::location::GpsSatellite::J2CPP_METHOD_NAME(7),
 		android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

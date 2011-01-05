@@ -75,8 +75,8 @@ jboolean org::apache::http::client::HttpRequestRetryHandler::retryRequest(local_
 		org::apache::http::client::HttpRequestRetryHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpRequestRetryHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::HttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

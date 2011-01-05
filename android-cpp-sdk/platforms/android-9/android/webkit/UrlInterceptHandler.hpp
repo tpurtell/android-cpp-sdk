@@ -79,8 +79,8 @@ local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::UrlInt
 		android::webkit::UrlInterceptHandler::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptHandler::J2CPP_METHOD_NAME(0),
 		android::webkit::UrlInterceptHandler::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::webkit::CacheManager_::CacheResult > >
-	(get_jobject(), a0, a1);
+		local_ref< android::webkit::CacheManager_::CacheResult >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::webkit::PluginData > android::webkit::UrlInterceptHandler::getPluginData(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -89,8 +89,8 @@ local_ref< android::webkit::PluginData > android::webkit::UrlInterceptHandler::g
 		android::webkit::UrlInterceptHandler::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptHandler::J2CPP_METHOD_NAME(1),
 		android::webkit::UrlInterceptHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::PluginData > >
-	(get_jobject(), a0, a1);
+		local_ref< android::webkit::PluginData >
+	>(get_jobject(), a0, a1);
 }
 
 

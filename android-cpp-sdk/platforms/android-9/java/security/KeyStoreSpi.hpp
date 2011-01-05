@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_SECURITY_KEYSTORESPI_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyStore_ { class ProtectionParameter; } } } }
@@ -131,8 +131,8 @@ java::security::KeyStoreSpi::KeyStoreSpi()
 	call_new_object<
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(0),
-		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -144,8 +144,8 @@ local_ref< java::security::Key > java::security::KeyStoreSpi::engineGetKey(local
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(1),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::Key > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::Key >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::security::KeyStoreSpi::engineGetCertificateChain(local_ref< java::lang::String > const &a0)
@@ -154,8 +154,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > java::sec
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(2),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::Certificate > java::security::KeyStoreSpi::engineGetCertificate(local_ref< java::lang::String > const &a0)
@@ -164,8 +164,8 @@ local_ref< java::security::cert::Certificate > java::security::KeyStoreSpi::engi
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(3),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::cert::Certificate > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::Certificate >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::security::KeyStoreSpi::engineGetCreationDate(local_ref< java::lang::String > const &a0)
@@ -174,8 +174,8 @@ local_ref< java::util::Date > java::security::KeyStoreSpi::engineGetCreationDate
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(4),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Date > >
-	(get_jobject(), a0);
+		local_ref< java::util::Date >
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStoreSpi::engineSetKeyEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::Key > const &a1, local_ref< array<jchar,1> > const &a2, local_ref< array< local_ref< java::security::cert::Certificate >, 1> > const &a3)
@@ -184,8 +184,8 @@ void java::security::KeyStoreSpi::engineSetKeyEntry(local_ref< java::lang::Strin
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(5),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::security::KeyStoreSpi::engineSetKeyEntry(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1, local_ref< array< local_ref< java::security::cert::Certificate >, 1> > const &a2)
@@ -194,8 +194,8 @@ void java::security::KeyStoreSpi::engineSetKeyEntry(local_ref< java::lang::Strin
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(6),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::KeyStoreSpi::engineSetCertificateEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::Certificate > const &a1)
@@ -204,8 +204,8 @@ void java::security::KeyStoreSpi::engineSetCertificateEntry(local_ref< java::lan
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(7),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStoreSpi::engineDeleteEntry(local_ref< java::lang::String > const &a0)
@@ -214,8 +214,8 @@ void java::security::KeyStoreSpi::engineDeleteEntry(local_ref< java::lang::Strin
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(8),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::KeyStoreSpi::engineAliases()
@@ -224,8 +224,8 @@ local_ref< java::util::Enumeration > java::security::KeyStoreSpi::engineAliases(
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(9),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jboolean java::security::KeyStoreSpi::engineContainsAlias(local_ref< java::lang::String > const &a0)
@@ -234,8 +234,8 @@ jboolean java::security::KeyStoreSpi::engineContainsAlias(local_ref< java::lang:
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(10),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::KeyStoreSpi::engineSize()
@@ -244,8 +244,8 @@ jint java::security::KeyStoreSpi::engineSize()
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(11),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::security::KeyStoreSpi::engineIsKeyEntry(local_ref< java::lang::String > const &a0)
@@ -254,8 +254,8 @@ jboolean java::security::KeyStoreSpi::engineIsKeyEntry(local_ref< java::lang::St
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(12),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::KeyStoreSpi::engineIsCertificateEntry(local_ref< java::lang::String > const &a0)
@@ -264,8 +264,8 @@ jboolean java::security::KeyStoreSpi::engineIsCertificateEntry(local_ref< java::
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(13),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::KeyStoreSpi::engineGetCertificateAlias(local_ref< java::security::cert::Certificate > const &a0)
@@ -274,8 +274,8 @@ local_ref< java::lang::String > java::security::KeyStoreSpi::engineGetCertificat
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(14),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStoreSpi::engineStore(local_ref< java::io::OutputStream > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -284,8 +284,8 @@ void java::security::KeyStoreSpi::engineStore(local_ref< java::io::OutputStream 
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(15),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStoreSpi::engineStore(local_ref< java::security::KeyStore_::LoadStoreParameter > const &a0)
@@ -294,8 +294,8 @@ void java::security::KeyStoreSpi::engineStore(local_ref< java::security::KeyStor
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(16),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyStoreSpi::engineLoad(local_ref< java::io::InputStream > const &a0, local_ref< array<jchar,1> > const &a1)
@@ -304,8 +304,8 @@ void java::security::KeyStoreSpi::engineLoad(local_ref< java::io::InputStream > 
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(17),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStoreSpi::engineLoad(local_ref< java::security::KeyStore_::LoadStoreParameter > const &a0)
@@ -314,8 +314,8 @@ void java::security::KeyStoreSpi::engineLoad(local_ref< java::security::KeyStore
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(18),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::KeyStore_::Entry > java::security::KeyStoreSpi::engineGetEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore_::ProtectionParameter > const &a1)
@@ -324,8 +324,8 @@ local_ref< java::security::KeyStore_::Entry > java::security::KeyStoreSpi::engin
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(19),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::security::KeyStore_::Entry > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::KeyStore_::Entry >
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyStoreSpi::engineSetEntry(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore_::Entry > const &a1, local_ref< java::security::KeyStore_::ProtectionParameter > const &a2)
@@ -334,8 +334,8 @@ void java::security::KeyStoreSpi::engineSetEntry(local_ref< java::lang::String >
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(20),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::security::KeyStoreSpi::engineEntryInstanceOf(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
@@ -344,8 +344,8 @@ jboolean java::security::KeyStoreSpi::engineEntryInstanceOf(local_ref< java::lan
 		java::security::KeyStoreSpi::J2CPP_CLASS_NAME,
 		java::security::KeyStoreSpi::J2CPP_METHOD_NAME(21),
 		java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

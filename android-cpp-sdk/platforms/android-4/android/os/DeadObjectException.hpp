@@ -12,9 +12,19 @@
 
 
 namespace j2cpp { namespace android { namespace os { class RemoteException; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/os/RemoteException.hpp>
+#include <android/util/AndroidException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +47,11 @@ namespace android { namespace os {
 		}
 
 		operator local_ref<android::os::RemoteException>() const;
+		operator local_ref<android::util::AndroidException>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DeadObjectException();
@@ -63,14 +78,39 @@ android::os::DeadObjectException::operator local_ref<android::os::RemoteExceptio
 	return local_ref<android::os::RemoteException>(get_jobject());
 }
 
+android::os::DeadObjectException::operator local_ref<android::util::AndroidException>() const
+{
+	return local_ref<android::util::AndroidException>(get_jobject());
+}
+
+android::os::DeadObjectException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::os::DeadObjectException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::os::DeadObjectException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+android::os::DeadObjectException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::os::DeadObjectException::DeadObjectException()
 : object<android::os::DeadObjectException>(
 	call_new_object<
 		android::os::DeadObjectException::J2CPP_CLASS_NAME,
 		android::os::DeadObjectException::J2CPP_METHOD_NAME(0),
-		android::os::DeadObjectException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::DeadObjectException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

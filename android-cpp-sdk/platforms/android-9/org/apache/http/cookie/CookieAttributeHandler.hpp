@@ -83,8 +83,8 @@ void org::apache::http::cookie::CookieAttributeHandler::parse(local_ref< org::ap
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::cookie::CookieAttributeHandler::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -93,8 +93,8 @@ void org::apache::http::cookie::CookieAttributeHandler::validate(local_ref< org:
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::cookie::CookieAttributeHandler::match(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -103,8 +103,8 @@ jboolean org::apache::http::cookie::CookieAttributeHandler::match(local_ref< org
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::CookieAttributeHandler::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

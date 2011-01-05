@@ -48,8 +48,8 @@ namespace java { namespace security { namespace cert {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 		}; //class CertPathRep
@@ -81,8 +81,8 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getType();
@@ -113,14 +113,14 @@ namespace j2cpp {
 
 
 
-java::security::cert::CertPath_::CertPathRep::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::CertPath_::CertPathRep::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::cert::CertPath_::CertPathRep::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -132,14 +132,14 @@ J2CPP_DEFINE_METHOD(java::security::cert::CertPath_::CertPathRep,1,"readResolve"
 
 
 
-java::security::cert::CertPath::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::CertPath::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::cert::CertPath::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -149,8 +149,8 @@ local_ref< java::lang::String > java::security::cert::CertPath::getType()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::CertPath::equals(local_ref< java::lang::Object > const &a0)
@@ -159,8 +159,8 @@ jboolean java::security::cert::CertPath::equals(local_ref< java::lang::Object > 
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(2),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::cert::CertPath::hashCode()
@@ -169,8 +169,8 @@ jint java::security::cert::CertPath::hashCode()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(3),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::CertPath::toString()
@@ -179,8 +179,8 @@ local_ref< java::lang::String > java::security::cert::CertPath::toString()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(4),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::security::cert::CertPath::getCertificates()
@@ -189,8 +189,8 @@ local_ref< java::util::List > java::security::cert::CertPath::getCertificates()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(5),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::cert::CertPath::getEncoded()
@@ -199,8 +199,8 @@ local_ref< array<jbyte,1> > java::security::cert::CertPath::getEncoded()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(6),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::cert::CertPath::getEncoded(local_ref< java::lang::String > const &a0)
@@ -209,8 +209,8 @@ local_ref< array<jbyte,1> > java::security::cert::CertPath::getEncoded(local_ref
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(7),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > java::security::cert::CertPath::getEncodings()
@@ -219,8 +219,8 @@ local_ref< java::util::Iterator > java::security::cert::CertPath::getEncodings()
 		java::security::cert::CertPath::J2CPP_CLASS_NAME,
 		java::security::cert::CertPath::J2CPP_METHOD_NAME(8),
 		java::security::cert::CertPath::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 

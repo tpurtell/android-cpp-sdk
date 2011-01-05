@@ -85,8 +85,8 @@ local_ref< dalvik::system::VMRuntime > dalvik::system::VMRuntime::getRuntime()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(1),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< dalvik::system::VMRuntime > >
-	();
+		local_ref< dalvik::system::VMRuntime >
+	>();
 }
 
 jfloat dalvik::system::VMRuntime::getTargetHeapUtilization()
@@ -95,8 +95,8 @@ jfloat dalvik::system::VMRuntime::getTargetHeapUtilization()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(2),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat dalvik::system::VMRuntime::setTargetHeapUtilization(jfloat a0)
@@ -105,8 +105,8 @@ jfloat dalvik::system::VMRuntime::setTargetHeapUtilization(jfloat a0)
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(3),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jlong dalvik::system::VMRuntime::getMinimumHeapSize()
@@ -115,8 +115,8 @@ jlong dalvik::system::VMRuntime::getMinimumHeapSize()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(4),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong dalvik::system::VMRuntime::setMinimumHeapSize(jlong a0)
@@ -125,8 +125,8 @@ jlong dalvik::system::VMRuntime::setMinimumHeapSize(jlong a0)
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(5),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void dalvik::system::VMRuntime::gcSoftReferences()
@@ -135,8 +135,8 @@ void dalvik::system::VMRuntime::gcSoftReferences()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(6),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void dalvik::system::VMRuntime::runFinalizationSync()
@@ -145,8 +145,8 @@ void dalvik::system::VMRuntime::runFinalizationSync()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(7),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong dalvik::system::VMRuntime::getExternalBytesAllocated()
@@ -155,8 +155,8 @@ jlong dalvik::system::VMRuntime::getExternalBytesAllocated()
 		dalvik::system::VMRuntime::J2CPP_CLASS_NAME,
 		dalvik::system::VMRuntime::J2CPP_METHOD_NAME(8),
 		dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 

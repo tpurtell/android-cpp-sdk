@@ -197,8 +197,8 @@ android::text::format::Time::Time(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(0),
-		android::text::format::Time::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::format::Time::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , allDay(get_jobject())
 , second(get_jobject())
@@ -222,8 +222,8 @@ android::text::format::Time::Time()
 	call_new_object<
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(1),
-		android::text::format::Time::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		android::text::format::Time::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 , allDay(get_jobject())
 , second(get_jobject())
@@ -247,8 +247,8 @@ android::text::format::Time::Time(local_ref< android::text::format::Time > const
 	call_new_object<
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(2),
-		android::text::format::Time::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::text::format::Time::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , allDay(get_jobject())
 , second(get_jobject())
@@ -272,8 +272,8 @@ jlong android::text::format::Time::normalize(jboolean a0)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(3),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void android::text::format::Time::switchTimezone(local_ref< java::lang::String > const &a0)
@@ -282,8 +282,8 @@ void android::text::format::Time::switchTimezone(local_ref< java::lang::String >
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(4),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::text::format::Time::getActualMaximum(jint a0)
@@ -292,8 +292,8 @@ jint android::text::format::Time::getActualMaximum(jint a0)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(5),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::text::format::Time::clear(local_ref< java::lang::String > const &a0)
@@ -302,8 +302,8 @@ void android::text::format::Time::clear(local_ref< java::lang::String > const &a
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(6),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::text::format::Time::compare(local_ref< android::text::format::Time > const &a0, local_ref< android::text::format::Time > const &a1)
@@ -312,8 +312,8 @@ jint android::text::format::Time::compare(local_ref< android::text::format::Time
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(7),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::text::format::Time::format(local_ref< java::lang::String > const &a0)
@@ -322,8 +322,8 @@ local_ref< java::lang::String > android::text::format::Time::format(local_ref< j
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(8),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::text::format::Time::toString()
@@ -332,8 +332,8 @@ local_ref< java::lang::String > android::text::format::Time::toString()
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(9),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::text::format::Time::parse(local_ref< java::lang::String > const &a0)
@@ -342,8 +342,8 @@ jboolean android::text::format::Time::parse(local_ref< java::lang::String > cons
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(10),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::format::Time::parse3339(local_ref< java::lang::String > const &a0)
@@ -352,8 +352,8 @@ jboolean android::text::format::Time::parse3339(local_ref< java::lang::String > 
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(11),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::text::format::Time::getCurrentTimezone()
@@ -362,8 +362,8 @@ local_ref< java::lang::String > android::text::format::Time::getCurrentTimezone(
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(12),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 void android::text::format::Time::setToNow()
@@ -372,8 +372,8 @@ void android::text::format::Time::setToNow()
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(13),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong android::text::format::Time::toMillis(jboolean a0)
@@ -382,8 +382,8 @@ jlong android::text::format::Time::toMillis(jboolean a0)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(14),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(14), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void android::text::format::Time::set(jlong a0)
@@ -392,8 +392,8 @@ void android::text::format::Time::set(jlong a0)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(15),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::text::format::Time::format2445()
@@ -402,8 +402,8 @@ local_ref< java::lang::String > android::text::format::Time::format2445()
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(16),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::text::format::Time::set(local_ref< android::text::format::Time > const &a0)
@@ -412,8 +412,8 @@ void android::text::format::Time::set(local_ref< android::text::format::Time > c
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(17),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::format::Time::set(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -422,8 +422,8 @@ void android::text::format::Time::set(jint a0, jint a1, jint a2, jint a3, jint a
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(18),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::text::format::Time::set(jint a0, jint a1, jint a2)
@@ -432,8 +432,8 @@ void android::text::format::Time::set(jint a0, jint a1, jint a2)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(19),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::format::Time::before(local_ref< android::text::format::Time > const &a0)
@@ -442,8 +442,8 @@ jboolean android::text::format::Time::before(local_ref< android::text::format::T
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(20),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::format::Time::after(local_ref< android::text::format::Time > const &a0)
@@ -452,8 +452,8 @@ jboolean android::text::format::Time::after(local_ref< android::text::format::Ti
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(21),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::text::format::Time::getWeekNumber()
@@ -462,8 +462,8 @@ jint android::text::format::Time::getWeekNumber()
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(22),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::format::Time::format3339(jboolean a0)
@@ -472,8 +472,8 @@ local_ref< java::lang::String > android::text::format::Time::format3339(jboolean
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(23),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::format::Time::isEpoch(local_ref< android::text::format::Time > const &a0)
@@ -482,8 +482,8 @@ jboolean android::text::format::Time::isEpoch(local_ref< android::text::format::
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(24),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::text::format::Time::getJulianDay(jlong a0, jlong a1)
@@ -492,8 +492,8 @@ jint android::text::format::Time::getJulianDay(jlong a0, jlong a1)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(25),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jlong android::text::format::Time::setJulianDay(jint a0)
@@ -502,8 +502,8 @@ jlong android::text::format::Time::setJulianDay(jint a0)
 		android::text::format::Time::J2CPP_CLASS_NAME,
 		android::text::format::Time::J2CPP_METHOD_NAME(26),
 		android::text::format::Time::J2CPP_METHOD_SIGNATURE(26), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

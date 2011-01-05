@@ -14,10 +14,12 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
 
 
@@ -44,6 +46,7 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::cookie::SetCookie>() const;
+		operator local_ref<org::apache::http::cookie::Cookie>() const;
 
 
 		void setCommentURL(local_ref< java::lang::String >  const&);
@@ -79,14 +82,19 @@ org::apache::http::cookie::SetCookie2::operator local_ref<org::apache::http::coo
 	return local_ref<org::apache::http::cookie::SetCookie>(get_jobject());
 }
 
+org::apache::http::cookie::SetCookie2::operator local_ref<org::apache::http::cookie::Cookie>() const
+{
+	return local_ref<org::apache::http::cookie::Cookie>(get_jobject());
+}
+
 void org::apache::http::cookie::SetCookie2::setCommentURL(local_ref< java::lang::String > const &a0)
 {
 	return call_method<
 		org::apache::http::cookie::SetCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie2::setPorts(local_ref< array<jint,1> > const &a0)
@@ -95,8 +103,8 @@ void org::apache::http::cookie::SetCookie2::setPorts(local_ref< array<jint,1> > 
 		org::apache::http::cookie::SetCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie2::setDiscard(jboolean a0)
@@ -105,8 +113,8 @@ void org::apache::http::cookie::SetCookie2::setDiscard(jboolean a0)
 		org::apache::http::cookie::SetCookie2::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::SetCookie2::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

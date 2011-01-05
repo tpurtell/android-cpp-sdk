@@ -80,8 +80,8 @@ local_ref< java::lang::String > java::util::logging::LoggingMXBean::getLoggerLev
 		java::util::logging::LoggingMXBean::J2CPP_CLASS_NAME,
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_NAME(0),
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::util::logging::LoggingMXBean::getLoggerNames()
@@ -90,8 +90,8 @@ local_ref< java::util::List > java::util::logging::LoggingMXBean::getLoggerNames
 		java::util::logging::LoggingMXBean::J2CPP_CLASS_NAME,
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_NAME(1),
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::logging::LoggingMXBean::getParentLoggerName(local_ref< java::lang::String > const &a0)
@@ -100,8 +100,8 @@ local_ref< java::lang::String > java::util::logging::LoggingMXBean::getParentLog
 		java::util::logging::LoggingMXBean::J2CPP_CLASS_NAME,
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_NAME(2),
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void java::util::logging::LoggingMXBean::setLoggerLevel(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -110,8 +110,8 @@ void java::util::logging::LoggingMXBean::setLoggerLevel(local_ref< java::lang::S
 		java::util::logging::LoggingMXBean::J2CPP_CLASS_NAME,
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_NAME(3),
 		java::util::logging::LoggingMXBean::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

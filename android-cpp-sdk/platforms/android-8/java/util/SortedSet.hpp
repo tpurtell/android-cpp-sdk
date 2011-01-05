@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Set.hpp>
 
@@ -46,6 +50,8 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::util::Collection>() const;
 		operator local_ref<java::util::Set>() const;
 
 
@@ -78,6 +84,16 @@ java::util::SortedSet::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::util::SortedSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::SortedSet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
 java::util::SortedSet::operator local_ref<java::util::Set>() const
 {
 	return local_ref<java::util::Set>(get_jobject());
@@ -89,8 +105,8 @@ local_ref< java::util::Comparator > java::util::SortedSet::comparator()
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(0),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::SortedSet::first()
@@ -99,8 +115,8 @@ local_ref< java::lang::Object > java::util::SortedSet::first()
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(1),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedSet > java::util::SortedSet::headSet(local_ref< java::lang::Object > const &a0)
@@ -109,8 +125,8 @@ local_ref< java::util::SortedSet > java::util::SortedSet::headSet(local_ref< jav
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(2),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::SortedSet::last()
@@ -119,8 +135,8 @@ local_ref< java::lang::Object > java::util::SortedSet::last()
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(3),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedSet > java::util::SortedSet::subSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -129,8 +145,8 @@ local_ref< java::util::SortedSet > java::util::SortedSet::subSet(local_ref< java
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(4),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedSet > java::util::SortedSet::tailSet(local_ref< java::lang::Object > const &a0)
@@ -139,8 +155,8 @@ local_ref< java::util::SortedSet > java::util::SortedSet::tailSet(local_ref< jav
 		java::util::SortedSet::J2CPP_CLASS_NAME,
 		java::util::SortedSet::J2CPP_METHOD_NAME(5),
 		java::util::SortedSet::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 

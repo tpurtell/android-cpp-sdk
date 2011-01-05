@@ -87,8 +87,8 @@ android::location::Geocoder::Geocoder(local_ref< android::content::Context > con
 	call_new_object<
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(0),
-		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -100,8 +100,8 @@ android::location::Geocoder::Geocoder(local_ref< android::content::Context > con
 	call_new_object<
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(1),
-		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -113,8 +113,8 @@ jboolean android::location::Geocoder::isPresent()
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(2),
 		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 local_ref< java::util::List > android::location::Geocoder::getFromLocation(jdouble a0, jdouble a1, jint a2)
@@ -123,8 +123,8 @@ local_ref< java::util::List > android::location::Geocoder::getFromLocation(jdoub
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(3),
 		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::List > android::location::Geocoder::getFromLocationName(local_ref< java::lang::String > const &a0, jint a1)
@@ -133,8 +133,8 @@ local_ref< java::util::List > android::location::Geocoder::getFromLocationName(l
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(4),
 		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::location::Geocoder::getFromLocationName(local_ref< java::lang::String > const &a0, jint a1, jdouble a2, jdouble a3, jdouble a4, jdouble a5)
@@ -143,8 +143,8 @@ local_ref< java::util::List > android::location::Geocoder::getFromLocationName(l
 		android::location::Geocoder::J2CPP_CLASS_NAME,
 		android::location::Geocoder::J2CPP_METHOD_NAME(5),
 		android::location::Geocoder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

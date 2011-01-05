@@ -44,9 +44,9 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::util::Comparator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CookieIdentityComparator();
@@ -72,11 +72,6 @@ namespace j2cpp {
 
 
 
-org::apache::http::cookie::CookieIdentityComparator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::cookie::CookieIdentityComparator::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
@@ -87,14 +82,19 @@ org::apache::http::cookie::CookieIdentityComparator::operator local_ref<java::ut
 	return local_ref<java::util::Comparator>(get_jobject());
 }
 
+org::apache::http::cookie::CookieIdentityComparator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::cookie::CookieIdentityComparator::CookieIdentityComparator()
 : object<org::apache::http::cookie::CookieIdentityComparator>(
 	call_new_object<
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_NAME(0),
-		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -106,8 +106,8 @@ jint org::apache::http::cookie::CookieIdentityComparator::compare(local_ref< org
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::cookie::CookieIdentityComparator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -116,8 +116,8 @@ jint org::apache::http::cookie::CookieIdentityComparator::compare(local_ref< jav
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::CookieIdentityComparator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

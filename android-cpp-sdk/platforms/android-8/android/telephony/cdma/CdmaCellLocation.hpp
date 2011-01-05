@@ -56,6 +56,7 @@ namespace android { namespace telephony { namespace cdma {
 		}
 
 		operator local_ref<android::telephony::CellLocation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		CdmaCellLocation();
@@ -96,14 +97,19 @@ android::telephony::cdma::CdmaCellLocation::operator local_ref<android::telephon
 	return local_ref<android::telephony::CellLocation>(get_jobject());
 }
 
+android::telephony::cdma::CdmaCellLocation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::telephony::cdma::CdmaCellLocation::CdmaCellLocation()
 : object<android::telephony::cdma::CdmaCellLocation>(
 	call_new_object<
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(0),
-		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -115,8 +121,8 @@ android::telephony::cdma::CdmaCellLocation::CdmaCellLocation(local_ref< android:
 	call_new_object<
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(1),
-		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -128,8 +134,8 @@ jint android::telephony::cdma::CdmaCellLocation::getBaseStationId()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(2),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::cdma::CdmaCellLocation::getBaseStationLatitude()
@@ -138,8 +144,8 @@ jint android::telephony::cdma::CdmaCellLocation::getBaseStationLatitude()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(3),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::cdma::CdmaCellLocation::getBaseStationLongitude()
@@ -148,8 +154,8 @@ jint android::telephony::cdma::CdmaCellLocation::getBaseStationLongitude()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(4),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::cdma::CdmaCellLocation::getSystemId()
@@ -158,8 +164,8 @@ jint android::telephony::cdma::CdmaCellLocation::getSystemId()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(5),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::cdma::CdmaCellLocation::getNetworkId()
@@ -168,8 +174,8 @@ jint android::telephony::cdma::CdmaCellLocation::getNetworkId()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(6),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::telephony::cdma::CdmaCellLocation::setStateInvalid()
@@ -178,8 +184,8 @@ void android::telephony::cdma::CdmaCellLocation::setStateInvalid()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(7),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::telephony::cdma::CdmaCellLocation::setCellLocationData(jint a0, jint a1, jint a2)
@@ -188,8 +194,8 @@ void android::telephony::cdma::CdmaCellLocation::setCellLocationData(jint a0, ji
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(8),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::telephony::cdma::CdmaCellLocation::setCellLocationData(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -198,8 +204,8 @@ void android::telephony::cdma::CdmaCellLocation::setCellLocationData(jint a0, ji
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(9),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jint android::telephony::cdma::CdmaCellLocation::hashCode()
@@ -208,8 +214,8 @@ jint android::telephony::cdma::CdmaCellLocation::hashCode()
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(10),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::cdma::CdmaCellLocation::equals(local_ref< java::lang::Object > const &a0)
@@ -218,8 +224,8 @@ jboolean android::telephony::cdma::CdmaCellLocation::equals(local_ref< java::lan
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(11),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::telephony::cdma::CdmaCellLocation::toString()
@@ -228,8 +234,8 @@ local_ref< java::lang::String > android::telephony::cdma::CdmaCellLocation::toSt
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(12),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::telephony::cdma::CdmaCellLocation::fillInNotifierBundle(local_ref< android::os::Bundle > const &a0)
@@ -238,8 +244,8 @@ void android::telephony::cdma::CdmaCellLocation::fillInNotifierBundle(local_ref<
 		android::telephony::cdma::CdmaCellLocation::J2CPP_CLASS_NAME,
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_NAME(13),
 		android::telephony::cdma::CdmaCellLocation::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -12,10 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class CharacterData; } } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Text; } } } }
 
 
 #include <java/lang/Object.hpp>
+#include <org/w3c/dom/CharacterData.hpp>
+#include <org/w3c/dom/Node.hpp>
 #include <org/w3c/dom/Text.hpp>
 
 
@@ -38,6 +42,8 @@ namespace org { namespace w3c { namespace dom {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::CharacterData>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
 		operator local_ref<org::w3c::dom::Text>() const;
 
 	}; //class CDATASection
@@ -62,6 +68,16 @@ namespace j2cpp {
 org::w3c::dom::CDATASection::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::w3c::dom::CDATASection::operator local_ref<org::w3c::dom::CharacterData>() const
+{
+	return local_ref<org::w3c::dom::CharacterData>(get_jobject());
+}
+
+org::w3c::dom::CDATASection::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jobject());
 }
 
 org::w3c::dom::CDATASection::operator local_ref<org::w3c::dom::Text>() const

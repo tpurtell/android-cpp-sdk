@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_INETADDRESS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
@@ -66,8 +66,8 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean equals(local_ref< java::lang::Object >  const&);
@@ -112,14 +112,14 @@ namespace j2cpp {
 
 
 
-java::net::InetAddress::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::net::InetAddress::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::InetAddress::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -129,8 +129,8 @@ jboolean java::net::InetAddress::equals(local_ref< java::lang::Object > const &a
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(1),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::net::InetAddress::getAddress()
@@ -139,8 +139,8 @@ local_ref< array<jbyte,1> > java::net::InetAddress::getAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(2),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::net::InetAddress >, 1> > java::net::InetAddress::getAllByName(local_ref< java::lang::String > const &a0)
@@ -149,8 +149,8 @@ local_ref< array< local_ref< java::net::InetAddress >, 1> > java::net::InetAddre
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(3),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::net::InetAddress >, 1> > >
-	(a0);
+		local_ref< array< local_ref< java::net::InetAddress >, 1> >
+	>(a0);
 }
 
 local_ref< java::net::InetAddress > java::net::InetAddress::getByName(local_ref< java::lang::String > const &a0)
@@ -159,8 +159,8 @@ local_ref< java::net::InetAddress > java::net::InetAddress::getByName(local_ref<
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(4),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::InetAddress > >
-	(a0);
+		local_ref< java::net::InetAddress >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::net::InetAddress::getHostAddress()
@@ -169,8 +169,8 @@ local_ref< java::lang::String > java::net::InetAddress::getHostAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(5),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InetAddress::getHostName()
@@ -179,8 +179,8 @@ local_ref< java::lang::String > java::net::InetAddress::getHostName()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(6),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InetAddress::getCanonicalHostName()
@@ -189,8 +189,8 @@ local_ref< java::lang::String > java::net::InetAddress::getCanonicalHostName()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(7),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::InetAddress::getLocalHost()
@@ -199,8 +199,8 @@ local_ref< java::net::InetAddress > java::net::InetAddress::getLocalHost()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(8),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::InetAddress > >
-	();
+		local_ref< java::net::InetAddress >
+	>();
 }
 
 jint java::net::InetAddress::hashCode()
@@ -209,8 +209,8 @@ jint java::net::InetAddress::hashCode()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(9),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMulticastAddress()
@@ -219,8 +219,8 @@ jboolean java::net::InetAddress::isMulticastAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(10),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InetAddress::toString()
@@ -229,8 +229,8 @@ local_ref< java::lang::String > java::net::InetAddress::toString()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(11),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isLoopbackAddress()
@@ -239,8 +239,8 @@ jboolean java::net::InetAddress::isLoopbackAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(12),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isLinkLocalAddress()
@@ -249,8 +249,8 @@ jboolean java::net::InetAddress::isLinkLocalAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(13),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isSiteLocalAddress()
@@ -259,8 +259,8 @@ jboolean java::net::InetAddress::isSiteLocalAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(14),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMCGlobal()
@@ -269,8 +269,8 @@ jboolean java::net::InetAddress::isMCGlobal()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(15),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMCNodeLocal()
@@ -279,8 +279,8 @@ jboolean java::net::InetAddress::isMCNodeLocal()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(16),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMCLinkLocal()
@@ -289,8 +289,8 @@ jboolean java::net::InetAddress::isMCLinkLocal()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(17),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMCSiteLocal()
@@ -299,8 +299,8 @@ jboolean java::net::InetAddress::isMCSiteLocal()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(18),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isMCOrgLocal()
@@ -309,8 +309,8 @@ jboolean java::net::InetAddress::isMCOrgLocal()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(19),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isAnyLocalAddress()
@@ -319,8 +319,8 @@ jboolean java::net::InetAddress::isAnyLocalAddress()
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(20),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::InetAddress::isReachable(jint a0)
@@ -329,8 +329,8 @@ jboolean java::net::InetAddress::isReachable(jint a0)
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(21),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::InetAddress::isReachable(local_ref< java::net::NetworkInterface > const &a0, jint a1, jint a2)
@@ -339,8 +339,8 @@ jboolean java::net::InetAddress::isReachable(local_ref< java::net::NetworkInterf
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(22),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::net::InetAddress > java::net::InetAddress::getByAddress(local_ref< array<jbyte,1> > const &a0)
@@ -349,8 +349,8 @@ local_ref< java::net::InetAddress > java::net::InetAddress::getByAddress(local_r
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(23),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::net::InetAddress > >
-	(a0);
+		local_ref< java::net::InetAddress >
+	>(a0);
 }
 
 local_ref< java::net::InetAddress > java::net::InetAddress::getByAddress(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -359,8 +359,8 @@ local_ref< java::net::InetAddress > java::net::InetAddress::getByAddress(local_r
 		java::net::InetAddress::J2CPP_CLASS_NAME,
 		java::net::InetAddress::J2CPP_METHOD_NAME(24),
 		java::net::InetAddress::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::net::InetAddress > >
-	(a0, a1);
+		local_ref< java::net::InetAddress >
+	>(a0, a1);
 }
 
 

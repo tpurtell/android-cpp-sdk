@@ -82,8 +82,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::Formatt
 		org::apache::http::FormattedHeader::J2CPP_CLASS_NAME,
 		org::apache::http::FormattedHeader::J2CPP_METHOD_NAME(0),
 		org::apache::http::FormattedHeader::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject());
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject());
 }
 
 jint org::apache::http::FormattedHeader::getValuePos()
@@ -92,8 +92,8 @@ jint org::apache::http::FormattedHeader::getValuePos()
 		org::apache::http::FormattedHeader::J2CPP_CLASS_NAME,
 		org::apache::http::FormattedHeader::J2CPP_METHOD_NAME(1),
 		org::apache::http::FormattedHeader::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

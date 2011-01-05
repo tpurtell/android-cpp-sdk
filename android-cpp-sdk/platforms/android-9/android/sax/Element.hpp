@@ -101,8 +101,8 @@ local_ref< android::sax::Element > android::sax::Element::getChild(local_ref< ja
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(1),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::sax::Element > >
-	(get_jobject(), a0);
+		local_ref< android::sax::Element >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::sax::Element > android::sax::Element::getChild(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -111,8 +111,8 @@ local_ref< android::sax::Element > android::sax::Element::getChild(local_ref< ja
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(2),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::sax::Element > >
-	(get_jobject(), a0, a1);
+		local_ref< android::sax::Element >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::sax::Element > android::sax::Element::requireChild(local_ref< java::lang::String > const &a0)
@@ -121,8 +121,8 @@ local_ref< android::sax::Element > android::sax::Element::requireChild(local_ref
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(3),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::sax::Element > >
-	(get_jobject(), a0);
+		local_ref< android::sax::Element >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::sax::Element > android::sax::Element::requireChild(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -131,8 +131,8 @@ local_ref< android::sax::Element > android::sax::Element::requireChild(local_ref
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(4),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::sax::Element > >
-	(get_jobject(), a0, a1);
+		local_ref< android::sax::Element >
+	>(get_jobject(), a0, a1);
 }
 
 void android::sax::Element::setElementListener(local_ref< android::sax::ElementListener > const &a0)
@@ -141,8 +141,8 @@ void android::sax::Element::setElementListener(local_ref< android::sax::ElementL
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(5),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::sax::Element::setTextElementListener(local_ref< android::sax::TextElementListener > const &a0)
@@ -151,8 +151,8 @@ void android::sax::Element::setTextElementListener(local_ref< android::sax::Text
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(6),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::sax::Element::setStartElementListener(local_ref< android::sax::StartElementListener > const &a0)
@@ -161,8 +161,8 @@ void android::sax::Element::setStartElementListener(local_ref< android::sax::Sta
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(7),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::sax::Element::setEndElementListener(local_ref< android::sax::EndElementListener > const &a0)
@@ -171,8 +171,8 @@ void android::sax::Element::setEndElementListener(local_ref< android::sax::EndEl
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(8),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::sax::Element::setEndTextElementListener(local_ref< android::sax::EndTextElementListener > const &a0)
@@ -181,8 +181,8 @@ void android::sax::Element::setEndTextElementListener(local_ref< android::sax::E
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(9),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::sax::Element::toString()
@@ -191,8 +191,8 @@ local_ref< java::lang::String > android::sax::Element::toString()
 		android::sax::Element::J2CPP_CLASS_NAME,
 		android::sax::Element::J2CPP_METHOD_NAME(10),
 		android::sax::Element::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

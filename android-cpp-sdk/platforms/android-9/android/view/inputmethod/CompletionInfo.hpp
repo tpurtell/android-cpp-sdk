@@ -105,8 +105,8 @@ android::view::inputmethod::CompletionInfo::CompletionInfo(jlong a0, jint a1, lo
 	call_new_object<
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(0),
-		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -118,8 +118,8 @@ android::view::inputmethod::CompletionInfo::CompletionInfo(jlong a0, jint a1, lo
 	call_new_object<
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(1),
-		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -131,8 +131,8 @@ jlong android::view::inputmethod::CompletionInfo::getId()
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint android::view::inputmethod::CompletionInfo::getPosition()
@@ -141,8 +141,8 @@ jint android::view::inputmethod::CompletionInfo::getPosition()
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(3),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::view::inputmethod::CompletionInfo::getText()
@@ -151,8 +151,8 @@ local_ref< java::lang::CharSequence > android::view::inputmethod::CompletionInfo
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(4),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::view::inputmethod::CompletionInfo::getLabel()
@@ -161,8 +161,8 @@ local_ref< java::lang::CharSequence > android::view::inputmethod::CompletionInfo
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(5),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::inputmethod::CompletionInfo::toString()
@@ -171,8 +171,8 @@ local_ref< java::lang::String > android::view::inputmethod::CompletionInfo::toSt
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(6),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::view::inputmethod::CompletionInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -181,8 +181,8 @@ void android::view::inputmethod::CompletionInfo::writeToParcel(local_ref< androi
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(7),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::inputmethod::CompletionInfo::describeContents()
@@ -191,8 +191,8 @@ jint android::view::inputmethod::CompletionInfo::describeContents()
 		android::view::inputmethod::CompletionInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_NAME(8),
 		android::view::inputmethod::CompletionInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

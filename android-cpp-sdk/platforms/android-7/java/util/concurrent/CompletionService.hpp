@@ -86,8 +86,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionSe
 		java::util::concurrent::CompletionService::J2CPP_CLASS_NAME,
 		java::util::concurrent::CompletionService::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::CompletionService::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionService::submit(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -96,8 +96,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionSe
 		java::util::concurrent::CompletionService::J2CPP_CLASS_NAME,
 		java::util::concurrent::CompletionService::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::CompletionService::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionService::take()
@@ -106,8 +106,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionSe
 		java::util::concurrent::CompletionService::J2CPP_CLASS_NAME,
 		java::util::concurrent::CompletionService::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::CompletionService::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject());
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionService::poll()
@@ -116,8 +116,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionSe
 		java::util::concurrent::CompletionService::J2CPP_CLASS_NAME,
 		java::util::concurrent::CompletionService::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::CompletionService::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject());
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionService::poll(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -126,8 +126,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionSe
 		java::util::concurrent::CompletionService::J2CPP_CLASS_NAME,
 		java::util::concurrent::CompletionService::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::CompletionService::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0, a1);
 }
 
 

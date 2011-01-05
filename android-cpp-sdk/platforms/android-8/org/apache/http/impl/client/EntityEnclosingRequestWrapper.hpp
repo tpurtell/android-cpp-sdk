@@ -11,14 +11,24 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_ENTITYENCLOSINGREQUESTWRAPPER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace client { class RequestWrapper; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
+#include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/HttpRequest.hpp>
+#include <org/apache/http/client/methods/HttpUriRequest.hpp>
 #include <org/apache/http/impl/client/RequestWrapper.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -45,7 +55,12 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		}
 
 		operator local_ref<org::apache::http::impl::client::RequestWrapper>() const;
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
+		operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
 		operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		EntityEnclosingRequestWrapper(local_ref< org::apache::http::HttpEntityEnclosingRequest > const&);
@@ -79,9 +94,34 @@ org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_r
 	return local_ref<org::apache::http::impl::client::RequestWrapper>(get_jobject());
 }
 
+org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
+{
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jobject());
+}
+
+org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::HttpUriRequest>(get_jobject());
+}
+
+org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
 org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const
 {
 	return local_ref<org::apache::http::HttpEntityEnclosingRequest>(get_jobject());
+}
+
+org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<org::apache::http::HttpRequest>() const
+{
+	return local_ref<org::apache::http::HttpRequest>(get_jobject());
+}
+
+org::apache::http::impl::client::EntityEnclosingRequestWrapper::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -90,8 +130,8 @@ org::apache::http::impl::client::EntityEnclosingRequestWrapper::EntityEnclosingR
 	call_new_object<
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -103,8 +143,8 @@ local_ref< org::apache::http::HttpEntity > org::apache::http::impl::client::Enti
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpEntity > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpEntity >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::EntityEnclosingRequestWrapper::setEntity(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -113,8 +153,8 @@ void org::apache::http::impl::client::EntityEnclosingRequestWrapper::setEntity(l
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::client::EntityEnclosingRequestWrapper::expectContinue()
@@ -123,8 +163,8 @@ jboolean org::apache::http::impl::client::EntityEnclosingRequestWrapper::expectC
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::client::EntityEnclosingRequestWrapper::isRepeatable()
@@ -133,8 +173,8 @@ jboolean org::apache::http::impl::client::EntityEnclosingRequestWrapper::isRepea
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::client::EntityEnclosingRequestWrapper::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

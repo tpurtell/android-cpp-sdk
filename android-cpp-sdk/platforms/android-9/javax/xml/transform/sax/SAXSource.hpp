@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_SAX_SAXSOURCE_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
@@ -54,8 +54,8 @@ namespace javax { namespace xml { namespace transform { namespace sax {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::xml::transform::Source>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SAXSource();
@@ -90,14 +90,14 @@ namespace j2cpp {
 
 
 
-javax::xml::transform::sax::SAXSource::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::xml::transform::sax::SAXSource::operator local_ref<javax::xml::transform::Source>() const
 {
 	return local_ref<javax::xml::transform::Source>(get_jobject());
+}
+
+javax::xml::transform::sax::SAXSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -106,8 +106,8 @@ javax::xml::transform::sax::SAXSource::SAXSource()
 	call_new_object<
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -119,8 +119,8 @@ javax::xml::transform::sax::SAXSource::SAXSource(local_ref< org::xml::sax::XMLRe
 	call_new_object<
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -132,8 +132,8 @@ javax::xml::transform::sax::SAXSource::SAXSource(local_ref< org::xml::sax::Input
 	call_new_object<
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -145,8 +145,8 @@ void javax::xml::transform::sax::SAXSource::setXMLReader(local_ref< org::xml::sa
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(3),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLReader > javax::xml::transform::sax::SAXSource::getXMLReader()
@@ -155,8 +155,8 @@ local_ref< org::xml::sax::XMLReader > javax::xml::transform::sax::SAXSource::get
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(4),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::xml::sax::XMLReader > >
-	(get_jobject());
+		local_ref< org::xml::sax::XMLReader >
+	>(get_jobject());
 }
 
 void javax::xml::transform::sax::SAXSource::setInputSource(local_ref< org::xml::sax::InputSource > const &a0)
@@ -165,8 +165,8 @@ void javax::xml::transform::sax::SAXSource::setInputSource(local_ref< org::xml::
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::InputSource > javax::xml::transform::sax::SAXSource::getInputSource()
@@ -175,8 +175,8 @@ local_ref< org::xml::sax::InputSource > javax::xml::transform::sax::SAXSource::g
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::xml::sax::InputSource > >
-	(get_jobject());
+		local_ref< org::xml::sax::InputSource >
+	>(get_jobject());
 }
 
 void javax::xml::transform::sax::SAXSource::setSystemId(local_ref< java::lang::String > const &a0)
@@ -185,8 +185,8 @@ void javax::xml::transform::sax::SAXSource::setSystemId(local_ref< java::lang::S
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(7),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::sax::SAXSource::getSystemId()
@@ -195,8 +195,8 @@ local_ref< java::lang::String > javax::xml::transform::sax::SAXSource::getSystem
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(8),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< org::xml::sax::InputSource > javax::xml::transform::sax::SAXSource::sourceToInputSource(local_ref< javax::xml::transform::Source > const &a0)
@@ -205,8 +205,8 @@ local_ref< org::xml::sax::InputSource > javax::xml::transform::sax::SAXSource::s
 		javax::xml::transform::sax::SAXSource::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_NAME(9),
 		javax::xml::transform::sax::SAXSource::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xml::sax::InputSource > >
-	(a0);
+		local_ref< org::xml::sax::InputSource >
+	>(a0);
 }
 
 

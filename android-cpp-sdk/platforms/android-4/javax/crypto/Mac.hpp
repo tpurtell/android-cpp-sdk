@@ -65,8 +65,8 @@ namespace javax { namespace crypto {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getAlgorithm();
@@ -104,14 +104,14 @@ namespace j2cpp {
 
 
 
-javax::crypto::Mac::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::Mac::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+javax::crypto::Mac::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -121,8 +121,8 @@ local_ref< java::lang::String > javax::crypto::Mac::getAlgorithm()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(1),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > javax::crypto::Mac::getProvider()
@@ -131,8 +131,8 @@ local_ref< java::security::Provider > javax::crypto::Mac::getProvider()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(2),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java::lang::String > const &a0)
@@ -141,8 +141,8 @@ local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java:
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(3),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::Mac > >
-	(a0);
+		local_ref< javax::crypto::Mac >
+	>(a0);
 }
 
 local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -151,8 +151,8 @@ local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java:
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(4),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::Mac > >
-	(a0, a1);
+		local_ref< javax::crypto::Mac >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -161,8 +161,8 @@ local_ref< javax::crypto::Mac > javax::crypto::Mac::getInstance(local_ref< java:
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(5),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::crypto::Mac > >
-	(a0, a1);
+		local_ref< javax::crypto::Mac >
+	>(a0, a1);
 }
 
 jint javax::crypto::Mac::getMacLength()
@@ -171,8 +171,8 @@ jint javax::crypto::Mac::getMacLength()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(6),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void javax::crypto::Mac::init(local_ref< java::security::Key > const &a0, local_ref< java::security::spec::AlgorithmParameterSpec > const &a1)
@@ -181,8 +181,8 @@ void javax::crypto::Mac::init(local_ref< java::security::Key > const &a0, local_
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(7),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::Mac::init(local_ref< java::security::Key > const &a0)
@@ -191,8 +191,8 @@ void javax::crypto::Mac::init(local_ref< java::security::Key > const &a0)
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(8),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::Mac::update(jbyte a0)
@@ -201,8 +201,8 @@ void javax::crypto::Mac::update(jbyte a0)
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(9),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::Mac::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -211,8 +211,8 @@ void javax::crypto::Mac::update(local_ref< array<jbyte,1> > const &a0, jint a1, 
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(10),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::crypto::Mac::update(local_ref< array<jbyte,1> > const &a0)
@@ -221,8 +221,8 @@ void javax::crypto::Mac::update(local_ref< array<jbyte,1> > const &a0)
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(11),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::Mac::update(local_ref< java::nio::ByteBuffer > const &a0)
@@ -231,8 +231,8 @@ void javax::crypto::Mac::update(local_ref< java::nio::ByteBuffer > const &a0)
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(12),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Mac::doFinal()
@@ -241,8 +241,8 @@ local_ref< array<jbyte,1> > javax::crypto::Mac::doFinal()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(13),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void javax::crypto::Mac::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -251,8 +251,8 @@ void javax::crypto::Mac::doFinal(local_ref< array<jbyte,1> > const &a0, jint a1)
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(14),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::Mac::doFinal(local_ref< array<jbyte,1> > const &a0)
@@ -261,8 +261,8 @@ local_ref< array<jbyte,1> > javax::crypto::Mac::doFinal(local_ref< array<jbyte,1
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(15),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::Mac::reset()
@@ -271,8 +271,8 @@ void javax::crypto::Mac::reset()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(16),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > javax::crypto::Mac::clone()
@@ -281,8 +281,8 @@ local_ref< java::lang::Object > javax::crypto::Mac::clone()
 		javax::crypto::Mac::J2CPP_CLASS_NAME,
 		javax::crypto::Mac::J2CPP_METHOD_NAME(17),
 		javax::crypto::Mac::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

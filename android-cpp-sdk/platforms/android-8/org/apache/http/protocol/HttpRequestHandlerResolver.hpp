@@ -75,8 +75,8 @@ local_ref< org::apache::http::protocol::HttpRequestHandler > org::apache::http::
 		org::apache::http::protocol::HttpRequestHandlerResolver::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandlerResolver::J2CPP_METHOD_NAME(0),
 		org::apache::http::protocol::HttpRequestHandlerResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::protocol::HttpRequestHandler > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::protocol::HttpRequestHandler >
+	>(get_jobject(), a0);
 }
 
 

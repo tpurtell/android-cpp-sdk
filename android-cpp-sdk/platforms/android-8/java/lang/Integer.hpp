@@ -16,8 +16,10 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Comparable.hpp>
 #include <java/lang/Number.hpp>
@@ -86,7 +88,9 @@ namespace java { namespace lang {
 		}
 
 		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		Integer(jint);
@@ -154,9 +158,19 @@ java::lang::Integer::operator local_ref<java::lang::Number>() const
 	return local_ref<java::lang::Number>(get_jobject());
 }
 
+java::lang::Integer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::lang::Integer::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Integer::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -165,8 +179,8 @@ java::lang::Integer::Integer(jint a0)
 	call_new_object<
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(0),
-		java::lang::Integer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Integer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -178,8 +192,8 @@ java::lang::Integer::Integer(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(1),
-		java::lang::Integer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Integer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -191,8 +205,8 @@ jbyte java::lang::Integer::byteValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(2),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(2), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jint java::lang::Integer::compareTo(local_ref< java::lang::Integer > const &a0)
@@ -201,8 +215,8 @@ jint java::lang::Integer::compareTo(local_ref< java::lang::Integer > const &a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(3),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::decode(local_ref< java::lang::String > const &a0)
@@ -211,8 +225,8 @@ local_ref< java::lang::Integer > java::lang::Integer::decode(local_ref< java::la
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(4),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Integer > >
-	(a0);
+		local_ref< java::lang::Integer >
+	>(a0);
 }
 
 jdouble java::lang::Integer::doubleValue()
@@ -221,8 +235,8 @@ jdouble java::lang::Integer::doubleValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(5),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jboolean java::lang::Integer::equals(local_ref< java::lang::Object > const &a0)
@@ -231,8 +245,8 @@ jboolean java::lang::Integer::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(6),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat java::lang::Integer::floatValue()
@@ -241,8 +255,8 @@ jfloat java::lang::Integer::floatValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(7),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java::lang::String > const &a0)
@@ -251,8 +265,8 @@ local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(8),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Integer > >
-	(a0);
+		local_ref< java::lang::Integer >
+	>(a0);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java::lang::String > const &a0, jint a1)
@@ -261,8 +275,8 @@ local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(9),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Integer > >
-	(a0, a1);
+		local_ref< java::lang::Integer >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java::lang::String > const &a0, local_ref< java::lang::Integer > const &a1)
@@ -271,8 +285,8 @@ local_ref< java::lang::Integer > java::lang::Integer::getInteger(local_ref< java
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(10),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Integer > >
-	(a0, a1);
+		local_ref< java::lang::Integer >
+	>(a0, a1);
 }
 
 jint java::lang::Integer::hashCode()
@@ -281,8 +295,8 @@ jint java::lang::Integer::hashCode()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(11),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::lang::Integer::intValue()
@@ -291,8 +305,8 @@ jint java::lang::Integer::intValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(12),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::lang::Integer::longValue()
@@ -301,8 +315,8 @@ jlong java::lang::Integer::longValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(13),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::lang::Integer::parseInt(local_ref< java::lang::String > const &a0)
@@ -311,8 +325,8 @@ jint java::lang::Integer::parseInt(local_ref< java::lang::String > const &a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(14),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::parseInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -321,8 +335,8 @@ jint java::lang::Integer::parseInt(local_ref< java::lang::String > const &a0, ji
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(15),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jshort java::lang::Integer::shortValue()
@@ -331,8 +345,8 @@ jshort java::lang::Integer::shortValue()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(16),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(16), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Integer::toBinaryString(jint a0)
@@ -341,8 +355,8 @@ local_ref< java::lang::String > java::lang::Integer::toBinaryString(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(17),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Integer::toHexString(jint a0)
@@ -351,8 +365,8 @@ local_ref< java::lang::String > java::lang::Integer::toHexString(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(18),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Integer::toOctalString(jint a0)
@@ -361,8 +375,8 @@ local_ref< java::lang::String > java::lang::Integer::toOctalString(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(19),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Integer::toString()
@@ -371,8 +385,8 @@ local_ref< java::lang::String > java::lang::Integer::toString()
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(20),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Integer::toString(jint a0)
@@ -381,8 +395,8 @@ local_ref< java::lang::String > java::lang::Integer::toString(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(21),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Integer::toString(jint a0, jint a1)
@@ -391,8 +405,8 @@ local_ref< java::lang::String > java::lang::Integer::toString(jint a0, jint a1)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(22),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::valueOf(local_ref< java::lang::String > const &a0)
@@ -401,8 +415,8 @@ local_ref< java::lang::Integer > java::lang::Integer::valueOf(local_ref< java::l
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(23),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Integer > >
-	(a0);
+		local_ref< java::lang::Integer >
+	>(a0);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::valueOf(local_ref< java::lang::String > const &a0, jint a1)
@@ -411,8 +425,8 @@ local_ref< java::lang::Integer > java::lang::Integer::valueOf(local_ref< java::l
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(24),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::Integer > >
-	(a0, a1);
+		local_ref< java::lang::Integer >
+	>(a0, a1);
 }
 
 jint java::lang::Integer::highestOneBit(jint a0)
@@ -421,8 +435,8 @@ jint java::lang::Integer::highestOneBit(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(25),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::lowestOneBit(jint a0)
@@ -431,8 +445,8 @@ jint java::lang::Integer::lowestOneBit(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(26),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::numberOfLeadingZeros(jint a0)
@@ -441,8 +455,8 @@ jint java::lang::Integer::numberOfLeadingZeros(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(27),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::numberOfTrailingZeros(jint a0)
@@ -451,8 +465,8 @@ jint java::lang::Integer::numberOfTrailingZeros(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(28),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::bitCount(jint a0)
@@ -461,8 +475,8 @@ jint java::lang::Integer::bitCount(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(29),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::rotateLeft(jint a0, jint a1)
@@ -471,8 +485,8 @@ jint java::lang::Integer::rotateLeft(jint a0, jint a1)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(30),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Integer::rotateRight(jint a0, jint a1)
@@ -481,8 +495,8 @@ jint java::lang::Integer::rotateRight(jint a0, jint a1)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(31),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::Integer::reverseBytes(jint a0)
@@ -491,8 +505,8 @@ jint java::lang::Integer::reverseBytes(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(32),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::reverse(jint a0)
@@ -501,8 +515,8 @@ jint java::lang::Integer::reverse(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(33),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Integer::signum(jint a0)
@@ -511,8 +525,8 @@ jint java::lang::Integer::signum(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(34),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::Integer > java::lang::Integer::valueOf(jint a0)
@@ -521,8 +535,8 @@ local_ref< java::lang::Integer > java::lang::Integer::valueOf(jint a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(35),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::Integer > >
-	(a0);
+		local_ref< java::lang::Integer >
+	>(a0);
 }
 
 jint java::lang::Integer::compareTo(local_ref< java::lang::Object > const &a0)
@@ -531,8 +545,8 @@ jint java::lang::Integer::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Integer::J2CPP_CLASS_NAME,
 		java::lang::Integer::J2CPP_METHOD_NAME(36),
 		java::lang::Integer::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

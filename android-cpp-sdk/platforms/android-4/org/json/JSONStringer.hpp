@@ -91,8 +91,8 @@ org::json::JSONStringer::JSONStringer()
 	call_new_object<
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(0),
-		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +104,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::array_()
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(1),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject());
+		local_ref< org::json::JSONStringer >
+	>(get_jobject());
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::endArray()
@@ -114,8 +114,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::endArray()
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(2),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject());
+		local_ref< org::json::JSONStringer >
+	>(get_jobject());
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::endObject()
@@ -124,8 +124,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::endObject()
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(3),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject());
+		local_ref< org::json::JSONStringer >
+	>(get_jobject());
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::key(local_ref< java::lang::String > const &a0)
@@ -134,8 +134,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::key(local_ref< jav
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(4),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONStringer >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::object_()
@@ -144,8 +144,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::object_()
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(5),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject());
+		local_ref< org::json::JSONStringer >
+	>(get_jobject());
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jboolean a0)
@@ -154,8 +154,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jboolean a0)
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(6),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONStringer >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jdouble a0)
@@ -164,8 +164,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jdouble a0)
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(7),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONStringer >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jlong a0)
@@ -174,8 +174,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::value(jlong a0)
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(8),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONStringer >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::value(local_ref< java::lang::Object > const &a0)
@@ -184,8 +184,8 @@ local_ref< org::json::JSONStringer > org::json::JSONStringer::value(local_ref< j
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(9),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::json::JSONStringer > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONStringer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONStringer::toString()
@@ -194,8 +194,8 @@ local_ref< java::lang::String > org::json::JSONStringer::toString()
 		org::json::JSONStringer::J2CPP_CLASS_NAME,
 		org::json::JSONStringer::J2CPP_METHOD_NAME(10),
 		org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

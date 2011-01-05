@@ -85,8 +85,8 @@ org::apache::http::message::ParserCursor::ParserCursor(jint a0, jint a1)
 	call_new_object<
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -98,8 +98,8 @@ jint org::apache::http::message::ParserCursor::getLowerBound()
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::message::ParserCursor::getUpperBound()
@@ -108,8 +108,8 @@ jint org::apache::http::message::ParserCursor::getUpperBound()
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::message::ParserCursor::getPos()
@@ -118,8 +118,8 @@ jint org::apache::http::message::ParserCursor::getPos()
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::message::ParserCursor::updatePos(jint a0)
@@ -128,8 +128,8 @@ void org::apache::http::message::ParserCursor::updatePos(jint a0)
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::message::ParserCursor::atEnd()
@@ -138,8 +138,8 @@ jboolean org::apache::http::message::ParserCursor::atEnd()
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::ParserCursor::toString()
@@ -148,8 +148,8 @@ local_ref< java::lang::String > org::apache::http::message::ParserCursor::toStri
 		org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME,
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

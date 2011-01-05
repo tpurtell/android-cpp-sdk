@@ -128,8 +128,8 @@ java::util::zip::Deflater::Deflater()
 	call_new_object<
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(0),
-		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -141,8 +141,8 @@ java::util::zip::Deflater::Deflater(jint a0)
 	call_new_object<
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(1),
-		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -154,8 +154,8 @@ java::util::zip::Deflater::Deflater(jint a0, jboolean a1)
 	call_new_object<
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(2),
-		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -167,8 +167,8 @@ jint java::util::zip::Deflater::deflate(local_ref< array<jbyte,1> > const &a0)
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(3),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::zip::Deflater::deflate(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -177,8 +177,8 @@ jint java::util::zip::Deflater::deflate(local_ref< array<jbyte,1> > const &a0, j
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(4),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::zip::Deflater::end()
@@ -187,8 +187,8 @@ void java::util::zip::Deflater::end()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(5),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -198,8 +198,8 @@ void java::util::zip::Deflater::finish()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(7),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::zip::Deflater::finished()
@@ -208,8 +208,8 @@ jboolean java::util::zip::Deflater::finished()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(8),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::zip::Deflater::getAdler()
@@ -218,8 +218,8 @@ jint java::util::zip::Deflater::getAdler()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(9),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::Deflater::getTotalIn()
@@ -228,8 +228,8 @@ jint java::util::zip::Deflater::getTotalIn()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(10),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::Deflater::getTotalOut()
@@ -238,8 +238,8 @@ jint java::util::zip::Deflater::getTotalOut()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(11),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::zip::Deflater::needsInput()
@@ -248,8 +248,8 @@ jboolean java::util::zip::Deflater::needsInput()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(12),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::zip::Deflater::reset()
@@ -258,8 +258,8 @@ void java::util::zip::Deflater::reset()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(13),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::Deflater::setDictionary(local_ref< array<jbyte,1> > const &a0)
@@ -268,8 +268,8 @@ void java::util::zip::Deflater::setDictionary(local_ref< array<jbyte,1> > const 
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(14),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Deflater::setDictionary(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -278,8 +278,8 @@ void java::util::zip::Deflater::setDictionary(local_ref< array<jbyte,1> > const 
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(15),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::zip::Deflater::setInput(local_ref< array<jbyte,1> > const &a0)
@@ -288,8 +288,8 @@ void java::util::zip::Deflater::setInput(local_ref< array<jbyte,1> > const &a0)
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(16),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Deflater::setInput(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -298,8 +298,8 @@ void java::util::zip::Deflater::setInput(local_ref< array<jbyte,1> > const &a0, 
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(17),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::zip::Deflater::setLevel(jint a0)
@@ -308,8 +308,8 @@ void java::util::zip::Deflater::setLevel(jint a0)
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(18),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Deflater::setStrategy(jint a0)
@@ -318,8 +318,8 @@ void java::util::zip::Deflater::setStrategy(jint a0)
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(19),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::util::zip::Deflater::getBytesRead()
@@ -328,8 +328,8 @@ jlong java::util::zip::Deflater::getBytesRead()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(20),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(20), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::zip::Deflater::getBytesWritten()
@@ -338,8 +338,8 @@ jlong java::util::zip::Deflater::getBytesWritten()
 		java::util::zip::Deflater::J2CPP_CLASS_NAME,
 		java::util::zip::Deflater::J2CPP_METHOD_NAME(21),
 		java::util::zip::Deflater::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 

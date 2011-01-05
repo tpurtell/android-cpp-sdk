@@ -88,8 +88,8 @@ org::apache::http::impl::io::HttpTransportMetricsImpl::HttpTransportMetricsImpl(
 	call_new_object<
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ jlong org::apache::http::impl::io::HttpTransportMetricsImpl::getBytesTransferred
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::HttpTransportMetricsImpl::setBytesTransferred(jlong a0)
@@ -111,8 +111,8 @@ void org::apache::http::impl::io::HttpTransportMetricsImpl::setBytesTransferred(
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::HttpTransportMetricsImpl::incrementBytesTransferred(jlong a0)
@@ -121,8 +121,8 @@ void org::apache::http::impl::io::HttpTransportMetricsImpl::incrementBytesTransf
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::HttpTransportMetricsImpl::reset()
@@ -131,8 +131,8 @@ void org::apache::http::impl::io::HttpTransportMetricsImpl::reset()
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

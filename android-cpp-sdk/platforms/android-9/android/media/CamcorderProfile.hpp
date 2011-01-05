@@ -114,8 +114,8 @@ local_ref< android::media::CamcorderProfile > android::media::CamcorderProfile::
 		android::media::CamcorderProfile::J2CPP_CLASS_NAME,
 		android::media::CamcorderProfile::J2CPP_METHOD_NAME(1),
 		android::media::CamcorderProfile::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::media::CamcorderProfile > >
-	(a0);
+		local_ref< android::media::CamcorderProfile >
+	>(a0);
 }
 
 local_ref< android::media::CamcorderProfile > android::media::CamcorderProfile::get(jint a0, jint a1)
@@ -124,8 +124,8 @@ local_ref< android::media::CamcorderProfile > android::media::CamcorderProfile::
 		android::media::CamcorderProfile::J2CPP_CLASS_NAME,
 		android::media::CamcorderProfile::J2CPP_METHOD_NAME(2),
 		android::media::CamcorderProfile::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::media::CamcorderProfile > >
-	(a0, a1);
+		local_ref< android::media::CamcorderProfile >
+	>(a0, a1);
 }
 
 

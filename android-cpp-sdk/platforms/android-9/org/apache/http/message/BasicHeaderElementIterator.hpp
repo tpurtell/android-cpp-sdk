@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderIterator; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class HeaderValueParser; } } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Head
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Iterator.hpp>
 #include <org/apache/http/HeaderElement.hpp>
 #include <org/apache/http/HeaderElementIterator.hpp>
 #include <org/apache/http/HeaderIterator.hpp>
@@ -50,6 +52,7 @@ namespace org { namespace apache { namespace http { namespace message {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
 		operator local_ref<org::apache::http::HeaderElementIterator>() const;
 
 
@@ -84,6 +87,11 @@ org::apache::http::message::BasicHeaderElementIterator::operator local_ref<java:
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::apache::http::message::BasicHeaderElementIterator::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jobject());
+}
+
 org::apache::http::message::BasicHeaderElementIterator::operator local_ref<org::apache::http::HeaderElementIterator>() const
 {
 	return local_ref<org::apache::http::HeaderElementIterator>(get_jobject());
@@ -95,8 +103,8 @@ org::apache::http::message::BasicHeaderElementIterator::BasicHeaderElementIterat
 	call_new_object<
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -108,8 +116,8 @@ org::apache::http::message::BasicHeaderElementIterator::BasicHeaderElementIterat
 	call_new_object<
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(1),
-		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -121,8 +129,8 @@ jboolean org::apache::http::message::BasicHeaderElementIterator::hasNext()
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicHeaderElementIterator::nextElement()
@@ -131,8 +139,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HeaderElement > >
-	(get_jobject());
+		local_ref< org::apache::http::HeaderElement >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicHeaderElementIterator::next()
@@ -141,8 +149,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicHeaderElementIt
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void org::apache::http::message::BasicHeaderElementIterator::remove()
@@ -151,8 +159,8 @@ void org::apache::http::message::BasicHeaderElementIterator::remove()
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

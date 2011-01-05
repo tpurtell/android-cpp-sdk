@@ -83,8 +83,8 @@ void android::app::NotificationManager::notify(jint a0, local_ref< android::app:
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(1),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::NotificationManager::notify(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::app::Notification > const &a2)
@@ -93,8 +93,8 @@ void android::app::NotificationManager::notify(local_ref< java::lang::String > c
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(2),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::NotificationManager::cancel(jint a0)
@@ -103,8 +103,8 @@ void android::app::NotificationManager::cancel(jint a0)
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(3),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NotificationManager::cancel(local_ref< java::lang::String > const &a0, jint a1)
@@ -113,8 +113,8 @@ void android::app::NotificationManager::cancel(local_ref< java::lang::String > c
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(4),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::NotificationManager::cancelAll()
@@ -123,8 +123,8 @@ void android::app::NotificationManager::cancelAll()
 		android::app::NotificationManager::J2CPP_CLASS_NAME,
 		android::app::NotificationManager::J2CPP_METHOD_NAME(5),
 		android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

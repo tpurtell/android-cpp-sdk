@@ -11,10 +11,12 @@
 #define J2CPP_ANDROID_DATABASE_DATASETOBSERVABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace database { class Observable; } } }
 
 
 #include <android/database/Observable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,6 +40,7 @@ namespace android { namespace database {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::database::Observable>() const;
 
 
@@ -62,6 +65,11 @@ namespace j2cpp {
 
 
 
+android::database::DataSetObservable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::database::DataSetObservable::operator local_ref<android::database::Observable>() const
 {
 	return local_ref<android::database::Observable>(get_jobject());
@@ -73,8 +81,8 @@ android::database::DataSetObservable::DataSetObservable()
 	call_new_object<
 		android::database::DataSetObservable::J2CPP_CLASS_NAME,
 		android::database::DataSetObservable::J2CPP_METHOD_NAME(0),
-		android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +94,8 @@ void android::database::DataSetObservable::notifyChanged()
 		android::database::DataSetObservable::J2CPP_CLASS_NAME,
 		android::database::DataSetObservable::J2CPP_METHOD_NAME(1),
 		android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::DataSetObservable::notifyInvalidated()
@@ -96,8 +104,8 @@ void android::database::DataSetObservable::notifyInvalidated()
 		android::database::DataSetObservable::J2CPP_CLASS_NAME,
 		android::database::DataSetObservable::J2CPP_METHOD_NAME(2),
 		android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

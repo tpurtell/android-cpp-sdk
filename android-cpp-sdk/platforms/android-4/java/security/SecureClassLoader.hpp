@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,6 +43,7 @@ namespace java { namespace security {
 		}
 
 		operator local_ref<java::lang::ClassLoader>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 	}; //class SecureClassLoader
@@ -64,6 +67,11 @@ namespace j2cpp {
 java::security::SecureClassLoader::operator local_ref<java::lang::ClassLoader>() const
 {
 	return local_ref<java::lang::ClassLoader>(get_jobject());
+}
+
+java::security::SecureClassLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 

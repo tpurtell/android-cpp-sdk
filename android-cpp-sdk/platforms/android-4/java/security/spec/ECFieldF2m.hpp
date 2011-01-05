@@ -48,8 +48,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::ECField>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ECFieldF2m(jint);
@@ -80,14 +80,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::ECFieldF2m::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::ECFieldF2m::operator local_ref<java::security::spec::ECField>() const
 {
 	return local_ref<java::security::spec::ECField>(get_jobject());
+}
+
+java::security::spec::ECFieldF2m::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -96,8 +96,8 @@ java::security::spec::ECFieldF2m::ECFieldF2m(jint a0)
 	call_new_object<
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +109,8 @@ java::security::spec::ECFieldF2m::ECFieldF2m(jint a0, local_ref< java::math::Big
 	call_new_object<
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(1),
-		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -122,8 +122,8 @@ java::security::spec::ECFieldF2m::ECFieldF2m(jint a0, local_ref< array<jint,1> >
 	call_new_object<
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(2),
-		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -135,8 +135,8 @@ jboolean java::security::spec::ECFieldF2m::equals(local_ref< java::lang::Object 
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(3),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::spec::ECFieldF2m::getFieldSize()
@@ -145,8 +145,8 @@ jint java::security::spec::ECFieldF2m::getFieldSize()
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(4),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::security::spec::ECFieldF2m::getM()
@@ -155,8 +155,8 @@ jint java::security::spec::ECFieldF2m::getM()
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(5),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jint,1> > java::security::spec::ECFieldF2m::getMidTermsOfReductionPolynomial()
@@ -165,8 +165,8 @@ local_ref< array<jint,1> > java::security::spec::ECFieldF2m::getMidTermsOfReduct
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(6),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::ECFieldF2m::getReductionPolynomial()
@@ -175,8 +175,8 @@ local_ref< java::math::BigInteger > java::security::spec::ECFieldF2m::getReducti
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(7),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jint java::security::spec::ECFieldF2m::hashCode()
@@ -185,8 +185,8 @@ jint java::security::spec::ECFieldF2m::hashCode()
 		java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME,
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(8),
 		java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

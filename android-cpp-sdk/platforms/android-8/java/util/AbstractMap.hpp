@@ -114,8 +114,8 @@ void java::util::AbstractMap::clear()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(1),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::AbstractMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -124,8 +124,8 @@ jboolean java::util::AbstractMap::containsKey(local_ref< java::lang::Object > co
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(2),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::AbstractMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -134,8 +134,8 @@ jboolean java::util::AbstractMap::containsValue(local_ref< java::lang::Object > 
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(3),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::AbstractMap::entrySet()
@@ -144,8 +144,8 @@ local_ref< java::util::Set > java::util::AbstractMap::entrySet()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(4),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 jboolean java::util::AbstractMap::equals(local_ref< java::lang::Object > const &a0)
@@ -154,8 +154,8 @@ jboolean java::util::AbstractMap::equals(local_ref< java::lang::Object > const &
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(5),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::AbstractMap::get(local_ref< java::lang::Object > const &a0)
@@ -164,8 +164,8 @@ local_ref< java::lang::Object > java::util::AbstractMap::get(local_ref< java::la
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(6),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::AbstractMap::hashCode()
@@ -174,8 +174,8 @@ jint java::util::AbstractMap::hashCode()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(7),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::AbstractMap::isEmpty()
@@ -184,8 +184,8 @@ jboolean java::util::AbstractMap::isEmpty()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(8),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::AbstractMap::keySet()
@@ -194,8 +194,8 @@ local_ref< java::util::Set > java::util::AbstractMap::keySet()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(9),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::AbstractMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -204,8 +204,8 @@ local_ref< java::lang::Object > java::util::AbstractMap::put(local_ref< java::la
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(10),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::AbstractMap::putAll(local_ref< java::util::Map > const &a0)
@@ -214,8 +214,8 @@ void java::util::AbstractMap::putAll(local_ref< java::util::Map > const &a0)
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(11),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::AbstractMap::remove(local_ref< java::lang::Object > const &a0)
@@ -224,8 +224,8 @@ local_ref< java::lang::Object > java::util::AbstractMap::remove(local_ref< java:
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(12),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::AbstractMap::size()
@@ -234,8 +234,8 @@ jint java::util::AbstractMap::size()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(13),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::AbstractMap::toString()
@@ -244,8 +244,8 @@ local_ref< java::lang::String > java::util::AbstractMap::toString()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(14),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::AbstractMap::values()
@@ -254,8 +254,8 @@ local_ref< java::util::Collection > java::util::AbstractMap::values()
 		java::util::AbstractMap::J2CPP_CLASS_NAME,
 		java::util::AbstractMap::J2CPP_METHOD_NAME(15),
 		java::util::AbstractMap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 

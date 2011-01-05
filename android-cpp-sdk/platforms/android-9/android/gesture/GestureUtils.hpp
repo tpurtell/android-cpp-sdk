@@ -87,8 +87,8 @@ local_ref< array<jfloat,1> > android::gesture::GestureUtils::spatialSampling(loc
 		android::gesture::GestureUtils::J2CPP_CLASS_NAME,
 		android::gesture::GestureUtils::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jfloat,1> > >
-	(a0, a1);
+		local_ref< array<jfloat,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jfloat,1> > android::gesture::GestureUtils::spatialSampling(local_ref< android::gesture::Gesture > const &a0, jint a1, jboolean a2)
@@ -97,8 +97,8 @@ local_ref< array<jfloat,1> > android::gesture::GestureUtils::spatialSampling(loc
 		android::gesture::GestureUtils::J2CPP_CLASS_NAME,
 		android::gesture::GestureUtils::J2CPP_METHOD_NAME(2),
 		android::gesture::GestureUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jfloat,1> > >
-	(a0, a1, a2);
+		local_ref< array<jfloat,1> >
+	>(a0, a1, a2);
 }
 
 local_ref< array<jfloat,1> > android::gesture::GestureUtils::temporalSampling(local_ref< android::gesture::GestureStroke > const &a0, jint a1)
@@ -107,8 +107,8 @@ local_ref< array<jfloat,1> > android::gesture::GestureUtils::temporalSampling(lo
 		android::gesture::GestureUtils::J2CPP_CLASS_NAME,
 		android::gesture::GestureUtils::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jfloat,1> > >
-	(a0, a1);
+		local_ref< array<jfloat,1> >
+	>(a0, a1);
 }
 
 local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureUtils::computeOrientedBoundingBox(local_ref< java::util::ArrayList > const &a0)
@@ -117,8 +117,8 @@ local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureUtil
 		android::gesture::GestureUtils::J2CPP_CLASS_NAME,
 		android::gesture::GestureUtils::J2CPP_METHOD_NAME(4),
 		android::gesture::GestureUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::gesture::OrientedBoundingBox > >
-	(a0);
+		local_ref< android::gesture::OrientedBoundingBox >
+	>(a0);
 }
 
 local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureUtils::computeOrientedBoundingBox(local_ref< array<jfloat,1> > const &a0)
@@ -127,8 +127,8 @@ local_ref< android::gesture::OrientedBoundingBox > android::gesture::GestureUtil
 		android::gesture::GestureUtils::J2CPP_CLASS_NAME,
 		android::gesture::GestureUtils::J2CPP_METHOD_NAME(5),
 		android::gesture::GestureUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::gesture::OrientedBoundingBox > >
-	(a0);
+		local_ref< android::gesture::OrientedBoundingBox >
+	>(a0);
 }
 
 

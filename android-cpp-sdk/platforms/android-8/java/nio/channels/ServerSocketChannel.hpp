@@ -11,13 +11,25 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectableChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class SocketChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class ServerSocket; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/net/ServerSocket.hpp>
+#include <java/nio/channels/Channel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
+#include <java/nio/channels/SelectableChannel.hpp>
 #include <java/nio/channels/SocketChannel.hpp>
+#include <java/nio/channels/spi/AbstractInterruptibleChannel.hpp>
 #include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
@@ -44,7 +56,13 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
+		operator local_ref<java::nio::channels::SelectableChannel>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
 		operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
 
 
 		static local_ref< java::nio::channels::ServerSocketChannel > open();
@@ -70,9 +88,39 @@ namespace j2cpp {
 
 
 
+java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::SelectableChannel>() const
+{
+	return local_ref<java::nio::channels::SelectableChannel>(get_jobject());
+}
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
 java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
 {
 	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+}
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -82,8 +130,8 @@ local_ref< java::nio::channels::ServerSocketChannel > java::nio::channels::Serve
 		java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::ServerSocketChannel > >
-	();
+		local_ref< java::nio::channels::ServerSocketChannel >
+	>();
 }
 
 jint java::nio::channels::ServerSocketChannel::validOps()
@@ -92,8 +140,8 @@ jint java::nio::channels::ServerSocketChannel::validOps()
 		java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_NAME(2),
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::ServerSocket > java::nio::channels::ServerSocketChannel::socket()
@@ -102,8 +150,8 @@ local_ref< java::net::ServerSocket > java::nio::channels::ServerSocketChannel::s
 		java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_NAME(3),
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::ServerSocket > >
-	(get_jobject());
+		local_ref< java::net::ServerSocket >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::SocketChannel > java::nio::channels::ServerSocketChannel::accept()
@@ -112,8 +160,8 @@ local_ref< java::nio::channels::SocketChannel > java::nio::channels::ServerSocke
 		java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_NAME(4),
 		java::nio::channels::ServerSocketChannel::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::channels::SocketChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::SocketChannel >
+	>(get_jobject());
 }
 
 

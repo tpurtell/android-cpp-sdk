@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_OPENGL_GLUTILS_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
@@ -85,8 +85,8 @@ jint android::opengl::GLUtils::getInternalFormat(local_ref< android::graphics::B
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(1),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::opengl::GLUtils::getType(local_ref< android::graphics::Bitmap > const &a0)
@@ -95,8 +95,8 @@ jint android::opengl::GLUtils::getType(local_ref< android::graphics::Bitmap > co
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(2),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::opengl::GLUtils::texImage2D(jint a0, jint a1, jint a2, local_ref< android::graphics::Bitmap > const &a3, jint a4)
@@ -105,8 +105,8 @@ void android::opengl::GLUtils::texImage2D(jint a0, jint a1, jint a2, local_ref< 
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(3),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLUtils::texImage2D(jint a0, jint a1, jint a2, local_ref< android::graphics::Bitmap > const &a3, jint a4, jint a5)
@@ -115,8 +115,8 @@ void android::opengl::GLUtils::texImage2D(jint a0, jint a1, jint a2, local_ref< 
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(4),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLUtils::texImage2D(jint a0, jint a1, local_ref< android::graphics::Bitmap > const &a2, jint a3)
@@ -125,8 +125,8 @@ void android::opengl::GLUtils::texImage2D(jint a0, jint a1, local_ref< android::
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(5),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLUtils::texSubImage2D(jint a0, jint a1, jint a2, jint a3, local_ref< android::graphics::Bitmap > const &a4)
@@ -135,8 +135,8 @@ void android::opengl::GLUtils::texSubImage2D(jint a0, jint a1, jint a2, jint a3,
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(6),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLUtils::texSubImage2D(jint a0, jint a1, jint a2, jint a3, local_ref< android::graphics::Bitmap > const &a4, jint a5, jint a6)
@@ -145,8 +145,8 @@ void android::opengl::GLUtils::texSubImage2D(jint a0, jint a1, jint a2, jint a3,
 		android::opengl::GLUtils::J2CPP_CLASS_NAME,
 		android::opengl::GLUtils::J2CPP_METHOD_NAME(7),
 		android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 

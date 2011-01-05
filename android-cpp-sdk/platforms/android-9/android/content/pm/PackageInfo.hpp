@@ -168,8 +168,8 @@ android::content::pm::PackageInfo::PackageInfo()
 	call_new_object<
 		android::content::pm::PackageInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , packageName(get_jobject())
 , versionCode(get_jobject())
@@ -200,8 +200,8 @@ local_ref< java::lang::String > android::content::pm::PackageInfo::toString()
 		android::content::pm::PackageInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageInfo::J2CPP_METHOD_NAME(1),
 		android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::PackageInfo::describeContents()
@@ -210,8 +210,8 @@ jint android::content::pm::PackageInfo::describeContents()
 		android::content::pm::PackageInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::PackageInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -220,8 +220,8 @@ void android::content::pm::PackageInfo::writeToParcel(local_ref< android::os::Pa
 		android::content::pm::PackageInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

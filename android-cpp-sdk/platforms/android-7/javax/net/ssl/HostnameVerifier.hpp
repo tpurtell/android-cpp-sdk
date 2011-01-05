@@ -74,8 +74,8 @@ jboolean javax::net::ssl::HostnameVerifier::verify(local_ref< java::lang::String
 		javax::net::ssl::HostnameVerifier::J2CPP_CLASS_NAME,
 		javax::net::ssl::HostnameVerifier::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::HostnameVerifier::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

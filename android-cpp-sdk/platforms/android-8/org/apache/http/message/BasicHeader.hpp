@@ -49,8 +49,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::Header>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
 
 
@@ -80,14 +80,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicHeader::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::BasicHeader::operator local_ref<org::apache::http::Header>() const
 {
 	return local_ref<org::apache::http::Header>(get_jobject());
+}
+
+org::apache::http::message::BasicHeader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::message::BasicHeader::operator local_ref<java::lang::Cloneable>() const
@@ -101,8 +101,8 @@ org::apache::http::message::BasicHeader::BasicHeader(local_ref< java::lang::Stri
 	call_new_object<
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -114,8 +114,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeader::getName
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicHeader::getValue()
@@ -124,8 +124,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeader::getValu
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicHeader::toString()
@@ -134,8 +134,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeader::toStrin
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apache::http::message::BasicHeader::getElements()
@@ -144,8 +144,8 @@ local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apach
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicHeader::clone()
@@ -154,8 +154,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicHeader::clone()
 		org::apache::http::message::BasicHeader::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHeader::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

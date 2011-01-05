@@ -12,12 +12,16 @@
 
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace io { class AbstractSessionOutputBuffer; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/Socket.hpp>
 #include <org/apache/http/impl/io/AbstractSessionOutputBuffer.hpp>
+#include <org/apache/http/io/SessionOutputBuffer.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -40,6 +44,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::io::SessionOutputBuffer>() const;
 		operator local_ref<org::apache::http::impl::io::AbstractSessionOutputBuffer>() const;
 
 
@@ -65,6 +71,16 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::SocketOutputBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::io::SocketOutputBuffer::operator local_ref<org::apache::http::io::SessionOutputBuffer>() const
+{
+	return local_ref<org::apache::http::io::SessionOutputBuffer>(get_jobject());
+}
+
 org::apache::http::impl::io::SocketOutputBuffer::operator local_ref<org::apache::http::impl::io::AbstractSessionOutputBuffer>() const
 {
 	return local_ref<org::apache::http::impl::io::AbstractSessionOutputBuffer>(get_jobject());
@@ -76,8 +92,8 @@ org::apache::http::impl::io::SocketOutputBuffer::SocketOutputBuffer(local_ref< j
 	call_new_object<
 		org::apache::http::impl::io::SocketOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::SocketOutputBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::SocketOutputBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::io::SocketOutputBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }

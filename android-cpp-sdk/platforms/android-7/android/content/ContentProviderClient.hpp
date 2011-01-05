@@ -109,8 +109,8 @@ local_ref< android::database::Cursor > android::content::ContentProviderClient::
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(1),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::content::ContentProviderClient::getType(local_ref< android::net::Uri > const &a0)
@@ -119,8 +119,8 @@ local_ref< java::lang::String > android::content::ContentProviderClient::getType
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(2),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::content::ContentProviderClient::insert(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -129,8 +129,8 @@ local_ref< android::net::Uri > android::content::ContentProviderClient::insert(l
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(3),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0, a1);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentProviderClient::bulkInsert(local_ref< android::net::Uri > const &a0, local_ref< array< local_ref< android::content::ContentValues >, 1> > const &a1)
@@ -139,8 +139,8 @@ jint android::content::ContentProviderClient::bulkInsert(local_ref< android::net
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(4),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::ContentProviderClient::delete_(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -149,8 +149,8 @@ jint android::content::ContentProviderClient::delete_(local_ref< android::net::U
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(5),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::ContentProviderClient::update(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -159,8 +159,8 @@ jint android::content::ContentProviderClient::update(local_ref< android::net::Ur
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(6),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::os::ParcelFileDescriptor > android::content::ContentProviderClient::openFile(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -169,8 +169,8 @@ local_ref< android::os::ParcelFileDescriptor > android::content::ContentProvider
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(7),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::ParcelFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::ParcelFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::ContentProviderClient::openAssetFile(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -179,8 +179,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::Conten
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(8),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > android::content::ContentProviderClient::applyBatch(local_ref< java::util::ArrayList > const &a0)
@@ -189,8 +189,8 @@ local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > and
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(9),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::content::ContentProviderResult >, 1> >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::ContentProviderClient::release()
@@ -199,8 +199,8 @@ jboolean android::content::ContentProviderClient::release()
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(10),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::content::ContentProvider > android::content::ContentProviderClient::getLocalContentProvider()
@@ -209,8 +209,8 @@ local_ref< android::content::ContentProvider > android::content::ContentProvider
 		android::content::ContentProviderClient::J2CPP_CLASS_NAME,
 		android::content::ContentProviderClient::J2CPP_METHOD_NAME(11),
 		android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::content::ContentProvider > >
-	(get_jobject());
+		local_ref< android::content::ContentProvider >
+	>(get_jobject());
 }
 
 

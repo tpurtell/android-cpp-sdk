@@ -12,14 +12,18 @@
 
 
 namespace j2cpp { namespace java { namespace util { class EventListenerProxy; } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/beans/PropertyChangeEvent.hpp>
 #include <java/beans/PropertyChangeListener.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventListener.hpp>
 #include <java/util/EventListenerProxy.hpp>
 
 
@@ -45,7 +49,9 @@ namespace java { namespace beans {
 		}
 
 		operator local_ref<java::util::EventListenerProxy>() const;
+		operator local_ref<java::util::EventListener>() const;
 		operator local_ref<java::beans::PropertyChangeListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PropertyChangeListenerProxy(local_ref< java::lang::String > const&, local_ref< java::beans::PropertyChangeListener > const&);
@@ -74,9 +80,19 @@ java::beans::PropertyChangeListenerProxy::operator local_ref<java::util::EventLi
 	return local_ref<java::util::EventListenerProxy>(get_jobject());
 }
 
+java::beans::PropertyChangeListenerProxy::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jobject());
+}
+
 java::beans::PropertyChangeListenerProxy::operator local_ref<java::beans::PropertyChangeListener>() const
 {
 	return local_ref<java::beans::PropertyChangeListener>(get_jobject());
+}
+
+java::beans::PropertyChangeListenerProxy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -85,8 +101,8 @@ java::beans::PropertyChangeListenerProxy::PropertyChangeListenerProxy(local_ref<
 	call_new_object<
 		java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_NAME(0),
-		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -98,8 +114,8 @@ local_ref< java::lang::String > java::beans::PropertyChangeListenerProxy::getPro
 		java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_NAME(1),
 		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::beans::PropertyChangeListenerProxy::propertyChange(local_ref< java::beans::PropertyChangeEvent > const &a0)
@@ -108,8 +124,8 @@ void java::beans::PropertyChangeListenerProxy::propertyChange(local_ref< java::b
 		java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_NAME(2),
 		java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

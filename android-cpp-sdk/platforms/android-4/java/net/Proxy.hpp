@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_NET_PROXY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { namespace Proxy_ { class Type; } } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +58,10 @@ namespace java { namespace net {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< array< local_ref< java::net::Proxy_::Type >, 1> > values();
@@ -120,9 +127,24 @@ namespace j2cpp {
 
 
 
+java::net::Proxy_::Type::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::Proxy_::Type::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::net::Proxy_::Type::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::net::Proxy_::Type::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< java::net::Proxy_::Type >, 1> > java::net::Proxy_::Type::values()
@@ -131,8 +153,8 @@ local_ref< array< local_ref< java::net::Proxy_::Type >, 1> > java::net::Proxy_::
 		java::net::Proxy_::Type::J2CPP_CLASS_NAME,
 		java::net::Proxy_::Type::J2CPP_METHOD_NAME(0),
 		java::net::Proxy_::Type::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::net::Proxy_::Type >, 1> > >
-	();
+		local_ref< array< local_ref< java::net::Proxy_::Type >, 1> >
+	>();
 }
 
 local_ref< java::net::Proxy_::Type > java::net::Proxy_::Type::valueOf(local_ref< java::lang::String > const &a0)
@@ -141,8 +163,8 @@ local_ref< java::net::Proxy_::Type > java::net::Proxy_::Type::valueOf(local_ref<
 		java::net::Proxy_::Type::J2CPP_CLASS_NAME,
 		java::net::Proxy_::Type::J2CPP_METHOD_NAME(1),
 		java::net::Proxy_::Type::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::Proxy_::Type > >
-	(a0);
+		local_ref< java::net::Proxy_::Type >
+	>(a0);
 }
 
 
@@ -193,8 +215,8 @@ java::net::Proxy::Proxy(local_ref< java::net::Proxy_::Type > const &a0, local_re
 	call_new_object<
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(0),
-		java::net::Proxy::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::net::Proxy::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -206,8 +228,8 @@ local_ref< java::net::Proxy_::Type > java::net::Proxy::type()
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(1),
 		java::net::Proxy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::Proxy_::Type > >
-	(get_jobject());
+		local_ref< java::net::Proxy_::Type >
+	>(get_jobject());
 }
 
 local_ref< java::net::SocketAddress > java::net::Proxy::address()
@@ -216,8 +238,8 @@ local_ref< java::net::SocketAddress > java::net::Proxy::address()
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(2),
 		java::net::Proxy::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::SocketAddress > >
-	(get_jobject());
+		local_ref< java::net::SocketAddress >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::Proxy::toString()
@@ -226,8 +248,8 @@ local_ref< java::lang::String > java::net::Proxy::toString()
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(3),
 		java::net::Proxy::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::Proxy::equals(local_ref< java::lang::Object > const &a0)
@@ -236,8 +258,8 @@ jboolean java::net::Proxy::equals(local_ref< java::lang::Object > const &a0)
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(4),
 		java::net::Proxy::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::Proxy::hashCode()
@@ -246,8 +268,8 @@ jint java::net::Proxy::hashCode()
 		java::net::Proxy::J2CPP_CLASS_NAME,
 		java::net::Proxy::J2CPP_METHOD_NAME(5),
 		java::net::Proxy::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

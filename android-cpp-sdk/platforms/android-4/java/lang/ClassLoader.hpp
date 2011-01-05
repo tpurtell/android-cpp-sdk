@@ -123,8 +123,8 @@ local_ref< java::lang::ClassLoader > java::lang::ClassLoader::getSystemClassLoad
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(2),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::ClassLoader > >
-	();
+		local_ref< java::lang::ClassLoader >
+	>();
 }
 
 local_ref< java::net::URL > java::lang::ClassLoader::getSystemResource(local_ref< java::lang::String > const &a0)
@@ -133,8 +133,8 @@ local_ref< java::net::URL > java::lang::ClassLoader::getSystemResource(local_ref
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(3),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::URL > >
-	(a0);
+		local_ref< java::net::URL >
+	>(a0);
 }
 
 local_ref< java::util::Enumeration > java::lang::ClassLoader::getSystemResources(local_ref< java::lang::String > const &a0)
@@ -143,8 +143,8 @@ local_ref< java::util::Enumeration > java::lang::ClassLoader::getSystemResources
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(4),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Enumeration > >
-	(a0);
+		local_ref< java::util::Enumeration >
+	>(a0);
 }
 
 local_ref< java::io::InputStream > java::lang::ClassLoader::getSystemResourceAsStream(local_ref< java::lang::String > const &a0)
@@ -153,8 +153,8 @@ local_ref< java::io::InputStream > java::lang::ClassLoader::getSystemResourceAsS
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(5),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::InputStream > >
-	(a0);
+		local_ref< java::io::InputStream >
+	>(a0);
 }
 
 
@@ -170,8 +170,8 @@ local_ref< java::lang::ClassLoader > java::lang::ClassLoader::getParent()
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(13),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::ClassLoader > >
-	(get_jobject());
+		local_ref< java::lang::ClassLoader >
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::lang::ClassLoader::getResource(local_ref< java::lang::String > const &a0)
@@ -180,8 +180,8 @@ local_ref< java::net::URL > java::lang::ClassLoader::getResource(local_ref< java
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(14),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::net::URL > >
-	(get_jobject(), a0);
+		local_ref< java::net::URL >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::lang::ClassLoader::getResources(local_ref< java::lang::String > const &a0)
@@ -190,8 +190,8 @@ local_ref< java::util::Enumeration > java::lang::ClassLoader::getResources(local
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(15),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject(), a0);
+		local_ref< java::util::Enumeration >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::lang::ClassLoader::getResourceAsStream(local_ref< java::lang::String > const &a0)
@@ -200,8 +200,8 @@ local_ref< java::io::InputStream > java::lang::ClassLoader::getResourceAsStream(
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(16),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Class > java::lang::ClassLoader::loadClass(local_ref< java::lang::String > const &a0)
@@ -210,8 +210,8 @@ local_ref< java::lang::Class > java::lang::ClassLoader::loadClass(local_ref< jav
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(17),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Class > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Class >
+	>(get_jobject(), a0);
 }
 
 
@@ -229,8 +229,8 @@ void java::lang::ClassLoader::setClassAssertionStatus(local_ref< java::lang::Str
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(27),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::ClassLoader::setPackageAssertionStatus(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -239,8 +239,8 @@ void java::lang::ClassLoader::setPackageAssertionStatus(local_ref< java::lang::S
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(28),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::ClassLoader::setDefaultAssertionStatus(jboolean a0)
@@ -249,8 +249,8 @@ void java::lang::ClassLoader::setDefaultAssertionStatus(jboolean a0)
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(29),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::ClassLoader::clearAssertionStatus()
@@ -259,8 +259,8 @@ void java::lang::ClassLoader::clearAssertionStatus()
 		java::lang::ClassLoader::J2CPP_CLASS_NAME,
 		java::lang::ClassLoader::J2CPP_METHOD_NAME(30),
 		java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

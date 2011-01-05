@@ -107,8 +107,8 @@ android::view::inputmethod::InputBinding::InputBinding(local_ref< android::view:
 	call_new_object<
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(0),
-		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -120,8 +120,8 @@ android::view::inputmethod::InputBinding::InputBinding(local_ref< android::view:
 	call_new_object<
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(1),
-		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -133,8 +133,8 @@ local_ref< android::view::inputmethod::InputConnection > android::view::inputmet
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::inputmethod::InputConnection > >
-	(get_jobject());
+		local_ref< android::view::inputmethod::InputConnection >
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::view::inputmethod::InputBinding::getConnectionToken()
@@ -143,8 +143,8 @@ local_ref< android::os::IBinder > android::view::inputmethod::InputBinding::getC
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(3),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 jint android::view::inputmethod::InputBinding::getUid()
@@ -153,8 +153,8 @@ jint android::view::inputmethod::InputBinding::getUid()
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(4),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::inputmethod::InputBinding::getPid()
@@ -163,8 +163,8 @@ jint android::view::inputmethod::InputBinding::getPid()
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(5),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::inputmethod::InputBinding::toString()
@@ -173,8 +173,8 @@ local_ref< java::lang::String > android::view::inputmethod::InputBinding::toStri
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(6),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::view::inputmethod::InputBinding::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -183,8 +183,8 @@ void android::view::inputmethod::InputBinding::writeToParcel(local_ref< android:
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(7),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::inputmethod::InputBinding::describeContents()
@@ -193,8 +193,8 @@ jint android::view::inputmethod::InputBinding::describeContents()
 		android::view::inputmethod::InputBinding::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_NAME(8),
 		android::view::inputmethod::InputBinding::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

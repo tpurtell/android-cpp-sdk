@@ -176,8 +176,8 @@ android::os::Build_::VERSION_CODES::VERSION_CODES()
 	call_new_object<
 		android::os::Build_::VERSION_CODES::J2CPP_CLASS_NAME,
 		android::os::Build_::VERSION_CODES::J2CPP_METHOD_NAME(0),
-		android::os::Build_::VERSION_CODES::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Build_::VERSION_CODES::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -240,8 +240,8 @@ android::os::Build_::VERSION::VERSION()
 	call_new_object<
 		android::os::Build_::VERSION::J2CPP_CLASS_NAME,
 		android::os::Build_::VERSION::J2CPP_METHOD_NAME(0),
-		android::os::Build_::VERSION::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Build_::VERSION::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -307,8 +307,8 @@ android::os::Build::Build()
 	call_new_object<
 		android::os::Build::J2CPP_CLASS_NAME,
 		android::os::Build::J2CPP_METHOD_NAME(0),
-		android::os::Build::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Build::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

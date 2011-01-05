@@ -77,8 +77,8 @@ javax::net::ssl::SSLContextSpi::SSLContextSpi()
 	call_new_object<
 		javax::net::ssl::SSLContextSpi::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLContextSpi::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::SSLContextSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::net::ssl::SSLContextSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

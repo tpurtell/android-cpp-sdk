@@ -154,8 +154,8 @@ android::telephony::PhoneNumberUtils::PhoneNumberUtils()
 	call_new_object<
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(0),
-		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -167,8 +167,8 @@ jboolean android::telephony::PhoneNumberUtils::isISODigit(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(1),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::is12Key(jchar a0)
@@ -177,8 +177,8 @@ jboolean android::telephony::PhoneNumberUtils::is12Key(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(2),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isDialable(jchar a0)
@@ -187,8 +187,8 @@ jboolean android::telephony::PhoneNumberUtils::isDialable(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(3),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isReallyDialable(jchar a0)
@@ -197,8 +197,8 @@ jboolean android::telephony::PhoneNumberUtils::isReallyDialable(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(4),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isNonSeparator(jchar a0)
@@ -207,8 +207,8 @@ jboolean android::telephony::PhoneNumberUtils::isNonSeparator(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(5),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isStartsPostDial(jchar a0)
@@ -217,8 +217,8 @@ jboolean android::telephony::PhoneNumberUtils::isStartsPostDial(jchar a0)
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(6),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::getNumberFromIntent(local_ref< android::content::Intent > const &a0, local_ref< android::content::Context > const &a1)
@@ -227,8 +227,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::getNumberF
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(7),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::extractNetworkPortion(local_ref< java::lang::String > const &a0)
@@ -237,8 +237,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::extractNet
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(8),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::stripSeparators(local_ref< java::lang::String > const &a0)
@@ -247,8 +247,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::stripSepar
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(9),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::extractPostDialPortion(local_ref< java::lang::String > const &a0)
@@ -257,8 +257,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::extractPos
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(10),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::compare(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -267,8 +267,8 @@ jboolean android::telephony::PhoneNumberUtils::compare(local_ref< java::lang::St
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(11),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::toCallerIDMinMatch(local_ref< java::lang::String > const &a0)
@@ -277,8 +277,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::toCallerID
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(12),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::getStrippedReversed(local_ref< java::lang::String > const &a0)
@@ -287,8 +287,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::getStrippe
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(13),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::stringFromStringAndTOA(local_ref< java::lang::String > const &a0, jint a1)
@@ -297,8 +297,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::stringFrom
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(14),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 jint android::telephony::PhoneNumberUtils::toaFromString(local_ref< java::lang::String > const &a0)
@@ -307,8 +307,8 @@ jint android::telephony::PhoneNumberUtils::toaFromString(local_ref< java::lang::
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(15),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::calledPartyBCDToString(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -317,8 +317,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::calledPart
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(16),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::calledPartyBCDFragmentToString(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -327,8 +327,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::calledPart
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(17),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isWellFormedSmsAddress(local_ref< java::lang::String > const &a0)
@@ -337,8 +337,8 @@ jboolean android::telephony::PhoneNumberUtils::isWellFormedSmsAddress(local_ref<
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(18),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isGlobalPhoneNumber(local_ref< java::lang::String > const &a0)
@@ -347,8 +347,8 @@ jboolean android::telephony::PhoneNumberUtils::isGlobalPhoneNumber(local_ref< ja
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(19),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::networkPortionToCalledPartyBCD(local_ref< java::lang::String > const &a0)
@@ -357,8 +357,8 @@ local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::networkPortion
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(20),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::networkPortionToCalledPartyBCDWithLength(local_ref< java::lang::String > const &a0)
@@ -367,8 +367,8 @@ local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::networkPortion
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(21),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::numberToCalledPartyBCD(local_ref< java::lang::String > const &a0)
@@ -377,8 +377,8 @@ local_ref< array<jbyte,1> > android::telephony::PhoneNumberUtils::numberToCalled
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(22),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< array<jbyte,1> > >
-	(a0);
+		local_ref< array<jbyte,1> >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::formatNumber(local_ref< java::lang::String > const &a0)
@@ -387,8 +387,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::formatNumb
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(23),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint android::telephony::PhoneNumberUtils::getFormatTypeForLocale(local_ref< java::util::Locale > const &a0)
@@ -397,8 +397,8 @@ jint android::telephony::PhoneNumberUtils::getFormatTypeForLocale(local_ref< jav
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(24),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::telephony::PhoneNumberUtils::formatNumber(local_ref< android::text::Editable > const &a0, jint a1)
@@ -407,8 +407,8 @@ void android::telephony::PhoneNumberUtils::formatNumber(local_ref< android::text
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(25),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::telephony::PhoneNumberUtils::formatNanpNumber(local_ref< android::text::Editable > const &a0)
@@ -417,8 +417,8 @@ void android::telephony::PhoneNumberUtils::formatNanpNumber(local_ref< android::
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(26),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::telephony::PhoneNumberUtils::formatJapaneseNumber(local_ref< android::text::Editable > const &a0)
@@ -427,8 +427,8 @@ void android::telephony::PhoneNumberUtils::formatJapaneseNumber(local_ref< andro
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(27),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::telephony::PhoneNumberUtils::isEmergencyNumber(local_ref< java::lang::String > const &a0)
@@ -437,8 +437,8 @@ jboolean android::telephony::PhoneNumberUtils::isEmergencyNumber(local_ref< java
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(28),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > android::telephony::PhoneNumberUtils::convertKeypadLettersToDigits(local_ref< java::lang::String > const &a0)
@@ -447,8 +447,8 @@ local_ref< java::lang::String > android::telephony::PhoneNumberUtils::convertKey
 		android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME,
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(29),
 		android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

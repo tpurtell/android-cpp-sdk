@@ -79,8 +79,8 @@ void java::beans::PropertyChangeListener::propertyChange(local_ref< java::beans:
 		java::beans::PropertyChangeListener::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeListener::J2CPP_METHOD_NAME(0),
 		java::beans::PropertyChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

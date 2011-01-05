@@ -11,10 +11,16 @@
 #define J2CPP_ANDROID_WIDGET_TABWIDGET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnFocusChangeListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class LinearLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -25,7 +31,12 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/LinearLayout.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -62,8 +73,15 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<android::widget::LinearLayout>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::view::View_::OnFocusChangeListener>() const;
+		operator local_ref<android::widget::LinearLayout>() const;
 
 
 		TabWidget(local_ref< android::content::Context > const&);
@@ -98,14 +116,49 @@ namespace j2cpp {
 
 
 
-android::widget::TabWidget::operator local_ref<android::widget::LinearLayout>() const
+android::widget::TabWidget::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::LinearLayout>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
 }
 
 android::widget::TabWidget::operator local_ref<android::view::View_::OnFocusChangeListener>() const
 {
 	return local_ref<android::view::View_::OnFocusChangeListener>(get_jobject());
+}
+
+android::widget::TabWidget::operator local_ref<android::widget::LinearLayout>() const
+{
+	return local_ref<android::widget::LinearLayout>(get_jobject());
 }
 
 
@@ -114,8 +167,8 @@ android::widget::TabWidget::TabWidget(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(0),
-		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -127,8 +180,8 @@ android::widget::TabWidget::TabWidget(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(1),
-		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -140,8 +193,8 @@ android::widget::TabWidget::TabWidget(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(2),
-		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -155,8 +208,8 @@ local_ref< android::view::View > android::widget::TabWidget::getChildTabViewAt(j
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(5),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0);
+		local_ref< android::view::View >
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TabWidget::getTabCount()
@@ -165,8 +218,8 @@ jint android::widget::TabWidget::getTabCount()
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(6),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TabWidget::setDividerDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -175,8 +228,8 @@ void android::widget::TabWidget::setDividerDrawable(local_ref< android::graphics
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(7),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::setDividerDrawable(jint a0)
@@ -185,8 +238,8 @@ void android::widget::TabWidget::setDividerDrawable(jint a0)
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(8),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::childDrawableStateChanged(local_ref< android::view::View > const &a0)
@@ -195,8 +248,8 @@ void android::widget::TabWidget::childDrawableStateChanged(local_ref< android::v
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(9),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::dispatchDraw(local_ref< android::graphics::Canvas > const &a0)
@@ -205,8 +258,8 @@ void android::widget::TabWidget::dispatchDraw(local_ref< android::graphics::Canv
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(10),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::setCurrentTab(jint a0)
@@ -215,8 +268,8 @@ void android::widget::TabWidget::setCurrentTab(jint a0)
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(11),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::focusCurrentTab(jint a0)
@@ -225,8 +278,8 @@ void android::widget::TabWidget::focusCurrentTab(jint a0)
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(12),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::setEnabled(jboolean a0)
@@ -235,8 +288,8 @@ void android::widget::TabWidget::setEnabled(jboolean a0)
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(13),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::addView(local_ref< android::view::View > const &a0)
@@ -245,8 +298,8 @@ void android::widget::TabWidget::addView(local_ref< android::view::View > const 
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(14),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabWidget::onFocusChange(local_ref< android::view::View > const &a0, jboolean a1)
@@ -255,8 +308,8 @@ void android::widget::TabWidget::onFocusChange(local_ref< android::view::View > 
 		android::widget::TabWidget::J2CPP_CLASS_NAME,
 		android::widget::TabWidget::J2CPP_METHOD_NAME(15),
 		android::widget::TabWidget::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

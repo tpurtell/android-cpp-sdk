@@ -92,8 +92,8 @@ jboolean org::apache::http::HttpEntity::isRepeatable()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::HttpEntity::isChunked()
@@ -102,8 +102,8 @@ jboolean org::apache::http::HttpEntity::isChunked()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jlong org::apache::http::HttpEntity::getContentLength()
@@ -112,8 +112,8 @@ jlong org::apache::http::HttpEntity::getContentLength()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::HttpEntity::getContentType()
@@ -122,8 +122,8 @@ local_ref< org::apache::http::Header > org::apache::http::HttpEntity::getContent
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::HttpEntity::getContentEncoding()
@@ -132,8 +132,8 @@ local_ref< org::apache::http::Header > org::apache::http::HttpEntity::getContent
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > org::apache::http::HttpEntity::getContent()
@@ -142,8 +142,8 @@ local_ref< java::io::InputStream > org::apache::http::HttpEntity::getContent()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(5),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpEntity::writeTo(local_ref< java::io::OutputStream > const &a0)
@@ -152,8 +152,8 @@ void org::apache::http::HttpEntity::writeTo(local_ref< java::io::OutputStream > 
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(6),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::HttpEntity::isStreaming()
@@ -162,8 +162,8 @@ jboolean org::apache::http::HttpEntity::isStreaming()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(7),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::HttpEntity::consumeContent()
@@ -172,8 +172,8 @@ void org::apache::http::HttpEntity::consumeContent()
 		org::apache::http::HttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::HttpEntity::J2CPP_METHOD_NAME(8),
 		org::apache::http::HttpEntity::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

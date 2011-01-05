@@ -84,8 +84,8 @@ jint android::text::method::KeyListener::getInputType()
 		android::text::method::KeyListener::J2CPP_CLASS_NAME,
 		android::text::method::KeyListener::J2CPP_METHOD_NAME(0),
 		android::text::method::KeyListener::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::text::method::KeyListener::onKeyDown(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -94,8 +94,8 @@ jboolean android::text::method::KeyListener::onKeyDown(local_ref< android::view:
 		android::text::method::KeyListener::J2CPP_CLASS_NAME,
 		android::text::method::KeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::KeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::KeyListener::onKeyUp(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -104,8 +104,8 @@ jboolean android::text::method::KeyListener::onKeyUp(local_ref< android::view::V
 		android::text::method::KeyListener::J2CPP_CLASS_NAME,
 		android::text::method::KeyListener::J2CPP_METHOD_NAME(2),
 		android::text::method::KeyListener::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::KeyListener::onKeyOther(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -114,8 +114,8 @@ jboolean android::text::method::KeyListener::onKeyOther(local_ref< android::view
 		android::text::method::KeyListener::J2CPP_CLASS_NAME,
 		android::text::method::KeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::KeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::KeyListener::clearMetaKeyState(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2)
@@ -124,8 +124,8 @@ void android::text::method::KeyListener::clearMetaKeyState(local_ref< android::v
 		android::text::method::KeyListener::J2CPP_CLASS_NAME,
 		android::text::method::KeyListener::J2CPP_METHOD_NAME(4),
 		android::text::method::KeyListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

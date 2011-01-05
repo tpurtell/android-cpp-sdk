@@ -11,6 +11,8 @@
 #define J2CPP_ANDROID_TEST_SUITEBUILDER_TESTSUITEBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
@@ -29,6 +31,8 @@ namespace j2cpp { namespace com { namespace android { namespace internal { names
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
 #include <junit/framework/TestCase.hpp>
 #include <junit/framework/TestSuite.hpp>
 
@@ -56,7 +60,10 @@ namespace android { namespace test { namespace suitebuilder {
 			{
 			}
 
+			operator local_ref<junit::framework::Test>() const;
+			operator local_ref<junit::framework::Assert>() const;
 			operator local_ref<junit::framework::TestCase>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			FailedToCreateTests(local_ref< java::lang::Exception > const&);
@@ -122,9 +129,24 @@ namespace j2cpp {
 
 
 
+android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
+}
+
 android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::operator local_ref<junit::framework::TestCase>() const
 {
 	return local_ref<junit::framework::TestCase>(get_jobject());
+}
+
+android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -133,8 +155,8 @@ android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::FailedToCre
 	call_new_object<
 		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_NAME(0),
-		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -146,8 +168,8 @@ void android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::testSu
 		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_NAME(1),
 		android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -168,8 +190,8 @@ android::test::suitebuilder::TestSuiteBuilder::TestSuiteBuilder(local_ref< java:
 	call_new_object<
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(0),
-		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -181,8 +203,8 @@ android::test::suitebuilder::TestSuiteBuilder::TestSuiteBuilder(local_ref< java:
 	call_new_object<
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(1),
-		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -194,8 +216,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(2),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject(), a0);
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suitebuilder::TestSuiteBuilder::excludePackages(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -204,8 +226,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(3),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject(), a0);
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suitebuilder::TestSuiteBuilder::addRequirements(local_ref< java::util::List > const &a0)
@@ -214,8 +236,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(4),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject(), a0);
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suitebuilder::TestSuiteBuilder::includeAllPackagesUnderHere()
@@ -224,8 +246,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(5),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject());
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject());
 }
 
 local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suitebuilder::TestSuiteBuilder::named(local_ref< java::lang::String > const &a0)
@@ -234,8 +256,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(6),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject(), a0);
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< junit::framework::TestSuite > android::test::suitebuilder::TestSuiteBuilder::build()
@@ -244,8 +266,8 @@ local_ref< junit::framework::TestSuite > android::test::suitebuilder::TestSuiteB
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(7),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< junit::framework::TestSuite > >
-	(get_jobject());
+		local_ref< junit::framework::TestSuite >
+	>(get_jobject());
 }
 
 
@@ -255,8 +277,8 @@ local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suiteb
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME,
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(9),
 		android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::test::suitebuilder::TestSuiteBuilder > >
-	(get_jobject(), a0);
+		local_ref< android::test::suitebuilder::TestSuiteBuilder >
+	>(get_jobject(), a0);
 }
 
 

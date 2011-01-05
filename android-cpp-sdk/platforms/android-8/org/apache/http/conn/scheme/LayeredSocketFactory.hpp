@@ -42,8 +42,8 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::scheme::SocketFactory>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::net::Socket > createSocket(local_ref< java::net::Socket >  const&, local_ref< java::lang::String >  const&, jint, jboolean);
@@ -68,14 +68,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::conn::scheme::LayeredSocketFactory::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::conn::scheme::LayeredSocketFactory::operator local_ref<org::apache::http::conn::scheme::SocketFactory>() const
 {
 	return local_ref<org::apache::http::conn::scheme::SocketFactory>(get_jobject());
+}
+
+org::apache::http::conn::scheme::LayeredSocketFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::net::Socket > org::apache::http::conn::scheme::LayeredSocketFactory::createSocket(local_ref< java::net::Socket > const &a0, local_ref< java::lang::String > const &a1, jint a2, jboolean a3)
@@ -84,8 +84,8 @@ local_ref< java::net::Socket > org::apache::http::conn::scheme::LayeredSocketFac
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

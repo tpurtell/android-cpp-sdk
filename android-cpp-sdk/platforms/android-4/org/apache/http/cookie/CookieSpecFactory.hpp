@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIESPECFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -75,8 +75,8 @@ local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::Co
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::cookie::CookieSpec > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::cookie::CookieSpec >
+	>(get_jobject(), a0);
 }
 
 

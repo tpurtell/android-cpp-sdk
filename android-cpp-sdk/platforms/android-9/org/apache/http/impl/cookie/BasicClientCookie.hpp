@@ -17,6 +17,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class ClientCookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
 #include <java/lang/Cloneable.hpp>
@@ -24,6 +25,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <java/lang/String.hpp>
 #include <java/util/Date.hpp>
 #include <org/apache/http/cookie/ClientCookie.hpp>
+#include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
 
 
@@ -70,10 +72,11 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::apache::http::cookie::SetCookie>() const;
-		operator local_ref<org::apache::http::cookie::ClientCookie>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::ClientCookie>() const;
+		operator local_ref<org::apache::http::cookie::SetCookie>() const;
+		operator local_ref<org::apache::http::cookie::Cookie>() const;
 
 
 		BasicClientCookie(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -122,14 +125,14 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
-}
-
-org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<org::apache::http::cookie::SetCookie>() const
-{
-	return local_ref<org::apache::http::cookie::SetCookie>(get_jobject());
 }
 
 org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<org::apache::http::cookie::ClientCookie>() const
@@ -137,9 +140,14 @@ org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<org::apac
 	return local_ref<org::apache::http::cookie::ClientCookie>(get_jobject());
 }
 
-org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<java::lang::Cloneable>() const
+org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<org::apache::http::cookie::SetCookie>() const
 {
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<org::apache::http::cookie::SetCookie>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicClientCookie::operator local_ref<org::apache::http::cookie::Cookie>() const
+{
+	return local_ref<org::apache::http::cookie::Cookie>(get_jobject());
 }
 
 
@@ -148,8 +156,8 @@ org::apache::http::impl::cookie::BasicClientCookie::BasicClientCookie(local_ref<
 	call_new_object<
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -161,8 +169,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getValue()
@@ -171,8 +179,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setValue(local_ref< java::lang::String > const &a0)
@@ -181,8 +189,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setValue(local_ref< jav
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getComment()
@@ -191,8 +199,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setComment(local_ref< java::lang::String > const &a0)
@@ -201,8 +209,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setComment(local_ref< j
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getCommentURL()
@@ -211,8 +219,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Date > org::apache::http::impl::cookie::BasicClientCookie::getExpiryDate()
@@ -221,8 +229,8 @@ local_ref< java::util::Date > org::apache::http::impl::cookie::BasicClientCookie
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setExpiryDate(local_ref< java::util::Date > const &a0)
@@ -231,8 +239,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setExpiryDate(local_ref
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie::isPersistent()
@@ -241,8 +249,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie::isPersistent()
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getDomain()
@@ -251,8 +259,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setDomain(local_ref< java::lang::String > const &a0)
@@ -261,8 +269,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setDomain(local_ref< ja
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getPath()
@@ -271,8 +279,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(12),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setPath(local_ref< java::lang::String > const &a0)
@@ -281,8 +289,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setPath(local_ref< java
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(13),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie::isSecure()
@@ -291,8 +299,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie::isSecure()
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(14),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setSecure(jboolean a0)
@@ -301,8 +309,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setSecure(jboolean a0)
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(15),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > org::apache::http::impl::cookie::BasicClientCookie::getPorts()
@@ -311,8 +319,8 @@ local_ref< array<jint,1> > org::apache::http::impl::cookie::BasicClientCookie::g
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(16),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::cookie::BasicClientCookie::getVersion()
@@ -321,8 +329,8 @@ jint org::apache::http::impl::cookie::BasicClientCookie::getVersion()
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(17),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setVersion(jint a0)
@@ -331,8 +339,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setVersion(jint a0)
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(18),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie::isExpired(local_ref< java::util::Date > const &a0)
@@ -341,8 +349,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie::isExpired(local_ref
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(19),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::cookie::BasicClientCookie::setAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -351,8 +359,8 @@ void org::apache::http::impl::cookie::BasicClientCookie::setAttribute(local_ref<
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(20),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::getAttribute(local_ref< java::lang::String > const &a0)
@@ -361,8 +369,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(21),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::cookie::BasicClientCookie::containsAttribute(local_ref< java::lang::String > const &a0)
@@ -371,8 +379,8 @@ jboolean org::apache::http::impl::cookie::BasicClientCookie::containsAttribute(l
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(22),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::cookie::BasicClientCookie::clone()
@@ -381,8 +389,8 @@ local_ref< java::lang::Object > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(23),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCookie::toString()
@@ -391,8 +399,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::BasicClientCook
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_NAME(24),
 		org::apache::http::impl::cookie::BasicClientCookie::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

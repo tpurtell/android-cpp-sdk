@@ -15,8 +15,14 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace gesture { class Gesture; } } }
 namespace j2cpp { namespace android { namespace gesture { namespace GestureOverlayView_ { class OnGesturingListener; } } } }
 namespace j2cpp { namespace android { namespace gesture { namespace GestureOverlayView_ { class OnGestureListener; } } } }
@@ -30,8 +36,14 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/gesture/GestureOverlayView.hpp>
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Path.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/FrameLayout.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
@@ -186,6 +198,13 @@ namespace android { namespace gesture {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::FrameLayout>() const;
 
 
@@ -271,8 +290,8 @@ void android::gesture::GestureOverlayView_::OnGesturingListener::onGesturingStar
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_METHOD_NAME(0),
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView_::OnGesturingListener::onGesturingEnded(local_ref< android::gesture::GestureOverlayView > const &a0)
@@ -281,8 +300,8 @@ void android::gesture::GestureOverlayView_::OnGesturingListener::onGesturingEnde
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureOverlayView_::OnGesturingListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -302,8 +321,8 @@ void android::gesture::GestureOverlayView_::OnGestureListener::onGestureStarted(
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_NAME(0),
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureOverlayView_::OnGestureListener::onGesture(local_ref< android::gesture::GestureOverlayView > const &a0, local_ref< android::view::MotionEvent > const &a1)
@@ -312,8 +331,8 @@ void android::gesture::GestureOverlayView_::OnGestureListener::onGesture(local_r
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_NAME(1),
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureOverlayView_::OnGestureListener::onGestureEnded(local_ref< android::gesture::GestureOverlayView > const &a0, local_ref< android::view::MotionEvent > const &a1)
@@ -322,8 +341,8 @@ void android::gesture::GestureOverlayView_::OnGestureListener::onGestureEnded(lo
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_NAME(2),
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::gesture::GestureOverlayView_::OnGestureListener::onGestureCancelled(local_ref< android::gesture::GestureOverlayView > const &a0, local_ref< android::view::MotionEvent > const &a1)
@@ -332,8 +351,8 @@ void android::gesture::GestureOverlayView_::OnGestureListener::onGestureCancelle
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureOverlayView_::OnGestureListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -355,8 +374,8 @@ void android::gesture::GestureOverlayView_::OnGesturePerformedListener::onGestur
 		android::gesture::GestureOverlayView_::OnGesturePerformedListener::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView_::OnGesturePerformedListener::J2CPP_METHOD_NAME(0),
 		android::gesture::GestureOverlayView_::OnGesturePerformedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -364,6 +383,41 @@ J2CPP_DEFINE_CLASS(android::gesture::GestureOverlayView_::OnGesturePerformedList
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGesturePerformedListener,0,"onGesturePerformed","(Landroid/gesture/GestureOverlayView;Landroid/gesture/Gesture;)V")
 
 
+
+android::gesture::GestureOverlayView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::gesture::GestureOverlayView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
 
 android::gesture::GestureOverlayView::operator local_ref<android::widget::FrameLayout>() const
 {
@@ -376,8 +430,8 @@ android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::con
 	call_new_object<
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(0),
-		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -389,8 +443,8 @@ android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::con
 	call_new_object<
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(1),
-		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -402,8 +456,8 @@ android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::con
 	call_new_object<
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(2),
-		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -415,8 +469,8 @@ local_ref< java::util::ArrayList > android::gesture::GestureOverlayView::getCurr
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(3),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject());
+		local_ref< java::util::ArrayList >
+	>(get_jobject());
 }
 
 jint android::gesture::GestureOverlayView::getOrientation()
@@ -425,8 +479,8 @@ jint android::gesture::GestureOverlayView::getOrientation()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(4),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setOrientation(jint a0)
@@ -435,8 +489,8 @@ void android::gesture::GestureOverlayView::setOrientation(jint a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(5),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::setGestureColor(jint a0)
@@ -445,8 +499,8 @@ void android::gesture::GestureOverlayView::setGestureColor(jint a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(6),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::setUncertainGestureColor(jint a0)
@@ -455,8 +509,8 @@ void android::gesture::GestureOverlayView::setUncertainGestureColor(jint a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(7),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::gesture::GestureOverlayView::getUncertainGestureColor()
@@ -465,8 +519,8 @@ jint android::gesture::GestureOverlayView::getUncertainGestureColor()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(8),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::gesture::GestureOverlayView::getGestureColor()
@@ -475,8 +529,8 @@ jint android::gesture::GestureOverlayView::getGestureColor()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(9),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::gesture::GestureOverlayView::getGestureStrokeWidth()
@@ -485,8 +539,8 @@ jfloat android::gesture::GestureOverlayView::getGestureStrokeWidth()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(10),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureStrokeWidth(jfloat a0)
@@ -495,8 +549,8 @@ void android::gesture::GestureOverlayView::setGestureStrokeWidth(jfloat a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(11),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::gesture::GestureOverlayView::getGestureStrokeType()
@@ -505,8 +559,8 @@ jint android::gesture::GestureOverlayView::getGestureStrokeType()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(12),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureStrokeType(jint a0)
@@ -515,8 +569,8 @@ void android::gesture::GestureOverlayView::setGestureStrokeType(jint a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(13),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::gesture::GestureOverlayView::getGestureStrokeLengthThreshold()
@@ -525,8 +579,8 @@ jfloat android::gesture::GestureOverlayView::getGestureStrokeLengthThreshold()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(14),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(14), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureStrokeLengthThreshold(jfloat a0)
@@ -535,8 +589,8 @@ void android::gesture::GestureOverlayView::setGestureStrokeLengthThreshold(jfloa
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(15),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::gesture::GestureOverlayView::getGestureStrokeSquarenessTreshold()
@@ -545,8 +599,8 @@ jfloat android::gesture::GestureOverlayView::getGestureStrokeSquarenessTreshold(
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(16),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(16), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureStrokeSquarenessTreshold(jfloat a0)
@@ -555,8 +609,8 @@ void android::gesture::GestureOverlayView::setGestureStrokeSquarenessTreshold(jf
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(17),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::gesture::GestureOverlayView::getGestureStrokeAngleThreshold()
@@ -565,8 +619,8 @@ jfloat android::gesture::GestureOverlayView::getGestureStrokeAngleThreshold()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(18),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(18), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureStrokeAngleThreshold(jfloat a0)
@@ -575,8 +629,8 @@ void android::gesture::GestureOverlayView::setGestureStrokeAngleThreshold(jfloat
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(19),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::gesture::GestureOverlayView::isEventsInterceptionEnabled()
@@ -585,8 +639,8 @@ jboolean android::gesture::GestureOverlayView::isEventsInterceptionEnabled()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(20),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setEventsInterceptionEnabled(jboolean a0)
@@ -595,8 +649,8 @@ void android::gesture::GestureOverlayView::setEventsInterceptionEnabled(jboolean
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(21),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::gesture::GestureOverlayView::isFadeEnabled()
@@ -605,8 +659,8 @@ jboolean android::gesture::GestureOverlayView::isFadeEnabled()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(22),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setFadeEnabled(jboolean a0)
@@ -615,8 +669,8 @@ void android::gesture::GestureOverlayView::setFadeEnabled(jboolean a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(23),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::gesture::Gesture > android::gesture::GestureOverlayView::getGesture()
@@ -625,8 +679,8 @@ local_ref< android::gesture::Gesture > android::gesture::GestureOverlayView::get
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(24),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::gesture::Gesture > >
-	(get_jobject());
+		local_ref< android::gesture::Gesture >
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGesture(local_ref< android::gesture::Gesture > const &a0)
@@ -635,8 +689,8 @@ void android::gesture::GestureOverlayView::setGesture(local_ref< android::gestur
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(25),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Path > android::gesture::GestureOverlayView::getGesturePath()
@@ -645,8 +699,8 @@ local_ref< android::graphics::Path > android::gesture::GestureOverlayView::getGe
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(26),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::graphics::Path > >
-	(get_jobject());
+		local_ref< android::graphics::Path >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Path > android::gesture::GestureOverlayView::getGesturePath(local_ref< android::graphics::Path > const &a0)
@@ -655,8 +709,8 @@ local_ref< android::graphics::Path > android::gesture::GestureOverlayView::getGe
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(27),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::graphics::Path > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Path >
+	>(get_jobject(), a0);
 }
 
 jboolean android::gesture::GestureOverlayView::isGestureVisible()
@@ -665,8 +719,8 @@ jboolean android::gesture::GestureOverlayView::isGestureVisible()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(28),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setGestureVisible(jboolean a0)
@@ -675,8 +729,8 @@ void android::gesture::GestureOverlayView::setGestureVisible(jboolean a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(29),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::gesture::GestureOverlayView::getFadeOffset()
@@ -685,8 +739,8 @@ jlong android::gesture::GestureOverlayView::getFadeOffset()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(30),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(30), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::setFadeOffset(jlong a0)
@@ -695,8 +749,8 @@ void android::gesture::GestureOverlayView::setFadeOffset(jlong a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(31),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::addOnGestureListener(local_ref< android::gesture::GestureOverlayView_::OnGestureListener > const &a0)
@@ -705,8 +759,8 @@ void android::gesture::GestureOverlayView::addOnGestureListener(local_ref< andro
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(32),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeOnGestureListener(local_ref< android::gesture::GestureOverlayView_::OnGestureListener > const &a0)
@@ -715,8 +769,8 @@ void android::gesture::GestureOverlayView::removeOnGestureListener(local_ref< an
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(33),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeAllOnGestureListeners()
@@ -725,8 +779,8 @@ void android::gesture::GestureOverlayView::removeAllOnGestureListeners()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(34),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::addOnGesturePerformedListener(local_ref< android::gesture::GestureOverlayView_::OnGesturePerformedListener > const &a0)
@@ -735,8 +789,8 @@ void android::gesture::GestureOverlayView::addOnGesturePerformedListener(local_r
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(35),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeOnGesturePerformedListener(local_ref< android::gesture::GestureOverlayView_::OnGesturePerformedListener > const &a0)
@@ -745,8 +799,8 @@ void android::gesture::GestureOverlayView::removeOnGesturePerformedListener(loca
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(36),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeAllOnGesturePerformedListeners()
@@ -755,8 +809,8 @@ void android::gesture::GestureOverlayView::removeAllOnGesturePerformedListeners(
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(37),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::addOnGesturingListener(local_ref< android::gesture::GestureOverlayView_::OnGesturingListener > const &a0)
@@ -765,8 +819,8 @@ void android::gesture::GestureOverlayView::addOnGesturingListener(local_ref< and
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(38),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeOnGesturingListener(local_ref< android::gesture::GestureOverlayView_::OnGesturingListener > const &a0)
@@ -775,8 +829,8 @@ void android::gesture::GestureOverlayView::removeOnGesturingListener(local_ref< 
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(39),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::removeAllOnGesturingListeners()
@@ -785,8 +839,8 @@ void android::gesture::GestureOverlayView::removeAllOnGesturingListeners()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(40),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::gesture::GestureOverlayView::isGesturing()
@@ -795,8 +849,8 @@ jboolean android::gesture::GestureOverlayView::isGesturing()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(41),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -805,8 +859,8 @@ void android::gesture::GestureOverlayView::draw(local_ref< android::graphics::Ca
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(42),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::clear(jboolean a0)
@@ -815,8 +869,8 @@ void android::gesture::GestureOverlayView::clear(jboolean a0)
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(43),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::gesture::GestureOverlayView::cancelClearAnimation()
@@ -825,8 +879,8 @@ void android::gesture::GestureOverlayView::cancelClearAnimation()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(44),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::gesture::GestureOverlayView::cancelGesture()
@@ -835,8 +889,8 @@ void android::gesture::GestureOverlayView::cancelGesture()
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(45),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -846,8 +900,8 @@ jboolean android::gesture::GestureOverlayView::dispatchTouchEvent(local_ref< and
 		android::gesture::GestureOverlayView::J2CPP_CLASS_NAME,
 		android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(47),
 		android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

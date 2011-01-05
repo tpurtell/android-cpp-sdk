@@ -95,8 +95,8 @@ void org::apache::http::cookie::SetCookie::setValue(local_ref< java::lang::Strin
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setComment(local_ref< java::lang::String > const &a0)
@@ -105,8 +105,8 @@ void org::apache::http::cookie::SetCookie::setComment(local_ref< java::lang::Str
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setExpiryDate(local_ref< java::util::Date > const &a0)
@@ -115,8 +115,8 @@ void org::apache::http::cookie::SetCookie::setExpiryDate(local_ref< java::util::
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setDomain(local_ref< java::lang::String > const &a0)
@@ -125,8 +125,8 @@ void org::apache::http::cookie::SetCookie::setDomain(local_ref< java::lang::Stri
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(3),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setPath(local_ref< java::lang::String > const &a0)
@@ -135,8 +135,8 @@ void org::apache::http::cookie::SetCookie::setPath(local_ref< java::lang::String
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(4),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setSecure(jboolean a0)
@@ -145,8 +145,8 @@ void org::apache::http::cookie::SetCookie::setSecure(jboolean a0)
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(5),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::cookie::SetCookie::setVersion(jint a0)
@@ -155,8 +155,8 @@ void org::apache::http::cookie::SetCookie::setVersion(jint a0)
 		org::apache::http::cookie::SetCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_NAME(6),
 		org::apache::http::cookie::SetCookie::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,8 +11,9 @@
 #define J2CPP_JAVA_NET_URLCLASSLOADER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class SecureClassLoader; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 namespace j2cpp { namespace java { namespace net { class URLStreamHandlerFactory; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace net { class URL; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URL.hpp>
 #include <java/net/URLStreamHandlerFactory.hpp>
@@ -57,6 +59,8 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::ClassLoader>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::SecureClassLoader>() const;
 
 
@@ -86,6 +90,16 @@ namespace j2cpp {
 
 
 
+java::net::URLClassLoader::operator local_ref<java::lang::ClassLoader>() const
+{
+	return local_ref<java::lang::ClassLoader>(get_jobject());
+}
+
+java::net::URLClassLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::URLClassLoader::operator local_ref<java::security::SecureClassLoader>() const
 {
 	return local_ref<java::security::SecureClassLoader>(get_jobject());
@@ -97,8 +111,8 @@ java::net::URLClassLoader::URLClassLoader(local_ref< array< local_ref< java::net
 	call_new_object<
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(0),
-		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -110,8 +124,8 @@ java::net::URLClassLoader::URLClassLoader(local_ref< array< local_ref< java::net
 	call_new_object<
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(1),
-		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -123,8 +137,8 @@ java::net::URLClassLoader::URLClassLoader(local_ref< array< local_ref< java::net
 	call_new_object<
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(2),
-		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -137,8 +151,8 @@ local_ref< java::util::Enumeration > java::net::URLClassLoader::findResources(lo
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(4),
 		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject(), a0);
+		local_ref< java::util::Enumeration >
+	>(get_jobject(), a0);
 }
 
 
@@ -148,8 +162,8 @@ local_ref< array< local_ref< java::net::URL >, 1> > java::net::URLClassLoader::g
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(6),
 		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::net::URL >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::net::URL >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::net::URLClassLoader > java::net::URLClassLoader::newInstance(local_ref< array< local_ref< java::net::URL >, 1> > const &a0)
@@ -158,8 +172,8 @@ local_ref< java::net::URLClassLoader > java::net::URLClassLoader::newInstance(lo
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(7),
 		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::net::URLClassLoader > >
-	(a0);
+		local_ref< java::net::URLClassLoader >
+	>(a0);
 }
 
 local_ref< java::net::URLClassLoader > java::net::URLClassLoader::newInstance(local_ref< array< local_ref< java::net::URL >, 1> > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -168,8 +182,8 @@ local_ref< java::net::URLClassLoader > java::net::URLClassLoader::newInstance(lo
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(8),
 		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::URLClassLoader > >
-	(a0, a1);
+		local_ref< java::net::URLClassLoader >
+	>(a0, a1);
 }
 
 
@@ -179,8 +193,8 @@ local_ref< java::net::URL > java::net::URLClassLoader::findResource(local_ref< j
 		java::net::URLClassLoader::J2CPP_CLASS_NAME,
 		java::net::URLClassLoader::J2CPP_METHOD_NAME(10),
 		java::net::URLClassLoader::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::net::URL > >
-	(get_jobject(), a0);
+		local_ref< java::net::URL >
+	>(get_jobject(), a0);
 }
 
 

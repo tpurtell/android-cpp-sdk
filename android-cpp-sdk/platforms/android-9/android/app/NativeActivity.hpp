@@ -12,22 +12,39 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
 namespace j2cpp { namespace android { namespace view { class InputQueue; } } }
 namespace j2cpp { namespace android { namespace view { namespace InputQueue_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } }
+namespace j2cpp { namespace android { namespace view { namespace SurfaceHolder_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { namespace SurfaceHolder_ { class Callback2; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalLayoutListener; } } } }
 
 
 #include <android/app/Activity.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/res/Configuration.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
 #include <android/view/InputQueue.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <android/view/LayoutInflater.hpp>
 #include <android/view/SurfaceHolder.hpp>
+#include <android/view/View.hpp>
 #include <android/view/ViewTreeObserver.hpp>
+#include <android/view/Window.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -70,9 +87,18 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
 		operator local_ref<android::app::Activity>() const;
-		operator local_ref<android::view::SurfaceHolder_::Callback2>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
 		operator local_ref<android::view::InputQueue_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::SurfaceHolder_::Callback>() const;
+		operator local_ref<android::view::SurfaceHolder_::Callback2>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
 		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
 
 
@@ -109,9 +135,49 @@ namespace j2cpp {
 
 
 
+android::app::NativeActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
 android::app::NativeActivity::operator local_ref<android::app::Activity>() const
 {
 	return local_ref<android::app::Activity>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::view::InputQueue_::Callback>() const
+{
+	return local_ref<android::view::InputQueue_::Callback>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::view::SurfaceHolder_::Callback>() const
+{
+	return local_ref<android::view::SurfaceHolder_::Callback>(get_jobject());
 }
 
 android::app::NativeActivity::operator local_ref<android::view::SurfaceHolder_::Callback2>() const
@@ -119,9 +185,14 @@ android::app::NativeActivity::operator local_ref<android::view::SurfaceHolder_::
 	return local_ref<android::view::SurfaceHolder_::Callback2>(get_jobject());
 }
 
-android::app::NativeActivity::operator local_ref<android::view::InputQueue_::Callback>() const
+android::app::NativeActivity::operator local_ref<android::view::Window_::Callback>() const
 {
-	return local_ref<android::view::InputQueue_::Callback>(get_jobject());
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::NativeActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
 }
 
 android::app::NativeActivity::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
@@ -135,8 +206,8 @@ android::app::NativeActivity::NativeActivity()
 	call_new_object<
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(0),
-		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -155,8 +226,8 @@ void android::app::NativeActivity::onConfigurationChanged(local_ref< android::co
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(8),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::onLowMemory()
@@ -165,8 +236,8 @@ void android::app::NativeActivity::onLowMemory()
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(9),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::NativeActivity::onWindowFocusChanged(jboolean a0)
@@ -175,8 +246,8 @@ void android::app::NativeActivity::onWindowFocusChanged(jboolean a0)
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(10),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::NativeActivity::dispatchKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -185,8 +256,8 @@ jboolean android::app::NativeActivity::dispatchKeyEvent(local_ref< android::view
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(11),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::surfaceCreated(local_ref< android::view::SurfaceHolder > const &a0)
@@ -195,8 +266,8 @@ void android::app::NativeActivity::surfaceCreated(local_ref< android::view::Surf
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(12),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::surfaceChanged(local_ref< android::view::SurfaceHolder > const &a0, jint a1, jint a2, jint a3)
@@ -205,8 +276,8 @@ void android::app::NativeActivity::surfaceChanged(local_ref< android::view::Surf
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(13),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::app::NativeActivity::surfaceRedrawNeeded(local_ref< android::view::SurfaceHolder > const &a0)
@@ -215,8 +286,8 @@ void android::app::NativeActivity::surfaceRedrawNeeded(local_ref< android::view:
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(14),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::surfaceDestroyed(local_ref< android::view::SurfaceHolder > const &a0)
@@ -225,8 +296,8 @@ void android::app::NativeActivity::surfaceDestroyed(local_ref< android::view::Su
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(15),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::onInputQueueCreated(local_ref< android::view::InputQueue > const &a0)
@@ -235,8 +306,8 @@ void android::app::NativeActivity::onInputQueueCreated(local_ref< android::view:
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(16),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::onInputQueueDestroyed(local_ref< android::view::InputQueue > const &a0)
@@ -245,8 +316,8 @@ void android::app::NativeActivity::onInputQueueDestroyed(local_ref< android::vie
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(17),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::NativeActivity::onGlobalLayout()
@@ -255,8 +326,8 @@ void android::app::NativeActivity::onGlobalLayout()
 		android::app::NativeActivity::J2CPP_CLASS_NAME,
 		android::app::NativeActivity::J2CPP_METHOD_NAME(18),
 		android::app::NativeActivity::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

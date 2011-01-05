@@ -39,8 +39,8 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean isOpen();
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::nio::channels::Channel::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::nio::channels::Channel::operator local_ref<java::io::Closeable>() const
 {
 	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::nio::channels::Channel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jboolean java::nio::channels::Channel::isOpen()
@@ -80,8 +80,8 @@ jboolean java::nio::channels::Channel::isOpen()
 		java::nio::channels::Channel::J2CPP_CLASS_NAME,
 		java::nio::channels::Channel::J2CPP_METHOD_NAME(0),
 		java::nio::channels::Channel::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::nio::channels::Channel::close()
@@ -90,8 +90,8 @@ void java::nio::channels::Channel::close()
 		java::nio::channels::Channel::J2CPP_CLASS_NAME,
 		java::nio::channels::Channel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::Channel::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

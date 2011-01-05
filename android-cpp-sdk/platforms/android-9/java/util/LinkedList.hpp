@@ -12,20 +12,26 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ListIterator; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
 namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace util { class Deque; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractSequentialList; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
+#include <java/util/AbstractList.hpp>
 #include <java/util/AbstractSequentialList.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Deque.hpp>
@@ -94,11 +100,16 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractSequentialList>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::util::Collection>() const;
 		operator local_ref<java::util::List>() const;
 		operator local_ref<java::util::Deque>() const;
-		operator local_ref<java::util::Queue>() const;
-		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::AbstractSequentialList>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -161,9 +172,34 @@ namespace j2cpp {
 
 
 
-java::util::LinkedList::operator local_ref<java::util::AbstractSequentialList>() const
+java::util::LinkedList::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref<java::util::AbstractSequentialList>(get_jobject());
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::LinkedList::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::LinkedList::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::LinkedList::operator local_ref<java::util::AbstractList>() const
+{
+	return local_ref<java::util::AbstractList>(get_jobject());
+}
+
+java::util::LinkedList::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jobject());
+}
+
+java::util::LinkedList::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
 }
 
 java::util::LinkedList::operator local_ref<java::util::List>() const
@@ -176,14 +212,14 @@ java::util::LinkedList::operator local_ref<java::util::Deque>() const
 	return local_ref<java::util::Deque>(get_jobject());
 }
 
-java::util::LinkedList::operator local_ref<java::util::Queue>() const
+java::util::LinkedList::operator local_ref<java::util::AbstractCollection>() const
 {
-	return local_ref<java::util::Queue>(get_jobject());
+	return local_ref<java::util::AbstractCollection>(get_jobject());
 }
 
-java::util::LinkedList::operator local_ref<java::lang::Cloneable>() const
+java::util::LinkedList::operator local_ref<java::util::AbstractSequentialList>() const
 {
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<java::util::AbstractSequentialList>(get_jobject());
 }
 
 java::util::LinkedList::operator local_ref<java::io::Serializable>() const
@@ -197,8 +233,8 @@ java::util::LinkedList::LinkedList()
 	call_new_object<
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(0),
-		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -210,8 +246,8 @@ java::util::LinkedList::LinkedList(local_ref< java::util::Collection > const &a0
 	call_new_object<
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(1),
-		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -223,8 +259,8 @@ void java::util::LinkedList::add(jint a0, local_ref< java::lang::Object > const 
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(2),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::LinkedList::add(local_ref< java::lang::Object > const &a0)
@@ -233,8 +269,8 @@ jboolean java::util::LinkedList::add(local_ref< java::lang::Object > const &a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(3),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::LinkedList::addAll(jint a0, local_ref< java::util::Collection > const &a1)
@@ -243,8 +279,8 @@ jboolean java::util::LinkedList::addAll(jint a0, local_ref< java::util::Collecti
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(4),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::LinkedList::addAll(local_ref< java::util::Collection > const &a0)
@@ -253,8 +289,8 @@ jboolean java::util::LinkedList::addAll(local_ref< java::util::Collection > cons
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(5),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::LinkedList::addFirst(local_ref< java::lang::Object > const &a0)
@@ -263,8 +299,8 @@ void java::util::LinkedList::addFirst(local_ref< java::lang::Object > const &a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(6),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::LinkedList::addLast(local_ref< java::lang::Object > const &a0)
@@ -273,8 +309,8 @@ void java::util::LinkedList::addLast(local_ref< java::lang::Object > const &a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(7),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::LinkedList::clear()
@@ -283,8 +319,8 @@ void java::util::LinkedList::clear()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(8),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::clone()
@@ -293,8 +329,8 @@ local_ref< java::lang::Object > java::util::LinkedList::clone()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(9),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::LinkedList::contains(local_ref< java::lang::Object > const &a0)
@@ -303,8 +339,8 @@ jboolean java::util::LinkedList::contains(local_ref< java::lang::Object > const 
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(10),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::get(jint a0)
@@ -313,8 +349,8 @@ local_ref< java::lang::Object > java::util::LinkedList::get(jint a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(11),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::getFirst()
@@ -323,8 +359,8 @@ local_ref< java::lang::Object > java::util::LinkedList::getFirst()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(12),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::getLast()
@@ -333,8 +369,8 @@ local_ref< java::lang::Object > java::util::LinkedList::getLast()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(13),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::LinkedList::indexOf(local_ref< java::lang::Object > const &a0)
@@ -343,8 +379,8 @@ jint java::util::LinkedList::indexOf(local_ref< java::lang::Object > const &a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(14),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::LinkedList::lastIndexOf(local_ref< java::lang::Object > const &a0)
@@ -353,8 +389,8 @@ jint java::util::LinkedList::lastIndexOf(local_ref< java::lang::Object > const &
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(15),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::ListIterator > java::util::LinkedList::listIterator(jint a0)
@@ -363,8 +399,8 @@ local_ref< java::util::ListIterator > java::util::LinkedList::listIterator(jint 
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(16),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::ListIterator > >
-	(get_jobject(), a0);
+		local_ref< java::util::ListIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::remove(jint a0)
@@ -373,8 +409,8 @@ local_ref< java::lang::Object > java::util::LinkedList::remove(jint a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(17),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::LinkedList::remove(local_ref< java::lang::Object > const &a0)
@@ -383,8 +419,8 @@ jboolean java::util::LinkedList::remove(local_ref< java::lang::Object > const &a
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(18),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::removeFirst()
@@ -393,8 +429,8 @@ local_ref< java::lang::Object > java::util::LinkedList::removeFirst()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(19),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::removeLast()
@@ -403,8 +439,8 @@ local_ref< java::lang::Object > java::util::LinkedList::removeLast()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(20),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::LinkedList::descendingIterator()
@@ -413,8 +449,8 @@ local_ref< java::util::Iterator > java::util::LinkedList::descendingIterator()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(21),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean java::util::LinkedList::offerFirst(local_ref< java::lang::Object > const &a0)
@@ -423,8 +459,8 @@ jboolean java::util::LinkedList::offerFirst(local_ref< java::lang::Object > cons
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(22),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::LinkedList::offerLast(local_ref< java::lang::Object > const &a0)
@@ -433,8 +469,8 @@ jboolean java::util::LinkedList::offerLast(local_ref< java::lang::Object > const
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(23),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::peekFirst()
@@ -443,8 +479,8 @@ local_ref< java::lang::Object > java::util::LinkedList::peekFirst()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(24),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::peekLast()
@@ -453,8 +489,8 @@ local_ref< java::lang::Object > java::util::LinkedList::peekLast()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(25),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::pollFirst()
@@ -463,8 +499,8 @@ local_ref< java::lang::Object > java::util::LinkedList::pollFirst()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(26),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::pollLast()
@@ -473,8 +509,8 @@ local_ref< java::lang::Object > java::util::LinkedList::pollLast()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(27),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::pop()
@@ -483,8 +519,8 @@ local_ref< java::lang::Object > java::util::LinkedList::pop()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(28),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::util::LinkedList::push(local_ref< java::lang::Object > const &a0)
@@ -493,8 +529,8 @@ void java::util::LinkedList::push(local_ref< java::lang::Object > const &a0)
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(29),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::LinkedList::removeFirstOccurrence(local_ref< java::lang::Object > const &a0)
@@ -503,8 +539,8 @@ jboolean java::util::LinkedList::removeFirstOccurrence(local_ref< java::lang::Ob
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(30),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::LinkedList::removeLastOccurrence(local_ref< java::lang::Object > const &a0)
@@ -513,8 +549,8 @@ jboolean java::util::LinkedList::removeLastOccurrence(local_ref< java::lang::Obj
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(31),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::set(jint a0, local_ref< java::lang::Object > const &a1)
@@ -523,8 +559,8 @@ local_ref< java::lang::Object > java::util::LinkedList::set(jint a0, local_ref< 
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(32),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::LinkedList::size()
@@ -533,8 +569,8 @@ jint java::util::LinkedList::size()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(33),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::LinkedList::offer(local_ref< java::lang::Object > const &a0)
@@ -543,8 +579,8 @@ jboolean java::util::LinkedList::offer(local_ref< java::lang::Object > const &a0
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(34),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::poll()
@@ -553,8 +589,8 @@ local_ref< java::lang::Object > java::util::LinkedList::poll()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(35),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::remove()
@@ -563,8 +599,8 @@ local_ref< java::lang::Object > java::util::LinkedList::remove()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(36),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::peek()
@@ -573,8 +609,8 @@ local_ref< java::lang::Object > java::util::LinkedList::peek()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(37),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::LinkedList::element()
@@ -583,8 +619,8 @@ local_ref< java::lang::Object > java::util::LinkedList::element()
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(38),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::LinkedList::toArray()
@@ -593,8 +629,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::LinkedList::
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(39),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::LinkedList::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -603,8 +639,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::LinkedList::
 		java::util::LinkedList::J2CPP_CLASS_NAME,
 		java::util::LinkedList::J2CPP_METHOD_NAME(40),
 		java::util::LinkedList::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 

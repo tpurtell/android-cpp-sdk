@@ -72,8 +72,8 @@ jboolean org::w3c::dom::DOMErrorHandler::handleError(local_ref< org::w3c::dom::D
 		org::w3c::dom::DOMErrorHandler::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMErrorHandler::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMErrorHandler::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

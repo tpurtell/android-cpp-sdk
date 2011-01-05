@@ -15,12 +15,14 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class RunnableFuture; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/RunnableFuture.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -56,7 +58,9 @@ namespace java { namespace util { namespace concurrent {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
 		operator local_ref<java::util::concurrent::RunnableFuture>() const;
+		operator local_ref<java::util::concurrent::Future>() const;
 
 
 		FutureTask(local_ref< java::util::concurrent::Callable > const&);
@@ -91,9 +95,19 @@ java::util::concurrent::FutureTask::operator local_ref<java::lang::Object>() con
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::util::concurrent::FutureTask::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jobject());
+}
+
 java::util::concurrent::FutureTask::operator local_ref<java::util::concurrent::RunnableFuture>() const
 {
 	return local_ref<java::util::concurrent::RunnableFuture>(get_jobject());
+}
+
+java::util::concurrent::FutureTask::operator local_ref<java::util::concurrent::Future>() const
+{
+	return local_ref<java::util::concurrent::Future>(get_jobject());
 }
 
 
@@ -102,8 +116,8 @@ java::util::concurrent::FutureTask::FutureTask(local_ref< java::util::concurrent
 	call_new_object<
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +129,8 @@ java::util::concurrent::FutureTask::FutureTask(local_ref< java::lang::Runnable >
 	call_new_object<
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -128,8 +142,8 @@ jboolean java::util::concurrent::FutureTask::isCancelled()
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::FutureTask::isDone()
@@ -138,8 +152,8 @@ jboolean java::util::concurrent::FutureTask::isDone()
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::FutureTask::cancel(jboolean a0)
@@ -148,8 +162,8 @@ jboolean java::util::concurrent::FutureTask::cancel(jboolean a0)
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::FutureTask::get()
@@ -158,8 +172,8 @@ local_ref< java::lang::Object > java::util::concurrent::FutureTask::get()
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::FutureTask::get(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -168,8 +182,8 @@ local_ref< java::lang::Object > java::util::concurrent::FutureTask::get(jlong a0
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -181,8 +195,8 @@ void java::util::concurrent::FutureTask::run()
 		java::util::concurrent::FutureTask::J2CPP_CLASS_NAME,
 		java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

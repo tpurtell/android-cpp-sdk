@@ -11,14 +11,24 @@
 #define J2CPP_ANDROID_WIDGET_DIGITALCLOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,6 +53,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::TextView>() const;
 
 
@@ -66,6 +81,31 @@ namespace j2cpp {
 
 
 
+android::widget::DigitalClock::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::DigitalClock::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::DigitalClock::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::DigitalClock::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
+}
+
+android::widget::DigitalClock::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::DigitalClock::operator local_ref<android::widget::TextView>() const
 {
 	return local_ref<android::widget::TextView>(get_jobject());
@@ -77,8 +117,8 @@ android::widget::DigitalClock::DigitalClock(local_ref< android::content::Context
 	call_new_object<
 		android::widget::DigitalClock::J2CPP_CLASS_NAME,
 		android::widget::DigitalClock::J2CPP_METHOD_NAME(0),
-		android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -90,8 +130,8 @@ android::widget::DigitalClock::DigitalClock(local_ref< android::content::Context
 	call_new_object<
 		android::widget::DigitalClock::J2CPP_CLASS_NAME,
 		android::widget::DigitalClock::J2CPP_METHOD_NAME(1),
-		android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }

@@ -11,12 +11,14 @@
 #define J2CPP_ORG_XML_SAX_EXT_LOCATOR2IMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class LocatorImpl; } } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class Locator2; } } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Locator.hpp>
 #include <org/xml/sax/ext/Locator2.hpp>
@@ -47,7 +49,9 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::xml::sax::helpers::LocatorImpl>() const;
+		operator local_ref<org::xml::sax::Locator>() const;
 		operator local_ref<org::xml::sax::ext::Locator2>() const;
 
 
@@ -77,9 +81,19 @@ namespace j2cpp {
 
 
 
+org::xml::sax::ext::Locator2Impl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::xml::sax::ext::Locator2Impl::operator local_ref<org::xml::sax::helpers::LocatorImpl>() const
 {
 	return local_ref<org::xml::sax::helpers::LocatorImpl>(get_jobject());
+}
+
+org::xml::sax::ext::Locator2Impl::operator local_ref<org::xml::sax::Locator>() const
+{
+	return local_ref<org::xml::sax::Locator>(get_jobject());
 }
 
 org::xml::sax::ext::Locator2Impl::operator local_ref<org::xml::sax::ext::Locator2>() const
@@ -93,8 +107,8 @@ org::xml::sax::ext::Locator2Impl::Locator2Impl()
 	call_new_object<
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(0),
-		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -106,8 +120,8 @@ org::xml::sax::ext::Locator2Impl::Locator2Impl(local_ref< org::xml::sax::Locator
 	call_new_object<
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(1),
-		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -119,8 +133,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2Impl::getXMLVersion(
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(2),
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::ext::Locator2Impl::getEncoding()
@@ -129,8 +143,8 @@ local_ref< java::lang::String > org::xml::sax::ext::Locator2Impl::getEncoding()
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(3),
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::xml::sax::ext::Locator2Impl::setXMLVersion(local_ref< java::lang::String > const &a0)
@@ -139,8 +153,8 @@ void org::xml::sax::ext::Locator2Impl::setXMLVersion(local_ref< java::lang::Stri
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(4),
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ext::Locator2Impl::setEncoding(local_ref< java::lang::String > const &a0)
@@ -149,8 +163,8 @@ void org::xml::sax::ext::Locator2Impl::setEncoding(local_ref< java::lang::String
 		org::xml::sax::ext::Locator2Impl::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_NAME(5),
 		org::xml::sax::ext::Locator2Impl::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

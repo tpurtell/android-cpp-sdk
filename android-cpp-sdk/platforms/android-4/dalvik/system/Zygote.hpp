@@ -86,8 +86,8 @@ jint dalvik::system::Zygote::fork()
 		dalvik::system::Zygote::J2CPP_CLASS_NAME,
 		dalvik::system::Zygote::J2CPP_METHOD_NAME(1),
 		dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint dalvik::system::Zygote::forkAndSpecialize(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3, local_ref< array<jint,2> > const &a4)
@@ -96,8 +96,8 @@ jint dalvik::system::Zygote::forkAndSpecialize(jint a0, jint a1, local_ref< arra
 		dalvik::system::Zygote::J2CPP_CLASS_NAME,
 		dalvik::system::Zygote::J2CPP_METHOD_NAME(2),
 		dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1, a2, a3, a4);
+		jint
+	>(a0, a1, a2, a3, a4);
 }
 
 jint dalvik::system::Zygote::forkAndSpecialize(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jboolean a3, local_ref< array<jint,2> > const &a4)
@@ -106,8 +106,8 @@ jint dalvik::system::Zygote::forkAndSpecialize(jint a0, jint a1, local_ref< arra
 		dalvik::system::Zygote::J2CPP_CLASS_NAME,
 		dalvik::system::Zygote::J2CPP_METHOD_NAME(3),
 		dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1, a2, a3, a4);
+		jint
+	>(a0, a1, a2, a3, a4);
 }
 
 jint dalvik::system::Zygote::forkSystemServer(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3, local_ref< array<jint,2> > const &a4)
@@ -116,8 +116,8 @@ jint dalvik::system::Zygote::forkSystemServer(jint a0, jint a1, local_ref< array
 		dalvik::system::Zygote::J2CPP_CLASS_NAME,
 		dalvik::system::Zygote::J2CPP_METHOD_NAME(4),
 		dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1, a2, a3, a4);
+		jint
+	>(a0, a1, a2, a3, a4);
 }
 
 jint dalvik::system::Zygote::forkSystemServer(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jboolean a3, local_ref< array<jint,2> > const &a4)
@@ -126,8 +126,8 @@ jint dalvik::system::Zygote::forkSystemServer(jint a0, jint a1, local_ref< array
 		dalvik::system::Zygote::J2CPP_CLASS_NAME,
 		dalvik::system::Zygote::J2CPP_METHOD_NAME(5),
 		dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1, a2, a3, a4);
+		jint
+	>(a0, a1, a2, a3, a4);
 }
 
 

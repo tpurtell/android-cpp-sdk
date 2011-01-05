@@ -11,6 +11,8 @@
 #define J2CPP_ANDROID_PREFERENCE_DIALOGPREFERENCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -31,6 +33,8 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/preference/PreferenceManager.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -82,9 +86,11 @@ namespace android { namespace preference {
 		{
 		}
 
-		operator local_ref<android::preference::Preference>() const;
-		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<android::preference::Preference>() const;
 		operator local_ref<android::preference::PreferenceManager_::OnActivityDestroyListener>() const;
 
 
@@ -129,9 +135,19 @@ namespace j2cpp {
 
 
 
-android::preference::DialogPreference::operator local_ref<android::preference::Preference>() const
+android::preference::DialogPreference::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::preference::Preference>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::preference::DialogPreference::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::preference::DialogPreference::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jobject());
 }
 
 android::preference::DialogPreference::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
@@ -139,9 +155,9 @@ android::preference::DialogPreference::operator local_ref<android::content::Dial
 	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jobject());
 }
 
-android::preference::DialogPreference::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
+android::preference::DialogPreference::operator local_ref<android::preference::Preference>() const
 {
-	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jobject());
+	return local_ref<android::preference::Preference>(get_jobject());
 }
 
 android::preference::DialogPreference::operator local_ref<android::preference::PreferenceManager_::OnActivityDestroyListener>() const
@@ -155,8 +171,8 @@ android::preference::DialogPreference::DialogPreference(local_ref< android::cont
 	call_new_object<
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(0),
-		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -168,8 +184,8 @@ android::preference::DialogPreference::DialogPreference(local_ref< android::cont
 	call_new_object<
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(1),
-		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -181,8 +197,8 @@ void android::preference::DialogPreference::setDialogTitle(local_ref< java::lang
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(2),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::DialogPreference::setDialogTitle(jint a0)
@@ -191,8 +207,8 @@ void android::preference::DialogPreference::setDialogTitle(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(3),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::preference::DialogPreference::getDialogTitle()
@@ -201,8 +217,8 @@ local_ref< java::lang::CharSequence > android::preference::DialogPreference::get
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(4),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::setDialogMessage(local_ref< java::lang::CharSequence > const &a0)
@@ -211,8 +227,8 @@ void android::preference::DialogPreference::setDialogMessage(local_ref< java::la
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(5),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::DialogPreference::setDialogMessage(jint a0)
@@ -221,8 +237,8 @@ void android::preference::DialogPreference::setDialogMessage(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(6),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::preference::DialogPreference::getDialogMessage()
@@ -231,8 +247,8 @@ local_ref< java::lang::CharSequence > android::preference::DialogPreference::get
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(7),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::setDialogIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -241,8 +257,8 @@ void android::preference::DialogPreference::setDialogIcon(local_ref< android::gr
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(8),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::DialogPreference::setDialogIcon(jint a0)
@@ -251,8 +267,8 @@ void android::preference::DialogPreference::setDialogIcon(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(9),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::preference::DialogPreference::getDialogIcon()
@@ -261,8 +277,8 @@ local_ref< android::graphics::drawable::Drawable > android::preference::DialogPr
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(10),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::setPositiveButtonText(local_ref< java::lang::CharSequence > const &a0)
@@ -271,8 +287,8 @@ void android::preference::DialogPreference::setPositiveButtonText(local_ref< jav
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(11),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::DialogPreference::setPositiveButtonText(jint a0)
@@ -281,8 +297,8 @@ void android::preference::DialogPreference::setPositiveButtonText(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(12),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::preference::DialogPreference::getPositiveButtonText()
@@ -291,8 +307,8 @@ local_ref< java::lang::CharSequence > android::preference::DialogPreference::get
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(13),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::setNegativeButtonText(local_ref< java::lang::CharSequence > const &a0)
@@ -301,8 +317,8 @@ void android::preference::DialogPreference::setNegativeButtonText(local_ref< jav
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(14),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::DialogPreference::setNegativeButtonText(jint a0)
@@ -311,8 +327,8 @@ void android::preference::DialogPreference::setNegativeButtonText(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(15),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::preference::DialogPreference::getNegativeButtonText()
@@ -321,8 +337,8 @@ local_ref< java::lang::CharSequence > android::preference::DialogPreference::get
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(16),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::setDialogLayoutResource(jint a0)
@@ -331,8 +347,8 @@ void android::preference::DialogPreference::setDialogLayoutResource(jint a0)
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(17),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::preference::DialogPreference::getDialogLayoutResource()
@@ -341,8 +357,8 @@ jint android::preference::DialogPreference::getDialogLayoutResource()
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(18),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -356,8 +372,8 @@ void android::preference::DialogPreference::onClick(local_ref< android::content:
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(24),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::preference::DialogPreference::onDismiss(local_ref< android::content::DialogInterface > const &a0)
@@ -366,8 +382,8 @@ void android::preference::DialogPreference::onDismiss(local_ref< android::conten
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(25),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -377,8 +393,8 @@ local_ref< android::app::Dialog > android::preference::DialogPreference::getDial
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(27),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::app::Dialog > >
-	(get_jobject());
+		local_ref< android::app::Dialog >
+	>(get_jobject());
 }
 
 void android::preference::DialogPreference::onActivityDestroy()
@@ -387,8 +403,8 @@ void android::preference::DialogPreference::onActivityDestroy()
 		android::preference::DialogPreference::J2CPP_CLASS_NAME,
 		android::preference::DialogPreference::J2CPP_METHOD_NAME(28),
 		android::preference::DialogPreference::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLFilter; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { class TransformerFactory; } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { namespace sax { class TemplatesHandler; } } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { namespace sax { class TransformerHandler; } } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace javax { namespace xml { namespace transform { class 
 namespace j2cpp { namespace javax { namespace xml { namespace transform { class Templates; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/xml/transform/Source.hpp>
 #include <javax/xml/transform/Templates.hpp>
@@ -56,6 +58,7 @@ namespace javax { namespace xml { namespace transform { namespace sax {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::xml::transform::TransformerFactory>() const;
 
 
@@ -88,6 +91,11 @@ namespace j2cpp {
 
 
 
+javax::xml::transform::sax::SAXTransformerFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::xml::transform::sax::SAXTransformerFactory::operator local_ref<javax::xml::transform::TransformerFactory>() const
 {
 	return local_ref<javax::xml::transform::TransformerFactory>(get_jobject());
@@ -100,8 +108,8 @@ local_ref< javax::xml::transform::sax::TransformerHandler > javax::xml::transfor
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::transform::sax::TransformerHandler > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::transform::sax::TransformerHandler >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::transform::sax::TransformerHandler > javax::xml::transform::sax::SAXTransformerFactory::newTransformerHandler(local_ref< javax::xml::transform::Templates > const &a0)
@@ -110,8 +118,8 @@ local_ref< javax::xml::transform::sax::TransformerHandler > javax::xml::transfor
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(2),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::transform::sax::TransformerHandler > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::transform::sax::TransformerHandler >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::transform::sax::TransformerHandler > javax::xml::transform::sax::SAXTransformerFactory::newTransformerHandler()
@@ -120,8 +128,8 @@ local_ref< javax::xml::transform::sax::TransformerHandler > javax::xml::transfor
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(3),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::xml::transform::sax::TransformerHandler > >
-	(get_jobject());
+		local_ref< javax::xml::transform::sax::TransformerHandler >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::transform::sax::TemplatesHandler > javax::xml::transform::sax::SAXTransformerFactory::newTemplatesHandler()
@@ -130,8 +138,8 @@ local_ref< javax::xml::transform::sax::TemplatesHandler > javax::xml::transform:
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(4),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::xml::transform::sax::TemplatesHandler > >
-	(get_jobject());
+		local_ref< javax::xml::transform::sax::TemplatesHandler >
+	>(get_jobject());
 }
 
 local_ref< org::xml::sax::XMLFilter > javax::xml::transform::sax::SAXTransformerFactory::newXMLFilter(local_ref< javax::xml::transform::Source > const &a0)
@@ -140,8 +148,8 @@ local_ref< org::xml::sax::XMLFilter > javax::xml::transform::sax::SAXTransformer
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::xml::sax::XMLFilter > >
-	(get_jobject(), a0);
+		local_ref< org::xml::sax::XMLFilter >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLFilter > javax::xml::transform::sax::SAXTransformerFactory::newXMLFilter(local_ref< javax::xml::transform::Templates > const &a0)
@@ -150,8 +158,8 @@ local_ref< org::xml::sax::XMLFilter > javax::xml::transform::sax::SAXTransformer
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::sax::SAXTransformerFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::xml::sax::XMLFilter > >
-	(get_jobject(), a0);
+		local_ref< org::xml::sax::XMLFilter >
+	>(get_jobject(), a0);
 }
 
 

@@ -49,8 +49,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Timestamp(local_ref< java::util::Date > const&, local_ref< java::security::cert::CertPath > const&);
@@ -77,14 +77,14 @@ namespace j2cpp {
 
 
 
-java::security::Timestamp::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::Timestamp::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::Timestamp::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +93,8 @@ java::security::Timestamp::Timestamp(local_ref< java::util::Date > const &a0, lo
 	call_new_object<
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(0),
-		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +106,8 @@ jboolean java::security::Timestamp::equals(local_ref< java::lang::Object > const
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(1),
 		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CertPath > java::security::Timestamp::getSignerCertPath()
@@ -116,8 +116,8 @@ local_ref< java::security::cert::CertPath > java::security::Timestamp::getSigner
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(2),
 		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject());
 }
 
 local_ref< java::util::Date > java::security::Timestamp::getTimestamp()
@@ -126,8 +126,8 @@ local_ref< java::util::Date > java::security::Timestamp::getTimestamp()
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(3),
 		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 jint java::security::Timestamp::hashCode()
@@ -136,8 +136,8 @@ jint java::security::Timestamp::hashCode()
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(4),
 		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Timestamp::toString()
@@ -146,8 +146,8 @@ local_ref< java::lang::String > java::security::Timestamp::toString()
 		java::security::Timestamp::J2CPP_CLASS_NAME,
 		java::security::Timestamp::J2CPP_METHOD_NAME(5),
 		java::security::Timestamp::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

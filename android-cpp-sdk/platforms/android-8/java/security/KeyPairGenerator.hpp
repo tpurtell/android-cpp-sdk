@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class KeyPairGeneratorSpi; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace security { class KeyPair; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyPair.hpp>
 #include <java/security/KeyPairGeneratorSpi.hpp>
@@ -57,6 +59,7 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::KeyPairGeneratorSpi>() const;
 
 
@@ -89,6 +92,11 @@ namespace j2cpp {
 
 
 
+java::security::KeyPairGenerator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::KeyPairGenerator::operator local_ref<java::security::KeyPairGeneratorSpi>() const
 {
 	return local_ref<java::security::KeyPairGeneratorSpi>(get_jobject());
@@ -101,8 +109,8 @@ local_ref< java::lang::String > java::security::KeyPairGenerator::getAlgorithm()
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(1),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::getInstance(local_ref< java::lang::String > const &a0)
@@ -111,8 +119,8 @@ local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(2),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::KeyPairGenerator > >
-	(a0);
+		local_ref< java::security::KeyPairGenerator >
+	>(a0);
 }
 
 local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -121,8 +129,8 @@ local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(3),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::KeyPairGenerator > >
-	(a0, a1);
+		local_ref< java::security::KeyPairGenerator >
+	>(a0, a1);
 }
 
 local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -131,8 +139,8 @@ local_ref< java::security::KeyPairGenerator > java::security::KeyPairGenerator::
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(4),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::KeyPairGenerator > >
-	(a0, a1);
+		local_ref< java::security::KeyPairGenerator >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::KeyPairGenerator::getProvider()
@@ -141,8 +149,8 @@ local_ref< java::security::Provider > java::security::KeyPairGenerator::getProvi
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(5),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 void java::security::KeyPairGenerator::initialize(jint a0)
@@ -151,8 +159,8 @@ void java::security::KeyPairGenerator::initialize(jint a0)
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(6),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::KeyPairGenerator::initialize(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0)
@@ -161,8 +169,8 @@ void java::security::KeyPairGenerator::initialize(local_ref< java::security::spe
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(7),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::KeyPair > java::security::KeyPairGenerator::genKeyPair()
@@ -171,8 +179,8 @@ local_ref< java::security::KeyPair > java::security::KeyPairGenerator::genKeyPai
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(8),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::KeyPair > >
-	(get_jobject());
+		local_ref< java::security::KeyPair >
+	>(get_jobject());
 }
 
 local_ref< java::security::KeyPair > java::security::KeyPairGenerator::generateKeyPair()
@@ -181,8 +189,8 @@ local_ref< java::security::KeyPair > java::security::KeyPairGenerator::generateK
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(9),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::KeyPair > >
-	(get_jobject());
+		local_ref< java::security::KeyPair >
+	>(get_jobject());
 }
 
 void java::security::KeyPairGenerator::initialize(jint a0, local_ref< java::security::SecureRandom > const &a1)
@@ -191,8 +199,8 @@ void java::security::KeyPairGenerator::initialize(jint a0, local_ref< java::secu
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(10),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::KeyPairGenerator::initialize(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0, local_ref< java::security::SecureRandom > const &a1)
@@ -201,8 +209,8 @@ void java::security::KeyPairGenerator::initialize(local_ref< java::security::spe
 		java::security::KeyPairGenerator::J2CPP_CLASS_NAME,
 		java::security::KeyPairGenerator::J2CPP_METHOD_NAME(11),
 		java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

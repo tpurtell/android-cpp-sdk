@@ -51,8 +51,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::io::HttpMessageWriter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AbstractMessageWriter(local_ref< org::apache::http::io::SessionOutputBuffer > const&, local_ref< org::apache::http::message::LineFormatter > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -79,14 +79,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::io::AbstractMessageWriter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::io::AbstractMessageWriter::operator local_ref<org::apache::http::io::HttpMessageWriter>() const
 {
 	return local_ref<org::apache::http::io::HttpMessageWriter>(get_jobject());
+}
+
+org::apache::http::impl::io::AbstractMessageWriter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -95,8 +95,8 @@ org::apache::http::impl::io::AbstractMessageWriter::AbstractMessageWriter(local_
 	call_new_object<
 		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -109,8 +109,8 @@ void org::apache::http::impl::io::AbstractMessageWriter::write(local_ref< org::a
 		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -97,8 +97,8 @@ org::apache::http::auth::AuthState::AuthState()
 	call_new_object<
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(0),
-		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -110,8 +110,8 @@ void org::apache::http::auth::AuthState::invalidate()
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(1),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::apache::http::auth::AuthState::isValid()
@@ -120,8 +120,8 @@ jboolean org::apache::http::auth::AuthState::isValid()
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(2),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::auth::AuthState::setAuthScheme(local_ref< org::apache::http::auth::AuthScheme > const &a0)
@@ -130,8 +130,8 @@ void org::apache::http::auth::AuthState::setAuthScheme(local_ref< org::apache::h
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(3),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::auth::AuthScheme > org::apache::http::auth::AuthState::getAuthScheme()
@@ -140,8 +140,8 @@ local_ref< org::apache::http::auth::AuthScheme > org::apache::http::auth::AuthSt
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(4),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::auth::AuthScheme > >
-	(get_jobject());
+		local_ref< org::apache::http::auth::AuthScheme >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::auth::Credentials > org::apache::http::auth::AuthState::getCredentials()
@@ -150,8 +150,8 @@ local_ref< org::apache::http::auth::Credentials > org::apache::http::auth::AuthS
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(5),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::auth::Credentials > >
-	(get_jobject());
+		local_ref< org::apache::http::auth::Credentials >
+	>(get_jobject());
 }
 
 void org::apache::http::auth::AuthState::setCredentials(local_ref< org::apache::http::auth::Credentials > const &a0)
@@ -160,8 +160,8 @@ void org::apache::http::auth::AuthState::setCredentials(local_ref< org::apache::
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(6),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::auth::AuthScope > org::apache::http::auth::AuthState::getAuthScope()
@@ -170,8 +170,8 @@ local_ref< org::apache::http::auth::AuthScope > org::apache::http::auth::AuthSta
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(7),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::auth::AuthScope > >
-	(get_jobject());
+		local_ref< org::apache::http::auth::AuthScope >
+	>(get_jobject());
 }
 
 void org::apache::http::auth::AuthState::setAuthScope(local_ref< org::apache::http::auth::AuthScope > const &a0)
@@ -180,8 +180,8 @@ void org::apache::http::auth::AuthState::setAuthScope(local_ref< org::apache::ht
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(8),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::auth::AuthState::toString()
@@ -190,8 +190,8 @@ local_ref< java::lang::String > org::apache::http::auth::AuthState::toString()
 		org::apache::http::auth::AuthState::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(9),
 		org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

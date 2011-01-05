@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_SQL_CONNECTIONPOOLDATASOURCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace javax { namespace sql { class CommonDataSource; } } }
 namespace j2cpp { namespace javax { namespace sql { class PooledConnection; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -43,8 +43,8 @@ namespace javax { namespace sql {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::sql::CommonDataSource>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< javax::sql::PooledConnection > getPooledConnection();
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-javax::sql::ConnectionPoolDataSource::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::sql::ConnectionPoolDataSource::operator local_ref<javax::sql::CommonDataSource>() const
 {
 	return local_ref<javax::sql::CommonDataSource>(get_jobject());
+}
+
+javax::sql::ConnectionPoolDataSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::getPooledConnection()
@@ -83,8 +83,8 @@ local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(0),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::sql::PooledConnection > >
-	(get_jobject());
+		local_ref< javax::sql::PooledConnection >
+	>(get_jobject());
 }
 
 local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::getPooledConnection(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -93,8 +93,8 @@ local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(1),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::sql::PooledConnection > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::sql::PooledConnection >
+	>(get_jobject(), a0, a1);
 }
 
 

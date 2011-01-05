@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Observable; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 #include <android/content/ContentValues.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 #include <java/util/Observable.hpp>
@@ -52,6 +54,7 @@ namespace android { namespace content {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Observable>() const;
 
 
@@ -79,6 +82,11 @@ namespace j2cpp {
 
 
 
+android::content::ContentQueryMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::content::ContentQueryMap::operator local_ref<java::util::Observable>() const
 {
 	return local_ref<java::util::Observable>(get_jobject());
@@ -90,8 +98,8 @@ android::content::ContentQueryMap::ContentQueryMap(local_ref< android::database:
 	call_new_object<
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(0),
-		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -103,8 +111,8 @@ void android::content::ContentQueryMap::setKeepUpdated(jboolean a0)
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(1),
 		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::ContentValues > android::content::ContentQueryMap::getValues(local_ref< java::lang::String > const &a0)
@@ -113,8 +121,8 @@ local_ref< android::content::ContentValues > android::content::ContentQueryMap::
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(2),
 		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::ContentValues > >
-	(get_jobject(), a0);
+		local_ref< android::content::ContentValues >
+	>(get_jobject(), a0);
 }
 
 void android::content::ContentQueryMap::requery()
@@ -123,8 +131,8 @@ void android::content::ContentQueryMap::requery()
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(3),
 		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Map > android::content::ContentQueryMap::getRows()
@@ -133,8 +141,8 @@ local_ref< java::util::Map > android::content::ContentQueryMap::getRows()
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(4),
 		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 void android::content::ContentQueryMap::close()
@@ -143,8 +151,8 @@ void android::content::ContentQueryMap::close()
 		android::content::ContentQueryMap::J2CPP_CLASS_NAME,
 		android::content::ContentQueryMap::J2CPP_METHOD_NAME(5),
 		android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

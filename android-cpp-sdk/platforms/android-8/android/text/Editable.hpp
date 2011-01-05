@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace android { namespace text { namespace Editable_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 namespace j2cpp { namespace android { namespace text { class GetChars; } } }
 namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 #include <android/text/GetChars.hpp>
 #include <android/text/InputFilter.hpp>
 #include <android/text/Spannable.hpp>
+#include <android/text/Spanned.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
@@ -90,10 +92,11 @@ namespace android { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<android::text::Spanned>() const;
 		operator local_ref<android::text::GetChars>() const;
 		operator local_ref<android::text::Spannable>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Appendable>() const;
 
 
@@ -139,8 +142,8 @@ android::text::Editable_::Factory::Factory()
 	call_new_object<
 		android::text::Editable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Editable_::Factory::J2CPP_METHOD_NAME(0),
-		android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -152,8 +155,8 @@ local_ref< android::text::Editable_::Factory > android::text::Editable_::Factory
 		android::text::Editable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Editable_::Factory::J2CPP_METHOD_NAME(1),
 		android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::Editable_::Factory > >
-	();
+		local_ref< android::text::Editable_::Factory >
+	>();
 }
 
 local_ref< android::text::Editable > android::text::Editable_::Factory::newEditable(local_ref< java::lang::CharSequence > const &a0)
@@ -162,8 +165,8 @@ local_ref< android::text::Editable > android::text::Editable_::Factory::newEdita
 		android::text::Editable_::Factory::J2CPP_CLASS_NAME,
 		android::text::Editable_::Factory::J2CPP_METHOD_NAME(2),
 		android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0);
 }
 
 
@@ -174,14 +177,9 @@ J2CPP_DEFINE_METHOD(android::text::Editable_::Factory,2,"newEditable","(Ljava/la
 
 
 
-android::text::Editable::operator local_ref<java::lang::Object>() const
+android::text::Editable::operator local_ref<android::text::Spanned>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
-android::text::Editable::operator local_ref<java::lang::CharSequence>() const
-{
-	return local_ref<java::lang::CharSequence>(get_jobject());
+	return local_ref<android::text::Spanned>(get_jobject());
 }
 
 android::text::Editable::operator local_ref<android::text::GetChars>() const
@@ -192,6 +190,16 @@ android::text::Editable::operator local_ref<android::text::GetChars>() const
 android::text::Editable::operator local_ref<android::text::Spannable>() const
 {
 	return local_ref<android::text::Spannable>(get_jobject());
+}
+
+android::text::Editable::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jobject());
+}
+
+android::text::Editable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::text::Editable::operator local_ref<java::lang::Appendable>() const
@@ -205,8 +213,8 @@ local_ref< android::text::Editable > android::text::Editable::replace(jint a0, j
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(0),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< android::text::Editable > android::text::Editable::replace(jint a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -215,8 +223,8 @@ local_ref< android::text::Editable > android::text::Editable::replace(jint a0, j
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(1),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::Editable > android::text::Editable::insert(jint a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3)
@@ -225,8 +233,8 @@ local_ref< android::text::Editable > android::text::Editable::insert(jint a0, lo
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(2),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::text::Editable > android::text::Editable::insert(jint a0, local_ref< java::lang::CharSequence > const &a1)
@@ -235,8 +243,8 @@ local_ref< android::text::Editable > android::text::Editable::insert(jint a0, lo
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(3),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::text::Editable > android::text::Editable::delete_(jint a0, jint a1)
@@ -245,8 +253,8 @@ local_ref< android::text::Editable > android::text::Editable::delete_(jint a0, j
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(4),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::text::Editable > android::text::Editable::append(local_ref< java::lang::CharSequence > const &a0)
@@ -255,8 +263,8 @@ local_ref< android::text::Editable > android::text::Editable::append(local_ref< 
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(5),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::Editable > android::text::Editable::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -265,8 +273,8 @@ local_ref< android::text::Editable > android::text::Editable::append(local_ref< 
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(6),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::Editable > android::text::Editable::append(jchar a0)
@@ -275,8 +283,8 @@ local_ref< android::text::Editable > android::text::Editable::append(jchar a0)
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(7),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::text::Editable > >
-	(get_jobject(), a0);
+		local_ref< android::text::Editable >
+	>(get_jobject(), a0);
 }
 
 void android::text::Editable::clear()
@@ -285,8 +293,8 @@ void android::text::Editable::clear()
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(8),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::text::Editable::clearSpans()
@@ -295,8 +303,8 @@ void android::text::Editable::clearSpans()
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(9),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::text::Editable::setFilters(local_ref< array< local_ref< android::text::InputFilter >, 1> > const &a0)
@@ -305,8 +313,8 @@ void android::text::Editable::setFilters(local_ref< array< local_ref< android::t
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(10),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< android::text::InputFilter >, 1> > android::text::Editable::getFilters()
@@ -315,8 +323,8 @@ local_ref< array< local_ref< android::text::InputFilter >, 1> > android::text::E
 		android::text::Editable::J2CPP_CLASS_NAME,
 		android::text::Editable::J2CPP_METHOD_NAME(11),
 		android::text::Editable::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< android::text::InputFilter >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::text::InputFilter >, 1> >
+	>(get_jobject());
 }
 
 

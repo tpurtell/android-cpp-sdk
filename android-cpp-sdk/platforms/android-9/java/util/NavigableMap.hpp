@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class NavigableSet; } } }
+namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { namespace Map_ { class Entry; } } } }
 namespace j2cpp { namespace java { namespace util { class SortedMap; } } }
 
@@ -60,6 +61,7 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Map>() const;
 		operator local_ref<java::util::SortedMap>() const;
 
 
@@ -104,6 +106,11 @@ java::util::NavigableMap::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::util::NavigableMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
+}
+
 java::util::NavigableMap::operator local_ref<java::util::SortedMap>() const
 {
 	return local_ref<java::util::SortedMap>(get_jobject());
@@ -115,8 +122,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::firstEntry()
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(0),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::lastEntry()
@@ -125,8 +132,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::lastEntry()
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(1),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::pollFirstEntry()
@@ -135,8 +142,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::pollFirstEntry()
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(2),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::pollLastEntry()
@@ -145,8 +152,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::pollLastEntry()
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(3),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::ceilingEntry(local_ref< java::lang::Object > const &a0)
@@ -155,8 +162,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::ceilingEntry(loca
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(4),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableMap::ceilingKey(local_ref< java::lang::Object > const &a0)
@@ -165,8 +172,8 @@ local_ref< java::lang::Object > java::util::NavigableMap::ceilingKey(local_ref< 
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(5),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::higherEntry(local_ref< java::lang::Object > const &a0)
@@ -175,8 +182,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::higherEntry(local
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(6),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableMap::higherKey(local_ref< java::lang::Object > const &a0)
@@ -185,8 +192,8 @@ local_ref< java::lang::Object > java::util::NavigableMap::higherKey(local_ref< j
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(7),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::floorEntry(local_ref< java::lang::Object > const &a0)
@@ -195,8 +202,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::floorEntry(local_
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(8),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableMap::floorKey(local_ref< java::lang::Object > const &a0)
@@ -205,8 +212,8 @@ local_ref< java::lang::Object > java::util::NavigableMap::floorKey(local_ref< ja
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(9),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::NavigableMap::lowerEntry(local_ref< java::lang::Object > const &a0)
@@ -215,8 +222,8 @@ local_ref< java::util::Map_::Entry > java::util::NavigableMap::lowerEntry(local_
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(10),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableMap::lowerKey(local_ref< java::lang::Object > const &a0)
@@ -225,8 +232,8 @@ local_ref< java::lang::Object > java::util::NavigableMap::lowerKey(local_ref< ja
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(11),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableMap::navigableKeySet()
@@ -235,8 +242,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableMap::navigableKeySet(
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(12),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableMap > java::util::NavigableMap::descendingMap()
@@ -245,8 +252,8 @@ local_ref< java::util::NavigableMap > java::util::NavigableMap::descendingMap()
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(13),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject());
+		local_ref< java::util::NavigableMap >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableMap::descendingKeySet()
@@ -255,8 +262,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableMap::descendingKeySet
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(14),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableMap > java::util::NavigableMap::subMap(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -265,8 +272,8 @@ local_ref< java::util::NavigableMap > java::util::NavigableMap::subMap(local_ref
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(15),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::NavigableMap > java::util::NavigableMap::headMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -275,8 +282,8 @@ local_ref< java::util::NavigableMap > java::util::NavigableMap::headMap(local_re
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(16),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableMap > java::util::NavigableMap::tailMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -285,8 +292,8 @@ local_ref< java::util::NavigableMap > java::util::NavigableMap::tailMap(local_re
 		java::util::NavigableMap::J2CPP_CLASS_NAME,
 		java::util::NavigableMap::J2CPP_METHOD_NAME(17),
 		java::util::NavigableMap::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -12,12 +12,16 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace ConsoleMessage_ { class MessageLevel; } } } }
 
 
 #include <android/webkit/ConsoleMessage.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +58,10 @@ namespace android { namespace webkit {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::webkit::ConsoleMessage_::MessageLevel >, 1> > values();
@@ -116,9 +123,24 @@ namespace j2cpp {
 
 
 
+android::webkit::ConsoleMessage_::MessageLevel::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::webkit::ConsoleMessage_::MessageLevel::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::webkit::ConsoleMessage_::MessageLevel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::webkit::ConsoleMessage_::MessageLevel::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::webkit::ConsoleMessage_::MessageLevel >, 1> > android::webkit::ConsoleMessage_::MessageLevel::values()
@@ -127,8 +149,8 @@ local_ref< array< local_ref< android::webkit::ConsoleMessage_::MessageLevel >, 1
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_METHOD_NAME(0),
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::webkit::ConsoleMessage_::MessageLevel >, 1> > >
-	();
+		local_ref< array< local_ref< android::webkit::ConsoleMessage_::MessageLevel >, 1> >
+	>();
 }
 
 local_ref< android::webkit::ConsoleMessage_::MessageLevel > android::webkit::ConsoleMessage_::MessageLevel::valueOf(local_ref< java::lang::String > const &a0)
@@ -137,8 +159,8 @@ local_ref< android::webkit::ConsoleMessage_::MessageLevel > android::webkit::Con
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_METHOD_NAME(1),
 		android::webkit::ConsoleMessage_::MessageLevel::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::ConsoleMessage_::MessageLevel > >
-	(a0);
+		local_ref< android::webkit::ConsoleMessage_::MessageLevel >
+	>(a0);
 }
 
 
@@ -205,8 +227,8 @@ android::webkit::ConsoleMessage::ConsoleMessage(local_ref< java::lang::String > 
 	call_new_object<
 		android::webkit::ConsoleMessage::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage::J2CPP_METHOD_NAME(0),
-		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -218,8 +240,8 @@ local_ref< android::webkit::ConsoleMessage_::MessageLevel > android::webkit::Con
 		android::webkit::ConsoleMessage::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage::J2CPP_METHOD_NAME(1),
 		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::ConsoleMessage_::MessageLevel > >
-	(get_jobject());
+		local_ref< android::webkit::ConsoleMessage_::MessageLevel >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::ConsoleMessage::message()
@@ -228,8 +250,8 @@ local_ref< java::lang::String > android::webkit::ConsoleMessage::message()
 		android::webkit::ConsoleMessage::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage::J2CPP_METHOD_NAME(2),
 		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::ConsoleMessage::sourceId()
@@ -238,8 +260,8 @@ local_ref< java::lang::String > android::webkit::ConsoleMessage::sourceId()
 		android::webkit::ConsoleMessage::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage::J2CPP_METHOD_NAME(3),
 		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::webkit::ConsoleMessage::lineNumber()
@@ -248,8 +270,8 @@ jint android::webkit::ConsoleMessage::lineNumber()
 		android::webkit::ConsoleMessage::J2CPP_CLASS_NAME,
 		android::webkit::ConsoleMessage::J2CPP_METHOD_NAME(4),
 		android::webkit::ConsoleMessage::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

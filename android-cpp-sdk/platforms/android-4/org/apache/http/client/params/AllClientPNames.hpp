@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { namespace params { class AuthPNames; } } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { namespace params { class CookieSpecPNames; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace params { class ConnConnectionPNames; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace params { class ConnRoutePNames; } } } } } }
@@ -19,7 +20,6 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace params { class ClientPNames; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreProtocolPNames; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreConnectionPNames; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -51,15 +51,15 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::apache::http::params::CoreConnectionPNames>() const;
-		operator local_ref<org::apache::http::params::CoreProtocolPNames>() const;
-		operator local_ref<org::apache::http::client::params::ClientPNames>() const;
 		operator local_ref<org::apache::http::auth::params::AuthPNames>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::cookie::params::CookieSpecPNames>() const;
 		operator local_ref<org::apache::http::conn::params::ConnConnectionPNames>() const;
-		operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const;
 		operator local_ref<org::apache::http::conn::params::ConnRoutePNames>() const;
+		operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const;
+		operator local_ref<org::apache::http::client::params::ClientPNames>() const;
+		operator local_ref<org::apache::http::params::CoreProtocolPNames>() const;
+		operator local_ref<org::apache::http::params::CoreConnectionPNames>() const;
 
 	}; //class AllClientPNames
 
@@ -82,29 +82,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::client::params::AllClientPNames::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
-org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::params::CoreConnectionPNames>() const
-{
-	return local_ref<org::apache::http::params::CoreConnectionPNames>(get_jobject());
-}
-
-org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::params::CoreProtocolPNames>() const
-{
-	return local_ref<org::apache::http::params::CoreProtocolPNames>(get_jobject());
-}
-
-org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::client::params::ClientPNames>() const
-{
-	return local_ref<org::apache::http::client::params::ClientPNames>(get_jobject());
-}
-
 org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::auth::params::AuthPNames>() const
 {
 	return local_ref<org::apache::http::auth::params::AuthPNames>(get_jobject());
+}
+
+org::apache::http::client::params::AllClientPNames::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::cookie::params::CookieSpecPNames>() const
@@ -117,14 +102,29 @@ org::apache::http::client::params::AllClientPNames::operator local_ref<org::apac
 	return local_ref<org::apache::http::conn::params::ConnConnectionPNames>(get_jobject());
 }
 
+org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::conn::params::ConnRoutePNames>() const
+{
+	return local_ref<org::apache::http::conn::params::ConnRoutePNames>(get_jobject());
+}
+
 org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const
 {
 	return local_ref<org::apache::http::conn::params::ConnManagerPNames>(get_jobject());
 }
 
-org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::conn::params::ConnRoutePNames>() const
+org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::client::params::ClientPNames>() const
 {
-	return local_ref<org::apache::http::conn::params::ConnRoutePNames>(get_jobject());
+	return local_ref<org::apache::http::client::params::ClientPNames>(get_jobject());
+}
+
+org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::params::CoreProtocolPNames>() const
+{
+	return local_ref<org::apache::http::params::CoreProtocolPNames>(get_jobject());
+}
+
+org::apache::http::client::params::AllClientPNames::operator local_ref<org::apache::http::params::CoreConnectionPNames>() const
+{
+	return local_ref<org::apache::http::params::CoreConnectionPNames>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(org::apache::http::client::params::AllClientPNames,"org/apache/http/client/params/AllClientPNames")

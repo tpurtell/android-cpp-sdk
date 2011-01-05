@@ -20,6 +20,7 @@ namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 namespace j2cpp { namespace java { namespace util { class NavigableMap; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ConcurrentNavigableMap; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class ConcurrentMap; } } } }
 namespace j2cpp { namespace java { namespace util { namespace Map_ { class Entry; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class SortedMap; } } }
@@ -37,6 +38,7 @@ namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 #include <java/util/NavigableSet.hpp>
 #include <java/util/Set.hpp>
 #include <java/util/SortedMap.hpp>
+#include <java/util/concurrent/ConcurrentMap.hpp>
 #include <java/util/concurrent/ConcurrentNavigableMap.hpp>
 
 
@@ -112,9 +114,14 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::util::AbstractMap>() const;
-		operator local_ref<java::util::concurrent::ConcurrentNavigableMap>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::AbstractMap>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::NavigableMap>() const;
+		operator local_ref<java::util::concurrent::ConcurrentNavigableMap>() const;
+		operator local_ref<java::util::concurrent::ConcurrentMap>() const;
+		operator local_ref<java::util::SortedMap>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -191,9 +198,29 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::AbstractMap>() const
 {
 	return local_ref<java::util::AbstractMap>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::NavigableMap>() const
+{
+	return local_ref<java::util::NavigableMap>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::concurrent::ConcurrentNavigableMap>() const
@@ -201,9 +228,14 @@ java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::co
 	return local_ref<java::util::concurrent::ConcurrentNavigableMap>(get_jobject());
 }
 
-java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::lang::Cloneable>() const
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::concurrent::ConcurrentMap>() const
 {
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<java::util::concurrent::ConcurrentMap>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::util::SortedMap>() const
+{
+	return local_ref<java::util::SortedMap>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentSkipListMap::operator local_ref<java::io::Serializable>() const
@@ -217,8 +249,8 @@ java::util::concurrent::ConcurrentSkipListMap::ConcurrentSkipListMap()
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -230,8 +262,8 @@ java::util::concurrent::ConcurrentSkipListMap::ConcurrentSkipListMap(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -243,8 +275,8 @@ java::util::concurrent::ConcurrentSkipListMap::ConcurrentSkipListMap(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(2),
-		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -256,8 +288,8 @@ java::util::concurrent::ConcurrentSkipListMap::ConcurrentSkipListMap(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(3),
-		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -269,8 +301,8 @@ local_ref< java::util::concurrent::ConcurrentSkipListMap > java::util::concurren
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::ConcurrentSkipListMap > >
-	(get_jobject());
+		local_ref< java::util::concurrent::ConcurrentSkipListMap >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -279,8 +311,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::containsKey(local_ref< j
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::get(local_ref< java::lang::Object > const &a0)
@@ -289,8 +321,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::g
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -299,8 +331,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::p
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::remove(local_ref< java::lang::Object > const &a0)
@@ -309,8 +341,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::r
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -319,8 +351,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::containsValue(local_ref<
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::ConcurrentSkipListMap::size()
@@ -329,8 +361,8 @@ jint java::util::concurrent::ConcurrentSkipListMap::size()
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::isEmpty()
@@ -339,8 +371,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::isEmpty()
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::concurrent::ConcurrentSkipListMap::clear()
@@ -349,8 +381,8 @@ void java::util::concurrent::ConcurrentSkipListMap::clear()
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListMap::keySet()
@@ -359,8 +391,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListMap::navigableKeySet()
@@ -369,8 +401,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::concurrent::ConcurrentSkipListMap::values()
@@ -379,8 +411,8 @@ local_ref< java::util::Collection > java::util::concurrent::ConcurrentSkipListMa
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::concurrent::ConcurrentSkipListMap::entrySet()
@@ -389,8 +421,8 @@ local_ref< java::util::Set > java::util::concurrent::ConcurrentSkipListMap::entr
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::descendingMap()
@@ -399,8 +431,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject());
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListMap::descendingKeySet()
@@ -409,8 +441,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::equals(local_ref< java::lang::Object > const &a0)
@@ -419,8 +451,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::equals(local_ref< java::
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::putIfAbsent(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -429,8 +461,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::p
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::remove(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -439,8 +471,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::remove(local_ref< java::
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -449,8 +481,8 @@ jboolean java::util::concurrent::ConcurrentSkipListMap::replace(local_ref< java:
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -459,8 +491,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::r
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Comparator > java::util::concurrent::ConcurrentSkipListMap::comparator()
@@ -469,8 +501,8 @@ local_ref< java::util::Comparator > java::util::concurrent::ConcurrentSkipListMa
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(24),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::firstKey()
@@ -479,8 +511,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::f
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(25),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::lastKey()
@@ -489,8 +521,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::l
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(26),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::subMap(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -499,8 +531,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(27),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::headMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -509,8 +541,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(28),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::tailMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -519,8 +551,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(29),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::subMap(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -529,8 +561,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(30),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::headMap(local_ref< java::lang::Object > const &a0)
@@ -539,8 +571,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(31),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentSkipListMap::tailMap(local_ref< java::lang::Object > const &a0)
@@ -549,8 +581,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(32),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::lowerEntry(local_ref< java::lang::Object > const &a0)
@@ -559,8 +591,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(33),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::lowerKey(local_ref< java::lang::Object > const &a0)
@@ -569,8 +601,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::l
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(34),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::floorEntry(local_ref< java::lang::Object > const &a0)
@@ -579,8 +611,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(35),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::floorKey(local_ref< java::lang::Object > const &a0)
@@ -589,8 +621,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::f
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(36),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::ceilingEntry(local_ref< java::lang::Object > const &a0)
@@ -599,8 +631,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(37),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::ceilingKey(local_ref< java::lang::Object > const &a0)
@@ -609,8 +641,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::c
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(38),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::higherEntry(local_ref< java::lang::Object > const &a0)
@@ -619,8 +651,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(39),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject(), a0);
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::higherKey(local_ref< java::lang::Object > const &a0)
@@ -629,8 +661,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::h
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(40),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::firstEntry()
@@ -639,8 +671,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(41),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::lastEntry()
@@ -649,8 +681,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(42),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::pollFirstEntry()
@@ -659,8 +691,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(43),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListMap::pollLastEntry()
@@ -669,8 +701,8 @@ local_ref< java::util::Map_::Entry > java::util::concurrent::ConcurrentSkipListM
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(44),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::util::Map_::Entry > >
-	(get_jobject());
+		local_ref< java::util::Map_::Entry >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::clone_1()
@@ -679,8 +711,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListMap::c
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(45),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::concurrent::ConcurrentSkipListMap::keySet_1()
@@ -689,8 +721,8 @@ local_ref< java::util::Set > java::util::concurrent::ConcurrentSkipListMap::keyS
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(46),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipListMap::tailMap_1(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -699,8 +731,8 @@ local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(47),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipListMap::headMap_1(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -709,8 +741,8 @@ local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(48),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipListMap::subMap_1(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -719,8 +751,8 @@ local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(49),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::NavigableMap >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipListMap::descendingMap_1()
@@ -729,8 +761,8 @@ local_ref< java::util::NavigableMap > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(50),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::util::NavigableMap > >
-	(get_jobject());
+		local_ref< java::util::NavigableMap >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap::tailMap_1(local_ref< java::lang::Object > const &a0)
@@ -739,8 +771,8 @@ local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(51),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap::subMap_1(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -749,8 +781,8 @@ local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(52),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap::headMap_1(local_ref< java::lang::Object > const &a0)
@@ -759,8 +791,8 @@ local_ref< java::util::SortedMap > java::util::concurrent::ConcurrentSkipListMap
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_NAME(53),
 		java::util::concurrent::ConcurrentSkipListMap::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< java::util::SortedMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedMap >
+	>(get_jobject(), a0);
 }
 
 

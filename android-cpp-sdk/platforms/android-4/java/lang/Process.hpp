@@ -85,8 +85,8 @@ java::lang::Process::Process()
 	call_new_object<
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(0),
-		java::lang::Process::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::Process::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ void java::lang::Process::destroy()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(1),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::lang::Process::exitValue()
@@ -108,8 +108,8 @@ jint java::lang::Process::exitValue()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(2),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::lang::Process::getErrorStream()
@@ -118,8 +118,8 @@ local_ref< java::io::InputStream > java::lang::Process::getErrorStream()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(3),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::lang::Process::getInputStream()
@@ -128,8 +128,8 @@ local_ref< java::io::InputStream > java::lang::Process::getInputStream()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(4),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > java::lang::Process::getOutputStream()
@@ -138,8 +138,8 @@ local_ref< java::io::OutputStream > java::lang::Process::getOutputStream()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(5),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 jint java::lang::Process::waitFor()
@@ -148,8 +148,8 @@ jint java::lang::Process::waitFor()
 		java::lang::Process::J2CPP_CLASS_NAME,
 		java::lang::Process::J2CPP_METHOD_NAME(6),
 		java::lang::Process::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

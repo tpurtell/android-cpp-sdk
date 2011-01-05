@@ -77,8 +77,8 @@ void android::content::SyncContext::onFinished(local_ref< android::content::Sync
 		android::content::SyncContext::J2CPP_CLASS_NAME,
 		android::content::SyncContext::J2CPP_METHOD_NAME(1),
 		android::content::SyncContext::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::IBinder > android::content::SyncContext::getSyncContextBinder()
@@ -87,8 +87,8 @@ local_ref< android::os::IBinder > android::content::SyncContext::getSyncContextB
 		android::content::SyncContext::J2CPP_CLASS_NAME,
 		android::content::SyncContext::J2CPP_METHOD_NAME(2),
 		android::content::SyncContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 

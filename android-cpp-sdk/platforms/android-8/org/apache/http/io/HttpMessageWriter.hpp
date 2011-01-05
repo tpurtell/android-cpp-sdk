@@ -73,8 +73,8 @@ void org::apache::http::io::HttpMessageWriter::write(local_ref< org::apache::htt
 		org::apache::http::io::HttpMessageWriter::J2CPP_CLASS_NAME,
 		org::apache::http::io::HttpMessageWriter::J2CPP_METHOD_NAME(0),
 		org::apache::http::io::HttpMessageWriter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

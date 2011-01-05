@@ -126,8 +126,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getCatalogName(jin
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(0),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnClassName(jint a0)
@@ -136,8 +136,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnClassName
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(1),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSetMetaData::getColumnCount()
@@ -146,8 +146,8 @@ jint java::sql::ResultSetMetaData::getColumnCount()
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(2),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::sql::ResultSetMetaData::getColumnDisplaySize(jint a0)
@@ -156,8 +156,8 @@ jint java::sql::ResultSetMetaData::getColumnDisplaySize(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(3),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnLabel(jint a0)
@@ -166,8 +166,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnLabel(jin
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(4),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnName(jint a0)
@@ -176,8 +176,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnName(jint
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(5),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSetMetaData::getColumnType(jint a0)
@@ -186,8 +186,8 @@ jint java::sql::ResultSetMetaData::getColumnType(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(6),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnTypeName(jint a0)
@@ -196,8 +196,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getColumnTypeName(
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(7),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSetMetaData::getPrecision(jint a0)
@@ -206,8 +206,8 @@ jint java::sql::ResultSetMetaData::getPrecision(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(8),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSetMetaData::getScale(jint a0)
@@ -216,8 +216,8 @@ jint java::sql::ResultSetMetaData::getScale(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(9),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getSchemaName(jint a0)
@@ -226,8 +226,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getSchemaName(jint
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(10),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getTableName(jint a0)
@@ -236,8 +236,8 @@ local_ref< java::lang::String > java::sql::ResultSetMetaData::getTableName(jint 
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(11),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isAutoIncrement(jint a0)
@@ -246,8 +246,8 @@ jboolean java::sql::ResultSetMetaData::isAutoIncrement(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(12),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isCaseSensitive(jint a0)
@@ -256,8 +256,8 @@ jboolean java::sql::ResultSetMetaData::isCaseSensitive(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(13),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isCurrency(jint a0)
@@ -266,8 +266,8 @@ jboolean java::sql::ResultSetMetaData::isCurrency(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(14),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isDefinitelyWritable(jint a0)
@@ -276,8 +276,8 @@ jboolean java::sql::ResultSetMetaData::isDefinitelyWritable(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(15),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ResultSetMetaData::isNullable(jint a0)
@@ -286,8 +286,8 @@ jint java::sql::ResultSetMetaData::isNullable(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(16),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isReadOnly(jint a0)
@@ -296,8 +296,8 @@ jboolean java::sql::ResultSetMetaData::isReadOnly(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(17),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isSearchable(jint a0)
@@ -306,8 +306,8 @@ jboolean java::sql::ResultSetMetaData::isSearchable(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(18),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isSigned(jint a0)
@@ -316,8 +316,8 @@ jboolean java::sql::ResultSetMetaData::isSigned(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(19),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ResultSetMetaData::isWritable(jint a0)
@@ -326,8 +326,8 @@ jboolean java::sql::ResultSetMetaData::isWritable(jint a0)
 		java::sql::ResultSetMetaData::J2CPP_CLASS_NAME,
 		java::sql::ResultSetMetaData::J2CPP_METHOD_NAME(20),
 		java::sql::ResultSetMetaData::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

@@ -11,16 +11,22 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_BLOCKINGDEQUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { class Deque; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/Collection.hpp>
 #include <java/util/Deque.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Queue.hpp>
 #include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -72,7 +78,10 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::util::Collection>() const;
 		operator local_ref<java::util::concurrent::BlockingQueue>() const;
 		operator local_ref<java::util::Deque>() const;
 
@@ -125,9 +134,24 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::BlockingDeque::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::concurrent::BlockingDeque::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::BlockingDeque::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jobject());
+}
+
+java::util::concurrent::BlockingDeque::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
 }
 
 java::util::concurrent::BlockingDeque::operator local_ref<java::util::concurrent::BlockingQueue>() const
@@ -146,8 +170,8 @@ void java::util::concurrent::BlockingDeque::addFirst(local_ref< java::lang::Obje
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::BlockingDeque::addLast(local_ref< java::lang::Object > const &a0)
@@ -156,8 +180,8 @@ void java::util::concurrent::BlockingDeque::addLast(local_ref< java::lang::Objec
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offerFirst(local_ref< java::lang::Object > const &a0)
@@ -166,8 +190,8 @@ jboolean java::util::concurrent::BlockingDeque::offerFirst(local_ref< java::lang
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offerLast(local_ref< java::lang::Object > const &a0)
@@ -176,8 +200,8 @@ jboolean java::util::concurrent::BlockingDeque::offerLast(local_ref< java::lang:
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::BlockingDeque::putFirst(local_ref< java::lang::Object > const &a0)
@@ -186,8 +210,8 @@ void java::util::concurrent::BlockingDeque::putFirst(local_ref< java::lang::Obje
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::BlockingDeque::putLast(local_ref< java::lang::Object > const &a0)
@@ -196,8 +220,8 @@ void java::util::concurrent::BlockingDeque::putLast(local_ref< java::lang::Objec
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offerFirst(local_ref< java::lang::Object > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -206,8 +230,8 @@ jboolean java::util::concurrent::BlockingDeque::offerFirst(local_ref< java::lang
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offerLast(local_ref< java::lang::Object > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -216,8 +240,8 @@ jboolean java::util::concurrent::BlockingDeque::offerLast(local_ref< java::lang:
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::takeFirst()
@@ -226,8 +250,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::takeFirst
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::takeLast()
@@ -236,8 +260,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::takeLast(
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::pollFirst(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -246,8 +270,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::pollFirst
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::pollLast(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -256,8 +280,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::pollLast(
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::BlockingDeque::removeFirstOccurrence(local_ref< java::lang::Object > const &a0)
@@ -266,8 +290,8 @@ jboolean java::util::concurrent::BlockingDeque::removeFirstOccurrence(local_ref<
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::removeLastOccurrence(local_ref< java::lang::Object > const &a0)
@@ -276,8 +300,8 @@ jboolean java::util::concurrent::BlockingDeque::removeLastOccurrence(local_ref< 
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::add(local_ref< java::lang::Object > const &a0)
@@ -286,8 +310,8 @@ jboolean java::util::concurrent::BlockingDeque::add(local_ref< java::lang::Objec
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offer(local_ref< java::lang::Object > const &a0)
@@ -296,8 +320,8 @@ jboolean java::util::concurrent::BlockingDeque::offer(local_ref< java::lang::Obj
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::BlockingDeque::put(local_ref< java::lang::Object > const &a0)
@@ -306,8 +330,8 @@ void java::util::concurrent::BlockingDeque::put(local_ref< java::lang::Object > 
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::offer(local_ref< java::lang::Object > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -316,8 +340,8 @@ jboolean java::util::concurrent::BlockingDeque::offer(local_ref< java::lang::Obj
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::remove()
@@ -326,8 +350,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::remove()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::poll()
@@ -336,8 +360,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::poll()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::take()
@@ -346,8 +370,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::take()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::poll(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -356,8 +380,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::poll(jlon
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::element()
@@ -366,8 +390,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::element()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::peek()
@@ -376,8 +400,8 @@ local_ref< java::lang::Object > java::util::concurrent::BlockingDeque::peek()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::BlockingDeque::remove(local_ref< java::lang::Object > const &a0)
@@ -386,8 +410,8 @@ jboolean java::util::concurrent::BlockingDeque::remove(local_ref< java::lang::Ob
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(24),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::BlockingDeque::contains(local_ref< java::lang::Object > const &a0)
@@ -396,8 +420,8 @@ jboolean java::util::concurrent::BlockingDeque::contains(local_ref< java::lang::
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(25),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::BlockingDeque::size()
@@ -406,8 +430,8 @@ jint java::util::concurrent::BlockingDeque::size()
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(26),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::concurrent::BlockingDeque::iterator()
@@ -416,8 +440,8 @@ local_ref< java::util::Iterator > java::util::concurrent::BlockingDeque::iterato
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(27),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 void java::util::concurrent::BlockingDeque::push(local_ref< java::lang::Object > const &a0)
@@ -426,8 +450,8 @@ void java::util::concurrent::BlockingDeque::push(local_ref< java::lang::Object >
 		java::util::concurrent::BlockingDeque::J2CPP_CLASS_NAME,
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_NAME(28),
 		java::util::concurrent::BlockingDeque::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

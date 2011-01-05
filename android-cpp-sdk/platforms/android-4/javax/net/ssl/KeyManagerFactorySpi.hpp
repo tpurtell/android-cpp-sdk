@@ -73,8 +73,8 @@ javax::net::ssl::KeyManagerFactorySpi::KeyManagerFactorySpi()
 	call_new_object<
 		javax::net::ssl::KeyManagerFactorySpi::J2CPP_CLASS_NAME,
 		javax::net::ssl::KeyManagerFactorySpi::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::KeyManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::net::ssl::KeyManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_ABSTRACTHTTPPARAMS_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -101,8 +101,8 @@ jlong org::apache::http::params::AbstractHttpParams::getLongParameter(local_ref<
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::AbstractHttpParams::setLongParameter(local_ref< java::lang::String > const &a0, jlong a1)
@@ -111,8 +111,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ab
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::params::AbstractHttpParams::getIntParameter(local_ref< java::lang::String > const &a0, jint a1)
@@ -121,8 +121,8 @@ jint org::apache::http::params::AbstractHttpParams::getIntParameter(local_ref< j
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::AbstractHttpParams::setIntParameter(local_ref< java::lang::String > const &a0, jint a1)
@@ -131,8 +131,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ab
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jdouble org::apache::http::params::AbstractHttpParams::getDoubleParameter(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -141,8 +141,8 @@ jdouble org::apache::http::params::AbstractHttpParams::getDoubleParameter(local_
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject(), a0, a1);
+		jdouble
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::AbstractHttpParams::setDoubleParameter(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -151,8 +151,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ab
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::params::AbstractHttpParams::getBooleanParameter(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -161,8 +161,8 @@ jboolean org::apache::http::params::AbstractHttpParams::getBooleanParameter(loca
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(7),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::AbstractHttpParams::setBooleanParameter(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -171,8 +171,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ab
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(8),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::params::AbstractHttpParams::isParameterTrue(local_ref< java::lang::String > const &a0)
@@ -181,8 +181,8 @@ jboolean org::apache::http::params::AbstractHttpParams::isParameterTrue(local_re
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(9),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::params::AbstractHttpParams::isParameterFalse(local_ref< java::lang::String > const &a0)
@@ -191,8 +191,8 @@ jboolean org::apache::http::params::AbstractHttpParams::isParameterFalse(local_r
 		org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(10),
 		org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

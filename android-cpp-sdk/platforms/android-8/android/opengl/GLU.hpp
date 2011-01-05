@@ -85,8 +85,8 @@ android::opengl::GLU::GLU()
 	call_new_object<
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(0),
-		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::lang::String > android::opengl::GLU::gluErrorString(jint a0)
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(1),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::opengl::GLU::gluLookAt(local_ref< javax::microedition::khronos::opengles::GL10 > const &a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4, jfloat a5, jfloat a6, jfloat a7, jfloat a8, jfloat a9)
@@ -108,8 +108,8 @@ void android::opengl::GLU::gluLookAt(local_ref< javax::microedition::khronos::op
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(2),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 void android::opengl::GLU::gluOrtho2D(local_ref< javax::microedition::khronos::opengles::GL10 > const &a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4)
@@ -118,8 +118,8 @@ void android::opengl::GLU::gluOrtho2D(local_ref< javax::microedition::khronos::o
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(3),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLU::gluPerspective(local_ref< javax::microedition::khronos::opengles::GL10 > const &a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4)
@@ -128,8 +128,8 @@ void android::opengl::GLU::gluPerspective(local_ref< javax::microedition::khrono
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(4),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jint android::opengl::GLU::gluProject(jfloat a0, jfloat a1, jfloat a2, local_ref< array<jfloat,1> > const &a3, jint a4, local_ref< array<jfloat,1> > const &a5, jint a6, local_ref< array<jint,1> > const &a7, jint a8, local_ref< array<jfloat,1> > const &a9, jint a10)
@@ -138,8 +138,8 @@ jint android::opengl::GLU::gluProject(jfloat a0, jfloat a1, jfloat a2, local_ref
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(5),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		jint
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 jint android::opengl::GLU::gluUnProject(jfloat a0, jfloat a1, jfloat a2, local_ref< array<jfloat,1> > const &a3, jint a4, local_ref< array<jfloat,1> > const &a5, jint a6, local_ref< array<jint,1> > const &a7, jint a8, local_ref< array<jfloat,1> > const &a9, jint a10)
@@ -148,8 +148,8 @@ jint android::opengl::GLU::gluUnProject(jfloat a0, jfloat a1, jfloat a2, local_r
 		android::opengl::GLU::J2CPP_CLASS_NAME,
 		android::opengl::GLU::J2CPP_METHOD_NAME(6),
 		android::opengl::GLU::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		jint
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 

@@ -82,6 +82,7 @@ namespace android { namespace provider {
 
 				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DURATION;
@@ -125,6 +126,8 @@ namespace android { namespace provider {
 
 				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::MediaStore_::Video_::VideoColumns>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 				Media();
@@ -315,6 +318,8 @@ namespace android { namespace provider {
 					}
 
 					operator local_ref<java::lang::Object>() const;
+					operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+					operator local_ref<android::provider::BaseColumns>() const;
 					operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
 
 
@@ -515,6 +520,8 @@ namespace android { namespace provider {
 					}
 
 					operator local_ref<java::lang::Object>() const;
+					operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+					operator local_ref<android::provider::BaseColumns>() const;
 					operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
 
 
@@ -626,6 +633,7 @@ namespace android { namespace provider {
 
 				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > TITLE_KEY;
@@ -671,6 +679,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
 
 
@@ -784,6 +794,7 @@ namespace android { namespace provider {
 
 				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DESCRIPTION;
@@ -886,6 +897,8 @@ namespace android { namespace provider {
 				}
 
 				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::MediaStore_::Images_::ImageColumns>() const;
 
 
@@ -1016,6 +1029,11 @@ android::provider::MediaStore_::Video_::VideoColumns::operator local_ref<java::l
 android::provider::MediaStore_::Video_::VideoColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Video_::VideoColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 static_field<
@@ -1160,14 +1178,24 @@ android::provider::MediaStore_::Video_::Media::operator local_ref<android::provi
 	return local_ref<android::provider::MediaStore_::Video_::VideoColumns>(get_jobject());
 }
 
+android::provider::MediaStore_::Video_::Media::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Video_::Media::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 
 android::provider::MediaStore_::Video_::Media::Media()
 : object<android::provider::MediaStore_::Video_::Media>(
 	call_new_object<
 		android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1179,8 +1207,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Media::ge
 		android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -1240,8 +1268,8 @@ android::provider::MediaStore_::Video_::Thumbnails::Thumbnails()
 	call_new_object<
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1253,8 +1281,8 @@ void android::provider::MediaStore_::Video_::Thumbnails::cancelThumbnailRequest(
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Video_::Thumbnails::getThumbnail(local_ref< android::content::ContentResolver > const &a0, jlong a1, jint a2, local_ref< android::graphics::BitmapFactory_::Options > const &a3)
@@ -1263,8 +1291,8 @@ local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Video_::T
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(2),
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Thumbnails::getContentUri(local_ref< java::lang::String > const &a0)
@@ -1273,8 +1301,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Thumbnail
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(3),
 		android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -1388,8 +1416,8 @@ android::provider::MediaStore_::Video::Video()
 	call_new_object<
 		android::provider::MediaStore_::Video::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Video::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Video::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1401,8 +1429,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Video::qu
 		android::provider::MediaStore_::Video::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Video::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Video::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2);
 }
 
 
@@ -1438,8 +1466,8 @@ android::provider::MediaStore_::Audio_::Artists_::Albums::Albums()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1451,8 +1479,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Artists_:
 		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -1483,8 +1511,8 @@ android::provider::MediaStore_::Audio_::Artists::Artists()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1496,8 +1524,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Artists::
 		android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -1555,6 +1583,16 @@ android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jobject());
@@ -1566,8 +1604,8 @@ android::provider::MediaStore_::Audio_::Playlists_::Members::Members()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1579,8 +1617,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Playlists
 		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -1660,8 +1698,8 @@ android::provider::MediaStore_::Audio_::Playlists::Playlists()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1673,8 +1711,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Playlists
 		android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -1805,8 +1843,8 @@ android::provider::MediaStore_::Audio_::Albums::Albums()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1818,8 +1856,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Albums::g
 		android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -1958,6 +1996,16 @@ android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<jav
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jobject());
@@ -1969,8 +2017,8 @@ android::provider::MediaStore_::Audio_::Genres_::Members::Members()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1982,8 +2030,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Genres_::
 		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 
@@ -2047,8 +2095,8 @@ android::provider::MediaStore_::Audio_::Genres::Genres()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2060,8 +2108,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Genres::g
 		android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -2162,6 +2210,11 @@ android::provider::MediaStore_::Audio_::AudioColumns::operator local_ref<java::l
 android::provider::MediaStore_::Audio_::AudioColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Audio_::AudioColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 static_field<
@@ -2301,6 +2354,16 @@ android::provider::MediaStore_::Audio_::Media::operator local_ref<java::lang::Ob
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::MediaStore_::Audio_::Media::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Audio_::Media::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::MediaStore_::Audio_::Media::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jobject());
@@ -2312,8 +2375,8 @@ android::provider::MediaStore_::Audio_::Media::Media()
 	call_new_object<
 		android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2325,8 +2388,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Media::ge
 		android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Media::getContentUriForPath(local_ref< java::lang::String > const &a0)
@@ -2335,8 +2398,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Media::ge
 		android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_NAME(2),
 		android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -2409,8 +2472,8 @@ android::provider::MediaStore_::Audio::Audio()
 	call_new_object<
 		android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Audio::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Audio::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2422,8 +2485,8 @@ local_ref< java::lang::String > android::provider::MediaStore_::Audio::keyFor(lo
 		android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Audio::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Audio::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 
@@ -2511,6 +2574,11 @@ android::provider::MediaStore_::Images_::ImageColumns::operator local_ref<java::
 android::provider::MediaStore_::Images_::ImageColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Images_::ImageColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 static_field<
@@ -2613,8 +2681,8 @@ android::provider::MediaStore_::Images_::Thumbnails::Thumbnails()
 	call_new_object<
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2626,8 +2694,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2);
 }
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Thumbnails::queryMiniThumbnails(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, jint a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -2636,8 +2704,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(2),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2, a3);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Thumbnails::queryMiniThumbnail(local_ref< android::content::ContentResolver > const &a0, jlong a1, jint a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -2646,8 +2714,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(3),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2, a3);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2, a3);
 }
 
 void android::provider::MediaStore_::Images_::Thumbnails::cancelThumbnailRequest(local_ref< android::content::ContentResolver > const &a0, jlong a1)
@@ -2656,8 +2724,8 @@ void android::provider::MediaStore_::Images_::Thumbnails::cancelThumbnailRequest
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(4),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Images_::Thumbnails::getThumbnail(local_ref< android::content::ContentResolver > const &a0, jlong a1, jint a2, local_ref< android::graphics::BitmapFactory_::Options > const &a3)
@@ -2666,8 +2734,8 @@ local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(5),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Thumbnails::getContentUri(local_ref< java::lang::String > const &a0)
@@ -2676,8 +2744,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Thumbnai
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(6),
 		android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -2795,6 +2863,16 @@ android::provider::MediaStore_::Images_::Media::operator local_ref<java::lang::O
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::provider::MediaStore_::Images_::Media::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jobject());
+}
+
+android::provider::MediaStore_::Images_::Media::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
 android::provider::MediaStore_::Images_::Media::operator local_ref<android::provider::MediaStore_::Images_::ImageColumns>() const
 {
 	return local_ref<android::provider::MediaStore_::Images_::ImageColumns>(get_jobject());
@@ -2806,8 +2884,8 @@ android::provider::MediaStore_::Images_::Media::Media()
 	call_new_object<
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2819,8 +2897,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2);
 }
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Media::query(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -2829,8 +2907,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(2),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Media::query(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< java::lang::String > const &a3, local_ref< array< local_ref< java::lang::String >, 1> > const &a4, local_ref< java::lang::String > const &a5)
@@ -2839,8 +2917,8 @@ local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(3),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::database::Cursor > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< android::database::Cursor >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Images_::Media::getBitmap(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -2849,8 +2927,8 @@ local_ref< android::graphics::Bitmap > android::provider::MediaStore_::Images_::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(4),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::provider::MediaStore_::Images_::Media::insertImage(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -2859,8 +2937,8 @@ local_ref< java::lang::String > android::provider::MediaStore_::Images_::Media::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(5),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::provider::MediaStore_::Images_::Media::insertImage(local_ref< android::content::ContentResolver > const &a0, local_ref< android::graphics::Bitmap > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -2869,8 +2947,8 @@ local_ref< java::lang::String > android::provider::MediaStore_::Images_::Media::
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(6),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Media::getContentUri(local_ref< java::lang::String > const &a0)
@@ -2879,8 +2957,8 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Media::g
 		android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(7),
 		android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 
@@ -2942,8 +3020,8 @@ android::provider::MediaStore_::Images::Images()
 	call_new_object<
 		android::provider::MediaStore_::Images::J2CPP_CLASS_NAME,
 		android::provider::MediaStore_::Images::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore_::Images::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore_::Images::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2966,8 +3044,8 @@ android::provider::MediaStore::MediaStore()
 	call_new_object<
 		android::provider::MediaStore::J2CPP_CLASS_NAME,
 		android::provider::MediaStore::J2CPP_METHOD_NAME(0),
-		android::provider::MediaStore::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::MediaStore::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2979,8 +3057,8 @@ local_ref< android::net::Uri > android::provider::MediaStore::getMediaScannerUri
 		android::provider::MediaStore::J2CPP_CLASS_NAME,
 		android::provider::MediaStore::J2CPP_METHOD_NAME(1),
 		android::provider::MediaStore::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::Uri > >
-	();
+		local_ref< android::net::Uri >
+	>();
 }
 
 

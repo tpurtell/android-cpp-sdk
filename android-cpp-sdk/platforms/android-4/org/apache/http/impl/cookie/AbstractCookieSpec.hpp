@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_ABSTRACTCOOKIESPEC_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -89,8 +89,8 @@ org::apache::http::impl::cookie::AbstractCookieSpec::AbstractCookieSpec()
 	call_new_object<
 		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +102,8 @@ void org::apache::http::impl::cookie::AbstractCookieSpec::registerAttribHandler(
 		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

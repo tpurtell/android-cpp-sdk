@@ -95,8 +95,8 @@ java::security::PermissionCollection::PermissionCollection()
 	call_new_object<
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(0),
-		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ void java::security::PermissionCollection::add(local_ref< java::security::Permis
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(1),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::PermissionCollection::elements()
@@ -118,8 +118,8 @@ local_ref< java::util::Enumeration > java::security::PermissionCollection::eleme
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(2),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jboolean java::security::PermissionCollection::implies(local_ref< java::security::Permission > const &a0)
@@ -128,8 +128,8 @@ jboolean java::security::PermissionCollection::implies(local_ref< java::security
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(3),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::PermissionCollection::isReadOnly()
@@ -138,8 +138,8 @@ jboolean java::security::PermissionCollection::isReadOnly()
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(4),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::PermissionCollection::setReadOnly()
@@ -148,8 +148,8 @@ void java::security::PermissionCollection::setReadOnly()
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(5),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::PermissionCollection::toString()
@@ -158,8 +158,8 @@ local_ref< java::lang::String > java::security::PermissionCollection::toString()
 		java::security::PermissionCollection::J2CPP_CLASS_NAME,
 		java::security::PermissionCollection::J2CPP_METHOD_NAME(6),
 		java::security::PermissionCollection::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

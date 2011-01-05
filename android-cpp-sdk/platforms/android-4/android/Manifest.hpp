@@ -356,8 +356,8 @@ android::Manifest_::permission::permission()
 	call_new_object<
 		android::Manifest_::permission::J2CPP_CLASS_NAME,
 		android::Manifest_::permission::J2CPP_METHOD_NAME(0),
-		android::Manifest_::permission::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::Manifest_::permission::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1228,8 +1228,8 @@ android::Manifest_::permission_group::permission_group()
 	call_new_object<
 		android::Manifest_::permission_group::J2CPP_CLASS_NAME,
 		android::Manifest_::permission_group::J2CPP_METHOD_NAME(0),
-		android::Manifest_::permission_group::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::Manifest_::permission_group::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1341,8 +1341,8 @@ android::Manifest::Manifest()
 	call_new_object<
 		android::Manifest::J2CPP_CLASS_NAME,
 		android::Manifest::J2CPP_METHOD_NAME(0),
-		android::Manifest::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::Manifest::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

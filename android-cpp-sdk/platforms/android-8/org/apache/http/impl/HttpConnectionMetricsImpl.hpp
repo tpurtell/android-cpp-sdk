@@ -55,8 +55,8 @@ namespace org { namespace apache { namespace http { namespace impl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpConnectionMetrics>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HttpConnectionMetricsImpl(local_ref< org::apache::http::io::HttpTransportMetrics > const&, local_ref< org::apache::http::io::HttpTransportMetrics > const&);
@@ -94,14 +94,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::HttpConnectionMetricsImpl::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::HttpConnectionMetricsImpl::operator local_ref<org::apache::http::HttpConnectionMetrics>() const
 {
 	return local_ref<org::apache::http::HttpConnectionMetrics>(get_jobject());
+}
+
+org::apache::http::impl::HttpConnectionMetricsImpl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -110,8 +110,8 @@ org::apache::http::impl::HttpConnectionMetricsImpl::HttpConnectionMetricsImpl(lo
 	call_new_object<
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -123,8 +123,8 @@ jlong org::apache::http::impl::HttpConnectionMetricsImpl::getReceivedBytesCount(
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong org::apache::http::impl::HttpConnectionMetricsImpl::getSentBytesCount()
@@ -133,8 +133,8 @@ jlong org::apache::http::impl::HttpConnectionMetricsImpl::getSentBytesCount()
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong org::apache::http::impl::HttpConnectionMetricsImpl::getRequestCount()
@@ -143,8 +143,8 @@ jlong org::apache::http::impl::HttpConnectionMetricsImpl::getRequestCount()
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void org::apache::http::impl::HttpConnectionMetricsImpl::incrementRequestCount()
@@ -153,8 +153,8 @@ void org::apache::http::impl::HttpConnectionMetricsImpl::incrementRequestCount()
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong org::apache::http::impl::HttpConnectionMetricsImpl::getResponseCount()
@@ -163,8 +163,8 @@ jlong org::apache::http::impl::HttpConnectionMetricsImpl::getResponseCount()
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void org::apache::http::impl::HttpConnectionMetricsImpl::incrementResponseCount()
@@ -173,8 +173,8 @@ void org::apache::http::impl::HttpConnectionMetricsImpl::incrementResponseCount(
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::HttpConnectionMetricsImpl::getMetric(local_ref< java::lang::String > const &a0)
@@ -183,8 +183,8 @@ local_ref< java::lang::Object > org::apache::http::impl::HttpConnectionMetricsIm
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::HttpConnectionMetricsImpl::setMetric(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -193,8 +193,8 @@ void org::apache::http::impl::HttpConnectionMetricsImpl::setMetric(local_ref< ja
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::HttpConnectionMetricsImpl::reset()
@@ -203,8 +203,8 @@ void org::apache::http::impl::HttpConnectionMetricsImpl::reset()
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME,
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -89,8 +89,8 @@ java::lang::Number::Number()
 	call_new_object<
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(0),
-		java::lang::Number::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::Number::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +102,8 @@ jbyte java::lang::Number::byteValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(1),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(1), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jdouble java::lang::Number::doubleValue()
@@ -112,8 +112,8 @@ jdouble java::lang::Number::doubleValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(2),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(2), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jfloat java::lang::Number::floatValue()
@@ -122,8 +122,8 @@ jfloat java::lang::Number::floatValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(3),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint java::lang::Number::intValue()
@@ -132,8 +132,8 @@ jint java::lang::Number::intValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(4),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::lang::Number::longValue()
@@ -142,8 +142,8 @@ jlong java::lang::Number::longValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(5),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jshort java::lang::Number::shortValue()
@@ -152,8 +152,8 @@ jshort java::lang::Number::shortValue()
 		java::lang::Number::J2CPP_CLASS_NAME,
 		java::lang::Number::J2CPP_METHOD_NAME(6),
 		java::lang::Number::J2CPP_METHOD_SIGNATURE(6), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 

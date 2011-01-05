@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertSelector; } } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { namespace x500 { class X500Principal; } } } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/math/BigInteger.hpp>
@@ -109,6 +111,7 @@ namespace java { namespace security { namespace cert {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::security::cert::CertSelector>() const;
 
 
@@ -189,6 +192,11 @@ java::security::cert::X509CertSelector::operator local_ref<java::lang::Object>()
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::security::cert::X509CertSelector::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::security::cert::X509CertSelector::operator local_ref<java::security::cert::CertSelector>() const
 {
 	return local_ref<java::security::cert::CertSelector>(get_jobject());
@@ -200,8 +208,8 @@ java::security::cert::X509CertSelector::X509CertSelector()
 	call_new_object<
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(0),
-		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -213,8 +221,8 @@ void java::security::cert::X509CertSelector::setCertificate(local_ref< java::sec
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(1),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::X509Certificate > java::security::cert::X509CertSelector::getCertificate()
@@ -223,8 +231,8 @@ local_ref< java::security::cert::X509Certificate > java::security::cert::X509Cer
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(2),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::cert::X509Certificate > >
-	(get_jobject());
+		local_ref< java::security::cert::X509Certificate >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSerialNumber(local_ref< java::math::BigInteger > const &a0)
@@ -233,8 +241,8 @@ void java::security::cert::X509CertSelector::setSerialNumber(local_ref< java::ma
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(3),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigInteger > java::security::cert::X509CertSelector::getSerialNumber()
@@ -243,8 +251,8 @@ local_ref< java::math::BigInteger > java::security::cert::X509CertSelector::getS
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(4),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setIssuer(local_ref< javax::security::auth::x500::X500Principal > const &a0)
@@ -253,8 +261,8 @@ void java::security::cert::X509CertSelector::setIssuer(local_ref< javax::securit
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(5),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::security::auth::x500::X500Principal > java::security::cert::X509CertSelector::getIssuer()
@@ -263,8 +271,8 @@ local_ref< javax::security::auth::x500::X500Principal > java::security::cert::X5
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(6),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< javax::security::auth::x500::X500Principal > >
-	(get_jobject());
+		local_ref< javax::security::auth::x500::X500Principal >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setIssuer(local_ref< java::lang::String > const &a0)
@@ -273,8 +281,8 @@ void java::security::cert::X509CertSelector::setIssuer(local_ref< java::lang::St
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(7),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::X509CertSelector::getIssuerAsString()
@@ -283,8 +291,8 @@ local_ref< java::lang::String > java::security::cert::X509CertSelector::getIssue
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(8),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setIssuer(local_ref< array<jbyte,1> > const &a0)
@@ -293,8 +301,8 @@ void java::security::cert::X509CertSelector::setIssuer(local_ref< array<jbyte,1>
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(9),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getIssuerAsBytes()
@@ -303,8 +311,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getIssuerAsB
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(10),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubject(local_ref< javax::security::auth::x500::X500Principal > const &a0)
@@ -313,8 +321,8 @@ void java::security::cert::X509CertSelector::setSubject(local_ref< javax::securi
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(11),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::security::auth::x500::X500Principal > java::security::cert::X509CertSelector::getSubject()
@@ -323,8 +331,8 @@ local_ref< javax::security::auth::x500::X500Principal > java::security::cert::X5
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(12),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< javax::security::auth::x500::X500Principal > >
-	(get_jobject());
+		local_ref< javax::security::auth::x500::X500Principal >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubject(local_ref< java::lang::String > const &a0)
@@ -333,8 +341,8 @@ void java::security::cert::X509CertSelector::setSubject(local_ref< java::lang::S
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(13),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::X509CertSelector::getSubjectAsString()
@@ -343,8 +351,8 @@ local_ref< java::lang::String > java::security::cert::X509CertSelector::getSubje
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(14),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubject(local_ref< array<jbyte,1> > const &a0)
@@ -353,8 +361,8 @@ void java::security::cert::X509CertSelector::setSubject(local_ref< array<jbyte,1
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(15),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getSubjectAsBytes()
@@ -363,8 +371,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getSubjectAs
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(16),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubjectKeyIdentifier(local_ref< array<jbyte,1> > const &a0)
@@ -373,8 +381,8 @@ void java::security::cert::X509CertSelector::setSubjectKeyIdentifier(local_ref< 
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(17),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getSubjectKeyIdentifier()
@@ -383,8 +391,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getSubjectKe
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(18),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setAuthorityKeyIdentifier(local_ref< array<jbyte,1> > const &a0)
@@ -393,8 +401,8 @@ void java::security::cert::X509CertSelector::setAuthorityKeyIdentifier(local_ref
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(19),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getAuthorityKeyIdentifier()
@@ -403,8 +411,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getAuthority
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(20),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setCertificateValid(local_ref< java::util::Date > const &a0)
@@ -413,8 +421,8 @@ void java::security::cert::X509CertSelector::setCertificateValid(local_ref< java
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(21),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::security::cert::X509CertSelector::getCertificateValid()
@@ -423,8 +431,8 @@ local_ref< java::util::Date > java::security::cert::X509CertSelector::getCertifi
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(22),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setPrivateKeyValid(local_ref< java::util::Date > const &a0)
@@ -433,8 +441,8 @@ void java::security::cert::X509CertSelector::setPrivateKeyValid(local_ref< java:
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(23),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::security::cert::X509CertSelector::getPrivateKeyValid()
@@ -443,8 +451,8 @@ local_ref< java::util::Date > java::security::cert::X509CertSelector::getPrivate
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(24),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubjectPublicKeyAlgID(local_ref< java::lang::String > const &a0)
@@ -453,8 +461,8 @@ void java::security::cert::X509CertSelector::setSubjectPublicKeyAlgID(local_ref<
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(25),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::X509CertSelector::getSubjectPublicKeyAlgID()
@@ -463,8 +471,8 @@ local_ref< java::lang::String > java::security::cert::X509CertSelector::getSubje
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(26),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubjectPublicKey(local_ref< java::security::PublicKey > const &a0)
@@ -473,8 +481,8 @@ void java::security::cert::X509CertSelector::setSubjectPublicKey(local_ref< java
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(27),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::cert::X509CertSelector::setSubjectPublicKey(local_ref< array<jbyte,1> > const &a0)
@@ -483,8 +491,8 @@ void java::security::cert::X509CertSelector::setSubjectPublicKey(local_ref< arra
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(28),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PublicKey > java::security::cert::X509CertSelector::getSubjectPublicKey()
@@ -493,8 +501,8 @@ local_ref< java::security::PublicKey > java::security::cert::X509CertSelector::g
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(29),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject());
+		local_ref< java::security::PublicKey >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setKeyUsage(local_ref< array<jboolean,1> > const &a0)
@@ -503,8 +511,8 @@ void java::security::cert::X509CertSelector::setKeyUsage(local_ref< array<jboole
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(30),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jboolean,1> > java::security::cert::X509CertSelector::getKeyUsage()
@@ -513,8 +521,8 @@ local_ref< array<jboolean,1> > java::security::cert::X509CertSelector::getKeyUsa
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(31),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< array<jboolean,1> > >
-	(get_jobject());
+		local_ref< array<jboolean,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setExtendedKeyUsage(local_ref< java::util::Set > const &a0)
@@ -523,8 +531,8 @@ void java::security::cert::X509CertSelector::setExtendedKeyUsage(local_ref< java
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(32),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::security::cert::X509CertSelector::getExtendedKeyUsage()
@@ -533,8 +541,8 @@ local_ref< java::util::Set > java::security::cert::X509CertSelector::getExtended
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(33),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setMatchAllSubjectAltNames(jboolean a0)
@@ -543,8 +551,8 @@ void java::security::cert::X509CertSelector::setMatchAllSubjectAltNames(jboolean
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(34),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::X509CertSelector::getMatchAllSubjectAltNames()
@@ -553,8 +561,8 @@ jboolean java::security::cert::X509CertSelector::getMatchAllSubjectAltNames()
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(35),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setSubjectAlternativeNames(local_ref< java::util::Collection > const &a0)
@@ -563,8 +571,8 @@ void java::security::cert::X509CertSelector::setSubjectAlternativeNames(local_re
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(36),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::cert::X509CertSelector::addSubjectAlternativeName(jint a0, local_ref< java::lang::String > const &a1)
@@ -573,8 +581,8 @@ void java::security::cert::X509CertSelector::addSubjectAlternativeName(jint a0, 
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(37),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::cert::X509CertSelector::addSubjectAlternativeName(jint a0, local_ref< array<jbyte,1> > const &a1)
@@ -583,8 +591,8 @@ void java::security::cert::X509CertSelector::addSubjectAlternativeName(jint a0, 
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(38),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Collection > java::security::cert::X509CertSelector::getSubjectAlternativeNames()
@@ -593,8 +601,8 @@ local_ref< java::util::Collection > java::security::cert::X509CertSelector::getS
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(39),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setNameConstraints(local_ref< array<jbyte,1> > const &a0)
@@ -603,8 +611,8 @@ void java::security::cert::X509CertSelector::setNameConstraints(local_ref< array
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(40),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getNameConstraints()
@@ -613,8 +621,8 @@ local_ref< array<jbyte,1> > java::security::cert::X509CertSelector::getNameConst
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(41),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setBasicConstraints(jint a0)
@@ -623,8 +631,8 @@ void java::security::cert::X509CertSelector::setBasicConstraints(jint a0)
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(42),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::security::cert::X509CertSelector::getBasicConstraints()
@@ -633,8 +641,8 @@ jint java::security::cert::X509CertSelector::getBasicConstraints()
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(43),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(43), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setPolicy(local_ref< java::util::Set > const &a0)
@@ -643,8 +651,8 @@ void java::security::cert::X509CertSelector::setPolicy(local_ref< java::util::Se
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(44),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::security::cert::X509CertSelector::getPolicy()
@@ -653,8 +661,8 @@ local_ref< java::util::Set > java::security::cert::X509CertSelector::getPolicy()
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(45),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 void java::security::cert::X509CertSelector::setPathToNames(local_ref< java::util::Collection > const &a0)
@@ -663,8 +671,8 @@ void java::security::cert::X509CertSelector::setPathToNames(local_ref< java::uti
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(46),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::cert::X509CertSelector::addPathToName(jint a0, local_ref< java::lang::String > const &a1)
@@ -673,8 +681,8 @@ void java::security::cert::X509CertSelector::addPathToName(jint a0, local_ref< j
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(47),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::cert::X509CertSelector::addPathToName(jint a0, local_ref< array<jbyte,1> > const &a1)
@@ -683,8 +691,8 @@ void java::security::cert::X509CertSelector::addPathToName(jint a0, local_ref< a
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(48),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Collection > java::security::cert::X509CertSelector::getPathToNames()
@@ -693,8 +701,8 @@ local_ref< java::util::Collection > java::security::cert::X509CertSelector::getP
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(49),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::X509CertSelector::toString()
@@ -703,8 +711,8 @@ local_ref< java::lang::String > java::security::cert::X509CertSelector::toString
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(50),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::X509CertSelector::match(local_ref< java::security::cert::Certificate > const &a0)
@@ -713,8 +721,8 @@ jboolean java::security::cert::X509CertSelector::match(local_ref< java::security
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(51),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::security::cert::X509CertSelector::clone()
@@ -723,8 +731,8 @@ local_ref< java::lang::Object > java::security::cert::X509CertSelector::clone()
 		java::security::cert::X509CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::X509CertSelector::J2CPP_METHOD_NAME(52),
 		java::security::cert::X509CertSelector::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

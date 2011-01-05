@@ -63,8 +63,8 @@ namespace android { namespace accounts {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AuthenticatorDescription(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, jint, jint, jint, jint);
@@ -100,14 +100,14 @@ namespace j2cpp {
 
 
 
-android::accounts::AuthenticatorDescription::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::accounts::AuthenticatorDescription::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::accounts::AuthenticatorDescription::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -116,8 +116,8 @@ android::accounts::AuthenticatorDescription::AuthenticatorDescription(local_ref<
 	call_new_object<
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(0),
-		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5)
+		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5)
 )
 , type(get_jobject())
 , labelId(get_jobject())
@@ -135,8 +135,8 @@ local_ref< android::accounts::AuthenticatorDescription > android::accounts::Auth
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(1),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::accounts::AuthenticatorDescription > >
-	(a0);
+		local_ref< android::accounts::AuthenticatorDescription >
+	>(a0);
 }
 
 jint android::accounts::AuthenticatorDescription::describeContents()
@@ -145,8 +145,8 @@ jint android::accounts::AuthenticatorDescription::describeContents()
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(2),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::accounts::AuthenticatorDescription::hashCode()
@@ -155,8 +155,8 @@ jint android::accounts::AuthenticatorDescription::hashCode()
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(3),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::accounts::AuthenticatorDescription::equals(local_ref< java::lang::Object > const &a0)
@@ -165,8 +165,8 @@ jboolean android::accounts::AuthenticatorDescription::equals(local_ref< java::la
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(4),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::accounts::AuthenticatorDescription::toString()
@@ -175,8 +175,8 @@ local_ref< java::lang::String > android::accounts::AuthenticatorDescription::toS
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(5),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::accounts::AuthenticatorDescription::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -185,8 +185,8 @@ void android::accounts::AuthenticatorDescription::writeToParcel(local_ref< andro
 		android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME,
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(6),
 		android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

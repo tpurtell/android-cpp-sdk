@@ -78,8 +78,8 @@ android::app::backup::RestoreObserver::RestoreObserver()
 	call_new_object<
 		android::app::backup::RestoreObserver::J2CPP_CLASS_NAME,
 		android::app::backup::RestoreObserver::J2CPP_METHOD_NAME(0),
-		android::app::backup::RestoreObserver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::backup::RestoreObserver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ void android::app::backup::RestoreObserver::restoreStarting(jint a0)
 		android::app::backup::RestoreObserver::J2CPP_CLASS_NAME,
 		android::app::backup::RestoreObserver::J2CPP_METHOD_NAME(1),
 		android::app::backup::RestoreObserver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::backup::RestoreObserver::onUpdate(jint a0, local_ref< java::lang::String > const &a1)
@@ -101,8 +101,8 @@ void android::app::backup::RestoreObserver::onUpdate(jint a0, local_ref< java::l
 		android::app::backup::RestoreObserver::J2CPP_CLASS_NAME,
 		android::app::backup::RestoreObserver::J2CPP_METHOD_NAME(2),
 		android::app::backup::RestoreObserver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::backup::RestoreObserver::restoreFinished(jint a0)
@@ -111,8 +111,8 @@ void android::app::backup::RestoreObserver::restoreFinished(jint a0)
 		android::app::backup::RestoreObserver::J2CPP_CLASS_NAME,
 		android::app::backup::RestoreObserver::J2CPP_METHOD_NAME(3),
 		android::app::backup::RestoreObserver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

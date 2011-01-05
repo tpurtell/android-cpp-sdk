@@ -86,8 +86,8 @@ jint org::apache::http::util::LangUtils::hashCode(jint a0, jint a1)
 		org::apache::http::util::LangUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::LangUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::util::LangUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint org::apache::http::util::LangUtils::hashCode(jint a0, jboolean a1)
@@ -96,8 +96,8 @@ jint org::apache::http::util::LangUtils::hashCode(jint a0, jboolean a1)
 		org::apache::http::util::LangUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::LangUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::util::LangUtils::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint org::apache::http::util::LangUtils::hashCode(jint a0, local_ref< java::lang::Object > const &a1)
@@ -106,8 +106,8 @@ jint org::apache::http::util::LangUtils::hashCode(jint a0, local_ref< java::lang
 		org::apache::http::util::LangUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::LangUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::util::LangUtils::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean org::apache::http::util::LangUtils::equals(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -116,8 +116,8 @@ jboolean org::apache::http::util::LangUtils::equals(local_ref< java::lang::Objec
 		org::apache::http::util::LangUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::LangUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::util::LangUtils::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean org::apache::http::util::LangUtils::equals(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -126,8 +126,8 @@ jboolean org::apache::http::util::LangUtils::equals(local_ref< array< local_ref<
 		org::apache::http::util::LangUtils::J2CPP_CLASS_NAME,
 		org::apache::http::util::LangUtils::J2CPP_METHOD_NAME(5),
 		org::apache::http::util::LangUtils::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 

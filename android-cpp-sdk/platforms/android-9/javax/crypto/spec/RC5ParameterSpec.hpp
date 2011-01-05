@@ -94,8 +94,8 @@ javax::crypto::spec::RC5ParameterSpec::RC5ParameterSpec(jint a0, jint a1, jint a
 	call_new_object<
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -107,8 +107,8 @@ javax::crypto::spec::RC5ParameterSpec::RC5ParameterSpec(jint a0, jint a1, jint a
 	call_new_object<
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -120,8 +120,8 @@ javax::crypto::spec::RC5ParameterSpec::RC5ParameterSpec(jint a0, jint a1, jint a
 	call_new_object<
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(2),
-		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4)
+		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -133,8 +133,8 @@ jint javax::crypto::spec::RC5ParameterSpec::getVersion()
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::RC5ParameterSpec::getRounds()
@@ -143,8 +143,8 @@ jint javax::crypto::spec::RC5ParameterSpec::getRounds()
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::RC5ParameterSpec::getWordSize()
@@ -153,8 +153,8 @@ jint javax::crypto::spec::RC5ParameterSpec::getWordSize()
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(5),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::crypto::spec::RC5ParameterSpec::getIV()
@@ -163,8 +163,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::RC5ParameterSpec::getIV()
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(6),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean javax::crypto::spec::RC5ParameterSpec::equals(local_ref< java::lang::Object > const &a0)
@@ -173,8 +173,8 @@ jboolean javax::crypto::spec::RC5ParameterSpec::equals(local_ref< java::lang::Ob
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(7),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::spec::RC5ParameterSpec::hashCode()
@@ -183,8 +183,8 @@ jint javax::crypto::spec::RC5ParameterSpec::hashCode()
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_NAME(8),
 		javax::crypto::spec::RC5ParameterSpec::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

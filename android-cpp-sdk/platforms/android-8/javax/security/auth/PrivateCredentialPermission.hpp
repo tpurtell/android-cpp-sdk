@@ -15,10 +15,14 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 
@@ -49,7 +53,10 @@ namespace javax { namespace security { namespace auth {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		PrivateCredentialPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -79,9 +86,24 @@ namespace j2cpp {
 
 
 
+javax::security::auth::PrivateCredentialPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::security::auth::PrivateCredentialPermission::operator local_ref<java::security::Permission>() const
 {
 	return local_ref<java::security::Permission>(get_jobject());
+}
+
+javax::security::auth::PrivateCredentialPermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jobject());
+}
+
+javax::security::auth::PrivateCredentialPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -90,8 +112,8 @@ javax::security::auth::PrivateCredentialPermission::PrivateCredentialPermission(
 	call_new_object<
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(0),
-		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -103,8 +125,8 @@ local_ref< array< local_ref< java::lang::String >, 2> > javax::security::auth::P
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(1),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::String >, 2> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 2> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::security::auth::PrivateCredentialPermission::getActions()
@@ -113,8 +135,8 @@ local_ref< java::lang::String > javax::security::auth::PrivateCredentialPermissi
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(2),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::security::auth::PrivateCredentialPermission::getCredentialClass()
@@ -123,8 +145,8 @@ local_ref< java::lang::String > javax::security::auth::PrivateCredentialPermissi
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(3),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint javax::security::auth::PrivateCredentialPermission::hashCode()
@@ -133,8 +155,8 @@ jint javax::security::auth::PrivateCredentialPermission::hashCode()
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(4),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean javax::security::auth::PrivateCredentialPermission::equals(local_ref< java::lang::Object > const &a0)
@@ -143,8 +165,8 @@ jboolean javax::security::auth::PrivateCredentialPermission::equals(local_ref< j
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(5),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::security::auth::PrivateCredentialPermission::implies(local_ref< java::security::Permission > const &a0)
@@ -153,8 +175,8 @@ jboolean javax::security::auth::PrivateCredentialPermission::implies(local_ref< 
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(6),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PermissionCollection > javax::security::auth::PrivateCredentialPermission::newPermissionCollection()
@@ -163,8 +185,8 @@ local_ref< java::security::PermissionCollection > javax::security::auth::Private
 		javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(7),
 		javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 

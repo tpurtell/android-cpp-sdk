@@ -81,8 +81,8 @@ void junit::framework::TestListener::addError(local_ref< junit::framework::Test 
 		junit::framework::TestListener::J2CPP_CLASS_NAME,
 		junit::framework::TestListener::J2CPP_METHOD_NAME(0),
 		junit::framework::TestListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::framework::TestListener::addFailure(local_ref< junit::framework::Test > const &a0, local_ref< junit::framework::AssertionFailedError > const &a1)
@@ -91,8 +91,8 @@ void junit::framework::TestListener::addFailure(local_ref< junit::framework::Tes
 		junit::framework::TestListener::J2CPP_CLASS_NAME,
 		junit::framework::TestListener::J2CPP_METHOD_NAME(1),
 		junit::framework::TestListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::framework::TestListener::endTest(local_ref< junit::framework::Test > const &a0)
@@ -101,8 +101,8 @@ void junit::framework::TestListener::endTest(local_ref< junit::framework::Test >
 		junit::framework::TestListener::J2CPP_CLASS_NAME,
 		junit::framework::TestListener::J2CPP_METHOD_NAME(2),
 		junit::framework::TestListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::framework::TestListener::startTest(local_ref< junit::framework::Test > const &a0)
@@ -111,8 +111,8 @@ void junit::framework::TestListener::startTest(local_ref< junit::framework::Test
 		junit::framework::TestListener::J2CPP_CLASS_NAME,
 		junit::framework::TestListener::J2CPP_METHOD_NAME(3),
 		junit::framework::TestListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

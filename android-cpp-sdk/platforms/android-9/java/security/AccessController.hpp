@@ -93,8 +93,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivileged(l
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(1),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivileged(local_ref< java::security::PrivilegedAction > const &a0, local_ref< java::security::AccessControlContext > const &a1)
@@ -103,8 +103,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivileged(l
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(2),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivileged(local_ref< java::security::PrivilegedExceptionAction > const &a0)
@@ -113,8 +113,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivileged(l
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(3),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivileged(local_ref< java::security::PrivilegedExceptionAction > const &a0, local_ref< java::security::AccessControlContext > const &a1)
@@ -123,8 +123,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivileged(l
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(4),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivilegedWithCombiner(local_ref< java::security::PrivilegedAction > const &a0)
@@ -133,8 +133,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivilegedWi
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(5),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivilegedWithCombiner(local_ref< java::security::PrivilegedExceptionAction > const &a0)
@@ -143,8 +143,8 @@ local_ref< java::lang::Object > java::security::AccessController::doPrivilegedWi
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(6),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 void java::security::AccessController::checkPermission(local_ref< java::security::Permission > const &a0)
@@ -153,8 +153,8 @@ void java::security::AccessController::checkPermission(local_ref< java::security
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(7),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::security::AccessControlContext > java::security::AccessController::getContext()
@@ -163,8 +163,8 @@ local_ref< java::security::AccessControlContext > java::security::AccessControll
 		java::security::AccessController::J2CPP_CLASS_NAME,
 		java::security::AccessController::J2CPP_METHOD_NAME(8),
 		java::security::AccessController::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::AccessControlContext > >
-	();
+		local_ref< java::security::AccessControlContext >
+	>();
 }
 
 

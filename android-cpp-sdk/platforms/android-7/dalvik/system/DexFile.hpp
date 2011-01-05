@@ -94,8 +94,8 @@ dalvik::system::DexFile::DexFile(local_ref< java::io::File > const &a0)
 	call_new_object<
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(0),
-		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -107,8 +107,8 @@ dalvik::system::DexFile::DexFile(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(1),
-		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -120,8 +120,8 @@ local_ref< dalvik::system::DexFile > dalvik::system::DexFile::loadDex(local_ref<
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(2),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< dalvik::system::DexFile > >
-	(a0, a1, a2);
+		local_ref< dalvik::system::DexFile >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > dalvik::system::DexFile::getName()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > dalvik::system::DexFile::getName()
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(3),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void dalvik::system::DexFile::close()
@@ -140,8 +140,8 @@ void dalvik::system::DexFile::close()
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(4),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Class > dalvik::system::DexFile::loadClass(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -150,8 +150,8 @@ local_ref< java::lang::Class > dalvik::system::DexFile::loadClass(local_ref< jav
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(5),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Class > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Class >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Enumeration > dalvik::system::DexFile::entries()
@@ -160,8 +160,8 @@ local_ref< java::util::Enumeration > dalvik::system::DexFile::entries()
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(6),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 
@@ -171,8 +171,8 @@ jboolean dalvik::system::DexFile::isDexOptNeeded(local_ref< java::lang::String >
 		dalvik::system::DexFile::J2CPP_CLASS_NAME,
 		dalvik::system::DexFile::J2CPP_METHOD_NAME(8),
 		dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

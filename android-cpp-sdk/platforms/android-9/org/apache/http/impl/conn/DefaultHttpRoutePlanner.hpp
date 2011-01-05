@@ -94,8 +94,8 @@ org::apache::http::impl::conn::DefaultHttpRoutePlanner::DefaultHttpRoutePlanner(
 	call_new_object<
 		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -107,8 +107,8 @@ local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl
 		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::routing::HttpRoute > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::conn::routing::HttpRoute >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

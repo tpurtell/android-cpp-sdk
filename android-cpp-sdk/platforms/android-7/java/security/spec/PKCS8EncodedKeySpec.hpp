@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_SECURITY_SPEC_PKCS8ENCODEDKEYSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class EncodedKeySpec; } } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/spec/EncodedKeySpec.hpp>
+#include <java/security/spec/KeySpec.hpp>
 
 
 namespace j2cpp {
@@ -40,7 +44,9 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::EncodedKeySpec>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
 
 
 		PKCS8EncodedKeySpec(local_ref< array<jbyte,1> > const&);
@@ -65,9 +71,19 @@ namespace j2cpp {
 
 
 
+java::security::spec::PKCS8EncodedKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::spec::PKCS8EncodedKeySpec::operator local_ref<java::security::spec::EncodedKeySpec>() const
 {
 	return local_ref<java::security::spec::EncodedKeySpec>(get_jobject());
+}
+
+java::security::spec::PKCS8EncodedKeySpec::operator local_ref<java::security::spec::KeySpec>() const
+{
+	return local_ref<java::security::spec::KeySpec>(get_jobject());
 }
 
 
@@ -76,8 +92,8 @@ java::security::spec::PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(local_ref< array<
 	call_new_object<
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +105,8 @@ local_ref< array<jbyte,1> > java::security::spec::PKCS8EncodedKeySpec::getEncode
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::spec::PKCS8EncodedKeySpec::getFormat()
@@ -99,8 +115,8 @@ local_ref< java::lang::String > java::security::spec::PKCS8EncodedKeySpec::getFo
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::PKCS8EncodedKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

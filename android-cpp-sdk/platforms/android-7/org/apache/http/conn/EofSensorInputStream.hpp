@@ -11,12 +11,16 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_EOFSENSORINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class EofSensorWatcher; } } } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 #include <org/apache/http/conn/EofSensorWatcher.hpp>
 
@@ -52,7 +56,9 @@ namespace org { namespace apache { namespace http { namespace conn {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
 
 
@@ -85,9 +91,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::EofSensorInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 org::apache::http::conn::EofSensorInputStream::operator local_ref<java::io::InputStream>() const
 {
 	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+org::apache::http::conn::EofSensorInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::conn::EofSensorInputStream::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
@@ -101,8 +117,8 @@ org::apache::http::conn::EofSensorInputStream::EofSensorInputStream(local_ref< j
 	call_new_object<
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -115,8 +131,8 @@ jint org::apache::http::conn::EofSensorInputStream::read()
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::conn::EofSensorInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -125,8 +141,8 @@ jint org::apache::http::conn::EofSensorInputStream::read(local_ref< array<jbyte,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint org::apache::http::conn::EofSensorInputStream::read(local_ref< array<jbyte,1> > const &a0)
@@ -135,8 +151,8 @@ jint org::apache::http::conn::EofSensorInputStream::read(local_ref< array<jbyte,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::conn::EofSensorInputStream::available()
@@ -145,8 +161,8 @@ jint org::apache::http::conn::EofSensorInputStream::available()
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::conn::EofSensorInputStream::close()
@@ -155,8 +171,8 @@ void org::apache::http::conn::EofSensorInputStream::close()
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -168,8 +184,8 @@ void org::apache::http::conn::EofSensorInputStream::releaseConnection()
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(10),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::conn::EofSensorInputStream::abortConnection()
@@ -178,8 +194,8 @@ void org::apache::http::conn::EofSensorInputStream::abortConnection()
 		org::apache::http::conn::EofSensorInputStream::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_NAME(11),
 		org::apache::http::conn::EofSensorInputStream::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -11,19 +11,27 @@
 #define J2CPP_ANDROID_TEXT_STYLE_REPLACEMENTSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateLayout; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class MetricAffectingSpan; } } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { class FontMetricsInt; } } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/MetricAffectingSpan.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
+#include <android/text/style/UpdateLayout.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -49,7 +57,11 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
+		operator local_ref<android::text::style::UpdateLayout>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::style::CharacterStyle>() const;
 		operator local_ref<android::text::style::MetricAffectingSpan>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ReplacementSpan();
@@ -76,9 +88,29 @@ namespace j2cpp {
 
 
 
+android::text::style::ReplacementSpan::operator local_ref<android::text::style::UpdateLayout>() const
+{
+	return local_ref<android::text::style::UpdateLayout>(get_jobject());
+}
+
+android::text::style::ReplacementSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
+android::text::style::ReplacementSpan::operator local_ref<android::text::style::CharacterStyle>() const
+{
+	return local_ref<android::text::style::CharacterStyle>(get_jobject());
+}
+
 android::text::style::ReplacementSpan::operator local_ref<android::text::style::MetricAffectingSpan>() const
 {
 	return local_ref<android::text::style::MetricAffectingSpan>(get_jobject());
+}
+
+android::text::style::ReplacementSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +119,8 @@ android::text::style::ReplacementSpan::ReplacementSpan()
 	call_new_object<
 		android::text::style::ReplacementSpan::J2CPP_CLASS_NAME,
 		android::text::style::ReplacementSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +132,8 @@ jint android::text::style::ReplacementSpan::getSize(local_ref< android::graphics
 		android::text::style::ReplacementSpan::J2CPP_CLASS_NAME,
 		android::text::style::ReplacementSpan::J2CPP_METHOD_NAME(1),
 		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::text::style::ReplacementSpan::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3, jfloat a4, jint a5, jint a6, jint a7, local_ref< android::graphics::Paint > const &a8)
@@ -110,8 +142,8 @@ void android::text::style::ReplacementSpan::draw(local_ref< android::graphics::C
 		android::text::style::ReplacementSpan::J2CPP_CLASS_NAME,
 		android::text::style::ReplacementSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::text::style::ReplacementSpan::updateMeasureState(local_ref< android::text::TextPaint > const &a0)
@@ -120,8 +152,8 @@ void android::text::style::ReplacementSpan::updateMeasureState(local_ref< androi
 		android::text::style::ReplacementSpan::J2CPP_CLASS_NAME,
 		android::text::style::ReplacementSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::style::ReplacementSpan::updateDrawState(local_ref< android::text::TextPaint > const &a0)
@@ -130,8 +162,8 @@ void android::text::style::ReplacementSpan::updateDrawState(local_ref< android::
 		android::text::style::ReplacementSpan::J2CPP_CLASS_NAME,
 		android::text::style::ReplacementSpan::J2CPP_METHOD_NAME(4),
 		android::text::style::ReplacementSpan::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

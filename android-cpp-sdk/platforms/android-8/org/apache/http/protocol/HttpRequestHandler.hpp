@@ -77,8 +77,8 @@ void org::apache::http::protocol::HttpRequestHandler::handle(local_ref< org::apa
 		org::apache::http::protocol::HttpRequestHandler::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpRequestHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::protocol::HttpRequestHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

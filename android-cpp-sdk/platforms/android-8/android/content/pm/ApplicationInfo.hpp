@@ -144,8 +144,9 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
-		operator local_ref<android::content::pm::PackageItemInfo>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<android::content::pm::PackageItemInfo>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ApplicationInfo();
@@ -228,8 +229,8 @@ android::content::pm::ApplicationInfo_::DisplayNameComparator::DisplayNameCompar
 	call_new_object<
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(0),
-		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -241,8 +242,8 @@ jint android::content::pm::ApplicationInfo_::DisplayNameComparator::compare(loca
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(1),
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::pm::ApplicationInfo_::DisplayNameComparator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -251,8 +252,8 @@ jint android::content::pm::ApplicationInfo_::DisplayNameComparator::compare(loca
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(2),
 		android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -263,14 +264,19 @@ J2CPP_DEFINE_METHOD(android::content::pm::ApplicationInfo_::DisplayNameComparato
 
 
 
+android::content::pm::ApplicationInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
 android::content::pm::ApplicationInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
 	return local_ref<android::content::pm::PackageItemInfo>(get_jobject());
 }
 
-android::content::pm::ApplicationInfo::operator local_ref<android::os::Parcelable>() const
+android::content::pm::ApplicationInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::os::Parcelable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -279,8 +285,8 @@ android::content::pm::ApplicationInfo::ApplicationInfo()
 	call_new_object<
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , taskAffinity(get_jobject())
 , permission(get_jobject())
@@ -308,8 +314,8 @@ android::content::pm::ApplicationInfo::ApplicationInfo(local_ref< android::conte
 	call_new_object<
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , taskAffinity(get_jobject())
 , permission(get_jobject())
@@ -337,8 +343,8 @@ void android::content::pm::ApplicationInfo::dump(local_ref< android::util::Print
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::ApplicationInfo::toString()
@@ -347,8 +353,8 @@ local_ref< java::lang::String > android::content::pm::ApplicationInfo::toString(
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::ApplicationInfo::describeContents()
@@ -357,8 +363,8 @@ jint android::content::pm::ApplicationInfo::describeContents()
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::ApplicationInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -367,8 +373,8 @@ void android::content::pm::ApplicationInfo::writeToParcel(local_ref< android::os
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::content::pm::ApplicationInfo::loadDescription(local_ref< android::content::pm::PackageManager > const &a0)
@@ -377,8 +383,8 @@ local_ref< java::lang::CharSequence > android::content::pm::ApplicationInfo::loa
 		android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(6),
 		android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 

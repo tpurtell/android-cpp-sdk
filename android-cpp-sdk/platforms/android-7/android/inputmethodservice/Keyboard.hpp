@@ -272,8 +272,8 @@ android::inputmethodservice::Keyboard_::Key::Key(local_ref< android::inputmethod
 	call_new_object<
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , codes(get_jobject())
 , label(get_jobject())
@@ -303,8 +303,8 @@ android::inputmethodservice::Keyboard_::Key::Key(local_ref< android::content::re
 	call_new_object<
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(1),
-		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4)
+		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4)
 )
 , codes(get_jobject())
 , label(get_jobject())
@@ -334,8 +334,8 @@ void android::inputmethodservice::Keyboard_::Key::onPressed()
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(2),
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::Keyboard_::Key::onReleased(jboolean a0)
@@ -344,8 +344,8 @@ void android::inputmethodservice::Keyboard_::Key::onReleased(jboolean a0)
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::Keyboard_::Key::isInside(jint a0, jint a1)
@@ -354,8 +354,8 @@ jboolean android::inputmethodservice::Keyboard_::Key::isInside(jint a0, jint a1)
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jint android::inputmethodservice::Keyboard_::Key::squaredDistanceFrom(jint a0, jint a1)
@@ -364,8 +364,8 @@ jint android::inputmethodservice::Keyboard_::Key::squaredDistanceFrom(jint a0, j
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(5),
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jint,1> > android::inputmethodservice::Keyboard_::Key::getCurrentDrawableState()
@@ -374,8 +374,8 @@ local_ref< array<jint,1> > android::inputmethodservice::Keyboard_::Key::getCurre
 		android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(6),
 		android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 
@@ -419,8 +419,8 @@ android::inputmethodservice::Keyboard_::Row::Row(local_ref< android::inputmethod
 	call_new_object<
 		android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , defaultWidth(get_jobject())
 , defaultHeight(get_jobject())
@@ -438,8 +438,8 @@ android::inputmethodservice::Keyboard_::Row::Row(local_ref< android::content::re
 	call_new_object<
 		android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(1),
-		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 , defaultWidth(get_jobject())
 , defaultHeight(get_jobject())
@@ -476,8 +476,8 @@ android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Con
 	call_new_object<
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -489,8 +489,8 @@ android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Con
 	call_new_object<
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(1),
-		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -502,8 +502,8 @@ android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Con
 	call_new_object<
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(2),
-		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4)
+		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -515,8 +515,8 @@ local_ref< java::util::List > android::inputmethodservice::Keyboard::getKeys()
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::inputmethodservice::Keyboard::getModifierKeys()
@@ -525,8 +525,8 @@ local_ref< java::util::List > android::inputmethodservice::Keyboard::getModifier
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 
@@ -543,8 +543,8 @@ jint android::inputmethodservice::Keyboard::getHeight()
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(13),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::inputmethodservice::Keyboard::getMinWidth()
@@ -553,8 +553,8 @@ jint android::inputmethodservice::Keyboard::getMinWidth()
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(14),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::Keyboard::setShifted(jboolean a0)
@@ -563,8 +563,8 @@ jboolean android::inputmethodservice::Keyboard::setShifted(jboolean a0)
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(15),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::Keyboard::isShifted()
@@ -573,8 +573,8 @@ jboolean android::inputmethodservice::Keyboard::isShifted()
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(16),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::inputmethodservice::Keyboard::getShiftKeyIndex()
@@ -583,8 +583,8 @@ jint android::inputmethodservice::Keyboard::getShiftKeyIndex()
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(17),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jint,1> > android::inputmethodservice::Keyboard::getNearestKeys(jint a0, jint a1)
@@ -593,8 +593,8 @@ local_ref< array<jint,1> > android::inputmethodservice::Keyboard::getNearestKeys
 		android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME,
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(18),
 		android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,10 +11,13 @@
 #define J2CPP_ANDROID_CONTENT_PM_PACKAGEMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace content { class IntentFilter; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ActivityInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class InstrumentationInfo; } } } }
@@ -51,9 +54,12 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 #include <android/content/res/XmlResourceParser.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AndroidException.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/util/List.hpp>
 
 
@@ -80,6 +86,10 @@ namespace android { namespace content { namespace pm {
 			{
 			}
 
+			operator local_ref<java::lang::Exception>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 			operator local_ref<android::util::AndroidException>() const;
 
 
@@ -376,6 +386,26 @@ namespace j2cpp {
 
 
 
+android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<android::util::AndroidException>() const
 {
 	return local_ref<android::util::AndroidException>(get_jobject());
@@ -387,8 +417,8 @@ android::content::pm::PackageManager_::NameNotFoundException::NameNotFoundExcept
 	call_new_object<
 		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -400,8 +430,8 @@ android::content::pm::PackageManager_::NameNotFoundException::NameNotFoundExcept
 	call_new_object<
 		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(1),
-		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -425,8 +455,8 @@ android::content::pm::PackageManager::PackageManager()
 	call_new_object<
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -438,8 +468,8 @@ local_ref< android::content::pm::PackageInfo > android::content::pm::PackageMana
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(1),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::pm::PackageInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::PackageInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::PackageManager::currentToCanonicalPackageNames(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -448,8 +478,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::Pa
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(2),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::PackageManager::canonicalToCurrentPackageNames(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -458,8 +488,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::Pa
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(3),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::Intent > android::content::pm::PackageManager::getLaunchIntentForPackage(local_ref< java::lang::String > const &a0)
@@ -468,8 +498,8 @@ local_ref< android::content::Intent > android::content::pm::PackageManager::getL
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(4),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::Intent > >
-	(get_jobject(), a0);
+		local_ref< android::content::Intent >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > android::content::pm::PackageManager::getPackageGids(local_ref< java::lang::String > const &a0)
@@ -478,8 +508,8 @@ local_ref< array<jint,1> > android::content::pm::PackageManager::getPackageGids(
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(5),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::pm::PermissionInfo > android::content::pm::PackageManager::getPermissionInfo(local_ref< java::lang::String > const &a0, jint a1)
@@ -488,8 +518,8 @@ local_ref< android::content::pm::PermissionInfo > android::content::pm::PackageM
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(6),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::pm::PermissionInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::PermissionInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryPermissionsByGroup(local_ref< java::lang::String > const &a0, jint a1)
@@ -498,8 +528,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryPermiss
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(7),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::PermissionGroupInfo > android::content::pm::PackageManager::getPermissionGroupInfo(local_ref< java::lang::String > const &a0, jint a1)
@@ -508,8 +538,8 @@ local_ref< android::content::pm::PermissionGroupInfo > android::content::pm::Pac
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(8),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::pm::PermissionGroupInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::PermissionGroupInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::getAllPermissionGroups(jint a0)
@@ -518,8 +548,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::getAllPermis
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(9),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::pm::ApplicationInfo > android::content::pm::PackageManager::getApplicationInfo(local_ref< java::lang::String > const &a0, jint a1)
@@ -528,8 +558,8 @@ local_ref< android::content::pm::ApplicationInfo > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(10),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::content::pm::ApplicationInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ApplicationInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ActivityInfo > android::content::pm::PackageManager::getActivityInfo(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -538,8 +568,8 @@ local_ref< android::content::pm::ActivityInfo > android::content::pm::PackageMan
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(11),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::content::pm::ActivityInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ActivityInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ActivityInfo > android::content::pm::PackageManager::getReceiverInfo(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -548,8 +578,8 @@ local_ref< android::content::pm::ActivityInfo > android::content::pm::PackageMan
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(12),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::pm::ActivityInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ActivityInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ServiceInfo > android::content::pm::PackageManager::getServiceInfo(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -558,8 +588,8 @@ local_ref< android::content::pm::ServiceInfo > android::content::pm::PackageMana
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(13),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::content::pm::ServiceInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ServiceInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ProviderInfo > android::content::pm::PackageManager::getProviderInfo(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -568,8 +598,8 @@ local_ref< android::content::pm::ProviderInfo > android::content::pm::PackageMan
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(14),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::content::pm::ProviderInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ProviderInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::getInstalledPackages(jint a0)
@@ -578,8 +608,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::getInstalled
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(15),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::PackageManager::checkPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -588,8 +618,8 @@ jint android::content::pm::PackageManager::checkPermission(local_ref< java::lang
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(16),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::pm::PackageManager::addPermission(local_ref< android::content::pm::PermissionInfo > const &a0)
@@ -598,8 +628,8 @@ jboolean android::content::pm::PackageManager::addPermission(local_ref< android:
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(17),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::pm::PackageManager::addPermissionAsync(local_ref< android::content::pm::PermissionInfo > const &a0)
@@ -608,8 +638,8 @@ jboolean android::content::pm::PackageManager::addPermissionAsync(local_ref< and
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(18),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::content::pm::PackageManager::removePermission(local_ref< java::lang::String > const &a0)
@@ -618,8 +648,8 @@ void android::content::pm::PackageManager::removePermission(local_ref< java::lan
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(19),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::PackageManager::checkSignatures(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -628,8 +658,8 @@ jint android::content::pm::PackageManager::checkSignatures(local_ref< java::lang
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(20),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::pm::PackageManager::checkSignatures(jint a0, jint a1)
@@ -638,8 +668,8 @@ jint android::content::pm::PackageManager::checkSignatures(jint a0, jint a1)
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(21),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::PackageManager::getPackagesForUid(jint a0)
@@ -648,8 +678,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::Pa
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(22),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::pm::PackageManager::getNameForUid(jint a0)
@@ -658,8 +688,8 @@ local_ref< java::lang::String > android::content::pm::PackageManager::getNameFor
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(23),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::getInstalledApplications(jint a0)
@@ -668,8 +698,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::getInstalled
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(24),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::PackageManager::getSystemSharedLibraryNames()
@@ -678,8 +708,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::pm::Pa
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(25),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< android::content::pm::FeatureInfo >, 1> > android::content::pm::PackageManager::getSystemAvailableFeatures()
@@ -688,8 +718,8 @@ local_ref< array< local_ref< android::content::pm::FeatureInfo >, 1> > android::
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(26),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< array< local_ref< android::content::pm::FeatureInfo >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::content::pm::FeatureInfo >, 1> >
+	>(get_jobject());
 }
 
 jboolean android::content::pm::PackageManager::hasSystemFeature(local_ref< java::lang::String > const &a0)
@@ -698,8 +728,8 @@ jboolean android::content::pm::PackageManager::hasSystemFeature(local_ref< java:
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(27),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::pm::ResolveInfo > android::content::pm::PackageManager::resolveActivity(local_ref< android::content::Intent > const &a0, jint a1)
@@ -708,8 +738,8 @@ local_ref< android::content::pm::ResolveInfo > android::content::pm::PackageMana
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(28),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::content::pm::ResolveInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ResolveInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryIntentActivities(local_ref< android::content::Intent > const &a0, jint a1)
@@ -718,8 +748,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryIntentA
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(29),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryIntentActivityOptions(local_ref< android::content::ComponentName > const &a0, local_ref< array< local_ref< android::content::Intent >, 1> > const &a1, local_ref< android::content::Intent > const &a2, jint a3)
@@ -728,8 +758,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryIntentA
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(30),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryBroadcastReceivers(local_ref< android::content::Intent > const &a0, jint a1)
@@ -738,8 +768,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryBroadca
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(31),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ResolveInfo > android::content::pm::PackageManager::resolveService(local_ref< android::content::Intent > const &a0, jint a1)
@@ -748,8 +778,8 @@ local_ref< android::content::pm::ResolveInfo > android::content::pm::PackageMana
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(32),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< android::content::pm::ResolveInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ResolveInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryIntentServices(local_ref< android::content::Intent > const &a0, jint a1)
@@ -758,8 +788,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryIntentS
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(33),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::pm::ProviderInfo > android::content::pm::PackageManager::resolveContentProvider(local_ref< java::lang::String > const &a0, jint a1)
@@ -768,8 +798,8 @@ local_ref< android::content::pm::ProviderInfo > android::content::pm::PackageMan
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(34),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::content::pm::ProviderInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::ProviderInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryContentProviders(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -778,8 +808,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryContent
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(35),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::content::pm::InstrumentationInfo > android::content::pm::PackageManager::getInstrumentationInfo(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -788,8 +818,8 @@ local_ref< android::content::pm::InstrumentationInfo > android::content::pm::Pac
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(36),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::content::pm::InstrumentationInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::InstrumentationInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::queryInstrumentation(local_ref< java::lang::String > const &a0, jint a1)
@@ -798,8 +828,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::queryInstrum
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(37),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getDrawable(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::content::pm::ApplicationInfo > const &a2)
@@ -808,8 +838,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(38),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getActivityIcon(local_ref< android::content::ComponentName > const &a0)
@@ -818,8 +848,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(39),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getActivityIcon(local_ref< android::content::Intent > const &a0)
@@ -828,8 +858,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(40),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getDefaultActivityIcon()
@@ -838,8 +868,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(41),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getApplicationIcon(local_ref< android::content::pm::ApplicationInfo > const &a0)
@@ -848,8 +878,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(42),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getApplicationIcon(local_ref< java::lang::String > const &a0)
@@ -858,8 +888,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(43),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getActivityLogo(local_ref< android::content::ComponentName > const &a0)
@@ -868,8 +898,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(44),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getActivityLogo(local_ref< android::content::Intent > const &a0)
@@ -878,8 +908,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(45),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getApplicationLogo(local_ref< android::content::pm::ApplicationInfo > const &a0)
@@ -888,8 +918,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(46),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageManager::getApplicationLogo(local_ref< java::lang::String > const &a0)
@@ -898,8 +928,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(47),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::content::pm::PackageManager::getText(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::content::pm::ApplicationInfo > const &a2)
@@ -908,8 +938,8 @@ local_ref< java::lang::CharSequence > android::content::pm::PackageManager::getT
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(48),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::content::pm::PackageManager::getXml(local_ref< java::lang::String > const &a0, jint a1, local_ref< android::content::pm::ApplicationInfo > const &a2)
@@ -918,8 +948,8 @@ local_ref< android::content::res::XmlResourceParser > android::content::pm::Pack
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(49),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::content::pm::PackageManager::getApplicationLabel(local_ref< android::content::pm::ApplicationInfo > const &a0)
@@ -928,8 +958,8 @@ local_ref< java::lang::CharSequence > android::content::pm::PackageManager::getA
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(50),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::Resources > android::content::pm::PackageManager::getResourcesForActivity(local_ref< android::content::ComponentName > const &a0)
@@ -938,8 +968,8 @@ local_ref< android::content::res::Resources > android::content::pm::PackageManag
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(51),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< android::content::res::Resources > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::Resources >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::Resources > android::content::pm::PackageManager::getResourcesForApplication(local_ref< android::content::pm::ApplicationInfo > const &a0)
@@ -948,8 +978,8 @@ local_ref< android::content::res::Resources > android::content::pm::PackageManag
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(52),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< android::content::res::Resources > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::Resources >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::Resources > android::content::pm::PackageManager::getResourcesForApplication(local_ref< java::lang::String > const &a0)
@@ -958,8 +988,8 @@ local_ref< android::content::res::Resources > android::content::pm::PackageManag
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(53),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< android::content::res::Resources > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::Resources >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::pm::PackageInfo > android::content::pm::PackageManager::getPackageArchiveInfo(local_ref< java::lang::String > const &a0, jint a1)
@@ -968,8 +998,8 @@ local_ref< android::content::pm::PackageInfo > android::content::pm::PackageMana
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(54),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< android::content::pm::PackageInfo > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::pm::PackageInfo >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::PackageManager::getInstallerPackageName(local_ref< java::lang::String > const &a0)
@@ -978,8 +1008,8 @@ local_ref< java::lang::String > android::content::pm::PackageManager::getInstall
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(55),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::content::pm::PackageManager::addPackageToPreferred(local_ref< java::lang::String > const &a0)
@@ -988,8 +1018,8 @@ void android::content::pm::PackageManager::addPackageToPreferred(local_ref< java
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(56),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::pm::PackageManager::removePackageFromPreferred(local_ref< java::lang::String > const &a0)
@@ -998,8 +1028,8 @@ void android::content::pm::PackageManager::removePackageFromPreferred(local_ref<
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(57),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::content::pm::PackageManager::getPreferredPackages(jint a0)
@@ -1008,8 +1038,8 @@ local_ref< java::util::List > android::content::pm::PackageManager::getPreferred
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(58),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(58), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 void android::content::pm::PackageManager::addPreferredActivity(local_ref< android::content::IntentFilter > const &a0, jint a1, local_ref< array< local_ref< android::content::ComponentName >, 1> > const &a2, local_ref< android::content::ComponentName > const &a3)
@@ -1018,8 +1048,8 @@ void android::content::pm::PackageManager::addPreferredActivity(local_ref< andro
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(59),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::content::pm::PackageManager::clearPackagePreferredActivities(local_ref< java::lang::String > const &a0)
@@ -1028,8 +1058,8 @@ void android::content::pm::PackageManager::clearPackagePreferredActivities(local
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(60),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::PackageManager::getPreferredActivities(local_ref< java::util::List > const &a0, local_ref< java::util::List > const &a1, local_ref< java::lang::String > const &a2)
@@ -1038,8 +1068,8 @@ jint android::content::pm::PackageManager::getPreferredActivities(local_ref< jav
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(61),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(61), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::pm::PackageManager::setComponentEnabledSetting(local_ref< android::content::ComponentName > const &a0, jint a1, jint a2)
@@ -1048,8 +1078,8 @@ void android::content::pm::PackageManager::setComponentEnabledSetting(local_ref<
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(62),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::pm::PackageManager::getComponentEnabledSetting(local_ref< android::content::ComponentName > const &a0)
@@ -1058,8 +1088,8 @@ jint android::content::pm::PackageManager::getComponentEnabledSetting(local_ref<
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(63),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(63), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::content::pm::PackageManager::setApplicationEnabledSetting(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -1068,8 +1098,8 @@ void android::content::pm::PackageManager::setApplicationEnabledSetting(local_re
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(64),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::pm::PackageManager::getApplicationEnabledSetting(local_ref< java::lang::String > const &a0)
@@ -1078,8 +1108,8 @@ jint android::content::pm::PackageManager::getApplicationEnabledSetting(local_re
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(65),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(65), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::pm::PackageManager::isSafeMode()
@@ -1088,8 +1118,8 @@ jboolean android::content::pm::PackageManager::isSafeMode()
 		android::content::pm::PackageManager::J2CPP_CLASS_NAME,
 		android::content::pm::PackageManager::J2CPP_METHOD_NAME(66),
 		android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(66), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

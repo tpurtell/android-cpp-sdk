@@ -77,8 +77,8 @@ android::database::Observable::Observable()
 	call_new_object<
 		android::database::Observable::J2CPP_CLASS_NAME,
 		android::database::Observable::J2CPP_METHOD_NAME(0),
-		android::database::Observable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::Observable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +90,8 @@ void android::database::Observable::registerObserver(local_ref< java::lang::Obje
 		android::database::Observable::J2CPP_CLASS_NAME,
 		android::database::Observable::J2CPP_METHOD_NAME(1),
 		android::database::Observable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Observable::unregisterObserver(local_ref< java::lang::Object > const &a0)
@@ -100,8 +100,8 @@ void android::database::Observable::unregisterObserver(local_ref< java::lang::Ob
 		android::database::Observable::J2CPP_CLASS_NAME,
 		android::database::Observable::J2CPP_METHOD_NAME(2),
 		android::database::Observable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::Observable::unregisterAll()
@@ -110,8 +110,8 @@ void android::database::Observable::unregisterAll()
 		android::database::Observable::J2CPP_CLASS_NAME,
 		android::database::Observable::J2CPP_METHOD_NAME(3),
 		android::database::Observable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

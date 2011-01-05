@@ -16,6 +16,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace app { class Instrumentation; } } }
 namespace j2cpp { namespace android { namespace test { class TestSuiteProvider; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 
 
@@ -23,6 +24,7 @@ namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 #include <android/os/Bundle.hpp>
 #include <android/test/TestSuiteProvider.hpp>
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <junit/framework/TestSuite.hpp>
 
@@ -64,6 +66,7 @@ namespace android { namespace test {
 
 		operator local_ref<android::app::Instrumentation>() const;
 		operator local_ref<android::test::TestSuiteProvider>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		InstrumentationTestRunner();
@@ -111,14 +114,19 @@ android::test::InstrumentationTestRunner::operator local_ref<android::test::Test
 	return local_ref<android::test::TestSuiteProvider>(get_jobject());
 }
 
+android::test::InstrumentationTestRunner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::test::InstrumentationTestRunner::InstrumentationTestRunner()
 : object<android::test::InstrumentationTestRunner>(
 	call_new_object<
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(0),
-		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -130,8 +138,8 @@ void android::test::InstrumentationTestRunner::onCreate(local_ref< android::os::
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(1),
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -141,8 +149,8 @@ void android::test::InstrumentationTestRunner::onStart()
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(3),
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< junit::framework::TestSuite > android::test::InstrumentationTestRunner::getTestSuite()
@@ -151,8 +159,8 @@ local_ref< junit::framework::TestSuite > android::test::InstrumentationTestRunne
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(4),
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< junit::framework::TestSuite > >
-	(get_jobject());
+		local_ref< junit::framework::TestSuite >
+	>(get_jobject());
 }
 
 local_ref< junit::framework::TestSuite > android::test::InstrumentationTestRunner::getAllTests()
@@ -161,8 +169,8 @@ local_ref< junit::framework::TestSuite > android::test::InstrumentationTestRunne
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(5),
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< junit::framework::TestSuite > >
-	(get_jobject());
+		local_ref< junit::framework::TestSuite >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ClassLoader > android::test::InstrumentationTestRunner::getLoader()
@@ -171,8 +179,8 @@ local_ref< java::lang::ClassLoader > android::test::InstrumentationTestRunner::g
 		android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME,
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(6),
 		android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::ClassLoader > >
-	(get_jobject());
+		local_ref< java::lang::ClassLoader >
+	>(get_jobject());
 }
 
 

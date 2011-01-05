@@ -43,8 +43,8 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpResponseInterceptor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ResponseProcessCookies();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::client::protocol::ResponseProcessCookies::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::client::protocol::ResponseProcessCookies::operator local_ref<org::apache::http::HttpResponseInterceptor>() const
 {
 	return local_ref<org::apache::http::HttpResponseInterceptor>(get_jobject());
+}
+
+org::apache::http::client::protocol::ResponseProcessCookies::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ org::apache::http::client::protocol::ResponseProcessCookies::ResponseProcessCook
 	call_new_object<
 		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ void org::apache::http::client::protocol::ResponseProcessCookies::process(local_
 		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::protocol::ResponseProcessCookies::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

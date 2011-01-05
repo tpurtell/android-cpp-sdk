@@ -11,12 +11,16 @@
 #define J2CPP_ANDROID_WEBKIT_COOKIESYNCMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace webkit { class WebSyncManager; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/webkit/WebSyncManager.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Runnable.hpp>
 
 
 namespace j2cpp {
@@ -46,6 +50,8 @@ namespace android { namespace webkit {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
 		operator local_ref<android::webkit::WebSyncManager>() const;
 
 
@@ -74,6 +80,16 @@ namespace j2cpp {
 
 
 
+android::webkit::CookieSyncManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::webkit::CookieSyncManager::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jobject());
+}
+
 android::webkit::CookieSyncManager::operator local_ref<android::webkit::WebSyncManager>() const
 {
 	return local_ref<android::webkit::WebSyncManager>(get_jobject());
@@ -86,8 +102,8 @@ local_ref< android::webkit::CookieSyncManager > android::webkit::CookieSyncManag
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(1),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::CookieSyncManager > >
-	();
+		local_ref< android::webkit::CookieSyncManager >
+	>();
 }
 
 local_ref< android::webkit::CookieSyncManager > android::webkit::CookieSyncManager::createInstance(local_ref< android::content::Context > const &a0)
@@ -96,8 +112,8 @@ local_ref< android::webkit::CookieSyncManager > android::webkit::CookieSyncManag
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(2),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::webkit::CookieSyncManager > >
-	(a0);
+		local_ref< android::webkit::CookieSyncManager >
+	>(a0);
 }
 
 
@@ -107,8 +123,8 @@ void android::webkit::CookieSyncManager::stopSync()
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(4),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CookieSyncManager::startSync()
@@ -117,8 +133,8 @@ void android::webkit::CookieSyncManager::startSync()
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(5),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CookieSyncManager::resetSync()
@@ -127,8 +143,8 @@ void android::webkit::CookieSyncManager::resetSync()
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(6),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CookieSyncManager::sync()
@@ -137,8 +153,8 @@ void android::webkit::CookieSyncManager::sync()
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(7),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CookieSyncManager::run()
@@ -147,8 +163,8 @@ void android::webkit::CookieSyncManager::run()
 		android::webkit::CookieSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(8),
 		android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

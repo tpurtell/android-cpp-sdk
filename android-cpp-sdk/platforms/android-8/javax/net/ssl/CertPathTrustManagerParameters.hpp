@@ -82,8 +82,8 @@ javax::net::ssl::CertPathTrustManagerParameters::CertPathTrustManagerParameters(
 	call_new_object<
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< java::security::cert::CertPathParameters > javax::net::ssl::CertPathT
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertPathParameters > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPathParameters >
+	>(get_jobject());
 }
 
 

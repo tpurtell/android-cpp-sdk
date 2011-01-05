@@ -70,8 +70,8 @@ android::graphics::DrawFilter::DrawFilter()
 	call_new_object<
 		android::graphics::DrawFilter::J2CPP_CLASS_NAME,
 		android::graphics::DrawFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::DrawFilter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::DrawFilter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

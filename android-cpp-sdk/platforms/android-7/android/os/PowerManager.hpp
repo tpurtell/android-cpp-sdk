@@ -136,8 +136,8 @@ void android::os::PowerManager_::WakeLock::setReferenceCounted(jboolean a0)
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(1),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::PowerManager_::WakeLock::acquire()
@@ -146,8 +146,8 @@ void android::os::PowerManager_::WakeLock::acquire()
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(2),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::PowerManager_::WakeLock::acquire(jlong a0)
@@ -156,8 +156,8 @@ void android::os::PowerManager_::WakeLock::acquire(jlong a0)
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(3),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::PowerManager_::WakeLock::release()
@@ -166,8 +166,8 @@ void android::os::PowerManager_::WakeLock::release()
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(4),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::os::PowerManager_::WakeLock::isHeld()
@@ -176,8 +176,8 @@ jboolean android::os::PowerManager_::WakeLock::isHeld()
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(5),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::os::PowerManager_::WakeLock::toString()
@@ -186,8 +186,8 @@ local_ref< java::lang::String > android::os::PowerManager_::WakeLock::toString()
 		android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME,
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(6),
 		android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -218,8 +218,8 @@ local_ref< android::os::PowerManager_::WakeLock > android::os::PowerManager::new
 		android::os::PowerManager::J2CPP_CLASS_NAME,
 		android::os::PowerManager::J2CPP_METHOD_NAME(1),
 		android::os::PowerManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::PowerManager_::WakeLock > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::PowerManager_::WakeLock >
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::PowerManager::userActivity(jlong a0, jboolean a1)
@@ -228,8 +228,8 @@ void android::os::PowerManager::userActivity(jlong a0, jboolean a1)
 		android::os::PowerManager::J2CPP_CLASS_NAME,
 		android::os::PowerManager::J2CPP_METHOD_NAME(2),
 		android::os::PowerManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::PowerManager::goToSleep(jlong a0)
@@ -238,8 +238,8 @@ void android::os::PowerManager::goToSleep(jlong a0)
 		android::os::PowerManager::J2CPP_CLASS_NAME,
 		android::os::PowerManager::J2CPP_METHOD_NAME(3),
 		android::os::PowerManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::PowerManager::isScreenOn()
@@ -248,8 +248,8 @@ jboolean android::os::PowerManager::isScreenOn()
 		android::os::PowerManager::J2CPP_CLASS_NAME,
 		android::os::PowerManager::J2CPP_METHOD_NAME(4),
 		android::os::PowerManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

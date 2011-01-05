@@ -69,8 +69,8 @@ jint java::lang::Comparable::compareTo(local_ref< java::lang::Object > const &a0
 		java::lang::Comparable::J2CPP_CLASS_NAME,
 		java::lang::Comparable::J2CPP_METHOD_NAME(0),
 		java::lang::Comparable::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

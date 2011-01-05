@@ -43,8 +43,8 @@ namespace android { namespace bluetooth {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::bluetooth::BluetoothSocket > accept();
@@ -68,14 +68,14 @@ namespace j2cpp {
 
 
 
-android::bluetooth::BluetoothServerSocket::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::bluetooth::BluetoothServerSocket::operator local_ref<java::io::Closeable>() const
 {
 	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+android::bluetooth::BluetoothServerSocket::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -85,8 +85,8 @@ local_ref< android::bluetooth::BluetoothSocket > android::bluetooth::BluetoothSe
 		android::bluetooth::BluetoothServerSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_NAME(1),
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::bluetooth::BluetoothSocket > >
-	(get_jobject());
+		local_ref< android::bluetooth::BluetoothSocket >
+	>(get_jobject());
 }
 
 local_ref< android::bluetooth::BluetoothSocket > android::bluetooth::BluetoothServerSocket::accept(jint a0)
@@ -95,8 +95,8 @@ local_ref< android::bluetooth::BluetoothSocket > android::bluetooth::BluetoothSe
 		android::bluetooth::BluetoothServerSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_NAME(2),
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::bluetooth::BluetoothSocket > >
-	(get_jobject(), a0);
+		local_ref< android::bluetooth::BluetoothSocket >
+	>(get_jobject(), a0);
 }
 
 void android::bluetooth::BluetoothServerSocket::close()
@@ -105,8 +105,8 @@ void android::bluetooth::BluetoothServerSocket::close()
 		android::bluetooth::BluetoothServerSocket::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_NAME(3),
 		android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

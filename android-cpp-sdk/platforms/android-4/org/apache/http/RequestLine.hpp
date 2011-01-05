@@ -78,8 +78,8 @@ local_ref< java::lang::String > org::apache::http::RequestLine::getMethod()
 		org::apache::http::RequestLine::J2CPP_CLASS_NAME,
 		org::apache::http::RequestLine::J2CPP_METHOD_NAME(0),
 		org::apache::http::RequestLine::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::RequestLine::getProtocolVersion()
@@ -88,8 +88,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::RequestLine::
 		org::apache::http::RequestLine::J2CPP_CLASS_NAME,
 		org::apache::http::RequestLine::J2CPP_METHOD_NAME(1),
 		org::apache::http::RequestLine::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject());
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::RequestLine::getUri()
@@ -98,8 +98,8 @@ local_ref< java::lang::String > org::apache::http::RequestLine::getUri()
 		org::apache::http::RequestLine::J2CPP_CLASS_NAME,
 		org::apache::http::RequestLine::J2CPP_METHOD_NAME(2),
 		org::apache::http::RequestLine::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -12,12 +12,14 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class PooledConnection; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/sql/SQLException.hpp>
 #include <java/util/EventObject.hpp>
 #include <javax/sql/PooledConnection.hpp>
@@ -44,6 +46,7 @@ namespace javax { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -69,6 +72,11 @@ namespace j2cpp {
 
 
 
+javax::sql::ConnectionEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::sql::ConnectionEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
@@ -85,8 +93,8 @@ javax::sql::ConnectionEvent::ConnectionEvent(local_ref< javax::sql::PooledConnec
 	call_new_object<
 		javax::sql::ConnectionEvent::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(0),
-		javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -98,8 +106,8 @@ javax::sql::ConnectionEvent::ConnectionEvent(local_ref< javax::sql::PooledConnec
 	call_new_object<
 		javax::sql::ConnectionEvent::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(1),
-		javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -111,8 +119,8 @@ local_ref< java::sql::SQLException > javax::sql::ConnectionEvent::getSQLExceptio
 		javax::sql::ConnectionEvent::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(2),
 		javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::sql::SQLException > >
-	(get_jobject());
+		local_ref< java::sql::SQLException >
+	>(get_jobject());
 }
 
 

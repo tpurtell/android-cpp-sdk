@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_NET_SSL_SSLSESSIONBINDINGLISTENER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionBindingEvent; } } } }
 namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionBindingEvent; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -41,8 +41,8 @@ namespace javax { namespace net { namespace ssl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void valueBound(local_ref< javax::net::ssl::SSLSessionBindingEvent >  const&);
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-javax::net::ssl::SSLSessionBindingListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::net::ssl::SSLSessionBindingListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+javax::net::ssl::SSLSessionBindingListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void javax::net::ssl::SSLSessionBindingListener::valueBound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const &a0)
@@ -82,8 +82,8 @@ void javax::net::ssl::SSLSessionBindingListener::valueBound(local_ref< javax::ne
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::net::ssl::SSLSessionBindingListener::valueUnbound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const &a0)
@@ -92,8 +92,8 @@ void javax::net::ssl::SSLSessionBindingListener::valueUnbound(local_ref< javax::
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -138,8 +138,8 @@ jint android::content::res::TypedArray::length()
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(1),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::res::TypedArray::getIndexCount()
@@ -148,8 +148,8 @@ jint android::content::res::TypedArray::getIndexCount()
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(2),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::res::TypedArray::getIndex(jint a0)
@@ -158,8 +158,8 @@ jint android::content::res::TypedArray::getIndex(jint a0)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(3),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::Resources > android::content::res::TypedArray::getResources()
@@ -168,8 +168,8 @@ local_ref< android::content::res::Resources > android::content::res::TypedArray:
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(4),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::res::Resources > >
-	(get_jobject());
+		local_ref< android::content::res::Resources >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::content::res::TypedArray::getText(jint a0)
@@ -178,8 +178,8 @@ local_ref< java::lang::CharSequence > android::content::res::TypedArray::getText
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(5),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::res::TypedArray::getString(jint a0)
@@ -188,8 +188,8 @@ local_ref< java::lang::String > android::content::res::TypedArray::getString(jin
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(6),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::res::TypedArray::getNonResourceString(jint a0)
@@ -198,8 +198,8 @@ local_ref< java::lang::String > android::content::res::TypedArray::getNonResourc
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(7),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::TypedArray::getBoolean(jint a0, jboolean a1)
@@ -208,8 +208,8 @@ jboolean android::content::res::TypedArray::getBoolean(jint a0, jboolean a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(8),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getInt(jint a0, jint a1)
@@ -218,8 +218,8 @@ jint android::content::res::TypedArray::getInt(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(9),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::content::res::TypedArray::getFloat(jint a0, jfloat a1)
@@ -228,8 +228,8 @@ jfloat android::content::res::TypedArray::getFloat(jint a0, jfloat a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(10),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getColor(jint a0, jint a1)
@@ -238,8 +238,8 @@ jint android::content::res::TypedArray::getColor(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(11),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::ColorStateList > android::content::res::TypedArray::getColorStateList(jint a0)
@@ -248,8 +248,8 @@ local_ref< android::content::res::ColorStateList > android::content::res::TypedA
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(12),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject(), a0);
 }
 
 jint android::content::res::TypedArray::getInteger(jint a0, jint a1)
@@ -258,8 +258,8 @@ jint android::content::res::TypedArray::getInteger(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(13),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::content::res::TypedArray::getDimension(jint a0, jfloat a1)
@@ -268,8 +268,8 @@ jfloat android::content::res::TypedArray::getDimension(jint a0, jfloat a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(14),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(14), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getDimensionPixelOffset(jint a0, jint a1)
@@ -278,8 +278,8 @@ jint android::content::res::TypedArray::getDimensionPixelOffset(jint a0, jint a1
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(15),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getDimensionPixelSize(jint a0, jint a1)
@@ -288,8 +288,8 @@ jint android::content::res::TypedArray::getDimensionPixelSize(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(16),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getLayoutDimension(jint a0, local_ref< java::lang::String > const &a1)
@@ -298,8 +298,8 @@ jint android::content::res::TypedArray::getLayoutDimension(jint a0, local_ref< j
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(17),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::res::TypedArray::getLayoutDimension(jint a0, jint a1)
@@ -308,8 +308,8 @@ jint android::content::res::TypedArray::getLayoutDimension(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(18),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::content::res::TypedArray::getFraction(jint a0, jint a1, jint a2, jfloat a3)
@@ -318,8 +318,8 @@ jfloat android::content::res::TypedArray::getFraction(jint a0, jint a1, jint a2,
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(19),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(19), 
-		jfloat >
-	(get_jobject(), a0, a1, a2, a3);
+		jfloat
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::content::res::TypedArray::getResourceId(jint a0, jint a1)
@@ -328,8 +328,8 @@ jint android::content::res::TypedArray::getResourceId(jint a0, jint a1)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(20),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::res::TypedArray::getDrawable(jint a0)
@@ -338,8 +338,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::res::TypedA
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(21),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::content::res::TypedArray::getTextArray(jint a0)
@@ -348,8 +348,8 @@ local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::content::
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(22),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< array< local_ref< java::lang::CharSequence >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::CharSequence >, 1> >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::res::TypedArray::getValue(jint a0, local_ref< android::util::TypedValue > const &a1)
@@ -358,8 +358,8 @@ jboolean android::content::res::TypedArray::getValue(jint a0, local_ref< android
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(23),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::res::TypedArray::hasValue(jint a0)
@@ -368,8 +368,8 @@ jboolean android::content::res::TypedArray::hasValue(jint a0)
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(24),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::util::TypedValue > android::content::res::TypedArray::peekValue(jint a0)
@@ -378,8 +378,8 @@ local_ref< android::util::TypedValue > android::content::res::TypedArray::peekVa
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(25),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::util::TypedValue > >
-	(get_jobject(), a0);
+		local_ref< android::util::TypedValue >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::res::TypedArray::getPositionDescription()
@@ -388,8 +388,8 @@ local_ref< java::lang::String > android::content::res::TypedArray::getPositionDe
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(26),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::content::res::TypedArray::recycle()
@@ -398,8 +398,8 @@ void android::content::res::TypedArray::recycle()
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(27),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::res::TypedArray::toString()
@@ -408,8 +408,8 @@ local_ref< java::lang::String > android::content::res::TypedArray::toString()
 		android::content::res::TypedArray::J2CPP_CLASS_NAME,
 		android::content::res::TypedArray::J2CPP_METHOD_NAME(28),
 		android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -75,8 +75,8 @@ local_ref< java::lang::String > java::net::URLEncoder::encode(local_ref< java::l
 		java::net::URLEncoder::J2CPP_CLASS_NAME,
 		java::net::URLEncoder::J2CPP_METHOD_NAME(1),
 		java::net::URLEncoder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::net::URLEncoder::encode(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -85,8 +85,8 @@ local_ref< java::lang::String > java::net::URLEncoder::encode(local_ref< java::l
 		java::net::URLEncoder::J2CPP_CLASS_NAME,
 		java::net::URLEncoder::J2CPP_METHOD_NAME(2),
 		java::net::URLEncoder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 

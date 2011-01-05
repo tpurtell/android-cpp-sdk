@@ -86,8 +86,8 @@ void android::text::method::Touch::scrollTo(local_ref< android::widget::TextView
 		android::text::method::Touch::J2CPP_CLASS_NAME,
 		android::text::method::Touch::J2CPP_METHOD_NAME(1),
 		android::text::method::Touch::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 jboolean android::text::method::Touch::onTouchEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -96,8 +96,8 @@ jboolean android::text::method::Touch::onTouchEvent(local_ref< android::widget::
 		android::text::method::Touch::J2CPP_CLASS_NAME,
 		android::text::method::Touch::J2CPP_METHOD_NAME(2),
 		android::text::method::Touch::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jint android::text::method::Touch::getInitialScrollX(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
@@ -106,8 +106,8 @@ jint android::text::method::Touch::getInitialScrollX(local_ref< android::widget:
 		android::text::method::Touch::J2CPP_CLASS_NAME,
 		android::text::method::Touch::J2CPP_METHOD_NAME(3),
 		android::text::method::Touch::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::text::method::Touch::getInitialScrollY(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
@@ -116,8 +116,8 @@ jint android::text::method::Touch::getInitialScrollY(local_ref< android::widget:
 		android::text::method::Touch::J2CPP_CLASS_NAME,
 		android::text::method::Touch::J2CPP_METHOD_NAME(4),
 		android::text::method::Touch::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 

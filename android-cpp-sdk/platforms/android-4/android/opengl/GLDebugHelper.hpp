@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_OPENGL_GLDEBUGHELPER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 
 
 #include <java/io/Writer.hpp>
@@ -88,8 +88,8 @@ android::opengl::GLDebugHelper::GLDebugHelper()
 	call_new_object<
 		android::opengl::GLDebugHelper::J2CPP_CLASS_NAME,
 		android::opengl::GLDebugHelper::J2CPP_METHOD_NAME(0),
-		android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ local_ref< javax::microedition::khronos::opengles::GL > android::opengl::GLDebug
 		android::opengl::GLDebugHelper::J2CPP_CLASS_NAME,
 		android::opengl::GLDebugHelper::J2CPP_METHOD_NAME(1),
 		android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::microedition::khronos::opengles::GL > >
-	(a0, a1, a2);
+		local_ref< javax::microedition::khronos::opengles::GL >
+	>(a0, a1, a2);
 }
 
 local_ref< javax::microedition::khronos::egl::EGL > android::opengl::GLDebugHelper::wrap(local_ref< javax::microedition::khronos::egl::EGL > const &a0, jint a1, local_ref< java::io::Writer > const &a2)
@@ -111,8 +111,8 @@ local_ref< javax::microedition::khronos::egl::EGL > android::opengl::GLDebugHelp
 		android::opengl::GLDebugHelper::J2CPP_CLASS_NAME,
 		android::opengl::GLDebugHelper::J2CPP_METHOD_NAME(2),
 		android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::microedition::khronos::egl::EGL > >
-	(a0, a1, a2);
+		local_ref< javax::microedition::khronos::egl::EGL >
+	>(a0, a1, a2);
 }
 
 

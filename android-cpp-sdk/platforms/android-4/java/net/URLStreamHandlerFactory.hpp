@@ -73,8 +73,8 @@ local_ref< java::net::URLStreamHandler > java::net::URLStreamHandlerFactory::cre
 		java::net::URLStreamHandlerFactory::J2CPP_CLASS_NAME,
 		java::net::URLStreamHandlerFactory::J2CPP_METHOD_NAME(0),
 		java::net::URLStreamHandlerFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::URLStreamHandler > >
-	(get_jobject(), a0);
+		local_ref< java::net::URLStreamHandler >
+	>(get_jobject(), a0);
 }
 
 

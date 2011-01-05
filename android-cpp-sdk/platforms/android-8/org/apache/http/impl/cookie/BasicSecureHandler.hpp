@@ -12,14 +12,18 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class AbstractCookieAttributeHandler; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
+#include <org/apache/http/cookie/CookieAttributeHandler.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
 #include <org/apache/http/impl/cookie/AbstractCookieAttributeHandler.hpp>
@@ -47,6 +51,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		}
 
 		operator local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>() const;
+		operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicSecureHandler();
@@ -78,14 +84,24 @@ org::apache::http::impl::cookie::BasicSecureHandler::operator local_ref<org::apa
 	return local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>(get_jobject());
 }
 
+org::apache::http::impl::cookie::BasicSecureHandler::operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const
+{
+	return local_ref<org::apache::http::cookie::CookieAttributeHandler>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BasicSecureHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::impl::cookie::BasicSecureHandler::BasicSecureHandler()
 : object<org::apache::http::impl::cookie::BasicSecureHandler>(
 	call_new_object<
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +113,8 @@ void org::apache::http::impl::cookie::BasicSecureHandler::parse(local_ref< org::
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::impl::cookie::BasicSecureHandler::match(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -107,8 +123,8 @@ jboolean org::apache::http::impl::cookie::BasicSecureHandler::match(local_ref< o
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::BasicSecureHandler::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

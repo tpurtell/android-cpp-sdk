@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_NET_SSL_HOSTNAMEVERIFIER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -74,8 +74,8 @@ jboolean javax::net::ssl::HostnameVerifier::verify(local_ref< java::lang::String
 		javax::net::ssl::HostnameVerifier::J2CPP_CLASS_NAME,
 		javax::net::ssl::HostnameVerifier::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::HostnameVerifier::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

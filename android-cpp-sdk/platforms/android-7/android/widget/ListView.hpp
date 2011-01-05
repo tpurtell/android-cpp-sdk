@@ -13,14 +13,25 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalLayoutListener; } } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
+namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { class AbsListView; } } }
+namespace j2cpp { namespace android { namespace widget { namespace Filter_ { class FilterListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace util { class SparseBooleanArray; } } }
@@ -31,14 +42,23 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
+#include <android/text/NoCopySpan.hpp>
+#include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/util/SparseBooleanArray.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/AbsListView.hpp>
 #include <android/widget/Adapter.hpp>
+#include <android/widget/AdapterView.hpp>
+#include <android/widget/Filter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <java/lang/Object.hpp>
 
@@ -156,7 +176,20 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
+		operator local_ref<android::text::TextWatcher>() const;
+		operator local_ref<android::widget::AdapterView>() const;
 		operator local_ref<android::widget::AbsListView>() const;
+		operator local_ref<android::widget::Filter_::FilterListener>() const;
 
 
 		ListView(local_ref< android::content::Context > const&);
@@ -239,8 +272,8 @@ android::widget::ListView_::FixedViewInfo::FixedViewInfo(local_ref< android::wid
 	call_new_object<
 		android::widget::ListView_::FixedViewInfo::J2CPP_CLASS_NAME,
 		android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_NAME(0),
-		android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , view(get_jobject())
 , data(get_jobject())
@@ -260,9 +293,74 @@ J2CPP_DEFINE_FIELD(android::widget::ListView_::FixedViewInfo,3,"this$0","Landroi
 
 
 
+android::widget::ListView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::text::TextWatcher>() const
+{
+	return local_ref<android::text::TextWatcher>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::widget::AdapterView>() const
+{
+	return local_ref<android::widget::AdapterView>(get_jobject());
+}
+
 android::widget::ListView::operator local_ref<android::widget::AbsListView>() const
 {
 	return local_ref<android::widget::AbsListView>(get_jobject());
+}
+
+android::widget::ListView::operator local_ref<android::widget::Filter_::FilterListener>() const
+{
+	return local_ref<android::widget::Filter_::FilterListener>(get_jobject());
 }
 
 
@@ -271,8 +369,8 @@ android::widget::ListView::ListView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(0),
-		android::widget::ListView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ListView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -284,8 +382,8 @@ android::widget::ListView::ListView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(1),
-		android::widget::ListView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::ListView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -297,8 +395,8 @@ android::widget::ListView::ListView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(2),
-		android::widget::ListView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::ListView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -310,8 +408,8 @@ jint android::widget::ListView::getMaxScrollAmount()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(3),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ListView::addHeaderView(local_ref< android::view::View > const &a0, local_ref< java::lang::Object > const &a1, jboolean a2)
@@ -320,8 +418,8 @@ void android::widget::ListView::addHeaderView(local_ref< android::view::View > c
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(4),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::ListView::addHeaderView(local_ref< android::view::View > const &a0)
@@ -330,8 +428,8 @@ void android::widget::ListView::addHeaderView(local_ref< android::view::View > c
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(5),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ListView::getHeaderViewsCount()
@@ -340,8 +438,8 @@ jint android::widget::ListView::getHeaderViewsCount()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(6),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::ListView::removeHeaderView(local_ref< android::view::View > const &a0)
@@ -350,8 +448,8 @@ jboolean android::widget::ListView::removeHeaderView(local_ref< android::view::V
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(7),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::addFooterView(local_ref< android::view::View > const &a0, local_ref< java::lang::Object > const &a1, jboolean a2)
@@ -360,8 +458,8 @@ void android::widget::ListView::addFooterView(local_ref< android::view::View > c
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(8),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::ListView::addFooterView(local_ref< android::view::View > const &a0)
@@ -370,8 +468,8 @@ void android::widget::ListView::addFooterView(local_ref< android::view::View > c
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(9),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ListView::getFooterViewsCount()
@@ -380,8 +478,8 @@ jint android::widget::ListView::getFooterViewsCount()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(10),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::ListView::removeFooterView(local_ref< android::view::View > const &a0)
@@ -390,8 +488,8 @@ jboolean android::widget::ListView::removeFooterView(local_ref< android::view::V
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(11),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::ListAdapter > android::widget::ListView::getAdapter()
@@ -400,8 +498,8 @@ local_ref< android::widget::ListAdapter > android::widget::ListView::getAdapter(
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(12),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 void android::widget::ListView::setAdapter(local_ref< android::widget::ListAdapter > const &a0)
@@ -410,8 +508,8 @@ void android::widget::ListView::setAdapter(local_ref< android::widget::ListAdapt
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(13),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ListView::requestChildRectangleOnScreen(local_ref< android::view::View > const &a0, local_ref< android::graphics::Rect > const &a1, jboolean a2)
@@ -420,8 +518,8 @@ jboolean android::widget::ListView::requestChildRectangleOnScreen(local_ref< and
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(14),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -433,8 +531,8 @@ void android::widget::ListView::setSelection(jint a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(18),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::setSelectionFromTop(jint a0, jint a1)
@@ -443,8 +541,8 @@ void android::widget::ListView::setSelectionFromTop(jint a0, jint a1)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(19),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::ListView::dispatchPopulateAccessibilityEvent(local_ref< android::view::accessibility::AccessibilityEvent > const &a0)
@@ -453,8 +551,8 @@ jboolean android::widget::ListView::dispatchPopulateAccessibilityEvent(local_ref
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(20),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::setSelectionAfterHeaderView()
@@ -463,8 +561,8 @@ void android::widget::ListView::setSelectionAfterHeaderView()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(21),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::ListView::dispatchKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -473,8 +571,8 @@ jboolean android::widget::ListView::dispatchKeyEvent(local_ref< android::view::K
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(22),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ListView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -483,8 +581,8 @@ jboolean android::widget::ListView::onKeyDown(jint a0, local_ref< android::view:
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(23),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::ListView::onKeyMultiple(jint a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -493,8 +591,8 @@ jboolean android::widget::ListView::onKeyMultiple(jint a0, jint a1, local_ref< a
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(24),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::widget::ListView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -503,8 +601,8 @@ jboolean android::widget::ListView::onKeyUp(jint a0, local_ref< android::view::K
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(25),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ListView::setItemsCanFocus(jboolean a0)
@@ -513,8 +611,8 @@ void android::widget::ListView::setItemsCanFocus(jboolean a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(26),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ListView::getItemsCanFocus()
@@ -523,8 +621,8 @@ jboolean android::widget::ListView::getItemsCanFocus()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(27),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ListView::setCacheColorHint(jint a0)
@@ -533,8 +631,8 @@ void android::widget::ListView::setCacheColorHint(jint a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(28),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -544,8 +642,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::ListView::ge
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(30),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::ListView::setDivider(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -554,8 +652,8 @@ void android::widget::ListView::setDivider(local_ref< android::graphics::drawabl
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(31),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ListView::getDividerHeight()
@@ -564,8 +662,8 @@ jint android::widget::ListView::getDividerHeight()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(32),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ListView::setDividerHeight(jint a0)
@@ -574,8 +672,8 @@ void android::widget::ListView::setDividerHeight(jint a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(33),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::setHeaderDividersEnabled(jboolean a0)
@@ -584,8 +682,8 @@ void android::widget::ListView::setHeaderDividersEnabled(jboolean a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(34),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::setFooterDividersEnabled(jboolean a0)
@@ -594,8 +692,8 @@ void android::widget::ListView::setFooterDividersEnabled(jboolean a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(35),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -608,8 +706,8 @@ jboolean android::widget::ListView::onTouchEvent(local_ref< android::view::Motio
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(40),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ListView::getChoiceMode()
@@ -618,8 +716,8 @@ jint android::widget::ListView::getChoiceMode()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(41),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(41), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ListView::setChoiceMode(jint a0)
@@ -628,8 +726,8 @@ void android::widget::ListView::setChoiceMode(jint a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(42),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ListView::performItemClick(local_ref< android::view::View > const &a0, jint a1, jlong a2)
@@ -638,8 +736,8 @@ jboolean android::widget::ListView::performItemClick(local_ref< android::view::V
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(43),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::ListView::setItemChecked(jint a0, jboolean a1)
@@ -648,8 +746,8 @@ void android::widget::ListView::setItemChecked(jint a0, jboolean a1)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(44),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::ListView::isItemChecked(jint a0)
@@ -658,8 +756,8 @@ jboolean android::widget::ListView::isItemChecked(jint a0)
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(45),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ListView::getCheckedItemPosition()
@@ -668,8 +766,8 @@ jint android::widget::ListView::getCheckedItemPosition()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(46),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::util::SparseBooleanArray > android::widget::ListView::getCheckedItemPositions()
@@ -678,8 +776,8 @@ local_ref< android::util::SparseBooleanArray > android::widget::ListView::getChe
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(47),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< android::util::SparseBooleanArray > >
-	(get_jobject());
+		local_ref< android::util::SparseBooleanArray >
+	>(get_jobject());
 }
 
 local_ref< array<jlong,1> > android::widget::ListView::getCheckItemIds()
@@ -688,8 +786,8 @@ local_ref< array<jlong,1> > android::widget::ListView::getCheckItemIds()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(48),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< array<jlong,1> > >
-	(get_jobject());
+		local_ref< array<jlong,1> >
+	>(get_jobject());
 }
 
 void android::widget::ListView::clearChoices()
@@ -698,8 +796,8 @@ void android::widget::ListView::clearChoices()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(49),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::Parcelable > android::widget::ListView::onSaveInstanceState()
@@ -708,8 +806,8 @@ local_ref< android::os::Parcelable > android::widget::ListView::onSaveInstanceSt
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(50),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::ListView::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -718,8 +816,8 @@ void android::widget::ListView::onRestoreInstanceState(local_ref< android::os::P
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(51),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ListView::setAdapter(local_ref< android::widget::Adapter > const &a0)
@@ -728,8 +826,8 @@ void android::widget::ListView::setAdapter(local_ref< android::widget::Adapter >
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(52),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::Adapter > android::widget::ListView::getAdapter_1()
@@ -738,8 +836,8 @@ local_ref< android::widget::Adapter > android::widget::ListView::getAdapter_1()
 		android::widget::ListView::J2CPP_CLASS_NAME,
 		android::widget::ListView::J2CPP_METHOD_NAME(53),
 		android::widget::ListView::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< android::widget::Adapter > >
-	(get_jobject());
+		local_ref< android::widget::Adapter >
+	>(get_jobject());
 }
 
 

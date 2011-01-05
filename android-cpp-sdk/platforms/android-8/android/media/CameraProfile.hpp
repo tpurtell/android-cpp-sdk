@@ -78,8 +78,8 @@ android::media::CameraProfile::CameraProfile()
 	call_new_object<
 		android::media::CameraProfile::J2CPP_CLASS_NAME,
 		android::media::CameraProfile::J2CPP_METHOD_NAME(0),
-		android::media::CameraProfile::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::CameraProfile::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ jint android::media::CameraProfile::getJpegEncodingQualityParameter(jint a0)
 		android::media::CameraProfile::J2CPP_CLASS_NAME,
 		android::media::CameraProfile::J2CPP_METHOD_NAME(1),
 		android::media::CameraProfile::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

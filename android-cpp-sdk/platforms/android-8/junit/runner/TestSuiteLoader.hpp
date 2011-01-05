@@ -75,8 +75,8 @@ local_ref< java::lang::Class > junit::runner::TestSuiteLoader::load(local_ref< j
 		junit::runner::TestSuiteLoader::J2CPP_CLASS_NAME,
 		junit::runner::TestSuiteLoader::J2CPP_METHOD_NAME(0),
 		junit::runner::TestSuiteLoader::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Class > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Class >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Class > junit::runner::TestSuiteLoader::reload(local_ref< java::lang::Class > const &a0)
@@ -85,8 +85,8 @@ local_ref< java::lang::Class > junit::runner::TestSuiteLoader::reload(local_ref<
 		junit::runner::TestSuiteLoader::J2CPP_CLASS_NAME,
 		junit::runner::TestSuiteLoader::J2CPP_METHOD_NAME(1),
 		junit::runner::TestSuiteLoader::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Class > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Class >
+	>(get_jobject(), a0);
 }
 
 

@@ -77,8 +77,8 @@ void android::text::GetChars::getChars(jint a0, jint a1, local_ref< array<jchar,
 		android::text::GetChars::J2CPP_CLASS_NAME,
 		android::text::GetChars::J2CPP_METHOD_NAME(0),
 		android::text::GetChars::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

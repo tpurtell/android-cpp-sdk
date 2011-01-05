@@ -11,10 +11,10 @@
 #define J2CPP_JAVAX_XML_DATATYPE_DATATYPEFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace javax { namespace xml { namespace datatype { class Duration; } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace datatype { class XMLGregorianCalendar; } } } }
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class GregorianCalendar; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
@@ -136,8 +136,8 @@ local_ref< javax::xml::datatype::DatatypeFactory > javax::xml::datatype::Datatyp
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(1),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::datatype::DatatypeFactory > >
-	();
+		local_ref< javax::xml::datatype::DatatypeFactory >
+	>();
 }
 
 local_ref< javax::xml::datatype::DatatypeFactory > javax::xml::datatype::DatatypeFactory::newInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -146,8 +146,8 @@ local_ref< javax::xml::datatype::DatatypeFactory > javax::xml::datatype::Datatyp
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(2),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::datatype::DatatypeFactory > >
-	(a0, a1);
+		local_ref< javax::xml::datatype::DatatypeFactory >
+	>(a0, a1);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDuration(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(3),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDuration(jlong a0)
@@ -166,8 +166,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(4),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDuration(jboolean a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2, local_ref< java::math::BigInteger > const &a3, local_ref< java::math::BigInteger > const &a4, local_ref< java::math::BigInteger > const &a5, local_ref< java::math::BigDecimal > const &a6)
@@ -176,8 +176,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(5),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDuration(jboolean a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6)
@@ -186,8 +186,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(6),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationDayTime(local_ref< java::lang::String > const &a0)
@@ -196,8 +196,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(7),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationDayTime(jlong a0)
@@ -206,8 +206,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(8),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationDayTime(jboolean a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2, local_ref< java::math::BigInteger > const &a3, local_ref< java::math::BigInteger > const &a4)
@@ -216,8 +216,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(9),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationDayTime(jboolean a0, jint a1, jint a2, jint a3, jint a4)
@@ -226,8 +226,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(10),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationYearMonth(local_ref< java::lang::String > const &a0)
@@ -236,8 +236,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(11),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationYearMonth(jlong a0)
@@ -246,8 +246,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(12),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationYearMonth(jboolean a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2)
@@ -256,8 +256,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(13),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactory::newDurationYearMonth(jboolean a0, jint a1, jint a2)
@@ -266,8 +266,8 @@ local_ref< javax::xml::datatype::Duration > javax::xml::datatype::DatatypeFactor
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(14),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< javax::xml::datatype::Duration > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< javax::xml::datatype::Duration >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendar()
@@ -276,8 +276,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(15),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject());
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendar(local_ref< java::lang::String > const &a0)
@@ -286,8 +286,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(16),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendar(local_ref< java::util::GregorianCalendar > const &a0)
@@ -296,8 +296,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(17),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendar(local_ref< java::math::BigInteger > const &a0, jint a1, jint a2, jint a3, jint a4, jint a5, local_ref< java::math::BigDecimal > const &a6, jint a7)
@@ -306,8 +306,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(18),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendar(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7)
@@ -316,8 +316,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(19),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendarDate(jint a0, jint a1, jint a2, jint a3)
@@ -326,8 +326,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(20),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendarTime(jint a0, jint a1, jint a2, jint a3)
@@ -336,8 +336,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(21),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendarTime(jint a0, jint a1, jint a2, local_ref< java::math::BigDecimal > const &a3, jint a4)
@@ -346,8 +346,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(22),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::DatatypeFactory::newXMLGregorianCalendarTime(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -356,8 +356,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::Da
 		javax::xml::datatype::DatatypeFactory::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_NAME(23),
 		javax::xml::datatype::DatatypeFactory::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

@@ -155,8 +155,8 @@ java::text::DecimalFormatSymbols::DecimalFormatSymbols()
 	call_new_object<
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(0),
-		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -168,8 +168,8 @@ java::text::DecimalFormatSymbols::DecimalFormatSymbols(local_ref< java::util::Lo
 	call_new_object<
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(1),
-		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -181,8 +181,8 @@ local_ref< java::lang::Object > java::text::DecimalFormatSymbols::clone()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(2),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::DecimalFormatSymbols::equals(local_ref< java::lang::Object > const &a0)
@@ -191,8 +191,8 @@ jboolean java::text::DecimalFormatSymbols::equals(local_ref< java::lang::Object 
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(3),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Currency > java::text::DecimalFormatSymbols::getCurrency()
@@ -201,8 +201,8 @@ local_ref< java::util::Currency > java::text::DecimalFormatSymbols::getCurrency(
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(4),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Currency > >
-	(get_jobject());
+		local_ref< java::util::Currency >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormatSymbols::getInternationalCurrencySymbol()
@@ -211,8 +211,8 @@ local_ref< java::lang::String > java::text::DecimalFormatSymbols::getInternation
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(5),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormatSymbols::getCurrencySymbol()
@@ -221,8 +221,8 @@ local_ref< java::lang::String > java::text::DecimalFormatSymbols::getCurrencySym
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(6),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getDecimalSeparator()
@@ -231,8 +231,8 @@ jchar java::text::DecimalFormatSymbols::getDecimalSeparator()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(7),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(7), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getDigit()
@@ -241,8 +241,8 @@ jchar java::text::DecimalFormatSymbols::getDigit()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(8),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(8), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getGroupingSeparator()
@@ -251,8 +251,8 @@ jchar java::text::DecimalFormatSymbols::getGroupingSeparator()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(9),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(9), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormatSymbols::getInfinity()
@@ -261,8 +261,8 @@ local_ref< java::lang::String > java::text::DecimalFormatSymbols::getInfinity()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(10),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getMinusSign()
@@ -271,8 +271,8 @@ jchar java::text::DecimalFormatSymbols::getMinusSign()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(11),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(11), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getMonetaryDecimalSeparator()
@@ -281,8 +281,8 @@ jchar java::text::DecimalFormatSymbols::getMonetaryDecimalSeparator()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(12),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(12), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DecimalFormatSymbols::getNaN()
@@ -291,8 +291,8 @@ local_ref< java::lang::String > java::text::DecimalFormatSymbols::getNaN()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(13),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getPatternSeparator()
@@ -301,8 +301,8 @@ jchar java::text::DecimalFormatSymbols::getPatternSeparator()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(14),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(14), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getPercent()
@@ -311,8 +311,8 @@ jchar java::text::DecimalFormatSymbols::getPercent()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(15),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(15), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getPerMill()
@@ -321,8 +321,8 @@ jchar java::text::DecimalFormatSymbols::getPerMill()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(16),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(16), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::text::DecimalFormatSymbols::getZeroDigit()
@@ -331,8 +331,8 @@ jchar java::text::DecimalFormatSymbols::getZeroDigit()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(17),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(17), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jint java::text::DecimalFormatSymbols::hashCode()
@@ -341,8 +341,8 @@ jint java::text::DecimalFormatSymbols::hashCode()
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(18),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::text::DecimalFormatSymbols::setCurrency(local_ref< java::util::Currency > const &a0)
@@ -351,8 +351,8 @@ void java::text::DecimalFormatSymbols::setCurrency(local_ref< java::util::Curren
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(19),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setInternationalCurrencySymbol(local_ref< java::lang::String > const &a0)
@@ -361,8 +361,8 @@ void java::text::DecimalFormatSymbols::setInternationalCurrencySymbol(local_ref<
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(20),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setCurrencySymbol(local_ref< java::lang::String > const &a0)
@@ -371,8 +371,8 @@ void java::text::DecimalFormatSymbols::setCurrencySymbol(local_ref< java::lang::
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(21),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setDecimalSeparator(jchar a0)
@@ -381,8 +381,8 @@ void java::text::DecimalFormatSymbols::setDecimalSeparator(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(22),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setDigit(jchar a0)
@@ -391,8 +391,8 @@ void java::text::DecimalFormatSymbols::setDigit(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(23),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setGroupingSeparator(jchar a0)
@@ -401,8 +401,8 @@ void java::text::DecimalFormatSymbols::setGroupingSeparator(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(24),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setInfinity(local_ref< java::lang::String > const &a0)
@@ -411,8 +411,8 @@ void java::text::DecimalFormatSymbols::setInfinity(local_ref< java::lang::String
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(25),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setMinusSign(jchar a0)
@@ -421,8 +421,8 @@ void java::text::DecimalFormatSymbols::setMinusSign(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(26),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar a0)
@@ -431,8 +431,8 @@ void java::text::DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(27),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setNaN(local_ref< java::lang::String > const &a0)
@@ -441,8 +441,8 @@ void java::text::DecimalFormatSymbols::setNaN(local_ref< java::lang::String > co
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(28),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setPatternSeparator(jchar a0)
@@ -451,8 +451,8 @@ void java::text::DecimalFormatSymbols::setPatternSeparator(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(29),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setPercent(jchar a0)
@@ -461,8 +461,8 @@ void java::text::DecimalFormatSymbols::setPercent(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(30),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setPerMill(jchar a0)
@@ -471,8 +471,8 @@ void java::text::DecimalFormatSymbols::setPerMill(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(31),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DecimalFormatSymbols::setZeroDigit(jchar a0)
@@ -481,8 +481,8 @@ void java::text::DecimalFormatSymbols::setZeroDigit(jchar a0)
 		java::text::DecimalFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_NAME(32),
 		java::text::DecimalFormatSymbols::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

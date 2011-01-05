@@ -81,8 +81,8 @@ local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMLocator::getOrig
 		javax::xml::transform::dom::DOMLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMLocator::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::dom::DOMLocator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 

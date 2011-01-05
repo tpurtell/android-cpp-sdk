@@ -198,8 +198,8 @@ jboolean android::view::GestureDetector_::OnGestureListener::onDown(local_ref< a
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(0),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::GestureDetector_::OnGestureListener::onShowPress(local_ref< android::view::MotionEvent > const &a0)
@@ -208,8 +208,8 @@ void android::view::GestureDetector_::OnGestureListener::onShowPress(local_ref< 
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(1),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::OnGestureListener::onSingleTapUp(local_ref< android::view::MotionEvent > const &a0)
@@ -218,8 +218,8 @@ jboolean android::view::GestureDetector_::OnGestureListener::onSingleTapUp(local
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(2),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::OnGestureListener::onScroll(local_ref< android::view::MotionEvent > const &a0, local_ref< android::view::MotionEvent > const &a1, jfloat a2, jfloat a3)
@@ -228,8 +228,8 @@ jboolean android::view::GestureDetector_::OnGestureListener::onScroll(local_ref<
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(3),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::view::GestureDetector_::OnGestureListener::onLongPress(local_ref< android::view::MotionEvent > const &a0)
@@ -238,8 +238,8 @@ void android::view::GestureDetector_::OnGestureListener::onLongPress(local_ref< 
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(4),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::OnGestureListener::onFling(local_ref< android::view::MotionEvent > const &a0, local_ref< android::view::MotionEvent > const &a1, jfloat a2, jfloat a3)
@@ -248,8 +248,8 @@ jboolean android::view::GestureDetector_::OnGestureListener::onFling(local_ref< 
 		android::view::GestureDetector_::OnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_NAME(5),
 		android::view::GestureDetector_::OnGestureListener::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -273,8 +273,8 @@ jboolean android::view::GestureDetector_::OnDoubleTapListener::onSingleTapConfir
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_NAME(0),
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::OnDoubleTapListener::onDoubleTap(local_ref< android::view::MotionEvent > const &a0)
@@ -283,8 +283,8 @@ jboolean android::view::GestureDetector_::OnDoubleTapListener::onDoubleTap(local
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_NAME(1),
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::OnDoubleTapListener::onDoubleTapEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -293,8 +293,8 @@ jboolean android::view::GestureDetector_::OnDoubleTapListener::onDoubleTapEvent(
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_NAME(2),
 		android::view::GestureDetector_::OnDoubleTapListener::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -325,8 +325,8 @@ android::view::GestureDetector_::SimpleOnGestureListener::SimpleOnGestureListene
 	call_new_object<
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(0),
-		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -338,8 +338,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onSingleTapUp
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(1),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::GestureDetector_::SimpleOnGestureListener::onLongPress(local_ref< android::view::MotionEvent > const &a0)
@@ -348,8 +348,8 @@ void android::view::GestureDetector_::SimpleOnGestureListener::onLongPress(local
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(2),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onScroll(local_ref< android::view::MotionEvent > const &a0, local_ref< android::view::MotionEvent > const &a1, jfloat a2, jfloat a3)
@@ -358,8 +358,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onScroll(loca
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(3),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onFling(local_ref< android::view::MotionEvent > const &a0, local_ref< android::view::MotionEvent > const &a1, jfloat a2, jfloat a3)
@@ -368,8 +368,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onFling(local
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(4),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::view::GestureDetector_::SimpleOnGestureListener::onShowPress(local_ref< android::view::MotionEvent > const &a0)
@@ -378,8 +378,8 @@ void android::view::GestureDetector_::SimpleOnGestureListener::onShowPress(local
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(5),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDown(local_ref< android::view::MotionEvent > const &a0)
@@ -388,8 +388,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDown(local_
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(6),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDoubleTap(local_ref< android::view::MotionEvent > const &a0)
@@ -398,8 +398,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDoubleTap(l
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(7),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDoubleTapEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -408,8 +408,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onDoubleTapEv
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(8),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector_::SimpleOnGestureListener::onSingleTapConfirmed(local_ref< android::view::MotionEvent > const &a0)
@@ -418,8 +418,8 @@ jboolean android::view::GestureDetector_::SimpleOnGestureListener::onSingleTapCo
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME,
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(9),
 		android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -448,8 +448,8 @@ android::view::GestureDetector::GestureDetector(local_ref< android::view::Gestur
 	call_new_object<
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(0),
-		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -461,8 +461,8 @@ android::view::GestureDetector::GestureDetector(local_ref< android::view::Gestur
 	call_new_object<
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(1),
-		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -474,8 +474,8 @@ android::view::GestureDetector::GestureDetector(local_ref< android::content::Con
 	call_new_object<
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(2),
-		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -487,8 +487,8 @@ android::view::GestureDetector::GestureDetector(local_ref< android::content::Con
 	call_new_object<
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(3),
-		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -500,8 +500,8 @@ void android::view::GestureDetector::setOnDoubleTapListener(local_ref< android::
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(4),
 		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::GestureDetector::setIsLongpressEnabled(jboolean a0)
@@ -510,8 +510,8 @@ void android::view::GestureDetector::setIsLongpressEnabled(jboolean a0)
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(5),
 		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::GestureDetector::isLongpressEnabled()
@@ -520,8 +520,8 @@ jboolean android::view::GestureDetector::isLongpressEnabled()
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(6),
 		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::GestureDetector::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -530,8 +530,8 @@ jboolean android::view::GestureDetector::onTouchEvent(local_ref< android::view::
 		android::view::GestureDetector::J2CPP_CLASS_NAME,
 		android::view::GestureDetector::J2CPP_METHOD_NAME(7),
 		android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

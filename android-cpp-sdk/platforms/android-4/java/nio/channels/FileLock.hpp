@@ -90,8 +90,8 @@ local_ref< java::nio::channels::FileChannel > java::nio::channels::FileLock::cha
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(1),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::FileChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::FileChannel >
+	>(get_jobject());
 }
 
 jlong java::nio::channels::FileLock::position()
@@ -100,8 +100,8 @@ jlong java::nio::channels::FileLock::position()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(2),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::nio::channels::FileLock::size()
@@ -110,8 +110,8 @@ jlong java::nio::channels::FileLock::size()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(3),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::FileLock::isShared()
@@ -120,8 +120,8 @@ jboolean java::nio::channels::FileLock::isShared()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(4),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::FileLock::overlaps(jlong a0, jlong a1)
@@ -130,8 +130,8 @@ jboolean java::nio::channels::FileLock::overlaps(jlong a0, jlong a1)
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(5),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::nio::channels::FileLock::isValid()
@@ -140,8 +140,8 @@ jboolean java::nio::channels::FileLock::isValid()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(6),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::nio::channels::FileLock::release()
@@ -150,8 +150,8 @@ void java::nio::channels::FileLock::release()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(7),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::channels::FileLock::toString()
@@ -160,8 +160,8 @@ local_ref< java::lang::String > java::nio::channels::FileLock::toString()
 		java::nio::channels::FileLock::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLock::J2CPP_METHOD_NAME(8),
 		java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

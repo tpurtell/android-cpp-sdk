@@ -75,8 +75,8 @@ void org::apache::http::impl::conn::tsccm::RefQueueHandler::handleReference(loca
 		org::apache::http::impl::conn::tsccm::RefQueueHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::impl::conn::tsccm::RefQueueHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

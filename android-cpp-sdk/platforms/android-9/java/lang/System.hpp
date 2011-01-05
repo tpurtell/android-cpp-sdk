@@ -145,8 +145,8 @@ void java::lang::System::setIn(local_ref< java::io::InputStream > const &a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(1),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::setOut(local_ref< java::io::PrintStream > const &a0)
@@ -155,8 +155,8 @@ void java::lang::System::setOut(local_ref< java::io::PrintStream > const &a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(2),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::setErr(local_ref< java::io::PrintStream > const &a0)
@@ -165,8 +165,8 @@ void java::lang::System::setErr(local_ref< java::io::PrintStream > const &a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(3),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::arraycopy(local_ref< java::lang::Object > const &a0, jint a1, local_ref< java::lang::Object > const &a2, jint a3, jint a4)
@@ -175,8 +175,8 @@ void java::lang::System::arraycopy(local_ref< java::lang::Object > const &a0, ji
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(4),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jlong java::lang::System::currentTimeMillis()
@@ -185,8 +185,8 @@ jlong java::lang::System::currentTimeMillis()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(5),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong java::lang::System::nanoTime()
@@ -195,8 +195,8 @@ jlong java::lang::System::nanoTime()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(6),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 void java::lang::System::exit(jint a0)
@@ -205,8 +205,8 @@ void java::lang::System::exit(jint a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(7),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::gc()
@@ -215,8 +215,8 @@ void java::lang::System::gc()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(8),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	();
+		void
+	>();
 }
 
 local_ref< java::lang::String > java::lang::System::getenv(local_ref< java::lang::String > const &a0)
@@ -225,8 +225,8 @@ local_ref< java::lang::String > java::lang::System::getenv(local_ref< java::lang
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(9),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::util::Map > java::lang::System::getenv()
@@ -235,8 +235,8 @@ local_ref< java::util::Map > java::lang::System::getenv()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(10),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Map > >
-	();
+		local_ref< java::util::Map >
+	>();
 }
 
 local_ref< java::nio::channels::Channel > java::lang::System::inheritedChannel()
@@ -245,8 +245,8 @@ local_ref< java::nio::channels::Channel > java::lang::System::inheritedChannel()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(11),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::nio::channels::Channel > >
-	();
+		local_ref< java::nio::channels::Channel >
+	>();
 }
 
 local_ref< java::util::Properties > java::lang::System::getProperties()
@@ -255,8 +255,8 @@ local_ref< java::util::Properties > java::lang::System::getProperties()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(12),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Properties > >
-	();
+		local_ref< java::util::Properties >
+	>();
 }
 
 local_ref< java::lang::String > java::lang::System::getProperty(local_ref< java::lang::String > const &a0)
@@ -265,8 +265,8 @@ local_ref< java::lang::String > java::lang::System::getProperty(local_ref< java:
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(13),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::System::getProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -275,8 +275,8 @@ local_ref< java::lang::String > java::lang::System::getProperty(local_ref< java:
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(14),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::System::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -285,8 +285,8 @@ local_ref< java::lang::String > java::lang::System::setProperty(local_ref< java:
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(15),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::System::clearProperty(local_ref< java::lang::String > const &a0)
@@ -295,8 +295,8 @@ local_ref< java::lang::String > java::lang::System::clearProperty(local_ref< jav
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(16),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::io::Console > java::lang::System::console()
@@ -305,8 +305,8 @@ local_ref< java::io::Console > java::lang::System::console()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(17),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::io::Console > >
-	();
+		local_ref< java::io::Console >
+	>();
 }
 
 local_ref< java::lang::SecurityManager > java::lang::System::getSecurityManager()
@@ -315,8 +315,8 @@ local_ref< java::lang::SecurityManager > java::lang::System::getSecurityManager(
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(18),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::SecurityManager > >
-	();
+		local_ref< java::lang::SecurityManager >
+	>();
 }
 
 jint java::lang::System::identityHashCode(local_ref< java::lang::Object > const &a0)
@@ -325,8 +325,8 @@ jint java::lang::System::identityHashCode(local_ref< java::lang::Object > const 
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(19),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void java::lang::System::load(local_ref< java::lang::String > const &a0)
@@ -335,8 +335,8 @@ void java::lang::System::load(local_ref< java::lang::String > const &a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(20),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::loadLibrary(local_ref< java::lang::String > const &a0)
@@ -345,8 +345,8 @@ void java::lang::System::loadLibrary(local_ref< java::lang::String > const &a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(21),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::runFinalization()
@@ -355,8 +355,8 @@ void java::lang::System::runFinalization()
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(22),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	();
+		void
+	>();
 }
 
 void java::lang::System::runFinalizersOnExit(jboolean a0)
@@ -365,8 +365,8 @@ void java::lang::System::runFinalizersOnExit(jboolean a0)
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(23),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::setProperties(local_ref< java::util::Properties > const &a0)
@@ -375,8 +375,8 @@ void java::lang::System::setProperties(local_ref< java::util::Properties > const
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(24),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::lang::System::setSecurityManager(local_ref< java::lang::SecurityManager > const &a0)
@@ -385,8 +385,8 @@ void java::lang::System::setSecurityManager(local_ref< java::lang::SecurityManag
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(25),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::System::mapLibraryName(local_ref< java::lang::String > const &a0)
@@ -395,8 +395,8 @@ local_ref< java::lang::String > java::lang::System::mapLibraryName(local_ref< ja
 		java::lang::System::J2CPP_CLASS_NAME,
 		java::lang::System::J2CPP_METHOD_NAME(26),
 		java::lang::System::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

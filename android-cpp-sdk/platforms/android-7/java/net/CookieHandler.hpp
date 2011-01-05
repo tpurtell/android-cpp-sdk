@@ -81,8 +81,8 @@ java::net::CookieHandler::CookieHandler()
 	call_new_object<
 		java::net::CookieHandler::J2CPP_CLASS_NAME,
 		java::net::CookieHandler::J2CPP_METHOD_NAME(0),
-		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +94,8 @@ local_ref< java::net::CookieHandler > java::net::CookieHandler::getDefault()
 		java::net::CookieHandler::J2CPP_CLASS_NAME,
 		java::net::CookieHandler::J2CPP_METHOD_NAME(1),
 		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::CookieHandler > >
-	();
+		local_ref< java::net::CookieHandler >
+	>();
 }
 
 void java::net::CookieHandler::setDefault(local_ref< java::net::CookieHandler > const &a0)
@@ -104,8 +104,8 @@ void java::net::CookieHandler::setDefault(local_ref< java::net::CookieHandler > 
 		java::net::CookieHandler::J2CPP_CLASS_NAME,
 		java::net::CookieHandler::J2CPP_METHOD_NAME(2),
 		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::util::Map > java::net::CookieHandler::get(local_ref< java::net::URI > const &a0, local_ref< java::util::Map > const &a1)
@@ -114,8 +114,8 @@ local_ref< java::util::Map > java::net::CookieHandler::get(local_ref< java::net:
 		java::net::CookieHandler::J2CPP_CLASS_NAME,
 		java::net::CookieHandler::J2CPP_METHOD_NAME(3),
 		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Map > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Map >
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::CookieHandler::put(local_ref< java::net::URI > const &a0, local_ref< java::util::Map > const &a1)
@@ -124,8 +124,8 @@ void java::net::CookieHandler::put(local_ref< java::net::URI > const &a0, local_
 		java::net::CookieHandler::J2CPP_CLASS_NAME,
 		java::net::CookieHandler::J2CPP_METHOD_NAME(4),
 		java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

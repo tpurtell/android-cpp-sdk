@@ -13,10 +13,16 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class LinkageError; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Error.hpp>
 #include <java/lang/LinkageError.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -45,6 +51,10 @@ namespace java { namespace lang {
 		}
 
 		operator local_ref<java::lang::LinkageError>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ExceptionInInitializerError();
@@ -75,14 +85,34 @@ java::lang::ExceptionInInitializerError::operator local_ref<java::lang::LinkageE
 	return local_ref<java::lang::LinkageError>(get_jobject());
 }
 
+java::lang::ExceptionInInitializerError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::lang::ExceptionInInitializerError::operator local_ref<java::lang::Error>() const
+{
+	return local_ref<java::lang::Error>(get_jobject());
+}
+
+java::lang::ExceptionInInitializerError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::lang::ExceptionInInitializerError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::lang::ExceptionInInitializerError::ExceptionInInitializerError()
 : object<java::lang::ExceptionInInitializerError>(
 	call_new_object<
 		java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME,
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(0),
-		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +124,8 @@ java::lang::ExceptionInInitializerError::ExceptionInInitializerError(local_ref< 
 	call_new_object<
 		java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME,
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(1),
-		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -107,8 +137,8 @@ java::lang::ExceptionInInitializerError::ExceptionInInitializerError(local_ref< 
 	call_new_object<
 		java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME,
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(2),
-		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -120,8 +150,8 @@ local_ref< java::lang::Throwable > java::lang::ExceptionInInitializerError::getE
 		java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME,
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(3),
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Throwable > java::lang::ExceptionInInitializerError::getCause()
@@ -130,8 +160,8 @@ local_ref< java::lang::Throwable > java::lang::ExceptionInInitializerError::getC
 		java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME,
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(4),
 		java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 

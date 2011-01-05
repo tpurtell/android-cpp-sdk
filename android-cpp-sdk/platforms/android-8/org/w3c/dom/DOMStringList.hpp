@@ -76,8 +76,8 @@ local_ref< java::lang::String > org::w3c::dom::DOMStringList::item(jint a0)
 		org::w3c::dom::DOMStringList::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint org::w3c::dom::DOMStringList::getLength()
@@ -86,8 +86,8 @@ jint org::w3c::dom::DOMStringList::getLength()
 		org::w3c::dom::DOMStringList::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::w3c::dom::DOMStringList::contains(local_ref< java::lang::String > const &a0)
@@ -96,8 +96,8 @@ jboolean org::w3c::dom::DOMStringList::contains(local_ref< java::lang::String > 
 		org::w3c::dom::DOMStringList::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::DOMStringList::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

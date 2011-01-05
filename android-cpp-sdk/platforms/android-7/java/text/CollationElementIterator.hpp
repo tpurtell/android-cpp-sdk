@@ -98,8 +98,8 @@ jint java::text::CollationElementIterator::getMaxExpansion(jint a0)
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(1),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::CollationElementIterator::getOffset()
@@ -108,8 +108,8 @@ jint java::text::CollationElementIterator::getOffset()
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(2),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::CollationElementIterator::next()
@@ -118,8 +118,8 @@ jint java::text::CollationElementIterator::next()
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(3),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::CollationElementIterator::previous()
@@ -128,8 +128,8 @@ jint java::text::CollationElementIterator::previous()
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(4),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::CollationElementIterator::primaryOrder(jint a0)
@@ -138,8 +138,8 @@ jint java::text::CollationElementIterator::primaryOrder(jint a0)
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(5),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void java::text::CollationElementIterator::reset()
@@ -148,8 +148,8 @@ void java::text::CollationElementIterator::reset()
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(6),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jshort java::text::CollationElementIterator::secondaryOrder(jint a0)
@@ -158,8 +158,8 @@ jshort java::text::CollationElementIterator::secondaryOrder(jint a0)
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(7),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(7), 
-		jshort >
-	(a0);
+		jshort
+	>(a0);
 }
 
 void java::text::CollationElementIterator::setOffset(jint a0)
@@ -168,8 +168,8 @@ void java::text::CollationElementIterator::setOffset(jint a0)
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(8),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::CollationElementIterator::setText(local_ref< java::text::CharacterIterator > const &a0)
@@ -178,8 +178,8 @@ void java::text::CollationElementIterator::setText(local_ref< java::text::Charac
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(9),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::CollationElementIterator::setText(local_ref< java::lang::String > const &a0)
@@ -188,8 +188,8 @@ void java::text::CollationElementIterator::setText(local_ref< java::lang::String
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(10),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort java::text::CollationElementIterator::tertiaryOrder(jint a0)
@@ -198,8 +198,8 @@ jshort java::text::CollationElementIterator::tertiaryOrder(jint a0)
 		java::text::CollationElementIterator::J2CPP_CLASS_NAME,
 		java::text::CollationElementIterator::J2CPP_METHOD_NAME(11),
 		java::text::CollationElementIterator::J2CPP_METHOD_SIGNATURE(11), 
-		jshort >
-	(a0);
+		jshort
+	>(a0);
 }
 
 

@@ -118,8 +118,8 @@ android::content::pm::ConfigurationInfo::ConfigurationInfo()
 	call_new_object<
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , reqTouchScreen(get_jobject())
 , reqKeyboardType(get_jobject())
@@ -136,8 +136,8 @@ android::content::pm::ConfigurationInfo::ConfigurationInfo(local_ref< android::c
 	call_new_object<
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , reqTouchScreen(get_jobject())
 , reqKeyboardType(get_jobject())
@@ -154,8 +154,8 @@ local_ref< java::lang::String > android::content::pm::ConfigurationInfo::toStrin
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::ConfigurationInfo::describeContents()
@@ -164,8 +164,8 @@ jint android::content::pm::ConfigurationInfo::describeContents()
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::ConfigurationInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -174,8 +174,8 @@ void android::content::pm::ConfigurationInfo::writeToParcel(local_ref< android::
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::ConfigurationInfo::getGlEsVersion()
@@ -184,8 +184,8 @@ local_ref< java::lang::String > android::content::pm::ConfigurationInfo::getGlEs
 		android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

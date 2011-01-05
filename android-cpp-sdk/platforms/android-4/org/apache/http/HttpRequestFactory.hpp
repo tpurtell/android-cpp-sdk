@@ -12,9 +12,9 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -78,8 +78,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::HttpRequestFactor
 		org::apache::http::HttpRequestFactory::J2CPP_CLASS_NAME,
 		org::apache::http::HttpRequestFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpRequestFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpRequest > org::apache::http::HttpRequestFactory::newHttpRequest(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -88,8 +88,8 @@ local_ref< org::apache::http::HttpRequest > org::apache::http::HttpRequestFactor
 		org::apache::http::HttpRequestFactory::J2CPP_CLASS_NAME,
 		org::apache::http::HttpRequestFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpRequestFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpRequest >
+	>(get_jobject(), a0, a1);
 }
 
 

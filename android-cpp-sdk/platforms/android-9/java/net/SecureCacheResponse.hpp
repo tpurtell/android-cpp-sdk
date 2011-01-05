@@ -12,11 +12,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/CacheResponse.hpp>
 #include <java/security/Principal.hpp>
@@ -47,6 +49,7 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::CacheResponse>() const;
 
 
@@ -74,6 +77,11 @@ namespace j2cpp {
 
 
 
+java::net::SecureCacheResponse::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::SecureCacheResponse::operator local_ref<java::net::CacheResponse>() const
 {
 	return local_ref<java::net::CacheResponse>(get_jobject());
@@ -85,8 +93,8 @@ java::net::SecureCacheResponse::SecureCacheResponse()
 	call_new_object<
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(0),
-		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +106,8 @@ local_ref< java::lang::String > java::net::SecureCacheResponse::getCipherSuite()
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(1),
 		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::net::SecureCacheResponse::getLocalCertificateChain()
@@ -108,8 +116,8 @@ local_ref< java::util::List > java::net::SecureCacheResponse::getLocalCertificat
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(2),
 		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::net::SecureCacheResponse::getServerCertificateChain()
@@ -118,8 +126,8 @@ local_ref< java::util::List > java::net::SecureCacheResponse::getServerCertifica
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(3),
 		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > java::net::SecureCacheResponse::getPeerPrincipal()
@@ -128,8 +136,8 @@ local_ref< java::security::Principal > java::net::SecureCacheResponse::getPeerPr
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(4),
 		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > java::net::SecureCacheResponse::getLocalPrincipal()
@@ -138,8 +146,8 @@ local_ref< java::security::Principal > java::net::SecureCacheResponse::getLocalP
 		java::net::SecureCacheResponse::J2CPP_CLASS_NAME,
 		java::net::SecureCacheResponse::J2CPP_METHOD_NAME(5),
 		java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 

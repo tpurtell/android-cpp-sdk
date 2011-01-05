@@ -78,8 +78,8 @@ android::database::sqlite::SQLiteClosable::SQLiteClosable()
 	call_new_object<
 		android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(0),
-		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -93,8 +93,8 @@ void android::database::sqlite::SQLiteClosable::acquireReference()
 		android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteClosable::releaseReference()
@@ -103,8 +103,8 @@ void android::database::sqlite::SQLiteClosable::releaseReference()
 		android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteClosable::releaseReferenceFromContainer()
@@ -113,8 +113,8 @@ void android::database::sqlite::SQLiteClosable::releaseReferenceFromContainer()
 		android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(5),
 		android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

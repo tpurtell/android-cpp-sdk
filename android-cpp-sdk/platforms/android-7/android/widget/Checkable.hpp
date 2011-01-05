@@ -73,8 +73,8 @@ void android::widget::Checkable::setChecked(jboolean a0)
 		android::widget::Checkable::J2CPP_CLASS_NAME,
 		android::widget::Checkable::J2CPP_METHOD_NAME(0),
 		android::widget::Checkable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::Checkable::isChecked()
@@ -83,8 +83,8 @@ jboolean android::widget::Checkable::isChecked()
 		android::widget::Checkable::J2CPP_CLASS_NAME,
 		android::widget::Checkable::J2CPP_METHOD_NAME(1),
 		android::widget::Checkable::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::Checkable::toggle()
@@ -93,8 +93,8 @@ void android::widget::Checkable::toggle()
 		android::widget::Checkable::J2CPP_CLASS_NAME,
 		android::widget::Checkable::J2CPP_METHOD_NAME(2),
 		android::widget::Checkable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

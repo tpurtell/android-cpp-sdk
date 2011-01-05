@@ -78,8 +78,8 @@ android::content::ContentUris::ContentUris()
 	call_new_object<
 		android::content::ContentUris::J2CPP_CLASS_NAME,
 		android::content::ContentUris::J2CPP_METHOD_NAME(0),
-		android::content::ContentUris::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::ContentUris::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -91,8 +91,8 @@ jlong android::content::ContentUris::parseId(local_ref< android::net::Uri > cons
 		android::content::ContentUris::J2CPP_CLASS_NAME,
 		android::content::ContentUris::J2CPP_METHOD_NAME(1),
 		android::content::ContentUris::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 local_ref< android::net::Uri_::Builder > android::content::ContentUris::appendId(local_ref< android::net::Uri_::Builder > const &a0, jlong a1)
@@ -101,8 +101,8 @@ local_ref< android::net::Uri_::Builder > android::content::ContentUris::appendId
 		android::content::ContentUris::J2CPP_CLASS_NAME,
 		android::content::ContentUris::J2CPP_METHOD_NAME(2),
 		android::content::ContentUris::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri_::Builder > >
-	(a0, a1);
+		local_ref< android::net::Uri_::Builder >
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::content::ContentUris::withAppendedId(local_ref< android::net::Uri > const &a0, jlong a1)
@@ -111,8 +111,8 @@ local_ref< android::net::Uri > android::content::ContentUris::withAppendedId(loc
 		android::content::ContentUris::J2CPP_CLASS_NAME,
 		android::content::ContentUris::J2CPP_METHOD_NAME(3),
 		android::content::ContentUris::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 

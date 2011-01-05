@@ -102,8 +102,8 @@ java::security::cert::CertificateFactorySpi::CertificateFactorySpi()
 	call_new_object<
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(0),
-		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -115,8 +115,8 @@ local_ref< java::security::cert::Certificate > java::security::cert::Certificate
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::Certificate > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::Certificate >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::security::cert::CertificateFactorySpi::engineGenerateCertificates(local_ref< java::io::InputStream > const &a0)
@@ -125,8 +125,8 @@ local_ref< java::util::Collection > java::security::cert::CertificateFactorySpi:
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(2),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CRL > java::security::cert::CertificateFactorySpi::engineGenerateCRL(local_ref< java::io::InputStream > const &a0)
@@ -135,8 +135,8 @@ local_ref< java::security::cert::CRL > java::security::cert::CertificateFactoryS
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(3),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::cert::CRL > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::CRL >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::security::cert::CertificateFactorySpi::engineGenerateCRLs(local_ref< java::io::InputStream > const &a0)
@@ -145,8 +145,8 @@ local_ref< java::util::Collection > java::security::cert::CertificateFactorySpi:
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(4),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CertPath > java::security::cert::CertificateFactorySpi::engineGenerateCertPath(local_ref< java::io::InputStream > const &a0)
@@ -155,8 +155,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::CertificateFac
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(5),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CertPath > java::security::cert::CertificateFactorySpi::engineGenerateCertPath(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
@@ -165,8 +165,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::CertificateFac
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(6),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::cert::CertPath > java::security::cert::CertificateFactorySpi::engineGenerateCertPath(local_ref< java::util::List > const &a0)
@@ -175,8 +175,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::CertificateFac
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(7),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject(), a0);
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > java::security::cert::CertificateFactorySpi::engineGetCertPathEncodings()
@@ -185,8 +185,8 @@ local_ref< java::util::Iterator > java::security::cert::CertificateFactorySpi::e
 		java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(8),
 		java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 

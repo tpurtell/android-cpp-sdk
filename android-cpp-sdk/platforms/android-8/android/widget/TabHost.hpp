@@ -22,8 +22,13 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -36,7 +41,11 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
 #include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/FrameLayout.hpp>
 #include <android/widget/TabHost.hpp>
 #include <android/widget/TabWidget.hpp>
@@ -171,7 +180,14 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<android::widget::FrameLayout>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
 		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		TabHost(local_ref< android::content::Context > const&);
@@ -223,8 +239,8 @@ local_ref< android::view::View > android::widget::TabHost_::TabContentFactory::c
 		android::widget::TabHost_::TabContentFactory::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabContentFactory::J2CPP_METHOD_NAME(0),
 		android::widget::TabHost_::TabContentFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0);
+		local_ref< android::view::View >
+	>(get_jobject(), a0);
 }
 
 
@@ -244,8 +260,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(1),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setIndicator(local_ref< java::lang::CharSequence > const &a0, local_ref< android::graphics::drawable::Drawable > const &a1)
@@ -254,8 +270,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(2),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0, a1);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setIndicator(local_ref< android::view::View > const &a0)
@@ -264,8 +280,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(3),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setContent(jint a0)
@@ -274,8 +290,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(4),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setContent(local_ref< android::widget::TabHost_::TabContentFactory > const &a0)
@@ -284,8 +300,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(5),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setContent(local_ref< android::content::Intent > const &a0)
@@ -294,8 +310,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSp
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(6),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::widget::TabHost_::TabSpec::getTag()
@@ -304,8 +320,8 @@ local_ref< java::lang::String > android::widget::TabHost_::TabSpec::getTag()
 		android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(7),
 		android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -333,8 +349,8 @@ void android::widget::TabHost_::OnTabChangeListener::onTabChanged(local_ref< jav
 		android::widget::TabHost_::OnTabChangeListener::J2CPP_CLASS_NAME,
 		android::widget::TabHost_::OnTabChangeListener::J2CPP_METHOD_NAME(0),
 		android::widget::TabHost_::OnTabChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -348,9 +364,44 @@ android::widget::TabHost::operator local_ref<android::widget::FrameLayout>() con
 	return local_ref<android::widget::FrameLayout>(get_jobject());
 }
 
+android::widget::TabHost::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
 android::widget::TabHost::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
 {
 	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::TabHost::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -359,8 +410,8 @@ android::widget::TabHost::TabHost(local_ref< android::content::Context > const &
 	call_new_object<
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(0),
-		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -372,8 +423,8 @@ android::widget::TabHost::TabHost(local_ref< android::content::Context > const &
 	call_new_object<
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(1),
-		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -385,8 +436,8 @@ local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost::newTab
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(2),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::widget::TabHost_::TabSpec > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TabHost_::TabSpec >
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::setup()
@@ -395,8 +446,8 @@ void android::widget::TabHost::setup()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(3),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TabHost::setup(local_ref< android::app::LocalActivityManager > const &a0)
@@ -405,8 +456,8 @@ void android::widget::TabHost::setup(local_ref< android::app::LocalActivityManag
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(4),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -417,8 +468,8 @@ void android::widget::TabHost::onTouchModeChanged(jboolean a0)
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(7),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::addTab(local_ref< android::widget::TabHost_::TabSpec > const &a0)
@@ -427,8 +478,8 @@ void android::widget::TabHost::addTab(local_ref< android::widget::TabHost_::TabS
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(8),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::clearAllTabs()
@@ -437,8 +488,8 @@ void android::widget::TabHost::clearAllTabs()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(9),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::widget::TabWidget > android::widget::TabHost::getTabWidget()
@@ -447,8 +498,8 @@ local_ref< android::widget::TabWidget > android::widget::TabHost::getTabWidget()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(10),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::widget::TabWidget > >
-	(get_jobject());
+		local_ref< android::widget::TabWidget >
+	>(get_jobject());
 }
 
 jint android::widget::TabHost::getCurrentTab()
@@ -457,8 +508,8 @@ jint android::widget::TabHost::getCurrentTab()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(11),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::widget::TabHost::getCurrentTabTag()
@@ -467,8 +518,8 @@ local_ref< java::lang::String > android::widget::TabHost::getCurrentTabTag()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(12),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::TabHost::getCurrentTabView()
@@ -477,8 +528,8 @@ local_ref< android::view::View > android::widget::TabHost::getCurrentTabView()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(13),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::TabHost::getCurrentView()
@@ -487,8 +538,8 @@ local_ref< android::view::View > android::widget::TabHost::getCurrentView()
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(14),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::TabHost::setCurrentTabByTag(local_ref< java::lang::String > const &a0)
@@ -497,8 +548,8 @@ void android::widget::TabHost::setCurrentTabByTag(local_ref< java::lang::String 
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(15),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::FrameLayout > android::widget::TabHost::getTabContentView()
@@ -507,8 +558,8 @@ local_ref< android::widget::FrameLayout > android::widget::TabHost::getTabConten
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(16),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::widget::FrameLayout > >
-	(get_jobject());
+		local_ref< android::widget::FrameLayout >
+	>(get_jobject());
 }
 
 jboolean android::widget::TabHost::dispatchKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -517,8 +568,8 @@ jboolean android::widget::TabHost::dispatchKeyEvent(local_ref< android::view::Ke
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(17),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::dispatchWindowFocusChanged(jboolean a0)
@@ -527,8 +578,8 @@ void android::widget::TabHost::dispatchWindowFocusChanged(jboolean a0)
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(18),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::setCurrentTab(jint a0)
@@ -537,8 +588,8 @@ void android::widget::TabHost::setCurrentTab(jint a0)
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(19),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TabHost::setOnTabChangedListener(local_ref< android::widget::TabHost_::OnTabChangeListener > const &a0)
@@ -547,8 +598,8 @@ void android::widget::TabHost::setOnTabChangedListener(local_ref< android::widge
 		android::widget::TabHost::J2CPP_CLASS_NAME,
 		android::widget::TabHost::J2CPP_METHOD_NAME(20),
 		android::widget::TabHost::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

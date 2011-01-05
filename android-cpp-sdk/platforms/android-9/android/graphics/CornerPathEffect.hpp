@@ -11,10 +11,12 @@
 #define J2CPP_ANDROID_GRAPHICS_CORNERPATHEFFECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
 
 
 #include <android/graphics/PathEffect.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,6 +38,7 @@ namespace android { namespace graphics {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::PathEffect>() const;
 
 
@@ -58,6 +61,11 @@ namespace j2cpp {
 
 
 
+android::graphics::CornerPathEffect::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::CornerPathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
 	return local_ref<android::graphics::PathEffect>(get_jobject());
@@ -69,8 +77,8 @@ android::graphics::CornerPathEffect::CornerPathEffect(jfloat a0)
 	call_new_object<
 		android::graphics::CornerPathEffect::J2CPP_CLASS_NAME,
 		android::graphics::CornerPathEffect::J2CPP_METHOD_NAME(0),
-		android::graphics::CornerPathEffect::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::CornerPathEffect::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

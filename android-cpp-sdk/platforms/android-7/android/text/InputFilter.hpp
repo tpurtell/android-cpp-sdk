@@ -134,8 +134,8 @@ android::text::InputFilter_::LengthFilter::LengthFilter(jint a0)
 	call_new_object<
 		android::text::InputFilter_::LengthFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_NAME(0),
-		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -147,8 +147,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter_::LengthFilter:
 		android::text::InputFilter_::LengthFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_NAME(1),
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -173,8 +173,8 @@ android::text::InputFilter_::AllCaps::AllCaps()
 	call_new_object<
 		android::text::InputFilter_::AllCaps::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_NAME(0),
-		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -186,8 +186,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter_::AllCaps::filt
 		android::text::InputFilter_::AllCaps::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_NAME(1),
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -208,8 +208,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter::filter(local_r
 		android::text::InputFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter::J2CPP_METHOD_NAME(0),
 		android::text::InputFilter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

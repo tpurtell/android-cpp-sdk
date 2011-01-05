@@ -37,8 +37,8 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::ParagraphStyle>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class WrapTogetherSpan
 
@@ -59,14 +59,14 @@ namespace j2cpp {
 
 
 
-android::text::style::WrapTogetherSpan::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::style::WrapTogetherSpan::operator local_ref<android::text::style::ParagraphStyle>() const
 {
 	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
+}
+
+android::text::style::WrapTogetherSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::text::style::WrapTogetherSpan,"android/text/style/WrapTogetherSpan")

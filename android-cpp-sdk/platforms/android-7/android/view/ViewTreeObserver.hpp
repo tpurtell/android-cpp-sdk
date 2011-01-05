@@ -218,8 +218,8 @@ void android::view::ViewTreeObserver_::OnTouchModeChangeListener::onTouchModeCha
 		android::view::ViewTreeObserver_::OnTouchModeChangeListener::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver_::OnTouchModeChangeListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewTreeObserver_::OnTouchModeChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -238,8 +238,8 @@ jboolean android::view::ViewTreeObserver_::OnPreDrawListener::onPreDraw()
 		android::view::ViewTreeObserver_::OnPreDrawListener::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver_::OnPreDrawListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewTreeObserver_::OnPreDrawListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -258,8 +258,8 @@ void android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::onGlobalFocu
 		android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -278,8 +278,8 @@ void android::view::ViewTreeObserver_::OnGlobalLayoutListener::onGlobalLayout()
 		android::view::ViewTreeObserver_::OnGlobalLayoutListener::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver_::OnGlobalLayoutListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewTreeObserver_::OnGlobalLayoutListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -298,8 +298,8 @@ void android::view::ViewTreeObserver_::OnScrollChangedListener::onScrollChanged(
 		android::view::ViewTreeObserver_::OnScrollChangedListener::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver_::OnScrollChangedListener::J2CPP_METHOD_NAME(0),
 		android::view::ViewTreeObserver_::OnScrollChangedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -320,8 +320,8 @@ void android::view::ViewTreeObserver::addOnGlobalFocusChangeListener(local_ref< 
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(1),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::removeOnGlobalFocusChangeListener(local_ref< android::view::ViewTreeObserver_::OnGlobalFocusChangeListener > const &a0)
@@ -330,8 +330,8 @@ void android::view::ViewTreeObserver::removeOnGlobalFocusChangeListener(local_re
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(2),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::addOnGlobalLayoutListener(local_ref< android::view::ViewTreeObserver_::OnGlobalLayoutListener > const &a0)
@@ -340,8 +340,8 @@ void android::view::ViewTreeObserver::addOnGlobalLayoutListener(local_ref< andro
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(3),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::removeGlobalOnLayoutListener(local_ref< android::view::ViewTreeObserver_::OnGlobalLayoutListener > const &a0)
@@ -350,8 +350,8 @@ void android::view::ViewTreeObserver::removeGlobalOnLayoutListener(local_ref< an
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(4),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::addOnPreDrawListener(local_ref< android::view::ViewTreeObserver_::OnPreDrawListener > const &a0)
@@ -360,8 +360,8 @@ void android::view::ViewTreeObserver::addOnPreDrawListener(local_ref< android::v
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(5),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::removeOnPreDrawListener(local_ref< android::view::ViewTreeObserver_::OnPreDrawListener > const &a0)
@@ -370,8 +370,8 @@ void android::view::ViewTreeObserver::removeOnPreDrawListener(local_ref< android
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(6),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::addOnScrollChangedListener(local_ref< android::view::ViewTreeObserver_::OnScrollChangedListener > const &a0)
@@ -380,8 +380,8 @@ void android::view::ViewTreeObserver::addOnScrollChangedListener(local_ref< andr
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(7),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::removeOnScrollChangedListener(local_ref< android::view::ViewTreeObserver_::OnScrollChangedListener > const &a0)
@@ -390,8 +390,8 @@ void android::view::ViewTreeObserver::removeOnScrollChangedListener(local_ref< a
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(8),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::addOnTouchModeChangeListener(local_ref< android::view::ViewTreeObserver_::OnTouchModeChangeListener > const &a0)
@@ -400,8 +400,8 @@ void android::view::ViewTreeObserver::addOnTouchModeChangeListener(local_ref< an
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(9),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::ViewTreeObserver::removeOnTouchModeChangeListener(local_ref< android::view::ViewTreeObserver_::OnTouchModeChangeListener > const &a0)
@@ -410,8 +410,8 @@ void android::view::ViewTreeObserver::removeOnTouchModeChangeListener(local_ref<
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(10),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ViewTreeObserver::isAlive()
@@ -420,8 +420,8 @@ jboolean android::view::ViewTreeObserver::isAlive()
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(11),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::view::ViewTreeObserver::dispatchOnGlobalLayout()
@@ -430,8 +430,8 @@ void android::view::ViewTreeObserver::dispatchOnGlobalLayout()
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(12),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::view::ViewTreeObserver::dispatchOnPreDraw()
@@ -440,8 +440,8 @@ jboolean android::view::ViewTreeObserver::dispatchOnPreDraw()
 		android::view::ViewTreeObserver::J2CPP_CLASS_NAME,
 		android::view::ViewTreeObserver::J2CPP_METHOD_NAME(13),
 		android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

@@ -12,18 +12,24 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPath; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class PolicyNode; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathValidatorResult; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathBuilderResult; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class TrustAnchor; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class PKIXCertPathValidatorResult; } } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 
 
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/PublicKey.hpp>
 #include <java/security/cert/CertPath.hpp>
 #include <java/security/cert/CertPathBuilderResult.hpp>
+#include <java/security/cert/CertPathValidatorResult.hpp>
 #include <java/security/cert/PKIXCertPathValidatorResult.hpp>
 #include <java/security/cert/PolicyNode.hpp>
 #include <java/security/cert/TrustAnchor.hpp>
@@ -50,8 +56,11 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::security::cert::PKIXCertPathValidatorResult>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::CertPathValidatorResult>() const;
 		operator local_ref<java::security::cert::CertPathBuilderResult>() const;
+		operator local_ref<java::security::cert::PKIXCertPathValidatorResult>() const;
 
 
 		PKIXCertPathBuilderResult(local_ref< java::security::cert::CertPath > const&, local_ref< java::security::cert::TrustAnchor > const&, local_ref< java::security::cert::PolicyNode > const&, local_ref< java::security::PublicKey > const&);
@@ -76,14 +85,29 @@ namespace j2cpp {
 
 
 
-java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::security::cert::PKIXCertPathValidatorResult>() const
+java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref<java::security::cert::PKIXCertPathValidatorResult>(get_jobject());
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::security::cert::CertPathValidatorResult>() const
+{
+	return local_ref<java::security::cert::CertPathValidatorResult>(get_jobject());
 }
 
 java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::security::cert::CertPathBuilderResult>() const
 {
 	return local_ref<java::security::cert::CertPathBuilderResult>(get_jobject());
+}
+
+java::security::cert::PKIXCertPathBuilderResult::operator local_ref<java::security::cert::PKIXCertPathValidatorResult>() const
+{
+	return local_ref<java::security::cert::PKIXCertPathValidatorResult>(get_jobject());
 }
 
 
@@ -92,8 +116,8 @@ java::security::cert::PKIXCertPathBuilderResult::PKIXCertPathBuilderResult(local
 	call_new_object<
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_NAME(0),
-		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -105,8 +129,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::PKIXCertPathBu
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_NAME(1),
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::PKIXCertPathBuilderResult::toString()
@@ -115,8 +139,8 @@ local_ref< java::lang::String > java::security::cert::PKIXCertPathBuilderResult:
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_NAME(2),
 		java::security::cert::PKIXCertPathBuilderResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

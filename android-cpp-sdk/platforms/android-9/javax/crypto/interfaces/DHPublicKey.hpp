@@ -13,12 +13,16 @@
 
 namespace j2cpp { namespace javax { namespace crypto { namespace interfaces { class DHKey; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/Key.hpp>
 #include <java/security/PublicKey.hpp>
 #include <javax/crypto/interfaces/DHKey.hpp>
 
@@ -43,9 +47,11 @@ namespace javax { namespace crypto { namespace interfaces {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::crypto::interfaces::DHKey>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
 		operator local_ref<java::security::PublicKey>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		local_ref< java::math::BigInteger > getY();
@@ -70,19 +76,29 @@ namespace j2cpp {
 
 
 
-javax::crypto::interfaces::DHPublicKey::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::interfaces::DHPublicKey::operator local_ref<javax::crypto::interfaces::DHKey>() const
 {
 	return local_ref<javax::crypto::interfaces::DHKey>(get_jobject());
 }
 
+javax::crypto::interfaces::DHPublicKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+javax::crypto::interfaces::DHPublicKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
+}
+
 javax::crypto::interfaces::DHPublicKey::operator local_ref<java::security::PublicKey>() const
 {
 	return local_ref<java::security::PublicKey>(get_jobject());
+}
+
+javax::crypto::interfaces::DHPublicKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > javax::crypto::interfaces::DHPublicKey::getY()
@@ -91,8 +107,8 @@ local_ref< java::math::BigInteger > javax::crypto::interfaces::DHPublicKey::getY
 		javax::crypto::interfaces::DHPublicKey::J2CPP_CLASS_NAME,
 		javax::crypto::interfaces::DHPublicKey::J2CPP_METHOD_NAME(0),
 		javax::crypto::interfaces::DHPublicKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

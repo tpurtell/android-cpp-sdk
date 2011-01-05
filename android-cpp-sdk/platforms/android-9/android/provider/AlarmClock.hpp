@@ -80,8 +80,8 @@ android::provider::AlarmClock::AlarmClock()
 	call_new_object<
 		android::provider::AlarmClock::J2CPP_CLASS_NAME,
 		android::provider::AlarmClock::J2CPP_METHOD_NAME(0),
-		android::provider::AlarmClock::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::AlarmClock::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

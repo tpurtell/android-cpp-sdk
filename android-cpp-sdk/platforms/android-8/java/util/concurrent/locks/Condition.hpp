@@ -87,8 +87,8 @@ void java::util::concurrent::locks::Condition::await()
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::Condition::awaitUninterruptibly()
@@ -97,8 +97,8 @@ void java::util::concurrent::locks::Condition::awaitUninterruptibly()
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::locks::Condition::awaitNanos(jlong a0)
@@ -107,8 +107,8 @@ jlong java::util::concurrent::locks::Condition::awaitNanos(jlong a0)
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::locks::Condition::await(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -117,8 +117,8 @@ jboolean java::util::concurrent::locks::Condition::await(jlong a0, local_ref< ja
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::locks::Condition::awaitUntil(local_ref< java::util::Date > const &a0)
@@ -127,8 +127,8 @@ jboolean java::util::concurrent::locks::Condition::awaitUntil(local_ref< java::u
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::locks::Condition::signal()
@@ -137,8 +137,8 @@ void java::util::concurrent::locks::Condition::signal()
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::Condition::signalAll()
@@ -147,8 +147,8 @@ void java::util::concurrent::locks::Condition::signalAll()
 		java::util::concurrent::locks::Condition::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::locks::Condition::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

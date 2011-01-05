@@ -272,8 +272,8 @@ namespace android { namespace bluetooth {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean equals(local_ref< java::lang::Object >  const&);
@@ -317,8 +317,8 @@ android::bluetooth::BluetoothClass_::Device_::Major::Major()
 	call_new_object<
 		android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_NAME(0),
-		android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -430,8 +430,8 @@ android::bluetooth::BluetoothClass_::Device::Device()
 	call_new_object<
 		android::bluetooth::BluetoothClass_::Device::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_NAME(0),
-		android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -854,8 +854,8 @@ android::bluetooth::BluetoothClass_::Service::Service()
 	call_new_object<
 		android::bluetooth::BluetoothClass_::Service::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_NAME(0),
-		android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -940,14 +940,14 @@ J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Service,8,"INFORMATION",
 
 
 
-android::bluetooth::BluetoothClass::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::bluetooth::BluetoothClass::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::bluetooth::BluetoothClass::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -957,8 +957,8 @@ jboolean android::bluetooth::BluetoothClass::equals(local_ref< java::lang::Objec
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(1),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::bluetooth::BluetoothClass::hashCode()
@@ -967,8 +967,8 @@ jint android::bluetooth::BluetoothClass::hashCode()
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(2),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::bluetooth::BluetoothClass::toString()
@@ -977,8 +977,8 @@ local_ref< java::lang::String > android::bluetooth::BluetoothClass::toString()
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(3),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::bluetooth::BluetoothClass::describeContents()
@@ -987,8 +987,8 @@ jint android::bluetooth::BluetoothClass::describeContents()
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(4),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::bluetooth::BluetoothClass::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -997,8 +997,8 @@ void android::bluetooth::BluetoothClass::writeToParcel(local_ref< android::os::P
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(5),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::bluetooth::BluetoothClass::hasService(jint a0)
@@ -1007,8 +1007,8 @@ jboolean android::bluetooth::BluetoothClass::hasService(jint a0)
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(6),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::bluetooth::BluetoothClass::getMajorDeviceClass()
@@ -1017,8 +1017,8 @@ jint android::bluetooth::BluetoothClass::getMajorDeviceClass()
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(7),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::bluetooth::BluetoothClass::getDeviceClass()
@@ -1027,8 +1027,8 @@ jint android::bluetooth::BluetoothClass::getDeviceClass()
 		android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(8),
 		android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

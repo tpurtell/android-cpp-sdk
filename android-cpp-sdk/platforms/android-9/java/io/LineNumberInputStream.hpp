@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_IO_LINENUMBERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,6 +50,9 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::InputStream>() const;
 		operator local_ref<java::io::FilterInputStream>() const;
 
 
@@ -76,6 +83,21 @@ namespace j2cpp {
 
 
 
+java::io::LineNumberInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::LineNumberInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::io::LineNumberInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
 java::io::LineNumberInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
 	return local_ref<java::io::FilterInputStream>(get_jobject());
@@ -87,8 +109,8 @@ java::io::LineNumberInputStream::LineNumberInputStream(local_ref< java::io::Inpu
 	call_new_object<
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(0),
-		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -100,8 +122,8 @@ jint java::io::LineNumberInputStream::available()
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(1),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::LineNumberInputStream::getLineNumber()
@@ -110,8 +132,8 @@ jint java::io::LineNumberInputStream::getLineNumber()
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(2),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::io::LineNumberInputStream::mark(jint a0)
@@ -120,8 +142,8 @@ void java::io::LineNumberInputStream::mark(jint a0)
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(3),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::io::LineNumberInputStream::read()
@@ -130,8 +152,8 @@ jint java::io::LineNumberInputStream::read()
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(4),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::LineNumberInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -140,8 +162,8 @@ jint java::io::LineNumberInputStream::read(local_ref< array<jbyte,1> > const &a0
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(5),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::LineNumberInputStream::reset()
@@ -150,8 +172,8 @@ void java::io::LineNumberInputStream::reset()
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(6),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::LineNumberInputStream::setLineNumber(jint a0)
@@ -160,8 +182,8 @@ void java::io::LineNumberInputStream::setLineNumber(jint a0)
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(7),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::io::LineNumberInputStream::skip(jlong a0)
@@ -170,8 +192,8 @@ jlong java::io::LineNumberInputStream::skip(jlong a0)
 		java::io::LineNumberInputStream::J2CPP_CLASS_NAME,
 		java::io::LineNumberInputStream::J2CPP_METHOD_NAME(8),
 		java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

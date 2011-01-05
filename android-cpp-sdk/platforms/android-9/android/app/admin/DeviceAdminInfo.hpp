@@ -141,8 +141,8 @@ android::app::admin::DeviceAdminInfo::DeviceAdminInfo(local_ref< android::conten
 	call_new_object<
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(0),
-		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -154,8 +154,8 @@ local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::getPackage
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(1),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::getReceiverName()
@@ -164,8 +164,8 @@ local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::getReceive
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(2),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::content::pm::ActivityInfo > android::app::admin::DeviceAdminInfo::getActivityInfo()
@@ -174,8 +174,8 @@ local_ref< android::content::pm::ActivityInfo > android::app::admin::DeviceAdmin
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(3),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::content::pm::ActivityInfo > >
-	(get_jobject());
+		local_ref< android::content::pm::ActivityInfo >
+	>(get_jobject());
 }
 
 local_ref< android::content::ComponentName > android::app::admin::DeviceAdminInfo::getComponent()
@@ -184,8 +184,8 @@ local_ref< android::content::ComponentName > android::app::admin::DeviceAdminInf
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(4),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject());
+		local_ref< android::content::ComponentName >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminInfo::loadLabel(local_ref< android::content::pm::PackageManager > const &a0)
@@ -194,8 +194,8 @@ local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminInfo::load
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(5),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminInfo::loadDescription(local_ref< android::content::pm::PackageManager > const &a0)
@@ -204,8 +204,8 @@ local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminInfo::load
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(6),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::admin::DeviceAdminInfo::loadIcon(local_ref< android::content::pm::PackageManager > const &a0)
@@ -214,8 +214,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::admin::DeviceAd
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(7),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::admin::DeviceAdminInfo::isVisible()
@@ -224,8 +224,8 @@ jboolean android::app::admin::DeviceAdminInfo::isVisible()
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(8),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::app::admin::DeviceAdminInfo::usesPolicy(jint a0)
@@ -234,8 +234,8 @@ jboolean android::app::admin::DeviceAdminInfo::usesPolicy(jint a0)
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(9),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::getTagForPolicy(jint a0)
@@ -244,8 +244,8 @@ local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::getTagForP
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(10),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::app::admin::DeviceAdminInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -254,8 +254,8 @@ void android::app::admin::DeviceAdminInfo::dump(local_ref< android::util::Printe
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(11),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::toString()
@@ -264,8 +264,8 @@ local_ref< java::lang::String > android::app::admin::DeviceAdminInfo::toString()
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(12),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::app::admin::DeviceAdminInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -274,8 +274,8 @@ void android::app::admin::DeviceAdminInfo::writeToParcel(local_ref< android::os:
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(13),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::admin::DeviceAdminInfo::describeContents()
@@ -284,8 +284,8 @@ jint android::app::admin::DeviceAdminInfo::describeContents()
 		android::app::admin::DeviceAdminInfo::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_NAME(14),
 		android::app::admin::DeviceAdminInfo::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

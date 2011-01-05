@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_SECURITY_IDENTITYSCOPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 namespace j2cpp { namespace java { namespace security { class Identity; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Identity.hpp>
 #include <java/security/Principal.hpp>
@@ -56,7 +60,10 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::security::Identity>() const;
+		operator local_ref<java::security::Principal>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		IdentityScope(local_ref< java::lang::String > const&);
@@ -88,9 +95,24 @@ namespace j2cpp {
 
 
 
+java::security::IdentityScope::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::security::IdentityScope::operator local_ref<java::security::Identity>() const
 {
 	return local_ref<java::security::Identity>(get_jobject());
+}
+
+java::security::IdentityScope::operator local_ref<java::security::Principal>() const
+{
+	return local_ref<java::security::Principal>(get_jobject());
+}
+
+java::security::IdentityScope::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -100,8 +122,8 @@ java::security::IdentityScope::IdentityScope(local_ref< java::lang::String > con
 	call_new_object<
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(1),
-		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -113,8 +135,8 @@ java::security::IdentityScope::IdentityScope(local_ref< java::lang::String > con
 	call_new_object<
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(2),
-		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +148,8 @@ local_ref< java::security::IdentityScope > java::security::IdentityScope::getSys
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(3),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::IdentityScope > >
-	();
+		local_ref< java::security::IdentityScope >
+	>();
 }
 
 
@@ -137,8 +159,8 @@ jint java::security::IdentityScope::size()
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(5),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::security::Identity > java::security::IdentityScope::getIdentity(local_ref< java::lang::String > const &a0)
@@ -147,8 +169,8 @@ local_ref< java::security::Identity > java::security::IdentityScope::getIdentity
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(6),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::Identity > >
-	(get_jobject(), a0);
+		local_ref< java::security::Identity >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::Identity > java::security::IdentityScope::getIdentity(local_ref< java::security::Principal > const &a0)
@@ -157,8 +179,8 @@ local_ref< java::security::Identity > java::security::IdentityScope::getIdentity
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(7),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::Identity > >
-	(get_jobject(), a0);
+		local_ref< java::security::Identity >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::Identity > java::security::IdentityScope::getIdentity(local_ref< java::security::PublicKey > const &a0)
@@ -167,8 +189,8 @@ local_ref< java::security::Identity > java::security::IdentityScope::getIdentity
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(8),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::Identity > >
-	(get_jobject(), a0);
+		local_ref< java::security::Identity >
+	>(get_jobject(), a0);
 }
 
 void java::security::IdentityScope::addIdentity(local_ref< java::security::Identity > const &a0)
@@ -177,8 +199,8 @@ void java::security::IdentityScope::addIdentity(local_ref< java::security::Ident
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(9),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::IdentityScope::removeIdentity(local_ref< java::security::Identity > const &a0)
@@ -187,8 +209,8 @@ void java::security::IdentityScope::removeIdentity(local_ref< java::security::Id
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(10),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::IdentityScope::identities()
@@ -197,8 +219,8 @@ local_ref< java::util::Enumeration > java::security::IdentityScope::identities()
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(11),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::IdentityScope::toString()
@@ -207,8 +229,8 @@ local_ref< java::lang::String > java::security::IdentityScope::toString()
 		java::security::IdentityScope::J2CPP_CLASS_NAME,
 		java::security::IdentityScope::J2CPP_METHOD_NAME(12),
 		java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

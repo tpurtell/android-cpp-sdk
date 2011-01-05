@@ -88,8 +88,8 @@ android::view::animation::OvershootInterpolator::OvershootInterpolator()
 	call_new_object<
 		android::view::animation::OvershootInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::OvershootInterpolator::J2CPP_METHOD_NAME(0),
-		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ android::view::animation::OvershootInterpolator::OvershootInterpolator(jfloat a0
 	call_new_object<
 		android::view::animation::OvershootInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::OvershootInterpolator::J2CPP_METHOD_NAME(1),
-		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -114,8 +114,8 @@ android::view::animation::OvershootInterpolator::OvershootInterpolator(local_ref
 	call_new_object<
 		android::view::animation::OvershootInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::OvershootInterpolator::J2CPP_METHOD_NAME(2),
-		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -127,8 +127,8 @@ jfloat android::view::animation::OvershootInterpolator::getInterpolation(jfloat 
 		android::view::animation::OvershootInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::OvershootInterpolator::J2CPP_METHOD_NAME(3),
 		android::view::animation::OvershootInterpolator::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 

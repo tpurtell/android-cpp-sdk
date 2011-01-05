@@ -13,10 +13,18 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +48,10 @@ namespace org { namespace apache { namespace http {
 		}
 
 		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ParseException();
@@ -68,14 +80,34 @@ org::apache::http::ParseException::operator local_ref<java::lang::RuntimeExcepti
 	return local_ref<java::lang::RuntimeException>(get_jobject());
 }
 
+org::apache::http::ParseException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::ParseException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+org::apache::http::ParseException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+org::apache::http::ParseException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 org::apache::http::ParseException::ParseException()
 : object<org::apache::http::ParseException>(
 	call_new_object<
 		org::apache::http::ParseException::J2CPP_CLASS_NAME,
 		org::apache::http::ParseException::J2CPP_METHOD_NAME(0),
-		org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -87,8 +119,8 @@ org::apache::http::ParseException::ParseException(local_ref< java::lang::String 
 	call_new_object<
 		org::apache::http::ParseException::J2CPP_CLASS_NAME,
 		org::apache::http::ParseException::J2CPP_METHOD_NAME(1),
-		org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

@@ -313,8 +313,8 @@ void android::hardware::Camera_::ErrorCallback::onError(jint a0, local_ref< andr
 		android::hardware::Camera_::ErrorCallback::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::ErrorCallback::J2CPP_METHOD_NAME(0),
 		android::hardware::Camera_::ErrorCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -334,8 +334,8 @@ local_ref< java::lang::String > android::hardware::Camera_::Parameters::flatten(
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(1),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::hardware::Camera_::Parameters::unflatten(local_ref< java::lang::String > const &a0)
@@ -344,8 +344,8 @@ void android::hardware::Camera_::Parameters::unflatten(local_ref< java::lang::St
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(2),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera_::Parameters::remove(local_ref< java::lang::String > const &a0)
@@ -354,8 +354,8 @@ void android::hardware::Camera_::Parameters::remove(local_ref< java::lang::Strin
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(3),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera_::Parameters::set(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -364,8 +364,8 @@ void android::hardware::Camera_::Parameters::set(local_ref< java::lang::String >
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(4),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::hardware::Camera_::Parameters::set(local_ref< java::lang::String > const &a0, jint a1)
@@ -374,8 +374,8 @@ void android::hardware::Camera_::Parameters::set(local_ref< java::lang::String >
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(5),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::hardware::Camera_::Parameters::get(local_ref< java::lang::String > const &a0)
@@ -384,8 +384,8 @@ local_ref< java::lang::String > android::hardware::Camera_::Parameters::get(loca
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(6),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint android::hardware::Camera_::Parameters::getInt(local_ref< java::lang::String > const &a0)
@@ -394,8 +394,8 @@ jint android::hardware::Camera_::Parameters::getInt(local_ref< java::lang::Strin
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(7),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera_::Parameters::setPreviewSize(jint a0, jint a1)
@@ -404,8 +404,8 @@ void android::hardware::Camera_::Parameters::setPreviewSize(jint a0, jint a1)
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(8),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::hardware::Camera_::Size > android::hardware::Camera_::Parameters::getPreviewSize()
@@ -414,8 +414,8 @@ local_ref< android::hardware::Camera_::Size > android::hardware::Camera_::Parame
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(9),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::hardware::Camera_::Size > >
-	(get_jobject());
+		local_ref< android::hardware::Camera_::Size >
+	>(get_jobject());
 }
 
 void android::hardware::Camera_::Parameters::setPreviewFrameRate(jint a0)
@@ -424,8 +424,8 @@ void android::hardware::Camera_::Parameters::setPreviewFrameRate(jint a0)
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(10),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::hardware::Camera_::Parameters::getPreviewFrameRate()
@@ -434,8 +434,8 @@ jint android::hardware::Camera_::Parameters::getPreviewFrameRate()
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(11),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::hardware::Camera_::Parameters::setPreviewFormat(jint a0)
@@ -444,8 +444,8 @@ void android::hardware::Camera_::Parameters::setPreviewFormat(jint a0)
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(12),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::hardware::Camera_::Parameters::getPreviewFormat()
@@ -454,8 +454,8 @@ jint android::hardware::Camera_::Parameters::getPreviewFormat()
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(13),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::hardware::Camera_::Parameters::setPictureSize(jint a0, jint a1)
@@ -464,8 +464,8 @@ void android::hardware::Camera_::Parameters::setPictureSize(jint a0, jint a1)
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(14),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::hardware::Camera_::Size > android::hardware::Camera_::Parameters::getPictureSize()
@@ -474,8 +474,8 @@ local_ref< android::hardware::Camera_::Size > android::hardware::Camera_::Parame
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(15),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::hardware::Camera_::Size > >
-	(get_jobject());
+		local_ref< android::hardware::Camera_::Size >
+	>(get_jobject());
 }
 
 void android::hardware::Camera_::Parameters::setPictureFormat(jint a0)
@@ -484,8 +484,8 @@ void android::hardware::Camera_::Parameters::setPictureFormat(jint a0)
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(16),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::hardware::Camera_::Parameters::getPictureFormat()
@@ -494,8 +494,8 @@ jint android::hardware::Camera_::Parameters::getPictureFormat()
 		android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(17),
 		android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -533,8 +533,8 @@ void android::hardware::Camera_::PreviewCallback::onPreviewFrame(local_ref< arra
 		android::hardware::Camera_::PreviewCallback::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::PreviewCallback::J2CPP_METHOD_NAME(0),
 		android::hardware::Camera_::PreviewCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -553,8 +553,8 @@ void android::hardware::Camera_::AutoFocusCallback::onAutoFocus(jboolean a0, loc
 		android::hardware::Camera_::AutoFocusCallback::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::AutoFocusCallback::J2CPP_METHOD_NAME(0),
 		android::hardware::Camera_::AutoFocusCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -573,8 +573,8 @@ void android::hardware::Camera_::ShutterCallback::onShutter()
 		android::hardware::Camera_::ShutterCallback::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::ShutterCallback::J2CPP_METHOD_NAME(0),
 		android::hardware::Camera_::ShutterCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -593,8 +593,8 @@ void android::hardware::Camera_::PictureCallback::onPictureTaken(local_ref< arra
 		android::hardware::Camera_::PictureCallback::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::PictureCallback::J2CPP_METHOD_NAME(0),
 		android::hardware::Camera_::PictureCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -613,8 +613,8 @@ android::hardware::Camera_::Size::Size(local_ref< android::hardware::Camera > co
 	call_new_object<
 		android::hardware::Camera_::Size::J2CPP_CLASS_NAME,
 		android::hardware::Camera_::Size::J2CPP_METHOD_NAME(0),
-		android::hardware::Camera_::Size::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::hardware::Camera_::Size::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 , width(get_jobject())
 , height(get_jobject())
@@ -644,8 +644,8 @@ local_ref< android::hardware::Camera > android::hardware::Camera::open()
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(1),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::hardware::Camera > >
-	();
+		local_ref< android::hardware::Camera >
+	>();
 }
 
 
@@ -655,8 +655,8 @@ void android::hardware::Camera::release()
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(3),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::hardware::Camera::setPreviewDisplay(local_ref< android::view::SurfaceHolder > const &a0)
@@ -665,8 +665,8 @@ void android::hardware::Camera::setPreviewDisplay(local_ref< android::view::Surf
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(4),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera::startPreview()
@@ -675,8 +675,8 @@ void android::hardware::Camera::startPreview()
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(5),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::hardware::Camera::stopPreview()
@@ -685,8 +685,8 @@ void android::hardware::Camera::stopPreview()
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(6),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::hardware::Camera::setPreviewCallback(local_ref< android::hardware::Camera_::PreviewCallback > const &a0)
@@ -695,8 +695,8 @@ void android::hardware::Camera::setPreviewCallback(local_ref< android::hardware:
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(7),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera::setOneShotPreviewCallback(local_ref< android::hardware::Camera_::PreviewCallback > const &a0)
@@ -705,8 +705,8 @@ void android::hardware::Camera::setOneShotPreviewCallback(local_ref< android::ha
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(8),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera::autoFocus(local_ref< android::hardware::Camera_::AutoFocusCallback > const &a0)
@@ -715,8 +715,8 @@ void android::hardware::Camera::autoFocus(local_ref< android::hardware::Camera_:
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(9),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera::takePicture(local_ref< android::hardware::Camera_::ShutterCallback > const &a0, local_ref< android::hardware::Camera_::PictureCallback > const &a1, local_ref< android::hardware::Camera_::PictureCallback > const &a2)
@@ -725,8 +725,8 @@ void android::hardware::Camera::takePicture(local_ref< android::hardware::Camera
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(10),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::hardware::Camera::setErrorCallback(local_ref< android::hardware::Camera_::ErrorCallback > const &a0)
@@ -735,8 +735,8 @@ void android::hardware::Camera::setErrorCallback(local_ref< android::hardware::C
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(11),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::hardware::Camera::setParameters(local_ref< android::hardware::Camera_::Parameters > const &a0)
@@ -745,8 +745,8 @@ void android::hardware::Camera::setParameters(local_ref< android::hardware::Came
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(12),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::hardware::Camera_::Parameters > android::hardware::Camera::getParameters()
@@ -755,8 +755,8 @@ local_ref< android::hardware::Camera_::Parameters > android::hardware::Camera::g
 		android::hardware::Camera::J2CPP_CLASS_NAME,
 		android::hardware::Camera::J2CPP_METHOD_NAME(13),
 		android::hardware::Camera::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::hardware::Camera_::Parameters > >
-	(get_jobject());
+		local_ref< android::hardware::Camera_::Parameters >
+	>(get_jobject());
 }
 
 

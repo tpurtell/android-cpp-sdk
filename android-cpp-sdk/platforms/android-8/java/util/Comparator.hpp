@@ -71,8 +71,8 @@ jint java::util::Comparator::compare(local_ref< java::lang::Object > const &a0, 
 		java::util::Comparator::J2CPP_CLASS_NAME,
 		java::util::Comparator::J2CPP_METHOD_NAME(0),
 		java::util::Comparator::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::Comparator::equals(local_ref< java::lang::Object > const &a0)
@@ -81,8 +81,8 @@ jboolean java::util::Comparator::equals(local_ref< java::lang::Object > const &a
 		java::util::Comparator::J2CPP_CLASS_NAME,
 		java::util::Comparator::J2CPP_METHOD_NAME(1),
 		java::util::Comparator::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

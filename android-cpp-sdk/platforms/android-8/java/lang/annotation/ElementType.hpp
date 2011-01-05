@@ -13,9 +13,15 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,6 +57,9 @@ namespace java { namespace lang { namespace annotation {
 		}
 
 		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		static local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> > values();
@@ -88,14 +97,29 @@ java::lang::annotation::ElementType::operator local_ref<java::lang::Enum>() cons
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+java::lang::annotation::ElementType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::lang::annotation::ElementType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::annotation::ElementType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> > java::lang::annotation::ElementType::values()
 {
 	return call_static_method<
 		java::lang::annotation::ElementType::J2CPP_CLASS_NAME,
 		java::lang::annotation::ElementType::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::ElementType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::annotation::ElementType >, 1> >
+	>();
 }
 
 local_ref< java::lang::annotation::ElementType > java::lang::annotation::ElementType::valueOf(local_ref< java::lang::String > const &a0)
@@ -104,8 +128,8 @@ local_ref< java::lang::annotation::ElementType > java::lang::annotation::Element
 		java::lang::annotation::ElementType::J2CPP_CLASS_NAME,
 		java::lang::annotation::ElementType::J2CPP_METHOD_NAME(1),
 		java::lang::annotation::ElementType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::annotation::ElementType > >
-	(a0);
+		local_ref< java::lang::annotation::ElementType >
+	>(a0);
 }
 
 

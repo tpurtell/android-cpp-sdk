@@ -92,8 +92,8 @@ android::net::TrafficStats::TrafficStats()
 	call_new_object<
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(0),
-		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +105,8 @@ jlong android::net::TrafficStats::getMobileTxPackets()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(1),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getMobileRxPackets()
@@ -115,8 +115,8 @@ jlong android::net::TrafficStats::getMobileRxPackets()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(2),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getMobileTxBytes()
@@ -125,8 +125,8 @@ jlong android::net::TrafficStats::getMobileTxBytes()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(3),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getMobileRxBytes()
@@ -135,8 +135,8 @@ jlong android::net::TrafficStats::getMobileRxBytes()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(4),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getTotalTxPackets()
@@ -145,8 +145,8 @@ jlong android::net::TrafficStats::getTotalTxPackets()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(5),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getTotalRxPackets()
@@ -155,8 +155,8 @@ jlong android::net::TrafficStats::getTotalRxPackets()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(6),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getTotalTxBytes()
@@ -165,8 +165,8 @@ jlong android::net::TrafficStats::getTotalTxBytes()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(7),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getTotalRxBytes()
@@ -175,8 +175,8 @@ jlong android::net::TrafficStats::getTotalRxBytes()
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(8),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::net::TrafficStats::getUidTxBytes(jint a0)
@@ -185,8 +185,8 @@ jlong android::net::TrafficStats::getUidTxBytes(jint a0)
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(9),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 jlong android::net::TrafficStats::getUidRxBytes(jint a0)
@@ -195,8 +195,8 @@ jlong android::net::TrafficStats::getUidRxBytes(jint a0)
 		android::net::TrafficStats::J2CPP_CLASS_NAME,
 		android::net::TrafficStats::J2CPP_METHOD_NAME(10),
 		android::net::TrafficStats::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 

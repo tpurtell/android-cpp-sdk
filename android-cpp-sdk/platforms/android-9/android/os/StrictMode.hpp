@@ -244,8 +244,8 @@ android::os::StrictMode_::ThreadPolicy_::Builder::Builder()
 	call_new_object<
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(0),
-		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -257,8 +257,8 @@ android::os::StrictMode_::ThreadPolicy_::Builder::Builder(local_ref< android::os
 	call_new_object<
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(1),
-		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -270,8 +270,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(2),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::permitAll()
@@ -280,8 +280,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(3),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::detectNetwork()
@@ -290,8 +290,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(4),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::permitNetwork()
@@ -300,8 +300,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(5),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::detectDiskReads()
@@ -310,8 +310,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(6),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::permitDiskReads()
@@ -320,8 +320,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(7),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::detectDiskWrites()
@@ -330,8 +330,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(8),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::permitDiskWrites()
@@ -340,8 +340,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(9),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::penaltyDialog()
@@ -350,8 +350,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(10),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::penaltyDeath()
@@ -360,8 +360,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(11),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::penaltyLog()
@@ -370,8 +370,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(12),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::StrictMode_::ThreadPolicy_::Builder::penaltyDropBox()
@@ -380,8 +380,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > android::os::Stric
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(13),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode_::ThreadPolicy_::Builder::build()
@@ -390,8 +390,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode_::Th
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_NAME(14),
 		android::os::StrictMode_::ThreadPolicy_::Builder::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::os::StrictMode_::ThreadPolicy > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::ThreadPolicy >
+	>(get_jobject());
 }
 
 
@@ -426,8 +426,8 @@ local_ref< java::lang::String > android::os::StrictMode_::ThreadPolicy::toString
 		android::os::StrictMode_::ThreadPolicy::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::ThreadPolicy::J2CPP_METHOD_NAME(1),
 		android::os::StrictMode_::ThreadPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -459,8 +459,8 @@ android::os::StrictMode_::VmPolicy_::Builder::Builder()
 	call_new_object<
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(0),
-		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -472,8 +472,8 @@ local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMod
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(1),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::StrictMode_::VmPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMode_::VmPolicy_::Builder::detectLeakedSqlLiteObjects()
@@ -482,8 +482,8 @@ local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMod
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(2),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::StrictMode_::VmPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMode_::VmPolicy_::Builder::penaltyDeath()
@@ -492,8 +492,8 @@ local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMod
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(3),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::StrictMode_::VmPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMode_::VmPolicy_::Builder::penaltyLog()
@@ -502,8 +502,8 @@ local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMod
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(4),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::StrictMode_::VmPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMode_::VmPolicy_::Builder::penaltyDropBox()
@@ -512,8 +512,8 @@ local_ref< android::os::StrictMode_::VmPolicy_::Builder > android::os::StrictMod
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(5),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::StrictMode_::VmPolicy_::Builder > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy_::Builder >
+	>(get_jobject());
 }
 
 local_ref< android::os::StrictMode_::VmPolicy > android::os::StrictMode_::VmPolicy_::Builder::build()
@@ -522,8 +522,8 @@ local_ref< android::os::StrictMode_::VmPolicy > android::os::StrictMode_::VmPoli
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_NAME(6),
 		android::os::StrictMode_::VmPolicy_::Builder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::StrictMode_::VmPolicy > >
-	(get_jobject());
+		local_ref< android::os::StrictMode_::VmPolicy >
+	>(get_jobject());
 }
 
 
@@ -550,8 +550,8 @@ local_ref< java::lang::String > android::os::StrictMode_::VmPolicy::toString()
 		android::os::StrictMode_::VmPolicy::J2CPP_CLASS_NAME,
 		android::os::StrictMode_::VmPolicy::J2CPP_METHOD_NAME(1),
 		android::os::StrictMode_::VmPolicy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -584,8 +584,8 @@ void android::os::StrictMode::setThreadPolicy(local_ref< android::os::StrictMode
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(1),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::getThreadPolicy()
@@ -594,8 +594,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::get
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(2),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::StrictMode_::ThreadPolicy > >
-	();
+		local_ref< android::os::StrictMode_::ThreadPolicy >
+	>();
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::allowThreadDiskWrites()
@@ -604,8 +604,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::all
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(3),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::StrictMode_::ThreadPolicy > >
-	();
+		local_ref< android::os::StrictMode_::ThreadPolicy >
+	>();
 }
 
 local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::allowThreadDiskReads()
@@ -614,8 +614,8 @@ local_ref< android::os::StrictMode_::ThreadPolicy > android::os::StrictMode::all
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(4),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::StrictMode_::ThreadPolicy > >
-	();
+		local_ref< android::os::StrictMode_::ThreadPolicy >
+	>();
 }
 
 void android::os::StrictMode::setVmPolicy(local_ref< android::os::StrictMode_::VmPolicy > const &a0)
@@ -624,8 +624,8 @@ void android::os::StrictMode::setVmPolicy(local_ref< android::os::StrictMode_::V
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(5),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< android::os::StrictMode_::VmPolicy > android::os::StrictMode::getVmPolicy()
@@ -634,8 +634,8 @@ local_ref< android::os::StrictMode_::VmPolicy > android::os::StrictMode::getVmPo
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(6),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::StrictMode_::VmPolicy > >
-	();
+		local_ref< android::os::StrictMode_::VmPolicy >
+	>();
 }
 
 void android::os::StrictMode::enableDefaults()
@@ -644,8 +644,8 @@ void android::os::StrictMode::enableDefaults()
 		android::os::StrictMode::J2CPP_CLASS_NAME,
 		android::os::StrictMode::J2CPP_METHOD_NAME(7),
 		android::os::StrictMode::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	();
+		void
+	>();
 }
 
 

@@ -226,8 +226,8 @@ android::provider::Browser_::BookmarkColumns::BookmarkColumns()
 	call_new_object<
 		android::provider::Browser_::BookmarkColumns::J2CPP_CLASS_NAME,
 		android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_NAME(0),
-		android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -311,8 +311,8 @@ android::provider::Browser_::SearchColumns::SearchColumns()
 	call_new_object<
 		android::provider::Browser_::SearchColumns::J2CPP_CLASS_NAME,
 		android::provider::Browser_::SearchColumns::J2CPP_METHOD_NAME(0),
-		android::provider::Browser_::SearchColumns::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Browser_::SearchColumns::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -360,8 +360,8 @@ android::provider::Browser::Browser()
 	call_new_object<
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(0),
-		android::provider::Browser::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Browser::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -373,8 +373,8 @@ void android::provider::Browser::saveBookmark(local_ref< android::content::Conte
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(1),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::provider::Browser::sendString(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1)
@@ -383,8 +383,8 @@ void android::provider::Browser::sendString(local_ref< android::content::Context
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(2),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::database::Cursor > android::provider::Browser::getAllBookmarks(local_ref< android::content::ContentResolver > const &a0)
@@ -393,8 +393,8 @@ local_ref< android::database::Cursor > android::provider::Browser::getAllBookmar
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(3),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::database::Cursor > >
-	(a0);
+		local_ref< android::database::Cursor >
+	>(a0);
 }
 
 local_ref< android::database::Cursor > android::provider::Browser::getAllVisitedUrls(local_ref< android::content::ContentResolver > const &a0)
@@ -403,8 +403,8 @@ local_ref< android::database::Cursor > android::provider::Browser::getAllVisited
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(4),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::database::Cursor > >
-	(a0);
+		local_ref< android::database::Cursor >
+	>(a0);
 }
 
 void android::provider::Browser::updateVisitedHistory(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -413,8 +413,8 @@ void android::provider::Browser::updateVisitedHistory(local_ref< android::conten
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(5),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::provider::Browser::truncateHistory(local_ref< android::content::ContentResolver > const &a0)
@@ -423,8 +423,8 @@ void android::provider::Browser::truncateHistory(local_ref< android::content::Co
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(6),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::provider::Browser::canClearHistory(local_ref< android::content::ContentResolver > const &a0)
@@ -433,8 +433,8 @@ jboolean android::provider::Browser::canClearHistory(local_ref< android::content
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(7),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::provider::Browser::clearHistory(local_ref< android::content::ContentResolver > const &a0)
@@ -443,8 +443,8 @@ void android::provider::Browser::clearHistory(local_ref< android::content::Conte
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(8),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::provider::Browser::deleteHistoryTimeFrame(local_ref< android::content::ContentResolver > const &a0, jlong a1, jlong a2)
@@ -453,8 +453,8 @@ void android::provider::Browser::deleteHistoryTimeFrame(local_ref< android::cont
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(9),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::provider::Browser::deleteFromHistory(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -463,8 +463,8 @@ void android::provider::Browser::deleteFromHistory(local_ref< android::content::
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(10),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::provider::Browser::addSearchUrl(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
@@ -473,8 +473,8 @@ void android::provider::Browser::addSearchUrl(local_ref< android::content::Conte
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(11),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::provider::Browser::clearSearches(local_ref< android::content::ContentResolver > const &a0)
@@ -483,8 +483,8 @@ void android::provider::Browser::clearSearches(local_ref< android::content::Cont
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(12),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::provider::Browser::requestAllIcons(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::webkit::WebIconDatabase_::IconListener > const &a2)
@@ -493,8 +493,8 @@ void android::provider::Browser::requestAllIcons(local_ref< android::content::Co
 		android::provider::Browser::J2CPP_CLASS_NAME,
 		android::provider::Browser::J2CPP_METHOD_NAME(13),
 		android::provider::Browser::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 

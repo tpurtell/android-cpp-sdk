@@ -67,8 +67,8 @@ namespace android { namespace appwidget {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AppWidgetProviderInfo();
@@ -104,14 +104,14 @@ namespace j2cpp {
 
 
 
-android::appwidget::AppWidgetProviderInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::appwidget::AppWidgetProviderInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::appwidget::AppWidgetProviderInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -120,8 +120,8 @@ android::appwidget::AppWidgetProviderInfo::AppWidgetProviderInfo()
 	call_new_object<
 		android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(0),
-		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , provider(get_jobject())
 , minWidth(get_jobject())
@@ -141,8 +141,8 @@ android::appwidget::AppWidgetProviderInfo::AppWidgetProviderInfo(local_ref< andr
 	call_new_object<
 		android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(1),
-		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , provider(get_jobject())
 , minWidth(get_jobject())
@@ -162,8 +162,8 @@ void android::appwidget::AppWidgetProviderInfo::writeToParcel(local_ref< android
 		android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(2),
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::appwidget::AppWidgetProviderInfo::describeContents()
@@ -172,8 +172,8 @@ jint android::appwidget::AppWidgetProviderInfo::describeContents()
 		android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(3),
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::appwidget::AppWidgetProviderInfo::toString()
@@ -182,8 +182,8 @@ local_ref< java::lang::String > android::appwidget::AppWidgetProviderInfo::toStr
 		android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(4),
 		android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

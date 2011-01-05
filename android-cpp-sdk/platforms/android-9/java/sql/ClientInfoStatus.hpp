@@ -12,10 +12,16 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,7 +52,10 @@ namespace java { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		static local_ref< array< local_ref< java::sql::ClientInfoStatus >, 1> > values();
@@ -74,9 +83,24 @@ namespace j2cpp {
 
 
 
+java::sql::ClientInfoStatus::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::sql::ClientInfoStatus::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::sql::ClientInfoStatus::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::sql::ClientInfoStatus::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< java::sql::ClientInfoStatus >, 1> > java::sql::ClientInfoStatus::values()
@@ -85,8 +109,8 @@ local_ref< array< local_ref< java::sql::ClientInfoStatus >, 1> > java::sql::Clie
 		java::sql::ClientInfoStatus::J2CPP_CLASS_NAME,
 		java::sql::ClientInfoStatus::J2CPP_METHOD_NAME(0),
 		java::sql::ClientInfoStatus::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::sql::ClientInfoStatus >, 1> > >
-	();
+		local_ref< array< local_ref< java::sql::ClientInfoStatus >, 1> >
+	>();
 }
 
 local_ref< java::sql::ClientInfoStatus > java::sql::ClientInfoStatus::valueOf(local_ref< java::lang::String > const &a0)
@@ -95,8 +119,8 @@ local_ref< java::sql::ClientInfoStatus > java::sql::ClientInfoStatus::valueOf(lo
 		java::sql::ClientInfoStatus::J2CPP_CLASS_NAME,
 		java::sql::ClientInfoStatus::J2CPP_METHOD_NAME(1),
 		java::sql::ClientInfoStatus::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::sql::ClientInfoStatus > >
-	(a0);
+		local_ref< java::sql::ClientInfoStatus >
+	>(a0);
 }
 
 

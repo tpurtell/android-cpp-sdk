@@ -91,8 +91,8 @@ android::os::storage::OnObbStateChangeListener::OnObbStateChangeListener()
 	call_new_object<
 		android::os::storage::OnObbStateChangeListener::J2CPP_CLASS_NAME,
 		android::os::storage::OnObbStateChangeListener::J2CPP_METHOD_NAME(0),
-		android::os::storage::OnObbStateChangeListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::storage::OnObbStateChangeListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +104,8 @@ void android::os::storage::OnObbStateChangeListener::onObbStateChange(local_ref<
 		android::os::storage::OnObbStateChangeListener::J2CPP_CLASS_NAME,
 		android::os::storage::OnObbStateChangeListener::J2CPP_METHOD_NAME(1),
 		android::os::storage::OnObbStateChangeListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

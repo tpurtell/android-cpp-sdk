@@ -12,19 +12,25 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Queue.hpp>
 #include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -70,9 +76,14 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::Collection>() const;
 		operator local_ref<java::util::AbstractQueue>() const;
 		operator local_ref<java::util::concurrent::BlockingQueue>() const;
-		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
 
 
 		SynchronousQueue();
@@ -117,6 +128,26 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::SynchronousQueue::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::concurrent::SynchronousQueue::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jobject());
+}
+
+java::util::concurrent::SynchronousQueue::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::concurrent::SynchronousQueue::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
 java::util::concurrent::SynchronousQueue::operator local_ref<java::util::AbstractQueue>() const
 {
 	return local_ref<java::util::AbstractQueue>(get_jobject());
@@ -127,9 +158,14 @@ java::util::concurrent::SynchronousQueue::operator local_ref<java::util::concurr
 	return local_ref<java::util::concurrent::BlockingQueue>(get_jobject());
 }
 
-java::util::concurrent::SynchronousQueue::operator local_ref<java::io::Serializable>() const
+java::util::concurrent::SynchronousQueue::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::SynchronousQueue::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
 }
 
 
@@ -138,8 +174,8 @@ java::util::concurrent::SynchronousQueue::SynchronousQueue()
 	call_new_object<
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -151,8 +187,8 @@ java::util::concurrent::SynchronousQueue::SynchronousQueue(jboolean a0)
 	call_new_object<
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -164,8 +200,8 @@ void java::util::concurrent::SynchronousQueue::put(local_ref< java::lang::Object
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::offer(local_ref< java::lang::Object > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -174,8 +210,8 @@ jboolean java::util::concurrent::SynchronousQueue::offer(local_ref< java::lang::
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::take()
@@ -184,8 +220,8 @@ local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::take()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::poll(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -194,8 +230,8 @@ local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::poll(j
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::offer(local_ref< java::lang::Object > const &a0)
@@ -204,8 +240,8 @@ jboolean java::util::concurrent::SynchronousQueue::offer(local_ref< java::lang::
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::poll()
@@ -214,8 +250,8 @@ local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::poll()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::SynchronousQueue::isEmpty()
@@ -224,8 +260,8 @@ jboolean java::util::concurrent::SynchronousQueue::isEmpty()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::concurrent::SynchronousQueue::size()
@@ -234,8 +270,8 @@ jint java::util::concurrent::SynchronousQueue::size()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::SynchronousQueue::remainingCapacity()
@@ -244,8 +280,8 @@ jint java::util::concurrent::SynchronousQueue::remainingCapacity()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::concurrent::SynchronousQueue::clear()
@@ -254,8 +290,8 @@ void java::util::concurrent::SynchronousQueue::clear()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::SynchronousQueue::contains(local_ref< java::lang::Object > const &a0)
@@ -264,8 +300,8 @@ jboolean java::util::concurrent::SynchronousQueue::contains(local_ref< java::lan
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::remove(local_ref< java::lang::Object > const &a0)
@@ -274,8 +310,8 @@ jboolean java::util::concurrent::SynchronousQueue::remove(local_ref< java::lang:
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::containsAll(local_ref< java::util::Collection > const &a0)
@@ -284,8 +320,8 @@ jboolean java::util::concurrent::SynchronousQueue::containsAll(local_ref< java::
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::removeAll(local_ref< java::util::Collection > const &a0)
@@ -294,8 +330,8 @@ jboolean java::util::concurrent::SynchronousQueue::removeAll(local_ref< java::ut
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::SynchronousQueue::retainAll(local_ref< java::util::Collection > const &a0)
@@ -304,8 +340,8 @@ jboolean java::util::concurrent::SynchronousQueue::retainAll(local_ref< java::ut
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::peek()
@@ -314,8 +350,8 @@ local_ref< java::lang::Object > java::util::concurrent::SynchronousQueue::peek()
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::concurrent::SynchronousQueue::iterator()
@@ -324,8 +360,8 @@ local_ref< java::util::Iterator > java::util::concurrent::SynchronousQueue::iter
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::SynchronousQueue::toArray()
@@ -334,8 +370,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::SynchronousQueue::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -344,8 +380,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::SynchronousQueue::drainTo(local_ref< java::util::Collection > const &a0)
@@ -354,8 +390,8 @@ jint java::util::concurrent::SynchronousQueue::drainTo(local_ref< java::util::Co
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::SynchronousQueue::drainTo(local_ref< java::util::Collection > const &a0, jint a1)
@@ -364,8 +400,8 @@ jint java::util::concurrent::SynchronousQueue::drainTo(local_ref< java::util::Co
 		java::util::concurrent::SynchronousQueue::J2CPP_CLASS_NAME,
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::SynchronousQueue::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_SQL_DATASOURCE_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace sql { class CommonDataSource; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace sql { class CommonDataSource; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 namespace j2cpp { namespace java { namespace sql { class Wrapper; } } }
@@ -45,8 +45,8 @@ namespace javax { namespace sql {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::sql::CommonDataSource>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::sql::Wrapper>() const;
 
 
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-javax::sql::DataSource::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::sql::DataSource::operator local_ref<javax::sql::CommonDataSource>() const
 {
 	return local_ref<javax::sql::CommonDataSource>(get_jobject());
+}
+
+javax::sql::DataSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 javax::sql::DataSource::operator local_ref<java::sql::Wrapper>() const
@@ -91,8 +91,8 @@ local_ref< java::sql::Connection > javax::sql::DataSource::getConnection()
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(0),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::sql::Connection > >
-	(get_jobject());
+		local_ref< java::sql::Connection >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Connection > javax::sql::DataSource::getConnection(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -101,8 +101,8 @@ local_ref< java::sql::Connection > javax::sql::DataSource::getConnection(local_r
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(1),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::sql::Connection > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Connection >
+	>(get_jobject(), a0, a1);
 }
 
 

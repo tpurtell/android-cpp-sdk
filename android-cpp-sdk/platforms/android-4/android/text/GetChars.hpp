@@ -38,8 +38,8 @@ namespace android { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void getChars(jint, jint, local_ref< array<jchar,1> >  const&, jint);
@@ -61,14 +61,14 @@ namespace j2cpp {
 
 
 
-android::text::GetChars::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::GetChars::operator local_ref<java::lang::CharSequence>() const
 {
 	return local_ref<java::lang::CharSequence>(get_jobject());
+}
+
+android::text::GetChars::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void android::text::GetChars::getChars(jint a0, jint a1, local_ref< array<jchar,1> > const &a2, jint a3)
@@ -77,8 +77,8 @@ void android::text::GetChars::getChars(jint a0, jint a1, local_ref< array<jchar,
 		android::text::GetChars::J2CPP_CLASS_NAME,
 		android::text::GetChars::J2CPP_METHOD_NAME(0),
 		android::text::GetChars::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

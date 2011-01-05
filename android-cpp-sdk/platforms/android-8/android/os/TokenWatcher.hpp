@@ -89,8 +89,8 @@ android::os::TokenWatcher::TokenWatcher(local_ref< android::os::Handler > const 
 	call_new_object<
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(0),
-		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -102,8 +102,8 @@ void android::os::TokenWatcher::acquired()
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(1),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::TokenWatcher::released()
@@ -112,8 +112,8 @@ void android::os::TokenWatcher::released()
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(2),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::TokenWatcher::acquire(local_ref< android::os::IBinder > const &a0, local_ref< java::lang::String > const &a1)
@@ -122,8 +122,8 @@ void android::os::TokenWatcher::acquire(local_ref< android::os::IBinder > const 
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(3),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::TokenWatcher::cleanup(local_ref< android::os::IBinder > const &a0, jboolean a1)
@@ -132,8 +132,8 @@ void android::os::TokenWatcher::cleanup(local_ref< android::os::IBinder > const 
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(4),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::TokenWatcher::release(local_ref< android::os::IBinder > const &a0)
@@ -142,8 +142,8 @@ void android::os::TokenWatcher::release(local_ref< android::os::IBinder > const 
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(5),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::TokenWatcher::isAcquired()
@@ -152,8 +152,8 @@ jboolean android::os::TokenWatcher::isAcquired()
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(6),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::os::TokenWatcher::dump()
@@ -162,8 +162,8 @@ void android::os::TokenWatcher::dump()
 		android::os::TokenWatcher::J2CPP_CLASS_NAME,
 		android::os::TokenWatcher::J2CPP_METHOD_NAME(7),
 		android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

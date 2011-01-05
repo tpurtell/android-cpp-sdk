@@ -12,10 +12,22 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace net { class ConnectException; } } }
+namespace j2cpp { namespace java { namespace net { class SocketException; } } }
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/net/ConnectException.hpp>
+#include <java/net/SocketException.hpp>
 #include <org/apache/http/HttpHost.hpp>
 
 
@@ -39,7 +51,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::net::ConnectException>() const;
+		operator local_ref<java::net::SocketException>() const;
+		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		HttpHostConnectException(local_ref< org::apache::http::HttpHost > const&, local_ref< java::net::ConnectException > const&);
@@ -64,9 +82,39 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 org::apache::http::conn::HttpHostConnectException::operator local_ref<java::net::ConnectException>() const
 {
 	return local_ref<java::net::ConnectException>(get_jobject());
+}
+
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::net::SocketException>() const
+{
+	return local_ref<java::net::SocketException>(get_jobject());
+}
+
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::io::IOException>() const
+{
+	return local_ref<java::io::IOException>(get_jobject());
+}
+
+org::apache::http::conn::HttpHostConnectException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -75,8 +123,8 @@ org::apache::http::conn::HttpHostConnectException::HttpHostConnectException(loca
 	call_new_object<
 		org::apache::http::conn::HttpHostConnectException::J2CPP_CLASS_NAME,
 		org::apache::http::conn::HttpHostConnectException::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::HttpHostConnectException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::conn::HttpHostConnectException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -88,8 +136,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::HttpHostConnec
 		org::apache::http::conn::HttpHostConnectException::J2CPP_CLASS_NAME,
 		org::apache::http::conn::HttpHostConnectException::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::HttpHostConnectException::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject());
 }
 
 

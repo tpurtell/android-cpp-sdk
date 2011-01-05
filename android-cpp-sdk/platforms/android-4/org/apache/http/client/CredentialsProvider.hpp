@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_CREDENTIALSPROVIDER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -79,8 +79,8 @@ void org::apache::http::client::CredentialsProvider::setCredentials(local_ref< o
 		org::apache::http::client::CredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::auth::Credentials > org::apache::http::client::CredentialsProvider::getCredentials(local_ref< org::apache::http::auth::AuthScope > const &a0)
@@ -89,8 +89,8 @@ local_ref< org::apache::http::auth::Credentials > org::apache::http::client::Cre
 		org::apache::http::client::CredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::auth::Credentials > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::auth::Credentials >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::CredentialsProvider::clear()
@@ -99,8 +99,8 @@ void org::apache::http::client::CredentialsProvider::clear()
 		org::apache::http::client::CredentialsProvider::J2CPP_CLASS_NAME,
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::CredentialsProvider::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

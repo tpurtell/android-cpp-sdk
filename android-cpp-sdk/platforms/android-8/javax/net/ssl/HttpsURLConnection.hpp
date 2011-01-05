@@ -12,15 +12,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace net { class HttpURLConnection; } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class HostnameVerifier; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/HttpURLConnection.hpp>
+#include <java/net/URLConnection.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/cert/Certificate.hpp>
 #include <javax/net/ssl/HostnameVerifier.hpp>
@@ -60,6 +64,8 @@ namespace javax { namespace net { namespace ssl {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::net::URLConnection>() const;
 		operator local_ref<java::net::HttpURLConnection>() const;
 
 
@@ -96,6 +102,16 @@ namespace j2cpp {
 
 
 
+javax::net::ssl::HttpsURLConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+javax::net::ssl::HttpsURLConnection::operator local_ref<java::net::URLConnection>() const
+{
+	return local_ref<java::net::URLConnection>(get_jobject());
+}
+
 javax::net::ssl::HttpsURLConnection::operator local_ref<java::net::HttpURLConnection>() const
 {
 	return local_ref<java::net::HttpURLConnection>(get_jobject());
@@ -108,8 +124,8 @@ void javax::net::ssl::HttpsURLConnection::setDefaultHostnameVerifier(local_ref< 
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< javax::net::ssl::HostnameVerifier > javax::net::ssl::HttpsURLConnection::getDefaultHostnameVerifier()
@@ -118,8 +134,8 @@ local_ref< javax::net::ssl::HostnameVerifier > javax::net::ssl::HttpsURLConnecti
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::net::ssl::HostnameVerifier > >
-	();
+		local_ref< javax::net::ssl::HostnameVerifier >
+	>();
 }
 
 void javax::net::ssl::HttpsURLConnection::setDefaultSSLSocketFactory(local_ref< javax::net::ssl::SSLSocketFactory > const &a0)
@@ -128,8 +144,8 @@ void javax::net::ssl::HttpsURLConnection::setDefaultSSLSocketFactory(local_ref< 
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::HttpsURLConnection::getDefaultSSLSocketFactory()
@@ -138,8 +154,8 @@ local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::HttpsURLConnecti
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::net::ssl::SSLSocketFactory > >
-	();
+		local_ref< javax::net::ssl::SSLSocketFactory >
+	>();
 }
 
 local_ref< java::lang::String > javax::net::ssl::HttpsURLConnection::getCipherSuite()
@@ -148,8 +164,8 @@ local_ref< java::lang::String > javax::net::ssl::HttpsURLConnection::getCipherSu
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::HttpsURLConnection::getLocalCertificates()
@@ -158,8 +174,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(6),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::HttpsURLConnection::getServerCertificates()
@@ -168,8 +184,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(7),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::HttpsURLConnection::getPeerPrincipal()
@@ -178,8 +194,8 @@ local_ref< java::security::Principal > javax::net::ssl::HttpsURLConnection::getP
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(8),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::HttpsURLConnection::getLocalPrincipal()
@@ -188,8 +204,8 @@ local_ref< java::security::Principal > javax::net::ssl::HttpsURLConnection::getL
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(9),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 void javax::net::ssl::HttpsURLConnection::setHostnameVerifier(local_ref< javax::net::ssl::HostnameVerifier > const &a0)
@@ -198,8 +214,8 @@ void javax::net::ssl::HttpsURLConnection::setHostnameVerifier(local_ref< javax::
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(10),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::net::ssl::HostnameVerifier > javax::net::ssl::HttpsURLConnection::getHostnameVerifier()
@@ -208,8 +224,8 @@ local_ref< javax::net::ssl::HostnameVerifier > javax::net::ssl::HttpsURLConnecti
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(11),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< javax::net::ssl::HostnameVerifier > >
-	(get_jobject());
+		local_ref< javax::net::ssl::HostnameVerifier >
+	>(get_jobject());
 }
 
 void javax::net::ssl::HttpsURLConnection::setSSLSocketFactory(local_ref< javax::net::ssl::SSLSocketFactory > const &a0)
@@ -218,8 +234,8 @@ void javax::net::ssl::HttpsURLConnection::setSSLSocketFactory(local_ref< javax::
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(12),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::HttpsURLConnection::getSSLSocketFactory()
@@ -228,8 +244,8 @@ local_ref< javax::net::ssl::SSLSocketFactory > javax::net::ssl::HttpsURLConnecti
 		javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME,
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(13),
 		javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::net::ssl::SSLSocketFactory > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSocketFactory >
+	>(get_jobject());
 }
 
 

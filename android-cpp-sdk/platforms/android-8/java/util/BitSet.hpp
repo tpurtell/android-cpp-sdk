@@ -70,8 +70,8 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		BitSet();
@@ -125,14 +125,14 @@ java::util::BitSet::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::util::BitSet::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::util::BitSet::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::BitSet::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -141,8 +141,8 @@ java::util::BitSet::BitSet()
 	call_new_object<
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(0),
-		java::util::BitSet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::BitSet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -154,8 +154,8 @@ java::util::BitSet::BitSet(jint a0)
 	call_new_object<
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(1),
-		java::util::BitSet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::BitSet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -167,8 +167,8 @@ local_ref< java::lang::Object > java::util::BitSet::clone()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(2),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::BitSet::equals(local_ref< java::lang::Object > const &a0)
@@ -177,8 +177,8 @@ jboolean java::util::BitSet::equals(local_ref< java::lang::Object > const &a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(3),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::BitSet::hashCode()
@@ -187,8 +187,8 @@ jint java::util::BitSet::hashCode()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(4),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::BitSet::get(jint a0)
@@ -197,8 +197,8 @@ jboolean java::util::BitSet::get(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(5),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::BitSet > java::util::BitSet::get(jint a0, jint a1)
@@ -207,8 +207,8 @@ local_ref< java::util::BitSet > java::util::BitSet::get(jint a0, jint a1)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(6),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::BitSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::BitSet >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::BitSet::set(jint a0)
@@ -217,8 +217,8 @@ void java::util::BitSet::set(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(7),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::set(jint a0, jboolean a1)
@@ -227,8 +227,8 @@ void java::util::BitSet::set(jint a0, jboolean a1)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(8),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::BitSet::set(jint a0, jint a1)
@@ -237,8 +237,8 @@ void java::util::BitSet::set(jint a0, jint a1)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(9),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::BitSet::set(jint a0, jint a1, jboolean a2)
@@ -247,8 +247,8 @@ void java::util::BitSet::set(jint a0, jint a1, jboolean a2)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(10),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::BitSet::clear()
@@ -257,8 +257,8 @@ void java::util::BitSet::clear()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(11),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::BitSet::clear(jint a0)
@@ -267,8 +267,8 @@ void java::util::BitSet::clear(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(12),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::clear(jint a0, jint a1)
@@ -277,8 +277,8 @@ void java::util::BitSet::clear(jint a0, jint a1)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(13),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::BitSet::flip(jint a0)
@@ -287,8 +287,8 @@ void java::util::BitSet::flip(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(14),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::flip(jint a0, jint a1)
@@ -297,8 +297,8 @@ void java::util::BitSet::flip(jint a0, jint a1)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(15),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::BitSet::intersects(local_ref< java::util::BitSet > const &a0)
@@ -307,8 +307,8 @@ jboolean java::util::BitSet::intersects(local_ref< java::util::BitSet > const &a
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(16),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::and_(local_ref< java::util::BitSet > const &a0)
@@ -317,8 +317,8 @@ void java::util::BitSet::and_(local_ref< java::util::BitSet > const &a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(17),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::andNot(local_ref< java::util::BitSet > const &a0)
@@ -327,8 +327,8 @@ void java::util::BitSet::andNot(local_ref< java::util::BitSet > const &a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(18),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::or_(local_ref< java::util::BitSet > const &a0)
@@ -337,8 +337,8 @@ void java::util::BitSet::or_(local_ref< java::util::BitSet > const &a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(19),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::BitSet::xor_(local_ref< java::util::BitSet > const &a0)
@@ -347,8 +347,8 @@ void java::util::BitSet::xor_(local_ref< java::util::BitSet > const &a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(20),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::BitSet::size()
@@ -357,8 +357,8 @@ jint java::util::BitSet::size()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(21),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::BitSet::length()
@@ -367,8 +367,8 @@ jint java::util::BitSet::length()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(22),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::BitSet::toString()
@@ -377,8 +377,8 @@ local_ref< java::lang::String > java::util::BitSet::toString()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(23),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::BitSet::nextSetBit(jint a0)
@@ -387,8 +387,8 @@ jint java::util::BitSet::nextSetBit(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(24),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::BitSet::nextClearBit(jint a0)
@@ -397,8 +397,8 @@ jint java::util::BitSet::nextClearBit(jint a0)
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(25),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::BitSet::isEmpty()
@@ -407,8 +407,8 @@ jboolean java::util::BitSet::isEmpty()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(26),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::BitSet::cardinality()
@@ -417,8 +417,8 @@ jint java::util::BitSet::cardinality()
 		java::util::BitSet::J2CPP_CLASS_NAME,
 		java::util::BitSet::J2CPP_METHOD_NAME(27),
 		java::util::BitSet::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

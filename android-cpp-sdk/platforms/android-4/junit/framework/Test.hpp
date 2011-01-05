@@ -73,8 +73,8 @@ jint junit::framework::Test::countTestCases()
 		junit::framework::Test::J2CPP_CLASS_NAME,
 		junit::framework::Test::J2CPP_METHOD_NAME(0),
 		junit::framework::Test::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void junit::framework::Test::run(local_ref< junit::framework::TestResult > const &a0)
@@ -83,8 +83,8 @@ void junit::framework::Test::run(local_ref< junit::framework::TestResult > const
 		junit::framework::Test::J2CPP_CLASS_NAME,
 		junit::framework::Test::J2CPP_METHOD_NAME(1),
 		junit::framework::Test::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

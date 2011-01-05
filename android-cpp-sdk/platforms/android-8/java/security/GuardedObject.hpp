@@ -81,8 +81,8 @@ java::security::GuardedObject::GuardedObject(local_ref< java::lang::Object > con
 	call_new_object<
 		java::security::GuardedObject::J2CPP_CLASS_NAME,
 		java::security::GuardedObject::J2CPP_METHOD_NAME(0),
-		java::security::GuardedObject::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::GuardedObject::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -94,8 +94,8 @@ local_ref< java::lang::Object > java::security::GuardedObject::getObject()
 		java::security::GuardedObject::J2CPP_CLASS_NAME,
 		java::security::GuardedObject::J2CPP_METHOD_NAME(1),
 		java::security::GuardedObject::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

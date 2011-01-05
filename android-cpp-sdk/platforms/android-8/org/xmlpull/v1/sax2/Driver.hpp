@@ -100,10 +100,10 @@ namespace org { namespace xmlpull { namespace v1 { namespace sax2 {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::xml::sax::Locator>() const;
 		operator local_ref<org::xml::sax::XMLReader>() const;
+		operator local_ref<org::xml::sax::Locator>() const;
 		operator local_ref<org::xml::sax::Attributes>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Driver();
@@ -160,9 +160,9 @@ namespace j2cpp {
 
 
 
-org::xmlpull::v1::sax2::Driver::operator local_ref<java::lang::Object>() const
+org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::XMLReader>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<org::xml::sax::XMLReader>(get_jobject());
 }
 
 org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::Locator>() const
@@ -170,14 +170,14 @@ org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::Locator>() con
 	return local_ref<org::xml::sax::Locator>(get_jobject());
 }
 
-org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::XMLReader>() const
-{
-	return local_ref<org::xml::sax::XMLReader>(get_jobject());
-}
-
 org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::Attributes>() const
 {
 	return local_ref<org::xml::sax::Attributes>(get_jobject());
+}
+
+org::xmlpull::v1::sax2::Driver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -186,8 +186,8 @@ org::xmlpull::v1::sax2::Driver::Driver()
 	call_new_object<
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(0),
-		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -199,8 +199,8 @@ org::xmlpull::v1::sax2::Driver::Driver(local_ref< org::xmlpull::v1::XmlPullParse
 	call_new_object<
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(1),
-		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -212,8 +212,8 @@ jint org::xmlpull::v1::sax2::Driver::getLength()
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(2),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getURI(jint a0)
@@ -222,8 +222,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getURI(jint a0)
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(3),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getLocalName(jint a0)
@@ -232,8 +232,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getLocalName(jin
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(4),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getQName(jint a0)
@@ -242,8 +242,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getQName(jint a0
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(5),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(jint a0)
@@ -252,8 +252,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(jint a0)
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(6),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(jint a0)
@@ -262,8 +262,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(jint a0
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(7),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint org::xmlpull::v1::sax2::Driver::getIndex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -272,8 +272,8 @@ jint org::xmlpull::v1::sax2::Driver::getIndex(local_ref< java::lang::String > co
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(8),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint org::xmlpull::v1::sax2::Driver::getIndex(local_ref< java::lang::String > const &a0)
@@ -282,8 +282,8 @@ jint org::xmlpull::v1::sax2::Driver::getIndex(local_ref< java::lang::String > co
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(9),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -292,8 +292,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(local_re
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(10),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(local_ref< java::lang::String > const &a0)
@@ -302,8 +302,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getType(local_re
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(11),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -312,8 +312,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(local_r
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(12),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(local_ref< java::lang::String > const &a0)
@@ -322,8 +322,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getValue(local_r
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(13),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getPublicId()
@@ -332,8 +332,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getPublicId()
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(14),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getSystemId()
@@ -342,8 +342,8 @@ local_ref< java::lang::String > org::xmlpull::v1::sax2::Driver::getSystemId()
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(15),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::sax2::Driver::getLineNumber()
@@ -352,8 +352,8 @@ jint org::xmlpull::v1::sax2::Driver::getLineNumber()
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(16),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::sax2::Driver::getColumnNumber()
@@ -362,8 +362,8 @@ jint org::xmlpull::v1::sax2::Driver::getColumnNumber()
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(17),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::xmlpull::v1::sax2::Driver::getFeature(local_ref< java::lang::String > const &a0)
@@ -372,8 +372,8 @@ jboolean org::xmlpull::v1::sax2::Driver::getFeature(local_ref< java::lang::Strin
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(18),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::sax2::Driver::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -382,8 +382,8 @@ void org::xmlpull::v1::sax2::Driver::setFeature(local_ref< java::lang::String > 
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(19),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xmlpull::v1::sax2::Driver::getProperty(local_ref< java::lang::String > const &a0)
@@ -392,8 +392,8 @@ local_ref< java::lang::Object > org::xmlpull::v1::sax2::Driver::getProperty(loca
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(20),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::sax2::Driver::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -402,8 +402,8 @@ void org::xmlpull::v1::sax2::Driver::setProperty(local_ref< java::lang::String >
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(21),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xmlpull::v1::sax2::Driver::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -412,8 +412,8 @@ void org::xmlpull::v1::sax2::Driver::setEntityResolver(local_ref< org::xml::sax:
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(22),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::EntityResolver > org::xmlpull::v1::sax2::Driver::getEntityResolver()
@@ -422,8 +422,8 @@ local_ref< org::xml::sax::EntityResolver > org::xmlpull::v1::sax2::Driver::getEn
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(23),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< org::xml::sax::EntityResolver > >
-	(get_jobject());
+		local_ref< org::xml::sax::EntityResolver >
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::sax2::Driver::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -432,8 +432,8 @@ void org::xmlpull::v1::sax2::Driver::setDTDHandler(local_ref< org::xml::sax::DTD
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(24),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::DTDHandler > org::xmlpull::v1::sax2::Driver::getDTDHandler()
@@ -442,8 +442,8 @@ local_ref< org::xml::sax::DTDHandler > org::xmlpull::v1::sax2::Driver::getDTDHan
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(25),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< org::xml::sax::DTDHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::DTDHandler >
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::sax2::Driver::setContentHandler(local_ref< org::xml::sax::ContentHandler > const &a0)
@@ -452,8 +452,8 @@ void org::xmlpull::v1::sax2::Driver::setContentHandler(local_ref< org::xml::sax:
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(26),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ContentHandler > org::xmlpull::v1::sax2::Driver::getContentHandler()
@@ -462,8 +462,8 @@ local_ref< org::xml::sax::ContentHandler > org::xmlpull::v1::sax2::Driver::getCo
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(27),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::sax2::Driver::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -472,8 +472,8 @@ void org::xmlpull::v1::sax2::Driver::setErrorHandler(local_ref< org::xml::sax::E
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(28),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > org::xmlpull::v1::sax2::Driver::getErrorHandler()
@@ -482,8 +482,8 @@ local_ref< org::xml::sax::ErrorHandler > org::xmlpull::v1::sax2::Driver::getErro
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(29),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::sax2::Driver::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -492,8 +492,8 @@ void org::xmlpull::v1::sax2::Driver::parse(local_ref< org::xml::sax::InputSource
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(30),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::sax2::Driver::parse(local_ref< java::lang::String > const &a0)
@@ -502,8 +502,8 @@ void org::xmlpull::v1::sax2::Driver::parse(local_ref< java::lang::String > const
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(31),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xmlpull::v1::sax2::Driver::parseSubTree(local_ref< org::xmlpull::v1::XmlPullParser > const &a0)
@@ -512,8 +512,8 @@ void org::xmlpull::v1::sax2::Driver::parseSubTree(local_ref< org::xmlpull::v1::X
 		org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(32),
 		org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

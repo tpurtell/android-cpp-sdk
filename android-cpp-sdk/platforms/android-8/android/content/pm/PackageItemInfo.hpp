@@ -156,8 +156,8 @@ android::content::pm::PackageItemInfo_::DisplayNameComparator::DisplayNameCompar
 	call_new_object<
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -169,8 +169,8 @@ jint android::content::pm::PackageItemInfo_::DisplayNameComparator::compare(loca
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(1),
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::pm::PackageItemInfo_::DisplayNameComparator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -179,8 +179,8 @@ jint android::content::pm::PackageItemInfo_::DisplayNameComparator::compare(loca
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(2),
 		android::content::pm::PackageItemInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -202,8 +202,8 @@ android::content::pm::PackageItemInfo::PackageItemInfo()
 	call_new_object<
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , name(get_jobject())
 , packageName(get_jobject())
@@ -221,8 +221,8 @@ android::content::pm::PackageItemInfo::PackageItemInfo(local_ref< android::conte
 	call_new_object<
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , name(get_jobject())
 , packageName(get_jobject())
@@ -241,8 +241,8 @@ local_ref< java::lang::CharSequence > android::content::pm::PackageItemInfo::loa
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::PackageItemInfo::loadIcon(local_ref< android::content::pm::PackageManager > const &a0)
@@ -251,8 +251,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Package
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::content::pm::PackageItemInfo::loadXmlMetaData(local_ref< android::content::pm::PackageManager > const &a0, local_ref< java::lang::String > const &a1)
@@ -261,8 +261,8 @@ local_ref< android::content::res::XmlResourceParser > android::content::pm::Pack
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -273,8 +273,8 @@ void android::content::pm::PackageItemInfo::writeToParcel(local_ref< android::os
 		android::content::pm::PackageItemInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_NAME(8),
 		android::content::pm::PackageItemInfo::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

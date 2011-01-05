@@ -13,10 +13,18 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -41,6 +49,10 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		MissingResourceException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -69,14 +81,34 @@ java::util::MissingResourceException::operator local_ref<java::lang::RuntimeExce
 	return local_ref<java::lang::RuntimeException>(get_jobject());
 }
 
+java::util::MissingResourceException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::MissingResourceException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::util::MissingResourceException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::util::MissingResourceException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::util::MissingResourceException::MissingResourceException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
 : object<java::util::MissingResourceException>(
 	call_new_object<
 		java::util::MissingResourceException::J2CPP_CLASS_NAME,
 		java::util::MissingResourceException::J2CPP_METHOD_NAME(0),
-		java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -88,8 +120,8 @@ local_ref< java::lang::String > java::util::MissingResourceException::getClassNa
 		java::util::MissingResourceException::J2CPP_CLASS_NAME,
 		java::util::MissingResourceException::J2CPP_METHOD_NAME(1),
 		java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::MissingResourceException::getKey()
@@ -98,8 +130,8 @@ local_ref< java::lang::String > java::util::MissingResourceException::getKey()
 		java::util::MissingResourceException::J2CPP_CLASS_NAME,
 		java::util::MissingResourceException::J2CPP_METHOD_NAME(2),
 		java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

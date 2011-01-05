@@ -11,8 +11,6 @@
 #define J2CPP_ANDROID_PROVIDER_CONTACTS_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
-namespace j2cpp { namespace android { namespace graphics { namespace BitmapFactory_ { class Options; } } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace provider { namespace Contacts_ { class PhonesColumns; } } } }
@@ -32,6 +30,8 @@ namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace BitmapFactory_ { class Options; } } } }
 
 
 #include <android/content/ContentResolver.hpp>
@@ -124,9 +124,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::GroupsColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -215,10 +215,10 @@ namespace android { namespace provider {
 				{
 				}
 
-				operator local_ref<java::lang::Object>() const;
-				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::Contacts_::PhonesColumns>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
+				operator local_ref<java::lang::Object>() const;
 
 
 
@@ -244,9 +244,9 @@ namespace android { namespace provider {
 				{
 				}
 
-				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::Contacts_::ExtensionsColumns>() const;
+				operator local_ref<java::lang::Object>() const;
 
 
 
@@ -272,10 +272,10 @@ namespace android { namespace provider {
 				{
 				}
 
-				operator local_ref<java::lang::Object>() const;
 				operator local_ref<android::provider::BaseColumns>() const;
 				operator local_ref<android::provider::Contacts_::ContactMethodsColumns>() const;
 				operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
+				operator local_ref<java::lang::Object>() const;
 
 
 
@@ -322,11 +322,11 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
-			operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
 			operator local_ref<android::provider::Contacts_::PhonesColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::PresenceColumns>() const;
+			operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static void markAsContacted(local_ref< android::content::ContentResolver >  const&, jlong);
@@ -414,10 +414,10 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::ContactMethodsColumns>() const;
 			operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< java::lang::String > encodePredefinedImProtocol(jint);
@@ -469,9 +469,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::ExtensionsColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -502,9 +502,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::OrganizationColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< java::lang::CharSequence > getDisplayLabel(local_ref< android::content::Context >  const&, jint, local_ref< java::lang::CharSequence >  const&);
@@ -740,10 +740,10 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::PhonesColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::PeopleColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< java::lang::CharSequence > getDisplayLabel(local_ref< android::content::Context >  const&, jint, local_ref< java::lang::CharSequence >  const&, local_ref< array< local_ref< java::lang::CharSequence >, 1> >  const&);
@@ -877,9 +877,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::PhotosColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -937,9 +937,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::SettingsColumns>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static local_ref< java::lang::String > getSetting(local_ref< android::content::ContentResolver >  const&, local_ref< java::lang::String >  const&, local_ref< java::lang::String >  const&);
@@ -977,9 +977,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::Contacts_::GroupsColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 
@@ -1182,11 +1182,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::PhonesColumns,11,"NUMBER_KEY","
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::PhonesColumns,12,"ISPRIMARY","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Groups::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::Groups::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -1195,6 +1190,11 @@ android::provider::Contacts_::Groups::operator local_ref<android::provider::Base
 android::provider::Contacts_::Groups::operator local_ref<android::provider::Contacts_::GroupsColumns>() const
 {
 	return local_ref<android::provider::Contacts_::GroupsColumns>(get_jobject());
+}
+
+android::provider::Contacts_::Groups::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -1353,9 +1353,9 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::PhotosColumns,5,"DATA","Ljava/l
 
 
 
-android::provider::Contacts_::People_::Phones::operator local_ref<java::lang::Object>() const
+android::provider::Contacts_::People_::Phones::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
 }
 
 android::provider::Contacts_::People_::Phones::operator local_ref<android::provider::BaseColumns>() const
@@ -1363,14 +1363,14 @@ android::provider::Contacts_::People_::Phones::operator local_ref<android::provi
 	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
-android::provider::Contacts_::People_::Phones::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
-{
-	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
-}
-
 android::provider::Contacts_::People_::Phones::operator local_ref<android::provider::Contacts_::PeopleColumns>() const
 {
 	return local_ref<android::provider::Contacts_::PeopleColumns>(get_jobject());
+}
+
+android::provider::Contacts_::People_::Phones::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -1396,11 +1396,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::People_::Phones,0,"CONTENT_DIRE
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::People_::Phones,1,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
 
-android::provider::Contacts_::People_::Extensions::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::People_::Extensions::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -1409,6 +1404,11 @@ android::provider::Contacts_::People_::Extensions::operator local_ref<android::p
 android::provider::Contacts_::People_::Extensions::operator local_ref<android::provider::Contacts_::ExtensionsColumns>() const
 {
 	return local_ref<android::provider::Contacts_::ExtensionsColumns>(get_jobject());
+}
+
+android::provider::Contacts_::People_::Extensions::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -1442,11 +1442,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::People_::Extensions,1,"DEFAULT_
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::People_::Extensions,2,"PERSON_ID","Ljava/lang/String;")
 
 
-android::provider::Contacts_::People_::ContactMethods::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::People_::ContactMethods::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -1460,6 +1455,11 @@ android::provider::Contacts_::People_::ContactMethods::operator local_ref<androi
 android::provider::Contacts_::People_::ContactMethods::operator local_ref<android::provider::Contacts_::PeopleColumns>() const
 {
 	return local_ref<android::provider::Contacts_::PeopleColumns>(get_jobject());
+}
+
+android::provider::Contacts_::People_::ContactMethods::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -1486,9 +1486,9 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::People_::ContactMethods,1,"DEFA
 
 
 
-android::provider::Contacts_::People::operator local_ref<java::lang::Object>() const
+android::provider::Contacts_::People::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
 }
 
 android::provider::Contacts_::People::operator local_ref<android::provider::BaseColumns>() const
@@ -1496,19 +1496,19 @@ android::provider::Contacts_::People::operator local_ref<android::provider::Base
 	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
+android::provider::Contacts_::People::operator local_ref<android::provider::Contacts_::PresenceColumns>() const
+{
+	return local_ref<android::provider::Contacts_::PresenceColumns>(get_jobject());
+}
+
 android::provider::Contacts_::People::operator local_ref<android::provider::Contacts_::PeopleColumns>() const
 {
 	return local_ref<android::provider::Contacts_::PeopleColumns>(get_jobject());
 }
 
-android::provider::Contacts_::People::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
+android::provider::Contacts_::People::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
-}
-
-android::provider::Contacts_::People::operator local_ref<android::provider::Contacts_::PresenceColumns>() const
-{
-	return local_ref<android::provider::Contacts_::PresenceColumns>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -1518,8 +1518,8 @@ void android::provider::Contacts_::People::markAsContacted(local_ref< android::c
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(1),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::provider::Contacts_::People::addToMyContactsGroup(local_ref< android::content::ContentResolver > const &a0, jlong a1)
@@ -1528,8 +1528,8 @@ local_ref< android::net::Uri > android::provider::Contacts_::People::addToMyCont
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(2),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::provider::Contacts_::People::addToGroup(local_ref< android::content::ContentResolver > const &a0, jlong a1, local_ref< java::lang::String > const &a2)
@@ -1538,8 +1538,8 @@ local_ref< android::net::Uri > android::provider::Contacts_::People::addToGroup(
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(3),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0, a1, a2);
+		local_ref< android::net::Uri >
+	>(a0, a1, a2);
 }
 
 local_ref< android::net::Uri > android::provider::Contacts_::People::addToGroup(local_ref< android::content::ContentResolver > const &a0, jlong a1, jlong a2)
@@ -1548,8 +1548,8 @@ local_ref< android::net::Uri > android::provider::Contacts_::People::addToGroup(
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(4),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::Uri > >
-	(a0, a1, a2);
+		local_ref< android::net::Uri >
+	>(a0, a1, a2);
 }
 
 local_ref< android::net::Uri > android::provider::Contacts_::People::createPersonInMyContactsGroup(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -1558,8 +1558,8 @@ local_ref< android::net::Uri > android::provider::Contacts_::People::createPerso
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(5),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 local_ref< android::database::Cursor > android::provider::Contacts_::People::queryGroups(local_ref< android::content::ContentResolver > const &a0, jlong a1)
@@ -1568,8 +1568,8 @@ local_ref< android::database::Cursor > android::provider::Contacts_::People::que
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(6),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::database::Cursor > >
-	(a0, a1);
+		local_ref< android::database::Cursor >
+	>(a0, a1);
 }
 
 void android::provider::Contacts_::People::setPhotoData(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< array<jbyte,1> > const &a2)
@@ -1578,8 +1578,8 @@ void android::provider::Contacts_::People::setPhotoData(local_ref< android::cont
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(7),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::io::InputStream > android::provider::Contacts_::People::openContactPhotoInputStream(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
@@ -1588,8 +1588,8 @@ local_ref< java::io::InputStream > android::provider::Contacts_::People::openCon
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(8),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::io::InputStream > >
-	(a0, a1);
+		local_ref< java::io::InputStream >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Bitmap > android::provider::Contacts_::People::loadContactPhoto(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1, jint a2, local_ref< android::graphics::BitmapFactory_::Options > const &a3)
@@ -1598,8 +1598,8 @@ local_ref< android::graphics::Bitmap > android::provider::Contacts_::People::loa
 		android::provider::Contacts_::People::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::People::J2CPP_METHOD_NAME(9),
 		android::provider::Contacts_::People::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Bitmap > >
-	(a0, a1, a2, a3);
+		local_ref< android::graphics::Bitmap >
+	>(a0, a1, a2, a3);
 }
 
 
@@ -1716,11 +1716,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::ExtensionsColumns,0,"NAME","Lja
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::ExtensionsColumns,1,"VALUE","Ljava/lang/String;")
 
 
-android::provider::Contacts_::ContactMethods::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::ContactMethods::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -1736,6 +1731,11 @@ android::provider::Contacts_::ContactMethods::operator local_ref<android::provid
 	return local_ref<android::provider::Contacts_::PeopleColumns>(get_jobject());
 }
 
+android::provider::Contacts_::ContactMethods::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< java::lang::String > android::provider::Contacts_::ContactMethods::encodePredefinedImProtocol(jint a0)
 {
@@ -1743,8 +1743,8 @@ local_ref< java::lang::String > android::provider::Contacts_::ContactMethods::en
 		android::provider::Contacts_::ContactMethods::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_NAME(1),
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::provider::Contacts_::ContactMethods::encodeCustomImProtocol(local_ref< java::lang::String > const &a0)
@@ -1753,8 +1753,8 @@ local_ref< java::lang::String > android::provider::Contacts_::ContactMethods::en
 		android::provider::Contacts_::ContactMethods::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_NAME(2),
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::Object > android::provider::Contacts_::ContactMethods::decodeImProtocol(local_ref< java::lang::String > const &a0)
@@ -1763,8 +1763,8 @@ local_ref< java::lang::Object > android::provider::Contacts_::ContactMethods::de
 		android::provider::Contacts_::ContactMethods::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_NAME(3),
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::provider::Contacts_::ContactMethods::getDisplayLabel(local_ref< android::content::Context > const &a0, jint a1, jint a2, local_ref< java::lang::CharSequence > const &a3)
@@ -1773,8 +1773,8 @@ local_ref< java::lang::CharSequence > android::provider::Contacts_::ContactMetho
 		android::provider::Contacts_::ContactMethods::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_NAME(4),
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3);
 }
 
 void android::provider::Contacts_::ContactMethods::addPostalLocation(local_ref< android::content::Context > const &a0, jlong a1, jdouble a2, jdouble a3)
@@ -1783,8 +1783,8 @@ void android::provider::Contacts_::ContactMethods::addPostalLocation(local_ref< 
 		android::provider::Contacts_::ContactMethods::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_NAME(5),
 		android::provider::Contacts_::ContactMethods::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -1960,11 +1960,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::ContactMethods,18,"DEFAULT_SORT
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::ContactMethods,19,"PERSON_ID","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Extensions::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::Extensions::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -1973,6 +1968,11 @@ android::provider::Contacts_::Extensions::operator local_ref<android::provider::
 android::provider::Contacts_::Extensions::operator local_ref<android::provider::Contacts_::ExtensionsColumns>() const
 {
 	return local_ref<android::provider::Contacts_::ExtensionsColumns>(get_jobject());
+}
+
+android::provider::Contacts_::Extensions::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -2024,11 +2024,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::Extensions,3,"DEFAULT_SORT_ORDE
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::Extensions,4,"PERSON_ID","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Organizations::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::Organizations::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -2039,6 +2034,11 @@ android::provider::Contacts_::Organizations::operator local_ref<android::provide
 	return local_ref<android::provider::Contacts_::OrganizationColumns>(get_jobject());
 }
 
+android::provider::Contacts_::Organizations::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< java::lang::CharSequence > android::provider::Contacts_::Organizations::getDisplayLabel(local_ref< android::content::Context > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
 {
@@ -2046,8 +2046,8 @@ local_ref< java::lang::CharSequence > android::provider::Contacts_::Organization
 		android::provider::Contacts_::Organizations::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Organizations::J2CPP_METHOD_NAME(1),
 		android::provider::Contacts_::Organizations::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -2184,8 +2184,8 @@ android::provider::Contacts_::Intents_::UI::UI()
 	call_new_object<
 		android::provider::Contacts_::Intents_::UI::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Intents_::UI::J2CPP_METHOD_NAME(0),
-		android::provider::Contacts_::Intents_::UI::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Contacts_::Intents_::UI::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2296,8 +2296,8 @@ android::provider::Contacts_::Intents_::Insert::Insert()
 	call_new_object<
 		android::provider::Contacts_::Intents_::Insert::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Intents_::Insert::J2CPP_METHOD_NAME(0),
-		android::provider::Contacts_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Contacts_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2537,8 +2537,8 @@ android::provider::Contacts_::Intents::Intents()
 	call_new_object<
 		android::provider::Contacts_::Intents::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Intents::J2CPP_METHOD_NAME(0),
-		android::provider::Contacts_::Intents::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::Contacts_::Intents::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2606,9 +2606,9 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::Intents,5,"EXTRA_FORCE_CREATE",
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::Intents,6,"EXTRA_CREATE_DESCRIPTION","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Phones::operator local_ref<java::lang::Object>() const
+android::provider::Contacts_::Phones::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
 }
 
 android::provider::Contacts_::Phones::operator local_ref<android::provider::BaseColumns>() const
@@ -2616,14 +2616,14 @@ android::provider::Contacts_::Phones::operator local_ref<android::provider::Base
 	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
-android::provider::Contacts_::Phones::operator local_ref<android::provider::Contacts_::PhonesColumns>() const
-{
-	return local_ref<android::provider::Contacts_::PhonesColumns>(get_jobject());
-}
-
 android::provider::Contacts_::Phones::operator local_ref<android::provider::Contacts_::PeopleColumns>() const
 {
 	return local_ref<android::provider::Contacts_::PeopleColumns>(get_jobject());
+}
+
+android::provider::Contacts_::Phones::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -2633,8 +2633,8 @@ local_ref< java::lang::CharSequence > android::provider::Contacts_::Phones::getD
 		android::provider::Contacts_::Phones::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Phones::J2CPP_METHOD_NAME(1),
 		android::provider::Contacts_::Phones::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::CharSequence > android::provider::Contacts_::Phones::getDisplayLabel(local_ref< android::content::Context > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2)
@@ -2643,8 +2643,8 @@ local_ref< java::lang::CharSequence > android::provider::Contacts_::Phones::getD
 		android::provider::Contacts_::Phones::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Phones::J2CPP_METHOD_NAME(2),
 		android::provider::Contacts_::Phones::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 
@@ -2908,9 +2908,9 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::PeopleColumns,8,"STARRED","Ljav
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::PeopleColumns,9,"PHOTO_VERSION","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Photos::operator local_ref<java::lang::Object>() const
+android::provider::Contacts_::Photos::operator local_ref<android::provider::Contacts_::PhotosColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::Contacts_::PhotosColumns>(get_jobject());
 }
 
 android::provider::Contacts_::Photos::operator local_ref<android::provider::BaseColumns>() const
@@ -2918,9 +2918,9 @@ android::provider::Contacts_::Photos::operator local_ref<android::provider::Base
 	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
-android::provider::Contacts_::Photos::operator local_ref<android::provider::Contacts_::PhotosColumns>() const
+android::provider::Contacts_::Photos::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::provider::Contacts_::PhotosColumns>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -2997,9 +2997,9 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::GroupsColumns,2,"SHOULD_SYNC","
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::GroupsColumns,3,"SYSTEM_ID","Ljava/lang/String;")
 
 
-android::provider::Contacts_::Settings::operator local_ref<java::lang::Object>() const
+android::provider::Contacts_::Settings::operator local_ref<android::provider::Contacts_::SettingsColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::Contacts_::SettingsColumns>(get_jobject());
 }
 
 android::provider::Contacts_::Settings::operator local_ref<android::provider::BaseColumns>() const
@@ -3007,9 +3007,9 @@ android::provider::Contacts_::Settings::operator local_ref<android::provider::Ba
 	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
-android::provider::Contacts_::Settings::operator local_ref<android::provider::Contacts_::SettingsColumns>() const
+android::provider::Contacts_::Settings::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::provider::Contacts_::SettingsColumns>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -3019,8 +3019,8 @@ local_ref< java::lang::String > android::provider::Contacts_::Settings::getSetti
 		android::provider::Contacts_::Settings::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Settings::J2CPP_METHOD_NAME(1),
 		android::provider::Contacts_::Settings::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 void android::provider::Contacts_::Settings::setSetting(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -3029,8 +3029,8 @@ void android::provider::Contacts_::Settings::setSetting(local_ref< android::cont
 		android::provider::Contacts_::Settings::J2CPP_CLASS_NAME,
 		android::provider::Contacts_::Settings::J2CPP_METHOD_NAME(2),
 		android::provider::Contacts_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 
@@ -3075,11 +3075,6 @@ J2CPP_DEFINE_FIELD(android::provider::Contacts_::Settings,2,"DEFAULT_SORT_ORDER"
 J2CPP_DEFINE_FIELD(android::provider::Contacts_::Settings,3,"SYNC_EVERYTHING","Ljava/lang/String;")
 
 
-android::provider::Contacts_::GroupMembership::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::Contacts_::GroupMembership::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
@@ -3088,6 +3083,11 @@ android::provider::Contacts_::GroupMembership::operator local_ref<android::provi
 android::provider::Contacts_::GroupMembership::operator local_ref<android::provider::Contacts_::GroupsColumns>() const
 {
 	return local_ref<android::provider::Contacts_::GroupsColumns>(get_jobject());
+}
+
+android::provider::Contacts_::GroupMembership::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 

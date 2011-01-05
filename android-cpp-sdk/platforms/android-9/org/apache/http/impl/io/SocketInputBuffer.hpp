@@ -11,13 +11,17 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_SOCKETINPUTBUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace io { class AbstractSessionInputBuffer; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionInputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/Socket.hpp>
 #include <org/apache/http/impl/io/AbstractSessionInputBuffer.hpp>
+#include <org/apache/http/io/SessionInputBuffer.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -41,7 +45,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::io::AbstractSessionInputBuffer>() const;
+		operator local_ref<org::apache::http::io::SessionInputBuffer>() const;
 
 
 		SocketInputBuffer(local_ref< java::net::Socket > const&, jint, local_ref< org::apache::http::params::HttpParams > const&);
@@ -67,9 +73,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::SocketInputBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::io::SocketInputBuffer::operator local_ref<org::apache::http::impl::io::AbstractSessionInputBuffer>() const
 {
 	return local_ref<org::apache::http::impl::io::AbstractSessionInputBuffer>(get_jobject());
+}
+
+org::apache::http::impl::io::SocketInputBuffer::operator local_ref<org::apache::http::io::SessionInputBuffer>() const
+{
+	return local_ref<org::apache::http::io::SessionInputBuffer>(get_jobject());
 }
 
 
@@ -78,8 +94,8 @@ org::apache::http::impl::io::SocketInputBuffer::SocketInputBuffer(local_ref< jav
 	call_new_object<
 		org::apache::http::impl::io::SocketInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::SocketInputBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::SocketInputBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::io::SocketInputBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -91,8 +107,8 @@ jboolean org::apache::http::impl::io::SocketInputBuffer::isDataAvailable(jint a0
 		org::apache::http::impl::io::SocketInputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::SocketInputBuffer::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::io::SocketInputBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

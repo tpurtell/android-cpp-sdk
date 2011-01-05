@@ -70,8 +70,8 @@ jint java::security::spec::ECField::getFieldSize()
 		java::security::spec::ECField::J2CPP_CLASS_NAME,
 		java::security::spec::ECField::J2CPP_METHOD_NAME(0),
 		java::security::spec::ECField::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

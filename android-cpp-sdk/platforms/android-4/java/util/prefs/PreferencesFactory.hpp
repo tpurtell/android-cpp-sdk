@@ -74,8 +74,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::PreferencesFactor
 		java::util::prefs::PreferencesFactory::J2CPP_CLASS_NAME,
 		java::util::prefs::PreferencesFactory::J2CPP_METHOD_NAME(0),
 		java::util::prefs::PreferencesFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject());
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject());
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::PreferencesFactory::systemRoot()
@@ -84,8 +84,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::PreferencesFactor
 		java::util::prefs::PreferencesFactory::J2CPP_CLASS_NAME,
 		java::util::prefs::PreferencesFactory::J2CPP_METHOD_NAME(1),
 		java::util::prefs::PreferencesFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject());
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject());
 }
 
 

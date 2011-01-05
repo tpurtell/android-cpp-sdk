@@ -100,8 +100,8 @@ void android::app::UiModeManager::enableCarMode(jint a0)
 		android::app::UiModeManager::J2CPP_CLASS_NAME,
 		android::app::UiModeManager::J2CPP_METHOD_NAME(1),
 		android::app::UiModeManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::UiModeManager::disableCarMode(jint a0)
@@ -110,8 +110,8 @@ void android::app::UiModeManager::disableCarMode(jint a0)
 		android::app::UiModeManager::J2CPP_CLASS_NAME,
 		android::app::UiModeManager::J2CPP_METHOD_NAME(2),
 		android::app::UiModeManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::app::UiModeManager::getCurrentModeType()
@@ -120,8 +120,8 @@ jint android::app::UiModeManager::getCurrentModeType()
 		android::app::UiModeManager::J2CPP_CLASS_NAME,
 		android::app::UiModeManager::J2CPP_METHOD_NAME(3),
 		android::app::UiModeManager::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::UiModeManager::setNightMode(jint a0)
@@ -130,8 +130,8 @@ void android::app::UiModeManager::setNightMode(jint a0)
 		android::app::UiModeManager::J2CPP_CLASS_NAME,
 		android::app::UiModeManager::J2CPP_METHOD_NAME(4),
 		android::app::UiModeManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::app::UiModeManager::getNightMode()
@@ -140,8 +140,8 @@ jint android::app::UiModeManager::getNightMode()
 		android::app::UiModeManager::J2CPP_CLASS_NAME,
 		android::app::UiModeManager::J2CPP_METHOD_NAME(5),
 		android::app::UiModeManager::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

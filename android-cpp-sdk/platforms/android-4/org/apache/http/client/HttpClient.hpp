@@ -11,15 +11,15 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_HTTPCLIENT_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class ResponseHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -105,8 +105,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::client::Ht
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http::client::HttpClient::getConnectionManager()
@@ -115,8 +115,8 @@ local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http:
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::ClientConnectionManager > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::ClientConnectionManager >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0)
@@ -125,8 +125,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClie
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -135,8 +135,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClie
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1)
@@ -145,8 +145,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClie
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -155,8 +155,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::client::HttpClie
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::client::ResponseHandler > const &a1)
@@ -165,8 +165,8 @@ local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(l
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(6),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::client::ResponseHandler > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -175,8 +175,8 @@ local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(l
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(7),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2)
@@ -185,8 +185,8 @@ local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(l
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(8),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2, local_ref< org::apache::http::protocol::HttpContext > const &a3)
@@ -195,8 +195,8 @@ local_ref< java::lang::Object > org::apache::http::client::HttpClient::execute(l
 		org::apache::http::client::HttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::client::HttpClient::J2CPP_METHOD_NAME(9),
 		org::apache::http::client::HttpClient::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

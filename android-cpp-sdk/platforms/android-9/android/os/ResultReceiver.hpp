@@ -95,8 +95,8 @@ android::os::ResultReceiver::ResultReceiver(local_ref< android::os::Handler > co
 	call_new_object<
 		android::os::ResultReceiver::J2CPP_CLASS_NAME,
 		android::os::ResultReceiver::J2CPP_METHOD_NAME(0),
-		android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -108,8 +108,8 @@ void android::os::ResultReceiver::send(jint a0, local_ref< android::os::Bundle >
 		android::os::ResultReceiver::J2CPP_CLASS_NAME,
 		android::os::ResultReceiver::J2CPP_METHOD_NAME(1),
 		android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -119,8 +119,8 @@ jint android::os::ResultReceiver::describeContents()
 		android::os::ResultReceiver::J2CPP_CLASS_NAME,
 		android::os::ResultReceiver::J2CPP_METHOD_NAME(3),
 		android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::ResultReceiver::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -129,8 +129,8 @@ void android::os::ResultReceiver::writeToParcel(local_ref< android::os::Parcel >
 		android::os::ResultReceiver::J2CPP_CLASS_NAME,
 		android::os::ResultReceiver::J2CPP_METHOD_NAME(4),
 		android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

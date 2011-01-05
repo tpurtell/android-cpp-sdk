@@ -69,8 +69,8 @@ namespace android { namespace telephony {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ServiceState();
@@ -117,14 +117,14 @@ namespace j2cpp {
 
 
 
-android::telephony::ServiceState::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::telephony::ServiceState::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::telephony::ServiceState::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -133,8 +133,8 @@ android::telephony::ServiceState::ServiceState()
 	call_new_object<
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(0),
-		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -146,8 +146,8 @@ android::telephony::ServiceState::ServiceState(local_ref< android::telephony::Se
 	call_new_object<
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(1),
-		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -159,8 +159,8 @@ android::telephony::ServiceState::ServiceState(local_ref< android::os::Parcel > 
 	call_new_object<
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(2),
-		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -173,8 +173,8 @@ void android::telephony::ServiceState::writeToParcel(local_ref< android::os::Par
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(4),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::telephony::ServiceState::describeContents()
@@ -183,8 +183,8 @@ jint android::telephony::ServiceState::describeContents()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(5),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::ServiceState::getState()
@@ -193,8 +193,8 @@ jint android::telephony::ServiceState::getState()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(6),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::ServiceState::getRoaming()
@@ -203,8 +203,8 @@ jboolean android::telephony::ServiceState::getRoaming()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(7),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::ServiceState::getOperatorAlphaLong()
@@ -213,8 +213,8 @@ local_ref< java::lang::String > android::telephony::ServiceState::getOperatorAlp
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(8),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::ServiceState::getOperatorAlphaShort()
@@ -223,8 +223,8 @@ local_ref< java::lang::String > android::telephony::ServiceState::getOperatorAlp
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(9),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::ServiceState::getOperatorNumeric()
@@ -233,8 +233,8 @@ local_ref< java::lang::String > android::telephony::ServiceState::getOperatorNum
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(10),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::telephony::ServiceState::getIsManualSelection()
@@ -243,8 +243,8 @@ jboolean android::telephony::ServiceState::getIsManualSelection()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(11),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::telephony::ServiceState::hashCode()
@@ -253,8 +253,8 @@ jint android::telephony::ServiceState::hashCode()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(12),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::ServiceState::equals(local_ref< java::lang::Object > const &a0)
@@ -263,8 +263,8 @@ jboolean android::telephony::ServiceState::equals(local_ref< java::lang::Object 
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(13),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::telephony::ServiceState::toString()
@@ -273,8 +273,8 @@ local_ref< java::lang::String > android::telephony::ServiceState::toString()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(14),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::telephony::ServiceState::setStateOutOfService()
@@ -283,8 +283,8 @@ void android::telephony::ServiceState::setStateOutOfService()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(15),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::telephony::ServiceState::setStateOff()
@@ -293,8 +293,8 @@ void android::telephony::ServiceState::setStateOff()
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(16),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::telephony::ServiceState::setState(jint a0)
@@ -303,8 +303,8 @@ void android::telephony::ServiceState::setState(jint a0)
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(17),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::ServiceState::setRoaming(jboolean a0)
@@ -313,8 +313,8 @@ void android::telephony::ServiceState::setRoaming(jboolean a0)
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(18),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::ServiceState::setOperatorName(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -323,8 +323,8 @@ void android::telephony::ServiceState::setOperatorName(local_ref< java::lang::St
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(19),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::telephony::ServiceState::setIsManualSelection(jboolean a0)
@@ -333,8 +333,8 @@ void android::telephony::ServiceState::setIsManualSelection(jboolean a0)
 		android::telephony::ServiceState::J2CPP_CLASS_NAME,
 		android::telephony::ServiceState::J2CPP_METHOD_NAME(20),
 		android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -74,8 +74,8 @@ local_ref< java::lang::String > org::apache::http::ReasonPhraseCatalog::getReaso
 		org::apache::http::ReasonPhraseCatalog::J2CPP_CLASS_NAME,
 		org::apache::http::ReasonPhraseCatalog::J2CPP_METHOD_NAME(0),
 		org::apache::http::ReasonPhraseCatalog::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -85,8 +85,8 @@ org::apache::http::protocol::RequestTargetHost::RequestTargetHost()
 	call_new_object<
 		org::apache::http::protocol::RequestTargetHost::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestTargetHost::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::RequestTargetHost::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::RequestTargetHost::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ void org::apache::http::protocol::RequestTargetHost::process(local_ref< org::apa
 		org::apache::http::protocol::RequestTargetHost::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestTargetHost::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::RequestTargetHost::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -75,8 +75,8 @@ local_ref< java::util::concurrent::locks::Lock > java::util::concurrent::locks::
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::concurrent::locks::Lock > >
-	(get_jobject());
+		local_ref< java::util::concurrent::locks::Lock >
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::locks::Lock > java::util::concurrent::locks::ReadWriteLock::writeLock()
@@ -85,8 +85,8 @@ local_ref< java::util::concurrent::locks::Lock > java::util::concurrent::locks::
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::locks::ReadWriteLock::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::locks::Lock > >
-	(get_jobject());
+		local_ref< java::util::concurrent::locks::Lock >
+	>(get_jobject());
 }
 
 

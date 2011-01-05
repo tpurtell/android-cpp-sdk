@@ -16,13 +16,18 @@ namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <android/content/Context.hpp>
@@ -34,8 +39,12 @@ namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 #include <android/net/Uri.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/ImageView.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -74,6 +83,9 @@ namespace android { namespace widget {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::widget::ImageView_::ScaleType >, 1> > values();
@@ -139,6 +151,9 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ImageView(local_ref< android::content::Context > const&);
@@ -191,14 +206,29 @@ android::widget::ImageView_::ScaleType::operator local_ref<java::lang::Enum>() c
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::widget::ImageView_::ScaleType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::ImageView_::ScaleType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::widget::ImageView_::ScaleType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::widget::ImageView_::ScaleType >, 1> > android::widget::ImageView_::ScaleType::values()
 {
 	return call_static_method<
 		android::widget::ImageView_::ScaleType::J2CPP_CLASS_NAME,
 		android::widget::ImageView_::ScaleType::J2CPP_METHOD_NAME(0),
 		android::widget::ImageView_::ScaleType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::widget::ImageView_::ScaleType >, 1> > >
-	();
+		local_ref< array< local_ref< android::widget::ImageView_::ScaleType >, 1> >
+	>();
 }
 
 local_ref< android::widget::ImageView_::ScaleType > android::widget::ImageView_::ScaleType::valueOf(local_ref< java::lang::String > const &a0)
@@ -207,8 +237,8 @@ local_ref< android::widget::ImageView_::ScaleType > android::widget::ImageView_:
 		android::widget::ImageView_::ScaleType::J2CPP_CLASS_NAME,
 		android::widget::ImageView_::ScaleType::J2CPP_METHOD_NAME(1),
 		android::widget::ImageView_::ScaleType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::widget::ImageView_::ScaleType > >
-	(a0);
+		local_ref< android::widget::ImageView_::ScaleType >
+	>(a0);
 }
 
 
@@ -293,14 +323,29 @@ android::widget::ImageView::operator local_ref<android::view::View>() const
 	return local_ref<android::view::View>(get_jobject());
 }
 
+android::widget::ImageView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::ImageView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::ImageView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::widget::ImageView::ImageView(local_ref< android::content::Context > const &a0)
 : object<android::widget::ImageView>(
 	call_new_object<
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(0),
-		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -312,8 +357,8 @@ android::widget::ImageView::ImageView(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(1),
-		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -325,8 +370,8 @@ android::widget::ImageView::ImageView(local_ref< android::content::Context > con
 	call_new_object<
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(2),
-		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -339,8 +384,8 @@ void android::widget::ImageView::invalidateDrawable(local_ref< android::graphics
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(4),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -350,8 +395,8 @@ void android::widget::ImageView::setAdjustViewBounds(jboolean a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(6),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setMaxWidth(jint a0)
@@ -360,8 +405,8 @@ void android::widget::ImageView::setMaxWidth(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(7),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setMaxHeight(jint a0)
@@ -370,8 +415,8 @@ void android::widget::ImageView::setMaxHeight(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(8),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::ImageView::getDrawable()
@@ -380,8 +425,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::ImageView::g
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(9),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::ImageView::setImageResource(jint a0)
@@ -390,8 +435,8 @@ void android::widget::ImageView::setImageResource(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(10),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setImageURI(local_ref< android::net::Uri > const &a0)
@@ -400,8 +445,8 @@ void android::widget::ImageView::setImageURI(local_ref< android::net::Uri > cons
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(11),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setImageDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -410,8 +455,8 @@ void android::widget::ImageView::setImageDrawable(local_ref< android::graphics::
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(12),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setImageBitmap(local_ref< android::graphics::Bitmap > const &a0)
@@ -420,8 +465,8 @@ void android::widget::ImageView::setImageBitmap(local_ref< android::graphics::Bi
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(13),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setImageState(local_ref< array<jint,1> > const &a0, jboolean a1)
@@ -430,8 +475,8 @@ void android::widget::ImageView::setImageState(local_ref< array<jint,1> > const 
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(14),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ImageView::setSelected(jboolean a0)
@@ -440,8 +485,8 @@ void android::widget::ImageView::setSelected(jboolean a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(15),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setImageLevel(jint a0)
@@ -450,8 +495,8 @@ void android::widget::ImageView::setImageLevel(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(16),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setScaleType(local_ref< android::widget::ImageView_::ScaleType > const &a0)
@@ -460,8 +505,8 @@ void android::widget::ImageView::setScaleType(local_ref< android::widget::ImageV
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(17),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::ImageView_::ScaleType > android::widget::ImageView::getScaleType()
@@ -470,8 +515,8 @@ local_ref< android::widget::ImageView_::ScaleType > android::widget::ImageView::
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(18),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::widget::ImageView_::ScaleType > >
-	(get_jobject());
+		local_ref< android::widget::ImageView_::ScaleType >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Matrix > android::widget::ImageView::getImageMatrix()
@@ -480,8 +525,8 @@ local_ref< android::graphics::Matrix > android::widget::ImageView::getImageMatri
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(19),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::graphics::Matrix > >
-	(get_jobject());
+		local_ref< android::graphics::Matrix >
+	>(get_jobject());
 }
 
 void android::widget::ImageView::setImageMatrix(local_ref< android::graphics::Matrix > const &a0)
@@ -490,8 +535,8 @@ void android::widget::ImageView::setImageMatrix(local_ref< android::graphics::Ma
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(20),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > android::widget::ImageView::onCreateDrawableState(jint a0)
@@ -500,8 +545,8 @@ local_ref< array<jint,1> > android::widget::ImageView::onCreateDrawableState(jin
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(21),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 
@@ -514,8 +559,8 @@ jint android::widget::ImageView::getBaseline()
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(26),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ImageView::setColorFilter(jint a0, local_ref< android::graphics::PorterDuff_::Mode > const &a1)
@@ -524,8 +569,8 @@ void android::widget::ImageView::setColorFilter(jint a0, local_ref< android::gra
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(27),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ImageView::setColorFilter(jint a0)
@@ -534,8 +579,8 @@ void android::widget::ImageView::setColorFilter(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(28),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::clearColorFilter()
@@ -544,8 +589,8 @@ void android::widget::ImageView::clearColorFilter()
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(29),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::ImageView::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -554,8 +599,8 @@ void android::widget::ImageView::setColorFilter(local_ref< android::graphics::Co
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(30),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ImageView::setAlpha(jint a0)
@@ -564,8 +609,8 @@ void android::widget::ImageView::setAlpha(jint a0)
 		android::widget::ImageView::J2CPP_CLASS_NAME,
 		android::widget::ImageView::J2CPP_METHOD_NAME(31),
 		android::widget::ImageView::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

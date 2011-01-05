@@ -85,8 +85,8 @@ android::graphics::YuvImage::YuvImage(local_ref< array<jbyte,1> > const &a0, jin
 	call_new_object<
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(0),
-		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -98,8 +98,8 @@ jboolean android::graphics::YuvImage::compressToJpeg(local_ref< android::graphic
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(1),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array<jbyte,1> > android::graphics::YuvImage::getYuvData()
@@ -108,8 +108,8 @@ local_ref< array<jbyte,1> > android::graphics::YuvImage::getYuvData()
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(2),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint android::graphics::YuvImage::getYuvFormat()
@@ -118,8 +118,8 @@ jint android::graphics::YuvImage::getYuvFormat()
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(3),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jint,1> > android::graphics::YuvImage::getStrides()
@@ -128,8 +128,8 @@ local_ref< array<jint,1> > android::graphics::YuvImage::getStrides()
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(4),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jint,1> > >
-	(get_jobject());
+		local_ref< array<jint,1> >
+	>(get_jobject());
 }
 
 jint android::graphics::YuvImage::getWidth()
@@ -138,8 +138,8 @@ jint android::graphics::YuvImage::getWidth()
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(5),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::YuvImage::getHeight()
@@ -148,8 +148,8 @@ jint android::graphics::YuvImage::getHeight()
 		android::graphics::YuvImage::J2CPP_CLASS_NAME,
 		android::graphics::YuvImage::J2CPP_METHOD_NAME(6),
 		android::graphics::YuvImage::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

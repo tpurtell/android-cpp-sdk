@@ -85,8 +85,8 @@ void java::net::CookieStore::add(local_ref< java::net::URI > const &a0, local_re
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(0),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::List > java::net::CookieStore::get(local_ref< java::net::URI > const &a0)
@@ -95,8 +95,8 @@ local_ref< java::util::List > java::net::CookieStore::get(local_ref< java::net::
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(1),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::net::CookieStore::getCookies()
@@ -105,8 +105,8 @@ local_ref< java::util::List > java::net::CookieStore::getCookies()
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(2),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::net::CookieStore::getURIs()
@@ -115,8 +115,8 @@ local_ref< java::util::List > java::net::CookieStore::getURIs()
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(3),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean java::net::CookieStore::remove(local_ref< java::net::URI > const &a0, local_ref< java::net::HttpCookie > const &a1)
@@ -125,8 +125,8 @@ jboolean java::net::CookieStore::remove(local_ref< java::net::URI > const &a0, l
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(4),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::net::CookieStore::removeAll()
@@ -135,8 +135,8 @@ jboolean java::net::CookieStore::removeAll()
 		java::net::CookieStore::J2CPP_CLASS_NAME,
 		java::net::CookieStore::J2CPP_METHOD_NAME(5),
 		java::net::CookieStore::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

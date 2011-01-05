@@ -73,8 +73,8 @@ java::security::KeyFactorySpi::KeyFactorySpi()
 	call_new_object<
 		java::security::KeyFactorySpi::J2CPP_CLASS_NAME,
 		java::security::KeyFactorySpi::J2CPP_METHOD_NAME(0),
-		java::security::KeyFactorySpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::KeyFactorySpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

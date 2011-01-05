@@ -88,8 +88,8 @@ java::security::spec::EllipticCurve::EllipticCurve(local_ref< java::security::sp
 	call_new_object<
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(0),
-		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -101,8 +101,8 @@ java::security::spec::EllipticCurve::EllipticCurve(local_ref< java::security::sp
 	call_new_object<
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(1),
-		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -114,8 +114,8 @@ local_ref< java::math::BigInteger > java::security::spec::EllipticCurve::getA()
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(2),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::EllipticCurve::getB()
@@ -124,8 +124,8 @@ local_ref< java::math::BigInteger > java::security::spec::EllipticCurve::getB()
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(3),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::ECField > java::security::spec::EllipticCurve::getField()
@@ -134,8 +134,8 @@ local_ref< java::security::spec::ECField > java::security::spec::EllipticCurve::
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(4),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::spec::ECField > >
-	(get_jobject());
+		local_ref< java::security::spec::ECField >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::spec::EllipticCurve::getSeed()
@@ -144,8 +144,8 @@ local_ref< array<jbyte,1> > java::security::spec::EllipticCurve::getSeed()
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(5),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean java::security::spec::EllipticCurve::equals(local_ref< java::lang::Object > const &a0)
@@ -154,8 +154,8 @@ jboolean java::security::spec::EllipticCurve::equals(local_ref< java::lang::Obje
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(6),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::security::spec::EllipticCurve::hashCode()
@@ -164,8 +164,8 @@ jint java::security::spec::EllipticCurve::hashCode()
 		java::security::spec::EllipticCurve::J2CPP_CLASS_NAME,
 		java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(7),
 		java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

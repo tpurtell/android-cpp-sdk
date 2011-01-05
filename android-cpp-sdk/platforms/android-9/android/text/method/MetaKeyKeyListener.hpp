@@ -128,8 +128,8 @@ android::text::method::MetaKeyKeyListener::MetaKeyKeyListener()
 	call_new_object<
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -141,8 +141,8 @@ void android::text::method::MetaKeyKeyListener::resetMetaState(local_ref< androi
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::text::method::MetaKeyKeyListener::getMetaState(local_ref< java::lang::CharSequence > const &a0)
@@ -151,8 +151,8 @@ jint android::text::method::MetaKeyKeyListener::getMetaState(local_ref< java::la
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(2),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::text::method::MetaKeyKeyListener::getMetaState(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -161,8 +161,8 @@ jint android::text::method::MetaKeyKeyListener::getMetaState(local_ref< java::la
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::text::method::MetaKeyKeyListener::adjustMetaAfterKeypress(local_ref< android::text::Spannable > const &a0)
@@ -171,8 +171,8 @@ void android::text::method::MetaKeyKeyListener::adjustMetaAfterKeypress(local_re
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(4),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::text::method::MetaKeyKeyListener::isMetaTracker(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::Object > const &a1)
@@ -181,8 +181,8 @@ jboolean android::text::method::MetaKeyKeyListener::isMetaTracker(local_ref< jav
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(5),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean android::text::method::MetaKeyKeyListener::isSelectingMetaTracker(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::Object > const &a1)
@@ -191,8 +191,8 @@ jboolean android::text::method::MetaKeyKeyListener::isSelectingMetaTracker(local
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(6),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 
@@ -202,8 +202,8 @@ jboolean android::text::method::MetaKeyKeyListener::onKeyDown(local_ref< android
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(8),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::MetaKeyKeyListener::onKeyUp(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -212,8 +212,8 @@ jboolean android::text::method::MetaKeyKeyListener::onKeyUp(local_ref< android::
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(9),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::method::MetaKeyKeyListener::clearMetaKeyState(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2)
@@ -222,8 +222,8 @@ void android::text::method::MetaKeyKeyListener::clearMetaKeyState(local_ref< and
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(10),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::MetaKeyKeyListener::clearMetaKeyState(local_ref< android::text::Editable > const &a0, jint a1)
@@ -232,8 +232,8 @@ void android::text::method::MetaKeyKeyListener::clearMetaKeyState(local_ref< and
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(11),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jlong android::text::method::MetaKeyKeyListener::resetLockedMeta(jlong a0)
@@ -242,8 +242,8 @@ jlong android::text::method::MetaKeyKeyListener::resetLockedMeta(jlong a0)
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(12),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 jint android::text::method::MetaKeyKeyListener::getMetaState(jlong a0)
@@ -252,8 +252,8 @@ jint android::text::method::MetaKeyKeyListener::getMetaState(jlong a0)
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(13),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::text::method::MetaKeyKeyListener::getMetaState(jlong a0, jint a1)
@@ -262,8 +262,8 @@ jint android::text::method::MetaKeyKeyListener::getMetaState(jlong a0, jint a1)
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(14),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jlong android::text::method::MetaKeyKeyListener::adjustMetaAfterKeypress(jlong a0)
@@ -272,8 +272,8 @@ jlong android::text::method::MetaKeyKeyListener::adjustMetaAfterKeypress(jlong a
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(15),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(15), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 jlong android::text::method::MetaKeyKeyListener::handleKeyDown(jlong a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -282,8 +282,8 @@ jlong android::text::method::MetaKeyKeyListener::handleKeyDown(jlong a0, jint a1
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(16),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(16), 
-		jlong >
-	(a0, a1, a2);
+		jlong
+	>(a0, a1, a2);
 }
 
 jlong android::text::method::MetaKeyKeyListener::handleKeyUp(jlong a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -292,8 +292,8 @@ jlong android::text::method::MetaKeyKeyListener::handleKeyUp(jlong a0, jint a1, 
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(17),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(17), 
-		jlong >
-	(a0, a1, a2);
+		jlong
+	>(a0, a1, a2);
 }
 
 jlong android::text::method::MetaKeyKeyListener::clearMetaKeyState(jlong a0, jint a1)
@@ -302,8 +302,8 @@ jlong android::text::method::MetaKeyKeyListener::clearMetaKeyState(jlong a0, jin
 		android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(18),
 		android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(18), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 

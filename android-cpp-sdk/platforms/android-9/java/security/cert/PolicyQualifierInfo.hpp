@@ -80,8 +80,8 @@ java::security::cert::PolicyQualifierInfo::PolicyQualifierInfo(local_ref< array<
 	call_new_object<
 		java::security::cert::PolicyQualifierInfo::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_NAME(0),
-		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -93,8 +93,8 @@ local_ref< array<jbyte,1> > java::security::cert::PolicyQualifierInfo::getEncode
 		java::security::cert::PolicyQualifierInfo::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_NAME(1),
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::PolicyQualifierInfo::getPolicyQualifierId()
@@ -103,8 +103,8 @@ local_ref< java::lang::String > java::security::cert::PolicyQualifierInfo::getPo
 		java::security::cert::PolicyQualifierInfo::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_NAME(2),
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::cert::PolicyQualifierInfo::getPolicyQualifier()
@@ -113,8 +113,8 @@ local_ref< array<jbyte,1> > java::security::cert::PolicyQualifierInfo::getPolicy
 		java::security::cert::PolicyQualifierInfo::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_NAME(3),
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::PolicyQualifierInfo::toString()
@@ -123,8 +123,8 @@ local_ref< java::lang::String > java::security::cert::PolicyQualifierInfo::toStr
 		java::security::cert::PolicyQualifierInfo::J2CPP_CLASS_NAME,
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_NAME(4),
 		java::security::cert::PolicyQualifierInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

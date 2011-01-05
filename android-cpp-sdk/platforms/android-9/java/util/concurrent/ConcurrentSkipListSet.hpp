@@ -12,24 +12,30 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class SortedSet; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class NavigableSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Cloneable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/NavigableSet.hpp>
+#include <java/util/Set.hpp>
 #include <java/util/SortedSet.hpp>
 
 
@@ -86,9 +92,15 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::util::AbstractSet>() const;
-		operator local_ref<java::util::NavigableSet>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::SortedSet>() const;
+		operator local_ref<java::util::NavigableSet>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Set>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -146,9 +158,24 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::AbstractSet>() const
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref<java::util::AbstractSet>(get_jobject());
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::SortedSet>() const
+{
+	return local_ref<java::util::SortedSet>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::NavigableSet>() const
@@ -156,9 +183,24 @@ java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::Na
 	return local_ref<java::util::NavigableSet>(get_jobject());
 }
 
-java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::lang::Cloneable>() const
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::Collection>() const
 {
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::AbstractSet>() const
+{
+	return local_ref<java::util::AbstractSet>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentSkipListSet::operator local_ref<java::io::Serializable>() const
@@ -172,8 +214,8 @@ java::util::concurrent::ConcurrentSkipListSet::ConcurrentSkipListSet()
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -185,8 +227,8 @@ java::util::concurrent::ConcurrentSkipListSet::ConcurrentSkipListSet(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -198,8 +240,8 @@ java::util::concurrent::ConcurrentSkipListSet::ConcurrentSkipListSet(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(2),
-		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -211,8 +253,8 @@ java::util::concurrent::ConcurrentSkipListSet::ConcurrentSkipListSet(local_ref< 
 	call_new_object<
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(3),
-		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -224,8 +266,8 @@ local_ref< java::util::concurrent::ConcurrentSkipListSet > java::util::concurren
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::ConcurrentSkipListSet > >
-	(get_jobject());
+		local_ref< java::util::concurrent::ConcurrentSkipListSet >
+	>(get_jobject());
 }
 
 jint java::util::concurrent::ConcurrentSkipListSet::size()
@@ -234,8 +276,8 @@ jint java::util::concurrent::ConcurrentSkipListSet::size()
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::isEmpty()
@@ -244,8 +286,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::isEmpty()
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::contains(local_ref< java::lang::Object > const &a0)
@@ -254,8 +296,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::contains(local_ref< java
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::add(local_ref< java::lang::Object > const &a0)
@@ -264,8 +306,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::add(local_ref< java::lan
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::remove(local_ref< java::lang::Object > const &a0)
@@ -274,8 +316,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::remove(local_ref< java::
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::ConcurrentSkipListSet::clear()
@@ -284,8 +326,8 @@ void java::util::concurrent::ConcurrentSkipListSet::clear()
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::concurrent::ConcurrentSkipListSet::iterator()
@@ -294,8 +336,8 @@ local_ref< java::util::Iterator > java::util::concurrent::ConcurrentSkipListSet:
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::concurrent::ConcurrentSkipListSet::descendingIterator()
@@ -304,8 +346,8 @@ local_ref< java::util::Iterator > java::util::concurrent::ConcurrentSkipListSet:
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::equals(local_ref< java::lang::Object > const &a0)
@@ -314,8 +356,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::equals(local_ref< java::
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::ConcurrentSkipListSet::removeAll(local_ref< java::util::Collection > const &a0)
@@ -324,8 +366,8 @@ jboolean java::util::concurrent::ConcurrentSkipListSet::removeAll(local_ref< jav
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::lower(local_ref< java::lang::Object > const &a0)
@@ -334,8 +376,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::l
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::floor(local_ref< java::lang::Object > const &a0)
@@ -344,8 +386,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::f
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::ceiling(local_ref< java::lang::Object > const &a0)
@@ -354,8 +396,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::c
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::higher(local_ref< java::lang::Object > const &a0)
@@ -364,8 +406,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::h
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::pollFirst()
@@ -374,8 +416,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::p
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::pollLast()
@@ -384,8 +426,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::p
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Comparator > java::util::concurrent::ConcurrentSkipListSet::comparator()
@@ -394,8 +436,8 @@ local_ref< java::util::Comparator > java::util::concurrent::ConcurrentSkipListSe
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(21),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Comparator > >
-	(get_jobject());
+		local_ref< java::util::Comparator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::first()
@@ -404,8 +446,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::f
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(22),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::last()
@@ -414,8 +456,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::l
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(23),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::subSet(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -424,8 +466,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(24),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::headSet(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -434,8 +476,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(25),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::tailSet(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -444,8 +486,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(26),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::subSet(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -454,8 +496,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(27),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::headSet(local_ref< java::lang::Object > const &a0)
@@ -464,8 +506,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(28),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::tailSet(local_ref< java::lang::Object > const &a0)
@@ -474,8 +516,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(29),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipListSet::descendingSet()
@@ -484,8 +526,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentSkipList
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(30),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::clone_1()
@@ -494,8 +536,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentSkipListSet::c
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(31),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet::tailSet_1(local_ref< java::lang::Object > const &a0)
@@ -504,8 +546,8 @@ local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(32),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet::subSet_1(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -514,8 +556,8 @@ local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(33),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet::headSet_1(local_ref< java::lang::Object > const &a0)
@@ -524,8 +566,8 @@ local_ref< java::util::SortedSet > java::util::concurrent::ConcurrentSkipListSet
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_NAME(34),
 		java::util::concurrent::ConcurrentSkipListSet::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::util::SortedSet > >
-	(get_jobject(), a0);
+		local_ref< java::util::SortedSet >
+	>(get_jobject(), a0);
 }
 
 

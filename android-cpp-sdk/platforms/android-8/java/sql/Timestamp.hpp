@@ -13,9 +13,15 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Date.hpp>
@@ -54,7 +60,11 @@ namespace java { namespace sql {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::util::Date>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		Timestamp(jint, jint, jint, jint, jint, jint, jint);
@@ -90,9 +100,29 @@ namespace j2cpp {
 
 
 
+java::sql::Timestamp::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::sql::Timestamp::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::sql::Timestamp::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::sql::Timestamp::operator local_ref<java::util::Date>() const
 {
 	return local_ref<java::util::Date>(get_jobject());
+}
+
+java::sql::Timestamp::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -101,8 +131,8 @@ java::sql::Timestamp::Timestamp(jint a0, jint a1, jint a2, jint a3, jint a4, jin
 	call_new_object<
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(0),
-		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }
@@ -114,8 +144,8 @@ java::sql::Timestamp::Timestamp(jlong a0)
 	call_new_object<
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(1),
-		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -127,8 +157,8 @@ jboolean java::sql::Timestamp::after(local_ref< java::sql::Timestamp > const &a0
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(2),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::Timestamp::before(local_ref< java::sql::Timestamp > const &a0)
@@ -137,8 +167,8 @@ jboolean java::sql::Timestamp::before(local_ref< java::sql::Timestamp > const &a
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(3),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::sql::Timestamp::compareTo(local_ref< java::util::Date > const &a0)
@@ -147,8 +177,8 @@ jint java::sql::Timestamp::compareTo(local_ref< java::util::Date > const &a0)
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(4),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::Timestamp::compareTo(local_ref< java::sql::Timestamp > const &a0)
@@ -157,8 +187,8 @@ jint java::sql::Timestamp::compareTo(local_ref< java::sql::Timestamp > const &a0
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(5),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::Timestamp::equals(local_ref< java::lang::Object > const &a0)
@@ -167,8 +197,8 @@ jboolean java::sql::Timestamp::equals(local_ref< java::lang::Object > const &a0)
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(6),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::Timestamp::equals(local_ref< java::sql::Timestamp > const &a0)
@@ -177,8 +207,8 @@ jboolean java::sql::Timestamp::equals(local_ref< java::sql::Timestamp > const &a
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(7),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::sql::Timestamp::getNanos()
@@ -187,8 +217,8 @@ jint java::sql::Timestamp::getNanos()
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(8),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::sql::Timestamp::getTime()
@@ -197,8 +227,8 @@ jlong java::sql::Timestamp::getTime()
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(9),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::sql::Timestamp::setNanos(jint a0)
@@ -207,8 +237,8 @@ void java::sql::Timestamp::setNanos(jint a0)
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(10),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::Timestamp::setTime(jlong a0)
@@ -217,8 +247,8 @@ void java::sql::Timestamp::setTime(jlong a0)
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(11),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::Timestamp::toString()
@@ -227,8 +257,8 @@ local_ref< java::lang::String > java::sql::Timestamp::toString()
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(12),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Timestamp > java::sql::Timestamp::valueOf(local_ref< java::lang::String > const &a0)
@@ -237,8 +267,8 @@ local_ref< java::sql::Timestamp > java::sql::Timestamp::valueOf(local_ref< java:
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(13),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::sql::Timestamp > >
-	(a0);
+		local_ref< java::sql::Timestamp >
+	>(a0);
 }
 
 jint java::sql::Timestamp::compareTo(local_ref< java::lang::Object > const &a0)
@@ -247,8 +277,8 @@ jint java::sql::Timestamp::compareTo(local_ref< java::lang::Object > const &a0)
 		java::sql::Timestamp::J2CPP_CLASS_NAME,
 		java::sql::Timestamp::J2CPP_METHOD_NAME(14),
 		java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

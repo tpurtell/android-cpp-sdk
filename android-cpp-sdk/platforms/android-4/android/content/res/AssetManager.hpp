@@ -14,12 +14,14 @@
 namespace j2cpp { namespace android { namespace content { namespace res { class XmlResourceParser; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetFileDescriptor; } } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/res/AssetFileDescriptor.hpp>
 #include <android/content/res/XmlResourceParser.hpp>
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -60,6 +62,8 @@ namespace android { namespace content { namespace res {
 			}
 
 			operator local_ref<java::io::InputStream>() const;
+			operator local_ref<java::io::Closeable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			jint getAssetInt();
@@ -151,6 +155,16 @@ android::content::res::AssetManager_::AssetInputStream::operator local_ref<java:
 	return local_ref<java::io::InputStream>(get_jobject());
 }
 
+android::content::res::AssetManager_::AssetInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+android::content::res::AssetManager_::AssetInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 jint android::content::res::AssetManager_::AssetInputStream::getAssetInt()
 {
@@ -158,8 +172,8 @@ jint android::content::res::AssetManager_::AssetInputStream::getAssetInt()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(1),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::res::AssetManager_::AssetInputStream::read()
@@ -168,8 +182,8 @@ jint android::content::res::AssetManager_::AssetInputStream::read()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(2),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::content::res::AssetManager_::AssetInputStream::markSupported()
@@ -178,8 +192,8 @@ jboolean android::content::res::AssetManager_::AssetInputStream::markSupported()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(3),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::content::res::AssetManager_::AssetInputStream::available()
@@ -188,8 +202,8 @@ jint android::content::res::AssetManager_::AssetInputStream::available()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(4),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::res::AssetManager_::AssetInputStream::close()
@@ -198,8 +212,8 @@ void android::content::res::AssetManager_::AssetInputStream::close()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(5),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::content::res::AssetManager_::AssetInputStream::mark(jint a0)
@@ -208,8 +222,8 @@ void android::content::res::AssetManager_::AssetInputStream::mark(jint a0)
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(6),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::res::AssetManager_::AssetInputStream::reset()
@@ -218,8 +232,8 @@ void android::content::res::AssetManager_::AssetInputStream::reset()
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(7),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::content::res::AssetManager_::AssetInputStream::read(local_ref< array<jbyte,1> > const &a0)
@@ -228,8 +242,8 @@ jint android::content::res::AssetManager_::AssetInputStream::read(local_ref< arr
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(8),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::content::res::AssetManager_::AssetInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -238,8 +252,8 @@ jint android::content::res::AssetManager_::AssetInputStream::read(local_ref< arr
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(9),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong android::content::res::AssetManager_::AssetInputStream::skip(jlong a0)
@@ -248,8 +262,8 @@ jlong android::content::res::AssetManager_::AssetInputStream::skip(jlong a0)
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(10),
 		android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 
@@ -284,8 +298,8 @@ void android::content::res::AssetManager::close()
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(1),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > android::content::res::AssetManager::open(local_ref< java::lang::String > const &a0)
@@ -294,8 +308,8 @@ local_ref< java::io::InputStream > android::content::res::AssetManager::open(loc
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(2),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > android::content::res::AssetManager::open(local_ref< java::lang::String > const &a0, jint a1)
@@ -304,8 +318,8 @@ local_ref< java::io::InputStream > android::content::res::AssetManager::open(loc
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(3),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::res::AssetManager::openFd(local_ref< java::lang::String > const &a0)
@@ -314,8 +328,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::res::A
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(4),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::content::res::AssetManager::list(local_ref< java::lang::String > const &a0)
@@ -324,8 +338,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::res::A
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(5),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::res::AssetManager::openNonAssetFd(local_ref< java::lang::String > const &a0)
@@ -334,8 +348,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::res::A
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(6),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::AssetFileDescriptor > android::content::res::AssetManager::openNonAssetFd(jint a0, local_ref< java::lang::String > const &a1)
@@ -344,8 +358,8 @@ local_ref< android::content::res::AssetFileDescriptor > android::content::res::A
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(7),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::content::res::AssetFileDescriptor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::AssetFileDescriptor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::content::res::AssetManager::openXmlResourceParser(local_ref< java::lang::String > const &a0)
@@ -354,8 +368,8 @@ local_ref< android::content::res::XmlResourceParser > android::content::res::Ass
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(8),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::XmlResourceParser > android::content::res::AssetManager::openXmlResourceParser(jint a0, local_ref< java::lang::String > const &a1)
@@ -364,8 +378,8 @@ local_ref< android::content::res::XmlResourceParser > android::content::res::Ass
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(9),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::content::res::XmlResourceParser > >
-	(get_jobject(), a0, a1);
+		local_ref< android::content::res::XmlResourceParser >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -375,8 +389,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::content::res::A
 		android::content::res::AssetManager::J2CPP_CLASS_NAME,
 		android::content::res::AssetManager::J2CPP_METHOD_NAME(11),
 		android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 

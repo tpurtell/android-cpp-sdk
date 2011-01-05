@@ -110,8 +110,8 @@ local_ref< java::lang::String > java::sql::ParameterMetaData::getParameterClassN
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(0),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ParameterMetaData::getParameterCount()
@@ -120,8 +120,8 @@ jint java::sql::ParameterMetaData::getParameterCount()
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(1),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::sql::ParameterMetaData::getParameterMode(jint a0)
@@ -130,8 +130,8 @@ jint java::sql::ParameterMetaData::getParameterMode(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(2),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ParameterMetaData::getParameterType(jint a0)
@@ -140,8 +140,8 @@ jint java::sql::ParameterMetaData::getParameterType(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(3),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::sql::ParameterMetaData::getParameterTypeName(jint a0)
@@ -150,8 +150,8 @@ local_ref< java::lang::String > java::sql::ParameterMetaData::getParameterTypeNa
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(4),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ParameterMetaData::getPrecision(jint a0)
@@ -160,8 +160,8 @@ jint java::sql::ParameterMetaData::getPrecision(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(5),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ParameterMetaData::getScale(jint a0)
@@ -170,8 +170,8 @@ jint java::sql::ParameterMetaData::getScale(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(6),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::sql::ParameterMetaData::isNullable(jint a0)
@@ -180,8 +180,8 @@ jint java::sql::ParameterMetaData::isNullable(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(7),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::ParameterMetaData::isSigned(jint a0)
@@ -190,8 +190,8 @@ jboolean java::sql::ParameterMetaData::isSigned(jint a0)
 		java::sql::ParameterMetaData::J2CPP_CLASS_NAME,
 		java::sql::ParameterMetaData::J2CPP_METHOD_NAME(8),
 		java::sql::ParameterMetaData::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

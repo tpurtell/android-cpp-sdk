@@ -46,6 +46,7 @@ namespace javax { namespace crypto { namespace spec {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<javax::crypto::spec::PSource>() const;
 
 
@@ -98,6 +99,11 @@ namespace j2cpp {
 
 
 
+javax::crypto::spec::PSource_::PSpecified::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::crypto::spec::PSource_::PSpecified::operator local_ref<javax::crypto::spec::PSource>() const
 {
 	return local_ref<javax::crypto::spec::PSource>(get_jobject());
@@ -109,8 +115,8 @@ javax::crypto::spec::PSource_::PSpecified::PSpecified(local_ref< array<jbyte,1> 
 	call_new_object<
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -122,8 +128,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::PSource_::PSpecified::getValue(
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::PSource_::PSpecified::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 
@@ -156,8 +162,8 @@ local_ref< java::lang::String > javax::crypto::spec::PSource::getAlgorithm()
 		javax::crypto::spec::PSource::J2CPP_CLASS_NAME,
 		javax::crypto::spec::PSource::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::PSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

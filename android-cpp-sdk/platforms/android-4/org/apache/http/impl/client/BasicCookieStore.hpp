@@ -12,11 +12,11 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -100,8 +100,8 @@ org::apache::http::impl::client::BasicCookieStore::BasicCookieStore()
 	call_new_object<
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -113,8 +113,8 @@ void org::apache::http::impl::client::BasicCookieStore::addCookie(local_ref< org
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::client::BasicCookieStore::addCookies(local_ref< array< local_ref< org::apache::http::cookie::Cookie >, 1> > const &a0)
@@ -123,8 +123,8 @@ void org::apache::http::impl::client::BasicCookieStore::addCookies(local_ref< ar
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > org::apache::http::impl::client::BasicCookieStore::getCookies()
@@ -133,8 +133,8 @@ local_ref< java::util::List > org::apache::http::impl::client::BasicCookieStore:
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::client::BasicCookieStore::clearExpired(local_ref< java::util::Date > const &a0)
@@ -143,8 +143,8 @@ jboolean org::apache::http::impl::client::BasicCookieStore::clearExpired(local_r
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::client::BasicCookieStore::toString()
@@ -153,8 +153,8 @@ local_ref< java::lang::String > org::apache::http::impl::client::BasicCookieStor
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::client::BasicCookieStore::clear()
@@ -163,8 +163,8 @@ void org::apache::http::impl::client::BasicCookieStore::clear()
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::client::BasicCookieStore::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

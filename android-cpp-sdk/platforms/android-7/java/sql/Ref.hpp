@@ -79,8 +79,8 @@ local_ref< java::lang::String > java::sql::Ref::getBaseTypeName()
 		java::sql::Ref::J2CPP_CLASS_NAME,
 		java::sql::Ref::J2CPP_METHOD_NAME(0),
 		java::sql::Ref::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::sql::Ref::getObject()
@@ -89,8 +89,8 @@ local_ref< java::lang::Object > java::sql::Ref::getObject()
 		java::sql::Ref::J2CPP_CLASS_NAME,
 		java::sql::Ref::J2CPP_METHOD_NAME(1),
 		java::sql::Ref::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::sql::Ref::getObject(local_ref< java::util::Map > const &a0)
@@ -99,8 +99,8 @@ local_ref< java::lang::Object > java::sql::Ref::getObject(local_ref< java::util:
 		java::sql::Ref::J2CPP_CLASS_NAME,
 		java::sql::Ref::J2CPP_METHOD_NAME(2),
 		java::sql::Ref::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void java::sql::Ref::setObject(local_ref< java::lang::Object > const &a0)
@@ -109,8 +109,8 @@ void java::sql::Ref::setObject(local_ref< java::lang::Object > const &a0)
 		java::sql::Ref::J2CPP_CLASS_NAME,
 		java::sql::Ref::J2CPP_METHOD_NAME(3),
 		java::sql::Ref::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

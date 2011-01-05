@@ -59,8 +59,8 @@ namespace java { namespace util { namespace logging {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::util::logging::Level > parse(local_ref< java::lang::String >  const&);
@@ -100,14 +100,14 @@ namespace j2cpp {
 
 
 
-java::util::logging::Level::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::logging::Level::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::logging::Level::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -118,8 +118,8 @@ local_ref< java::util::logging::Level > java::util::logging::Level::parse(local_
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(2),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::logging::Level > >
-	(a0);
+		local_ref< java::util::logging::Level >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::logging::Level::getName()
@@ -128,8 +128,8 @@ local_ref< java::lang::String > java::util::logging::Level::getName()
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(3),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::logging::Level::getResourceBundleName()
@@ -138,8 +138,8 @@ local_ref< java::lang::String > java::util::logging::Level::getResourceBundleNam
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(4),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::logging::Level::intValue()
@@ -148,8 +148,8 @@ jint java::util::logging::Level::intValue()
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(5),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::logging::Level::getLocalizedName()
@@ -158,8 +158,8 @@ local_ref< java::lang::String > java::util::logging::Level::getLocalizedName()
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(6),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::util::logging::Level::equals(local_ref< java::lang::Object > const &a0)
@@ -168,8 +168,8 @@ jboolean java::util::logging::Level::equals(local_ref< java::lang::Object > cons
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(7),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::logging::Level::hashCode()
@@ -178,8 +178,8 @@ jint java::util::logging::Level::hashCode()
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(8),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::logging::Level::toString()
@@ -188,8 +188,8 @@ local_ref< java::lang::String > java::util::logging::Level::toString()
 		java::util::logging::Level::J2CPP_CLASS_NAME,
 		java::util::logging::Level::J2CPP_METHOD_NAME(9),
 		java::util::logging::Level::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

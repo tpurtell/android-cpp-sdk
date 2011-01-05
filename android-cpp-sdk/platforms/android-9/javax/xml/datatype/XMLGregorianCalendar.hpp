@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_XML_DATATYPE_XMLGREGORIANCALENDAR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace javax { namespace xml { namespace datatype { class Duration; } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace namespace { class QName; } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class GregorianCalendar; } } }
@@ -93,8 +93,8 @@ namespace javax { namespace xml { namespace datatype {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		XMLGregorianCalendar();
@@ -156,14 +156,14 @@ namespace j2cpp {
 
 
 
-javax::xml::datatype::XMLGregorianCalendar::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::xml::datatype::XMLGregorianCalendar::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+javax::xml::datatype::XMLGregorianCalendar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -172,8 +172,8 @@ javax::xml::datatype::XMLGregorianCalendar::XMLGregorianCalendar()
 	call_new_object<
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(0),
-		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -185,8 +185,8 @@ void javax::xml::datatype::XMLGregorianCalendar::clear()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(1),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::reset()
@@ -195,8 +195,8 @@ void javax::xml::datatype::XMLGregorianCalendar::reset()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(2),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setYear(local_ref< java::math::BigInteger > const &a0)
@@ -205,8 +205,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setYear(local_ref< java::math::
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(3),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setYear(jint a0)
@@ -215,8 +215,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setYear(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(4),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setMonth(jint a0)
@@ -225,8 +225,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setMonth(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(5),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setDay(jint a0)
@@ -235,8 +235,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setDay(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(6),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setTimezone(jint a0)
@@ -245,8 +245,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setTimezone(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(7),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint a2)
@@ -255,8 +255,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint 
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(8),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setHour(jint a0)
@@ -265,8 +265,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setHour(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(9),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setMinute(jint a0)
@@ -275,8 +275,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setMinute(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(10),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setSecond(jint a0)
@@ -285,8 +285,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setSecond(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(11),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setMillisecond(jint a0)
@@ -295,8 +295,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setMillisecond(jint a0)
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(12),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setFractionalSecond(local_ref< java::math::BigDecimal > const &a0)
@@ -305,8 +305,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setFractionalSecond(local_ref< 
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(13),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint a2, local_ref< java::math::BigDecimal > const &a3)
@@ -315,8 +315,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint 
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(14),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint a2, jint a3)
@@ -325,8 +325,8 @@ void javax::xml::datatype::XMLGregorianCalendar::setTime(jint a0, jint a1, jint 
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(15),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::math::BigInteger > javax::xml::datatype::XMLGregorianCalendar::getEon()
@@ -335,8 +335,8 @@ local_ref< java::math::BigInteger > javax::xml::datatype::XMLGregorianCalendar::
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(16),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getYear()
@@ -345,8 +345,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getYear()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(17),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > javax::xml::datatype::XMLGregorianCalendar::getEonAndYear()
@@ -355,8 +355,8 @@ local_ref< java::math::BigInteger > javax::xml::datatype::XMLGregorianCalendar::
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(18),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getMonth()
@@ -365,8 +365,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getMonth()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(19),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getDay()
@@ -375,8 +375,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getDay()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(20),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getTimezone()
@@ -385,8 +385,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getTimezone()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(21),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getHour()
@@ -395,8 +395,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getHour()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(22),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getMinute()
@@ -405,8 +405,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getMinute()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(23),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getSecond()
@@ -415,8 +415,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getSecond()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(24),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::getMillisecond()
@@ -425,8 +425,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::getMillisecond()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(25),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > javax::xml::datatype::XMLGregorianCalendar::getFractionalSecond()
@@ -435,8 +435,8 @@ local_ref< java::math::BigDecimal > javax::xml::datatype::XMLGregorianCalendar::
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(26),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::compare(local_ref< javax::xml::datatype::XMLGregorianCalendar > const &a0)
@@ -445,8 +445,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::compare(local_ref< javax::xml::
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(27),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::XMLGregorianCalendar::normalize()
@@ -455,8 +455,8 @@ local_ref< javax::xml::datatype::XMLGregorianCalendar > javax::xml::datatype::XM
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(28),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< javax::xml::datatype::XMLGregorianCalendar > >
-	(get_jobject());
+		local_ref< javax::xml::datatype::XMLGregorianCalendar >
+	>(get_jobject());
 }
 
 jboolean javax::xml::datatype::XMLGregorianCalendar::equals(local_ref< java::lang::Object > const &a0)
@@ -465,8 +465,8 @@ jboolean javax::xml::datatype::XMLGregorianCalendar::equals(local_ref< java::lan
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(29),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::xml::datatype::XMLGregorianCalendar::hashCode()
@@ -475,8 +475,8 @@ jint javax::xml::datatype::XMLGregorianCalendar::hashCode()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(30),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::datatype::XMLGregorianCalendar::toXMLFormat()
@@ -485,8 +485,8 @@ local_ref< java::lang::String > javax::xml::datatype::XMLGregorianCalendar::toXM
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(31),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::namespace::QName > javax::xml::datatype::XMLGregorianCalendar::getXMLSchemaType()
@@ -495,8 +495,8 @@ local_ref< javax::xml::namespace::QName > javax::xml::datatype::XMLGregorianCale
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(32),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< javax::xml::namespace::QName > >
-	(get_jobject());
+		local_ref< javax::xml::namespace::QName >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::xml::datatype::XMLGregorianCalendar::toString()
@@ -505,8 +505,8 @@ local_ref< java::lang::String > javax::xml::datatype::XMLGregorianCalendar::toSt
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(33),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean javax::xml::datatype::XMLGregorianCalendar::isValid()
@@ -515,8 +515,8 @@ jboolean javax::xml::datatype::XMLGregorianCalendar::isValid()
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(34),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::xml::datatype::XMLGregorianCalendar::add(local_ref< javax::xml::datatype::Duration > const &a0)
@@ -525,8 +525,8 @@ void javax::xml::datatype::XMLGregorianCalendar::add(local_ref< javax::xml::data
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(35),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::GregorianCalendar > javax::xml::datatype::XMLGregorianCalendar::toGregorianCalendar()
@@ -535,8 +535,8 @@ local_ref< java::util::GregorianCalendar > javax::xml::datatype::XMLGregorianCal
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(36),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::util::GregorianCalendar > >
-	(get_jobject());
+		local_ref< java::util::GregorianCalendar >
+	>(get_jobject());
 }
 
 local_ref< java::util::GregorianCalendar > javax::xml::datatype::XMLGregorianCalendar::toGregorianCalendar(local_ref< java::util::TimeZone > const &a0, local_ref< java::util::Locale > const &a1, local_ref< javax::xml::datatype::XMLGregorianCalendar > const &a2)
@@ -545,8 +545,8 @@ local_ref< java::util::GregorianCalendar > javax::xml::datatype::XMLGregorianCal
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(37),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::util::GregorianCalendar > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::GregorianCalendar >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::TimeZone > javax::xml::datatype::XMLGregorianCalendar::getTimeZone(jint a0)
@@ -555,8 +555,8 @@ local_ref< java::util::TimeZone > javax::xml::datatype::XMLGregorianCalendar::ge
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(38),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::util::TimeZone > >
-	(get_jobject(), a0);
+		local_ref< java::util::TimeZone >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > javax::xml::datatype::XMLGregorianCalendar::clone()
@@ -565,8 +565,8 @@ local_ref< java::lang::Object > javax::xml::datatype::XMLGregorianCalendar::clon
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_CLASS_NAME,
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_NAME(39),
 		javax::xml::datatype::XMLGregorianCalendar::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

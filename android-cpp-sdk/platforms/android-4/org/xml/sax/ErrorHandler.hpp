@@ -11,8 +11,8 @@
 #define J2CPP_ORG_XML_SAX_ERRORHANDLER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -76,8 +76,8 @@ void org::xml::sax::ErrorHandler::warning(local_ref< org::xml::sax::SAXParseExce
 		org::xml::sax::ErrorHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ErrorHandler::error(local_ref< org::xml::sax::SAXParseException > const &a0)
@@ -86,8 +86,8 @@ void org::xml::sax::ErrorHandler::error(local_ref< org::xml::sax::SAXParseExcept
 		org::xml::sax::ErrorHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::ErrorHandler::fatalError(local_ref< org::xml::sax::SAXParseException > const &a0)
@@ -96,8 +96,8 @@ void org::xml::sax::ErrorHandler::fatalError(local_ref< org::xml::sax::SAXParseE
 		org::xml::sax::ErrorHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_NAME(2),
 		org::xml::sax::ErrorHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

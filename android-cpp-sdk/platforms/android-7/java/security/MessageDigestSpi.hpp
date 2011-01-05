@@ -78,8 +78,8 @@ java::security::MessageDigestSpi::MessageDigestSpi()
 	call_new_object<
 		java::security::MessageDigestSpi::J2CPP_CLASS_NAME,
 		java::security::MessageDigestSpi::J2CPP_METHOD_NAME(0),
-		java::security::MessageDigestSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::MessageDigestSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::lang::Object > java::security::MessageDigestSpi::clone()
 		java::security::MessageDigestSpi::J2CPP_CLASS_NAME,
 		java::security::MessageDigestSpi::J2CPP_METHOD_NAME(8),
 		java::security::MessageDigestSpi::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

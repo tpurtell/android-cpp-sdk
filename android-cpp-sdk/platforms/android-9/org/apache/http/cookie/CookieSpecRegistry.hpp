@@ -95,8 +95,8 @@ org::apache::http::cookie::CookieSpecRegistry::CookieSpecRegistry()
 	call_new_object<
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(0),
-		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ void org::apache::http::cookie::CookieSpecRegistry::register_(local_ref< java::l
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::cookie::CookieSpecRegistry::unregister(local_ref< java::lang::String > const &a0)
@@ -118,8 +118,8 @@ void org::apache::http::cookie::CookieSpecRegistry::unregister(local_ref< java::
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::CookieSpecRegistry::getCookieSpec(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
@@ -128,8 +128,8 @@ local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::Co
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(3),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::cookie::CookieSpec > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::cookie::CookieSpec >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::CookieSpecRegistry::getCookieSpec(local_ref< java::lang::String > const &a0)
@@ -138,8 +138,8 @@ local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::Co
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(4),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::cookie::CookieSpec > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::cookie::CookieSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > org::apache::http::cookie::CookieSpecRegistry::getSpecNames()
@@ -148,8 +148,8 @@ local_ref< java::util::List > org::apache::http::cookie::CookieSpecRegistry::get
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(5),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void org::apache::http::cookie::CookieSpecRegistry::setItems(local_ref< java::util::Map > const &a0)
@@ -158,8 +158,8 @@ void org::apache::http::cookie::CookieSpecRegistry::setItems(local_ref< java::ut
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(6),
 		org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

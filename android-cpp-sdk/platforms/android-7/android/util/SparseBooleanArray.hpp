@@ -93,8 +93,8 @@ android::util::SparseBooleanArray::SparseBooleanArray()
 	call_new_object<
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(0),
-		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -106,8 +106,8 @@ android::util::SparseBooleanArray::SparseBooleanArray(jint a0)
 	call_new_object<
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(1),
-		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -119,8 +119,8 @@ jboolean android::util::SparseBooleanArray::get(jint a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(2),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::util::SparseBooleanArray::get(jint a0, jboolean a1)
@@ -129,8 +129,8 @@ jboolean android::util::SparseBooleanArray::get(jint a0, jboolean a1)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(3),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::util::SparseBooleanArray::delete_(jint a0)
@@ -139,8 +139,8 @@ void android::util::SparseBooleanArray::delete_(jint a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(4),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::SparseBooleanArray::put(jint a0, jboolean a1)
@@ -149,8 +149,8 @@ void android::util::SparseBooleanArray::put(jint a0, jboolean a1)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(5),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::SparseBooleanArray::size()
@@ -159,8 +159,8 @@ jint android::util::SparseBooleanArray::size()
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(6),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::SparseBooleanArray::keyAt(jint a0)
@@ -169,8 +169,8 @@ jint android::util::SparseBooleanArray::keyAt(jint a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(7),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::util::SparseBooleanArray::valueAt(jint a0)
@@ -179,8 +179,8 @@ jboolean android::util::SparseBooleanArray::valueAt(jint a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(8),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseBooleanArray::indexOfKey(jint a0)
@@ -189,8 +189,8 @@ jint android::util::SparseBooleanArray::indexOfKey(jint a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(9),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseBooleanArray::indexOfValue(jboolean a0)
@@ -199,8 +199,8 @@ jint android::util::SparseBooleanArray::indexOfValue(jboolean a0)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(10),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::util::SparseBooleanArray::clear()
@@ -209,8 +209,8 @@ void android::util::SparseBooleanArray::clear()
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(11),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::util::SparseBooleanArray::append(jint a0, jboolean a1)
@@ -219,8 +219,8 @@ void android::util::SparseBooleanArray::append(jint a0, jboolean a1)
 		android::util::SparseBooleanArray::J2CPP_CLASS_NAME,
 		android::util::SparseBooleanArray::J2CPP_METHOD_NAME(12),
 		android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

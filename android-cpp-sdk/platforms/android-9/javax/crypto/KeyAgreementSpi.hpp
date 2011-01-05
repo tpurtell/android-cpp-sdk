@@ -75,8 +75,8 @@ javax::crypto::KeyAgreementSpi::KeyAgreementSpi()
 	call_new_object<
 		javax::crypto::KeyAgreementSpi::J2CPP_CLASS_NAME,
 		javax::crypto::KeyAgreementSpi::J2CPP_METHOD_NAME(0),
-		javax::crypto::KeyAgreementSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::KeyAgreementSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

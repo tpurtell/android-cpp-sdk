@@ -79,8 +79,8 @@ void javax::sql::PooledConnection::addConnectionEventListener(local_ref< javax::
 		javax::sql::PooledConnection::J2CPP_CLASS_NAME,
 		javax::sql::PooledConnection::J2CPP_METHOD_NAME(0),
 		javax::sql::PooledConnection::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::PooledConnection::close()
@@ -89,8 +89,8 @@ void javax::sql::PooledConnection::close()
 		javax::sql::PooledConnection::J2CPP_CLASS_NAME,
 		javax::sql::PooledConnection::J2CPP_METHOD_NAME(1),
 		javax::sql::PooledConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::sql::Connection > javax::sql::PooledConnection::getConnection()
@@ -99,8 +99,8 @@ local_ref< java::sql::Connection > javax::sql::PooledConnection::getConnection()
 		javax::sql::PooledConnection::J2CPP_CLASS_NAME,
 		javax::sql::PooledConnection::J2CPP_METHOD_NAME(2),
 		javax::sql::PooledConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::sql::Connection > >
-	(get_jobject());
+		local_ref< java::sql::Connection >
+	>(get_jobject());
 }
 
 void javax::sql::PooledConnection::removeConnectionEventListener(local_ref< javax::sql::ConnectionEventListener > const &a0)
@@ -109,8 +109,8 @@ void javax::sql::PooledConnection::removeConnectionEventListener(local_ref< java
 		javax::sql::PooledConnection::J2CPP_CLASS_NAME,
 		javax::sql::PooledConnection::J2CPP_METHOD_NAME(3),
 		javax::sql::PooledConnection::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

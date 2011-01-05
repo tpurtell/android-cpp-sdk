@@ -40,8 +40,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpMessage>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::apache::http::RequestLine > getRequestLine();
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HttpRequest::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HttpRequest::operator local_ref<org::apache::http::HttpMessage>() const
 {
 	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
+org::apache::http::HttpRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::apache::http::RequestLine > org::apache::http::HttpRequest::getRequestLine()
@@ -80,8 +80,8 @@ local_ref< org::apache::http::RequestLine > org::apache::http::HttpRequest::getR
 		org::apache::http::HttpRequest::J2CPP_CLASS_NAME,
 		org::apache::http::HttpRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::RequestLine > >
-	(get_jobject());
+		local_ref< org::apache::http::RequestLine >
+	>(get_jobject());
 }
 
 

@@ -345,8 +345,8 @@ jboolean android::media::MediaPlayer_::OnErrorListener::onError(local_ref< andro
 		android::media::MediaPlayer_::OnErrorListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnErrorListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnErrorListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -365,8 +365,8 @@ jboolean android::media::MediaPlayer_::OnInfoListener::onInfo(local_ref< android
 		android::media::MediaPlayer_::OnInfoListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnInfoListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnInfoListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -385,8 +385,8 @@ void android::media::MediaPlayer_::OnBufferingUpdateListener::onBufferingUpdate(
 		android::media::MediaPlayer_::OnBufferingUpdateListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnBufferingUpdateListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnBufferingUpdateListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -405,8 +405,8 @@ void android::media::MediaPlayer_::OnSeekCompleteListener::onSeekComplete(local_
 		android::media::MediaPlayer_::OnSeekCompleteListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnSeekCompleteListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnSeekCompleteListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -425,8 +425,8 @@ void android::media::MediaPlayer_::OnVideoSizeChangedListener::onVideoSizeChange
 		android::media::MediaPlayer_::OnVideoSizeChangedListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnVideoSizeChangedListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnVideoSizeChangedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -445,8 +445,8 @@ void android::media::MediaPlayer_::OnCompletionListener::onCompletion(local_ref<
 		android::media::MediaPlayer_::OnCompletionListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnCompletionListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnCompletionListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -465,8 +465,8 @@ void android::media::MediaPlayer_::OnPreparedListener::onPrepared(local_ref< and
 		android::media::MediaPlayer_::OnPreparedListener::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer_::OnPreparedListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaPlayer_::OnPreparedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -486,8 +486,8 @@ android::media::MediaPlayer::MediaPlayer()
 	call_new_object<
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(0),
-		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -499,8 +499,8 @@ void android::media::MediaPlayer::setDisplay(local_ref< android::view::SurfaceHo
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(1),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1)
@@ -509,8 +509,8 @@ local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(loc
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(2),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::media::MediaPlayer > >
-	(a0, a1);
+		local_ref< android::media::MediaPlayer >
+	>(a0, a1);
 }
 
 local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::view::SurfaceHolder > const &a2)
@@ -519,8 +519,8 @@ local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(loc
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(3),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::media::MediaPlayer > >
-	(a0, a1, a2);
+		local_ref< android::media::MediaPlayer >
+	>(a0, a1, a2);
 }
 
 local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(local_ref< android::content::Context > const &a0, jint a1)
@@ -529,8 +529,8 @@ local_ref< android::media::MediaPlayer > android::media::MediaPlayer::create(loc
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(4),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::media::MediaPlayer > >
-	(a0, a1);
+		local_ref< android::media::MediaPlayer >
+	>(a0, a1);
 }
 
 void android::media::MediaPlayer::setDataSource(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1)
@@ -539,8 +539,8 @@ void android::media::MediaPlayer::setDataSource(local_ref< android::content::Con
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(5),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaPlayer::setDataSource(local_ref< java::lang::String > const &a0)
@@ -549,8 +549,8 @@ void android::media::MediaPlayer::setDataSource(local_ref< java::lang::String > 
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(6),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setDataSource(local_ref< java::io::FileDescriptor > const &a0)
@@ -559,8 +559,8 @@ void android::media::MediaPlayer::setDataSource(local_ref< java::io::FileDescrip
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(7),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setDataSource(local_ref< java::io::FileDescriptor > const &a0, jlong a1, jlong a2)
@@ -569,8 +569,8 @@ void android::media::MediaPlayer::setDataSource(local_ref< java::io::FileDescrip
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(8),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::MediaPlayer::prepare()
@@ -579,8 +579,8 @@ void android::media::MediaPlayer::prepare()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(9),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::prepareAsync()
@@ -589,8 +589,8 @@ void android::media::MediaPlayer::prepareAsync()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(10),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::start()
@@ -599,8 +599,8 @@ void android::media::MediaPlayer::start()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(11),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::stop()
@@ -609,8 +609,8 @@ void android::media::MediaPlayer::stop()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(12),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::pause()
@@ -619,8 +619,8 @@ void android::media::MediaPlayer::pause()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(13),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::setWakeMode(local_ref< android::content::Context > const &a0, jint a1)
@@ -629,8 +629,8 @@ void android::media::MediaPlayer::setWakeMode(local_ref< android::content::Conte
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(14),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaPlayer::setScreenOnWhilePlaying(jboolean a0)
@@ -639,8 +639,8 @@ void android::media::MediaPlayer::setScreenOnWhilePlaying(jboolean a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(15),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::MediaPlayer::getVideoWidth()
@@ -649,8 +649,8 @@ jint android::media::MediaPlayer::getVideoWidth()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(16),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::MediaPlayer::getVideoHeight()
@@ -659,8 +659,8 @@ jint android::media::MediaPlayer::getVideoHeight()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(17),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::media::MediaPlayer::isPlaying()
@@ -669,8 +669,8 @@ jboolean android::media::MediaPlayer::isPlaying()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(18),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::seekTo(jint a0)
@@ -679,8 +679,8 @@ void android::media::MediaPlayer::seekTo(jint a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(19),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::MediaPlayer::getCurrentPosition()
@@ -689,8 +689,8 @@ jint android::media::MediaPlayer::getCurrentPosition()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(20),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::MediaPlayer::getDuration()
@@ -699,8 +699,8 @@ jint android::media::MediaPlayer::getDuration()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(21),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::release()
@@ -709,8 +709,8 @@ void android::media::MediaPlayer::release()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(22),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::reset()
@@ -719,8 +719,8 @@ void android::media::MediaPlayer::reset()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(23),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::setAudioStreamType(jint a0)
@@ -729,8 +729,8 @@ void android::media::MediaPlayer::setAudioStreamType(jint a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(24),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setLooping(jboolean a0)
@@ -739,8 +739,8 @@ void android::media::MediaPlayer::setLooping(jboolean a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(25),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::MediaPlayer::isLooping()
@@ -749,8 +749,8 @@ jboolean android::media::MediaPlayer::isLooping()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(26),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::setVolume(jfloat a0, jfloat a1)
@@ -759,8 +759,8 @@ void android::media::MediaPlayer::setVolume(jfloat a0, jfloat a1)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(27),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaPlayer::setAudioSessionId(jint a0)
@@ -769,8 +769,8 @@ void android::media::MediaPlayer::setAudioSessionId(jint a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(28),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::MediaPlayer::getAudioSessionId()
@@ -779,8 +779,8 @@ jint android::media::MediaPlayer::getAudioSessionId()
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(29),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::MediaPlayer::attachAuxEffect(jint a0)
@@ -789,8 +789,8 @@ void android::media::MediaPlayer::attachAuxEffect(jint a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(30),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setAuxEffectSendLevel(jfloat a0)
@@ -799,8 +799,8 @@ void android::media::MediaPlayer::setAuxEffectSendLevel(jfloat a0)
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(31),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -810,8 +810,8 @@ void android::media::MediaPlayer::setOnPreparedListener(local_ref< android::medi
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(33),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnCompletionListener(local_ref< android::media::MediaPlayer_::OnCompletionListener > const &a0)
@@ -820,8 +820,8 @@ void android::media::MediaPlayer::setOnCompletionListener(local_ref< android::me
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(34),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnBufferingUpdateListener(local_ref< android::media::MediaPlayer_::OnBufferingUpdateListener > const &a0)
@@ -830,8 +830,8 @@ void android::media::MediaPlayer::setOnBufferingUpdateListener(local_ref< androi
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(35),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnSeekCompleteListener(local_ref< android::media::MediaPlayer_::OnSeekCompleteListener > const &a0)
@@ -840,8 +840,8 @@ void android::media::MediaPlayer::setOnSeekCompleteListener(local_ref< android::
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(36),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnVideoSizeChangedListener(local_ref< android::media::MediaPlayer_::OnVideoSizeChangedListener > const &a0)
@@ -850,8 +850,8 @@ void android::media::MediaPlayer::setOnVideoSizeChangedListener(local_ref< andro
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(37),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnErrorListener(local_ref< android::media::MediaPlayer_::OnErrorListener > const &a0)
@@ -860,8 +860,8 @@ void android::media::MediaPlayer::setOnErrorListener(local_ref< android::media::
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(38),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaPlayer::setOnInfoListener(local_ref< android::media::MediaPlayer_::OnInfoListener > const &a0)
@@ -870,8 +870,8 @@ void android::media::MediaPlayer::setOnInfoListener(local_ref< android::media::M
 		android::media::MediaPlayer::J2CPP_CLASS_NAME,
 		android::media::MediaPlayer::J2CPP_METHOD_NAME(39),
 		android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

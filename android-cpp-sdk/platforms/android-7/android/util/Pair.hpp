@@ -82,8 +82,8 @@ android::util::Pair::Pair(local_ref< java::lang::Object > const &a0, local_ref< 
 	call_new_object<
 		android::util::Pair::J2CPP_CLASS_NAME,
 		android::util::Pair::J2CPP_METHOD_NAME(0),
-		android::util::Pair::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::util::Pair::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , first(get_jobject())
 , second(get_jobject())
@@ -97,8 +97,8 @@ jboolean android::util::Pair::equals(local_ref< java::lang::Object > const &a0)
 		android::util::Pair::J2CPP_CLASS_NAME,
 		android::util::Pair::J2CPP_METHOD_NAME(1),
 		android::util::Pair::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::util::Pair::hashCode()
@@ -107,8 +107,8 @@ jint android::util::Pair::hashCode()
 		android::util::Pair::J2CPP_CLASS_NAME,
 		android::util::Pair::J2CPP_METHOD_NAME(2),
 		android::util::Pair::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::util::Pair > android::util::Pair::create(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -117,8 +117,8 @@ local_ref< android::util::Pair > android::util::Pair::create(local_ref< java::la
 		android::util::Pair::J2CPP_CLASS_NAME,
 		android::util::Pair::J2CPP_METHOD_NAME(3),
 		android::util::Pair::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::util::Pair > >
-	(a0, a1);
+		local_ref< android::util::Pair >
+	>(a0, a1);
 }
 
 

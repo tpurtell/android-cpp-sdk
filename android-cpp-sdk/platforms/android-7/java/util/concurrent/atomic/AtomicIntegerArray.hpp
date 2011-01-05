@@ -54,8 +54,8 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AtomicIntegerArray(jint);
@@ -93,14 +93,14 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::atomic::AtomicIntegerArray::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::concurrent::atomic::AtomicIntegerArray::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::concurrent::atomic::AtomicIntegerArray::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -109,8 +109,8 @@ java::util::concurrent::atomic::AtomicIntegerArray::AtomicIntegerArray(jint a0)
 	call_new_object<
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -122,8 +122,8 @@ java::util::concurrent::atomic::AtomicIntegerArray::AtomicIntegerArray(local_ref
 	call_new_object<
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -135,8 +135,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::length()
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::get(jint a0)
@@ -145,8 +145,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::get(jint a0)
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::atomic::AtomicIntegerArray::set(jint a0, jint a1)
@@ -155,8 +155,8 @@ void java::util::concurrent::atomic::AtomicIntegerArray::set(jint a0, jint a1)
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::getAndSet(jint a0, jint a1)
@@ -165,8 +165,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::getAndSet(jint a0, jint
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::atomic::AtomicIntegerArray::compareAndSet(jint a0, jint a1, jint a2)
@@ -175,8 +175,8 @@ jboolean java::util::concurrent::atomic::AtomicIntegerArray::compareAndSet(jint 
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::util::concurrent::atomic::AtomicIntegerArray::weakCompareAndSet(jint a0, jint a1, jint a2)
@@ -185,8 +185,8 @@ jboolean java::util::concurrent::atomic::AtomicIntegerArray::weakCompareAndSet(j
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::getAndIncrement(jint a0)
@@ -195,8 +195,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::getAndIncrement(jint a0
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::getAndDecrement(jint a0)
@@ -205,8 +205,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::getAndDecrement(jint a0
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::getAndAdd(jint a0, jint a1)
@@ -215,8 +215,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::getAndAdd(jint a0, jint
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::incrementAndGet(jint a0)
@@ -225,8 +225,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::incrementAndGet(jint a0
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::decrementAndGet(jint a0)
@@ -235,8 +235,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::decrementAndGet(jint a0
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerArray::addAndGet(jint a0, jint a1)
@@ -245,8 +245,8 @@ jint java::util::concurrent::atomic::AtomicIntegerArray::addAndGet(jint a0, jint
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::util::concurrent::atomic::AtomicIntegerArray::toString()
@@ -255,8 +255,8 @@ local_ref< java::lang::String > java::util::concurrent::atomic::AtomicIntegerArr
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::atomic::AtomicIntegerArray::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

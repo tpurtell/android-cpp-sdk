@@ -11,11 +11,15 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_DEFAULTHTTPCLIENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace client { class AbstractHttpClient; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpClient; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/client/HttpClient.hpp>
 #include <org/apache/http/conn/ClientConnectionManager.hpp>
 #include <org/apache/http/impl/client/AbstractHttpClient.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -59,7 +63,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::client::AbstractHttpClient>() const;
+		operator local_ref<org::apache::http::client::HttpClient>() const;
 
 
 		DefaultHttpClient(local_ref< org::apache::http::conn::ClientConnectionManager > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -86,9 +92,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::client::DefaultHttpClient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::client::DefaultHttpClient::operator local_ref<org::apache::http::impl::client::AbstractHttpClient>() const
 {
 	return local_ref<org::apache::http::impl::client::AbstractHttpClient>(get_jobject());
+}
+
+org::apache::http::impl::client::DefaultHttpClient::operator local_ref<org::apache::http::client::HttpClient>() const
+{
+	return local_ref<org::apache::http::client::HttpClient>(get_jobject());
 }
 
 
@@ -97,8 +113,8 @@ org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient(local_ref<
 	call_new_object<
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -110,8 +126,8 @@ org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient(local_ref<
 	call_new_object<
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(1),
-		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -123,8 +139,8 @@ org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient()
 	call_new_object<
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(2),
-		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(2)>
-	()
+		org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(2)
+	>()
 )
 {
 }

@@ -93,8 +93,8 @@ local_ref< java::io::InputStream > java::sql::Blob::getBinaryStream()
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(0),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::sql::Blob::getBinaryStream(jlong a0, jlong a1)
@@ -103,8 +103,8 @@ local_ref< java::io::InputStream > java::sql::Blob::getBinaryStream(jlong a0, jl
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(1),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > java::sql::Blob::getBytes(jlong a0, jint a1)
@@ -113,8 +113,8 @@ local_ref< array<jbyte,1> > java::sql::Blob::getBytes(jlong a0, jint a1)
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(2),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::sql::Blob::length()
@@ -123,8 +123,8 @@ jlong java::sql::Blob::length()
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(3),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::sql::Blob::position(local_ref< java::sql::Blob > const &a0, jlong a1)
@@ -133,8 +133,8 @@ jlong java::sql::Blob::position(local_ref< java::sql::Blob > const &a0, jlong a1
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(4),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::sql::Blob::position(local_ref< array<jbyte,1> > const &a0, jlong a1)
@@ -143,8 +143,8 @@ jlong java::sql::Blob::position(local_ref< array<jbyte,1> > const &a0, jlong a1)
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(5),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::OutputStream > java::sql::Blob::setBinaryStream(jlong a0)
@@ -153,8 +153,8 @@ local_ref< java::io::OutputStream > java::sql::Blob::setBinaryStream(jlong a0)
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(6),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::OutputStream >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::Blob::setBytes(jlong a0, local_ref< array<jbyte,1> > const &a1)
@@ -163,8 +163,8 @@ jint java::sql::Blob::setBytes(jlong a0, local_ref< array<jbyte,1> > const &a1)
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(7),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::sql::Blob::setBytes(jlong a0, local_ref< array<jbyte,1> > const &a1, jint a2, jint a3)
@@ -173,8 +173,8 @@ jint java::sql::Blob::setBytes(jlong a0, local_ref< array<jbyte,1> > const &a1, 
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(8),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::sql::Blob::truncate(jlong a0)
@@ -183,8 +183,8 @@ void java::sql::Blob::truncate(jlong a0)
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(9),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::sql::Blob::free()
@@ -193,8 +193,8 @@ void java::sql::Blob::free()
 		java::sql::Blob::J2CPP_CLASS_NAME,
 		java::sql::Blob::J2CPP_METHOD_NAME(10),
 		java::sql::Blob::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

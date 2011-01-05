@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_PREFERENCE_PREFERENCESCREEN_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceGroup; } } }
+namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
@@ -20,15 +20,21 @@ namespace j2cpp { namespace android { namespace widget { class ListView; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnDismissListener; } } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 
 
 #include <android/app/Dialog.hpp>
 #include <android/content/DialogInterface.hpp>
+#include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceGroup.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <android/widget/ListView.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -61,8 +67,11 @@ namespace android { namespace preference {
 		}
 
 		operator local_ref<android::preference::PreferenceGroup>() const;
+		operator local_ref<android::preference::Preference>() const;
 		operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const;
 		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::widget::ListAdapter > getRootAdapter();
@@ -93,6 +102,11 @@ android::preference::PreferenceScreen::operator local_ref<android::preference::P
 	return local_ref<android::preference::PreferenceGroup>(get_jobject());
 }
 
+android::preference::PreferenceScreen::operator local_ref<android::preference::Preference>() const
+{
+	return local_ref<android::preference::Preference>(get_jobject());
+}
+
 android::preference::PreferenceScreen::operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const
 {
 	return local_ref<android::widget::AdapterView_::OnItemClickListener>(get_jobject());
@@ -103,6 +117,16 @@ android::preference::PreferenceScreen::operator local_ref<android::content::Dial
 	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jobject());
 }
 
+android::preference::PreferenceScreen::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::preference::PreferenceScreen::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< android::widget::ListAdapter > android::preference::PreferenceScreen::getRootAdapter()
 {
@@ -110,8 +134,8 @@ local_ref< android::widget::ListAdapter > android::preference::PreferenceScreen:
 		android::preference::PreferenceScreen::J2CPP_CLASS_NAME,
 		android::preference::PreferenceScreen::J2CPP_METHOD_NAME(1),
 		android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 
@@ -121,8 +145,8 @@ void android::preference::PreferenceScreen::bind(local_ref< android::widget::Lis
 		android::preference::PreferenceScreen::J2CPP_CLASS_NAME,
 		android::preference::PreferenceScreen::J2CPP_METHOD_NAME(3),
 		android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -132,8 +156,8 @@ void android::preference::PreferenceScreen::onDismiss(local_ref< android::conten
 		android::preference::PreferenceScreen::J2CPP_CLASS_NAME,
 		android::preference::PreferenceScreen::J2CPP_METHOD_NAME(5),
 		android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::Dialog > android::preference::PreferenceScreen::getDialog()
@@ -142,8 +166,8 @@ local_ref< android::app::Dialog > android::preference::PreferenceScreen::getDial
 		android::preference::PreferenceScreen::J2CPP_CLASS_NAME,
 		android::preference::PreferenceScreen::J2CPP_METHOD_NAME(6),
 		android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::app::Dialog > >
-	(get_jobject());
+		local_ref< android::app::Dialog >
+	>(get_jobject());
 }
 
 void android::preference::PreferenceScreen::onItemClick(local_ref< android::widget::AdapterView > const &a0, local_ref< android::view::View > const &a1, jint a2, jlong a3)
@@ -152,8 +176,8 @@ void android::preference::PreferenceScreen::onItemClick(local_ref< android::widg
 		android::preference::PreferenceScreen::J2CPP_CLASS_NAME,
 		android::preference::PreferenceScreen::J2CPP_METHOD_NAME(7),
 		android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

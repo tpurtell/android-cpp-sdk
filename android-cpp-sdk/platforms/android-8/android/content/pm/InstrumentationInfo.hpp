@@ -16,11 +16,13 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PackageItemInfo; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/pm/PackageItemInfo.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -61,8 +63,9 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
-		operator local_ref<android::content::pm::PackageItemInfo>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<android::content::pm::PackageItemInfo>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		InstrumentationInfo();
@@ -97,14 +100,19 @@ namespace j2cpp {
 
 
 
+android::content::pm::InstrumentationInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
 android::content::pm::InstrumentationInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
 	return local_ref<android::content::pm::PackageItemInfo>(get_jobject());
 }
 
-android::content::pm::InstrumentationInfo::operator local_ref<android::os::Parcelable>() const
+android::content::pm::InstrumentationInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::os::Parcelable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -113,8 +121,8 @@ android::content::pm::InstrumentationInfo::InstrumentationInfo()
 	call_new_object<
 		android::content::pm::InstrumentationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , targetPackage(get_jobject())
 , sourceDir(get_jobject())
@@ -132,8 +140,8 @@ android::content::pm::InstrumentationInfo::InstrumentationInfo(local_ref< androi
 	call_new_object<
 		android::content::pm::InstrumentationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , targetPackage(get_jobject())
 , sourceDir(get_jobject())
@@ -151,8 +159,8 @@ local_ref< java::lang::String > android::content::pm::InstrumentationInfo::toStr
 		android::content::pm::InstrumentationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::InstrumentationInfo::describeContents()
@@ -161,8 +169,8 @@ jint android::content::pm::InstrumentationInfo::describeContents()
 		android::content::pm::InstrumentationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::InstrumentationInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -171,8 +179,8 @@ void android::content::pm::InstrumentationInfo::writeToParcel(local_ref< android
 		android::content::pm::InstrumentationInfo::J2CPP_CLASS_NAME,
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::InstrumentationInfo::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

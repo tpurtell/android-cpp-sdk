@@ -16,9 +16,11 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManagerFactory; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Collection.hpp>
 #include <org/apache/http/HttpHost.hpp>
@@ -58,6 +60,7 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		}
 
 		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ClientParamBean(local_ref< org::apache::http::params::HttpParams > const&);
@@ -98,14 +101,19 @@ org::apache::http::client::params::ClientParamBean::operator local_ref<org::apac
 	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jobject());
 }
 
+org::apache::http::client::params::ClientParamBean::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::client::params::ClientParamBean::ClientParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
 : object<org::apache::http::client::params::ClientParamBean>(
 	call_new_object<
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -117,8 +125,8 @@ void org::apache::http::client::params::ClientParamBean::setConnectionManagerFac
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setConnectionManagerFactory(local_ref< org::apache::http::conn::ClientConnectionManagerFactory > const &a0)
@@ -127,8 +135,8 @@ void org::apache::http::client::params::ClientParamBean::setConnectionManagerFac
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setHandleRedirects(jboolean a0)
@@ -137,8 +145,8 @@ void org::apache::http::client::params::ClientParamBean::setHandleRedirects(jboo
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setRejectRelativeRedirect(jboolean a0)
@@ -147,8 +155,8 @@ void org::apache::http::client::params::ClientParamBean::setRejectRelativeRedire
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setMaxRedirects(jint a0)
@@ -157,8 +165,8 @@ void org::apache::http::client::params::ClientParamBean::setMaxRedirects(jint a0
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setAllowCircularRedirects(jboolean a0)
@@ -167,8 +175,8 @@ void org::apache::http::client::params::ClientParamBean::setAllowCircularRedirec
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(6),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setHandleAuthentication(jboolean a0)
@@ -177,8 +185,8 @@ void org::apache::http::client::params::ClientParamBean::setHandleAuthentication
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(7),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setCookiePolicy(local_ref< java::lang::String > const &a0)
@@ -187,8 +195,8 @@ void org::apache::http::client::params::ClientParamBean::setCookiePolicy(local_r
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(8),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setVirtualHost(local_ref< org::apache::http::HttpHost > const &a0)
@@ -197,8 +205,8 @@ void org::apache::http::client::params::ClientParamBean::setVirtualHost(local_re
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(9),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setDefaultHeaders(local_ref< java::util::Collection > const &a0)
@@ -207,8 +215,8 @@ void org::apache::http::client::params::ClientParamBean::setDefaultHeaders(local
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(10),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::params::ClientParamBean::setDefaultHost(local_ref< org::apache::http::HttpHost > const &a0)
@@ -217,8 +225,8 @@ void org::apache::http::client::params::ClientParamBean::setDefaultHost(local_re
 		org::apache::http::client::params::ClientParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_NAME(11),
 		org::apache::http::client::params::ClientParamBean::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

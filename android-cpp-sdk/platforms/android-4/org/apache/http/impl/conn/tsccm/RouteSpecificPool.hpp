@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_ROUTESPECIFICPOOL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class WaitingThread; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -113,8 +113,8 @@ org::apache::http::impl::conn::tsccm::RouteSpecificPool::RouteSpecificPool(local
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +126,8 @@ local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::routing::HttpRoute > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::HttpRoute >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getMaxEntries()
@@ -136,8 +136,8 @@ jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getMaxEntries()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::isUnused()
@@ -146,8 +146,8 @@ jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::isUnused()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getCapacity()
@@ -156,8 +156,8 @@ jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getCapacity()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getEntryCount()
@@ -166,8 +166,8 @@ jint org::apache::http::impl::conn::tsccm::RouteSpecificPool::getEntryCount()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::http::impl::conn::tsccm::RouteSpecificPool::allocEntry(local_ref< java::lang::Object > const &a0)
@@ -176,8 +176,8 @@ local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::h
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::tsccm::RouteSpecificPool::freeEntry(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0)
@@ -186,8 +186,8 @@ void org::apache::http::impl::conn::tsccm::RouteSpecificPool::freeEntry(local_re
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::tsccm::RouteSpecificPool::createdEntry(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0)
@@ -196,8 +196,8 @@ void org::apache::http::impl::conn::tsccm::RouteSpecificPool::createdEntry(local
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::deleteEntry(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0)
@@ -206,8 +206,8 @@ jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::deleteEntry(lo
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::tsccm::RouteSpecificPool::dropEntry()
@@ -216,8 +216,8 @@ void org::apache::http::impl::conn::tsccm::RouteSpecificPool::dropEntry()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::RouteSpecificPool::queueThread(local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > const &a0)
@@ -226,8 +226,8 @@ void org::apache::http::impl::conn::tsccm::RouteSpecificPool::queueThread(local_
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::hasThread()
@@ -236,8 +236,8 @@ jboolean org::apache::http::impl::conn::tsccm::RouteSpecificPool::hasThread()
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(12),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > org::apache::http::impl::conn::tsccm::RouteSpecificPool::nextThread()
@@ -246,8 +246,8 @@ local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > org::apache::ht
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(13),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > >
-	(get_jobject());
+		local_ref< org::apache::http::impl::conn::tsccm::WaitingThread >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::RouteSpecificPool::removeThread(local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > const &a0)
@@ -256,8 +256,8 @@ void org::apache::http::impl::conn::tsccm::RouteSpecificPool::removeThread(local
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_NAME(14),
 		org::apache::http::impl::conn::tsccm::RouteSpecificPool::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,10 +11,12 @@
 #define J2CPP_JAVA_SECURITY_PUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/Key.hpp>
 
@@ -38,6 +40,7 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::Key>() const;
 
@@ -60,6 +63,11 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
+
+java::security::PublicKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
 
 java::security::PublicKey::operator local_ref<java::lang::Object>() const
 {

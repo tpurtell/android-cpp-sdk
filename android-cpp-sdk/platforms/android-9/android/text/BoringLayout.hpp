@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class Layout; } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Directions; } } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
@@ -34,6 +35,7 @@ namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { cl
 #include <android/text/TextPaint.hpp>
 #include <android/text/TextUtils.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -62,6 +64,7 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::graphics::Paint_::FontMetricsInt>() const;
 
 
@@ -112,6 +115,7 @@ namespace android { namespace text {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::Layout>() const;
 		operator local_ref<android::text::TextUtils_::EllipsizeCallback>() const;
 
@@ -159,6 +163,11 @@ namespace j2cpp {
 
 
 
+android::text::BoringLayout_::Metrics::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::text::BoringLayout_::Metrics::operator local_ref<android::graphics::Paint_::FontMetricsInt>() const
 {
 	return local_ref<android::graphics::Paint_::FontMetricsInt>(get_jobject());
@@ -170,8 +179,8 @@ android::text::BoringLayout_::Metrics::Metrics()
 	call_new_object<
 		android::text::BoringLayout_::Metrics::J2CPP_CLASS_NAME,
 		android::text::BoringLayout_::Metrics::J2CPP_METHOD_NAME(0),
-		android::text::BoringLayout_::Metrics::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::BoringLayout_::Metrics::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , width(get_jobject())
 {
@@ -184,8 +193,8 @@ local_ref< java::lang::String > android::text::BoringLayout_::Metrics::toString(
 		android::text::BoringLayout_::Metrics::J2CPP_CLASS_NAME,
 		android::text::BoringLayout_::Metrics::J2CPP_METHOD_NAME(1),
 		android::text::BoringLayout_::Metrics::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -196,6 +205,11 @@ J2CPP_DEFINE_METHOD(android::text::BoringLayout_::Metrics,1,"toString","()Ljava/
 J2CPP_DEFINE_FIELD(android::text::BoringLayout_::Metrics,0,"width","I")
 
 
+
+android::text::BoringLayout::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::text::BoringLayout::operator local_ref<android::text::Layout>() const
 {
@@ -213,8 +227,8 @@ android::text::BoringLayout::BoringLayout(local_ref< java::lang::CharSequence > 
 	call_new_object<
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(0),
-		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6, a7)
+		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6, a7)
 )
 {
 }
@@ -226,8 +240,8 @@ android::text::BoringLayout::BoringLayout(local_ref< java::lang::CharSequence > 
 	call_new_object<
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(1),
-		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
+		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
 )
 {
 }
@@ -239,8 +253,8 @@ local_ref< android::text::BoringLayout > android::text::BoringLayout::make(local
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(2),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::BoringLayout > >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< android::text::BoringLayout >
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 local_ref< android::text::BoringLayout > android::text::BoringLayout::make(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jint a2, local_ref< android::text::Layout_::Alignment > const &a3, jfloat a4, jfloat a5, local_ref< android::text::BoringLayout_::Metrics > const &a6, jboolean a7, local_ref< android::text::TextUtils_::TruncateAt > const &a8, jint a9)
@@ -249,8 +263,8 @@ local_ref< android::text::BoringLayout > android::text::BoringLayout::make(local
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(3),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::text::BoringLayout > >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		local_ref< android::text::BoringLayout >
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 local_ref< android::text::BoringLayout > android::text::BoringLayout::replaceOrMake(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jint a2, local_ref< android::text::Layout_::Alignment > const &a3, jfloat a4, jfloat a5, local_ref< android::text::BoringLayout_::Metrics > const &a6, jboolean a7)
@@ -259,8 +273,8 @@ local_ref< android::text::BoringLayout > android::text::BoringLayout::replaceOrM
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(4),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::text::BoringLayout > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< android::text::BoringLayout >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 local_ref< android::text::BoringLayout > android::text::BoringLayout::replaceOrMake(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jint a2, local_ref< android::text::Layout_::Alignment > const &a3, jfloat a4, jfloat a5, local_ref< android::text::BoringLayout_::Metrics > const &a6, jboolean a7, local_ref< android::text::TextUtils_::TruncateAt > const &a8, jint a9)
@@ -269,8 +283,8 @@ local_ref< android::text::BoringLayout > android::text::BoringLayout::replaceOrM
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(5),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::text::BoringLayout > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		local_ref< android::text::BoringLayout >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 local_ref< android::text::BoringLayout_::Metrics > android::text::BoringLayout::isBoring(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1)
@@ -279,8 +293,8 @@ local_ref< android::text::BoringLayout_::Metrics > android::text::BoringLayout::
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(6),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::text::BoringLayout_::Metrics > >
-	(a0, a1);
+		local_ref< android::text::BoringLayout_::Metrics >
+	>(a0, a1);
 }
 
 local_ref< android::text::BoringLayout_::Metrics > android::text::BoringLayout::isBoring(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, local_ref< android::text::BoringLayout_::Metrics > const &a2)
@@ -289,8 +303,8 @@ local_ref< android::text::BoringLayout_::Metrics > android::text::BoringLayout::
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(7),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::text::BoringLayout_::Metrics > >
-	(a0, a1, a2);
+		local_ref< android::text::BoringLayout_::Metrics >
+	>(a0, a1, a2);
 }
 
 jint android::text::BoringLayout::getHeight()
@@ -299,8 +313,8 @@ jint android::text::BoringLayout::getHeight()
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(8),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::BoringLayout::getLineCount()
@@ -309,8 +323,8 @@ jint android::text::BoringLayout::getLineCount()
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(9),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::BoringLayout::getLineTop(jint a0)
@@ -319,8 +333,8 @@ jint android::text::BoringLayout::getLineTop(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(10),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getLineDescent(jint a0)
@@ -329,8 +343,8 @@ jint android::text::BoringLayout::getLineDescent(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(11),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getLineStart(jint a0)
@@ -339,8 +353,8 @@ jint android::text::BoringLayout::getLineStart(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(12),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getParagraphDirection(jint a0)
@@ -349,8 +363,8 @@ jint android::text::BoringLayout::getParagraphDirection(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(13),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::BoringLayout::getLineContainsTab(jint a0)
@@ -359,8 +373,8 @@ jboolean android::text::BoringLayout::getLineContainsTab(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(14),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::BoringLayout::getLineMax(jint a0)
@@ -369,8 +383,8 @@ jfloat android::text::BoringLayout::getLineMax(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(15),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(15), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::Layout_::Directions > android::text::BoringLayout::getLineDirections(jint a0)
@@ -379,8 +393,8 @@ local_ref< android::text::Layout_::Directions > android::text::BoringLayout::get
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(16),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::text::Layout_::Directions > >
-	(get_jobject(), a0);
+		local_ref< android::text::Layout_::Directions >
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getTopPadding()
@@ -389,8 +403,8 @@ jint android::text::BoringLayout::getTopPadding()
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(17),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::BoringLayout::getBottomPadding()
@@ -399,8 +413,8 @@ jint android::text::BoringLayout::getBottomPadding()
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(18),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::BoringLayout::getEllipsisCount(jint a0)
@@ -409,8 +423,8 @@ jint android::text::BoringLayout::getEllipsisCount(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(19),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getEllipsisStart(jint a0)
@@ -419,8 +433,8 @@ jint android::text::BoringLayout::getEllipsisStart(jint a0)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(20),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::BoringLayout::getEllipsizedWidth()
@@ -429,8 +443,8 @@ jint android::text::BoringLayout::getEllipsizedWidth()
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(21),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::BoringLayout::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Path > const &a1, local_ref< android::graphics::Paint > const &a2, jint a3)
@@ -439,8 +453,8 @@ void android::text::BoringLayout::draw(local_ref< android::graphics::Canvas > co
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(22),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::BoringLayout::ellipsized(jint a0, jint a1)
@@ -449,8 +463,8 @@ void android::text::BoringLayout::ellipsized(jint a0, jint a1)
 		android::text::BoringLayout::J2CPP_CLASS_NAME,
 		android::text::BoringLayout::J2CPP_METHOD_NAME(23),
 		android::text::BoringLayout::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

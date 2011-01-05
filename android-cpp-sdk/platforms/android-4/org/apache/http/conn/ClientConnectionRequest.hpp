@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CLIENTCONNECTIONREQUEST_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -77,8 +77,8 @@ local_ref< org::apache::http::conn::ManagedClientConnection > org::apache::http:
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::ManagedClientConnection > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ManagedClientConnection >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ClientConnectionRequest::abortRequest()
@@ -87,8 +87,8 @@ void org::apache::http::conn::ClientConnectionRequest::abortRequest()
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ClientConnectionRequest::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

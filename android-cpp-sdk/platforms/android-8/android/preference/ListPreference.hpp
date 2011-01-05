@@ -11,17 +11,28 @@
 #define J2CPP_ANDROID_PREFERENCE_LISTPREFERENCE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace preference { class DialogPreference; } } }
+namespace j2cpp { namespace android { namespace preference { namespace PreferenceManager_ { class OnActivityDestroyListener; } } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnClickListener; } } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnDismissListener; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/content/DialogInterface.hpp>
 #include <android/preference/DialogPreference.hpp>
+#include <android/preference/Preference.hpp>
+#include <android/preference/PreferenceManager.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -62,7 +73,13 @@ namespace android { namespace preference {
 		{
 		}
 
+		operator local_ref<android::preference::Preference>() const;
 		operator local_ref<android::preference::DialogPreference>() const;
+		operator local_ref<android::preference::PreferenceManager_::OnActivityDestroyListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
 
 
 		ListPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
@@ -96,9 +113,39 @@ namespace j2cpp {
 
 
 
+android::preference::ListPreference::operator local_ref<android::preference::Preference>() const
+{
+	return local_ref<android::preference::Preference>(get_jobject());
+}
+
 android::preference::ListPreference::operator local_ref<android::preference::DialogPreference>() const
 {
 	return local_ref<android::preference::DialogPreference>(get_jobject());
+}
+
+android::preference::ListPreference::operator local_ref<android::preference::PreferenceManager_::OnActivityDestroyListener>() const
+{
+	return local_ref<android::preference::PreferenceManager_::OnActivityDestroyListener>(get_jobject());
+}
+
+android::preference::ListPreference::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jobject());
+}
+
+android::preference::ListPreference::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jobject());
+}
+
+android::preference::ListPreference::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::preference::ListPreference::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 
@@ -107,8 +154,8 @@ android::preference::ListPreference::ListPreference(local_ref< android::content:
 	call_new_object<
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(0),
-		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -120,8 +167,8 @@ android::preference::ListPreference::ListPreference(local_ref< android::content:
 	call_new_object<
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(1),
-		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -133,8 +180,8 @@ void android::preference::ListPreference::setEntries(local_ref< array< local_ref
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(2),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::ListPreference::setEntries(jint a0)
@@ -143,8 +190,8 @@ void android::preference::ListPreference::setEntries(jint a0)
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(3),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::preference::ListPreference::getEntries()
@@ -153,8 +200,8 @@ local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::preferenc
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(4),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::lang::CharSequence >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::CharSequence >, 1> >
+	>(get_jobject());
 }
 
 void android::preference::ListPreference::setEntryValues(local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a0)
@@ -163,8 +210,8 @@ void android::preference::ListPreference::setEntryValues(local_ref< array< local
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(5),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::ListPreference::setEntryValues(jint a0)
@@ -173,8 +220,8 @@ void android::preference::ListPreference::setEntryValues(jint a0)
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(6),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::preference::ListPreference::getEntryValues()
@@ -183,8 +230,8 @@ local_ref< array< local_ref< java::lang::CharSequence >, 1> > android::preferenc
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(7),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::CharSequence >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::CharSequence >, 1> >
+	>(get_jobject());
 }
 
 void android::preference::ListPreference::setValue(local_ref< java::lang::String > const &a0)
@@ -193,8 +240,8 @@ void android::preference::ListPreference::setValue(local_ref< java::lang::String
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(8),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::preference::ListPreference::setValueIndex(jint a0)
@@ -203,8 +250,8 @@ void android::preference::ListPreference::setValueIndex(jint a0)
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(9),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::preference::ListPreference::getValue()
@@ -213,8 +260,8 @@ local_ref< java::lang::String > android::preference::ListPreference::getValue()
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(10),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::preference::ListPreference::getEntry()
@@ -223,8 +270,8 @@ local_ref< java::lang::CharSequence > android::preference::ListPreference::getEn
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(11),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 jint android::preference::ListPreference::findIndexOfValue(local_ref< java::lang::String > const &a0)
@@ -233,8 +280,8 @@ jint android::preference::ListPreference::findIndexOfValue(local_ref< java::lang
 		android::preference::ListPreference::J2CPP_CLASS_NAME,
 		android::preference::ListPreference::J2CPP_METHOD_NAME(12),
 		android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

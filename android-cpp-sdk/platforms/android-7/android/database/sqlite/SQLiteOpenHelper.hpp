@@ -89,8 +89,8 @@ android::database::sqlite::SQLiteOpenHelper::SQLiteOpenHelper(local_ref< android
 	call_new_object<
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(0),
-		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -102,8 +102,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(1),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(get_jobject());
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(get_jobject());
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteOpenHelper::getReadableDatabase()
@@ -112,8 +112,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(get_jobject());
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteOpenHelper::close()
@@ -122,8 +122,8 @@ void android::database::sqlite::SQLiteOpenHelper::close()
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteOpenHelper::onCreate(local_ref< android::database::sqlite::SQLiteDatabase > const &a0)
@@ -132,8 +132,8 @@ void android::database::sqlite::SQLiteOpenHelper::onCreate(local_ref< android::d
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteOpenHelper::onUpgrade(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, jint a1, jint a2)
@@ -142,8 +142,8 @@ void android::database::sqlite::SQLiteOpenHelper::onUpgrade(local_ref< android::
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(5),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::database::sqlite::SQLiteOpenHelper::onOpen(local_ref< android::database::sqlite::SQLiteDatabase > const &a0)
@@ -152,8 +152,8 @@ void android::database::sqlite::SQLiteOpenHelper::onOpen(local_ref< android::dat
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(6),
 		android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_TELEPHONY_SMSMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 
 
 #include <android/app/PendingIntent.hpp>
@@ -104,8 +104,8 @@ void android::telephony::SmsManager::sendTextMessage(local_ref< java::lang::Stri
 		android::telephony::SmsManager::J2CPP_CLASS_NAME,
 		android::telephony::SmsManager::J2CPP_METHOD_NAME(1),
 		android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< java::util::ArrayList > android::telephony::SmsManager::divideMessage(local_ref< java::lang::String > const &a0)
@@ -114,8 +114,8 @@ local_ref< java::util::ArrayList > android::telephony::SmsManager::divideMessage
 		android::telephony::SmsManager::J2CPP_CLASS_NAME,
 		android::telephony::SmsManager::J2CPP_METHOD_NAME(2),
 		android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject(), a0);
+		local_ref< java::util::ArrayList >
+	>(get_jobject(), a0);
 }
 
 void android::telephony::SmsManager::sendMultipartTextMessage(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::util::ArrayList > const &a2, local_ref< java::util::ArrayList > const &a3, local_ref< java::util::ArrayList > const &a4)
@@ -124,8 +124,8 @@ void android::telephony::SmsManager::sendMultipartTextMessage(local_ref< java::l
 		android::telephony::SmsManager::J2CPP_CLASS_NAME,
 		android::telephony::SmsManager::J2CPP_METHOD_NAME(3),
 		android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::telephony::SmsManager::sendDataMessage(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jshort a2, local_ref< array<jbyte,1> > const &a3, local_ref< android::app::PendingIntent > const &a4, local_ref< android::app::PendingIntent > const &a5)
@@ -134,8 +134,8 @@ void android::telephony::SmsManager::sendDataMessage(local_ref< java::lang::Stri
 		android::telephony::SmsManager::J2CPP_CLASS_NAME,
 		android::telephony::SmsManager::J2CPP_METHOD_NAME(4),
 		android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::telephony::SmsManager > android::telephony::SmsManager::getDefault()
@@ -144,8 +144,8 @@ local_ref< android::telephony::SmsManager > android::telephony::SmsManager::getD
 		android::telephony::SmsManager::J2CPP_CLASS_NAME,
 		android::telephony::SmsManager::J2CPP_METHOD_NAME(5),
 		android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::telephony::SmsManager > >
-	();
+		local_ref< android::telephony::SmsManager >
+	>();
 }
 
 

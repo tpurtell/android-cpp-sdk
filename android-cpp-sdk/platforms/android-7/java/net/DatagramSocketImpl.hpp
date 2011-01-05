@@ -61,8 +61,8 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::SocketOptions>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DatagramSocketImpl();
@@ -87,14 +87,14 @@ namespace j2cpp {
 
 
 
-java::net::DatagramSocketImpl::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::net::DatagramSocketImpl::operator local_ref<java::net::SocketOptions>() const
 {
 	return local_ref<java::net::SocketOptions>(get_jobject());
+}
+
+java::net::DatagramSocketImpl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -103,8 +103,8 @@ java::net::DatagramSocketImpl::DatagramSocketImpl()
 	call_new_object<
 		java::net::DatagramSocketImpl::J2CPP_CLASS_NAME,
 		java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(0),
-		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -121,8 +121,8 @@ local_ref< java::lang::Object > java::net::DatagramSocketImpl::getOption(jint a0
 		java::net::DatagramSocketImpl::J2CPP_CLASS_NAME,
 		java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(6),
 		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 
@@ -140,8 +140,8 @@ void java::net::DatagramSocketImpl::setOption(jint a0, local_ref< java::lang::Ob
 		java::net::DatagramSocketImpl::J2CPP_CLASS_NAME,
 		java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(16),
 		java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

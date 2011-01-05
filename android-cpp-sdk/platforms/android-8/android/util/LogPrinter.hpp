@@ -41,8 +41,8 @@ namespace android { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::util::Printer>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		LogPrinter(jint, local_ref< java::lang::String > const&);
@@ -65,14 +65,14 @@ namespace j2cpp {
 
 
 
-android::util::LogPrinter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::util::LogPrinter::operator local_ref<android::util::Printer>() const
 {
 	return local_ref<android::util::Printer>(get_jobject());
+}
+
+android::util::LogPrinter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -81,8 +81,8 @@ android::util::LogPrinter::LogPrinter(jint a0, local_ref< java::lang::String > c
 	call_new_object<
 		android::util::LogPrinter::J2CPP_CLASS_NAME,
 		android::util::LogPrinter::J2CPP_METHOD_NAME(0),
-		android::util::LogPrinter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::util::LogPrinter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -94,8 +94,8 @@ void android::util::LogPrinter::println(local_ref< java::lang::String > const &a
 		android::util::LogPrinter::J2CPP_CLASS_NAME,
 		android::util::LogPrinter::J2CPP_METHOD_NAME(1),
 		android::util::LogPrinter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

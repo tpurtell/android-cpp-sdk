@@ -12,21 +12,29 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace Provider_ { class Service; } } } }
+namespace j2cpp { namespace java { namespace util { class Hashtable; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace java { namespace util { class Dictionary; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace util { class Properties; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/Dictionary.hpp>
+#include <java/util/Hashtable.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Map.hpp>
 #include <java/util/Properties.hpp>
@@ -111,7 +119,13 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Hashtable>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::util::Dictionary>() const;
 		operator local_ref<java::util::Properties>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		local_ref< java::lang::String > getName();
@@ -158,8 +172,8 @@ java::security::Provider_::Service::Service(local_ref< java::security::Provider 
 	call_new_object<
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(0),
-		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5)
+		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -171,8 +185,8 @@ local_ref< java::lang::String > java::security::Provider_::Service::getType()
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(1),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Provider_::Service::getAlgorithm()
@@ -181,8 +195,8 @@ local_ref< java::lang::String > java::security::Provider_::Service::getAlgorithm
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(2),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > java::security::Provider_::Service::getProvider()
@@ -191,8 +205,8 @@ local_ref< java::security::Provider > java::security::Provider_::Service::getPro
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(3),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Provider_::Service::getClassName()
@@ -201,8 +215,8 @@ local_ref< java::lang::String > java::security::Provider_::Service::getClassName
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(4),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Provider_::Service::getAttribute(local_ref< java::lang::String > const &a0)
@@ -211,8 +225,8 @@ local_ref< java::lang::String > java::security::Provider_::Service::getAttribute
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(5),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::security::Provider_::Service::newInstance(local_ref< java::lang::Object > const &a0)
@@ -221,8 +235,8 @@ local_ref< java::lang::Object > java::security::Provider_::Service::newInstance(
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(6),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::Provider_::Service::supportsParameter(local_ref< java::lang::Object > const &a0)
@@ -231,8 +245,8 @@ jboolean java::security::Provider_::Service::supportsParameter(local_ref< java::
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(7),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Provider_::Service::toString()
@@ -241,8 +255,8 @@ local_ref< java::lang::String > java::security::Provider_::Service::toString()
 		java::security::Provider_::Service::J2CPP_CLASS_NAME,
 		java::security::Provider_::Service::J2CPP_METHOD_NAME(8),
 		java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -259,9 +273,39 @@ J2CPP_DEFINE_METHOD(java::security::Provider_::Service,8,"toString","()Ljava/lan
 
 
 
+java::security::Provider::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::Provider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::Provider::operator local_ref<java::util::Hashtable>() const
+{
+	return local_ref<java::util::Hashtable>(get_jobject());
+}
+
+java::security::Provider::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jobject());
+}
+
+java::security::Provider::operator local_ref<java::util::Dictionary>() const
+{
+	return local_ref<java::util::Dictionary>(get_jobject());
+}
+
 java::security::Provider::operator local_ref<java::util::Properties>() const
 {
 	return local_ref<java::util::Properties>(get_jobject());
+}
+
+java::security::Provider::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -271,8 +315,8 @@ local_ref< java::lang::String > java::security::Provider::getName()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(1),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jdouble java::security::Provider::getVersion()
@@ -281,8 +325,8 @@ jdouble java::security::Provider::getVersion()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(2),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(2), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Provider::getInfo()
@@ -291,8 +335,8 @@ local_ref< java::lang::String > java::security::Provider::getInfo()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(3),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Provider::toString()
@@ -301,8 +345,8 @@ local_ref< java::lang::String > java::security::Provider::toString()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(4),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::Provider::clear()
@@ -311,8 +355,8 @@ void java::security::Provider::clear()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(5),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::security::Provider::load(local_ref< java::io::InputStream > const &a0)
@@ -321,8 +365,8 @@ void java::security::Provider::load(local_ref< java::io::InputStream > const &a0
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(6),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Provider::putAll(local_ref< java::util::Map > const &a0)
@@ -331,8 +375,8 @@ void java::security::Provider::putAll(local_ref< java::util::Map > const &a0)
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(7),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::security::Provider::entrySet()
@@ -341,8 +385,8 @@ local_ref< java::util::Set > java::security::Provider::entrySet()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(8),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::security::Provider::keySet()
@@ -351,8 +395,8 @@ local_ref< java::util::Set > java::security::Provider::keySet()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(9),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::security::Provider::values()
@@ -361,8 +405,8 @@ local_ref< java::util::Collection > java::security::Provider::values()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(10),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::Provider::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -371,8 +415,8 @@ local_ref< java::lang::Object > java::security::Provider::put(local_ref< java::l
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(11),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::security::Provider::remove(local_ref< java::lang::Object > const &a0)
@@ -381,8 +425,8 @@ local_ref< java::lang::Object > java::security::Provider::remove(local_ref< java
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(12),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::Provider_::Service > java::security::Provider::getService(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -391,8 +435,8 @@ local_ref< java::security::Provider_::Service > java::security::Provider::getSer
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(13),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::security::Provider_::Service > >
-	(get_jobject(), a0, a1);
+		local_ref< java::security::Provider_::Service >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Set > java::security::Provider::getServices()
@@ -401,8 +445,8 @@ local_ref< java::util::Set > java::security::Provider::getServices()
 		java::security::Provider::J2CPP_CLASS_NAME,
 		java::security::Provider::J2CPP_METHOD_NAME(14),
 		java::security::Provider::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 

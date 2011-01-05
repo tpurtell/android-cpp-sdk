@@ -85,8 +85,8 @@ java::lang::Object::Object()
 	call_new_object<
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(0),
-		java::lang::Object::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::Object::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ jboolean java::lang::Object::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(2),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -110,8 +110,8 @@ local_ref< java::lang::Class > java::lang::Object::getClass()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(4),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 jint java::lang::Object::hashCode()
@@ -120,8 +120,8 @@ jint java::lang::Object::hashCode()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(5),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::lang::Object::notify()
@@ -130,8 +130,8 @@ void java::lang::Object::notify()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(6),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::Object::notifyAll()
@@ -140,8 +140,8 @@ void java::lang::Object::notifyAll()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(7),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Object::toString()
@@ -150,8 +150,8 @@ local_ref< java::lang::String > java::lang::Object::toString()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(8),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::lang::Object::wait()
@@ -160,8 +160,8 @@ void java::lang::Object::wait()
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(9),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::Object::wait(jlong a0)
@@ -170,8 +170,8 @@ void java::lang::Object::wait(jlong a0)
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(10),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::Object::wait(jlong a0, jint a1)
@@ -180,8 +180,8 @@ void java::lang::Object::wait(jlong a0, jint a1)
 		java::lang::Object::J2CPP_CLASS_NAME,
 		java::lang::Object::J2CPP_METHOD_NAME(11),
 		java::lang::Object::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

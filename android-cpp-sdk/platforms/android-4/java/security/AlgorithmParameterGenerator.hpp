@@ -99,8 +99,8 @@ local_ref< java::lang::String > java::security::AlgorithmParameterGenerator::get
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(1),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::AlgorithmParameterGenerator > java::security::AlgorithmParameterGenerator::getInstance(local_ref< java::lang::String > const &a0)
@@ -109,8 +109,8 @@ local_ref< java::security::AlgorithmParameterGenerator > java::security::Algorit
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(2),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::AlgorithmParameterGenerator > >
-	(a0);
+		local_ref< java::security::AlgorithmParameterGenerator >
+	>(a0);
 }
 
 local_ref< java::security::AlgorithmParameterGenerator > java::security::AlgorithmParameterGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -119,8 +119,8 @@ local_ref< java::security::AlgorithmParameterGenerator > java::security::Algorit
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(3),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::AlgorithmParameterGenerator > >
-	(a0, a1);
+		local_ref< java::security::AlgorithmParameterGenerator >
+	>(a0, a1);
 }
 
 local_ref< java::security::AlgorithmParameterGenerator > java::security::AlgorithmParameterGenerator::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -129,8 +129,8 @@ local_ref< java::security::AlgorithmParameterGenerator > java::security::Algorit
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(4),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::AlgorithmParameterGenerator > >
-	(a0, a1);
+		local_ref< java::security::AlgorithmParameterGenerator >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::AlgorithmParameterGenerator::getProvider()
@@ -139,8 +139,8 @@ local_ref< java::security::Provider > java::security::AlgorithmParameterGenerato
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(5),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 void java::security::AlgorithmParameterGenerator::init(jint a0)
@@ -149,8 +149,8 @@ void java::security::AlgorithmParameterGenerator::init(jint a0)
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(6),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::AlgorithmParameterGenerator::init(jint a0, local_ref< java::security::SecureRandom > const &a1)
@@ -159,8 +159,8 @@ void java::security::AlgorithmParameterGenerator::init(jint a0, local_ref< java:
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(7),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::security::AlgorithmParameterGenerator::init(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0)
@@ -169,8 +169,8 @@ void java::security::AlgorithmParameterGenerator::init(local_ref< java::security
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(8),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::AlgorithmParameterGenerator::init(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0, local_ref< java::security::SecureRandom > const &a1)
@@ -179,8 +179,8 @@ void java::security::AlgorithmParameterGenerator::init(local_ref< java::security
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(9),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParameterGenerator::generateParameters()
@@ -189,8 +189,8 @@ local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParame
 		java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(10),
 		java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::security::AlgorithmParameters > >
-	(get_jobject());
+		local_ref< java::security::AlgorithmParameters >
+	>(get_jobject());
 }
 
 

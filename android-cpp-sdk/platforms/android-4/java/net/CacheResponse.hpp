@@ -77,8 +77,8 @@ java::net::CacheResponse::CacheResponse()
 	call_new_object<
 		java::net::CacheResponse::J2CPP_CLASS_NAME,
 		java::net::CacheResponse::J2CPP_METHOD_NAME(0),
-		java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +90,8 @@ local_ref< java::io::InputStream > java::net::CacheResponse::getBody()
 		java::net::CacheResponse::J2CPP_CLASS_NAME,
 		java::net::CacheResponse::J2CPP_METHOD_NAME(1),
 		java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map > java::net::CacheResponse::getHeaders()
@@ -100,8 +100,8 @@ local_ref< java::util::Map > java::net::CacheResponse::getHeaders()
 		java::net::CacheResponse::J2CPP_CLASS_NAME,
 		java::net::CacheResponse::J2CPP_METHOD_NAME(2),
 		java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 

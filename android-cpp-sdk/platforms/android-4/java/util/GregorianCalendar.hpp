@@ -11,13 +11,19 @@
 #define J2CPP_JAVA_UTIL_GREGORIANCALENDAR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { class TimeZone; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { class Calendar; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/Calendar.hpp>
 #include <java/util/Date.hpp>
@@ -71,7 +77,11 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::util::Calendar>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		GregorianCalendar();
@@ -119,9 +129,29 @@ namespace j2cpp {
 
 
 
+java::util::GregorianCalendar::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::util::GregorianCalendar::operator local_ref<java::util::Calendar>() const
 {
 	return local_ref<java::util::Calendar>(get_jobject());
+}
+
+java::util::GregorianCalendar::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::util::GregorianCalendar::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::GregorianCalendar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -130,8 +160,8 @@ java::util::GregorianCalendar::GregorianCalendar()
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(0),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -143,8 +173,8 @@ java::util::GregorianCalendar::GregorianCalendar(jint a0, jint a1, jint a2)
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(1),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -156,8 +186,8 @@ java::util::GregorianCalendar::GregorianCalendar(jint a0, jint a1, jint a2, jint
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(2),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -169,8 +199,8 @@ java::util::GregorianCalendar::GregorianCalendar(jint a0, jint a1, jint a2, jint
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(3),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3, a4, a5)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -182,8 +212,8 @@ java::util::GregorianCalendar::GregorianCalendar(local_ref< java::util::Locale >
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(4),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -195,8 +225,8 @@ java::util::GregorianCalendar::GregorianCalendar(local_ref< java::util::TimeZone
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(5),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -208,8 +238,8 @@ java::util::GregorianCalendar::GregorianCalendar(local_ref< java::util::TimeZone
 	call_new_object<
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(6),
-		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1)
+		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1)
 )
 {
 }
@@ -221,8 +251,8 @@ void java::util::GregorianCalendar::add(jint a0, jint a1)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(7),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::GregorianCalendar::clone()
@@ -231,8 +261,8 @@ local_ref< java::lang::Object > java::util::GregorianCalendar::clone()
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(8),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -243,8 +273,8 @@ jboolean java::util::GregorianCalendar::equals(local_ref< java::lang::Object > c
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(11),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::getActualMaximum(jint a0)
@@ -253,8 +283,8 @@ jint java::util::GregorianCalendar::getActualMaximum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(12),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::getActualMinimum(jint a0)
@@ -263,8 +293,8 @@ jint java::util::GregorianCalendar::getActualMinimum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(13),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::getGreatestMinimum(jint a0)
@@ -273,8 +303,8 @@ jint java::util::GregorianCalendar::getGreatestMinimum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(14),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::util::GregorianCalendar::getGregorianChange()
@@ -283,8 +313,8 @@ local_ref< java::util::Date > java::util::GregorianCalendar::getGregorianChange(
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(15),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 jint java::util::GregorianCalendar::getLeastMaximum(jint a0)
@@ -293,8 +323,8 @@ jint java::util::GregorianCalendar::getLeastMaximum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(16),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::getMaximum(jint a0)
@@ -303,8 +333,8 @@ jint java::util::GregorianCalendar::getMaximum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(17),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::getMinimum(jint a0)
@@ -313,8 +343,8 @@ jint java::util::GregorianCalendar::getMinimum(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(18),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::GregorianCalendar::hashCode()
@@ -323,8 +353,8 @@ jint java::util::GregorianCalendar::hashCode()
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(19),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::GregorianCalendar::isLeapYear(jint a0)
@@ -333,8 +363,8 @@ jboolean java::util::GregorianCalendar::isLeapYear(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(20),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::GregorianCalendar::roll(jint a0, jint a1)
@@ -343,8 +373,8 @@ void java::util::GregorianCalendar::roll(jint a0, jint a1)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(21),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::GregorianCalendar::roll(jint a0, jboolean a1)
@@ -353,8 +383,8 @@ void java::util::GregorianCalendar::roll(jint a0, jboolean a1)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(22),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::GregorianCalendar::setGregorianChange(local_ref< java::util::Date > const &a0)
@@ -363,8 +393,8 @@ void java::util::GregorianCalendar::setGregorianChange(local_ref< java::util::Da
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(23),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::GregorianCalendar::setFirstDayOfWeek(jint a0)
@@ -373,8 +403,8 @@ void java::util::GregorianCalendar::setFirstDayOfWeek(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(24),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::GregorianCalendar::setMinimalDaysInFirstWeek(jint a0)
@@ -383,8 +413,8 @@ void java::util::GregorianCalendar::setMinimalDaysInFirstWeek(jint a0)
 		java::util::GregorianCalendar::J2CPP_CLASS_NAME,
 		java::util::GregorianCalendar::J2CPP_METHOD_NAME(25),
 		java::util::GregorianCalendar::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

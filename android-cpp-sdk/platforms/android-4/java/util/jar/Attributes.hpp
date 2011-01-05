@@ -138,9 +138,9 @@ namespace java { namespace util { namespace jar {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Attributes();
@@ -196,8 +196,8 @@ java::util::jar::Attributes_::Name::Name(local_ref< java::lang::String > const &
 	call_new_object<
 		java::util::jar::Attributes_::Name::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_NAME(0),
-		java::util::jar::Attributes_::Name::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::jar::Attributes_::Name::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -209,8 +209,8 @@ local_ref< java::lang::String > java::util::jar::Attributes_::Name::toString()
 		java::util::jar::Attributes_::Name::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_NAME(1),
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::util::jar::Attributes_::Name::equals(local_ref< java::lang::Object > const &a0)
@@ -219,8 +219,8 @@ jboolean java::util::jar::Attributes_::Name::equals(local_ref< java::lang::Objec
 		java::util::jar::Attributes_::Name::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_NAME(2),
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::jar::Attributes_::Name::hashCode()
@@ -229,8 +229,8 @@ jint java::util::jar::Attributes_::Name::hashCode()
 		java::util::jar::Attributes_::Name::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_NAME(3),
 		java::util::jar::Attributes_::Name::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -381,9 +381,9 @@ J2CPP_DEFINE_FIELD(java::util::jar::Attributes_::Name,16,"IMPLEMENTATION_URL","L
 
 
 
-java::util::jar::Attributes::operator local_ref<java::lang::Object>() const
+java::util::jar::Attributes::operator local_ref<java::util::Map>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::util::Map>(get_jobject());
 }
 
 java::util::jar::Attributes::operator local_ref<java::lang::Cloneable>() const
@@ -391,9 +391,9 @@ java::util::jar::Attributes::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-java::util::jar::Attributes::operator local_ref<java::util::Map>() const
+java::util::jar::Attributes::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::Map>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -402,8 +402,8 @@ java::util::jar::Attributes::Attributes()
 	call_new_object<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(0),
-		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -415,8 +415,8 @@ java::util::jar::Attributes::Attributes(local_ref< java::util::jar::Attributes >
 	call_new_object<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(1),
-		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -428,8 +428,8 @@ java::util::jar::Attributes::Attributes(jint a0)
 	call_new_object<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(2),
-		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -441,8 +441,8 @@ void java::util::jar::Attributes::clear()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(3),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::jar::Attributes::containsKey(local_ref< java::lang::Object > const &a0)
@@ -451,8 +451,8 @@ jboolean java::util::jar::Attributes::containsKey(local_ref< java::lang::Object 
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(4),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::jar::Attributes::containsValue(local_ref< java::lang::Object > const &a0)
@@ -461,8 +461,8 @@ jboolean java::util::jar::Attributes::containsValue(local_ref< java::lang::Objec
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(5),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::jar::Attributes::entrySet()
@@ -471,8 +471,8 @@ local_ref< java::util::Set > java::util::jar::Attributes::entrySet()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(6),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::jar::Attributes::get(local_ref< java::lang::Object > const &a0)
@@ -481,8 +481,8 @@ local_ref< java::lang::Object > java::util::jar::Attributes::get(local_ref< java
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(7),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::jar::Attributes::isEmpty()
@@ -491,8 +491,8 @@ jboolean java::util::jar::Attributes::isEmpty()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(8),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::jar::Attributes::keySet()
@@ -501,8 +501,8 @@ local_ref< java::util::Set > java::util::jar::Attributes::keySet()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(9),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::jar::Attributes::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -511,8 +511,8 @@ local_ref< java::lang::Object > java::util::jar::Attributes::put(local_ref< java
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(10),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::jar::Attributes::putAll(local_ref< java::util::Map > const &a0)
@@ -521,8 +521,8 @@ void java::util::jar::Attributes::putAll(local_ref< java::util::Map > const &a0)
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(11),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::jar::Attributes::remove(local_ref< java::lang::Object > const &a0)
@@ -531,8 +531,8 @@ local_ref< java::lang::Object > java::util::jar::Attributes::remove(local_ref< j
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(12),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::jar::Attributes::size()
@@ -541,8 +541,8 @@ jint java::util::jar::Attributes::size()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(13),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::jar::Attributes::values()
@@ -551,8 +551,8 @@ local_ref< java::util::Collection > java::util::jar::Attributes::values()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(14),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::jar::Attributes::clone()
@@ -561,8 +561,8 @@ local_ref< java::lang::Object > java::util::jar::Attributes::clone()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(15),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::jar::Attributes::hashCode()
@@ -571,8 +571,8 @@ jint java::util::jar::Attributes::hashCode()
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(16),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::jar::Attributes::equals(local_ref< java::lang::Object > const &a0)
@@ -581,8 +581,8 @@ jboolean java::util::jar::Attributes::equals(local_ref< java::lang::Object > con
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(17),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::jar::Attributes::getValue(local_ref< java::util::jar::Attributes_::Name > const &a0)
@@ -591,8 +591,8 @@ local_ref< java::lang::String > java::util::jar::Attributes::getValue(local_ref<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(18),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::jar::Attributes::getValue(local_ref< java::lang::String > const &a0)
@@ -601,8 +601,8 @@ local_ref< java::lang::String > java::util::jar::Attributes::getValue(local_ref<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(19),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::jar::Attributes::putValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -611,8 +611,8 @@ local_ref< java::lang::String > java::util::jar::Attributes::putValue(local_ref<
 		java::util::jar::Attributes::J2CPP_CLASS_NAME,
 		java::util::jar::Attributes::J2CPP_METHOD_NAME(20),
 		java::util::jar::Attributes::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 

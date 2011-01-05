@@ -11,7 +11,9 @@
 #define J2CPP_JAVA_TEXT_MESSAGEFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -20,9 +22,12 @@ namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 namespace j2cpp { namespace java { namespace text { namespace MessageFormat_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace text { class Format; } } }
+namespace j2cpp { namespace java { namespace text { namespace AttributedCharacterIterator_ { class Attribute; } } } }
 namespace j2cpp { namespace java { namespace text { namespace Format_ { class Field; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
@@ -59,6 +64,9 @@ namespace java { namespace text {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const;
 			operator local_ref<java::text::Format_::Field>() const;
 
 
@@ -105,6 +113,9 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::text::Format>() const;
 
 
@@ -149,6 +160,21 @@ namespace j2cpp {
 
 
 
+java::text::MessageFormat_::Field::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::MessageFormat_::Field::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::MessageFormat_::Field::operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const
+{
+	return local_ref<java::text::AttributedCharacterIterator_::Attribute>(get_jobject());
+}
+
 java::text::MessageFormat_::Field::operator local_ref<java::text::Format_::Field>() const
 {
 	return local_ref<java::text::Format_::Field>(get_jobject());
@@ -174,6 +200,21 @@ J2CPP_DEFINE_FIELD(java::text::MessageFormat_::Field,0,"ARGUMENT","Ljava/text/Me
 
 
 
+java::text::MessageFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::MessageFormat::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::text::MessageFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::text::MessageFormat::operator local_ref<java::text::Format>() const
 {
 	return local_ref<java::text::Format>(get_jobject());
@@ -185,8 +226,8 @@ java::text::MessageFormat::MessageFormat(local_ref< java::lang::String > const &
 	call_new_object<
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(0),
-		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -198,8 +239,8 @@ java::text::MessageFormat::MessageFormat(local_ref< java::lang::String > const &
 	call_new_object<
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(1),
-		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -211,8 +252,8 @@ void java::text::MessageFormat::applyPattern(local_ref< java::lang::String > con
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(2),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::text::MessageFormat::clone()
@@ -221,8 +262,8 @@ local_ref< java::lang::Object > java::text::MessageFormat::clone()
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(3),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::MessageFormat::equals(local_ref< java::lang::Object > const &a0)
@@ -231,8 +272,8 @@ jboolean java::text::MessageFormat::equals(local_ref< java::lang::Object > const
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(4),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::MessageFormat::formatToCharacterIterator(local_ref< java::lang::Object > const &a0)
@@ -241,8 +282,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::MessageFormat::
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(5),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject(), a0);
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::MessageFormat::format(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -251,8 +292,8 @@ local_ref< java::lang::StringBuffer > java::text::MessageFormat::format(local_re
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(6),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::text::MessageFormat::format(local_ref< java::lang::Object > const &a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -261,8 +302,8 @@ local_ref< java::lang::StringBuffer > java::text::MessageFormat::format(local_re
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(7),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > java::text::MessageFormat::format(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -271,8 +312,8 @@ local_ref< java::lang::String > java::text::MessageFormat::format(local_ref< jav
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(8),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< java::text::Format >, 1> > java::text::MessageFormat::getFormats()
@@ -281,8 +322,8 @@ local_ref< array< local_ref< java::text::Format >, 1> > java::text::MessageForma
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(9),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< java::text::Format >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::text::Format >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::text::Format >, 1> > java::text::MessageFormat::getFormatsByArgumentIndex()
@@ -291,8 +332,8 @@ local_ref< array< local_ref< java::text::Format >, 1> > java::text::MessageForma
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(10),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< java::text::Format >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::text::Format >, 1> >
+	>(get_jobject());
 }
 
 void java::text::MessageFormat::setFormatByArgumentIndex(jint a0, local_ref< java::text::Format > const &a1)
@@ -301,8 +342,8 @@ void java::text::MessageFormat::setFormatByArgumentIndex(jint a0, local_ref< jav
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(11),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::MessageFormat::setFormatsByArgumentIndex(local_ref< array< local_ref< java::text::Format >, 1> > const &a0)
@@ -311,8 +352,8 @@ void java::text::MessageFormat::setFormatsByArgumentIndex(local_ref< array< loca
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(12),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Locale > java::text::MessageFormat::getLocale()
@@ -321,8 +362,8 @@ local_ref< java::util::Locale > java::text::MessageFormat::getLocale()
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(13),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 jint java::text::MessageFormat::hashCode()
@@ -331,8 +372,8 @@ jint java::text::MessageFormat::hashCode()
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(14),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::text::MessageFormat::parse(local_ref< java::lang::String > const &a0)
@@ -341,8 +382,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::text::MessageForma
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(15),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::text::MessageFormat::parse(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -351,8 +392,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::text::MessageForma
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(16),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::text::MessageFormat::parseObject(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -361,8 +402,8 @@ local_ref< java::lang::Object > java::text::MessageFormat::parseObject(local_ref
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(17),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::MessageFormat::setFormat(jint a0, local_ref< java::text::Format > const &a1)
@@ -371,8 +412,8 @@ void java::text::MessageFormat::setFormat(jint a0, local_ref< java::text::Format
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(18),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::MessageFormat::setFormats(local_ref< array< local_ref< java::text::Format >, 1> > const &a0)
@@ -381,8 +422,8 @@ void java::text::MessageFormat::setFormats(local_ref< array< local_ref< java::te
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(19),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::MessageFormat::setLocale(local_ref< java::util::Locale > const &a0)
@@ -391,8 +432,8 @@ void java::text::MessageFormat::setLocale(local_ref< java::util::Locale > const 
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(20),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::MessageFormat::toPattern()
@@ -401,8 +442,8 @@ local_ref< java::lang::String > java::text::MessageFormat::toPattern()
 		java::text::MessageFormat::J2CPP_CLASS_NAME,
 		java::text::MessageFormat::J2CPP_METHOD_NAME(21),
 		java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

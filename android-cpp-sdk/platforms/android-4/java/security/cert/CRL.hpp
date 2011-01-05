@@ -80,8 +80,8 @@ local_ref< java::lang::String > java::security::cert::CRL::getType()
 		java::security::cert::CRL::J2CPP_CLASS_NAME,
 		java::security::cert::CRL::J2CPP_METHOD_NAME(1),
 		java::security::cert::CRL::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::CRL::isRevoked(local_ref< java::security::cert::Certificate > const &a0)
@@ -90,8 +90,8 @@ jboolean java::security::cert::CRL::isRevoked(local_ref< java::security::cert::C
 		java::security::cert::CRL::J2CPP_CLASS_NAME,
 		java::security::cert::CRL::J2CPP_METHOD_NAME(2),
 		java::security::cert::CRL::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::CRL::toString()
@@ -100,8 +100,8 @@ local_ref< java::lang::String > java::security::cert::CRL::toString()
 		java::security::cert::CRL::J2CPP_CLASS_NAME,
 		java::security::cert::CRL::J2CPP_METHOD_NAME(3),
 		java::security::cert::CRL::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

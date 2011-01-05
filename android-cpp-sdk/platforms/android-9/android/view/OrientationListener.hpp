@@ -94,8 +94,8 @@ android::view::OrientationListener::OrientationListener(local_ref< android::cont
 	call_new_object<
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(0),
-		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -107,8 +107,8 @@ android::view::OrientationListener::OrientationListener(local_ref< android::cont
 	call_new_object<
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(1),
-		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -120,8 +120,8 @@ void android::view::OrientationListener::enable()
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(2),
 		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::OrientationListener::disable()
@@ -130,8 +130,8 @@ void android::view::OrientationListener::disable()
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(3),
 		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::OrientationListener::onAccuracyChanged(jint a0, jint a1)
@@ -140,8 +140,8 @@ void android::view::OrientationListener::onAccuracyChanged(jint a0, jint a1)
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(4),
 		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::OrientationListener::onSensorChanged(jint a0, local_ref< array<jfloat,1> > const &a1)
@@ -150,8 +150,8 @@ void android::view::OrientationListener::onSensorChanged(jint a0, local_ref< arr
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(5),
 		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::OrientationListener::onOrientationChanged(jint a0)
@@ -160,8 +160,8 @@ void android::view::OrientationListener::onOrientationChanged(jint a0)
 		android::view::OrientationListener::J2CPP_CLASS_NAME,
 		android::view::OrientationListener::J2CPP_METHOD_NAME(6),
 		android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

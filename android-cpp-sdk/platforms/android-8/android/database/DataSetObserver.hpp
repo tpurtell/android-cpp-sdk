@@ -73,8 +73,8 @@ android::database::DataSetObserver::DataSetObserver()
 	call_new_object<
 		android::database::DataSetObserver::J2CPP_CLASS_NAME,
 		android::database::DataSetObserver::J2CPP_METHOD_NAME(0),
-		android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +86,8 @@ void android::database::DataSetObserver::onChanged()
 		android::database::DataSetObserver::J2CPP_CLASS_NAME,
 		android::database::DataSetObserver::J2CPP_METHOD_NAME(1),
 		android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::DataSetObserver::onInvalidated()
@@ -96,8 +96,8 @@ void android::database::DataSetObserver::onInvalidated()
 		android::database::DataSetObserver::J2CPP_CLASS_NAME,
 		android::database::DataSetObserver::J2CPP_METHOD_NAME(2),
 		android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

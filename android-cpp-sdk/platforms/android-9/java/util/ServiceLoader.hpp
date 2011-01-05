@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_UTIL_SERVICELOADER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
@@ -52,8 +52,8 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void reload();
@@ -80,14 +80,14 @@ namespace j2cpp {
 
 
 
-java::util::ServiceLoader::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::ServiceLoader::operator local_ref<java::lang::Iterable>() const
 {
 	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::ServiceLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -97,8 +97,8 @@ void java::util::ServiceLoader::reload()
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(1),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::ServiceLoader::iterator()
@@ -107,8 +107,8 @@ local_ref< java::util::Iterator > java::util::ServiceLoader::iterator()
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(2),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::util::ServiceLoader > java::util::ServiceLoader::load(local_ref< java::lang::Class > const &a0, local_ref< java::lang::ClassLoader > const &a1)
@@ -117,8 +117,8 @@ local_ref< java::util::ServiceLoader > java::util::ServiceLoader::load(local_ref
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(3),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::ServiceLoader > >
-	(a0, a1);
+		local_ref< java::util::ServiceLoader >
+	>(a0, a1);
 }
 
 local_ref< java::util::ServiceLoader > java::util::ServiceLoader::load(local_ref< java::lang::Class > const &a0)
@@ -127,8 +127,8 @@ local_ref< java::util::ServiceLoader > java::util::ServiceLoader::load(local_ref
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(4),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::ServiceLoader > >
-	(a0);
+		local_ref< java::util::ServiceLoader >
+	>(a0);
 }
 
 local_ref< java::util::ServiceLoader > java::util::ServiceLoader::loadInstalled(local_ref< java::lang::Class > const &a0)
@@ -137,8 +137,8 @@ local_ref< java::util::ServiceLoader > java::util::ServiceLoader::loadInstalled(
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(5),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::ServiceLoader > >
-	(a0);
+		local_ref< java::util::ServiceLoader >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::ServiceLoader::toString()
@@ -147,8 +147,8 @@ local_ref< java::lang::String > java::util::ServiceLoader::toString()
 		java::util::ServiceLoader::J2CPP_CLASS_NAME,
 		java::util::ServiceLoader::J2CPP_METHOD_NAME(6),
 		java::util::ServiceLoader::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

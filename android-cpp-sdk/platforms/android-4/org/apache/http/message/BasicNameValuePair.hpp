@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICNAMEVALUEPAIR_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class NameValuePair; } } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class NameValuePair; } } } }
 
 
 #include <java/lang/Cloneable.hpp>
@@ -48,9 +48,9 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::NameValuePair>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 
 
 		BasicNameValuePair(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -80,6 +80,11 @@ namespace j2cpp {
 
 
 
+org::apache::http::message::BasicNameValuePair::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 org::apache::http::message::BasicNameValuePair::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -90,19 +95,14 @@ org::apache::http::message::BasicNameValuePair::operator local_ref<org::apache::
 	return local_ref<org::apache::http::NameValuePair>(get_jobject());
 }
 
-org::apache::http::message::BasicNameValuePair::operator local_ref<java::lang::Cloneable>() const
-{
-	return local_ref<java::lang::Cloneable>(get_jobject());
-}
-
 
 org::apache::http::message::BasicNameValuePair::BasicNameValuePair(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 : object<org::apache::http::message::BasicNameValuePair>(
 	call_new_object<
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -114,8 +114,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicNameValuePair::
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicNameValuePair::getValue()
@@ -124,8 +124,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicNameValuePair::
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicNameValuePair::toString()
@@ -134,8 +134,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicNameValuePair::
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::message::BasicNameValuePair::equals(local_ref< java::lang::Object > const &a0)
@@ -144,8 +144,8 @@ jboolean org::apache::http::message::BasicNameValuePair::equals(local_ref< java:
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::message::BasicNameValuePair::hashCode()
@@ -154,8 +154,8 @@ jint org::apache::http::message::BasicNameValuePair::hashCode()
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicNameValuePair::clone()
@@ -164,8 +164,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicNameValuePair::
 		org::apache::http::message::BasicNameValuePair::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::BasicNameValuePair::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

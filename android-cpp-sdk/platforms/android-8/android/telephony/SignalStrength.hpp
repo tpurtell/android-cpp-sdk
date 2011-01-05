@@ -55,8 +55,8 @@ namespace android { namespace telephony {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void writeToParcel(local_ref< android::os::Parcel >  const&, jint);
@@ -90,14 +90,14 @@ namespace j2cpp {
 
 
 
-android::telephony::SignalStrength::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::telephony::SignalStrength::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::telephony::SignalStrength::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -107,8 +107,8 @@ void android::telephony::SignalStrength::writeToParcel(local_ref< android::os::P
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(1),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::telephony::SignalStrength::describeContents()
@@ -117,8 +117,8 @@ jint android::telephony::SignalStrength::describeContents()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(2),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getGsmSignalStrength()
@@ -127,8 +127,8 @@ jint android::telephony::SignalStrength::getGsmSignalStrength()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(3),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getGsmBitErrorRate()
@@ -137,8 +137,8 @@ jint android::telephony::SignalStrength::getGsmBitErrorRate()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(4),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getCdmaDbm()
@@ -147,8 +147,8 @@ jint android::telephony::SignalStrength::getCdmaDbm()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(5),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getCdmaEcio()
@@ -157,8 +157,8 @@ jint android::telephony::SignalStrength::getCdmaEcio()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(6),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getEvdoDbm()
@@ -167,8 +167,8 @@ jint android::telephony::SignalStrength::getEvdoDbm()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(7),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getEvdoEcio()
@@ -177,8 +177,8 @@ jint android::telephony::SignalStrength::getEvdoEcio()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(8),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::getEvdoSnr()
@@ -187,8 +187,8 @@ jint android::telephony::SignalStrength::getEvdoSnr()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(9),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::SignalStrength::isGsm()
@@ -197,8 +197,8 @@ jboolean android::telephony::SignalStrength::isGsm()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(10),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::telephony::SignalStrength::hashCode()
@@ -207,8 +207,8 @@ jint android::telephony::SignalStrength::hashCode()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(11),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::telephony::SignalStrength::equals(local_ref< java::lang::Object > const &a0)
@@ -217,8 +217,8 @@ jboolean android::telephony::SignalStrength::equals(local_ref< java::lang::Objec
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(12),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::telephony::SignalStrength::toString()
@@ -227,8 +227,8 @@ local_ref< java::lang::String > android::telephony::SignalStrength::toString()
 		android::telephony::SignalStrength::J2CPP_CLASS_NAME,
 		android::telephony::SignalStrength::J2CPP_METHOD_NAME(13),
 		android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

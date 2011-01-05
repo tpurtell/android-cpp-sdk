@@ -12,8 +12,8 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -80,8 +80,8 @@ local_ref< org::apache::http::RequestLine > org::apache::http::HttpRequest::getR
 		org::apache::http::HttpRequest::J2CPP_CLASS_NAME,
 		org::apache::http::HttpRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::RequestLine > >
-	(get_jobject());
+		local_ref< org::apache::http::RequestLine >
+	>(get_jobject());
 }
 
 

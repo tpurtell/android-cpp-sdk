@@ -73,8 +73,8 @@ jboolean java::io::FilenameFilter::accept(local_ref< java::io::File > const &a0,
 		java::io::FilenameFilter::J2CPP_CLASS_NAME,
 		java::io::FilenameFilter::J2CPP_METHOD_NAME(0),
 		java::io::FilenameFilter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

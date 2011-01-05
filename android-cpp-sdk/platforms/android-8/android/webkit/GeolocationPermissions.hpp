@@ -113,8 +113,8 @@ void android::webkit::GeolocationPermissions_::Callback::invoke(local_ref< java:
 		android::webkit::GeolocationPermissions_::Callback::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions_::Callback::J2CPP_METHOD_NAME(0),
 		android::webkit::GeolocationPermissions_::Callback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -134,8 +134,8 @@ android::webkit::GeolocationPermissions::GeolocationPermissions()
 	call_new_object<
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(0),
-		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -147,8 +147,8 @@ local_ref< android::webkit::GeolocationPermissions > android::webkit::Geolocatio
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(1),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::GeolocationPermissions > >
-	();
+		local_ref< android::webkit::GeolocationPermissions >
+	>();
 }
 
 void android::webkit::GeolocationPermissions::getOrigins(local_ref< android::webkit::ValueCallback > const &a0)
@@ -157,8 +157,8 @@ void android::webkit::GeolocationPermissions::getOrigins(local_ref< android::web
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(2),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::GeolocationPermissions::getAllowed(local_ref< java::lang::String > const &a0, local_ref< android::webkit::ValueCallback > const &a1)
@@ -167,8 +167,8 @@ void android::webkit::GeolocationPermissions::getAllowed(local_ref< java::lang::
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(3),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::GeolocationPermissions::clear(local_ref< java::lang::String > const &a0)
@@ -177,8 +177,8 @@ void android::webkit::GeolocationPermissions::clear(local_ref< java::lang::Strin
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(4),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::GeolocationPermissions::allow(local_ref< java::lang::String > const &a0)
@@ -187,8 +187,8 @@ void android::webkit::GeolocationPermissions::allow(local_ref< java::lang::Strin
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(5),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::GeolocationPermissions::clearAll()
@@ -197,8 +197,8 @@ void android::webkit::GeolocationPermissions::clearAll()
 		android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME,
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(6),
 		android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

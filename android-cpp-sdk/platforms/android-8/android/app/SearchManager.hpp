@@ -145,9 +145,9 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
 		operator local_ref<android::content::DialogInterface_::OnCancelListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void startSearch(local_ref< java::lang::String >  const&, jboolean, local_ref< android::content::ComponentName >  const&, local_ref< android::os::Bundle >  const&, jboolean);
@@ -224,8 +224,8 @@ void android::app::SearchManager_::OnDismissListener::onDismiss()
 		android::app::SearchManager_::OnDismissListener::J2CPP_CLASS_NAME,
 		android::app::SearchManager_::OnDismissListener::J2CPP_METHOD_NAME(0),
 		android::app::SearchManager_::OnDismissListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -244,8 +244,8 @@ void android::app::SearchManager_::OnCancelListener::onCancel()
 		android::app::SearchManager_::OnCancelListener::J2CPP_CLASS_NAME,
 		android::app::SearchManager_::OnCancelListener::J2CPP_METHOD_NAME(0),
 		android::app::SearchManager_::OnCancelListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -254,9 +254,9 @@ J2CPP_DEFINE_METHOD(android::app::SearchManager_::OnCancelListener,0,"onCancel",
 
 
 
-android::app::SearchManager::operator local_ref<java::lang::Object>() const
+android::app::SearchManager::operator local_ref<android::content::DialogInterface_::OnCancelListener>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::content::DialogInterface_::OnCancelListener>(get_jobject());
 }
 
 android::app::SearchManager::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
@@ -264,9 +264,9 @@ android::app::SearchManager::operator local_ref<android::content::DialogInterfac
 	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jobject());
 }
 
-android::app::SearchManager::operator local_ref<android::content::DialogInterface_::OnCancelListener>() const
+android::app::SearchManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::content::DialogInterface_::OnCancelListener>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -276,8 +276,8 @@ void android::app::SearchManager::startSearch(local_ref< java::lang::String > co
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(1),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::app::SearchManager::triggerSearch(local_ref< java::lang::String > const &a0, local_ref< android::content::ComponentName > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -286,8 +286,8 @@ void android::app::SearchManager::triggerSearch(local_ref< java::lang::String > 
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(2),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::SearchManager::stopSearch()
@@ -296,8 +296,8 @@ void android::app::SearchManager::stopSearch()
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(3),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::SearchManager::setOnDismissListener(local_ref< android::app::SearchManager_::OnDismissListener > const &a0)
@@ -306,8 +306,8 @@ void android::app::SearchManager::setOnDismissListener(local_ref< android::app::
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(4),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::SearchManager::setOnCancelListener(local_ref< android::app::SearchManager_::OnCancelListener > const &a0)
@@ -316,8 +316,8 @@ void android::app::SearchManager::setOnCancelListener(local_ref< android::app::S
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(5),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::SearchManager::onCancel(local_ref< android::content::DialogInterface > const &a0)
@@ -326,8 +326,8 @@ void android::app::SearchManager::onCancel(local_ref< android::content::DialogIn
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(6),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::SearchManager::onDismiss(local_ref< android::content::DialogInterface > const &a0)
@@ -336,8 +336,8 @@ void android::app::SearchManager::onDismiss(local_ref< android::content::DialogI
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(7),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::SearchableInfo > android::app::SearchManager::getSearchableInfo(local_ref< android::content::ComponentName > const &a0)
@@ -346,8 +346,8 @@ local_ref< android::app::SearchableInfo > android::app::SearchManager::getSearch
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(8),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::app::SearchableInfo > >
-	(get_jobject(), a0);
+		local_ref< android::app::SearchableInfo >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::app::SearchManager::getSearchablesInGlobalSearch()
@@ -356,8 +356,8 @@ local_ref< java::util::List > android::app::SearchManager::getSearchablesInGloba
 		android::app::SearchManager::J2CPP_CLASS_NAME,
 		android::app::SearchManager::J2CPP_METHOD_NAME(9),
 		android::app::SearchManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 

@@ -15,11 +15,17 @@ namespace j2cpp { namespace android { namespace graphics { namespace AvoidXfermo
 namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <android/graphics/AvoidXfermode.hpp>
 #include <android/graphics/Xfermode.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,6 +58,9 @@ namespace android { namespace graphics {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::AvoidXfermode_::Mode >, 1> > values();
@@ -80,6 +89,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Xfermode>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AvoidXfermode(jint, jint, local_ref< android::graphics::AvoidXfermode_::Mode > const&);
@@ -107,14 +117,29 @@ android::graphics::AvoidXfermode_::Mode::operator local_ref<java::lang::Enum>() 
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::graphics::AvoidXfermode_::Mode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::AvoidXfermode_::Mode::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::graphics::AvoidXfermode_::Mode::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::graphics::AvoidXfermode_::Mode >, 1> > android::graphics::AvoidXfermode_::Mode::values()
 {
 	return call_static_method<
 		android::graphics::AvoidXfermode_::Mode::J2CPP_CLASS_NAME,
 		android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_NAME(0),
 		android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::AvoidXfermode_::Mode >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::AvoidXfermode_::Mode >, 1> >
+	>();
 }
 
 local_ref< android::graphics::AvoidXfermode_::Mode > android::graphics::AvoidXfermode_::Mode::valueOf(local_ref< java::lang::String > const &a0)
@@ -123,8 +148,8 @@ local_ref< android::graphics::AvoidXfermode_::Mode > android::graphics::AvoidXfe
 		android::graphics::AvoidXfermode_::Mode::J2CPP_CLASS_NAME,
 		android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_NAME(1),
 		android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::AvoidXfermode_::Mode > >
-	(a0);
+		local_ref< android::graphics::AvoidXfermode_::Mode >
+	>(a0);
 }
 
 
@@ -161,14 +186,19 @@ android::graphics::AvoidXfermode::operator local_ref<android::graphics::Xfermode
 	return local_ref<android::graphics::Xfermode>(get_jobject());
 }
 
+android::graphics::AvoidXfermode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::AvoidXfermode::AvoidXfermode(jint a0, jint a1, local_ref< android::graphics::AvoidXfermode_::Mode > const &a2)
 : object<android::graphics::AvoidXfermode>(
 	call_new_object<
 		android::graphics::AvoidXfermode::J2CPP_CLASS_NAME,
 		android::graphics::AvoidXfermode::J2CPP_METHOD_NAME(0),
-		android::graphics::AvoidXfermode::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::AvoidXfermode::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }

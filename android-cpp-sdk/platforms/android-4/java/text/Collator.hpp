@@ -67,9 +67,9 @@ namespace java { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Comparator>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Object > clone();
@@ -112,11 +112,6 @@ namespace j2cpp {
 
 
 
-java::text::Collator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::text::Collator::operator local_ref<java::util::Comparator>() const
 {
 	return local_ref<java::util::Comparator>(get_jobject());
@@ -127,6 +122,11 @@ java::text::Collator::operator local_ref<java::lang::Cloneable>() const
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
+java::text::Collator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 local_ref< java::lang::Object > java::text::Collator::clone()
 {
@@ -134,8 +134,8 @@ local_ref< java::lang::Object > java::text::Collator::clone()
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(1),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::text::Collator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -144,8 +144,8 @@ jint java::text::Collator::compare(local_ref< java::lang::Object > const &a0, lo
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(2),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::text::Collator::compare(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -154,8 +154,8 @@ jint java::text::Collator::compare(local_ref< java::lang::String > const &a0, lo
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(3),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::text::Collator::equals(local_ref< java::lang::Object > const &a0)
@@ -164,8 +164,8 @@ jboolean java::text::Collator::equals(local_ref< java::lang::Object > const &a0)
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(4),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::text::Collator::equals(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -174,8 +174,8 @@ jboolean java::text::Collator::equals(local_ref< java::lang::String > const &a0,
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(5),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::util::Locale >, 1> > java::text::Collator::getAvailableLocales()
@@ -184,8 +184,8 @@ local_ref< array< local_ref< java::util::Locale >, 1> > java::text::Collator::ge
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(6),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::util::Locale >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::Locale >, 1> >
+	>();
 }
 
 local_ref< java::text::CollationKey > java::text::Collator::getCollationKey(local_ref< java::lang::String > const &a0)
@@ -194,8 +194,8 @@ local_ref< java::text::CollationKey > java::text::Collator::getCollationKey(loca
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(7),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::text::CollationKey > >
-	(get_jobject(), a0);
+		local_ref< java::text::CollationKey >
+	>(get_jobject(), a0);
 }
 
 jint java::text::Collator::getDecomposition()
@@ -204,8 +204,8 @@ jint java::text::Collator::getDecomposition()
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(8),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::text::Collator > java::text::Collator::getInstance()
@@ -214,8 +214,8 @@ local_ref< java::text::Collator > java::text::Collator::getInstance()
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(9),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::text::Collator > >
-	();
+		local_ref< java::text::Collator >
+	>();
 }
 
 local_ref< java::text::Collator > java::text::Collator::getInstance(local_ref< java::util::Locale > const &a0)
@@ -224,8 +224,8 @@ local_ref< java::text::Collator > java::text::Collator::getInstance(local_ref< j
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(10),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::text::Collator > >
-	(a0);
+		local_ref< java::text::Collator >
+	>(a0);
 }
 
 jint java::text::Collator::getStrength()
@@ -234,8 +234,8 @@ jint java::text::Collator::getStrength()
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(11),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::Collator::hashCode()
@@ -244,8 +244,8 @@ jint java::text::Collator::hashCode()
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(12),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::text::Collator::setDecomposition(jint a0)
@@ -254,8 +254,8 @@ void java::text::Collator::setDecomposition(jint a0)
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(13),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::Collator::setStrength(jint a0)
@@ -264,8 +264,8 @@ void java::text::Collator::setStrength(jint a0)
 		java::text::Collator::J2CPP_CLASS_NAME,
 		java::text::Collator::J2CPP_METHOD_NAME(14),
 		java::text::Collator::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

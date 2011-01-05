@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_XPATH_XPATHCONSTANTS_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace namespace { class QName; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace namespace { class QName; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 

@@ -79,8 +79,8 @@ android::os::ConditionVariable::ConditionVariable()
 	call_new_object<
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(0),
-		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -92,8 +92,8 @@ android::os::ConditionVariable::ConditionVariable(jboolean a0)
 	call_new_object<
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(1),
-		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -105,8 +105,8 @@ void android::os::ConditionVariable::open()
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(2),
 		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::ConditionVariable::close()
@@ -115,8 +115,8 @@ void android::os::ConditionVariable::close()
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(3),
 		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::os::ConditionVariable::block()
@@ -125,8 +125,8 @@ void android::os::ConditionVariable::block()
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(4),
 		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::os::ConditionVariable::block(jlong a0)
@@ -135,8 +135,8 @@ jboolean android::os::ConditionVariable::block(jlong a0)
 		android::os::ConditionVariable::J2CPP_CLASS_NAME,
 		android::os::ConditionVariable::J2CPP_METHOD_NAME(5),
 		android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

@@ -48,8 +48,8 @@ namespace android { namespace view {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::os::Parcelable > getSuperState();
@@ -76,14 +76,14 @@ namespace j2cpp {
 
 
 
-android::view::AbsSavedState::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::AbsSavedState::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::view::AbsSavedState::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -94,8 +94,8 @@ local_ref< android::os::Parcelable > android::view::AbsSavedState::getSuperState
 		android::view::AbsSavedState::J2CPP_CLASS_NAME,
 		android::view::AbsSavedState::J2CPP_METHOD_NAME(2),
 		android::view::AbsSavedState::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 jint android::view::AbsSavedState::describeContents()
@@ -104,8 +104,8 @@ jint android::view::AbsSavedState::describeContents()
 		android::view::AbsSavedState::J2CPP_CLASS_NAME,
 		android::view::AbsSavedState::J2CPP_METHOD_NAME(3),
 		android::view::AbsSavedState::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::AbsSavedState::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -114,8 +114,8 @@ void android::view::AbsSavedState::writeToParcel(local_ref< android::os::Parcel 
 		android::view::AbsSavedState::J2CPP_CLASS_NAME,
 		android::view::AbsSavedState::J2CPP_METHOD_NAME(4),
 		android::view::AbsSavedState::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

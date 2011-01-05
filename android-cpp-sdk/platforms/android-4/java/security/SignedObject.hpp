@@ -50,8 +50,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SignedObject(local_ref< java::io::Serializable > const&, local_ref< java::security::PrivateKey > const&, local_ref< java::security::Signature > const&);
@@ -77,14 +77,14 @@ namespace j2cpp {
 
 
 
-java::security::SignedObject::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::SignedObject::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::SignedObject::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +93,8 @@ java::security::SignedObject::SignedObject(local_ref< java::io::Serializable > c
 	call_new_object<
 		java::security::SignedObject::J2CPP_CLASS_NAME,
 		java::security::SignedObject::J2CPP_METHOD_NAME(0),
-		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -106,8 +106,8 @@ local_ref< java::lang::Object > java::security::SignedObject::getObject()
 		java::security::SignedObject::J2CPP_CLASS_NAME,
 		java::security::SignedObject::J2CPP_METHOD_NAME(1),
 		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::SignedObject::getSignature()
@@ -116,8 +116,8 @@ local_ref< array<jbyte,1> > java::security::SignedObject::getSignature()
 		java::security::SignedObject::J2CPP_CLASS_NAME,
 		java::security::SignedObject::J2CPP_METHOD_NAME(2),
 		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::SignedObject::getAlgorithm()
@@ -126,8 +126,8 @@ local_ref< java::lang::String > java::security::SignedObject::getAlgorithm()
 		java::security::SignedObject::J2CPP_CLASS_NAME,
 		java::security::SignedObject::J2CPP_METHOD_NAME(3),
 		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::SignedObject::verify(local_ref< java::security::PublicKey > const &a0, local_ref< java::security::Signature > const &a1)
@@ -136,8 +136,8 @@ jboolean java::security::SignedObject::verify(local_ref< java::security::PublicK
 		java::security::SignedObject::J2CPP_CLASS_NAME,
 		java::security::SignedObject::J2CPP_METHOD_NAME(4),
 		java::security::SignedObject::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

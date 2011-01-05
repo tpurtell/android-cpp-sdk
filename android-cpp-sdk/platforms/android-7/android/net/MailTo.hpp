@@ -92,8 +92,8 @@ jboolean android::net::MailTo::isMailTo(local_ref< java::lang::String > const &a
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(1),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< android::net::MailTo > android::net::MailTo::parse(local_ref< java::lang::String > const &a0)
@@ -102,8 +102,8 @@ local_ref< android::net::MailTo > android::net::MailTo::parse(local_ref< java::l
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(2),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::MailTo > >
-	(a0);
+		local_ref< android::net::MailTo >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::MailTo::getTo()
@@ -112,8 +112,8 @@ local_ref< java::lang::String > android::net::MailTo::getTo()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(3),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::MailTo::getCc()
@@ -122,8 +122,8 @@ local_ref< java::lang::String > android::net::MailTo::getCc()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(4),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::MailTo::getSubject()
@@ -132,8 +132,8 @@ local_ref< java::lang::String > android::net::MailTo::getSubject()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(5),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::MailTo::getBody()
@@ -142,8 +142,8 @@ local_ref< java::lang::String > android::net::MailTo::getBody()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(6),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Map > android::net::MailTo::getHeaders()
@@ -152,8 +152,8 @@ local_ref< java::util::Map > android::net::MailTo::getHeaders()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(7),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::MailTo::toString()
@@ -162,8 +162,8 @@ local_ref< java::lang::String > android::net::MailTo::toString()
 		android::net::MailTo::J2CPP_CLASS_NAME,
 		android::net::MailTo::J2CPP_METHOD_NAME(8),
 		android::net::MailTo::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

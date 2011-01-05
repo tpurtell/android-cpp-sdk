@@ -11,6 +11,8 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_ANIMATIONSET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -22,6 +24,8 @@ namespace j2cpp { namespace android { namespace view { namespace animation { cla
 #include <android/util/AttributeSet.hpp>
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/Transformation.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 
 
@@ -66,6 +70,8 @@ namespace android { namespace view { namespace animation {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::animation::Animation>() const;
 
 
@@ -108,6 +114,16 @@ namespace j2cpp {
 
 
 
+android::view::animation::AnimationSet::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::view::animation::AnimationSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::animation::AnimationSet::operator local_ref<android::view::animation::Animation>() const
 {
 	return local_ref<android::view::animation::Animation>(get_jobject());
@@ -119,8 +135,8 @@ android::view::animation::AnimationSet::AnimationSet(local_ref< android::content
 	call_new_object<
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(0),
-		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -132,8 +148,8 @@ android::view::animation::AnimationSet::AnimationSet(jboolean a0)
 	call_new_object<
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(1),
-		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -146,8 +162,8 @@ void android::view::animation::AnimationSet::setFillAfter(jboolean a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(3),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::setFillBefore(jboolean a0)
@@ -156,8 +172,8 @@ void android::view::animation::AnimationSet::setFillBefore(jboolean a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(4),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::setRepeatMode(jint a0)
@@ -166,8 +182,8 @@ void android::view::animation::AnimationSet::setRepeatMode(jint a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(5),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::setStartOffset(jlong a0)
@@ -176,8 +192,8 @@ void android::view::animation::AnimationSet::setStartOffset(jlong a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(6),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::setDuration(jlong a0)
@@ -186,8 +202,8 @@ void android::view::animation::AnimationSet::setDuration(jlong a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(7),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::addAnimation(local_ref< android::view::animation::Animation > const &a0)
@@ -196,8 +212,8 @@ void android::view::animation::AnimationSet::addAnimation(local_ref< android::vi
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(8),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::setStartTime(jlong a0)
@@ -206,8 +222,8 @@ void android::view::animation::AnimationSet::setStartTime(jlong a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(9),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::view::animation::AnimationSet::getStartTime()
@@ -216,8 +232,8 @@ jlong android::view::animation::AnimationSet::getStartTime()
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(10),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::view::animation::AnimationSet::restrictDuration(jlong a0)
@@ -226,8 +242,8 @@ void android::view::animation::AnimationSet::restrictDuration(jlong a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(11),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::view::animation::AnimationSet::getDuration()
@@ -236,8 +252,8 @@ jlong android::view::animation::AnimationSet::getDuration()
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(12),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(12), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::view::animation::AnimationSet::computeDurationHint()
@@ -246,8 +262,8 @@ jlong android::view::animation::AnimationSet::computeDurationHint()
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(13),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean android::view::animation::AnimationSet::getTransformation(jlong a0, local_ref< android::view::animation::Transformation > const &a1)
@@ -256,8 +272,8 @@ jboolean android::view::animation::AnimationSet::getTransformation(jlong a0, loc
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(14),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::animation::AnimationSet::scaleCurrentDuration(jfloat a0)
@@ -266,8 +282,8 @@ void android::view::animation::AnimationSet::scaleCurrentDuration(jfloat a0)
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(15),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::AnimationSet::initialize(jint a0, jint a1, jint a2, jint a3)
@@ -276,8 +292,8 @@ void android::view::animation::AnimationSet::initialize(jint a0, jint a1, jint a
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(16),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::view::animation::AnimationSet::reset()
@@ -286,8 +302,8 @@ void android::view::animation::AnimationSet::reset()
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(17),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::view::animation::AnimationSet::getAnimations()
@@ -296,8 +312,8 @@ local_ref< java::util::List > android::view::animation::AnimationSet::getAnimati
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(18),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean android::view::animation::AnimationSet::willChangeTransformationMatrix()
@@ -306,8 +322,8 @@ jboolean android::view::animation::AnimationSet::willChangeTransformationMatrix(
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(19),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::animation::AnimationSet::willChangeBounds()
@@ -316,8 +332,8 @@ jboolean android::view::animation::AnimationSet::willChangeBounds()
 		android::view::animation::AnimationSet::J2CPP_CLASS_NAME,
 		android::view::animation::AnimationSet::J2CPP_METHOD_NAME(20),
 		android::view::animation::AnimationSet::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

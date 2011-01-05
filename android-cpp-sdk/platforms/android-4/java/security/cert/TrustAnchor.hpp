@@ -11,11 +11,11 @@
 #define J2CPP_JAVA_SECURITY_CERT_TRUSTANCHOR_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace auth { namespace x500 { class X500Principal; } } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace security { namespace auth { namespace x500 { class X500Principal; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -94,8 +94,8 @@ java::security::cert::TrustAnchor::TrustAnchor(local_ref< java::security::cert::
 	call_new_object<
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(0),
-		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -107,8 +107,8 @@ java::security::cert::TrustAnchor::TrustAnchor(local_ref< java::lang::String > c
 	call_new_object<
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(1),
-		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -120,8 +120,8 @@ java::security::cert::TrustAnchor::TrustAnchor(local_ref< javax::security::auth:
 	call_new_object<
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(2),
-		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -133,8 +133,8 @@ local_ref< array<jbyte,1> > java::security::cert::TrustAnchor::getNameConstraint
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(3),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::cert::X509Certificate > java::security::cert::TrustAnchor::getTrustedCert()
@@ -143,8 +143,8 @@ local_ref< java::security::cert::X509Certificate > java::security::cert::TrustAn
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(4),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::cert::X509Certificate > >
-	(get_jobject());
+		local_ref< java::security::cert::X509Certificate >
+	>(get_jobject());
 }
 
 local_ref< javax::security::auth::x500::X500Principal > java::security::cert::TrustAnchor::getCA()
@@ -153,8 +153,8 @@ local_ref< javax::security::auth::x500::X500Principal > java::security::cert::Tr
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(5),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::security::auth::x500::X500Principal > >
-	(get_jobject());
+		local_ref< javax::security::auth::x500::X500Principal >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::TrustAnchor::getCAName()
@@ -163,8 +163,8 @@ local_ref< java::lang::String > java::security::cert::TrustAnchor::getCAName()
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(6),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::PublicKey > java::security::cert::TrustAnchor::getCAPublicKey()
@@ -173,8 +173,8 @@ local_ref< java::security::PublicKey > java::security::cert::TrustAnchor::getCAP
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(7),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject());
+		local_ref< java::security::PublicKey >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::TrustAnchor::toString()
@@ -183,8 +183,8 @@ local_ref< java::lang::String > java::security::cert::TrustAnchor::toString()
 		java::security::cert::TrustAnchor::J2CPP_CLASS_NAME,
 		java::security::cert::TrustAnchor::J2CPP_METHOD_NAME(8),
 		java::security::cert::TrustAnchor::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

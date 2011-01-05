@@ -80,8 +80,8 @@ java::security::SecureRandomSpi::SecureRandomSpi()
 	call_new_object<
 		java::security::SecureRandomSpi::J2CPP_CLASS_NAME,
 		java::security::SecureRandomSpi::J2CPP_METHOD_NAME(0),
-		java::security::SecureRandomSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::SecureRandomSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

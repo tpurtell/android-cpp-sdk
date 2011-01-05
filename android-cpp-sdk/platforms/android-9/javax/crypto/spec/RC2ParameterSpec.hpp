@@ -90,8 +90,8 @@ javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(jint a0)
 	call_new_object<
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -103,8 +103,8 @@ javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(jint a0, local_ref< arra
 	call_new_object<
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -116,8 +116,8 @@ javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(jint a0, local_ref< arra
 	call_new_object<
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(2),
-		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -129,8 +129,8 @@ jint javax::crypto::spec::RC2ParameterSpec::getEffectiveKeyBits()
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::crypto::spec::RC2ParameterSpec::getIV()
@@ -139,8 +139,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::RC2ParameterSpec::getIV()
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean javax::crypto::spec::RC2ParameterSpec::equals(local_ref< java::lang::Object > const &a0)
@@ -149,8 +149,8 @@ jboolean javax::crypto::spec::RC2ParameterSpec::equals(local_ref< java::lang::Ob
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(5),
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::spec::RC2ParameterSpec::hashCode()
@@ -159,8 +159,8 @@ jint javax::crypto::spec::RC2ParameterSpec::hashCode()
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(6),
 		javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

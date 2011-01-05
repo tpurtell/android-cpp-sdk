@@ -97,8 +97,8 @@ android::graphics::ColorMatrix::ColorMatrix()
 	call_new_object<
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(0),
-		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -110,8 +110,8 @@ android::graphics::ColorMatrix::ColorMatrix(local_ref< array<jfloat,1> > const &
 	call_new_object<
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(1),
-		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -123,8 +123,8 @@ android::graphics::ColorMatrix::ColorMatrix(local_ref< android::graphics::ColorM
 	call_new_object<
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(2),
-		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -136,8 +136,8 @@ local_ref< array<jfloat,1> > android::graphics::ColorMatrix::getArray()
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(3),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jfloat,1> > >
-	(get_jobject());
+		local_ref< array<jfloat,1> >
+	>(get_jobject());
 }
 
 void android::graphics::ColorMatrix::reset()
@@ -146,8 +146,8 @@ void android::graphics::ColorMatrix::reset()
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(4),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::ColorMatrix::set(local_ref< android::graphics::ColorMatrix > const &a0)
@@ -156,8 +156,8 @@ void android::graphics::ColorMatrix::set(local_ref< android::graphics::ColorMatr
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(5),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::ColorMatrix::set(local_ref< array<jfloat,1> > const &a0)
@@ -166,8 +166,8 @@ void android::graphics::ColorMatrix::set(local_ref< array<jfloat,1> > const &a0)
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(6),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::ColorMatrix::setScale(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -176,8 +176,8 @@ void android::graphics::ColorMatrix::setScale(jfloat a0, jfloat a1, jfloat a2, j
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(7),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::ColorMatrix::setRotate(jint a0, jfloat a1)
@@ -186,8 +186,8 @@ void android::graphics::ColorMatrix::setRotate(jint a0, jfloat a1)
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(8),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::ColorMatrix::setConcat(local_ref< android::graphics::ColorMatrix > const &a0, local_ref< android::graphics::ColorMatrix > const &a1)
@@ -196,8 +196,8 @@ void android::graphics::ColorMatrix::setConcat(local_ref< android::graphics::Col
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(9),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::ColorMatrix::preConcat(local_ref< android::graphics::ColorMatrix > const &a0)
@@ -206,8 +206,8 @@ void android::graphics::ColorMatrix::preConcat(local_ref< android::graphics::Col
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(10),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::ColorMatrix::postConcat(local_ref< android::graphics::ColorMatrix > const &a0)
@@ -216,8 +216,8 @@ void android::graphics::ColorMatrix::postConcat(local_ref< android::graphics::Co
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(11),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::ColorMatrix::setSaturation(jfloat a0)
@@ -226,8 +226,8 @@ void android::graphics::ColorMatrix::setSaturation(jfloat a0)
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(12),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::ColorMatrix::setRGB2YUV()
@@ -236,8 +236,8 @@ void android::graphics::ColorMatrix::setRGB2YUV()
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(13),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::graphics::ColorMatrix::setYUV2RGB()
@@ -246,8 +246,8 @@ void android::graphics::ColorMatrix::setYUV2RGB()
 		android::graphics::ColorMatrix::J2CPP_CLASS_NAME,
 		android::graphics::ColorMatrix::J2CPP_METHOD_NAME(14),
 		android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

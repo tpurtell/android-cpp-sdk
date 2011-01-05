@@ -94,8 +94,8 @@ void android::webkit::WebSyncManager::run()
 		android::webkit::WebSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::WebSyncManager::J2CPP_METHOD_NAME(2),
 		android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebSyncManager::sync()
@@ -104,8 +104,8 @@ void android::webkit::WebSyncManager::sync()
 		android::webkit::WebSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::WebSyncManager::J2CPP_METHOD_NAME(3),
 		android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebSyncManager::resetSync()
@@ -114,8 +114,8 @@ void android::webkit::WebSyncManager::resetSync()
 		android::webkit::WebSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::WebSyncManager::J2CPP_METHOD_NAME(4),
 		android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebSyncManager::startSync()
@@ -124,8 +124,8 @@ void android::webkit::WebSyncManager::startSync()
 		android::webkit::WebSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::WebSyncManager::J2CPP_METHOD_NAME(5),
 		android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebSyncManager::stopSync()
@@ -134,8 +134,8 @@ void android::webkit::WebSyncManager::stopSync()
 		android::webkit::WebSyncManager::J2CPP_CLASS_NAME,
 		android::webkit::WebSyncManager::J2CPP_METHOD_NAME(6),
 		android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

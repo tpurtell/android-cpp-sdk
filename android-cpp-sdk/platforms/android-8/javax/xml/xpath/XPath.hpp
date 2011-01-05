@@ -106,8 +106,8 @@ void javax::xml::xpath::XPath::reset()
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(0),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void javax::xml::xpath::XPath::setXPathVariableResolver(local_ref< javax::xml::xpath::XPathVariableResolver > const &a0)
@@ -116,8 +116,8 @@ void javax::xml::xpath::XPath::setXPathVariableResolver(local_ref< javax::xml::x
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(1),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::xpath::XPathVariableResolver > javax::xml::xpath::XPath::getXPathVariableResolver()
@@ -126,8 +126,8 @@ local_ref< javax::xml::xpath::XPathVariableResolver > javax::xml::xpath::XPath::
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(2),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::xpath::XPathVariableResolver > >
-	(get_jobject());
+		local_ref< javax::xml::xpath::XPathVariableResolver >
+	>(get_jobject());
 }
 
 void javax::xml::xpath::XPath::setXPathFunctionResolver(local_ref< javax::xml::xpath::XPathFunctionResolver > const &a0)
@@ -136,8 +136,8 @@ void javax::xml::xpath::XPath::setXPathFunctionResolver(local_ref< javax::xml::x
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(3),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::xpath::XPathFunctionResolver > javax::xml::xpath::XPath::getXPathFunctionResolver()
@@ -146,8 +146,8 @@ local_ref< javax::xml::xpath::XPathFunctionResolver > javax::xml::xpath::XPath::
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(4),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::xml::xpath::XPathFunctionResolver > >
-	(get_jobject());
+		local_ref< javax::xml::xpath::XPathFunctionResolver >
+	>(get_jobject());
 }
 
 void javax::xml::xpath::XPath::setNamespaceContext(local_ref< javax::xml::namespace::NamespaceContext > const &a0)
@@ -156,8 +156,8 @@ void javax::xml::xpath::XPath::setNamespaceContext(local_ref< javax::xml::namesp
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(5),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::namespace::NamespaceContext > javax::xml::xpath::XPath::getNamespaceContext()
@@ -166,8 +166,8 @@ local_ref< javax::xml::namespace::NamespaceContext > javax::xml::xpath::XPath::g
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(6),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< javax::xml::namespace::NamespaceContext > >
-	(get_jobject());
+		local_ref< javax::xml::namespace::NamespaceContext >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::xpath::XPathExpression > javax::xml::xpath::XPath::compile(local_ref< java::lang::String > const &a0)
@@ -176,8 +176,8 @@ local_ref< javax::xml::xpath::XPathExpression > javax::xml::xpath::XPath::compil
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(7),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< javax::xml::xpath::XPathExpression > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::xpath::XPathExpression >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > javax::xml::xpath::XPath::evaluate(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< javax::xml::namespace::QName > const &a2)
@@ -186,8 +186,8 @@ local_ref< java::lang::Object > javax::xml::xpath::XPath::evaluate(local_ref< ja
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(8),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > javax::xml::xpath::XPath::evaluate(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -196,8 +196,8 @@ local_ref< java::lang::String > javax::xml::xpath::XPath::evaluate(local_ref< ja
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(9),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > javax::xml::xpath::XPath::evaluate(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::InputSource > const &a1, local_ref< javax::xml::namespace::QName > const &a2)
@@ -206,8 +206,8 @@ local_ref< java::lang::Object > javax::xml::xpath::XPath::evaluate(local_ref< ja
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(10),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > javax::xml::xpath::XPath::evaluate(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::InputSource > const &a1)
@@ -216,8 +216,8 @@ local_ref< java::lang::String > javax::xml::xpath::XPath::evaluate(local_ref< ja
 		javax::xml::xpath::XPath::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPath::J2CPP_METHOD_NAME(11),
 		javax::xml::xpath::XPath::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 

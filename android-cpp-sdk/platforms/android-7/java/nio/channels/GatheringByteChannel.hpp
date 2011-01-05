@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_NIO_CHANNELS_GATHERINGBYTECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
 
 
@@ -41,7 +45,9 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
 		operator local_ref<java::nio::channels::WritableByteChannel>() const;
 
 
@@ -66,9 +72,19 @@ namespace j2cpp {
 
 
 
+java::nio::channels::GatheringByteChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::nio::channels::GatheringByteChannel::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::GatheringByteChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
 }
 
 java::nio::channels::GatheringByteChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
@@ -82,8 +98,8 @@ jlong java::nio::channels::GatheringByteChannel::write(local_ref< array< local_r
 		java::nio::channels::GatheringByteChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::GatheringByteChannel::J2CPP_METHOD_NAME(0),
 		java::nio::channels::GatheringByteChannel::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::channels::GatheringByteChannel::write(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0, jint a1, jint a2)
@@ -92,8 +108,8 @@ jlong java::nio::channels::GatheringByteChannel::write(local_ref< array< local_r
 		java::nio::channels::GatheringByteChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::GatheringByteChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::GatheringByteChannel::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 

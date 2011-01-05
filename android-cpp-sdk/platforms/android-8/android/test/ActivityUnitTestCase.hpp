@@ -11,12 +11,17 @@
 #define J2CPP_ANDROID_TEST_ACTIVITYUNITTESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
+namespace j2cpp { namespace android { namespace test { class InstrumentationTestCase; } } }
 namespace j2cpp { namespace android { namespace test { class ActivityTestCase; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/Activity.hpp>
@@ -24,7 +29,12 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 #include <android/test/ActivityTestCase.hpp>
+#include <android/test/InstrumentationTestCase.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
+#include <junit/framework/TestCase.hpp>
 
 
 namespace j2cpp {
@@ -57,7 +67,12 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<junit::framework::Assert>() const;
+		operator local_ref<junit::framework::Test>() const;
+		operator local_ref<junit::framework::TestCase>() const;
+		operator local_ref<android::test::InstrumentationTestCase>() const;
 		operator local_ref<android::test::ActivityTestCase>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ActivityUnitTestCase(local_ref< java::lang::Class > const&);
@@ -87,9 +102,34 @@ namespace j2cpp {
 
 
 
+android::test::ActivityUnitTestCase::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
+}
+
+android::test::ActivityUnitTestCase::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+android::test::ActivityUnitTestCase::operator local_ref<junit::framework::TestCase>() const
+{
+	return local_ref<junit::framework::TestCase>(get_jobject());
+}
+
+android::test::ActivityUnitTestCase::operator local_ref<android::test::InstrumentationTestCase>() const
+{
+	return local_ref<android::test::InstrumentationTestCase>(get_jobject());
+}
+
 android::test::ActivityUnitTestCase::operator local_ref<android::test::ActivityTestCase>() const
 {
 	return local_ref<android::test::ActivityTestCase>(get_jobject());
+}
+
+android::test::ActivityUnitTestCase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -98,8 +138,8 @@ android::test::ActivityUnitTestCase::ActivityUnitTestCase(local_ref< java::lang:
 	call_new_object<
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(0),
-		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -111,8 +151,8 @@ local_ref< android::app::Activity > android::test::ActivityUnitTestCase::getActi
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(1),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::Activity > >
-	(get_jobject());
+		local_ref< android::app::Activity >
+	>(get_jobject());
 }
 
 
@@ -124,8 +164,8 @@ void android::test::ActivityUnitTestCase::setApplication(local_ref< android::app
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(5),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::test::ActivityUnitTestCase::setActivityContext(local_ref< android::content::Context > const &a0)
@@ -134,8 +174,8 @@ void android::test::ActivityUnitTestCase::setActivityContext(local_ref< android:
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(6),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::test::ActivityUnitTestCase::getRequestedOrientation()
@@ -144,8 +184,8 @@ jint android::test::ActivityUnitTestCase::getRequestedOrientation()
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(7),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::content::Intent > android::test::ActivityUnitTestCase::getStartedActivityIntent()
@@ -154,8 +194,8 @@ local_ref< android::content::Intent > android::test::ActivityUnitTestCase::getSt
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(8),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::Intent > >
-	(get_jobject());
+		local_ref< android::content::Intent >
+	>(get_jobject());
 }
 
 jint android::test::ActivityUnitTestCase::getStartedActivityRequest()
@@ -164,8 +204,8 @@ jint android::test::ActivityUnitTestCase::getStartedActivityRequest()
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(9),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::test::ActivityUnitTestCase::isFinishCalled()
@@ -174,8 +214,8 @@ jboolean android::test::ActivityUnitTestCase::isFinishCalled()
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(10),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::test::ActivityUnitTestCase::getFinishedActivityRequest()
@@ -184,8 +224,8 @@ jint android::test::ActivityUnitTestCase::getFinishedActivityRequest()
 		android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(11),
 		android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

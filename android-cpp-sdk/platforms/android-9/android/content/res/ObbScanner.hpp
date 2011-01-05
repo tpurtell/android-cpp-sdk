@@ -76,8 +76,8 @@ local_ref< android::content::res::ObbInfo > android::content::res::ObbScanner::g
 		android::content::res::ObbScanner::J2CPP_CLASS_NAME,
 		android::content::res::ObbScanner::J2CPP_METHOD_NAME(1),
 		android::content::res::ObbScanner::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::res::ObbInfo > >
-	(a0);
+		local_ref< android::content::res::ObbInfo >
+	>(a0);
 }
 
 

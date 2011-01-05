@@ -103,8 +103,8 @@ local_ref< java::lang::Object > java::nio::Buffer::array_()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(1),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::nio::Buffer::arrayOffset()
@@ -113,8 +113,8 @@ jint java::nio::Buffer::arrayOffset()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(2),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::nio::Buffer::capacity()
@@ -123,8 +123,8 @@ jint java::nio::Buffer::capacity()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(3),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::clear()
@@ -133,8 +133,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::clear()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(4),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject());
+		local_ref< java::nio::Buffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::flip()
@@ -143,8 +143,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::flip()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(5),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject());
+		local_ref< java::nio::Buffer >
+	>(get_jobject());
 }
 
 jboolean java::nio::Buffer::hasArray()
@@ -153,8 +153,8 @@ jboolean java::nio::Buffer::hasArray()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(6),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::Buffer::hasRemaining()
@@ -163,8 +163,8 @@ jboolean java::nio::Buffer::hasRemaining()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(7),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::Buffer::isDirect()
@@ -173,8 +173,8 @@ jboolean java::nio::Buffer::isDirect()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(8),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::Buffer::isReadOnly()
@@ -183,8 +183,8 @@ jboolean java::nio::Buffer::isReadOnly()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(9),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::Buffer::limit()
@@ -193,8 +193,8 @@ jint java::nio::Buffer::limit()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(10),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::limit(jint a0)
@@ -203,8 +203,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::limit(jint a0)
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(11),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::Buffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::mark()
@@ -213,8 +213,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::mark()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(12),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject());
+		local_ref< java::nio::Buffer >
+	>(get_jobject());
 }
 
 jint java::nio::Buffer::position()
@@ -223,8 +223,8 @@ jint java::nio::Buffer::position()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(13),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::position(jint a0)
@@ -233,8 +233,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::position(jint a0)
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(14),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::Buffer >
+	>(get_jobject(), a0);
 }
 
 jint java::nio::Buffer::remaining()
@@ -243,8 +243,8 @@ jint java::nio::Buffer::remaining()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(15),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::reset()
@@ -253,8 +253,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::reset()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(16),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject());
+		local_ref< java::nio::Buffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::Buffer > java::nio::Buffer::rewind()
@@ -263,8 +263,8 @@ local_ref< java::nio::Buffer > java::nio::Buffer::rewind()
 		java::nio::Buffer::J2CPP_CLASS_NAME,
 		java::nio::Buffer::J2CPP_METHOD_NAME(17),
 		java::nio::Buffer::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::nio::Buffer > >
-	(get_jobject());
+		local_ref< java::nio::Buffer >
+	>(get_jobject());
 }
 
 

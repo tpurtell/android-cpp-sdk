@@ -69,8 +69,8 @@ void junit::framework::Protectable::protect()
 		junit::framework::Protectable::J2CPP_CLASS_NAME,
 		junit::framework::Protectable::J2CPP_METHOD_NAME(0),
 		junit::framework::Protectable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

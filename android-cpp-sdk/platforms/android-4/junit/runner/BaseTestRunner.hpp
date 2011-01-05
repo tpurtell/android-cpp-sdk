@@ -138,8 +138,8 @@ junit::runner::BaseTestRunner::BaseTestRunner()
 	call_new_object<
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(0),
-		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -151,8 +151,8 @@ void junit::runner::BaseTestRunner::startTest(local_ref< junit::framework::Test 
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(1),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -163,8 +163,8 @@ void junit::runner::BaseTestRunner::savePreferences()
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(4),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	();
+		void
+	>();
 }
 
 void junit::runner::BaseTestRunner::setPreference(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -173,8 +173,8 @@ void junit::runner::BaseTestRunner::setPreference(local_ref< java::lang::String 
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(5),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::runner::BaseTestRunner::endTest(local_ref< junit::framework::Test > const &a0)
@@ -183,8 +183,8 @@ void junit::runner::BaseTestRunner::endTest(local_ref< junit::framework::Test > 
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(6),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::runner::BaseTestRunner::addError(local_ref< junit::framework::Test > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -193,8 +193,8 @@ void junit::runner::BaseTestRunner::addError(local_ref< junit::framework::Test >
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(7),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::runner::BaseTestRunner::addFailure(local_ref< junit::framework::Test > const &a0, local_ref< junit::framework::AssertionFailedError > const &a1)
@@ -203,8 +203,8 @@ void junit::runner::BaseTestRunner::addFailure(local_ref< junit::framework::Test
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(8),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void junit::runner::BaseTestRunner::testStarted(local_ref< java::lang::String > const &a0)
@@ -213,8 +213,8 @@ void junit::runner::BaseTestRunner::testStarted(local_ref< java::lang::String > 
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(9),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::runner::BaseTestRunner::testEnded(local_ref< java::lang::String > const &a0)
@@ -223,8 +223,8 @@ void junit::runner::BaseTestRunner::testEnded(local_ref< java::lang::String > co
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(10),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::runner::BaseTestRunner::testFailed(jint a0, local_ref< junit::framework::Test > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -233,8 +233,8 @@ void junit::runner::BaseTestRunner::testFailed(jint a0, local_ref< junit::framew
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(11),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< junit::framework::Test > junit::runner::BaseTestRunner::getTest(local_ref< java::lang::String > const &a0)
@@ -243,8 +243,8 @@ local_ref< junit::framework::Test > junit::runner::BaseTestRunner::getTest(local
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(12),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< junit::framework::Test > >
-	(get_jobject(), a0);
+		local_ref< junit::framework::Test >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > junit::runner::BaseTestRunner::elapsedTimeAsString(jlong a0)
@@ -253,8 +253,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::elapsedTimeAsStri
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(13),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 
@@ -264,8 +264,8 @@ void junit::runner::BaseTestRunner::setLoading(jboolean a0)
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(15),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > junit::runner::BaseTestRunner::extractClassName(local_ref< java::lang::String > const &a0)
@@ -274,8 +274,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::extractClassName(
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(16),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > junit::runner::BaseTestRunner::truncate(local_ref< java::lang::String > const &a0)
@@ -284,8 +284,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::truncate(local_re
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(17),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 
@@ -297,8 +297,8 @@ local_ref< junit::runner::TestSuiteLoader > junit::runner::BaseTestRunner::getLo
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(21),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< junit::runner::TestSuiteLoader > >
-	(get_jobject());
+		local_ref< junit::runner::TestSuiteLoader >
+	>(get_jobject());
 }
 
 
@@ -308,8 +308,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::getPreference(loc
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(23),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint junit::runner::BaseTestRunner::getPreference(local_ref< java::lang::String > const &a0, jint a1)
@@ -318,8 +318,8 @@ jint junit::runner::BaseTestRunner::getPreference(local_ref< java::lang::String 
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(24),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean junit::runner::BaseTestRunner::inVAJava()
@@ -328,8 +328,8 @@ jboolean junit::runner::BaseTestRunner::inVAJava()
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(25),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 local_ref< java::lang::String > junit::runner::BaseTestRunner::getFilteredTrace(local_ref< java::lang::Throwable > const &a0)
@@ -338,8 +338,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::getFilteredTrace(
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(26),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > junit::runner::BaseTestRunner::getFilteredTrace(local_ref< java::lang::String > const &a0)
@@ -348,8 +348,8 @@ local_ref< java::lang::String > junit::runner::BaseTestRunner::getFilteredTrace(
 		junit::runner::BaseTestRunner::J2CPP_CLASS_NAME,
 		junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(27),
 		junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

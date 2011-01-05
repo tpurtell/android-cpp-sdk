@@ -11,11 +11,21 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTIFICATEEXPIREDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertificateException; } } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 #include <java/security/cert/CertificateException.hpp>
 
 
@@ -39,7 +49,12 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::cert::CertificateException>() const;
+		operator local_ref<java::security::GeneralSecurityException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		CertificateExpiredException(local_ref< java::lang::String > const&);
@@ -63,9 +78,34 @@ namespace j2cpp {
 
 
 
+java::security::cert::CertificateExpiredException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::security::cert::CertificateExpiredException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::security::cert::CertificateExpiredException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::cert::CertificateExpiredException::operator local_ref<java::security::cert::CertificateException>() const
 {
 	return local_ref<java::security::cert::CertificateException>(get_jobject());
+}
+
+java::security::cert::CertificateExpiredException::operator local_ref<java::security::GeneralSecurityException>() const
+{
+	return local_ref<java::security::GeneralSecurityException>(get_jobject());
+}
+
+java::security::cert::CertificateExpiredException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -74,8 +114,8 @@ java::security::cert::CertificateExpiredException::CertificateExpiredException(l
 	call_new_object<
 		java::security::cert::CertificateExpiredException::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateExpiredException::J2CPP_METHOD_NAME(0),
-		java::security::cert::CertificateExpiredException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::cert::CertificateExpiredException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -87,8 +127,8 @@ java::security::cert::CertificateExpiredException::CertificateExpiredException()
 	call_new_object<
 		java::security::cert::CertificateExpiredException::J2CPP_CLASS_NAME,
 		java::security::cert::CertificateExpiredException::J2CPP_METHOD_NAME(1),
-		java::security::cert::CertificateExpiredException::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		java::security::cert::CertificateExpiredException::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }

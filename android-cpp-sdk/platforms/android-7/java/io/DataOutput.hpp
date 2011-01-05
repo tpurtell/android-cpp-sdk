@@ -97,8 +97,8 @@ void java::io::DataOutput::write(local_ref< array<jbyte,1> > const &a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(0),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -107,8 +107,8 @@ void java::io::DataOutput::write(local_ref< array<jbyte,1> > const &a0, jint a1,
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(1),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::DataOutput::write(jint a0)
@@ -117,8 +117,8 @@ void java::io::DataOutput::write(jint a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(2),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeBoolean(jboolean a0)
@@ -127,8 +127,8 @@ void java::io::DataOutput::writeBoolean(jboolean a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(3),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeByte(jint a0)
@@ -137,8 +137,8 @@ void java::io::DataOutput::writeByte(jint a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(4),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeBytes(local_ref< java::lang::String > const &a0)
@@ -147,8 +147,8 @@ void java::io::DataOutput::writeBytes(local_ref< java::lang::String > const &a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(5),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeChar(jint a0)
@@ -157,8 +157,8 @@ void java::io::DataOutput::writeChar(jint a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(6),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeChars(local_ref< java::lang::String > const &a0)
@@ -167,8 +167,8 @@ void java::io::DataOutput::writeChars(local_ref< java::lang::String > const &a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(7),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeDouble(jdouble a0)
@@ -177,8 +177,8 @@ void java::io::DataOutput::writeDouble(jdouble a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(8),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeFloat(jfloat a0)
@@ -187,8 +187,8 @@ void java::io::DataOutput::writeFloat(jfloat a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(9),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeInt(jint a0)
@@ -197,8 +197,8 @@ void java::io::DataOutput::writeInt(jint a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(10),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeLong(jlong a0)
@@ -207,8 +207,8 @@ void java::io::DataOutput::writeLong(jlong a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(11),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeShort(jint a0)
@@ -217,8 +217,8 @@ void java::io::DataOutput::writeShort(jint a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(12),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::DataOutput::writeUTF(local_ref< java::lang::String > const &a0)
@@ -227,8 +227,8 @@ void java::io::DataOutput::writeUTF(local_ref< java::lang::String > const &a0)
 		java::io::DataOutput::J2CPP_CLASS_NAME,
 		java::io::DataOutput::J2CPP_METHOD_NAME(13),
 		java::io::DataOutput::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

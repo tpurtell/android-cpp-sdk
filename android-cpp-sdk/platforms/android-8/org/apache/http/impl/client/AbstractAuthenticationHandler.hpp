@@ -49,8 +49,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::client::AuthenticationHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AbstractAuthenticationHandler();
@@ -76,14 +76,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::client::AbstractAuthenticationHandler::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::client::AbstractAuthenticationHandler::operator local_ref<org::apache::http::client::AuthenticationHandler>() const
 {
 	return local_ref<org::apache::http::client::AuthenticationHandler>(get_jobject());
+}
+
+org::apache::http::impl::client::AbstractAuthenticationHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -92,8 +92,8 @@ org::apache::http::impl::client::AbstractAuthenticationHandler::AbstractAuthenti
 	call_new_object<
 		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +107,8 @@ local_ref< org::apache::http::auth::AuthScheme > org::apache::http::impl::client
 		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::auth::AuthScheme > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::auth::AuthScheme >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class EofSensorWatcher; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 #include <org/apache/http/conn/EofSensorWatcher.hpp>
@@ -60,9 +62,11 @@ namespace org { namespace apache { namespace http { namespace conn {
 		{
 		}
 
-		operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
 		operator local_ref<org::apache::http::conn::EofSensorWatcher>() const;
+		operator local_ref<org::apache::http::HttpEntity>() const;
+		operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const;
 
 
 		BasicManagedEntity(local_ref< org::apache::http::HttpEntity > const&, local_ref< org::apache::http::conn::ManagedClientConnection > const&, jboolean);
@@ -96,9 +100,9 @@ namespace j2cpp {
 
 
 
-org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const
+org::apache::http::conn::BasicManagedEntity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<org::apache::http::entity::HttpEntityWrapper>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
@@ -111,14 +115,24 @@ org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::htt
 	return local_ref<org::apache::http::conn::EofSensorWatcher>(get_jobject());
 }
 
+org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::HttpEntity>() const
+{
+	return local_ref<org::apache::http::HttpEntity>(get_jobject());
+}
+
+org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const
+{
+	return local_ref<org::apache::http::entity::HttpEntityWrapper>(get_jobject());
+}
+
 
 org::apache::http::conn::BasicManagedEntity::BasicManagedEntity(local_ref< org::apache::http::HttpEntity > const &a0, local_ref< org::apache::http::conn::ManagedClientConnection > const &a1, jboolean a2)
 : object<org::apache::http::conn::BasicManagedEntity>(
 	call_new_object<
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -130,8 +144,8 @@ jboolean org::apache::http::conn::BasicManagedEntity::isRepeatable()
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > org::apache::http::conn::BasicManagedEntity::getContent()
@@ -140,8 +154,8 @@ local_ref< java::io::InputStream > org::apache::http::conn::BasicManagedEntity::
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 void org::apache::http::conn::BasicManagedEntity::consumeContent()
@@ -150,8 +164,8 @@ void org::apache::http::conn::BasicManagedEntity::consumeContent()
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::conn::BasicManagedEntity::writeTo(local_ref< java::io::OutputStream > const &a0)
@@ -160,8 +174,8 @@ void org::apache::http::conn::BasicManagedEntity::writeTo(local_ref< java::io::O
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::conn::BasicManagedEntity::releaseConnection()
@@ -170,8 +184,8 @@ void org::apache::http::conn::BasicManagedEntity::releaseConnection()
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::conn::BasicManagedEntity::abortConnection()
@@ -180,8 +194,8 @@ void org::apache::http::conn::BasicManagedEntity::abortConnection()
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::BasicManagedEntity::eofDetected(local_ref< java::io::InputStream > const &a0)
@@ -190,8 +204,8 @@ jboolean org::apache::http::conn::BasicManagedEntity::eofDetected(local_ref< jav
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(7),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::conn::BasicManagedEntity::streamClosed(local_ref< java::io::InputStream > const &a0)
@@ -200,8 +214,8 @@ jboolean org::apache::http::conn::BasicManagedEntity::streamClosed(local_ref< ja
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(8),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::conn::BasicManagedEntity::streamAbort(local_ref< java::io::InputStream > const &a0)
@@ -210,8 +224,8 @@ jboolean org::apache::http::conn::BasicManagedEntity::streamAbort(local_ref< jav
 		org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME,
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(9),
 		org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

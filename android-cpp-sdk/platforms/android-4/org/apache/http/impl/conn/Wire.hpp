@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_WIRE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace commons { namespace logging { class Log; } } } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace commons { namespace logging { class Log; } } } } }
 
 
 #include <java/io/InputStream.hpp>
@@ -100,8 +100,8 @@ org::apache::http::impl::conn::Wire::Wire(local_ref< org::apache::commons::loggi
 	call_new_object<
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -113,8 +113,8 @@ jboolean org::apache::http::impl::conn::Wire::enabled()
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::Wire::output(local_ref< java::io::InputStream > const &a0)
@@ -123,8 +123,8 @@ void org::apache::http::impl::conn::Wire::output(local_ref< java::io::InputStrea
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::input(local_ref< java::io::InputStream > const &a0)
@@ -133,8 +133,8 @@ void org::apache::http::impl::conn::Wire::input(local_ref< java::io::InputStream
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::output(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -143,8 +143,8 @@ void org::apache::http::impl::conn::Wire::output(local_ref< array<jbyte,1> > con
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::conn::Wire::input(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -153,8 +153,8 @@ void org::apache::http::impl::conn::Wire::input(local_ref< array<jbyte,1> > cons
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::conn::Wire::output(local_ref< array<jbyte,1> > const &a0)
@@ -163,8 +163,8 @@ void org::apache::http::impl::conn::Wire::output(local_ref< array<jbyte,1> > con
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::input(local_ref< array<jbyte,1> > const &a0)
@@ -173,8 +173,8 @@ void org::apache::http::impl::conn::Wire::input(local_ref< array<jbyte,1> > cons
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::output(jint a0)
@@ -183,8 +183,8 @@ void org::apache::http::impl::conn::Wire::output(jint a0)
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::input(jint a0)
@@ -193,8 +193,8 @@ void org::apache::http::impl::conn::Wire::input(jint a0)
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::output(local_ref< java::lang::String > const &a0)
@@ -203,8 +203,8 @@ void org::apache::http::impl::conn::Wire::output(local_ref< java::lang::String >
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::Wire::input(local_ref< java::lang::String > const &a0)
@@ -213,8 +213,8 @@ void org::apache::http::impl::conn::Wire::input(local_ref< java::lang::String > 
 		org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

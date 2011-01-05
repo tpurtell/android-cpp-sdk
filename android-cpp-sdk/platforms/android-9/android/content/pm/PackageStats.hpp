@@ -109,8 +109,8 @@ android::content::pm::PackageStats::PackageStats(local_ref< java::lang::String >
 	call_new_object<
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(0),
-		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 , packageName(get_jobject())
 , codeSize(get_jobject())
@@ -126,8 +126,8 @@ android::content::pm::PackageStats::PackageStats(local_ref< android::os::Parcel 
 	call_new_object<
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(1),
-		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , packageName(get_jobject())
 , codeSize(get_jobject())
@@ -143,8 +143,8 @@ android::content::pm::PackageStats::PackageStats(local_ref< android::content::pm
 	call_new_object<
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(2),
-		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , packageName(get_jobject())
 , codeSize(get_jobject())
@@ -160,8 +160,8 @@ local_ref< java::lang::String > android::content::pm::PackageStats::toString()
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(3),
 		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::PackageStats::describeContents()
@@ -170,8 +170,8 @@ jint android::content::pm::PackageStats::describeContents()
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(4),
 		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::PackageStats::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -180,8 +180,8 @@ void android::content::pm::PackageStats::writeToParcel(local_ref< android::os::P
 		android::content::pm::PackageStats::J2CPP_CLASS_NAME,
 		android::content::pm::PackageStats::J2CPP_METHOD_NAME(5),
 		android::content::pm::PackageStats::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

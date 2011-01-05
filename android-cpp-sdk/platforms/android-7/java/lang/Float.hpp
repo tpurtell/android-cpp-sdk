@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_LANG_FLOAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Comparable.hpp>
 #include <java/lang/Number.hpp>
@@ -78,8 +80,10 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Number>() const;
 
 
 		Float(jfloat);
@@ -135,14 +139,24 @@ namespace j2cpp {
 
 
 
-java::lang::Float::operator local_ref<java::lang::Number>() const
+java::lang::Float::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Number>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::lang::Float::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::lang::Float::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Float::operator local_ref<java::lang::Number>() const
+{
+	return local_ref<java::lang::Number>(get_jobject());
 }
 
 
@@ -151,8 +165,8 @@ java::lang::Float::Float(jfloat a0)
 	call_new_object<
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(0),
-		java::lang::Float::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Float::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -164,8 +178,8 @@ java::lang::Float::Float(jdouble a0)
 	call_new_object<
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(1),
-		java::lang::Float::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Float::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -177,8 +191,8 @@ java::lang::Float::Float(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(2),
-		java::lang::Float::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::lang::Float::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -190,8 +204,8 @@ jint java::lang::Float::compareTo(local_ref< java::lang::Float > const &a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(3),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jbyte java::lang::Float::byteValue()
@@ -200,8 +214,8 @@ jbyte java::lang::Float::byteValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(4),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(4), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jdouble java::lang::Float::doubleValue()
@@ -210,8 +224,8 @@ jdouble java::lang::Float::doubleValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(5),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jboolean java::lang::Float::equals(local_ref< java::lang::Object > const &a0)
@@ -220,8 +234,8 @@ jboolean java::lang::Float::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(6),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Float::floatToIntBits(jfloat a0)
@@ -230,8 +244,8 @@ jint java::lang::Float::floatToIntBits(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(7),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint java::lang::Float::floatToRawIntBits(jfloat a0)
@@ -240,8 +254,8 @@ jint java::lang::Float::floatToRawIntBits(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(8),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jfloat java::lang::Float::floatValue()
@@ -250,8 +264,8 @@ jfloat java::lang::Float::floatValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(9),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(9), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint java::lang::Float::hashCode()
@@ -260,8 +274,8 @@ jint java::lang::Float::hashCode()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(10),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat java::lang::Float::intBitsToFloat(jint a0)
@@ -270,8 +284,8 @@ jfloat java::lang::Float::intBitsToFloat(jint a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(11),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jint java::lang::Float::intValue()
@@ -280,8 +294,8 @@ jint java::lang::Float::intValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(12),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::lang::Float::isInfinite()
@@ -290,8 +304,8 @@ jboolean java::lang::Float::isInfinite()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(13),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Float::isInfinite(jfloat a0)
@@ -300,8 +314,8 @@ jboolean java::lang::Float::isInfinite(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(14),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Float::isNaN()
@@ -310,8 +324,8 @@ jboolean java::lang::Float::isNaN()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(15),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Float::isNaN(jfloat a0)
@@ -320,8 +334,8 @@ jboolean java::lang::Float::isNaN(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(16),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jlong java::lang::Float::longValue()
@@ -330,8 +344,8 @@ jlong java::lang::Float::longValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(17),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(17), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat java::lang::Float::parseFloat(local_ref< java::lang::String > const &a0)
@@ -340,8 +354,8 @@ jfloat java::lang::Float::parseFloat(local_ref< java::lang::String > const &a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(18),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(18), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jshort java::lang::Float::shortValue()
@@ -350,8 +364,8 @@ jshort java::lang::Float::shortValue()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(19),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(19), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Float::toString()
@@ -360,8 +374,8 @@ local_ref< java::lang::String > java::lang::Float::toString()
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(20),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Float::toString(jfloat a0)
@@ -370,8 +384,8 @@ local_ref< java::lang::String > java::lang::Float::toString(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(21),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::Float > java::lang::Float::valueOf(local_ref< java::lang::String > const &a0)
@@ -380,8 +394,8 @@ local_ref< java::lang::Float > java::lang::Float::valueOf(local_ref< java::lang:
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(22),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::lang::Float > >
-	(a0);
+		local_ref< java::lang::Float >
+	>(a0);
 }
 
 jint java::lang::Float::compare(jfloat a0, jfloat a1)
@@ -390,8 +404,8 @@ jint java::lang::Float::compare(jfloat a0, jfloat a1)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(23),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 local_ref< java::lang::Float > java::lang::Float::valueOf(jfloat a0)
@@ -400,8 +414,8 @@ local_ref< java::lang::Float > java::lang::Float::valueOf(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(24),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::Float > >
-	(a0);
+		local_ref< java::lang::Float >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Float::toHexString(jfloat a0)
@@ -410,8 +424,8 @@ local_ref< java::lang::String > java::lang::Float::toHexString(jfloat a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(25),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint java::lang::Float::compareTo(local_ref< java::lang::Object > const &a0)
@@ -420,8 +434,8 @@ jint java::lang::Float::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Float::J2CPP_CLASS_NAME,
 		java::lang::Float::J2CPP_METHOD_NAME(26),
 		java::lang::Float::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

@@ -86,8 +86,8 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::View_::OnTouchListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ZoomButtonsController(local_ref< android::view::View > const&);
@@ -133,8 +133,8 @@ void android::widget::ZoomButtonsController_::OnZoomListener::onVisibilityChange
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_METHOD_NAME(0),
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ZoomButtonsController_::OnZoomListener::onZoom(jboolean a0)
@@ -143,8 +143,8 @@ void android::widget::ZoomButtonsController_::OnZoomListener::onZoom(jboolean a0
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_METHOD_NAME(1),
 		android::widget::ZoomButtonsController_::OnZoomListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -154,14 +154,14 @@ J2CPP_DEFINE_METHOD(android::widget::ZoomButtonsController_::OnZoomListener,1,"o
 
 
 
-android::widget::ZoomButtonsController::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::widget::ZoomButtonsController::operator local_ref<android::view::View_::OnTouchListener>() const
 {
 	return local_ref<android::view::View_::OnTouchListener>(get_jobject());
+}
+
+android::widget::ZoomButtonsController::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -170,8 +170,8 @@ android::widget::ZoomButtonsController::ZoomButtonsController(local_ref< android
 	call_new_object<
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(0),
-		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -183,8 +183,8 @@ void android::widget::ZoomButtonsController::setZoomInEnabled(jboolean a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(1),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ZoomButtonsController::setZoomOutEnabled(jboolean a0)
@@ -193,8 +193,8 @@ void android::widget::ZoomButtonsController::setZoomOutEnabled(jboolean a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(2),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ZoomButtonsController::setZoomSpeed(jlong a0)
@@ -203,8 +203,8 @@ void android::widget::ZoomButtonsController::setZoomSpeed(jlong a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(3),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ZoomButtonsController::setOnZoomListener(local_ref< android::widget::ZoomButtonsController_::OnZoomListener > const &a0)
@@ -213,8 +213,8 @@ void android::widget::ZoomButtonsController::setOnZoomListener(local_ref< androi
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(4),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ZoomButtonsController::setFocusable(jboolean a0)
@@ -223,8 +223,8 @@ void android::widget::ZoomButtonsController::setFocusable(jboolean a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(5),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ZoomButtonsController::isAutoDismissed()
@@ -233,8 +233,8 @@ jboolean android::widget::ZoomButtonsController::isAutoDismissed()
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(6),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ZoomButtonsController::setAutoDismissed(jboolean a0)
@@ -243,8 +243,8 @@ void android::widget::ZoomButtonsController::setAutoDismissed(jboolean a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(7),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ZoomButtonsController::isVisible()
@@ -253,8 +253,8 @@ jboolean android::widget::ZoomButtonsController::isVisible()
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(8),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ZoomButtonsController::setVisible(jboolean a0)
@@ -263,8 +263,8 @@ void android::widget::ZoomButtonsController::setVisible(jboolean a0)
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(9),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ViewGroup > android::widget::ZoomButtonsController::getContainer()
@@ -273,8 +273,8 @@ local_ref< android::view::ViewGroup > android::widget::ZoomButtonsController::ge
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(10),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::view::ViewGroup > >
-	(get_jobject());
+		local_ref< android::view::ViewGroup >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::ZoomButtonsController::getZoomControls()
@@ -283,8 +283,8 @@ local_ref< android::view::View > android::widget::ZoomButtonsController::getZoom
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(11),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 jboolean android::widget::ZoomButtonsController::onTouch(local_ref< android::view::View > const &a0, local_ref< android::view::MotionEvent > const &a1)
@@ -293,8 +293,8 @@ jboolean android::widget::ZoomButtonsController::onTouch(local_ref< android::vie
 		android::widget::ZoomButtonsController::J2CPP_CLASS_NAME,
 		android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(12),
 		android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

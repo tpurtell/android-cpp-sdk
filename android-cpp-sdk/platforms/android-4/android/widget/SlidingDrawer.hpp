@@ -11,9 +11,13 @@
 #define J2CPP_ANDROID_WIDGET_SLIDINGDRAWER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SlidingDrawer_ { class OnDrawerOpenListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace SlidingDrawer_ { class OnDrawerCloseListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace SlidingDrawer_ { class OnDrawerScrollListener; } } } }
@@ -23,10 +27,14 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/SlidingDrawer.hpp>
 #include <java/lang/Object.hpp>
 
@@ -147,7 +155,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewManager>() const;
 		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SlidingDrawer(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
@@ -202,8 +216,8 @@ void android::widget::SlidingDrawer_::OnDrawerOpenListener::onDrawerOpened()
 		android::widget::SlidingDrawer_::OnDrawerOpenListener::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer_::OnDrawerOpenListener::J2CPP_METHOD_NAME(0),
 		android::widget::SlidingDrawer_::OnDrawerOpenListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -222,8 +236,8 @@ void android::widget::SlidingDrawer_::OnDrawerCloseListener::onDrawerClosed()
 		android::widget::SlidingDrawer_::OnDrawerCloseListener::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer_::OnDrawerCloseListener::J2CPP_METHOD_NAME(0),
 		android::widget::SlidingDrawer_::OnDrawerCloseListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -242,8 +256,8 @@ void android::widget::SlidingDrawer_::OnDrawerScrollListener::onScrollStarted()
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_METHOD_NAME(0),
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer_::OnDrawerScrollListener::onScrollEnded()
@@ -252,8 +266,8 @@ void android::widget::SlidingDrawer_::OnDrawerScrollListener::onScrollEnded()
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_METHOD_NAME(1),
 		android::widget::SlidingDrawer_::OnDrawerScrollListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -263,9 +277,39 @@ J2CPP_DEFINE_METHOD(android::widget::SlidingDrawer_::OnDrawerScrollListener,1,"o
 
 
 
+android::widget::SlidingDrawer::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::SlidingDrawer::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::SlidingDrawer::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::SlidingDrawer::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
 android::widget::SlidingDrawer::operator local_ref<android::view::ViewGroup>() const
 {
 	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::SlidingDrawer::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::SlidingDrawer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -274,8 +318,8 @@ android::widget::SlidingDrawer::SlidingDrawer(local_ref< android::content::Conte
 	call_new_object<
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(0),
-		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -287,8 +331,8 @@ android::widget::SlidingDrawer::SlidingDrawer(local_ref< android::content::Conte
 	call_new_object<
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(1),
-		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -304,8 +348,8 @@ jboolean android::widget::SlidingDrawer::onInterceptTouchEvent(local_ref< androi
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(6),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::SlidingDrawer::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -314,8 +358,8 @@ jboolean android::widget::SlidingDrawer::onTouchEvent(local_ref< android::view::
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(7),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::SlidingDrawer::toggle()
@@ -324,8 +368,8 @@ void android::widget::SlidingDrawer::toggle()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(8),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::animateToggle()
@@ -334,8 +378,8 @@ void android::widget::SlidingDrawer::animateToggle()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(9),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::open()
@@ -344,8 +388,8 @@ void android::widget::SlidingDrawer::open()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(10),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::close()
@@ -354,8 +398,8 @@ void android::widget::SlidingDrawer::close()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(11),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::animateClose()
@@ -364,8 +408,8 @@ void android::widget::SlidingDrawer::animateClose()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(12),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::animateOpen()
@@ -374,8 +418,8 @@ void android::widget::SlidingDrawer::animateOpen()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(13),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::setOnDrawerOpenListener(local_ref< android::widget::SlidingDrawer_::OnDrawerOpenListener > const &a0)
@@ -384,8 +428,8 @@ void android::widget::SlidingDrawer::setOnDrawerOpenListener(local_ref< android:
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(14),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::SlidingDrawer::setOnDrawerCloseListener(local_ref< android::widget::SlidingDrawer_::OnDrawerCloseListener > const &a0)
@@ -394,8 +438,8 @@ void android::widget::SlidingDrawer::setOnDrawerCloseListener(local_ref< android
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(15),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::SlidingDrawer::setOnDrawerScrollListener(local_ref< android::widget::SlidingDrawer_::OnDrawerScrollListener > const &a0)
@@ -404,8 +448,8 @@ void android::widget::SlidingDrawer::setOnDrawerScrollListener(local_ref< androi
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(16),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::SlidingDrawer::getHandle()
@@ -414,8 +458,8 @@ local_ref< android::view::View > android::widget::SlidingDrawer::getHandle()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(17),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::SlidingDrawer::getContent()
@@ -424,8 +468,8 @@ local_ref< android::view::View > android::widget::SlidingDrawer::getContent()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(18),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::unlock()
@@ -434,8 +478,8 @@ void android::widget::SlidingDrawer::unlock()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(19),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::SlidingDrawer::lock()
@@ -444,8 +488,8 @@ void android::widget::SlidingDrawer::lock()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(20),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::SlidingDrawer::isOpened()
@@ -454,8 +498,8 @@ jboolean android::widget::SlidingDrawer::isOpened()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(21),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::SlidingDrawer::isMoving()
@@ -464,8 +508,8 @@ jboolean android::widget::SlidingDrawer::isMoving()
 		android::widget::SlidingDrawer::J2CPP_CLASS_NAME,
 		android::widget::SlidingDrawer::J2CPP_METHOD_NAME(22),
 		android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

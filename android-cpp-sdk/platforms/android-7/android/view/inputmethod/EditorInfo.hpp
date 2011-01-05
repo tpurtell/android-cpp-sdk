@@ -173,8 +173,8 @@ android::view::inputmethod::EditorInfo::EditorInfo()
 	call_new_object<
 		android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(0),
-		android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , inputType(get_jobject())
 , imeOptions(get_jobject())
@@ -200,8 +200,8 @@ void android::view::inputmethod::EditorInfo::dump(local_ref< android::util::Prin
 		android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(1),
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::inputmethod::EditorInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -210,8 +210,8 @@ void android::view::inputmethod::EditorInfo::writeToParcel(local_ref< android::o
 		android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::inputmethod::EditorInfo::describeContents()
@@ -220,8 +220,8 @@ jint android::view::inputmethod::EditorInfo::describeContents()
 		android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME,
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(3),
 		android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -37,8 +37,8 @@ namespace java { namespace lang { namespace annotation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class Inherited
 
@@ -59,14 +59,14 @@ namespace j2cpp {
 
 
 
-java::lang::annotation::Inherited::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::annotation::Inherited::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+java::lang::annotation::Inherited::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(java::lang::annotation::Inherited,"java/lang/annotation/Inherited")

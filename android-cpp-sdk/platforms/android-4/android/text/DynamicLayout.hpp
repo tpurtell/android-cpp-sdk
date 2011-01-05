@@ -17,12 +17,14 @@ namespace j2cpp { namespace android { namespace text { namespace Layout_ { class
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Alignment; } } } }
 namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class TruncateAt; } } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/Layout.hpp>
 #include <android/text/TextPaint.hpp>
 #include <android/text/TextUtils.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -59,6 +61,7 @@ namespace android { namespace text {
 		}
 
 		operator local_ref<android::text::Layout>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DynamicLayout(local_ref< java::lang::CharSequence > const&, local_ref< android::text::TextPaint > const&, jint, local_ref< android::text::Layout_::Alignment > const&, jfloat, jfloat, jboolean);
@@ -99,14 +102,19 @@ android::text::DynamicLayout::operator local_ref<android::text::Layout>() const
 	return local_ref<android::text::Layout>(get_jobject());
 }
 
+android::text::DynamicLayout::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jint a2, local_ref< android::text::Layout_::Alignment > const &a3, jfloat a4, jfloat a5, jboolean a6)
 : object<android::text::DynamicLayout>(
 	call_new_object<
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(0),
-		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }
@@ -118,8 +126,8 @@ android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence 
 	call_new_object<
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(1),
-		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5, a6, a7)
+		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5, a6, a7)
 )
 {
 }
@@ -131,8 +139,8 @@ android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence 
 	call_new_object<
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(2),
-		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
+		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
 )
 {
 }
@@ -144,8 +152,8 @@ jint android::text::DynamicLayout::getLineCount()
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(3),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::DynamicLayout::getLineTop(jint a0)
@@ -154,8 +162,8 @@ jint android::text::DynamicLayout::getLineTop(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(4),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::DynamicLayout::getLineDescent(jint a0)
@@ -164,8 +172,8 @@ jint android::text::DynamicLayout::getLineDescent(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(5),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::DynamicLayout::getLineStart(jint a0)
@@ -174,8 +182,8 @@ jint android::text::DynamicLayout::getLineStart(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(6),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::DynamicLayout::getLineContainsTab(jint a0)
@@ -184,8 +192,8 @@ jboolean android::text::DynamicLayout::getLineContainsTab(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(7),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::text::DynamicLayout::getParagraphDirection(jint a0)
@@ -194,8 +202,8 @@ jint android::text::DynamicLayout::getParagraphDirection(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(8),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::Layout_::Directions > android::text::DynamicLayout::getLineDirections(jint a0)
@@ -204,8 +212,8 @@ local_ref< android::text::Layout_::Directions > android::text::DynamicLayout::ge
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(9),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::text::Layout_::Directions > >
-	(get_jobject(), a0);
+		local_ref< android::text::Layout_::Directions >
+	>(get_jobject(), a0);
 }
 
 jint android::text::DynamicLayout::getTopPadding()
@@ -214,8 +222,8 @@ jint android::text::DynamicLayout::getTopPadding()
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(10),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::DynamicLayout::getBottomPadding()
@@ -224,8 +232,8 @@ jint android::text::DynamicLayout::getBottomPadding()
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(11),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::DynamicLayout::getEllipsizedWidth()
@@ -234,8 +242,8 @@ jint android::text::DynamicLayout::getEllipsizedWidth()
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(12),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::DynamicLayout::getEllipsisStart(jint a0)
@@ -244,8 +252,8 @@ jint android::text::DynamicLayout::getEllipsisStart(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(13),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::DynamicLayout::getEllipsisCount(jint a0)
@@ -254,8 +262,8 @@ jint android::text::DynamicLayout::getEllipsisCount(jint a0)
 		android::text::DynamicLayout::J2CPP_CLASS_NAME,
 		android::text::DynamicLayout::J2CPP_METHOD_NAME(14),
 		android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

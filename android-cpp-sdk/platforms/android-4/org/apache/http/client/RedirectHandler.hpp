@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_REDIRECTHANDLER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
@@ -79,8 +79,8 @@ jboolean org::apache::http::client::RedirectHandler::isRedirectRequested(local_r
 		org::apache::http::client::RedirectHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::RedirectHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::RedirectHandler::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::net::URI > org::apache::http::client::RedirectHandler::getLocationURI(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -89,8 +89,8 @@ local_ref< java::net::URI > org::apache::http::client::RedirectHandler::getLocat
 		org::apache::http::client::RedirectHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::RedirectHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::RedirectHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::URI > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::URI >
+	>(get_jobject(), a0, a1);
 }
 
 

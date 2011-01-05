@@ -44,8 +44,8 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::routing::HttpRouteDirector>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicRouteDirector();
@@ -71,14 +71,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::conn::routing::BasicRouteDirector::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::conn::routing::BasicRouteDirector::operator local_ref<org::apache::http::conn::routing::HttpRouteDirector>() const
 {
 	return local_ref<org::apache::http::conn::routing::HttpRouteDirector>(get_jobject());
+}
+
+org::apache::http::conn::routing::BasicRouteDirector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +87,8 @@ org::apache::http::conn::routing::BasicRouteDirector::BasicRouteDirector()
 	call_new_object<
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +100,8 @@ jint org::apache::http::conn::routing::BasicRouteDirector::nextStep(local_ref< o
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::routing::BasicRouteDirector::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

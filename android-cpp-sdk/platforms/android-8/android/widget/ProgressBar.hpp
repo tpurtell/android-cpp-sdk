@@ -15,8 +15,11 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
@@ -24,7 +27,9 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/animation/Interpolator.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -77,6 +82,9 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ProgressBar(local_ref< android::content::Context > const&);
@@ -127,14 +135,29 @@ android::widget::ProgressBar::operator local_ref<android::view::View>() const
 	return local_ref<android::view::View>(get_jobject());
 }
 
+android::widget::ProgressBar::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::ProgressBar::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::ProgressBar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context > const &a0)
 : object<android::widget::ProgressBar>(
 	call_new_object<
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(0),
-		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -146,8 +169,8 @@ android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(1),
-		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -159,8 +182,8 @@ android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(2),
-		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -172,8 +195,8 @@ jboolean android::widget::ProgressBar::isIndeterminate()
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(3),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setIndeterminate(jboolean a0)
@@ -182,8 +205,8 @@ void android::widget::ProgressBar::setIndeterminate(jboolean a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(4),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::ProgressBar::getIndeterminateDrawable()
@@ -192,8 +215,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::ProgressBar:
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(5),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setIndeterminateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -202,8 +225,8 @@ void android::widget::ProgressBar::setIndeterminateDrawable(local_ref< android::
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(6),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::ProgressBar::getProgressDrawable()
@@ -212,8 +235,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::ProgressBar:
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(7),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setProgressDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -222,8 +245,8 @@ void android::widget::ProgressBar::setProgressDrawable(local_ref< android::graph
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(8),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -233,8 +256,8 @@ void android::widget::ProgressBar::postInvalidate()
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(10),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setProgress(jint a0)
@@ -243,8 +266,8 @@ void android::widget::ProgressBar::setProgress(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(11),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ProgressBar::setSecondaryProgress(jint a0)
@@ -253,8 +276,8 @@ void android::widget::ProgressBar::setSecondaryProgress(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(12),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ProgressBar::getProgress()
@@ -263,8 +286,8 @@ jint android::widget::ProgressBar::getProgress()
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(13),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::ProgressBar::getSecondaryProgress()
@@ -273,8 +296,8 @@ jint android::widget::ProgressBar::getSecondaryProgress()
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(14),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::ProgressBar::getMax()
@@ -283,8 +306,8 @@ jint android::widget::ProgressBar::getMax()
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(15),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setMax(jint a0)
@@ -293,8 +316,8 @@ void android::widget::ProgressBar::setMax(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(16),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ProgressBar::incrementProgressBy(jint a0)
@@ -303,8 +326,8 @@ void android::widget::ProgressBar::incrementProgressBy(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(17),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ProgressBar::incrementSecondaryProgressBy(jint a0)
@@ -313,8 +336,8 @@ void android::widget::ProgressBar::incrementSecondaryProgressBy(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(18),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ProgressBar::setInterpolator(local_ref< android::content::Context > const &a0, jint a1)
@@ -323,8 +346,8 @@ void android::widget::ProgressBar::setInterpolator(local_ref< android::content::
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(19),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ProgressBar::setInterpolator(local_ref< android::view::animation::Interpolator > const &a0)
@@ -333,8 +356,8 @@ void android::widget::ProgressBar::setInterpolator(local_ref< android::view::ani
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(20),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::animation::Interpolator > android::widget::ProgressBar::getInterpolator()
@@ -343,8 +366,8 @@ local_ref< android::view::animation::Interpolator > android::widget::ProgressBar
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(21),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::view::animation::Interpolator > >
-	(get_jobject());
+		local_ref< android::view::animation::Interpolator >
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::setVisibility(jint a0)
@@ -353,8 +376,8 @@ void android::widget::ProgressBar::setVisibility(jint a0)
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(22),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -364,8 +387,8 @@ void android::widget::ProgressBar::invalidateDrawable(local_ref< android::graphi
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(24),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -378,8 +401,8 @@ local_ref< android::os::Parcelable > android::widget::ProgressBar::onSaveInstanc
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(29),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::ProgressBar::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -388,8 +411,8 @@ void android::widget::ProgressBar::onRestoreInstanceState(local_ref< android::os
 		android::widget::ProgressBar::J2CPP_CLASS_NAME,
 		android::widget::ProgressBar::J2CPP_METHOD_NAME(30),
 		android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -167,8 +167,8 @@ local_ref< java::lang::String > java::util::prefs::Preferences::absolutePath()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(1),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::prefs::Preferences::childrenNames()
@@ -177,8 +177,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::prefs::Prefe
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(2),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void java::util::prefs::Preferences::clear()
@@ -187,8 +187,8 @@ void java::util::prefs::Preferences::clear()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(3),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::prefs::Preferences::exportNode(local_ref< java::io::OutputStream > const &a0)
@@ -197,8 +197,8 @@ void java::util::prefs::Preferences::exportNode(local_ref< java::io::OutputStrea
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(4),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::exportSubtree(local_ref< java::io::OutputStream > const &a0)
@@ -207,8 +207,8 @@ void java::util::prefs::Preferences::exportSubtree(local_ref< java::io::OutputSt
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(5),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::flush()
@@ -217,8 +217,8 @@ void java::util::prefs::Preferences::flush()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(6),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::prefs::Preferences::get(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -227,8 +227,8 @@ local_ref< java::lang::String > java::util::prefs::Preferences::get(local_ref< j
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(7),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::prefs::Preferences::getBoolean(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -237,8 +237,8 @@ jboolean java::util::prefs::Preferences::getBoolean(local_ref< java::lang::Strin
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(8),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > java::util::prefs::Preferences::getByteArray(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -247,8 +247,8 @@ local_ref< array<jbyte,1> > java::util::prefs::Preferences::getByteArray(local_r
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(9),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0, a1);
 }
 
 jdouble java::util::prefs::Preferences::getDouble(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -257,8 +257,8 @@ jdouble java::util::prefs::Preferences::getDouble(local_ref< java::lang::String 
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(10),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(10), 
-		jdouble >
-	(get_jobject(), a0, a1);
+		jdouble
+	>(get_jobject(), a0, a1);
 }
 
 jfloat java::util::prefs::Preferences::getFloat(local_ref< java::lang::String > const &a0, jfloat a1)
@@ -267,8 +267,8 @@ jfloat java::util::prefs::Preferences::getFloat(local_ref< java::lang::String > 
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(11),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::prefs::Preferences::getInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -277,8 +277,8 @@ jint java::util::prefs::Preferences::getInt(local_ref< java::lang::String > cons
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(12),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::util::prefs::Preferences::getLong(local_ref< java::lang::String > const &a0, jlong a1)
@@ -287,8 +287,8 @@ jlong java::util::prefs::Preferences::getLong(local_ref< java::lang::String > co
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(13),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::importPreferences(local_ref< java::io::InputStream > const &a0)
@@ -297,8 +297,8 @@ void java::util::prefs::Preferences::importPreferences(local_ref< java::io::Inpu
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(14),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean java::util::prefs::Preferences::isUserNode()
@@ -307,8 +307,8 @@ jboolean java::util::prefs::Preferences::isUserNode()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(15),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::prefs::Preferences::keys()
@@ -317,8 +317,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::prefs::Prefe
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(16),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::prefs::Preferences::name()
@@ -327,8 +327,8 @@ local_ref< java::lang::String > java::util::prefs::Preferences::name()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(17),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::node(local_ref< java::lang::String > const &a0)
@@ -337,8 +337,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::node
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(18),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject(), a0);
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::prefs::Preferences::nodeExists(local_ref< java::lang::String > const &a0)
@@ -347,8 +347,8 @@ jboolean java::util::prefs::Preferences::nodeExists(local_ref< java::lang::Strin
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(19),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::parent()
@@ -357,8 +357,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::pare
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(20),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject());
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject());
 }
 
 void java::util::prefs::Preferences::put(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -367,8 +367,8 @@ void java::util::prefs::Preferences::put(local_ref< java::lang::String > const &
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(21),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putBoolean(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -377,8 +377,8 @@ void java::util::prefs::Preferences::putBoolean(local_ref< java::lang::String > 
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(22),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putByteArray(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -387,8 +387,8 @@ void java::util::prefs::Preferences::putByteArray(local_ref< java::lang::String 
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(23),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putDouble(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -397,8 +397,8 @@ void java::util::prefs::Preferences::putDouble(local_ref< java::lang::String > c
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(24),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putFloat(local_ref< java::lang::String > const &a0, jfloat a1)
@@ -407,8 +407,8 @@ void java::util::prefs::Preferences::putFloat(local_ref< java::lang::String > co
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(25),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putInt(local_ref< java::lang::String > const &a0, jint a1)
@@ -417,8 +417,8 @@ void java::util::prefs::Preferences::putInt(local_ref< java::lang::String > cons
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(26),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::putLong(local_ref< java::lang::String > const &a0, jlong a1)
@@ -427,8 +427,8 @@ void java::util::prefs::Preferences::putLong(local_ref< java::lang::String > con
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(27),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::prefs::Preferences::remove(local_ref< java::lang::String > const &a0)
@@ -437,8 +437,8 @@ void java::util::prefs::Preferences::remove(local_ref< java::lang::String > cons
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(28),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::removeNode()
@@ -447,8 +447,8 @@ void java::util::prefs::Preferences::removeNode()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(29),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::prefs::Preferences::addNodeChangeListener(local_ref< java::util::prefs::NodeChangeListener > const &a0)
@@ -457,8 +457,8 @@ void java::util::prefs::Preferences::addNodeChangeListener(local_ref< java::util
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(30),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::addPreferenceChangeListener(local_ref< java::util::prefs::PreferenceChangeListener > const &a0)
@@ -467,8 +467,8 @@ void java::util::prefs::Preferences::addPreferenceChangeListener(local_ref< java
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(31),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::removeNodeChangeListener(local_ref< java::util::prefs::NodeChangeListener > const &a0)
@@ -477,8 +477,8 @@ void java::util::prefs::Preferences::removeNodeChangeListener(local_ref< java::u
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(32),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::removePreferenceChangeListener(local_ref< java::util::prefs::PreferenceChangeListener > const &a0)
@@ -487,8 +487,8 @@ void java::util::prefs::Preferences::removePreferenceChangeListener(local_ref< j
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(33),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::Preferences::sync()
@@ -497,8 +497,8 @@ void java::util::prefs::Preferences::sync()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(34),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::systemNodeForPackage(local_ref< java::lang::Class > const &a0)
@@ -507,8 +507,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::syst
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(35),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< java::util::prefs::Preferences > >
-	(a0);
+		local_ref< java::util::prefs::Preferences >
+	>(a0);
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::systemRoot()
@@ -517,8 +517,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::syst
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(36),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< java::util::prefs::Preferences > >
-	();
+		local_ref< java::util::prefs::Preferences >
+	>();
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::userNodeForPackage(local_ref< java::lang::Class > const &a0)
@@ -527,8 +527,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::user
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(37),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::util::prefs::Preferences > >
-	(a0);
+		local_ref< java::util::prefs::Preferences >
+	>(a0);
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::userRoot()
@@ -537,8 +537,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::Preferences::user
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(38),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::util::prefs::Preferences > >
-	();
+		local_ref< java::util::prefs::Preferences >
+	>();
 }
 
 local_ref< java::lang::String > java::util::prefs::Preferences::toString()
@@ -547,8 +547,8 @@ local_ref< java::lang::String > java::util::prefs::Preferences::toString()
 		java::util::prefs::Preferences::J2CPP_CLASS_NAME,
 		java::util::prefs::Preferences::J2CPP_METHOD_NAME(39),
 		java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

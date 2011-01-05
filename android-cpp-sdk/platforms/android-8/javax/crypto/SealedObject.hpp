@@ -94,8 +94,8 @@ javax::crypto::SealedObject::SealedObject(local_ref< java::io::Serializable > co
 	call_new_object<
 		javax::crypto::SealedObject::J2CPP_CLASS_NAME,
 		javax::crypto::SealedObject::J2CPP_METHOD_NAME(0),
-		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -108,8 +108,8 @@ local_ref< java::lang::String > javax::crypto::SealedObject::getAlgorithm()
 		javax::crypto::SealedObject::J2CPP_CLASS_NAME,
 		javax::crypto::SealedObject::J2CPP_METHOD_NAME(2),
 		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref< java::security::Key > const &a0)
@@ -118,8 +118,8 @@ local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref
 		javax::crypto::SealedObject::J2CPP_CLASS_NAME,
 		javax::crypto::SealedObject::J2CPP_METHOD_NAME(3),
 		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref< javax::crypto::Cipher > const &a0)
@@ -128,8 +128,8 @@ local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref
 		javax::crypto::SealedObject::J2CPP_CLASS_NAME,
 		javax::crypto::SealedObject::J2CPP_METHOD_NAME(4),
 		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref< java::security::Key > const &a0, local_ref< java::lang::String > const &a1)
@@ -138,8 +138,8 @@ local_ref< java::lang::Object > javax::crypto::SealedObject::getObject(local_ref
 		javax::crypto::SealedObject::J2CPP_CLASS_NAME,
 		javax::crypto::SealedObject::J2CPP_METHOD_NAME(5),
 		javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

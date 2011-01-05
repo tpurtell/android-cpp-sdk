@@ -11,11 +11,15 @@
 #define J2CPP_JAVA_IO_SEQUENCEINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/Enumeration.hpp>
 
 
@@ -43,7 +47,9 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SequenceInputStream(local_ref< java::io::InputStream > const&, local_ref< java::io::InputStream > const&);
@@ -70,9 +76,19 @@ namespace j2cpp {
 
 
 
+java::io::SequenceInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::io::SequenceInputStream::operator local_ref<java::io::InputStream>() const
 {
 	return local_ref<java::io::InputStream>(get_jobject());
+}
+
+java::io::SequenceInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -81,8 +97,8 @@ java::io::SequenceInputStream::SequenceInputStream(local_ref< java::io::InputStr
 	call_new_object<
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(0),
-		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -94,8 +110,8 @@ java::io::SequenceInputStream::SequenceInputStream(local_ref< java::util::Enumer
 	call_new_object<
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(1),
-		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -107,8 +123,8 @@ jint java::io::SequenceInputStream::available()
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(2),
 		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::io::SequenceInputStream::close()
@@ -117,8 +133,8 @@ void java::io::SequenceInputStream::close()
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(3),
 		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::io::SequenceInputStream::read()
@@ -127,8 +143,8 @@ jint java::io::SequenceInputStream::read()
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(4),
 		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::SequenceInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -137,8 +153,8 @@ jint java::io::SequenceInputStream::read(local_ref< array<jbyte,1> > const &a0, 
 		java::io::SequenceInputStream::J2CPP_CLASS_NAME,
 		java::io::SequenceInputStream::J2CPP_METHOD_NAME(5),
 		java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 

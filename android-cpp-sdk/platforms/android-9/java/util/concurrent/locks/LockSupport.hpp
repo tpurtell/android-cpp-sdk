@@ -89,8 +89,8 @@ void java::util::concurrent::locks::LockSupport::unpark(local_ref< java::lang::T
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::concurrent::locks::LockSupport::park(local_ref< java::lang::Object > const &a0)
@@ -99,8 +99,8 @@ void java::util::concurrent::locks::LockSupport::park(local_ref< java::lang::Obj
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::concurrent::locks::LockSupport::parkNanos(local_ref< java::lang::Object > const &a0, jlong a1)
@@ -109,8 +109,8 @@ void java::util::concurrent::locks::LockSupport::parkNanos(local_ref< java::lang
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void java::util::concurrent::locks::LockSupport::parkUntil(local_ref< java::lang::Object > const &a0, jlong a1)
@@ -119,8 +119,8 @@ void java::util::concurrent::locks::LockSupport::parkUntil(local_ref< java::lang
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::locks::LockSupport::getBlocker(local_ref< java::lang::Thread > const &a0)
@@ -129,8 +129,8 @@ local_ref< java::lang::Object > java::util::concurrent::locks::LockSupport::getB
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 void java::util::concurrent::locks::LockSupport::park()
@@ -139,8 +139,8 @@ void java::util::concurrent::locks::LockSupport::park()
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 void java::util::concurrent::locks::LockSupport::parkNanos(jlong a0)
@@ -149,8 +149,8 @@ void java::util::concurrent::locks::LockSupport::parkNanos(jlong a0)
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::util::concurrent::locks::LockSupport::parkUntil(jlong a0)
@@ -159,8 +159,8 @@ void java::util::concurrent::locks::LockSupport::parkUntil(jlong a0)
 		java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

@@ -131,8 +131,8 @@ jboolean android::app::admin::DevicePolicyManager::isAdminActive(local_ref< andr
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(1),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > android::app::admin::DevicePolicyManager::getActiveAdmins()
@@ -141,8 +141,8 @@ local_ref< java::util::List > android::app::admin::DevicePolicyManager::getActiv
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(2),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void android::app::admin::DevicePolicyManager::removeActiveAdmin(local_ref< android::content::ComponentName > const &a0)
@@ -151,8 +151,8 @@ void android::app::admin::DevicePolicyManager::removeActiveAdmin(local_ref< andr
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(3),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::admin::DevicePolicyManager::setPasswordQuality(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -161,8 +161,8 @@ void android::app::admin::DevicePolicyManager::setPasswordQuality(local_ref< and
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(4),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::admin::DevicePolicyManager::getPasswordQuality(local_ref< android::content::ComponentName > const &a0)
@@ -171,8 +171,8 @@ jint android::app::admin::DevicePolicyManager::getPasswordQuality(local_ref< and
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(5),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::app::admin::DevicePolicyManager::setPasswordMinimumLength(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -181,8 +181,8 @@ void android::app::admin::DevicePolicyManager::setPasswordMinimumLength(local_re
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(6),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::admin::DevicePolicyManager::getPasswordMinimumLength(local_ref< android::content::ComponentName > const &a0)
@@ -191,8 +191,8 @@ jint android::app::admin::DevicePolicyManager::getPasswordMinimumLength(local_re
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(7),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::app::admin::DevicePolicyManager::getPasswordMaximumLength(jint a0)
@@ -201,8 +201,8 @@ jint android::app::admin::DevicePolicyManager::getPasswordMaximumLength(jint a0)
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(8),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::admin::DevicePolicyManager::isActivePasswordSufficient()
@@ -211,8 +211,8 @@ jboolean android::app::admin::DevicePolicyManager::isActivePasswordSufficient()
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(9),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::app::admin::DevicePolicyManager::getCurrentFailedPasswordAttempts()
@@ -221,8 +221,8 @@ jint android::app::admin::DevicePolicyManager::getCurrentFailedPasswordAttempts(
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(10),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::admin::DevicePolicyManager::setMaximumFailedPasswordsForWipe(local_ref< android::content::ComponentName > const &a0, jint a1)
@@ -231,8 +231,8 @@ void android::app::admin::DevicePolicyManager::setMaximumFailedPasswordsForWipe(
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(11),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::app::admin::DevicePolicyManager::getMaximumFailedPasswordsForWipe(local_ref< android::content::ComponentName > const &a0)
@@ -241,8 +241,8 @@ jint android::app::admin::DevicePolicyManager::getMaximumFailedPasswordsForWipe(
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(12),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::admin::DevicePolicyManager::resetPassword(local_ref< java::lang::String > const &a0, jint a1)
@@ -251,8 +251,8 @@ jboolean android::app::admin::DevicePolicyManager::resetPassword(local_ref< java
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(13),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DevicePolicyManager::setMaximumTimeToLock(local_ref< android::content::ComponentName > const &a0, jlong a1)
@@ -261,8 +261,8 @@ void android::app::admin::DevicePolicyManager::setMaximumTimeToLock(local_ref< a
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(14),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::app::admin::DevicePolicyManager::getMaximumTimeToLock(local_ref< android::content::ComponentName > const &a0)
@@ -271,8 +271,8 @@ jlong android::app::admin::DevicePolicyManager::getMaximumTimeToLock(local_ref< 
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(15),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(15), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void android::app::admin::DevicePolicyManager::lockNow()
@@ -281,8 +281,8 @@ void android::app::admin::DevicePolicyManager::lockNow()
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(16),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::admin::DevicePolicyManager::wipeData(jint a0)
@@ -291,8 +291,8 @@ void android::app::admin::DevicePolicyManager::wipeData(jint a0)
 		android::app::admin::DevicePolicyManager::J2CPP_CLASS_NAME,
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_NAME(17),
 		android::app::admin::DevicePolicyManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

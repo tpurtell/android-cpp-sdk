@@ -138,8 +138,8 @@ android::widget::Filter_::FilterResults::FilterResults()
 	call_new_object<
 		android::widget::Filter_::FilterResults::J2CPP_CLASS_NAME,
 		android::widget::Filter_::FilterResults::J2CPP_METHOD_NAME(0),
-		android::widget::Filter_::FilterResults::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::widget::Filter_::FilterResults::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , values(get_jobject())
 , count(get_jobject())
@@ -166,8 +166,8 @@ void android::widget::Filter_::FilterListener::onFilterComplete(jint a0)
 		android::widget::Filter_::FilterListener::J2CPP_CLASS_NAME,
 		android::widget::Filter_::FilterListener::J2CPP_METHOD_NAME(0),
 		android::widget::Filter_::FilterListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -187,8 +187,8 @@ android::widget::Filter::Filter()
 	call_new_object<
 		android::widget::Filter::J2CPP_CLASS_NAME,
 		android::widget::Filter::J2CPP_METHOD_NAME(0),
-		android::widget::Filter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::widget::Filter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -200,8 +200,8 @@ void android::widget::Filter::filter(local_ref< java::lang::CharSequence > const
 		android::widget::Filter::J2CPP_CLASS_NAME,
 		android::widget::Filter::J2CPP_METHOD_NAME(1),
 		android::widget::Filter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::Filter::filter(local_ref< java::lang::CharSequence > const &a0, local_ref< android::widget::Filter_::FilterListener > const &a1)
@@ -210,8 +210,8 @@ void android::widget::Filter::filter(local_ref< java::lang::CharSequence > const
 		android::widget::Filter::J2CPP_CLASS_NAME,
 		android::widget::Filter::J2CPP_METHOD_NAME(2),
 		android::widget::Filter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -222,8 +222,8 @@ local_ref< java::lang::CharSequence > android::widget::Filter::convertResultToSt
 		android::widget::Filter::J2CPP_CLASS_NAME,
 		android::widget::Filter::J2CPP_METHOD_NAME(5),
 		android::widget::Filter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 

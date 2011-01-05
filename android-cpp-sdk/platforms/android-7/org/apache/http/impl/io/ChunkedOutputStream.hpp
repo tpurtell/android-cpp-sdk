@@ -11,11 +11,17 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_CHUNKEDOUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/io/SessionOutputBuffer.hpp>
 
 
@@ -48,7 +54,10 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::io::Flushable>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::OutputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ChunkedOutputStream(local_ref< org::apache::http::io::SessionOutputBuffer > const&, jint);
@@ -80,9 +89,24 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::ChunkedOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
+org::apache::http::impl::io::ChunkedOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 org::apache::http::impl::io::ChunkedOutputStream::operator local_ref<java::io::OutputStream>() const
 {
 	return local_ref<java::io::OutputStream>(get_jobject());
+}
+
+org::apache::http::impl::io::ChunkedOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -91,8 +115,8 @@ org::apache::http::impl::io::ChunkedOutputStream::ChunkedOutputStream(local_ref<
 	call_new_object<
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -104,8 +128,8 @@ org::apache::http::impl::io::ChunkedOutputStream::ChunkedOutputStream(local_ref<
 	call_new_object<
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(1),
-		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -120,8 +144,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::finish()
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::ChunkedOutputStream::write(jint a0)
@@ -130,8 +154,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::write(jint a0)
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::ChunkedOutputStream::write(local_ref< array<jbyte,1> > const &a0)
@@ -140,8 +164,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::write(local_ref< array<jb
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::ChunkedOutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -150,8 +174,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::write(local_ref< array<jb
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::io::ChunkedOutputStream::flush()
@@ -160,8 +184,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::flush()
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::ChunkedOutputStream::close()
@@ -170,8 +194,8 @@ void org::apache::http::impl::io::ChunkedOutputStream::close()
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::io::ChunkedOutputStream::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

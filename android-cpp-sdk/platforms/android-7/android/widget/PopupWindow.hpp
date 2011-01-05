@@ -209,8 +209,8 @@ void android::widget::PopupWindow_::OnDismissListener::onDismiss()
 		android::widget::PopupWindow_::OnDismissListener::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow_::OnDismissListener::J2CPP_METHOD_NAME(0),
 		android::widget::PopupWindow_::OnDismissListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -230,8 +230,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(0),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -243,8 +243,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(1),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -256,8 +256,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(2),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -269,8 +269,8 @@ android::widget::PopupWindow::PopupWindow()
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(3),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(3)>
-	()
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(3)
+	>()
 )
 {
 }
@@ -282,8 +282,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(4),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -295,8 +295,8 @@ android::widget::PopupWindow::PopupWindow(jint a0, jint a1)
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(5),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -308,8 +308,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(6),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1, a2)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1, a2)
 )
 {
 }
@@ -321,8 +321,8 @@ android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const
 	call_new_object<
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(7),
-		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1, a2, a3)
+		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -334,8 +334,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::PopupWindow:
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(8),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setBackgroundDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -344,8 +344,8 @@ void android::widget::PopupWindow::setBackgroundDrawable(local_ref< android::gra
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(9),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::PopupWindow::getAnimationStyle()
@@ -354,8 +354,8 @@ jint android::widget::PopupWindow::getAnimationStyle()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(10),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setIgnoreCheekPress()
@@ -364,8 +364,8 @@ void android::widget::PopupWindow::setIgnoreCheekPress()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(11),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setAnimationStyle(jint a0)
@@ -374,8 +374,8 @@ void android::widget::PopupWindow::setAnimationStyle(jint a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(12),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::PopupWindow::getContentView()
@@ -384,8 +384,8 @@ local_ref< android::view::View > android::widget::PopupWindow::getContentView()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(13),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setContentView(local_ref< android::view::View > const &a0)
@@ -394,8 +394,8 @@ void android::widget::PopupWindow::setContentView(local_ref< android::view::View
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(14),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::PopupWindow::setTouchInterceptor(local_ref< android::view::View_::OnTouchListener > const &a0)
@@ -404,8 +404,8 @@ void android::widget::PopupWindow::setTouchInterceptor(local_ref< android::view:
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(15),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::PopupWindow::isFocusable()
@@ -414,8 +414,8 @@ jboolean android::widget::PopupWindow::isFocusable()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(16),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setFocusable(jboolean a0)
@@ -424,8 +424,8 @@ void android::widget::PopupWindow::setFocusable(jboolean a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(17),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::PopupWindow::getInputMethodMode()
@@ -434,8 +434,8 @@ jint android::widget::PopupWindow::getInputMethodMode()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(18),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setInputMethodMode(jint a0)
@@ -444,8 +444,8 @@ void android::widget::PopupWindow::setInputMethodMode(jint a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(19),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::PopupWindow::setSoftInputMode(jint a0)
@@ -454,8 +454,8 @@ void android::widget::PopupWindow::setSoftInputMode(jint a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(20),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::PopupWindow::getSoftInputMode()
@@ -464,8 +464,8 @@ jint android::widget::PopupWindow::getSoftInputMode()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(21),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::PopupWindow::isTouchable()
@@ -474,8 +474,8 @@ jboolean android::widget::PopupWindow::isTouchable()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(22),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setTouchable(jboolean a0)
@@ -484,8 +484,8 @@ void android::widget::PopupWindow::setTouchable(jboolean a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(23),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::PopupWindow::isOutsideTouchable()
@@ -494,8 +494,8 @@ jboolean android::widget::PopupWindow::isOutsideTouchable()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(24),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setOutsideTouchable(jboolean a0)
@@ -504,8 +504,8 @@ void android::widget::PopupWindow::setOutsideTouchable(jboolean a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(25),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::PopupWindow::isClippingEnabled()
@@ -514,8 +514,8 @@ jboolean android::widget::PopupWindow::isClippingEnabled()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(26),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setClippingEnabled(jboolean a0)
@@ -524,8 +524,8 @@ void android::widget::PopupWindow::setClippingEnabled(jboolean a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(27),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::PopupWindow::setWindowLayoutMode(jint a0, jint a1)
@@ -534,8 +534,8 @@ void android::widget::PopupWindow::setWindowLayoutMode(jint a0, jint a1)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(28),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::PopupWindow::getHeight()
@@ -544,8 +544,8 @@ jint android::widget::PopupWindow::getHeight()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(29),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setHeight(jint a0)
@@ -554,8 +554,8 @@ void android::widget::PopupWindow::setHeight(jint a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(30),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::PopupWindow::getWidth()
@@ -564,8 +564,8 @@ jint android::widget::PopupWindow::getWidth()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(31),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setWidth(jint a0)
@@ -574,8 +574,8 @@ void android::widget::PopupWindow::setWidth(jint a0)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(32),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::PopupWindow::isShowing()
@@ -584,8 +584,8 @@ jboolean android::widget::PopupWindow::isShowing()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(33),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::showAtLocation(local_ref< android::view::View > const &a0, jint a1, jint a2, jint a3)
@@ -594,8 +594,8 @@ void android::widget::PopupWindow::showAtLocation(local_ref< android::view::View
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(34),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::PopupWindow::showAsDropDown(local_ref< android::view::View > const &a0)
@@ -604,8 +604,8 @@ void android::widget::PopupWindow::showAsDropDown(local_ref< android::view::View
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(35),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::PopupWindow::showAsDropDown(local_ref< android::view::View > const &a0, jint a1, jint a2)
@@ -614,8 +614,8 @@ void android::widget::PopupWindow::showAsDropDown(local_ref< android::view::View
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(36),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::widget::PopupWindow::isAboveAnchor()
@@ -624,8 +624,8 @@ jboolean android::widget::PopupWindow::isAboveAnchor()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(37),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(37), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::widget::PopupWindow::getMaxAvailableHeight(local_ref< android::view::View > const &a0)
@@ -634,8 +634,8 @@ jint android::widget::PopupWindow::getMaxAvailableHeight(local_ref< android::vie
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(38),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(38), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::PopupWindow::getMaxAvailableHeight(local_ref< android::view::View > const &a0, jint a1)
@@ -644,8 +644,8 @@ jint android::widget::PopupWindow::getMaxAvailableHeight(local_ref< android::vie
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(39),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::PopupWindow::dismiss()
@@ -654,8 +654,8 @@ void android::widget::PopupWindow::dismiss()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(40),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::setOnDismissListener(local_ref< android::widget::PopupWindow_::OnDismissListener > const &a0)
@@ -664,8 +664,8 @@ void android::widget::PopupWindow::setOnDismissListener(local_ref< android::widg
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(41),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::PopupWindow::update()
@@ -674,8 +674,8 @@ void android::widget::PopupWindow::update()
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(42),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::PopupWindow::update(jint a0, jint a1)
@@ -684,8 +684,8 @@ void android::widget::PopupWindow::update(jint a0, jint a1)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(43),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::PopupWindow::update(jint a0, jint a1, jint a2, jint a3)
@@ -694,8 +694,8 @@ void android::widget::PopupWindow::update(jint a0, jint a1, jint a2, jint a3)
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(44),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::PopupWindow::update(jint a0, jint a1, jint a2, jint a3, jboolean a4)
@@ -704,8 +704,8 @@ void android::widget::PopupWindow::update(jint a0, jint a1, jint a2, jint a3, jb
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(45),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::widget::PopupWindow::update(local_ref< android::view::View > const &a0, jint a1, jint a2)
@@ -714,8 +714,8 @@ void android::widget::PopupWindow::update(local_ref< android::view::View > const
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(46),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::PopupWindow::update(local_ref< android::view::View > const &a0, jint a1, jint a2, jint a3, jint a4)
@@ -724,8 +724,8 @@ void android::widget::PopupWindow::update(local_ref< android::view::View > const
 		android::widget::PopupWindow::J2CPP_CLASS_NAME,
 		android::widget::PopupWindow::J2CPP_METHOD_NAME(47),
 		android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

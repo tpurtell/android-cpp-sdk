@@ -11,13 +11,17 @@
 #define J2CPP_ORG_XMLPULL_V1_XMLPULLPARSEREXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -50,7 +54,10 @@ namespace org { namespace xmlpull { namespace v1 {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		XmlPullParserException(local_ref< java::lang::String > const&);
@@ -79,9 +86,24 @@ namespace j2cpp {
 
 
 
+org::xmlpull::v1::XmlPullParserException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+org::xmlpull::v1::XmlPullParserException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 org::xmlpull::v1::XmlPullParserException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+org::xmlpull::v1::XmlPullParserException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -90,8 +112,8 @@ org::xmlpull::v1::XmlPullParserException::XmlPullParserException(local_ref< java
 	call_new_object<
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(0),
-		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -103,8 +125,8 @@ org::xmlpull::v1::XmlPullParserException::XmlPullParserException(local_ref< java
 	call_new_object<
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(1),
-		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -116,8 +138,8 @@ local_ref< java::lang::Throwable > org::xmlpull::v1::XmlPullParserException::get
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(2),
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParserException::getLineNumber()
@@ -126,8 +148,8 @@ jint org::xmlpull::v1::XmlPullParserException::getLineNumber()
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(3),
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xmlpull::v1::XmlPullParserException::getColumnNumber()
@@ -136,8 +158,8 @@ jint org::xmlpull::v1::XmlPullParserException::getColumnNumber()
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(4),
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::xmlpull::v1::XmlPullParserException::printStackTrace()
@@ -146,8 +168,8 @@ void org::xmlpull::v1::XmlPullParserException::printStackTrace()
 		org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME,
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(5),
 		org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

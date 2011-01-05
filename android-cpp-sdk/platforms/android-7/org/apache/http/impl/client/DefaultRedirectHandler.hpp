@@ -90,8 +90,8 @@ org::apache::http::impl::client::DefaultRedirectHandler::DefaultRedirectHandler(
 	call_new_object<
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -103,8 +103,8 @@ jboolean org::apache::http::impl::client::DefaultRedirectHandler::isRedirectRequ
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::net::URI > org::apache::http::impl::client::DefaultRedirectHandler::getLocationURI(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -113,8 +113,8 @@ local_ref< java::net::URI > org::apache::http::impl::client::DefaultRedirectHand
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::DefaultRedirectHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::URI > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::URI >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -12,11 +12,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class CharacterData; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <org/w3c/dom/CharacterData.hpp>
+#include <org/w3c/dom/Node.hpp>
 
 
 namespace j2cpp {
@@ -39,6 +41,7 @@ namespace org { namespace w3c { namespace dom {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
 		operator local_ref<org::w3c::dom::CharacterData>() const;
 
 
@@ -67,6 +70,11 @@ org::w3c::dom::Text::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::w3c::dom::Text::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jobject());
+}
+
 org::w3c::dom::Text::operator local_ref<org::w3c::dom::CharacterData>() const
 {
 	return local_ref<org::w3c::dom::CharacterData>(get_jobject());
@@ -78,8 +86,8 @@ local_ref< org::w3c::dom::Text > org::w3c::dom::Text::splitText(jint a0)
 		org::w3c::dom::Text::J2CPP_CLASS_NAME,
 		org::w3c::dom::Text::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::Text::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::Text > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::Text >
+	>(get_jobject(), a0);
 }
 
 

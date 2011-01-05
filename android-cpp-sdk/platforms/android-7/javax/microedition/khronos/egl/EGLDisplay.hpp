@@ -71,8 +71,8 @@ javax::microedition::khronos::egl::EGLDisplay::EGLDisplay()
 	call_new_object<
 		javax::microedition::khronos::egl::EGLDisplay::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_NAME(0),
-		javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

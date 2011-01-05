@@ -96,8 +96,8 @@ java::security::spec::PSSParameterSpec::PSSParameterSpec(jint a0)
 	call_new_object<
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +109,8 @@ java::security::spec::PSSParameterSpec::PSSParameterSpec(local_ref< java::lang::
 	call_new_object<
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(1),
-		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4)
+		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -122,8 +122,8 @@ jint java::security::spec::PSSParameterSpec::getSaltLength()
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::spec::PSSParameterSpec::getDigestAlgorithm()
@@ -132,8 +132,8 @@ local_ref< java::lang::String > java::security::spec::PSSParameterSpec::getDiges
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(3),
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::spec::PSSParameterSpec::getMGFAlgorithm()
@@ -142,8 +142,8 @@ local_ref< java::lang::String > java::security::spec::PSSParameterSpec::getMGFAl
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(4),
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::AlgorithmParameterSpec > java::security::spec::PSSParameterSpec::getMGFParameters()
@@ -152,8 +152,8 @@ local_ref< java::security::spec::AlgorithmParameterSpec > java::security::spec::
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(5),
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::spec::AlgorithmParameterSpec > >
-	(get_jobject());
+		local_ref< java::security::spec::AlgorithmParameterSpec >
+	>(get_jobject());
 }
 
 jint java::security::spec::PSSParameterSpec::getTrailerField()
@@ -162,8 +162,8 @@ jint java::security::spec::PSSParameterSpec::getTrailerField()
 		java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(6),
 		java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

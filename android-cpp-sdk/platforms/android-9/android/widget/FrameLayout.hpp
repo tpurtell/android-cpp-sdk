@@ -11,14 +11,20 @@
 #define J2CPP_ANDROID_WIDGET_FRAMELAYOUT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace widget { namespace FrameLayout_ { class LayoutParams; } } } }
 
 
@@ -27,8 +33,13 @@ namespace j2cpp { namespace android { namespace widget { namespace FrameLayout_ 
 #include <android/graphics/Region.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/FrameLayout.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -59,7 +70,9 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const;
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
 
 
 			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
@@ -109,7 +122,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::View>() const;
 		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 
 
 		FrameLayout(local_ref< android::content::Context > const&);
@@ -143,9 +162,19 @@ namespace j2cpp {
 
 
 
+android::widget::FrameLayout_::LayoutParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::widget::FrameLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const
 {
 	return local_ref<android::view::ViewGroup_::MarginLayoutParams>(get_jobject());
+}
+
+android::widget::FrameLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jobject());
 }
 
 
@@ -154,8 +183,8 @@ android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::co
 	call_new_object<
 		android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(0),
-		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , gravity(get_jobject())
 {
@@ -168,8 +197,8 @@ android::widget::FrameLayout_::LayoutParams::LayoutParams(jint a0, jint a1)
 	call_new_object<
 		android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(1),
-		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 , gravity(get_jobject())
 {
@@ -182,8 +211,8 @@ android::widget::FrameLayout_::LayoutParams::LayoutParams(jint a0, jint a1, jint
 	call_new_object<
 		android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(2),
-		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 , gravity(get_jobject())
 {
@@ -196,8 +225,8 @@ android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::vi
 	call_new_object<
 		android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(3),
-		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 , gravity(get_jobject())
 {
@@ -210,8 +239,8 @@ android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::vi
 	call_new_object<
 		android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(4),
-		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 , gravity(get_jobject())
 {
@@ -230,9 +259,39 @@ J2CPP_DEFINE_FIELD(android::widget::FrameLayout_::LayoutParams,0,"gravity","I")
 
 
 
+android::widget::FrameLayout::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::FrameLayout::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::FrameLayout::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
 android::widget::FrameLayout::operator local_ref<android::view::ViewGroup>() const
 {
 	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::FrameLayout::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::FrameLayout::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::FrameLayout::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
 }
 
 
@@ -241,8 +300,8 @@ android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(0),
-		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -254,8 +313,8 @@ android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(1),
-		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -267,8 +326,8 @@ android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(2),
-		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -280,8 +339,8 @@ void android::widget::FrameLayout::setForegroundGravity(jint a0)
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(3),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -293,8 +352,8 @@ void android::widget::FrameLayout::setForeground(local_ref< android::graphics::d
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(7),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::FrameLayout::getForeground()
@@ -303,8 +362,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::FrameLayout:
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(8),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 
@@ -316,8 +375,8 @@ void android::widget::FrameLayout::draw(local_ref< android::graphics::Canvas > c
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(12),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::FrameLayout::gatherTransparentRegion(local_ref< android::graphics::Region > const &a0)
@@ -326,8 +385,8 @@ jboolean android::widget::FrameLayout::gatherTransparentRegion(local_ref< androi
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(13),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::FrameLayout::setMeasureAllChildren(jboolean a0)
@@ -336,8 +395,8 @@ void android::widget::FrameLayout::setMeasureAllChildren(jboolean a0)
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(14),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::FrameLayout::getConsiderGoneChildrenWhenMeasuring()
@@ -346,8 +405,8 @@ jboolean android::widget::FrameLayout::getConsiderGoneChildrenWhenMeasuring()
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(15),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::widget::FrameLayout_::LayoutParams > android::widget::FrameLayout::generateLayoutParams(local_ref< android::util::AttributeSet > const &a0)
@@ -356,8 +415,8 @@ local_ref< android::widget::FrameLayout_::LayoutParams > android::widget::FrameL
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(16),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::widget::FrameLayout_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::FrameLayout_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -369,8 +428,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::widget::FrameLayou
 		android::widget::FrameLayout::J2CPP_CLASS_NAME,
 		android::widget::FrameLayout::J2CPP_METHOD_NAME(20),
 		android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

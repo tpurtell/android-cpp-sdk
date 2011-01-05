@@ -125,8 +125,8 @@ void android::webkit::Plugin_::PreferencesClickHandler::handleClickEvent(local_r
 		android::webkit::Plugin_::PreferencesClickHandler::J2CPP_CLASS_NAME,
 		android::webkit::Plugin_::PreferencesClickHandler::J2CPP_METHOD_NAME(0),
 		android::webkit::Plugin_::PreferencesClickHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -146,8 +146,8 @@ android::webkit::Plugin::Plugin(local_ref< java::lang::String > const &a0, local
 	call_new_object<
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(0),
-		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -159,8 +159,8 @@ local_ref< java::lang::String > android::webkit::Plugin::toString()
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(1),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::Plugin::getName()
@@ -169,8 +169,8 @@ local_ref< java::lang::String > android::webkit::Plugin::getName()
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(2),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::Plugin::getPath()
@@ -179,8 +179,8 @@ local_ref< java::lang::String > android::webkit::Plugin::getPath()
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(3),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::Plugin::getFileName()
@@ -189,8 +189,8 @@ local_ref< java::lang::String > android::webkit::Plugin::getFileName()
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(4),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::Plugin::getDescription()
@@ -199,8 +199,8 @@ local_ref< java::lang::String > android::webkit::Plugin::getDescription()
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(5),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::webkit::Plugin::setName(local_ref< java::lang::String > const &a0)
@@ -209,8 +209,8 @@ void android::webkit::Plugin::setName(local_ref< java::lang::String > const &a0)
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(6),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::Plugin::setPath(local_ref< java::lang::String > const &a0)
@@ -219,8 +219,8 @@ void android::webkit::Plugin::setPath(local_ref< java::lang::String > const &a0)
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(7),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::Plugin::setFileName(local_ref< java::lang::String > const &a0)
@@ -229,8 +229,8 @@ void android::webkit::Plugin::setFileName(local_ref< java::lang::String > const 
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(8),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::Plugin::setDescription(local_ref< java::lang::String > const &a0)
@@ -239,8 +239,8 @@ void android::webkit::Plugin::setDescription(local_ref< java::lang::String > con
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(9),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::Plugin::setClickHandler(local_ref< android::webkit::Plugin_::PreferencesClickHandler > const &a0)
@@ -249,8 +249,8 @@ void android::webkit::Plugin::setClickHandler(local_ref< android::webkit::Plugin
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(10),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::Plugin::dispatchClickEvent(local_ref< android::content::Context > const &a0)
@@ -259,8 +259,8 @@ void android::webkit::Plugin::dispatchClickEvent(local_ref< android::content::Co
 		android::webkit::Plugin::J2CPP_CLASS_NAME,
 		android::webkit::Plugin::J2CPP_METHOD_NAME(11),
 		android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

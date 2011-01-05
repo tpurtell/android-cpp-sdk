@@ -85,8 +85,8 @@ jboolean java::net::InterfaceAddress::equals(local_ref< java::lang::Object > con
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(1),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::InterfaceAddress::hashCode()
@@ -95,8 +95,8 @@ jint java::net::InterfaceAddress::hashCode()
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(2),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InterfaceAddress::toString()
@@ -105,8 +105,8 @@ local_ref< java::lang::String > java::net::InterfaceAddress::toString()
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(3),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::InterfaceAddress::getAddress()
@@ -115,8 +115,8 @@ local_ref< java::net::InetAddress > java::net::InterfaceAddress::getAddress()
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(4),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::InterfaceAddress::getBroadcast()
@@ -125,8 +125,8 @@ local_ref< java::net::InetAddress > java::net::InterfaceAddress::getBroadcast()
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(5),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jshort java::net::InterfaceAddress::getNetworkPrefixLength()
@@ -135,8 +135,8 @@ jshort java::net::InterfaceAddress::getNetworkPrefixLength()
 		java::net::InterfaceAddress::J2CPP_CLASS_NAME,
 		java::net::InterfaceAddress::J2CPP_METHOD_NAME(6),
 		java::net::InterfaceAddress::J2CPP_METHOD_SIGNATURE(6), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 

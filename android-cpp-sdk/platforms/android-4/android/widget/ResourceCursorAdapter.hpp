@@ -13,16 +13,28 @@
 
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
+namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class CursorAdapter; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/Adapter.hpp>
+#include <android/widget/BaseAdapter.hpp>
 #include <android/widget/CursorAdapter.hpp>
+#include <android/widget/Filterable.hpp>
+#include <android/widget/ListAdapter.hpp>
+#include <android/widget/SpinnerAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -49,7 +61,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::widget::SpinnerAdapter>() const;
+		operator local_ref<android::widget::Adapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::BaseAdapter>() const;
 		operator local_ref<android::widget::CursorAdapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ResourceCursorAdapter(local_ref< android::content::Context > const&, jint, local_ref< android::database::Cursor > const&);
@@ -76,9 +94,39 @@ namespace j2cpp {
 
 
 
+android::widget::ResourceCursorAdapter::operator local_ref<android::widget::SpinnerAdapter>() const
+{
+	return local_ref<android::widget::SpinnerAdapter>(get_jobject());
+}
+
+android::widget::ResourceCursorAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
+android::widget::ResourceCursorAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jobject());
+}
+
+android::widget::ResourceCursorAdapter::operator local_ref<android::widget::ListAdapter>() const
+{
+	return local_ref<android::widget::ListAdapter>(get_jobject());
+}
+
+android::widget::ResourceCursorAdapter::operator local_ref<android::widget::BaseAdapter>() const
+{
+	return local_ref<android::widget::BaseAdapter>(get_jobject());
+}
+
 android::widget::ResourceCursorAdapter::operator local_ref<android::widget::CursorAdapter>() const
 {
 	return local_ref<android::widget::CursorAdapter>(get_jobject());
+}
+
+android::widget::ResourceCursorAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +135,8 @@ android::widget::ResourceCursorAdapter::ResourceCursorAdapter(local_ref< android
 	call_new_object<
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -100,8 +148,8 @@ android::widget::ResourceCursorAdapter::ResourceCursorAdapter(local_ref< android
 	call_new_object<
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(1),
-		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -113,8 +161,8 @@ local_ref< android::view::View > android::widget::ResourceCursorAdapter::newView
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(2),
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::widget::ResourceCursorAdapter::newDropDownView(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, local_ref< android::view::ViewGroup > const &a2)
@@ -123,8 +171,8 @@ local_ref< android::view::View > android::widget::ResourceCursorAdapter::newDrop
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::ResourceCursorAdapter::setViewResource(jint a0)
@@ -133,8 +181,8 @@ void android::widget::ResourceCursorAdapter::setViewResource(jint a0)
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ResourceCursorAdapter::setDropDownViewResource(jint a0)
@@ -143,8 +191,8 @@ void android::widget::ResourceCursorAdapter::setDropDownViewResource(jint a0)
 		android::widget::ResourceCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::ResourceCursorAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

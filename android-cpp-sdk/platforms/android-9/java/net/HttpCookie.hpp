@@ -70,8 +70,8 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		HttpCookie(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -121,14 +121,14 @@ namespace j2cpp {
 
 
 
-java::net::HttpCookie::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::net::HttpCookie::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::net::HttpCookie::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -137,8 +137,8 @@ java::net::HttpCookie::HttpCookie(local_ref< java::lang::String > const &a0, loc
 	call_new_object<
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(0),
-		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -150,8 +150,8 @@ jboolean java::net::HttpCookie::domainMatches(local_ref< java::lang::String > co
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(1),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::util::List > java::net::HttpCookie::parse(local_ref< java::lang::String > const &a0)
@@ -160,8 +160,8 @@ local_ref< java::util::List > java::net::HttpCookie::parse(local_ref< java::lang
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(2),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getComment()
@@ -170,8 +170,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getComment()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(3),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getCommentURL()
@@ -180,8 +180,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getCommentURL()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(4),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::HttpCookie::getDiscard()
@@ -190,8 +190,8 @@ jboolean java::net::HttpCookie::getDiscard()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(5),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getDomain()
@@ -200,8 +200,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getDomain()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(6),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong java::net::HttpCookie::getMaxAge()
@@ -210,8 +210,8 @@ jlong java::net::HttpCookie::getMaxAge()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(7),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getName()
@@ -220,8 +220,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getName()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(8),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getPath()
@@ -230,8 +230,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getPath()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(9),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getPortlist()
@@ -240,8 +240,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getPortlist()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(10),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::HttpCookie::getSecure()
@@ -250,8 +250,8 @@ jboolean java::net::HttpCookie::getSecure()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(11),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::getValue()
@@ -260,8 +260,8 @@ local_ref< java::lang::String > java::net::HttpCookie::getValue()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(12),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::net::HttpCookie::getVersion()
@@ -270,8 +270,8 @@ jint java::net::HttpCookie::getVersion()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(13),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::net::HttpCookie::hasExpired()
@@ -280,8 +280,8 @@ jboolean java::net::HttpCookie::hasExpired()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(14),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::HttpCookie::setComment(local_ref< java::lang::String > const &a0)
@@ -290,8 +290,8 @@ void java::net::HttpCookie::setComment(local_ref< java::lang::String > const &a0
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(15),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setCommentURL(local_ref< java::lang::String > const &a0)
@@ -300,8 +300,8 @@ void java::net::HttpCookie::setCommentURL(local_ref< java::lang::String > const 
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(16),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setDiscard(jboolean a0)
@@ -310,8 +310,8 @@ void java::net::HttpCookie::setDiscard(jboolean a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(17),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setDomain(local_ref< java::lang::String > const &a0)
@@ -320,8 +320,8 @@ void java::net::HttpCookie::setDomain(local_ref< java::lang::String > const &a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(18),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setMaxAge(jlong a0)
@@ -330,8 +330,8 @@ void java::net::HttpCookie::setMaxAge(jlong a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(19),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setPath(local_ref< java::lang::String > const &a0)
@@ -340,8 +340,8 @@ void java::net::HttpCookie::setPath(local_ref< java::lang::String > const &a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(20),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setPortlist(local_ref< java::lang::String > const &a0)
@@ -350,8 +350,8 @@ void java::net::HttpCookie::setPortlist(local_ref< java::lang::String > const &a
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(21),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setSecure(jboolean a0)
@@ -360,8 +360,8 @@ void java::net::HttpCookie::setSecure(jboolean a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(22),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setValue(local_ref< java::lang::String > const &a0)
@@ -370,8 +370,8 @@ void java::net::HttpCookie::setValue(local_ref< java::lang::String > const &a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(23),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::HttpCookie::setVersion(jint a0)
@@ -380,8 +380,8 @@ void java::net::HttpCookie::setVersion(jint a0)
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(24),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::net::HttpCookie::clone()
@@ -390,8 +390,8 @@ local_ref< java::lang::Object > java::net::HttpCookie::clone()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(25),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::net::HttpCookie::equals(local_ref< java::lang::Object > const &a0)
@@ -400,8 +400,8 @@ jboolean java::net::HttpCookie::equals(local_ref< java::lang::Object > const &a0
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(26),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::HttpCookie::hashCode()
@@ -410,8 +410,8 @@ jint java::net::HttpCookie::hashCode()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(27),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpCookie::toString()
@@ -420,8 +420,8 @@ local_ref< java::lang::String > java::net::HttpCookie::toString()
 		java::net::HttpCookie::J2CPP_CLASS_NAME,
 		java::net::HttpCookie::J2CPP_METHOD_NAME(28),
 		java::net::HttpCookie::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

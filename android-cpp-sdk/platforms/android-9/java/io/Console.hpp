@@ -101,8 +101,8 @@ void java::io::Console::flush()
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(1),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::Console > java::io::Console::format(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -111,8 +111,8 @@ local_ref< java::io::Console > java::io::Console::format(local_ref< java::lang::
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(2),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::Console > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::Console >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::Console > java::io::Console::printf(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -121,8 +121,8 @@ local_ref< java::io::Console > java::io::Console::printf(local_ref< java::lang::
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(3),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::Console > >
-	(get_jobject(), a0, a1);
+		local_ref< java::io::Console >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::Reader > java::io::Console::reader()
@@ -131,8 +131,8 @@ local_ref< java::io::Reader > java::io::Console::reader()
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(4),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::Console::readLine()
@@ -141,8 +141,8 @@ local_ref< java::lang::String > java::io::Console::readLine()
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(5),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::Console::readLine(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -151,8 +151,8 @@ local_ref< java::lang::String > java::io::Console::readLine(local_ref< java::lan
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(6),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jchar,1> > java::io::Console::readPassword()
@@ -161,8 +161,8 @@ local_ref< array<jchar,1> > java::io::Console::readPassword()
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(7),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > java::io::Console::readPassword(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -171,8 +171,8 @@ local_ref< array<jchar,1> > java::io::Console::readPassword(local_ref< java::lan
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(8),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jchar,1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array<jchar,1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::PrintWriter > java::io::Console::writer()
@@ -181,8 +181,8 @@ local_ref< java::io::PrintWriter > java::io::Console::writer()
 		java::io::Console::J2CPP_CLASS_NAME,
 		java::io::Console::J2CPP_METHOD_NAME(9),
 		java::io::Console::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::io::PrintWriter > >
-	(get_jobject());
+		local_ref< java::io::PrintWriter >
+	>(get_jobject());
 }
 
 

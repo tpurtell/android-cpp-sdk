@@ -99,8 +99,8 @@ java::lang::ProcessBuilder::ProcessBuilder(local_ref< array< local_ref< java::la
 	call_new_object<
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(0),
-		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -112,8 +112,8 @@ java::lang::ProcessBuilder::ProcessBuilder(local_ref< java::util::List > const &
 	call_new_object<
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(1),
-		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -125,8 +125,8 @@ local_ref< java::util::List > java::lang::ProcessBuilder::command()
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(2),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::command(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -135,8 +135,8 @@ local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::command(loca
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(3),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::ProcessBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::ProcessBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::command(local_ref< java::util::List > const &a0)
@@ -145,8 +145,8 @@ local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::command(loca
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(4),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::ProcessBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::ProcessBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::File > java::lang::ProcessBuilder::directory()
@@ -155,8 +155,8 @@ local_ref< java::io::File > java::lang::ProcessBuilder::directory()
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(5),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::File > >
-	(get_jobject());
+		local_ref< java::io::File >
+	>(get_jobject());
 }
 
 local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::directory(local_ref< java::io::File > const &a0)
@@ -165,8 +165,8 @@ local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::directory(lo
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(6),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::ProcessBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::ProcessBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Map > java::lang::ProcessBuilder::environment()
@@ -175,8 +175,8 @@ local_ref< java::util::Map > java::lang::ProcessBuilder::environment()
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(7),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 jboolean java::lang::ProcessBuilder::redirectErrorStream()
@@ -185,8 +185,8 @@ jboolean java::lang::ProcessBuilder::redirectErrorStream()
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(8),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::redirectErrorStream(jboolean a0)
@@ -195,8 +195,8 @@ local_ref< java::lang::ProcessBuilder > java::lang::ProcessBuilder::redirectErro
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(9),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::ProcessBuilder > >
-	(get_jobject(), a0);
+		local_ref< java::lang::ProcessBuilder >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Process > java::lang::ProcessBuilder::start()
@@ -205,8 +205,8 @@ local_ref< java::lang::Process > java::lang::ProcessBuilder::start()
 		java::lang::ProcessBuilder::J2CPP_CLASS_NAME,
 		java::lang::ProcessBuilder::J2CPP_METHOD_NAME(10),
 		java::lang::ProcessBuilder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Process > >
-	(get_jobject());
+		local_ref< java::lang::Process >
+	>(get_jobject());
 }
 
 

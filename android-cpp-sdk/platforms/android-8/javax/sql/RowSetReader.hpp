@@ -71,8 +71,8 @@ void javax::sql::RowSetReader::readData(local_ref< javax::sql::RowSetInternal > 
 		javax::sql::RowSetReader::J2CPP_CLASS_NAME,
 		javax::sql::RowSetReader::J2CPP_METHOD_NAME(0),
 		javax::sql::RowSetReader::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

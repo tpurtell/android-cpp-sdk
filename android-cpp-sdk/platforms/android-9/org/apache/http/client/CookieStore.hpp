@@ -83,8 +83,8 @@ void org::apache::http::client::CookieStore::addCookie(local_ref< org::apache::h
 		org::apache::http::client::CookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::client::CookieStore::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::CookieStore::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > org::apache::http::client::CookieStore::getCookies()
@@ -93,8 +93,8 @@ local_ref< java::util::List > org::apache::http::client::CookieStore::getCookies
 		org::apache::http::client::CookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::client::CookieStore::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::CookieStore::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::client::CookieStore::clearExpired(local_ref< java::util::Date > const &a0)
@@ -103,8 +103,8 @@ jboolean org::apache::http::client::CookieStore::clearExpired(local_ref< java::u
 		org::apache::http::client::CookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::client::CookieStore::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::CookieStore::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::CookieStore::clear()
@@ -113,8 +113,8 @@ void org::apache::http::client::CookieStore::clear()
 		org::apache::http::client::CookieStore::J2CPP_CLASS_NAME,
 		org::apache::http::client::CookieStore::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::CookieStore::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

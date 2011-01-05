@@ -73,8 +73,8 @@ local_ref< java::lang::Object > java::sql::Wrapper::unwrap(local_ref< java::lang
 		java::sql::Wrapper::J2CPP_CLASS_NAME,
 		java::sql::Wrapper::J2CPP_METHOD_NAME(0),
 		java::sql::Wrapper::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::sql::Wrapper::isWrapperFor(local_ref< java::lang::Class > const &a0)
@@ -83,8 +83,8 @@ jboolean java::sql::Wrapper::isWrapperFor(local_ref< java::lang::Class > const &
 		java::sql::Wrapper::J2CPP_CLASS_NAME,
 		java::sql::Wrapper::J2CPP_METHOD_NAME(1),
 		java::sql::Wrapper::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

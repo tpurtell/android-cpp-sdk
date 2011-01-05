@@ -167,8 +167,8 @@ jboolean android::view::MenuItem_::OnMenuItemClickListener::onMenuItemClick(loca
 		android::view::MenuItem_::OnMenuItemClickListener::J2CPP_CLASS_NAME,
 		android::view::MenuItem_::OnMenuItemClickListener::J2CPP_METHOD_NAME(0),
 		android::view::MenuItem_::OnMenuItemClickListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -188,8 +188,8 @@ jint android::view::MenuItem::getItemId()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(0),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MenuItem::getGroupId()
@@ -198,8 +198,8 @@ jint android::view::MenuItem::getGroupId()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(1),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::MenuItem::getOrder()
@@ -208,8 +208,8 @@ jint android::view::MenuItem::getOrder()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(2),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -218,8 +218,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setTitle(local_ref
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(3),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setTitle(jint a0)
@@ -228,8 +228,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setTitle(jint a0)
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(4),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::view::MenuItem::getTitle()
@@ -238,8 +238,8 @@ local_ref< java::lang::CharSequence > android::view::MenuItem::getTitle()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(5),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setTitleCondensed(local_ref< java::lang::CharSequence > const &a0)
@@ -248,8 +248,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setTitleCondensed(
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(6),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::view::MenuItem::getTitleCondensed()
@@ -258,8 +258,8 @@ local_ref< java::lang::CharSequence > android::view::MenuItem::getTitleCondensed
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(7),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -268,8 +268,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setIcon(local_ref<
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(8),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setIcon(jint a0)
@@ -278,8 +278,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setIcon(jint a0)
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(9),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::view::MenuItem::getIcon()
@@ -288,8 +288,8 @@ local_ref< android::graphics::drawable::Drawable > android::view::MenuItem::getI
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(10),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setIntent(local_ref< android::content::Intent > const &a0)
@@ -298,8 +298,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setIntent(local_re
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(11),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::Intent > android::view::MenuItem::getIntent()
@@ -308,8 +308,8 @@ local_ref< android::content::Intent > android::view::MenuItem::getIntent()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(12),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::content::Intent > >
-	(get_jobject());
+		local_ref< android::content::Intent >
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setShortcut(jchar a0, jchar a1)
@@ -318,8 +318,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setShortcut(jchar 
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(13),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setNumericShortcut(jchar a0)
@@ -328,8 +328,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setNumericShortcut
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(14),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jchar android::view::MenuItem::getNumericShortcut()
@@ -338,8 +338,8 @@ jchar android::view::MenuItem::getNumericShortcut()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(15),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(15), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setAlphabeticShortcut(jchar a0)
@@ -348,8 +348,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setAlphabeticShort
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(16),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jchar android::view::MenuItem::getAlphabeticShortcut()
@@ -358,8 +358,8 @@ jchar android::view::MenuItem::getAlphabeticShortcut()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(17),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(17), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setCheckable(jboolean a0)
@@ -368,8 +368,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setCheckable(jbool
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(18),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::MenuItem::isCheckable()
@@ -378,8 +378,8 @@ jboolean android::view::MenuItem::isCheckable()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(19),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setChecked(jboolean a0)
@@ -388,8 +388,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setChecked(jboolea
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(20),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::MenuItem::isChecked()
@@ -398,8 +398,8 @@ jboolean android::view::MenuItem::isChecked()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(21),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setVisible(jboolean a0)
@@ -408,8 +408,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setVisible(jboolea
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(22),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::MenuItem::isVisible()
@@ -418,8 +418,8 @@ jboolean android::view::MenuItem::isVisible()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(23),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setEnabled(jboolean a0)
@@ -428,8 +428,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setEnabled(jboolea
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(24),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::MenuItem::isEnabled()
@@ -438,8 +438,8 @@ jboolean android::view::MenuItem::isEnabled()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(25),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::view::MenuItem::hasSubMenu()
@@ -448,8 +448,8 @@ jboolean android::view::MenuItem::hasSubMenu()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(26),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::SubMenu > android::view::MenuItem::getSubMenu()
@@ -458,8 +458,8 @@ local_ref< android::view::SubMenu > android::view::MenuItem::getSubMenu()
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(27),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject());
+		local_ref< android::view::SubMenu >
+	>(get_jobject());
 }
 
 local_ref< android::view::MenuItem > android::view::MenuItem::setOnMenuItemClickListener(local_ref< android::view::MenuItem_::OnMenuItemClickListener > const &a0)
@@ -468,8 +468,8 @@ local_ref< android::view::MenuItem > android::view::MenuItem::setOnMenuItemClick
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(28),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject(), a0);
+		local_ref< android::view::MenuItem >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ContextMenu_::ContextMenuInfo > android::view::MenuItem::getMenuInfo()
@@ -478,8 +478,8 @@ local_ref< android::view::ContextMenu_::ContextMenuInfo > android::view::MenuIte
 		android::view::MenuItem::J2CPP_CLASS_NAME,
 		android::view::MenuItem::J2CPP_METHOD_NAME(29),
 		android::view::MenuItem::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::view::ContextMenu_::ContextMenuInfo > >
-	(get_jobject());
+		local_ref< android::view::ContextMenu_::ContextMenuInfo >
+	>(get_jobject());
 }
 
 

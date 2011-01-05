@@ -85,8 +85,8 @@ java::security::KeyPair::KeyPair(local_ref< java::security::PublicKey > const &a
 	call_new_object<
 		java::security::KeyPair::J2CPP_CLASS_NAME,
 		java::security::KeyPair::J2CPP_METHOD_NAME(0),
-		java::security::KeyPair::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::KeyPair::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::security::PrivateKey > java::security::KeyPair::getPrivate()
 		java::security::KeyPair::J2CPP_CLASS_NAME,
 		java::security::KeyPair::J2CPP_METHOD_NAME(1),
 		java::security::KeyPair::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::PrivateKey > >
-	(get_jobject());
+		local_ref< java::security::PrivateKey >
+	>(get_jobject());
 }
 
 local_ref< java::security::PublicKey > java::security::KeyPair::getPublic()
@@ -108,8 +108,8 @@ local_ref< java::security::PublicKey > java::security::KeyPair::getPublic()
 		java::security::KeyPair::J2CPP_CLASS_NAME,
 		java::security::KeyPair::J2CPP_METHOD_NAME(2),
 		java::security::KeyPair::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject());
+		local_ref< java::security::PublicKey >
+	>(get_jobject());
 }
 
 

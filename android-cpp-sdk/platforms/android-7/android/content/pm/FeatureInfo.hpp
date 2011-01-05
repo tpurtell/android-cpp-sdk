@@ -110,8 +110,8 @@ android::content::pm::FeatureInfo::FeatureInfo()
 	call_new_object<
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , name(get_jobject())
 , reqGlEsVersion(get_jobject())
@@ -126,8 +126,8 @@ android::content::pm::FeatureInfo::FeatureInfo(local_ref< android::content::pm::
 	call_new_object<
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , name(get_jobject())
 , reqGlEsVersion(get_jobject())
@@ -142,8 +142,8 @@ local_ref< java::lang::String > android::content::pm::FeatureInfo::toString()
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::FeatureInfo::describeContents()
@@ -152,8 +152,8 @@ jint android::content::pm::FeatureInfo::describeContents()
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::FeatureInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -162,8 +162,8 @@ void android::content::pm::FeatureInfo::writeToParcel(local_ref< android::os::Pa
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::FeatureInfo::getGlEsVersion()
@@ -172,8 +172,8 @@ local_ref< java::lang::String > android::content::pm::FeatureInfo::getGlEsVersio
 		android::content::pm::FeatureInfo::J2CPP_CLASS_NAME,
 		android::content::pm::FeatureInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::FeatureInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

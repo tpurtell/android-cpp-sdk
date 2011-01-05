@@ -71,8 +71,8 @@ void android::util::Printer::println(local_ref< java::lang::String > const &a0)
 		android::util::Printer::J2CPP_CLASS_NAME,
 		android::util::Printer::J2CPP_METHOD_NAME(0),
 		android::util::Printer::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

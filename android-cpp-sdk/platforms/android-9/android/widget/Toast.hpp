@@ -114,8 +114,8 @@ android::widget::Toast::Toast(local_ref< android::content::Context > const &a0)
 	call_new_object<
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(0),
-		android::widget::Toast::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::Toast::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -127,8 +127,8 @@ void android::widget::Toast::show()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(1),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::Toast::cancel()
@@ -137,8 +137,8 @@ void android::widget::Toast::cancel()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(2),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::Toast::setView(local_ref< android::view::View > const &a0)
@@ -147,8 +147,8 @@ void android::widget::Toast::setView(local_ref< android::view::View > const &a0)
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(3),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::Toast::getView()
@@ -157,8 +157,8 @@ local_ref< android::view::View > android::widget::Toast::getView()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(4),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::Toast::setDuration(jint a0)
@@ -167,8 +167,8 @@ void android::widget::Toast::setDuration(jint a0)
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(5),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::Toast::getDuration()
@@ -177,8 +177,8 @@ jint android::widget::Toast::getDuration()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(6),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::Toast::setMargin(jfloat a0, jfloat a1)
@@ -187,8 +187,8 @@ void android::widget::Toast::setMargin(jfloat a0, jfloat a1)
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(7),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::widget::Toast::getHorizontalMargin()
@@ -197,8 +197,8 @@ jfloat android::widget::Toast::getHorizontalMargin()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(8),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(8), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::widget::Toast::getVerticalMargin()
@@ -207,8 +207,8 @@ jfloat android::widget::Toast::getVerticalMargin()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(9),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(9), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::widget::Toast::setGravity(jint a0, jint a1, jint a2)
@@ -217,8 +217,8 @@ void android::widget::Toast::setGravity(jint a0, jint a1, jint a2)
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(10),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::widget::Toast::getGravity()
@@ -227,8 +227,8 @@ jint android::widget::Toast::getGravity()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(11),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Toast::getXOffset()
@@ -237,8 +237,8 @@ jint android::widget::Toast::getXOffset()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(12),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Toast::getYOffset()
@@ -247,8 +247,8 @@ jint android::widget::Toast::getYOffset()
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(13),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::widget::Toast > android::widget::Toast::makeText(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2)
@@ -257,8 +257,8 @@ local_ref< android::widget::Toast > android::widget::Toast::makeText(local_ref< 
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(14),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::widget::Toast > >
-	(a0, a1, a2);
+		local_ref< android::widget::Toast >
+	>(a0, a1, a2);
 }
 
 local_ref< android::widget::Toast > android::widget::Toast::makeText(local_ref< android::content::Context > const &a0, jint a1, jint a2)
@@ -267,8 +267,8 @@ local_ref< android::widget::Toast > android::widget::Toast::makeText(local_ref< 
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(15),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::widget::Toast > >
-	(a0, a1, a2);
+		local_ref< android::widget::Toast >
+	>(a0, a1, a2);
 }
 
 void android::widget::Toast::setText(jint a0)
@@ -277,8 +277,8 @@ void android::widget::Toast::setText(jint a0)
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(16),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::Toast::setText(local_ref< java::lang::CharSequence > const &a0)
@@ -287,8 +287,8 @@ void android::widget::Toast::setText(local_ref< java::lang::CharSequence > const
 		android::widget::Toast::J2CPP_CLASS_NAME,
 		android::widget::Toast::J2CPP_METHOD_NAME(17),
 		android::widget::Toast::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

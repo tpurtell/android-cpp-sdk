@@ -79,8 +79,8 @@ local_ref< java::lang::String > android::text::AutoText::get(local_ref< java::la
 		android::text::AutoText::J2CPP_CLASS_NAME,
 		android::text::AutoText::J2CPP_METHOD_NAME(1),
 		android::text::AutoText::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 jint android::text::AutoText::getSize(local_ref< android::view::View > const &a0)
@@ -89,8 +89,8 @@ jint android::text::AutoText::getSize(local_ref< android::view::View > const &a0
 		android::text::AutoText::J2CPP_CLASS_NAME,
 		android::text::AutoText::J2CPP_METHOD_NAME(2),
 		android::text::AutoText::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

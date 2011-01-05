@@ -12,11 +12,21 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InterruptedIOException; } } }
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/io/InterruptedIOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +50,11 @@ namespace java { namespace net {
 		}
 
 		operator local_ref<java::io::InterruptedIOException>() const;
+		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SocketTimeoutException();
@@ -67,14 +82,39 @@ java::net::SocketTimeoutException::operator local_ref<java::io::InterruptedIOExc
 	return local_ref<java::io::InterruptedIOException>(get_jobject());
 }
 
+java::net::SocketTimeoutException::operator local_ref<java::io::IOException>() const
+{
+	return local_ref<java::io::IOException>(get_jobject());
+}
+
+java::net::SocketTimeoutException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::SocketTimeoutException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::net::SocketTimeoutException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::net::SocketTimeoutException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::net::SocketTimeoutException::SocketTimeoutException()
 : object<java::net::SocketTimeoutException>(
 	call_new_object<
 		java::net::SocketTimeoutException::J2CPP_CLASS_NAME,
 		java::net::SocketTimeoutException::J2CPP_METHOD_NAME(0),
-		java::net::SocketTimeoutException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::SocketTimeoutException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +126,8 @@ java::net::SocketTimeoutException::SocketTimeoutException(local_ref< java::lang:
 	call_new_object<
 		java::net::SocketTimeoutException::J2CPP_CLASS_NAME,
 		java::net::SocketTimeoutException::J2CPP_METHOD_NAME(1),
-		java::net::SocketTimeoutException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::net::SocketTimeoutException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

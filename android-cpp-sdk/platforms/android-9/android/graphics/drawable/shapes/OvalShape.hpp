@@ -11,14 +11,20 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_SHAPES_OVALSHAPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class RectShape; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class Shape; } } } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/graphics/drawable/shapes/RectShape.hpp>
+#include <android/graphics/drawable/shapes/Shape.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,7 +47,10 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::drawable::shapes::RectShape>() const;
+		operator local_ref<android::graphics::drawable::shapes::Shape>() const;
 
 
 		OvalShape();
@@ -66,9 +75,24 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::shapes::OvalShape::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::graphics::drawable::shapes::OvalShape::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::drawable::shapes::OvalShape::operator local_ref<android::graphics::drawable::shapes::RectShape>() const
 {
 	return local_ref<android::graphics::drawable::shapes::RectShape>(get_jobject());
+}
+
+android::graphics::drawable::shapes::OvalShape::operator local_ref<android::graphics::drawable::shapes::Shape>() const
+{
+	return local_ref<android::graphics::drawable::shapes::Shape>(get_jobject());
 }
 
 
@@ -77,8 +101,8 @@ android::graphics::drawable::shapes::OvalShape::OvalShape()
 	call_new_object<
 		android::graphics::drawable::shapes::OvalShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::OvalShape::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::shapes::OvalShape::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::shapes::OvalShape::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -90,8 +114,8 @@ void android::graphics::drawable::shapes::OvalShape::draw(local_ref< android::gr
 		android::graphics::drawable::shapes::OvalShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::OvalShape::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::shapes::OvalShape::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

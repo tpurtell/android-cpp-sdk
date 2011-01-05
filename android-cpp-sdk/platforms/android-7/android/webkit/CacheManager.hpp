@@ -151,8 +151,8 @@ android::webkit::CacheManager_::CacheResult::CacheResult()
 	call_new_object<
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(0),
-		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -164,8 +164,8 @@ jint android::webkit::CacheManager_::CacheResult::getHttpStatusCode()
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(1),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::webkit::CacheManager_::CacheResult::getContentLength()
@@ -174,8 +174,8 @@ jlong android::webkit::CacheManager_::CacheResult::getContentLength()
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(2),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getLocalPath()
@@ -184,8 +184,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(3),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong android::webkit::CacheManager_::CacheResult::getExpires()
@@ -194,8 +194,8 @@ jlong android::webkit::CacheManager_::CacheResult::getExpires()
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(4),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getExpiresString()
@@ -204,8 +204,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(5),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getLastModified()
@@ -214,8 +214,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(6),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getETag()
@@ -224,8 +224,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(7),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getMimeType()
@@ -234,8 +234,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(8),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getLocation()
@@ -244,8 +244,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(9),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getEncoding()
@@ -254,8 +254,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(10),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::getContentDisposition()
@@ -264,8 +264,8 @@ local_ref< java::lang::String > android::webkit::CacheManager_::CacheResult::get
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(11),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > android::webkit::CacheManager_::CacheResult::getInputStream()
@@ -274,8 +274,8 @@ local_ref< java::io::InputStream > android::webkit::CacheManager_::CacheResult::
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(12),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > android::webkit::CacheManager_::CacheResult::getOutputStream()
@@ -284,8 +284,8 @@ local_ref< java::io::OutputStream > android::webkit::CacheManager_::CacheResult:
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(13),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 void android::webkit::CacheManager_::CacheResult::setInputStream(local_ref< java::io::InputStream > const &a0)
@@ -294,8 +294,8 @@ void android::webkit::CacheManager_::CacheResult::setInputStream(local_ref< java
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(14),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CacheManager_::CacheResult::setEncoding(local_ref< java::lang::String > const &a0)
@@ -304,8 +304,8 @@ void android::webkit::CacheManager_::CacheResult::setEncoding(local_ref< java::l
 		android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(15),
 		android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -340,8 +340,8 @@ android::webkit::CacheManager::CacheManager()
 	call_new_object<
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(0),
-		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -353,8 +353,8 @@ local_ref< java::io::File > android::webkit::CacheManager::getCacheFileBaseDir()
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(1),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::File > >
-	();
+		local_ref< java::io::File >
+	>();
 }
 
 jboolean android::webkit::CacheManager::cacheDisabled()
@@ -363,8 +363,8 @@ jboolean android::webkit::CacheManager::cacheDisabled()
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(2),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 jboolean android::webkit::CacheManager::startCacheTransaction()
@@ -373,8 +373,8 @@ jboolean android::webkit::CacheManager::startCacheTransaction()
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(3),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 jboolean android::webkit::CacheManager::endCacheTransaction()
@@ -383,8 +383,8 @@ jboolean android::webkit::CacheManager::endCacheTransaction()
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(4),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::CacheManager::getCacheFile(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -393,8 +393,8 @@ local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::CacheM
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(5),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::webkit::CacheManager_::CacheResult > >
-	(a0, a1);
+		local_ref< android::webkit::CacheManager_::CacheResult >
+	>(a0, a1);
 }
 
 void android::webkit::CacheManager::saveCacheFile(local_ref< java::lang::String > const &a0, local_ref< android::webkit::CacheManager_::CacheResult > const &a1)
@@ -403,8 +403,8 @@ void android::webkit::CacheManager::saveCacheFile(local_ref< java::lang::String 
 		android::webkit::CacheManager::J2CPP_CLASS_NAME,
 		android::webkit::CacheManager::J2CPP_METHOD_NAME(6),
 		android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

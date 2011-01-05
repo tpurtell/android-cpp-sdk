@@ -1054,8 +1054,8 @@ android::opengl::GLES20::GLES20()
 	call_new_object<
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(0),
-		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -1067,8 +1067,8 @@ void android::opengl::GLES20::glActiveTexture(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(1),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glAttachShader(jint a0, jint a1)
@@ -1077,8 +1077,8 @@ void android::opengl::GLES20::glAttachShader(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(2),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBindAttribLocation(jint a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -1087,8 +1087,8 @@ void android::opengl::GLES20::glBindAttribLocation(jint a0, jint a1, local_ref< 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(3),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glBindBuffer(jint a0, jint a1)
@@ -1097,8 +1097,8 @@ void android::opengl::GLES20::glBindBuffer(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(4),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBindFramebuffer(jint a0, jint a1)
@@ -1107,8 +1107,8 @@ void android::opengl::GLES20::glBindFramebuffer(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(5),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBindRenderbuffer(jint a0, jint a1)
@@ -1117,8 +1117,8 @@ void android::opengl::GLES20::glBindRenderbuffer(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(6),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBindTexture(jint a0, jint a1)
@@ -1127,8 +1127,8 @@ void android::opengl::GLES20::glBindTexture(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(7),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBlendColor(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -1137,8 +1137,8 @@ void android::opengl::GLES20::glBlendColor(jfloat a0, jfloat a1, jfloat a2, jflo
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(8),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glBlendEquation(jint a0)
@@ -1147,8 +1147,8 @@ void android::opengl::GLES20::glBlendEquation(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(9),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glBlendEquationSeparate(jint a0, jint a1)
@@ -1157,8 +1157,8 @@ void android::opengl::GLES20::glBlendEquationSeparate(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(10),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBlendFunc(jint a0, jint a1)
@@ -1167,8 +1167,8 @@ void android::opengl::GLES20::glBlendFunc(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(11),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glBlendFuncSeparate(jint a0, jint a1, jint a2, jint a3)
@@ -1177,8 +1177,8 @@ void android::opengl::GLES20::glBlendFuncSeparate(jint a0, jint a1, jint a2, jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(12),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glBufferData(jint a0, jint a1, local_ref< java::nio::Buffer > const &a2, jint a3)
@@ -1187,8 +1187,8 @@ void android::opengl::GLES20::glBufferData(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(13),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glBufferSubData(jint a0, jint a1, jint a2, local_ref< java::nio::Buffer > const &a3)
@@ -1197,8 +1197,8 @@ void android::opengl::GLES20::glBufferSubData(jint a0, jint a1, jint a2, local_r
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(14),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 jint android::opengl::GLES20::glCheckFramebufferStatus(jint a0)
@@ -1207,8 +1207,8 @@ jint android::opengl::GLES20::glCheckFramebufferStatus(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(15),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::opengl::GLES20::glClear(jint a0)
@@ -1217,8 +1217,8 @@ void android::opengl::GLES20::glClear(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(16),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glClearColor(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -1227,8 +1227,8 @@ void android::opengl::GLES20::glClearColor(jfloat a0, jfloat a1, jfloat a2, jflo
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(17),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glClearDepthf(jfloat a0)
@@ -1237,8 +1237,8 @@ void android::opengl::GLES20::glClearDepthf(jfloat a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(18),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glClearStencil(jint a0)
@@ -1247,8 +1247,8 @@ void android::opengl::GLES20::glClearStencil(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(19),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glColorMask(jboolean a0, jboolean a1, jboolean a2, jboolean a3)
@@ -1257,8 +1257,8 @@ void android::opengl::GLES20::glColorMask(jboolean a0, jboolean a1, jboolean a2,
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(20),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glCompileShader(jint a0)
@@ -1267,8 +1267,8 @@ void android::opengl::GLES20::glCompileShader(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(21),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glCompressedTexImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::nio::Buffer > const &a7)
@@ -1277,8 +1277,8 @@ void android::opengl::GLES20::glCompressedTexImage2D(jint a0, jint a1, jint a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(22),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::opengl::GLES20::glCompressedTexSubImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7, local_ref< java::nio::Buffer > const &a8)
@@ -1287,8 +1287,8 @@ void android::opengl::GLES20::glCompressedTexSubImage2D(jint a0, jint a1, jint a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(23),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::opengl::GLES20::glCopyTexImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7)
@@ -1297,8 +1297,8 @@ void android::opengl::GLES20::glCopyTexImage2D(jint a0, jint a1, jint a2, jint a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(24),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::opengl::GLES20::glCopyTexSubImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7)
@@ -1307,8 +1307,8 @@ void android::opengl::GLES20::glCopyTexSubImage2D(jint a0, jint a1, jint a2, jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(25),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 jint android::opengl::GLES20::glCreateProgram()
@@ -1317,8 +1317,8 @@ jint android::opengl::GLES20::glCreateProgram()
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(26),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::opengl::GLES20::glCreateShader(jint a0)
@@ -1327,8 +1327,8 @@ jint android::opengl::GLES20::glCreateShader(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(27),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::opengl::GLES20::glCullFace(jint a0)
@@ -1337,8 +1337,8 @@ void android::opengl::GLES20::glCullFace(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(28),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDeleteBuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1347,8 +1347,8 @@ void android::opengl::GLES20::glDeleteBuffers(jint a0, local_ref< array<jint,1> 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(29),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glDeleteBuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1357,8 +1357,8 @@ void android::opengl::GLES20::glDeleteBuffers(jint a0, local_ref< java::nio::Int
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(30),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDeleteFramebuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1367,8 +1367,8 @@ void android::opengl::GLES20::glDeleteFramebuffers(jint a0, local_ref< array<jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(31),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glDeleteFramebuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1377,8 +1377,8 @@ void android::opengl::GLES20::glDeleteFramebuffers(jint a0, local_ref< java::nio
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(32),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDeleteProgram(jint a0)
@@ -1387,8 +1387,8 @@ void android::opengl::GLES20::glDeleteProgram(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(33),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDeleteRenderbuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1397,8 +1397,8 @@ void android::opengl::GLES20::glDeleteRenderbuffers(jint a0, local_ref< array<ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(34),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glDeleteRenderbuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1407,8 +1407,8 @@ void android::opengl::GLES20::glDeleteRenderbuffers(jint a0, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(35),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDeleteShader(jint a0)
@@ -1417,8 +1417,8 @@ void android::opengl::GLES20::glDeleteShader(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(36),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDeleteTextures(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1427,8 +1427,8 @@ void android::opengl::GLES20::glDeleteTextures(jint a0, local_ref< array<jint,1>
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(37),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glDeleteTextures(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1437,8 +1437,8 @@ void android::opengl::GLES20::glDeleteTextures(jint a0, local_ref< java::nio::In
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(38),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDepthFunc(jint a0)
@@ -1447,8 +1447,8 @@ void android::opengl::GLES20::glDepthFunc(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(39),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDepthMask(jboolean a0)
@@ -1457,8 +1457,8 @@ void android::opengl::GLES20::glDepthMask(jboolean a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(40),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDepthRangef(jfloat a0, jfloat a1)
@@ -1467,8 +1467,8 @@ void android::opengl::GLES20::glDepthRangef(jfloat a0, jfloat a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(41),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDetachShader(jint a0, jint a1)
@@ -1477,8 +1477,8 @@ void android::opengl::GLES20::glDetachShader(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(42),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glDisable(jint a0)
@@ -1487,8 +1487,8 @@ void android::opengl::GLES20::glDisable(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(43),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDisableVertexAttribArray(jint a0)
@@ -1497,8 +1497,8 @@ void android::opengl::GLES20::glDisableVertexAttribArray(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(44),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glDrawArrays(jint a0, jint a1, jint a2)
@@ -1507,8 +1507,8 @@ void android::opengl::GLES20::glDrawArrays(jint a0, jint a1, jint a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(45),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glDrawElements(jint a0, jint a1, jint a2, local_ref< java::nio::Buffer > const &a3)
@@ -1517,8 +1517,8 @@ void android::opengl::GLES20::glDrawElements(jint a0, jint a1, jint a2, local_re
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(46),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glEnable(jint a0)
@@ -1527,8 +1527,8 @@ void android::opengl::GLES20::glEnable(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(47),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glEnableVertexAttribArray(jint a0)
@@ -1537,8 +1537,8 @@ void android::opengl::GLES20::glEnableVertexAttribArray(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(48),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glFinish()
@@ -1547,8 +1547,8 @@ void android::opengl::GLES20::glFinish()
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(49),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::opengl::GLES20::glFlush()
@@ -1557,8 +1557,8 @@ void android::opengl::GLES20::glFlush()
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(50),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::opengl::GLES20::glFramebufferRenderbuffer(jint a0, jint a1, jint a2, jint a3)
@@ -1567,8 +1567,8 @@ void android::opengl::GLES20::glFramebufferRenderbuffer(jint a0, jint a1, jint a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(51),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glFramebufferTexture2D(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -1577,8 +1577,8 @@ void android::opengl::GLES20::glFramebufferTexture2D(jint a0, jint a1, jint a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(52),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glFrontFace(jint a0)
@@ -1587,8 +1587,8 @@ void android::opengl::GLES20::glFrontFace(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(53),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glGenBuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1597,8 +1597,8 @@ void android::opengl::GLES20::glGenBuffers(jint a0, local_ref< array<jint,1> > c
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(54),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGenBuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1607,8 +1607,8 @@ void android::opengl::GLES20::glGenBuffers(jint a0, local_ref< java::nio::IntBuf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(55),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGenerateMipmap(jint a0)
@@ -1617,8 +1617,8 @@ void android::opengl::GLES20::glGenerateMipmap(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(56),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glGenFramebuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1627,8 +1627,8 @@ void android::opengl::GLES20::glGenFramebuffers(jint a0, local_ref< array<jint,1
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(57),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGenFramebuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1637,8 +1637,8 @@ void android::opengl::GLES20::glGenFramebuffers(jint a0, local_ref< java::nio::I
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(58),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGenRenderbuffers(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1647,8 +1647,8 @@ void android::opengl::GLES20::glGenRenderbuffers(jint a0, local_ref< array<jint,
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(59),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGenRenderbuffers(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1657,8 +1657,8 @@ void android::opengl::GLES20::glGenRenderbuffers(jint a0, local_ref< java::nio::
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(60),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGenTextures(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1667,8 +1667,8 @@ void android::opengl::GLES20::glGenTextures(jint a0, local_ref< array<jint,1> > 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(61),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGenTextures(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1677,8 +1677,8 @@ void android::opengl::GLES20::glGenTextures(jint a0, local_ref< java::nio::IntBu
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(62),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetActiveAttrib(jint a0, jint a1, jint a2, local_ref< array<jint,1> > const &a3, jint a4, local_ref< array<jint,1> > const &a5, jint a6, local_ref< array<jint,1> > const &a7, jint a8, local_ref< array<jbyte,1> > const &a9, jint a10)
@@ -1687,8 +1687,8 @@ void android::opengl::GLES20::glGetActiveAttrib(jint a0, jint a1, jint a2, local
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(63),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 void android::opengl::GLES20::glGetActiveAttrib(jint a0, jint a1, jint a2, local_ref< java::nio::IntBuffer > const &a3, local_ref< java::nio::IntBuffer > const &a4, local_ref< java::nio::IntBuffer > const &a5, jbyte a6)
@@ -1697,8 +1697,8 @@ void android::opengl::GLES20::glGetActiveAttrib(jint a0, jint a1, jint a2, local
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(64),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::opengl::GLES20::glGetActiveUniform(jint a0, jint a1, jint a2, local_ref< array<jint,1> > const &a3, jint a4, local_ref< array<jint,1> > const &a5, jint a6, local_ref< array<jint,1> > const &a7, jint a8, local_ref< array<jbyte,1> > const &a9, jint a10)
@@ -1707,8 +1707,8 @@ void android::opengl::GLES20::glGetActiveUniform(jint a0, jint a1, jint a2, loca
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(65),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
 }
 
 void android::opengl::GLES20::glGetActiveUniform(jint a0, jint a1, jint a2, local_ref< java::nio::IntBuffer > const &a3, local_ref< java::nio::IntBuffer > const &a4, local_ref< java::nio::IntBuffer > const &a5, jbyte a6)
@@ -1717,8 +1717,8 @@ void android::opengl::GLES20::glGetActiveUniform(jint a0, jint a1, jint a2, loca
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(66),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::opengl::GLES20::glGetAttachedShaders(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3, local_ref< array<jint,1> > const &a4, jint a5)
@@ -1727,8 +1727,8 @@ void android::opengl::GLES20::glGetAttachedShaders(jint a0, jint a1, local_ref< 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(67),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES20::glGetAttachedShaders(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2, local_ref< java::nio::IntBuffer > const &a3)
@@ -1737,8 +1737,8 @@ void android::opengl::GLES20::glGetAttachedShaders(jint a0, jint a1, local_ref< 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(68),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 jint android::opengl::GLES20::glGetAttribLocation(jint a0, local_ref< java::lang::String > const &a1)
@@ -1747,8 +1747,8 @@ jint android::opengl::GLES20::glGetAttribLocation(jint a0, local_ref< java::lang
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(69),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(69), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetBooleanv(jint a0, local_ref< array<jboolean,1> > const &a1, jint a2)
@@ -1757,8 +1757,8 @@ void android::opengl::GLES20::glGetBooleanv(jint a0, local_ref< array<jboolean,1
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(70),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetBooleanv(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1767,8 +1767,8 @@ void android::opengl::GLES20::glGetBooleanv(jint a0, local_ref< java::nio::IntBu
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(71),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetBufferParameteriv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1777,8 +1777,8 @@ void android::opengl::GLES20::glGetBufferParameteriv(jint a0, jint a1, local_ref
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(72),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetBufferParameteriv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1787,8 +1787,8 @@ void android::opengl::GLES20::glGetBufferParameteriv(jint a0, jint a1, local_ref
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(73),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(73), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jint android::opengl::GLES20::glGetError()
@@ -1797,8 +1797,8 @@ jint android::opengl::GLES20::glGetError()
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(74),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(74), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void android::opengl::GLES20::glGetFloatv(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -1807,8 +1807,8 @@ void android::opengl::GLES20::glGetFloatv(jint a0, local_ref< array<jfloat,1> > 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(75),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(75), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetFloatv(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -1817,8 +1817,8 @@ void android::opengl::GLES20::glGetFloatv(jint a0, local_ref< java::nio::FloatBu
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(76),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetFramebufferAttachmentParameteriv(jint a0, jint a1, jint a2, local_ref< array<jint,1> > const &a3, jint a4)
@@ -1827,8 +1827,8 @@ void android::opengl::GLES20::glGetFramebufferAttachmentParameteriv(jint a0, jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(77),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(77), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glGetFramebufferAttachmentParameteriv(jint a0, jint a1, jint a2, local_ref< java::nio::IntBuffer > const &a3)
@@ -1837,8 +1837,8 @@ void android::opengl::GLES20::glGetFramebufferAttachmentParameteriv(jint a0, jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(78),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetIntegerv(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -1847,8 +1847,8 @@ void android::opengl::GLES20::glGetIntegerv(jint a0, local_ref< array<jint,1> > 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(79),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(79), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetIntegerv(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -1857,8 +1857,8 @@ void android::opengl::GLES20::glGetIntegerv(jint a0, local_ref< java::nio::IntBu
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(80),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetProgramiv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1867,8 +1867,8 @@ void android::opengl::GLES20::glGetProgramiv(jint a0, jint a1, local_ref< array<
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(81),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(81), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetProgramiv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1877,8 +1877,8 @@ void android::opengl::GLES20::glGetProgramiv(jint a0, jint a1, local_ref< java::
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(82),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(82), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::opengl::GLES20::glGetProgramInfoLog(jint a0)
@@ -1887,8 +1887,8 @@ local_ref< java::lang::String > android::opengl::GLES20::glGetProgramInfoLog(jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(83),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(83), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::opengl::GLES20::glGetRenderbufferParameteriv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1897,8 +1897,8 @@ void android::opengl::GLES20::glGetRenderbufferParameteriv(jint a0, jint a1, loc
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(84),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetRenderbufferParameteriv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1907,8 +1907,8 @@ void android::opengl::GLES20::glGetRenderbufferParameteriv(jint a0, jint a1, loc
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(85),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(85), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetShaderiv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -1917,8 +1917,8 @@ void android::opengl::GLES20::glGetShaderiv(jint a0, jint a1, local_ref< array<j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(86),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetShaderiv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -1927,8 +1927,8 @@ void android::opengl::GLES20::glGetShaderiv(jint a0, jint a1, local_ref< java::n
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(87),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(87), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::opengl::GLES20::glGetShaderInfoLog(jint a0)
@@ -1937,8 +1937,8 @@ local_ref< java::lang::String > android::opengl::GLES20::glGetShaderInfoLog(jint
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(88),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(88), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::opengl::GLES20::glGetShaderPrecisionFormat(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3, local_ref< array<jint,1> > const &a4, jint a5)
@@ -1947,8 +1947,8 @@ void android::opengl::GLES20::glGetShaderPrecisionFormat(jint a0, jint a1, local
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(89),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(89), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES20::glGetShaderPrecisionFormat(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2, local_ref< java::nio::IntBuffer > const &a3)
@@ -1957,8 +1957,8 @@ void android::opengl::GLES20::glGetShaderPrecisionFormat(jint a0, jint a1, local
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(90),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(90), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetShaderSource(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3, local_ref< array<jbyte,1> > const &a4, jint a5)
@@ -1967,8 +1967,8 @@ void android::opengl::GLES20::glGetShaderSource(jint a0, jint a1, local_ref< arr
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(91),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(91), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES20::glGetShaderSource(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2, jbyte a3)
@@ -1977,8 +1977,8 @@ void android::opengl::GLES20::glGetShaderSource(jint a0, jint a1, local_ref< jav
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(92),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(92), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::opengl::GLES20::glGetString(jint a0)
@@ -1987,8 +1987,8 @@ local_ref< java::lang::String > android::opengl::GLES20::glGetString(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(93),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(93), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::opengl::GLES20::glGetTexParameterfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -1997,8 +1997,8 @@ void android::opengl::GLES20::glGetTexParameterfv(jint a0, jint a1, local_ref< a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(94),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(94), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetTexParameterfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2007,8 +2007,8 @@ void android::opengl::GLES20::glGetTexParameterfv(jint a0, jint a1, local_ref< j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(95),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetTexParameteriv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2017,8 +2017,8 @@ void android::opengl::GLES20::glGetTexParameteriv(jint a0, jint a1, local_ref< a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(96),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(96), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetTexParameteriv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2027,8 +2027,8 @@ void android::opengl::GLES20::glGetTexParameteriv(jint a0, jint a1, local_ref< j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(97),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(97), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetUniformfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2037,8 +2037,8 @@ void android::opengl::GLES20::glGetUniformfv(jint a0, jint a1, local_ref< array<
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(98),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(98), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetUniformfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2047,8 +2047,8 @@ void android::opengl::GLES20::glGetUniformfv(jint a0, jint a1, local_ref< java::
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(99),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(99), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetUniformiv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2057,8 +2057,8 @@ void android::opengl::GLES20::glGetUniformiv(jint a0, jint a1, local_ref< array<
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(100),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(100), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetUniformiv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2067,8 +2067,8 @@ void android::opengl::GLES20::glGetUniformiv(jint a0, jint a1, local_ref< java::
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(101),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(101), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jint android::opengl::GLES20::glGetUniformLocation(jint a0, local_ref< java::lang::String > const &a1)
@@ -2077,8 +2077,8 @@ jint android::opengl::GLES20::glGetUniformLocation(jint a0, local_ref< java::lan
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(102),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(102), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glGetVertexAttribfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2087,8 +2087,8 @@ void android::opengl::GLES20::glGetVertexAttribfv(jint a0, jint a1, local_ref< a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(103),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(103), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetVertexAttribfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2097,8 +2097,8 @@ void android::opengl::GLES20::glGetVertexAttribfv(jint a0, jint a1, local_ref< j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(104),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(104), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glGetVertexAttribiv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2107,8 +2107,8 @@ void android::opengl::GLES20::glGetVertexAttribiv(jint a0, jint a1, local_ref< a
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(105),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(105), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glGetVertexAttribiv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2117,8 +2117,8 @@ void android::opengl::GLES20::glGetVertexAttribiv(jint a0, jint a1, local_ref< j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(106),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(106), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glHint(jint a0, jint a1)
@@ -2127,8 +2127,8 @@ void android::opengl::GLES20::glHint(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(107),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(107), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean android::opengl::GLES20::glIsBuffer(jint a0)
@@ -2137,8 +2137,8 @@ jboolean android::opengl::GLES20::glIsBuffer(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(108),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(108), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsEnabled(jint a0)
@@ -2147,8 +2147,8 @@ jboolean android::opengl::GLES20::glIsEnabled(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(109),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(109), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsFramebuffer(jint a0)
@@ -2157,8 +2157,8 @@ jboolean android::opengl::GLES20::glIsFramebuffer(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(110),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(110), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsProgram(jint a0)
@@ -2167,8 +2167,8 @@ jboolean android::opengl::GLES20::glIsProgram(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(111),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(111), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsRenderbuffer(jint a0)
@@ -2177,8 +2177,8 @@ jboolean android::opengl::GLES20::glIsRenderbuffer(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(112),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(112), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsShader(jint a0)
@@ -2187,8 +2187,8 @@ jboolean android::opengl::GLES20::glIsShader(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(113),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(113), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::opengl::GLES20::glIsTexture(jint a0)
@@ -2197,8 +2197,8 @@ jboolean android::opengl::GLES20::glIsTexture(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(114),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(114), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::opengl::GLES20::glLineWidth(jfloat a0)
@@ -2207,8 +2207,8 @@ void android::opengl::GLES20::glLineWidth(jfloat a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(115),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(115), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glLinkProgram(jint a0)
@@ -2217,8 +2217,8 @@ void android::opengl::GLES20::glLinkProgram(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(116),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(116), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glPixelStorei(jint a0, jint a1)
@@ -2227,8 +2227,8 @@ void android::opengl::GLES20::glPixelStorei(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(117),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(117), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glPolygonOffset(jfloat a0, jfloat a1)
@@ -2237,8 +2237,8 @@ void android::opengl::GLES20::glPolygonOffset(jfloat a0, jfloat a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(118),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(118), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glReadPixels(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, local_ref< java::nio::Buffer > const &a6)
@@ -2247,8 +2247,8 @@ void android::opengl::GLES20::glReadPixels(jint a0, jint a1, jint a2, jint a3, j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(119),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(119), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::opengl::GLES20::glReleaseShaderCompiler()
@@ -2257,8 +2257,8 @@ void android::opengl::GLES20::glReleaseShaderCompiler()
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(120),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(120), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::opengl::GLES20::glRenderbufferStorage(jint a0, jint a1, jint a2, jint a3)
@@ -2267,8 +2267,8 @@ void android::opengl::GLES20::glRenderbufferStorage(jint a0, jint a1, jint a2, j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(121),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(121), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glSampleCoverage(jfloat a0, jboolean a1)
@@ -2277,8 +2277,8 @@ void android::opengl::GLES20::glSampleCoverage(jfloat a0, jboolean a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(122),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(122), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glScissor(jint a0, jint a1, jint a2, jint a3)
@@ -2287,8 +2287,8 @@ void android::opengl::GLES20::glScissor(jint a0, jint a1, jint a2, jint a3)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(123),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(123), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glShaderBinary(jint a0, local_ref< array<jint,1> > const &a1, jint a2, jint a3, local_ref< java::nio::Buffer > const &a4, jint a5)
@@ -2297,8 +2297,8 @@ void android::opengl::GLES20::glShaderBinary(jint a0, local_ref< array<jint,1> >
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(124),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(124), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES20::glShaderBinary(jint a0, local_ref< java::nio::IntBuffer > const &a1, jint a2, local_ref< java::nio::Buffer > const &a3, jint a4)
@@ -2307,8 +2307,8 @@ void android::opengl::GLES20::glShaderBinary(jint a0, local_ref< java::nio::IntB
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(125),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(125), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glShaderSource(jint a0, local_ref< java::lang::String > const &a1)
@@ -2317,8 +2317,8 @@ void android::opengl::GLES20::glShaderSource(jint a0, local_ref< java::lang::Str
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(126),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(126), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glStencilFunc(jint a0, jint a1, jint a2)
@@ -2327,8 +2327,8 @@ void android::opengl::GLES20::glStencilFunc(jint a0, jint a1, jint a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(127),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(127), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glStencilFuncSeparate(jint a0, jint a1, jint a2, jint a3)
@@ -2337,8 +2337,8 @@ void android::opengl::GLES20::glStencilFuncSeparate(jint a0, jint a1, jint a2, j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(128),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(128), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glStencilMask(jint a0)
@@ -2347,8 +2347,8 @@ void android::opengl::GLES20::glStencilMask(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(129),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(129), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glStencilMaskSeparate(jint a0, jint a1)
@@ -2357,8 +2357,8 @@ void android::opengl::GLES20::glStencilMaskSeparate(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(130),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(130), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glStencilOp(jint a0, jint a1, jint a2)
@@ -2367,8 +2367,8 @@ void android::opengl::GLES20::glStencilOp(jint a0, jint a1, jint a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(131),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(131), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glStencilOpSeparate(jint a0, jint a1, jint a2, jint a3)
@@ -2377,8 +2377,8 @@ void android::opengl::GLES20::glStencilOpSeparate(jint a0, jint a1, jint a2, jin
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(132),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(132), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glTexImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7, local_ref< java::nio::Buffer > const &a8)
@@ -2387,8 +2387,8 @@ void android::opengl::GLES20::glTexImage2D(jint a0, jint a1, jint a2, jint a3, j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(133),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(133), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::opengl::GLES20::glTexParameterf(jint a0, jint a1, jfloat a2)
@@ -2397,8 +2397,8 @@ void android::opengl::GLES20::glTexParameterf(jint a0, jint a1, jfloat a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(134),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(134), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glTexParameterfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2407,8 +2407,8 @@ void android::opengl::GLES20::glTexParameterfv(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(135),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(135), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glTexParameterfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2417,8 +2417,8 @@ void android::opengl::GLES20::glTexParameterfv(jint a0, jint a1, local_ref< java
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(136),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(136), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glTexParameteri(jint a0, jint a1, jint a2)
@@ -2427,8 +2427,8 @@ void android::opengl::GLES20::glTexParameteri(jint a0, jint a1, jint a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(137),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(137), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glTexParameteriv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2437,8 +2437,8 @@ void android::opengl::GLES20::glTexParameteriv(jint a0, jint a1, local_ref< arra
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(138),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(138), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glTexParameteriv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2447,8 +2447,8 @@ void android::opengl::GLES20::glTexParameteriv(jint a0, jint a1, local_ref< java
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(139),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(139), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glTexSubImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7, local_ref< java::nio::Buffer > const &a8)
@@ -2457,8 +2457,8 @@ void android::opengl::GLES20::glTexSubImage2D(jint a0, jint a1, jint a2, jint a3
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(140),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(140), 
-		void >
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::opengl::GLES20::glUniform1f(jint a0, jfloat a1)
@@ -2467,8 +2467,8 @@ void android::opengl::GLES20::glUniform1f(jint a0, jfloat a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(141),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(141), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glUniform1fv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2477,8 +2477,8 @@ void android::opengl::GLES20::glUniform1fv(jint a0, jint a1, local_ref< array<jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(142),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(142), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform1fv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2487,8 +2487,8 @@ void android::opengl::GLES20::glUniform1fv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(143),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(143), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform1i(jint a0, jint a1)
@@ -2497,8 +2497,8 @@ void android::opengl::GLES20::glUniform1i(jint a0, jint a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(144),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(144), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glUniform1iv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2507,8 +2507,8 @@ void android::opengl::GLES20::glUniform1iv(jint a0, jint a1, local_ref< array<ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(145),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(145), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform1iv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2517,8 +2517,8 @@ void android::opengl::GLES20::glUniform1iv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(146),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(146), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform2f(jint a0, jfloat a1, jfloat a2)
@@ -2527,8 +2527,8 @@ void android::opengl::GLES20::glUniform2f(jint a0, jfloat a1, jfloat a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(147),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(147), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform2fv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2537,8 +2537,8 @@ void android::opengl::GLES20::glUniform2fv(jint a0, jint a1, local_ref< array<jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(148),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(148), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform2fv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2547,8 +2547,8 @@ void android::opengl::GLES20::glUniform2fv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(149),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(149), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform2i(jint a0, jint a1, jint a2)
@@ -2557,8 +2557,8 @@ void android::opengl::GLES20::glUniform2i(jint a0, jint a1, jint a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(150),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(150), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform2iv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2567,8 +2567,8 @@ void android::opengl::GLES20::glUniform2iv(jint a0, jint a1, local_ref< array<ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(151),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(151), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform2iv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2577,8 +2577,8 @@ void android::opengl::GLES20::glUniform2iv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(152),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(152), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform3f(jint a0, jfloat a1, jfloat a2, jfloat a3)
@@ -2587,8 +2587,8 @@ void android::opengl::GLES20::glUniform3f(jint a0, jfloat a1, jfloat a2, jfloat 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(153),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(153), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform3fv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2597,8 +2597,8 @@ void android::opengl::GLES20::glUniform3fv(jint a0, jint a1, local_ref< array<jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(154),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(154), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform3fv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2607,8 +2607,8 @@ void android::opengl::GLES20::glUniform3fv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(155),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(155), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform3i(jint a0, jint a1, jint a2, jint a3)
@@ -2617,8 +2617,8 @@ void android::opengl::GLES20::glUniform3i(jint a0, jint a1, jint a2, jint a3)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(156),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(156), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform3iv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2627,8 +2627,8 @@ void android::opengl::GLES20::glUniform3iv(jint a0, jint a1, local_ref< array<ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(157),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(157), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform3iv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2637,8 +2637,8 @@ void android::opengl::GLES20::glUniform3iv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(158),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(158), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform4f(jint a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4)
@@ -2647,8 +2647,8 @@ void android::opengl::GLES20::glUniform4f(jint a0, jfloat a1, jfloat a2, jfloat 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(159),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(159), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glUniform4fv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -2657,8 +2657,8 @@ void android::opengl::GLES20::glUniform4fv(jint a0, jint a1, local_ref< array<jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(160),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(160), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform4fv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -2667,8 +2667,8 @@ void android::opengl::GLES20::glUniform4fv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(161),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(161), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniform4i(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -2677,8 +2677,8 @@ void android::opengl::GLES20::glUniform4i(jint a0, jint a1, jint a2, jint a3, ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(162),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(162), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glUniform4iv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -2687,8 +2687,8 @@ void android::opengl::GLES20::glUniform4iv(jint a0, jint a1, local_ref< array<ji
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(163),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(163), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniform4iv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -2697,8 +2697,8 @@ void android::opengl::GLES20::glUniform4iv(jint a0, jint a1, local_ref< java::ni
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(164),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(164), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glUniformMatrix2fv(jint a0, jint a1, jboolean a2, local_ref< array<jfloat,1> > const &a3, jint a4)
@@ -2707,8 +2707,8 @@ void android::opengl::GLES20::glUniformMatrix2fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(165),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(165), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glUniformMatrix2fv(jint a0, jint a1, jboolean a2, local_ref< java::nio::FloatBuffer > const &a3)
@@ -2717,8 +2717,8 @@ void android::opengl::GLES20::glUniformMatrix2fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(166),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(166), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniformMatrix3fv(jint a0, jint a1, jboolean a2, local_ref< array<jfloat,1> > const &a3, jint a4)
@@ -2727,8 +2727,8 @@ void android::opengl::GLES20::glUniformMatrix3fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(167),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(167), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glUniformMatrix3fv(jint a0, jint a1, jboolean a2, local_ref< java::nio::FloatBuffer > const &a3)
@@ -2737,8 +2737,8 @@ void android::opengl::GLES20::glUniformMatrix3fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(168),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(168), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUniformMatrix4fv(jint a0, jint a1, jboolean a2, local_ref< array<jfloat,1> > const &a3, jint a4)
@@ -2747,8 +2747,8 @@ void android::opengl::GLES20::glUniformMatrix4fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(169),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(169), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glUniformMatrix4fv(jint a0, jint a1, jboolean a2, local_ref< java::nio::FloatBuffer > const &a3)
@@ -2757,8 +2757,8 @@ void android::opengl::GLES20::glUniformMatrix4fv(jint a0, jint a1, jboolean a2, 
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(170),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(170), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glUseProgram(jint a0)
@@ -2767,8 +2767,8 @@ void android::opengl::GLES20::glUseProgram(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(171),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(171), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glValidateProgram(jint a0)
@@ -2777,8 +2777,8 @@ void android::opengl::GLES20::glValidateProgram(jint a0)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(172),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(172), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::opengl::GLES20::glVertexAttrib1f(jint a0, jfloat a1)
@@ -2787,8 +2787,8 @@ void android::opengl::GLES20::glVertexAttrib1f(jint a0, jfloat a1)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(173),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(173), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glVertexAttrib1fv(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -2797,8 +2797,8 @@ void android::opengl::GLES20::glVertexAttrib1fv(jint a0, local_ref< array<jfloat
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(174),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(174), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glVertexAttrib1fv(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -2807,8 +2807,8 @@ void android::opengl::GLES20::glVertexAttrib1fv(jint a0, local_ref< java::nio::F
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(175),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(175), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glVertexAttrib2f(jint a0, jfloat a1, jfloat a2)
@@ -2817,8 +2817,8 @@ void android::opengl::GLES20::glVertexAttrib2f(jint a0, jfloat a1, jfloat a2)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(176),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(176), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glVertexAttrib2fv(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -2827,8 +2827,8 @@ void android::opengl::GLES20::glVertexAttrib2fv(jint a0, local_ref< array<jfloat
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(177),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(177), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glVertexAttrib2fv(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -2837,8 +2837,8 @@ void android::opengl::GLES20::glVertexAttrib2fv(jint a0, local_ref< java::nio::F
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(178),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(178), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glVertexAttrib3f(jint a0, jfloat a1, jfloat a2, jfloat a3)
@@ -2847,8 +2847,8 @@ void android::opengl::GLES20::glVertexAttrib3f(jint a0, jfloat a1, jfloat a2, jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(179),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(179), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 void android::opengl::GLES20::glVertexAttrib3fv(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -2857,8 +2857,8 @@ void android::opengl::GLES20::glVertexAttrib3fv(jint a0, local_ref< array<jfloat
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(180),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(180), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glVertexAttrib3fv(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -2867,8 +2867,8 @@ void android::opengl::GLES20::glVertexAttrib3fv(jint a0, local_ref< java::nio::F
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(181),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(181), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glVertexAttrib4f(jint a0, jfloat a1, jfloat a2, jfloat a3, jfloat a4)
@@ -2877,8 +2877,8 @@ void android::opengl::GLES20::glVertexAttrib4f(jint a0, jfloat a1, jfloat a2, jf
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(182),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(182), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 void android::opengl::GLES20::glVertexAttrib4fv(jint a0, local_ref< array<jfloat,1> > const &a1, jint a2)
@@ -2887,8 +2887,8 @@ void android::opengl::GLES20::glVertexAttrib4fv(jint a0, local_ref< array<jfloat
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(183),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(183), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::opengl::GLES20::glVertexAttrib4fv(jint a0, local_ref< java::nio::FloatBuffer > const &a1)
@@ -2897,8 +2897,8 @@ void android::opengl::GLES20::glVertexAttrib4fv(jint a0, local_ref< java::nio::F
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(184),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(184), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::opengl::GLES20::glVertexAttribPointer(jint a0, jint a1, jint a2, jboolean a3, jint a4, local_ref< java::nio::Buffer > const &a5)
@@ -2907,8 +2907,8 @@ void android::opengl::GLES20::glVertexAttribPointer(jint a0, jint a1, jint a2, j
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(185),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(185), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLES20::glViewport(jint a0, jint a1, jint a2, jint a3)
@@ -2917,8 +2917,8 @@ void android::opengl::GLES20::glViewport(jint a0, jint a1, jint a2, jint a3)
 		android::opengl::GLES20::J2CPP_CLASS_NAME,
 		android::opengl::GLES20::J2CPP_METHOD_NAME(186),
 		android::opengl::GLES20::J2CPP_METHOD_SIGNATURE(186), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 

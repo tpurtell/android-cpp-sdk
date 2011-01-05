@@ -141,8 +141,8 @@ void android::view::inputmethod::InputMethod_::SessionCallback::sessionCreated(l
 		android::view::inputmethod::InputMethod_::SessionCallback::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod_::SessionCallback::J2CPP_METHOD_NAME(0),
 		android::view::inputmethod::InputMethod_::SessionCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -162,8 +162,8 @@ void android::view::inputmethod::InputMethod::attachToken(local_ref< android::os
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(0),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::inputmethod::InputMethod::bindInput(local_ref< android::view::inputmethod::InputBinding > const &a0)
@@ -172,8 +172,8 @@ void android::view::inputmethod::InputMethod::bindInput(local_ref< android::view
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(1),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::inputmethod::InputMethod::unbindInput()
@@ -182,8 +182,8 @@ void android::view::inputmethod::InputMethod::unbindInput()
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(2),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::inputmethod::InputMethod::startInput(local_ref< android::view::inputmethod::InputConnection > const &a0, local_ref< android::view::inputmethod::EditorInfo > const &a1)
@@ -192,8 +192,8 @@ void android::view::inputmethod::InputMethod::startInput(local_ref< android::vie
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(3),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::inputmethod::InputMethod::restartInput(local_ref< android::view::inputmethod::InputConnection > const &a0, local_ref< android::view::inputmethod::EditorInfo > const &a1)
@@ -202,8 +202,8 @@ void android::view::inputmethod::InputMethod::restartInput(local_ref< android::v
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(4),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::inputmethod::InputMethod::createSession(local_ref< android::view::inputmethod::InputMethod_::SessionCallback > const &a0)
@@ -212,8 +212,8 @@ void android::view::inputmethod::InputMethod::createSession(local_ref< android::
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(5),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::inputmethod::InputMethod::setSessionEnabled(local_ref< android::view::inputmethod::InputMethodSession > const &a0, jboolean a1)
@@ -222,8 +222,8 @@ void android::view::inputmethod::InputMethod::setSessionEnabled(local_ref< andro
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(6),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::inputmethod::InputMethod::revokeSession(local_ref< android::view::inputmethod::InputMethodSession > const &a0)
@@ -232,8 +232,8 @@ void android::view::inputmethod::InputMethod::revokeSession(local_ref< android::
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(7),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::inputmethod::InputMethod::showSoftInput(jint a0, local_ref< android::os::ResultReceiver > const &a1)
@@ -242,8 +242,8 @@ void android::view::inputmethod::InputMethod::showSoftInput(jint a0, local_ref< 
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(8),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::inputmethod::InputMethod::hideSoftInput(jint a0, local_ref< android::os::ResultReceiver > const &a1)
@@ -252,8 +252,8 @@ void android::view::inputmethod::InputMethod::hideSoftInput(jint a0, local_ref< 
 		android::view::inputmethod::InputMethod::J2CPP_CLASS_NAME,
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_NAME(9),
 		android::view::inputmethod::InputMethod::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

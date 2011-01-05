@@ -11,15 +11,17 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_HTTPURIREQUEST_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
+#include <org/apache/http/HttpMessage.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 
 
@@ -47,6 +49,7 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpRequest>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
 
 
 		local_ref< java::lang::String > getMethod();
@@ -84,14 +87,19 @@ org::apache::http::client::methods::HttpUriRequest::operator local_ref<org::apac
 	return local_ref<org::apache::http::HttpRequest>(get_jobject());
 }
 
+org::apache::http::client::methods::HttpUriRequest::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
 local_ref< java::lang::String > org::apache::http::client::methods::HttpUriRequest::getMethod()
 {
 	return call_method<
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::net::URI > org::apache::http::client::methods::HttpUriRequest::getURI()
@@ -100,8 +108,8 @@ local_ref< java::net::URI > org::apache::http::client::methods::HttpUriRequest::
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::URI > >
-	(get_jobject());
+		local_ref< java::net::URI >
+	>(get_jobject());
 }
 
 void org::apache::http::client::methods::HttpUriRequest::abort()
@@ -110,8 +118,8 @@ void org::apache::http::client::methods::HttpUriRequest::abort()
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean org::apache::http::client::methods::HttpUriRequest::isAborted()
@@ -120,8 +128,8 @@ jboolean org::apache::http::client::methods::HttpUriRequest::isAborted()
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::methods::HttpUriRequest::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

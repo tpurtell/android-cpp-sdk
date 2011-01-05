@@ -11,8 +11,10 @@
 #define J2CPP_ANDROID_VIEW_SURFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
@@ -27,9 +29,11 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/graphics/Region.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -55,6 +59,9 @@ namespace android { namespace view {
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Throwable>() const;
 			operator local_ref<java::lang::Exception>() const;
 
 
@@ -188,6 +195,21 @@ namespace j2cpp {
 
 
 
+android::view::Surface_::OutOfResourcesException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::view::Surface_::OutOfResourcesException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::view::Surface_::OutOfResourcesException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 android::view::Surface_::OutOfResourcesException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
@@ -199,8 +221,8 @@ android::view::Surface_::OutOfResourcesException::OutOfResourcesException()
 	call_new_object<
 		android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME,
 		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(0),
-		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -212,8 +234,8 @@ android::view::Surface_::OutOfResourcesException::OutOfResourcesException(local_
 	call_new_object<
 		android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME,
 		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(1),
-		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -243,8 +265,8 @@ jboolean android::view::Surface::isValid()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(1),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Canvas > android::view::Surface::lockCanvas(local_ref< android::graphics::Rect > const &a0)
@@ -253,8 +275,8 @@ local_ref< android::graphics::Canvas > android::view::Surface::lockCanvas(local_
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(2),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::Canvas > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::Canvas >
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::unlockCanvasAndPost(local_ref< android::graphics::Canvas > const &a0)
@@ -263,8 +285,8 @@ void android::view::Surface::unlockCanvasAndPost(local_ref< android::graphics::C
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(3),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::unlockCanvas(local_ref< android::graphics::Canvas > const &a0)
@@ -273,8 +295,8 @@ void android::view::Surface::unlockCanvas(local_ref< android::graphics::Canvas >
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(4),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::setOrientation(jint a0, jint a1)
@@ -283,8 +305,8 @@ void android::view::Surface::setOrientation(jint a0, jint a1)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(5),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::view::Surface::setLayer(jint a0)
@@ -293,8 +315,8 @@ void android::view::Surface::setLayer(jint a0)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(6),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::setPosition(jint a0, jint a1)
@@ -303,8 +325,8 @@ void android::view::Surface::setPosition(jint a0, jint a1)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(7),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::Surface::setSize(jint a0, jint a1)
@@ -313,8 +335,8 @@ void android::view::Surface::setSize(jint a0, jint a1)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(8),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::view::Surface::hide()
@@ -323,8 +345,8 @@ void android::view::Surface::hide()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(9),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::Surface::show()
@@ -333,8 +355,8 @@ void android::view::Surface::show()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(10),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::Surface::setTransparentRegionHint(local_ref< android::graphics::Region > const &a0)
@@ -343,8 +365,8 @@ void android::view::Surface::setTransparentRegionHint(local_ref< android::graphi
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(11),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::setAlpha(jfloat a0)
@@ -353,8 +375,8 @@ void android::view::Surface::setAlpha(jfloat a0)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(12),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::setMatrix(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -363,8 +385,8 @@ void android::view::Surface::setMatrix(jfloat a0, jfloat a1, jfloat a2, jfloat a
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(13),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::view::Surface::freeze()
@@ -373,8 +395,8 @@ void android::view::Surface::freeze()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(14),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::Surface::unfreeze()
@@ -383,8 +405,8 @@ void android::view::Surface::unfreeze()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(15),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::view::Surface::setFreezeTint(jint a0)
@@ -393,8 +415,8 @@ void android::view::Surface::setFreezeTint(jint a0)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(16),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::setFlags(jint a0, jint a1)
@@ -403,8 +425,8 @@ void android::view::Surface::setFlags(jint a0, jint a1)
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(17),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::view::Surface::toString()
@@ -413,8 +435,8 @@ local_ref< java::lang::String > android::view::Surface::toString()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(18),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::view::Surface::describeContents()
@@ -423,8 +445,8 @@ jint android::view::Surface::describeContents()
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(19),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::Surface::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -433,8 +455,8 @@ void android::view::Surface::readFromParcel(local_ref< android::os::Parcel > con
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(20),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::Surface::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -443,8 +465,8 @@ void android::view::Surface::writeToParcel(local_ref< android::os::Parcel > cons
 		android::view::Surface::J2CPP_CLASS_NAME,
 		android::view::Surface::J2CPP_METHOD_NAME(21),
 		android::view::Surface::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

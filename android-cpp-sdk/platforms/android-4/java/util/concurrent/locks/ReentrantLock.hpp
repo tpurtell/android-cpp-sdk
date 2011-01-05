@@ -68,9 +68,9 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::util::concurrent::locks::Lock>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::concurrent::locks::Lock>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ReentrantLock();
@@ -111,9 +111,9 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::locks::ReentrantLock::operator local_ref<java::lang::Object>() const
+java::util::concurrent::locks::ReentrantLock::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::util::concurrent::locks::ReentrantLock::operator local_ref<java::util::concurrent::locks::Lock>() const
@@ -121,9 +121,9 @@ java::util::concurrent::locks::ReentrantLock::operator local_ref<java::util::con
 	return local_ref<java::util::concurrent::locks::Lock>(get_jobject());
 }
 
-java::util::concurrent::locks::ReentrantLock::operator local_ref<java::io::Serializable>() const
+java::util::concurrent::locks::ReentrantLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -132,8 +132,8 @@ java::util::concurrent::locks::ReentrantLock::ReentrantLock()
 	call_new_object<
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -145,8 +145,8 @@ java::util::concurrent::locks::ReentrantLock::ReentrantLock(jboolean a0)
 	call_new_object<
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -158,8 +158,8 @@ void java::util::concurrent::locks::ReentrantLock::lock()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::locks::ReentrantLock::lockInterruptibly()
@@ -168,8 +168,8 @@ void java::util::concurrent::locks::ReentrantLock::lockInterruptibly()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::tryLock()
@@ -178,8 +178,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::tryLock()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::tryLock(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -188,8 +188,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::tryLock(jlong a0, local_r
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::locks::ReentrantLock::unlock()
@@ -198,8 +198,8 @@ void java::util::concurrent::locks::ReentrantLock::unlock()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::concurrent::locks::Condition > java::util::concurrent::locks::ReentrantLock::newCondition()
@@ -208,8 +208,8 @@ local_ref< java::util::concurrent::locks::Condition > java::util::concurrent::lo
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::concurrent::locks::Condition > >
-	(get_jobject());
+		local_ref< java::util::concurrent::locks::Condition >
+	>(get_jobject());
 }
 
 jint java::util::concurrent::locks::ReentrantLock::getHoldCount()
@@ -218,8 +218,8 @@ jint java::util::concurrent::locks::ReentrantLock::getHoldCount()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::isHeldByCurrentThread()
@@ -228,8 +228,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::isHeldByCurrentThread()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::isLocked()
@@ -238,8 +238,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::isLocked()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::isFair()
@@ -248,8 +248,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::isFair()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -259,8 +259,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::hasQueuedThreads()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::locks::ReentrantLock::hasQueuedThread(local_ref< java::lang::Thread > const &a0)
@@ -269,8 +269,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::hasQueuedThread(local_ref
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::locks::ReentrantLock::getQueueLength()
@@ -279,8 +279,8 @@ jint java::util::concurrent::locks::ReentrantLock::getQueueLength()
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -290,8 +290,8 @@ jboolean java::util::concurrent::locks::ReentrantLock::hasWaiters(local_ref< jav
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::locks::ReentrantLock::getWaitQueueLength(local_ref< java::util::concurrent::locks::Condition > const &a0)
@@ -300,8 +300,8 @@ jint java::util::concurrent::locks::ReentrantLock::getWaitQueueLength(local_ref<
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 
@@ -311,8 +311,8 @@ local_ref< java::lang::String > java::util::concurrent::locks::ReentrantLock::to
 		java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME,
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

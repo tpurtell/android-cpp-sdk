@@ -74,8 +74,8 @@ void android::view::accessibility::AccessibilityEventSource::sendAccessibilityEv
 		android::view::accessibility::AccessibilityEventSource::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEventSource::J2CPP_METHOD_NAME(0),
 		android::view::accessibility::AccessibilityEventSource::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::accessibility::AccessibilityEventSource::sendAccessibilityEventUnchecked(local_ref< android::view::accessibility::AccessibilityEvent > const &a0)
@@ -84,8 +84,8 @@ void android::view::accessibility::AccessibilityEventSource::sendAccessibilityEv
 		android::view::accessibility::AccessibilityEventSource::J2CPP_CLASS_NAME,
 		android::view::accessibility::AccessibilityEventSource::J2CPP_METHOD_NAME(1),
 		android::view::accessibility::AccessibilityEventSource::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

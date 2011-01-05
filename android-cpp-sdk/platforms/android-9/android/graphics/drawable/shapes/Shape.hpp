@@ -50,8 +50,8 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Shape();
@@ -82,14 +82,14 @@ namespace j2cpp {
 
 
 
-android::graphics::drawable::shapes::Shape::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::graphics::drawable::shapes::Shape::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::graphics::drawable::shapes::Shape::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -98,8 +98,8 @@ android::graphics::drawable::shapes::Shape::Shape()
 	call_new_object<
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -111,8 +111,8 @@ jfloat android::graphics::drawable::shapes::Shape::getWidth()
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::graphics::drawable::shapes::Shape::getHeight()
@@ -121,8 +121,8 @@ jfloat android::graphics::drawable::shapes::Shape::getHeight()
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::graphics::drawable::shapes::Shape::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -131,8 +131,8 @@ void android::graphics::drawable::shapes::Shape::draw(local_ref< android::graphi
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::drawable::shapes::Shape::resize(jfloat a0, jfloat a1)
@@ -141,8 +141,8 @@ void android::graphics::drawable::shapes::Shape::resize(jfloat a0, jfloat a1)
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::drawable::shapes::Shape::hasAlpha()
@@ -151,8 +151,8 @@ jboolean android::graphics::drawable::shapes::Shape::hasAlpha()
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -162,8 +162,8 @@ local_ref< android::graphics::drawable::shapes::Shape > android::graphics::drawa
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::drawable::shapes::Shape > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::shapes::Shape >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::graphics::drawable::shapes::Shape::clone_1()
@@ -172,8 +172,8 @@ local_ref< java::lang::Object > android::graphics::drawable::shapes::Shape::clon
 		android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

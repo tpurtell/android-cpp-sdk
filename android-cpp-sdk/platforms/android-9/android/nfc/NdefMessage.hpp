@@ -96,8 +96,8 @@ android::nfc::NdefMessage::NdefMessage(local_ref< array<jbyte,1> > const &a0)
 	call_new_object<
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(0),
-		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +109,8 @@ android::nfc::NdefMessage::NdefMessage(local_ref< array< local_ref< android::nfc
 	call_new_object<
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(1),
-		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -122,8 +122,8 @@ local_ref< array< local_ref< android::nfc::NdefRecord >, 1> > android::nfc::Ndef
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(2),
 		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< android::nfc::NdefRecord >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::nfc::NdefRecord >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > android::nfc::NdefMessage::toByteArray()
@@ -132,8 +132,8 @@ local_ref< array<jbyte,1> > android::nfc::NdefMessage::toByteArray()
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(3),
 		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint android::nfc::NdefMessage::describeContents()
@@ -142,8 +142,8 @@ jint android::nfc::NdefMessage::describeContents()
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(4),
 		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::nfc::NdefMessage::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -152,8 +152,8 @@ void android::nfc::NdefMessage::writeToParcel(local_ref< android::os::Parcel > c
 		android::nfc::NdefMessage::J2CPP_CLASS_NAME,
 		android::nfc::NdefMessage::J2CPP_METHOD_NAME(5),
 		android::nfc::NdefMessage::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

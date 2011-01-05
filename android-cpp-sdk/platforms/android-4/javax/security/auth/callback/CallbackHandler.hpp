@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_CALLBACK_CALLBACKHANDLER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -73,8 +73,8 @@ void javax::security::auth::callback::CallbackHandler::handle(local_ref< array< 
 		javax::security::auth::callback::CallbackHandler::J2CPP_CLASS_NAME,
 		javax::security::auth::callback::CallbackHandler::J2CPP_METHOD_NAME(0),
 		javax::security::auth::callback::CallbackHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -159,8 +159,8 @@ org::json::JSONArray::JSONArray()
 	call_new_object<
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(0),
-		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -172,8 +172,8 @@ org::json::JSONArray::JSONArray(local_ref< org::json::JSONTokener > const &a0)
 	call_new_object<
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(1),
-		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -185,8 +185,8 @@ org::json::JSONArray::JSONArray(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(2),
-		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -198,8 +198,8 @@ org::json::JSONArray::JSONArray(local_ref< java::util::Collection > const &a0)
 	call_new_object<
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(3),
-		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -211,8 +211,8 @@ jboolean org::json::JSONArray::equals(local_ref< java::lang::Object > const &a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(4),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::json::JSONArray::get(jint a0)
@@ -221,8 +221,8 @@ local_ref< java::lang::Object > org::json::JSONArray::get(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(5),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean org::json::JSONArray::getBoolean(jint a0)
@@ -231,8 +231,8 @@ jboolean org::json::JSONArray::getBoolean(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(6),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jdouble org::json::JSONArray::getDouble(jint a0)
@@ -241,8 +241,8 @@ jdouble org::json::JSONArray::getDouble(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(7),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(7), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jint org::json::JSONArray::getInt(jint a0)
@@ -251,8 +251,8 @@ jint org::json::JSONArray::getInt(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(8),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::getJSONArray(jint a0)
@@ -261,8 +261,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::getJSONArray(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(9),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONObject > org::json::JSONArray::getJSONObject(jint a0)
@@ -271,8 +271,8 @@ local_ref< org::json::JSONObject > org::json::JSONArray::getJSONObject(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(10),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::json::JSONObject > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONObject >
+	>(get_jobject(), a0);
 }
 
 jlong org::json::JSONArray::getLong(jint a0)
@@ -281,8 +281,8 @@ jlong org::json::JSONArray::getLong(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(11),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONArray::getString(jint a0)
@@ -291,8 +291,8 @@ local_ref< java::lang::String > org::json::JSONArray::getString(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(12),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean org::json::JSONArray::isNull(jint a0)
@@ -301,8 +301,8 @@ jboolean org::json::JSONArray::isNull(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(13),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONArray::join(local_ref< java::lang::String > const &a0)
@@ -311,8 +311,8 @@ local_ref< java::lang::String > org::json::JSONArray::join(local_ref< java::lang
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(14),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint org::json::JSONArray::length()
@@ -321,8 +321,8 @@ jint org::json::JSONArray::length()
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(15),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::json::JSONArray::opt(jint a0)
@@ -331,8 +331,8 @@ local_ref< java::lang::Object > org::json::JSONArray::opt(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(16),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean org::json::JSONArray::optBoolean(jint a0)
@@ -341,8 +341,8 @@ jboolean org::json::JSONArray::optBoolean(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(17),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::json::JSONArray::optBoolean(jint a0, jboolean a1)
@@ -351,8 +351,8 @@ jboolean org::json::JSONArray::optBoolean(jint a0, jboolean a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(18),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jdouble org::json::JSONArray::optDouble(jint a0)
@@ -361,8 +361,8 @@ jdouble org::json::JSONArray::optDouble(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(19),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(19), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jdouble org::json::JSONArray::optDouble(jint a0, jdouble a1)
@@ -371,8 +371,8 @@ jdouble org::json::JSONArray::optDouble(jint a0, jdouble a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(20),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(20), 
-		jdouble >
-	(get_jobject(), a0, a1);
+		jdouble
+	>(get_jobject(), a0, a1);
 }
 
 jint org::json::JSONArray::optInt(jint a0)
@@ -381,8 +381,8 @@ jint org::json::JSONArray::optInt(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(21),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint org::json::JSONArray::optInt(jint a0, jint a1)
@@ -391,8 +391,8 @@ jint org::json::JSONArray::optInt(jint a0, jint a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(22),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::optJSONArray(jint a0)
@@ -401,8 +401,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::optJSONArray(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(23),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONObject > org::json::JSONArray::optJSONObject(jint a0)
@@ -411,8 +411,8 @@ local_ref< org::json::JSONObject > org::json::JSONArray::optJSONObject(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(24),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< org::json::JSONObject > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONObject >
+	>(get_jobject(), a0);
 }
 
 jlong org::json::JSONArray::optLong(jint a0)
@@ -421,8 +421,8 @@ jlong org::json::JSONArray::optLong(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(25),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(25), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong org::json::JSONArray::optLong(jint a0, jlong a1)
@@ -431,8 +431,8 @@ jlong org::json::JSONArray::optLong(jint a0, jlong a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(26),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(26), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::json::JSONArray::optString(jint a0)
@@ -441,8 +441,8 @@ local_ref< java::lang::String > org::json::JSONArray::optString(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(27),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONArray::optString(jint a0, local_ref< java::lang::String > const &a1)
@@ -451,8 +451,8 @@ local_ref< java::lang::String > org::json::JSONArray::optString(jint a0, local_r
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(28),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jboolean a0)
@@ -461,8 +461,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jboolean a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(29),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jdouble a0)
@@ -471,8 +471,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jdouble a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(30),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0)
@@ -481,8 +481,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(31),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jlong a0)
@@ -491,8 +491,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jlong a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(32),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(local_ref< java::lang::Object > const &a0)
@@ -501,8 +501,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(local_ref< java::lan
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(33),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jboolean a1)
@@ -511,8 +511,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jboolean a1
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(34),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0, a1);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jdouble a1)
@@ -521,8 +521,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jdouble a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(35),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0, a1);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jint a1)
@@ -531,8 +531,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jint a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(36),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0, a1);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jlong a1)
@@ -541,8 +541,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, jlong a1)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(37),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0, a1);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, local_ref< java::lang::Object > const &a1)
@@ -551,8 +551,8 @@ local_ref< org::json::JSONArray > org::json::JSONArray::put(jint a0, local_ref< 
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(38),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< org::json::JSONArray > >
-	(get_jobject(), a0, a1);
+		local_ref< org::json::JSONArray >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::json::JSONObject > org::json::JSONArray::toJSONObject(local_ref< org::json::JSONArray > const &a0)
@@ -561,8 +561,8 @@ local_ref< org::json::JSONObject > org::json::JSONArray::toJSONObject(local_ref<
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(39),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< org::json::JSONObject > >
-	(get_jobject(), a0);
+		local_ref< org::json::JSONObject >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::json::JSONArray::toString()
@@ -571,8 +571,8 @@ local_ref< java::lang::String > org::json::JSONArray::toString()
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(40),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::json::JSONArray::toString(jint a0)
@@ -581,8 +581,8 @@ local_ref< java::lang::String > org::json::JSONArray::toString(jint a0)
 		org::json::JSONArray::J2CPP_CLASS_NAME,
 		org::json::JSONArray::J2CPP_METHOD_NAME(41),
 		org::json::JSONArray::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

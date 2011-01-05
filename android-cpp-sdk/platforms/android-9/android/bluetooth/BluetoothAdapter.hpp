@@ -154,8 +154,8 @@ local_ref< android::bluetooth::BluetoothAdapter > android::bluetooth::BluetoothA
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(1),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::bluetooth::BluetoothAdapter > >
-	();
+		local_ref< android::bluetooth::BluetoothAdapter >
+	>();
 }
 
 local_ref< android::bluetooth::BluetoothDevice > android::bluetooth::BluetoothAdapter::getRemoteDevice(local_ref< java::lang::String > const &a0)
@@ -164,8 +164,8 @@ local_ref< android::bluetooth::BluetoothDevice > android::bluetooth::BluetoothAd
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(2),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::bluetooth::BluetoothDevice > >
-	(get_jobject(), a0);
+		local_ref< android::bluetooth::BluetoothDevice >
+	>(get_jobject(), a0);
 }
 
 jboolean android::bluetooth::BluetoothAdapter::isEnabled()
@@ -174,8 +174,8 @@ jboolean android::bluetooth::BluetoothAdapter::isEnabled()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(3),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::bluetooth::BluetoothAdapter::getState()
@@ -184,8 +184,8 @@ jint android::bluetooth::BluetoothAdapter::getState()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(4),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::enable()
@@ -194,8 +194,8 @@ jboolean android::bluetooth::BluetoothAdapter::enable()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(5),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::disable()
@@ -204,8 +204,8 @@ jboolean android::bluetooth::BluetoothAdapter::disable()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(6),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::bluetooth::BluetoothAdapter::getAddress()
@@ -214,8 +214,8 @@ local_ref< java::lang::String > android::bluetooth::BluetoothAdapter::getAddress
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(7),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::bluetooth::BluetoothAdapter::getName()
@@ -224,8 +224,8 @@ local_ref< java::lang::String > android::bluetooth::BluetoothAdapter::getName()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(8),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::setName(local_ref< java::lang::String > const &a0)
@@ -234,8 +234,8 @@ jboolean android::bluetooth::BluetoothAdapter::setName(local_ref< java::lang::St
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(9),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::bluetooth::BluetoothAdapter::getScanMode()
@@ -244,8 +244,8 @@ jint android::bluetooth::BluetoothAdapter::getScanMode()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(10),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::startDiscovery()
@@ -254,8 +254,8 @@ jboolean android::bluetooth::BluetoothAdapter::startDiscovery()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(11),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::cancelDiscovery()
@@ -264,8 +264,8 @@ jboolean android::bluetooth::BluetoothAdapter::cancelDiscovery()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(12),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::bluetooth::BluetoothAdapter::isDiscovering()
@@ -274,8 +274,8 @@ jboolean android::bluetooth::BluetoothAdapter::isDiscovering()
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(13),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > android::bluetooth::BluetoothAdapter::getBondedDevices()
@@ -284,8 +284,8 @@ local_ref< java::util::Set > android::bluetooth::BluetoothAdapter::getBondedDevi
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(14),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< android::bluetooth::BluetoothServerSocket > android::bluetooth::BluetoothAdapter::listenUsingRfcommWithServiceRecord(local_ref< java::lang::String > const &a0, local_ref< java::util::UUID > const &a1)
@@ -294,8 +294,8 @@ local_ref< android::bluetooth::BluetoothServerSocket > android::bluetooth::Bluet
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(15),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::bluetooth::BluetoothServerSocket > >
-	(get_jobject(), a0, a1);
+		local_ref< android::bluetooth::BluetoothServerSocket >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::bluetooth::BluetoothAdapter::checkBluetoothAddress(local_ref< java::lang::String > const &a0)
@@ -304,8 +304,8 @@ jboolean android::bluetooth::BluetoothAdapter::checkBluetoothAddress(local_ref< 
 		android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME,
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(16),
 		android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

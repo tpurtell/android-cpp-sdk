@@ -92,8 +92,8 @@ java::security::spec::ECParameterSpec::ECParameterSpec(local_ref< java::security
 	call_new_object<
 		java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -105,8 +105,8 @@ jint java::security::spec::ECParameterSpec::getCofactor()
 		java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::EllipticCurve > java::security::spec::ECParameterSpec::getCurve()
@@ -115,8 +115,8 @@ local_ref< java::security::spec::EllipticCurve > java::security::spec::ECParamet
 		java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::spec::EllipticCurve > >
-	(get_jobject());
+		local_ref< java::security::spec::EllipticCurve >
+	>(get_jobject());
 }
 
 local_ref< java::security::spec::ECPoint > java::security::spec::ECParameterSpec::getGenerator()
@@ -125,8 +125,8 @@ local_ref< java::security::spec::ECPoint > java::security::spec::ECParameterSpec
 		java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(3),
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::spec::ECPoint > >
-	(get_jobject());
+		local_ref< java::security::spec::ECPoint >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::ECParameterSpec::getOrder()
@@ -135,8 +135,8 @@ local_ref< java::math::BigInteger > java::security::spec::ECParameterSpec::getOr
 		java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(4),
 		java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

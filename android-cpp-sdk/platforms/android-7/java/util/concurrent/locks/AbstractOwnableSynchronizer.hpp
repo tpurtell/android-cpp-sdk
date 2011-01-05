@@ -40,8 +40,8 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 	}; //class AbstractOwnableSynchronizer
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::locks::AbstractOwnableSynchronizer::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::concurrent::locks::AbstractOwnableSynchronizer::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::concurrent::locks::AbstractOwnableSynchronizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 

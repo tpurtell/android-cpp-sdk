@@ -244,8 +244,8 @@ void android::media::AudioManager::adjustStreamVolume(jint a0, jint a1, jint a2)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(1),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::AudioManager::adjustVolume(jint a0, jint a1)
@@ -254,8 +254,8 @@ void android::media::AudioManager::adjustVolume(jint a0, jint a1)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(2),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::AudioManager::adjustSuggestedStreamVolume(jint a0, jint a1, jint a2)
@@ -264,8 +264,8 @@ void android::media::AudioManager::adjustSuggestedStreamVolume(jint a0, jint a1,
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(3),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::media::AudioManager::getRingerMode()
@@ -274,8 +274,8 @@ jint android::media::AudioManager::getRingerMode()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(4),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioManager::getStreamMaxVolume(jint a0)
@@ -284,8 +284,8 @@ jint android::media::AudioManager::getStreamMaxVolume(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(5),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::AudioManager::getStreamVolume(jint a0)
@@ -294,8 +294,8 @@ jint android::media::AudioManager::getStreamVolume(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(6),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioManager::setRingerMode(jint a0)
@@ -304,8 +304,8 @@ void android::media::AudioManager::setRingerMode(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(7),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioManager::setStreamVolume(jint a0, jint a1, jint a2)
@@ -314,8 +314,8 @@ void android::media::AudioManager::setStreamVolume(jint a0, jint a1, jint a2)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(8),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::AudioManager::setStreamSolo(jint a0, jboolean a1)
@@ -324,8 +324,8 @@ void android::media::AudioManager::setStreamSolo(jint a0, jboolean a1)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(9),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::AudioManager::setStreamMute(jint a0, jboolean a1)
@@ -334,8 +334,8 @@ void android::media::AudioManager::setStreamMute(jint a0, jboolean a1)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(10),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::media::AudioManager::shouldVibrate(jint a0)
@@ -344,8 +344,8 @@ jboolean android::media::AudioManager::shouldVibrate(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(11),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::media::AudioManager::getVibrateSetting(jint a0)
@@ -354,8 +354,8 @@ jint android::media::AudioManager::getVibrateSetting(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(12),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioManager::setVibrateSetting(jint a0, jint a1)
@@ -364,8 +364,8 @@ void android::media::AudioManager::setVibrateSetting(jint a0, jint a1)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(13),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::AudioManager::setSpeakerphoneOn(jboolean a0)
@@ -374,8 +374,8 @@ void android::media::AudioManager::setSpeakerphoneOn(jboolean a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(14),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isSpeakerphoneOn()
@@ -384,8 +384,8 @@ jboolean android::media::AudioManager::isSpeakerphoneOn()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(15),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setBluetoothScoOn(jboolean a0)
@@ -394,8 +394,8 @@ void android::media::AudioManager::setBluetoothScoOn(jboolean a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(16),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isBluetoothScoOn()
@@ -404,8 +404,8 @@ jboolean android::media::AudioManager::isBluetoothScoOn()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(17),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setBluetoothA2dpOn(jboolean a0)
@@ -414,8 +414,8 @@ void android::media::AudioManager::setBluetoothA2dpOn(jboolean a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(18),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isBluetoothA2dpOn()
@@ -424,8 +424,8 @@ jboolean android::media::AudioManager::isBluetoothA2dpOn()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(19),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setWiredHeadsetOn(jboolean a0)
@@ -434,8 +434,8 @@ void android::media::AudioManager::setWiredHeadsetOn(jboolean a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(20),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isWiredHeadsetOn()
@@ -444,8 +444,8 @@ jboolean android::media::AudioManager::isWiredHeadsetOn()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(21),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setMicrophoneMute(jboolean a0)
@@ -454,8 +454,8 @@ void android::media::AudioManager::setMicrophoneMute(jboolean a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(22),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isMicrophoneMute()
@@ -464,8 +464,8 @@ jboolean android::media::AudioManager::isMicrophoneMute()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(23),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setMode(jint a0)
@@ -474,8 +474,8 @@ void android::media::AudioManager::setMode(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(24),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::AudioManager::getMode()
@@ -484,8 +484,8 @@ jint android::media::AudioManager::getMode()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(25),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setRouting(jint a0, jint a1, jint a2)
@@ -494,8 +494,8 @@ void android::media::AudioManager::setRouting(jint a0, jint a1, jint a2)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(26),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::media::AudioManager::getRouting(jint a0)
@@ -504,8 +504,8 @@ jint android::media::AudioManager::getRouting(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(27),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::AudioManager::isMusicActive()
@@ -514,8 +514,8 @@ jboolean android::media::AudioManager::isMusicActive()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(28),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::AudioManager::setParameters(local_ref< java::lang::String > const &a0)
@@ -524,8 +524,8 @@ void android::media::AudioManager::setParameters(local_ref< java::lang::String >
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(29),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::media::AudioManager::getParameters(local_ref< java::lang::String > const &a0)
@@ -534,8 +534,8 @@ local_ref< java::lang::String > android::media::AudioManager::getParameters(loca
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(30),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioManager::playSoundEffect(jint a0)
@@ -544,8 +544,8 @@ void android::media::AudioManager::playSoundEffect(jint a0)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(31),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioManager::playSoundEffect(jint a0, jfloat a1)
@@ -554,8 +554,8 @@ void android::media::AudioManager::playSoundEffect(jint a0, jfloat a1)
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(32),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::AudioManager::loadSoundEffects()
@@ -564,8 +564,8 @@ void android::media::AudioManager::loadSoundEffects()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(33),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::AudioManager::unloadSoundEffects()
@@ -574,8 +574,8 @@ void android::media::AudioManager::unloadSoundEffects()
 		android::media::AudioManager::J2CPP_CLASS_NAME,
 		android::media::AudioManager::J2CPP_METHOD_NAME(34),
 		android::media::AudioManager::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -75,8 +75,8 @@ android::view::MenuInflater::MenuInflater(local_ref< android::content::Context >
 	call_new_object<
 		android::view::MenuInflater::J2CPP_CLASS_NAME,
 		android::view::MenuInflater::J2CPP_METHOD_NAME(0),
-		android::view::MenuInflater::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::view::MenuInflater::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -88,8 +88,8 @@ void android::view::MenuInflater::inflate(jint a0, local_ref< android::view::Men
 		android::view::MenuInflater::J2CPP_CLASS_NAME,
 		android::view::MenuInflater::J2CPP_METHOD_NAME(1),
 		android::view::MenuInflater::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,21 +11,34 @@
 #define J2CPP_ANDROID_APPWIDGET_APPWIDGETHOSTVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace appwidget { class AppWidgetProviderInfo; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace widget { namespace FrameLayout_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { class RemoteViews; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/appwidget/AppWidgetProviderInfo.hpp>
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/FrameLayout.hpp>
 #include <android/widget/RemoteViews.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -58,7 +71,14 @@ namespace android { namespace appwidget {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewParent>() const;
 		operator local_ref<android::widget::FrameLayout>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AppWidgetHostView(local_ref< android::content::Context > const&);
@@ -87,9 +107,44 @@ namespace j2cpp {
 
 
 
+android::appwidget::AppWidgetHostView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
 android::appwidget::AppWidgetHostView::operator local_ref<android::widget::FrameLayout>() const
 {
 	return local_ref<android::widget::FrameLayout>(get_jobject());
+}
+
+android::appwidget::AppWidgetHostView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -98,8 +153,8 @@ android::appwidget::AppWidgetHostView::AppWidgetHostView(local_ref< android::con
 	call_new_object<
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(0),
-		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -111,8 +166,8 @@ android::appwidget::AppWidgetHostView::AppWidgetHostView(local_ref< android::con
 	call_new_object<
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(1),
-		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -124,8 +179,8 @@ void android::appwidget::AppWidgetHostView::setAppWidget(jint a0, local_ref< and
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(2),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::appwidget::AppWidgetHostView::getAppWidgetId()
@@ -134,8 +189,8 @@ jint android::appwidget::AppWidgetHostView::getAppWidgetId()
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(3),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::appwidget::AppWidgetProviderInfo > android::appwidget::AppWidgetHostView::getAppWidgetInfo()
@@ -144,8 +199,8 @@ local_ref< android::appwidget::AppWidgetProviderInfo > android::appwidget::AppWi
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(4),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::appwidget::AppWidgetProviderInfo > >
-	(get_jobject());
+		local_ref< android::appwidget::AppWidgetProviderInfo >
+	>(get_jobject());
 }
 
 local_ref< android::widget::FrameLayout_::LayoutParams > android::appwidget::AppWidgetHostView::generateLayoutParams(local_ref< android::util::AttributeSet > const &a0)
@@ -154,8 +209,8 @@ local_ref< android::widget::FrameLayout_::LayoutParams > android::appwidget::App
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(5),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::widget::FrameLayout_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::FrameLayout_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 void android::appwidget::AppWidgetHostView::updateAppWidget(local_ref< android::widget::RemoteViews > const &a0)
@@ -164,8 +219,8 @@ void android::appwidget::AppWidgetHostView::updateAppWidget(local_ref< android::
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(6),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -178,8 +233,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::appwidget::AppWidg
 		android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(11),
 		android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

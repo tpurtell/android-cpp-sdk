@@ -11,9 +11,9 @@
 #define J2CPP_ORG_W3C_DOM_PROCESSINGINSTRUCTION_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -84,8 +84,8 @@ local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getTarget(
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getData()
@@ -94,8 +94,8 @@ local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getData()
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ProcessingInstruction::setData(local_ref< java::lang::String > const &a0)
@@ -104,8 +104,8 @@ void org::w3c::dom::ProcessingInstruction::setData(local_ref< java::lang::String
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

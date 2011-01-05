@@ -75,8 +75,8 @@ android::opengl::Visibility::Visibility()
 	call_new_object<
 		android::opengl::Visibility::J2CPP_CLASS_NAME,
 		android::opengl::Visibility::J2CPP_METHOD_NAME(0),
-		android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +88,8 @@ jint android::opengl::Visibility::visibilityTest(local_ref< array<jfloat,1> > co
 		android::opengl::Visibility::J2CPP_CLASS_NAME,
 		android::opengl::Visibility::J2CPP_METHOD_NAME(1),
 		android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1, a2, a3, a4, a5, a6);
+		jint
+	>(a0, a1, a2, a3, a4, a5, a6);
 }
 
 jint android::opengl::Visibility::frustumCullSpheres(local_ref< array<jfloat,1> > const &a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3, jint a4, local_ref< array<jint,1> > const &a5, jint a6, jint a7)
@@ -98,8 +98,8 @@ jint android::opengl::Visibility::frustumCullSpheres(local_ref< array<jfloat,1> 
 		android::opengl::Visibility::J2CPP_CLASS_NAME,
 		android::opengl::Visibility::J2CPP_METHOD_NAME(2),
 		android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1, a2, a3, a4, a5, a6, a7);
+		jint
+	>(a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::opengl::Visibility::computeBoundingSphere(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3, jint a4)
@@ -108,8 +108,8 @@ void android::opengl::Visibility::computeBoundingSphere(local_ref< array<jfloat,
 		android::opengl::Visibility::J2CPP_CLASS_NAME,
 		android::opengl::Visibility::J2CPP_METHOD_NAME(3),
 		android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 

@@ -53,8 +53,8 @@ namespace android { namespace provider {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::provider::BaseColumns>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 
@@ -89,14 +89,14 @@ namespace j2cpp {
 
 
 
-android::provider::LiveFolders::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::LiveFolders::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::LiveFolders::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 

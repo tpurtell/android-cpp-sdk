@@ -11,12 +11,13 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_DEFAULTREQUESTDIRECTOR_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpRequestExecutor; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpProcessor; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpRequestExecutor; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoutePlanner; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionKeepAliveStrategy; } } } } }
@@ -27,7 +28,6 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class RedirectHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -131,8 +131,8 @@ org::apache::http::impl::client::DefaultRequestDirector::DefaultRequestDirector(
 	call_new_object<
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
 )
 {
 }
@@ -145,8 +145,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::De
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::DefaultRequestDirector::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

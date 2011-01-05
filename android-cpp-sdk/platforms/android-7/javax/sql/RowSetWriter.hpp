@@ -71,8 +71,8 @@ jboolean javax::sql::RowSetWriter::writeData(local_ref< javax::sql::RowSetIntern
 		javax::sql::RowSetWriter::J2CPP_CLASS_NAME,
 		javax::sql::RowSetWriter::J2CPP_METHOD_NAME(0),
 		javax::sql::RowSetWriter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

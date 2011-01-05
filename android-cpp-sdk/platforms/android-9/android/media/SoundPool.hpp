@@ -142,8 +142,8 @@ void android::media::SoundPool_::OnLoadCompleteListener::onLoadComplete(local_re
 		android::media::SoundPool_::OnLoadCompleteListener::J2CPP_CLASS_NAME,
 		android::media::SoundPool_::OnLoadCompleteListener::J2CPP_METHOD_NAME(0),
 		android::media::SoundPool_::OnLoadCompleteListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -163,8 +163,8 @@ android::media::SoundPool::SoundPool(jint a0, jint a1, jint a2)
 	call_new_object<
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(0),
-		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -176,8 +176,8 @@ jint android::media::SoundPool::load(local_ref< java::lang::String > const &a0, 
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(1),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::media::SoundPool::load(local_ref< android::content::Context > const &a0, jint a1, jint a2)
@@ -186,8 +186,8 @@ jint android::media::SoundPool::load(local_ref< android::content::Context > cons
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(2),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::media::SoundPool::load(local_ref< android::content::res::AssetFileDescriptor > const &a0, jint a1)
@@ -196,8 +196,8 @@ jint android::media::SoundPool::load(local_ref< android::content::res::AssetFile
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(3),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::media::SoundPool::load(local_ref< java::io::FileDescriptor > const &a0, jlong a1, jlong a2, jint a3)
@@ -206,8 +206,8 @@ jint android::media::SoundPool::load(local_ref< java::io::FileDescriptor > const
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(4),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::media::SoundPool::unload(jint a0)
@@ -216,8 +216,8 @@ jboolean android::media::SoundPool::unload(jint a0)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(5),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::media::SoundPool::play(jint a0, jfloat a1, jfloat a2, jint a3, jint a4, jfloat a5)
@@ -226,8 +226,8 @@ jint android::media::SoundPool::play(jint a0, jfloat a1, jfloat a2, jint a3, jin
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(6),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::media::SoundPool::pause(jint a0)
@@ -236,8 +236,8 @@ void android::media::SoundPool::pause(jint a0)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(7),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::SoundPool::resume(jint a0)
@@ -246,8 +246,8 @@ void android::media::SoundPool::resume(jint a0)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(8),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::SoundPool::autoPause()
@@ -256,8 +256,8 @@ void android::media::SoundPool::autoPause()
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(9),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::SoundPool::autoResume()
@@ -266,8 +266,8 @@ void android::media::SoundPool::autoResume()
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(10),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::SoundPool::stop(jint a0)
@@ -276,8 +276,8 @@ void android::media::SoundPool::stop(jint a0)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(11),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::SoundPool::setVolume(jint a0, jfloat a1, jfloat a2)
@@ -286,8 +286,8 @@ void android::media::SoundPool::setVolume(jint a0, jfloat a1, jfloat a2)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(12),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::SoundPool::setPriority(jint a0, jint a1)
@@ -296,8 +296,8 @@ void android::media::SoundPool::setPriority(jint a0, jint a1)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(13),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::SoundPool::setLoop(jint a0, jint a1)
@@ -306,8 +306,8 @@ void android::media::SoundPool::setLoop(jint a0, jint a1)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(14),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::SoundPool::setRate(jint a0, jfloat a1)
@@ -316,8 +316,8 @@ void android::media::SoundPool::setRate(jint a0, jfloat a1)
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(15),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::SoundPool::setOnLoadCompleteListener(local_ref< android::media::SoundPool_::OnLoadCompleteListener > const &a0)
@@ -326,8 +326,8 @@ void android::media::SoundPool::setOnLoadCompleteListener(local_ref< android::me
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(16),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::SoundPool::release()
@@ -336,8 +336,8 @@ void android::media::SoundPool::release()
 		android::media::SoundPool::J2CPP_CLASS_NAME,
 		android::media::SoundPool::J2CPP_METHOD_NAME(17),
 		android::media::SoundPool::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -12,13 +12,17 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class RSAKey; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/Key.hpp>
 #include <java/security/PublicKey.hpp>
 #include <java/security/interfaces/RSAKey.hpp>
 
@@ -44,8 +48,10 @@ namespace java { namespace security { namespace interfaces {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
 		operator local_ref<java::security::PublicKey>() const;
 		operator local_ref<java::security::interfaces::RSAKey>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		local_ref< java::math::BigInteger > getPublicExponent();
@@ -75,6 +81,11 @@ java::security::interfaces::RSAPublicKey::operator local_ref<java::lang::Object>
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::security::interfaces::RSAPublicKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
+}
+
 java::security::interfaces::RSAPublicKey::operator local_ref<java::security::PublicKey>() const
 {
 	return local_ref<java::security::PublicKey>(get_jobject());
@@ -85,14 +96,19 @@ java::security::interfaces::RSAPublicKey::operator local_ref<java::security::int
 	return local_ref<java::security::interfaces::RSAKey>(get_jobject());
 }
 
+java::security::interfaces::RSAPublicKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPublicKey::getPublicExponent()
 {
 	return call_method<
 		java::security::interfaces::RSAPublicKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPublicKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::RSAPublicKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

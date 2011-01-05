@@ -252,8 +252,8 @@ void android::speech::tts::TextToSpeech_::OnInitListener::onInit(jint a0)
 		android::speech::tts::TextToSpeech_::OnInitListener::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech_::OnInitListener::J2CPP_METHOD_NAME(0),
 		android::speech::tts::TextToSpeech_::OnInitListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -272,8 +272,8 @@ android::speech::tts::TextToSpeech_::Engine::Engine(local_ref< android::speech::
 	call_new_object<
 		android::speech::tts::TextToSpeech_::Engine::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_NAME(0),
-		android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -441,8 +441,8 @@ void android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::onUttera
 		android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::J2CPP_METHOD_NAME(0),
 		android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -462,8 +462,8 @@ android::speech::tts::TextToSpeech::TextToSpeech(local_ref< android::content::Co
 	call_new_object<
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(0),
-		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -475,8 +475,8 @@ void android::speech::tts::TextToSpeech::shutdown()
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(1),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::speech::tts::TextToSpeech::addSpeech(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -485,8 +485,8 @@ jint android::speech::tts::TextToSpeech::addSpeech(local_ref< java::lang::String
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(2),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::speech::tts::TextToSpeech::addSpeech(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -495,8 +495,8 @@ jint android::speech::tts::TextToSpeech::addSpeech(local_ref< java::lang::String
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(3),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::speech::tts::TextToSpeech::addEarcon(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -505,8 +505,8 @@ jint android::speech::tts::TextToSpeech::addEarcon(local_ref< java::lang::String
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(4),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::speech::tts::TextToSpeech::addEarcon(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -515,8 +515,8 @@ jint android::speech::tts::TextToSpeech::addEarcon(local_ref< java::lang::String
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(5),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::speech::tts::TextToSpeech::speak(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::util::HashMap > const &a2)
@@ -525,8 +525,8 @@ jint android::speech::tts::TextToSpeech::speak(local_ref< java::lang::String > c
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(6),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::speech::tts::TextToSpeech::playEarcon(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::util::HashMap > const &a2)
@@ -535,8 +535,8 @@ jint android::speech::tts::TextToSpeech::playEarcon(local_ref< java::lang::Strin
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(7),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::speech::tts::TextToSpeech::playSilence(jlong a0, jint a1, local_ref< java::util::HashMap > const &a2)
@@ -545,8 +545,8 @@ jint android::speech::tts::TextToSpeech::playSilence(jlong a0, jint a1, local_re
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(8),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::speech::tts::TextToSpeech::isSpeaking()
@@ -555,8 +555,8 @@ jboolean android::speech::tts::TextToSpeech::isSpeaking()
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(9),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::speech::tts::TextToSpeech::stop()
@@ -565,8 +565,8 @@ jint android::speech::tts::TextToSpeech::stop()
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(10),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::speech::tts::TextToSpeech::setSpeechRate(jfloat a0)
@@ -575,8 +575,8 @@ jint android::speech::tts::TextToSpeech::setSpeechRate(jfloat a0)
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(11),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::speech::tts::TextToSpeech::setPitch(jfloat a0)
@@ -585,8 +585,8 @@ jint android::speech::tts::TextToSpeech::setPitch(jfloat a0)
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(12),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::speech::tts::TextToSpeech::setLanguage(local_ref< java::util::Locale > const &a0)
@@ -595,8 +595,8 @@ jint android::speech::tts::TextToSpeech::setLanguage(local_ref< java::util::Loca
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(13),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Locale > android::speech::tts::TextToSpeech::getLanguage()
@@ -605,8 +605,8 @@ local_ref< java::util::Locale > android::speech::tts::TextToSpeech::getLanguage(
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(14),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 jint android::speech::tts::TextToSpeech::isLanguageAvailable(local_ref< java::util::Locale > const &a0)
@@ -615,8 +615,8 @@ jint android::speech::tts::TextToSpeech::isLanguageAvailable(local_ref< java::ut
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(15),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::speech::tts::TextToSpeech::synthesizeToFile(local_ref< java::lang::String > const &a0, local_ref< java::util::HashMap > const &a1, local_ref< java::lang::String > const &a2)
@@ -625,8 +625,8 @@ jint android::speech::tts::TextToSpeech::synthesizeToFile(local_ref< java::lang:
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(16),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::speech::tts::TextToSpeech::setOnUtteranceCompletedListener(local_ref< android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener > const &a0)
@@ -635,8 +635,8 @@ jint android::speech::tts::TextToSpeech::setOnUtteranceCompletedListener(local_r
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(17),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::speech::tts::TextToSpeech::setEngineByPackageName(local_ref< java::lang::String > const &a0)
@@ -645,8 +645,8 @@ jint android::speech::tts::TextToSpeech::setEngineByPackageName(local_ref< java:
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(18),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::speech::tts::TextToSpeech::getDefaultEngine()
@@ -655,8 +655,8 @@ local_ref< java::lang::String > android::speech::tts::TextToSpeech::getDefaultEn
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(19),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::speech::tts::TextToSpeech::areDefaultsEnforced()
@@ -665,8 +665,8 @@ jboolean android::speech::tts::TextToSpeech::areDefaultsEnforced()
 		android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME,
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(20),
 		android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

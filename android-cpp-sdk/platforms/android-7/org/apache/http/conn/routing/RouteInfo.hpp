@@ -11,15 +11,19 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_ROUTEINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class TunnelType; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class LayerType; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -56,7 +60,10 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >, 1> > values();
@@ -87,7 +94,10 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 			{
 			}
 
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Comparable>() const;
 
 
 			static local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >, 1> > values();
@@ -160,9 +170,24 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::routing::RouteInfo_::TunnelType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+org::apache::http::conn::routing::RouteInfo_::TunnelType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::conn::routing::RouteInfo_::TunnelType::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+org::apache::http::conn::routing::RouteInfo_::TunnelType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >, 1> > org::apache::http::conn::routing::RouteInfo_::TunnelType::values()
@@ -171,8 +196,8 @@ local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::Tunne
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >, 1> > >
-	();
+		local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >, 1> >
+	>();
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apache::http::conn::routing::RouteInfo_::TunnelType::valueOf(local_ref< java::lang::String > const &a0)
@@ -181,8 +206,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apach
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > >
-	(a0);
+		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >
+	>(a0);
 }
 
 
@@ -213,9 +238,24 @@ J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::TunnelType,1,"T
 J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::TunnelType,2,"$VALUES","[org.apache.http.conn.routing.RouteInfo.TunnelType")
 
 
+org::apache::http::conn::routing::RouteInfo_::LayerType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+org::apache::http::conn::routing::RouteInfo_::LayerType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::conn::routing::RouteInfo_::LayerType::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+org::apache::http::conn::routing::RouteInfo_::LayerType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >, 1> > org::apache::http::conn::routing::RouteInfo_::LayerType::values()
@@ -224,8 +264,8 @@ local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::Layer
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >, 1> > >
-	();
+		local_ref< array< local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >, 1> >
+	>();
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache::http::conn::routing::RouteInfo_::LayerType::valueOf(local_ref< java::lang::String > const &a0)
@@ -234,8 +274,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > >
-	(a0);
+		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >
+	>(a0);
 }
 
 
@@ -278,8 +318,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::conn::routing::RouteInfo::getLocalAddress()
@@ -288,8 +328,8 @@ local_ref< java::net::InetAddress > org::apache::http::conn::routing::RouteInfo:
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::conn::routing::RouteInfo::getHopCount()
@@ -298,8 +338,8 @@ jint org::apache::http::conn::routing::RouteInfo::getHopCount()
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteInfo::getHopTarget(jint a0)
@@ -308,8 +348,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteInfo::getProxyHost()
@@ -318,8 +358,8 @@ local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::Route
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::HttpHost > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpHost >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apache::http::conn::routing::RouteInfo::getTunnelType()
@@ -328,8 +368,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apach
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteInfo::isTunnelled()
@@ -338,8 +378,8 @@ jboolean org::apache::http::conn::routing::RouteInfo::isTunnelled()
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache::http::conn::routing::RouteInfo::getLayerType()
@@ -348,8 +388,8 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(7),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteInfo::isLayered()
@@ -358,8 +398,8 @@ jboolean org::apache::http::conn::routing::RouteInfo::isLayered()
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(8),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean org::apache::http::conn::routing::RouteInfo::isSecure()
@@ -368,8 +408,8 @@ jboolean org::apache::http::conn::routing::RouteInfo::isSecure()
 		org::apache::http::conn::routing::RouteInfo::J2CPP_CLASS_NAME,
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_NAME(9),
 		org::apache::http::conn::routing::RouteInfo::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

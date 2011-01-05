@@ -77,8 +77,8 @@ jint android::text::ParcelableSpan::getSpanTypeId()
 		android::text::ParcelableSpan::J2CPP_CLASS_NAME,
 		android::text::ParcelableSpan::J2CPP_METHOD_NAME(0),
 		android::text::ParcelableSpan::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

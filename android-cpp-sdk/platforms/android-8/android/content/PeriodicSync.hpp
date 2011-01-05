@@ -60,8 +60,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PeriodicSync(local_ref< android::accounts::Account > const&, local_ref< java::lang::String > const&, local_ref< android::os::Bundle > const&, jlong);
@@ -92,14 +92,14 @@ namespace j2cpp {
 
 
 
-android::content::PeriodicSync::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::PeriodicSync::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::PeriodicSync::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -108,8 +108,8 @@ android::content::PeriodicSync::PeriodicSync(local_ref< android::accounts::Accou
 	call_new_object<
 		android::content::PeriodicSync::J2CPP_CLASS_NAME,
 		android::content::PeriodicSync::J2CPP_METHOD_NAME(0),
-		android::content::PeriodicSync::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::content::PeriodicSync::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 , account(get_jobject())
 , authority(get_jobject())
@@ -125,8 +125,8 @@ jint android::content::PeriodicSync::describeContents()
 		android::content::PeriodicSync::J2CPP_CLASS_NAME,
 		android::content::PeriodicSync::J2CPP_METHOD_NAME(1),
 		android::content::PeriodicSync::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::PeriodicSync::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -135,8 +135,8 @@ void android::content::PeriodicSync::writeToParcel(local_ref< android::os::Parce
 		android::content::PeriodicSync::J2CPP_CLASS_NAME,
 		android::content::PeriodicSync::J2CPP_METHOD_NAME(2),
 		android::content::PeriodicSync::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::content::PeriodicSync::equals(local_ref< java::lang::Object > const &a0)
@@ -145,8 +145,8 @@ jboolean android::content::PeriodicSync::equals(local_ref< java::lang::Object > 
 		android::content::PeriodicSync::J2CPP_CLASS_NAME,
 		android::content::PeriodicSync::J2CPP_METHOD_NAME(3),
 		android::content::PeriodicSync::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

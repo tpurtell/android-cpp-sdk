@@ -12,9 +12,9 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpecFactory; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -43,8 +43,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::cookie::CookieSpecFactory>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BrowserCompatSpecFactory();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::cookie::BrowserCompatSpecFactory::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::cookie::BrowserCompatSpecFactory::operator local_ref<org::apache::http::cookie::CookieSpecFactory>() const
 {
 	return local_ref<org::apache::http::cookie::CookieSpecFactory>(get_jobject());
+}
+
+org::apache::http::impl::cookie::BrowserCompatSpecFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ org::apache::http::impl::cookie::BrowserCompatSpecFactory::BrowserCompatSpecFact
 	call_new_object<
 		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::impl::cook
 		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BrowserCompatSpecFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::cookie::CookieSpec > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::cookie::CookieSpec >
+	>(get_jobject(), a0);
 }
 
 

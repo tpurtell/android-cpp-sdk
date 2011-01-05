@@ -11,10 +11,15 @@
 #define J2CPP_ANDROID_WIDGET_RADIOGROUP_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace widget { namespace RadioGroup_ { class OnCheckedChangeListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace RadioGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { class LinearLayout; } } }
@@ -25,9 +30,13 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/LinearLayout.hpp>
 #include <android/widget/RadioGroup.hpp>
 #include <java/lang/Object.hpp>
@@ -81,7 +90,10 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+			operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const;
 			operator local_ref<android::widget::LinearLayout_::LayoutParams>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
@@ -124,7 +136,14 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewParent>() const;
 		operator local_ref<android::widget::LinearLayout>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RadioGroup(local_ref< android::content::Context > const&);
@@ -168,8 +187,8 @@ void android::widget::RadioGroup_::OnCheckedChangeListener::onCheckedChanged(loc
 		android::widget::RadioGroup_::OnCheckedChangeListener::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::OnCheckedChangeListener::J2CPP_METHOD_NAME(0),
 		android::widget::RadioGroup_::OnCheckedChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -177,9 +196,24 @@ J2CPP_DEFINE_CLASS(android::widget::RadioGroup_::OnCheckedChangeListener,"androi
 J2CPP_DEFINE_METHOD(android::widget::RadioGroup_::OnCheckedChangeListener,0,"onCheckedChanged","(Landroid/widget/RadioGroup;I)V")
 
 
+android::widget::RadioGroup_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jobject());
+}
+
+android::widget::RadioGroup_::LayoutParams::operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::MarginLayoutParams>(get_jobject());
+}
+
 android::widget::RadioGroup_::LayoutParams::operator local_ref<android::widget::LinearLayout_::LayoutParams>() const
 {
 	return local_ref<android::widget::LinearLayout_::LayoutParams>(get_jobject());
+}
+
+android::widget::RadioGroup_::LayoutParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -188,8 +222,8 @@ android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::con
 	call_new_object<
 		android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(0),
-		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -201,8 +235,8 @@ android::widget::RadioGroup_::LayoutParams::LayoutParams(jint a0, jint a1)
 	call_new_object<
 		android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(1),
-		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -214,8 +248,8 @@ android::widget::RadioGroup_::LayoutParams::LayoutParams(jint a0, jint a1, jfloa
 	call_new_object<
 		android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(2),
-		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -227,8 +261,8 @@ android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::vie
 	call_new_object<
 		android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(3),
-		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -240,8 +274,8 @@ android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::vie
 	call_new_object<
 		android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(4),
-		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -259,9 +293,44 @@ J2CPP_DEFINE_METHOD(android::widget::RadioGroup_::LayoutParams,5,"setBaseAttribu
 
 
 
+android::widget::RadioGroup::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
 android::widget::RadioGroup::operator local_ref<android::widget::LinearLayout>() const
 {
 	return local_ref<android::widget::LinearLayout>(get_jobject());
+}
+
+android::widget::RadioGroup::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -270,8 +339,8 @@ android::widget::RadioGroup::RadioGroup(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(0),
-		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -283,8 +352,8 @@ android::widget::RadioGroup::RadioGroup(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(1),
-		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -296,8 +365,8 @@ void android::widget::RadioGroup::setOnHierarchyChangeListener(local_ref< androi
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(2),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -307,8 +376,8 @@ void android::widget::RadioGroup::addView(local_ref< android::view::View > const
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(4),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RadioGroup::check(jint a0)
@@ -317,8 +386,8 @@ void android::widget::RadioGroup::check(jint a0)
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(5),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::RadioGroup::getCheckedRadioButtonId()
@@ -327,8 +396,8 @@ jint android::widget::RadioGroup::getCheckedRadioButtonId()
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(6),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::RadioGroup::clearCheck()
@@ -337,8 +406,8 @@ void android::widget::RadioGroup::clearCheck()
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(7),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::RadioGroup::setOnCheckedChangeListener(local_ref< android::widget::RadioGroup_::OnCheckedChangeListener > const &a0)
@@ -347,8 +416,8 @@ void android::widget::RadioGroup::setOnCheckedChangeListener(local_ref< android:
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(8),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::RadioGroup_::LayoutParams > android::widget::RadioGroup::generateLayoutParams(local_ref< android::util::AttributeSet > const &a0)
@@ -357,8 +426,8 @@ local_ref< android::widget::RadioGroup_::LayoutParams > android::widget::RadioGr
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(9),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::widget::RadioGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::RadioGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -369,8 +438,8 @@ local_ref< android::widget::LinearLayout_::LayoutParams > android::widget::Radio
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(12),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::widget::LinearLayout_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::LinearLayout_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -380,8 +449,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::widget::RadioGroup
 		android::widget::RadioGroup::J2CPP_CLASS_NAME,
 		android::widget::RadioGroup::J2CPP_METHOD_NAME(14),
 		android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

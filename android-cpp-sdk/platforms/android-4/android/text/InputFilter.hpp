@@ -44,8 +44,8 @@ namespace android { namespace text {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::text::InputFilter>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			AllCaps();
@@ -68,8 +68,8 @@ namespace android { namespace text {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::text::InputFilter>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			LengthFilter(jint);
@@ -118,14 +118,14 @@ namespace j2cpp {
 
 
 
-android::text::InputFilter_::AllCaps::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::InputFilter_::AllCaps::operator local_ref<android::text::InputFilter>() const
 {
 	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
+android::text::InputFilter_::AllCaps::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -134,8 +134,8 @@ android::text::InputFilter_::AllCaps::AllCaps()
 	call_new_object<
 		android::text::InputFilter_::AllCaps::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_NAME(0),
-		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -147,8 +147,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter_::AllCaps::filt
 		android::text::InputFilter_::AllCaps::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_NAME(1),
 		android::text::InputFilter_::AllCaps::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -157,14 +157,14 @@ J2CPP_DEFINE_METHOD(android::text::InputFilter_::AllCaps,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::text::InputFilter_::AllCaps,1,"filter","(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;")
 
 
-android::text::InputFilter_::LengthFilter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::InputFilter_::LengthFilter::operator local_ref<android::text::InputFilter>() const
 {
 	return local_ref<android::text::InputFilter>(get_jobject());
+}
+
+android::text::InputFilter_::LengthFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -173,8 +173,8 @@ android::text::InputFilter_::LengthFilter::LengthFilter(jint a0)
 	call_new_object<
 		android::text::InputFilter_::LengthFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_NAME(0),
-		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -186,8 +186,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter_::LengthFilter:
 		android::text::InputFilter_::LengthFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_NAME(1),
 		android::text::InputFilter_::LengthFilter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -208,8 +208,8 @@ local_ref< java::lang::CharSequence > android::text::InputFilter::filter(local_r
 		android::text::InputFilter::J2CPP_CLASS_NAME,
 		android::text::InputFilter::J2CPP_METHOD_NAME(0),
 		android::text::InputFilter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

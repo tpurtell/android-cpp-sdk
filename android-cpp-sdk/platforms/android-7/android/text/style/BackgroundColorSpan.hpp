@@ -11,18 +11,22 @@
 #define J2CPP_ANDROID_TEXT_STYLE_BACKGROUNDCOLORSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
 namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <android/text/ParcelableSpan.hpp>
 #include <android/text/TextPaint.hpp>
 #include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/UpdateAppearance.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -50,9 +54,11 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::CharacterStyle>() const;
 		operator local_ref<android::text::style::UpdateAppearance>() const;
 		operator local_ref<android::text::ParcelableSpan>() const;
+		operator local_ref<android::os::Parcelable>() const;
 
 
 		BackgroundColorSpan(jint);
@@ -81,6 +87,11 @@ namespace j2cpp {
 
 
 
+android::text::style::BackgroundColorSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::text::style::BackgroundColorSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
 	return local_ref<android::text::style::CharacterStyle>(get_jobject());
@@ -96,14 +107,19 @@ android::text::style::BackgroundColorSpan::operator local_ref<android::text::Par
 	return local_ref<android::text::ParcelableSpan>(get_jobject());
 }
 
+android::text::style::BackgroundColorSpan::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
 
 android::text::style::BackgroundColorSpan::BackgroundColorSpan(jint a0)
 : object<android::text::style::BackgroundColorSpan>(
 	call_new_object<
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +131,8 @@ android::text::style::BackgroundColorSpan::BackgroundColorSpan(local_ref< androi
 	call_new_object<
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(1),
-		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -128,8 +144,8 @@ jint android::text::style::BackgroundColorSpan::getSpanTypeId()
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::style::BackgroundColorSpan::describeContents()
@@ -138,8 +154,8 @@ jint android::text::style::BackgroundColorSpan::describeContents()
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::style::BackgroundColorSpan::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -148,8 +164,8 @@ void android::text::style::BackgroundColorSpan::writeToParcel(local_ref< android
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(4),
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::text::style::BackgroundColorSpan::getBackgroundColor()
@@ -158,8 +174,8 @@ jint android::text::style::BackgroundColorSpan::getBackgroundColor()
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(5),
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::style::BackgroundColorSpan::updateDrawState(local_ref< android::text::TextPaint > const &a0)
@@ -168,8 +184,8 @@ void android::text::style::BackgroundColorSpan::updateDrawState(local_ref< andro
 		android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME,
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(6),
 		android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

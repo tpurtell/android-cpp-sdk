@@ -11,13 +11,13 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_ABSTRACTCONNPOOL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace ref { class Reference; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class PoolEntryRequest; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RefQueueHandler; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
-namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
-namespace j2cpp { namespace java { namespace lang { namespace ref { class Reference; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -118,8 +118,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::enableConnectionGC(
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::http::impl::conn::tsccm::AbstractConnPool::getEntry(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< java::lang::Object > const &a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -128,8 +128,8 @@ local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::h
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > org::apache::http::impl::conn::tsccm::AbstractConnPool::requestPoolEntry(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< java::lang::Object > const &a1)
@@ -138,8 +138,8 @@ local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > org::apache:
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::freeEntry(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0, jboolean a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -148,8 +148,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::freeEntry(local_ref
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::handleReference(local_ref< java::lang::ref::Reference > const &a0)
@@ -158,8 +158,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::handleReference(loc
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -169,8 +169,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::closeIdleConnection
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::closeExpiredConnections()
@@ -179,8 +179,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::closeExpiredConnect
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::deleteClosedConnections()
@@ -189,8 +189,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::deleteClosedConnect
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::shutdown()
@@ -199,8 +199,8 @@ void org::apache::http::impl::conn::tsccm::AbstractConnPool::shutdown()
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

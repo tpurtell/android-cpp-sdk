@@ -116,8 +116,8 @@ jboolean android::speech::SpeechRecognizer::isRecognitionAvailable(local_ref< an
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(1),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< android::speech::SpeechRecognizer > android::speech::SpeechRecognizer::createSpeechRecognizer(local_ref< android::content::Context > const &a0)
@@ -126,8 +126,8 @@ local_ref< android::speech::SpeechRecognizer > android::speech::SpeechRecognizer
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(2),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::speech::SpeechRecognizer > >
-	(a0);
+		local_ref< android::speech::SpeechRecognizer >
+	>(a0);
 }
 
 local_ref< android::speech::SpeechRecognizer > android::speech::SpeechRecognizer::createSpeechRecognizer(local_ref< android::content::Context > const &a0, local_ref< android::content::ComponentName > const &a1)
@@ -136,8 +136,8 @@ local_ref< android::speech::SpeechRecognizer > android::speech::SpeechRecognizer
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(3),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::speech::SpeechRecognizer > >
-	(a0, a1);
+		local_ref< android::speech::SpeechRecognizer >
+	>(a0, a1);
 }
 
 void android::speech::SpeechRecognizer::setRecognitionListener(local_ref< android::speech::RecognitionListener > const &a0)
@@ -146,8 +146,8 @@ void android::speech::SpeechRecognizer::setRecognitionListener(local_ref< androi
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(4),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::SpeechRecognizer::startListening(local_ref< android::content::Intent > const &a0)
@@ -156,8 +156,8 @@ void android::speech::SpeechRecognizer::startListening(local_ref< android::conte
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(5),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::speech::SpeechRecognizer::stopListening()
@@ -166,8 +166,8 @@ void android::speech::SpeechRecognizer::stopListening()
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(6),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::SpeechRecognizer::cancel()
@@ -176,8 +176,8 @@ void android::speech::SpeechRecognizer::cancel()
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(7),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::speech::SpeechRecognizer::destroy()
@@ -186,8 +186,8 @@ void android::speech::SpeechRecognizer::destroy()
 		android::speech::SpeechRecognizer::J2CPP_CLASS_NAME,
 		android::speech::SpeechRecognizer::J2CPP_METHOD_NAME(8),
 		android::speech::SpeechRecognizer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -11,22 +11,32 @@
 #define J2CPP_JAVA_NIO_CHANNELS_PIPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectableChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ScatteringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace Pipe_ { class SourceChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace Pipe_ { class SinkChannel; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/GatheringByteChannel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
 #include <java/nio/channels/Pipe.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
 #include <java/nio/channels/ScatteringByteChannel.hpp>
+#include <java/nio/channels/SelectableChannel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
+#include <java/nio/channels/spi/AbstractInterruptibleChannel.hpp>
 #include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
@@ -53,9 +63,15 @@ namespace java { namespace nio { namespace channels {
 			{
 			}
 
-			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
-			operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+			operator local_ref<java::nio::channels::SelectableChannel>() const;
+			operator local_ref<java::nio::channels::Channel>() const;
 			operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+			operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+			operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+			operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Closeable>() const;
 
 
 			jint validOps();
@@ -77,9 +93,15 @@ namespace java { namespace nio { namespace channels {
 			{
 			}
 
-			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
-			operator local_ref<java::nio::channels::WritableByteChannel>() const;
+			operator local_ref<java::nio::channels::SelectableChannel>() const;
 			operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+			operator local_ref<java::nio::channels::WritableByteChannel>() const;
+			operator local_ref<java::nio::channels::Channel>() const;
+			operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+			operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Closeable>() const;
 
 
 			jint validOps();
@@ -133,9 +155,19 @@ namespace j2cpp {
 
 
 
-java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::SelectableChannel>() const
 {
-	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+	return local_ref<java::nio::channels::SelectableChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
+{
+	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jobject());
 }
 
 java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
@@ -143,9 +175,29 @@ java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channel
 	return local_ref<java::nio::channels::ReadableByteChannel>(get_jobject());
 }
 
-java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
 {
-	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jobject());
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -155,8 +207,8 @@ jint java::nio::channels::Pipe_::SourceChannel::validOps()
 		java::nio::channels::Pipe_::SourceChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::Pipe_::SourceChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::Pipe_::SourceChannel::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -165,9 +217,14 @@ J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SourceChannel,0,"<init>","(Ljava
 J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SourceChannel,1,"validOps","()I")
 
 
-java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::SelectableChannel>() const
 {
-	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+	return local_ref<java::nio::channels::SelectableChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+{
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
 }
 
 java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
@@ -175,9 +232,34 @@ java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels:
 	return local_ref<java::nio::channels::WritableByteChannel>(get_jobject());
 }
 
-java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::Channel>() const
 {
-	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
 
@@ -187,8 +269,8 @@ jint java::nio::channels::Pipe_::SinkChannel::validOps()
 		java::nio::channels::Pipe_::SinkChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::Pipe_::SinkChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::Pipe_::SinkChannel::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -210,8 +292,8 @@ local_ref< java::nio::channels::Pipe > java::nio::channels::Pipe::open()
 		java::nio::channels::Pipe::J2CPP_CLASS_NAME,
 		java::nio::channels::Pipe::J2CPP_METHOD_NAME(1),
 		java::nio::channels::Pipe::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::Pipe > >
-	();
+		local_ref< java::nio::channels::Pipe >
+	>();
 }
 
 local_ref< java::nio::channels::Pipe_::SinkChannel > java::nio::channels::Pipe::sink()
@@ -220,8 +302,8 @@ local_ref< java::nio::channels::Pipe_::SinkChannel > java::nio::channels::Pipe::
 		java::nio::channels::Pipe::J2CPP_CLASS_NAME,
 		java::nio::channels::Pipe::J2CPP_METHOD_NAME(2),
 		java::nio::channels::Pipe::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::channels::Pipe_::SinkChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::Pipe_::SinkChannel >
+	>(get_jobject());
 }
 
 local_ref< java::nio::channels::Pipe_::SourceChannel > java::nio::channels::Pipe::source()
@@ -230,8 +312,8 @@ local_ref< java::nio::channels::Pipe_::SourceChannel > java::nio::channels::Pipe
 		java::nio::channels::Pipe::J2CPP_CLASS_NAME,
 		java::nio::channels::Pipe::J2CPP_METHOD_NAME(3),
 		java::nio::channels::Pipe::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::channels::Pipe_::SourceChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::Pipe_::SourceChannel >
+	>(get_jobject());
 }
 
 

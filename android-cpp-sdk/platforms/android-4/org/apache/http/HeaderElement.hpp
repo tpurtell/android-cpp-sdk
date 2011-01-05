@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_HEADERELEMENT_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class NameValuePair; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class NameValuePair; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -84,8 +84,8 @@ local_ref< java::lang::String > org::apache::http::HeaderElement::getName()
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(0),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::HeaderElement::getValue()
@@ -94,8 +94,8 @@ local_ref< java::lang::String > org::apache::http::HeaderElement::getValue()
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(1),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apache::http::HeaderElement::getParameters()
@@ -104,8 +104,8 @@ local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apach
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(2),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::HeaderElement::getParameterByName(local_ref< java::lang::String > const &a0)
@@ -114,8 +114,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::HeaderElement::
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(3),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::HeaderElement::getParameterCount()
@@ -124,8 +124,8 @@ jint org::apache::http::HeaderElement::getParameterCount()
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(4),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::HeaderElement::getParameter(jint a0)
@@ -134,8 +134,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::HeaderElement::
 		org::apache::http::HeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderElement::J2CPP_METHOD_NAME(5),
 		org::apache::http::HeaderElement::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0);
 }
 
 

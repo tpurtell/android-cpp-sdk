@@ -12,10 +12,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Delayed; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/concurrent/Delayed.hpp>
 #include <java/util/concurrent/Future.hpp>
@@ -40,6 +42,7 @@ namespace java { namespace util { namespace concurrent {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::util::concurrent::Delayed>() const;
 		operator local_ref<java::util::concurrent::Future>() const;
 
@@ -65,6 +68,11 @@ namespace j2cpp {
 java::util::concurrent::ScheduledFuture::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::ScheduledFuture::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
 java::util::concurrent::ScheduledFuture::operator local_ref<java::util::concurrent::Delayed>() const

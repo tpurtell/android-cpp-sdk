@@ -82,8 +82,8 @@ java::security::spec::ECGenParameterSpec::ECGenParameterSpec(local_ref< java::la
 	call_new_object<
 		java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< java::lang::String > java::security::spec::ECGenParameterSpec::getNam
 		java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

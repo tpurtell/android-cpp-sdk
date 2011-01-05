@@ -11,14 +11,16 @@
 #define J2CPP_ANDROID_TEXT_TEXTUTILS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class Pattern; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
@@ -37,8 +39,10 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/text/TextPaint.hpp>
 #include <android/text/TextUtils.hpp>
 #include <android/util/Printer.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
@@ -75,9 +79,10 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Iterable>() const;
 			operator local_ref<java::lang::Object>() const;
-			operator local_ref<android::text::TextUtils_::StringSplitter>() const;
 			operator local_ref<java::util::Iterator>() const;
+			operator local_ref<android::text::TextUtils_::StringSplitter>() const;
 
 
 			SimpleStringSplitter(jchar);
@@ -112,7 +117,10 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::text::TextUtils_::TruncateAt >, 1> > values();
@@ -139,8 +147,8 @@ namespace android { namespace text {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::Iterable>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			void setString(local_ref< java::lang::String >  const&);
@@ -294,19 +302,24 @@ namespace j2cpp {
 
 
 
+android::text::TextUtils_::SimpleStringSplitter::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 android::text::TextUtils_::SimpleStringSplitter::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::text::TextUtils_::SimpleStringSplitter::operator local_ref<android::text::TextUtils_::StringSplitter>() const
-{
-	return local_ref<android::text::TextUtils_::StringSplitter>(get_jobject());
-}
-
 android::text::TextUtils_::SimpleStringSplitter::operator local_ref<java::util::Iterator>() const
 {
 	return local_ref<java::util::Iterator>(get_jobject());
+}
+
+android::text::TextUtils_::SimpleStringSplitter::operator local_ref<android::text::TextUtils_::StringSplitter>() const
+{
+	return local_ref<android::text::TextUtils_::StringSplitter>(get_jobject());
 }
 
 
@@ -315,8 +328,8 @@ android::text::TextUtils_::SimpleStringSplitter::SimpleStringSplitter(jchar a0)
 	call_new_object<
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(0),
-		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -328,8 +341,8 @@ void android::text::TextUtils_::SimpleStringSplitter::setString(local_ref< java:
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(1),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::text::TextUtils_::SimpleStringSplitter::iterator()
@@ -338,8 +351,8 @@ local_ref< java::util::Iterator > android::text::TextUtils_::SimpleStringSplitte
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(2),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean android::text::TextUtils_::SimpleStringSplitter::hasNext()
@@ -348,8 +361,8 @@ jboolean android::text::TextUtils_::SimpleStringSplitter::hasNext()
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(3),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::TextUtils_::SimpleStringSplitter::next()
@@ -358,8 +371,8 @@ local_ref< java::lang::String > android::text::TextUtils_::SimpleStringSplitter:
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(4),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::text::TextUtils_::SimpleStringSplitter::remove()
@@ -368,8 +381,8 @@ void android::text::TextUtils_::SimpleStringSplitter::remove()
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(5),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::text::TextUtils_::SimpleStringSplitter::next_1()
@@ -378,8 +391,8 @@ local_ref< java::lang::Object > android::text::TextUtils_::SimpleStringSplitter:
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(6),
 		android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -393,9 +406,24 @@ J2CPP_DEFINE_METHOD(android::text::TextUtils_::SimpleStringSplitter,5,"remove","
 J2CPP_DEFINE_METHOD(android::text::TextUtils_::SimpleStringSplitter,6,"next","()Ljava/lang/Object;")
 
 
+android::text::TextUtils_::TruncateAt::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::text::TextUtils_::TruncateAt::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::text::TextUtils_::TruncateAt::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::TextUtils_::TruncateAt::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::text::TextUtils_::TruncateAt >, 1> > android::text::TextUtils_::TruncateAt::values()
@@ -404,8 +432,8 @@ local_ref< array< local_ref< android::text::TextUtils_::TruncateAt >, 1> > andro
 		android::text::TextUtils_::TruncateAt::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::TruncateAt::J2CPP_METHOD_NAME(0),
 		android::text::TextUtils_::TruncateAt::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::text::TextUtils_::TruncateAt >, 1> > >
-	();
+		local_ref< array< local_ref< android::text::TextUtils_::TruncateAt >, 1> >
+	>();
 }
 
 local_ref< android::text::TextUtils_::TruncateAt > android::text::TextUtils_::TruncateAt::valueOf(local_ref< java::lang::String > const &a0)
@@ -414,8 +442,8 @@ local_ref< android::text::TextUtils_::TruncateAt > android::text::TextUtils_::Tr
 		android::text::TextUtils_::TruncateAt::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::TruncateAt::J2CPP_METHOD_NAME(1),
 		android::text::TextUtils_::TruncateAt::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::TextUtils_::TruncateAt > >
-	(a0);
+		local_ref< android::text::TextUtils_::TruncateAt >
+	>(a0);
 }
 
 
@@ -462,14 +490,14 @@ J2CPP_DEFINE_FIELD(android::text::TextUtils_::TruncateAt,3,"START","Landroid/tex
 J2CPP_DEFINE_FIELD(android::text::TextUtils_::TruncateAt,4,"$VALUES","[android.text.TextUtils.TruncateAt")
 
 
-android::text::TextUtils_::StringSplitter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::TextUtils_::StringSplitter::operator local_ref<java::lang::Iterable>() const
 {
 	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+android::text::TextUtils_::StringSplitter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void android::text::TextUtils_::StringSplitter::setString(local_ref< java::lang::String > const &a0)
@@ -478,8 +506,8 @@ void android::text::TextUtils_::StringSplitter::setString(local_ref< java::lang:
 		android::text::TextUtils_::StringSplitter::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::StringSplitter::J2CPP_METHOD_NAME(0),
 		android::text::TextUtils_::StringSplitter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -498,8 +526,8 @@ void android::text::TextUtils_::EllipsizeCallback::ellipsized(jint a0, jint a1)
 		android::text::TextUtils_::EllipsizeCallback::J2CPP_CLASS_NAME,
 		android::text::TextUtils_::EllipsizeCallback::J2CPP_METHOD_NAME(0),
 		android::text::TextUtils_::EllipsizeCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -520,8 +548,8 @@ void android::text::TextUtils::getChars(local_ref< java::lang::CharSequence > co
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(1),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1)
@@ -530,8 +558,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(2),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1, jint a2)
@@ -540,8 +568,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(3),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1, jint a2, jint a3)
@@ -550,8 +578,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(4),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1, a2, a3);
+		jint
+	>(a0, a1, a2, a3);
 }
 
 jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1)
@@ -560,8 +588,8 @@ jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(5),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1, jint a2)
@@ -570,8 +598,8 @@ jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(6),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence > const &a0, jchar a1, jint a2, jint a3)
@@ -580,8 +608,8 @@ jint android::text::TextUtils::lastIndexOf(local_ref< java::lang::CharSequence >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(7),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1, a2, a3);
+		jint
+	>(a0, a1, a2, a3);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1)
@@ -590,8 +618,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(8),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2)
@@ -600,8 +628,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(9),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2, jint a3)
@@ -610,8 +638,8 @@ jint android::text::TextUtils::indexOf(local_ref< java::lang::CharSequence > con
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(10),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(a0, a1, a2, a3);
+		jint
+	>(a0, a1, a2, a3);
 }
 
 jboolean android::text::TextUtils::regionMatches(local_ref< java::lang::CharSequence > const &a0, jint a1, local_ref< java::lang::CharSequence > const &a2, jint a3, jint a4)
@@ -620,8 +648,8 @@ jboolean android::text::TextUtils::regionMatches(local_ref< java::lang::CharSequ
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(11),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0, a1, a2, a3, a4);
+		jboolean
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::text::TextUtils::substring(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -630,8 +658,8 @@ local_ref< java::lang::String > android::text::TextUtils::substring(local_ref< j
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(12),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::text::TextUtils::join(local_ref< java::lang::CharSequence > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -640,8 +668,8 @@ local_ref< java::lang::String > android::text::TextUtils::join(local_ref< java::
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(13),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::text::TextUtils::join(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::Iterable > const &a1)
@@ -650,8 +678,8 @@ local_ref< java::lang::String > android::text::TextUtils::join(local_ref< java::
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(14),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::text::TextUtils::split(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -660,8 +688,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::text::TextUtils
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(15),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::text::TextUtils::split(local_ref< java::lang::String > const &a0, local_ref< java::util::regex::Pattern > const &a1)
@@ -670,8 +698,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::text::TextUtils
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(16),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::stringOrSpannedString(local_ref< java::lang::CharSequence > const &a0)
@@ -680,8 +708,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::stringOrSpannedS
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(17),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::CharSequence > >
-	(a0);
+		local_ref< java::lang::CharSequence >
+	>(a0);
 }
 
 jboolean android::text::TextUtils::isEmpty(local_ref< java::lang::CharSequence > const &a0)
@@ -690,8 +718,8 @@ jboolean android::text::TextUtils::isEmpty(local_ref< java::lang::CharSequence >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(18),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::text::TextUtils::getTrimmedLength(local_ref< java::lang::CharSequence > const &a0)
@@ -700,8 +728,8 @@ jint android::text::TextUtils::getTrimmedLength(local_ref< java::lang::CharSeque
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(19),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jboolean android::text::TextUtils::equals(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1)
@@ -710,8 +738,8 @@ jboolean android::text::TextUtils::equals(local_ref< java::lang::CharSequence > 
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(20),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::getReverse(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -720,8 +748,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::getReverse(local
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(21),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 void android::text::TextUtils::writeToParcel(local_ref< java::lang::CharSequence > const &a0, local_ref< android::os::Parcel > const &a1, jint a2)
@@ -730,8 +758,8 @@ void android::text::TextUtils::writeToParcel(local_ref< java::lang::CharSequence
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(22),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::text::TextUtils::dumpSpans(local_ref< java::lang::CharSequence > const &a0, local_ref< android::util::Printer > const &a1, local_ref< java::lang::String > const &a2)
@@ -740,8 +768,8 @@ void android::text::TextUtils::dumpSpans(local_ref< java::lang::CharSequence > c
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(23),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::replace(local_ref< java::lang::CharSequence > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a2)
@@ -750,8 +778,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::replace(local_re
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(24),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::expandTemplate(local_ref< java::lang::CharSequence > const &a0, local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a1)
@@ -760,8 +788,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::expandTemplate(l
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(25),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1);
 }
 
 jint android::text::TextUtils::getOffsetBefore(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -770,8 +798,8 @@ jint android::text::TextUtils::getOffsetBefore(local_ref< java::lang::CharSequen
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(26),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::text::TextUtils::getOffsetAfter(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -780,8 +808,8 @@ jint android::text::TextUtils::getOffsetAfter(local_ref< java::lang::CharSequenc
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(27),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 void android::text::TextUtils::copySpansFrom(local_ref< android::text::Spanned > const &a0, jint a1, jint a2, local_ref< java::lang::Class > const &a3, local_ref< android::text::Spannable > const &a4, jint a5)
@@ -790,8 +818,8 @@ void android::text::TextUtils::copySpansFrom(local_ref< android::text::Spanned >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(28),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(a0, a1, a2, a3, a4, a5);
+		void
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::ellipsize(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jfloat a2, local_ref< android::text::TextUtils_::TruncateAt > const &a3)
@@ -800,8 +828,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::ellipsize(local_
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(29),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::ellipsize(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jfloat a2, local_ref< android::text::TextUtils_::TruncateAt > const &a3, jboolean a4, local_ref< android::text::TextUtils_::EllipsizeCallback > const &a5)
@@ -810,8 +838,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::ellipsize(local_
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(30),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::commaEllipsize(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, jfloat a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -820,8 +848,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::commaEllipsize(l
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(31),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3, a4);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::text::TextUtils::htmlEncode(local_ref< java::lang::String > const &a0)
@@ -830,8 +858,8 @@ local_ref< java::lang::String > android::text::TextUtils::htmlEncode(local_ref< 
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(32),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::text::TextUtils::concat(local_ref< array< local_ref< java::lang::CharSequence >, 1> > const &a0)
@@ -840,8 +868,8 @@ local_ref< java::lang::CharSequence > android::text::TextUtils::concat(local_ref
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(33),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::lang::CharSequence > >
-	(a0);
+		local_ref< java::lang::CharSequence >
+	>(a0);
 }
 
 jboolean android::text::TextUtils::isGraphic(local_ref< java::lang::CharSequence > const &a0)
@@ -850,8 +878,8 @@ jboolean android::text::TextUtils::isGraphic(local_ref< java::lang::CharSequence
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(34),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::text::TextUtils::isGraphic(jchar a0)
@@ -860,8 +888,8 @@ jboolean android::text::TextUtils::isGraphic(jchar a0)
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(35),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::text::TextUtils::isDigitsOnly(local_ref< java::lang::CharSequence > const &a0)
@@ -870,8 +898,8 @@ jboolean android::text::TextUtils::isDigitsOnly(local_ref< java::lang::CharSeque
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(36),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::text::TextUtils::getCapsMode(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -880,8 +908,8 @@ jint android::text::TextUtils::getCapsMode(local_ref< java::lang::CharSequence >
 		android::text::TextUtils::J2CPP_CLASS_NAME,
 		android::text::TextUtils::J2CPP_METHOD_NAME(37),
 		android::text::TextUtils::J2CPP_METHOD_SIGNATURE(37), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 

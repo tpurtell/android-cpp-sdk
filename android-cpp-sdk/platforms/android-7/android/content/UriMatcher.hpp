@@ -80,8 +80,8 @@ android::content::UriMatcher::UriMatcher(jint a0)
 	call_new_object<
 		android::content::UriMatcher::J2CPP_CLASS_NAME,
 		android::content::UriMatcher::J2CPP_METHOD_NAME(0),
-		android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -93,8 +93,8 @@ void android::content::UriMatcher::addURI(local_ref< java::lang::String > const 
 		android::content::UriMatcher::J2CPP_CLASS_NAME,
 		android::content::UriMatcher::J2CPP_METHOD_NAME(1),
 		android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::content::UriMatcher::match(local_ref< android::net::Uri > const &a0)
@@ -103,8 +103,8 @@ jint android::content::UriMatcher::match(local_ref< android::net::Uri > const &a
 		android::content::UriMatcher::J2CPP_CLASS_NAME,
 		android::content::UriMatcher::J2CPP_METHOD_NAME(2),
 		android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

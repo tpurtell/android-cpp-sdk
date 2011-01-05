@@ -71,8 +71,8 @@ local_ref< java::util::Iterator > java::lang::Iterable::iterator()
 		java::lang::Iterable::J2CPP_CLASS_NAME,
 		java::lang::Iterable::J2CPP_METHOD_NAME(0),
 		java::lang::Iterable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 

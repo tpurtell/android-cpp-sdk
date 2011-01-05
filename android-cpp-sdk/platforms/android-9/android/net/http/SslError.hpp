@@ -99,8 +99,8 @@ android::net::http::SslError::SslError(jint a0, local_ref< android::net::http::S
 	call_new_object<
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(0),
-		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +112,8 @@ android::net::http::SslError::SslError(jint a0, local_ref< java::security::cert:
 	call_new_object<
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(1),
-		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -125,8 +125,8 @@ local_ref< android::net::http::SslCertificate > android::net::http::SslError::ge
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(2),
 		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::http::SslCertificate > >
-	(get_jobject());
+		local_ref< android::net::http::SslCertificate >
+	>(get_jobject());
 }
 
 jboolean android::net::http::SslError::addError(jint a0)
@@ -135,8 +135,8 @@ jboolean android::net::http::SslError::addError(jint a0)
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(3),
 		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::http::SslError::hasError(jint a0)
@@ -145,8 +145,8 @@ jboolean android::net::http::SslError::hasError(jint a0)
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(4),
 		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::net::http::SslError::getPrimaryError()
@@ -155,8 +155,8 @@ jint android::net::http::SslError::getPrimaryError()
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(5),
 		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslError::toString()
@@ -165,8 +165,8 @@ local_ref< java::lang::String > android::net::http::SslError::toString()
 		android::net::http::SslError::J2CPP_CLASS_NAME,
 		android::net::http::SslError::J2CPP_METHOD_NAME(6),
 		android::net::http::SslError::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

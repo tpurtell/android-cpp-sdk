@@ -74,8 +74,8 @@ local_ref< java::lang::Thread > java::util::concurrent::ThreadFactory::newThread
 		java::util::concurrent::ThreadFactory::J2CPP_CLASS_NAME,
 		java::util::concurrent::ThreadFactory::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::ThreadFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Thread > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Thread >
+	>(get_jobject(), a0);
 }
 
 

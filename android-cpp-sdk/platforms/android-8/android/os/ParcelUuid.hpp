@@ -54,8 +54,8 @@ namespace android { namespace os {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ParcelUuid(local_ref< java::util::UUID > const&);
@@ -86,14 +86,14 @@ namespace j2cpp {
 
 
 
-android::os::ParcelUuid::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::os::ParcelUuid::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::os::ParcelUuid::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -102,8 +102,8 @@ android::os::ParcelUuid::ParcelUuid(local_ref< java::util::UUID > const &a0)
 	call_new_object<
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(0),
-		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +115,8 @@ local_ref< android::os::ParcelUuid > android::os::ParcelUuid::fromString(local_r
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(1),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::ParcelUuid > >
-	(a0);
+		local_ref< android::os::ParcelUuid >
+	>(a0);
 }
 
 local_ref< java::util::UUID > android::os::ParcelUuid::getUuid()
@@ -125,8 +125,8 @@ local_ref< java::util::UUID > android::os::ParcelUuid::getUuid()
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(2),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::UUID > >
-	(get_jobject());
+		local_ref< java::util::UUID >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::os::ParcelUuid::toString()
@@ -135,8 +135,8 @@ local_ref< java::lang::String > android::os::ParcelUuid::toString()
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(3),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::os::ParcelUuid::hashCode()
@@ -145,8 +145,8 @@ jint android::os::ParcelUuid::hashCode()
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(4),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::os::ParcelUuid::equals(local_ref< java::lang::Object > const &a0)
@@ -155,8 +155,8 @@ jboolean android::os::ParcelUuid::equals(local_ref< java::lang::Object > const &
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(5),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::os::ParcelUuid::describeContents()
@@ -165,8 +165,8 @@ jint android::os::ParcelUuid::describeContents()
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(6),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::ParcelUuid::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -175,8 +175,8 @@ void android::os::ParcelUuid::writeToParcel(local_ref< android::os::Parcel > con
 		android::os::ParcelUuid::J2CPP_CLASS_NAME,
 		android::os::ParcelUuid::J2CPP_METHOD_NAME(7),
 		android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

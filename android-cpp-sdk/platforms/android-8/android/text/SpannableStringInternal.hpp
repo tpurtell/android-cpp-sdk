@@ -91,8 +91,8 @@ jint android::text::SpannableStringInternal::length()
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(1),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jchar android::text::SpannableStringInternal::charAt(jint a0)
@@ -101,8 +101,8 @@ jchar android::text::SpannableStringInternal::charAt(jint a0)
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(2),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(2), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::text::SpannableStringInternal::toString()
@@ -111,8 +111,8 @@ local_ref< java::lang::String > android::text::SpannableStringInternal::toString
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(3),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::text::SpannableStringInternal::getChars(jint a0, jint a1, local_ref< array<jchar,1> > const &a2, jint a3)
@@ -121,8 +121,8 @@ void android::text::SpannableStringInternal::getChars(jint a0, jint a1, local_re
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(4),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::text::SpannableStringInternal::getSpanStart(local_ref< java::lang::Object > const &a0)
@@ -131,8 +131,8 @@ jint android::text::SpannableStringInternal::getSpanStart(local_ref< java::lang:
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(5),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::SpannableStringInternal::getSpanEnd(local_ref< java::lang::Object > const &a0)
@@ -141,8 +141,8 @@ jint android::text::SpannableStringInternal::getSpanEnd(local_ref< java::lang::O
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(6),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::SpannableStringInternal::getSpanFlags(local_ref< java::lang::Object > const &a0)
@@ -151,8 +151,8 @@ jint android::text::SpannableStringInternal::getSpanFlags(local_ref< java::lang:
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(7),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > android::text::SpannableStringInternal::getSpans(jint a0, jint a1, local_ref< java::lang::Class > const &a2)
@@ -161,8 +161,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::text::Spannable
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(8),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::text::SpannableStringInternal::nextSpanTransition(jint a0, jint a1, local_ref< java::lang::Class > const &a2)
@@ -171,8 +171,8 @@ jint android::text::SpannableStringInternal::nextSpanTransition(jint a0, jint a1
 		android::text::SpannableStringInternal::J2CPP_CLASS_NAME,
 		android::text::SpannableStringInternal::J2CPP_METHOD_NAME(9),
 		android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 

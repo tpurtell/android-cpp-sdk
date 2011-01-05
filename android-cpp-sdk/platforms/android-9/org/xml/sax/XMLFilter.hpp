@@ -80,8 +80,8 @@ void org::xml::sax::XMLFilter::setParent(local_ref< org::xml::sax::XMLReader > c
 		org::xml::sax::XMLFilter::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLFilter::J2CPP_METHOD_NAME(0),
 		org::xml::sax::XMLFilter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::XMLReader > org::xml::sax::XMLFilter::getParent()
@@ -90,8 +90,8 @@ local_ref< org::xml::sax::XMLReader > org::xml::sax::XMLFilter::getParent()
 		org::xml::sax::XMLFilter::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLFilter::J2CPP_METHOD_NAME(1),
 		org::xml::sax::XMLFilter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::xml::sax::XMLReader > >
-	(get_jobject());
+		local_ref< org::xml::sax::XMLReader >
+	>(get_jobject());
 }
 
 

@@ -124,8 +124,8 @@ jboolean org::apache::http::message::AbstractHttpMessage::containsHeader(local_r
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http::message::AbstractHttpMessage::getHeaders(local_ref< java::lang::String > const &a0)
@@ -134,8 +134,8 @@ local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< org::apache::http::Header >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< org::apache::http::Header >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::AbstractHttpMessage::getFirstHeader(local_ref< java::lang::String > const &a0)
@@ -144,8 +144,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::AbstractHttpM
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::AbstractHttpMessage::getLastHeader(local_ref< java::lang::String > const &a0)
@@ -154,8 +154,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::AbstractHttpM
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http::message::AbstractHttpMessage::getAllHeaders()
@@ -164,8 +164,8 @@ local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< org::apache::http::Header >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::Header >, 1> >
+	>(get_jobject());
 }
 
 void org::apache::http::message::AbstractHttpMessage::addHeader(local_ref< org::apache::http::Header > const &a0)
@@ -174,8 +174,8 @@ void org::apache::http::message::AbstractHttpMessage::addHeader(local_ref< org::
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::AbstractHttpMessage::addHeader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -184,8 +184,8 @@ void org::apache::http::message::AbstractHttpMessage::addHeader(local_ref< java:
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(8),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::message::AbstractHttpMessage::setHeader(local_ref< org::apache::http::Header > const &a0)
@@ -194,8 +194,8 @@ void org::apache::http::message::AbstractHttpMessage::setHeader(local_ref< org::
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(9),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::AbstractHttpMessage::setHeader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -204,8 +204,8 @@ void org::apache::http::message::AbstractHttpMessage::setHeader(local_ref< java:
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::message::AbstractHttpMessage::setHeaders(local_ref< array< local_ref< org::apache::http::Header >, 1> > const &a0)
@@ -214,8 +214,8 @@ void org::apache::http::message::AbstractHttpMessage::setHeaders(local_ref< arra
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(11),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::AbstractHttpMessage::removeHeader(local_ref< org::apache::http::Header > const &a0)
@@ -224,8 +224,8 @@ void org::apache::http::message::AbstractHttpMessage::removeHeader(local_ref< or
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(12),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::message::AbstractHttpMessage::removeHeaders(local_ref< java::lang::String > const &a0)
@@ -234,8 +234,8 @@ void org::apache::http::message::AbstractHttpMessage::removeHeaders(local_ref< j
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(13),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HeaderIterator > org::apache::http::message::AbstractHttpMessage::headerIterator()
@@ -244,8 +244,8 @@ local_ref< org::apache::http::HeaderIterator > org::apache::http::message::Abstr
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(14),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< org::apache::http::HeaderIterator > >
-	(get_jobject());
+		local_ref< org::apache::http::HeaderIterator >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HeaderIterator > org::apache::http::message::AbstractHttpMessage::headerIterator(local_ref< java::lang::String > const &a0)
@@ -254,8 +254,8 @@ local_ref< org::apache::http::HeaderIterator > org::apache::http::message::Abstr
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(15),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::apache::http::HeaderIterator > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HeaderIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::message::AbstractHttpMessage::getParams()
@@ -264,8 +264,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::message::A
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(16),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 void org::apache::http::message::AbstractHttpMessage::setParams(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -274,8 +274,8 @@ void org::apache::http::message::AbstractHttpMessage::setParams(local_ref< org::
 		org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME,
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(17),
 		org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

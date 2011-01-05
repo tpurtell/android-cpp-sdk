@@ -75,8 +75,8 @@ local_ref< org::apache::http::auth::AuthScheme > org::apache::http::auth::AuthSc
 		org::apache::http::auth::AuthSchemeFactory::J2CPP_CLASS_NAME,
 		org::apache::http::auth::AuthSchemeFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::auth::AuthSchemeFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::auth::AuthScheme > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::auth::AuthScheme >
+	>(get_jobject(), a0);
 }
 
 

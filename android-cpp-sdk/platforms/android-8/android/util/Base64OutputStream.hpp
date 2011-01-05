@@ -11,12 +11,18 @@
 #define J2CPP_ANDROID_UTIL_BASE64OUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterOutputStream.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,7 +47,11 @@ namespace android { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
+		operator local_ref<java::io::OutputStream>() const;
 
 
 		Base64OutputStream(local_ref< java::io::OutputStream > const&, jint);
@@ -66,9 +76,29 @@ namespace j2cpp {
 
 
 
+android::util::Base64OutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::util::Base64OutputStream::operator local_ref<java::io::FilterOutputStream>() const
 {
 	return local_ref<java::io::FilterOutputStream>(get_jobject());
+}
+
+android::util::Base64OutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+android::util::Base64OutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
+android::util::Base64OutputStream::operator local_ref<java::io::OutputStream>() const
+{
+	return local_ref<java::io::OutputStream>(get_jobject());
 }
 
 
@@ -77,8 +107,8 @@ android::util::Base64OutputStream::Base64OutputStream(local_ref< java::io::Outpu
 	call_new_object<
 		android::util::Base64OutputStream::J2CPP_CLASS_NAME,
 		android::util::Base64OutputStream::J2CPP_METHOD_NAME(0),
-		android::util::Base64OutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::util::Base64OutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -90,8 +120,8 @@ void android::util::Base64OutputStream::write(jint a0)
 		android::util::Base64OutputStream::J2CPP_CLASS_NAME,
 		android::util::Base64OutputStream::J2CPP_METHOD_NAME(1),
 		android::util::Base64OutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::Base64OutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -100,8 +130,8 @@ void android::util::Base64OutputStream::write(local_ref< array<jbyte,1> > const 
 		android::util::Base64OutputStream::J2CPP_CLASS_NAME,
 		android::util::Base64OutputStream::J2CPP_METHOD_NAME(2),
 		android::util::Base64OutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::util::Base64OutputStream::close()
@@ -110,8 +140,8 @@ void android::util::Base64OutputStream::close()
 		android::util::Base64OutputStream::J2CPP_CLASS_NAME,
 		android::util::Base64OutputStream::J2CPP_METHOD_NAME(3),
 		android::util::Base64OutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

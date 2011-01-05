@@ -87,8 +87,8 @@ javax::crypto::CipherSpi::CipherSpi()
 	call_new_object<
 		javax::crypto::CipherSpi::J2CPP_CLASS_NAME,
 		javax::crypto::CipherSpi::J2CPP_METHOD_NAME(0),
-		javax::crypto::CipherSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::CipherSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

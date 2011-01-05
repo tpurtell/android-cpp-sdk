@@ -91,8 +91,8 @@ void java::security::Certificate::decode(local_ref< java::io::InputStream > cons
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(0),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Certificate::encode(local_ref< java::io::OutputStream > const &a0)
@@ -101,8 +101,8 @@ void java::security::Certificate::encode(local_ref< java::io::OutputStream > con
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(1),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Certificate::getFormat()
@@ -111,8 +111,8 @@ local_ref< java::lang::String > java::security::Certificate::getFormat()
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(2),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > java::security::Certificate::getGuarantor()
@@ -121,8 +121,8 @@ local_ref< java::security::Principal > java::security::Certificate::getGuarantor
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(3),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > java::security::Certificate::getPrincipal()
@@ -131,8 +131,8 @@ local_ref< java::security::Principal > java::security::Certificate::getPrincipal
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(4),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::security::PublicKey > java::security::Certificate::getPublicKey()
@@ -141,8 +141,8 @@ local_ref< java::security::PublicKey > java::security::Certificate::getPublicKey
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(5),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject());
+		local_ref< java::security::PublicKey >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Certificate::toString(jboolean a0)
@@ -151,8 +151,8 @@ local_ref< java::lang::String > java::security::Certificate::toString(jboolean a
 		java::security::Certificate::J2CPP_CLASS_NAME,
 		java::security::Certificate::J2CPP_METHOD_NAME(6),
 		java::security::Certificate::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

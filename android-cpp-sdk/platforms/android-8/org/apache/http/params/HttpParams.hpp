@@ -99,8 +99,8 @@ local_ref< java::lang::Object > org::apache::http::params::HttpParams::getParame
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(0),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::setParameter(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -109,8 +109,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::copy()
@@ -119,8 +119,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::params::HttpParams::removeParameter(local_ref< java::lang::String > const &a0)
@@ -129,8 +129,8 @@ jboolean org::apache::http::params::HttpParams::removeParameter(local_ref< java:
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jlong org::apache::http::params::HttpParams::getLongParameter(local_ref< java::lang::String > const &a0, jlong a1)
@@ -139,8 +139,8 @@ jlong org::apache::http::params::HttpParams::getLongParameter(local_ref< java::l
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::setLongParameter(local_ref< java::lang::String > const &a0, jlong a1)
@@ -149,8 +149,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::params::HttpParams::getIntParameter(local_ref< java::lang::String > const &a0, jint a1)
@@ -159,8 +159,8 @@ jint org::apache::http::params::HttpParams::getIntParameter(local_ref< java::lan
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::setIntParameter(local_ref< java::lang::String > const &a0, jint a1)
@@ -169,8 +169,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(7),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jdouble org::apache::http::params::HttpParams::getDoubleParameter(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -179,8 +179,8 @@ jdouble org::apache::http::params::HttpParams::getDoubleParameter(local_ref< jav
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(8),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(8), 
-		jdouble >
-	(get_jobject(), a0, a1);
+		jdouble
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::setDoubleParameter(local_ref< java::lang::String > const &a0, jdouble a1)
@@ -189,8 +189,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(9),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::params::HttpParams::getBooleanParameter(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -199,8 +199,8 @@ jboolean org::apache::http::params::HttpParams::getBooleanParameter(local_ref< j
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(10),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::params::HttpParams::setBooleanParameter(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -209,8 +209,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::params::Ht
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(11),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::params::HttpParams::isParameterTrue(local_ref< java::lang::String > const &a0)
@@ -219,8 +219,8 @@ jboolean org::apache::http::params::HttpParams::isParameterTrue(local_ref< java:
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(12),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::params::HttpParams::isParameterFalse(local_ref< java::lang::String > const &a0)
@@ -229,8 +229,8 @@ jboolean org::apache::http::params::HttpParams::isParameterFalse(local_ref< java
 		org::apache::http::params::HttpParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpParams::J2CPP_METHOD_NAME(13),
 		org::apache::http::params::HttpParams::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

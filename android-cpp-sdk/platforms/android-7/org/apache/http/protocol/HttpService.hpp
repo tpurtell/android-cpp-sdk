@@ -105,8 +105,8 @@ org::apache::http::protocol::HttpService::HttpService(local_ref< org::apache::ht
 	call_new_object<
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -118,8 +118,8 @@ void org::apache::http::protocol::HttpService::setHttpProcessor(local_ref< org::
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpService::setConnReuseStrategy(local_ref< org::apache::http::ConnectionReuseStrategy > const &a0)
@@ -128,8 +128,8 @@ void org::apache::http::protocol::HttpService::setConnReuseStrategy(local_ref< o
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpService::setResponseFactory(local_ref< org::apache::http::HttpResponseFactory > const &a0)
@@ -138,8 +138,8 @@ void org::apache::http::protocol::HttpService::setResponseFactory(local_ref< org
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpService::setHandlerResolver(local_ref< org::apache::http::protocol::HttpRequestHandlerResolver > const &a0)
@@ -148,8 +148,8 @@ void org::apache::http::protocol::HttpService::setHandlerResolver(local_ref< org
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpService::setExpectationVerifier(local_ref< org::apache::http::protocol::HttpExpectationVerifier > const &a0)
@@ -158,8 +158,8 @@ void org::apache::http::protocol::HttpService::setExpectationVerifier(local_ref<
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(5),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::protocol::HttpService::getParams()
@@ -168,8 +168,8 @@ local_ref< org::apache::http::params::HttpParams > org::apache::http::protocol::
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(6),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::HttpService::setParams(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -178,8 +178,8 @@ void org::apache::http::protocol::HttpService::setParams(local_ref< org::apache:
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(7),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpService::handleRequest(local_ref< org::apache::http::HttpServerConnection > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -188,8 +188,8 @@ void org::apache::http::protocol::HttpService::handleRequest(local_ref< org::apa
 		org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(8),
 		org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

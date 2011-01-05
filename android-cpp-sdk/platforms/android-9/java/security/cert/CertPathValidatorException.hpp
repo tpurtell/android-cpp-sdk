@@ -11,12 +11,18 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTPATHVALIDATOREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPath; } } } }
 namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <java/security/GeneralSecurityException.hpp>
@@ -48,7 +54,11 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::GeneralSecurityException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		CertPathValidatorException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&, local_ref< java::security::cert::CertPath > const&, jint);
@@ -77,9 +87,29 @@ namespace j2cpp {
 
 
 
+java::security::cert::CertPathValidatorException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::security::cert::CertPathValidatorException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::security::cert::CertPathValidatorException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::cert::CertPathValidatorException::operator local_ref<java::security::GeneralSecurityException>() const
 {
 	return local_ref<java::security::GeneralSecurityException>(get_jobject());
+}
+
+java::security::cert::CertPathValidatorException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -88,8 +118,8 @@ java::security::cert::CertPathValidatorException::CertPathValidatorException(loc
 	call_new_object<
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(0),
-		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -101,8 +131,8 @@ java::security::cert::CertPathValidatorException::CertPathValidatorException(loc
 	call_new_object<
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(1),
-		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -114,8 +144,8 @@ java::security::cert::CertPathValidatorException::CertPathValidatorException(loc
 	call_new_object<
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(2),
-		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -127,8 +157,8 @@ java::security::cert::CertPathValidatorException::CertPathValidatorException(loc
 	call_new_object<
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(3),
-		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -140,8 +170,8 @@ java::security::cert::CertPathValidatorException::CertPathValidatorException()
 	call_new_object<
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(4),
-		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(4)>
-	()
+		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(4)
+	>()
 )
 {
 }
@@ -153,8 +183,8 @@ local_ref< java::security::cert::CertPath > java::security::cert::CertPathValida
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(5),
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::cert::CertPath > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPath >
+	>(get_jobject());
 }
 
 jint java::security::cert::CertPathValidatorException::getIndex()
@@ -163,8 +193,8 @@ jint java::security::cert::CertPathValidatorException::getIndex()
 		java::security::cert::CertPathValidatorException::J2CPP_CLASS_NAME,
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_NAME(6),
 		java::security::cert::CertPathValidatorException::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

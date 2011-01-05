@@ -11,17 +11,23 @@
 #define J2CPP_JAVA_SECURITY_SIGNER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace security { class Identity; } } }
 namespace j2cpp { namespace java { namespace security { class IdentityScope; } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 namespace j2cpp { namespace java { namespace security { class KeyPair; } } }
+namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Identity.hpp>
 #include <java/security/IdentityScope.hpp>
 #include <java/security/KeyPair.hpp>
+#include <java/security/Principal.hpp>
 #include <java/security/PrivateKey.hpp>
 
 
@@ -49,7 +55,10 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::security::Identity>() const;
+		operator local_ref<java::security::Principal>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		Signer(local_ref< java::lang::String > const&);
@@ -75,9 +84,24 @@ namespace j2cpp {
 
 
 
+java::security::Signer::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::security::Signer::operator local_ref<java::security::Identity>() const
 {
 	return local_ref<java::security::Identity>(get_jobject());
+}
+
+java::security::Signer::operator local_ref<java::security::Principal>() const
+{
+	return local_ref<java::security::Principal>(get_jobject());
+}
+
+java::security::Signer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +111,8 @@ java::security::Signer::Signer(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::security::Signer::J2CPP_CLASS_NAME,
 		java::security::Signer::J2CPP_METHOD_NAME(1),
-		java::security::Signer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::Signer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -100,8 +124,8 @@ java::security::Signer::Signer(local_ref< java::lang::String > const &a0, local_
 	call_new_object<
 		java::security::Signer::J2CPP_CLASS_NAME,
 		java::security::Signer::J2CPP_METHOD_NAME(2),
-		java::security::Signer::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::security::Signer::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -113,8 +137,8 @@ local_ref< java::security::PrivateKey > java::security::Signer::getPrivateKey()
 		java::security::Signer::J2CPP_CLASS_NAME,
 		java::security::Signer::J2CPP_METHOD_NAME(3),
 		java::security::Signer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::PrivateKey > >
-	(get_jobject());
+		local_ref< java::security::PrivateKey >
+	>(get_jobject());
 }
 
 void java::security::Signer::setKeyPair(local_ref< java::security::KeyPair > const &a0)
@@ -123,8 +147,8 @@ void java::security::Signer::setKeyPair(local_ref< java::security::KeyPair > con
 		java::security::Signer::J2CPP_CLASS_NAME,
 		java::security::Signer::J2CPP_METHOD_NAME(4),
 		java::security::Signer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Signer::toString()
@@ -133,8 +157,8 @@ local_ref< java::lang::String > java::security::Signer::toString()
 		java::security::Signer::J2CPP_CLASS_NAME,
 		java::security::Signer::J2CPP_METHOD_NAME(5),
 		java::security::Signer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

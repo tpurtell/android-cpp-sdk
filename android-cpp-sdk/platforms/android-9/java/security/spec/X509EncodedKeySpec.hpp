@@ -12,11 +12,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class EncodedKeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/spec/EncodedKeySpec.hpp>
+#include <java/security/spec/KeySpec.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +44,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
 		operator local_ref<java::security::spec::EncodedKeySpec>() const;
 
 
@@ -65,6 +71,16 @@ namespace j2cpp {
 
 
 
+java::security::spec::X509EncodedKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::security::spec::X509EncodedKeySpec::operator local_ref<java::security::spec::KeySpec>() const
+{
+	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
 java::security::spec::X509EncodedKeySpec::operator local_ref<java::security::spec::EncodedKeySpec>() const
 {
 	return local_ref<java::security::spec::EncodedKeySpec>(get_jobject());
@@ -76,8 +92,8 @@ java::security::spec::X509EncodedKeySpec::X509EncodedKeySpec(local_ref< array<jb
 	call_new_object<
 		java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +105,8 @@ local_ref< array<jbyte,1> > java::security::spec::X509EncodedKeySpec::getEncoded
 		java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::spec::X509EncodedKeySpec::getFormat()
@@ -99,8 +115,8 @@ local_ref< java::lang::String > java::security::spec::X509EncodedKeySpec::getFor
 		java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

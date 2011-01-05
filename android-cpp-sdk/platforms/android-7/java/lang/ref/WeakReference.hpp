@@ -41,6 +41,7 @@ namespace java { namespace lang { namespace ref {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::ref::Reference>() const;
 
 
@@ -65,6 +66,11 @@ namespace j2cpp {
 
 
 
+java::lang::ref::WeakReference::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::lang::ref::WeakReference::operator local_ref<java::lang::ref::Reference>() const
 {
 	return local_ref<java::lang::ref::Reference>(get_jobject());
@@ -76,8 +82,8 @@ java::lang::ref::WeakReference::WeakReference(local_ref< java::lang::Object > co
 	call_new_object<
 		java::lang::ref::WeakReference::J2CPP_CLASS_NAME,
 		java::lang::ref::WeakReference::J2CPP_METHOD_NAME(0),
-		java::lang::ref::WeakReference::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::ref::WeakReference::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +95,8 @@ java::lang::ref::WeakReference::WeakReference(local_ref< java::lang::Object > co
 	call_new_object<
 		java::lang::ref::WeakReference::J2CPP_CLASS_NAME,
 		java::lang::ref::WeakReference::J2CPP_METHOD_NAME(1),
-		java::lang::ref::WeakReference::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::lang::ref::WeakReference::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }

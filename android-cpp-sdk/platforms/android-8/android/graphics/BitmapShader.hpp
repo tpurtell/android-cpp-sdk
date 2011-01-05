@@ -14,10 +14,12 @@
 namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/Shader.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +42,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Shader>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BitmapShader(local_ref< android::graphics::Bitmap > const&, local_ref< android::graphics::Shader_::TileMode > const&, local_ref< android::graphics::Shader_::TileMode > const&);
@@ -66,14 +69,19 @@ android::graphics::BitmapShader::operator local_ref<android::graphics::Shader>()
 	return local_ref<android::graphics::Shader>(get_jobject());
 }
 
+android::graphics::BitmapShader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::BitmapShader::BitmapShader(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Shader_::TileMode > const &a1, local_ref< android::graphics::Shader_::TileMode > const &a2)
 : object<android::graphics::BitmapShader>(
 	call_new_object<
 		android::graphics::BitmapShader::J2CPP_CLASS_NAME,
 		android::graphics::BitmapShader::J2CPP_METHOD_NAME(0),
-		android::graphics::BitmapShader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::BitmapShader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }

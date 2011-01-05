@@ -78,8 +78,8 @@ local_ref< javax::xml::validation::Validator > javax::xml::validation::Schema::n
 		javax::xml::validation::Schema::J2CPP_CLASS_NAME,
 		javax::xml::validation::Schema::J2CPP_METHOD_NAME(1),
 		javax::xml::validation::Schema::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::validation::Validator > >
-	(get_jobject());
+		local_ref< javax::xml::validation::Validator >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::validation::ValidatorHandler > javax::xml::validation::Schema::newValidatorHandler()
@@ -88,8 +88,8 @@ local_ref< javax::xml::validation::ValidatorHandler > javax::xml::validation::Sc
 		javax::xml::validation::Schema::J2CPP_CLASS_NAME,
 		javax::xml::validation::Schema::J2CPP_METHOD_NAME(2),
 		javax::xml::validation::Schema::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::validation::ValidatorHandler > >
-	(get_jobject());
+		local_ref< javax::xml::validation::ValidatorHandler >
+	>(get_jobject());
 }
 
 

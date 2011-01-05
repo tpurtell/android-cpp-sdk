@@ -55,8 +55,8 @@ namespace java { namespace security { namespace acl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::acl::Owner>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void setName(local_ref< java::security::Principal >  const&, local_ref< java::lang::String >  const&);
@@ -86,14 +86,14 @@ namespace j2cpp {
 
 
 
-java::security::acl::Acl::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::acl::Acl::operator local_ref<java::security::acl::Owner>() const
 {
 	return local_ref<java::security::acl::Owner>(get_jobject());
+}
+
+java::security::acl::Acl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::security::acl::Acl::setName(local_ref< java::security::Principal > const &a0, local_ref< java::lang::String > const &a1)
@@ -102,8 +102,8 @@ void java::security::acl::Acl::setName(local_ref< java::security::Principal > co
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(0),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::security::acl::Acl::getName()
@@ -112,8 +112,8 @@ local_ref< java::lang::String > java::security::acl::Acl::getName()
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(1),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::acl::Acl::addEntry(local_ref< java::security::Principal > const &a0, local_ref< java::security::acl::AclEntry > const &a1)
@@ -122,8 +122,8 @@ jboolean java::security::acl::Acl::addEntry(local_ref< java::security::Principal
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(2),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::security::acl::Acl::removeEntry(local_ref< java::security::Principal > const &a0, local_ref< java::security::acl::AclEntry > const &a1)
@@ -132,8 +132,8 @@ jboolean java::security::acl::Acl::removeEntry(local_ref< java::security::Princi
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(3),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Enumeration > java::security::acl::Acl::getPermissions(local_ref< java::security::Principal > const &a0)
@@ -142,8 +142,8 @@ local_ref< java::util::Enumeration > java::security::acl::Acl::getPermissions(lo
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(4),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject(), a0);
+		local_ref< java::util::Enumeration >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Enumeration > java::security::acl::Acl::entries()
@@ -152,8 +152,8 @@ local_ref< java::util::Enumeration > java::security::acl::Acl::entries()
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(5),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 jboolean java::security::acl::Acl::checkPermission(local_ref< java::security::Principal > const &a0, local_ref< java::security::acl::Permission > const &a1)
@@ -162,8 +162,8 @@ jboolean java::security::acl::Acl::checkPermission(local_ref< java::security::Pr
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(6),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::security::acl::Acl::toString()
@@ -172,8 +172,8 @@ local_ref< java::lang::String > java::security::acl::Acl::toString()
 		java::security::acl::Acl::J2CPP_CLASS_NAME,
 		java::security::acl::Acl::J2CPP_METHOD_NAME(7),
 		java::security::acl::Acl::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

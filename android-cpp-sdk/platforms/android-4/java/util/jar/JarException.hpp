@@ -11,11 +11,21 @@
 #define J2CPP_JAVA_UTIL_JAR_JAREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipException; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/util/zip/ZipException.hpp>
 
 
@@ -39,7 +49,12 @@ namespace java { namespace util { namespace jar {
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::util::zip::ZipException>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		JarException();
@@ -63,9 +78,34 @@ namespace j2cpp {
 
 
 
+java::util::jar::JarException::operator local_ref<java::io::IOException>() const
+{
+	return local_ref<java::io::IOException>(get_jobject());
+}
+
+java::util::jar::JarException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::util::jar::JarException::operator local_ref<java::util::zip::ZipException>() const
 {
 	return local_ref<java::util::zip::ZipException>(get_jobject());
+}
+
+java::util::jar::JarException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::util::jar::JarException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::util::jar::JarException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -74,8 +114,8 @@ java::util::jar::JarException::JarException()
 	call_new_object<
 		java::util::jar::JarException::J2CPP_CLASS_NAME,
 		java::util::jar::JarException::J2CPP_METHOD_NAME(0),
-		java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -87,8 +127,8 @@ java::util::jar::JarException::JarException(local_ref< java::lang::String > cons
 	call_new_object<
 		java::util::jar::JarException::J2CPP_CLASS_NAME,
 		java::util::jar::JarException::J2CPP_METHOD_NAME(1),
-		java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

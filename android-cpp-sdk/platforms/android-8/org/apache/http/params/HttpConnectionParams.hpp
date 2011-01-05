@@ -52,8 +52,8 @@ namespace org { namespace apache { namespace http { namespace params {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::params::CoreConnectionPNames>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static jint getSoTimeout(local_ref< org::apache::http::params::HttpParams >  const&);
@@ -88,14 +88,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::params::HttpConnectionParams::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::params::HttpConnectionParams::operator local_ref<org::apache::http::params::CoreConnectionPNames>() const
 {
 	return local_ref<org::apache::http::params::CoreConnectionPNames>(get_jobject());
+}
+
+org::apache::http::params::HttpConnectionParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -105,8 +105,8 @@ jint org::apache::http::params::HttpConnectionParams::getSoTimeout(local_ref< or
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setSoTimeout(local_ref< org::apache::http::params::HttpParams > const &a0, jint a1)
@@ -115,8 +115,8 @@ void org::apache::http::params::HttpConnectionParams::setSoTimeout(local_ref< or
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean org::apache::http::params::HttpConnectionParams::getTcpNoDelay(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -125,8 +125,8 @@ jboolean org::apache::http::params::HttpConnectionParams::getTcpNoDelay(local_re
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setTcpNoDelay(local_ref< org::apache::http::params::HttpParams > const &a0, jboolean a1)
@@ -135,8 +135,8 @@ void org::apache::http::params::HttpConnectionParams::setTcpNoDelay(local_ref< o
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint org::apache::http::params::HttpConnectionParams::getSocketBufferSize(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -145,8 +145,8 @@ jint org::apache::http::params::HttpConnectionParams::getSocketBufferSize(local_
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setSocketBufferSize(local_ref< org::apache::http::params::HttpParams > const &a0, jint a1)
@@ -155,8 +155,8 @@ void org::apache::http::params::HttpConnectionParams::setSocketBufferSize(local_
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint org::apache::http::params::HttpConnectionParams::getLinger(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -165,8 +165,8 @@ jint org::apache::http::params::HttpConnectionParams::getLinger(local_ref< org::
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(7),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setLinger(local_ref< org::apache::http::params::HttpParams > const &a0, jint a1)
@@ -175,8 +175,8 @@ void org::apache::http::params::HttpConnectionParams::setLinger(local_ref< org::
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(8),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint org::apache::http::params::HttpConnectionParams::getConnectionTimeout(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -185,8 +185,8 @@ jint org::apache::http::params::HttpConnectionParams::getConnectionTimeout(local
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(9),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setConnectionTimeout(local_ref< org::apache::http::params::HttpParams > const &a0, jint a1)
@@ -195,8 +195,8 @@ void org::apache::http::params::HttpConnectionParams::setConnectionTimeout(local
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(10),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean org::apache::http::params::HttpConnectionParams::isStaleCheckingEnabled(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -205,8 +205,8 @@ jboolean org::apache::http::params::HttpConnectionParams::isStaleCheckingEnabled
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(11),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::params::HttpConnectionParams::setStaleCheckingEnabled(local_ref< org::apache::http::params::HttpParams > const &a0, jboolean a1)
@@ -215,8 +215,8 @@ void org::apache::http::params::HttpConnectionParams::setStaleCheckingEnabled(lo
 		org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(12),
 		org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

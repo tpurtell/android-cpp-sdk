@@ -99,8 +99,8 @@ android::accounts::AbstractAccountAuthenticator::AbstractAccountAuthenticator(lo
 	call_new_object<
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(0),
-		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -112,8 +112,8 @@ local_ref< android::os::IBinder > android::accounts::AbstractAccountAuthenticato
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(1),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::editProperties(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< java::lang::String > const &a1)
@@ -122,8 +122,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(2),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::addAccount(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< android::os::Bundle > const &a4)
@@ -132,8 +132,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(3),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::confirmCredentials(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -142,8 +142,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(4),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::getAuthToken(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::os::Bundle > const &a3)
@@ -152,8 +152,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(5),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::accounts::AbstractAccountAuthenticator::getAuthTokenLabel(local_ref< java::lang::String > const &a0)
@@ -162,8 +162,8 @@ local_ref< java::lang::String > android::accounts::AbstractAccountAuthenticator:
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(6),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::updateCredentials(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::os::Bundle > const &a3)
@@ -172,8 +172,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(7),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::hasFeatures(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -182,8 +182,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(8),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator::getAccountRemovalAllowed(local_ref< android::accounts::AccountAuthenticatorResponse > const &a0, local_ref< android::accounts::Account > const &a1)
@@ -192,8 +192,8 @@ local_ref< android::os::Bundle > android::accounts::AbstractAccountAuthenticator
 		android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME,
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(9),
 		android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1);
 }
 
 

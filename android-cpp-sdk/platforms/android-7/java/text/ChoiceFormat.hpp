@@ -11,20 +11,26 @@
 #define J2CPP_JAVA_TEXT_CHOICEFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace text { class Format; } } }
 namespace j2cpp { namespace java { namespace text { class NumberFormat; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/Format.hpp>
 #include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 
@@ -63,6 +69,10 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::text::Format>() const;
 		operator local_ref<java::text::NumberFormat>() const;
 
 
@@ -100,6 +110,26 @@ namespace j2cpp {
 
 
 
+java::text::ChoiceFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::ChoiceFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::ChoiceFormat::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::text::ChoiceFormat::operator local_ref<java::text::Format>() const
+{
+	return local_ref<java::text::Format>(get_jobject());
+}
+
 java::text::ChoiceFormat::operator local_ref<java::text::NumberFormat>() const
 {
 	return local_ref<java::text::NumberFormat>(get_jobject());
@@ -111,8 +141,8 @@ java::text::ChoiceFormat::ChoiceFormat(local_ref< array<jdouble,1> > const &a0, 
 	call_new_object<
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(0),
-		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -124,8 +154,8 @@ java::text::ChoiceFormat::ChoiceFormat(local_ref< java::lang::String > const &a0
 	call_new_object<
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(1),
-		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -137,8 +167,8 @@ void java::text::ChoiceFormat::applyPattern(local_ref< java::lang::String > cons
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(2),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::text::ChoiceFormat::clone()
@@ -147,8 +177,8 @@ local_ref< java::lang::Object > java::text::ChoiceFormat::clone()
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(3),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::ChoiceFormat::equals(local_ref< java::lang::Object > const &a0)
@@ -157,8 +187,8 @@ jboolean java::text::ChoiceFormat::equals(local_ref< java::lang::Object > const 
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(4),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::ChoiceFormat::format(jdouble a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -167,8 +197,8 @@ local_ref< java::lang::StringBuffer > java::text::ChoiceFormat::format(jdouble a
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(5),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::text::ChoiceFormat::format(jlong a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -177,8 +207,8 @@ local_ref< java::lang::StringBuffer > java::text::ChoiceFormat::format(jlong a0,
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(6),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::text::ChoiceFormat::getFormats()
@@ -187,8 +217,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::text::ChoiceFormat
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(7),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array<jdouble,1> > java::text::ChoiceFormat::getLimits()
@@ -197,8 +227,8 @@ local_ref< array<jdouble,1> > java::text::ChoiceFormat::getLimits()
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(8),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jdouble,1> > >
-	(get_jobject());
+		local_ref< array<jdouble,1> >
+	>(get_jobject());
 }
 
 jint java::text::ChoiceFormat::hashCode()
@@ -207,8 +237,8 @@ jint java::text::ChoiceFormat::hashCode()
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(9),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jdouble java::text::ChoiceFormat::nextDouble(jdouble a0)
@@ -217,8 +247,8 @@ jdouble java::text::ChoiceFormat::nextDouble(jdouble a0)
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(10),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(10), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 jdouble java::text::ChoiceFormat::nextDouble(jdouble a0, jboolean a1)
@@ -227,8 +257,8 @@ jdouble java::text::ChoiceFormat::nextDouble(jdouble a0, jboolean a1)
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(11),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(11), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 local_ref< java::lang::Number > java::text::ChoiceFormat::parse(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -237,8 +267,8 @@ local_ref< java::lang::Number > java::text::ChoiceFormat::parse(local_ref< java:
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(12),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Number > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Number >
+	>(get_jobject(), a0, a1);
 }
 
 jdouble java::text::ChoiceFormat::previousDouble(jdouble a0)
@@ -247,8 +277,8 @@ jdouble java::text::ChoiceFormat::previousDouble(jdouble a0)
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(13),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(13), 
-		jdouble >
-	(a0);
+		jdouble
+	>(a0);
 }
 
 void java::text::ChoiceFormat::setChoices(local_ref< array<jdouble,1> > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -257,8 +287,8 @@ void java::text::ChoiceFormat::setChoices(local_ref< array<jdouble,1> > const &a
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(14),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::text::ChoiceFormat::toPattern()
@@ -267,8 +297,8 @@ local_ref< java::lang::String > java::text::ChoiceFormat::toPattern()
 		java::text::ChoiceFormat::J2CPP_CLASS_NAME,
 		java::text::ChoiceFormat::J2CPP_METHOD_NAME(15),
 		java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

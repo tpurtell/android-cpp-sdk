@@ -11,21 +11,37 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SOCKETCHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ScatteringByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectableChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/net/Socket.hpp>
 #include <java/net/SocketAddress.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/nio/channels/ByteChannel.hpp>
+#include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/GatheringByteChannel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
+#include <java/nio/channels/ReadableByteChannel.hpp>
 #include <java/nio/channels/ScatteringByteChannel.hpp>
+#include <java/nio/channels/SelectableChannel.hpp>
+#include <java/nio/channels/WritableByteChannel.hpp>
+#include <java/nio/channels/spi/AbstractInterruptibleChannel.hpp>
 #include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
@@ -62,10 +78,18 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
-		operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
-		operator local_ref<java::nio::channels::ByteChannel>() const;
-		operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+		operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+		operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::ByteChannel>() const;
+		operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+		operator local_ref<java::nio::channels::SelectableChannel>() const;
+		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+		operator local_ref<java::nio::channels::WritableByteChannel>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::nio::channels::SocketChannel > open();
@@ -101,14 +125,14 @@ namespace j2cpp {
 
 
 
-java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+java::nio::channels::SocketChannel::operator local_ref<java::io::Closeable>() const
 {
-	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+	return local_ref<java::io::Closeable>(get_jobject());
 }
 
-java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ByteChannel>() const
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
 {
-	return local_ref<java::nio::channels::ByteChannel>(get_jobject());
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
 }
 
 java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
@@ -116,9 +140,49 @@ java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::Scat
 	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jobject());
 }
 
-java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
 {
-	return local_ref<java::nio::channels::GatheringByteChannel>(get_jobject());
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
+{
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ByteChannel>() const
+{
+	return local_ref<java::nio::channels::ByteChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
+{
+	return local_ref<java::nio::channels::ReadableByteChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::SelectableChannel>() const
+{
+	return local_ref<java::nio::channels::SelectableChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
+{
+	return local_ref<java::nio::channels::WritableByteChannel>(get_jobject());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -128,8 +192,8 @@ local_ref< java::nio::channels::SocketChannel > java::nio::channels::SocketChann
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(1),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::channels::SocketChannel > >
-	();
+		local_ref< java::nio::channels::SocketChannel >
+	>();
 }
 
 local_ref< java::nio::channels::SocketChannel > java::nio::channels::SocketChannel::open(local_ref< java::net::SocketAddress > const &a0)
@@ -138,8 +202,8 @@ local_ref< java::nio::channels::SocketChannel > java::nio::channels::SocketChann
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(2),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::channels::SocketChannel > >
-	(a0);
+		local_ref< java::nio::channels::SocketChannel >
+	>(a0);
 }
 
 jint java::nio::channels::SocketChannel::validOps()
@@ -148,8 +212,8 @@ jint java::nio::channels::SocketChannel::validOps()
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(3),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::Socket > java::nio::channels::SocketChannel::socket()
@@ -158,8 +222,8 @@ local_ref< java::net::Socket > java::nio::channels::SocketChannel::socket()
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(4),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::Socket > >
-	(get_jobject());
+		local_ref< java::net::Socket >
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SocketChannel::isConnected()
@@ -168,8 +232,8 @@ jboolean java::nio::channels::SocketChannel::isConnected()
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(5),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SocketChannel::isConnectionPending()
@@ -178,8 +242,8 @@ jboolean java::nio::channels::SocketChannel::isConnectionPending()
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(6),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::channels::SocketChannel::connect(local_ref< java::net::SocketAddress > const &a0)
@@ -188,8 +252,8 @@ jboolean java::nio::channels::SocketChannel::connect(local_ref< java::net::Socke
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(7),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::channels::SocketChannel::finishConnect()
@@ -198,8 +262,8 @@ jboolean java::nio::channels::SocketChannel::finishConnect()
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(8),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::channels::SocketChannel::read(local_ref< java::nio::ByteBuffer > const &a0)
@@ -208,8 +272,8 @@ jint java::nio::channels::SocketChannel::read(local_ref< java::nio::ByteBuffer >
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(9),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::channels::SocketChannel::read(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0, jint a1, jint a2)
@@ -218,8 +282,8 @@ jlong java::nio::channels::SocketChannel::read(local_ref< array< local_ref< java
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(10),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::nio::channels::SocketChannel::read(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0)
@@ -228,8 +292,8 @@ jlong java::nio::channels::SocketChannel::read(local_ref< array< local_ref< java
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(11),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint java::nio::channels::SocketChannel::write(local_ref< java::nio::ByteBuffer > const &a0)
@@ -238,8 +302,8 @@ jint java::nio::channels::SocketChannel::write(local_ref< java::nio::ByteBuffer 
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(12),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::channels::SocketChannel::write(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0, jint a1, jint a2)
@@ -248,8 +312,8 @@ jlong java::nio::channels::SocketChannel::write(local_ref< array< local_ref< jav
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(13),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong java::nio::channels::SocketChannel::write(local_ref< array< local_ref< java::nio::ByteBuffer >, 1> > const &a0)
@@ -258,8 +322,8 @@ jlong java::nio::channels::SocketChannel::write(local_ref< array< local_ref< jav
 		java::nio::channels::SocketChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(14),
 		java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(14), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

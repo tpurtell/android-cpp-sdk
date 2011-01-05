@@ -40,8 +40,8 @@ namespace java { namespace lang { namespace annotation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::annotation::RetentionPolicy > value();
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::lang::annotation::Retention::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::annotation::Retention::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+java::lang::annotation::Retention::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Retention::value()
@@ -80,8 +80,8 @@ local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Ret
 		java::lang::annotation::Retention::J2CPP_CLASS_NAME,
 		java::lang::annotation::Retention::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::Retention::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::annotation::RetentionPolicy > >
-	(get_jobject());
+		local_ref< java::lang::annotation::RetentionPolicy >
+	>(get_jobject());
 }
 
 

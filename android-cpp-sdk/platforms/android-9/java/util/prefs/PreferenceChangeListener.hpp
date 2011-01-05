@@ -80,8 +80,8 @@ void java::util::prefs::PreferenceChangeListener::preferenceChange(local_ref< ja
 		java::util::prefs::PreferenceChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::PreferenceChangeListener::J2CPP_METHOD_NAME(0),
 		java::util::prefs::PreferenceChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

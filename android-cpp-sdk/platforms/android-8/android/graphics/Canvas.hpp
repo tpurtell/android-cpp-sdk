@@ -28,6 +28,8 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 
 
@@ -42,7 +44,9 @@ namespace j2cpp { namespace javax { namespace microedition { namespace khronos {
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/RectF.hpp>
 #include <android/graphics/Region.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -79,6 +83,9 @@ namespace android { namespace graphics {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Canvas_::VertexMode >, 1> > values();
@@ -111,6 +118,9 @@ namespace android { namespace graphics {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Canvas_::EdgeType >, 1> > values();
@@ -353,14 +363,29 @@ android::graphics::Canvas_::VertexMode::operator local_ref<java::lang::Enum>() c
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::graphics::Canvas_::VertexMode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Canvas_::VertexMode::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::graphics::Canvas_::VertexMode::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::graphics::Canvas_::VertexMode >, 1> > android::graphics::Canvas_::VertexMode::values()
 {
 	return call_static_method<
 		android::graphics::Canvas_::VertexMode::J2CPP_CLASS_NAME,
 		android::graphics::Canvas_::VertexMode::J2CPP_METHOD_NAME(0),
 		android::graphics::Canvas_::VertexMode::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Canvas_::VertexMode >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Canvas_::VertexMode >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Canvas_::VertexMode > android::graphics::Canvas_::VertexMode::valueOf(local_ref< java::lang::String > const &a0)
@@ -369,8 +394,8 @@ local_ref< android::graphics::Canvas_::VertexMode > android::graphics::Canvas_::
 		android::graphics::Canvas_::VertexMode::J2CPP_CLASS_NAME,
 		android::graphics::Canvas_::VertexMode::J2CPP_METHOD_NAME(1),
 		android::graphics::Canvas_::VertexMode::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Canvas_::VertexMode > >
-	(a0);
+		local_ref< android::graphics::Canvas_::VertexMode >
+	>(a0);
 }
 
 
@@ -414,14 +439,29 @@ android::graphics::Canvas_::EdgeType::operator local_ref<java::lang::Enum>() con
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+android::graphics::Canvas_::EdgeType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Canvas_::EdgeType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::graphics::Canvas_::EdgeType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< android::graphics::Canvas_::EdgeType >, 1> > android::graphics::Canvas_::EdgeType::values()
 {
 	return call_static_method<
 		android::graphics::Canvas_::EdgeType::J2CPP_CLASS_NAME,
 		android::graphics::Canvas_::EdgeType::J2CPP_METHOD_NAME(0),
 		android::graphics::Canvas_::EdgeType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Canvas_::EdgeType >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Canvas_::EdgeType >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Canvas_::EdgeType > android::graphics::Canvas_::EdgeType::valueOf(local_ref< java::lang::String > const &a0)
@@ -430,8 +470,8 @@ local_ref< android::graphics::Canvas_::EdgeType > android::graphics::Canvas_::Ed
 		android::graphics::Canvas_::EdgeType::J2CPP_CLASS_NAME,
 		android::graphics::Canvas_::EdgeType::J2CPP_METHOD_NAME(1),
 		android::graphics::Canvas_::EdgeType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Canvas_::EdgeType > >
-	(a0);
+		local_ref< android::graphics::Canvas_::EdgeType >
+	>(a0);
 }
 
 
@@ -474,8 +514,8 @@ android::graphics::Canvas::Canvas()
 	call_new_object<
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(0),
-		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -487,8 +527,8 @@ android::graphics::Canvas::Canvas(local_ref< android::graphics::Bitmap > const &
 	call_new_object<
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(1),
-		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -500,8 +540,8 @@ android::graphics::Canvas::Canvas(local_ref< javax::microedition::khronos::openg
 	call_new_object<
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(2),
-		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -513,8 +553,8 @@ local_ref< javax::microedition::khronos::opengles::GL > android::graphics::Canva
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(3),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::microedition::khronos::opengles::GL > >
-	(get_jobject());
+		local_ref< javax::microedition::khronos::opengles::GL >
+	>(get_jobject());
 }
 
 void android::graphics::Canvas::freeGlCaches()
@@ -523,8 +563,8 @@ void android::graphics::Canvas::freeGlCaches()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(4),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::graphics::Canvas::setBitmap(local_ref< android::graphics::Bitmap > const &a0)
@@ -533,8 +573,8 @@ void android::graphics::Canvas::setBitmap(local_ref< android::graphics::Bitmap >
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(5),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::setViewport(jint a0, jint a1)
@@ -543,8 +583,8 @@ void android::graphics::Canvas::setViewport(jint a0, jint a1)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(6),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::isOpaque()
@@ -553,8 +593,8 @@ jboolean android::graphics::Canvas::isOpaque()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(7),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::graphics::Canvas::getWidth()
@@ -563,8 +603,8 @@ jint android::graphics::Canvas::getWidth()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(8),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Canvas::getHeight()
@@ -573,8 +613,8 @@ jint android::graphics::Canvas::getHeight()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(9),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Canvas::getDensity()
@@ -583,8 +623,8 @@ jint android::graphics::Canvas::getDensity()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(10),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Canvas::setDensity(jint a0)
@@ -593,8 +633,8 @@ void android::graphics::Canvas::setDensity(jint a0)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(11),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Canvas::save()
@@ -603,8 +643,8 @@ jint android::graphics::Canvas::save()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(12),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::Canvas::save(jint a0)
@@ -613,8 +653,8 @@ jint android::graphics::Canvas::save(jint a0)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(13),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::Canvas::saveLayer(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::Paint > const &a1, jint a2)
@@ -623,8 +663,8 @@ jint android::graphics::Canvas::saveLayer(local_ref< android::graphics::RectF > 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(14),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::Canvas::saveLayer(jfloat a0, jfloat a1, jfloat a2, jfloat a3, local_ref< android::graphics::Paint > const &a4, jint a5)
@@ -633,8 +673,8 @@ jint android::graphics::Canvas::saveLayer(jfloat a0, jfloat a1, jfloat a2, jfloa
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(15),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jint android::graphics::Canvas::saveLayerAlpha(local_ref< android::graphics::RectF > const &a0, jint a1, jint a2)
@@ -643,8 +683,8 @@ jint android::graphics::Canvas::saveLayerAlpha(local_ref< android::graphics::Rec
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(16),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::Canvas::saveLayerAlpha(jfloat a0, jfloat a1, jfloat a2, jfloat a3, jint a4, jint a5)
@@ -653,8 +693,8 @@ jint android::graphics::Canvas::saveLayerAlpha(jfloat a0, jfloat a1, jfloat a2, 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(17),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Canvas::restore()
@@ -663,8 +703,8 @@ void android::graphics::Canvas::restore()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(18),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::graphics::Canvas::getSaveCount()
@@ -673,8 +713,8 @@ jint android::graphics::Canvas::getSaveCount()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(19),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::Canvas::restoreToCount(jint a0)
@@ -683,8 +723,8 @@ void android::graphics::Canvas::restoreToCount(jint a0)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(20),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::translate(jfloat a0, jfloat a1)
@@ -693,8 +733,8 @@ void android::graphics::Canvas::translate(jfloat a0, jfloat a1)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(21),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::scale(jfloat a0, jfloat a1)
@@ -703,8 +743,8 @@ void android::graphics::Canvas::scale(jfloat a0, jfloat a1)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(22),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::scale(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -713,8 +753,8 @@ void android::graphics::Canvas::scale(jfloat a0, jfloat a1, jfloat a2, jfloat a3
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(23),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::rotate(jfloat a0)
@@ -723,8 +763,8 @@ void android::graphics::Canvas::rotate(jfloat a0)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(24),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::rotate(jfloat a0, jfloat a1, jfloat a2)
@@ -733,8 +773,8 @@ void android::graphics::Canvas::rotate(jfloat a0, jfloat a1, jfloat a2)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(25),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Canvas::skew(jfloat a0, jfloat a1)
@@ -743,8 +783,8 @@ void android::graphics::Canvas::skew(jfloat a0, jfloat a1)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(26),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::concat(local_ref< android::graphics::Matrix > const &a0)
@@ -753,8 +793,8 @@ void android::graphics::Canvas::concat(local_ref< android::graphics::Matrix > co
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(27),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::setMatrix(local_ref< android::graphics::Matrix > const &a0)
@@ -763,8 +803,8 @@ void android::graphics::Canvas::setMatrix(local_ref< android::graphics::Matrix >
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(28),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::getMatrix(local_ref< android::graphics::Matrix > const &a0)
@@ -773,8 +813,8 @@ void android::graphics::Canvas::getMatrix(local_ref< android::graphics::Matrix >
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(29),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Matrix > android::graphics::Canvas::getMatrix()
@@ -783,8 +823,8 @@ local_ref< android::graphics::Matrix > android::graphics::Canvas::getMatrix()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(30),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::graphics::Matrix > >
-	(get_jobject());
+		local_ref< android::graphics::Matrix >
+	>(get_jobject());
 }
 
 jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -793,8 +833,8 @@ jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::RectF
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(31),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::Rect > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -803,8 +843,8 @@ jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::Rect 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(32),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::RectF > const &a0)
@@ -813,8 +853,8 @@ jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::RectF
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(33),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::Rect > const &a0)
@@ -823,8 +863,8 @@ jboolean android::graphics::Canvas::clipRect(local_ref< android::graphics::Rect 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(34),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Canvas::clipRect(jfloat a0, jfloat a1, jfloat a2, jfloat a3, local_ref< android::graphics::Region_::Op > const &a4)
@@ -833,8 +873,8 @@ jboolean android::graphics::Canvas::clipRect(jfloat a0, jfloat a1, jfloat a2, jf
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(35),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::graphics::Canvas::clipRect(jfloat a0, jfloat a1, jfloat a2, jfloat a3)
@@ -843,8 +883,8 @@ jboolean android::graphics::Canvas::clipRect(jfloat a0, jfloat a1, jfloat a2, jf
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(36),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Canvas::clipRect(jint a0, jint a1, jint a2, jint a3)
@@ -853,8 +893,8 @@ jboolean android::graphics::Canvas::clipRect(jint a0, jint a1, jint a2, jint a3)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(37),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(37), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::graphics::Canvas::clipPath(local_ref< android::graphics::Path > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -863,8 +903,8 @@ jboolean android::graphics::Canvas::clipPath(local_ref< android::graphics::Path 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(38),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::clipPath(local_ref< android::graphics::Path > const &a0)
@@ -873,8 +913,8 @@ jboolean android::graphics::Canvas::clipPath(local_ref< android::graphics::Path 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(39),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(39), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Canvas::clipRegion(local_ref< android::graphics::Region > const &a0, local_ref< android::graphics::Region_::Op > const &a1)
@@ -883,8 +923,8 @@ jboolean android::graphics::Canvas::clipRegion(local_ref< android::graphics::Reg
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(40),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::clipRegion(local_ref< android::graphics::Region > const &a0)
@@ -893,8 +933,8 @@ jboolean android::graphics::Canvas::clipRegion(local_ref< android::graphics::Reg
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(41),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::DrawFilter > android::graphics::Canvas::getDrawFilter()
@@ -903,8 +943,8 @@ local_ref< android::graphics::DrawFilter > android::graphics::Canvas::getDrawFil
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(42),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< android::graphics::DrawFilter > >
-	(get_jobject());
+		local_ref< android::graphics::DrawFilter >
+	>(get_jobject());
 }
 
 void android::graphics::Canvas::setDrawFilter(local_ref< android::graphics::DrawFilter > const &a0)
@@ -913,8 +953,8 @@ void android::graphics::Canvas::setDrawFilter(local_ref< android::graphics::Draw
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(43),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::Canvas::quickReject(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::Canvas_::EdgeType > const &a1)
@@ -923,8 +963,8 @@ jboolean android::graphics::Canvas::quickReject(local_ref< android::graphics::Re
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(44),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::quickReject(local_ref< android::graphics::Path > const &a0, local_ref< android::graphics::Canvas_::EdgeType > const &a1)
@@ -933,8 +973,8 @@ jboolean android::graphics::Canvas::quickReject(local_ref< android::graphics::Pa
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(45),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::Canvas::quickReject(jfloat a0, jfloat a1, jfloat a2, jfloat a3, local_ref< android::graphics::Canvas_::EdgeType > const &a4)
@@ -943,8 +983,8 @@ jboolean android::graphics::Canvas::quickReject(jfloat a0, jfloat a1, jfloat a2,
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(46),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(46), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::graphics::Canvas::getClipBounds(local_ref< android::graphics::Rect > const &a0)
@@ -953,8 +993,8 @@ jboolean android::graphics::Canvas::getClipBounds(local_ref< android::graphics::
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(47),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(47), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Rect > android::graphics::Canvas::getClipBounds()
@@ -963,8 +1003,8 @@ local_ref< android::graphics::Rect > android::graphics::Canvas::getClipBounds()
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(48),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< android::graphics::Rect > >
-	(get_jobject());
+		local_ref< android::graphics::Rect >
+	>(get_jobject());
 }
 
 void android::graphics::Canvas::drawRGB(jint a0, jint a1, jint a2)
@@ -973,8 +1013,8 @@ void android::graphics::Canvas::drawRGB(jint a0, jint a1, jint a2)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(49),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Canvas::drawARGB(jint a0, jint a1, jint a2, jint a3)
@@ -983,8 +1023,8 @@ void android::graphics::Canvas::drawARGB(jint a0, jint a1, jint a2, jint a3)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(50),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawColor(jint a0)
@@ -993,8 +1033,8 @@ void android::graphics::Canvas::drawColor(jint a0)
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(51),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::drawColor(jint a0, local_ref< android::graphics::PorterDuff_::Mode > const &a1)
@@ -1003,8 +1043,8 @@ void android::graphics::Canvas::drawColor(jint a0, local_ref< android::graphics:
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(52),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawPaint(local_ref< android::graphics::Paint > const &a0)
@@ -1013,8 +1053,8 @@ void android::graphics::Canvas::drawPaint(local_ref< android::graphics::Paint > 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(53),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::drawPoints(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::Paint > const &a3)
@@ -1023,8 +1063,8 @@ void android::graphics::Canvas::drawPoints(local_ref< array<jfloat,1> > const &a
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(54),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawPoints(local_ref< array<jfloat,1> > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1033,8 +1073,8 @@ void android::graphics::Canvas::drawPoints(local_ref< array<jfloat,1> > const &a
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(55),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawPoint(jfloat a0, jfloat a1, local_ref< android::graphics::Paint > const &a2)
@@ -1043,8 +1083,8 @@ void android::graphics::Canvas::drawPoint(jfloat a0, jfloat a1, local_ref< andro
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(56),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Canvas::drawLine(jfloat a0, jfloat a1, jfloat a2, jfloat a3, local_ref< android::graphics::Paint > const &a4)
@@ -1053,8 +1093,8 @@ void android::graphics::Canvas::drawLine(jfloat a0, jfloat a1, jfloat a2, jfloat
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(57),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Canvas::drawLines(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::Paint > const &a3)
@@ -1063,8 +1103,8 @@ void android::graphics::Canvas::drawLines(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(58),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawLines(local_ref< array<jfloat,1> > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1073,8 +1113,8 @@ void android::graphics::Canvas::drawLines(local_ref< array<jfloat,1> > const &a0
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(59),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawRect(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1083,8 +1123,8 @@ void android::graphics::Canvas::drawRect(local_ref< android::graphics::RectF > c
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(60),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawRect(local_ref< android::graphics::Rect > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1093,8 +1133,8 @@ void android::graphics::Canvas::drawRect(local_ref< android::graphics::Rect > co
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(61),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawRect(jfloat a0, jfloat a1, jfloat a2, jfloat a3, local_ref< android::graphics::Paint > const &a4)
@@ -1103,8 +1143,8 @@ void android::graphics::Canvas::drawRect(jfloat a0, jfloat a1, jfloat a2, jfloat
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(62),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Canvas::drawOval(local_ref< android::graphics::RectF > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1113,8 +1153,8 @@ void android::graphics::Canvas::drawOval(local_ref< android::graphics::RectF > c
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(63),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawCircle(jfloat a0, jfloat a1, jfloat a2, local_ref< android::graphics::Paint > const &a3)
@@ -1123,8 +1163,8 @@ void android::graphics::Canvas::drawCircle(jfloat a0, jfloat a1, jfloat a2, loca
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(64),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawArc(local_ref< android::graphics::RectF > const &a0, jfloat a1, jfloat a2, jboolean a3, local_ref< android::graphics::Paint > const &a4)
@@ -1133,8 +1173,8 @@ void android::graphics::Canvas::drawArc(local_ref< android::graphics::RectF > co
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(65),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Canvas::drawRoundRect(local_ref< android::graphics::RectF > const &a0, jfloat a1, jfloat a2, local_ref< android::graphics::Paint > const &a3)
@@ -1143,8 +1183,8 @@ void android::graphics::Canvas::drawRoundRect(local_ref< android::graphics::Rect
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(66),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawPath(local_ref< android::graphics::Path > const &a0, local_ref< android::graphics::Paint > const &a1)
@@ -1153,8 +1193,8 @@ void android::graphics::Canvas::drawPath(local_ref< android::graphics::Path > co
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(67),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap > const &a0, jfloat a1, jfloat a2, local_ref< android::graphics::Paint > const &a3)
@@ -1163,8 +1203,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(68),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::RectF > const &a2, local_ref< android::graphics::Paint > const &a3)
@@ -1173,8 +1213,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(69),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Rect > const &a1, local_ref< android::graphics::Rect > const &a2, local_ref< android::graphics::Paint > const &a3)
@@ -1183,8 +1223,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(70),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, jint a5, jint a6, jboolean a7, local_ref< android::graphics::Paint > const &a8)
@@ -1193,8 +1233,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< array<jint,1> > const &a0,
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(71),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< array<jint,1> > const &a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jboolean a7, local_ref< android::graphics::Paint > const &a8)
@@ -1203,8 +1243,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< array<jint,1> > const &a0,
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(72),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Matrix > const &a1, local_ref< android::graphics::Paint > const &a2)
@@ -1213,8 +1253,8 @@ void android::graphics::Canvas::drawBitmap(local_ref< android::graphics::Bitmap 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(73),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(73), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Canvas::drawBitmapMesh(local_ref< android::graphics::Bitmap > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3, jint a4, local_ref< array<jint,1> > const &a5, jint a6, local_ref< android::graphics::Paint > const &a7)
@@ -1223,8 +1263,8 @@ void android::graphics::Canvas::drawBitmapMesh(local_ref< android::graphics::Bit
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(74),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::graphics::Canvas::drawVertices(local_ref< android::graphics::Canvas_::VertexMode > const &a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3, local_ref< array<jfloat,1> > const &a4, jint a5, local_ref< array<jint,1> > const &a6, jint a7, local_ref< array<jshort,1> > const &a8, jint a9, jint a10, local_ref< android::graphics::Paint > const &a11)
@@ -1233,8 +1273,8 @@ void android::graphics::Canvas::drawVertices(local_ref< android::graphics::Canva
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(75),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(75), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 
 void android::graphics::Canvas::drawText(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, local_ref< android::graphics::Paint > const &a5)
@@ -1243,8 +1283,8 @@ void android::graphics::Canvas::drawText(local_ref< array<jchar,1> > const &a0, 
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(76),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Canvas::drawText(local_ref< java::lang::String > const &a0, jfloat a1, jfloat a2, local_ref< android::graphics::Paint > const &a3)
@@ -1253,8 +1293,8 @@ void android::graphics::Canvas::drawText(local_ref< java::lang::String > const &
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(77),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(77), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::graphics::Canvas::drawText(local_ref< java::lang::String > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, local_ref< android::graphics::Paint > const &a5)
@@ -1263,8 +1303,8 @@ void android::graphics::Canvas::drawText(local_ref< java::lang::String > const &
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(78),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Canvas::drawText(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jfloat a3, jfloat a4, local_ref< android::graphics::Paint > const &a5)
@@ -1273,8 +1313,8 @@ void android::graphics::Canvas::drawText(local_ref< java::lang::CharSequence > c
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(79),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(79), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::graphics::Canvas::drawPosText(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, local_ref< array<jfloat,1> > const &a3, local_ref< android::graphics::Paint > const &a4)
@@ -1283,8 +1323,8 @@ void android::graphics::Canvas::drawPosText(local_ref< array<jchar,1> > const &a
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(80),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Canvas::drawPosText(local_ref< java::lang::String > const &a0, local_ref< array<jfloat,1> > const &a1, local_ref< android::graphics::Paint > const &a2)
@@ -1293,8 +1333,8 @@ void android::graphics::Canvas::drawPosText(local_ref< java::lang::String > cons
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(81),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(81), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::Canvas::drawTextOnPath(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, local_ref< android::graphics::Path > const &a3, jfloat a4, jfloat a5, local_ref< android::graphics::Paint > const &a6)
@@ -1303,8 +1343,8 @@ void android::graphics::Canvas::drawTextOnPath(local_ref< array<jchar,1> > const
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(82),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(82), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 void android::graphics::Canvas::drawTextOnPath(local_ref< java::lang::String > const &a0, local_ref< android::graphics::Path > const &a1, jfloat a2, jfloat a3, local_ref< android::graphics::Paint > const &a4)
@@ -1313,8 +1353,8 @@ void android::graphics::Canvas::drawTextOnPath(local_ref< java::lang::String > c
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(83),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(83), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Picture > const &a0)
@@ -1323,8 +1363,8 @@ void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Pictur
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(84),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Picture > const &a0, local_ref< android::graphics::RectF > const &a1)
@@ -1333,8 +1373,8 @@ void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Pictur
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(85),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(85), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Picture > const &a0, local_ref< android::graphics::Rect > const &a1)
@@ -1343,8 +1383,8 @@ void android::graphics::Canvas::drawPicture(local_ref< android::graphics::Pictur
 		android::graphics::Canvas::J2CPP_CLASS_NAME,
 		android::graphics::Canvas::J2CPP_METHOD_NAME(86),
 		android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

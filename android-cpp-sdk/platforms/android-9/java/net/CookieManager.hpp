@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_NET_COOKIEMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace net { class CookieHandler; } } }
 namespace j2cpp { namespace java { namespace net { class CookieStore; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace net { class CookiePolicy; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/CookieHandler.hpp>
 #include <java/net/CookiePolicy.hpp>
 #include <java/net/CookieStore.hpp>
@@ -49,6 +51,7 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::CookieHandler>() const;
 
 
@@ -76,6 +79,11 @@ namespace j2cpp {
 
 
 
+java::net::CookieManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::CookieManager::operator local_ref<java::net::CookieHandler>() const
 {
 	return local_ref<java::net::CookieHandler>(get_jobject());
@@ -87,8 +95,8 @@ java::net::CookieManager::CookieManager()
 	call_new_object<
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(0),
-		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +108,8 @@ java::net::CookieManager::CookieManager(local_ref< java::net::CookieStore > cons
 	call_new_object<
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(1),
-		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -113,8 +121,8 @@ local_ref< java::util::Map > java::net::CookieManager::get(local_ref< java::net:
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(2),
 		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Map > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Map >
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::CookieManager::put(local_ref< java::net::URI > const &a0, local_ref< java::util::Map > const &a1)
@@ -123,8 +131,8 @@ void java::net::CookieManager::put(local_ref< java::net::URI > const &a0, local_
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(3),
 		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::CookieManager::setCookiePolicy(local_ref< java::net::CookiePolicy > const &a0)
@@ -133,8 +141,8 @@ void java::net::CookieManager::setCookiePolicy(local_ref< java::net::CookiePolic
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(4),
 		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::net::CookieStore > java::net::CookieManager::getCookieStore()
@@ -143,8 +151,8 @@ local_ref< java::net::CookieStore > java::net::CookieManager::getCookieStore()
 		java::net::CookieManager::J2CPP_CLASS_NAME,
 		java::net::CookieManager::J2CPP_METHOD_NAME(5),
 		java::net::CookieManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::CookieStore > >
-	(get_jobject());
+		local_ref< java::net::CookieStore >
+	>(get_jobject());
 }
 
 

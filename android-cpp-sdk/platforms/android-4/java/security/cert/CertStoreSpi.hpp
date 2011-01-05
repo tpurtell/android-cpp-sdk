@@ -82,8 +82,8 @@ java::security::cert::CertStoreSpi::CertStoreSpi(local_ref< java::security::cert
 	call_new_object<
 		java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertStoreSpi::J2CPP_METHOD_NAME(0),
-		java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< java::util::Collection > java::security::cert::CertStoreSpi::engineGe
 		java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertStoreSpi::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Collection > java::security::cert::CertStoreSpi::engineGetCRLs(local_ref< java::security::cert::CRLSelector > const &a0)
@@ -105,8 +105,8 @@ local_ref< java::util::Collection > java::security::cert::CertStoreSpi::engineGe
 		java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME,
 		java::security::cert::CertStoreSpi::J2CPP_METHOD_NAME(2),
 		java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Collection > >
-	(get_jobject(), a0);
+		local_ref< java::util::Collection >
+	>(get_jobject(), a0);
 }
 
 

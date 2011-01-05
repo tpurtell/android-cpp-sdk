@@ -120,8 +120,8 @@ jint android::util::Log::v(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(1),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::v(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -130,8 +130,8 @@ jint android::util::Log::v(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(2),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::util::Log::d(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -140,8 +140,8 @@ jint android::util::Log::d(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(3),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::d(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -150,8 +150,8 @@ jint android::util::Log::d(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(4),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::util::Log::i(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -160,8 +160,8 @@ jint android::util::Log::i(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(5),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::i(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -170,8 +170,8 @@ jint android::util::Log::i(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(6),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -180,8 +180,8 @@ jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(7),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -190,8 +190,8 @@ jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(8),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jboolean android::util::Log::isLoggable(local_ref< java::lang::String > const &a0, jint a1)
@@ -200,8 +200,8 @@ jboolean android::util::Log::isLoggable(local_ref< java::lang::String > const &a
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(9),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -210,8 +210,8 @@ jint android::util::Log::w(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(10),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::e(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -220,8 +220,8 @@ jint android::util::Log::e(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(11),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::e(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -230,8 +230,8 @@ jint android::util::Log::e(local_ref< java::lang::String > const &a0, local_ref<
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(12),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -240,8 +240,8 @@ jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_re
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(13),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
@@ -250,8 +250,8 @@ jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_re
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(14),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Throwable > const &a2)
@@ -260,8 +260,8 @@ jint android::util::Log::wtf(local_ref< java::lang::String > const &a0, local_re
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(15),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::util::Log::getStackTraceString(local_ref< java::lang::Throwable > const &a0)
@@ -270,8 +270,8 @@ local_ref< java::lang::String > android::util::Log::getStackTraceString(local_re
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(16),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint android::util::Log::println(jint a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -280,8 +280,8 @@ jint android::util::Log::println(jint a0, local_ref< java::lang::String > const 
 		android::util::Log::J2CPP_CLASS_NAME,
 		android::util::Log::J2CPP_METHOD_NAME(17),
 		android::util::Log::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 

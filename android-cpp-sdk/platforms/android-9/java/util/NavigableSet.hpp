@@ -11,13 +11,19 @@
 #define J2CPP_JAVA_UTIL_NAVIGABLESET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class SortedSet; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Set.hpp>
 #include <java/util/SortedSet.hpp>
 
 
@@ -50,8 +56,11 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::SortedSet>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::Set>() const;
 
 
 		local_ref< java::lang::Object > pollFirst();
@@ -83,6 +92,11 @@ namespace j2cpp {
 
 
 
+java::util::NavigableSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::NavigableSet::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -93,14 +107,24 @@ java::util::NavigableSet::operator local_ref<java::util::SortedSet>() const
 	return local_ref<java::util::SortedSet>(get_jobject());
 }
 
+java::util::NavigableSet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::NavigableSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
+}
+
 local_ref< java::lang::Object > java::util::NavigableSet::pollFirst()
 {
 	return call_method<
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(0),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::NavigableSet::pollLast()
@@ -109,8 +133,8 @@ local_ref< java::lang::Object > java::util::NavigableSet::pollLast()
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(1),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::NavigableSet::higher(local_ref< java::lang::Object > const &a0)
@@ -119,8 +143,8 @@ local_ref< java::lang::Object > java::util::NavigableSet::higher(local_ref< java
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(2),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableSet::ceiling(local_ref< java::lang::Object > const &a0)
@@ -129,8 +153,8 @@ local_ref< java::lang::Object > java::util::NavigableSet::ceiling(local_ref< jav
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(3),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableSet::lower(local_ref< java::lang::Object > const &a0)
@@ -139,8 +163,8 @@ local_ref< java::lang::Object > java::util::NavigableSet::lower(local_ref< java:
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(4),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::NavigableSet::floor(local_ref< java::lang::Object > const &a0)
@@ -149,8 +173,8 @@ local_ref< java::lang::Object > java::util::NavigableSet::floor(local_ref< java:
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(5),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > java::util::NavigableSet::descendingIterator()
@@ -159,8 +183,8 @@ local_ref< java::util::Iterator > java::util::NavigableSet::descendingIterator()
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(6),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableSet::descendingSet()
@@ -169,8 +193,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableSet::descendingSet()
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(7),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableSet::subSet(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -179,8 +203,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableSet::subSet(local_ref
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(8),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableSet::headSet(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -189,8 +213,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableSet::headSet(local_re
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(9),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::NavigableSet > java::util::NavigableSet::tailSet(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -199,8 +223,8 @@ local_ref< java::util::NavigableSet > java::util::NavigableSet::tailSet(local_re
 		java::util::NavigableSet::J2CPP_CLASS_NAME,
 		java::util::NavigableSet::J2CPP_METHOD_NAME(10),
 		java::util::NavigableSet::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::NavigableSet >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -111,8 +111,8 @@ java::beans::PropertyChangeSupport::PropertyChangeSupport(local_ref< java::lang:
 	call_new_object<
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(0),
-		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -124,8 +124,8 @@ void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lan
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(1),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::Object > const &a2, local_ref< java::lang::Object > const &a3)
@@ -134,8 +134,8 @@ void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< ja
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(2),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::beans::PropertyChangeSupport::removePropertyChangeListener(local_ref< java::lang::String > const &a0, local_ref< java::beans::PropertyChangeListener > const &a1)
@@ -144,8 +144,8 @@ void java::beans::PropertyChangeSupport::removePropertyChangeListener(local_ref<
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(3),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::beans::PropertyChangeSupport::addPropertyChangeListener(local_ref< java::lang::String > const &a0, local_ref< java::beans::PropertyChangeListener > const &a1)
@@ -154,8 +154,8 @@ void java::beans::PropertyChangeSupport::addPropertyChangeListener(local_ref< ja
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(4),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > java::beans::PropertyChangeSupport::getPropertyChangeListeners(local_ref< java::lang::String > const &a0)
@@ -164,8 +164,8 @@ local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > java::b
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(5),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> >
+	>(get_jobject(), a0);
 }
 
 void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lang::String > const &a0, jboolean a1, jboolean a2)
@@ -174,8 +174,8 @@ void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lan
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(6),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< java::lang::String > const &a0, jint a1, jboolean a2, jboolean a3)
@@ -184,8 +184,8 @@ void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< ja
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(7),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -194,8 +194,8 @@ void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lan
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(8),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< java::lang::String > const &a0, jint a1, jint a2, jint a3)
@@ -204,8 +204,8 @@ void java::beans::PropertyChangeSupport::fireIndexedPropertyChange(local_ref< ja
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(9),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean java::beans::PropertyChangeSupport::hasListeners(local_ref< java::lang::String > const &a0)
@@ -214,8 +214,8 @@ jboolean java::beans::PropertyChangeSupport::hasListeners(local_ref< java::lang:
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(10),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::beans::PropertyChangeSupport::removePropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -224,8 +224,8 @@ void java::beans::PropertyChangeSupport::removePropertyChangeListener(local_ref<
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(11),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::beans::PropertyChangeSupport::addPropertyChangeListener(local_ref< java::beans::PropertyChangeListener > const &a0)
@@ -234,8 +234,8 @@ void java::beans::PropertyChangeSupport::addPropertyChangeListener(local_ref< ja
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(12),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > java::beans::PropertyChangeSupport::getPropertyChangeListeners()
@@ -244,8 +244,8 @@ local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > java::b
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(13),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::beans::PropertyChangeListener >, 1> >
+	>(get_jobject());
 }
 
 void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::beans::PropertyChangeEvent > const &a0)
@@ -254,8 +254,8 @@ void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::bea
 		java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(14),
 		java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

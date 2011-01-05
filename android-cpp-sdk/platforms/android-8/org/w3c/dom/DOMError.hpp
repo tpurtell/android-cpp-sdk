@@ -91,8 +91,8 @@ jshort org::w3c::dom::DOMError::getSeverity()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(0), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::DOMError::getMessage()
@@ -101,8 +101,8 @@ local_ref< java::lang::String > org::w3c::dom::DOMError::getMessage()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::DOMError::getType()
@@ -111,8 +111,8 @@ local_ref< java::lang::String > org::w3c::dom::DOMError::getType()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::w3c::dom::DOMError::getRelatedException()
@@ -121,8 +121,8 @@ local_ref< java::lang::Object > org::w3c::dom::DOMError::getRelatedException()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::w3c::dom::DOMError::getRelatedData()
@@ -131,8 +131,8 @@ local_ref< java::lang::Object > org::w3c::dom::DOMError::getRelatedData()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::DOMLocator > org::w3c::dom::DOMError::getLocation()
@@ -141,8 +141,8 @@ local_ref< org::w3c::dom::DOMLocator > org::w3c::dom::DOMError::getLocation()
 		org::w3c::dom::DOMError::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMError::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::DOMError::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::w3c::dom::DOMLocator > >
-	(get_jobject());
+		local_ref< org::w3c::dom::DOMLocator >
+	>(get_jobject());
 }
 
 

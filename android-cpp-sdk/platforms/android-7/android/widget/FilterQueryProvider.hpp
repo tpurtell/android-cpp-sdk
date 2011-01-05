@@ -73,8 +73,8 @@ local_ref< android::database::Cursor > android::widget::FilterQueryProvider::run
 		android::widget::FilterQueryProvider::J2CPP_CLASS_NAME,
 		android::widget::FilterQueryProvider::J2CPP_METHOD_NAME(0),
 		android::widget::FilterQueryProvider::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0);
 }
 
 

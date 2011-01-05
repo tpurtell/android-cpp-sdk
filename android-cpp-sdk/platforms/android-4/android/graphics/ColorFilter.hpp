@@ -70,8 +70,8 @@ android::graphics::ColorFilter::ColorFilter()
 	call_new_object<
 		android::graphics::ColorFilter::J2CPP_CLASS_NAME,
 		android::graphics::ColorFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::ColorFilter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::ColorFilter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

@@ -97,8 +97,8 @@ org::apache::http::impl::io::AbstractMessageParser::AbstractMessageParser(local_
 	call_new_object<
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -110,8 +110,8 @@ local_ref< array< local_ref< org::apache::http::Header >, 1> > org::apache::http
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< org::apache::http::Header >, 1> > >
-	(a0, a1, a2, a3);
+		local_ref< array< local_ref< org::apache::http::Header >, 1> >
+	>(a0, a1, a2, a3);
 }
 
 
@@ -121,8 +121,8 @@ local_ref< org::apache::http::HttpMessage > org::apache::http::impl::io::Abstrac
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::io::AbstractMessageParser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpMessage > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpMessage >
+	>(get_jobject());
 }
 
 

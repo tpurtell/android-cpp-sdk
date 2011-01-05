@@ -147,8 +147,8 @@ void android::media::JetPlayer_::OnJetEventListener::onJetEvent(local_ref< andro
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_CLASS_NAME,
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_NAME(0),
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::media::JetPlayer_::OnJetEventListener::onJetUserIdUpdate(local_ref< android::media::JetPlayer > const &a0, jint a1, jint a2)
@@ -157,8 +157,8 @@ void android::media::JetPlayer_::OnJetEventListener::onJetUserIdUpdate(local_ref
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_CLASS_NAME,
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_NAME(1),
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::media::JetPlayer_::OnJetEventListener::onJetNumQueuedSegmentUpdate(local_ref< android::media::JetPlayer > const &a0, jint a1)
@@ -167,8 +167,8 @@ void android::media::JetPlayer_::OnJetEventListener::onJetNumQueuedSegmentUpdate
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_CLASS_NAME,
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_NAME(2),
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::JetPlayer_::OnJetEventListener::onJetPauseUpdate(local_ref< android::media::JetPlayer > const &a0, jint a1)
@@ -177,8 +177,8 @@ void android::media::JetPlayer_::OnJetEventListener::onJetPauseUpdate(local_ref<
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_CLASS_NAME,
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_NAME(3),
 		android::media::JetPlayer_::OnJetEventListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -202,8 +202,8 @@ local_ref< android::media::JetPlayer > android::media::JetPlayer::getJetPlayer()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(1),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::media::JetPlayer > >
-	();
+		local_ref< android::media::JetPlayer >
+	>();
 }
 
 local_ref< java::lang::Object > android::media::JetPlayer::clone()
@@ -212,8 +212,8 @@ local_ref< java::lang::Object > android::media::JetPlayer::clone()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(2),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 
@@ -223,8 +223,8 @@ void android::media::JetPlayer::release()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(4),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::media::JetPlayer::getMaxTracks()
@@ -233,8 +233,8 @@ jint android::media::JetPlayer::getMaxTracks()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(5),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jboolean android::media::JetPlayer::loadJetFile(local_ref< java::lang::String > const &a0)
@@ -243,8 +243,8 @@ jboolean android::media::JetPlayer::loadJetFile(local_ref< java::lang::String > 
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(6),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::JetPlayer::loadJetFile(local_ref< android::content::res::AssetFileDescriptor > const &a0)
@@ -253,8 +253,8 @@ jboolean android::media::JetPlayer::loadJetFile(local_ref< android::content::res
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(7),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::JetPlayer::closeJetFile()
@@ -263,8 +263,8 @@ jboolean android::media::JetPlayer::closeJetFile()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(8),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::media::JetPlayer::play()
@@ -273,8 +273,8 @@ jboolean android::media::JetPlayer::play()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(9),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::media::JetPlayer::pause()
@@ -283,8 +283,8 @@ jboolean android::media::JetPlayer::pause()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(10),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::media::JetPlayer::queueJetSegment(jint a0, jint a1, jint a2, jint a3, jint a4, jbyte a5)
@@ -293,8 +293,8 @@ jboolean android::media::JetPlayer::queueJetSegment(jint a0, jint a1, jint a2, j
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(11),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jboolean android::media::JetPlayer::queueJetSegmentMuteArray(jint a0, jint a1, jint a2, jint a3, local_ref< array<jboolean,1> > const &a4, jbyte a5)
@@ -303,8 +303,8 @@ jboolean android::media::JetPlayer::queueJetSegmentMuteArray(jint a0, jint a1, j
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(12),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 jboolean android::media::JetPlayer::setMuteFlags(jint a0, jboolean a1)
@@ -313,8 +313,8 @@ jboolean android::media::JetPlayer::setMuteFlags(jint a0, jboolean a1)
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(13),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::media::JetPlayer::setMuteArray(local_ref< array<jboolean,1> > const &a0, jboolean a1)
@@ -323,8 +323,8 @@ jboolean android::media::JetPlayer::setMuteArray(local_ref< array<jboolean,1> > 
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(14),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::media::JetPlayer::setMuteFlag(jint a0, jboolean a1, jboolean a2)
@@ -333,8 +333,8 @@ jboolean android::media::JetPlayer::setMuteFlag(jint a0, jboolean a1, jboolean a
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(15),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::media::JetPlayer::triggerClip(jint a0)
@@ -343,8 +343,8 @@ jboolean android::media::JetPlayer::triggerClip(jint a0)
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(16),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::JetPlayer::clearQueue()
@@ -353,8 +353,8 @@ jboolean android::media::JetPlayer::clearQueue()
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(17),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::JetPlayer::setEventListener(local_ref< android::media::JetPlayer_::OnJetEventListener > const &a0)
@@ -363,8 +363,8 @@ void android::media::JetPlayer::setEventListener(local_ref< android::media::JetP
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(18),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::JetPlayer::setEventListener(local_ref< android::media::JetPlayer_::OnJetEventListener > const &a0, local_ref< android::os::Handler > const &a1)
@@ -373,8 +373,8 @@ void android::media::JetPlayer::setEventListener(local_ref< android::media::JetP
 		android::media::JetPlayer::J2CPP_CLASS_NAME,
 		android::media::JetPlayer::J2CPP_METHOD_NAME(19),
 		android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

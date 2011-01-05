@@ -106,8 +106,8 @@ android::view::animation::Transformation::Transformation()
 	call_new_object<
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(0),
-		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -119,8 +119,8 @@ void android::view::animation::Transformation::clear()
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(1),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::view::animation::Transformation::getTransformationType()
@@ -129,8 +129,8 @@ jint android::view::animation::Transformation::getTransformationType()
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(2),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::animation::Transformation::setTransformationType(jint a0)
@@ -139,8 +139,8 @@ void android::view::animation::Transformation::setTransformationType(jint a0)
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(3),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::Transformation::set(local_ref< android::view::animation::Transformation > const &a0)
@@ -149,8 +149,8 @@ void android::view::animation::Transformation::set(local_ref< android::view::ani
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(4),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::view::animation::Transformation::compose(local_ref< android::view::animation::Transformation > const &a0)
@@ -159,8 +159,8 @@ void android::view::animation::Transformation::compose(local_ref< android::view:
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(5),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Matrix > android::view::animation::Transformation::getMatrix()
@@ -169,8 +169,8 @@ local_ref< android::graphics::Matrix > android::view::animation::Transformation:
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(6),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::Matrix > >
-	(get_jobject());
+		local_ref< android::graphics::Matrix >
+	>(get_jobject());
 }
 
 void android::view::animation::Transformation::setAlpha(jfloat a0)
@@ -179,8 +179,8 @@ void android::view::animation::Transformation::setAlpha(jfloat a0)
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(7),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::animation::Transformation::getAlpha()
@@ -189,8 +189,8 @@ jfloat android::view::animation::Transformation::getAlpha()
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(8),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(8), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::animation::Transformation::toString()
@@ -199,8 +199,8 @@ local_ref< java::lang::String > android::view::animation::Transformation::toStri
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(9),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::animation::Transformation::toShortString()
@@ -209,8 +209,8 @@ local_ref< java::lang::String > android::view::animation::Transformation::toShor
 		android::view::animation::Transformation::J2CPP_CLASS_NAME,
 		android::view::animation::Transformation::J2CPP_METHOD_NAME(10),
 		android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

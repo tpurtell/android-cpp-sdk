@@ -13,10 +13,26 @@
 
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace app { class LocalActivityManager; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/Activity.hpp>
 #include <android/app/LocalActivityManager.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -48,6 +64,14 @@ namespace android { namespace app {
 		}
 
 		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ActivityGroup();
@@ -77,14 +101,54 @@ android::app::ActivityGroup::operator local_ref<android::app::Activity>() const
 	return local_ref<android::app::Activity>(get_jobject());
 }
 
+android::app::ActivityGroup::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::app::ActivityGroup::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::app::ActivityGroup::ActivityGroup()
 : object<android::app::ActivityGroup>(
 	call_new_object<
 		android::app::ActivityGroup::J2CPP_CLASS_NAME,
 		android::app::ActivityGroup::J2CPP_METHOD_NAME(0),
-		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -96,8 +160,8 @@ android::app::ActivityGroup::ActivityGroup(jboolean a0)
 	call_new_object<
 		android::app::ActivityGroup::J2CPP_CLASS_NAME,
 		android::app::ActivityGroup::J2CPP_METHOD_NAME(1),
-		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -115,8 +179,8 @@ local_ref< android::app::Activity > android::app::ActivityGroup::getCurrentActiv
 		android::app::ActivityGroup::J2CPP_CLASS_NAME,
 		android::app::ActivityGroup::J2CPP_METHOD_NAME(8),
 		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::app::Activity > >
-	(get_jobject());
+		local_ref< android::app::Activity >
+	>(get_jobject());
 }
 
 local_ref< android::app::LocalActivityManager > android::app::ActivityGroup::getLocalActivityManager()
@@ -125,8 +189,8 @@ local_ref< android::app::LocalActivityManager > android::app::ActivityGroup::get
 		android::app::ActivityGroup::J2CPP_CLASS_NAME,
 		android::app::ActivityGroup::J2CPP_METHOD_NAME(9),
 		android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::app::LocalActivityManager > >
-	(get_jobject());
+		local_ref< android::app::LocalActivityManager >
+	>(get_jobject());
 }
 
 

@@ -44,8 +44,8 @@ namespace javax { namespace xml { namespace transform { namespace sax {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::xml::sax::ContentHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< javax::xml::transform::Templates > getTemplates();
@@ -71,14 +71,14 @@ namespace j2cpp {
 
 
 
-javax::xml::transform::sax::TemplatesHandler::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::xml::transform::sax::TemplatesHandler::operator local_ref<org::xml::sax::ContentHandler>() const
 {
 	return local_ref<org::xml::sax::ContentHandler>(get_jobject());
+}
+
+javax::xml::transform::sax::TemplatesHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< javax::xml::transform::Templates > javax::xml::transform::sax::TemplatesHandler::getTemplates()
@@ -87,8 +87,8 @@ local_ref< javax::xml::transform::Templates > javax::xml::transform::sax::Templa
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::xml::transform::Templates > >
-	(get_jobject());
+		local_ref< javax::xml::transform::Templates >
+	>(get_jobject());
 }
 
 void javax::xml::transform::sax::TemplatesHandler::setSystemId(local_ref< java::lang::String > const &a0)
@@ -97,8 +97,8 @@ void javax::xml::transform::sax::TemplatesHandler::setSystemId(local_ref< java::
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::sax::TemplatesHandler::getSystemId()
@@ -107,8 +107,8 @@ local_ref< java::lang::String > javax::xml::transform::sax::TemplatesHandler::ge
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_CLASS_NAME,
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_NAME(2),
 		javax::xml::transform::sax::TemplatesHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

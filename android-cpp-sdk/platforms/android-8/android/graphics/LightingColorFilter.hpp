@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/ColorFilter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +39,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::ColorFilter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		LightingColorFilter(jint, jint);
@@ -63,14 +66,19 @@ android::graphics::LightingColorFilter::operator local_ref<android::graphics::Co
 	return local_ref<android::graphics::ColorFilter>(get_jobject());
 }
 
+android::graphics::LightingColorFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::LightingColorFilter::LightingColorFilter(jint a0, jint a1)
 : object<android::graphics::LightingColorFilter>(
 	call_new_object<
 		android::graphics::LightingColorFilter::J2CPP_CLASS_NAME,
 		android::graphics::LightingColorFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::LightingColorFilter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::graphics::LightingColorFilter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }

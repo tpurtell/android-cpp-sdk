@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_WEBKIT_WEBHISTORYITEM_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
@@ -49,8 +49,8 @@ namespace android { namespace webkit {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint getId();
@@ -76,14 +76,14 @@ namespace j2cpp {
 
 
 
-android::webkit::WebHistoryItem::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::webkit::WebHistoryItem::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::webkit::WebHistoryItem::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +93,8 @@ jint android::webkit::WebHistoryItem::getId()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(1),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getUrl()
@@ -103,8 +103,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getUrl()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(2),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getOriginalUrl()
@@ -113,8 +113,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getOriginalUrl(
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(3),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebHistoryItem::getTitle()
@@ -123,8 +123,8 @@ local_ref< java::lang::String > android::webkit::WebHistoryItem::getTitle()
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(4),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::webkit::WebHistoryItem::getFavicon()
@@ -133,8 +133,8 @@ local_ref< android::graphics::Bitmap > android::webkit::WebHistoryItem::getFavic
 		android::webkit::WebHistoryItem::J2CPP_CLASS_NAME,
 		android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(5),
 		android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 

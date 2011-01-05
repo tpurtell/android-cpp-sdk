@@ -12,11 +12,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/AbstractCollection.hpp>
 #include <java/util/Collection.hpp>
@@ -47,8 +49,11 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::util::AbstractCollection>() const;
 		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::util::Collection>() const;
 
 
 		jboolean add(local_ref< java::lang::Object >  const&);
@@ -74,6 +79,16 @@ namespace j2cpp {
 
 
 
+java::util::AbstractQueue::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::AbstractQueue::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::AbstractQueue::operator local_ref<java::util::AbstractCollection>() const
 {
 	return local_ref<java::util::AbstractCollection>(get_jobject());
@@ -84,6 +99,11 @@ java::util::AbstractQueue::operator local_ref<java::util::Queue>() const
 	return local_ref<java::util::Queue>(get_jobject());
 }
 
+java::util::AbstractQueue::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
 
 jboolean java::util::AbstractQueue::add(local_ref< java::lang::Object > const &a0)
 {
@@ -91,8 +111,8 @@ jboolean java::util::AbstractQueue::add(local_ref< java::lang::Object > const &a
 		java::util::AbstractQueue::J2CPP_CLASS_NAME,
 		java::util::AbstractQueue::J2CPP_METHOD_NAME(1),
 		java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::AbstractQueue::addAll(local_ref< java::util::Collection > const &a0)
@@ -101,8 +121,8 @@ jboolean java::util::AbstractQueue::addAll(local_ref< java::util::Collection > c
 		java::util::AbstractQueue::J2CPP_CLASS_NAME,
 		java::util::AbstractQueue::J2CPP_METHOD_NAME(2),
 		java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::AbstractQueue::remove()
@@ -111,8 +131,8 @@ local_ref< java::lang::Object > java::util::AbstractQueue::remove()
 		java::util::AbstractQueue::J2CPP_CLASS_NAME,
 		java::util::AbstractQueue::J2CPP_METHOD_NAME(3),
 		java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::AbstractQueue::element()
@@ -121,8 +141,8 @@ local_ref< java::lang::Object > java::util::AbstractQueue::element()
 		java::util::AbstractQueue::J2CPP_CLASS_NAME,
 		java::util::AbstractQueue::J2CPP_METHOD_NAME(4),
 		java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::util::AbstractQueue::clear()
@@ -131,8 +151,8 @@ void java::util::AbstractQueue::clear()
 		java::util::AbstractQueue::J2CPP_CLASS_NAME,
 		java::util::AbstractQueue::J2CPP_METHOD_NAME(5),
 		java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

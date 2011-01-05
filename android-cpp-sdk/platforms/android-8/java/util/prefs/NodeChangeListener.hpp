@@ -82,8 +82,8 @@ void java::util::prefs::NodeChangeListener::childAdded(local_ref< java::util::pr
 		java::util::prefs::NodeChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_NAME(0),
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::prefs::NodeChangeListener::childRemoved(local_ref< java::util::prefs::NodeChangeEvent > const &a0)
@@ -92,8 +92,8 @@ void java::util::prefs::NodeChangeListener::childRemoved(local_ref< java::util::
 		java::util::prefs::NodeChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_NAME(1),
 		java::util::prefs::NodeChangeListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

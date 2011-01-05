@@ -85,8 +85,8 @@ org::apache::http::protocol::RequestDate::RequestDate()
 	call_new_object<
 		org::apache::http::protocol::RequestDate::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestDate::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::RequestDate::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::RequestDate::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ void org::apache::http::protocol::RequestDate::process(local_ref< org::apache::h
 		org::apache::http::protocol::RequestDate::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestDate::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::RequestDate::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

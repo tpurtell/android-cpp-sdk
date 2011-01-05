@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_REFQUEUEWORKER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RefQueueHandler; } } } } } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RefQueueHandler; } } } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -50,8 +50,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Runnable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RefQueueWorker(local_ref< java::lang::ref::ReferenceQueue > const&, local_ref< org::apache::http::impl::conn::tsccm::RefQueueHandler > const&);
@@ -81,14 +81,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::conn::tsccm::RefQueueWorker::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::conn::tsccm::RefQueueWorker::operator local_ref<java::lang::Runnable>() const
 {
 	return local_ref<java::lang::Runnable>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::RefQueueWorker::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -97,8 +97,8 @@ org::apache::http::impl::conn::tsccm::RefQueueWorker::RefQueueWorker(local_ref< 
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -110,8 +110,8 @@ void org::apache::http::impl::conn::tsccm::RefQueueWorker::run()
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::tsccm::RefQueueWorker::shutdown()
@@ -120,8 +120,8 @@ void org::apache::http::impl::conn::tsccm::RefQueueWorker::shutdown()
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::impl::conn::tsccm::RefQueueWorker::toString()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > org::apache::http::impl::conn::tsccm::RefQueueWo
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::tsccm::RefQueueWorker::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

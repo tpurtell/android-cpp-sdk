@@ -56,8 +56,9 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
 			operator local_ref<android::provider::SyncStateContract_::Columns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			Constants();
@@ -117,8 +118,8 @@ namespace android { namespace provider {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACCOUNT_NAME;
@@ -169,14 +170,19 @@ namespace j2cpp {
 
 
 
-android::provider::SyncStateContract_::Constants::operator local_ref<java::lang::Object>() const
+android::provider::SyncStateContract_::Constants::operator local_ref<android::provider::BaseColumns>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::provider::BaseColumns>(get_jobject());
 }
 
 android::provider::SyncStateContract_::Constants::operator local_ref<android::provider::SyncStateContract_::Columns>() const
 {
 	return local_ref<android::provider::SyncStateContract_::Columns>(get_jobject());
+}
+
+android::provider::SyncStateContract_::Constants::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -185,8 +191,8 @@ android::provider::SyncStateContract_::Constants::Constants()
 	call_new_object<
 		android::provider::SyncStateContract_::Constants::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Constants::J2CPP_METHOD_NAME(0),
-		android::provider::SyncStateContract_::Constants::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::SyncStateContract_::Constants::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -217,8 +223,8 @@ android::provider::SyncStateContract_::Helpers::Helpers()
 	call_new_object<
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(0),
-		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -230,8 +236,8 @@ local_ref< array<jbyte,1> > android::provider::SyncStateContract_::Helpers::get(
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(1),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1, a2);
+		local_ref< array<jbyte,1> >
+	>(a0, a1, a2);
 }
 
 void android::provider::SyncStateContract_::Helpers::set(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::accounts::Account > const &a2, local_ref< array<jbyte,1> > const &a3)
@@ -240,8 +246,8 @@ void android::provider::SyncStateContract_::Helpers::set(local_ref< android::con
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(2),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1, a2, a3);
+		void
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::net::Uri > android::provider::SyncStateContract_::Helpers::insert(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::accounts::Account > const &a2, local_ref< array<jbyte,1> > const &a3)
@@ -250,8 +256,8 @@ local_ref< android::net::Uri > android::provider::SyncStateContract_::Helpers::i
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(3),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::Uri > >
-	(a0, a1, a2, a3);
+		local_ref< android::net::Uri >
+	>(a0, a1, a2, a3);
 }
 
 void android::provider::SyncStateContract_::Helpers::update(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::net::Uri > const &a1, local_ref< array<jbyte,1> > const &a2)
@@ -260,8 +266,8 @@ void android::provider::SyncStateContract_::Helpers::update(local_ref< android::
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(4),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< android::util::Pair > android::provider::SyncStateContract_::Helpers::getWithUri(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::accounts::Account > const &a2)
@@ -270,8 +276,8 @@ local_ref< android::util::Pair > android::provider::SyncStateContract_::Helpers:
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(5),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::util::Pair > >
-	(a0, a1, a2);
+		local_ref< android::util::Pair >
+	>(a0, a1, a2);
 }
 
 local_ref< android::content::ContentProviderOperation > android::provider::SyncStateContract_::Helpers::newSetOperation(local_ref< android::net::Uri > const &a0, local_ref< android::accounts::Account > const &a1, local_ref< array<jbyte,1> > const &a2)
@@ -280,8 +286,8 @@ local_ref< android::content::ContentProviderOperation > android::provider::SyncS
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(6),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::ContentProviderOperation > >
-	(a0, a1, a2);
+		local_ref< android::content::ContentProviderOperation >
+	>(a0, a1, a2);
 }
 
 local_ref< android::content::ContentProviderOperation > android::provider::SyncStateContract_::Helpers::newUpdateOperation(local_ref< android::net::Uri > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -290,8 +296,8 @@ local_ref< android::content::ContentProviderOperation > android::provider::SyncS
 		android::provider::SyncStateContract_::Helpers::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_NAME(7),
 		android::provider::SyncStateContract_::Helpers::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::content::ContentProviderOperation > >
-	(a0, a1);
+		local_ref< android::content::ContentProviderOperation >
+	>(a0, a1);
 }
 
 
@@ -306,14 +312,14 @@ J2CPP_DEFINE_METHOD(android::provider::SyncStateContract_::Helpers,6,"newSetOper
 J2CPP_DEFINE_METHOD(android::provider::SyncStateContract_::Helpers,7,"newUpdateOperation","(Landroid/net/Uri;[B)Landroid/content/ContentProviderOperation;")
 
 
-android::provider::SyncStateContract_::Columns::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::provider::SyncStateContract_::Columns::operator local_ref<android::provider::BaseColumns>() const
 {
 	return local_ref<android::provider::BaseColumns>(get_jobject());
+}
+
+android::provider::SyncStateContract_::Columns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 static_field<
@@ -356,8 +362,8 @@ android::provider::SyncStateContract::SyncStateContract()
 	call_new_object<
 		android::provider::SyncStateContract::J2CPP_CLASS_NAME,
 		android::provider::SyncStateContract::J2CPP_METHOD_NAME(0),
-		android::provider::SyncStateContract::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::SyncStateContract::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

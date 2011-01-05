@@ -11,18 +11,24 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Set.hpp>
 
 
 namespace j2cpp {
@@ -59,7 +65,12 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
 		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Set>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -98,9 +109,34 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
 java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::util::AbstractSet>() const
 {
 	return local_ref<java::util::AbstractSet>(get_jobject());
+}
+
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
 }
 
 java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::io::Serializable>() const
@@ -114,8 +150,8 @@ java::util::concurrent::CopyOnWriteArraySet::CopyOnWriteArraySet()
 	call_new_object<
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -127,8 +163,8 @@ java::util::concurrent::CopyOnWriteArraySet::CopyOnWriteArraySet(local_ref< java
 	call_new_object<
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -140,8 +176,8 @@ jint java::util::concurrent::CopyOnWriteArraySet::size()
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::isEmpty()
@@ -150,8 +186,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::isEmpty()
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::contains(local_ref< java::lang::Object > const &a0)
@@ -160,8 +196,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::contains(local_ref< java::
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::CopyOnWriteArraySet::toArray()
@@ -170,8 +206,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::CopyOnWriteArraySet::toArray(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -180,8 +216,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::concurrent::
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::CopyOnWriteArraySet::clear()
@@ -190,8 +226,8 @@ void java::util::concurrent::CopyOnWriteArraySet::clear()
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::remove(local_ref< java::lang::Object > const &a0)
@@ -200,8 +236,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::remove(local_ref< java::la
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::add(local_ref< java::lang::Object > const &a0)
@@ -210,8 +246,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::add(local_ref< java::lang:
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::containsAll(local_ref< java::util::Collection > const &a0)
@@ -220,8 +256,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::containsAll(local_ref< jav
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::addAll(local_ref< java::util::Collection > const &a0)
@@ -230,8 +266,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::addAll(local_ref< java::ut
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::removeAll(local_ref< java::util::Collection > const &a0)
@@ -240,8 +276,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::removeAll(local_ref< java:
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::retainAll(local_ref< java::util::Collection > const &a0)
@@ -250,8 +286,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::retainAll(local_ref< java:
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > java::util::concurrent::CopyOnWriteArraySet::iterator()
@@ -260,8 +296,8 @@ local_ref< java::util::Iterator > java::util::concurrent::CopyOnWriteArraySet::i
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::CopyOnWriteArraySet::equals(local_ref< java::lang::Object > const &a0)
@@ -270,8 +306,8 @@ jboolean java::util::concurrent::CopyOnWriteArraySet::equals(local_ref< java::la
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME,
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

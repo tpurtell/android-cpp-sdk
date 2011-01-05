@@ -86,8 +86,8 @@ org::apache::http::impl::conn::IdleConnectionHandler::IdleConnectionHandler()
 	call_new_object<
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ void org::apache::http::impl::conn::IdleConnectionHandler::add(local_ref< org::a
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean org::apache::http::impl::conn::IdleConnectionHandler::remove(local_ref< org::apache::http::HttpConnection > const &a0)
@@ -109,8 +109,8 @@ jboolean org::apache::http::impl::conn::IdleConnectionHandler::remove(local_ref<
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::IdleConnectionHandler::removeAll()
@@ -119,8 +119,8 @@ void org::apache::http::impl::conn::IdleConnectionHandler::removeAll()
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::IdleConnectionHandler::closeIdleConnections(jlong a0)
@@ -129,8 +129,8 @@ void org::apache::http::impl::conn::IdleConnectionHandler::closeIdleConnections(
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::conn::IdleConnectionHandler::closeExpiredConnections()
@@ -139,8 +139,8 @@ void org::apache::http::impl::conn::IdleConnectionHandler::closeExpiredConnectio
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

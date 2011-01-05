@@ -11,12 +11,12 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGL10_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLContext; } } } } }
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLSurface; } } } } }
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLDisplay; } } } } }
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLConfig; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLConfig; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLDisplay; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLSurface; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLContext; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -143,8 +143,8 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::microedition::khronos::egl::EGL>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean eglChooseConfig(local_ref< javax::microedition::khronos::egl::EGLDisplay >  const&, local_ref< array<jint,1> >  const&, local_ref< array< local_ref< javax::microedition::khronos::egl::EGLConfig >, 1> >  const&, jint, local_ref< array<jint,1> >  const&);
@@ -263,14 +263,14 @@ namespace j2cpp {
 
 
 
-javax::microedition::khronos::egl::EGL10::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::microedition::khronos::egl::EGL10::operator local_ref<javax::microedition::khronos::egl::EGL>() const
 {
 	return local_ref<javax::microedition::khronos::egl::EGL>(get_jobject());
+}
+
+javax::microedition::khronos::egl::EGL10::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglChooseConfig(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< array<jint,1> > const &a1, local_ref< array< local_ref< javax::microedition::khronos::egl::EGLConfig >, 1> > const &a2, jint a3, local_ref< array<jint,1> > const &a4)
@@ -279,8 +279,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglChooseConfig(local_ref< ja
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(0),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglCopyBuffers(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a1, local_ref< java::lang::Object > const &a2)
@@ -289,8 +289,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglCopyBuffers(local_ref< jav
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(1),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLContext > javax::microedition::khronos::egl::EGL10::eglCreateContext(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLConfig > const &a1, local_ref< javax::microedition::khronos::egl::EGLContext > const &a2, local_ref< array<jint,1> > const &a3)
@@ -299,8 +299,8 @@ local_ref< javax::microedition::khronos::egl::EGLContext > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(2),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::microedition::khronos::egl::EGLContext > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::microedition::khronos::egl::EGLContext >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::khronos::egl::EGL10::eglCreatePbufferSurface(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLConfig > const &a1, local_ref< array<jint,1> > const &a2)
@@ -309,8 +309,8 @@ local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(3),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::microedition::khronos::egl::EGLSurface > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< javax::microedition::khronos::egl::EGLSurface >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::khronos::egl::EGL10::eglCreatePixmapSurface(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLConfig > const &a1, local_ref< java::lang::Object > const &a2, local_ref< array<jint,1> > const &a3)
@@ -319,8 +319,8 @@ local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(4),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::microedition::khronos::egl::EGLSurface > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::microedition::khronos::egl::EGLSurface >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::khronos::egl::EGL10::eglCreateWindowSurface(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLConfig > const &a1, local_ref< java::lang::Object > const &a2, local_ref< array<jint,1> > const &a3)
@@ -329,8 +329,8 @@ local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(5),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< javax::microedition::khronos::egl::EGLSurface > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::microedition::khronos::egl::EGLSurface >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglDestroyContext(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLContext > const &a1)
@@ -339,8 +339,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglDestroyContext(local_ref< 
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(6),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglDestroySurface(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a1)
@@ -349,8 +349,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglDestroySurface(local_ref< 
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(7),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglGetConfigAttrib(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLConfig > const &a1, jint a2, local_ref< array<jint,1> > const &a3)
@@ -359,8 +359,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglGetConfigAttrib(local_ref<
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(8),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglGetConfigs(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< array< local_ref< javax::microedition::khronos::egl::EGLConfig >, 1> > const &a1, jint a2, local_ref< array<jint,1> > const &a3)
@@ -369,8 +369,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglGetConfigs(local_ref< java
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(9),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLContext > javax::microedition::khronos::egl::EGL10::eglGetCurrentContext()
@@ -379,8 +379,8 @@ local_ref< javax::microedition::khronos::egl::EGLContext > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(10),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< javax::microedition::khronos::egl::EGLContext > >
-	(get_jobject());
+		local_ref< javax::microedition::khronos::egl::EGLContext >
+	>(get_jobject());
 }
 
 local_ref< javax::microedition::khronos::egl::EGLDisplay > javax::microedition::khronos::egl::EGL10::eglGetCurrentDisplay()
@@ -389,8 +389,8 @@ local_ref< javax::microedition::khronos::egl::EGLDisplay > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(11),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< javax::microedition::khronos::egl::EGLDisplay > >
-	(get_jobject());
+		local_ref< javax::microedition::khronos::egl::EGLDisplay >
+	>(get_jobject());
 }
 
 local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::khronos::egl::EGL10::eglGetCurrentSurface(jint a0)
@@ -399,8 +399,8 @@ local_ref< javax::microedition::khronos::egl::EGLSurface > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(12),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< javax::microedition::khronos::egl::EGLSurface > >
-	(get_jobject(), a0);
+		local_ref< javax::microedition::khronos::egl::EGLSurface >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::microedition::khronos::egl::EGLDisplay > javax::microedition::khronos::egl::EGL10::eglGetDisplay(local_ref< java::lang::Object > const &a0)
@@ -409,8 +409,8 @@ local_ref< javax::microedition::khronos::egl::EGLDisplay > javax::microedition::
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(13),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::microedition::khronos::egl::EGLDisplay > >
-	(get_jobject(), a0);
+		local_ref< javax::microedition::khronos::egl::EGLDisplay >
+	>(get_jobject(), a0);
 }
 
 jint javax::microedition::khronos::egl::EGL10::eglGetError()
@@ -419,8 +419,8 @@ jint javax::microedition::khronos::egl::EGL10::eglGetError()
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(14),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglInitialize(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< array<jint,1> > const &a1)
@@ -429,8 +429,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglInitialize(local_ref< java
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(15),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglMakeCurrent(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a1, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a2, local_ref< javax::microedition::khronos::egl::EGLContext > const &a3)
@@ -439,8 +439,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglMakeCurrent(local_ref< jav
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(16),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglQueryContext(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLContext > const &a1, jint a2, local_ref< array<jint,1> > const &a3)
@@ -449,8 +449,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglQueryContext(local_ref< ja
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(17),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > javax::microedition::khronos::egl::EGL10::eglQueryString(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, jint a1)
@@ -459,8 +459,8 @@ local_ref< java::lang::String > javax::microedition::khronos::egl::EGL10::eglQue
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(18),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglQuerySurface(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a1, jint a2, local_ref< array<jint,1> > const &a3)
@@ -469,8 +469,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglQuerySurface(local_ref< ja
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(19),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglSwapBuffers(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a1)
@@ -479,8 +479,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglSwapBuffers(local_ref< jav
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(20),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglTerminate(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0)
@@ -489,8 +489,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglTerminate(local_ref< javax
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(21),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglWaitGL()
@@ -499,8 +499,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglWaitGL()
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(22),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::microedition::khronos::egl::EGL10::eglWaitNative(jint a0, local_ref< java::lang::Object > const &a1)
@@ -509,8 +509,8 @@ jboolean javax::microedition::khronos::egl::EGL10::eglWaitNative(jint a0, local_
 		javax::microedition::khronos::egl::EGL10::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_NAME(23),
 		javax::microedition::khronos::egl::EGL10::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

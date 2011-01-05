@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_UTIL_PREFS_BACKINGSTOREEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -41,6 +45,9 @@ namespace java { namespace util { namespace prefs {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Exception>() const;
 
 
@@ -65,6 +72,21 @@ namespace j2cpp {
 
 
 
+java::util::prefs::BackingStoreException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::prefs::BackingStoreException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::prefs::BackingStoreException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 java::util::prefs::BackingStoreException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
@@ -76,8 +98,8 @@ java::util::prefs::BackingStoreException::BackingStoreException(local_ref< java:
 	call_new_object<
 		java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME,
 		java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(0),
-		java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +111,8 @@ java::util::prefs::BackingStoreException::BackingStoreException(local_ref< java:
 	call_new_object<
 		java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME,
 		java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(1),
-		java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

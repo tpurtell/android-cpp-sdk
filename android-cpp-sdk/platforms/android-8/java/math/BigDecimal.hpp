@@ -139,6 +139,7 @@ namespace java { namespace math {
 		}
 
 		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -255,6 +256,11 @@ java::math::BigDecimal::operator local_ref<java::lang::Number>() const
 	return local_ref<java::lang::Number>(get_jobject());
 }
 
+java::math::BigDecimal::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::math::BigDecimal::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
@@ -271,8 +277,8 @@ java::math::BigDecimal::BigDecimal(local_ref< array<jchar,1> > const &a0, jint a
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(0),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -284,8 +290,8 @@ java::math::BigDecimal::BigDecimal(local_ref< array<jchar,1> > const &a0, jint a
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(1),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -297,8 +303,8 @@ java::math::BigDecimal::BigDecimal(local_ref< array<jchar,1> > const &a0)
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(2),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -310,8 +316,8 @@ java::math::BigDecimal::BigDecimal(local_ref< array<jchar,1> > const &a0, local_
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(3),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -323,8 +329,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(4),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -336,8 +342,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::lang::String > const &a0, lo
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(5),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -349,8 +355,8 @@ java::math::BigDecimal::BigDecimal(jdouble a0)
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(6),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(6)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(6)
+	>(a0)
 )
 {
 }
@@ -362,8 +368,8 @@ java::math::BigDecimal::BigDecimal(jdouble a0, local_ref< java::math::MathContex
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(7),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1)
 )
 {
 }
@@ -375,8 +381,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(8),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(8)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(8)
+	>(a0)
 )
 {
 }
@@ -388,8 +394,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(9),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(9)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(9)
+	>(a0, a1)
 )
 {
 }
@@ -401,8 +407,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(10),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(10)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(10)
+	>(a0, a1)
 )
 {
 }
@@ -414,8 +420,8 @@ java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(11),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(11)>
-	(a0, a1, a2)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(11)
+	>(a0, a1, a2)
 )
 {
 }
@@ -427,8 +433,8 @@ java::math::BigDecimal::BigDecimal(jint a0)
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(12),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(12)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(12)
+	>(a0)
 )
 {
 }
@@ -440,8 +446,8 @@ java::math::BigDecimal::BigDecimal(jint a0, local_ref< java::math::MathContext >
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(13),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(13)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(13)
+	>(a0, a1)
 )
 {
 }
@@ -453,8 +459,8 @@ java::math::BigDecimal::BigDecimal(jlong a0)
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(14),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(14)>
-	(a0)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(14)
+	>(a0)
 )
 {
 }
@@ -466,8 +472,8 @@ java::math::BigDecimal::BigDecimal(jlong a0, local_ref< java::math::MathContext 
 	call_new_object<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(15),
-		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(15)>
-	(a0, a1)
+		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(15)
+	>(a0, a1)
 )
 {
 }
@@ -479,8 +485,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(jlong a0, ji
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(16),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::math::BigDecimal > >
-	(a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(jlong a0)
@@ -489,8 +495,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(jlong a0)
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(17),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::math::BigDecimal > >
-	(a0);
+		local_ref< java::math::BigDecimal >
+	>(a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(jdouble a0)
@@ -499,8 +505,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(jdouble a0)
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(18),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::math::BigDecimal > >
-	(a0);
+		local_ref< java::math::BigDecimal >
+	>(a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::add(local_ref< java::math::BigDecimal > const &a0)
@@ -509,8 +515,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::add(local_ref< java:
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(19),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::add(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -519,8 +525,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::add(local_ref< java:
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(20),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::subtract(local_ref< java::math::BigDecimal > const &a0)
@@ -529,8 +535,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::subtract(local_ref< 
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(21),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::subtract(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -539,8 +545,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::subtract(local_ref< 
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(22),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::multiply(local_ref< java::math::BigDecimal > const &a0)
@@ -549,8 +555,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::multiply(local_ref< 
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(23),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::multiply(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -559,8 +565,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::multiply(local_ref< 
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(24),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0, jint a1, jint a2)
@@ -569,8 +575,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(25),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0, jint a1, local_ref< java::math::RoundingMode > const &a2)
@@ -579,8 +585,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(26),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0, jint a1)
@@ -589,8 +595,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(27),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::RoundingMode > const &a1)
@@ -599,8 +605,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(28),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0)
@@ -609,8 +615,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(29),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -619,8 +625,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divide(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(30),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divideToIntegralValue(local_ref< java::math::BigDecimal > const &a0)
@@ -629,8 +635,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divideToIntegralValu
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(31),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::divideToIntegralValue(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -639,8 +645,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::divideToIntegralValu
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(32),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::remainder(local_ref< java::math::BigDecimal > const &a0)
@@ -649,8 +655,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::remainder(local_ref<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(33),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::remainder(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -659,8 +665,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::remainder(local_ref<
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(34),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::math::BigDecimal >, 1> > java::math::BigDecimal::divideAndRemainder(local_ref< java::math::BigDecimal > const &a0)
@@ -669,8 +675,8 @@ local_ref< array< local_ref< java::math::BigDecimal >, 1> > java::math::BigDecim
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(35),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< array< local_ref< java::math::BigDecimal >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::math::BigDecimal >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::math::BigDecimal >, 1> > java::math::BigDecimal::divideAndRemainder(local_ref< java::math::BigDecimal > const &a0, local_ref< java::math::MathContext > const &a1)
@@ -679,8 +685,8 @@ local_ref< array< local_ref< java::math::BigDecimal >, 1> > java::math::BigDecim
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(36),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< array< local_ref< java::math::BigDecimal >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::math::BigDecimal >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::pow(jint a0)
@@ -689,8 +695,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::pow(jint a0)
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(37),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::pow(jint a0, local_ref< java::math::MathContext > const &a1)
@@ -699,8 +705,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::pow(jint a0, local_r
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(38),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::abs()
@@ -709,8 +715,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::abs()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(39),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::abs(local_ref< java::math::MathContext > const &a0)
@@ -719,8 +725,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::abs(local_ref< java:
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(40),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::negate()
@@ -729,8 +735,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::negate()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(41),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::negate(local_ref< java::math::MathContext > const &a0)
@@ -739,8 +745,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::negate(local_ref< ja
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(42),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::plus()
@@ -749,8 +755,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::plus()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(43),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::plus(local_ref< java::math::MathContext > const &a0)
@@ -759,8 +765,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::plus(local_ref< java
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(44),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigDecimal::signum()
@@ -769,8 +775,8 @@ jint java::math::BigDecimal::signum()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(45),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(45), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::scale()
@@ -779,8 +785,8 @@ jint java::math::BigDecimal::scale()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(46),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::precision()
@@ -789,8 +795,8 @@ jint java::math::BigDecimal::precision()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(47),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(47), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigDecimal::unscaledValue()
@@ -799,8 +805,8 @@ local_ref< java::math::BigInteger > java::math::BigDecimal::unscaledValue()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(48),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::round(local_ref< java::math::MathContext > const &a0)
@@ -809,8 +815,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::round(local_ref< jav
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(49),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0, local_ref< java::math::RoundingMode > const &a1)
@@ -819,8 +825,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0, lo
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(50),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0, jint a1)
@@ -829,8 +835,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0, ji
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(51),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0, a1);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0)
@@ -839,8 +845,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::setScale(jint a0)
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(52),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::movePointLeft(jint a0)
@@ -849,8 +855,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::movePointLeft(jint a
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(53),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::movePointRight(jint a0)
@@ -859,8 +865,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::movePointRight(jint 
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(54),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::scaleByPowerOfTen(jint a0)
@@ -869,8 +875,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::scaleByPowerOfTen(ji
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(55),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::stripTrailingZeros()
@@ -879,8 +885,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::stripTrailingZeros()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(56),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::compareTo(local_ref< java::math::BigDecimal > const &a0)
@@ -889,8 +895,8 @@ jint java::math::BigDecimal::compareTo(local_ref< java::math::BigDecimal > const
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(57),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(57), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::math::BigDecimal::equals(local_ref< java::lang::Object > const &a0)
@@ -899,8 +905,8 @@ jboolean java::math::BigDecimal::equals(local_ref< java::lang::Object > const &a
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(58),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(58), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::min(local_ref< java::math::BigDecimal > const &a0)
@@ -909,8 +915,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::min(local_ref< java:
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(59),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(59), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::max(local_ref< java::math::BigDecimal > const &a0)
@@ -919,8 +925,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::max(local_ref< java:
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(60),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject(), a0);
+		local_ref< java::math::BigDecimal >
+	>(get_jobject(), a0);
 }
 
 jint java::math::BigDecimal::hashCode()
@@ -929,8 +935,8 @@ jint java::math::BigDecimal::hashCode()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(61),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(61), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::math::BigDecimal::toString()
@@ -939,8 +945,8 @@ local_ref< java::lang::String > java::math::BigDecimal::toString()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(62),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(62), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::math::BigDecimal::toEngineeringString()
@@ -949,8 +955,8 @@ local_ref< java::lang::String > java::math::BigDecimal::toEngineeringString()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(63),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(63), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::math::BigDecimal::toPlainString()
@@ -959,8 +965,8 @@ local_ref< java::lang::String > java::math::BigDecimal::toPlainString()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(64),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(64), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigDecimal::toBigInteger()
@@ -969,8 +975,8 @@ local_ref< java::math::BigInteger > java::math::BigDecimal::toBigInteger()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(65),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(65), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::math::BigDecimal::toBigIntegerExact()
@@ -979,8 +985,8 @@ local_ref< java::math::BigInteger > java::math::BigDecimal::toBigIntegerExact()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(66),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(66), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jlong java::math::BigDecimal::longValue()
@@ -989,8 +995,8 @@ jlong java::math::BigDecimal::longValue()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(67),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(67), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::math::BigDecimal::longValueExact()
@@ -999,8 +1005,8 @@ jlong java::math::BigDecimal::longValueExact()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(68),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(68), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::intValue()
@@ -1009,8 +1015,8 @@ jint java::math::BigDecimal::intValue()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(69),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(69), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::intValueExact()
@@ -1019,8 +1025,8 @@ jint java::math::BigDecimal::intValueExact()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(70),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(70), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jshort java::math::BigDecimal::shortValueExact()
@@ -1029,8 +1035,8 @@ jshort java::math::BigDecimal::shortValueExact()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(71),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(71), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 jbyte java::math::BigDecimal::byteValueExact()
@@ -1039,8 +1045,8 @@ jbyte java::math::BigDecimal::byteValueExact()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(72),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(72), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jfloat java::math::BigDecimal::floatValue()
@@ -1049,8 +1055,8 @@ jfloat java::math::BigDecimal::floatValue()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(73),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(73), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble java::math::BigDecimal::doubleValue()
@@ -1059,8 +1065,8 @@ jdouble java::math::BigDecimal::doubleValue()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(74),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(74), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::ulp()
@@ -1069,8 +1075,8 @@ local_ref< java::math::BigDecimal > java::math::BigDecimal::ulp()
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(75),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(75), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 jint java::math::BigDecimal::compareTo(local_ref< java::lang::Object > const &a0)
@@ -1079,8 +1085,8 @@ jint java::math::BigDecimal::compareTo(local_ref< java::lang::Object > const &a0
 		java::math::BigDecimal::J2CPP_CLASS_NAME,
 		java::math::BigDecimal::J2CPP_METHOD_NAME(76),
 		java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(76), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

@@ -15,10 +15,15 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class CompletionInfo; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AutoCompleteTextView_ { class Validator; } } } }
 namespace j2cpp { namespace android { namespace widget { class EditText; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
@@ -32,12 +37,15 @@ namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ 
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/AutoCompleteTextView.hpp>
 #include <android/widget/EditText.hpp>
 #include <android/widget/Filter.hpp>
 #include <android/widget/ListAdapter.hpp>
+#include <android/widget/TextView.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 
@@ -144,6 +152,12 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::widget::TextView>() const;
 		operator local_ref<android::widget::EditText>() const;
 		operator local_ref<android::widget::Filter_::FilterListener>() const;
 
@@ -224,8 +238,8 @@ jboolean android::widget::AutoCompleteTextView_::Validator::isValid(local_ref< j
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_METHOD_NAME(0),
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::AutoCompleteTextView_::Validator::fixText(local_ref< java::lang::CharSequence > const &a0)
@@ -234,8 +248,8 @@ local_ref< java::lang::CharSequence > android::widget::AutoCompleteTextView_::Va
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_METHOD_NAME(1),
 		android::widget::AutoCompleteTextView_::Validator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 
@@ -244,6 +258,36 @@ J2CPP_DEFINE_METHOD(android::widget::AutoCompleteTextView_::Validator,0,"isValid
 J2CPP_DEFINE_METHOD(android::widget::AutoCompleteTextView_::Validator,1,"fixText","(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;")
 
 
+
+android::widget::AutoCompleteTextView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::AutoCompleteTextView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::AutoCompleteTextView::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
+}
+
+android::widget::AutoCompleteTextView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::AutoCompleteTextView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::AutoCompleteTextView::operator local_ref<android::widget::TextView>() const
+{
+	return local_ref<android::widget::TextView>(get_jobject());
+}
 
 android::widget::AutoCompleteTextView::operator local_ref<android::widget::EditText>() const
 {
@@ -261,8 +305,8 @@ android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::
 	call_new_object<
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(0),
-		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -274,8 +318,8 @@ android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::
 	call_new_object<
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(1),
-		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -287,8 +331,8 @@ android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::
 	call_new_object<
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(2),
-		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -300,8 +344,8 @@ void android::widget::AutoCompleteTextView::setOnClickListener(local_ref< androi
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(3),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::setCompletionHint(local_ref< java::lang::CharSequence > const &a0)
@@ -310,8 +354,8 @@ void android::widget::AutoCompleteTextView::setCompletionHint(local_ref< java::l
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(4),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getDropDownWidth()
@@ -320,8 +364,8 @@ jint android::widget::AutoCompleteTextView::getDropDownWidth()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(5),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setDropDownWidth(jint a0)
@@ -330,8 +374,8 @@ void android::widget::AutoCompleteTextView::setDropDownWidth(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(6),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getDropDownHeight()
@@ -340,8 +384,8 @@ jint android::widget::AutoCompleteTextView::getDropDownHeight()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(7),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setDropDownHeight(jint a0)
@@ -350,8 +394,8 @@ void android::widget::AutoCompleteTextView::setDropDownHeight(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(8),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getDropDownAnchor()
@@ -360,8 +404,8 @@ jint android::widget::AutoCompleteTextView::getDropDownAnchor()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(9),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setDropDownAnchor(jint a0)
@@ -370,8 +414,8 @@ void android::widget::AutoCompleteTextView::setDropDownAnchor(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(10),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::AutoCompleteTextView::getDropDownBackground()
@@ -380,8 +424,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::AutoComplete
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(11),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setDropDownBackgroundDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -390,8 +434,8 @@ void android::widget::AutoCompleteTextView::setDropDownBackgroundDrawable(local_
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(12),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::setDropDownBackgroundResource(jint a0)
@@ -400,8 +444,8 @@ void android::widget::AutoCompleteTextView::setDropDownBackgroundResource(jint a
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(13),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::setDropDownVerticalOffset(jint a0)
@@ -410,8 +454,8 @@ void android::widget::AutoCompleteTextView::setDropDownVerticalOffset(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(14),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getDropDownVerticalOffset()
@@ -420,8 +464,8 @@ jint android::widget::AutoCompleteTextView::getDropDownVerticalOffset()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(15),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setDropDownHorizontalOffset(jint a0)
@@ -430,8 +474,8 @@ void android::widget::AutoCompleteTextView::setDropDownHorizontalOffset(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(16),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getDropDownHorizontalOffset()
@@ -440,8 +484,8 @@ jint android::widget::AutoCompleteTextView::getDropDownHorizontalOffset()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(17),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AutoCompleteTextView::getThreshold()
@@ -450,8 +494,8 @@ jint android::widget::AutoCompleteTextView::getThreshold()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(18),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setThreshold(jint a0)
@@ -460,8 +504,8 @@ void android::widget::AutoCompleteTextView::setThreshold(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(19),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::setOnItemClickListener(local_ref< android::widget::AdapterView_::OnItemClickListener > const &a0)
@@ -470,8 +514,8 @@ void android::widget::AutoCompleteTextView::setOnItemClickListener(local_ref< an
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(20),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::setOnItemSelectedListener(local_ref< android::widget::AdapterView_::OnItemSelectedListener > const &a0)
@@ -480,8 +524,8 @@ void android::widget::AutoCompleteTextView::setOnItemSelectedListener(local_ref<
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(21),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget::AutoCompleteTextView::getItemClickListener()
@@ -490,8 +534,8 @@ local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget:
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(22),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< android::widget::AdapterView_::OnItemClickListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemClickListener >
+	>(get_jobject());
 }
 
 local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widget::AutoCompleteTextView::getItemSelectedListener()
@@ -500,8 +544,8 @@ local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widg
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(23),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< android::widget::AdapterView_::OnItemSelectedListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemSelectedListener >
+	>(get_jobject());
 }
 
 local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget::AutoCompleteTextView::getOnItemClickListener()
@@ -510,8 +554,8 @@ local_ref< android::widget::AdapterView_::OnItemClickListener > android::widget:
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(24),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::widget::AdapterView_::OnItemClickListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemClickListener >
+	>(get_jobject());
 }
 
 local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widget::AutoCompleteTextView::getOnItemSelectedListener()
@@ -520,8 +564,8 @@ local_ref< android::widget::AdapterView_::OnItemSelectedListener > android::widg
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(25),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::widget::AdapterView_::OnItemSelectedListener > >
-	(get_jobject());
+		local_ref< android::widget::AdapterView_::OnItemSelectedListener >
+	>(get_jobject());
 }
 
 local_ref< android::widget::ListAdapter > android::widget::AutoCompleteTextView::getAdapter()
@@ -530,8 +574,8 @@ local_ref< android::widget::ListAdapter > android::widget::AutoCompleteTextView:
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(26),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setAdapter(local_ref< android::widget::ListAdapter > const &a0)
@@ -540,8 +584,8 @@ void android::widget::AutoCompleteTextView::setAdapter(local_ref< android::widge
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(27),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AutoCompleteTextView::onKeyPreIme(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -550,8 +594,8 @@ jboolean android::widget::AutoCompleteTextView::onKeyPreIme(jint a0, local_ref< 
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(28),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::AutoCompleteTextView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -560,8 +604,8 @@ jboolean android::widget::AutoCompleteTextView::onKeyUp(jint a0, local_ref< andr
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(29),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::AutoCompleteTextView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -570,8 +614,8 @@ jboolean android::widget::AutoCompleteTextView::onKeyDown(jint a0, local_ref< an
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(30),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::AutoCompleteTextView::enoughToFilter()
@@ -580,8 +624,8 @@ jboolean android::widget::AutoCompleteTextView::enoughToFilter()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(31),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::AutoCompleteTextView::isPopupShowing()
@@ -590,8 +634,8 @@ jboolean android::widget::AutoCompleteTextView::isPopupShowing()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(32),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -601,8 +645,8 @@ void android::widget::AutoCompleteTextView::clearListSelection()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(34),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setListSelection(jint a0)
@@ -611,8 +655,8 @@ void android::widget::AutoCompleteTextView::setListSelection(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(35),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AutoCompleteTextView::getListSelection()
@@ -621,8 +665,8 @@ jint android::widget::AutoCompleteTextView::getListSelection()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(36),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -632,8 +676,8 @@ void android::widget::AutoCompleteTextView::performCompletion()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(38),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::onCommitCompletion(local_ref< android::view::inputmethod::CompletionInfo > const &a0)
@@ -642,8 +686,8 @@ void android::widget::AutoCompleteTextView::onCommitCompletion(local_ref< androi
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(39),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AutoCompleteTextView::isPerformingCompletion()
@@ -652,8 +696,8 @@ jboolean android::widget::AutoCompleteTextView::isPerformingCompletion()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(40),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -663,8 +707,8 @@ void android::widget::AutoCompleteTextView::onFilterComplete(jint a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(42),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AutoCompleteTextView::onWindowFocusChanged(jboolean a0)
@@ -673,8 +717,8 @@ void android::widget::AutoCompleteTextView::onWindowFocusChanged(jboolean a0)
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(43),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -687,8 +731,8 @@ void android::widget::AutoCompleteTextView::dismissDropDown()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(48),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -698,8 +742,8 @@ void android::widget::AutoCompleteTextView::showDropDown()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(50),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::setValidator(local_ref< android::widget::AutoCompleteTextView_::Validator > const &a0)
@@ -708,8 +752,8 @@ void android::widget::AutoCompleteTextView::setValidator(local_ref< android::wid
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(51),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::AutoCompleteTextView_::Validator > android::widget::AutoCompleteTextView::getValidator()
@@ -718,8 +762,8 @@ local_ref< android::widget::AutoCompleteTextView_::Validator > android::widget::
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(52),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< android::widget::AutoCompleteTextView_::Validator > >
-	(get_jobject());
+		local_ref< android::widget::AutoCompleteTextView_::Validator >
+	>(get_jobject());
 }
 
 void android::widget::AutoCompleteTextView::performValidation()
@@ -728,8 +772,8 @@ void android::widget::AutoCompleteTextView::performValidation()
 		android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME,
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(53),
 		android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

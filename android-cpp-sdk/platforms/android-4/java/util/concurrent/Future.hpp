@@ -80,8 +80,8 @@ jboolean java::util::concurrent::Future::cancel(jboolean a0)
 		java::util::concurrent::Future::J2CPP_CLASS_NAME,
 		java::util::concurrent::Future::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::Future::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::Future::isCancelled()
@@ -90,8 +90,8 @@ jboolean java::util::concurrent::Future::isCancelled()
 		java::util::concurrent::Future::J2CPP_CLASS_NAME,
 		java::util::concurrent::Future::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::Future::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::Future::isDone()
@@ -100,8 +100,8 @@ jboolean java::util::concurrent::Future::isDone()
 		java::util::concurrent::Future::J2CPP_CLASS_NAME,
 		java::util::concurrent::Future::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::Future::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::Future::get()
@@ -110,8 +110,8 @@ local_ref< java::lang::Object > java::util::concurrent::Future::get()
 		java::util::concurrent::Future::J2CPP_CLASS_NAME,
 		java::util::concurrent::Future::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::Future::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::concurrent::Future::get(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -120,8 +120,8 @@ local_ref< java::lang::Object > java::util::concurrent::Future::get(jlong a0, lo
 		java::util::concurrent::Future::J2CPP_CLASS_NAME,
 		java::util::concurrent::Future::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::Future::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

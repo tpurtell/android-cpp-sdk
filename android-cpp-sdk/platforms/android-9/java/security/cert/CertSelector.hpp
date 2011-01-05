@@ -41,8 +41,8 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Object > clone();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-java::security::cert::CertSelector::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::CertSelector::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::CertSelector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::cert::CertSelector::clone()
@@ -82,8 +82,8 @@ local_ref< java::lang::Object > java::security::cert::CertSelector::clone()
 		java::security::cert::CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::CertSelector::J2CPP_METHOD_NAME(0),
 		java::security::cert::CertSelector::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::security::cert::CertSelector::match(local_ref< java::security::cert::Certificate > const &a0)
@@ -92,8 +92,8 @@ jboolean java::security::cert::CertSelector::match(local_ref< java::security::ce
 		java::security::cert::CertSelector::J2CPP_CLASS_NAME,
 		java::security::cert::CertSelector::J2CPP_METHOD_NAME(1),
 		java::security::cert::CertSelector::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

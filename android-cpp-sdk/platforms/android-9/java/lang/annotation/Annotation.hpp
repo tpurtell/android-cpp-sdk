@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_ANNOTATION_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -80,8 +80,8 @@ local_ref< java::lang::Class > java::lang::annotation::Annotation::annotationTyp
 		java::lang::annotation::Annotation::J2CPP_CLASS_NAME,
 		java::lang::annotation::Annotation::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::Annotation::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 jboolean java::lang::annotation::Annotation::equals(local_ref< java::lang::Object > const &a0)
@@ -90,8 +90,8 @@ jboolean java::lang::annotation::Annotation::equals(local_ref< java::lang::Objec
 		java::lang::annotation::Annotation::J2CPP_CLASS_NAME,
 		java::lang::annotation::Annotation::J2CPP_METHOD_NAME(1),
 		java::lang::annotation::Annotation::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::lang::annotation::Annotation::hashCode()
@@ -100,8 +100,8 @@ jint java::lang::annotation::Annotation::hashCode()
 		java::lang::annotation::Annotation::J2CPP_CLASS_NAME,
 		java::lang::annotation::Annotation::J2CPP_METHOD_NAME(2),
 		java::lang::annotation::Annotation::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::annotation::Annotation::toString()
@@ -110,8 +110,8 @@ local_ref< java::lang::String > java::lang::annotation::Annotation::toString()
 		java::lang::annotation::Annotation::J2CPP_CLASS_NAME,
 		java::lang::annotation::Annotation::J2CPP_METHOD_NAME(3),
 		java::lang::annotation::Annotation::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

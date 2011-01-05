@@ -72,8 +72,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAKey::getModul
 		java::security::interfaces::RSAKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::RSAKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

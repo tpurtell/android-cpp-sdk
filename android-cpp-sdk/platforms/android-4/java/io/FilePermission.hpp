@@ -14,6 +14,7 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 
@@ -49,8 +51,10 @@ namespace java { namespace io {
 		{
 		}
 
-		operator local_ref<java::security::Permission>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		FilePermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -77,14 +81,24 @@ namespace j2cpp {
 
 
 
+java::io::FilePermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::io::FilePermission::operator local_ref<java::security::Permission>() const
 {
 	return local_ref<java::security::Permission>(get_jobject());
 }
 
-java::io::FilePermission::operator local_ref<java::io::Serializable>() const
+java::io::FilePermission::operator local_ref<java::security::Guard>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::security::Guard>(get_jobject());
+}
+
+java::io::FilePermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -93,8 +107,8 @@ java::io::FilePermission::FilePermission(local_ref< java::lang::String > const &
 	call_new_object<
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(0),
-		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +120,8 @@ local_ref< java::lang::String > java::io::FilePermission::getActions()
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(1),
 		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::io::FilePermission::equals(local_ref< java::lang::Object > const &a0)
@@ -116,8 +130,8 @@ jboolean java::io::FilePermission::equals(local_ref< java::lang::Object > const 
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(2),
 		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::FilePermission::implies(local_ref< java::security::Permission > const &a0)
@@ -126,8 +140,8 @@ jboolean java::io::FilePermission::implies(local_ref< java::security::Permission
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(3),
 		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PermissionCollection > java::io::FilePermission::newPermissionCollection()
@@ -136,8 +150,8 @@ local_ref< java::security::PermissionCollection > java::io::FilePermission::newP
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(4),
 		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 jint java::io::FilePermission::hashCode()
@@ -146,8 +160,8 @@ jint java::io::FilePermission::hashCode()
 		java::io::FilePermission::J2CPP_CLASS_NAME,
 		java::io::FilePermission::J2CPP_METHOD_NAME(5),
 		java::io::FilePermission::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -124,8 +124,8 @@ java::security::Identity::Identity(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(1),
-		java::security::Identity::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::Identity::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -137,8 +137,8 @@ java::security::Identity::Identity(local_ref< java::lang::String > const &a0, lo
 	call_new_object<
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(2),
-		java::security::Identity::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::security::Identity::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -150,8 +150,8 @@ void java::security::Identity::addCertificate(local_ref< java::security::Certifi
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(3),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::Identity::removeCertificate(local_ref< java::security::Certificate > const &a0)
@@ -160,8 +160,8 @@ void java::security::Identity::removeCertificate(local_ref< java::security::Cert
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(4),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::security::Certificate >, 1> > java::security::Identity::certificates()
@@ -170,8 +170,8 @@ local_ref< array< local_ref< java::security::Certificate >, 1> > java::security:
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(5),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::security::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::Certificate >, 1> >
+	>(get_jobject());
 }
 
 
@@ -181,8 +181,8 @@ local_ref< java::lang::String > java::security::Identity::toString(jboolean a0)
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(7),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::IdentityScope > java::security::Identity::getScope()
@@ -191,8 +191,8 @@ local_ref< java::security::IdentityScope > java::security::Identity::getScope()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(8),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::security::IdentityScope > >
-	(get_jobject());
+		local_ref< java::security::IdentityScope >
+	>(get_jobject());
 }
 
 void java::security::Identity::setPublicKey(local_ref< java::security::PublicKey > const &a0)
@@ -201,8 +201,8 @@ void java::security::Identity::setPublicKey(local_ref< java::security::PublicKey
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(9),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PublicKey > java::security::Identity::getPublicKey()
@@ -211,8 +211,8 @@ local_ref< java::security::PublicKey > java::security::Identity::getPublicKey()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(10),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::security::PublicKey > >
-	(get_jobject());
+		local_ref< java::security::PublicKey >
+	>(get_jobject());
 }
 
 void java::security::Identity::setInfo(local_ref< java::lang::String > const &a0)
@@ -221,8 +221,8 @@ void java::security::Identity::setInfo(local_ref< java::lang::String > const &a0
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(11),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Identity::getInfo()
@@ -231,8 +231,8 @@ local_ref< java::lang::String > java::security::Identity::getInfo()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(12),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::Identity::equals(local_ref< java::lang::Object > const &a0)
@@ -241,8 +241,8 @@ jboolean java::security::Identity::equals(local_ref< java::lang::Object > const 
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(13),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::Identity::getName()
@@ -251,8 +251,8 @@ local_ref< java::lang::String > java::security::Identity::getName()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(14),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::security::Identity::hashCode()
@@ -261,8 +261,8 @@ jint java::security::Identity::hashCode()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(15),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Identity::toString()
@@ -271,8 +271,8 @@ local_ref< java::lang::String > java::security::Identity::toString()
 		java::security::Identity::J2CPP_CLASS_NAME,
 		java::security::Identity::J2CPP_METHOD_NAME(16),
 		java::security::Identity::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

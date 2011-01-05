@@ -87,8 +87,8 @@ java::util::Observable::Observable()
 	call_new_object<
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(0),
-		java::util::Observable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Observable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +100,8 @@ void java::util::Observable::addObserver(local_ref< java::util::Observer > const
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(1),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -111,8 +111,8 @@ jint java::util::Observable::countObservers()
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(3),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::Observable::deleteObserver(local_ref< java::util::Observer > const &a0)
@@ -121,8 +121,8 @@ void java::util::Observable::deleteObserver(local_ref< java::util::Observer > co
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(4),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Observable::deleteObservers()
@@ -131,8 +131,8 @@ void java::util::Observable::deleteObservers()
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(5),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::Observable::hasChanged()
@@ -141,8 +141,8 @@ jboolean java::util::Observable::hasChanged()
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(6),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::Observable::notifyObservers()
@@ -151,8 +151,8 @@ void java::util::Observable::notifyObservers()
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(7),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::Observable::notifyObservers(local_ref< java::lang::Object > const &a0)
@@ -161,8 +161,8 @@ void java::util::Observable::notifyObservers(local_ref< java::lang::Object > con
 		java::util::Observable::J2CPP_CLASS_NAME,
 		java::util::Observable::J2CPP_METHOD_NAME(8),
 		java::util::Observable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

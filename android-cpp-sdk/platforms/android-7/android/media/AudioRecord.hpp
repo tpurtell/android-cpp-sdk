@@ -163,8 +163,8 @@ void android::media::AudioRecord_::OnRecordPositionUpdateListener::onMarkerReach
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_CLASS_NAME,
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_METHOD_NAME(0),
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioRecord_::OnRecordPositionUpdateListener::onPeriodicNotification(local_ref< android::media::AudioRecord > const &a0)
@@ -173,8 +173,8 @@ void android::media::AudioRecord_::OnRecordPositionUpdateListener::onPeriodicNot
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_CLASS_NAME,
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_METHOD_NAME(1),
 		android::media::AudioRecord_::OnRecordPositionUpdateListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -195,8 +195,8 @@ android::media::AudioRecord::AudioRecord(jint a0, jint a1, jint a2, jint a3, jin
 	call_new_object<
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(0),
-		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -208,8 +208,8 @@ void android::media::AudioRecord::release()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(1),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -219,8 +219,8 @@ jint android::media::AudioRecord::getSampleRate()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(3),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getAudioSource()
@@ -229,8 +229,8 @@ jint android::media::AudioRecord::getAudioSource()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(4),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getAudioFormat()
@@ -239,8 +239,8 @@ jint android::media::AudioRecord::getAudioFormat()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(5),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getChannelConfiguration()
@@ -249,8 +249,8 @@ jint android::media::AudioRecord::getChannelConfiguration()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(6),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getChannelCount()
@@ -259,8 +259,8 @@ jint android::media::AudioRecord::getChannelCount()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(7),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getState()
@@ -269,8 +269,8 @@ jint android::media::AudioRecord::getState()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(8),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getRecordingState()
@@ -279,8 +279,8 @@ jint android::media::AudioRecord::getRecordingState()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(9),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getNotificationMarkerPosition()
@@ -289,8 +289,8 @@ jint android::media::AudioRecord::getNotificationMarkerPosition()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(10),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getPositionNotificationPeriod()
@@ -299,8 +299,8 @@ jint android::media::AudioRecord::getPositionNotificationPeriod()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(11),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::getMinBufferSize(jint a0, jint a1, jint a2)
@@ -309,8 +309,8 @@ jint android::media::AudioRecord::getMinBufferSize(jint a0, jint a1, jint a2)
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(12),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 void android::media::AudioRecord::startRecording()
@@ -319,8 +319,8 @@ void android::media::AudioRecord::startRecording()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(13),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::AudioRecord::stop()
@@ -329,8 +329,8 @@ void android::media::AudioRecord::stop()
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(14),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::media::AudioRecord::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -339,8 +339,8 @@ jint android::media::AudioRecord::read(local_ref< array<jbyte,1> > const &a0, ji
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(15),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::media::AudioRecord::read(local_ref< array<jshort,1> > const &a0, jint a1, jint a2)
@@ -349,8 +349,8 @@ jint android::media::AudioRecord::read(local_ref< array<jshort,1> > const &a0, j
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(16),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::media::AudioRecord::read(local_ref< java::nio::ByteBuffer > const &a0, jint a1)
@@ -359,8 +359,8 @@ jint android::media::AudioRecord::read(local_ref< java::nio::ByteBuffer > const 
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(17),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::AudioRecord::setRecordPositionUpdateListener(local_ref< android::media::AudioRecord_::OnRecordPositionUpdateListener > const &a0)
@@ -369,8 +369,8 @@ void android::media::AudioRecord::setRecordPositionUpdateListener(local_ref< and
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(18),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::AudioRecord::setRecordPositionUpdateListener(local_ref< android::media::AudioRecord_::OnRecordPositionUpdateListener > const &a0, local_ref< android::os::Handler > const &a1)
@@ -379,8 +379,8 @@ void android::media::AudioRecord::setRecordPositionUpdateListener(local_ref< and
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(19),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::media::AudioRecord::setNotificationMarkerPosition(jint a0)
@@ -389,8 +389,8 @@ jint android::media::AudioRecord::setNotificationMarkerPosition(jint a0)
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(20),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::media::AudioRecord::setPositionNotificationPeriod(jint a0)
@@ -399,8 +399,8 @@ jint android::media::AudioRecord::setPositionNotificationPeriod(jint a0)
 		android::media::AudioRecord::J2CPP_CLASS_NAME,
 		android::media::AudioRecord::J2CPP_METHOD_NAME(21),
 		android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

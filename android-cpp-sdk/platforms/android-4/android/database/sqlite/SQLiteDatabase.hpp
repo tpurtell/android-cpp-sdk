@@ -138,6 +138,7 @@ namespace android { namespace database { namespace sqlite {
 		}
 
 		operator local_ref<android::database::sqlite::SQLiteClosable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static jint releaseMemory();
@@ -222,8 +223,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase_::CursorFactory::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase_::CursorFactory::J2CPP_METHOD_NAME(0),
 		android::database::sqlite::SQLiteDatabase_::CursorFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -237,6 +238,11 @@ android::database::sqlite::SQLiteDatabase::operator local_ref<android::database:
 	return local_ref<android::database::sqlite::SQLiteClosable>(get_jobject());
 }
 
+android::database::sqlite::SQLiteDatabase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 
 jint android::database::sqlite::SQLiteDatabase::releaseMemory()
@@ -245,8 +251,8 @@ jint android::database::sqlite::SQLiteDatabase::releaseMemory()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void android::database::sqlite::SQLiteDatabase::setLockingEnabled(jboolean a0)
@@ -255,8 +261,8 @@ void android::database::sqlite::SQLiteDatabase::setLockingEnabled(jboolean a0)
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteDatabase::beginTransaction()
@@ -265,8 +271,8 @@ void android::database::sqlite::SQLiteDatabase::beginTransaction()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteDatabase::endTransaction()
@@ -275,8 +281,8 @@ void android::database::sqlite::SQLiteDatabase::endTransaction()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(5),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteDatabase::setTransactionSuccessful()
@@ -285,8 +291,8 @@ void android::database::sqlite::SQLiteDatabase::setTransactionSuccessful()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(6),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::inTransaction()
@@ -295,8 +301,8 @@ jboolean android::database::sqlite::SQLiteDatabase::inTransaction()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(7),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::isDbLockedByCurrentThread()
@@ -305,8 +311,8 @@ jboolean android::database::sqlite::SQLiteDatabase::isDbLockedByCurrentThread()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(8),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::isDbLockedByOtherThreads()
@@ -315,8 +321,8 @@ jboolean android::database::sqlite::SQLiteDatabase::isDbLockedByOtherThreads()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(9),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::yieldIfContended()
@@ -325,8 +331,8 @@ jboolean android::database::sqlite::SQLiteDatabase::yieldIfContended()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(10),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::yieldIfContendedSafely()
@@ -335,8 +341,8 @@ jboolean android::database::sqlite::SQLiteDatabase::yieldIfContendedSafely()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(11),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Map > android::database::sqlite::SQLiteDatabase::getSyncedTables()
@@ -345,8 +351,8 @@ local_ref< java::util::Map > android::database::sqlite::SQLiteDatabase::getSynce
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(12),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Map > >
-	(get_jobject());
+		local_ref< java::util::Map >
+	>(get_jobject());
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteDatabase::openDatabase(local_ref< java::lang::String > const &a0, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a1, jint a2)
@@ -355,8 +361,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(13),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(a0, a1, a2);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(a0, a1, a2);
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteDatabase::openOrCreateDatabase(local_ref< java::io::File > const &a0, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a1)
@@ -365,8 +371,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(14),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(a0, a1);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(a0, a1);
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteDatabase::openOrCreateDatabase(local_ref< java::lang::String > const &a0, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a1)
@@ -375,8 +381,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(15),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(a0, a1);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(a0, a1);
 }
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteDatabase::create(local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a0)
@@ -385,8 +391,8 @@ local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(16),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::database::sqlite::SQLiteDatabase > >
-	(a0);
+		local_ref< android::database::sqlite::SQLiteDatabase >
+	>(a0);
 }
 
 void android::database::sqlite::SQLiteDatabase::close()
@@ -395,8 +401,8 @@ void android::database::sqlite::SQLiteDatabase::close()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(17),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::database::sqlite::SQLiteDatabase::getVersion()
@@ -405,8 +411,8 @@ jint android::database::sqlite::SQLiteDatabase::getVersion()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(18),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteDatabase::setVersion(jint a0)
@@ -415,8 +421,8 @@ void android::database::sqlite::SQLiteDatabase::setVersion(jint a0)
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(19),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::getMaximumSize()
@@ -425,8 +431,8 @@ jlong android::database::sqlite::SQLiteDatabase::getMaximumSize()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(20),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(20), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::database::sqlite::SQLiteDatabase::setMaximumSize(jlong a0)
@@ -435,8 +441,8 @@ jlong android::database::sqlite::SQLiteDatabase::setMaximumSize(jlong a0)
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(21),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::getPageSize()
@@ -445,8 +451,8 @@ jlong android::database::sqlite::SQLiteDatabase::getPageSize()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(22),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(22), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteDatabase::setPageSize(jlong a0)
@@ -455,8 +461,8 @@ void android::database::sqlite::SQLiteDatabase::setPageSize(jlong a0)
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(23),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteDatabase::markTableSyncable(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -465,8 +471,8 @@ void android::database::sqlite::SQLiteDatabase::markTableSyncable(local_ref< jav
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(24),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::database::sqlite::SQLiteDatabase::markTableSyncable(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -475,8 +481,8 @@ void android::database::sqlite::SQLiteDatabase::markTableSyncable(local_ref< jav
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(25),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::database::sqlite::SQLiteDatabase::findEditTable(local_ref< java::lang::String > const &a0)
@@ -485,8 +491,8 @@ local_ref< java::lang::String > android::database::sqlite::SQLiteDatabase::findE
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(26),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< android::database::sqlite::SQLiteStatement > android::database::sqlite::SQLiteDatabase::compileStatement(local_ref< java::lang::String > const &a0)
@@ -495,8 +501,8 @@ local_ref< android::database::sqlite::SQLiteStatement > android::database::sqlit
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(27),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::database::sqlite::SQLiteStatement > >
-	(get_jobject(), a0);
+		local_ref< android::database::sqlite::SQLiteStatement >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::query(jboolean a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< java::lang::String > const &a3, local_ref< array< local_ref< java::lang::String >, 1> > const &a4, local_ref< java::lang::String > const &a5, local_ref< java::lang::String > const &a6, local_ref< java::lang::String > const &a7, local_ref< java::lang::String > const &a8)
@@ -505,8 +511,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(28),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::queryWithFactory(local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a0, jboolean a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4, local_ref< array< local_ref< java::lang::String >, 1> > const &a5, local_ref< java::lang::String > const &a6, local_ref< java::lang::String > const &a7, local_ref< java::lang::String > const &a8, local_ref< java::lang::String > const &a9)
@@ -515,8 +521,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(29),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::query(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4, local_ref< java::lang::String > const &a5, local_ref< java::lang::String > const &a6)
@@ -525,8 +531,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(30),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::query(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3, local_ref< java::lang::String > const &a4, local_ref< java::lang::String > const &a5, local_ref< java::lang::String > const &a6, local_ref< java::lang::String > const &a7)
@@ -535,8 +541,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(31),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::rawQuery(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -545,8 +551,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(32),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase::rawQueryWithFactory(local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, local_ref< java::lang::String > const &a3)
@@ -555,8 +561,8 @@ local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(33),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::insert(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -565,8 +571,8 @@ jlong android::database::sqlite::SQLiteDatabase::insert(local_ref< java::lang::S
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(34),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(34), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::insertOrThrow(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -575,8 +581,8 @@ jlong android::database::sqlite::SQLiteDatabase::insertOrThrow(local_ref< java::
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(35),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(35), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::replace(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -585,8 +591,8 @@ jlong android::database::sqlite::SQLiteDatabase::replace(local_ref< java::lang::
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(36),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(36), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jlong android::database::sqlite::SQLiteDatabase::replaceOrThrow(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::content::ContentValues > const &a2)
@@ -595,8 +601,8 @@ jlong android::database::sqlite::SQLiteDatabase::replaceOrThrow(local_ref< java:
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(37),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(37), 
-		jlong >
-	(get_jobject(), a0, a1, a2);
+		jlong
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::database::sqlite::SQLiteDatabase::delete_(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2)
@@ -605,8 +611,8 @@ jint android::database::sqlite::SQLiteDatabase::delete_(local_ref< java::lang::S
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(38),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(38), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::database::sqlite::SQLiteDatabase::update(local_ref< java::lang::String > const &a0, local_ref< android::content::ContentValues > const &a1, local_ref< java::lang::String > const &a2, local_ref< array< local_ref< java::lang::String >, 1> > const &a3)
@@ -615,8 +621,8 @@ jint android::database::sqlite::SQLiteDatabase::update(local_ref< java::lang::St
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(39),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::database::sqlite::SQLiteDatabase::execSQL(local_ref< java::lang::String > const &a0)
@@ -625,8 +631,8 @@ void android::database::sqlite::SQLiteDatabase::execSQL(local_ref< java::lang::S
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(40),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::database::sqlite::SQLiteDatabase::execSQL(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -635,8 +641,8 @@ void android::database::sqlite::SQLiteDatabase::execSQL(local_ref< java::lang::S
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(41),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -646,8 +652,8 @@ jboolean android::database::sqlite::SQLiteDatabase::isReadOnly()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(43),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::isOpen()
@@ -656,8 +662,8 @@ jboolean android::database::sqlite::SQLiteDatabase::isOpen()
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(44),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::database::sqlite::SQLiteDatabase::needUpgrade(jint a0)
@@ -666,8 +672,8 @@ jboolean android::database::sqlite::SQLiteDatabase::needUpgrade(jint a0)
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(45),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::database::sqlite::SQLiteDatabase::getPath()
@@ -676,8 +682,8 @@ local_ref< java::lang::String > android::database::sqlite::SQLiteDatabase::getPa
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(46),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::database::sqlite::SQLiteDatabase::setLocale(local_ref< java::util::Locale > const &a0)
@@ -686,8 +692,8 @@ void android::database::sqlite::SQLiteDatabase::setLocale(local_ref< java::util:
 		android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(47),
 		android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

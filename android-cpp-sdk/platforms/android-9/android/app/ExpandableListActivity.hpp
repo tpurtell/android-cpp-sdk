@@ -11,11 +11,18 @@
 #define J2CPP_ANDROID_APP_EXPANDABLELISTACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
 namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
 namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
 namespace j2cpp { namespace android { namespace widget { class ExpandableListView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnGroupExpandListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
@@ -24,10 +31,17 @@ namespace j2cpp { namespace android { namespace widget { namespace ExpandableLis
 
 
 #include <android/app/Activity.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/view/ContextMenu.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
 #include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/ExpandableListAdapter.hpp>
 #include <android/widget/ExpandableListView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -62,11 +76,18 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
 		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
 		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const;
 		operator local_ref<android::widget::ExpandableListView_::OnChildClickListener>() const;
 		operator local_ref<android::widget::ExpandableListView_::OnGroupCollapseListener>() const;
-		operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const;
 
 
 		ExpandableListActivity();
@@ -100,14 +121,54 @@ namespace j2cpp {
 
 
 
+android::app::ExpandableListActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
 android::app::ExpandableListActivity::operator local_ref<android::app::Activity>() const
 {
 	return local_ref<android::app::Activity>(get_jobject());
 }
 
+android::app::ExpandableListActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
 android::app::ExpandableListActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
 {
 	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const
+{
+	return local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>(get_jobject());
 }
 
 android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnChildClickListener>() const
@@ -120,19 +181,14 @@ android::app::ExpandableListActivity::operator local_ref<android::widget::Expand
 	return local_ref<android::widget::ExpandableListView_::OnGroupCollapseListener>(get_jobject());
 }
 
-android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const
-{
-	return local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>(get_jobject());
-}
-
 
 android::app::ExpandableListActivity::ExpandableListActivity()
 : object<android::app::ExpandableListActivity>(
 	call_new_object<
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(0),
-		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -144,8 +200,8 @@ void android::app::ExpandableListActivity::onCreateContextMenu(local_ref< androi
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(1),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::app::ExpandableListActivity::onChildClick(local_ref< android::widget::ExpandableListView > const &a0, local_ref< android::view::View > const &a1, jint a2, jint a3, jlong a4)
@@ -154,8 +210,8 @@ jboolean android::app::ExpandableListActivity::onChildClick(local_ref< android::
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(2),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::app::ExpandableListActivity::onGroupCollapse(jint a0)
@@ -164,8 +220,8 @@ void android::app::ExpandableListActivity::onGroupCollapse(jint a0)
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(3),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ExpandableListActivity::onGroupExpand(jint a0)
@@ -174,8 +230,8 @@ void android::app::ExpandableListActivity::onGroupExpand(jint a0)
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(4),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -185,8 +241,8 @@ void android::app::ExpandableListActivity::onContentChanged()
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(6),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::ExpandableListActivity::setListAdapter(local_ref< android::widget::ExpandableListAdapter > const &a0)
@@ -195,8 +251,8 @@ void android::app::ExpandableListActivity::setListAdapter(local_ref< android::wi
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(7),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::ExpandableListView > android::app::ExpandableListActivity::getExpandableListView()
@@ -205,8 +261,8 @@ local_ref< android::widget::ExpandableListView > android::app::ExpandableListAct
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(8),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::widget::ExpandableListView > >
-	(get_jobject());
+		local_ref< android::widget::ExpandableListView >
+	>(get_jobject());
 }
 
 local_ref< android::widget::ExpandableListAdapter > android::app::ExpandableListActivity::getExpandableListAdapter()
@@ -215,8 +271,8 @@ local_ref< android::widget::ExpandableListAdapter > android::app::ExpandableList
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(9),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::widget::ExpandableListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ExpandableListAdapter >
+	>(get_jobject());
 }
 
 jlong android::app::ExpandableListActivity::getSelectedId()
@@ -225,8 +281,8 @@ jlong android::app::ExpandableListActivity::getSelectedId()
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(10),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::app::ExpandableListActivity::getSelectedPosition()
@@ -235,8 +291,8 @@ jlong android::app::ExpandableListActivity::getSelectedPosition()
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(11),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(11), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jboolean android::app::ExpandableListActivity::setSelectedChild(jint a0, jint a1, jboolean a2)
@@ -245,8 +301,8 @@ jboolean android::app::ExpandableListActivity::setSelectedChild(jint a0, jint a1
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(12),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::ExpandableListActivity::setSelectedGroup(jint a0)
@@ -255,8 +311,8 @@ void android::app::ExpandableListActivity::setSelectedGroup(jint a0)
 		android::app::ExpandableListActivity::J2CPP_CLASS_NAME,
 		android::app::ExpandableListActivity::J2CPP_METHOD_NAME(13),
 		android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

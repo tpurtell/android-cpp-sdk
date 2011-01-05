@@ -11,10 +11,16 @@
 #define J2CPP_ANDROID_WIDGET_TABLEROW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { class LinearLayout; } } }
 namespace j2cpp { namespace android { namespace widget { namespace LinearLayout_ { class LayoutParams; } } } }
@@ -23,11 +29,16 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/LinearLayout.hpp>
 #include <android/widget/TableRow.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -63,6 +74,9 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const;
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
 			operator local_ref<android::widget::LinearLayout_::LayoutParams>() const;
 
 
@@ -110,6 +124,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::LinearLayout>() const;
 
 
@@ -140,6 +161,21 @@ namespace j2cpp {
 
 
 
+android::widget::TableRow_::LayoutParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::TableRow_::LayoutParams::operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::MarginLayoutParams>(get_jobject());
+}
+
+android::widget::TableRow_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
+{
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jobject());
+}
+
 android::widget::TableRow_::LayoutParams::operator local_ref<android::widget::LinearLayout_::LayoutParams>() const
 {
 	return local_ref<android::widget::LinearLayout_::LayoutParams>(get_jobject());
@@ -151,8 +187,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(local_ref< android::conte
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(0),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -166,8 +202,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(jint a0, jint a1)
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(1),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -181,8 +217,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(jint a0, jint a1, jfloat 
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(2),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -196,8 +232,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams()
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(3),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)>
-	()
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)
+	>()
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -211,8 +247,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(jint a0)
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(4),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -226,8 +262,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(local_ref< android::view:
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(5),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -241,8 +277,8 @@ android::widget::TableRow_::LayoutParams::LayoutParams(local_ref< android::view:
 	call_new_object<
 		android::widget::TableRow_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_NAME(6),
-		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(6)>
-	(a0)
+		android::widget::TableRow_::LayoutParams::J2CPP_METHOD_SIGNATURE(6)
+	>(a0)
 )
 , column(get_jobject())
 , span(get_jobject())
@@ -267,6 +303,41 @@ J2CPP_DEFINE_FIELD(android::widget::TableRow_::LayoutParams,1,"span","I")
 
 
 
+android::widget::TableRow::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::TableRow::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::TableRow::operator local_ref<android::widget::LinearLayout>() const
 {
 	return local_ref<android::widget::LinearLayout>(get_jobject());
@@ -278,8 +349,8 @@ android::widget::TableRow::TableRow(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(0),
-		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -291,8 +362,8 @@ android::widget::TableRow::TableRow(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(1),
-		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -304,8 +375,8 @@ void android::widget::TableRow::setOnHierarchyChangeListener(local_ref< android:
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(2),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -316,8 +387,8 @@ local_ref< android::view::View > android::widget::TableRow::getVirtualChildAt(ji
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(5),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0);
+		local_ref< android::view::View >
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TableRow::getVirtualChildCount()
@@ -326,8 +397,8 @@ jint android::widget::TableRow::getVirtualChildCount()
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(6),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::widget::TableRow_::LayoutParams > android::widget::TableRow::generateLayoutParams(local_ref< android::util::AttributeSet > const &a0)
@@ -336,8 +407,8 @@ local_ref< android::widget::TableRow_::LayoutParams > android::widget::TableRow:
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(7),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::widget::TableRow_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::TableRow_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -349,8 +420,8 @@ local_ref< android::widget::LinearLayout_::LayoutParams > android::widget::Table
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(11),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::widget::LinearLayout_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::LinearLayout_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -361,8 +432,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::widget::TableRow::
 		android::widget::TableRow::J2CPP_CLASS_NAME,
 		android::widget::TableRow::J2CPP_METHOD_NAME(14),
 		android::widget::TableRow::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

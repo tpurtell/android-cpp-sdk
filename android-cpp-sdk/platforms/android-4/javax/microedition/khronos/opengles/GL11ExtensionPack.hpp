@@ -11,11 +11,11 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL11EXTENSIONPACK_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -362,8 +362,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindFramebuffe
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(0),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindRenderbufferOES(jint a0, jint a1)
@@ -372,8 +372,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindRenderbuff
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(1),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindTexture(jint a0, jint a1)
@@ -382,8 +382,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindTexture(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(2),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendEquation(jint a0)
@@ -392,8 +392,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendEquation(
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(3),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendEquationSeparate(jint a0, jint a1)
@@ -402,8 +402,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendEquationS
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(4),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendFuncSeparate(jint a0, jint a1, jint a2, jint a3)
@@ -412,8 +412,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glBlendFuncSepar
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(5),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint javax::microedition::khronos::opengles::GL11ExtensionPack::glCheckFramebufferStatusOES(jint a0)
@@ -422,8 +422,8 @@ jint javax::microedition::khronos::opengles::GL11ExtensionPack::glCheckFramebuff
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(6),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glCompressedTexImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, local_ref< java::nio::Buffer > const &a7)
@@ -432,8 +432,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glCompressedTexI
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(7),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glCopyTexImage2D(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7)
@@ -442,8 +442,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glCopyTexImage2D
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(8),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteFramebuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -452,8 +452,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteFramebuf
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(9),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteFramebuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -462,8 +462,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteFramebuf
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(10),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteRenderbuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -472,8 +472,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteRenderbu
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(11),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteRenderbuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -482,8 +482,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glDeleteRenderbu
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(12),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glEnable(jint a0)
@@ -492,8 +492,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glEnable(jint a0
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(13),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glFramebufferRenderbufferOES(jint a0, jint a1, jint a2, jint a3)
@@ -502,8 +502,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glFramebufferRen
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(14),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glFramebufferTexture2DOES(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -512,8 +512,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glFramebufferTex
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(15),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenerateMipmapOES(jint a0)
@@ -522,8 +522,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenerateMipmap
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(16),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenFramebuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -532,8 +532,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenFramebuffer
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(17),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenFramebuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -542,8 +542,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenFramebuffer
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(18),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenRenderbuffersOES(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -552,8 +552,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenRenderbuffe
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(19),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenRenderbuffersOES(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -562,8 +562,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGenRenderbuffe
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(20),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetFramebufferAttachmentParameterivOES(jint a0, jint a1, jint a2, local_ref< array<jint,1> > const &a3, jint a4)
@@ -572,8 +572,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetFramebuffer
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(21),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetFramebufferAttachmentParameterivOES(jint a0, jint a1, jint a2, local_ref< java::nio::IntBuffer > const &a3)
@@ -582,8 +582,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetFramebuffer
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(22),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetIntegerv(jint a0, local_ref< array<jint,1> > const &a1, jint a2)
@@ -592,8 +592,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetIntegerv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(23),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetIntegerv(jint a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -602,8 +602,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetIntegerv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(24),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetRenderbufferParameterivOES(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -612,8 +612,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetRenderbuffe
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(25),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetRenderbufferParameterivOES(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -622,8 +622,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetRenderbuffe
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(26),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -632,8 +632,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenfv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(27),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -642,8 +642,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenfv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(28),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGeniv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -652,8 +652,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGeniv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(29),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGeniv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -662,8 +662,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGeniv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(30),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenxv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -672,8 +672,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenxv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(31),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenxv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -682,8 +682,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glGetTexGenxv(ji
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(32),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean javax::microedition::khronos::opengles::GL11ExtensionPack::glIsFramebufferOES(jint a0)
@@ -692,8 +692,8 @@ jboolean javax::microedition::khronos::opengles::GL11ExtensionPack::glIsFramebuf
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(33),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::microedition::khronos::opengles::GL11ExtensionPack::glIsRenderbufferOES(jint a0)
@@ -702,8 +702,8 @@ jboolean javax::microedition::khronos::opengles::GL11ExtensionPack::glIsRenderbu
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(34),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glRenderbufferStorageOES(jint a0, jint a1, jint a2, jint a3)
@@ -712,8 +712,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glRenderbufferSt
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(35),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glStencilOp(jint a0, jint a1, jint a2)
@@ -722,8 +722,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glStencilOp(jint
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(36),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvf(jint a0, jint a1, jfloat a2)
@@ -732,8 +732,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvf(jint a
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(37),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -742,8 +742,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvfv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(38),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -752,8 +752,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvfv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(39),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvx(jint a0, jint a1, jint a2)
@@ -762,8 +762,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvx(jint a
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(40),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvxv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -772,8 +772,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvxv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(41),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvxv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -782,8 +782,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexEnvxv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(42),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenf(jint a0, jint a1, jfloat a2)
@@ -792,8 +792,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenf(jint a
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(43),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenfv(jint a0, jint a1, local_ref< array<jfloat,1> > const &a2, jint a3)
@@ -802,8 +802,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenfv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(44),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenfv(jint a0, jint a1, local_ref< java::nio::FloatBuffer > const &a2)
@@ -812,8 +812,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenfv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(45),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeni(jint a0, jint a1, jint a2)
@@ -822,8 +822,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeni(jint a
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(46),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeniv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -832,8 +832,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeniv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(47),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeniv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -842,8 +842,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGeniv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(48),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenx(jint a0, jint a1, jint a2)
@@ -852,8 +852,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenx(jint a
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(49),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenxv(jint a0, jint a1, local_ref< array<jint,1> > const &a2, jint a3)
@@ -862,8 +862,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenxv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(50),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenxv(jint a0, jint a1, local_ref< java::nio::IntBuffer > const &a2)
@@ -872,8 +872,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexGenxv(jint 
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(51),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexParameterf(jint a0, jint a1, jfloat a2)
@@ -882,8 +882,8 @@ void javax::microedition::khronos::opengles::GL11ExtensionPack::glTexParameterf(
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_CLASS_NAME,
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_NAME(52),
 		javax::microedition::khronos::opengles::GL11ExtensionPack::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

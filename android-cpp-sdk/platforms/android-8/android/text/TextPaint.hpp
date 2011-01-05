@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Paint.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -50,6 +52,7 @@ namespace android { namespace text {
 		}
 
 		operator local_ref<android::graphics::Paint>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		TextPaint();
@@ -85,14 +88,19 @@ android::text::TextPaint::operator local_ref<android::graphics::Paint>() const
 	return local_ref<android::graphics::Paint>(get_jobject());
 }
 
+android::text::TextPaint::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::text::TextPaint::TextPaint()
 : object<android::text::TextPaint>(
 	call_new_object<
 		android::text::TextPaint::J2CPP_CLASS_NAME,
 		android::text::TextPaint::J2CPP_METHOD_NAME(0),
-		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , bgColor(get_jobject())
 , baselineShift(get_jobject())
@@ -109,8 +117,8 @@ android::text::TextPaint::TextPaint(jint a0)
 	call_new_object<
 		android::text::TextPaint::J2CPP_CLASS_NAME,
 		android::text::TextPaint::J2CPP_METHOD_NAME(1),
-		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , bgColor(get_jobject())
 , baselineShift(get_jobject())
@@ -127,8 +135,8 @@ android::text::TextPaint::TextPaint(local_ref< android::graphics::Paint > const 
 	call_new_object<
 		android::text::TextPaint::J2CPP_CLASS_NAME,
 		android::text::TextPaint::J2CPP_METHOD_NAME(2),
-		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 , bgColor(get_jobject())
 , baselineShift(get_jobject())
@@ -145,8 +153,8 @@ void android::text::TextPaint::set(local_ref< android::text::TextPaint > const &
 		android::text::TextPaint::J2CPP_CLASS_NAME,
 		android::text::TextPaint::J2CPP_METHOD_NAME(3),
 		android::text::TextPaint::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

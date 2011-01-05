@@ -71,8 +71,8 @@ jint java::lang::Readable::read(local_ref< java::nio::CharBuffer > const &a0)
 		java::lang::Readable::J2CPP_CLASS_NAME,
 		java::lang::Readable::J2CPP_METHOD_NAME(0),
 		java::lang::Readable::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

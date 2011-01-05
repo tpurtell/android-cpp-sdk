@@ -94,8 +94,8 @@ jboolean org::apache::http::HttpClientConnection::isResponseAvailable(jint a0)
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpClientConnection::sendRequestHeader(local_ref< org::apache::http::HttpRequest > const &a0)
@@ -104,8 +104,8 @@ void org::apache::http::HttpClientConnection::sendRequestHeader(local_ref< org::
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpClientConnection::sendRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const &a0)
@@ -114,8 +114,8 @@ void org::apache::http::HttpClientConnection::sendRequestEntity(local_ref< org::
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::HttpClientConnection::receiveResponseHeader()
@@ -124,8 +124,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::HttpClientConnec
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpClientConnection::receiveResponseEntity(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -134,8 +134,8 @@ void org::apache::http::HttpClientConnection::receiveResponseEntity(local_ref< o
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpClientConnection::flush()
@@ -144,8 +144,8 @@ void org::apache::http::HttpClientConnection::flush()
 		org::apache::http::HttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_NAME(5),
 		org::apache::http::HttpClientConnection::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

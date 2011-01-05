@@ -11,9 +11,13 @@
 #define J2CPP_JAVA_NET_INET4ADDRESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 
 
@@ -46,7 +50,9 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::net::InetAddress>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean isMulticastAddress();
@@ -77,9 +83,19 @@ namespace j2cpp {
 
 
 
+java::net::Inet4Address::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::net::Inet4Address::operator local_ref<java::net::InetAddress>() const
 {
 	return local_ref<java::net::InetAddress>(get_jobject());
+}
+
+java::net::Inet4Address::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +105,8 @@ jboolean java::net::Inet4Address::isMulticastAddress()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(1),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isAnyLocalAddress()
@@ -99,8 +115,8 @@ jboolean java::net::Inet4Address::isAnyLocalAddress()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(2),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isLoopbackAddress()
@@ -109,8 +125,8 @@ jboolean java::net::Inet4Address::isLoopbackAddress()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(3),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isLinkLocalAddress()
@@ -119,8 +135,8 @@ jboolean java::net::Inet4Address::isLinkLocalAddress()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(4),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isSiteLocalAddress()
@@ -129,8 +145,8 @@ jboolean java::net::Inet4Address::isSiteLocalAddress()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(5),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isMCGlobal()
@@ -139,8 +155,8 @@ jboolean java::net::Inet4Address::isMCGlobal()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(6),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isMCNodeLocal()
@@ -149,8 +165,8 @@ jboolean java::net::Inet4Address::isMCNodeLocal()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(7),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isMCLinkLocal()
@@ -159,8 +175,8 @@ jboolean java::net::Inet4Address::isMCLinkLocal()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(8),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isMCSiteLocal()
@@ -169,8 +185,8 @@ jboolean java::net::Inet4Address::isMCSiteLocal()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(9),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet4Address::isMCOrgLocal()
@@ -179,8 +195,8 @@ jboolean java::net::Inet4Address::isMCOrgLocal()
 		java::net::Inet4Address::J2CPP_CLASS_NAME,
 		java::net::Inet4Address::J2CPP_METHOD_NAME(10),
 		java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

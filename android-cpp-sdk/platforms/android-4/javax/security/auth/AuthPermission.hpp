@@ -11,12 +11,20 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_AUTHPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/BasicPermission.hpp>
+#include <java/security/Guard.hpp>
+#include <java/security/Permission.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +47,11 @@ namespace javax { namespace security { namespace auth {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::security::Permission>() const;
 		operator local_ref<java::security::BasicPermission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AuthPermission(local_ref< java::lang::String > const&);
@@ -63,9 +75,29 @@ namespace j2cpp {
 
 
 
+javax::security::auth::AuthPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+javax::security::auth::AuthPermission::operator local_ref<java::security::Permission>() const
+{
+	return local_ref<java::security::Permission>(get_jobject());
+}
+
 javax::security::auth::AuthPermission::operator local_ref<java::security::BasicPermission>() const
 {
 	return local_ref<java::security::BasicPermission>(get_jobject());
+}
+
+javax::security::auth::AuthPermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jobject());
+}
+
+javax::security::auth::AuthPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -74,8 +106,8 @@ javax::security::auth::AuthPermission::AuthPermission(local_ref< java::lang::Str
 	call_new_object<
 		javax::security::auth::AuthPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::AuthPermission::J2CPP_METHOD_NAME(0),
-		javax::security::auth::AuthPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::security::auth::AuthPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -87,8 +119,8 @@ javax::security::auth::AuthPermission::AuthPermission(local_ref< java::lang::Str
 	call_new_object<
 		javax::security::auth::AuthPermission::J2CPP_CLASS_NAME,
 		javax::security::auth::AuthPermission::J2CPP_METHOD_NAME(1),
-		javax::security::auth::AuthPermission::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::security::auth::AuthPermission::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }

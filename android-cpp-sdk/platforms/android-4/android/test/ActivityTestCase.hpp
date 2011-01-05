@@ -12,9 +12,17 @@
 
 
 namespace j2cpp { namespace android { namespace test { class InstrumentationTestCase; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 
 
 #include <android/test/InstrumentationTestCase.hpp>
+#include <java/lang/Object.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
+#include <junit/framework/TestCase.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +48,10 @@ namespace android { namespace test {
 		}
 
 		operator local_ref<android::test::InstrumentationTestCase>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<junit::framework::TestCase>() const;
+		operator local_ref<junit::framework::Test>() const;
+		operator local_ref<junit::framework::Assert>() const;
 
 
 		ActivityTestCase();
@@ -66,14 +78,34 @@ android::test::ActivityTestCase::operator local_ref<android::test::Instrumentati
 	return local_ref<android::test::InstrumentationTestCase>(get_jobject());
 }
 
+android::test::ActivityTestCase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::test::ActivityTestCase::operator local_ref<junit::framework::TestCase>() const
+{
+	return local_ref<junit::framework::TestCase>(get_jobject());
+}
+
+android::test::ActivityTestCase::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+android::test::ActivityTestCase::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
+}
+
 
 android::test::ActivityTestCase::ActivityTestCase()
 : object<android::test::ActivityTestCase>(
 	call_new_object<
 		android::test::ActivityTestCase::J2CPP_CLASS_NAME,
 		android::test::ActivityTestCase::J2CPP_METHOD_NAME(0),
-		android::test::ActivityTestCase::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::ActivityTestCase::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

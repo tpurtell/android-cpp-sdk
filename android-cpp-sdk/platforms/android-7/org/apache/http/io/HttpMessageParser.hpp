@@ -73,8 +73,8 @@ local_ref< org::apache::http::HttpMessage > org::apache::http::io::HttpMessagePa
 		org::apache::http::io::HttpMessageParser::J2CPP_CLASS_NAME,
 		org::apache::http::io::HttpMessageParser::J2CPP_METHOD_NAME(0),
 		org::apache::http::io::HttpMessageParser::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::HttpMessage > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpMessage >
+	>(get_jobject());
 }
 
 

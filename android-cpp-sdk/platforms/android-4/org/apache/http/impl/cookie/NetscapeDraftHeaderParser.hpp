@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_NETSCAPEDRAFTHEADERPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class ParserCursor; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -84,8 +84,8 @@ org::apache::http::impl::cookie::NetscapeDraftHeaderParser::NetscapeDraftHeaderP
 	call_new_object<
 		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::impl::cookie::N
 		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HeaderElement > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HeaderElement >
+	>(get_jobject(), a0, a1);
 }
 
 

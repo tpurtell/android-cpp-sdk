@@ -92,8 +92,8 @@ android::provider::SearchRecentSuggestions::SearchRecentSuggestions(local_ref< a
 	call_new_object<
 		android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME,
 		android::provider::SearchRecentSuggestions::J2CPP_METHOD_NAME(0),
-		android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -105,8 +105,8 @@ void android::provider::SearchRecentSuggestions::saveRecentQuery(local_ref< java
 		android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME,
 		android::provider::SearchRecentSuggestions::J2CPP_METHOD_NAME(1),
 		android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::provider::SearchRecentSuggestions::clearHistory()
@@ -115,8 +115,8 @@ void android::provider::SearchRecentSuggestions::clearHistory()
 		android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME,
 		android::provider::SearchRecentSuggestions::J2CPP_METHOD_NAME(2),
 		android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

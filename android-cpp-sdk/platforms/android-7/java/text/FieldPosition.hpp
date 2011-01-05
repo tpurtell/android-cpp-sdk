@@ -95,8 +95,8 @@ java::text::FieldPosition::FieldPosition(jint a0)
 	call_new_object<
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(0),
-		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -108,8 +108,8 @@ java::text::FieldPosition::FieldPosition(local_ref< java::text::Format_::Field >
 	call_new_object<
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(1),
-		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -121,8 +121,8 @@ java::text::FieldPosition::FieldPosition(local_ref< java::text::Format_::Field >
 	call_new_object<
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(2),
-		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -134,8 +134,8 @@ jboolean java::text::FieldPosition::equals(local_ref< java::lang::Object > const
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(3),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::text::FieldPosition::getBeginIndex()
@@ -144,8 +144,8 @@ jint java::text::FieldPosition::getBeginIndex()
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(4),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::FieldPosition::getEndIndex()
@@ -154,8 +154,8 @@ jint java::text::FieldPosition::getEndIndex()
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(5),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::FieldPosition::getField()
@@ -164,8 +164,8 @@ jint java::text::FieldPosition::getField()
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(6),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::text::Format_::Field > java::text::FieldPosition::getFieldAttribute()
@@ -174,8 +174,8 @@ local_ref< java::text::Format_::Field > java::text::FieldPosition::getFieldAttri
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(7),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::text::Format_::Field > >
-	(get_jobject());
+		local_ref< java::text::Format_::Field >
+	>(get_jobject());
 }
 
 jint java::text::FieldPosition::hashCode()
@@ -184,8 +184,8 @@ jint java::text::FieldPosition::hashCode()
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(8),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::text::FieldPosition::setBeginIndex(jint a0)
@@ -194,8 +194,8 @@ void java::text::FieldPosition::setBeginIndex(jint a0)
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(9),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::FieldPosition::setEndIndex(jint a0)
@@ -204,8 +204,8 @@ void java::text::FieldPosition::setEndIndex(jint a0)
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(10),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::FieldPosition::toString()
@@ -214,8 +214,8 @@ local_ref< java::lang::String > java::text::FieldPosition::toString()
 		java::text::FieldPosition::J2CPP_CLASS_NAME,
 		java::text::FieldPosition::J2CPP_METHOD_NAME(11),
 		java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

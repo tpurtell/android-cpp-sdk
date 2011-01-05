@@ -95,8 +95,8 @@ org::apache::http::client::utils::URLEncodedUtils::URLEncodedUtils()
 	call_new_object<
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ local_ref< java::util::List > org::apache::http::client::utils::URLEncodedUtils:
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(a0, a1);
+		local_ref< java::util::List >
+	>(a0, a1);
 }
 
 local_ref< java::util::List > org::apache::http::client::utils::URLEncodedUtils::parse(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -118,8 +118,8 @@ local_ref< java::util::List > org::apache::http::client::utils::URLEncodedUtils:
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::List > >
-	(a0);
+		local_ref< java::util::List >
+	>(a0);
 }
 
 jboolean org::apache::http::client::utils::URLEncodedUtils::isEncoded(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -128,8 +128,8 @@ jboolean org::apache::http::client::utils::URLEncodedUtils::isEncoded(local_ref<
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::client::utils::URLEncodedUtils::parse(local_ref< java::util::List > const &a0, local_ref< java::util::Scanner > const &a1, local_ref< java::lang::String > const &a2)
@@ -138,8 +138,8 @@ void org::apache::http::client::utils::URLEncodedUtils::parse(local_ref< java::u
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > org::apache::http::client::utils::URLEncodedUtils::format(local_ref< java::util::List > const &a0, local_ref< java::lang::String > const &a1)
@@ -148,8 +148,8 @@ local_ref< java::lang::String > org::apache::http::client::utils::URLEncodedUtil
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::utils::URLEncodedUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 

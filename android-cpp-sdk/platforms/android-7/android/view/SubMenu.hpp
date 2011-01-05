@@ -101,8 +101,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderTitle(jint 
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(0),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -111,8 +111,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderTitle(local
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(1),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderIcon(jint a0)
@@ -121,8 +121,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderIcon(jint a
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(2),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -131,8 +131,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderIcon(local_
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(3),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderView(local_ref< android::view::View > const &a0)
@@ -141,8 +141,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setHeaderView(local_
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(4),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 void android::view::SubMenu::clearHeader()
@@ -151,8 +151,8 @@ void android::view::SubMenu::clearHeader()
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(5),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setIcon(jint a0)
@@ -161,8 +161,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setIcon(jint a0)
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(6),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::SubMenu > android::view::SubMenu::setIcon(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -171,8 +171,8 @@ local_ref< android::view::SubMenu > android::view::SubMenu::setIcon(local_ref< a
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(7),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::SubMenu > >
-	(get_jobject(), a0);
+		local_ref< android::view::SubMenu >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::MenuItem > android::view::SubMenu::getItem()
@@ -181,8 +181,8 @@ local_ref< android::view::MenuItem > android::view::SubMenu::getItem()
 		android::view::SubMenu::J2CPP_CLASS_NAME,
 		android::view::SubMenu::J2CPP_METHOD_NAME(8),
 		android::view::SubMenu::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::MenuItem > >
-	(get_jobject());
+		local_ref< android::view::MenuItem >
+	>(get_jobject());
 }
 
 

@@ -14,8 +14,10 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/EventObject.hpp>
@@ -45,7 +47,9 @@ namespace java { namespace beans {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		PropertyChangeEvent(local_ref< java::lang::Object > const&, local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
@@ -72,9 +76,19 @@ namespace j2cpp {
 
 
 
+java::beans::PropertyChangeEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::beans::PropertyChangeEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
+}
+
+java::beans::PropertyChangeEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -83,8 +97,8 @@ java::beans::PropertyChangeEvent::PropertyChangeEvent(local_ref< java::lang::Obj
 	call_new_object<
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(0),
-		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -96,8 +110,8 @@ local_ref< java::lang::String > java::beans::PropertyChangeEvent::getPropertyNam
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(1),
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::beans::PropertyChangeEvent::setPropagationId(local_ref< java::lang::Object > const &a0)
@@ -106,8 +120,8 @@ void java::beans::PropertyChangeEvent::setPropagationId(local_ref< java::lang::O
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(2),
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getPropagationId()
@@ -116,8 +130,8 @@ local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getPropagation
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(3),
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getOldValue()
@@ -126,8 +140,8 @@ local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getOldValue()
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(4),
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getNewValue()
@@ -136,8 +150,8 @@ local_ref< java::lang::Object > java::beans::PropertyChangeEvent::getNewValue()
 		java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(5),
 		java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

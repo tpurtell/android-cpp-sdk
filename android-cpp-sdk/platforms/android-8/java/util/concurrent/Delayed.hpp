@@ -80,8 +80,8 @@ jlong java::util::concurrent::Delayed::getDelay(local_ref< java::util::concurren
 		java::util::concurrent::Delayed::J2CPP_CLASS_NAME,
 		java::util::concurrent::Delayed::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::Delayed::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

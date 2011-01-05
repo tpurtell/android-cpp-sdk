@@ -98,8 +98,8 @@ local_ref< java::nio::charset::CoderResult > java::nio::charset::CoderResult::ma
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(1),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::charset::CoderResult > >
-	(a0);
+		local_ref< java::nio::charset::CoderResult >
+	>(a0);
 }
 
 local_ref< java::nio::charset::CoderResult > java::nio::charset::CoderResult::unmappableForLength(jint a0)
@@ -108,8 +108,8 @@ local_ref< java::nio::charset::CoderResult > java::nio::charset::CoderResult::un
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(2),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::charset::CoderResult > >
-	(a0);
+		local_ref< java::nio::charset::CoderResult >
+	>(a0);
 }
 
 jboolean java::nio::charset::CoderResult::isUnderflow()
@@ -118,8 +118,8 @@ jboolean java::nio::charset::CoderResult::isUnderflow()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(3),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::CoderResult::isError()
@@ -128,8 +128,8 @@ jboolean java::nio::charset::CoderResult::isError()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(4),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::CoderResult::isMalformed()
@@ -138,8 +138,8 @@ jboolean java::nio::charset::CoderResult::isMalformed()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(5),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::CoderResult::isOverflow()
@@ -148,8 +148,8 @@ jboolean java::nio::charset::CoderResult::isOverflow()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(6),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::CoderResult::isUnmappable()
@@ -158,8 +158,8 @@ jboolean java::nio::charset::CoderResult::isUnmappable()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(7),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::charset::CoderResult::length()
@@ -168,8 +168,8 @@ jint java::nio::charset::CoderResult::length()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(8),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::nio::charset::CoderResult::throwException()
@@ -178,8 +178,8 @@ void java::nio::charset::CoderResult::throwException()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(9),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::CoderResult::toString()
@@ -188,8 +188,8 @@ local_ref< java::lang::String > java::nio::charset::CoderResult::toString()
 		java::nio::charset::CoderResult::J2CPP_CLASS_NAME,
 		java::nio::charset::CoderResult::J2CPP_METHOD_NAME(10),
 		java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

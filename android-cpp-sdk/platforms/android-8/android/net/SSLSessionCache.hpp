@@ -75,8 +75,8 @@ android::net::SSLSessionCache::SSLSessionCache(local_ref< java::io::File > const
 	call_new_object<
 		android::net::SSLSessionCache::J2CPP_CLASS_NAME,
 		android::net::SSLSessionCache::J2CPP_METHOD_NAME(0),
-		android::net::SSLSessionCache::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::net::SSLSessionCache::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -88,8 +88,8 @@ android::net::SSLSessionCache::SSLSessionCache(local_ref< android::content::Cont
 	call_new_object<
 		android::net::SSLSessionCache::J2CPP_CLASS_NAME,
 		android::net::SSLSessionCache::J2CPP_METHOD_NAME(1),
-		android::net::SSLSessionCache::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::net::SSLSessionCache::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

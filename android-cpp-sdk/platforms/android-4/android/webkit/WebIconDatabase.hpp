@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_WEBKIT_WEBICONDATABASE_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebIconDatabase_ { class IconListener; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
@@ -116,8 +116,8 @@ void android::webkit::WebIconDatabase_::IconListener::onReceivedIcon(local_ref< 
 		android::webkit::WebIconDatabase_::IconListener::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase_::IconListener::J2CPP_METHOD_NAME(0),
 		android::webkit::WebIconDatabase_::IconListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -138,8 +138,8 @@ void android::webkit::WebIconDatabase::open(local_ref< java::lang::String > cons
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(1),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebIconDatabase::close()
@@ -148,8 +148,8 @@ void android::webkit::WebIconDatabase::close()
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(2),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebIconDatabase::removeAllIcons()
@@ -158,8 +158,8 @@ void android::webkit::WebIconDatabase::removeAllIcons()
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(3),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebIconDatabase::requestIconForPageUrl(local_ref< java::lang::String > const &a0, local_ref< android::webkit::WebIconDatabase_::IconListener > const &a1)
@@ -168,8 +168,8 @@ void android::webkit::WebIconDatabase::requestIconForPageUrl(local_ref< java::la
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(4),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebIconDatabase::retainIconForPageUrl(local_ref< java::lang::String > const &a0)
@@ -178,8 +178,8 @@ void android::webkit::WebIconDatabase::retainIconForPageUrl(local_ref< java::lan
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(5),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebIconDatabase::releaseIconForPageUrl(local_ref< java::lang::String > const &a0)
@@ -188,8 +188,8 @@ void android::webkit::WebIconDatabase::releaseIconForPageUrl(local_ref< java::la
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(6),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebIconDatabase > android::webkit::WebIconDatabase::getInstance()
@@ -198,8 +198,8 @@ local_ref< android::webkit::WebIconDatabase > android::webkit::WebIconDatabase::
 		android::webkit::WebIconDatabase::J2CPP_CLASS_NAME,
 		android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(7),
 		android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::webkit::WebIconDatabase > >
-	();
+		local_ref< android::webkit::WebIconDatabase >
+	>();
 }
 
 

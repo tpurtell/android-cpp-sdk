@@ -202,8 +202,8 @@ void android::content::DialogInterface_::OnClickListener::onClick(local_ref< and
 		android::content::DialogInterface_::OnClickListener::J2CPP_CLASS_NAME,
 		android::content::DialogInterface_::OnClickListener::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface_::OnClickListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -222,8 +222,8 @@ void android::content::DialogInterface_::OnMultiChoiceClickListener::onClick(loc
 		android::content::DialogInterface_::OnMultiChoiceClickListener::J2CPP_CLASS_NAME,
 		android::content::DialogInterface_::OnMultiChoiceClickListener::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface_::OnMultiChoiceClickListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -242,8 +242,8 @@ jboolean android::content::DialogInterface_::OnKeyListener::onKey(local_ref< and
 		android::content::DialogInterface_::OnKeyListener::J2CPP_CLASS_NAME,
 		android::content::DialogInterface_::OnKeyListener::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface_::OnKeyListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -262,8 +262,8 @@ void android::content::DialogInterface_::OnCancelListener::onCancel(local_ref< a
 		android::content::DialogInterface_::OnCancelListener::J2CPP_CLASS_NAME,
 		android::content::DialogInterface_::OnCancelListener::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface_::OnCancelListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -282,8 +282,8 @@ void android::content::DialogInterface_::OnDismissListener::onDismiss(local_ref<
 		android::content::DialogInterface_::OnDismissListener::J2CPP_CLASS_NAME,
 		android::content::DialogInterface_::OnDismissListener::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface_::OnDismissListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -303,8 +303,8 @@ void android::content::DialogInterface::cancel()
 		android::content::DialogInterface::J2CPP_CLASS_NAME,
 		android::content::DialogInterface::J2CPP_METHOD_NAME(0),
 		android::content::DialogInterface::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::content::DialogInterface::dismiss()
@@ -313,8 +313,8 @@ void android::content::DialogInterface::dismiss()
 		android::content::DialogInterface::J2CPP_CLASS_NAME,
 		android::content::DialogInterface::J2CPP_METHOD_NAME(1),
 		android::content::DialogInterface::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -78,8 +78,8 @@ jlong org::apache::http::entity::ContentLengthStrategy::determineLength(local_re
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_METHOD_NAME(0),
 		org::apache::http::entity::ContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

@@ -150,8 +150,8 @@ local_ref< android::net::http::AndroidHttpClient > android::net::http::AndroidHt
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(1),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::net::http::AndroidHttpClient > >
-	(a0, a1);
+		local_ref< android::net::http::AndroidHttpClient >
+	>(a0, a1);
 }
 
 local_ref< android::net::http::AndroidHttpClient > android::net::http::AndroidHttpClient::newInstance(local_ref< java::lang::String > const &a0)
@@ -160,8 +160,8 @@ local_ref< android::net::http::AndroidHttpClient > android::net::http::AndroidHt
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(2),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::http::AndroidHttpClient > >
-	(a0);
+		local_ref< android::net::http::AndroidHttpClient >
+	>(a0);
 }
 
 
@@ -171,8 +171,8 @@ void android::net::http::AndroidHttpClient::modifyRequestToAcceptGzipResponse(lo
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(4),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::io::InputStream > android::net::http::AndroidHttpClient::getUngzippedContent(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -181,8 +181,8 @@ local_ref< java::io::InputStream > android::net::http::AndroidHttpClient::getUng
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(5),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::InputStream > >
-	(a0);
+		local_ref< java::io::InputStream >
+	>(a0);
 }
 
 void android::net::http::AndroidHttpClient::close()
@@ -191,8 +191,8 @@ void android::net::http::AndroidHttpClient::close()
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(6),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::params::HttpParams > android::net::http::AndroidHttpClient::getParams()
@@ -201,8 +201,8 @@ local_ref< org::apache::http::params::HttpParams > android::net::http::AndroidHt
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(7),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::params::HttpParams > >
-	(get_jobject());
+		local_ref< org::apache::http::params::HttpParams >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::conn::ClientConnectionManager > android::net::http::AndroidHttpClient::getConnectionManager()
@@ -211,8 +211,8 @@ local_ref< org::apache::http::conn::ClientConnectionManager > android::net::http
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(8),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::conn::ClientConnectionManager > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::ClientConnectionManager >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0)
@@ -221,8 +221,8 @@ local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClie
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(9),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -231,8 +231,8 @@ local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClie
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(10),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1)
@@ -241,8 +241,8 @@ local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClie
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(11),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -251,8 +251,8 @@ local_ref< org::apache::http::HttpResponse > android::net::http::AndroidHttpClie
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(12),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::client::ResponseHandler > const &a1)
@@ -261,8 +261,8 @@ local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(l
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(13),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::client::methods::HttpUriRequest > const &a0, local_ref< org::apache::http::client::ResponseHandler > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -271,8 +271,8 @@ local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(l
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(14),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2)
@@ -281,8 +281,8 @@ local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(l
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(15),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::client::ResponseHandler > const &a2, local_ref< org::apache::http::protocol::HttpContext > const &a3)
@@ -291,8 +291,8 @@ local_ref< java::lang::Object > android::net::http::AndroidHttpClient::execute(l
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(16),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< org::apache::http::entity::AbstractHttpEntity > android::net::http::AndroidHttpClient::getCompressedEntity(local_ref< array<jbyte,1> > const &a0, local_ref< android::content::ContentResolver > const &a1)
@@ -301,8 +301,8 @@ local_ref< org::apache::http::entity::AbstractHttpEntity > android::net::http::A
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(17),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< org::apache::http::entity::AbstractHttpEntity > >
-	(a0, a1);
+		local_ref< org::apache::http::entity::AbstractHttpEntity >
+	>(a0, a1);
 }
 
 jlong android::net::http::AndroidHttpClient::getMinGzipSize(local_ref< android::content::ContentResolver > const &a0)
@@ -311,8 +311,8 @@ jlong android::net::http::AndroidHttpClient::getMinGzipSize(local_ref< android::
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(18),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(18), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 void android::net::http::AndroidHttpClient::enableCurlLogging(local_ref< java::lang::String > const &a0, jint a1)
@@ -321,8 +321,8 @@ void android::net::http::AndroidHttpClient::enableCurlLogging(local_ref< java::l
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(19),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::http::AndroidHttpClient::disableCurlLogging()
@@ -331,8 +331,8 @@ void android::net::http::AndroidHttpClient::disableCurlLogging()
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(20),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong android::net::http::AndroidHttpClient::parseDate(local_ref< java::lang::String > const &a0)
@@ -341,8 +341,8 @@ jlong android::net::http::AndroidHttpClient::parseDate(local_ref< java::lang::St
 		android::net::http::AndroidHttpClient::J2CPP_CLASS_NAME,
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_NAME(21),
 		android::net::http::AndroidHttpClient::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 

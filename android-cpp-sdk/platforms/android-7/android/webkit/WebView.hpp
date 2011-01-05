@@ -17,12 +17,17 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { namespace http { class SslCertificate; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Picture; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalFocusChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace webkit { class WebViewClient; } } }
@@ -43,6 +48,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/Picture.hpp>
 #include <android/graphics/Rect.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/net/http/SslCertificate.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/Message.hpp>
@@ -51,7 +57,10 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
 #include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/webkit/DownloadListener.hpp>
 #include <android/webkit/PluginList.hpp>
 #include <android/webkit/WebBackForwardList.hpp>
@@ -292,9 +301,16 @@ namespace android { namespace webkit {
 		{
 		}
 
-		operator local_ref<android::widget::AbsoluteLayout>() const;
-		operator local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
 		operator local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>() const;
+		operator local_ref<android::widget::AbsoluteLayout>() const;
 
 
 		WebView(local_ref< android::content::Context > const&);
@@ -423,8 +439,8 @@ jint android::webkit::WebView_::HitTestResult::getType()
 		android::webkit::WebView_::HitTestResult::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::HitTestResult::J2CPP_METHOD_NAME(1),
 		android::webkit::WebView_::HitTestResult::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebView_::HitTestResult::getExtra()
@@ -433,8 +449,8 @@ local_ref< java::lang::String > android::webkit::WebView_::HitTestResult::getExt
 		android::webkit::WebView_::HitTestResult::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::HitTestResult::J2CPP_METHOD_NAME(2),
 		android::webkit::WebView_::HitTestResult::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -537,8 +553,8 @@ android::webkit::WebView_::WebViewTransport::WebViewTransport(local_ref< android
 	call_new_object<
 		android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_NAME(0),
-		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -550,8 +566,8 @@ void android::webkit::WebView_::WebViewTransport::setWebView(local_ref< android:
 		android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_NAME(1),
 		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebView > android::webkit::WebView_::WebViewTransport::getWebView()
@@ -560,8 +576,8 @@ local_ref< android::webkit::WebView > android::webkit::WebView_::WebViewTranspor
 		android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_NAME(2),
 		android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::webkit::WebView > >
-	(get_jobject());
+		local_ref< android::webkit::WebView >
+	>(get_jobject());
 }
 
 
@@ -584,8 +600,8 @@ void android::webkit::WebView_::PictureListener::onNewPicture(local_ref< android
 		android::webkit::WebView_::PictureListener::J2CPP_CLASS_NAME,
 		android::webkit::WebView_::PictureListener::J2CPP_METHOD_NAME(0),
 		android::webkit::WebView_::PictureListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -594,9 +610,44 @@ J2CPP_DEFINE_METHOD(android::webkit::WebView_::PictureListener,0,"onNewPicture",
 
 
 
-android::webkit::WebView::operator local_ref<android::widget::AbsoluteLayout>() const
+android::webkit::WebView::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::AbsoluteLayout>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>() const
+{
+	return local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::webkit::WebView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
 }
 
 android::webkit::WebView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>() const
@@ -604,9 +655,9 @@ android::webkit::WebView::operator local_ref<android::view::ViewTreeObserver_::O
 	return local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>(get_jobject());
 }
 
-android::webkit::WebView::operator local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>() const
+android::webkit::WebView::operator local_ref<android::widget::AbsoluteLayout>() const
 {
-	return local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>(get_jobject());
+	return local_ref<android::widget::AbsoluteLayout>(get_jobject());
 }
 
 
@@ -615,8 +666,8 @@ android::webkit::WebView::WebView(local_ref< android::content::Context > const &
 	call_new_object<
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(0),
-		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -628,8 +679,8 @@ android::webkit::WebView::WebView(local_ref< android::content::Context > const &
 	call_new_object<
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(1),
-		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -641,8 +692,8 @@ android::webkit::WebView::WebView(local_ref< android::content::Context > const &
 	call_new_object<
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(2),
-		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -654,8 +705,8 @@ void android::webkit::WebView::setScrollBarStyle(jint a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(3),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setHorizontalScrollbarOverlay(jboolean a0)
@@ -664,8 +715,8 @@ void android::webkit::WebView::setHorizontalScrollbarOverlay(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(4),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setVerticalScrollbarOverlay(jboolean a0)
@@ -674,8 +725,8 @@ void android::webkit::WebView::setVerticalScrollbarOverlay(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(5),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::overlayHorizontalScrollbar()
@@ -684,8 +735,8 @@ jboolean android::webkit::WebView::overlayHorizontalScrollbar()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(6),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::overlayVerticalScrollbar()
@@ -694,8 +745,8 @@ jboolean android::webkit::WebView::overlayVerticalScrollbar()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(7),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::net::http::SslCertificate > android::webkit::WebView::getCertificate()
@@ -704,8 +755,8 @@ local_ref< android::net::http::SslCertificate > android::webkit::WebView::getCer
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(8),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::net::http::SslCertificate > >
-	(get_jobject());
+		local_ref< android::net::http::SslCertificate >
+	>(get_jobject());
 }
 
 void android::webkit::WebView::setCertificate(local_ref< android::net::http::SslCertificate > const &a0)
@@ -714,8 +765,8 @@ void android::webkit::WebView::setCertificate(local_ref< android::net::http::Ssl
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(9),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::savePassword(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -724,8 +775,8 @@ void android::webkit::WebView::savePassword(local_ref< java::lang::String > cons
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(10),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::WebView::setHttpAuthUsernamePassword(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
@@ -734,8 +785,8 @@ void android::webkit::WebView::setHttpAuthUsernamePassword(local_ref< java::lang
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(11),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > android::webkit::WebView::getHttpAuthUsernamePassword(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -744,8 +795,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > android::webkit::WebView
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(12),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebView::destroy()
@@ -754,8 +805,8 @@ void android::webkit::WebView::destroy()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(13),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::enablePlatformNotifications()
@@ -764,8 +815,8 @@ void android::webkit::WebView::enablePlatformNotifications()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(14),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::webkit::WebView::disablePlatformNotifications()
@@ -774,8 +825,8 @@ void android::webkit::WebView::disablePlatformNotifications()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(15),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::webkit::WebView::setNetworkAvailable(jboolean a0)
@@ -784,8 +835,8 @@ void android::webkit::WebView::setNetworkAvailable(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(16),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::saveState(local_ref< android::os::Bundle > const &a0)
@@ -794,8 +845,8 @@ local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::saveS
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(17),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::webkit::WebBackForwardList > >
-	(get_jobject(), a0);
+		local_ref< android::webkit::WebBackForwardList >
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::savePicture(local_ref< android::os::Bundle > const &a0, local_ref< java::io::File > const &a1)
@@ -804,8 +855,8 @@ jboolean android::webkit::WebView::savePicture(local_ref< android::os::Bundle > 
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(18),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::webkit::WebView::restorePicture(local_ref< android::os::Bundle > const &a0, local_ref< java::io::File > const &a1)
@@ -814,8 +865,8 @@ jboolean android::webkit::WebView::restorePicture(local_ref< android::os::Bundle
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(19),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::restoreState(local_ref< android::os::Bundle > const &a0)
@@ -824,8 +875,8 @@ local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::resto
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(20),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< android::webkit::WebBackForwardList > >
-	(get_jobject(), a0);
+		local_ref< android::webkit::WebBackForwardList >
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::loadUrl(local_ref< java::lang::String > const &a0)
@@ -834,8 +885,8 @@ void android::webkit::WebView::loadUrl(local_ref< java::lang::String > const &a0
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(21),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::postUrl(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -844,8 +895,8 @@ void android::webkit::WebView::postUrl(local_ref< java::lang::String > const &a0
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(22),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebView::loadData(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -854,8 +905,8 @@ void android::webkit::WebView::loadData(local_ref< java::lang::String > const &a
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(23),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::WebView::loadDataWithBaseURL(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -864,8 +915,8 @@ void android::webkit::WebView::loadDataWithBaseURL(local_ref< java::lang::String
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(24),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::webkit::WebView::stopLoading()
@@ -874,8 +925,8 @@ void android::webkit::WebView::stopLoading()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(25),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::reload()
@@ -884,8 +935,8 @@ void android::webkit::WebView::reload()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(26),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::canGoBack()
@@ -894,8 +945,8 @@ jboolean android::webkit::WebView::canGoBack()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(27),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(27), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebView::goBack()
@@ -904,8 +955,8 @@ void android::webkit::WebView::goBack()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(28),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::canGoForward()
@@ -914,8 +965,8 @@ jboolean android::webkit::WebView::canGoForward()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(29),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::WebView::goForward()
@@ -924,8 +975,8 @@ void android::webkit::WebView::goForward()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(30),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::canGoBackOrForward(jint a0)
@@ -934,8 +985,8 @@ jboolean android::webkit::WebView::canGoBackOrForward(jint a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(31),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::goBackOrForward(jint a0)
@@ -944,8 +995,8 @@ void android::webkit::WebView::goBackOrForward(jint a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(32),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::pageUp(jboolean a0)
@@ -954,8 +1005,8 @@ jboolean android::webkit::WebView::pageUp(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(33),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(33), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::pageDown(jboolean a0)
@@ -964,8 +1015,8 @@ jboolean android::webkit::WebView::pageDown(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(34),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::clearView()
@@ -974,8 +1025,8 @@ void android::webkit::WebView::clearView()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(35),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Picture > android::webkit::WebView::capturePicture()
@@ -984,8 +1035,8 @@ local_ref< android::graphics::Picture > android::webkit::WebView::capturePicture
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(36),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::graphics::Picture > >
-	(get_jobject());
+		local_ref< android::graphics::Picture >
+	>(get_jobject());
 }
 
 jfloat android::webkit::WebView::getScale()
@@ -994,8 +1045,8 @@ jfloat android::webkit::WebView::getScale()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(37),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(37), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::webkit::WebView::setInitialScale(jint a0)
@@ -1004,8 +1055,8 @@ void android::webkit::WebView::setInitialScale(jint a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(38),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::invokeZoomPicker()
@@ -1014,8 +1065,8 @@ void android::webkit::WebView::invokeZoomPicker()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(39),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::webkit::WebView_::HitTestResult > android::webkit::WebView::getHitTestResult()
@@ -1024,8 +1075,8 @@ local_ref< android::webkit::WebView_::HitTestResult > android::webkit::WebView::
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(40),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< android::webkit::WebView_::HitTestResult > >
-	(get_jobject());
+		local_ref< android::webkit::WebView_::HitTestResult >
+	>(get_jobject());
 }
 
 void android::webkit::WebView::requestFocusNodeHref(local_ref< android::os::Message > const &a0)
@@ -1034,8 +1085,8 @@ void android::webkit::WebView::requestFocusNodeHref(local_ref< android::os::Mess
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(41),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::requestImageRef(local_ref< android::os::Message > const &a0)
@@ -1044,8 +1095,8 @@ void android::webkit::WebView::requestImageRef(local_ref< android::os::Message >
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(42),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1058,8 +1109,8 @@ local_ref< java::lang::String > android::webkit::WebView::getUrl()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(47),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebView::getOriginalUrl()
@@ -1068,8 +1119,8 @@ local_ref< java::lang::String > android::webkit::WebView::getOriginalUrl()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(48),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::webkit::WebView::getTitle()
@@ -1078,8 +1129,8 @@ local_ref< java::lang::String > android::webkit::WebView::getTitle()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(49),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::webkit::WebView::getFavicon()
@@ -1088,8 +1139,8 @@ local_ref< android::graphics::Bitmap > android::webkit::WebView::getFavicon()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(50),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 jint android::webkit::WebView::getProgress()
@@ -1098,8 +1149,8 @@ jint android::webkit::WebView::getProgress()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(51),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(51), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::webkit::WebView::getContentHeight()
@@ -1108,8 +1159,8 @@ jint android::webkit::WebView::getContentHeight()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(52),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(52), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::WebView::pauseTimers()
@@ -1118,8 +1169,8 @@ void android::webkit::WebView::pauseTimers()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(53),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::resumeTimers()
@@ -1128,8 +1179,8 @@ void android::webkit::WebView::resumeTimers()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(54),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::freeMemory()
@@ -1138,8 +1189,8 @@ void android::webkit::WebView::freeMemory()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(55),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::clearCache(jboolean a0)
@@ -1148,8 +1199,8 @@ void android::webkit::WebView::clearCache(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(56),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(56), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::clearFormData()
@@ -1158,8 +1209,8 @@ void android::webkit::WebView::clearFormData()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(57),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(57), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::clearHistory()
@@ -1168,8 +1219,8 @@ void android::webkit::WebView::clearHistory()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(58),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::clearSslPreferences()
@@ -1178,8 +1229,8 @@ void android::webkit::WebView::clearSslPreferences()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(59),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::copyBackForwardList()
@@ -1188,8 +1239,8 @@ local_ref< android::webkit::WebBackForwardList > android::webkit::WebView::copyB
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(60),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< android::webkit::WebBackForwardList > >
-	(get_jobject());
+		local_ref< android::webkit::WebBackForwardList >
+	>(get_jobject());
 }
 
 void android::webkit::WebView::findNext(jboolean a0)
@@ -1198,8 +1249,8 @@ void android::webkit::WebView::findNext(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(61),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebView::findAll(local_ref< java::lang::String > const &a0)
@@ -1208,8 +1259,8 @@ jint android::webkit::WebView::findAll(local_ref< java::lang::String > const &a0
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(62),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(62), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::WebView::findAddress(local_ref< java::lang::String > const &a0)
@@ -1218,8 +1269,8 @@ local_ref< java::lang::String > android::webkit::WebView::findAddress(local_ref<
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(63),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(63), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void android::webkit::WebView::clearMatches()
@@ -1228,8 +1279,8 @@ void android::webkit::WebView::clearMatches()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(64),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::documentHasImages(local_ref< android::os::Message > const &a0)
@@ -1238,8 +1289,8 @@ void android::webkit::WebView::documentHasImages(local_ref< android::os::Message
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(65),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::computeScroll()
@@ -1248,8 +1299,8 @@ void android::webkit::WebView::computeScroll()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(66),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::WebView::setWebViewClient(local_ref< android::webkit::WebViewClient > const &a0)
@@ -1258,8 +1309,8 @@ void android::webkit::WebView::setWebViewClient(local_ref< android::webkit::WebV
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(67),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setDownloadListener(local_ref< android::webkit::DownloadListener > const &a0)
@@ -1268,8 +1319,8 @@ void android::webkit::WebView::setDownloadListener(local_ref< android::webkit::D
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(68),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setWebChromeClient(local_ref< android::webkit::WebChromeClient > const &a0)
@@ -1278,8 +1329,8 @@ void android::webkit::WebView::setWebChromeClient(local_ref< android::webkit::We
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(69),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setPictureListener(local_ref< android::webkit::WebView_::PictureListener > const &a0)
@@ -1288,8 +1339,8 @@ void android::webkit::WebView::setPictureListener(local_ref< android::webkit::We
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(70),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::addJavascriptInterface(local_ref< java::lang::Object > const &a0, local_ref< java::lang::String > const &a1)
@@ -1298,8 +1349,8 @@ void android::webkit::WebView::addJavascriptInterface(local_ref< java::lang::Obj
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(71),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::webkit::WebSettings > android::webkit::WebView::getSettings()
@@ -1308,8 +1359,8 @@ local_ref< android::webkit::WebSettings > android::webkit::WebView::getSettings(
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(72),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(72), 
-		local_ref< android::webkit::WebSettings > >
-	(get_jobject());
+		local_ref< android::webkit::WebSettings >
+	>(get_jobject());
 }
 
 local_ref< android::webkit::PluginList > android::webkit::WebView::getPluginList()
@@ -1318,8 +1369,8 @@ local_ref< android::webkit::PluginList > android::webkit::WebView::getPluginList
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(73),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(73), 
-		local_ref< android::webkit::PluginList > >
-	();
+		local_ref< android::webkit::PluginList >
+	>();
 }
 
 void android::webkit::WebView::refreshPlugins(jboolean a0)
@@ -1328,8 +1379,8 @@ void android::webkit::WebView::refreshPlugins(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(74),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1341,8 +1392,8 @@ void android::webkit::WebView::setLayoutParams(local_ref< android::view::ViewGro
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(78),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::performLongClick()
@@ -1351,8 +1402,8 @@ jboolean android::webkit::WebView::performLongClick()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(79),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(79), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1361,8 +1412,8 @@ jboolean android::webkit::WebView::onKeyDown(jint a0, local_ref< android::view::
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(80),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(80), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::webkit::WebView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1371,8 +1422,8 @@ jboolean android::webkit::WebView::onKeyUp(jint a0, local_ref< android::view::Ke
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(81),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(81), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -1383,8 +1434,8 @@ void android::webkit::WebView::onChildViewAdded(local_ref< android::view::View >
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(84),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebView::onChildViewRemoved(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -1393,8 +1444,8 @@ void android::webkit::WebView::onChildViewRemoved(local_ref< android::view::View
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(85),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(85), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebView::onGlobalFocusChanged(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -1403,8 +1454,8 @@ void android::webkit::WebView::onGlobalFocusChanged(local_ref< android::view::Vi
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(86),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::WebView::onWindowFocusChanged(jboolean a0)
@@ -1413,8 +1464,8 @@ void android::webkit::WebView::onWindowFocusChanged(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(87),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(87), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1426,8 +1477,8 @@ jboolean android::webkit::WebView::dispatchKeyEvent(local_ref< android::view::Ke
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(91),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(91), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -1436,8 +1487,8 @@ jboolean android::webkit::WebView::onTouchEvent(local_ref< android::view::Motion
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(92),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(92), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::setMapTrackballToArrowKeys(jboolean a0)
@@ -1446,8 +1497,8 @@ void android::webkit::WebView::setMapTrackballToArrowKeys(jboolean a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(93),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(93), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::WebView::onTrackballEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -1456,8 +1507,8 @@ jboolean android::webkit::WebView::onTrackballEvent(local_ref< android::view::Mo
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(94),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(94), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::flingScroll(jint a0, jint a1)
@@ -1466,8 +1517,8 @@ void android::webkit::WebView::flingScroll(jint a0, jint a1)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(95),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::View > android::webkit::WebView::getZoomControls()
@@ -1476,8 +1527,8 @@ local_ref< android::view::View > android::webkit::WebView::getZoomControls()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(96),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(96), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::zoomIn()
@@ -1486,8 +1537,8 @@ jboolean android::webkit::WebView::zoomIn()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(97),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(97), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::zoomOut()
@@ -1496,8 +1547,8 @@ jboolean android::webkit::WebView::zoomOut()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(98),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(98), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::webkit::WebView::requestFocus(jint a0, local_ref< android::graphics::Rect > const &a1)
@@ -1506,8 +1557,8 @@ jboolean android::webkit::WebView::requestFocus(jint a0, local_ref< android::gra
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(99),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(99), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -1517,8 +1568,8 @@ jboolean android::webkit::WebView::requestChildRectangleOnScreen(local_ref< andr
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(101),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(101), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::WebView::setBackgroundColor(jint a0)
@@ -1527,8 +1578,8 @@ void android::webkit::WebView::setBackgroundColor(jint a0)
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(102),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(102), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::WebView::debugDump()
@@ -1537,8 +1588,8 @@ void android::webkit::WebView::debugDump()
 		android::webkit::WebView::J2CPP_CLASS_NAME,
 		android::webkit::WebView::J2CPP_METHOD_NAME(103),
 		android::webkit::WebView::J2CPP_METHOD_SIGNATURE(103), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_NET_MULTICASTSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class DatagramSocket; } } }
 namespace j2cpp { namespace java { namespace net { class DatagramPacket; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/DatagramPacket.hpp>
 #include <java/net/DatagramSocket.hpp>
 #include <java/net/InetAddress.hpp>
@@ -61,6 +63,7 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::DatagramSocket>() const;
 
 
@@ -100,6 +103,11 @@ namespace j2cpp {
 
 
 
+java::net::MulticastSocket::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::MulticastSocket::operator local_ref<java::net::DatagramSocket>() const
 {
 	return local_ref<java::net::DatagramSocket>(get_jobject());
@@ -111,8 +119,8 @@ java::net::MulticastSocket::MulticastSocket()
 	call_new_object<
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(0),
-		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -124,8 +132,8 @@ java::net::MulticastSocket::MulticastSocket(jint a0)
 	call_new_object<
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(1),
-		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -137,8 +145,8 @@ java::net::MulticastSocket::MulticastSocket(local_ref< java::net::SocketAddress 
 	call_new_object<
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(2),
-		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -150,8 +158,8 @@ local_ref< java::net::InetAddress > java::net::MulticastSocket::getInterface()
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(3),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 local_ref< java::net::NetworkInterface > java::net::MulticastSocket::getNetworkInterface()
@@ -160,8 +168,8 @@ local_ref< java::net::NetworkInterface > java::net::MulticastSocket::getNetworkI
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(4),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::NetworkInterface > >
-	(get_jobject());
+		local_ref< java::net::NetworkInterface >
+	>(get_jobject());
 }
 
 jint java::net::MulticastSocket::getTimeToLive()
@@ -170,8 +178,8 @@ jint java::net::MulticastSocket::getTimeToLive()
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(5),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jbyte java::net::MulticastSocket::getTTL()
@@ -180,8 +188,8 @@ jbyte java::net::MulticastSocket::getTTL()
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(6),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(6), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 void java::net::MulticastSocket::joinGroup(local_ref< java::net::InetAddress > const &a0)
@@ -190,8 +198,8 @@ void java::net::MulticastSocket::joinGroup(local_ref< java::net::InetAddress > c
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(7),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::MulticastSocket::joinGroup(local_ref< java::net::SocketAddress > const &a0, local_ref< java::net::NetworkInterface > const &a1)
@@ -200,8 +208,8 @@ void java::net::MulticastSocket::joinGroup(local_ref< java::net::SocketAddress >
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(8),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::MulticastSocket::leaveGroup(local_ref< java::net::InetAddress > const &a0)
@@ -210,8 +218,8 @@ void java::net::MulticastSocket::leaveGroup(local_ref< java::net::InetAddress > 
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(9),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::MulticastSocket::leaveGroup(local_ref< java::net::SocketAddress > const &a0, local_ref< java::net::NetworkInterface > const &a1)
@@ -220,8 +228,8 @@ void java::net::MulticastSocket::leaveGroup(local_ref< java::net::SocketAddress 
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(10),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::MulticastSocket::send(local_ref< java::net::DatagramPacket > const &a0, jbyte a1)
@@ -230,8 +238,8 @@ void java::net::MulticastSocket::send(local_ref< java::net::DatagramPacket > con
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(11),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::MulticastSocket::setInterface(local_ref< java::net::InetAddress > const &a0)
@@ -240,8 +248,8 @@ void java::net::MulticastSocket::setInterface(local_ref< java::net::InetAddress 
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(12),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::MulticastSocket::setNetworkInterface(local_ref< java::net::NetworkInterface > const &a0)
@@ -250,8 +258,8 @@ void java::net::MulticastSocket::setNetworkInterface(local_ref< java::net::Netwo
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(13),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::MulticastSocket::setTimeToLive(jint a0)
@@ -260,8 +268,8 @@ void java::net::MulticastSocket::setTimeToLive(jint a0)
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(14),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::MulticastSocket::setTTL(jbyte a0)
@@ -270,8 +278,8 @@ void java::net::MulticastSocket::setTTL(jbyte a0)
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(15),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::MulticastSocket::getLoopbackMode()
@@ -280,8 +288,8 @@ jboolean java::net::MulticastSocket::getLoopbackMode()
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(16),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::MulticastSocket::setLoopbackMode(jboolean a0)
@@ -290,8 +298,8 @@ void java::net::MulticastSocket::setLoopbackMode(jboolean a0)
 		java::net::MulticastSocket::J2CPP_CLASS_NAME,
 		java::net::MulticastSocket::J2CPP_METHOD_NAME(17),
 		java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

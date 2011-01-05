@@ -82,8 +82,8 @@ jboolean org::apache::http::TokenIterator::hasNext()
 		org::apache::http::TokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::TokenIterator::J2CPP_METHOD_NAME(0),
 		org::apache::http::TokenIterator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::TokenIterator::nextToken()
@@ -92,8 +92,8 @@ local_ref< java::lang::String > org::apache::http::TokenIterator::nextToken()
 		org::apache::http::TokenIterator::J2CPP_CLASS_NAME,
 		org::apache::http::TokenIterator::J2CPP_METHOD_NAME(1),
 		org::apache::http::TokenIterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

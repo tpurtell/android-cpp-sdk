@@ -48,9 +48,9 @@ namespace android { namespace webkit {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< android::webkit::WebHistoryItem > getCurrentItem();
@@ -75,9 +75,9 @@ namespace j2cpp {
 
 
 
-android::webkit::WebBackForwardList::operator local_ref<java::lang::Object>() const
+android::webkit::WebBackForwardList::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 android::webkit::WebBackForwardList::operator local_ref<java::lang::Cloneable>() const
@@ -85,9 +85,9 @@ android::webkit::WebBackForwardList::operator local_ref<java::lang::Cloneable>()
 	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
-android::webkit::WebBackForwardList::operator local_ref<java::io::Serializable>() const
+android::webkit::WebBackForwardList::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -97,8 +97,8 @@ local_ref< android::webkit::WebHistoryItem > android::webkit::WebBackForwardList
 		android::webkit::WebBackForwardList::J2CPP_CLASS_NAME,
 		android::webkit::WebBackForwardList::J2CPP_METHOD_NAME(1),
 		android::webkit::WebBackForwardList::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::webkit::WebHistoryItem > >
-	(get_jobject());
+		local_ref< android::webkit::WebHistoryItem >
+	>(get_jobject());
 }
 
 jint android::webkit::WebBackForwardList::getCurrentIndex()
@@ -107,8 +107,8 @@ jint android::webkit::WebBackForwardList::getCurrentIndex()
 		android::webkit::WebBackForwardList::J2CPP_CLASS_NAME,
 		android::webkit::WebBackForwardList::J2CPP_METHOD_NAME(2),
 		android::webkit::WebBackForwardList::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::webkit::WebHistoryItem > android::webkit::WebBackForwardList::getItemAtIndex(jint a0)
@@ -117,8 +117,8 @@ local_ref< android::webkit::WebHistoryItem > android::webkit::WebBackForwardList
 		android::webkit::WebBackForwardList::J2CPP_CLASS_NAME,
 		android::webkit::WebBackForwardList::J2CPP_METHOD_NAME(3),
 		android::webkit::WebBackForwardList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::webkit::WebHistoryItem > >
-	(get_jobject(), a0);
+		local_ref< android::webkit::WebHistoryItem >
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::WebBackForwardList::getSize()
@@ -127,8 +127,8 @@ jint android::webkit::WebBackForwardList::getSize()
 		android::webkit::WebBackForwardList::J2CPP_CLASS_NAME,
 		android::webkit::WebBackForwardList::J2CPP_METHOD_NAME(4),
 		android::webkit::WebBackForwardList::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

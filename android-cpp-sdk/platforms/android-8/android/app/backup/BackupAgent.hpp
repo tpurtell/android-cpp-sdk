@@ -15,12 +15,16 @@ namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor;
 namespace j2cpp { namespace android { namespace app { namespace backup { class BackupDataOutput; } } } }
 namespace j2cpp { namespace android { namespace app { namespace backup { class BackupDataInput; } } } }
 namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/app/backup/BackupDataInput.hpp>
 #include <android/app/backup/BackupDataOutput.hpp>
+#include <android/content/Context.hpp>
 #include <android/content/ContextWrapper.hpp>
 #include <android/os/ParcelFileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -47,6 +51,8 @@ namespace android { namespace app { namespace backup {
 		}
 
 		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BackupAgent();
@@ -78,14 +84,24 @@ android::app::backup::BackupAgent::operator local_ref<android::content::ContextW
 	return local_ref<android::content::ContextWrapper>(get_jobject());
 }
 
+android::app::backup::BackupAgent::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::backup::BackupAgent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::app::backup::BackupAgent::BackupAgent()
 : object<android::app::backup::BackupAgent>(
 	call_new_object<
 		android::app::backup::BackupAgent::J2CPP_CLASS_NAME,
 		android::app::backup::BackupAgent::J2CPP_METHOD_NAME(0),
-		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +113,8 @@ void android::app::backup::BackupAgent::onCreate()
 		android::app::backup::BackupAgent::J2CPP_CLASS_NAME,
 		android::app::backup::BackupAgent::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::backup::BackupAgent::onDestroy()
@@ -107,8 +123,8 @@ void android::app::backup::BackupAgent::onDestroy()
 		android::app::backup::BackupAgent::J2CPP_CLASS_NAME,
 		android::app::backup::BackupAgent::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::backup::BackupAgent::onBackup(local_ref< android::os::ParcelFileDescriptor > const &a0, local_ref< android::app::backup::BackupDataOutput > const &a1, local_ref< android::os::ParcelFileDescriptor > const &a2)
@@ -117,8 +133,8 @@ void android::app::backup::BackupAgent::onBackup(local_ref< android::os::ParcelF
 		android::app::backup::BackupAgent::J2CPP_CLASS_NAME,
 		android::app::backup::BackupAgent::J2CPP_METHOD_NAME(3),
 		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::backup::BackupAgent::onRestore(local_ref< android::app::backup::BackupDataInput > const &a0, jint a1, local_ref< android::os::ParcelFileDescriptor > const &a2)
@@ -127,8 +143,8 @@ void android::app::backup::BackupAgent::onRestore(local_ref< android::app::backu
 		android::app::backup::BackupAgent::J2CPP_CLASS_NAME,
 		android::app::backup::BackupAgent::J2CPP_METHOD_NAME(4),
 		android::app::backup::BackupAgent::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

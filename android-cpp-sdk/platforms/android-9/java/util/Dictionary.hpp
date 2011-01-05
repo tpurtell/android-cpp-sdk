@@ -85,8 +85,8 @@ java::util::Dictionary::Dictionary()
 	call_new_object<
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(0),
-		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::util::Enumeration > java::util::Dictionary::elements()
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(1),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Dictionary::get(local_ref< java::lang::Object > const &a0)
@@ -108,8 +108,8 @@ local_ref< java::lang::Object > java::util::Dictionary::get(local_ref< java::lan
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(2),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Dictionary::isEmpty()
@@ -118,8 +118,8 @@ jboolean java::util::Dictionary::isEmpty()
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(3),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::util::Dictionary::keys()
@@ -128,8 +128,8 @@ local_ref< java::util::Enumeration > java::util::Dictionary::keys()
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(4),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Dictionary::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -138,8 +138,8 @@ local_ref< java::lang::Object > java::util::Dictionary::put(local_ref< java::lan
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(5),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::util::Dictionary::remove(local_ref< java::lang::Object > const &a0)
@@ -148,8 +148,8 @@ local_ref< java::lang::Object > java::util::Dictionary::remove(local_ref< java::
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(6),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::Dictionary::size()
@@ -158,8 +158,8 @@ jint java::util::Dictionary::size()
 		java::util::Dictionary::J2CPP_CLASS_NAME,
 		java::util::Dictionary::J2CPP_METHOD_NAME(7),
 		java::util::Dictionary::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

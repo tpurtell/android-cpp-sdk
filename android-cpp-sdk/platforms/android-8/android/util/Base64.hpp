@@ -98,8 +98,8 @@ local_ref< array<jbyte,1> > android::util::Base64::decode(local_ref< java::lang:
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(1),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1);
+		local_ref< array<jbyte,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jbyte,1> > android::util::Base64::decode(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -108,8 +108,8 @@ local_ref< array<jbyte,1> > android::util::Base64::decode(local_ref< array<jbyte
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(2),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1);
+		local_ref< array<jbyte,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jbyte,1> > android::util::Base64::decode(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jint a3)
@@ -118,8 +118,8 @@ local_ref< array<jbyte,1> > android::util::Base64::decode(local_ref< array<jbyte
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(3),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1, a2, a3);
+		local_ref< array<jbyte,1> >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::util::Base64::encodeToString(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -128,8 +128,8 @@ local_ref< java::lang::String > android::util::Base64::encodeToString(local_ref<
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(4),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::util::Base64::encodeToString(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jint a3)
@@ -138,8 +138,8 @@ local_ref< java::lang::String > android::util::Base64::encodeToString(local_ref<
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(5),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< array<jbyte,1> > android::util::Base64::encode(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -148,8 +148,8 @@ local_ref< array<jbyte,1> > android::util::Base64::encode(local_ref< array<jbyte
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(6),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1);
+		local_ref< array<jbyte,1> >
+	>(a0, a1);
 }
 
 local_ref< array<jbyte,1> > android::util::Base64::encode(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2, jint a3)
@@ -158,8 +158,8 @@ local_ref< array<jbyte,1> > android::util::Base64::encode(local_ref< array<jbyte
 		android::util::Base64::J2CPP_CLASS_NAME,
 		android::util::Base64::J2CPP_METHOD_NAME(7),
 		android::util::Base64::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array<jbyte,1> > >
-	(a0, a1, a2, a3);
+		local_ref< array<jbyte,1> >
+	>(a0, a1, a2, a3);
 }
 
 

@@ -98,8 +98,8 @@ android::accounts::AccountAuthenticatorResponse::AccountAuthenticatorResponse(lo
 	call_new_object<
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(0),
-		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -111,8 +111,8 @@ void android::accounts::AccountAuthenticatorResponse::onResult(local_ref< androi
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(1),
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::accounts::AccountAuthenticatorResponse::onRequestContinued()
@@ -121,8 +121,8 @@ void android::accounts::AccountAuthenticatorResponse::onRequestContinued()
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(2),
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::accounts::AccountAuthenticatorResponse::onError(jint a0, local_ref< java::lang::String > const &a1)
@@ -131,8 +131,8 @@ void android::accounts::AccountAuthenticatorResponse::onError(jint a0, local_ref
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(3),
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::accounts::AccountAuthenticatorResponse::describeContents()
@@ -141,8 +141,8 @@ jint android::accounts::AccountAuthenticatorResponse::describeContents()
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(4),
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::accounts::AccountAuthenticatorResponse::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -151,8 +151,8 @@ void android::accounts::AccountAuthenticatorResponse::writeToParcel(local_ref< a
 		android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME,
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(5),
 		android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

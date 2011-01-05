@@ -11,18 +11,27 @@
 #define J2CPP_ANDROID_APP_PROGRESSDIALOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace app { class AlertDialog; } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnCancelListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 
 
 #include <android/app/AlertDialog.hpp>
+#include <android/app/Dialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -68,7 +77,12 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::AlertDialog>() const;
+		operator local_ref<android::app::Dialog>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
 
 
 		ProgressDialog(local_ref< android::content::Context > const&);
@@ -113,9 +127,34 @@ namespace j2cpp {
 
 
 
+android::app::ProgressDialog::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::ProgressDialog::operator local_ref<android::app::AlertDialog>() const
 {
 	return local_ref<android::app::AlertDialog>(get_jobject());
+}
+
+android::app::ProgressDialog::operator local_ref<android::app::Dialog>() const
+{
+	return local_ref<android::app::Dialog>(get_jobject());
+}
+
+android::app::ProgressDialog::operator local_ref<android::content::DialogInterface>() const
+{
+	return local_ref<android::content::DialogInterface>(get_jobject());
+}
+
+android::app::ProgressDialog::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::ProgressDialog::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
 }
 
 
@@ -124,8 +163,8 @@ android::app::ProgressDialog::ProgressDialog(local_ref< android::content::Contex
 	call_new_object<
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(0),
-		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -137,8 +176,8 @@ android::app::ProgressDialog::ProgressDialog(local_ref< android::content::Contex
 	call_new_object<
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(1),
-		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -150,8 +189,8 @@ local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(loc
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(2),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::app::ProgressDialog > >
-	(a0, a1, a2);
+		local_ref< android::app::ProgressDialog >
+	>(a0, a1, a2);
 }
 
 local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< java::lang::CharSequence > const &a2, jboolean a3)
@@ -160,8 +199,8 @@ local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(loc
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(3),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::ProgressDialog > >
-	(a0, a1, a2, a3);
+		local_ref< android::app::ProgressDialog >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< java::lang::CharSequence > const &a2, jboolean a3, jboolean a4)
@@ -170,8 +209,8 @@ local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(loc
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(4),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::app::ProgressDialog > >
-	(a0, a1, a2, a3, a4);
+		local_ref< android::app::ProgressDialog >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< java::lang::CharSequence > const &a2, jboolean a3, jboolean a4, local_ref< android::content::DialogInterface_::OnCancelListener > const &a5)
@@ -180,8 +219,8 @@ local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(loc
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(5),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::app::ProgressDialog > >
-	(a0, a1, a2, a3, a4, a5);
+		local_ref< android::app::ProgressDialog >
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 
@@ -191,8 +230,8 @@ void android::app::ProgressDialog::onStart()
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(7),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -202,8 +241,8 @@ void android::app::ProgressDialog::setProgress(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(9),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::setSecondaryProgress(jint a0)
@@ -212,8 +251,8 @@ void android::app::ProgressDialog::setSecondaryProgress(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(10),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::app::ProgressDialog::getProgress()
@@ -222,8 +261,8 @@ jint android::app::ProgressDialog::getProgress()
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(11),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::ProgressDialog::getSecondaryProgress()
@@ -232,8 +271,8 @@ jint android::app::ProgressDialog::getSecondaryProgress()
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(12),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::ProgressDialog::getMax()
@@ -242,8 +281,8 @@ jint android::app::ProgressDialog::getMax()
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(13),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::ProgressDialog::setMax(jint a0)
@@ -252,8 +291,8 @@ void android::app::ProgressDialog::setMax(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(14),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::incrementProgressBy(jint a0)
@@ -262,8 +301,8 @@ void android::app::ProgressDialog::incrementProgressBy(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(15),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::incrementSecondaryProgressBy(jint a0)
@@ -272,8 +311,8 @@ void android::app::ProgressDialog::incrementSecondaryProgressBy(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(16),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::setProgressDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -282,8 +321,8 @@ void android::app::ProgressDialog::setProgressDrawable(local_ref< android::graph
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(17),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::setIndeterminateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -292,8 +331,8 @@ void android::app::ProgressDialog::setIndeterminateDrawable(local_ref< android::
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(18),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::setIndeterminate(jboolean a0)
@@ -302,8 +341,8 @@ void android::app::ProgressDialog::setIndeterminate(jboolean a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(19),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::ProgressDialog::isIndeterminate()
@@ -312,8 +351,8 @@ jboolean android::app::ProgressDialog::isIndeterminate()
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(20),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::app::ProgressDialog::setMessage(local_ref< java::lang::CharSequence > const &a0)
@@ -322,8 +361,8 @@ void android::app::ProgressDialog::setMessage(local_ref< java::lang::CharSequenc
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(21),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::ProgressDialog::setProgressStyle(jint a0)
@@ -332,8 +371,8 @@ void android::app::ProgressDialog::setProgressStyle(jint a0)
 		android::app::ProgressDialog::J2CPP_CLASS_NAME,
 		android::app::ProgressDialog::J2CPP_METHOD_NAME(22),
 		android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

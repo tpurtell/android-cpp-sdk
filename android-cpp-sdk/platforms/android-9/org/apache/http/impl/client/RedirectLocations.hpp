@@ -80,8 +80,8 @@ org::apache::http::impl::client::RedirectLocations::RedirectLocations()
 	call_new_object<
 		org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -93,8 +93,8 @@ jboolean org::apache::http::impl::client::RedirectLocations::contains(local_ref<
 		org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::client::RedirectLocations::add(local_ref< java::net::URI > const &a0)
@@ -103,8 +103,8 @@ void org::apache::http::impl::client::RedirectLocations::add(local_ref< java::ne
 		org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::client::RedirectLocations::remove(local_ref< java::net::URI > const &a0)
@@ -113,8 +113,8 @@ jboolean org::apache::http::impl::client::RedirectLocations::remove(local_ref< j
 		org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

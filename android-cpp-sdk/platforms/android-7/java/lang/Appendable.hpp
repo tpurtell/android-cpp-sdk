@@ -75,8 +75,8 @@ local_ref< java::lang::Appendable > java::lang::Appendable::append(jchar a0)
 		java::lang::Appendable::J2CPP_CLASS_NAME,
 		java::lang::Appendable::J2CPP_METHOD_NAME(0),
 		java::lang::Appendable::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::lang::Appendable::append(local_ref< java::lang::CharSequence > const &a0)
@@ -85,8 +85,8 @@ local_ref< java::lang::Appendable > java::lang::Appendable::append(local_ref< ja
 		java::lang::Appendable::J2CPP_CLASS_NAME,
 		java::lang::Appendable::J2CPP_METHOD_NAME(1),
 		java::lang::Appendable::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::lang::Appendable::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -95,8 +95,8 @@ local_ref< java::lang::Appendable > java::lang::Appendable::append(local_ref< ja
 		java::lang::Appendable::J2CPP_CLASS_NAME,
 		java::lang::Appendable::J2CPP_METHOD_NAME(2),
 		java::lang::Appendable::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

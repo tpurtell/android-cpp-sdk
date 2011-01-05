@@ -11,14 +11,14 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_PROTOCOL_CLIENTCONTEXTCONFIGURER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthSchemeRegistry; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthSchemeRegistry; } } } } }
+namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpecRegistry; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace protocol { class ClientContext; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
-namespace j2cpp { namespace java { namespace util { class List; } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -102,8 +102,8 @@ org::apache::http::client::protocol::ClientContextConfigurer::ClientContextConfi
 	call_new_object<
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +115,8 @@ void org::apache::http::client::protocol::ClientContextConfigurer::setCookieSpec
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::protocol::ClientContextConfigurer::setAuthSchemeRegistry(local_ref< org::apache::http::auth::AuthSchemeRegistry > const &a0)
@@ -125,8 +125,8 @@ void org::apache::http::client::protocol::ClientContextConfigurer::setAuthScheme
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::protocol::ClientContextConfigurer::setCookieStore(local_ref< org::apache::http::client::CookieStore > const &a0)
@@ -135,8 +135,8 @@ void org::apache::http::client::protocol::ClientContextConfigurer::setCookieStor
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::protocol::ClientContextConfigurer::setCredentialsProvider(local_ref< org::apache::http::client::CredentialsProvider > const &a0)
@@ -145,8 +145,8 @@ void org::apache::http::client::protocol::ClientContextConfigurer::setCredential
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::protocol::ClientContextConfigurer::setAuthSchemePref(local_ref< java::util::List > const &a0)
@@ -155,8 +155,8 @@ void org::apache::http::client::protocol::ClientContextConfigurer::setAuthScheme
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME,
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

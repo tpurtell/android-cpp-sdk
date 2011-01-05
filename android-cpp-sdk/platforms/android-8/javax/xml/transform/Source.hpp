@@ -74,8 +74,8 @@ void javax::xml::transform::Source::setSystemId(local_ref< java::lang::String > 
 		javax::xml::transform::Source::J2CPP_CLASS_NAME,
 		javax::xml::transform::Source::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::Source::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::Source::getSystemId()
@@ -84,8 +84,8 @@ local_ref< java::lang::String > javax::xml::transform::Source::getSystemId()
 		javax::xml::transform::Source::J2CPP_CLASS_NAME,
 		javax::xml::transform::Source::J2CPP_METHOD_NAME(1),
 		javax::xml::transform::Source::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

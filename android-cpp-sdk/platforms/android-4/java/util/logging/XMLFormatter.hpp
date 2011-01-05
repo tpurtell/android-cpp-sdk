@@ -15,8 +15,10 @@ namespace j2cpp { namespace java { namespace util { namespace logging { class Fo
 namespace j2cpp { namespace java { namespace util { namespace logging { class Handler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/logging/Formatter.hpp>
 #include <java/util/logging/Handler.hpp>
@@ -46,6 +48,7 @@ namespace java { namespace util { namespace logging {
 		}
 
 		operator local_ref<java::util::logging::Formatter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		XMLFormatter();
@@ -76,14 +79,19 @@ java::util::logging::XMLFormatter::operator local_ref<java::util::logging::Forma
 	return local_ref<java::util::logging::Formatter>(get_jobject());
 }
 
+java::util::logging::XMLFormatter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::util::logging::XMLFormatter::XMLFormatter()
 : object<java::util::logging::XMLFormatter>(
 	call_new_object<
 		java::util::logging::XMLFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::XMLFormatter::J2CPP_METHOD_NAME(0),
-		java::util::logging::XMLFormatter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::logging::XMLFormatter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +103,8 @@ local_ref< java::lang::String > java::util::logging::XMLFormatter::format(local_
 		java::util::logging::XMLFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::XMLFormatter::J2CPP_METHOD_NAME(1),
 		java::util::logging::XMLFormatter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::XMLFormatter::getHead(local_ref< java::util::logging::Handler > const &a0)
@@ -105,8 +113,8 @@ local_ref< java::lang::String > java::util::logging::XMLFormatter::getHead(local
 		java::util::logging::XMLFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::XMLFormatter::J2CPP_METHOD_NAME(2),
 		java::util::logging::XMLFormatter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::XMLFormatter::getTail(local_ref< java::util::logging::Handler > const &a0)
@@ -115,8 +123,8 @@ local_ref< java::lang::String > java::util::logging::XMLFormatter::getTail(local
 		java::util::logging::XMLFormatter::J2CPP_CLASS_NAME,
 		java::util::logging::XMLFormatter::J2CPP_METHOD_NAME(3),
 		java::util::logging::XMLFormatter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

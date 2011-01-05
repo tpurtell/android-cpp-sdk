@@ -100,8 +100,8 @@ local_ref< javax::xml::parsers::SAXParserFactory > javax::xml::parsers::SAXParse
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(1),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::parsers::SAXParserFactory > >
-	();
+		local_ref< javax::xml::parsers::SAXParserFactory >
+	>();
 }
 
 local_ref< javax::xml::parsers::SAXParser > javax::xml::parsers::SAXParserFactory::newSAXParser()
@@ -110,8 +110,8 @@ local_ref< javax::xml::parsers::SAXParser > javax::xml::parsers::SAXParserFactor
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(2),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::parsers::SAXParser > >
-	(get_jobject());
+		local_ref< javax::xml::parsers::SAXParser >
+	>(get_jobject());
 }
 
 void javax::xml::parsers::SAXParserFactory::setNamespaceAware(jboolean a0)
@@ -120,8 +120,8 @@ void javax::xml::parsers::SAXParserFactory::setNamespaceAware(jboolean a0)
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(3),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::SAXParserFactory::setValidating(jboolean a0)
@@ -130,8 +130,8 @@ void javax::xml::parsers::SAXParserFactory::setValidating(jboolean a0)
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(4),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::parsers::SAXParserFactory::isNamespaceAware()
@@ -140,8 +140,8 @@ jboolean javax::xml::parsers::SAXParserFactory::isNamespaceAware()
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(5),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean javax::xml::parsers::SAXParserFactory::isValidating()
@@ -150,8 +150,8 @@ jboolean javax::xml::parsers::SAXParserFactory::isValidating()
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(6),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::xml::parsers::SAXParserFactory::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -160,8 +160,8 @@ void javax::xml::parsers::SAXParserFactory::setFeature(local_ref< java::lang::St
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(7),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean javax::xml::parsers::SAXParserFactory::getFeature(local_ref< java::lang::String > const &a0)
@@ -170,8 +170,8 @@ jboolean javax::xml::parsers::SAXParserFactory::getFeature(local_ref< java::lang
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(8),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::parsers::SAXParserFactory::getSchema()
@@ -180,8 +180,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::parsers::SAXParserFactor
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(9),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject());
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject());
 }
 
 void javax::xml::parsers::SAXParserFactory::setSchema(local_ref< javax::xml::validation::Schema > const &a0)
@@ -190,8 +190,8 @@ void javax::xml::parsers::SAXParserFactory::setSchema(local_ref< javax::xml::val
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(10),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::parsers::SAXParserFactory::setXIncludeAware(jboolean a0)
@@ -200,8 +200,8 @@ void javax::xml::parsers::SAXParserFactory::setXIncludeAware(jboolean a0)
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(11),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::parsers::SAXParserFactory::isXIncludeAware()
@@ -210,8 +210,8 @@ jboolean javax::xml::parsers::SAXParserFactory::isXIncludeAware()
 		javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME,
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(12),
 		javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

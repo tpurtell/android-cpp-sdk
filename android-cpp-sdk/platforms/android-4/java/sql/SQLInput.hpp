@@ -137,8 +137,8 @@ local_ref< java::lang::String > java::sql::SQLInput::readString()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(0),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::sql::SQLInput::readBoolean()
@@ -147,8 +147,8 @@ jboolean java::sql::SQLInput::readBoolean()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(1),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jbyte java::sql::SQLInput::readByte()
@@ -157,8 +157,8 @@ jbyte java::sql::SQLInput::readByte()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(2),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(2), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 jshort java::sql::SQLInput::readShort()
@@ -167,8 +167,8 @@ jshort java::sql::SQLInput::readShort()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(3),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(3), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 jint java::sql::SQLInput::readInt()
@@ -177,8 +177,8 @@ jint java::sql::SQLInput::readInt()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(4),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::sql::SQLInput::readLong()
@@ -187,8 +187,8 @@ jlong java::sql::SQLInput::readLong()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(5),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jfloat java::sql::SQLInput::readFloat()
@@ -197,8 +197,8 @@ jfloat java::sql::SQLInput::readFloat()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(6),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jdouble java::sql::SQLInput::readDouble()
@@ -207,8 +207,8 @@ jdouble java::sql::SQLInput::readDouble()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(7),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(7), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 local_ref< java::math::BigDecimal > java::sql::SQLInput::readBigDecimal()
@@ -217,8 +217,8 @@ local_ref< java::math::BigDecimal > java::sql::SQLInput::readBigDecimal()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(8),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::math::BigDecimal > >
-	(get_jobject());
+		local_ref< java::math::BigDecimal >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::sql::SQLInput::readBytes()
@@ -227,8 +227,8 @@ local_ref< array<jbyte,1> > java::sql::SQLInput::readBytes()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(9),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Date > java::sql::SQLInput::readDate()
@@ -237,8 +237,8 @@ local_ref< java::sql::Date > java::sql::SQLInput::readDate()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(10),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::sql::Date > >
-	(get_jobject());
+		local_ref< java::sql::Date >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Time > java::sql::SQLInput::readTime()
@@ -247,8 +247,8 @@ local_ref< java::sql::Time > java::sql::SQLInput::readTime()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(11),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::sql::Time > >
-	(get_jobject());
+		local_ref< java::sql::Time >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Timestamp > java::sql::SQLInput::readTimestamp()
@@ -257,8 +257,8 @@ local_ref< java::sql::Timestamp > java::sql::SQLInput::readTimestamp()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(12),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::sql::Timestamp > >
-	(get_jobject());
+		local_ref< java::sql::Timestamp >
+	>(get_jobject());
 }
 
 local_ref< java::io::Reader > java::sql::SQLInput::readCharacterStream()
@@ -267,8 +267,8 @@ local_ref< java::io::Reader > java::sql::SQLInput::readCharacterStream()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(13),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::sql::SQLInput::readAsciiStream()
@@ -277,8 +277,8 @@ local_ref< java::io::InputStream > java::sql::SQLInput::readAsciiStream()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(14),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::sql::SQLInput::readBinaryStream()
@@ -287,8 +287,8 @@ local_ref< java::io::InputStream > java::sql::SQLInput::readBinaryStream()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(15),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::sql::SQLInput::readObject()
@@ -297,8 +297,8 @@ local_ref< java::lang::Object > java::sql::SQLInput::readObject()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(16),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Ref > java::sql::SQLInput::readRef()
@@ -307,8 +307,8 @@ local_ref< java::sql::Ref > java::sql::SQLInput::readRef()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(17),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::sql::Ref > >
-	(get_jobject());
+		local_ref< java::sql::Ref >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Blob > java::sql::SQLInput::readBlob()
@@ -317,8 +317,8 @@ local_ref< java::sql::Blob > java::sql::SQLInput::readBlob()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(18),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::sql::Blob > >
-	(get_jobject());
+		local_ref< java::sql::Blob >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Clob > java::sql::SQLInput::readClob()
@@ -327,8 +327,8 @@ local_ref< java::sql::Clob > java::sql::SQLInput::readClob()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(19),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::sql::Clob > >
-	(get_jobject());
+		local_ref< java::sql::Clob >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Array > java::sql::SQLInput::readArray()
@@ -337,8 +337,8 @@ local_ref< java::sql::Array > java::sql::SQLInput::readArray()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(20),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::sql::Array > >
-	(get_jobject());
+		local_ref< java::sql::Array >
+	>(get_jobject());
 }
 
 jboolean java::sql::SQLInput::wasNull()
@@ -347,8 +347,8 @@ jboolean java::sql::SQLInput::wasNull()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(21),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::net::URL > java::sql::SQLInput::readURL()
@@ -357,8 +357,8 @@ local_ref< java::net::URL > java::sql::SQLInput::readURL()
 		java::sql::SQLInput::J2CPP_CLASS_NAME,
 		java::sql::SQLInput::J2CPP_METHOD_NAME(22),
 		java::sql::SQLInput::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::net::URL > >
-	(get_jobject());
+		local_ref< java::net::URL >
+	>(get_jobject());
 }
 
 

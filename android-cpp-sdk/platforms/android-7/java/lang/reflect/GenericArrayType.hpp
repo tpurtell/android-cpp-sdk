@@ -78,8 +78,8 @@ local_ref< java::lang::reflect::Type > java::lang::reflect::GenericArrayType::ge
 		java::lang::reflect::GenericArrayType::J2CPP_CLASS_NAME,
 		java::lang::reflect::GenericArrayType::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::GenericArrayType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::reflect::Type > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Type >
+	>(get_jobject());
 }
 
 

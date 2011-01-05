@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_RESPONSESERVER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -85,8 +85,8 @@ org::apache::http::protocol::ResponseServer::ResponseServer()
 	call_new_object<
 		org::apache::http::protocol::ResponseServer::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::ResponseServer::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::ResponseServer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::ResponseServer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ void org::apache::http::protocol::ResponseServer::process(local_ref< org::apache
 		org::apache::http::protocol::ResponseServer::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::ResponseServer::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::ResponseServer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

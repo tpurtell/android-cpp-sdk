@@ -71,8 +71,8 @@ jboolean java::util::Enumeration::hasMoreElements()
 		java::util::Enumeration::J2CPP_CLASS_NAME,
 		java::util::Enumeration::J2CPP_METHOD_NAME(0),
 		java::util::Enumeration::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Enumeration::nextElement()
@@ -81,8 +81,8 @@ local_ref< java::lang::Object > java::util::Enumeration::nextElement()
 		java::util::Enumeration::J2CPP_CLASS_NAME,
 		java::util::Enumeration::J2CPP_METHOD_NAME(1),
 		java::util::Enumeration::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

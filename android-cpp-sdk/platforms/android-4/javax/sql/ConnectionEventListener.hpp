@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_SQL_CONNECTIONEVENTLISTENER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace sql { class ConnectionEvent; } } }
 namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace sql { class ConnectionEvent; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -41,8 +41,8 @@ namespace javax { namespace sql {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void connectionClosed(local_ref< javax::sql::ConnectionEvent >  const&);
@@ -65,14 +65,14 @@ namespace j2cpp {
 
 
 
-javax::sql::ConnectionEventListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::sql::ConnectionEventListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+javax::sql::ConnectionEventListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void javax::sql::ConnectionEventListener::connectionClosed(local_ref< javax::sql::ConnectionEvent > const &a0)
@@ -81,8 +81,8 @@ void javax::sql::ConnectionEventListener::connectionClosed(local_ref< javax::sql
 		javax::sql::ConnectionEventListener::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_NAME(0),
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::ConnectionEventListener::connectionErrorOccurred(local_ref< javax::sql::ConnectionEvent > const &a0)
@@ -91,8 +91,8 @@ void javax::sql::ConnectionEventListener::connectionErrorOccurred(local_ref< jav
 		javax::sql::ConnectionEventListener::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_NAME(1),
 		javax::sql::ConnectionEventListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

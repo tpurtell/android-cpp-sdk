@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_PICTUREDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace graphics { class Picture; } } }
 #include <android/graphics/ColorFilter.hpp>
 #include <android/graphics/Picture.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -52,6 +54,7 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::drawable::Drawable>() const;
 
 
@@ -85,6 +88,11 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::PictureDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::drawable::PictureDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
@@ -96,8 +104,8 @@ android::graphics::drawable::PictureDrawable::PictureDrawable(local_ref< android
 	call_new_object<
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +117,8 @@ local_ref< android::graphics::Picture > android::graphics::drawable::PictureDraw
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Picture > >
-	(get_jobject());
+		local_ref< android::graphics::Picture >
+	>(get_jobject());
 }
 
 void android::graphics::drawable::PictureDrawable::setPicture(local_ref< android::graphics::Picture > const &a0)
@@ -119,8 +127,8 @@ void android::graphics::drawable::PictureDrawable::setPicture(local_ref< android
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::PictureDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -129,8 +137,8 @@ void android::graphics::drawable::PictureDrawable::draw(local_ref< android::grap
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::PictureDrawable::getIntrinsicWidth()
@@ -139,8 +147,8 @@ jint android::graphics::drawable::PictureDrawable::getIntrinsicWidth()
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::PictureDrawable::getIntrinsicHeight()
@@ -149,8 +157,8 @@ jint android::graphics::drawable::PictureDrawable::getIntrinsicHeight()
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::PictureDrawable::getOpacity()
@@ -159,8 +167,8 @@ jint android::graphics::drawable::PictureDrawable::getOpacity()
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::PictureDrawable::setFilterBitmap(jboolean a0)
@@ -169,8 +177,8 @@ void android::graphics::drawable::PictureDrawable::setFilterBitmap(jboolean a0)
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::PictureDrawable::setDither(jboolean a0)
@@ -179,8 +187,8 @@ void android::graphics::drawable::PictureDrawable::setDither(jboolean a0)
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::PictureDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -189,8 +197,8 @@ void android::graphics::drawable::PictureDrawable::setColorFilter(local_ref< and
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::PictureDrawable::setAlpha(jint a0)
@@ -199,8 +207,8 @@ void android::graphics::drawable::PictureDrawable::setAlpha(jint a0)
 		android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

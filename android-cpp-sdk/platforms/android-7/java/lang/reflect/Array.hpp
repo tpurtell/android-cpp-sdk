@@ -114,8 +114,8 @@ local_ref< java::lang::Object > java::lang::reflect::Array::get(local_ref< java:
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 jboolean java::lang::reflect::Array::getBoolean(local_ref< java::lang::Object > const &a0, jint a1)
@@ -124,8 +124,8 @@ jboolean java::lang::reflect::Array::getBoolean(local_ref< java::lang::Object > 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jbyte java::lang::reflect::Array::getByte(local_ref< java::lang::Object > const &a0, jint a1)
@@ -134,8 +134,8 @@ jbyte java::lang::reflect::Array::getByte(local_ref< java::lang::Object > const 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(3),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(3), 
-		jbyte >
-	(a0, a1);
+		jbyte
+	>(a0, a1);
 }
 
 jchar java::lang::reflect::Array::getChar(local_ref< java::lang::Object > const &a0, jint a1)
@@ -144,8 +144,8 @@ jchar java::lang::reflect::Array::getChar(local_ref< java::lang::Object > const 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(4),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(4), 
-		jchar >
-	(a0, a1);
+		jchar
+	>(a0, a1);
 }
 
 jdouble java::lang::reflect::Array::getDouble(local_ref< java::lang::Object > const &a0, jint a1)
@@ -154,8 +154,8 @@ jdouble java::lang::reflect::Array::getDouble(local_ref< java::lang::Object > co
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(5),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(5), 
-		jdouble >
-	(a0, a1);
+		jdouble
+	>(a0, a1);
 }
 
 jfloat java::lang::reflect::Array::getFloat(local_ref< java::lang::Object > const &a0, jint a1)
@@ -164,8 +164,8 @@ jfloat java::lang::reflect::Array::getFloat(local_ref< java::lang::Object > cons
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(6),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jint java::lang::reflect::Array::getInt(local_ref< java::lang::Object > const &a0, jint a1)
@@ -174,8 +174,8 @@ jint java::lang::reflect::Array::getInt(local_ref< java::lang::Object > const &a
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(7),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint java::lang::reflect::Array::getLength(local_ref< java::lang::Object > const &a0)
@@ -184,8 +184,8 @@ jint java::lang::reflect::Array::getLength(local_ref< java::lang::Object > const
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(8),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jlong java::lang::reflect::Array::getLong(local_ref< java::lang::Object > const &a0, jint a1)
@@ -194,8 +194,8 @@ jlong java::lang::reflect::Array::getLong(local_ref< java::lang::Object > const 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(9),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(a0, a1);
+		jlong
+	>(a0, a1);
 }
 
 jshort java::lang::reflect::Array::getShort(local_ref< java::lang::Object > const &a0, jint a1)
@@ -204,8 +204,8 @@ jshort java::lang::reflect::Array::getShort(local_ref< java::lang::Object > cons
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(10),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(10), 
-		jshort >
-	(a0, a1);
+		jshort
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::lang::reflect::Array::newInstance(local_ref< java::lang::Class > const &a0, local_ref< array<jint,1> > const &a1)
@@ -214,8 +214,8 @@ local_ref< java::lang::Object > java::lang::reflect::Array::newInstance(local_re
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(11),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 local_ref< java::lang::Object > java::lang::reflect::Array::newInstance(local_ref< java::lang::Class > const &a0, jint a1)
@@ -224,8 +224,8 @@ local_ref< java::lang::Object > java::lang::reflect::Array::newInstance(local_re
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(12),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(a0, a1);
+		local_ref< java::lang::Object >
+	>(a0, a1);
 }
 
 void java::lang::reflect::Array::set(local_ref< java::lang::Object > const &a0, jint a1, local_ref< java::lang::Object > const &a2)
@@ -234,8 +234,8 @@ void java::lang::reflect::Array::set(local_ref< java::lang::Object > const &a0, 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(13),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setBoolean(local_ref< java::lang::Object > const &a0, jint a1, jboolean a2)
@@ -244,8 +244,8 @@ void java::lang::reflect::Array::setBoolean(local_ref< java::lang::Object > cons
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(14),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setByte(local_ref< java::lang::Object > const &a0, jint a1, jbyte a2)
@@ -254,8 +254,8 @@ void java::lang::reflect::Array::setByte(local_ref< java::lang::Object > const &
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(15),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setChar(local_ref< java::lang::Object > const &a0, jint a1, jchar a2)
@@ -264,8 +264,8 @@ void java::lang::reflect::Array::setChar(local_ref< java::lang::Object > const &
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(16),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setDouble(local_ref< java::lang::Object > const &a0, jint a1, jdouble a2)
@@ -274,8 +274,8 @@ void java::lang::reflect::Array::setDouble(local_ref< java::lang::Object > const
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(17),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setFloat(local_ref< java::lang::Object > const &a0, jint a1, jfloat a2)
@@ -284,8 +284,8 @@ void java::lang::reflect::Array::setFloat(local_ref< java::lang::Object > const 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(18),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setInt(local_ref< java::lang::Object > const &a0, jint a1, jint a2)
@@ -294,8 +294,8 @@ void java::lang::reflect::Array::setInt(local_ref< java::lang::Object > const &a
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(19),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setLong(local_ref< java::lang::Object > const &a0, jint a1, jlong a2)
@@ -304,8 +304,8 @@ void java::lang::reflect::Array::setLong(local_ref< java::lang::Object > const &
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(20),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void java::lang::reflect::Array::setShort(local_ref< java::lang::Object > const &a0, jint a1, jshort a2)
@@ -314,8 +314,8 @@ void java::lang::reflect::Array::setShort(local_ref< java::lang::Object > const 
 		java::lang::reflect::Array::J2CPP_CLASS_NAME,
 		java::lang::reflect::Array::J2CPP_METHOD_NAME(21),
 		java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 

@@ -76,8 +76,8 @@ local_ref< java::net::InetAddress > org::apache::http::conn::scheme::HostNameRes
 		org::apache::http::conn::scheme::HostNameResolver::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::HostNameResolver::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::scheme::HostNameResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject(), a0);
+		local_ref< java::net::InetAddress >
+	>(get_jobject(), a0);
 }
 
 

@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_NET_SOCKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
-namespace j2cpp { namespace java { namespace net { class SocketImplFactory; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Proxy; } } }
+namespace j2cpp { namespace java { namespace net { class SocketImplFactory; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -184,8 +184,8 @@ java::net::Socket::Socket()
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(0),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -197,8 +197,8 @@ java::net::Socket::Socket(local_ref< java::net::Proxy > const &a0)
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(1),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -210,8 +210,8 @@ java::net::Socket::Socket(local_ref< java::lang::String > const &a0, jint a1)
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(2),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -223,8 +223,8 @@ java::net::Socket::Socket(local_ref< java::lang::String > const &a0, jint a1, lo
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(3),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -236,8 +236,8 @@ java::net::Socket::Socket(local_ref< java::lang::String > const &a0, jint a1, jb
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(4),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1, a2)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1, a2)
 )
 {
 }
@@ -249,8 +249,8 @@ java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, jint a1
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(5),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -262,8 +262,8 @@ java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, jint a1
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(6),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1, a2, a3)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -275,8 +275,8 @@ java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, jint a1
 	call_new_object<
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(7),
-		java::net::Socket::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1, a2)
+		java::net::Socket::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1, a2)
 )
 {
 }
@@ -289,8 +289,8 @@ void java::net::Socket::close()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(9),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::Socket::getInetAddress()
@@ -299,8 +299,8 @@ local_ref< java::net::InetAddress > java::net::Socket::getInetAddress()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(10),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::net::Socket::getInputStream()
@@ -309,8 +309,8 @@ local_ref< java::io::InputStream > java::net::Socket::getInputStream()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(11),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::getKeepAlive()
@@ -319,8 +319,8 @@ jboolean java::net::Socket::getKeepAlive()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(12),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::Socket::getLocalAddress()
@@ -329,8 +329,8 @@ local_ref< java::net::InetAddress > java::net::Socket::getLocalAddress()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(13),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint java::net::Socket::getLocalPort()
@@ -339,8 +339,8 @@ jint java::net::Socket::getLocalPort()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(14),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > java::net::Socket::getOutputStream()
@@ -349,8 +349,8 @@ local_ref< java::io::OutputStream > java::net::Socket::getOutputStream()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(15),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 jint java::net::Socket::getPort()
@@ -359,8 +359,8 @@ jint java::net::Socket::getPort()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(16),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::Socket::getSoLinger()
@@ -369,8 +369,8 @@ jint java::net::Socket::getSoLinger()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(17),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::Socket::getReceiveBufferSize()
@@ -379,8 +379,8 @@ jint java::net::Socket::getReceiveBufferSize()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(18),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::Socket::getSendBufferSize()
@@ -389,8 +389,8 @@ jint java::net::Socket::getSendBufferSize()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(19),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::net::Socket::getSoTimeout()
@@ -399,8 +399,8 @@ jint java::net::Socket::getSoTimeout()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(20),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::getTcpNoDelay()
@@ -409,8 +409,8 @@ jboolean java::net::Socket::getTcpNoDelay()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(21),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::Socket::setKeepAlive(jboolean a0)
@@ -419,8 +419,8 @@ void java::net::Socket::setKeepAlive(jboolean a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(22),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::setSocketImplFactory(local_ref< java::net::SocketImplFactory > const &a0)
@@ -429,8 +429,8 @@ void java::net::Socket::setSocketImplFactory(local_ref< java::net::SocketImplFac
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(23),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::net::Socket::setSendBufferSize(jint a0)
@@ -439,8 +439,8 @@ void java::net::Socket::setSendBufferSize(jint a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(24),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::setReceiveBufferSize(jint a0)
@@ -449,8 +449,8 @@ void java::net::Socket::setReceiveBufferSize(jint a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(25),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::setSoLinger(jboolean a0, jint a1)
@@ -459,8 +459,8 @@ void java::net::Socket::setSoLinger(jboolean a0, jint a1)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(26),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::net::Socket::setSoTimeout(jint a0)
@@ -469,8 +469,8 @@ void java::net::Socket::setSoTimeout(jint a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(27),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::setTcpNoDelay(jboolean a0)
@@ -479,8 +479,8 @@ void java::net::Socket::setTcpNoDelay(jboolean a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(28),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::net::Socket::toString()
@@ -489,8 +489,8 @@ local_ref< java::lang::String > java::net::Socket::toString()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(29),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::net::Socket::shutdownInput()
@@ -499,8 +499,8 @@ void java::net::Socket::shutdownInput()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(30),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::net::Socket::shutdownOutput()
@@ -509,8 +509,8 @@ void java::net::Socket::shutdownOutput()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(31),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::net::SocketAddress > java::net::Socket::getLocalSocketAddress()
@@ -519,8 +519,8 @@ local_ref< java::net::SocketAddress > java::net::Socket::getLocalSocketAddress()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(32),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::net::SocketAddress > >
-	(get_jobject());
+		local_ref< java::net::SocketAddress >
+	>(get_jobject());
 }
 
 local_ref< java::net::SocketAddress > java::net::Socket::getRemoteSocketAddress()
@@ -529,8 +529,8 @@ local_ref< java::net::SocketAddress > java::net::Socket::getRemoteSocketAddress(
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(33),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(33), 
-		local_ref< java::net::SocketAddress > >
-	(get_jobject());
+		local_ref< java::net::SocketAddress >
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::isBound()
@@ -539,8 +539,8 @@ jboolean java::net::Socket::isBound()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(34),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::isConnected()
@@ -549,8 +549,8 @@ jboolean java::net::Socket::isConnected()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(35),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(35), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::isClosed()
@@ -559,8 +559,8 @@ jboolean java::net::Socket::isClosed()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(36),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::Socket::bind(local_ref< java::net::SocketAddress > const &a0)
@@ -569,8 +569,8 @@ void java::net::Socket::bind(local_ref< java::net::SocketAddress > const &a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(37),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::connect(local_ref< java::net::SocketAddress > const &a0)
@@ -579,8 +579,8 @@ void java::net::Socket::connect(local_ref< java::net::SocketAddress > const &a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(38),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::net::Socket::connect(local_ref< java::net::SocketAddress > const &a0, jint a1)
@@ -589,8 +589,8 @@ void java::net::Socket::connect(local_ref< java::net::SocketAddress > const &a0,
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(39),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::net::Socket::isInputShutdown()
@@ -599,8 +599,8 @@ jboolean java::net::Socket::isInputShutdown()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(40),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(40), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Socket::isOutputShutdown()
@@ -609,8 +609,8 @@ jboolean java::net::Socket::isOutputShutdown()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(41),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::Socket::setReuseAddress(jboolean a0)
@@ -619,8 +619,8 @@ void java::net::Socket::setReuseAddress(jboolean a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(42),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::Socket::getReuseAddress()
@@ -629,8 +629,8 @@ jboolean java::net::Socket::getReuseAddress()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(43),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(43), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::Socket::setOOBInline(jboolean a0)
@@ -639,8 +639,8 @@ void java::net::Socket::setOOBInline(jboolean a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(44),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::net::Socket::getOOBInline()
@@ -649,8 +649,8 @@ jboolean java::net::Socket::getOOBInline()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(45),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(45), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::net::Socket::setTrafficClass(jint a0)
@@ -659,8 +659,8 @@ void java::net::Socket::setTrafficClass(jint a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(46),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::net::Socket::getTrafficClass()
@@ -669,8 +669,8 @@ jint java::net::Socket::getTrafficClass()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(47),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(47), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::net::Socket::sendUrgentData(jint a0)
@@ -679,8 +679,8 @@ void java::net::Socket::sendUrgentData(jint a0)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(48),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::channels::SocketChannel > java::net::Socket::getChannel()
@@ -689,8 +689,8 @@ local_ref< java::nio::channels::SocketChannel > java::net::Socket::getChannel()
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(49),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::nio::channels::SocketChannel > >
-	(get_jobject());
+		local_ref< java::nio::channels::SocketChannel >
+	>(get_jobject());
 }
 
 void java::net::Socket::setPerformancePreferences(jint a0, jint a1, jint a2)
@@ -699,8 +699,8 @@ void java::net::Socket::setPerformancePreferences(jint a0, jint a1, jint a2)
 		java::net::Socket::J2CPP_CLASS_NAME,
 		java::net::Socket::J2CPP_METHOD_NAME(50),
 		java::net::Socket::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

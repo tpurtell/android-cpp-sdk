@@ -84,10 +84,12 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<org::apache::http::HttpRequestInterceptor>() const;
+		operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const;
 		operator local_ref<org::apache::http::protocol::HttpProcessor>() const;
 		operator local_ref<org::apache::http::protocol::HttpRequestInterceptorList>() const;
-		operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const;
-		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<org::apache::http::HttpResponseInterceptor>() const;
 
 
 		BasicHttpProcessor();
@@ -139,6 +141,21 @@ org::apache::http::protocol::BasicHttpProcessor::operator local_ref<java::lang::
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::HttpRequestInterceptor>() const
+{
+	return local_ref<org::apache::http::HttpRequestInterceptor>(get_jobject());
+}
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const
+{
+	return local_ref<org::apache::http::protocol::HttpResponseInterceptorList>(get_jobject());
+}
+
 org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpProcessor>() const
 {
 	return local_ref<org::apache::http::protocol::HttpProcessor>(get_jobject());
@@ -149,14 +166,9 @@ org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache:
 	return local_ref<org::apache::http::protocol::HttpRequestInterceptorList>(get_jobject());
 }
 
-org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::HttpResponseInterceptor>() const
 {
-	return local_ref<org::apache::http::protocol::HttpResponseInterceptorList>(get_jobject());
-}
-
-org::apache::http::protocol::BasicHttpProcessor::operator local_ref<java::lang::Cloneable>() const
-{
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<org::apache::http::HttpResponseInterceptor>(get_jobject());
 }
 
 
@@ -165,8 +177,8 @@ org::apache::http::protocol::BasicHttpProcessor::BasicHttpProcessor()
 	call_new_object<
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -178,8 +190,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addRequestInterceptor(loca
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0, jint a1)
@@ -188,8 +200,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addRequestInterceptor(loca
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addResponseInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0, jint a1)
@@ -198,8 +210,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addResponseInterceptor(loc
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::removeRequestInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -208,8 +220,8 @@ void org::apache::http::protocol::BasicHttpProcessor::removeRequestInterceptorBy
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::removeResponseInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -218,8 +230,8 @@ void org::apache::http::protocol::BasicHttpProcessor::removeResponseInterceptorB
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(5),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0)
@@ -228,8 +240,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< 
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(6),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0, jint a1)
@@ -238,8 +250,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< 
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(7),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::protocol::BasicHttpProcessor::getRequestInterceptorCount()
@@ -248,8 +260,8 @@ jint org::apache::http::protocol::BasicHttpProcessor::getRequestInterceptorCount
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(8),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::protocol::BasicHttpProcessor::getRequestInterceptor(jint a0)
@@ -258,8 +270,8 @@ local_ref< org::apache::http::HttpRequestInterceptor > org::apache::http::protoc
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(9),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::HttpRequestInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpRequestInterceptor >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::clearRequestInterceptors()
@@ -268,8 +280,8 @@ void org::apache::http::protocol::BasicHttpProcessor::clearRequestInterceptors()
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(10),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addResponseInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0)
@@ -278,8 +290,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addResponseInterceptor(loc
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(11),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0)
@@ -288,8 +300,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< 
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(12),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0, jint a1)
@@ -298,8 +310,8 @@ void org::apache::http::protocol::BasicHttpProcessor::addInterceptor(local_ref< 
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(13),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::protocol::BasicHttpProcessor::getResponseInterceptorCount()
@@ -308,8 +320,8 @@ jint org::apache::http::protocol::BasicHttpProcessor::getResponseInterceptorCoun
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(14),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::protocol::BasicHttpProcessor::getResponseInterceptor(jint a0)
@@ -318,8 +330,8 @@ local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::proto
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(15),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< org::apache::http::HttpResponseInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponseInterceptor >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::clearResponseInterceptors()
@@ -328,8 +340,8 @@ void org::apache::http::protocol::BasicHttpProcessor::clearResponseInterceptors(
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(16),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::setInterceptors(local_ref< java::util::List > const &a0)
@@ -338,8 +350,8 @@ void org::apache::http::protocol::BasicHttpProcessor::setInterceptors(local_ref<
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(17),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::clearInterceptors()
@@ -348,8 +360,8 @@ void org::apache::http::protocol::BasicHttpProcessor::clearInterceptors()
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(18),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::process(local_ref< org::apache::http::HttpRequest > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -358,8 +370,8 @@ void org::apache::http::protocol::BasicHttpProcessor::process(local_ref< org::ap
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(19),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::protocol::BasicHttpProcessor::process(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -368,8 +380,8 @@ void org::apache::http::protocol::BasicHttpProcessor::process(local_ref< org::ap
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(20),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -379,8 +391,8 @@ local_ref< org::apache::http::protocol::BasicHttpProcessor > org::apache::http::
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(22),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< org::apache::http::protocol::BasicHttpProcessor > >
-	(get_jobject());
+		local_ref< org::apache::http::protocol::BasicHttpProcessor >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::protocol::BasicHttpProcessor::clone()
@@ -389,8 +401,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::BasicHttpProcessor:
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(23),
 		org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

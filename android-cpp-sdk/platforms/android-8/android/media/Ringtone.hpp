@@ -85,8 +85,8 @@ void android::media::Ringtone::setStreamType(jint a0)
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(1),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::Ringtone::getStreamType()
@@ -95,8 +95,8 @@ jint android::media::Ringtone::getStreamType()
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(2),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::media::Ringtone::getTitle(local_ref< android::content::Context > const &a0)
@@ -105,8 +105,8 @@ local_ref< java::lang::String > android::media::Ringtone::getTitle(local_ref< an
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(3),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::media::Ringtone::play()
@@ -115,8 +115,8 @@ void android::media::Ringtone::play()
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(4),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::Ringtone::stop()
@@ -125,8 +125,8 @@ void android::media::Ringtone::stop()
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(5),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::media::Ringtone::isPlaying()
@@ -135,8 +135,8 @@ jboolean android::media::Ringtone::isPlaying()
 		android::media::Ringtone::J2CPP_CLASS_NAME,
 		android::media::Ringtone::J2CPP_METHOD_NAME(6),
 		android::media::Ringtone::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

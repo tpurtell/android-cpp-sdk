@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Directions; } } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Alignment; } } } }
@@ -30,7 +32,9 @@ namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/text/Layout.hpp>
 #include <android/text/TextPaint.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -85,7 +89,10 @@ namespace android { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::text::Layout_::Alignment >, 1> > values();
@@ -246,9 +253,24 @@ J2CPP_DEFINE_CLASS(android::text::Layout_::Directions,"android/text/Layout$Direc
 J2CPP_DEFINE_METHOD(android::text::Layout_::Directions,0,"<init>","()V")
 
 
+android::text::Layout_::Alignment::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::text::Layout_::Alignment::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::text::Layout_::Alignment::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::Layout_::Alignment::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::text::Layout_::Alignment >, 1> > android::text::Layout_::Alignment::values()
@@ -257,8 +279,8 @@ local_ref< array< local_ref< android::text::Layout_::Alignment >, 1> > android::
 		android::text::Layout_::Alignment::J2CPP_CLASS_NAME,
 		android::text::Layout_::Alignment::J2CPP_METHOD_NAME(0),
 		android::text::Layout_::Alignment::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::text::Layout_::Alignment >, 1> > >
-	();
+		local_ref< array< local_ref< android::text::Layout_::Alignment >, 1> >
+	>();
 }
 
 local_ref< android::text::Layout_::Alignment > android::text::Layout_::Alignment::valueOf(local_ref< java::lang::String > const &a0)
@@ -267,8 +289,8 @@ local_ref< android::text::Layout_::Alignment > android::text::Layout_::Alignment
 		android::text::Layout_::Alignment::J2CPP_CLASS_NAME,
 		android::text::Layout_::Alignment::J2CPP_METHOD_NAME(1),
 		android::text::Layout_::Alignment::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::Layout_::Alignment > >
-	(a0);
+		local_ref< android::text::Layout_::Alignment >
+	>(a0);
 }
 
 
@@ -320,8 +342,8 @@ jfloat android::text::Layout::getDesiredWidth(local_ref< java::lang::CharSequenc
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(1),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jfloat android::text::Layout::getDesiredWidth(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, local_ref< android::text::TextPaint > const &a3)
@@ -330,8 +352,8 @@ jfloat android::text::Layout::getDesiredWidth(local_ref< java::lang::CharSequenc
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(2),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(a0, a1, a2, a3);
+		jfloat
+	>(a0, a1, a2, a3);
 }
 
 void android::text::Layout::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -340,8 +362,8 @@ void android::text::Layout::draw(local_ref< android::graphics::Canvas > const &a
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(3),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::Layout::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Path > const &a1, local_ref< android::graphics::Paint > const &a2, jint a3)
@@ -350,8 +372,8 @@ void android::text::Layout::draw(local_ref< android::graphics::Canvas > const &a
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(4),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::CharSequence > android::text::Layout::getText()
@@ -360,8 +382,8 @@ local_ref< java::lang::CharSequence > android::text::Layout::getText()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(5),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< android::text::TextPaint > android::text::Layout::getPaint()
@@ -370,8 +392,8 @@ local_ref< android::text::TextPaint > android::text::Layout::getPaint()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(6),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::text::TextPaint > >
-	(get_jobject());
+		local_ref< android::text::TextPaint >
+	>(get_jobject());
 }
 
 jint android::text::Layout::getWidth()
@@ -380,8 +402,8 @@ jint android::text::Layout::getWidth()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(7),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::Layout::getEllipsizedWidth()
@@ -390,8 +412,8 @@ jint android::text::Layout::getEllipsizedWidth()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(8),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::Layout::increaseWidthTo(jint a0)
@@ -400,8 +422,8 @@ void android::text::Layout::increaseWidthTo(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(9),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getHeight()
@@ -410,8 +432,8 @@ jint android::text::Layout::getHeight()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(10),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::text::Layout_::Alignment > android::text::Layout::getAlignment()
@@ -420,8 +442,8 @@ local_ref< android::text::Layout_::Alignment > android::text::Layout::getAlignme
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(11),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::text::Layout_::Alignment > >
-	(get_jobject());
+		local_ref< android::text::Layout_::Alignment >
+	>(get_jobject());
 }
 
 jfloat android::text::Layout::getSpacingMultiplier()
@@ -430,8 +452,8 @@ jfloat android::text::Layout::getSpacingMultiplier()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(12),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(12), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::text::Layout::getSpacingAdd()
@@ -440,8 +462,8 @@ jfloat android::text::Layout::getSpacingAdd()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(13),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(13), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jint android::text::Layout::getLineCount()
@@ -450,8 +472,8 @@ jint android::text::Layout::getLineCount()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(14),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::Layout::getLineBounds(jint a0, local_ref< android::graphics::Rect > const &a1)
@@ -460,8 +482,8 @@ jint android::text::Layout::getLineBounds(jint a0, local_ref< android::graphics:
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(15),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::text::Layout::getLineTop(jint a0)
@@ -470,8 +492,8 @@ jint android::text::Layout::getLineTop(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(16),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineDescent(jint a0)
@@ -480,8 +502,8 @@ jint android::text::Layout::getLineDescent(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(17),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineStart(jint a0)
@@ -490,8 +512,8 @@ jint android::text::Layout::getLineStart(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(18),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getParagraphDirection(jint a0)
@@ -500,8 +522,8 @@ jint android::text::Layout::getParagraphDirection(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(19),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean android::text::Layout::getLineContainsTab(jint a0)
@@ -510,8 +532,8 @@ jboolean android::text::Layout::getLineContainsTab(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(20),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::Layout_::Directions > android::text::Layout::getLineDirections(jint a0)
@@ -520,8 +542,8 @@ local_ref< android::text::Layout_::Directions > android::text::Layout::getLineDi
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(21),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< android::text::Layout_::Directions > >
-	(get_jobject(), a0);
+		local_ref< android::text::Layout_::Directions >
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getTopPadding()
@@ -530,8 +552,8 @@ jint android::text::Layout::getTopPadding()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(22),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::Layout::getBottomPadding()
@@ -540,8 +562,8 @@ jint android::text::Layout::getBottomPadding()
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(23),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jfloat android::text::Layout::getPrimaryHorizontal(jint a0)
@@ -550,8 +572,8 @@ jfloat android::text::Layout::getPrimaryHorizontal(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(24),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(24), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::Layout::getSecondaryHorizontal(jint a0)
@@ -560,8 +582,8 @@ jfloat android::text::Layout::getSecondaryHorizontal(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(25),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(25), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::Layout::getLineLeft(jint a0)
@@ -570,8 +592,8 @@ jfloat android::text::Layout::getLineLeft(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(26),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(26), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::Layout::getLineRight(jint a0)
@@ -580,8 +602,8 @@ jfloat android::text::Layout::getLineRight(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(27),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(27), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::Layout::getLineMax(jint a0)
@@ -590,8 +612,8 @@ jfloat android::text::Layout::getLineMax(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(28),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(28), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::text::Layout::getLineWidth(jint a0)
@@ -600,8 +622,8 @@ jfloat android::text::Layout::getLineWidth(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(29),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(29), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineForVertical(jint a0)
@@ -610,8 +632,8 @@ jint android::text::Layout::getLineForVertical(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(30),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineForOffset(jint a0)
@@ -620,8 +642,8 @@ jint android::text::Layout::getLineForOffset(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(31),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getOffsetForHorizontal(jint a0, jfloat a1)
@@ -630,8 +652,8 @@ jint android::text::Layout::getOffsetForHorizontal(jint a0, jfloat a1)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(32),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::text::Layout::getLineEnd(jint a0)
@@ -640,8 +662,8 @@ jint android::text::Layout::getLineEnd(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(33),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineVisibleEnd(jint a0)
@@ -650,8 +672,8 @@ jint android::text::Layout::getLineVisibleEnd(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(34),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineBottom(jint a0)
@@ -660,8 +682,8 @@ jint android::text::Layout::getLineBottom(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(35),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(35), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineBaseline(jint a0)
@@ -670,8 +692,8 @@ jint android::text::Layout::getLineBaseline(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(36),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getLineAscent(jint a0)
@@ -680,8 +702,8 @@ jint android::text::Layout::getLineAscent(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(37),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(37), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getOffsetToLeftOf(jint a0)
@@ -690,8 +712,8 @@ jint android::text::Layout::getOffsetToLeftOf(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(38),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(38), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getOffsetToRightOf(jint a0)
@@ -700,8 +722,8 @@ jint android::text::Layout::getOffsetToRightOf(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(39),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(39), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::text::Layout::getCursorPath(jint a0, local_ref< android::graphics::Path > const &a1, local_ref< java::lang::CharSequence > const &a2)
@@ -710,8 +732,8 @@ void android::text::Layout::getCursorPath(jint a0, local_ref< android::graphics:
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(40),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::Layout::getSelectionPath(jint a0, jint a1, local_ref< android::graphics::Path > const &a2)
@@ -720,8 +742,8 @@ void android::text::Layout::getSelectionPath(jint a0, jint a1, local_ref< androi
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(41),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::Layout_::Alignment > android::text::Layout::getParagraphAlignment(jint a0)
@@ -730,8 +752,8 @@ local_ref< android::text::Layout_::Alignment > android::text::Layout::getParagra
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(42),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< android::text::Layout_::Alignment > >
-	(get_jobject(), a0);
+		local_ref< android::text::Layout_::Alignment >
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getParagraphLeft(jint a0)
@@ -740,8 +762,8 @@ jint android::text::Layout::getParagraphLeft(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(43),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(43), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getParagraphRight(jint a0)
@@ -750,8 +772,8 @@ jint android::text::Layout::getParagraphRight(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(44),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(44), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 
@@ -761,8 +783,8 @@ jint android::text::Layout::getEllipsisStart(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(46),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::text::Layout::getEllipsisCount(jint a0)
@@ -771,8 +793,8 @@ jint android::text::Layout::getEllipsisCount(jint a0)
 		android::text::Layout::J2CPP_CLASS_NAME,
 		android::text::Layout::J2CPP_METHOD_NAME(47),
 		android::text::Layout::J2CPP_METHOD_SIGNATURE(47), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

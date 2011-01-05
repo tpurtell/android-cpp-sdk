@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_TIMEUNIT_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -64,7 +68,10 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		static local_ref< array< local_ref< java::util::concurrent::TimeUnit >, 1> > values();
@@ -107,9 +114,24 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::TimeUnit::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::util::concurrent::TimeUnit::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+java::util::concurrent::TimeUnit::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::TimeUnit::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< java::util::concurrent::TimeUnit >, 1> > java::util::concurrent::TimeUnit::values()
@@ -118,8 +140,8 @@ local_ref< array< local_ref< java::util::concurrent::TimeUnit >, 1> > java::util
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::util::concurrent::TimeUnit >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::concurrent::TimeUnit >, 1> >
+	>();
 }
 
 local_ref< java::util::concurrent::TimeUnit > java::util::concurrent::TimeUnit::valueOf(local_ref< java::lang::String > const &a0)
@@ -128,8 +150,8 @@ local_ref< java::util::concurrent::TimeUnit > java::util::concurrent::TimeUnit::
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::TimeUnit > >
-	(a0);
+		local_ref< java::util::concurrent::TimeUnit >
+	>(a0);
 }
 
 
@@ -139,8 +161,8 @@ jlong java::util::concurrent::TimeUnit::convert(jlong a0, local_ref< java::util:
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::util::concurrent::TimeUnit::toNanos(jlong a0)
@@ -149,8 +171,8 @@ jlong java::util::concurrent::TimeUnit::toNanos(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toMicros(jlong a0)
@@ -159,8 +181,8 @@ jlong java::util::concurrent::TimeUnit::toMicros(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toMillis(jlong a0)
@@ -169,8 +191,8 @@ jlong java::util::concurrent::TimeUnit::toMillis(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toSeconds(jlong a0)
@@ -179,8 +201,8 @@ jlong java::util::concurrent::TimeUnit::toSeconds(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toMinutes(jlong a0)
@@ -189,8 +211,8 @@ jlong java::util::concurrent::TimeUnit::toMinutes(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toHours(jlong a0)
@@ -199,8 +221,8 @@ jlong java::util::concurrent::TimeUnit::toHours(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong java::util::concurrent::TimeUnit::toDays(jlong a0)
@@ -209,8 +231,8 @@ jlong java::util::concurrent::TimeUnit::toDays(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::TimeUnit::timedWait(local_ref< java::lang::Object > const &a0, jlong a1)
@@ -219,8 +241,8 @@ void java::util::concurrent::TimeUnit::timedWait(local_ref< java::lang::Object >
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::TimeUnit::timedJoin(local_ref< java::lang::Thread > const &a0, jlong a1)
@@ -229,8 +251,8 @@ void java::util::concurrent::TimeUnit::timedJoin(local_ref< java::lang::Thread >
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::TimeUnit::sleep(jlong a0)
@@ -239,8 +261,8 @@ void java::util::concurrent::TimeUnit::sleep(jlong a0)
 		java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME,
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

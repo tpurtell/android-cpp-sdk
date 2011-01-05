@@ -2581,8 +2581,8 @@ android::R_::dimen::dimen()
 	call_new_object<
 		android::R_::dimen::J2CPP_CLASS_NAME,
 		android::R_::dimen::J2CPP_METHOD_NAME(0),
-		android::R_::dimen::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::dimen::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2629,8 +2629,8 @@ android::R_::integer::integer()
 	call_new_object<
 		android::R_::integer::J2CPP_CLASS_NAME,
 		android::R_::integer::J2CPP_METHOD_NAME(0),
-		android::R_::integer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::integer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2677,8 +2677,8 @@ android::R_::string::string()
 	call_new_object<
 		android::R_::string::J2CPP_CLASS_NAME,
 		android::R_::string::J2CPP_METHOD_NAME(0),
-		android::R_::string::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::string::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2877,8 +2877,8 @@ android::R_::xml::xml()
 	call_new_object<
 		android::R_::xml::J2CPP_CLASS_NAME,
 		android::R_::xml::J2CPP_METHOD_NAME(0),
-		android::R_::xml::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::xml::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2900,8 +2900,8 @@ android::R_::raw::raw()
 	call_new_object<
 		android::R_::raw::J2CPP_CLASS_NAME,
 		android::R_::raw::J2CPP_METHOD_NAME(0),
-		android::R_::raw::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::raw::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -2923,8 +2923,8 @@ android::R_::color::color()
 	call_new_object<
 		android::R_::color::J2CPP_CLASS_NAME,
 		android::R_::color::J2CPP_METHOD_NAME(0),
-		android::R_::color::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::color::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -3091,8 +3091,8 @@ android::R_::drawable::drawable()
 	call_new_object<
 		android::R_::drawable::J2CPP_CLASS_NAME,
 		android::R_::drawable::J2CPP_METHOD_NAME(0),
-		android::R_::drawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::drawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -4443,8 +4443,8 @@ android::R_::anim::anim()
 	call_new_object<
 		android::R_::anim::J2CPP_CLASS_NAME,
 		android::R_::anim::J2CPP_METHOD_NAME(0),
-		android::R_::anim::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::anim::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -4563,8 +4563,8 @@ android::R_::style::style()
 	call_new_object<
 		android::R_::style::J2CPP_CLASS_NAME,
 		android::R_::style::J2CPP_METHOD_NAME(0),
-		android::R_::style::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::style::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -5371,8 +5371,8 @@ android::R_::bool::bool()
 	call_new_object<
 		android::R_::bool::J2CPP_CLASS_NAME,
 		android::R_::bool::J2CPP_METHOD_NAME(0),
-		android::R_::bool::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::bool::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -5394,8 +5394,8 @@ android::R_::attr::attr()
 	call_new_object<
 		android::R_::attr::J2CPP_CLASS_NAME,
 		android::R_::attr::J2CPP_METHOD_NAME(0),
-		android::R_::attr::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::attr::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -10962,8 +10962,8 @@ android::R_::id::id()
 	call_new_object<
 		android::R_::id::J2CPP_CLASS_NAME,
 		android::R_::id::J2CPP_METHOD_NAME(0),
-		android::R_::id::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::id::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -11330,8 +11330,8 @@ android::R_::layout::layout()
 	call_new_object<
 		android::R_::layout::J2CPP_CLASS_NAME,
 		android::R_::layout::J2CPP_METHOD_NAME(0),
-		android::R_::layout::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::layout::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -11514,8 +11514,8 @@ android::R_::plurals::plurals()
 	call_new_object<
 		android::R_::plurals::J2CPP_CLASS_NAME,
 		android::R_::plurals::J2CPP_METHOD_NAME(0),
-		android::R_::plurals::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::plurals::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -11537,8 +11537,8 @@ android::R_::array::array()
 	call_new_object<
 		android::R_::array::J2CPP_CLASS_NAME,
 		android::R_::array::J2CPP_METHOD_NAME(0),
-		android::R_::array::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R_::array::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -11602,8 +11602,8 @@ android::R::R()
 	call_new_object<
 		android::R::J2CPP_CLASS_NAME,
 		android::R::J2CPP_METHOD_NAME(0),
-		android::R::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::R::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

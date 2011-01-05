@@ -11,10 +11,12 @@
 #define J2CPP_JAVA_SECURITY_PUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/Key.hpp>
 
@@ -38,8 +40,9 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::security::Key>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), jlong > serialVersionUID;
@@ -61,14 +64,19 @@ namespace j2cpp {
 
 
 
-java::security::PublicKey::operator local_ref<java::lang::Object>() const
+java::security::PublicKey::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 java::security::PublicKey::operator local_ref<java::security::Key>() const
 {
 	return local_ref<java::security::Key>(get_jobject());
+}
+
+java::security::PublicKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 static_field<

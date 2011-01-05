@@ -11,8 +11,13 @@
 #define J2CPP_ANDROID_WIDGET_EDITTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class TruncateAt; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
@@ -21,11 +26,16 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/text/Editable.hpp>
 #include <android/text/TextUtils.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/TextView.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -59,6 +69,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::TextView>() const;
 
 
@@ -91,6 +106,31 @@ namespace j2cpp {
 
 
 
+android::widget::EditText::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::EditText::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::EditText::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::EditText::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
+}
+
+android::widget::EditText::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::EditText::operator local_ref<android::widget::TextView>() const
 {
 	return local_ref<android::widget::TextView>(get_jobject());
@@ -102,8 +142,8 @@ android::widget::EditText::EditText(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(0),
-		android::widget::EditText::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::EditText::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +155,8 @@ android::widget::EditText::EditText(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(1),
-		android::widget::EditText::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::EditText::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -128,8 +168,8 @@ android::widget::EditText::EditText(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(2),
-		android::widget::EditText::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::EditText::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -143,8 +183,8 @@ local_ref< android::text::Editable > android::widget::EditText::getText()
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(5),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::text::Editable > >
-	(get_jobject());
+		local_ref< android::text::Editable >
+	>(get_jobject());
 }
 
 void android::widget::EditText::setText(local_ref< java::lang::CharSequence > const &a0, local_ref< android::widget::TextView_::BufferType > const &a1)
@@ -153,8 +193,8 @@ void android::widget::EditText::setText(local_ref< java::lang::CharSequence > co
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(6),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::EditText::setSelection(jint a0, jint a1)
@@ -163,8 +203,8 @@ void android::widget::EditText::setSelection(jint a0, jint a1)
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(7),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::EditText::setSelection(jint a0)
@@ -173,8 +213,8 @@ void android::widget::EditText::setSelection(jint a0)
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(8),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::EditText::selectAll()
@@ -183,8 +223,8 @@ void android::widget::EditText::selectAll()
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(9),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::EditText::extendSelection(jint a0)
@@ -193,8 +233,8 @@ void android::widget::EditText::extendSelection(jint a0)
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(10),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::EditText::setEllipsize(local_ref< android::text::TextUtils_::TruncateAt > const &a0)
@@ -203,8 +243,8 @@ void android::widget::EditText::setEllipsize(local_ref< android::text::TextUtils
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(11),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::EditText::getText_1()
@@ -213,8 +253,8 @@ local_ref< java::lang::CharSequence > android::widget::EditText::getText_1()
 		android::widget::EditText::J2CPP_CLASS_NAME,
 		android::widget::EditText::J2CPP_METHOD_NAME(12),
 		android::widget::EditText::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 

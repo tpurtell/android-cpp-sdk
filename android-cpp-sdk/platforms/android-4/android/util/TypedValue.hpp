@@ -201,8 +201,8 @@ android::util::TypedValue::TypedValue()
 	call_new_object<
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(0),
-		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , type(get_jobject())
 , string(get_jobject())
@@ -221,8 +221,8 @@ jfloat android::util::TypedValue::getFloat()
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(1),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::util::TypedValue::complexToFloat(jint a0)
@@ -231,8 +231,8 @@ jfloat android::util::TypedValue::complexToFloat(jint a0)
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(2),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jfloat android::util::TypedValue::complexToDimension(jint a0, local_ref< android::util::DisplayMetrics > const &a1)
@@ -241,8 +241,8 @@ jfloat android::util::TypedValue::complexToDimension(jint a0, local_ref< android
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(3),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jint android::util::TypedValue::complexToDimensionPixelOffset(jint a0, local_ref< android::util::DisplayMetrics > const &a1)
@@ -251,8 +251,8 @@ jint android::util::TypedValue::complexToDimensionPixelOffset(jint a0, local_ref
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(4),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jint android::util::TypedValue::complexToDimensionPixelSize(jint a0, local_ref< android::util::DisplayMetrics > const &a1)
@@ -261,8 +261,8 @@ jint android::util::TypedValue::complexToDimensionPixelSize(jint a0, local_ref< 
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(5),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jfloat android::util::TypedValue::complexToDimensionNoisy(jint a0, local_ref< android::util::DisplayMetrics > const &a1)
@@ -271,8 +271,8 @@ jfloat android::util::TypedValue::complexToDimensionNoisy(jint a0, local_ref< an
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(6),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(a0, a1);
+		jfloat
+	>(a0, a1);
 }
 
 jfloat android::util::TypedValue::applyDimension(jint a0, jfloat a1, local_ref< android::util::DisplayMetrics > const &a2)
@@ -281,8 +281,8 @@ jfloat android::util::TypedValue::applyDimension(jint a0, jfloat a1, local_ref< 
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(7),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(a0, a1, a2);
+		jfloat
+	>(a0, a1, a2);
 }
 
 jfloat android::util::TypedValue::getDimension(local_ref< android::util::DisplayMetrics > const &a0)
@@ -291,8 +291,8 @@ jfloat android::util::TypedValue::getDimension(local_ref< android::util::Display
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(8),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(8), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jfloat android::util::TypedValue::complexToFraction(jint a0, jfloat a1, jfloat a2)
@@ -301,8 +301,8 @@ jfloat android::util::TypedValue::complexToFraction(jint a0, jfloat a1, jfloat a
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(9),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(9), 
-		jfloat >
-	(a0, a1, a2);
+		jfloat
+	>(a0, a1, a2);
 }
 
 jfloat android::util::TypedValue::getFraction(jfloat a0, jfloat a1)
@@ -311,8 +311,8 @@ jfloat android::util::TypedValue::getFraction(jfloat a0, jfloat a1)
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(10),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(10), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::util::TypedValue::coerceToString()
@@ -321,8 +321,8 @@ local_ref< java::lang::CharSequence > android::util::TypedValue::coerceToString(
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(11),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::util::TypedValue::coerceToString(jint a0, jint a1)
@@ -331,8 +331,8 @@ local_ref< java::lang::String > android::util::TypedValue::coerceToString(jint a
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(12),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 void android::util::TypedValue::setTo(local_ref< android::util::TypedValue > const &a0)
@@ -341,8 +341,8 @@ void android::util::TypedValue::setTo(local_ref< android::util::TypedValue > con
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(13),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::util::TypedValue::toString()
@@ -351,8 +351,8 @@ local_ref< java::lang::String > android::util::TypedValue::toString()
 		android::util::TypedValue::J2CPP_CLASS_NAME,
 		android::util::TypedValue::J2CPP_METHOD_NAME(14),
 		android::util::TypedValue::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -12,16 +12,24 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class ClickableSpan; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <android/text/ParcelableSpan.hpp>
+#include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/ClickableSpan.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,8 +58,12 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
-		operator local_ref<android::text::style::ClickableSpan>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::ParcelableSpan>() const;
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::style::ClickableSpan>() const;
+		operator local_ref<android::os::Parcelable>() const;
 
 
 		URLSpan(local_ref< java::lang::String > const&);
@@ -80,14 +92,34 @@ namespace j2cpp {
 
 
 
-android::text::style::URLSpan::operator local_ref<android::text::style::ClickableSpan>() const
+android::text::style::URLSpan::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::text::style::ClickableSpan>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::text::style::URLSpan::operator local_ref<android::text::ParcelableSpan>() const
 {
 	return local_ref<android::text::ParcelableSpan>(get_jobject());
+}
+
+android::text::style::URLSpan::operator local_ref<android::text::style::CharacterStyle>() const
+{
+	return local_ref<android::text::style::CharacterStyle>(get_jobject());
+}
+
+android::text::style::URLSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
+android::text::style::URLSpan::operator local_ref<android::text::style::ClickableSpan>() const
+{
+	return local_ref<android::text::style::ClickableSpan>(get_jobject());
+}
+
+android::text::style::URLSpan::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -96,8 +128,8 @@ android::text::style::URLSpan::URLSpan(local_ref< java::lang::String > const &a0
 	call_new_object<
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +141,8 @@ android::text::style::URLSpan::URLSpan(local_ref< android::os::Parcel > const &a
 	call_new_object<
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(1),
-		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -122,8 +154,8 @@ jint android::text::style::URLSpan::getSpanTypeId()
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::text::style::URLSpan::describeContents()
@@ -132,8 +164,8 @@ jint android::text::style::URLSpan::describeContents()
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(3),
 		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::text::style::URLSpan::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -142,8 +174,8 @@ void android::text::style::URLSpan::writeToParcel(local_ref< android::os::Parcel
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(4),
 		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::text::style::URLSpan::getURL()
@@ -152,8 +184,8 @@ local_ref< java::lang::String > android::text::style::URLSpan::getURL()
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(5),
 		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::text::style::URLSpan::onClick(local_ref< android::view::View > const &a0)
@@ -162,8 +194,8 @@ void android::text::style::URLSpan::onClick(local_ref< android::view::View > con
 		android::text::style::URLSpan::J2CPP_CLASS_NAME,
 		android::text::style::URLSpan::J2CPP_METHOD_NAME(6),
 		android::text::style::URLSpan::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

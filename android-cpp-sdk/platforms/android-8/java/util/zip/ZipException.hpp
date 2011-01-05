@@ -12,11 +12,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +47,11 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ZipException();
@@ -63,9 +75,29 @@ namespace j2cpp {
 
 
 
+java::util::zip::ZipException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::zip::ZipException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::util::zip::ZipException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 java::util::zip::ZipException::operator local_ref<java::io::IOException>() const
 {
 	return local_ref<java::io::IOException>(get_jobject());
+}
+
+java::util::zip::ZipException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -74,8 +106,8 @@ java::util::zip::ZipException::ZipException()
 	call_new_object<
 		java::util::zip::ZipException::J2CPP_CLASS_NAME,
 		java::util::zip::ZipException::J2CPP_METHOD_NAME(0),
-		java::util::zip::ZipException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::zip::ZipException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -87,8 +119,8 @@ java::util::zip::ZipException::ZipException(local_ref< java::lang::String > cons
 	call_new_object<
 		java::util::zip::ZipException::J2CPP_CLASS_NAME,
 		java::util::zip::ZipException::J2CPP_METHOD_NAME(1),
-		java::util::zip::ZipException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::zip::ZipException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

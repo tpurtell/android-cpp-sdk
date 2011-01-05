@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 
 
+#include <android/widget/Adapter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <java/lang/Object.hpp>
 
@@ -40,6 +42,7 @@ namespace android { namespace widget {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::Adapter>() const;
 
 
 		local_ref< android::widget::ListAdapter > getWrappedAdapter();
@@ -71,14 +74,19 @@ android::widget::WrapperListAdapter::operator local_ref<android::widget::ListAda
 	return local_ref<android::widget::ListAdapter>(get_jobject());
 }
 
+android::widget::WrapperListAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
 local_ref< android::widget::ListAdapter > android::widget::WrapperListAdapter::getWrappedAdapter()
 {
 	return call_method<
 		android::widget::WrapperListAdapter::J2CPP_CLASS_NAME,
 		android::widget::WrapperListAdapter::J2CPP_METHOD_NAME(0),
 		android::widget::WrapperListAdapter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::widget::ListAdapter > >
-	(get_jobject());
+		local_ref< android::widget::ListAdapter >
+	>(get_jobject());
 }
 
 

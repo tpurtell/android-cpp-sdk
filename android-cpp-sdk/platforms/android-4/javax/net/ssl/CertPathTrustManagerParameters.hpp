@@ -11,9 +11,9 @@
 #define J2CPP_JAVAX_NET_SSL_CERTPATHTRUSTMANAGERPARAMETERS_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -82,8 +82,8 @@ javax::net::ssl::CertPathTrustManagerParameters::CertPathTrustManagerParameters(
 	call_new_object<
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< java::security::cert::CertPathParameters > javax::net::ssl::CertPathT
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME,
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::cert::CertPathParameters > >
-	(get_jobject());
+		local_ref< java::security::cert::CertPathParameters >
+	>(get_jobject());
 }
 
 

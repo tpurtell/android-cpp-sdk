@@ -85,8 +85,8 @@ local_ref< java::sql::Connection > javax::sql::DataSource::getConnection()
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(0),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::sql::Connection > >
-	(get_jobject());
+		local_ref< java::sql::Connection >
+	>(get_jobject());
 }
 
 local_ref< java::sql::Connection > javax::sql::DataSource::getConnection(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -95,8 +95,8 @@ local_ref< java::sql::Connection > javax::sql::DataSource::getConnection(local_r
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(1),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::sql::Connection > >
-	(get_jobject(), a0, a1);
+		local_ref< java::sql::Connection >
+	>(get_jobject(), a0, a1);
 }
 
 jint javax::sql::DataSource::getLoginTimeout()
@@ -105,8 +105,8 @@ jint javax::sql::DataSource::getLoginTimeout()
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(2),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::PrintWriter > javax::sql::DataSource::getLogWriter()
@@ -115,8 +115,8 @@ local_ref< java::io::PrintWriter > javax::sql::DataSource::getLogWriter()
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(3),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::PrintWriter > >
-	(get_jobject());
+		local_ref< java::io::PrintWriter >
+	>(get_jobject());
 }
 
 void javax::sql::DataSource::setLoginTimeout(jint a0)
@@ -125,8 +125,8 @@ void javax::sql::DataSource::setLoginTimeout(jint a0)
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(4),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::DataSource::setLogWriter(local_ref< java::io::PrintWriter > const &a0)
@@ -135,8 +135,8 @@ void javax::sql::DataSource::setLogWriter(local_ref< java::io::PrintWriter > con
 		javax::sql::DataSource::J2CPP_CLASS_NAME,
 		javax::sql::DataSource::J2CPP_METHOD_NAME(5),
 		javax::sql::DataSource::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

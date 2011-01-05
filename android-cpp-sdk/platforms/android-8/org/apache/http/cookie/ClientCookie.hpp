@@ -51,8 +51,8 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::cookie::Cookie>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getAttribute(local_ref< java::lang::String >  const&);
@@ -88,14 +88,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::cookie::ClientCookie::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::cookie::ClientCookie::operator local_ref<org::apache::http::cookie::Cookie>() const
 {
 	return local_ref<org::apache::http::cookie::Cookie>(get_jobject());
+}
+
+org::apache::http::cookie::ClientCookie::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::cookie::ClientCookie::getAttribute(local_ref< java::lang::String > const &a0)
@@ -104,8 +104,8 @@ local_ref< java::lang::String > org::apache::http::cookie::ClientCookie::getAttr
 		org::apache::http::cookie::ClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::ClientCookie::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::ClientCookie::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::cookie::ClientCookie::containsAttribute(local_ref< java::lang::String > const &a0)
@@ -114,8 +114,8 @@ jboolean org::apache::http::cookie::ClientCookie::containsAttribute(local_ref< j
 		org::apache::http::cookie::ClientCookie::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::ClientCookie::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::ClientCookie::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

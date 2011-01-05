@@ -11,13 +11,21 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_ENTITY_URLENCODEDFORMENTITY_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class StringEntity; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class AbstractHttpEntity; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
+#include <org/apache/http/HttpEntity.hpp>
+#include <org/apache/http/entity/AbstractHttpEntity.hpp>
 #include <org/apache/http/entity/StringEntity.hpp>
 
 
@@ -41,7 +49,11 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		{
 		}
 
+		operator local_ref<org::apache::http::HttpEntity>() const;
 		operator local_ref<org::apache::http::entity::StringEntity>() const;
+		operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 
 
 		UrlEncodedFormEntity(local_ref< java::util::List > const&, local_ref< java::lang::String > const&);
@@ -67,9 +79,29 @@ namespace j2cpp {
 
 
 
+org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<org::apache::http::HttpEntity>() const
+{
+	return local_ref<org::apache::http::HttpEntity>(get_jobject());
+}
+
 org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<org::apache::http::entity::StringEntity>() const
 {
 	return local_ref<org::apache::http::entity::StringEntity>(get_jobject());
+}
+
+org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const
+{
+	return local_ref<org::apache::http::entity::AbstractHttpEntity>(get_jobject());
+}
+
+org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
 
@@ -78,8 +110,8 @@ org::apache::http::client::entity::UrlEncodedFormEntity::UrlEncodedFormEntity(lo
 	call_new_object<
 		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME,
 		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -91,8 +123,8 @@ org::apache::http::client::entity::UrlEncodedFormEntity::UrlEncodedFormEntity(lo
 	call_new_object<
 		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME,
 		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(1),
-		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

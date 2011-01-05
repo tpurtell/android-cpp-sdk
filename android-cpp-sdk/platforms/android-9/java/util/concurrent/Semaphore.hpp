@@ -118,8 +118,8 @@ java::util::concurrent::Semaphore::Semaphore(jint a0)
 	call_new_object<
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -131,8 +131,8 @@ java::util::concurrent::Semaphore::Semaphore(jint a0, jboolean a1)
 	call_new_object<
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -144,8 +144,8 @@ void java::util::concurrent::Semaphore::acquire()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::Semaphore::acquireUninterruptibly()
@@ -154,8 +154,8 @@ void java::util::concurrent::Semaphore::acquireUninterruptibly()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::Semaphore::tryAcquire()
@@ -164,8 +164,8 @@ jboolean java::util::concurrent::Semaphore::tryAcquire()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::Semaphore::tryAcquire(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -174,8 +174,8 @@ jboolean java::util::concurrent::Semaphore::tryAcquire(jlong a0, local_ref< java
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::Semaphore::release()
@@ -184,8 +184,8 @@ void java::util::concurrent::Semaphore::release()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::concurrent::Semaphore::acquire(jint a0)
@@ -194,8 +194,8 @@ void java::util::concurrent::Semaphore::acquire(jint a0)
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::concurrent::Semaphore::acquireUninterruptibly(jint a0)
@@ -204,8 +204,8 @@ void java::util::concurrent::Semaphore::acquireUninterruptibly(jint a0)
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::Semaphore::tryAcquire(jint a0)
@@ -214,8 +214,8 @@ jboolean java::util::concurrent::Semaphore::tryAcquire(jint a0)
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::concurrent::Semaphore::tryAcquire(jint a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -224,8 +224,8 @@ jboolean java::util::concurrent::Semaphore::tryAcquire(jint a0, jlong a1, local_
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::concurrent::Semaphore::release(jint a0)
@@ -234,8 +234,8 @@ void java::util::concurrent::Semaphore::release(jint a0)
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::Semaphore::availablePermits()
@@ -244,8 +244,8 @@ jint java::util::concurrent::Semaphore::availablePermits()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::Semaphore::drainPermits()
@@ -254,8 +254,8 @@ jint java::util::concurrent::Semaphore::drainPermits()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -265,8 +265,8 @@ jboolean java::util::concurrent::Semaphore::isFair()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::Semaphore::hasQueuedThreads()
@@ -275,8 +275,8 @@ jboolean java::util::concurrent::Semaphore::hasQueuedThreads()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::concurrent::Semaphore::getQueueLength()
@@ -285,8 +285,8 @@ jint java::util::concurrent::Semaphore::getQueueLength()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -296,8 +296,8 @@ local_ref< java::lang::String > java::util::concurrent::Semaphore::toString()
 		java::util::concurrent::Semaphore::J2CPP_CLASS_NAME,
 		java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -13,9 +13,12 @@
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceView; } } }
 namespace j2cpp { namespace android { namespace view { namespace SurfaceHolder_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace opengl { namespace GLSurfaceView_ { class EGLConfigChooser; } } } }
 namespace j2cpp { namespace android { namespace opengl { namespace GLSurfaceView_ { class Renderer; } } } }
 namespace j2cpp { namespace android { namespace opengl { namespace GLSurfaceView_ { class EGLContextFactory; } } } }
@@ -33,10 +36,13 @@ namespace j2cpp { namespace javax { namespace microedition { namespace khronos {
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/opengl/GLSurfaceView.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/SurfaceHolder.hpp>
 #include <android/view/SurfaceView.hpp>
+#include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <javax/microedition/khronos/egl/EGL10.hpp>
@@ -215,8 +221,12 @@ namespace android { namespace opengl {
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::view::SurfaceView>() const;
 		operator local_ref<android::view::SurfaceHolder_::Callback>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		GLSurfaceView(local_ref< android::content::Context > const&);
@@ -275,8 +285,8 @@ local_ref< javax::microedition::khronos::egl::EGLConfig > android::opengl::GLSur
 		android::opengl::GLSurfaceView_::EGLConfigChooser::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::EGLConfigChooser::J2CPP_METHOD_NAME(0),
 		android::opengl::GLSurfaceView_::EGLConfigChooser::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::microedition::khronos::egl::EGLConfig > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::microedition::khronos::egl::EGLConfig >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -295,8 +305,8 @@ void android::opengl::GLSurfaceView_::Renderer::onSurfaceCreated(local_ref< java
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_NAME(0),
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::opengl::GLSurfaceView_::Renderer::onSurfaceChanged(local_ref< javax::microedition::khronos::opengles::GL10 > const &a0, jint a1, jint a2)
@@ -305,8 +315,8 @@ void android::opengl::GLSurfaceView_::Renderer::onSurfaceChanged(local_ref< java
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_NAME(1),
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::opengl::GLSurfaceView_::Renderer::onDrawFrame(local_ref< javax::microedition::khronos::opengles::GL10 > const &a0)
@@ -315,8 +325,8 @@ void android::opengl::GLSurfaceView_::Renderer::onDrawFrame(local_ref< javax::mi
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_NAME(2),
 		android::opengl::GLSurfaceView_::Renderer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -337,8 +347,8 @@ local_ref< javax::microedition::khronos::egl::EGLContext > android::opengl::GLSu
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_METHOD_NAME(0),
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::microedition::khronos::egl::EGLContext > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< javax::microedition::khronos::egl::EGLContext >
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::opengl::GLSurfaceView_::EGLContextFactory::destroyContext(local_ref< javax::microedition::khronos::egl::EGL10 > const &a0, local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a1, local_ref< javax::microedition::khronos::egl::EGLContext > const &a2)
@@ -347,8 +357,8 @@ void android::opengl::GLSurfaceView_::EGLContextFactory::destroyContext(local_re
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_METHOD_NAME(1),
 		android::opengl::GLSurfaceView_::EGLContextFactory::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -368,8 +378,8 @@ local_ref< javax::microedition::khronos::opengles::GL > android::opengl::GLSurfa
 		android::opengl::GLSurfaceView_::GLWrapper::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::GLWrapper::J2CPP_METHOD_NAME(0),
 		android::opengl::GLSurfaceView_::GLWrapper::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::microedition::khronos::opengles::GL > >
-	(get_jobject(), a0);
+		local_ref< javax::microedition::khronos::opengles::GL >
+	>(get_jobject(), a0);
 }
 
 
@@ -388,8 +398,8 @@ local_ref< javax::microedition::khronos::egl::EGLSurface > android::opengl::GLSu
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_METHOD_NAME(0),
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::microedition::khronos::egl::EGLSurface > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< javax::microedition::khronos::egl::EGLSurface >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::destroySurface(local_ref< javax::microedition::khronos::egl::EGL10 > const &a0, local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a1, local_ref< javax::microedition::khronos::egl::EGLSurface > const &a2)
@@ -398,8 +408,8 @@ void android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::destroySurface(lo
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_METHOD_NAME(1),
 		android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -408,6 +418,16 @@ J2CPP_DEFINE_METHOD(android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory,0,"
 J2CPP_DEFINE_METHOD(android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory,1,"destroySurface","(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)V")
 
 
+
+android::opengl::GLSurfaceView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::opengl::GLSurfaceView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
 
 android::opengl::GLSurfaceView::operator local_ref<android::view::SurfaceView>() const
 {
@@ -419,14 +439,24 @@ android::opengl::GLSurfaceView::operator local_ref<android::view::SurfaceHolder_
 	return local_ref<android::view::SurfaceHolder_::Callback>(get_jobject());
 }
 
+android::opengl::GLSurfaceView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::opengl::GLSurfaceView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::opengl::GLSurfaceView::GLSurfaceView(local_ref< android::content::Context > const &a0)
 : object<android::opengl::GLSurfaceView>(
 	call_new_object<
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(0),
-		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -438,8 +468,8 @@ android::opengl::GLSurfaceView::GLSurfaceView(local_ref< android::content::Conte
 	call_new_object<
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(1),
-		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -451,8 +481,8 @@ void android::opengl::GLSurfaceView::setGLWrapper(local_ref< android::opengl::GL
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(2),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setDebugFlags(jint a0)
@@ -461,8 +491,8 @@ void android::opengl::GLSurfaceView::setDebugFlags(jint a0)
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(3),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::opengl::GLSurfaceView::getDebugFlags()
@@ -471,8 +501,8 @@ jint android::opengl::GLSurfaceView::getDebugFlags()
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(4),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::opengl::GLSurfaceView::setRenderer(local_ref< android::opengl::GLSurfaceView_::Renderer > const &a0)
@@ -481,8 +511,8 @@ void android::opengl::GLSurfaceView::setRenderer(local_ref< android::opengl::GLS
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(5),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setEGLContextFactory(local_ref< android::opengl::GLSurfaceView_::EGLContextFactory > const &a0)
@@ -491,8 +521,8 @@ void android::opengl::GLSurfaceView::setEGLContextFactory(local_ref< android::op
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(6),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setEGLWindowSurfaceFactory(local_ref< android::opengl::GLSurfaceView_::EGLWindowSurfaceFactory > const &a0)
@@ -501,8 +531,8 @@ void android::opengl::GLSurfaceView::setEGLWindowSurfaceFactory(local_ref< andro
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(7),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setEGLConfigChooser(local_ref< android::opengl::GLSurfaceView_::EGLConfigChooser > const &a0)
@@ -511,8 +541,8 @@ void android::opengl::GLSurfaceView::setEGLConfigChooser(local_ref< android::ope
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(8),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setEGLConfigChooser(jboolean a0)
@@ -521,8 +551,8 @@ void android::opengl::GLSurfaceView::setEGLConfigChooser(jboolean a0)
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(9),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setEGLConfigChooser(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -531,8 +561,8 @@ void android::opengl::GLSurfaceView::setEGLConfigChooser(jint a0, jint a1, jint 
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(10),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::opengl::GLSurfaceView::setEGLContextClientVersion(jint a0)
@@ -541,8 +571,8 @@ void android::opengl::GLSurfaceView::setEGLContextClientVersion(jint a0)
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(11),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::setRenderMode(jint a0)
@@ -551,8 +581,8 @@ void android::opengl::GLSurfaceView::setRenderMode(jint a0)
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(12),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::opengl::GLSurfaceView::getRenderMode()
@@ -561,8 +591,8 @@ jint android::opengl::GLSurfaceView::getRenderMode()
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(13),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::opengl::GLSurfaceView::requestRender()
@@ -571,8 +601,8 @@ void android::opengl::GLSurfaceView::requestRender()
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(14),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::opengl::GLSurfaceView::surfaceCreated(local_ref< android::view::SurfaceHolder > const &a0)
@@ -581,8 +611,8 @@ void android::opengl::GLSurfaceView::surfaceCreated(local_ref< android::view::Su
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(15),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::surfaceDestroyed(local_ref< android::view::SurfaceHolder > const &a0)
@@ -591,8 +621,8 @@ void android::opengl::GLSurfaceView::surfaceDestroyed(local_ref< android::view::
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(16),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::opengl::GLSurfaceView::surfaceChanged(local_ref< android::view::SurfaceHolder > const &a0, jint a1, jint a2, jint a3)
@@ -601,8 +631,8 @@ void android::opengl::GLSurfaceView::surfaceChanged(local_ref< android::view::Su
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(17),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::opengl::GLSurfaceView::onPause()
@@ -611,8 +641,8 @@ void android::opengl::GLSurfaceView::onPause()
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(18),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::opengl::GLSurfaceView::onResume()
@@ -621,8 +651,8 @@ void android::opengl::GLSurfaceView::onResume()
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(19),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::opengl::GLSurfaceView::queueEvent(local_ref< java::lang::Runnable > const &a0)
@@ -631,8 +661,8 @@ void android::opengl::GLSurfaceView::queueEvent(local_ref< java::lang::Runnable 
 		android::opengl::GLSurfaceView::J2CPP_CLASS_NAME,
 		android::opengl::GLSurfaceView::J2CPP_METHOD_NAME(20),
 		android::opengl::GLSurfaceView::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

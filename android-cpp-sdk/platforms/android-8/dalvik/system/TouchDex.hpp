@@ -75,8 +75,8 @@ dalvik::system::TouchDex::TouchDex()
 	call_new_object<
 		dalvik::system::TouchDex::J2CPP_CLASS_NAME,
 		dalvik::system::TouchDex::J2CPP_METHOD_NAME(0),
-		dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +88,8 @@ jint dalvik::system::TouchDex::start(local_ref< java::lang::String > const &a0)
 		dalvik::system::TouchDex::J2CPP_CLASS_NAME,
 		dalvik::system::TouchDex::J2CPP_METHOD_NAME(1),
 		dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void dalvik::system::TouchDex::main(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -98,8 +98,8 @@ void dalvik::system::TouchDex::main(local_ref< array< local_ref< java::lang::Str
 		dalvik::system::TouchDex::J2CPP_CLASS_NAME,
 		dalvik::system::TouchDex::J2CPP_METHOD_NAME(2),
 		dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

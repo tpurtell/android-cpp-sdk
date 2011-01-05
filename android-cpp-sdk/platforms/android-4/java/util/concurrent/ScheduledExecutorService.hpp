@@ -11,6 +11,7 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_SCHEDULEDEXECUTORSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Executor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Executor.hpp>
 #include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/ScheduledFuture.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
@@ -49,8 +51,9 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::Executor>() const;
 		operator local_ref<java::util::concurrent::ExecutorService>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::util::concurrent::ScheduledFuture > schedule(local_ref< java::lang::Runnable >  const&, jlong, local_ref< java::util::concurrent::TimeUnit >  const&);
@@ -76,14 +79,19 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::ScheduledExecutorService::operator local_ref<java::lang::Object>() const
+java::util::concurrent::ScheduledExecutorService::operator local_ref<java::util::concurrent::Executor>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<java::util::concurrent::Executor>(get_jobject());
 }
 
 java::util::concurrent::ScheduledExecutorService::operator local_ref<java::util::concurrent::ExecutorService>() const
 {
 	return local_ref<java::util::concurrent::ExecutorService>(get_jobject());
+}
+
+java::util::concurrent::ScheduledExecutorService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledExecutorService::schedule(local_ref< java::lang::Runnable > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -92,8 +100,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledExecutorService::schedule(local_ref< java::util::concurrent::Callable > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -102,8 +110,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledExecutorService::scheduleAtFixedRate(local_ref< java::lang::Runnable > const &a0, jlong a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -112,8 +120,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledExecutorService::scheduleWithFixedDelay(local_ref< java::lang::Runnable > const &a0, jlong a1, jlong a2, local_ref< java::util::concurrent::TimeUnit > const &a3)
@@ -122,8 +130,8 @@ local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::Sch
 		java::util::concurrent::ScheduledExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::ScheduledExecutorService::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::concurrent::ScheduledFuture > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ScheduledFuture >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

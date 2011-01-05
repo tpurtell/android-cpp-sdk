@@ -11,16 +11,22 @@
 #define J2CPP_JAVA_IO_STRINGWRITER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/Writer.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 
@@ -62,7 +68,11 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::io::Flushable>() const;
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::io::Writer>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Appendable>() const;
 
 
 		StringWriter();
@@ -102,9 +112,29 @@ namespace j2cpp {
 
 
 
+java::io::StringWriter::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
+java::io::StringWriter::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::io::StringWriter::operator local_ref<java::io::Writer>() const
 {
 	return local_ref<java::io::Writer>(get_jobject());
+}
+
+java::io::StringWriter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::StringWriter::operator local_ref<java::lang::Appendable>() const
+{
+	return local_ref<java::lang::Appendable>(get_jobject());
 }
 
 
@@ -113,8 +143,8 @@ java::io::StringWriter::StringWriter()
 	call_new_object<
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(0),
-		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +156,8 @@ java::io::StringWriter::StringWriter(jint a0)
 	call_new_object<
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(1),
-		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -139,8 +169,8 @@ void java::io::StringWriter::close()
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(2),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::StringWriter::flush()
@@ -149,8 +179,8 @@ void java::io::StringWriter::flush()
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(3),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::StringBuffer > java::io::StringWriter::getBuffer()
@@ -159,8 +189,8 @@ local_ref< java::lang::StringBuffer > java::io::StringWriter::getBuffer()
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(4),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject());
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::io::StringWriter::toString()
@@ -169,8 +199,8 @@ local_ref< java::lang::String > java::io::StringWriter::toString()
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(5),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::io::StringWriter::write(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -179,8 +209,8 @@ void java::io::StringWriter::write(local_ref< array<jchar,1> > const &a0, jint a
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(6),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::StringWriter::write(jint a0)
@@ -189,8 +219,8 @@ void java::io::StringWriter::write(jint a0)
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(7),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StringWriter::write(local_ref< java::lang::String > const &a0)
@@ -199,8 +229,8 @@ void java::io::StringWriter::write(local_ref< java::lang::String > const &a0)
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(8),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::StringWriter::write(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -209,8 +239,8 @@ void java::io::StringWriter::write(local_ref< java::lang::String > const &a0, ji
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(9),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::io::StringWriter > java::io::StringWriter::append(jchar a0)
@@ -219,8 +249,8 @@ local_ref< java::io::StringWriter > java::io::StringWriter::append(jchar a0)
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(10),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::io::StringWriter > >
-	(get_jobject(), a0);
+		local_ref< java::io::StringWriter >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::StringWriter > java::io::StringWriter::append(local_ref< java::lang::CharSequence > const &a0)
@@ -229,8 +259,8 @@ local_ref< java::io::StringWriter > java::io::StringWriter::append(local_ref< ja
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(11),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::io::StringWriter > >
-	(get_jobject(), a0);
+		local_ref< java::io::StringWriter >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::StringWriter > java::io::StringWriter::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -239,8 +269,8 @@ local_ref< java::io::StringWriter > java::io::StringWriter::append(local_ref< ja
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(12),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::io::StringWriter > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::io::StringWriter >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::io::Writer > java::io::StringWriter::append_1(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -249,8 +279,8 @@ local_ref< java::io::Writer > java::io::StringWriter::append_1(local_ref< java::
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(13),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::io::Writer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::io::Writer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::io::Writer > java::io::StringWriter::append_1(local_ref< java::lang::CharSequence > const &a0)
@@ -259,8 +289,8 @@ local_ref< java::io::Writer > java::io::StringWriter::append_1(local_ref< java::
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(14),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::io::Writer > >
-	(get_jobject(), a0);
+		local_ref< java::io::Writer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Writer > java::io::StringWriter::append_1(jchar a0)
@@ -269,8 +299,8 @@ local_ref< java::io::Writer > java::io::StringWriter::append_1(jchar a0)
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(15),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::io::Writer > >
-	(get_jobject(), a0);
+		local_ref< java::io::Writer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::io::StringWriter::append_2(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -279,8 +309,8 @@ local_ref< java::lang::Appendable > java::io::StringWriter::append_2(local_ref< 
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(16),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Appendable > java::io::StringWriter::append_2(local_ref< java::lang::CharSequence > const &a0)
@@ -289,8 +319,8 @@ local_ref< java::lang::Appendable > java::io::StringWriter::append_2(local_ref< 
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(17),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Appendable > java::io::StringWriter::append_2(jchar a0)
@@ -299,8 +329,8 @@ local_ref< java::lang::Appendable > java::io::StringWriter::append_2(jchar a0)
 		java::io::StringWriter::J2CPP_CLASS_NAME,
 		java::io::StringWriter::J2CPP_METHOD_NAME(18),
 		java::io::StringWriter::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Appendable >
+	>(get_jobject(), a0);
 }
 
 

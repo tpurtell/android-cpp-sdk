@@ -77,8 +77,8 @@ jint javax::sql::CommonDataSource::getLoginTimeout()
 		javax::sql::CommonDataSource::J2CPP_CLASS_NAME,
 		javax::sql::CommonDataSource::J2CPP_METHOD_NAME(0),
 		javax::sql::CommonDataSource::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::PrintWriter > javax::sql::CommonDataSource::getLogWriter()
@@ -87,8 +87,8 @@ local_ref< java::io::PrintWriter > javax::sql::CommonDataSource::getLogWriter()
 		javax::sql::CommonDataSource::J2CPP_CLASS_NAME,
 		javax::sql::CommonDataSource::J2CPP_METHOD_NAME(1),
 		javax::sql::CommonDataSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::PrintWriter > >
-	(get_jobject());
+		local_ref< java::io::PrintWriter >
+	>(get_jobject());
 }
 
 void javax::sql::CommonDataSource::setLoginTimeout(jint a0)
@@ -97,8 +97,8 @@ void javax::sql::CommonDataSource::setLoginTimeout(jint a0)
 		javax::sql::CommonDataSource::J2CPP_CLASS_NAME,
 		javax::sql::CommonDataSource::J2CPP_METHOD_NAME(2),
 		javax::sql::CommonDataSource::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::CommonDataSource::setLogWriter(local_ref< java::io::PrintWriter > const &a0)
@@ -107,8 +107,8 @@ void javax::sql::CommonDataSource::setLogWriter(local_ref< java::io::PrintWriter
 		javax::sql::CommonDataSource::J2CPP_CLASS_NAME,
 		javax::sql::CommonDataSource::J2CPP_METHOD_NAME(3),
 		javax::sql::CommonDataSource::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

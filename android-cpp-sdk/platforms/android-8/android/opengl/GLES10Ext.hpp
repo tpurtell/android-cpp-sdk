@@ -75,8 +75,8 @@ android::opengl::GLES10Ext::GLES10Ext()
 	call_new_object<
 		android::opengl::GLES10Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES10Ext::J2CPP_METHOD_NAME(0),
-		android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +88,8 @@ jint android::opengl::GLES10Ext::glQueryMatrixxOES(local_ref< array<jint,1> > co
 		android::opengl::GLES10Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES10Ext::J2CPP_METHOD_NAME(1),
 		android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0, a1, a2, a3);
+		jint
+	>(a0, a1, a2, a3);
 }
 
 jint android::opengl::GLES10Ext::glQueryMatrixxOES(local_ref< java::nio::IntBuffer > const &a0, local_ref< java::nio::IntBuffer > const &a1)
@@ -98,8 +98,8 @@ jint android::opengl::GLES10Ext::glQueryMatrixxOES(local_ref< java::nio::IntBuff
 		android::opengl::GLES10Ext::J2CPP_CLASS_NAME,
 		android::opengl::GLES10Ext::J2CPP_METHOD_NAME(2),
 		android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 

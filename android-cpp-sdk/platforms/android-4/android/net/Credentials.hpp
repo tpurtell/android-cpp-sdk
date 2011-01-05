@@ -75,8 +75,8 @@ android::net::Credentials::Credentials(jint a0, jint a1, jint a2)
 	call_new_object<
 		android::net::Credentials::J2CPP_CLASS_NAME,
 		android::net::Credentials::J2CPP_METHOD_NAME(0),
-		android::net::Credentials::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::net::Credentials::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -88,8 +88,8 @@ jint android::net::Credentials::getPid()
 		android::net::Credentials::J2CPP_CLASS_NAME,
 		android::net::Credentials::J2CPP_METHOD_NAME(1),
 		android::net::Credentials::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::net::Credentials::getUid()
@@ -98,8 +98,8 @@ jint android::net::Credentials::getUid()
 		android::net::Credentials::J2CPP_CLASS_NAME,
 		android::net::Credentials::J2CPP_METHOD_NAME(2),
 		android::net::Credentials::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::net::Credentials::getGid()
@@ -108,8 +108,8 @@ jint android::net::Credentials::getGid()
 		android::net::Credentials::J2CPP_CLASS_NAME,
 		android::net::Credentials::J2CPP_METHOD_NAME(3),
 		android::net::Credentials::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

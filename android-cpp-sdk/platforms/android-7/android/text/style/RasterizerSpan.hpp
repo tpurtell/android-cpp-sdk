@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_TEXT_STYLE_RASTERIZERSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rasterizer; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace text { namespace style { class U
 #include <android/text/TextPaint.hpp>
 #include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/UpdateAppearance.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -44,6 +46,7 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::CharacterStyle>() const;
 		operator local_ref<android::text::style::UpdateAppearance>() const;
 
@@ -70,6 +73,11 @@ namespace j2cpp {
 
 
 
+android::text::style::RasterizerSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::text::style::RasterizerSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
 	return local_ref<android::text::style::CharacterStyle>(get_jobject());
@@ -86,8 +94,8 @@ android::text::style::RasterizerSpan::RasterizerSpan(local_ref< android::graphic
 	call_new_object<
 		android::text::style::RasterizerSpan::J2CPP_CLASS_NAME,
 		android::text::style::RasterizerSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::RasterizerSpan::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::RasterizerSpan::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -99,8 +107,8 @@ local_ref< android::graphics::Rasterizer > android::text::style::RasterizerSpan:
 		android::text::style::RasterizerSpan::J2CPP_CLASS_NAME,
 		android::text::style::RasterizerSpan::J2CPP_METHOD_NAME(1),
 		android::text::style::RasterizerSpan::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Rasterizer > >
-	(get_jobject());
+		local_ref< android::graphics::Rasterizer >
+	>(get_jobject());
 }
 
 void android::text::style::RasterizerSpan::updateDrawState(local_ref< android::text::TextPaint > const &a0)
@@ -109,8 +117,8 @@ void android::text::style::RasterizerSpan::updateDrawState(local_ref< android::t
 		android::text::style::RasterizerSpan::J2CPP_CLASS_NAME,
 		android::text::style::RasterizerSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::RasterizerSpan::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

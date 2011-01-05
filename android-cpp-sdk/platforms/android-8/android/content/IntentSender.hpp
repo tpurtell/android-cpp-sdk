@@ -23,6 +23,8 @@ namespace j2cpp { namespace android { namespace util { class AndroidException; }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <android/content/Context.hpp>
@@ -33,9 +35,11 @@ namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AndroidException.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -63,6 +67,10 @@ namespace android { namespace content {
 			}
 
 			operator local_ref<android::util::AndroidException>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Exception>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			SendIntentException();
@@ -120,8 +128,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void sendIntent(local_ref< android::content::Context >  const&, jint, local_ref< android::content::Intent >  const&, local_ref< android::content::IntentSender_::OnFinished >  const&, local_ref< android::os::Handler >  const&);
@@ -158,14 +166,34 @@ android::content::IntentSender_::SendIntentException::operator local_ref<android
 	return local_ref<android::util::AndroidException>(get_jobject());
 }
 
+android::content::IntentSender_::SendIntentException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::content::IntentSender_::SendIntentException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+android::content::IntentSender_::SendIntentException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::content::IntentSender_::SendIntentException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 android::content::IntentSender_::SendIntentException::SendIntentException()
 : object<android::content::IntentSender_::SendIntentException>(
 	call_new_object<
 		android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME,
 		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(0),
-		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -177,8 +205,8 @@ android::content::IntentSender_::SendIntentException::SendIntentException(local_
 	call_new_object<
 		android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME,
 		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(1),
-		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -190,8 +218,8 @@ android::content::IntentSender_::SendIntentException::SendIntentException(local_
 	call_new_object<
 		android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME,
 		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(2),
-		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -215,8 +243,8 @@ void android::content::IntentSender_::OnFinished::onSendFinished(local_ref< andr
 		android::content::IntentSender_::OnFinished::J2CPP_CLASS_NAME,
 		android::content::IntentSender_::OnFinished::J2CPP_METHOD_NAME(0),
 		android::content::IntentSender_::OnFinished::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 
@@ -225,14 +253,14 @@ J2CPP_DEFINE_METHOD(android::content::IntentSender_::OnFinished,0,"onSendFinishe
 
 
 
-android::content::IntentSender::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::IntentSender::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::IntentSender::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -242,8 +270,8 @@ void android::content::IntentSender::sendIntent(local_ref< android::content::Con
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(1),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::content::IntentSender::equals(local_ref< java::lang::Object > const &a0)
@@ -252,8 +280,8 @@ jboolean android::content::IntentSender::equals(local_ref< java::lang::Object > 
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(2),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentSender::hashCode()
@@ -262,8 +290,8 @@ jint android::content::IntentSender::hashCode()
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(3),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentSender::toString()
@@ -272,8 +300,8 @@ local_ref< java::lang::String > android::content::IntentSender::toString()
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(4),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::IntentSender::describeContents()
@@ -282,8 +310,8 @@ jint android::content::IntentSender::describeContents()
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(5),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::IntentSender::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -292,8 +320,8 @@ void android::content::IntentSender::writeToParcel(local_ref< android::os::Parce
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(6),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::IntentSender::writeIntentSenderOrNullToParcel(local_ref< android::content::IntentSender > const &a0, local_ref< android::os::Parcel > const &a1)
@@ -302,8 +330,8 @@ void android::content::IntentSender::writeIntentSenderOrNullToParcel(local_ref< 
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(7),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::content::IntentSender > android::content::IntentSender::readIntentSenderOrNullFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -312,8 +340,8 @@ local_ref< android::content::IntentSender > android::content::IntentSender::read
 		android::content::IntentSender::J2CPP_CLASS_NAME,
 		android::content::IntentSender::J2CPP_METHOD_NAME(8),
 		android::content::IntentSender::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::content::IntentSender > >
-	(a0);
+		local_ref< android::content::IntentSender >
+	>(a0);
 }
 
 

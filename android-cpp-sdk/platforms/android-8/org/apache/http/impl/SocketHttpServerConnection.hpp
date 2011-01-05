@@ -12,12 +12,18 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class AbstractHttpServerConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpServerConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpInetConnection.hpp>
+#include <org/apache/http/HttpServerConnection.hpp>
 #include <org/apache/http/impl/AbstractHttpServerConnection.hpp>
 
 
@@ -56,7 +62,10 @@ namespace org { namespace apache { namespace http { namespace impl {
 		}
 
 		operator local_ref<org::apache::http::impl::AbstractHttpServerConnection>() const;
+		operator local_ref<org::apache::http::HttpServerConnection>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
 		operator local_ref<org::apache::http::HttpInetConnection>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SocketHttpServerConnection();
@@ -94,9 +103,24 @@ org::apache::http::impl::SocketHttpServerConnection::operator local_ref<org::apa
 	return local_ref<org::apache::http::impl::AbstractHttpServerConnection>(get_jobject());
 }
 
+org::apache::http::impl::SocketHttpServerConnection::operator local_ref<org::apache::http::HttpServerConnection>() const
+{
+	return local_ref<org::apache::http::HttpServerConnection>(get_jobject());
+}
+
+org::apache::http::impl::SocketHttpServerConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
 org::apache::http::impl::SocketHttpServerConnection::operator local_ref<org::apache::http::HttpInetConnection>() const
 {
 	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
+}
+
+org::apache::http::impl::SocketHttpServerConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -105,8 +129,8 @@ org::apache::http::impl::SocketHttpServerConnection::SocketHttpServerConnection(
 	call_new_object<
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -124,8 +148,8 @@ jboolean org::apache::http::impl::SocketHttpServerConnection::isOpen()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::impl::SocketHttpServerConnection::getLocalAddress()
@@ -134,8 +158,8 @@ local_ref< java::net::InetAddress > org::apache::http::impl::SocketHttpServerCon
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::SocketHttpServerConnection::getLocalPort()
@@ -144,8 +168,8 @@ jint org::apache::http::impl::SocketHttpServerConnection::getLocalPort()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > org::apache::http::impl::SocketHttpServerConnection::getRemoteAddress()
@@ -154,8 +178,8 @@ local_ref< java::net::InetAddress > org::apache::http::impl::SocketHttpServerCon
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 jint org::apache::http::impl::SocketHttpServerConnection::getRemotePort()
@@ -164,8 +188,8 @@ jint org::apache::http::impl::SocketHttpServerConnection::getRemotePort()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::impl::SocketHttpServerConnection::setSocketTimeout(jint a0)
@@ -174,8 +198,8 @@ void org::apache::http::impl::SocketHttpServerConnection::setSocketTimeout(jint 
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(12),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::impl::SocketHttpServerConnection::getSocketTimeout()
@@ -184,8 +208,8 @@ jint org::apache::http::impl::SocketHttpServerConnection::getSocketTimeout()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(13),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::apache::http::impl::SocketHttpServerConnection::shutdown()
@@ -194,8 +218,8 @@ void org::apache::http::impl::SocketHttpServerConnection::shutdown()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(14),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::SocketHttpServerConnection::close()
@@ -204,8 +228,8 @@ void org::apache::http::impl::SocketHttpServerConnection::close()
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_NAME(15),
 		org::apache::http::impl::SocketHttpServerConnection::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -11,13 +11,17 @@
 #define J2CPP_JAVA_UTIL_ZIP_CHECKEDINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class Checksum; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/zip/Checksum.hpp>
 
 
@@ -44,6 +48,9 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::InputStream>() const;
 		operator local_ref<java::io::FilterInputStream>() const;
 
 
@@ -71,6 +78,21 @@ namespace j2cpp {
 
 
 
+java::util::zip::CheckedInputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::zip::CheckedInputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::util::zip::CheckedInputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
 java::util::zip::CheckedInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
 	return local_ref<java::io::FilterInputStream>(get_jobject());
@@ -82,8 +104,8 @@ java::util::zip::CheckedInputStream::CheckedInputStream(local_ref< java::io::Inp
 	call_new_object<
 		java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(0),
-		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -95,8 +117,8 @@ jint java::util::zip::CheckedInputStream::read()
 		java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(1),
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::CheckedInputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -105,8 +127,8 @@ jint java::util::zip::CheckedInputStream::read(local_ref< array<jbyte,1> > const
 		java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(2),
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::zip::Checksum > java::util::zip::CheckedInputStream::getChecksum()
@@ -115,8 +137,8 @@ local_ref< java::util::zip::Checksum > java::util::zip::CheckedInputStream::getC
 		java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(3),
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::zip::Checksum > >
-	(get_jobject());
+		local_ref< java::util::zip::Checksum >
+	>(get_jobject());
 }
 
 jlong java::util::zip::CheckedInputStream::skip(jlong a0)
@@ -125,8 +147,8 @@ jlong java::util::zip::CheckedInputStream::skip(jlong a0)
 		java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME,
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(4),
 		java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

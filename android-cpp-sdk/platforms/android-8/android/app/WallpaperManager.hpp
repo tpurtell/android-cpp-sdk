@@ -126,8 +126,8 @@ local_ref< android::app::WallpaperManager > android::app::WallpaperManager::getI
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(1),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::WallpaperManager > >
-	(a0);
+		local_ref< android::app::WallpaperManager >
+	>(a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManager::getDrawable()
@@ -136,8 +136,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManage
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(2),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManager::peekDrawable()
@@ -146,8 +146,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManage
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(3),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManager::getFastDrawable()
@@ -156,8 +156,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManage
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(4),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManager::peekFastDrawable()
@@ -166,8 +166,8 @@ local_ref< android::graphics::drawable::Drawable > android::app::WallpaperManage
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(5),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< android::app::WallpaperInfo > android::app::WallpaperManager::getWallpaperInfo()
@@ -176,8 +176,8 @@ local_ref< android::app::WallpaperInfo > android::app::WallpaperManager::getWall
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(6),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::app::WallpaperInfo > >
-	(get_jobject());
+		local_ref< android::app::WallpaperInfo >
+	>(get_jobject());
 }
 
 void android::app::WallpaperManager::setResource(jint a0)
@@ -186,8 +186,8 @@ void android::app::WallpaperManager::setResource(jint a0)
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(7),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::WallpaperManager::setBitmap(local_ref< android::graphics::Bitmap > const &a0)
@@ -196,8 +196,8 @@ void android::app::WallpaperManager::setBitmap(local_ref< android::graphics::Bit
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(8),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::WallpaperManager::setStream(local_ref< java::io::InputStream > const &a0)
@@ -206,8 +206,8 @@ void android::app::WallpaperManager::setStream(local_ref< java::io::InputStream 
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(9),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::app::WallpaperManager::getDesiredMinimumWidth()
@@ -216,8 +216,8 @@ jint android::app::WallpaperManager::getDesiredMinimumWidth()
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(10),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::app::WallpaperManager::getDesiredMinimumHeight()
@@ -226,8 +226,8 @@ jint android::app::WallpaperManager::getDesiredMinimumHeight()
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(11),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::WallpaperManager::suggestDesiredDimensions(jint a0, jint a1)
@@ -236,8 +236,8 @@ void android::app::WallpaperManager::suggestDesiredDimensions(jint a0, jint a1)
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(12),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::WallpaperManager::setWallpaperOffsets(local_ref< android::os::IBinder > const &a0, jfloat a1, jfloat a2)
@@ -246,8 +246,8 @@ void android::app::WallpaperManager::setWallpaperOffsets(local_ref< android::os:
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(13),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::WallpaperManager::setWallpaperOffsetSteps(jfloat a0, jfloat a1)
@@ -256,8 +256,8 @@ void android::app::WallpaperManager::setWallpaperOffsetSteps(jfloat a0, jfloat a
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(14),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::WallpaperManager::sendWallpaperCommand(local_ref< android::os::IBinder > const &a0, local_ref< java::lang::String > const &a1, jint a2, jint a3, jint a4, local_ref< android::os::Bundle > const &a5)
@@ -266,8 +266,8 @@ void android::app::WallpaperManager::sendWallpaperCommand(local_ref< android::os
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(15),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::app::WallpaperManager::clearWallpaperOffsets(local_ref< android::os::IBinder > const &a0)
@@ -276,8 +276,8 @@ void android::app::WallpaperManager::clearWallpaperOffsets(local_ref< android::o
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(16),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::WallpaperManager::clear()
@@ -286,8 +286,8 @@ void android::app::WallpaperManager::clear()
 		android::app::WallpaperManager::J2CPP_CLASS_NAME,
 		android::app::WallpaperManager::J2CPP_METHOD_NAME(17),
 		android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

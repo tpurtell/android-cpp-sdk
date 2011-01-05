@@ -80,8 +80,8 @@ void org::apache::http::client::methods::AbortableHttpRequest::setConnectionRequ
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::methods::AbortableHttpRequest::setReleaseTrigger(local_ref< org::apache::http::conn::ConnectionReleaseTrigger > const &a0)
@@ -90,8 +90,8 @@ void org::apache::http::client::methods::AbortableHttpRequest::setReleaseTrigger
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::client::methods::AbortableHttpRequest::abort()
@@ -100,8 +100,8 @@ void org::apache::http::client::methods::AbortableHttpRequest::abort()
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::methods::AbortableHttpRequest::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

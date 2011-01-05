@@ -130,6 +130,7 @@ namespace android { namespace media { namespace audiofx {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::media::audiofx::AudioEffect>() const;
 
 
@@ -190,8 +191,8 @@ android::media::audiofx::Equalizer_::Settings::Settings()
 	call_new_object<
 		android::media::audiofx::Equalizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , curPreset(get_jobject())
 , numBands(get_jobject())
@@ -206,8 +207,8 @@ android::media::audiofx::Equalizer_::Settings::Settings(local_ref< java::lang::S
 	call_new_object<
 		android::media::audiofx::Equalizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , curPreset(get_jobject())
 , numBands(get_jobject())
@@ -222,8 +223,8 @@ local_ref< java::lang::String > android::media::audiofx::Equalizer_::Settings::t
 		android::media::audiofx::Equalizer_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::Equalizer_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -248,8 +249,8 @@ void android::media::audiofx::Equalizer_::OnParameterChangeListener::onParameter
 		android::media::audiofx::Equalizer_::OnParameterChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer_::OnParameterChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::Equalizer_::OnParameterChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 
@@ -257,6 +258,11 @@ J2CPP_DEFINE_CLASS(android::media::audiofx::Equalizer_::OnParameterChangeListene
 J2CPP_DEFINE_METHOD(android::media::audiofx::Equalizer_::OnParameterChangeListener,0,"onParameterChange","(Landroid/media/audiofx/Equalizer;IIII)V")
 
 
+
+android::media::audiofx::Equalizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::media::audiofx::Equalizer::operator local_ref<android::media::audiofx::AudioEffect>() const
 {
@@ -269,8 +275,8 @@ android::media::audiofx::Equalizer::Equalizer(jint a0, jint a1)
 	call_new_object<
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -282,8 +288,8 @@ jshort android::media::audiofx::Equalizer::getNumberOfBands()
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(1), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< array<jshort,1> > android::media::audiofx::Equalizer::getBandLevelRange()
@@ -292,8 +298,8 @@ local_ref< array<jshort,1> > android::media::audiofx::Equalizer::getBandLevelRan
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jshort,1> > >
-	(get_jobject());
+		local_ref< array<jshort,1> >
+	>(get_jobject());
 }
 
 void android::media::audiofx::Equalizer::setBandLevel(jshort a0, jshort a1)
@@ -302,8 +308,8 @@ void android::media::audiofx::Equalizer::setBandLevel(jshort a0, jshort a1)
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jshort android::media::audiofx::Equalizer::getBandLevel(jshort a0)
@@ -312,8 +318,8 @@ jshort android::media::audiofx::Equalizer::getBandLevel(jshort a0)
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(4), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint android::media::audiofx::Equalizer::getCenterFreq(jshort a0)
@@ -322,8 +328,8 @@ jint android::media::audiofx::Equalizer::getCenterFreq(jshort a0)
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jint,1> > android::media::audiofx::Equalizer::getBandFreqRange(jshort a0)
@@ -332,8 +338,8 @@ local_ref< array<jint,1> > android::media::audiofx::Equalizer::getBandFreqRange(
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array<jint,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jint,1> >
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::Equalizer::getBand(jint a0)
@@ -342,8 +348,8 @@ jshort android::media::audiofx::Equalizer::getBand(jint a0)
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(7),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(7), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::Equalizer::getCurrentPreset()
@@ -352,8 +358,8 @@ jshort android::media::audiofx::Equalizer::getCurrentPreset()
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(8),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(8), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::Equalizer::usePreset(jshort a0)
@@ -362,8 +368,8 @@ void android::media::audiofx::Equalizer::usePreset(jshort a0)
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(9),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::Equalizer::getNumberOfPresets()
@@ -372,8 +378,8 @@ jshort android::media::audiofx::Equalizer::getNumberOfPresets()
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(10),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(10), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::media::audiofx::Equalizer::getPresetName(jshort a0)
@@ -382,8 +388,8 @@ local_ref< java::lang::String > android::media::audiofx::Equalizer::getPresetNam
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(11),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::media::audiofx::Equalizer::setParameterListener(local_ref< android::media::audiofx::Equalizer_::OnParameterChangeListener > const &a0)
@@ -392,8 +398,8 @@ void android::media::audiofx::Equalizer::setParameterListener(local_ref< android
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(12),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::audiofx::Equalizer_::Settings > android::media::audiofx::Equalizer::getProperties()
@@ -402,8 +408,8 @@ local_ref< android::media::audiofx::Equalizer_::Settings > android::media::audio
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(13),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::media::audiofx::Equalizer_::Settings > >
-	(get_jobject());
+		local_ref< android::media::audiofx::Equalizer_::Settings >
+	>(get_jobject());
 }
 
 void android::media::audiofx::Equalizer::setProperties(local_ref< android::media::audiofx::Equalizer_::Settings > const &a0)
@@ -412,8 +418,8 @@ void android::media::audiofx::Equalizer::setProperties(local_ref< android::media
 		android::media::audiofx::Equalizer::J2CPP_CLASS_NAME,
 		android::media::audiofx::Equalizer::J2CPP_METHOD_NAME(14),
 		android::media::audiofx::Equalizer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

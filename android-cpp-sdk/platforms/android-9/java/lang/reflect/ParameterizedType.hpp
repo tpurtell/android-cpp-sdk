@@ -40,8 +40,8 @@ namespace java { namespace lang { namespace reflect {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::reflect::Type>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > getActualTypeArguments();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-java::lang::reflect::ParameterizedType::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::reflect::ParameterizedType::operator local_ref<java::lang::reflect::Type>() const
 {
 	return local_ref<java::lang::reflect::Type>(get_jobject());
+}
+
+java::lang::reflect::ParameterizedType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::reflect::ParameterizedType::getActualTypeArguments()
@@ -82,8 +82,8 @@ local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::refle
 		java::lang::reflect::ParameterizedType::J2CPP_CLASS_NAME,
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Type >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Type > java::lang::reflect::ParameterizedType::getOwnerType()
@@ -92,8 +92,8 @@ local_ref< java::lang::reflect::Type > java::lang::reflect::ParameterizedType::g
 		java::lang::reflect::ParameterizedType::J2CPP_CLASS_NAME,
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::reflect::Type > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Type >
+	>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Type > java::lang::reflect::ParameterizedType::getRawType()
@@ -102,8 +102,8 @@ local_ref< java::lang::reflect::Type > java::lang::reflect::ParameterizedType::g
 		java::lang::reflect::ParameterizedType::J2CPP_CLASS_NAME,
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_NAME(2),
 		java::lang::reflect::ParameterizedType::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::reflect::Type > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Type >
+	>(get_jobject());
 }
 
 

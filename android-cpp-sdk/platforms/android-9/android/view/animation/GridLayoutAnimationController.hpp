@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Animation; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace view { namespace animation { nam
 #include <android/util/AttributeSet.hpp>
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/LayoutAnimationController.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -54,6 +56,7 @@ namespace android { namespace view { namespace animation {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>() const;
 
 
@@ -104,6 +107,7 @@ namespace android { namespace view { namespace animation {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::animation::LayoutAnimationController>() const;
 
 
@@ -149,6 +153,11 @@ namespace j2cpp {
 
 
 
+android::view::animation::GridLayoutAnimationController_::AnimationParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::animation::GridLayoutAnimationController_::AnimationParameters::operator local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>() const
 {
 	return local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>(get_jobject());
@@ -160,8 +169,8 @@ android::view::animation::GridLayoutAnimationController_::AnimationParameters::A
 	call_new_object<
 		android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0),
-		android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , column(get_jobject())
 , row(get_jobject())
@@ -182,6 +191,11 @@ J2CPP_DEFINE_FIELD(android::view::animation::GridLayoutAnimationController_::Ani
 
 
 
+android::view::animation::GridLayoutAnimationController::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::view::animation::GridLayoutAnimationController::operator local_ref<android::view::animation::LayoutAnimationController>() const
 {
 	return local_ref<android::view::animation::LayoutAnimationController>(get_jobject());
@@ -193,8 +207,8 @@ android::view::animation::GridLayoutAnimationController::GridLayoutAnimationCont
 	call_new_object<
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(0),
-		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -206,8 +220,8 @@ android::view::animation::GridLayoutAnimationController::GridLayoutAnimationCont
 	call_new_object<
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(1),
-		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -219,8 +233,8 @@ android::view::animation::GridLayoutAnimationController::GridLayoutAnimationCont
 	call_new_object<
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(2),
-		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -232,8 +246,8 @@ jfloat android::view::animation::GridLayoutAnimationController::getColumnDelay()
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(3),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::view::animation::GridLayoutAnimationController::setColumnDelay(jfloat a0)
@@ -242,8 +256,8 @@ void android::view::animation::GridLayoutAnimationController::setColumnDelay(jfl
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(4),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::view::animation::GridLayoutAnimationController::getRowDelay()
@@ -252,8 +266,8 @@ jfloat android::view::animation::GridLayoutAnimationController::getRowDelay()
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(5),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::view::animation::GridLayoutAnimationController::setRowDelay(jfloat a0)
@@ -262,8 +276,8 @@ void android::view::animation::GridLayoutAnimationController::setRowDelay(jfloat
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(6),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::animation::GridLayoutAnimationController::getDirection()
@@ -272,8 +286,8 @@ jint android::view::animation::GridLayoutAnimationController::getDirection()
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(7),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::animation::GridLayoutAnimationController::setDirection(jint a0)
@@ -282,8 +296,8 @@ void android::view::animation::GridLayoutAnimationController::setDirection(jint 
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(8),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::view::animation::GridLayoutAnimationController::getDirectionPriority()
@@ -292,8 +306,8 @@ jint android::view::animation::GridLayoutAnimationController::getDirectionPriori
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(9),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::view::animation::GridLayoutAnimationController::setDirectionPriority(jint a0)
@@ -302,8 +316,8 @@ void android::view::animation::GridLayoutAnimationController::setDirectionPriori
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(10),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::animation::GridLayoutAnimationController::willOverlap()
@@ -312,8 +326,8 @@ jboolean android::view::animation::GridLayoutAnimationController::willOverlap()
 		android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME,
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(11),
 		android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

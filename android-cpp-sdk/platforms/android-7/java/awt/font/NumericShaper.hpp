@@ -70,8 +70,8 @@ namespace java { namespace awt { namespace font {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint hashCode();
@@ -124,14 +124,14 @@ namespace j2cpp {
 
 
 
-java::awt::font::NumericShaper::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::awt::font::NumericShaper::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::awt::font::NumericShaper::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -141,8 +141,8 @@ jint java::awt::font::NumericShaper::hashCode()
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(1),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::awt::font::NumericShaper::equals(local_ref< java::lang::Object > const &a0)
@@ -151,8 +151,8 @@ jboolean java::awt::font::NumericShaper::equals(local_ref< java::lang::Object > 
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(2),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::awt::font::NumericShaper::toString()
@@ -161,8 +161,8 @@ local_ref< java::lang::String > java::awt::font::NumericShaper::toString()
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(3),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getContextualShaper(jint a0, jint a1)
@@ -171,8 +171,8 @@ local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getC
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(4),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::awt::font::NumericShaper > >
-	(a0, a1);
+		local_ref< java::awt::font::NumericShaper >
+	>(a0, a1);
 }
 
 local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getContextualShaper(jint a0)
@@ -181,8 +181,8 @@ local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getC
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(5),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::awt::font::NumericShaper > >
-	(a0);
+		local_ref< java::awt::font::NumericShaper >
+	>(a0);
 }
 
 jint java::awt::font::NumericShaper::getRanges()
@@ -191,8 +191,8 @@ jint java::awt::font::NumericShaper::getRanges()
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(6),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getShaper(jint a0)
@@ -201,8 +201,8 @@ local_ref< java::awt::font::NumericShaper > java::awt::font::NumericShaper::getS
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(7),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::awt::font::NumericShaper > >
-	(a0);
+		local_ref< java::awt::font::NumericShaper >
+	>(a0);
 }
 
 jboolean java::awt::font::NumericShaper::isContextual()
@@ -211,8 +211,8 @@ jboolean java::awt::font::NumericShaper::isContextual()
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(8),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::awt::font::NumericShaper::shape(local_ref< array<jchar,1> > const &a0, jint a1, jint a2, jint a3)
@@ -221,8 +221,8 @@ void java::awt::font::NumericShaper::shape(local_ref< array<jchar,1> > const &a0
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(9),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::awt::font::NumericShaper::shape(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -231,8 +231,8 @@ void java::awt::font::NumericShaper::shape(local_ref< array<jchar,1> > const &a0
 		java::awt::font::NumericShaper::J2CPP_CLASS_NAME,
 		java::awt::font::NumericShaper::J2CPP_METHOD_NAME(10),
 		java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

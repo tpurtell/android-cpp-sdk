@@ -124,8 +124,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newFixedThreadPool(jint a0, local_ref< java::util::concurrent::ThreadFactory > const &a1)
@@ -134,8 +134,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	(a0, a1);
+		local_ref< java::util::concurrent::ExecutorService >
+	>(a0, a1);
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newSingleThreadExecutor()
@@ -144,8 +144,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	();
+		local_ref< java::util::concurrent::ExecutorService >
+	>();
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newSingleThreadExecutor(local_ref< java::util::concurrent::ThreadFactory > const &a0)
@@ -154,8 +154,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newCachedThreadPool()
@@ -164,8 +164,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	();
+		local_ref< java::util::concurrent::ExecutorService >
+	>();
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newCachedThreadPool(local_ref< java::util::concurrent::ThreadFactory > const &a0)
@@ -174,8 +174,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concurrent::Executors::newSingleThreadScheduledExecutor()
@@ -184,8 +184,8 @@ local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concur
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::concurrent::ScheduledExecutorService > >
-	();
+		local_ref< java::util::concurrent::ScheduledExecutorService >
+	>();
 }
 
 local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concurrent::Executors::newSingleThreadScheduledExecutor(local_ref< java::util::concurrent::ThreadFactory > const &a0)
@@ -194,8 +194,8 @@ local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concur
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::concurrent::ScheduledExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ScheduledExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concurrent::Executors::newScheduledThreadPool(jint a0)
@@ -204,8 +204,8 @@ local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concur
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::concurrent::ScheduledExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ScheduledExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concurrent::Executors::newScheduledThreadPool(jint a0, local_ref< java::util::concurrent::ThreadFactory > const &a1)
@@ -214,8 +214,8 @@ local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concur
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::concurrent::ScheduledExecutorService > >
-	(a0, a1);
+		local_ref< java::util::concurrent::ScheduledExecutorService >
+	>(a0, a1);
 }
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::unconfigurableExecutorService(local_ref< java::util::concurrent::ExecutorService > const &a0)
@@ -224,8 +224,8 @@ local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Exe
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::concurrent::ExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concurrent::Executors::unconfigurableScheduledExecutorService(local_ref< java::util::concurrent::ScheduledExecutorService > const &a0)
@@ -234,8 +234,8 @@ local_ref< java::util::concurrent::ScheduledExecutorService > java::util::concur
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::concurrent::ScheduledExecutorService > >
-	(a0);
+		local_ref< java::util::concurrent::ScheduledExecutorService >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::Executors::defaultThreadFactory()
@@ -244,8 +244,8 @@ local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::Execu
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::concurrent::ThreadFactory > >
-	();
+		local_ref< java::util::concurrent::ThreadFactory >
+	>();
 }
 
 local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::Executors::privilegedThreadFactory()
@@ -254,8 +254,8 @@ local_ref< java::util::concurrent::ThreadFactory > java::util::concurrent::Execu
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(14),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::concurrent::ThreadFactory > >
-	();
+		local_ref< java::util::concurrent::ThreadFactory >
+	>();
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::callable(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -264,8 +264,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(15),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0, a1);
+		local_ref< java::util::concurrent::Callable >
+	>(a0, a1);
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::callable(local_ref< java::lang::Runnable > const &a0)
@@ -274,8 +274,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(16),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0);
+		local_ref< java::util::concurrent::Callable >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::callable(local_ref< java::security::PrivilegedAction > const &a0)
@@ -284,8 +284,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(17),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0);
+		local_ref< java::util::concurrent::Callable >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::callable(local_ref< java::security::PrivilegedExceptionAction > const &a0)
@@ -294,8 +294,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(18),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0);
+		local_ref< java::util::concurrent::Callable >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::privilegedCallable(local_ref< java::util::concurrent::Callable > const &a0)
@@ -304,8 +304,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(19),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0);
+		local_ref< java::util::concurrent::Callable >
+	>(a0);
 }
 
 local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors::privilegedCallableUsingCurrentClassLoader(local_ref< java::util::concurrent::Callable > const &a0)
@@ -314,8 +314,8 @@ local_ref< java::util::concurrent::Callable > java::util::concurrent::Executors:
 		java::util::concurrent::Executors::J2CPP_CLASS_NAME,
 		java::util::concurrent::Executors::J2CPP_METHOD_NAME(20),
 		java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::concurrent::Callable > >
-	(a0);
+		local_ref< java::util::concurrent::Callable >
+	>(a0);
 }
 
 

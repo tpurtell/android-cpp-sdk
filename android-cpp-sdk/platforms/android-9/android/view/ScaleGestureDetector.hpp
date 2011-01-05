@@ -159,8 +159,8 @@ android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::SimpleOnScal
 	call_new_object<
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_NAME(0),
-		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -172,8 +172,8 @@ jboolean android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::onS
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_NAME(1),
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::onScaleBegin(local_ref< android::view::ScaleGestureDetector > const &a0)
@@ -182,8 +182,8 @@ jboolean android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::onS
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_NAME(2),
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::onScaleEnd(local_ref< android::view::ScaleGestureDetector > const &a0)
@@ -192,8 +192,8 @@ void android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::onScale
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_NAME(3),
 		android::view::ScaleGestureDetector_::SimpleOnScaleGestureListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -215,8 +215,8 @@ jboolean android::view::ScaleGestureDetector_::OnScaleGestureListener::onScale(l
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_NAME(0),
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ScaleGestureDetector_::OnScaleGestureListener::onScaleBegin(local_ref< android::view::ScaleGestureDetector > const &a0)
@@ -225,8 +225,8 @@ jboolean android::view::ScaleGestureDetector_::OnScaleGestureListener::onScaleBe
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_NAME(1),
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::ScaleGestureDetector_::OnScaleGestureListener::onScaleEnd(local_ref< android::view::ScaleGestureDetector > const &a0)
@@ -235,8 +235,8 @@ void android::view::ScaleGestureDetector_::OnScaleGestureListener::onScaleEnd(lo
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_NAME(2),
 		android::view::ScaleGestureDetector_::OnScaleGestureListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -258,8 +258,8 @@ android::view::ScaleGestureDetector::ScaleGestureDetector(local_ref< android::co
 	call_new_object<
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(0),
-		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -271,8 +271,8 @@ jboolean android::view::ScaleGestureDetector::onTouchEvent(local_ref< android::v
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(1),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::ScaleGestureDetector::isInProgress()
@@ -281,8 +281,8 @@ jboolean android::view::ScaleGestureDetector::isInProgress()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(2),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jfloat android::view::ScaleGestureDetector::getFocusX()
@@ -291,8 +291,8 @@ jfloat android::view::ScaleGestureDetector::getFocusX()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(3),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::ScaleGestureDetector::getFocusY()
@@ -301,8 +301,8 @@ jfloat android::view::ScaleGestureDetector::getFocusY()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(4),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::ScaleGestureDetector::getCurrentSpan()
@@ -311,8 +311,8 @@ jfloat android::view::ScaleGestureDetector::getCurrentSpan()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(5),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::ScaleGestureDetector::getPreviousSpan()
@@ -321,8 +321,8 @@ jfloat android::view::ScaleGestureDetector::getPreviousSpan()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(6),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(6), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::ScaleGestureDetector::getScaleFactor()
@@ -331,8 +331,8 @@ jfloat android::view::ScaleGestureDetector::getScaleFactor()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(7),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jlong android::view::ScaleGestureDetector::getTimeDelta()
@@ -341,8 +341,8 @@ jlong android::view::ScaleGestureDetector::getTimeDelta()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(8),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(8), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::view::ScaleGestureDetector::getEventTime()
@@ -351,8 +351,8 @@ jlong android::view::ScaleGestureDetector::getEventTime()
 		android::view::ScaleGestureDetector::J2CPP_CLASS_NAME,
 		android::view::ScaleGestureDetector::J2CPP_METHOD_NAME(9),
 		android::view::ScaleGestureDetector::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 

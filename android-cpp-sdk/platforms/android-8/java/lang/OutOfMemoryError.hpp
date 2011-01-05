@@ -13,9 +13,17 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class VirtualMachineError; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/lang/VirtualMachineError.hpp>
 
 
@@ -40,6 +48,10 @@ namespace java { namespace lang {
 		}
 
 		operator local_ref<java::lang::VirtualMachineError>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		OutOfMemoryError();
@@ -67,14 +79,34 @@ java::lang::OutOfMemoryError::operator local_ref<java::lang::VirtualMachineError
 	return local_ref<java::lang::VirtualMachineError>(get_jobject());
 }
 
+java::lang::OutOfMemoryError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::lang::OutOfMemoryError::operator local_ref<java::lang::Error>() const
+{
+	return local_ref<java::lang::Error>(get_jobject());
+}
+
+java::lang::OutOfMemoryError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::lang::OutOfMemoryError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::lang::OutOfMemoryError::OutOfMemoryError()
 : object<java::lang::OutOfMemoryError>(
 	call_new_object<
 		java::lang::OutOfMemoryError::J2CPP_CLASS_NAME,
 		java::lang::OutOfMemoryError::J2CPP_METHOD_NAME(0),
-		java::lang::OutOfMemoryError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::OutOfMemoryError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +118,8 @@ java::lang::OutOfMemoryError::OutOfMemoryError(local_ref< java::lang::String > c
 	call_new_object<
 		java::lang::OutOfMemoryError::J2CPP_CLASS_NAME,
 		java::lang::OutOfMemoryError::J2CPP_METHOD_NAME(1),
-		java::lang::OutOfMemoryError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::OutOfMemoryError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

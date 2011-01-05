@@ -94,8 +94,8 @@ org::apache::http::impl::cookie::BasicDomainHandler::BasicDomainHandler()
 	call_new_object<
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +107,8 @@ void org::apache::http::impl::cookie::BasicDomainHandler::parse(local_ref< org::
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::cookie::BasicDomainHandler::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -117,8 +117,8 @@ void org::apache::http::impl::cookie::BasicDomainHandler::validate(local_ref< or
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::impl::cookie::BasicDomainHandler::match(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -127,8 +127,8 @@ jboolean org::apache::http::impl::cookie::BasicDomainHandler::match(local_ref< o
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::BasicDomainHandler::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

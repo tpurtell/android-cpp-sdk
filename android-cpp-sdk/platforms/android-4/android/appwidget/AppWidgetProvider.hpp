@@ -15,12 +15,14 @@ namespace j2cpp { namespace android { namespace appwidget { class AppWidgetManag
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class BroadcastReceiver; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/appwidget/AppWidgetManager.hpp>
 #include <android/content/BroadcastReceiver.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -48,6 +50,7 @@ namespace android { namespace appwidget {
 		}
 
 		operator local_ref<android::content::BroadcastReceiver>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AppWidgetProvider();
@@ -79,14 +82,19 @@ android::appwidget::AppWidgetProvider::operator local_ref<android::content::Broa
 	return local_ref<android::content::BroadcastReceiver>(get_jobject());
 }
 
+android::appwidget::AppWidgetProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::appwidget::AppWidgetProvider::AppWidgetProvider()
 : object<android::appwidget::AppWidgetProvider>(
 	call_new_object<
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(0),
-		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +106,8 @@ void android::appwidget::AppWidgetProvider::onReceive(local_ref< android::conten
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(1),
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::appwidget::AppWidgetProvider::onUpdate(local_ref< android::content::Context > const &a0, local_ref< android::appwidget::AppWidgetManager > const &a1, local_ref< array<jint,1> > const &a2)
@@ -108,8 +116,8 @@ void android::appwidget::AppWidgetProvider::onUpdate(local_ref< android::content
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(2),
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::appwidget::AppWidgetProvider::onDeleted(local_ref< android::content::Context > const &a0, local_ref< array<jint,1> > const &a1)
@@ -118,8 +126,8 @@ void android::appwidget::AppWidgetProvider::onDeleted(local_ref< android::conten
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(3),
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::appwidget::AppWidgetProvider::onEnabled(local_ref< android::content::Context > const &a0)
@@ -128,8 +136,8 @@ void android::appwidget::AppWidgetProvider::onEnabled(local_ref< android::conten
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(4),
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::appwidget::AppWidgetProvider::onDisabled(local_ref< android::content::Context > const &a0)
@@ -138,8 +146,8 @@ void android::appwidget::AppWidgetProvider::onDisabled(local_ref< android::conte
 		android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME,
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(5),
 		android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -96,8 +96,8 @@ android::text::util::Rfc822Token::Rfc822Token(local_ref< java::lang::String > co
 	call_new_object<
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(0),
-		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -109,8 +109,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::getName()
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(1),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::getAddress()
@@ -119,8 +119,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::getAddress()
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(2),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::getComment()
@@ -129,8 +129,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::getComment()
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(3),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::text::util::Rfc822Token::setName(local_ref< java::lang::String > const &a0)
@@ -139,8 +139,8 @@ void android::text::util::Rfc822Token::setName(local_ref< java::lang::String > c
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(4),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::util::Rfc822Token::setAddress(local_ref< java::lang::String > const &a0)
@@ -149,8 +149,8 @@ void android::text::util::Rfc822Token::setAddress(local_ref< java::lang::String 
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(5),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::util::Rfc822Token::setComment(local_ref< java::lang::String > const &a0)
@@ -159,8 +159,8 @@ void android::text::util::Rfc822Token::setComment(local_ref< java::lang::String 
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(6),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::toString()
@@ -169,8 +169,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::toString()
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(7),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::quoteNameIfNecessary(local_ref< java::lang::String > const &a0)
@@ -179,8 +179,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::quoteNameIfNec
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(8),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::quoteName(local_ref< java::lang::String > const &a0)
@@ -189,8 +189,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::quoteName(loca
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(9),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::quoteComment(local_ref< java::lang::String > const &a0)
@@ -199,8 +199,8 @@ local_ref< java::lang::String > android::text::util::Rfc822Token::quoteComment(l
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(10),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint android::text::util::Rfc822Token::hashCode()
@@ -209,8 +209,8 @@ jint android::text::util::Rfc822Token::hashCode()
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(11),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::text::util::Rfc822Token::equals(local_ref< java::lang::Object > const &a0)
@@ -219,8 +219,8 @@ jboolean android::text::util::Rfc822Token::equals(local_ref< java::lang::Object 
 		android::text::util::Rfc822Token::J2CPP_CLASS_NAME,
 		android::text::util::Rfc822Token::J2CPP_METHOD_NAME(12),
 		android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

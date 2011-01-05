@@ -11,14 +11,24 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_DEFAULTHTTPCLIENTCONNECTION_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class SocketHttpClientConnection; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class SocketHttpClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class AbstractHttpClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/Socket.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
+#include <org/apache/http/impl/AbstractHttpClientConnection.hpp>
 #include <org/apache/http/impl/SocketHttpClientConnection.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -44,7 +54,12 @@ namespace org { namespace apache { namespace http { namespace impl {
 		{
 		}
 
+		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::SocketHttpClientConnection>() const;
+		operator local_ref<org::apache::http::impl::AbstractHttpClientConnection>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
 
 
 		DefaultHttpClientConnection();
@@ -70,9 +85,34 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<org::apache::http::impl::SocketHttpClientConnection>() const
 {
 	return local_ref<org::apache::http::impl::SocketHttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<org::apache::http::impl::AbstractHttpClientConnection>() const
+{
+	return local_ref<org::apache::http::impl::AbstractHttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::DefaultHttpClientConnection::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
 }
 
 
@@ -81,8 +121,8 @@ org::apache::http::impl::DefaultHttpClientConnection::DefaultHttpClientConnectio
 	call_new_object<
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -94,8 +134,8 @@ void org::apache::http::impl::DefaultHttpClientConnection::bind(local_ref< java:
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::DefaultHttpClientConnection::toString()
@@ -104,8 +144,8 @@ local_ref< java::lang::String > org::apache::http::impl::DefaultHttpClientConnec
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::DefaultHttpClientConnection::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

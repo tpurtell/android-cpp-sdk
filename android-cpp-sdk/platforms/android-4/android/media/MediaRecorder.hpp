@@ -386,8 +386,8 @@ void android::media::MediaRecorder_::OnErrorListener::onError(local_ref< android
 		android::media::MediaRecorder_::OnErrorListener::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder_::OnErrorListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaRecorder_::OnErrorListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -451,8 +451,8 @@ void android::media::MediaRecorder_::OnInfoListener::onInfo(local_ref< android::
 		android::media::MediaRecorder_::OnInfoListener::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder_::OnInfoListener::J2CPP_METHOD_NAME(0),
 		android::media::MediaRecorder_::OnInfoListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -575,8 +575,8 @@ android::media::MediaRecorder::MediaRecorder()
 	call_new_object<
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(0),
-		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -588,8 +588,8 @@ void android::media::MediaRecorder::setCamera(local_ref< android::hardware::Came
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(1),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setPreviewDisplay(local_ref< android::view::Surface > const &a0)
@@ -598,8 +598,8 @@ void android::media::MediaRecorder::setPreviewDisplay(local_ref< android::view::
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(2),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setAudioSource(jint a0)
@@ -608,8 +608,8 @@ void android::media::MediaRecorder::setAudioSource(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(3),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::MediaRecorder::getAudioSourceMax()
@@ -618,8 +618,8 @@ jint android::media::MediaRecorder::getAudioSourceMax()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(4),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void android::media::MediaRecorder::setVideoSource(jint a0)
@@ -628,8 +628,8 @@ void android::media::MediaRecorder::setVideoSource(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(5),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setOutputFormat(jint a0)
@@ -638,8 +638,8 @@ void android::media::MediaRecorder::setOutputFormat(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(6),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setVideoSize(jint a0, jint a1)
@@ -648,8 +648,8 @@ void android::media::MediaRecorder::setVideoSize(jint a0, jint a1)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(7),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::media::MediaRecorder::setVideoFrameRate(jint a0)
@@ -658,8 +658,8 @@ void android::media::MediaRecorder::setVideoFrameRate(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(8),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setMaxDuration(jint a0)
@@ -668,8 +668,8 @@ void android::media::MediaRecorder::setMaxDuration(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(9),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setMaxFileSize(jlong a0)
@@ -678,8 +678,8 @@ void android::media::MediaRecorder::setMaxFileSize(jlong a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(10),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setAudioEncoder(jint a0)
@@ -688,8 +688,8 @@ void android::media::MediaRecorder::setAudioEncoder(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(11),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setVideoEncoder(jint a0)
@@ -698,8 +698,8 @@ void android::media::MediaRecorder::setVideoEncoder(jint a0)
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(12),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setOutputFile(local_ref< java::io::FileDescriptor > const &a0)
@@ -708,8 +708,8 @@ void android::media::MediaRecorder::setOutputFile(local_ref< java::io::FileDescr
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(13),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setOutputFile(local_ref< java::lang::String > const &a0)
@@ -718,8 +718,8 @@ void android::media::MediaRecorder::setOutputFile(local_ref< java::lang::String 
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(14),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::prepare()
@@ -728,8 +728,8 @@ void android::media::MediaRecorder::prepare()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(15),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaRecorder::start()
@@ -738,8 +738,8 @@ void android::media::MediaRecorder::start()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(16),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaRecorder::stop()
@@ -748,8 +748,8 @@ void android::media::MediaRecorder::stop()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(17),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::MediaRecorder::reset()
@@ -758,8 +758,8 @@ void android::media::MediaRecorder::reset()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(18),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::media::MediaRecorder::getMaxAmplitude()
@@ -768,8 +768,8 @@ jint android::media::MediaRecorder::getMaxAmplitude()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(19),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::MediaRecorder::setOnErrorListener(local_ref< android::media::MediaRecorder_::OnErrorListener > const &a0)
@@ -778,8 +778,8 @@ void android::media::MediaRecorder::setOnErrorListener(local_ref< android::media
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(20),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::setOnInfoListener(local_ref< android::media::MediaRecorder_::OnInfoListener > const &a0)
@@ -788,8 +788,8 @@ void android::media::MediaRecorder::setOnInfoListener(local_ref< android::media:
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(21),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::media::MediaRecorder::release()
@@ -798,8 +798,8 @@ void android::media::MediaRecorder::release()
 		android::media::MediaRecorder::J2CPP_CLASS_NAME,
 		android::media::MediaRecorder::J2CPP_METHOD_NAME(22),
 		android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

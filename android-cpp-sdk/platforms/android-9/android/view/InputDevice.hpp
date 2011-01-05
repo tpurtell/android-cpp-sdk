@@ -194,8 +194,8 @@ jfloat android::view::InputDevice_::MotionRange::getMin()
 		android::view::InputDevice_::MotionRange::J2CPP_CLASS_NAME,
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_NAME(1),
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::InputDevice_::MotionRange::getMax()
@@ -204,8 +204,8 @@ jfloat android::view::InputDevice_::MotionRange::getMax()
 		android::view::InputDevice_::MotionRange::J2CPP_CLASS_NAME,
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_NAME(2),
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::InputDevice_::MotionRange::getRange()
@@ -214,8 +214,8 @@ jfloat android::view::InputDevice_::MotionRange::getRange()
 		android::view::InputDevice_::MotionRange::J2CPP_CLASS_NAME,
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_NAME(3),
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::InputDevice_::MotionRange::getFlat()
@@ -224,8 +224,8 @@ jfloat android::view::InputDevice_::MotionRange::getFlat()
 		android::view::InputDevice_::MotionRange::J2CPP_CLASS_NAME,
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_NAME(4),
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::view::InputDevice_::MotionRange::getFuzz()
@@ -234,8 +234,8 @@ jfloat android::view::InputDevice_::MotionRange::getFuzz()
 		android::view::InputDevice_::MotionRange::J2CPP_CLASS_NAME,
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_NAME(5),
 		android::view::InputDevice_::MotionRange::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 
@@ -266,8 +266,8 @@ local_ref< android::view::InputDevice > android::view::InputDevice::getDevice(ji
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(1),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::InputDevice > >
-	(a0);
+		local_ref< android::view::InputDevice >
+	>(a0);
 }
 
 local_ref< array<jint,1> > android::view::InputDevice::getDeviceIds()
@@ -276,8 +276,8 @@ local_ref< array<jint,1> > android::view::InputDevice::getDeviceIds()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(2),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jint,1> > >
-	();
+		local_ref< array<jint,1> >
+	>();
 }
 
 jint android::view::InputDevice::getId()
@@ -286,8 +286,8 @@ jint android::view::InputDevice::getId()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(3),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::InputDevice::getName()
@@ -296,8 +296,8 @@ local_ref< java::lang::String > android::view::InputDevice::getName()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(4),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::view::InputDevice::getSources()
@@ -306,8 +306,8 @@ jint android::view::InputDevice::getSources()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(5),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::view::InputDevice::getKeyboardType()
@@ -316,8 +316,8 @@ jint android::view::InputDevice::getKeyboardType()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(6),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::view::KeyCharacterMap > android::view::InputDevice::getKeyCharacterMap()
@@ -326,8 +326,8 @@ local_ref< android::view::KeyCharacterMap > android::view::InputDevice::getKeyCh
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(7),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::view::KeyCharacterMap > >
-	(get_jobject());
+		local_ref< android::view::KeyCharacterMap >
+	>(get_jobject());
 }
 
 local_ref< android::view::InputDevice_::MotionRange > android::view::InputDevice::getMotionRange(jint a0)
@@ -336,8 +336,8 @@ local_ref< android::view::InputDevice_::MotionRange > android::view::InputDevice
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(8),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::InputDevice_::MotionRange > >
-	(get_jobject(), a0);
+		local_ref< android::view::InputDevice_::MotionRange >
+	>(get_jobject(), a0);
 }
 
 void android::view::InputDevice::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -346,8 +346,8 @@ void android::view::InputDevice::writeToParcel(local_ref< android::os::Parcel > 
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(9),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::view::InputDevice::describeContents()
@@ -356,8 +356,8 @@ jint android::view::InputDevice::describeContents()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(10),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::view::InputDevice::toString()
@@ -366,8 +366,8 @@ local_ref< java::lang::String > android::view::InputDevice::toString()
 		android::view::InputDevice::J2CPP_CLASS_NAME,
 		android::view::InputDevice::J2CPP_METHOD_NAME(11),
 		android::view::InputDevice::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

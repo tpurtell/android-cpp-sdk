@@ -12,9 +12,17 @@
 
 
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +45,10 @@ namespace java { namespace nio { namespace channels {
 		}
 
 		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		FileLockInterruptionException();
@@ -64,14 +76,34 @@ java::nio::channels::FileLockInterruptionException::operator local_ref<java::io:
 	return local_ref<java::io::IOException>(get_jobject());
 }
 
+java::nio::channels::FileLockInterruptionException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::nio::channels::FileLockInterruptionException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::nio::channels::FileLockInterruptionException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::nio::channels::FileLockInterruptionException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 java::nio::channels::FileLockInterruptionException::FileLockInterruptionException()
 : object<java::nio::channels::FileLockInterruptionException>(
 	call_new_object<
 		java::nio::channels::FileLockInterruptionException::J2CPP_CLASS_NAME,
 		java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_NAME(0),
-		java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

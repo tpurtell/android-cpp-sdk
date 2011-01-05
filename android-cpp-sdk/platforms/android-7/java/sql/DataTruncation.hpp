@@ -12,10 +12,18 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLWarning; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
+#include <java/sql/SQLException.hpp>
 #include <java/sql/SQLWarning.hpp>
 
 
@@ -43,8 +51,12 @@ namespace java { namespace sql {
 		{
 		}
 
-		operator local_ref<java::sql::SQLWarning>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::sql::SQLException>() const;
+		operator local_ref<java::sql::SQLWarning>() const;
 
 
 		DataTruncation(jint, jboolean, jboolean, jint, jint);
@@ -71,14 +83,34 @@ namespace j2cpp {
 
 
 
-java::sql::DataTruncation::operator local_ref<java::sql::SQLWarning>() const
-{
-	return local_ref<java::sql::SQLWarning>(get_jobject());
-}
-
 java::sql::DataTruncation::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::sql::DataTruncation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::sql::DataTruncation::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::sql::DataTruncation::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::sql::DataTruncation::operator local_ref<java::sql::SQLException>() const
+{
+	return local_ref<java::sql::SQLException>(get_jobject());
+}
+
+java::sql::DataTruncation::operator local_ref<java::sql::SQLWarning>() const
+{
+	return local_ref<java::sql::SQLWarning>(get_jobject());
 }
 
 
@@ -87,8 +119,8 @@ java::sql::DataTruncation::DataTruncation(jint a0, jboolean a1, jboolean a2, jin
 	call_new_object<
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(0),
-		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -100,8 +132,8 @@ jint java::sql::DataTruncation::getDataSize()
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(1),
 		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::sql::DataTruncation::getIndex()
@@ -110,8 +142,8 @@ jint java::sql::DataTruncation::getIndex()
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(2),
 		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::sql::DataTruncation::getParameter()
@@ -120,8 +152,8 @@ jboolean java::sql::DataTruncation::getParameter()
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(3),
 		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::sql::DataTruncation::getRead()
@@ -130,8 +162,8 @@ jboolean java::sql::DataTruncation::getRead()
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(4),
 		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::sql::DataTruncation::getTransferSize()
@@ -140,8 +172,8 @@ jint java::sql::DataTruncation::getTransferSize()
 		java::sql::DataTruncation::J2CPP_CLASS_NAME,
 		java::sql::DataTruncation::J2CPP_METHOD_NAME(5),
 		java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

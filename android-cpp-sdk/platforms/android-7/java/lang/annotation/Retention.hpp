@@ -80,8 +80,8 @@ local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Ret
 		java::lang::annotation::Retention::J2CPP_CLASS_NAME,
 		java::lang::annotation::Retention::J2CPP_METHOD_NAME(0),
 		java::lang::annotation::Retention::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::annotation::RetentionPolicy > >
-	(get_jobject());
+		local_ref< java::lang::annotation::RetentionPolicy >
+	>(get_jobject());
 }
 
 

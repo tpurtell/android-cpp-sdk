@@ -11,12 +11,20 @@
 #define J2CPP_JAVA_NET_HTTPRETRYEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -42,7 +50,11 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
 
 
 		HttpRetryException(local_ref< java::lang::String > const&, jint);
@@ -68,9 +80,29 @@ namespace j2cpp {
 
 
 
+java::net::HttpRetryException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 java::net::HttpRetryException::operator local_ref<java::io::IOException>() const
 {
 	return local_ref<java::io::IOException>(get_jobject());
+}
+
+java::net::HttpRetryException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::net::HttpRetryException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::net::HttpRetryException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
 }
 
 
@@ -79,8 +111,8 @@ java::net::HttpRetryException::HttpRetryException(local_ref< java::lang::String 
 	call_new_object<
 		java::net::HttpRetryException::J2CPP_CLASS_NAME,
 		java::net::HttpRetryException::J2CPP_METHOD_NAME(0),
-		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -92,8 +124,8 @@ java::net::HttpRetryException::HttpRetryException(local_ref< java::lang::String 
 	call_new_object<
 		java::net::HttpRetryException::J2CPP_CLASS_NAME,
 		java::net::HttpRetryException::J2CPP_METHOD_NAME(1),
-		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -105,8 +137,8 @@ local_ref< java::lang::String > java::net::HttpRetryException::getLocation()
 		java::net::HttpRetryException::J2CPP_CLASS_NAME,
 		java::net::HttpRetryException::J2CPP_METHOD_NAME(2),
 		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::HttpRetryException::getReason()
@@ -115,8 +147,8 @@ local_ref< java::lang::String > java::net::HttpRetryException::getReason()
 		java::net::HttpRetryException::J2CPP_CLASS_NAME,
 		java::net::HttpRetryException::J2CPP_METHOD_NAME(3),
 		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::net::HttpRetryException::responseCode()
@@ -125,8 +157,8 @@ jint java::net::HttpRetryException::responseCode()
 		java::net::HttpRetryException::J2CPP_CLASS_NAME,
 		java::net::HttpRetryException::J2CPP_METHOD_NAME(4),
 		java::net::HttpRetryException::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

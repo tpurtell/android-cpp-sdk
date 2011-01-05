@@ -73,8 +73,8 @@ void org::apache::http::entity::ContentProducer::writeTo(local_ref< java::io::Ou
 		org::apache::http::entity::ContentProducer::J2CPP_CLASS_NAME,
 		org::apache::http::entity::ContentProducer::J2CPP_METHOD_NAME(0),
 		org::apache::http::entity::ContentProducer::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

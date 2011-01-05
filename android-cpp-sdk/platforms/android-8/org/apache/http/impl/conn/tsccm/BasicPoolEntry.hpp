@@ -14,9 +14,11 @@
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractPoolEntry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionOperator; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/ref/ReferenceQueue.hpp>
 #include <org/apache/http/conn/ClientConnectionOperator.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
@@ -46,6 +48,7 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		}
 
 		operator local_ref<org::apache::http::impl::conn::AbstractPoolEntry>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicPoolEntry(local_ref< org::apache::http::conn::ClientConnectionOperator > const&, local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< java::lang::ref::ReferenceQueue > const&);
@@ -76,14 +79,19 @@ org::apache::http::impl::conn::tsccm::BasicPoolEntry::operator local_ref<org::ap
 	return local_ref<org::apache::http::impl::conn::AbstractPoolEntry>(get_jobject());
 }
 
+org::apache::http::impl::conn::tsccm::BasicPoolEntry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 org::apache::http::impl::conn::tsccm::BasicPoolEntry::BasicPoolEntry(local_ref< org::apache::http::conn::ClientConnectionOperator > const &a0, local_ref< org::apache::http::conn::routing::HttpRoute > const &a1, local_ref< java::lang::ref::ReferenceQueue > const &a2)
 : object<org::apache::http::impl::conn::tsccm::BasicPoolEntry>(
 	call_new_object<
 		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::impl::conn::tsccm::BasicPoolEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }

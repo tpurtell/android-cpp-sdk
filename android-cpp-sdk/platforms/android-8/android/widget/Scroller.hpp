@@ -111,8 +111,8 @@ android::widget::Scroller::Scroller(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(0),
-		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -124,8 +124,8 @@ android::widget::Scroller::Scroller(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(1),
-		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -137,8 +137,8 @@ jboolean android::widget::Scroller::isFinished()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(2),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::Scroller::forceFinished(jboolean a0)
@@ -147,8 +147,8 @@ void android::widget::Scroller::forceFinished(jboolean a0)
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(3),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::Scroller::getDuration()
@@ -157,8 +157,8 @@ jint android::widget::Scroller::getDuration()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(4),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getCurrX()
@@ -167,8 +167,8 @@ jint android::widget::Scroller::getCurrX()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(5),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getCurrY()
@@ -177,8 +177,8 @@ jint android::widget::Scroller::getCurrY()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(6),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getStartX()
@@ -187,8 +187,8 @@ jint android::widget::Scroller::getStartX()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(7),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getStartY()
@@ -197,8 +197,8 @@ jint android::widget::Scroller::getStartY()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(8),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getFinalX()
@@ -207,8 +207,8 @@ jint android::widget::Scroller::getFinalX()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(9),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::Scroller::getFinalY()
@@ -217,8 +217,8 @@ jint android::widget::Scroller::getFinalY()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(10),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::Scroller::computeScrollOffset()
@@ -227,8 +227,8 @@ jboolean android::widget::Scroller::computeScrollOffset()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(11),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::Scroller::startScroll(jint a0, jint a1, jint a2, jint a3)
@@ -237,8 +237,8 @@ void android::widget::Scroller::startScroll(jint a0, jint a1, jint a2, jint a3)
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(12),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::Scroller::startScroll(jint a0, jint a1, jint a2, jint a3, jint a4)
@@ -247,8 +247,8 @@ void android::widget::Scroller::startScroll(jint a0, jint a1, jint a2, jint a3, 
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(13),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void android::widget::Scroller::fling(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5, jint a6, jint a7)
@@ -257,8 +257,8 @@ void android::widget::Scroller::fling(jint a0, jint a1, jint a2, jint a3, jint a
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(14),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6, a7);
 }
 
 void android::widget::Scroller::abortAnimation()
@@ -267,8 +267,8 @@ void android::widget::Scroller::abortAnimation()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(15),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::Scroller::extendDuration(jint a0)
@@ -277,8 +277,8 @@ void android::widget::Scroller::extendDuration(jint a0)
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(16),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::Scroller::timePassed()
@@ -287,8 +287,8 @@ jint android::widget::Scroller::timePassed()
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(17),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::Scroller::setFinalX(jint a0)
@@ -297,8 +297,8 @@ void android::widget::Scroller::setFinalX(jint a0)
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(18),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::Scroller::setFinalY(jint a0)
@@ -307,8 +307,8 @@ void android::widget::Scroller::setFinalY(jint a0)
 		android::widget::Scroller::J2CPP_CLASS_NAME,
 		android::widget::Scroller::J2CPP_METHOD_NAME(19),
 		android::widget::Scroller::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

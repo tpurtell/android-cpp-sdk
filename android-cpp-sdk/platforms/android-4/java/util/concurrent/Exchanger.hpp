@@ -76,8 +76,8 @@ java::util::concurrent::Exchanger::Exchanger()
 	call_new_object<
 		java::util::concurrent::Exchanger::J2CPP_CLASS_NAME,
 		java::util::concurrent::Exchanger::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -89,8 +89,8 @@ local_ref< java::lang::Object > java::util::concurrent::Exchanger::exchange(loca
 		java::util::concurrent::Exchanger::J2CPP_CLASS_NAME,
 		java::util::concurrent::Exchanger::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::Exchanger::exchange(local_ref< java::lang::Object > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -99,8 +99,8 @@ local_ref< java::lang::Object > java::util::concurrent::Exchanger::exchange(loca
 		java::util::concurrent::Exchanger::J2CPP_CLASS_NAME,
 		java::util::concurrent::Exchanger::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

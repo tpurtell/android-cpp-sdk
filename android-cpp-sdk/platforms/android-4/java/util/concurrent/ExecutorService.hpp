@@ -61,8 +61,8 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::concurrent::Executor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void shutdown();
@@ -96,14 +96,14 @@ namespace j2cpp {
 
 
 
-java::util::concurrent::ExecutorService::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::concurrent::ExecutorService::operator local_ref<java::util::concurrent::Executor>() const
 {
 	return local_ref<java::util::concurrent::Executor>(get_jobject());
+}
+
+java::util::concurrent::ExecutorService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::util::concurrent::ExecutorService::shutdown()
@@ -112,8 +112,8 @@ void java::util::concurrent::ExecutorService::shutdown()
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::List > java::util::concurrent::ExecutorService::shutdownNow()
@@ -122,8 +122,8 @@ local_ref< java::util::List > java::util::concurrent::ExecutorService::shutdownN
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ExecutorService::isShutdown()
@@ -132,8 +132,8 @@ jboolean java::util::concurrent::ExecutorService::isShutdown()
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ExecutorService::isTerminated()
@@ -142,8 +142,8 @@ jboolean java::util::concurrent::ExecutorService::isTerminated()
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::ExecutorService::awaitTermination(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -152,8 +152,8 @@ jboolean java::util::concurrent::ExecutorService::awaitTermination(jlong a0, loc
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorService::submit(local_ref< java::util::concurrent::Callable > const &a0)
@@ -162,8 +162,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorServ
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorService::submit(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -172,8 +172,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorServ
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorService::submit(local_ref< java::lang::Runnable > const &a0)
@@ -182,8 +182,8 @@ local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorServ
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::concurrent::Future > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::Future >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::util::concurrent::ExecutorService::invokeAll(local_ref< java::util::Collection > const &a0)
@@ -192,8 +192,8 @@ local_ref< java::util::List > java::util::concurrent::ExecutorService::invokeAll
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0);
+		local_ref< java::util::List >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::util::concurrent::ExecutorService::invokeAll(local_ref< java::util::Collection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -202,8 +202,8 @@ local_ref< java::util::List > java::util::concurrent::ExecutorService::invokeAll
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::List > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::List >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ExecutorService::invokeAny(local_ref< java::util::Collection > const &a0)
@@ -212,8 +212,8 @@ local_ref< java::lang::Object > java::util::concurrent::ExecutorService::invokeA
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ExecutorService::invokeAny(local_ref< java::util::Collection > const &a0, jlong a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
@@ -222,8 +222,8 @@ local_ref< java::lang::Object > java::util::concurrent::ExecutorService::invokeA
 		java::util::concurrent::ExecutorService::J2CPP_CLASS_NAME,
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::ExecutorService::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

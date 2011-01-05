@@ -71,8 +71,8 @@ void android::accounts::OnAccountsUpdateListener::onAccountsUpdated(local_ref< a
 		android::accounts::OnAccountsUpdateListener::J2CPP_CLASS_NAME,
 		android::accounts::OnAccountsUpdateListener::J2CPP_METHOD_NAME(0),
 		android::accounts::OnAccountsUpdateListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -75,8 +75,8 @@ void android::os::Vibrator::vibrate(jlong a0)
 		android::os::Vibrator::J2CPP_CLASS_NAME,
 		android::os::Vibrator::J2CPP_METHOD_NAME(1),
 		android::os::Vibrator::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Vibrator::vibrate(local_ref< array<jlong,1> > const &a0, jint a1)
@@ -85,8 +85,8 @@ void android::os::Vibrator::vibrate(local_ref< array<jlong,1> > const &a0, jint 
 		android::os::Vibrator::J2CPP_CLASS_NAME,
 		android::os::Vibrator::J2CPP_METHOD_NAME(2),
 		android::os::Vibrator::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Vibrator::cancel()
@@ -95,8 +95,8 @@ void android::os::Vibrator::cancel()
 		android::os::Vibrator::J2CPP_CLASS_NAME,
 		android::os::Vibrator::J2CPP_METHOD_NAME(3),
 		android::os::Vibrator::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

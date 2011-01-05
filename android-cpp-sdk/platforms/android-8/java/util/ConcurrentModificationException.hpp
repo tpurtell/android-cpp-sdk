@@ -13,10 +13,18 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +48,10 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ConcurrentModificationException();
@@ -67,14 +79,34 @@ java::util::ConcurrentModificationException::operator local_ref<java::lang::Runt
 	return local_ref<java::lang::RuntimeException>(get_jobject());
 }
 
+java::util::ConcurrentModificationException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::ConcurrentModificationException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::util::ConcurrentModificationException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::util::ConcurrentModificationException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::util::ConcurrentModificationException::ConcurrentModificationException()
 : object<java::util::ConcurrentModificationException>(
 	call_new_object<
 		java::util::ConcurrentModificationException::J2CPP_CLASS_NAME,
 		java::util::ConcurrentModificationException::J2CPP_METHOD_NAME(0),
-		java::util::ConcurrentModificationException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::ConcurrentModificationException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +118,8 @@ java::util::ConcurrentModificationException::ConcurrentModificationException(loc
 	call_new_object<
 		java::util::ConcurrentModificationException::J2CPP_CLASS_NAME,
 		java::util::ConcurrentModificationException::J2CPP_METHOD_NAME(1),
-		java::util::ConcurrentModificationException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::ConcurrentModificationException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

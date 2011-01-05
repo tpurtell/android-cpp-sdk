@@ -12,9 +12,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/PathEffect.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,6 +39,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::PathEffect>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ComposePathEffect(local_ref< android::graphics::PathEffect > const&, local_ref< android::graphics::PathEffect > const&);
@@ -63,14 +66,19 @@ android::graphics::ComposePathEffect::operator local_ref<android::graphics::Path
 	return local_ref<android::graphics::PathEffect>(get_jobject());
 }
 
+android::graphics::ComposePathEffect::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::ComposePathEffect::ComposePathEffect(local_ref< android::graphics::PathEffect > const &a0, local_ref< android::graphics::PathEffect > const &a1)
 : object<android::graphics::ComposePathEffect>(
 	call_new_object<
 		android::graphics::ComposePathEffect::J2CPP_CLASS_NAME,
 		android::graphics::ComposePathEffect::J2CPP_METHOD_NAME(0),
-		android::graphics::ComposePathEffect::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::graphics::ComposePathEffect::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }

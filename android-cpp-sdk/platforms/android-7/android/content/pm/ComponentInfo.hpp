@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_CONTENT_PM_COMPONENTINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcel.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -64,6 +66,7 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::pm::PackageItemInfo>() const;
 
 
@@ -97,6 +100,11 @@ namespace j2cpp {
 
 
 
+android::content::pm::ComponentInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::content::pm::ComponentInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
 	return local_ref<android::content::pm::PackageItemInfo>(get_jobject());
@@ -108,8 +116,8 @@ android::content::pm::ComponentInfo::ComponentInfo()
 	call_new_object<
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , applicationInfo(get_jobject())
 , processName(get_jobject())
@@ -125,8 +133,8 @@ android::content::pm::ComponentInfo::ComponentInfo(local_ref< android::content::
 	call_new_object<
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , applicationInfo(get_jobject())
 , processName(get_jobject())
@@ -143,8 +151,8 @@ local_ref< java::lang::CharSequence > android::content::pm::ComponentInfo::loadL
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::content::pm::ComponentInfo::loadIcon(local_ref< android::content::pm::PackageManager > const &a0)
@@ -153,8 +161,8 @@ local_ref< android::graphics::drawable::Drawable > android::content::pm::Compone
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 jint android::content::pm::ComponentInfo::getIconResource()
@@ -163,8 +171,8 @@ jint android::content::pm::ComponentInfo::getIconResource()
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -175,8 +183,8 @@ void android::content::pm::ComponentInfo::writeToParcel(local_ref< android::os::
 		android::content::pm::ComponentInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(8),
 		android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

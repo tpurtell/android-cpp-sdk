@@ -14,13 +14,17 @@
 namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/preference/Preference.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -60,6 +64,8 @@ namespace android { namespace preference {
 		}
 
 		operator local_ref<android::preference::Preference>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		PreferenceGroup(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, jint);
@@ -97,14 +103,24 @@ android::preference::PreferenceGroup::operator local_ref<android::preference::Pr
 	return local_ref<android::preference::Preference>(get_jobject());
 }
 
+android::preference::PreferenceGroup::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::preference::PreferenceGroup::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::preference::PreferenceGroup::PreferenceGroup(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, jint a2)
 : object<android::preference::PreferenceGroup>(
 	call_new_object<
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(0),
-		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -116,8 +132,8 @@ android::preference::PreferenceGroup::PreferenceGroup(local_ref< android::conten
 	call_new_object<
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(1),
-		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -129,8 +145,8 @@ void android::preference::PreferenceGroup::setOrderingAsAdded(jboolean a0)
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(2),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::PreferenceGroup::isOrderingAsAdded()
@@ -139,8 +155,8 @@ jboolean android::preference::PreferenceGroup::isOrderingAsAdded()
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(3),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::preference::PreferenceGroup::addItemFromInflater(local_ref< android::preference::Preference > const &a0)
@@ -149,8 +165,8 @@ void android::preference::PreferenceGroup::addItemFromInflater(local_ref< androi
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(4),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::preference::PreferenceGroup::getPreferenceCount()
@@ -159,8 +175,8 @@ jint android::preference::PreferenceGroup::getPreferenceCount()
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(5),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::preference::Preference > android::preference::PreferenceGroup::getPreference(jint a0)
@@ -169,8 +185,8 @@ local_ref< android::preference::Preference > android::preference::PreferenceGrou
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(6),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::preference::Preference > >
-	(get_jobject(), a0);
+		local_ref< android::preference::Preference >
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::PreferenceGroup::addPreference(local_ref< android::preference::Preference > const &a0)
@@ -179,8 +195,8 @@ jboolean android::preference::PreferenceGroup::addPreference(local_ref< android:
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(7),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::PreferenceGroup::removePreference(local_ref< android::preference::Preference > const &a0)
@@ -189,8 +205,8 @@ jboolean android::preference::PreferenceGroup::removePreference(local_ref< andro
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(8),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::preference::PreferenceGroup::removeAll()
@@ -199,8 +215,8 @@ void android::preference::PreferenceGroup::removeAll()
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(9),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -210,8 +226,8 @@ local_ref< android::preference::Preference > android::preference::PreferenceGrou
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(11),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::preference::Preference > >
-	(get_jobject(), a0);
+		local_ref< android::preference::Preference >
+	>(get_jobject(), a0);
 }
 
 
@@ -223,8 +239,8 @@ void android::preference::PreferenceGroup::setEnabled(jboolean a0)
 		android::preference::PreferenceGroup::J2CPP_CLASS_NAME,
 		android::preference::PreferenceGroup::J2CPP_METHOD_NAME(15),
 		android::preference::PreferenceGroup::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

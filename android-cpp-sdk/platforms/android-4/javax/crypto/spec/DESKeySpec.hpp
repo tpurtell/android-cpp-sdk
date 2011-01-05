@@ -43,8 +43,8 @@ namespace javax { namespace crypto { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DESKeySpec(local_ref< array<jbyte,1> > const&);
@@ -73,14 +73,14 @@ namespace j2cpp {
 
 
 
-javax::crypto::spec::DESKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::spec::DESKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+javax::crypto::spec::DESKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +89,8 @@ javax::crypto::spec::DESKeySpec::DESKeySpec(local_ref< array<jbyte,1> > const &a
 	call_new_object<
 		javax::crypto::spec::DESKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -102,8 +102,8 @@ javax::crypto::spec::DESKeySpec::DESKeySpec(local_ref< array<jbyte,1> > const &a
 	call_new_object<
 		javax::crypto::spec::DESKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -115,8 +115,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::DESKeySpec::getKey()
 		javax::crypto::spec::DESKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jboolean javax::crypto::spec::DESKeySpec::isParityAdjusted(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -125,8 +125,8 @@ jboolean javax::crypto::spec::DESKeySpec::isParityAdjusted(local_ref< array<jbyt
 		javax::crypto::spec::DESKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 jboolean javax::crypto::spec::DESKeySpec::isWeak(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -135,8 +135,8 @@ jboolean javax::crypto::spec::DESKeySpec::isWeak(local_ref< array<jbyte,1> > con
 		javax::crypto::spec::DESKeySpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::DESKeySpec::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 

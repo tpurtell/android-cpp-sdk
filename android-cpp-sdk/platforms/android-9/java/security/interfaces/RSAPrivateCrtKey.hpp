@@ -12,12 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
+namespace j2cpp { namespace java { namespace security { namespace interfaces { class RSAKey; } } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class RSAPrivateKey; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/Key.hpp>
+#include <java/security/PrivateKey.hpp>
+#include <java/security/interfaces/RSAKey.hpp>
 #include <java/security/interfaces/RSAPrivateKey.hpp>
 
 
@@ -47,7 +55,11 @@ namespace java { namespace security { namespace interfaces {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::PrivateKey>() const;
+		operator local_ref<java::security::Key>() const;
+		operator local_ref<java::security::interfaces::RSAKey>() const;
 		operator local_ref<java::security::interfaces::RSAPrivateKey>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		local_ref< java::math::BigInteger > getCrtCoefficient();
@@ -82,9 +94,29 @@ java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::lang::Obj
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::security::PrivateKey>() const
+{
+	return local_ref<java::security::PrivateKey>(get_jobject());
+}
+
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
+}
+
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::security::interfaces::RSAKey>() const
+{
+	return local_ref<java::security::interfaces::RSAKey>(get_jobject());
+}
+
 java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::security::interfaces::RSAPrivateKey>() const
 {
 	return local_ref<java::security::interfaces::RSAPrivateKey>(get_jobject());
+}
+
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getCrtCoefficient()
@@ -93,8 +125,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(0),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getPrimeP()
@@ -103,8 +135,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(1),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getPrimeQ()
@@ -113,8 +145,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(2),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getPrimeExponentP()
@@ -123,8 +155,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(3),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getPrimeExponentQ()
@@ -133,8 +165,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(4),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getPublicExponent()
@@ -143,8 +175,8 @@ local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_CLASS_NAME,
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_NAME(5),
 		java::security::interfaces::RSAPrivateCrtKey::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

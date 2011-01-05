@@ -15,10 +15,12 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Head
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderIterator; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/Iterator.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HeaderIterator.hpp>
 
@@ -51,8 +53,9 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HeaderIterator>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
 
 
 		BasicHeaderIterator(local_ref< array< local_ref< org::apache::http::Header >, 1> > const&, local_ref< java::lang::String > const&);
@@ -81,14 +84,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::message::BasicHeaderIterator::operator local_ref<org::apache::http::HeaderIterator>() const
+{
+	return local_ref<org::apache::http::HeaderIterator>(get_jobject());
+}
+
 org::apache::http::message::BasicHeaderIterator::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::apache::http::message::BasicHeaderIterator::operator local_ref<org::apache::http::HeaderIterator>() const
+org::apache::http::message::BasicHeaderIterator::operator local_ref<java::util::Iterator>() const
 {
-	return local_ref<org::apache::http::HeaderIterator>(get_jobject());
+	return local_ref<java::util::Iterator>(get_jobject());
 }
 
 
@@ -97,8 +105,8 @@ org::apache::http::message::BasicHeaderIterator::BasicHeaderIterator(local_ref< 
 	call_new_object<
 		org::apache::http::message::BasicHeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -112,8 +120,8 @@ jboolean org::apache::http::message::BasicHeaderIterator::hasNext()
 		org::apache::http::message::BasicHeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::BasicHeaderIterator::nextHeader()
@@ -122,8 +130,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::BasicHeaderIt
 		org::apache::http::message::BasicHeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicHeaderIterator::next()
@@ -132,8 +140,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicHeaderIterator:
 		org::apache::http::message::BasicHeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void org::apache::http::message::BasicHeaderIterator::remove()
@@ -142,8 +150,8 @@ void org::apache::http::message::BasicHeaderIterator::remove()
 		org::apache::http::message::BasicHeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::BasicHeaderIterator::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

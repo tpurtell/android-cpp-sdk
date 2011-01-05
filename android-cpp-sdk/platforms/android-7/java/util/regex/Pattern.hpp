@@ -63,8 +63,8 @@ namespace java { namespace util { namespace regex {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::util::regex::Pattern > compile(local_ref< java::lang::String >  const&);
@@ -105,14 +105,14 @@ namespace j2cpp {
 
 
 
-java::util::regex::Pattern::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::regex::Pattern::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::util::regex::Pattern::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -122,8 +122,8 @@ local_ref< java::util::regex::Pattern > java::util::regex::Pattern::compile(loca
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(1),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::regex::Pattern > >
-	(a0);
+		local_ref< java::util::regex::Pattern >
+	>(a0);
 }
 
 local_ref< java::util::regex::Pattern > java::util::regex::Pattern::compile(local_ref< java::lang::String > const &a0, jint a1)
@@ -132,8 +132,8 @@ local_ref< java::util::regex::Pattern > java::util::regex::Pattern::compile(loca
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(2),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::regex::Pattern > >
-	(a0, a1);
+		local_ref< java::util::regex::Pattern >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::util::regex::Pattern::pattern()
@@ -142,8 +142,8 @@ local_ref< java::lang::String > java::util::regex::Pattern::pattern()
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(3),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::regex::Pattern::flags()
@@ -152,8 +152,8 @@ jint java::util::regex::Pattern::flags()
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(4),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::regex::Matcher > java::util::regex::Pattern::matcher(local_ref< java::lang::CharSequence > const &a0)
@@ -162,8 +162,8 @@ local_ref< java::util::regex::Matcher > java::util::regex::Pattern::matcher(loca
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(5),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::regex::Matcher > >
-	(get_jobject(), a0);
+		local_ref< java::util::regex::Matcher >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::regex::Pattern::matches(local_ref< java::lang::String > const &a0, local_ref< java::lang::CharSequence > const &a1)
@@ -172,8 +172,8 @@ jboolean java::util::regex::Pattern::matches(local_ref< java::lang::String > con
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(6),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::regex::Pattern::split(local_ref< java::lang::CharSequence > const &a0)
@@ -182,8 +182,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::regex::Patte
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(7),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::util::regex::Pattern::split(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -192,8 +192,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::util::regex::Patte
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(8),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject(), a0, a1);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::util::regex::Pattern::quote(local_ref< java::lang::String > const &a0)
@@ -202,8 +202,8 @@ local_ref< java::lang::String > java::util::regex::Pattern::quote(local_ref< jav
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(9),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::util::regex::Pattern::toString()
@@ -212,8 +212,8 @@ local_ref< java::lang::String > java::util::regex::Pattern::toString()
 		java::util::regex::Pattern::J2CPP_CLASS_NAME,
 		java::util::regex::Pattern::J2CPP_METHOD_NAME(10),
 		java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

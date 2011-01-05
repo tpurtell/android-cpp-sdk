@@ -12,15 +12,23 @@
 
 
 namespace j2cpp { namespace android { namespace widget { namespace SeekBar_ { class OnSeekBarChangeListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class ProgressBar; } } }
 namespace j2cpp { namespace android { namespace widget { class AbsSeekBar; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/AbsSeekBar.hpp>
+#include <android/widget/ProgressBar.hpp>
 #include <android/widget/SeekBar.hpp>
 #include <java/lang/Object.hpp>
 
@@ -78,7 +86,12 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::widget::ProgressBar>() const;
 		operator local_ref<android::widget::AbsSeekBar>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SeekBar(local_ref< android::content::Context > const&);
@@ -115,8 +128,8 @@ void android::widget::SeekBar_::OnSeekBarChangeListener::onProgressChanged(local
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_CLASS_NAME,
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_NAME(0),
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::SeekBar_::OnSeekBarChangeListener::onStartTrackingTouch(local_ref< android::widget::SeekBar > const &a0)
@@ -125,8 +138,8 @@ void android::widget::SeekBar_::OnSeekBarChangeListener::onStartTrackingTouch(lo
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_CLASS_NAME,
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_NAME(1),
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::SeekBar_::OnSeekBarChangeListener::onStopTrackingTouch(local_ref< android::widget::SeekBar > const &a0)
@@ -135,8 +148,8 @@ void android::widget::SeekBar_::OnSeekBarChangeListener::onStopTrackingTouch(loc
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_CLASS_NAME,
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_NAME(2),
 		android::widget::SeekBar_::OnSeekBarChangeListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -147,9 +160,34 @@ J2CPP_DEFINE_METHOD(android::widget::SeekBar_::OnSeekBarChangeListener,2,"onStop
 
 
 
+android::widget::SeekBar::operator local_ref<android::widget::ProgressBar>() const
+{
+	return local_ref<android::widget::ProgressBar>(get_jobject());
+}
+
 android::widget::SeekBar::operator local_ref<android::widget::AbsSeekBar>() const
 {
 	return local_ref<android::widget::AbsSeekBar>(get_jobject());
+}
+
+android::widget::SeekBar::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::SeekBar::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::SeekBar::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::SeekBar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -158,8 +196,8 @@ android::widget::SeekBar::SeekBar(local_ref< android::content::Context > const &
 	call_new_object<
 		android::widget::SeekBar::J2CPP_CLASS_NAME,
 		android::widget::SeekBar::J2CPP_METHOD_NAME(0),
-		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -171,8 +209,8 @@ android::widget::SeekBar::SeekBar(local_ref< android::content::Context > const &
 	call_new_object<
 		android::widget::SeekBar::J2CPP_CLASS_NAME,
 		android::widget::SeekBar::J2CPP_METHOD_NAME(1),
-		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -184,8 +222,8 @@ android::widget::SeekBar::SeekBar(local_ref< android::content::Context > const &
 	call_new_object<
 		android::widget::SeekBar::J2CPP_CLASS_NAME,
 		android::widget::SeekBar::J2CPP_METHOD_NAME(2),
-		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -197,8 +235,8 @@ void android::widget::SeekBar::setOnSeekBarChangeListener(local_ref< android::wi
 		android::widget::SeekBar::J2CPP_CLASS_NAME,
 		android::widget::SeekBar::J2CPP_METHOD_NAME(3),
 		android::widget::SeekBar::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,11 +11,14 @@
 #define J2CPP_JAVA_TEXT_SIMPLEDATEFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { class DateFormatSymbols; } } }
 namespace j2cpp { namespace java { namespace text { class DateFormat; } } }
+namespace j2cpp { namespace java { namespace text { class Format; } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
@@ -23,6 +26,8 @@ namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
@@ -30,6 +35,7 @@ namespace j2cpp { namespace java { namespace util { class Date; } } }
 #include <java/text/DateFormat.hpp>
 #include <java/text/DateFormatSymbols.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/Format.hpp>
 #include <java/text/ParsePosition.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/Locale.hpp>
@@ -71,7 +77,11 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::text::DateFormat>() const;
+		operator local_ref<java::text::Format>() const;
 
 
 		SimpleDateFormat();
@@ -110,9 +120,29 @@ namespace j2cpp {
 
 
 
+java::text::SimpleDateFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::SimpleDateFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::SimpleDateFormat::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::text::SimpleDateFormat::operator local_ref<java::text::DateFormat>() const
 {
 	return local_ref<java::text::DateFormat>(get_jobject());
+}
+
+java::text::SimpleDateFormat::operator local_ref<java::text::Format>() const
+{
+	return local_ref<java::text::Format>(get_jobject());
 }
 
 
@@ -121,8 +151,8 @@ java::text::SimpleDateFormat::SimpleDateFormat()
 	call_new_object<
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(0),
-		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -134,8 +164,8 @@ java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > c
 	call_new_object<
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(1),
-		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -147,8 +177,8 @@ java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > c
 	call_new_object<
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(2),
-		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -160,8 +190,8 @@ java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > c
 	call_new_object<
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(3),
-		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -173,8 +203,8 @@ void java::text::SimpleDateFormat::applyLocalizedPattern(local_ref< java::lang::
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(4),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::SimpleDateFormat::applyPattern(local_ref< java::lang::String > const &a0)
@@ -183,8 +213,8 @@ void java::text::SimpleDateFormat::applyPattern(local_ref< java::lang::String > 
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(5),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::text::SimpleDateFormat::clone()
@@ -193,8 +223,8 @@ local_ref< java::lang::Object > java::text::SimpleDateFormat::clone()
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(6),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::SimpleDateFormat::equals(local_ref< java::lang::Object > const &a0)
@@ -203,8 +233,8 @@ jboolean java::text::SimpleDateFormat::equals(local_ref< java::lang::Object > co
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(7),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::text::AttributedCharacterIterator > java::text::SimpleDateFormat::formatToCharacterIterator(local_ref< java::lang::Object > const &a0)
@@ -213,8 +243,8 @@ local_ref< java::text::AttributedCharacterIterator > java::text::SimpleDateForma
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(8),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::text::AttributedCharacterIterator > >
-	(get_jobject(), a0);
+		local_ref< java::text::AttributedCharacterIterator >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::SimpleDateFormat::format(local_ref< java::util::Date > const &a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -223,8 +253,8 @@ local_ref< java::lang::StringBuffer > java::text::SimpleDateFormat::format(local
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(9),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::util::Date > java::text::SimpleDateFormat::get2DigitYearStart()
@@ -233,8 +263,8 @@ local_ref< java::util::Date > java::text::SimpleDateFormat::get2DigitYearStart()
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(10),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 local_ref< java::text::DateFormatSymbols > java::text::SimpleDateFormat::getDateFormatSymbols()
@@ -243,8 +273,8 @@ local_ref< java::text::DateFormatSymbols > java::text::SimpleDateFormat::getDate
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(11),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::text::DateFormatSymbols > >
-	(get_jobject());
+		local_ref< java::text::DateFormatSymbols >
+	>(get_jobject());
 }
 
 jint java::text::SimpleDateFormat::hashCode()
@@ -253,8 +283,8 @@ jint java::text::SimpleDateFormat::hashCode()
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(12),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::util::Date > java::text::SimpleDateFormat::parse(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -263,8 +293,8 @@ local_ref< java::util::Date > java::text::SimpleDateFormat::parse(local_ref< jav
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(13),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::Date > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Date >
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::SimpleDateFormat::set2DigitYearStart(local_ref< java::util::Date > const &a0)
@@ -273,8 +303,8 @@ void java::text::SimpleDateFormat::set2DigitYearStart(local_ref< java::util::Dat
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(14),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::SimpleDateFormat::setDateFormatSymbols(local_ref< java::text::DateFormatSymbols > const &a0)
@@ -283,8 +313,8 @@ void java::text::SimpleDateFormat::setDateFormatSymbols(local_ref< java::text::D
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(15),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::SimpleDateFormat::toLocalizedPattern()
@@ -293,8 +323,8 @@ local_ref< java::lang::String > java::text::SimpleDateFormat::toLocalizedPattern
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(16),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::SimpleDateFormat::toPattern()
@@ -303,8 +333,8 @@ local_ref< java::lang::String > java::text::SimpleDateFormat::toPattern()
 		java::text::SimpleDateFormat::J2CPP_CLASS_NAME,
 		java::text::SimpleDateFormat::J2CPP_METHOD_NAME(17),
 		java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

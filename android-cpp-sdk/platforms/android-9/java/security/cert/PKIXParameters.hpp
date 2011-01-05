@@ -12,6 +12,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertStore; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyStore.hpp>
@@ -83,6 +85,7 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::cert::CertPathParameters>() const;
 
@@ -136,6 +139,11 @@ namespace j2cpp {
 
 
 
+java::security::cert::PKIXParameters::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::security::cert::PKIXParameters::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -152,8 +160,8 @@ java::security::cert::PKIXParameters::PKIXParameters(local_ref< java::util::Set 
 	call_new_object<
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(0),
-		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -165,8 +173,8 @@ java::security::cert::PKIXParameters::PKIXParameters(local_ref< java::security::
 	call_new_object<
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(1),
-		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -178,8 +186,8 @@ local_ref< java::util::Set > java::security::cert::PKIXParameters::getTrustAncho
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(2),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setTrustAnchors(local_ref< java::util::Set > const &a0)
@@ -188,8 +196,8 @@ void java::security::cert::PKIXParameters::setTrustAnchors(local_ref< java::util
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(3),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXParameters::isAnyPolicyInhibited()
@@ -198,8 +206,8 @@ jboolean java::security::cert::PKIXParameters::isAnyPolicyInhibited()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(4),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setAnyPolicyInhibited(jboolean a0)
@@ -208,8 +216,8 @@ void java::security::cert::PKIXParameters::setAnyPolicyInhibited(jboolean a0)
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(5),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::security::cert::PKIXParameters::getCertPathCheckers()
@@ -218,8 +226,8 @@ local_ref< java::util::List > java::security::cert::PKIXParameters::getCertPathC
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(6),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setCertPathCheckers(local_ref< java::util::List > const &a0)
@@ -228,8 +236,8 @@ void java::security::cert::PKIXParameters::setCertPathCheckers(local_ref< java::
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(7),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::cert::PKIXParameters::addCertPathChecker(local_ref< java::security::cert::PKIXCertPathChecker > const &a0)
@@ -238,8 +246,8 @@ void java::security::cert::PKIXParameters::addCertPathChecker(local_ref< java::s
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(8),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::List > java::security::cert::PKIXParameters::getCertStores()
@@ -248,8 +256,8 @@ local_ref< java::util::List > java::security::cert::PKIXParameters::getCertStore
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(9),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setCertStores(local_ref< java::util::List > const &a0)
@@ -258,8 +266,8 @@ void java::security::cert::PKIXParameters::setCertStores(local_ref< java::util::
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(10),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::cert::PKIXParameters::addCertStore(local_ref< java::security::cert::CertStore > const &a0)
@@ -268,8 +276,8 @@ void java::security::cert::PKIXParameters::addCertStore(local_ref< java::securit
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(11),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Date > java::security::cert::PKIXParameters::getDate()
@@ -278,8 +286,8 @@ local_ref< java::util::Date > java::security::cert::PKIXParameters::getDate()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(12),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setDate(local_ref< java::util::Date > const &a0)
@@ -288,8 +296,8 @@ void java::security::cert::PKIXParameters::setDate(local_ref< java::util::Date >
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(13),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXParameters::isExplicitPolicyRequired()
@@ -298,8 +306,8 @@ jboolean java::security::cert::PKIXParameters::isExplicitPolicyRequired()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(14),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setExplicitPolicyRequired(jboolean a0)
@@ -308,8 +316,8 @@ void java::security::cert::PKIXParameters::setExplicitPolicyRequired(jboolean a0
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(15),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::security::cert::PKIXParameters::getInitialPolicies()
@@ -318,8 +326,8 @@ local_ref< java::util::Set > java::security::cert::PKIXParameters::getInitialPol
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(16),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setInitialPolicies(local_ref< java::util::Set > const &a0)
@@ -328,8 +336,8 @@ void java::security::cert::PKIXParameters::setInitialPolicies(local_ref< java::u
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(17),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXParameters::isPolicyMappingInhibited()
@@ -338,8 +346,8 @@ jboolean java::security::cert::PKIXParameters::isPolicyMappingInhibited()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(18),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setPolicyMappingInhibited(jboolean a0)
@@ -348,8 +356,8 @@ void java::security::cert::PKIXParameters::setPolicyMappingInhibited(jboolean a0
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(19),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXParameters::getPolicyQualifiersRejected()
@@ -358,8 +366,8 @@ jboolean java::security::cert::PKIXParameters::getPolicyQualifiersRejected()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(20),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setPolicyQualifiersRejected(jboolean a0)
@@ -368,8 +376,8 @@ void java::security::cert::PKIXParameters::setPolicyQualifiersRejected(jboolean 
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(21),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXParameters::isRevocationEnabled()
@@ -378,8 +386,8 @@ jboolean java::security::cert::PKIXParameters::isRevocationEnabled()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(22),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setRevocationEnabled(jboolean a0)
@@ -388,8 +396,8 @@ void java::security::cert::PKIXParameters::setRevocationEnabled(jboolean a0)
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(23),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::cert::PKIXParameters::getSigProvider()
@@ -398,8 +406,8 @@ local_ref< java::lang::String > java::security::cert::PKIXParameters::getSigProv
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(24),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setSigProvider(local_ref< java::lang::String > const &a0)
@@ -408,8 +416,8 @@ void java::security::cert::PKIXParameters::setSigProvider(local_ref< java::lang:
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(25),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::cert::CertSelector > java::security::cert::PKIXParameters::getTargetCertConstraints()
@@ -418,8 +426,8 @@ local_ref< java::security::cert::CertSelector > java::security::cert::PKIXParame
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(26),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::security::cert::CertSelector > >
-	(get_jobject());
+		local_ref< java::security::cert::CertSelector >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXParameters::setTargetCertConstraints(local_ref< java::security::cert::CertSelector > const &a0)
@@ -428,8 +436,8 @@ void java::security::cert::PKIXParameters::setTargetCertConstraints(local_ref< j
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(27),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::security::cert::PKIXParameters::clone()
@@ -438,8 +446,8 @@ local_ref< java::lang::Object > java::security::cert::PKIXParameters::clone()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(28),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::PKIXParameters::toString()
@@ -448,8 +456,8 @@ local_ref< java::lang::String > java::security::cert::PKIXParameters::toString()
 		java::security::cert::PKIXParameters::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(29),
 		java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -82,8 +82,8 @@ javax::crypto::spec::DHGenParameterSpec::DHGenParameterSpec(jint a0, jint a1)
 	call_new_object<
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -95,8 +95,8 @@ jint javax::crypto::spec::DHGenParameterSpec::getPrimeSize()
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::DHGenParameterSpec::getExponentSize()
@@ -105,8 +105,8 @@ jint javax::crypto::spec::DHGenParameterSpec::getExponentSize()
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

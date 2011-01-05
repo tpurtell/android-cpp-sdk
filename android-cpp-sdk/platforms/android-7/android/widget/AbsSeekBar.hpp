@@ -11,10 +11,14 @@
 #define J2CPP_ANDROID_WIDGET_ABSSEEKBAR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace widget { class ProgressBar; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -24,7 +28,10 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/ProgressBar.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -61,6 +68,10 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::widget::ProgressBar>() const;
 
 
@@ -93,6 +104,26 @@ namespace j2cpp {
 
 
 
+android::widget::AbsSeekBar::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::AbsSeekBar::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::AbsSeekBar::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::AbsSeekBar::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::widget::AbsSeekBar::operator local_ref<android::widget::ProgressBar>() const
 {
 	return local_ref<android::widget::ProgressBar>(get_jobject());
@@ -104,8 +135,8 @@ android::widget::AbsSeekBar::AbsSeekBar(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(0),
-		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -117,8 +148,8 @@ android::widget::AbsSeekBar::AbsSeekBar(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(1),
-		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -130,8 +161,8 @@ android::widget::AbsSeekBar::AbsSeekBar(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(2),
-		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -143,8 +174,8 @@ void android::widget::AbsSeekBar::setThumb(local_ref< android::graphics::drawabl
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(3),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AbsSeekBar::getThumbOffset()
@@ -153,8 +184,8 @@ jint android::widget::AbsSeekBar::getThumbOffset()
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(4),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AbsSeekBar::setThumbOffset(jint a0)
@@ -163,8 +194,8 @@ void android::widget::AbsSeekBar::setThumbOffset(jint a0)
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(5),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsSeekBar::setKeyProgressIncrement(jint a0)
@@ -173,8 +204,8 @@ void android::widget::AbsSeekBar::setKeyProgressIncrement(jint a0)
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(6),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AbsSeekBar::getKeyProgressIncrement()
@@ -183,8 +214,8 @@ jint android::widget::AbsSeekBar::getKeyProgressIncrement()
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(7),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AbsSeekBar::setMax(jint a0)
@@ -193,8 +224,8 @@ void android::widget::AbsSeekBar::setMax(jint a0)
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(8),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -208,8 +239,8 @@ jboolean android::widget::AbsSeekBar::onTouchEvent(local_ref< android::view::Mot
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(14),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsSeekBar::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -218,8 +249,8 @@ jboolean android::widget::AbsSeekBar::onKeyDown(jint a0, local_ref< android::vie
 		android::widget::AbsSeekBar::J2CPP_CLASS_NAME,
 		android::widget::AbsSeekBar::J2CPP_METHOD_NAME(15),
 		android::widget::AbsSeekBar::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

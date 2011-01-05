@@ -109,8 +109,8 @@ void android::widget::ExpandableListAdapter::registerDataSetObserver(local_ref< 
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(0),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ExpandableListAdapter::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -119,8 +119,8 @@ void android::widget::ExpandableListAdapter::unregisterDataSetObserver(local_ref
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(1),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::ExpandableListAdapter::getGroupCount()
@@ -129,8 +129,8 @@ jint android::widget::ExpandableListAdapter::getGroupCount()
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(2),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::ExpandableListAdapter::getChildrenCount(jint a0)
@@ -139,8 +139,8 @@ jint android::widget::ExpandableListAdapter::getChildrenCount(jint a0)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::widget::ExpandableListAdapter::getGroup(jint a0)
@@ -149,8 +149,8 @@ local_ref< java::lang::Object > android::widget::ExpandableListAdapter::getGroup
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > android::widget::ExpandableListAdapter::getChild(jint a0, jint a1)
@@ -159,8 +159,8 @@ local_ref< java::lang::Object > android::widget::ExpandableListAdapter::getChild
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::widget::ExpandableListAdapter::getGroupId(jint a0)
@@ -169,8 +169,8 @@ jlong android::widget::ExpandableListAdapter::getGroupId(jint a0)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(6),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jlong android::widget::ExpandableListAdapter::getChildId(jint a0, jint a1)
@@ -179,8 +179,8 @@ jlong android::widget::ExpandableListAdapter::getChildId(jint a0, jint a1)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(7),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::ExpandableListAdapter::hasStableIds()
@@ -189,8 +189,8 @@ jboolean android::widget::ExpandableListAdapter::hasStableIds()
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(8),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::ExpandableListAdapter::getGroupView(jint a0, jboolean a1, local_ref< android::view::View > const &a2, local_ref< android::view::ViewGroup > const &a3)
@@ -199,8 +199,8 @@ local_ref< android::view::View > android::widget::ExpandableListAdapter::getGrou
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(9),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::view::View > android::widget::ExpandableListAdapter::getChildView(jint a0, jint a1, jboolean a2, local_ref< android::view::View > const &a3, local_ref< android::view::ViewGroup > const &a4)
@@ -209,8 +209,8 @@ local_ref< android::view::View > android::widget::ExpandableListAdapter::getChil
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(10),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::widget::ExpandableListAdapter::isChildSelectable(jint a0, jint a1)
@@ -219,8 +219,8 @@ jboolean android::widget::ExpandableListAdapter::isChildSelectable(jint a0, jint
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(11),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::ExpandableListAdapter::areAllItemsEnabled()
@@ -229,8 +229,8 @@ jboolean android::widget::ExpandableListAdapter::areAllItemsEnabled()
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(12),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::ExpandableListAdapter::isEmpty()
@@ -239,8 +239,8 @@ jboolean android::widget::ExpandableListAdapter::isEmpty()
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(13),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ExpandableListAdapter::onGroupExpanded(jint a0)
@@ -249,8 +249,8 @@ void android::widget::ExpandableListAdapter::onGroupExpanded(jint a0)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(14),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ExpandableListAdapter::onGroupCollapsed(jint a0)
@@ -259,8 +259,8 @@ void android::widget::ExpandableListAdapter::onGroupCollapsed(jint a0)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(15),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong android::widget::ExpandableListAdapter::getCombinedChildId(jlong a0, jlong a1)
@@ -269,8 +269,8 @@ jlong android::widget::ExpandableListAdapter::getCombinedChildId(jlong a0, jlong
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(16),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::widget::ExpandableListAdapter::getCombinedGroupId(jlong a0)
@@ -279,8 +279,8 @@ jlong android::widget::ExpandableListAdapter::getCombinedGroupId(jlong a0)
 		android::widget::ExpandableListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_NAME(17),
 		android::widget::ExpandableListAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

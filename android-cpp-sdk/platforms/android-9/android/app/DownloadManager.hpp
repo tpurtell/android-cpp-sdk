@@ -241,8 +241,8 @@ android::app::DownloadManager_::Query::Query()
 	call_new_object<
 		android::app::DownloadManager_::Query::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Query::J2CPP_METHOD_NAME(0),
-		android::app::DownloadManager_::Query::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::DownloadManager_::Query::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -254,8 +254,8 @@ local_ref< android::app::DownloadManager_::Query > android::app::DownloadManager
 		android::app::DownloadManager_::Query::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Query::J2CPP_METHOD_NAME(1),
 		android::app::DownloadManager_::Query::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::DownloadManager_::Query > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Query >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Query > android::app::DownloadManager_::Query::setFilterByStatus(jint a0)
@@ -264,8 +264,8 @@ local_ref< android::app::DownloadManager_::Query > android::app::DownloadManager
 		android::app::DownloadManager_::Query::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Query::J2CPP_METHOD_NAME(2),
 		android::app::DownloadManager_::Query::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::app::DownloadManager_::Query > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Query >
+	>(get_jobject(), a0);
 }
 
 
@@ -286,8 +286,8 @@ android::app::DownloadManager_::Request::Request(local_ref< android::net::Uri > 
 	call_new_object<
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(0),
-		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -299,8 +299,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(1),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setDestinationInExternalFilesDir(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -309,8 +309,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(2),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setDestinationInExternalPublicDir(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -319,8 +319,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(3),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::addRequestHeader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -329,8 +329,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(4),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0, a1);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setTitle(local_ref< java::lang::CharSequence > const &a0)
@@ -339,8 +339,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(5),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setDescription(local_ref< java::lang::CharSequence > const &a0)
@@ -349,8 +349,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(6),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setMimeType(local_ref< java::lang::String > const &a0)
@@ -359,8 +359,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(7),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setShowRunningNotification(jboolean a0)
@@ -369,8 +369,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(8),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setAllowedNetworkTypes(jint a0)
@@ -379,8 +379,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(9),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setAllowedOverRoaming(jboolean a0)
@@ -389,8 +389,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(10),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::app::DownloadManager_::Request > android::app::DownloadManager_::Request::setVisibleInDownloadsUi(jboolean a0)
@@ -399,8 +399,8 @@ local_ref< android::app::DownloadManager_::Request > android::app::DownloadManag
 		android::app::DownloadManager_::Request::J2CPP_CLASS_NAME,
 		android::app::DownloadManager_::Request::J2CPP_METHOD_NAME(11),
 		android::app::DownloadManager_::Request::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::app::DownloadManager_::Request > >
-	(get_jobject(), a0);
+		local_ref< android::app::DownloadManager_::Request >
+	>(get_jobject(), a0);
 }
 
 
@@ -449,8 +449,8 @@ jlong android::app::DownloadManager::enqueue(local_ref< android::app::DownloadMa
 		android::app::DownloadManager::J2CPP_CLASS_NAME,
 		android::app::DownloadManager::J2CPP_METHOD_NAME(1),
 		android::app::DownloadManager::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint android::app::DownloadManager::remove(local_ref< array<jlong,1> > const &a0)
@@ -459,8 +459,8 @@ jint android::app::DownloadManager::remove(local_ref< array<jlong,1> > const &a0
 		android::app::DownloadManager::J2CPP_CLASS_NAME,
 		android::app::DownloadManager::J2CPP_METHOD_NAME(2),
 		android::app::DownloadManager::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::app::DownloadManager::query(local_ref< android::app::DownloadManager_::Query > const &a0)
@@ -469,8 +469,8 @@ local_ref< android::database::Cursor > android::app::DownloadManager::query(loca
 		android::app::DownloadManager::J2CPP_CLASS_NAME,
 		android::app::DownloadManager::J2CPP_METHOD_NAME(3),
 		android::app::DownloadManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::database::Cursor > >
-	(get_jobject(), a0);
+		local_ref< android::database::Cursor >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::ParcelFileDescriptor > android::app::DownloadManager::openDownloadedFile(jlong a0)
@@ -479,8 +479,8 @@ local_ref< android::os::ParcelFileDescriptor > android::app::DownloadManager::op
 		android::app::DownloadManager::J2CPP_CLASS_NAME,
 		android::app::DownloadManager::J2CPP_METHOD_NAME(4),
 		android::app::DownloadManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::ParcelFileDescriptor > >
-	(get_jobject(), a0);
+		local_ref< android::os::ParcelFileDescriptor >
+	>(get_jobject(), a0);
 }
 
 

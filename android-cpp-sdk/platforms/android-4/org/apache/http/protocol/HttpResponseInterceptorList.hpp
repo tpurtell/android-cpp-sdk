@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPRESPONSEINTERCEPTORLIST_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
 
 
 #include <java/lang/Class.hpp>
@@ -89,8 +89,8 @@ void org::apache::http::protocol::HttpResponseInterceptorList::addResponseInterc
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(0),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpResponseInterceptorList::addResponseInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const &a0, jint a1)
@@ -99,8 +99,8 @@ void org::apache::http::protocol::HttpResponseInterceptorList::addResponseInterc
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint org::apache::http::protocol::HttpResponseInterceptorList::getResponseInterceptorCount()
@@ -109,8 +109,8 @@ jint org::apache::http::protocol::HttpResponseInterceptorList::getResponseInterc
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::protocol::HttpResponseInterceptorList::getResponseInterceptor(jint a0)
@@ -119,8 +119,8 @@ local_ref< org::apache::http::HttpResponseInterceptor > org::apache::http::proto
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::HttpResponseInterceptor > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::HttpResponseInterceptor >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpResponseInterceptorList::clearResponseInterceptors()
@@ -129,8 +129,8 @@ void org::apache::http::protocol::HttpResponseInterceptorList::clearResponseInte
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::protocol::HttpResponseInterceptorList::removeResponseInterceptorByClass(local_ref< java::lang::Class > const &a0)
@@ -139,8 +139,8 @@ void org::apache::http::protocol::HttpResponseInterceptorList::removeResponseInt
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(5),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::HttpResponseInterceptorList::setInterceptors(local_ref< java::util::List > const &a0)
@@ -149,8 +149,8 @@ void org::apache::http::protocol::HttpResponseInterceptorList::setInterceptors(l
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_NAME(6),
 		org::apache::http::protocol::HttpResponseInterceptorList::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

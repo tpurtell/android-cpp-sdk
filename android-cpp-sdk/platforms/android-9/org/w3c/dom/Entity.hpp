@@ -90,8 +90,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getPublicId()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getSystemId()
@@ -100,8 +100,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getSystemId()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getNotationName()
@@ -110,8 +110,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getNotationName()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getInputEncoding()
@@ -120,8 +120,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getInputEncoding()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getXmlEncoding()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getXmlEncoding()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getXmlVersion()
@@ -140,8 +140,8 @@ local_ref< java::lang::String > org::w3c::dom::Entity::getXmlVersion()
 		org::w3c::dom::Entity::J2CPP_CLASS_NAME,
 		org::w3c::dom::Entity::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::Entity::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

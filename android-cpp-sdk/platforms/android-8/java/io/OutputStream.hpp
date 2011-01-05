@@ -95,8 +95,8 @@ java::io::OutputStream::OutputStream()
 	call_new_object<
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(0),
-		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ void java::io::OutputStream::close()
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(1),
 		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::OutputStream::flush()
@@ -118,8 +118,8 @@ void java::io::OutputStream::flush()
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(2),
 		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::OutputStream::write(local_ref< array<jbyte,1> > const &a0)
@@ -128,8 +128,8 @@ void java::io::OutputStream::write(local_ref< array<jbyte,1> > const &a0)
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(3),
 		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::OutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -138,8 +138,8 @@ void java::io::OutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(4),
 		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::io::OutputStream::write(jint a0)
@@ -148,8 +148,8 @@ void java::io::OutputStream::write(jint a0)
 		java::io::OutputStream::J2CPP_CLASS_NAME,
 		java::io::OutputStream::J2CPP_METHOD_NAME(5),
 		java::io::OutputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

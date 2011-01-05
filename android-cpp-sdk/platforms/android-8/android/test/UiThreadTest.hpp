@@ -37,8 +37,8 @@ namespace android { namespace test {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class UiThreadTest
 
@@ -58,14 +58,14 @@ namespace j2cpp {
 
 
 
-android::test::UiThreadTest::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::test::UiThreadTest::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+android::test::UiThreadTest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::test::UiThreadTest,"android/test/UiThreadTest")

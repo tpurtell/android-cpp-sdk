@@ -14,11 +14,13 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { namespace Formatter_ { class BigDecimalLayoutForm; } } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
 namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class Flushable; } } }
@@ -31,7 +33,9 @@ namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 #include <java/io/IOException.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/io/PrintStream.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Appendable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -68,6 +72,9 @@ namespace java { namespace util {
 			}
 
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Comparable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< java::util::Formatter_::BigDecimalLayoutForm >, 1> > values();
@@ -167,14 +174,29 @@ java::util::Formatter_::BigDecimalLayoutForm::operator local_ref<java::lang::Enu
 	return local_ref<java::lang::Enum>(get_jobject());
 }
 
+java::util::Formatter_::BigDecimalLayoutForm::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::Formatter_::BigDecimalLayoutForm::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::util::Formatter_::BigDecimalLayoutForm::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 local_ref< array< local_ref< java::util::Formatter_::BigDecimalLayoutForm >, 1> > java::util::Formatter_::BigDecimalLayoutForm::values()
 {
 	return call_static_method<
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_CLASS_NAME,
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_METHOD_NAME(0),
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::util::Formatter_::BigDecimalLayoutForm >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::Formatter_::BigDecimalLayoutForm >, 1> >
+	>();
 }
 
 local_ref< java::util::Formatter_::BigDecimalLayoutForm > java::util::Formatter_::BigDecimalLayoutForm::valueOf(local_ref< java::lang::String > const &a0)
@@ -183,8 +205,8 @@ local_ref< java::util::Formatter_::BigDecimalLayoutForm > java::util::Formatter_
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_CLASS_NAME,
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_METHOD_NAME(1),
 		java::util::Formatter_::BigDecimalLayoutForm::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Formatter_::BigDecimalLayoutForm > >
-	(a0);
+		local_ref< java::util::Formatter_::BigDecimalLayoutForm >
+	>(a0);
 }
 
 
@@ -237,8 +259,8 @@ java::util::Formatter::Formatter()
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(0),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -250,8 +272,8 @@ java::util::Formatter::Formatter(local_ref< java::lang::Appendable > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(1),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -263,8 +285,8 @@ java::util::Formatter::Formatter(local_ref< java::util::Locale > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(2),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -276,8 +298,8 @@ java::util::Formatter::Formatter(local_ref< java::lang::Appendable > const &a0, 
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(3),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -289,8 +311,8 @@ java::util::Formatter::Formatter(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(4),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -302,8 +324,8 @@ java::util::Formatter::Formatter(local_ref< java::lang::String > const &a0, loca
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(5),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -315,8 +337,8 @@ java::util::Formatter::Formatter(local_ref< java::lang::String > const &a0, loca
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(6),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1, a2)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1, a2)
 )
 {
 }
@@ -328,8 +350,8 @@ java::util::Formatter::Formatter(local_ref< java::io::File > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(7),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(7)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(7)
+	>(a0)
 )
 {
 }
@@ -341,8 +363,8 @@ java::util::Formatter::Formatter(local_ref< java::io::File > const &a0, local_re
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(8),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(8)>
-	(a0, a1)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(8)
+	>(a0, a1)
 )
 {
 }
@@ -354,8 +376,8 @@ java::util::Formatter::Formatter(local_ref< java::io::File > const &a0, local_re
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(9),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(9)>
-	(a0, a1, a2)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(9)
+	>(a0, a1, a2)
 )
 {
 }
@@ -367,8 +389,8 @@ java::util::Formatter::Formatter(local_ref< java::io::OutputStream > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(10),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(10)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(10)
+	>(a0)
 )
 {
 }
@@ -380,8 +402,8 @@ java::util::Formatter::Formatter(local_ref< java::io::OutputStream > const &a0, 
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(11),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(11)>
-	(a0, a1)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(11)
+	>(a0, a1)
 )
 {
 }
@@ -393,8 +415,8 @@ java::util::Formatter::Formatter(local_ref< java::io::OutputStream > const &a0, 
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(12),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(12)>
-	(a0, a1, a2)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(12)
+	>(a0, a1, a2)
 )
 {
 }
@@ -406,8 +428,8 @@ java::util::Formatter::Formatter(local_ref< java::io::PrintStream > const &a0)
 	call_new_object<
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(13),
-		java::util::Formatter::J2CPP_METHOD_SIGNATURE(13)>
-	(a0)
+		java::util::Formatter::J2CPP_METHOD_SIGNATURE(13)
+	>(a0)
 )
 {
 }
@@ -419,8 +441,8 @@ local_ref< java::util::Locale > java::util::Formatter::locale()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(14),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Appendable > java::util::Formatter::out()
@@ -429,8 +451,8 @@ local_ref< java::lang::Appendable > java::util::Formatter::out()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(15),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Appendable > >
-	(get_jobject());
+		local_ref< java::lang::Appendable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Formatter::toString()
@@ -439,8 +461,8 @@ local_ref< java::lang::String > java::util::Formatter::toString()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(16),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::Formatter::flush()
@@ -449,8 +471,8 @@ void java::util::Formatter::flush()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(17),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::Formatter::close()
@@ -459,8 +481,8 @@ void java::util::Formatter::close()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(18),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::IOException > java::util::Formatter::ioException()
@@ -469,8 +491,8 @@ local_ref< java::io::IOException > java::util::Formatter::ioException()
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(19),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::io::IOException > >
-	(get_jobject());
+		local_ref< java::io::IOException >
+	>(get_jobject());
 }
 
 local_ref< java::util::Formatter > java::util::Formatter::format(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::Object >, 1> > const &a1)
@@ -479,8 +501,8 @@ local_ref< java::util::Formatter > java::util::Formatter::format(local_ref< java
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(20),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::util::Formatter > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Formatter >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Formatter > java::util::Formatter::format(local_ref< java::util::Locale > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2)
@@ -489,8 +511,8 @@ local_ref< java::util::Formatter > java::util::Formatter::format(local_ref< java
 		java::util::Formatter::J2CPP_CLASS_NAME,
 		java::util::Formatter::J2CPP_METHOD_NAME(21),
 		java::util::Formatter::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::util::Formatter > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::util::Formatter >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

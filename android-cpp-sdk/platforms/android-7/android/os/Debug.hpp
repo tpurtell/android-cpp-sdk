@@ -304,8 +304,8 @@ android::os::Debug_::InstructionCount::InstructionCount()
 	call_new_object<
 		android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME,
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(0),
-		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -317,8 +317,8 @@ jboolean android::os::Debug_::InstructionCount::resetAndStart()
 		android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME,
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(1),
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::os::Debug_::InstructionCount::collect()
@@ -327,8 +327,8 @@ jboolean android::os::Debug_::InstructionCount::collect()
 		android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME,
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(2),
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::os::Debug_::InstructionCount::globalTotal()
@@ -337,8 +337,8 @@ jint android::os::Debug_::InstructionCount::globalTotal()
 		android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME,
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(3),
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Debug_::InstructionCount::globalMethodInvocations()
@@ -347,8 +347,8 @@ jint android::os::Debug_::InstructionCount::globalMethodInvocations()
 		android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME,
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(4),
 		android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -376,8 +376,8 @@ android::os::Debug_::MemoryInfo::MemoryInfo()
 	call_new_object<
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(0),
-		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , dalvikPss(get_jobject())
 , dalvikPrivateDirty(get_jobject())
@@ -398,8 +398,8 @@ jint android::os::Debug_::MemoryInfo::getTotalPss()
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(1),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Debug_::MemoryInfo::getTotalPrivateDirty()
@@ -408,8 +408,8 @@ jint android::os::Debug_::MemoryInfo::getTotalPrivateDirty()
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(2),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Debug_::MemoryInfo::getTotalSharedDirty()
@@ -418,8 +418,8 @@ jint android::os::Debug_::MemoryInfo::getTotalSharedDirty()
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(3),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::Debug_::MemoryInfo::describeContents()
@@ -428,8 +428,8 @@ jint android::os::Debug_::MemoryInfo::describeContents()
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(4),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::Debug_::MemoryInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -438,8 +438,8 @@ void android::os::Debug_::MemoryInfo::writeToParcel(local_ref< android::os::Parc
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(5),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Debug_::MemoryInfo::readFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -448,8 +448,8 @@ void android::os::Debug_::MemoryInfo::readFromParcel(local_ref< android::os::Par
 		android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(6),
 		android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -496,8 +496,8 @@ void android::os::Debug::waitForDebugger()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(1),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	();
+		void
+	>();
 }
 
 jboolean android::os::Debug::waitingForDebugger()
@@ -506,8 +506,8 @@ jboolean android::os::Debug::waitingForDebugger()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(2),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 jboolean android::os::Debug::isDebuggerConnected()
@@ -516,8 +516,8 @@ jboolean android::os::Debug::isDebuggerConnected()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(3),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 void android::os::Debug::changeDebugPort(jint a0)
@@ -526,8 +526,8 @@ void android::os::Debug::changeDebugPort(jint a0)
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(4),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::os::Debug::startNativeTracing()
@@ -536,8 +536,8 @@ void android::os::Debug::startNativeTracing()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(5),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::stopNativeTracing()
@@ -546,8 +546,8 @@ void android::os::Debug::stopNativeTracing()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(6),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::enableEmulatorTraceOutput()
@@ -556,8 +556,8 @@ void android::os::Debug::enableEmulatorTraceOutput()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(7),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::startMethodTracing()
@@ -566,8 +566,8 @@ void android::os::Debug::startMethodTracing()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(8),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::startMethodTracing(local_ref< java::lang::String > const &a0)
@@ -576,8 +576,8 @@ void android::os::Debug::startMethodTracing(local_ref< java::lang::String > cons
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(9),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::os::Debug::startMethodTracing(local_ref< java::lang::String > const &a0, jint a1)
@@ -586,8 +586,8 @@ void android::os::Debug::startMethodTracing(local_ref< java::lang::String > cons
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(10),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::os::Debug::startMethodTracing(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -596,8 +596,8 @@ void android::os::Debug::startMethodTracing(local_ref< java::lang::String > cons
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(11),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::os::Debug::stopMethodTracing()
@@ -606,8 +606,8 @@ void android::os::Debug::stopMethodTracing()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(12),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	();
+		void
+	>();
 }
 
 jlong android::os::Debug::threadCpuTimeNanos()
@@ -616,8 +616,8 @@ jlong android::os::Debug::threadCpuTimeNanos()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(13),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(13), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 void android::os::Debug::startAllocCounting()
@@ -626,8 +626,8 @@ void android::os::Debug::startAllocCounting()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(14),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::stopAllocCounting()
@@ -636,8 +636,8 @@ void android::os::Debug::stopAllocCounting()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(15),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	();
+		void
+	>();
 }
 
 jint android::os::Debug::getGlobalAllocCount()
@@ -646,8 +646,8 @@ jint android::os::Debug::getGlobalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(16),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalAllocSize()
@@ -656,8 +656,8 @@ jint android::os::Debug::getGlobalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(17),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalFreedCount()
@@ -666,8 +666,8 @@ jint android::os::Debug::getGlobalFreedCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(18),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalFreedSize()
@@ -676,8 +676,8 @@ jint android::os::Debug::getGlobalFreedSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(19),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalExternalAllocCount()
@@ -686,8 +686,8 @@ jint android::os::Debug::getGlobalExternalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(20),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalExternalAllocSize()
@@ -696,8 +696,8 @@ jint android::os::Debug::getGlobalExternalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(21),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalExternalFreedCount()
@@ -706,8 +706,8 @@ jint android::os::Debug::getGlobalExternalFreedCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(22),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalExternalFreedSize()
@@ -716,8 +716,8 @@ jint android::os::Debug::getGlobalExternalFreedSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(23),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getGlobalGcInvocationCount()
@@ -726,8 +726,8 @@ jint android::os::Debug::getGlobalGcInvocationCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(24),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getThreadAllocCount()
@@ -736,8 +736,8 @@ jint android::os::Debug::getThreadAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(25),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getThreadAllocSize()
@@ -746,8 +746,8 @@ jint android::os::Debug::getThreadAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(26),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getThreadExternalAllocCount()
@@ -756,8 +756,8 @@ jint android::os::Debug::getThreadExternalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(27),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getThreadExternalAllocSize()
@@ -766,8 +766,8 @@ jint android::os::Debug::getThreadExternalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(28),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getThreadGcInvocationCount()
@@ -776,8 +776,8 @@ jint android::os::Debug::getThreadGcInvocationCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(29),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void android::os::Debug::resetGlobalAllocCount()
@@ -786,8 +786,8 @@ void android::os::Debug::resetGlobalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(30),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalAllocSize()
@@ -796,8 +796,8 @@ void android::os::Debug::resetGlobalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(31),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalFreedCount()
@@ -806,8 +806,8 @@ void android::os::Debug::resetGlobalFreedCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(32),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalFreedSize()
@@ -816,8 +816,8 @@ void android::os::Debug::resetGlobalFreedSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(33),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalExternalAllocCount()
@@ -826,8 +826,8 @@ void android::os::Debug::resetGlobalExternalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(34),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalExternalAllocSize()
@@ -836,8 +836,8 @@ void android::os::Debug::resetGlobalExternalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(35),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalExternalFreedCount()
@@ -846,8 +846,8 @@ void android::os::Debug::resetGlobalExternalFreedCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(36),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalExternalFreedSize()
@@ -856,8 +856,8 @@ void android::os::Debug::resetGlobalExternalFreedSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(37),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetGlobalGcInvocationCount()
@@ -866,8 +866,8 @@ void android::os::Debug::resetGlobalGcInvocationCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(38),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetThreadAllocCount()
@@ -876,8 +876,8 @@ void android::os::Debug::resetThreadAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(39),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetThreadAllocSize()
@@ -886,8 +886,8 @@ void android::os::Debug::resetThreadAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(40),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetThreadExternalAllocCount()
@@ -896,8 +896,8 @@ void android::os::Debug::resetThreadExternalAllocCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(41),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetThreadExternalAllocSize()
@@ -906,8 +906,8 @@ void android::os::Debug::resetThreadExternalAllocSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(42),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetThreadGcInvocationCount()
@@ -916,8 +916,8 @@ void android::os::Debug::resetThreadGcInvocationCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(43),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	();
+		void
+	>();
 }
 
 void android::os::Debug::resetAllCounts()
@@ -926,8 +926,8 @@ void android::os::Debug::resetAllCounts()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(44),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	();
+		void
+	>();
 }
 
 jlong android::os::Debug::getNativeHeapSize()
@@ -936,8 +936,8 @@ jlong android::os::Debug::getNativeHeapSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(45),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(45), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::os::Debug::getNativeHeapAllocatedSize()
@@ -946,8 +946,8 @@ jlong android::os::Debug::getNativeHeapAllocatedSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(46),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(46), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::os::Debug::getNativeHeapFreeSize()
@@ -956,8 +956,8 @@ jlong android::os::Debug::getNativeHeapFreeSize()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(47),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(47), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 void android::os::Debug::getMemoryInfo(local_ref< android::os::Debug_::MemoryInfo > const &a0)
@@ -966,8 +966,8 @@ void android::os::Debug::getMemoryInfo(local_ref< android::os::Debug_::MemoryInf
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(48),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::os::Debug::setAllocationLimit(jint a0)
@@ -976,8 +976,8 @@ jint android::os::Debug::setAllocationLimit(jint a0)
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(49),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(49), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint android::os::Debug::setGlobalAllocationLimit(jint a0)
@@ -986,8 +986,8 @@ jint android::os::Debug::setGlobalAllocationLimit(jint a0)
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(50),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(50), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void android::os::Debug::printLoadedClasses(jint a0)
@@ -996,8 +996,8 @@ void android::os::Debug::printLoadedClasses(jint a0)
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(51),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::os::Debug::getLoadedClassCount()
@@ -1006,8 +1006,8 @@ jint android::os::Debug::getLoadedClassCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(52),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(52), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void android::os::Debug::dumpHprofData(local_ref< java::lang::String > const &a0)
@@ -1016,8 +1016,8 @@ void android::os::Debug::dumpHprofData(local_ref< java::lang::String > const &a0
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(53),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::os::Debug::getBinderSentTransactions()
@@ -1026,8 +1026,8 @@ jint android::os::Debug::getBinderSentTransactions()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(54),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(54), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getBinderReceivedTransactions()
@@ -1036,8 +1036,8 @@ jint android::os::Debug::getBinderReceivedTransactions()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(55),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(55), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getBinderLocalObjectCount()
@@ -1046,8 +1046,8 @@ jint android::os::Debug::getBinderLocalObjectCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(56),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(56), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getBinderProxyObjectCount()
@@ -1056,8 +1056,8 @@ jint android::os::Debug::getBinderProxyObjectCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(57),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(57), 
-		jint >
-	();
+		jint
+	>();
 }
 
 jint android::os::Debug::getBinderDeathObjectCount()
@@ -1066,8 +1066,8 @@ jint android::os::Debug::getBinderDeathObjectCount()
 		android::os::Debug::J2CPP_CLASS_NAME,
 		android::os::Debug::J2CPP_METHOD_NAME(58),
 		android::os::Debug::J2CPP_METHOD_SIGNATURE(58), 
-		jint >
-	();
+		jint
+	>();
 }
 
 

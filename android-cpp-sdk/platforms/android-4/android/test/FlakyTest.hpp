@@ -38,8 +38,8 @@ namespace android { namespace test {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint tolerance();
@@ -61,14 +61,14 @@ namespace j2cpp {
 
 
 
-android::test::FlakyTest::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::test::FlakyTest::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+android::test::FlakyTest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jint android::test::FlakyTest::tolerance()
@@ -77,8 +77,8 @@ jint android::test::FlakyTest::tolerance()
 		android::test::FlakyTest::J2CPP_CLASS_NAME,
 		android::test::FlakyTest::J2CPP_METHOD_NAME(0),
 		android::test::FlakyTest::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -113,8 +113,8 @@ android::content::BroadcastReceiver::BroadcastReceiver()
 	call_new_object<
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(0),
-		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +126,8 @@ void android::content::BroadcastReceiver::onReceive(local_ref< android::content:
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(1),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::IBinder > android::content::BroadcastReceiver::peekService(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -136,8 +136,8 @@ local_ref< android::os::IBinder > android::content::BroadcastReceiver::peekServi
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(2),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::BroadcastReceiver::setResultCode(jint a0)
@@ -146,8 +146,8 @@ void android::content::BroadcastReceiver::setResultCode(jint a0)
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(3),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::BroadcastReceiver::getResultCode()
@@ -156,8 +156,8 @@ jint android::content::BroadcastReceiver::getResultCode()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(4),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::BroadcastReceiver::setResultData(local_ref< java::lang::String > const &a0)
@@ -166,8 +166,8 @@ void android::content::BroadcastReceiver::setResultData(local_ref< java::lang::S
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(5),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::BroadcastReceiver::getResultData()
@@ -176,8 +176,8 @@ local_ref< java::lang::String > android::content::BroadcastReceiver::getResultDa
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(6),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::content::BroadcastReceiver::setResultExtras(local_ref< android::os::Bundle > const &a0)
@@ -186,8 +186,8 @@ void android::content::BroadcastReceiver::setResultExtras(local_ref< android::os
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(7),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::content::BroadcastReceiver::getResultExtras(jboolean a0)
@@ -196,8 +196,8 @@ local_ref< android::os::Bundle > android::content::BroadcastReceiver::getResultE
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(8),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0);
 }
 
 void android::content::BroadcastReceiver::setResult(jint a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -206,8 +206,8 @@ void android::content::BroadcastReceiver::setResult(jint a0, local_ref< java::la
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(9),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::content::BroadcastReceiver::getAbortBroadcast()
@@ -216,8 +216,8 @@ jboolean android::content::BroadcastReceiver::getAbortBroadcast()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(10),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::content::BroadcastReceiver::abortBroadcast()
@@ -226,8 +226,8 @@ void android::content::BroadcastReceiver::abortBroadcast()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(11),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::content::BroadcastReceiver::clearAbortBroadcast()
@@ -236,8 +236,8 @@ void android::content::BroadcastReceiver::clearAbortBroadcast()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(12),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::content::BroadcastReceiver::isOrderedBroadcast()
@@ -246,8 +246,8 @@ jboolean android::content::BroadcastReceiver::isOrderedBroadcast()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(13),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::content::BroadcastReceiver::isInitialStickyBroadcast()
@@ -256,8 +256,8 @@ jboolean android::content::BroadcastReceiver::isInitialStickyBroadcast()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(14),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::content::BroadcastReceiver::setOrderedHint(jboolean a0)
@@ -266,8 +266,8 @@ void android::content::BroadcastReceiver::setOrderedHint(jboolean a0)
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(15),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::BroadcastReceiver::setDebugUnregister(jboolean a0)
@@ -276,8 +276,8 @@ void android::content::BroadcastReceiver::setDebugUnregister(jboolean a0)
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(16),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::BroadcastReceiver::getDebugUnregister()
@@ -286,8 +286,8 @@ jboolean android::content::BroadcastReceiver::getDebugUnregister()
 		android::content::BroadcastReceiver::J2CPP_CLASS_NAME,
 		android::content::BroadcastReceiver::J2CPP_METHOD_NAME(17),
 		android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

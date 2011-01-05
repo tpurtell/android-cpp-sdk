@@ -84,8 +84,8 @@ local_ref< java::util::Enumeration > javax::net::ssl::SSLSessionContext::getIds(
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLSession > javax::net::ssl::SSLSessionContext::getSession(local_ref< array<jbyte,1> > const &a0)
@@ -94,8 +94,8 @@ local_ref< javax::net::ssl::SSLSession > javax::net::ssl::SSLSessionContext::get
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLSession > >
-	(get_jobject(), a0);
+		local_ref< javax::net::ssl::SSLSession >
+	>(get_jobject(), a0);
 }
 
 jint javax::net::ssl::SSLSessionContext::getSessionCacheSize()
@@ -104,8 +104,8 @@ jint javax::net::ssl::SSLSessionContext::getSessionCacheSize()
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::net::ssl::SSLSessionContext::getSessionTimeout()
@@ -114,8 +114,8 @@ jint javax::net::ssl::SSLSessionContext::getSessionTimeout()
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLSessionContext::setSessionCacheSize(jint a0)
@@ -124,8 +124,8 @@ void javax::net::ssl::SSLSessionContext::setSessionCacheSize(jint a0)
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::net::ssl::SSLSessionContext::setSessionTimeout(jint a0)
@@ -134,8 +134,8 @@ void javax::net::ssl::SSLSessionContext::setSessionTimeout(jint a0)
 		javax::net::ssl::SSLSessionContext::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::SSLSessionContext::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

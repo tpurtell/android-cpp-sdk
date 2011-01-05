@@ -92,8 +92,8 @@ local_ref< org::w3c::dom::ls::LSParser > org::w3c::dom::ls::DOMImplementationLS:
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::ls::LSParser > >
-	(get_jobject(), a0, a1);
+		local_ref< org::w3c::dom::ls::LSParser >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::w3c::dom::ls::LSSerializer > org::w3c::dom::ls::DOMImplementationLS::createLSSerializer()
@@ -102,8 +102,8 @@ local_ref< org::w3c::dom::ls::LSSerializer > org::w3c::dom::ls::DOMImplementatio
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::w3c::dom::ls::LSSerializer > >
-	(get_jobject());
+		local_ref< org::w3c::dom::ls::LSSerializer >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::ls::LSInput > org::w3c::dom::ls::DOMImplementationLS::createLSInput()
@@ -112,8 +112,8 @@ local_ref< org::w3c::dom::ls::LSInput > org::w3c::dom::ls::DOMImplementationLS::
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::w3c::dom::ls::LSInput > >
-	(get_jobject());
+		local_ref< org::w3c::dom::ls::LSInput >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::ls::LSOutput > org::w3c::dom::ls::DOMImplementationLS::createLSOutput()
@@ -122,8 +122,8 @@ local_ref< org::w3c::dom::ls::LSOutput > org::w3c::dom::ls::DOMImplementationLS:
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::ls::DOMImplementationLS::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::w3c::dom::ls::LSOutput > >
-	(get_jobject());
+		local_ref< org::w3c::dom::ls::LSOutput >
+	>(get_jobject());
 }
 
 

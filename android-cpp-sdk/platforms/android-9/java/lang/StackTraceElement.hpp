@@ -95,8 +95,8 @@ java::lang::StackTraceElement::StackTraceElement(local_ref< java::lang::String >
 	call_new_object<
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(0),
-		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -108,8 +108,8 @@ jboolean java::lang::StackTraceElement::equals(local_ref< java::lang::Object > c
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(1),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::StackTraceElement::getClassName()
@@ -118,8 +118,8 @@ local_ref< java::lang::String > java::lang::StackTraceElement::getClassName()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(2),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::StackTraceElement::getFileName()
@@ -128,8 +128,8 @@ local_ref< java::lang::String > java::lang::StackTraceElement::getFileName()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(3),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::lang::StackTraceElement::getLineNumber()
@@ -138,8 +138,8 @@ jint java::lang::StackTraceElement::getLineNumber()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(4),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::StackTraceElement::getMethodName()
@@ -148,8 +148,8 @@ local_ref< java::lang::String > java::lang::StackTraceElement::getMethodName()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(5),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::lang::StackTraceElement::hashCode()
@@ -158,8 +158,8 @@ jint java::lang::StackTraceElement::hashCode()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(6),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::lang::StackTraceElement::isNativeMethod()
@@ -168,8 +168,8 @@ jboolean java::lang::StackTraceElement::isNativeMethod()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(7),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::StackTraceElement::toString()
@@ -178,8 +178,8 @@ local_ref< java::lang::String > java::lang::StackTraceElement::toString()
 		java::lang::StackTraceElement::J2CPP_CLASS_NAME,
 		java::lang::StackTraceElement::J2CPP_METHOD_NAME(8),
 		java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

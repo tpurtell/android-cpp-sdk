@@ -148,8 +148,8 @@ android::location::Criteria::Criteria()
 	call_new_object<
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(0),
-		android::location::Criteria::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::location::Criteria::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -161,8 +161,8 @@ android::location::Criteria::Criteria(local_ref< android::location::Criteria > c
 	call_new_object<
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(1),
-		android::location::Criteria::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::location::Criteria::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -174,8 +174,8 @@ void android::location::Criteria::setHorizontalAccuracy(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(2),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getHorizontalAccuracy()
@@ -184,8 +184,8 @@ jint android::location::Criteria::getHorizontalAccuracy()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(3),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setVerticalAccuracy(jint a0)
@@ -194,8 +194,8 @@ void android::location::Criteria::setVerticalAccuracy(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(4),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getVerticalAccuracy()
@@ -204,8 +204,8 @@ jint android::location::Criteria::getVerticalAccuracy()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(5),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setSpeedAccuracy(jint a0)
@@ -214,8 +214,8 @@ void android::location::Criteria::setSpeedAccuracy(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(6),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getSpeedAccuracy()
@@ -224,8 +224,8 @@ jint android::location::Criteria::getSpeedAccuracy()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(7),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setBearingAccuracy(jint a0)
@@ -234,8 +234,8 @@ void android::location::Criteria::setBearingAccuracy(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(8),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getBearingAccuracy()
@@ -244,8 +244,8 @@ jint android::location::Criteria::getBearingAccuracy()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(9),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setAccuracy(jint a0)
@@ -254,8 +254,8 @@ void android::location::Criteria::setAccuracy(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(10),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getAccuracy()
@@ -264,8 +264,8 @@ jint android::location::Criteria::getAccuracy()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(11),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setPowerRequirement(jint a0)
@@ -274,8 +274,8 @@ void android::location::Criteria::setPowerRequirement(jint a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(12),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::location::Criteria::getPowerRequirement()
@@ -284,8 +284,8 @@ jint android::location::Criteria::getPowerRequirement()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(13),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::setCostAllowed(jboolean a0)
@@ -294,8 +294,8 @@ void android::location::Criteria::setCostAllowed(jboolean a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(14),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::Criteria::isCostAllowed()
@@ -304,8 +304,8 @@ jboolean android::location::Criteria::isCostAllowed()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(15),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::location::Criteria::setAltitudeRequired(jboolean a0)
@@ -314,8 +314,8 @@ void android::location::Criteria::setAltitudeRequired(jboolean a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(16),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::Criteria::isAltitudeRequired()
@@ -324,8 +324,8 @@ jboolean android::location::Criteria::isAltitudeRequired()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(17),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::location::Criteria::setSpeedRequired(jboolean a0)
@@ -334,8 +334,8 @@ void android::location::Criteria::setSpeedRequired(jboolean a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(18),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::Criteria::isSpeedRequired()
@@ -344,8 +344,8 @@ jboolean android::location::Criteria::isSpeedRequired()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(19),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::location::Criteria::setBearingRequired(jboolean a0)
@@ -354,8 +354,8 @@ void android::location::Criteria::setBearingRequired(jboolean a0)
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(20),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::Criteria::isBearingRequired()
@@ -364,8 +364,8 @@ jboolean android::location::Criteria::isBearingRequired()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(21),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::location::Criteria::describeContents()
@@ -374,8 +374,8 @@ jint android::location::Criteria::describeContents()
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(22),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::location::Criteria::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -384,8 +384,8 @@ void android::location::Criteria::writeToParcel(local_ref< android::os::Parcel >
 		android::location::Criteria::J2CPP_CLASS_NAME,
 		android::location::Criteria::J2CPP_METHOD_NAME(23),
 		android::location::Criteria::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

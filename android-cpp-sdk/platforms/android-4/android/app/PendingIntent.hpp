@@ -11,7 +11,6 @@
 #define J2CPP_ANDROID_APP_PENDINGINTENT_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { namespace PendingIntent_ { class OnFinished; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
@@ -21,9 +20,12 @@ namespace j2cpp { namespace android { namespace util { class AndroidException; }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class IntentSender; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { namespace PendingIntent_ { class OnFinished; } } } }
 
 
 #include <android/app/PendingIntent.hpp>
@@ -35,9 +37,11 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AndroidException.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -65,6 +69,10 @@ namespace android { namespace app {
 			}
 
 			operator local_ref<android::util::AndroidException>() const;
+			operator local_ref<java::io::Serializable>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::lang::Exception>() const;
+			operator local_ref<java::lang::Object>() const;
 
 
 			CanceledException();
@@ -136,8 +144,8 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< android::app::PendingIntent > getActivity(local_ref< android::content::Context >  const&, jint, local_ref< android::content::Intent >  const&, jint);
@@ -188,14 +196,34 @@ android::app::PendingIntent_::CanceledException::operator local_ref<android::uti
 	return local_ref<android::util::AndroidException>(get_jobject());
 }
 
+android::app::PendingIntent_::CanceledException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::app::PendingIntent_::CanceledException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::app::PendingIntent_::CanceledException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+android::app::PendingIntent_::CanceledException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::app::PendingIntent_::CanceledException::CanceledException()
 : object<android::app::PendingIntent_::CanceledException>(
 	call_new_object<
 		android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME,
 		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(0),
-		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -207,8 +235,8 @@ android::app::PendingIntent_::CanceledException::CanceledException(local_ref< ja
 	call_new_object<
 		android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME,
 		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(1),
-		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -220,8 +248,8 @@ android::app::PendingIntent_::CanceledException::CanceledException(local_ref< ja
 	call_new_object<
 		android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME,
 		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(2),
-		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -245,8 +273,8 @@ void android::app::PendingIntent_::OnFinished::onSendFinished(local_ref< android
 		android::app::PendingIntent_::OnFinished::J2CPP_CLASS_NAME,
 		android::app::PendingIntent_::OnFinished::J2CPP_METHOD_NAME(0),
 		android::app::PendingIntent_::OnFinished::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 
@@ -255,14 +283,14 @@ J2CPP_DEFINE_METHOD(android::app::PendingIntent_::OnFinished,0,"onSendFinished",
 
 
 
-android::app::PendingIntent::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::app::PendingIntent::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::app::PendingIntent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -272,8 +300,8 @@ local_ref< android::app::PendingIntent > android::app::PendingIntent::getActivit
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(1),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::PendingIntent > >
-	(a0, a1, a2, a3);
+		local_ref< android::app::PendingIntent >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::app::PendingIntent > android::app::PendingIntent::getBroadcast(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::content::Intent > const &a2, jint a3)
@@ -282,8 +310,8 @@ local_ref< android::app::PendingIntent > android::app::PendingIntent::getBroadca
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(2),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::app::PendingIntent > >
-	(a0, a1, a2, a3);
+		local_ref< android::app::PendingIntent >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::app::PendingIntent > android::app::PendingIntent::getService(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::content::Intent > const &a2, jint a3)
@@ -292,8 +320,8 @@ local_ref< android::app::PendingIntent > android::app::PendingIntent::getService
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(3),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::app::PendingIntent > >
-	(a0, a1, a2, a3);
+		local_ref< android::app::PendingIntent >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< android::content::IntentSender > android::app::PendingIntent::getIntentSender()
@@ -302,8 +330,8 @@ local_ref< android::content::IntentSender > android::app::PendingIntent::getInte
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(4),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::IntentSender > >
-	(get_jobject());
+		local_ref< android::content::IntentSender >
+	>(get_jobject());
 }
 
 void android::app::PendingIntent::cancel()
@@ -312,8 +340,8 @@ void android::app::PendingIntent::cancel()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(5),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::PendingIntent::send()
@@ -322,8 +350,8 @@ void android::app::PendingIntent::send()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(6),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::PendingIntent::send(jint a0)
@@ -332,8 +360,8 @@ void android::app::PendingIntent::send(jint a0)
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(7),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::PendingIntent::send(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::content::Intent > const &a2)
@@ -342,8 +370,8 @@ void android::app::PendingIntent::send(local_ref< android::content::Context > co
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(8),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::PendingIntent::send(jint a0, local_ref< android::app::PendingIntent_::OnFinished > const &a1, local_ref< android::os::Handler > const &a2)
@@ -352,8 +380,8 @@ void android::app::PendingIntent::send(jint a0, local_ref< android::app::Pending
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(9),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::PendingIntent::send(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::content::Intent > const &a2, local_ref< android::app::PendingIntent_::OnFinished > const &a3, local_ref< android::os::Handler > const &a4)
@@ -362,8 +390,8 @@ void android::app::PendingIntent::send(local_ref< android::content::Context > co
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(10),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::app::PendingIntent::getTargetPackage()
@@ -372,8 +400,8 @@ local_ref< java::lang::String > android::app::PendingIntent::getTargetPackage()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(11),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::app::PendingIntent::equals(local_ref< java::lang::Object > const &a0)
@@ -382,8 +410,8 @@ jboolean android::app::PendingIntent::equals(local_ref< java::lang::Object > con
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(12),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::app::PendingIntent::hashCode()
@@ -392,8 +420,8 @@ jint android::app::PendingIntent::hashCode()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(13),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::app::PendingIntent::toString()
@@ -402,8 +430,8 @@ local_ref< java::lang::String > android::app::PendingIntent::toString()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(14),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::app::PendingIntent::describeContents()
@@ -412,8 +440,8 @@ jint android::app::PendingIntent::describeContents()
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(15),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::app::PendingIntent::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -422,8 +450,8 @@ void android::app::PendingIntent::writeToParcel(local_ref< android::os::Parcel >
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(16),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::PendingIntent::writePendingIntentOrNullToParcel(local_ref< android::app::PendingIntent > const &a0, local_ref< android::os::Parcel > const &a1)
@@ -432,8 +460,8 @@ void android::app::PendingIntent::writePendingIntentOrNullToParcel(local_ref< an
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(17),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< android::app::PendingIntent > android::app::PendingIntent::readPendingIntentOrNullFromParcel(local_ref< android::os::Parcel > const &a0)
@@ -442,8 +470,8 @@ local_ref< android::app::PendingIntent > android::app::PendingIntent::readPendin
 		android::app::PendingIntent::J2CPP_CLASS_NAME,
 		android::app::PendingIntent::J2CPP_METHOD_NAME(18),
 		android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::app::PendingIntent > >
-	(a0);
+		local_ref< android::app::PendingIntent >
+	>(a0);
 }
 
 

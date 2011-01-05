@@ -77,8 +77,8 @@ jboolean org::apache::http::conn::EofSensorWatcher::eofDetected(local_ref< java:
 		org::apache::http::conn::EofSensorWatcher::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::conn::EofSensorWatcher::streamClosed(local_ref< java::io::InputStream > const &a0)
@@ -87,8 +87,8 @@ jboolean org::apache::http::conn::EofSensorWatcher::streamClosed(local_ref< java
 		org::apache::http::conn::EofSensorWatcher::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::conn::EofSensorWatcher::streamAbort(local_ref< java::io::InputStream > const &a0)
@@ -97,8 +97,8 @@ jboolean org::apache::http::conn::EofSensorWatcher::streamAbort(local_ref< java:
 		org::apache::http::conn::EofSensorWatcher::J2CPP_CLASS_NAME,
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::EofSensorWatcher::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

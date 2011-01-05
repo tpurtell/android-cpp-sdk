@@ -84,8 +84,8 @@ local_ref< java::lang::String > java::net::IDN::toASCII(local_ref< java::lang::S
 		java::net::IDN::J2CPP_CLASS_NAME,
 		java::net::IDN::J2CPP_METHOD_NAME(1),
 		java::net::IDN::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::net::IDN::toASCII(local_ref< java::lang::String > const &a0)
@@ -94,8 +94,8 @@ local_ref< java::lang::String > java::net::IDN::toASCII(local_ref< java::lang::S
 		java::net::IDN::J2CPP_CLASS_NAME,
 		java::net::IDN::J2CPP_METHOD_NAME(2),
 		java::net::IDN::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > java::net::IDN::toUnicode(local_ref< java::lang::String > const &a0, jint a1)
@@ -104,8 +104,8 @@ local_ref< java::lang::String > java::net::IDN::toUnicode(local_ref< java::lang:
 		java::net::IDN::J2CPP_CLASS_NAME,
 		java::net::IDN::J2CPP_METHOD_NAME(3),
 		java::net::IDN::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::net::IDN::toUnicode(local_ref< java::lang::String > const &a0)
@@ -114,8 +114,8 @@ local_ref< java::lang::String > java::net::IDN::toUnicode(local_ref< java::lang:
 		java::net::IDN::J2CPP_CLASS_NAME,
 		java::net::IDN::J2CPP_METHOD_NAME(4),
 		java::net::IDN::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

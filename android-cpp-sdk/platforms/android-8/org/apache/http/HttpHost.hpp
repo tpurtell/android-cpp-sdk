@@ -111,8 +111,8 @@ org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0,
 	call_new_object<
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(0),
-		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -124,8 +124,8 @@ org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0,
 	call_new_object<
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(1),
-		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -137,8 +137,8 @@ org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(2),
-		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -150,8 +150,8 @@ org::apache::http::HttpHost::HttpHost(local_ref< org::apache::http::HttpHost > c
 	call_new_object<
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(3),
-		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -163,8 +163,8 @@ local_ref< java::lang::String > org::apache::http::HttpHost::getHostName()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::HttpHost::getPort()
@@ -173,8 +173,8 @@ jint org::apache::http::HttpHost::getPort()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(5),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::HttpHost::getSchemeName()
@@ -183,8 +183,8 @@ local_ref< java::lang::String > org::apache::http::HttpHost::getSchemeName()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(6),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::HttpHost::toURI()
@@ -193,8 +193,8 @@ local_ref< java::lang::String > org::apache::http::HttpHost::toURI()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(7),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::HttpHost::toHostString()
@@ -203,8 +203,8 @@ local_ref< java::lang::String > org::apache::http::HttpHost::toHostString()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(8),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::HttpHost::toString()
@@ -213,8 +213,8 @@ local_ref< java::lang::String > org::apache::http::HttpHost::toString()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(9),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::HttpHost::equals(local_ref< java::lang::Object > const &a0)
@@ -223,8 +223,8 @@ jboolean org::apache::http::HttpHost::equals(local_ref< java::lang::Object > con
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(10),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::HttpHost::hashCode()
@@ -233,8 +233,8 @@ jint org::apache::http::HttpHost::hashCode()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(11),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::HttpHost::clone()
@@ -243,8 +243,8 @@ local_ref< java::lang::Object > org::apache::http::HttpHost::clone()
 		org::apache::http::HttpHost::J2CPP_CLASS_NAME,
 		org::apache::http::HttpHost::J2CPP_METHOD_NAME(12),
 		org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

@@ -118,8 +118,8 @@ android::telephony::PhoneStateListener::PhoneStateListener()
 	call_new_object<
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(0),
-		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -131,8 +131,8 @@ void android::telephony::PhoneStateListener::onServiceStateChanged(local_ref< an
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(1),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onSignalStrengthChanged(jint a0)
@@ -141,8 +141,8 @@ void android::telephony::PhoneStateListener::onSignalStrengthChanged(jint a0)
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(2),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean a0)
@@ -151,8 +151,8 @@ void android::telephony::PhoneStateListener::onMessageWaitingIndicatorChanged(jb
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(3),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onCallForwardingIndicatorChanged(jboolean a0)
@@ -161,8 +161,8 @@ void android::telephony::PhoneStateListener::onCallForwardingIndicatorChanged(jb
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(4),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onCellLocationChanged(local_ref< android::telephony::CellLocation > const &a0)
@@ -171,8 +171,8 @@ void android::telephony::PhoneStateListener::onCellLocationChanged(local_ref< an
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(5),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onCallStateChanged(jint a0, local_ref< java::lang::String > const &a1)
@@ -181,8 +181,8 @@ void android::telephony::PhoneStateListener::onCallStateChanged(jint a0, local_r
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(6),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::telephony::PhoneStateListener::onDataConnectionStateChanged(jint a0)
@@ -191,8 +191,8 @@ void android::telephony::PhoneStateListener::onDataConnectionStateChanged(jint a
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(7),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onDataConnectionStateChanged(jint a0, jint a1)
@@ -201,8 +201,8 @@ void android::telephony::PhoneStateListener::onDataConnectionStateChanged(jint a
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(8),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::telephony::PhoneStateListener::onDataActivity(jint a0)
@@ -211,8 +211,8 @@ void android::telephony::PhoneStateListener::onDataActivity(jint a0)
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(9),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::telephony::PhoneStateListener::onSignalStrengthsChanged(local_ref< android::telephony::SignalStrength > const &a0)
@@ -221,8 +221,8 @@ void android::telephony::PhoneStateListener::onSignalStrengthsChanged(local_ref<
 		android::telephony::PhoneStateListener::J2CPP_CLASS_NAME,
 		android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(10),
 		android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

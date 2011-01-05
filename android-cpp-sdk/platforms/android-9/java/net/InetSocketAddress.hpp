@@ -15,8 +15,10 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
@@ -52,7 +54,9 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::SocketAddress>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		InetSocketAddress(jint);
@@ -84,9 +88,19 @@ namespace j2cpp {
 
 
 
+java::net::InetSocketAddress::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::InetSocketAddress::operator local_ref<java::net::SocketAddress>() const
 {
 	return local_ref<java::net::SocketAddress>(get_jobject());
+}
+
+java::net::InetSocketAddress::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -95,8 +109,8 @@ java::net::InetSocketAddress::InetSocketAddress(jint a0)
 	call_new_object<
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(0),
-		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -108,8 +122,8 @@ java::net::InetSocketAddress::InetSocketAddress(local_ref< java::net::InetAddres
 	call_new_object<
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(1),
-		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -121,8 +135,8 @@ java::net::InetSocketAddress::InetSocketAddress(local_ref< java::lang::String > 
 	call_new_object<
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(2),
-		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -134,8 +148,8 @@ local_ref< java::net::InetSocketAddress > java::net::InetSocketAddress::createUn
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(3),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::InetSocketAddress > >
-	(a0, a1);
+		local_ref< java::net::InetSocketAddress >
+	>(a0, a1);
 }
 
 jint java::net::InetSocketAddress::getPort()
@@ -144,8 +158,8 @@ jint java::net::InetSocketAddress::getPort()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(4),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::InetAddress > java::net::InetSocketAddress::getAddress()
@@ -154,8 +168,8 @@ local_ref< java::net::InetAddress > java::net::InetSocketAddress::getAddress()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(5),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::net::InetAddress > >
-	(get_jobject());
+		local_ref< java::net::InetAddress >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InetSocketAddress::getHostName()
@@ -164,8 +178,8 @@ local_ref< java::lang::String > java::net::InetSocketAddress::getHostName()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(6),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::InetSocketAddress::isUnresolved()
@@ -174,8 +188,8 @@ jboolean java::net::InetSocketAddress::isUnresolved()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(7),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::InetSocketAddress::toString()
@@ -184,8 +198,8 @@ local_ref< java::lang::String > java::net::InetSocketAddress::toString()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(8),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::InetSocketAddress::equals(local_ref< java::lang::Object > const &a0)
@@ -194,8 +208,8 @@ jboolean java::net::InetSocketAddress::equals(local_ref< java::lang::Object > co
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(9),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::InetSocketAddress::hashCode()
@@ -204,8 +218,8 @@ jint java::net::InetSocketAddress::hashCode()
 		java::net::InetSocketAddress::J2CPP_CLASS_NAME,
 		java::net::InetSocketAddress::J2CPP_METHOD_NAME(10),
 		java::net::InetSocketAddress::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

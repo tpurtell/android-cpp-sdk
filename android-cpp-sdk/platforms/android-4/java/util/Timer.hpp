@@ -97,8 +97,8 @@ java::util::Timer::Timer(jboolean a0)
 	call_new_object<
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(0),
-		java::util::Timer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::Timer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -110,8 +110,8 @@ java::util::Timer::Timer()
 	call_new_object<
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(1),
-		java::util::Timer::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		java::util::Timer::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -123,8 +123,8 @@ java::util::Timer::Timer(local_ref< java::lang::String > const &a0, jboolean a1)
 	call_new_object<
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(2),
-		java::util::Timer::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::Timer::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -136,8 +136,8 @@ java::util::Timer::Timer(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(3),
-		java::util::Timer::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::Timer::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -149,8 +149,8 @@ void java::util::Timer::cancel()
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(4),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::util::Timer::purge()
@@ -159,8 +159,8 @@ jint java::util::Timer::purge()
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(5),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, local_ref< java::util::Date > const &a1)
@@ -169,8 +169,8 @@ void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, l
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(6),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, jlong a1)
@@ -179,8 +179,8 @@ void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, j
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(7),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, jlong a1, jlong a2)
@@ -189,8 +189,8 @@ void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, j
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(8),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, local_ref< java::util::Date > const &a1, jlong a2)
@@ -199,8 +199,8 @@ void java::util::Timer::schedule(local_ref< java::util::TimerTask > const &a0, l
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(9),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::Timer::scheduleAtFixedRate(local_ref< java::util::TimerTask > const &a0, jlong a1, jlong a2)
@@ -209,8 +209,8 @@ void java::util::Timer::scheduleAtFixedRate(local_ref< java::util::TimerTask > c
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(10),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::Timer::scheduleAtFixedRate(local_ref< java::util::TimerTask > const &a0, local_ref< java::util::Date > const &a1, jlong a2)
@@ -219,8 +219,8 @@ void java::util::Timer::scheduleAtFixedRate(local_ref< java::util::TimerTask > c
 		java::util::Timer::J2CPP_CLASS_NAME,
 		java::util::Timer::J2CPP_METHOD_NAME(11),
 		java::util::Timer::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

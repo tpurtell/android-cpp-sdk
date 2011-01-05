@@ -12,9 +12,9 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestInterceptor; } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -85,8 +85,8 @@ org::apache::http::protocol::RequestUserAgent::RequestUserAgent()
 	call_new_object<
 		org::apache::http::protocol::RequestUserAgent::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestUserAgent::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::RequestUserAgent::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::protocol::RequestUserAgent::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ void org::apache::http::protocol::RequestUserAgent::process(local_ref< org::apac
 		org::apache::http::protocol::RequestUserAgent::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::RequestUserAgent::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::RequestUserAgent::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

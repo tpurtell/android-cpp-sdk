@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_NET_RESPONSECACHE_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
-namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace net { class CacheRequest; } } }
+namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
@@ -89,8 +89,8 @@ java::net::ResponseCache::ResponseCache()
 	call_new_object<
 		java::net::ResponseCache::J2CPP_CLASS_NAME,
 		java::net::ResponseCache::J2CPP_METHOD_NAME(0),
-		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +102,8 @@ local_ref< java::net::ResponseCache > java::net::ResponseCache::getDefault()
 		java::net::ResponseCache::J2CPP_CLASS_NAME,
 		java::net::ResponseCache::J2CPP_METHOD_NAME(1),
 		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::ResponseCache > >
-	();
+		local_ref< java::net::ResponseCache >
+	>();
 }
 
 void java::net::ResponseCache::setDefault(local_ref< java::net::ResponseCache > const &a0)
@@ -112,8 +112,8 @@ void java::net::ResponseCache::setDefault(local_ref< java::net::ResponseCache > 
 		java::net::ResponseCache::J2CPP_CLASS_NAME,
 		java::net::ResponseCache::J2CPP_METHOD_NAME(2),
 		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::net::CacheResponse > java::net::ResponseCache::get(local_ref< java::net::URI > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::util::Map > const &a2)
@@ -122,8 +122,8 @@ local_ref< java::net::CacheResponse > java::net::ResponseCache::get(local_ref< j
 		java::net::ResponseCache::J2CPP_CLASS_NAME,
 		java::net::ResponseCache::J2CPP_METHOD_NAME(3),
 		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::net::CacheResponse > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::net::CacheResponse >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::net::CacheRequest > java::net::ResponseCache::put(local_ref< java::net::URI > const &a0, local_ref< java::net::URLConnection > const &a1)
@@ -132,8 +132,8 @@ local_ref< java::net::CacheRequest > java::net::ResponseCache::put(local_ref< ja
 		java::net::ResponseCache::J2CPP_CLASS_NAME,
 		java::net::ResponseCache::J2CPP_METHOD_NAME(4),
 		java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::net::CacheRequest > >
-	(get_jobject(), a0, a1);
+		local_ref< java::net::CacheRequest >
+	>(get_jobject(), a0, a1);
 }
 
 

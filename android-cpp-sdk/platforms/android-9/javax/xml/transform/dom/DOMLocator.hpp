@@ -40,8 +40,8 @@ namespace javax { namespace xml { namespace transform { namespace dom {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::xml::transform::SourceLocator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::w3c::dom::Node > getOriginatingNode();
@@ -65,14 +65,14 @@ namespace j2cpp {
 
 
 
-javax::xml::transform::dom::DOMLocator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::xml::transform::dom::DOMLocator::operator local_ref<javax::xml::transform::SourceLocator>() const
 {
 	return local_ref<javax::xml::transform::SourceLocator>(get_jobject());
+}
+
+javax::xml::transform::dom::DOMLocator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMLocator::getOriginatingNode()
@@ -81,8 +81,8 @@ local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMLocator::getOrig
 		javax::xml::transform::dom::DOMLocator::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMLocator::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::dom::DOMLocator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 

@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CLIENTCONNECTIONMANAGERFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -77,8 +77,8 @@ local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http:
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::ClientConnectionManager > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ClientConnectionManager >
+	>(get_jobject(), a0, a1);
 }
 
 

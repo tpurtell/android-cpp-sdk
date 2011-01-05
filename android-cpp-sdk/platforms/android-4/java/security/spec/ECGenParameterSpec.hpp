@@ -41,8 +41,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ECGenParameterSpec(local_ref< java::lang::String > const&);
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::ECGenParameterSpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::ECGenParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
 {
 	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jobject());
+}
+
+java::security::spec::ECGenParameterSpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -82,8 +82,8 @@ java::security::spec::ECGenParameterSpec::ECGenParameterSpec(local_ref< java::la
 	call_new_object<
 		java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ local_ref< java::lang::String > java::security::spec::ECGenParameterSpec::getNam
 		java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

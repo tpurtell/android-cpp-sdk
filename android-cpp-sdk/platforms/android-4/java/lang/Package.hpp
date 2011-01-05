@@ -64,8 +64,8 @@ namespace java { namespace lang {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::reflect::AnnotatedElement>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::annotation::Annotation > getAnnotation(local_ref< java::lang::Class >  const&);
@@ -104,14 +104,14 @@ namespace j2cpp {
 
 
 
-java::lang::Package::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::Package::operator local_ref<java::lang::reflect::AnnotatedElement>() const
 {
 	return local_ref<java::lang::reflect::AnnotatedElement>(get_jobject());
+}
+
+java::lang::Package::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -121,8 +121,8 @@ local_ref< java::lang::annotation::Annotation > java::lang::Package::getAnnotati
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(1),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::annotation::Annotation > >
-	(get_jobject(), a0);
+		local_ref< java::lang::annotation::Annotation >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::Package::getAnnotations()
@@ -131,8 +131,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(2),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::lang::Package::getDeclaredAnnotations()
@@ -141,8 +141,8 @@ local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > java::la
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(3),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::annotation::Annotation >, 1> >
+	>(get_jobject());
 }
 
 jboolean java::lang::Package::isAnnotationPresent(local_ref< java::lang::Class > const &a0)
@@ -151,8 +151,8 @@ jboolean java::lang::Package::isAnnotationPresent(local_ref< java::lang::Class >
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(4),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::Package::getImplementationTitle()
@@ -161,8 +161,8 @@ local_ref< java::lang::String > java::lang::Package::getImplementationTitle()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(5),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Package::getImplementationVendor()
@@ -171,8 +171,8 @@ local_ref< java::lang::String > java::lang::Package::getImplementationVendor()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(6),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Package::getImplementationVersion()
@@ -181,8 +181,8 @@ local_ref< java::lang::String > java::lang::Package::getImplementationVersion()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(7),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Package::getName()
@@ -191,8 +191,8 @@ local_ref< java::lang::String > java::lang::Package::getName()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(8),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Package > java::lang::Package::getPackage(local_ref< java::lang::String > const &a0)
@@ -201,8 +201,8 @@ local_ref< java::lang::Package > java::lang::Package::getPackage(local_ref< java
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(9),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Package > >
-	(a0);
+		local_ref< java::lang::Package >
+	>(a0);
 }
 
 local_ref< array< local_ref< java::lang::Package >, 1> > java::lang::Package::getPackages()
@@ -211,8 +211,8 @@ local_ref< array< local_ref< java::lang::Package >, 1> > java::lang::Package::ge
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(10),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< java::lang::Package >, 1> > >
-	();
+		local_ref< array< local_ref< java::lang::Package >, 1> >
+	>();
 }
 
 local_ref< java::lang::String > java::lang::Package::getSpecificationTitle()
@@ -221,8 +221,8 @@ local_ref< java::lang::String > java::lang::Package::getSpecificationTitle()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(11),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Package::getSpecificationVendor()
@@ -231,8 +231,8 @@ local_ref< java::lang::String > java::lang::Package::getSpecificationVendor()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(12),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Package::getSpecificationVersion()
@@ -241,8 +241,8 @@ local_ref< java::lang::String > java::lang::Package::getSpecificationVersion()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(13),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::lang::Package::hashCode()
@@ -251,8 +251,8 @@ jint java::lang::Package::hashCode()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(14),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::lang::Package::isCompatibleWith(local_ref< java::lang::String > const &a0)
@@ -261,8 +261,8 @@ jboolean java::lang::Package::isCompatibleWith(local_ref< java::lang::String > c
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(15),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::Package::isSealed()
@@ -271,8 +271,8 @@ jboolean java::lang::Package::isSealed()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(16),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Package::isSealed(local_ref< java::net::URL > const &a0)
@@ -281,8 +281,8 @@ jboolean java::lang::Package::isSealed(local_ref< java::net::URL > const &a0)
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(17),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::lang::Package::toString()
@@ -291,8 +291,8 @@ local_ref< java::lang::String > java::lang::Package::toString()
 		java::lang::Package::J2CPP_CLASS_NAME,
 		java::lang::Package::J2CPP_METHOD_NAME(18),
 		java::lang::Package::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

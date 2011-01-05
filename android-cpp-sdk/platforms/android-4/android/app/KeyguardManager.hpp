@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_APP_KEYGUARDMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class OnKeyguardExitResult; } } } }
-namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class KeyguardLock; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class OnKeyguardExitResult; } } } }
+namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class KeyguardLock; } } } }
 
 
 #include <android/app/KeyguardManager.hpp>
@@ -134,8 +134,8 @@ void android::app::KeyguardManager_::OnKeyguardExitResult::onKeyguardExitResult(
 		android::app::KeyguardManager_::OnKeyguardExitResult::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager_::OnKeyguardExitResult::J2CPP_METHOD_NAME(0),
 		android::app::KeyguardManager_::OnKeyguardExitResult::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -155,8 +155,8 @@ void android::app::KeyguardManager_::KeyguardLock::disableKeyguard()
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_NAME(1),
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::KeyguardManager_::KeyguardLock::reenableKeyguard()
@@ -165,8 +165,8 @@ void android::app::KeyguardManager_::KeyguardLock::reenableKeyguard()
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_NAME(2),
 		android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -191,8 +191,8 @@ local_ref< android::app::KeyguardManager_::KeyguardLock > android::app::Keyguard
 		android::app::KeyguardManager::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager::J2CPP_METHOD_NAME(1),
 		android::app::KeyguardManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::KeyguardManager_::KeyguardLock > >
-	(get_jobject(), a0);
+		local_ref< android::app::KeyguardManager_::KeyguardLock >
+	>(get_jobject(), a0);
 }
 
 jboolean android::app::KeyguardManager::inKeyguardRestrictedInputMode()
@@ -201,8 +201,8 @@ jboolean android::app::KeyguardManager::inKeyguardRestrictedInputMode()
 		android::app::KeyguardManager::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager::J2CPP_METHOD_NAME(2),
 		android::app::KeyguardManager::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::app::KeyguardManager::exitKeyguardSecurely(local_ref< android::app::KeyguardManager_::OnKeyguardExitResult > const &a0)
@@ -211,8 +211,8 @@ void android::app::KeyguardManager::exitKeyguardSecurely(local_ref< android::app
 		android::app::KeyguardManager::J2CPP_CLASS_NAME,
 		android::app::KeyguardManager::J2CPP_METHOD_NAME(3),
 		android::app::KeyguardManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

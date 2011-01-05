@@ -11,12 +11,20 @@
 #define J2CPP_ORG_W3C_DOM_DOMEXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -57,7 +65,11 @@ namespace org { namespace w3c { namespace dom {
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
 		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		DOMException(jshort, local_ref< java::lang::String > const&);
@@ -99,9 +111,29 @@ namespace j2cpp {
 
 
 
+org::w3c::dom::DOMException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
 org::w3c::dom::DOMException::operator local_ref<java::lang::RuntimeException>() const
 {
 	return local_ref<java::lang::RuntimeException>(get_jobject());
+}
+
+org::w3c::dom::DOMException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+org::w3c::dom::DOMException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::w3c::dom::DOMException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -110,8 +142,8 @@ org::w3c::dom::DOMException::DOMException(jshort a0, local_ref< java::lang::Stri
 	call_new_object<
 		org::w3c::dom::DOMException::J2CPP_CLASS_NAME,
 		org::w3c::dom::DOMException::J2CPP_METHOD_NAME(0),
-		org::w3c::dom::DOMException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::w3c::dom::DOMException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , code(get_jobject())
 {

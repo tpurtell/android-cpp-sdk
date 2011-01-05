@@ -11,12 +11,20 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_RUNNABLESCHEDULEDFUTURE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class RunnableFuture; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ScheduledFuture; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Delayed; } } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/lang/Runnable.hpp>
+#include <java/util/concurrent/Delayed.hpp>
+#include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/RunnableFuture.hpp>
 #include <java/util/concurrent/ScheduledFuture.hpp>
 
@@ -40,9 +48,13 @@ namespace java { namespace util { namespace concurrent {
 		{
 		}
 
+		operator local_ref<java::lang::Comparable>() const;
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
 		operator local_ref<java::util::concurrent::RunnableFuture>() const;
+		operator local_ref<java::util::concurrent::Future>() const;
 		operator local_ref<java::util::concurrent::ScheduledFuture>() const;
+		operator local_ref<java::util::concurrent::Delayed>() const;
 
 
 		jboolean isPeriodic();
@@ -65,9 +77,19 @@ namespace j2cpp {
 
 
 
+java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jobject());
 }
 
 java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::util::concurrent::RunnableFuture>() const
@@ -75,9 +97,19 @@ java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::util::
 	return local_ref<java::util::concurrent::RunnableFuture>(get_jobject());
 }
 
+java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::util::concurrent::Future>() const
+{
+	return local_ref<java::util::concurrent::Future>(get_jobject());
+}
+
 java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::util::concurrent::ScheduledFuture>() const
 {
 	return local_ref<java::util::concurrent::ScheduledFuture>(get_jobject());
+}
+
+java::util::concurrent::RunnableScheduledFuture::operator local_ref<java::util::concurrent::Delayed>() const
+{
+	return local_ref<java::util::concurrent::Delayed>(get_jobject());
 }
 
 jboolean java::util::concurrent::RunnableScheduledFuture::isPeriodic()
@@ -86,8 +118,8 @@ jboolean java::util::concurrent::RunnableScheduledFuture::isPeriodic()
 		java::util::concurrent::RunnableScheduledFuture::J2CPP_CLASS_NAME,
 		java::util::concurrent::RunnableScheduledFuture::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::RunnableScheduledFuture::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

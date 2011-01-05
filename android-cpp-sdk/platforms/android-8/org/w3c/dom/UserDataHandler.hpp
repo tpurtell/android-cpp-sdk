@@ -85,8 +85,8 @@ void org::w3c::dom::UserDataHandler::handle(jshort a0, local_ref< java::lang::St
 		org::w3c::dom::UserDataHandler::J2CPP_CLASS_NAME,
 		org::w3c::dom::UserDataHandler::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::UserDataHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

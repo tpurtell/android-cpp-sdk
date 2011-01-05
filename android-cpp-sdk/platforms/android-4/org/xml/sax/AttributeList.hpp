@@ -82,8 +82,8 @@ jint org::xml::sax::AttributeList::getLength()
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(0),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::AttributeList::getName(jint a0)
@@ -92,8 +92,8 @@ local_ref< java::lang::String > org::xml::sax::AttributeList::getName(jint a0)
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(1),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::AttributeList::getType(jint a0)
@@ -102,8 +102,8 @@ local_ref< java::lang::String > org::xml::sax::AttributeList::getType(jint a0)
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(2),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::AttributeList::getValue(jint a0)
@@ -112,8 +112,8 @@ local_ref< java::lang::String > org::xml::sax::AttributeList::getValue(jint a0)
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(3),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::AttributeList::getType(local_ref< java::lang::String > const &a0)
@@ -122,8 +122,8 @@ local_ref< java::lang::String > org::xml::sax::AttributeList::getType(local_ref<
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(4),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::xml::sax::AttributeList::getValue(local_ref< java::lang::String > const &a0)
@@ -132,8 +132,8 @@ local_ref< java::lang::String > org::xml::sax::AttributeList::getValue(local_ref
 		org::xml::sax::AttributeList::J2CPP_CLASS_NAME,
 		org::xml::sax::AttributeList::J2CPP_METHOD_NAME(5),
 		org::xml::sax::AttributeList::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

@@ -11,17 +11,20 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_STATELISTDRAWABLE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class DrawableContainer; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 
 
 #include <android/content/res/Resources.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/graphics/drawable/DrawableContainer.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Object.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
 
@@ -49,7 +52,10 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
 		operator local_ref<android::graphics::drawable::DrawableContainer>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		StateListDrawable();
@@ -76,9 +82,24 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::StateListDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
+{
+	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
+}
+
 android::graphics::drawable::StateListDrawable::operator local_ref<android::graphics::drawable::DrawableContainer>() const
 {
 	return local_ref<android::graphics::drawable::DrawableContainer>(get_jobject());
+}
+
+android::graphics::drawable::StateListDrawable::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::graphics::drawable::StateListDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -87,8 +108,8 @@ android::graphics::drawable::StateListDrawable::StateListDrawable()
 	call_new_object<
 		android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +121,8 @@ void android::graphics::drawable::StateListDrawable::addState(local_ref< array<j
 		android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::graphics::drawable::StateListDrawable::isStateful()
@@ -110,8 +131,8 @@ jboolean android::graphics::drawable::StateListDrawable::isStateful()
 		android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -121,8 +142,8 @@ void android::graphics::drawable::StateListDrawable::inflate(local_ref< android:
 		android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::StateListDrawable::mutate()
@@ -131,8 +152,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 

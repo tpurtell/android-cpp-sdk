@@ -75,8 +75,8 @@ org::apache::http::params::HttpAbstractParamBean::HttpAbstractParamBean(local_re
 	call_new_object<
 		org::apache::http::params::HttpAbstractParamBean::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_NAME(0),
-		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::params::HttpAbstractParamBean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

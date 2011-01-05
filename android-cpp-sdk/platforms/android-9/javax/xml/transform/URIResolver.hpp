@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_URIRESOLVER_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -74,8 +74,8 @@ local_ref< javax::xml::transform::Source > javax::xml::transform::URIResolver::r
 		javax::xml::transform::URIResolver::J2CPP_CLASS_NAME,
 		javax::xml::transform::URIResolver::J2CPP_METHOD_NAME(0),
 		javax::xml::transform::URIResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::xml::transform::Source > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::xml::transform::Source >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -85,8 +85,8 @@ dalvik::system::VMStack::VMStack()
 	call_new_object<
 		dalvik::system::VMStack::J2CPP_CLASS_NAME,
 		dalvik::system::VMStack::J2CPP_METHOD_NAME(0),
-		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::lang::ClassLoader > dalvik::system::VMStack::getCallingClassLoa
 		dalvik::system::VMStack::J2CPP_CLASS_NAME,
 		dalvik::system::VMStack::J2CPP_METHOD_NAME(1),
 		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::ClassLoader > >
-	();
+		local_ref< java::lang::ClassLoader >
+	>();
 }
 
 local_ref< java::lang::ClassLoader > dalvik::system::VMStack::getCallingClassLoader2()
@@ -108,8 +108,8 @@ local_ref< java::lang::ClassLoader > dalvik::system::VMStack::getCallingClassLoa
 		dalvik::system::VMStack::J2CPP_CLASS_NAME,
 		dalvik::system::VMStack::J2CPP_METHOD_NAME(2),
 		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::ClassLoader > >
-	();
+		local_ref< java::lang::ClassLoader >
+	>();
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::system::VMStack::getClasses(jint a0, jboolean a1)
@@ -118,8 +118,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::system::VMStack::
 		dalvik::system::VMStack::J2CPP_CLASS_NAME,
 		dalvik::system::VMStack::J2CPP_METHOD_NAME(3),
 		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(a0, a1);
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(a0, a1);
 }
 
 local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > dalvik::system::VMStack::getThreadStackTrace(local_ref< java::lang::Thread > const &a0)
@@ -128,8 +128,8 @@ local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > dalvik::syste
 		dalvik::system::VMStack::J2CPP_CLASS_NAME,
 		dalvik::system::VMStack::J2CPP_METHOD_NAME(4),
 		dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::lang::StackTraceElement >, 1> > >
-	(a0);
+		local_ref< array< local_ref< java::lang::StackTraceElement >, 1> >
+	>(a0);
 }
 
 

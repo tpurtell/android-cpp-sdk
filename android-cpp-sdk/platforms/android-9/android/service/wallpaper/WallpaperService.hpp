@@ -14,6 +14,9 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace service { namespace wallpaper { namespace WallpaperService_ { class Engine; } } } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } }
@@ -23,6 +26,9 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
 #include <android/app/Service.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
@@ -121,6 +127,10 @@ namespace android { namespace service { namespace wallpaper {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
 		operator local_ref<android::app::Service>() const;
 
 
@@ -163,8 +173,8 @@ android::service::wallpaper::WallpaperService_::Engine::Engine(local_ref< androi
 	call_new_object<
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(0),
-		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -176,8 +186,8 @@ local_ref< android::view::SurfaceHolder > android::service::wallpaper::Wallpaper
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(1),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::SurfaceHolder > >
-	(get_jobject());
+		local_ref< android::view::SurfaceHolder >
+	>(get_jobject());
 }
 
 jint android::service::wallpaper::WallpaperService_::Engine::getDesiredMinimumWidth()
@@ -186,8 +196,8 @@ jint android::service::wallpaper::WallpaperService_::Engine::getDesiredMinimumWi
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(2),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::service::wallpaper::WallpaperService_::Engine::getDesiredMinimumHeight()
@@ -196,8 +206,8 @@ jint android::service::wallpaper::WallpaperService_::Engine::getDesiredMinimumHe
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(3),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::service::wallpaper::WallpaperService_::Engine::isVisible()
@@ -206,8 +216,8 @@ jboolean android::service::wallpaper::WallpaperService_::Engine::isVisible()
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(4),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::service::wallpaper::WallpaperService_::Engine::isPreview()
@@ -216,8 +226,8 @@ jboolean android::service::wallpaper::WallpaperService_::Engine::isPreview()
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(5),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::setTouchEventsEnabled(jboolean a0)
@@ -226,8 +236,8 @@ void android::service::wallpaper::WallpaperService_::Engine::setTouchEventsEnabl
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(6),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onCreate(local_ref< android::view::SurfaceHolder > const &a0)
@@ -236,8 +246,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onCreate(local_ref<
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(7),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onDestroy()
@@ -246,8 +256,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onDestroy()
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(8),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onVisibilityChanged(jboolean a0)
@@ -256,8 +266,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onVisibilityChanged
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(9),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -266,8 +276,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onTouchEvent(local_
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(10),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onOffsetsChanged(jfloat a0, jfloat a1, jfloat a2, jfloat a3, jint a4, jint a5)
@@ -276,8 +286,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onOffsetsChanged(jf
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(11),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 local_ref< android::os::Bundle > android::service::wallpaper::WallpaperService_::Engine::onCommand(local_ref< java::lang::String > const &a0, jint a1, jint a2, jint a3, local_ref< android::os::Bundle > const &a4, jboolean a5)
@@ -286,8 +296,8 @@ local_ref< android::os::Bundle > android::service::wallpaper::WallpaperService_:
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(12),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onDesiredSizeChanged(jint a0, jint a1)
@@ -296,8 +306,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onDesiredSizeChange
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(13),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onSurfaceChanged(local_ref< android::view::SurfaceHolder > const &a0, jint a1, jint a2, jint a3)
@@ -306,8 +316,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onSurfaceChanged(lo
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(14),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onSurfaceRedrawNeeded(local_ref< android::view::SurfaceHolder > const &a0)
@@ -316,8 +326,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onSurfaceRedrawNeed
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(15),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onSurfaceCreated(local_ref< android::view::SurfaceHolder > const &a0)
@@ -326,8 +336,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onSurfaceCreated(lo
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(16),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::service::wallpaper::WallpaperService_::Engine::onSurfaceDestroyed(local_ref< android::view::SurfaceHolder > const &a0)
@@ -336,8 +346,8 @@ void android::service::wallpaper::WallpaperService_::Engine::onSurfaceDestroyed(
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(17),
 		android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -365,6 +375,26 @@ J2CPP_DEFINE_FIELD(android::service::wallpaper::WallpaperService_::Engine,0,"thi
 
 
 
+android::service::wallpaper::WallpaperService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::service::wallpaper::WallpaperService::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::service::wallpaper::WallpaperService::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::service::wallpaper::WallpaperService::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
 android::service::wallpaper::WallpaperService::operator local_ref<android::app::Service>() const
 {
 	return local_ref<android::app::Service>(get_jobject());
@@ -376,8 +406,8 @@ android::service::wallpaper::WallpaperService::WallpaperService()
 	call_new_object<
 		android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(0),
-		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -389,8 +419,8 @@ void android::service::wallpaper::WallpaperService::onCreate()
 		android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(1),
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::service::wallpaper::WallpaperService::onDestroy()
@@ -399,8 +429,8 @@ void android::service::wallpaper::WallpaperService::onDestroy()
 		android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(2),
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::service::wallpaper::WallpaperService::onBind(local_ref< android::content::Intent > const &a0)
@@ -409,8 +439,8 @@ local_ref< android::os::IBinder > android::service::wallpaper::WallpaperService:
 		android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(3),
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::service::wallpaper::WallpaperService_::Engine > android::service::wallpaper::WallpaperService::onCreateEngine()
@@ -419,8 +449,8 @@ local_ref< android::service::wallpaper::WallpaperService_::Engine > android::ser
 		android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME,
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(4),
 		android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::service::wallpaper::WallpaperService_::Engine > >
-	(get_jobject());
+		local_ref< android::service::wallpaper::WallpaperService_::Engine >
+	>(get_jobject());
 }
 
 

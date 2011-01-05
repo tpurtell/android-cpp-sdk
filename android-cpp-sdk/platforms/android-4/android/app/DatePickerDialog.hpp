@@ -11,22 +11,28 @@
 #define J2CPP_ANDROID_APP_DATEPICKERDIALOG_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { namespace DatePickerDialog_ { class OnDateSetListener; } } } }
-namespace j2cpp { namespace android { namespace app { class AlertDialog; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class DatePicker; } } }
 namespace j2cpp { namespace android { namespace widget { namespace DatePicker_ { class OnDateChangedListener; } } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
+namespace j2cpp { namespace android { namespace app { namespace DatePickerDialog_ { class OnDateSetListener; } } } }
+namespace j2cpp { namespace android { namespace app { class AlertDialog; } } }
 
 
 #include <android/app/AlertDialog.hpp>
 #include <android/app/DatePickerDialog.hpp>
+#include <android/app/Dialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/os/Bundle.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/DatePicker.hpp>
 #include <java/lang/Object.hpp>
 
@@ -84,9 +90,14 @@ namespace android { namespace app {
 		{
 		}
 
-		operator local_ref<android::app::AlertDialog>() const;
-		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
 		operator local_ref<android::widget::DatePicker_::OnDateChangedListener>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::app::Dialog>() const;
+		operator local_ref<android::app::AlertDialog>() const;
 
 
 		DatePickerDialog(local_ref< android::content::Context > const&, local_ref< android::app::DatePickerDialog_::OnDateSetListener > const&, jint, jint, jint);
@@ -127,8 +138,8 @@ void android::app::DatePickerDialog_::OnDateSetListener::onDateSet(local_ref< an
 		android::app::DatePickerDialog_::OnDateSetListener::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog_::OnDateSetListener::J2CPP_METHOD_NAME(0),
 		android::app::DatePickerDialog_::OnDateSetListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -137,9 +148,24 @@ J2CPP_DEFINE_METHOD(android::app::DatePickerDialog_::OnDateSetListener,0,"onDate
 
 
 
-android::app::DatePickerDialog::operator local_ref<android::app::AlertDialog>() const
+android::app::DatePickerDialog::operator local_ref<android::view::Window_::Callback>() const
 {
-	return local_ref<android::app::AlertDialog>(get_jobject());
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::DatePickerDialog::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
+}
+
+android::app::DatePickerDialog::operator local_ref<android::widget::DatePicker_::OnDateChangedListener>() const
+{
+	return local_ref<android::widget::DatePicker_::OnDateChangedListener>(get_jobject());
+}
+
+android::app::DatePickerDialog::operator local_ref<android::content::DialogInterface>() const
+{
+	return local_ref<android::content::DialogInterface>(get_jobject());
 }
 
 android::app::DatePickerDialog::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
@@ -147,9 +173,19 @@ android::app::DatePickerDialog::operator local_ref<android::content::DialogInter
 	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jobject());
 }
 
-android::app::DatePickerDialog::operator local_ref<android::widget::DatePicker_::OnDateChangedListener>() const
+android::app::DatePickerDialog::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::DatePicker_::OnDateChangedListener>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::app::DatePickerDialog::operator local_ref<android::app::Dialog>() const
+{
+	return local_ref<android::app::Dialog>(get_jobject());
+}
+
+android::app::DatePickerDialog::operator local_ref<android::app::AlertDialog>() const
+{
+	return local_ref<android::app::AlertDialog>(get_jobject());
 }
 
 
@@ -158,8 +194,8 @@ android::app::DatePickerDialog::DatePickerDialog(local_ref< android::content::Co
 	call_new_object<
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(0),
-		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -171,8 +207,8 @@ android::app::DatePickerDialog::DatePickerDialog(local_ref< android::content::Co
 	call_new_object<
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(1),
-		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5)
+		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -184,8 +220,8 @@ void android::app::DatePickerDialog::show()
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(2),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::DatePickerDialog::onClick(local_ref< android::content::DialogInterface > const &a0, jint a1)
@@ -194,8 +230,8 @@ void android::app::DatePickerDialog::onClick(local_ref< android::content::Dialog
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(3),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::DatePickerDialog::onDateChanged(local_ref< android::widget::DatePicker > const &a0, jint a1, jint a2, jint a3)
@@ -204,8 +240,8 @@ void android::app::DatePickerDialog::onDateChanged(local_ref< android::widget::D
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(4),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::app::DatePickerDialog::updateDate(jint a0, jint a1, jint a2)
@@ -214,8 +250,8 @@ void android::app::DatePickerDialog::updateDate(jint a0, jint a1, jint a2)
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(5),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::os::Bundle > android::app::DatePickerDialog::onSaveInstanceState()
@@ -224,8 +260,8 @@ local_ref< android::os::Bundle > android::app::DatePickerDialog::onSaveInstanceS
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(6),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::Bundle > >
-	(get_jobject());
+		local_ref< android::os::Bundle >
+	>(get_jobject());
 }
 
 void android::app::DatePickerDialog::onRestoreInstanceState(local_ref< android::os::Bundle > const &a0)
@@ -234,8 +270,8 @@ void android::app::DatePickerDialog::onRestoreInstanceState(local_ref< android::
 		android::app::DatePickerDialog::J2CPP_CLASS_NAME,
 		android::app::DatePickerDialog::J2CPP_METHOD_NAME(7),
 		android::app::DatePickerDialog::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

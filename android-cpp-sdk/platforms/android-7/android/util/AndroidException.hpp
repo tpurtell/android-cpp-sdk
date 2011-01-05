@@ -11,12 +11,18 @@
 #define J2CPP_ANDROID_UTIL_ANDROIDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +46,9 @@ namespace android { namespace util {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Exception>() const;
 
 
@@ -64,6 +73,21 @@ namespace j2cpp {
 
 
 
+android::util::AndroidException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::util::AndroidException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::util::AndroidException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 android::util::AndroidException::operator local_ref<java::lang::Exception>() const
 {
 	return local_ref<java::lang::Exception>(get_jobject());
@@ -75,8 +99,8 @@ android::util::AndroidException::AndroidException()
 	call_new_object<
 		android::util::AndroidException::J2CPP_CLASS_NAME,
 		android::util::AndroidException::J2CPP_METHOD_NAME(0),
-		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +112,8 @@ android::util::AndroidException::AndroidException(local_ref< java::lang::String 
 	call_new_object<
 		android::util::AndroidException::J2CPP_CLASS_NAME,
 		android::util::AndroidException::J2CPP_METHOD_NAME(1),
-		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -101,8 +125,8 @@ android::util::AndroidException::AndroidException(local_ref< java::lang::Excepti
 	call_new_object<
 		android::util::AndroidException::J2CPP_CLASS_NAME,
 		android::util::AndroidException::J2CPP_METHOD_NAME(2),
-		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::util::AndroidException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }

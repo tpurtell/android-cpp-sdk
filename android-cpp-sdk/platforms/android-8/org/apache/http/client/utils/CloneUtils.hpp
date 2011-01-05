@@ -74,8 +74,8 @@ local_ref< java::lang::Object > org::apache::http::client::utils::CloneUtils::cl
 		org::apache::http::client::utils::CloneUtils::J2CPP_CLASS_NAME,
 		org::apache::http::client::utils::CloneUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::utils::CloneUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(a0);
+		local_ref< java::lang::Object >
+	>(a0);
 }
 
 

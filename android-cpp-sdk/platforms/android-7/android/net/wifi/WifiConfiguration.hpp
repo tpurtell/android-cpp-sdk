@@ -662,8 +662,8 @@ android::net::wifi::WifiConfiguration::WifiConfiguration()
 	call_new_object<
 		android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(0),
-		android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , networkId(get_jobject())
 , status(get_jobject())
@@ -689,8 +689,8 @@ local_ref< java::lang::String > android::net::wifi::WifiConfiguration::toString(
 		android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(1),
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiConfiguration::describeContents()
@@ -699,8 +699,8 @@ jint android::net::wifi::WifiConfiguration::describeContents()
 		android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(2),
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiConfiguration::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -709,8 +709,8 @@ void android::net::wifi::WifiConfiguration::writeToParcel(local_ref< android::os
 		android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(3),
 		android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

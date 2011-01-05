@@ -75,8 +75,8 @@ javax::crypto::ExemptionMechanismSpi::ExemptionMechanismSpi()
 	call_new_object<
 		javax::crypto::ExemptionMechanismSpi::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanismSpi::J2CPP_METHOD_NAME(0),
-		javax::crypto::ExemptionMechanismSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::ExemptionMechanismSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

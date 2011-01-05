@@ -166,8 +166,8 @@ jlong dalvik::system::VMDebug::lastDebuggerActivity()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(1),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jboolean dalvik::system::VMDebug::isDebuggingEnabled()
@@ -176,8 +176,8 @@ jboolean dalvik::system::VMDebug::isDebuggingEnabled()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(2),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 jboolean dalvik::system::VMDebug::isDebuggerConnected()
@@ -186,8 +186,8 @@ jboolean dalvik::system::VMDebug::isDebuggerConnected()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(3),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 void dalvik::system::VMDebug::startMethodTracing()
@@ -196,8 +196,8 @@ void dalvik::system::VMDebug::startMethodTracing()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(4),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::startMethodTracing(local_ref< java::lang::String > const &a0, jint a1, jint a2)
@@ -206,8 +206,8 @@ void dalvik::system::VMDebug::startMethodTracing(local_ref< java::lang::String >
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(5),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void dalvik::system::VMDebug::stopMethodTracing()
@@ -216,8 +216,8 @@ void dalvik::system::VMDebug::stopMethodTracing()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(6),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::startEmulatorTracing()
@@ -226,8 +226,8 @@ void dalvik::system::VMDebug::startEmulatorTracing()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(7),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::stopEmulatorTracing()
@@ -236,8 +236,8 @@ void dalvik::system::VMDebug::stopEmulatorTracing()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(8),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	();
+		void
+	>();
 }
 
 jlong dalvik::system::VMDebug::threadCpuTimeNanos()
@@ -246,8 +246,8 @@ jlong dalvik::system::VMDebug::threadCpuTimeNanos()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(9),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(9), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 void dalvik::system::VMDebug::startAllocCounting()
@@ -256,8 +256,8 @@ void dalvik::system::VMDebug::startAllocCounting()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(10),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::stopAllocCounting()
@@ -266,8 +266,8 @@ void dalvik::system::VMDebug::stopAllocCounting()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(11),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	();
+		void
+	>();
 }
 
 jint dalvik::system::VMDebug::getAllocCount(jint a0)
@@ -276,8 +276,8 @@ jint dalvik::system::VMDebug::getAllocCount(jint a0)
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(12),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void dalvik::system::VMDebug::resetAllocCount(jint a0)
@@ -286,8 +286,8 @@ void dalvik::system::VMDebug::resetAllocCount(jint a0)
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(13),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint dalvik::system::VMDebug::setAllocationLimit(jint a0)
@@ -296,8 +296,8 @@ jint dalvik::system::VMDebug::setAllocationLimit(jint a0)
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(14),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 jint dalvik::system::VMDebug::setGlobalAllocationLimit(jint a0)
@@ -306,8 +306,8 @@ jint dalvik::system::VMDebug::setGlobalAllocationLimit(jint a0)
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(15),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 void dalvik::system::VMDebug::startInstructionCounting()
@@ -316,8 +316,8 @@ void dalvik::system::VMDebug::startInstructionCounting()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(16),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::stopInstructionCounting()
@@ -326,8 +326,8 @@ void dalvik::system::VMDebug::stopInstructionCounting()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(17),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::getInstructionCount(local_ref< array<jint,1> > const &a0)
@@ -336,8 +336,8 @@ void dalvik::system::VMDebug::getInstructionCount(local_ref< array<jint,1> > con
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(18),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void dalvik::system::VMDebug::resetInstructionCount()
@@ -346,8 +346,8 @@ void dalvik::system::VMDebug::resetInstructionCount()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(19),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	();
+		void
+	>();
 }
 
 void dalvik::system::VMDebug::printLoadedClasses(jint a0)
@@ -356,8 +356,8 @@ void dalvik::system::VMDebug::printLoadedClasses(jint a0)
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(20),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint dalvik::system::VMDebug::getLoadedClassCount()
@@ -366,8 +366,8 @@ jint dalvik::system::VMDebug::getLoadedClassCount()
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(21),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	();
+		jint
+	>();
 }
 
 void dalvik::system::VMDebug::dumpHprofData(local_ref< java::lang::String > const &a0)
@@ -376,8 +376,8 @@ void dalvik::system::VMDebug::dumpHprofData(local_ref< java::lang::String > cons
 		dalvik::system::VMDebug::J2CPP_CLASS_NAME,
 		dalvik::system::VMDebug::J2CPP_METHOD_NAME(22),
 		dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

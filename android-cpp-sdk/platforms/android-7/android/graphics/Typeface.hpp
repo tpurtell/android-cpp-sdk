@@ -114,8 +114,8 @@ jint android::graphics::Typeface::getStyle()
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(1),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::Typeface::isBold()
@@ -124,8 +124,8 @@ jboolean android::graphics::Typeface::isBold()
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(2),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::graphics::Typeface::isItalic()
@@ -134,8 +134,8 @@ jboolean android::graphics::Typeface::isItalic()
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(3),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::create(local_ref< java::lang::String > const &a0, jint a1)
@@ -144,8 +144,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::create(loc
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(4),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::Typeface > >
-	(a0, a1);
+		local_ref< android::graphics::Typeface >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::create(local_ref< android::graphics::Typeface > const &a0, jint a1)
@@ -154,8 +154,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::create(loc
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(5),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::Typeface > >
-	(a0, a1);
+		local_ref< android::graphics::Typeface >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::defaultFromStyle(jint a0)
@@ -164,8 +164,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::defaultFro
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(6),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::Typeface > >
-	(a0);
+		local_ref< android::graphics::Typeface >
+	>(a0);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::createFromAsset(local_ref< android::content::res::AssetManager > const &a0, local_ref< java::lang::String > const &a1)
@@ -174,8 +174,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::createFrom
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(7),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Typeface > >
-	(a0, a1);
+		local_ref< android::graphics::Typeface >
+	>(a0, a1);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::createFromFile(local_ref< java::io::File > const &a0)
@@ -184,8 +184,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::createFrom
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(8),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::graphics::Typeface > >
-	(a0);
+		local_ref< android::graphics::Typeface >
+	>(a0);
 }
 
 local_ref< android::graphics::Typeface > android::graphics::Typeface::createFromFile(local_ref< java::lang::String > const &a0)
@@ -194,8 +194,8 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::createFrom
 		android::graphics::Typeface::J2CPP_CLASS_NAME,
 		android::graphics::Typeface::J2CPP_METHOD_NAME(9),
 		android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::graphics::Typeface > >
-	(a0);
+		local_ref< android::graphics::Typeface >
+	>(a0);
 }
 
 

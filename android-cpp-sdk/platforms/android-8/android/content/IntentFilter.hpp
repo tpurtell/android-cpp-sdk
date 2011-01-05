@@ -25,8 +25,11 @@ namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <android/content/ContentResolver.hpp>
@@ -38,8 +41,11 @@ namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 #include <android/os/PatternMatcher.hpp>
 #include <android/util/AndroidException.hpp>
 #include <android/util/Printer.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/Set.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -97,6 +103,10 @@ namespace android { namespace content {
 			}
 
 			operator local_ref<android::util::AndroidException>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Exception>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			MalformedMimeTypeException();
@@ -186,8 +196,8 @@ namespace android { namespace content {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		IntentFilter();
@@ -285,8 +295,8 @@ android::content::IntentFilter_::AuthorityEntry::AuthorityEntry(local_ref< java:
 	call_new_object<
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(0),
-		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -298,8 +308,8 @@ local_ref< java::lang::String > android::content::IntentFilter_::AuthorityEntry:
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(1),
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::IntentFilter_::AuthorityEntry::getPort()
@@ -308,8 +318,8 @@ jint android::content::IntentFilter_::AuthorityEntry::getPort()
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(2),
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::content::IntentFilter_::AuthorityEntry::match(local_ref< android::net::Uri > const &a0)
@@ -318,8 +328,8 @@ jint android::content::IntentFilter_::AuthorityEntry::match(local_ref< android::
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(3),
 		android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 
@@ -335,14 +345,34 @@ android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<
 	return local_ref<android::util::AndroidException>(get_jobject());
 }
 
+android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 android::content::IntentFilter_::MalformedMimeTypeException::MalformedMimeTypeException()
 : object<android::content::IntentFilter_::MalformedMimeTypeException>(
 	call_new_object<
 		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(0),
-		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -354,8 +384,8 @@ android::content::IntentFilter_::MalformedMimeTypeException::MalformedMimeTypeEx
 	call_new_object<
 		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME,
 		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(1),
-		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -368,14 +398,14 @@ J2CPP_DEFINE_METHOD(android::content::IntentFilter_::MalformedMimeTypeException,
 
 
 
-android::content::IntentFilter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::content::IntentFilter::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::IntentFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -384,8 +414,8 @@ android::content::IntentFilter::IntentFilter()
 	call_new_object<
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(0),
-		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -397,8 +427,8 @@ android::content::IntentFilter::IntentFilter(local_ref< java::lang::String > con
 	call_new_object<
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(1),
-		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -410,8 +440,8 @@ android::content::IntentFilter::IntentFilter(local_ref< java::lang::String > con
 	call_new_object<
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(2),
-		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -423,8 +453,8 @@ android::content::IntentFilter::IntentFilter(local_ref< android::content::Intent
 	call_new_object<
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(3),
-		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -436,8 +466,8 @@ local_ref< android::content::IntentFilter > android::content::IntentFilter::crea
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(4),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::content::IntentFilter > >
-	(a0, a1);
+		local_ref< android::content::IntentFilter >
+	>(a0, a1);
 }
 
 void android::content::IntentFilter::setPriority(jint a0)
@@ -446,8 +476,8 @@ void android::content::IntentFilter::setPriority(jint a0)
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(5),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::getPriority()
@@ -456,8 +486,8 @@ jint android::content::IntentFilter::getPriority()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(6),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::addAction(local_ref< java::lang::String > const &a0)
@@ -466,8 +496,8 @@ void android::content::IntentFilter::addAction(local_ref< java::lang::String > c
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(7),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::countActions()
@@ -476,8 +506,8 @@ jint android::content::IntentFilter::countActions()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(8),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentFilter::getAction(jint a0)
@@ -486,8 +516,8 @@ local_ref< java::lang::String > android::content::IntentFilter::getAction(jint a
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(9),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasAction(local_ref< java::lang::String > const &a0)
@@ -496,8 +526,8 @@ jboolean android::content::IntentFilter::hasAction(local_ref< java::lang::String
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(10),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::matchAction(local_ref< java::lang::String > const &a0)
@@ -506,8 +536,8 @@ jboolean android::content::IntentFilter::matchAction(local_ref< java::lang::Stri
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(11),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::actionsIterator()
@@ -516,8 +546,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::actionsIterato
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(12),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::addDataType(local_ref< java::lang::String > const &a0)
@@ -526,8 +556,8 @@ void android::content::IntentFilter::addDataType(local_ref< java::lang::String >
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(13),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasDataType(local_ref< java::lang::String > const &a0)
@@ -536,8 +566,8 @@ jboolean android::content::IntentFilter::hasDataType(local_ref< java::lang::Stri
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(14),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::countDataTypes()
@@ -546,8 +576,8 @@ jint android::content::IntentFilter::countDataTypes()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(15),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentFilter::getDataType(jint a0)
@@ -556,8 +586,8 @@ local_ref< java::lang::String > android::content::IntentFilter::getDataType(jint
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(16),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::typesIterator()
@@ -566,8 +596,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::typesIterator(
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(17),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::addDataScheme(local_ref< java::lang::String > const &a0)
@@ -576,8 +606,8 @@ void android::content::IntentFilter::addDataScheme(local_ref< java::lang::String
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(18),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::countDataSchemes()
@@ -586,8 +616,8 @@ jint android::content::IntentFilter::countDataSchemes()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(19),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentFilter::getDataScheme(jint a0)
@@ -596,8 +626,8 @@ local_ref< java::lang::String > android::content::IntentFilter::getDataScheme(ji
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(20),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasDataScheme(local_ref< java::lang::String > const &a0)
@@ -606,8 +636,8 @@ jboolean android::content::IntentFilter::hasDataScheme(local_ref< java::lang::St
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(21),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::schemesIterator()
@@ -616,8 +646,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::schemesIterato
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(22),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::addDataAuthority(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -626,8 +656,8 @@ void android::content::IntentFilter::addDataAuthority(local_ref< java::lang::Str
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(23),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::IntentFilter::countDataAuthorities()
@@ -636,8 +666,8 @@ jint android::content::IntentFilter::countDataAuthorities()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(24),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::content::IntentFilter_::AuthorityEntry > android::content::IntentFilter::getDataAuthority(jint a0)
@@ -646,8 +676,8 @@ local_ref< android::content::IntentFilter_::AuthorityEntry > android::content::I
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(25),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< android::content::IntentFilter_::AuthorityEntry > >
-	(get_jobject(), a0);
+		local_ref< android::content::IntentFilter_::AuthorityEntry >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasDataAuthority(local_ref< android::net::Uri > const &a0)
@@ -656,8 +686,8 @@ jboolean android::content::IntentFilter::hasDataAuthority(local_ref< android::ne
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(26),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::authoritiesIterator()
@@ -666,8 +696,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::authoritiesIte
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(27),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::addDataPath(local_ref< java::lang::String > const &a0, jint a1)
@@ -676,8 +706,8 @@ void android::content::IntentFilter::addDataPath(local_ref< java::lang::String >
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(28),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::IntentFilter::countDataPaths()
@@ -686,8 +716,8 @@ jint android::content::IntentFilter::countDataPaths()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(29),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::os::PatternMatcher > android::content::IntentFilter::getDataPath(jint a0)
@@ -696,8 +726,8 @@ local_ref< android::os::PatternMatcher > android::content::IntentFilter::getData
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(30),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::os::PatternMatcher > >
-	(get_jobject(), a0);
+		local_ref< android::os::PatternMatcher >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasDataPath(local_ref< java::lang::String > const &a0)
@@ -706,8 +736,8 @@ jboolean android::content::IntentFilter::hasDataPath(local_ref< java::lang::Stri
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(31),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::pathsIterator()
@@ -716,8 +746,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::pathsIterator(
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(32),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 jint android::content::IntentFilter::matchDataAuthority(local_ref< android::net::Uri > const &a0)
@@ -726,8 +756,8 @@ jint android::content::IntentFilter::matchDataAuthority(local_ref< android::net:
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(33),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::matchData(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::net::Uri > const &a2)
@@ -736,8 +766,8 @@ jint android::content::IntentFilter::matchData(local_ref< java::lang::String > c
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(34),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::content::IntentFilter::addCategory(local_ref< java::lang::String > const &a0)
@@ -746,8 +776,8 @@ void android::content::IntentFilter::addCategory(local_ref< java::lang::String >
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(35),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::countCategories()
@@ -756,8 +786,8 @@ jint android::content::IntentFilter::countCategories()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(36),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(36), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentFilter::getCategory(jint a0)
@@ -766,8 +796,8 @@ local_ref< java::lang::String > android::content::IntentFilter::getCategory(jint
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(37),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean android::content::IntentFilter::hasCategory(local_ref< java::lang::String > const &a0)
@@ -776,8 +806,8 @@ jboolean android::content::IntentFilter::hasCategory(local_ref< java::lang::Stri
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(38),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Iterator > android::content::IntentFilter::categoriesIterator()
@@ -786,8 +816,8 @@ local_ref< java::util::Iterator > android::content::IntentFilter::categoriesIter
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(39),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::content::IntentFilter::matchCategories(local_ref< java::util::Set > const &a0)
@@ -796,8 +826,8 @@ local_ref< java::lang::String > android::content::IntentFilter::matchCategories(
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(40),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jint android::content::IntentFilter::match(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::Intent > const &a1, jboolean a2, local_ref< java::lang::String > const &a3)
@@ -806,8 +836,8 @@ jint android::content::IntentFilter::match(local_ref< android::content::ContentR
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(41),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(41), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::content::IntentFilter::match(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::net::Uri > const &a3, local_ref< java::util::Set > const &a4, local_ref< java::lang::String > const &a5)
@@ -816,8 +846,8 @@ jint android::content::IntentFilter::match(local_ref< java::lang::String > const
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(42),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(42), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		jint
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::content::IntentFilter::writeToXml(local_ref< org::xmlpull::v1::XmlSerializer > const &a0)
@@ -826,8 +856,8 @@ void android::content::IntentFilter::writeToXml(local_ref< org::xmlpull::v1::Xml
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(43),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::IntentFilter::readFromXml(local_ref< org::xmlpull::v1::XmlPullParser > const &a0)
@@ -836,8 +866,8 @@ void android::content::IntentFilter::readFromXml(local_ref< org::xmlpull::v1::Xm
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(44),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::content::IntentFilter::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -846,8 +876,8 @@ void android::content::IntentFilter::dump(local_ref< android::util::Printer > co
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(45),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::content::IntentFilter::describeContents()
@@ -856,8 +886,8 @@ jint android::content::IntentFilter::describeContents()
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(46),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::IntentFilter::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -866,8 +896,8 @@ void android::content::IntentFilter::writeToParcel(local_ref< android::os::Parce
 		android::content::IntentFilter::J2CPP_CLASS_NAME,
 		android::content::IntentFilter::J2CPP_METHOD_NAME(47),
 		android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

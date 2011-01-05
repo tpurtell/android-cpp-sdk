@@ -74,8 +74,8 @@ local_ref< javax::xml::xpath::XPathFunction > javax::xml::xpath::XPathFunctionRe
 		javax::xml::xpath::XPathFunctionResolver::J2CPP_CLASS_NAME,
 		javax::xml::xpath::XPathFunctionResolver::J2CPP_METHOD_NAME(0),
 		javax::xml::xpath::XPathFunctionResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< javax::xml::xpath::XPathFunction > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::xml::xpath::XPathFunction >
+	>(get_jobject(), a0, a1);
 }
 
 

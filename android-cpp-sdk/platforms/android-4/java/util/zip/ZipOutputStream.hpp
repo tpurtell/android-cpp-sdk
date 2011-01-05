@@ -11,13 +11,21 @@
 #define J2CPP_JAVA_UTIL_ZIP_ZIPOUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class DeflaterOutputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/FilterOutputStream.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/zip/DeflaterOutputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
@@ -52,7 +60,12 @@ namespace java { namespace util { namespace zip {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
+		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::io::OutputStream>() const;
 		operator local_ref<java::util::zip::DeflaterOutputStream>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ZipOutputStream(local_ref< java::io::OutputStream > const&);
@@ -86,9 +99,34 @@ namespace j2cpp {
 
 
 
+java::util::zip::ZipOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::util::zip::ZipOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
+java::util::zip::ZipOutputStream::operator local_ref<java::io::FilterOutputStream>() const
+{
+	return local_ref<java::io::FilterOutputStream>(get_jobject());
+}
+
+java::util::zip::ZipOutputStream::operator local_ref<java::io::OutputStream>() const
+{
+	return local_ref<java::io::OutputStream>(get_jobject());
+}
+
 java::util::zip::ZipOutputStream::operator local_ref<java::util::zip::DeflaterOutputStream>() const
 {
 	return local_ref<java::util::zip::DeflaterOutputStream>(get_jobject());
+}
+
+java::util::zip::ZipOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -97,8 +135,8 @@ java::util::zip::ZipOutputStream::ZipOutputStream(local_ref< java::io::OutputStr
 	call_new_object<
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(0),
-		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -110,8 +148,8 @@ void java::util::zip::ZipOutputStream::close()
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(1),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::ZipOutputStream::closeEntry()
@@ -120,8 +158,8 @@ void java::util::zip::ZipOutputStream::closeEntry()
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(2),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::ZipOutputStream::finish()
@@ -130,8 +168,8 @@ void java::util::zip::ZipOutputStream::finish()
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(3),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::ZipOutputStream::putNextEntry(local_ref< java::util::zip::ZipEntry > const &a0)
@@ -140,8 +178,8 @@ void java::util::zip::ZipOutputStream::putNextEntry(local_ref< java::util::zip::
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(4),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::ZipOutputStream::setComment(local_ref< java::lang::String > const &a0)
@@ -150,8 +188,8 @@ void java::util::zip::ZipOutputStream::setComment(local_ref< java::lang::String 
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(5),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::ZipOutputStream::setLevel(jint a0)
@@ -160,8 +198,8 @@ void java::util::zip::ZipOutputStream::setLevel(jint a0)
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(6),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::ZipOutputStream::setMethod(jint a0)
@@ -170,8 +208,8 @@ void java::util::zip::ZipOutputStream::setMethod(jint a0)
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(7),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::ZipOutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -180,8 +218,8 @@ void java::util::zip::ZipOutputStream::write(local_ref< array<jbyte,1> > const &
 		java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME,
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(8),
 		java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

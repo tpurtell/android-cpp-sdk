@@ -14,10 +14,15 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace widget { class Button; } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace widget { class Checkable; } } }
 namespace j2cpp { namespace android { namespace widget { namespace CompoundButton_ { class OnCheckedChangeListener; } } } }
 
@@ -26,10 +31,14 @@ namespace j2cpp { namespace android { namespace widget { namespace CompoundButto
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/Button.hpp>
 #include <android/widget/Checkable.hpp>
 #include <android/widget/CompoundButton.hpp>
+#include <android/widget/TextView.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -95,7 +104,13 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 		operator local_ref<android::widget::Button>() const;
+		operator local_ref<android::widget::TextView>() const;
 		operator local_ref<android::widget::Checkable>() const;
 
 
@@ -142,8 +157,8 @@ void android::widget::CompoundButton_::OnCheckedChangeListener::onCheckedChanged
 		android::widget::CompoundButton_::OnCheckedChangeListener::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton_::OnCheckedChangeListener::J2CPP_METHOD_NAME(0),
 		android::widget::CompoundButton_::OnCheckedChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -152,9 +167,39 @@ J2CPP_DEFINE_METHOD(android::widget::CompoundButton_::OnCheckedChangeListener,0,
 
 
 
+android::widget::CompoundButton::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::CompoundButton::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::CompoundButton::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
+}
+
+android::widget::CompoundButton::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::CompoundButton::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
 android::widget::CompoundButton::operator local_ref<android::widget::Button>() const
 {
 	return local_ref<android::widget::Button>(get_jobject());
+}
+
+android::widget::CompoundButton::operator local_ref<android::widget::TextView>() const
+{
+	return local_ref<android::widget::TextView>(get_jobject());
 }
 
 android::widget::CompoundButton::operator local_ref<android::widget::Checkable>() const
@@ -168,8 +213,8 @@ android::widget::CompoundButton::CompoundButton(local_ref< android::content::Con
 	call_new_object<
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(0),
-		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -181,8 +226,8 @@ android::widget::CompoundButton::CompoundButton(local_ref< android::content::Con
 	call_new_object<
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(1),
-		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -194,8 +239,8 @@ android::widget::CompoundButton::CompoundButton(local_ref< android::content::Con
 	call_new_object<
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(2),
-		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -207,8 +252,8 @@ void android::widget::CompoundButton::toggle()
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(3),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::CompoundButton::performClick()
@@ -217,8 +262,8 @@ jboolean android::widget::CompoundButton::performClick()
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(4),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::CompoundButton::isChecked()
@@ -227,8 +272,8 @@ jboolean android::widget::CompoundButton::isChecked()
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(5),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::CompoundButton::setChecked(jboolean a0)
@@ -237,8 +282,8 @@ void android::widget::CompoundButton::setChecked(jboolean a0)
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(6),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CompoundButton::setOnCheckedChangeListener(local_ref< android::widget::CompoundButton_::OnCheckedChangeListener > const &a0)
@@ -247,8 +292,8 @@ void android::widget::CompoundButton::setOnCheckedChangeListener(local_ref< andr
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(7),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CompoundButton::setButtonDrawable(jint a0)
@@ -257,8 +302,8 @@ void android::widget::CompoundButton::setButtonDrawable(jint a0)
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(8),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::CompoundButton::setButtonDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -267,8 +312,8 @@ void android::widget::CompoundButton::setButtonDrawable(local_ref< android::grap
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(9),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::CompoundButton::dispatchPopulateAccessibilityEvent(local_ref< android::view::accessibility::AccessibilityEvent > const &a0)
@@ -277,8 +322,8 @@ jboolean android::widget::CompoundButton::dispatchPopulateAccessibilityEvent(loc
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(10),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -291,8 +336,8 @@ local_ref< android::os::Parcelable > android::widget::CompoundButton::onSaveInst
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(15),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::CompoundButton::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -301,8 +346,8 @@ void android::widget::CompoundButton::onRestoreInstanceState(local_ref< android:
 		android::widget::CompoundButton::J2CPP_CLASS_NAME,
 		android::widget::CompoundButton::J2CPP_METHOD_NAME(16),
 		android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

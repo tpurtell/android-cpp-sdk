@@ -279,8 +279,8 @@ android::media::ToneGenerator::ToneGenerator(jint a0, jint a1)
 	call_new_object<
 		android::media::ToneGenerator::J2CPP_CLASS_NAME,
 		android::media::ToneGenerator::J2CPP_METHOD_NAME(0),
-		android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -292,8 +292,8 @@ jboolean android::media::ToneGenerator::startTone(jint a0)
 		android::media::ToneGenerator::J2CPP_CLASS_NAME,
 		android::media::ToneGenerator::J2CPP_METHOD_NAME(1),
 		android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::media::ToneGenerator::stopTone()
@@ -302,8 +302,8 @@ void android::media::ToneGenerator::stopTone()
 		android::media::ToneGenerator::J2CPP_CLASS_NAME,
 		android::media::ToneGenerator::J2CPP_METHOD_NAME(2),
 		android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::media::ToneGenerator::release()
@@ -312,8 +312,8 @@ void android::media::ToneGenerator::release()
 		android::media::ToneGenerator::J2CPP_CLASS_NAME,
 		android::media::ToneGenerator::J2CPP_METHOD_NAME(3),
 		android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

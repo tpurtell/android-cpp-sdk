@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_DOM_DOMRESULT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class Result; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class Result; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
@@ -53,8 +53,8 @@ namespace javax { namespace xml { namespace transform { namespace dom {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::xml::transform::Result>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DOMResult();
@@ -90,14 +90,14 @@ namespace j2cpp {
 
 
 
-javax::xml::transform::dom::DOMResult::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::xml::transform::dom::DOMResult::operator local_ref<javax::xml::transform::Result>() const
 {
 	return local_ref<javax::xml::transform::Result>(get_jobject());
+}
+
+javax::xml::transform::dom::DOMResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -106,8 +106,8 @@ javax::xml::transform::dom::DOMResult::DOMResult()
 	call_new_object<
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -119,8 +119,8 @@ javax::xml::transform::dom::DOMResult::DOMResult(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -132,8 +132,8 @@ javax::xml::transform::dom::DOMResult::DOMResult(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -145,8 +145,8 @@ javax::xml::transform::dom::DOMResult::DOMResult(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(3),
-		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -158,8 +158,8 @@ javax::xml::transform::dom::DOMResult::DOMResult(local_ref< org::w3c::dom::Node 
 	call_new_object<
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(4),
-		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1, a2)
+		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1, a2)
 )
 {
 }
@@ -171,8 +171,8 @@ void javax::xml::transform::dom::DOMResult::setNode(local_ref< org::w3c::dom::No
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMResult::getNode()
@@ -181,8 +181,8 @@ local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMResult::getNode(
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 void javax::xml::transform::dom::DOMResult::setNextSibling(local_ref< org::w3c::dom::Node > const &a0)
@@ -191,8 +191,8 @@ void javax::xml::transform::dom::DOMResult::setNextSibling(local_ref< org::w3c::
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(7),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMResult::getNextSibling()
@@ -201,8 +201,8 @@ local_ref< org::w3c::dom::Node > javax::xml::transform::dom::DOMResult::getNextS
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(8),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::w3c::dom::Node > >
-	(get_jobject());
+		local_ref< org::w3c::dom::Node >
+	>(get_jobject());
 }
 
 void javax::xml::transform::dom::DOMResult::setSystemId(local_ref< java::lang::String > const &a0)
@@ -211,8 +211,8 @@ void javax::xml::transform::dom::DOMResult::setSystemId(local_ref< java::lang::S
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(9),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::dom::DOMResult::getSystemId()
@@ -221,8 +221,8 @@ local_ref< java::lang::String > javax::xml::transform::dom::DOMResult::getSystem
 		javax::xml::transform::dom::DOMResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_NAME(10),
 		javax::xml::transform::dom::DOMResult::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

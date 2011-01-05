@@ -113,8 +113,8 @@ jint android::util::AttributeSet::getAttributeCount()
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(0),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getAttributeName(jint a0)
@@ -123,8 +123,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getAttributeName(ji
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(1),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getAttributeValue(jint a0)
@@ -133,8 +133,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getAttributeValue(j
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(2),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getAttributeValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -143,8 +143,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getAttributeValue(l
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(3),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getPositionDescription()
@@ -153,8 +153,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getPositionDescript
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(4),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::util::AttributeSet::getAttributeNameResource(jint a0)
@@ -163,8 +163,8 @@ jint android::util::AttributeSet::getAttributeNameResource(jint a0)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(5),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::AttributeSet::getAttributeListValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, jint a3)
@@ -173,8 +173,8 @@ jint android::util::AttributeSet::getAttributeListValue(local_ref< java::lang::S
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(6),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::util::AttributeSet::getAttributeBooleanValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -183,8 +183,8 @@ jboolean android::util::AttributeSet::getAttributeBooleanValue(local_ref< java::
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(7),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::util::AttributeSet::getAttributeResourceValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -193,8 +193,8 @@ jint android::util::AttributeSet::getAttributeResourceValue(local_ref< java::lan
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(8),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::util::AttributeSet::getAttributeIntValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -203,8 +203,8 @@ jint android::util::AttributeSet::getAttributeIntValue(local_ref< java::lang::St
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(9),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::util::AttributeSet::getAttributeUnsignedIntValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -213,8 +213,8 @@ jint android::util::AttributeSet::getAttributeUnsignedIntValue(local_ref< java::
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(10),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jfloat android::util::AttributeSet::getAttributeFloatValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -223,8 +223,8 @@ jfloat android::util::AttributeSet::getAttributeFloatValue(local_ref< java::lang
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(11),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(get_jobject(), a0, a1, a2);
+		jfloat
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::util::AttributeSet::getAttributeListValue(jint a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, jint a2)
@@ -233,8 +233,8 @@ jint android::util::AttributeSet::getAttributeListValue(jint a0, local_ref< arra
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(12),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::util::AttributeSet::getAttributeBooleanValue(jint a0, jboolean a1)
@@ -243,8 +243,8 @@ jboolean android::util::AttributeSet::getAttributeBooleanValue(jint a0, jboolean
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(13),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::AttributeSet::getAttributeResourceValue(jint a0, jint a1)
@@ -253,8 +253,8 @@ jint android::util::AttributeSet::getAttributeResourceValue(jint a0, jint a1)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(14),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::AttributeSet::getAttributeIntValue(jint a0, jint a1)
@@ -263,8 +263,8 @@ jint android::util::AttributeSet::getAttributeIntValue(jint a0, jint a1)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(15),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::AttributeSet::getAttributeUnsignedIntValue(jint a0, jint a1)
@@ -273,8 +273,8 @@ jint android::util::AttributeSet::getAttributeUnsignedIntValue(jint a0, jint a1)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(16),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::util::AttributeSet::getAttributeFloatValue(jint a0, jfloat a1)
@@ -283,8 +283,8 @@ jfloat android::util::AttributeSet::getAttributeFloatValue(jint a0, jfloat a1)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(17),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(17), 
-		jfloat >
-	(get_jobject(), a0, a1);
+		jfloat
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getIdAttribute()
@@ -293,8 +293,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getIdAttribute()
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(18),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::util::AttributeSet::getClassAttribute()
@@ -303,8 +303,8 @@ local_ref< java::lang::String > android::util::AttributeSet::getClassAttribute()
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(19),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::util::AttributeSet::getIdAttributeResourceValue(jint a0)
@@ -313,8 +313,8 @@ jint android::util::AttributeSet::getIdAttributeResourceValue(jint a0)
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(20),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::AttributeSet::getStyleAttribute()
@@ -323,8 +323,8 @@ jint android::util::AttributeSet::getStyleAttribute()
 		android::util::AttributeSet::J2CPP_CLASS_NAME,
 		android::util::AttributeSet::J2CPP_METHOD_NAME(21),
 		android::util::AttributeSet::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

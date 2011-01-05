@@ -16,19 +16,30 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/graphics/Rect.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/widget/FrameLayout.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -88,6 +99,13 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<android::widget::FrameLayout>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ScrollView(local_ref< android::content::Context > const&);
@@ -140,14 +158,49 @@ android::widget::ScrollView::operator local_ref<android::widget::FrameLayout>() 
 	return local_ref<android::widget::FrameLayout>(get_jobject());
 }
 
+android::widget::ScrollView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::ScrollView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::widget::ScrollView::ScrollView(local_ref< android::content::Context > const &a0)
 : object<android::widget::ScrollView>(
 	call_new_object<
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(0),
-		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -159,8 +212,8 @@ android::widget::ScrollView::ScrollView(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(1),
-		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -172,8 +225,8 @@ android::widget::ScrollView::ScrollView(local_ref< android::content::Context > c
 	call_new_object<
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(2),
-		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -187,8 +240,8 @@ jint android::widget::ScrollView::getMaxScrollAmount()
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(5),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::ScrollView::addView(local_ref< android::view::View > const &a0)
@@ -197,8 +250,8 @@ void android::widget::ScrollView::addView(local_ref< android::view::View > const
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(6),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ScrollView::addView(local_ref< android::view::View > const &a0, jint a1)
@@ -207,8 +260,8 @@ void android::widget::ScrollView::addView(local_ref< android::view::View > const
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(7),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ScrollView::addView(local_ref< android::view::View > const &a0, local_ref< android::view::ViewGroup_::LayoutParams > const &a1)
@@ -217,8 +270,8 @@ void android::widget::ScrollView::addView(local_ref< android::view::View > const
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(8),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ScrollView::addView(local_ref< android::view::View > const &a0, jint a1, local_ref< android::view::ViewGroup_::LayoutParams > const &a2)
@@ -227,8 +280,8 @@ void android::widget::ScrollView::addView(local_ref< android::view::View > const
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(9),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::widget::ScrollView::isFillViewport()
@@ -237,8 +290,8 @@ jboolean android::widget::ScrollView::isFillViewport()
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(10),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ScrollView::setFillViewport(jboolean a0)
@@ -247,8 +300,8 @@ void android::widget::ScrollView::setFillViewport(jboolean a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(11),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::isSmoothScrollingEnabled()
@@ -257,8 +310,8 @@ jboolean android::widget::ScrollView::isSmoothScrollingEnabled()
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(12),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::ScrollView::setSmoothScrollingEnabled(jboolean a0)
@@ -267,8 +320,8 @@ void android::widget::ScrollView::setSmoothScrollingEnabled(jboolean a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(13),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -278,8 +331,8 @@ jboolean android::widget::ScrollView::dispatchKeyEvent(local_ref< android::view:
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(15),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::executeKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -288,8 +341,8 @@ jboolean android::widget::ScrollView::executeKeyEvent(local_ref< android::view::
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(16),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::onInterceptTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -298,8 +351,8 @@ jboolean android::widget::ScrollView::onInterceptTouchEvent(local_ref< android::
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(17),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -308,8 +361,8 @@ jboolean android::widget::ScrollView::onTouchEvent(local_ref< android::view::Mot
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(18),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::pageScroll(jint a0)
@@ -318,8 +371,8 @@ jboolean android::widget::ScrollView::pageScroll(jint a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(19),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::fullScroll(jint a0)
@@ -328,8 +381,8 @@ jboolean android::widget::ScrollView::fullScroll(jint a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(20),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::ScrollView::arrowScroll(jint a0)
@@ -338,8 +391,8 @@ jboolean android::widget::ScrollView::arrowScroll(jint a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(21),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::ScrollView::smoothScrollBy(jint a0, jint a1)
@@ -348,8 +401,8 @@ void android::widget::ScrollView::smoothScrollBy(jint a0, jint a1)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(22),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::ScrollView::smoothScrollTo(jint a0, jint a1)
@@ -358,8 +411,8 @@ void android::widget::ScrollView::smoothScrollTo(jint a0, jint a1)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(23),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -372,8 +425,8 @@ void android::widget::ScrollView::computeScroll()
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(28),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -383,8 +436,8 @@ void android::widget::ScrollView::requestChildFocus(local_ref< android::view::Vi
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(30),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -394,8 +447,8 @@ jboolean android::widget::ScrollView::requestChildRectangleOnScreen(local_ref< a
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(32),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::ScrollView::requestLayout()
@@ -404,8 +457,8 @@ void android::widget::ScrollView::requestLayout()
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(33),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -416,8 +469,8 @@ void android::widget::ScrollView::fling(jint a0)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(36),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ScrollView::scrollTo(jint a0, jint a1)
@@ -426,8 +479,8 @@ void android::widget::ScrollView::scrollTo(jint a0, jint a1)
 		android::widget::ScrollView::J2CPP_CLASS_NAME,
 		android::widget::ScrollView::J2CPP_METHOD_NAME(37),
 		android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

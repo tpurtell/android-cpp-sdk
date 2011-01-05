@@ -12,15 +12,27 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class AbortableHttpRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpRequestBase; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <org/apache/http/HttpEntity.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
+#include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/HttpRequest.hpp>
+#include <org/apache/http/client/methods/AbortableHttpRequest.hpp>
 #include <org/apache/http/client/methods/HttpRequestBase.hpp>
+#include <org/apache/http/client/methods/HttpUriRequest.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -46,8 +58,15 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		{
 		}
 
+		operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const;
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
 		operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const;
+		operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
 		operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 
 
 		HttpEntityEnclosingRequestBase();
@@ -76,14 +95,49 @@ namespace j2cpp {
 
 
 
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::AbortableHttpRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
+{
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jobject());
+}
+
 org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const
 {
 	return local_ref<org::apache::http::client::methods::HttpRequestBase>(get_jobject());
 }
 
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::HttpUriRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
 org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const
 {
 	return local_ref<org::apache::http::HttpEntityEnclosingRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::HttpRequest>() const
+{
+	return local_ref<org::apache::http::HttpRequest>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
 }
 
 
@@ -92,8 +146,8 @@ org::apache::http::client::methods::HttpEntityEnclosingRequestBase::HttpEntityEn
 	call_new_object<
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(0),
-		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -105,8 +159,8 @@ local_ref< org::apache::http::HttpEntity > org::apache::http::client::methods::H
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpEntity > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpEntity >
+	>(get_jobject());
 }
 
 void org::apache::http::client::methods::HttpEntityEnclosingRequestBase::setEntity(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -115,8 +169,8 @@ void org::apache::http::client::methods::HttpEntityEnclosingRequestBase::setEnti
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::client::methods::HttpEntityEnclosingRequestBase::expectContinue()
@@ -125,8 +179,8 @@ jboolean org::apache::http::client::methods::HttpEntityEnclosingRequestBase::exp
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::client::methods::HttpEntityEnclosingRequestBase::clone()
@@ -135,8 +189,8 @@ local_ref< java::lang::Object > org::apache::http::client::methods::HttpEntityEn
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME,
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

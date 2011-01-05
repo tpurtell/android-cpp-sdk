@@ -91,8 +91,8 @@ android::webkit::UrlInterceptRegistry::UrlInterceptRegistry()
 	call_new_object<
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(0),
-		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +104,8 @@ void android::webkit::UrlInterceptRegistry::setUrlInterceptDisabled(jboolean a0)
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(1),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::webkit::UrlInterceptRegistry::urlInterceptDisabled()
@@ -114,8 +114,8 @@ jboolean android::webkit::UrlInterceptRegistry::urlInterceptDisabled()
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(2),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 jboolean android::webkit::UrlInterceptRegistry::registerHandler(local_ref< android::webkit::UrlInterceptHandler > const &a0)
@@ -124,8 +124,8 @@ jboolean android::webkit::UrlInterceptRegistry::registerHandler(local_ref< andro
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(3),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean android::webkit::UrlInterceptRegistry::unregisterHandler(local_ref< android::webkit::UrlInterceptHandler > const &a0)
@@ -134,8 +134,8 @@ jboolean android::webkit::UrlInterceptRegistry::unregisterHandler(local_ref< and
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(4),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::UrlInterceptRegistry::getSurrogate(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -144,8 +144,8 @@ local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::UrlInt
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(5),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::webkit::CacheManager_::CacheResult > >
-	(a0, a1);
+		local_ref< android::webkit::CacheManager_::CacheResult >
+	>(a0, a1);
 }
 
 local_ref< android::webkit::PluginData > android::webkit::UrlInterceptRegistry::getPluginData(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
@@ -154,8 +154,8 @@ local_ref< android::webkit::PluginData > android::webkit::UrlInterceptRegistry::
 		android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME,
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(6),
 		android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::webkit::PluginData > >
-	(a0, a1);
+		local_ref< android::webkit::PluginData >
+	>(a0, a1);
 }
 
 

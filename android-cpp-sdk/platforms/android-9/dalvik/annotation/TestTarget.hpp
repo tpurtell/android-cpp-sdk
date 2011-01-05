@@ -11,8 +11,8 @@
 #define J2CPP_DALVIK_ANNOTATION_TESTTARGET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
@@ -44,8 +44,8 @@ namespace dalvik { namespace annotation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > methodName();
@@ -69,14 +69,14 @@ namespace j2cpp {
 
 
 
-dalvik::annotation::TestTarget::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 dalvik::annotation::TestTarget::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+dalvik::annotation::TestTarget::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::String > dalvik::annotation::TestTarget::methodName()
@@ -85,8 +85,8 @@ local_ref< java::lang::String > dalvik::annotation::TestTarget::methodName()
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(0),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > dalvik::annotation::TestTarget::conceptName()
@@ -95,8 +95,8 @@ local_ref< java::lang::String > dalvik::annotation::TestTarget::conceptName()
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(1),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::annotation::TestTarget::methodArgs()
@@ -105,8 +105,8 @@ local_ref< array< local_ref< java::lang::Class >, 1> > dalvik::annotation::TestT
 		dalvik::annotation::TestTarget::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTarget::J2CPP_METHOD_NAME(2),
 		dalvik::annotation::TestTarget::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::lang::Class >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Class >, 1> >
+	>(get_jobject());
 }
 
 

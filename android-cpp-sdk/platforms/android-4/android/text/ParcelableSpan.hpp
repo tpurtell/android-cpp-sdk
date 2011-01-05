@@ -38,8 +38,8 @@ namespace android { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jint getSpanTypeId();
@@ -61,14 +61,14 @@ namespace j2cpp {
 
 
 
-android::text::ParcelableSpan::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::ParcelableSpan::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::text::ParcelableSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jint android::text::ParcelableSpan::getSpanTypeId()
@@ -77,8 +77,8 @@ jint android::text::ParcelableSpan::getSpanTypeId()
 		android::text::ParcelableSpan::J2CPP_CLASS_NAME,
 		android::text::ParcelableSpan::J2CPP_METHOD_NAME(0),
 		android::text::ParcelableSpan::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

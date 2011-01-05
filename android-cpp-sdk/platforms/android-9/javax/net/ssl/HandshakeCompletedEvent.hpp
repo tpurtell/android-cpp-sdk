@@ -11,15 +11,19 @@
 #define J2CPP_JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocket; } } } }
 namespace j2cpp { namespace javax { namespace security { namespace cert { class X509Certificate; } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/cert/Certificate.hpp>
@@ -56,7 +60,9 @@ namespace javax { namespace net { namespace ssl {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		HandshakeCompletedEvent(local_ref< javax::net::ssl::SSLSocket > const&, local_ref< javax::net::ssl::SSLSession > const&);
@@ -87,9 +93,19 @@ namespace j2cpp {
 
 
 
+javax::net::ssl::HandshakeCompletedEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::net::ssl::HandshakeCompletedEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
+}
+
+javax::net::ssl::HandshakeCompletedEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -98,8 +114,8 @@ javax::net::ssl::HandshakeCompletedEvent::HandshakeCompletedEvent(local_ref< jav
 	call_new_object<
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -111,8 +127,8 @@ local_ref< javax::net::ssl::SSLSession > javax::net::ssl::HandshakeCompletedEven
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::net::ssl::SSLSession > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSession >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::net::ssl::HandshakeCompletedEvent::getCipherSuite()
@@ -121,8 +137,8 @@ local_ref< java::lang::String > javax::net::ssl::HandshakeCompletedEvent::getCip
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::HandshakeCompletedEvent::getLocalCertificates()
@@ -131,8 +147,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::HandshakeCompletedEvent::getPeerCertificates()
@@ -141,8 +157,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > javax::net::ssl::HandshakeCompletedEvent::getPeerCertificateChain()
@@ -151,8 +167,8 @@ local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > java
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::HandshakeCompletedEvent::getPeerPrincipal()
@@ -161,8 +177,8 @@ local_ref< java::security::Principal > javax::net::ssl::HandshakeCompletedEvent:
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(6),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::HandshakeCompletedEvent::getLocalPrincipal()
@@ -171,8 +187,8 @@ local_ref< java::security::Principal > javax::net::ssl::HandshakeCompletedEvent:
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(7),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLSocket > javax::net::ssl::HandshakeCompletedEvent::getSocket()
@@ -181,8 +197,8 @@ local_ref< javax::net::ssl::SSLSocket > javax::net::ssl::HandshakeCompletedEvent
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME,
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(8),
 		javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< javax::net::ssl::SSLSocket > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSocket >
+	>(get_jobject());
 }
 
 

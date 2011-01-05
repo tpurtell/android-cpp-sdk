@@ -12,11 +12,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <junit/framework/Assert.hpp>
 #include <junit/framework/Test.hpp>
@@ -54,8 +56,9 @@ namespace junit { namespace framework {
 		{
 		}
 
-		operator local_ref<junit::framework::Assert>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<junit::framework::Test>() const;
+		operator local_ref<junit::framework::Assert>() const;
 
 
 		TestCase();
@@ -85,14 +88,19 @@ namespace j2cpp {
 
 
 
-junit::framework::TestCase::operator local_ref<junit::framework::Assert>() const
+junit::framework::TestCase::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<junit::framework::Assert>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 junit::framework::TestCase::operator local_ref<junit::framework::Test>() const
 {
 	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+junit::framework::TestCase::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
 }
 
 
@@ -101,8 +109,8 @@ junit::framework::TestCase::TestCase()
 	call_new_object<
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(0),
-		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -114,8 +122,8 @@ junit::framework::TestCase::TestCase(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(1),
-		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -127,8 +135,8 @@ jint junit::framework::TestCase::countTestCases()
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(2),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -138,8 +146,8 @@ local_ref< junit::framework::TestResult > junit::framework::TestCase::run()
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(4),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< junit::framework::TestResult > >
-	(get_jobject());
+		local_ref< junit::framework::TestResult >
+	>(get_jobject());
 }
 
 void junit::framework::TestCase::run(local_ref< junit::framework::TestResult > const &a0)
@@ -148,8 +156,8 @@ void junit::framework::TestCase::run(local_ref< junit::framework::TestResult > c
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(5),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void junit::framework::TestCase::runBare()
@@ -158,8 +166,8 @@ void junit::framework::TestCase::runBare()
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(6),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -171,8 +179,8 @@ local_ref< java::lang::String > junit::framework::TestCase::toString()
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(10),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > junit::framework::TestCase::getName()
@@ -181,8 +189,8 @@ local_ref< java::lang::String > junit::framework::TestCase::getName()
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(11),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void junit::framework::TestCase::setName(local_ref< java::lang::String > const &a0)
@@ -191,8 +199,8 @@ void junit::framework::TestCase::setName(local_ref< java::lang::String > const &
 		junit::framework::TestCase::J2CPP_CLASS_NAME,
 		junit::framework::TestCase::J2CPP_METHOD_NAME(12),
 		junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

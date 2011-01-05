@@ -13,13 +13,17 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class NavigableSet; } } }
+namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class NavigableMap; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ConcurrentMap; } } } }
+namespace j2cpp { namespace java { namespace util { class SortedMap; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Map.hpp>
 #include <java/util/NavigableMap.hpp>
 #include <java/util/NavigableSet.hpp>
+#include <java/util/SortedMap.hpp>
 #include <java/util/concurrent/ConcurrentMap.hpp>
 
 
@@ -52,8 +56,10 @@ namespace java { namespace util { namespace concurrent {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::util::concurrent::ConcurrentMap>() const;
+		operator local_ref<java::util::Map>() const;
 		operator local_ref<java::util::NavigableMap>() const;
+		operator local_ref<java::util::concurrent::ConcurrentMap>() const;
+		operator local_ref<java::util::SortedMap>() const;
 
 
 		local_ref< java::util::concurrent::ConcurrentNavigableMap > subMap(local_ref< java::lang::Object >  const&, jboolean, local_ref< java::lang::Object >  const&, jboolean);
@@ -90,14 +96,24 @@ java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::lang::O
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::util::concurrent::ConcurrentMap>() const
+java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::util::Map>() const
 {
-	return local_ref<java::util::concurrent::ConcurrentMap>(get_jobject());
+	return local_ref<java::util::Map>(get_jobject());
 }
 
 java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::util::NavigableMap>() const
 {
 	return local_ref<java::util::NavigableMap>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::util::concurrent::ConcurrentMap>() const
+{
+	return local_ref<java::util::concurrent::ConcurrentMap>(get_jobject());
+}
+
+java::util::concurrent::ConcurrentNavigableMap::operator local_ref<java::util::SortedMap>() const
+{
+	return local_ref<java::util::SortedMap>(get_jobject());
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::subMap(local_ref< java::lang::Object > const &a0, jboolean a1, local_ref< java::lang::Object > const &a2, jboolean a3)
@@ -106,8 +122,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::headMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -116,8 +132,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::tailMap(local_ref< java::lang::Object > const &a0, jboolean a1)
@@ -126,8 +142,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::subMap(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -136,8 +152,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::headMap(local_ref< java::lang::Object > const &a0)
@@ -146,8 +162,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::tailMap(local_ref< java::lang::Object > const &a0)
@@ -156,8 +172,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject(), a0);
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurrent::ConcurrentNavigableMap::descendingMap()
@@ -166,8 +182,8 @@ local_ref< java::util::concurrent::ConcurrentNavigableMap > java::util::concurre
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::concurrent::ConcurrentNavigableMap > >
-	(get_jobject());
+		local_ref< java::util::concurrent::ConcurrentNavigableMap >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigableMap::navigableKeySet()
@@ -176,8 +192,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigabl
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigableMap::keySet()
@@ -186,8 +202,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigabl
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigableMap::descendingKeySet()
@@ -196,8 +212,8 @@ local_ref< java::util::NavigableSet > java::util::concurrent::ConcurrentNavigabl
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::ConcurrentNavigableMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::NavigableSet > >
-	(get_jobject());
+		local_ref< java::util::NavigableSet >
+	>(get_jobject());
 }
 
 

@@ -79,8 +79,8 @@ void org::xml::sax::ext::DeclHandler::elementDecl(local_ref< java::lang::String 
 		org::xml::sax::ext::DeclHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_NAME(0),
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::ext::DeclHandler::attributeDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -89,8 +89,8 @@ void org::xml::sax::ext::DeclHandler::attributeDecl(local_ref< java::lang::Strin
 		org::xml::sax::ext::DeclHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_NAME(1),
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 void org::xml::sax::ext::DeclHandler::internalEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -99,8 +99,8 @@ void org::xml::sax::ext::DeclHandler::internalEntityDecl(local_ref< java::lang::
 		org::xml::sax::ext::DeclHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_NAME(2),
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::ext::DeclHandler::externalEntityDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -109,8 +109,8 @@ void org::xml::sax::ext::DeclHandler::externalEntityDecl(local_ref< java::lang::
 		org::xml::sax::ext::DeclHandler::J2CPP_CLASS_NAME,
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_NAME(3),
 		org::xml::sax::ext::DeclHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

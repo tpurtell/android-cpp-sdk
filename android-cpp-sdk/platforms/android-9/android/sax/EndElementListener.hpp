@@ -69,8 +69,8 @@ void android::sax::EndElementListener::end()
 		android::sax::EndElementListener::J2CPP_CLASS_NAME,
 		android::sax::EndElementListener::J2CPP_METHOD_NAME(0),
 		android::sax::EndElementListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

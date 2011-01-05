@@ -12,15 +12,25 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractClientConnAdapter; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 
 
 #include <java/lang/Object.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpHost.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
+#include <org/apache/http/conn/ManagedClientConnection.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/impl/conn/AbstractClientConnAdapter.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -58,7 +68,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
 		operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const;
+		operator local_ref<org::apache::http::conn::ManagedClientConnection>() const;
+		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
 
 
 		local_ref< org::apache::http::conn::routing::HttpRoute > getRoute();
@@ -92,9 +108,39 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
+}
+
 org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const
 {
 	return local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::conn::ManagedClientConnection>() const
+{
+	return local_ref<org::apache::http::conn::ManagedClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
 }
 
 
@@ -106,8 +152,8 @@ local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::conn::routing::HttpRoute > >
-	(get_jobject());
+		local_ref< org::apache::http::conn::routing::HttpRoute >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::open(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2)
@@ -116,8 +162,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::open(local_ref< o
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::tunnelTarget(jboolean a0, local_ref< org::apache::http::params::HttpParams > const &a1)
@@ -126,8 +172,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::tunnelTarget(jboo
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::tunnelProxy(local_ref< org::apache::http::HttpHost > const &a0, jboolean a1, local_ref< org::apache::http::params::HttpParams > const &a2)
@@ -136,8 +182,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::tunnelProxy(local
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::layerProtocol(local_ref< org::apache::http::protocol::HttpContext > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
@@ -146,8 +192,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::layerProtocol(loc
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::close()
@@ -156,8 +202,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::close()
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::shutdown()
@@ -166,8 +212,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::shutdown()
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::conn::AbstractPooledConnAdapter::getState()
@@ -176,8 +222,8 @@ local_ref< java::lang::Object > org::apache::http::impl::conn::AbstractPooledCon
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::conn::AbstractPooledConnAdapter::setState(local_ref< java::lang::Object > const &a0)
@@ -186,8 +232,8 @@ void org::apache::http::impl::conn::AbstractPooledConnAdapter::setState(local_re
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(11),
 		org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

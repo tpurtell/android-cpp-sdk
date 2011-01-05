@@ -77,8 +77,8 @@ local_ref< java::security::Principal > org::apache::http::auth::Credentials::get
 		org::apache::http::auth::Credentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::Credentials::J2CPP_METHOD_NAME(0),
 		org::apache::http::auth::Credentials::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::auth::Credentials::getPassword()
@@ -87,8 +87,8 @@ local_ref< java::lang::String > org::apache::http::auth::Credentials::getPasswor
 		org::apache::http::auth::Credentials::J2CPP_CLASS_NAME,
 		org::apache::http::auth::Credentials::J2CPP_METHOD_NAME(1),
 		org::apache::http::auth::Credentials::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

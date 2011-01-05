@@ -40,8 +40,8 @@ namespace dalvik { namespace annotation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::annotation::Annotation>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Class > value();
@@ -63,14 +63,14 @@ namespace j2cpp {
 
 
 
-dalvik::annotation::TestTargetClass::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 dalvik::annotation::TestTargetClass::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
+}
+
+dalvik::annotation::TestTargetClass::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::Class > dalvik::annotation::TestTargetClass::value()
@@ -79,8 +79,8 @@ local_ref< java::lang::Class > dalvik::annotation::TestTargetClass::value()
 		dalvik::annotation::TestTargetClass::J2CPP_CLASS_NAME,
 		dalvik::annotation::TestTargetClass::J2CPP_METHOD_NAME(0),
 		dalvik::annotation::TestTargetClass::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Class > >
-	(get_jobject());
+		local_ref< java::lang::Class >
+	>(get_jobject());
 }
 
 

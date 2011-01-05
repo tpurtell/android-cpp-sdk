@@ -79,8 +79,8 @@ void android::os::SystemClock::sleep(jlong a0)
 		android::os::SystemClock::J2CPP_CLASS_NAME,
 		android::os::SystemClock::J2CPP_METHOD_NAME(1),
 		android::os::SystemClock::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jboolean android::os::SystemClock::setCurrentTimeMillis(jlong a0)
@@ -89,8 +89,8 @@ jboolean android::os::SystemClock::setCurrentTimeMillis(jlong a0)
 		android::os::SystemClock::J2CPP_CLASS_NAME,
 		android::os::SystemClock::J2CPP_METHOD_NAME(2),
 		android::os::SystemClock::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jlong android::os::SystemClock::uptimeMillis()
@@ -99,8 +99,8 @@ jlong android::os::SystemClock::uptimeMillis()
 		android::os::SystemClock::J2CPP_CLASS_NAME,
 		android::os::SystemClock::J2CPP_METHOD_NAME(3),
 		android::os::SystemClock::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::os::SystemClock::elapsedRealtime()
@@ -109,8 +109,8 @@ jlong android::os::SystemClock::elapsedRealtime()
 		android::os::SystemClock::J2CPP_CLASS_NAME,
 		android::os::SystemClock::J2CPP_METHOD_NAME(4),
 		android::os::SystemClock::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 jlong android::os::SystemClock::currentThreadTimeMillis()
@@ -119,8 +119,8 @@ jlong android::os::SystemClock::currentThreadTimeMillis()
 		android::os::SystemClock::J2CPP_CLASS_NAME,
 		android::os::SystemClock::J2CPP_METHOD_NAME(5),
 		android::os::SystemClock::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	();
+		jlong
+	>();
 }
 
 

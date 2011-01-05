@@ -82,8 +82,8 @@ void javax::net::ssl::SSLSessionBindingListener::valueBound(local_ref< javax::ne
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::net::ssl::SSLSessionBindingListener::valueUnbound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const &a0)
@@ -92,8 +92,8 @@ void javax::net::ssl::SSLSessionBindingListener::valueUnbound(local_ref< javax::
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLSessionBindingListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

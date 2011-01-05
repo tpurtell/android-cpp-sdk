@@ -76,8 +76,8 @@ jlong java::util::zip::Checksum::getValue()
 		java::util::zip::Checksum::J2CPP_CLASS_NAME,
 		java::util::zip::Checksum::J2CPP_METHOD_NAME(0),
 		java::util::zip::Checksum::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::zip::Checksum::reset()
@@ -86,8 +86,8 @@ void java::util::zip::Checksum::reset()
 		java::util::zip::Checksum::J2CPP_CLASS_NAME,
 		java::util::zip::Checksum::J2CPP_METHOD_NAME(1),
 		java::util::zip::Checksum::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::Checksum::update(jint a0)
@@ -96,8 +96,8 @@ void java::util::zip::Checksum::update(jint a0)
 		java::util::zip::Checksum::J2CPP_CLASS_NAME,
 		java::util::zip::Checksum::J2CPP_METHOD_NAME(2),
 		java::util::zip::Checksum::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Checksum::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -106,8 +106,8 @@ void java::util::zip::Checksum::update(local_ref< array<jbyte,1> > const &a0, ji
 		java::util::zip::Checksum::J2CPP_CLASS_NAME,
 		java::util::zip::Checksum::J2CPP_METHOD_NAME(3),
 		java::util::zip::Checksum::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -11,10 +11,15 @@
 #define J2CPP_ANDROID_WIDGET_RESOURCECURSORTREEADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class HeterogeneousExpandableList; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseExpandableListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class CursorTreeAdapter; } } }
 
 
@@ -22,7 +27,12 @@ namespace j2cpp { namespace android { namespace widget { class CursorTreeAdapter
 #include <android/database/Cursor.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/BaseExpandableListAdapter.hpp>
 #include <android/widget/CursorTreeAdapter.hpp>
+#include <android/widget/ExpandableListAdapter.hpp>
+#include <android/widget/Filterable.hpp>
+#include <android/widget/HeterogeneousExpandableList.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -48,6 +58,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::ExpandableListAdapter>() const;
+		operator local_ref<android::widget::HeterogeneousExpandableList>() const;
+		operator local_ref<android::widget::Filterable>() const;
+		operator local_ref<android::widget::BaseExpandableListAdapter>() const;
 		operator local_ref<android::widget::CursorTreeAdapter>() const;
 
 
@@ -74,6 +89,31 @@ namespace j2cpp {
 
 
 
+android::widget::ResourceCursorTreeAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::ResourceCursorTreeAdapter::operator local_ref<android::widget::ExpandableListAdapter>() const
+{
+	return local_ref<android::widget::ExpandableListAdapter>(get_jobject());
+}
+
+android::widget::ResourceCursorTreeAdapter::operator local_ref<android::widget::HeterogeneousExpandableList>() const
+{
+	return local_ref<android::widget::HeterogeneousExpandableList>(get_jobject());
+}
+
+android::widget::ResourceCursorTreeAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jobject());
+}
+
+android::widget::ResourceCursorTreeAdapter::operator local_ref<android::widget::BaseExpandableListAdapter>() const
+{
+	return local_ref<android::widget::BaseExpandableListAdapter>(get_jobject());
+}
+
 android::widget::ResourceCursorTreeAdapter::operator local_ref<android::widget::CursorTreeAdapter>() const
 {
 	return local_ref<android::widget::CursorTreeAdapter>(get_jobject());
@@ -85,8 +125,8 @@ android::widget::ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(local_ref<
 	call_new_object<
 		android::widget::ResourceCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5)
+		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -98,8 +138,8 @@ android::widget::ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(local_ref<
 	call_new_object<
 		android::widget::ResourceCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_NAME(1),
-		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4)
+		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -111,8 +151,8 @@ android::widget::ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(local_ref<
 	call_new_object<
 		android::widget::ResourceCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_NAME(2),
-		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3)
+		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -124,8 +164,8 @@ local_ref< android::view::View > android::widget::ResourceCursorTreeAdapter::new
 		android::widget::ResourceCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::view::View > android::widget::ResourceCursorTreeAdapter::newGroupView(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, jboolean a2, local_ref< android::view::ViewGroup > const &a3)
@@ -134,8 +174,8 @@ local_ref< android::view::View > android::widget::ResourceCursorTreeAdapter::new
 		android::widget::ResourceCursorTreeAdapter::J2CPP_CLASS_NAME,
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::ResourceCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

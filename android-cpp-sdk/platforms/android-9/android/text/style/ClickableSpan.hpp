@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_TEXT_STYLE_CLICKABLESPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 #include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/UpdateAppearance.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -44,6 +46,7 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::style::CharacterStyle>() const;
 		operator local_ref<android::text::style::UpdateAppearance>() const;
 
@@ -70,6 +73,11 @@ namespace j2cpp {
 
 
 
+android::text::style::ClickableSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::text::style::ClickableSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
 	return local_ref<android::text::style::CharacterStyle>(get_jobject());
@@ -86,8 +94,8 @@ android::text::style::ClickableSpan::ClickableSpan()
 	call_new_object<
 		android::text::style::ClickableSpan::J2CPP_CLASS_NAME,
 		android::text::style::ClickableSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +107,8 @@ void android::text::style::ClickableSpan::onClick(local_ref< android::view::View
 		android::text::style::ClickableSpan::J2CPP_CLASS_NAME,
 		android::text::style::ClickableSpan::J2CPP_METHOD_NAME(1),
 		android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::text::style::ClickableSpan::updateDrawState(local_ref< android::text::TextPaint > const &a0)
@@ -109,8 +117,8 @@ void android::text::style::ClickableSpan::updateDrawState(local_ref< android::te
 		android::text::style::ClickableSpan::J2CPP_CLASS_NAME,
 		android::text::style::ClickableSpan::J2CPP_METHOD_NAME(2),
 		android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

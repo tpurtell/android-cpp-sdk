@@ -75,8 +75,8 @@ namespace java { namespace nio { namespace charset {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		static local_ref< java::util::SortedMap > availableCharsets();
@@ -119,14 +119,14 @@ namespace j2cpp {
 
 
 
-java::nio::charset::Charset::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::nio::charset::Charset::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::nio::charset::Charset::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -136,8 +136,8 @@ local_ref< java::util::SortedMap > java::nio::charset::Charset::availableCharset
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(1),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::SortedMap > >
-	();
+		local_ref< java::util::SortedMap >
+	>();
 }
 
 local_ref< java::nio::charset::Charset > java::nio::charset::Charset::forName(local_ref< java::lang::String > const &a0)
@@ -146,8 +146,8 @@ local_ref< java::nio::charset::Charset > java::nio::charset::Charset::forName(lo
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(2),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::charset::Charset > >
-	(a0);
+		local_ref< java::nio::charset::Charset >
+	>(a0);
 }
 
 jboolean java::nio::charset::Charset::isSupported(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ jboolean java::nio::charset::Charset::isSupported(local_ref< java::lang::String 
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(3),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::nio::charset::Charset::contains(local_ref< java::nio::charset::Charset > const &a0)
@@ -166,8 +166,8 @@ jboolean java::nio::charset::Charset::contains(local_ref< java::nio::charset::Ch
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(4),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::Charset::newEncoder()
@@ -176,8 +176,8 @@ local_ref< java::nio::charset::CharsetEncoder > java::nio::charset::Charset::new
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(5),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::nio::charset::CharsetEncoder > >
-	(get_jobject());
+		local_ref< java::nio::charset::CharsetEncoder >
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::CharsetDecoder > java::nio::charset::Charset::newDecoder()
@@ -186,8 +186,8 @@ local_ref< java::nio::charset::CharsetDecoder > java::nio::charset::Charset::new
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(6),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::charset::CharsetDecoder > >
-	(get_jobject());
+		local_ref< java::nio::charset::CharsetDecoder >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::Charset::name()
@@ -196,8 +196,8 @@ local_ref< java::lang::String > java::nio::charset::Charset::name()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(7),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::nio::charset::Charset::aliases()
@@ -206,8 +206,8 @@ local_ref< java::util::Set > java::nio::charset::Charset::aliases()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(8),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::Charset::displayName()
@@ -216,8 +216,8 @@ local_ref< java::lang::String > java::nio::charset::Charset::displayName()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(9),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::Charset::displayName(local_ref< java::util::Locale > const &a0)
@@ -226,8 +226,8 @@ local_ref< java::lang::String > java::nio::charset::Charset::displayName(local_r
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(10),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::charset::Charset::isRegistered()
@@ -236,8 +236,8 @@ jboolean java::nio::charset::Charset::isRegistered()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(11),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::nio::charset::Charset::canEncode()
@@ -246,8 +246,8 @@ jboolean java::nio::charset::Charset::canEncode()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(12),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::charset::Charset::encode(local_ref< java::nio::CharBuffer > const &a0)
@@ -256,8 +256,8 @@ local_ref< java::nio::ByteBuffer > java::nio::charset::Charset::encode(local_ref
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(13),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::charset::Charset::encode(local_ref< java::lang::String > const &a0)
@@ -266,8 +266,8 @@ local_ref< java::nio::ByteBuffer > java::nio::charset::Charset::encode(local_ref
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(14),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::CharBuffer > java::nio::charset::Charset::decode(local_ref< java::nio::ByteBuffer > const &a0)
@@ -276,8 +276,8 @@ local_ref< java::nio::CharBuffer > java::nio::charset::Charset::decode(local_ref
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(15),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::nio::CharBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::CharBuffer >
+	>(get_jobject(), a0);
 }
 
 jint java::nio::charset::Charset::compareTo(local_ref< java::nio::charset::Charset > const &a0)
@@ -286,8 +286,8 @@ jint java::nio::charset::Charset::compareTo(local_ref< java::nio::charset::Chars
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(16),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::charset::Charset::equals(local_ref< java::lang::Object > const &a0)
@@ -296,8 +296,8 @@ jboolean java::nio::charset::Charset::equals(local_ref< java::lang::Object > con
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(17),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::nio::charset::Charset::hashCode()
@@ -306,8 +306,8 @@ jint java::nio::charset::Charset::hashCode()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(18),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::Charset::toString()
@@ -316,8 +316,8 @@ local_ref< java::lang::String > java::nio::charset::Charset::toString()
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(19),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::Charset > java::nio::charset::Charset::defaultCharset()
@@ -326,8 +326,8 @@ local_ref< java::nio::charset::Charset > java::nio::charset::Charset::defaultCha
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(20),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::nio::charset::Charset > >
-	();
+		local_ref< java::nio::charset::Charset >
+	>();
 }
 
 jint java::nio::charset::Charset::compareTo(local_ref< java::lang::Object > const &a0)
@@ -336,8 +336,8 @@ jint java::nio::charset::Charset::compareTo(local_ref< java::lang::Object > cons
 		java::nio::charset::Charset::J2CPP_CLASS_NAME,
 		java::nio::charset::Charset::J2CPP_METHOD_NAME(21),
 		java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

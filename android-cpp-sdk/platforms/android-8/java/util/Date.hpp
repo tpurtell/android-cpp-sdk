@@ -78,9 +78,9 @@ namespace java { namespace util {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		Date();
@@ -140,11 +140,6 @@ java::util::Date::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::util::Date::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::util::Date::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
@@ -155,14 +150,19 @@ java::util::Date::operator local_ref<java::lang::Comparable>() const
 	return local_ref<java::lang::Comparable>(get_jobject());
 }
 
+java::util::Date::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::util::Date::Date()
 : object<java::util::Date>(
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(0),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::Date::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -174,8 +174,8 @@ java::util::Date::Date(jint a0, jint a1, jint a2)
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(1),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		java::util::Date::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -187,8 +187,8 @@ java::util::Date::Date(jint a0, jint a1, jint a2, jint a3, jint a4)
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(2),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2, a3, a4)
+		java::util::Date::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -200,8 +200,8 @@ java::util::Date::Date(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(3),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2, a3, a4, a5)
+		java::util::Date::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -213,8 +213,8 @@ java::util::Date::Date(jlong a0)
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(4),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::util::Date::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -226,8 +226,8 @@ java::util::Date::Date(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(5),
-		java::util::Date::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::util::Date::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -239,8 +239,8 @@ jboolean java::util::Date::after(local_ref< java::util::Date > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(6),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Date::before(local_ref< java::util::Date > const &a0)
@@ -249,8 +249,8 @@ jboolean java::util::Date::before(local_ref< java::util::Date > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(7),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Date::clone()
@@ -259,8 +259,8 @@ local_ref< java::lang::Object > java::util::Date::clone()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(8),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::util::Date::compareTo(local_ref< java::util::Date > const &a0)
@@ -269,8 +269,8 @@ jint java::util::Date::compareTo(local_ref< java::util::Date > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(9),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Date::equals(local_ref< java::lang::Object > const &a0)
@@ -279,8 +279,8 @@ jboolean java::util::Date::equals(local_ref< java::lang::Object > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(10),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::util::Date::getDate()
@@ -289,8 +289,8 @@ jint java::util::Date::getDate()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(11),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getDay()
@@ -299,8 +299,8 @@ jint java::util::Date::getDay()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(12),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getHours()
@@ -309,8 +309,8 @@ jint java::util::Date::getHours()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(13),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getMinutes()
@@ -319,8 +319,8 @@ jint java::util::Date::getMinutes()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(14),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(14), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getMonth()
@@ -329,8 +329,8 @@ jint java::util::Date::getMonth()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(15),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getSeconds()
@@ -339,8 +339,8 @@ jint java::util::Date::getSeconds()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(16),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::Date::getTime()
@@ -349,8 +349,8 @@ jlong java::util::Date::getTime()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(17),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(17), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::util::Date::getTimezoneOffset()
@@ -359,8 +359,8 @@ jint java::util::Date::getTimezoneOffset()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(18),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::getYear()
@@ -369,8 +369,8 @@ jint java::util::Date::getYear()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(19),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::Date::hashCode()
@@ -379,8 +379,8 @@ jint java::util::Date::hashCode()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(20),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::Date::parse(local_ref< java::lang::String > const &a0)
@@ -389,8 +389,8 @@ jlong java::util::Date::parse(local_ref< java::lang::String > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(21),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(21), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 void java::util::Date::setDate(jint a0)
@@ -399,8 +399,8 @@ void java::util::Date::setDate(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(22),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setHours(jint a0)
@@ -409,8 +409,8 @@ void java::util::Date::setHours(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(23),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setMinutes(jint a0)
@@ -419,8 +419,8 @@ void java::util::Date::setMinutes(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(24),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setMonth(jint a0)
@@ -429,8 +429,8 @@ void java::util::Date::setMonth(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(25),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setSeconds(jint a0)
@@ -439,8 +439,8 @@ void java::util::Date::setSeconds(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(26),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setTime(jlong a0)
@@ -449,8 +449,8 @@ void java::util::Date::setTime(jlong a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(27),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Date::setYear(jint a0)
@@ -459,8 +459,8 @@ void java::util::Date::setYear(jint a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(28),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::Date::toGMTString()
@@ -469,8 +469,8 @@ local_ref< java::lang::String > java::util::Date::toGMTString()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(29),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Date::toLocaleString()
@@ -479,8 +479,8 @@ local_ref< java::lang::String > java::util::Date::toLocaleString()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(30),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::Date::toString()
@@ -489,8 +489,8 @@ local_ref< java::lang::String > java::util::Date::toString()
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(31),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong java::util::Date::UTC(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -499,8 +499,8 @@ jlong java::util::Date::UTC(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(32),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(32), 
-		jlong >
-	(a0, a1, a2, a3, a4, a5);
+		jlong
+	>(a0, a1, a2, a3, a4, a5);
 }
 
 jint java::util::Date::compareTo(local_ref< java::lang::Object > const &a0)
@@ -509,8 +509,8 @@ jint java::util::Date::compareTo(local_ref< java::lang::Object > const &a0)
 		java::util::Date::J2CPP_CLASS_NAME,
 		java::util::Date::J2CPP_METHOD_NAME(33),
 		java::util::Date::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

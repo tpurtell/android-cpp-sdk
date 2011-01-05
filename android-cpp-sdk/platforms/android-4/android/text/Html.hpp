@@ -11,7 +11,6 @@
 #define J2CPP_ANDROID_TEXT_HTML_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace text { namespace Html_ { class TagHandler; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
@@ -19,6 +18,7 @@ namespace j2cpp { namespace android { namespace text { namespace Html_ { class I
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
 #include <android/graphics/drawable/Drawable.hpp>
@@ -137,8 +137,8 @@ void android::text::Html_::TagHandler::handleTag(jboolean a0, local_ref< java::l
 		android::text::Html_::TagHandler::J2CPP_CLASS_NAME,
 		android::text::Html_::TagHandler::J2CPP_METHOD_NAME(0),
 		android::text::Html_::TagHandler::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -157,8 +157,8 @@ local_ref< android::graphics::drawable::Drawable > android::text::Html_::ImageGe
 		android::text::Html_::ImageGetter::J2CPP_CLASS_NAME,
 		android::text::Html_::ImageGetter::J2CPP_METHOD_NAME(0),
 		android::text::Html_::ImageGetter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject(), a0);
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject(), a0);
 }
 
 
@@ -179,8 +179,8 @@ local_ref< android::text::Spanned > android::text::Html::fromHtml(local_ref< jav
 		android::text::Html::J2CPP_CLASS_NAME,
 		android::text::Html::J2CPP_METHOD_NAME(1),
 		android::text::Html::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::Spanned > >
-	(a0);
+		local_ref< android::text::Spanned >
+	>(a0);
 }
 
 local_ref< android::text::Spanned > android::text::Html::fromHtml(local_ref< java::lang::String > const &a0, local_ref< android::text::Html_::ImageGetter > const &a1, local_ref< android::text::Html_::TagHandler > const &a2)
@@ -189,8 +189,8 @@ local_ref< android::text::Spanned > android::text::Html::fromHtml(local_ref< jav
 		android::text::Html::J2CPP_CLASS_NAME,
 		android::text::Html::J2CPP_METHOD_NAME(2),
 		android::text::Html::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::Spanned > >
-	(a0, a1, a2);
+		local_ref< android::text::Spanned >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > android::text::Html::toHtml(local_ref< android::text::Spanned > const &a0)
@@ -199,8 +199,8 @@ local_ref< java::lang::String > android::text::Html::toHtml(local_ref< android::
 		android::text::Html::J2CPP_CLASS_NAME,
 		android::text::Html::J2CPP_METHOD_NAME(3),
 		android::text::Html::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

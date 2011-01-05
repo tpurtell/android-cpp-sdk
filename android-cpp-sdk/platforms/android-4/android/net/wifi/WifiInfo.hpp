@@ -60,8 +60,8 @@ namespace android { namespace net { namespace wifi {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getSSID();
@@ -98,14 +98,14 @@ namespace j2cpp {
 
 
 
-android::net::wifi::WifiInfo::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::net::wifi::WifiInfo::operator local_ref<android::os::Parcelable>() const
 {
 	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::net::wifi::WifiInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -115,8 +115,8 @@ local_ref< java::lang::String > android::net::wifi::WifiInfo::getSSID()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(1),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::wifi::WifiInfo::getBSSID()
@@ -125,8 +125,8 @@ local_ref< java::lang::String > android::net::wifi::WifiInfo::getBSSID()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(2),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiInfo::getRssi()
@@ -135,8 +135,8 @@ jint android::net::wifi::WifiInfo::getRssi()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(3),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiInfo::getLinkSpeed()
@@ -145,8 +145,8 @@ jint android::net::wifi::WifiInfo::getLinkSpeed()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(4),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::wifi::WifiInfo::getMacAddress()
@@ -155,8 +155,8 @@ local_ref< java::lang::String > android::net::wifi::WifiInfo::getMacAddress()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(5),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiInfo::getNetworkId()
@@ -165,8 +165,8 @@ jint android::net::wifi::WifiInfo::getNetworkId()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(6),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::net::wifi::SupplicantState > android::net::wifi::WifiInfo::getSupplicantState()
@@ -175,8 +175,8 @@ local_ref< android::net::wifi::SupplicantState > android::net::wifi::WifiInfo::g
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(7),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::wifi::SupplicantState > >
-	(get_jobject());
+		local_ref< android::net::wifi::SupplicantState >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiInfo::getIpAddress()
@@ -185,8 +185,8 @@ jint android::net::wifi::WifiInfo::getIpAddress()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(8),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::net::wifi::WifiInfo::getHiddenSSID()
@@ -195,8 +195,8 @@ jboolean android::net::wifi::WifiInfo::getHiddenSSID()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(9),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::net::NetworkInfo_::DetailedState > android::net::wifi::WifiInfo::getDetailedStateOf(local_ref< android::net::wifi::SupplicantState > const &a0)
@@ -205,8 +205,8 @@ local_ref< android::net::NetworkInfo_::DetailedState > android::net::wifi::WifiI
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(10),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::NetworkInfo_::DetailedState > >
-	(a0);
+		local_ref< android::net::NetworkInfo_::DetailedState >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::wifi::WifiInfo::toString()
@@ -215,8 +215,8 @@ local_ref< java::lang::String > android::net::wifi::WifiInfo::toString()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(11),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::wifi::WifiInfo::describeContents()
@@ -225,8 +225,8 @@ jint android::net::wifi::WifiInfo::describeContents()
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(12),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::wifi::WifiInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -235,8 +235,8 @@ void android::net::wifi::WifiInfo::writeToParcel(local_ref< android::os::Parcel 
 		android::net::wifi::WifiInfo::J2CPP_CLASS_NAME,
 		android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(13),
 		android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -73,8 +73,8 @@ jboolean java::util::Iterator::hasNext()
 		java::util::Iterator::J2CPP_CLASS_NAME,
 		java::util::Iterator::J2CPP_METHOD_NAME(0),
 		java::util::Iterator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Iterator::next()
@@ -83,8 +83,8 @@ local_ref< java::lang::Object > java::util::Iterator::next()
 		java::util::Iterator::J2CPP_CLASS_NAME,
 		java::util::Iterator::J2CPP_METHOD_NAME(1),
 		java::util::Iterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::util::Iterator::remove()
@@ -93,8 +93,8 @@ void java::util::Iterator::remove()
 		java::util::Iterator::J2CPP_CLASS_NAME,
 		java::util::Iterator::J2CPP_METHOD_NAME(2),
 		java::util::Iterator::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -140,8 +140,8 @@ android::net::http::SslCertificate_::DName::DName(local_ref< android::net::http:
 	call_new_object<
 		android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(0),
-		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -153,8 +153,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getD
 		android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(1),
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getCName()
@@ -163,8 +163,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getC
 		android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(2),
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getOName()
@@ -173,8 +173,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getO
 		android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(3),
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getUName()
@@ -183,8 +183,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getU
 		android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(4),
 		android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -210,8 +210,8 @@ android::net::http::SslCertificate::SslCertificate(local_ref< java::lang::String
 	call_new_object<
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(0),
-		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -223,8 +223,8 @@ android::net::http::SslCertificate::SslCertificate(local_ref< java::lang::String
 	call_new_object<
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(1),
-		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3)
+		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -236,8 +236,8 @@ android::net::http::SslCertificate::SslCertificate(local_ref< java::security::ce
 	call_new_object<
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(2),
-		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -249,8 +249,8 @@ local_ref< android::os::Bundle > android::net::http::SslCertificate::saveState(l
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(3),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::os::Bundle > >
-	(a0);
+		local_ref< android::os::Bundle >
+	>(a0);
 }
 
 local_ref< android::net::http::SslCertificate > android::net::http::SslCertificate::restoreState(local_ref< android::os::Bundle > const &a0)
@@ -259,8 +259,8 @@ local_ref< android::net::http::SslCertificate > android::net::http::SslCertifica
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(4),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::http::SslCertificate > >
-	(a0);
+		local_ref< android::net::http::SslCertificate >
+	>(a0);
 }
 
 local_ref< java::util::Date > android::net::http::SslCertificate::getValidNotBeforeDate()
@@ -269,8 +269,8 @@ local_ref< java::util::Date > android::net::http::SslCertificate::getValidNotBef
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(5),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate::getValidNotBefore()
@@ -279,8 +279,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate::getValidNotB
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(6),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::util::Date > android::net::http::SslCertificate::getValidNotAfterDate()
@@ -289,8 +289,8 @@ local_ref< java::util::Date > android::net::http::SslCertificate::getValidNotAft
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(7),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Date > >
-	(get_jobject());
+		local_ref< java::util::Date >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate::getValidNotAfter()
@@ -299,8 +299,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate::getValidNotA
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(8),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::net::http::SslCertificate_::DName > android::net::http::SslCertificate::getIssuedTo()
@@ -309,8 +309,8 @@ local_ref< android::net::http::SslCertificate_::DName > android::net::http::SslC
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(9),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::net::http::SslCertificate_::DName > >
-	(get_jobject());
+		local_ref< android::net::http::SslCertificate_::DName >
+	>(get_jobject());
 }
 
 local_ref< android::net::http::SslCertificate_::DName > android::net::http::SslCertificate::getIssuedBy()
@@ -319,8 +319,8 @@ local_ref< android::net::http::SslCertificate_::DName > android::net::http::SslC
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(10),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::http::SslCertificate_::DName > >
-	(get_jobject());
+		local_ref< android::net::http::SslCertificate_::DName >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::http::SslCertificate::toString()
@@ -329,8 +329,8 @@ local_ref< java::lang::String > android::net::http::SslCertificate::toString()
 		android::net::http::SslCertificate::J2CPP_CLASS_NAME,
 		android::net::http::SslCertificate::J2CPP_METHOD_NAME(11),
 		android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

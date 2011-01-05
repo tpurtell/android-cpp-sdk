@@ -45,6 +45,8 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::protocol::HttpContext>() const;
 		operator local_ref<org::apache::http::protocol::BasicHttpContext>() const;
 
 
@@ -72,6 +74,16 @@ namespace j2cpp {
 
 
 
+org::apache::http::protocol::SyncBasicHttpContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::protocol::SyncBasicHttpContext::operator local_ref<org::apache::http::protocol::HttpContext>() const
+{
+	return local_ref<org::apache::http::protocol::HttpContext>(get_jobject());
+}
+
 org::apache::http::protocol::SyncBasicHttpContext::operator local_ref<org::apache::http::protocol::BasicHttpContext>() const
 {
 	return local_ref<org::apache::http::protocol::BasicHttpContext>(get_jobject());
@@ -83,8 +95,8 @@ org::apache::http::protocol::SyncBasicHttpContext::SyncBasicHttpContext(local_re
 	call_new_object<
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -96,8 +108,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::SyncBasicHttpContex
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::SyncBasicHttpContext::setAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -106,8 +118,8 @@ void org::apache::http::protocol::SyncBasicHttpContext::setAttribute(local_ref< 
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::apache::http::protocol::SyncBasicHttpContext::removeAttribute(local_ref< java::lang::String > const &a0)
@@ -116,8 +128,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::SyncBasicHttpContex
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::SyncBasicHttpContext::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

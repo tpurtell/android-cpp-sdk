@@ -81,8 +81,8 @@ local_ref< android::view::View > android::widget::SpinnerAdapter::getDropDownVie
 		android::widget::SpinnerAdapter::J2CPP_CLASS_NAME,
 		android::widget::SpinnerAdapter::J2CPP_METHOD_NAME(0),
 		android::widget::SpinnerAdapter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

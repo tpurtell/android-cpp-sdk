@@ -77,8 +77,8 @@ local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http:
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::ClientConnectionManagerFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::conn::ClientConnectionManager > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::conn::ClientConnectionManager >
+	>(get_jobject(), a0, a1);
 }
 
 

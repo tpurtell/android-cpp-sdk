@@ -49,8 +49,8 @@ namespace java { namespace security { namespace cert {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::Object > clone();
@@ -77,14 +77,14 @@ namespace j2cpp {
 
 
 
-java::security::cert::PKIXCertPathChecker::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::cert::PKIXCertPathChecker::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::security::cert::PKIXCertPathChecker::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -94,8 +94,8 @@ local_ref< java::lang::Object > java::security::cert::PKIXCertPathChecker::clone
 		java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(1),
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXCertPathChecker::init(jboolean a0)
@@ -104,8 +104,8 @@ void java::security::cert::PKIXCertPathChecker::init(jboolean a0)
 		java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(2),
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::cert::PKIXCertPathChecker::isForwardCheckingSupported()
@@ -114,8 +114,8 @@ jboolean java::security::cert::PKIXCertPathChecker::isForwardCheckingSupported()
 		java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(3),
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::security::cert::PKIXCertPathChecker::getSupportedExtensions()
@@ -124,8 +124,8 @@ local_ref< java::util::Set > java::security::cert::PKIXCertPathChecker::getSuppo
 		java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(4),
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 void java::security::cert::PKIXCertPathChecker::check(local_ref< java::security::cert::Certificate > const &a0, local_ref< java::util::Collection > const &a1)
@@ -134,8 +134,8 @@ void java::security::cert::PKIXCertPathChecker::check(local_ref< java::security:
 		java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME,
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(5),
 		java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

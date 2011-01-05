@@ -82,8 +82,8 @@ local_ref< java::lang::String > java::nio::charset::CodingErrorAction::toString(
 		java::nio::charset::CodingErrorAction::J2CPP_CLASS_NAME,
 		java::nio::charset::CodingErrorAction::J2CPP_METHOD_NAME(1),
 		java::nio::charset::CodingErrorAction::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

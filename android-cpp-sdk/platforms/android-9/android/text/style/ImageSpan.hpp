@@ -12,8 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class MetricAffectingSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateLayout; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ReplacementSpan; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class DynamicDrawableSpan; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -23,7 +29,13 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/net/Uri.hpp>
+#include <android/text/style/CharacterStyle.hpp>
 #include <android/text/style/DynamicDrawableSpan.hpp>
+#include <android/text/style/MetricAffectingSpan.hpp>
+#include <android/text/style/ReplacementSpan.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
+#include <android/text/style/UpdateLayout.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -59,6 +71,12 @@ namespace android { namespace text { namespace style {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<android::text::style::MetricAffectingSpan>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::style::UpdateLayout>() const;
+		operator local_ref<android::text::style::ReplacementSpan>() const;
 		operator local_ref<android::text::style::DynamicDrawableSpan>() const;
 
 
@@ -95,6 +113,36 @@ namespace j2cpp {
 
 
 
+android::text::style::ImageSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::CharacterStyle>() const
+{
+	return local_ref<android::text::style::CharacterStyle>(get_jobject());
+}
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::MetricAffectingSpan>() const
+{
+	return local_ref<android::text::style::MetricAffectingSpan>(get_jobject());
+}
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jobject());
+}
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::UpdateLayout>() const
+{
+	return local_ref<android::text::style::UpdateLayout>(get_jobject());
+}
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::ReplacementSpan>() const
+{
+	return local_ref<android::text::style::ReplacementSpan>(get_jobject());
+}
+
 android::text::style::ImageSpan::operator local_ref<android::text::style::DynamicDrawableSpan>() const
 {
 	return local_ref<android::text::style::DynamicDrawableSpan>(get_jobject());
@@ -106,8 +154,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::Bitmap 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(0),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -119,8 +167,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::Bitmap 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(1),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -132,8 +180,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(2),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -145,8 +193,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(3),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1, a2)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1, a2)
 )
 {
 }
@@ -158,8 +206,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawabl
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(4),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -171,8 +219,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawabl
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(5),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1)
 )
 {
 }
@@ -184,8 +232,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawabl
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(6),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(6)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(6)
+	>(a0, a1)
 )
 {
 }
@@ -197,8 +245,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawabl
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(7),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(7)>
-	(a0, a1, a2)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(7)
+	>(a0, a1, a2)
 )
 {
 }
@@ -210,8 +258,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(8),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(8)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(8)
+	>(a0, a1)
 )
 {
 }
@@ -223,8 +271,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(9),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(9)>
-	(a0, a1, a2)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(9)
+	>(a0, a1, a2)
 )
 {
 }
@@ -236,8 +284,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(10),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(10)>
-	(a0, a1)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(10)
+	>(a0, a1)
 )
 {
 }
@@ -249,8 +297,8 @@ android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context 
 	call_new_object<
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(11),
-		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(11)>
-	(a0, a1, a2)
+		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(11)
+	>(a0, a1, a2)
 )
 {
 }
@@ -262,8 +310,8 @@ local_ref< android::graphics::drawable::Drawable > android::text::style::ImageSp
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(12),
 		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::text::style::ImageSpan::getSource()
@@ -272,8 +320,8 @@ local_ref< java::lang::String > android::text::style::ImageSpan::getSource()
 		android::text::style::ImageSpan::J2CPP_CLASS_NAME,
 		android::text::style::ImageSpan::J2CPP_METHOD_NAME(13),
 		android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

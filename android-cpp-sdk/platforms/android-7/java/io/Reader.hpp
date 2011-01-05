@@ -54,9 +54,9 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Readable>() const;
-		operator local_ref<java::io::Closeable>() const;
 
 
 		void close();
@@ -88,6 +88,11 @@ namespace j2cpp {
 
 
 
+java::io::Reader::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::io::Reader::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -98,11 +103,6 @@ java::io::Reader::operator local_ref<java::lang::Readable>() const
 	return local_ref<java::lang::Readable>(get_jobject());
 }
 
-java::io::Reader::operator local_ref<java::io::Closeable>() const
-{
-	return local_ref<java::io::Closeable>(get_jobject());
-}
-
 
 
 void java::io::Reader::close()
@@ -111,8 +111,8 @@ void java::io::Reader::close()
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(2),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::io::Reader::mark(jint a0)
@@ -121,8 +121,8 @@ void java::io::Reader::mark(jint a0)
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(3),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::io::Reader::markSupported()
@@ -131,8 +131,8 @@ jboolean java::io::Reader::markSupported()
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(4),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::io::Reader::read()
@@ -141,8 +141,8 @@ jint java::io::Reader::read()
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(5),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::io::Reader::read(local_ref< array<jchar,1> > const &a0)
@@ -151,8 +151,8 @@ jint java::io::Reader::read(local_ref< array<jchar,1> > const &a0)
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(6),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::io::Reader::read(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -161,8 +161,8 @@ jint java::io::Reader::read(local_ref< array<jchar,1> > const &a0, jint a1, jint
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(7),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::io::Reader::ready()
@@ -171,8 +171,8 @@ jboolean java::io::Reader::ready()
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(8),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::io::Reader::reset()
@@ -181,8 +181,8 @@ void java::io::Reader::reset()
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(9),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong java::io::Reader::skip(jlong a0)
@@ -191,8 +191,8 @@ jlong java::io::Reader::skip(jlong a0)
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(10),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(10), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint java::io::Reader::read(local_ref< java::nio::CharBuffer > const &a0)
@@ -201,8 +201,8 @@ jint java::io::Reader::read(local_ref< java::nio::CharBuffer > const &a0)
 		java::io::Reader::J2CPP_CLASS_NAME,
 		java::io::Reader::J2CPP_METHOD_NAME(11),
 		java::io::Reader::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

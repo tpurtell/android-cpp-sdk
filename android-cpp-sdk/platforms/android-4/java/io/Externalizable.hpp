@@ -43,8 +43,8 @@ namespace java { namespace io {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void readExternal(local_ref< java::io::ObjectInput >  const&);
@@ -67,14 +67,14 @@ namespace j2cpp {
 
 
 
-java::io::Externalizable::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::io::Externalizable::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::io::Externalizable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::io::Externalizable::readExternal(local_ref< java::io::ObjectInput > const &a0)
@@ -83,8 +83,8 @@ void java::io::Externalizable::readExternal(local_ref< java::io::ObjectInput > c
 		java::io::Externalizable::J2CPP_CLASS_NAME,
 		java::io::Externalizable::J2CPP_METHOD_NAME(0),
 		java::io::Externalizable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::io::Externalizable::writeExternal(local_ref< java::io::ObjectOutput > const &a0)
@@ -93,8 +93,8 @@ void java::io::Externalizable::writeExternal(local_ref< java::io::ObjectOutput >
 		java::io::Externalizable::J2CPP_CLASS_NAME,
 		java::io::Externalizable::J2CPP_METHOD_NAME(1),
 		java::io::Externalizable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

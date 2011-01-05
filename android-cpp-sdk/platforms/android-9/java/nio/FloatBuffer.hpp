@@ -71,8 +71,9 @@ namespace java { namespace nio {
 		{
 		}
 
-		operator local_ref<java::nio::Buffer>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::Buffer>() const;
 
 
 		static local_ref< java::nio::FloatBuffer > allocate(jint);
@@ -120,14 +121,19 @@ namespace j2cpp {
 
 
 
-java::nio::FloatBuffer::operator local_ref<java::nio::Buffer>() const
-{
-	return local_ref<java::nio::Buffer>(get_jobject());
-}
-
 java::nio::FloatBuffer::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::nio::FloatBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::FloatBuffer::operator local_ref<java::nio::Buffer>() const
+{
+	return local_ref<java::nio::Buffer>(get_jobject());
 }
 
 
@@ -137,8 +143,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::allocate(jint a0)
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(1),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::FloatBuffer > >
-	(a0);
+		local_ref< java::nio::FloatBuffer >
+	>(a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::wrap(local_ref< array<jfloat,1> > const &a0)
@@ -147,8 +153,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::wrap(local_ref< arra
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(2),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::FloatBuffer > >
-	(a0);
+		local_ref< java::nio::FloatBuffer >
+	>(a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::wrap(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2)
@@ -157,8 +163,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::wrap(local_ref< arra
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(3),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::FloatBuffer > >
-	(a0, a1, a2);
+		local_ref< java::nio::FloatBuffer >
+	>(a0, a1, a2);
 }
 
 local_ref< array<jfloat,1> > java::nio::FloatBuffer::array_()
@@ -167,8 +173,8 @@ local_ref< array<jfloat,1> > java::nio::FloatBuffer::array_()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(4),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array<jfloat,1> > >
-	(get_jobject());
+		local_ref< array<jfloat,1> >
+	>(get_jobject());
 }
 
 jint java::nio::FloatBuffer::arrayOffset()
@@ -177,8 +183,8 @@ jint java::nio::FloatBuffer::arrayOffset()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(5),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::asReadOnlyBuffer()
@@ -187,8 +193,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::asReadOnlyBuffer()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(6),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject());
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::compact()
@@ -197,8 +203,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::compact()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(7),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject());
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject());
 }
 
 jint java::nio::FloatBuffer::compareTo(local_ref< java::nio::FloatBuffer > const &a0)
@@ -207,8 +213,8 @@ jint java::nio::FloatBuffer::compareTo(local_ref< java::nio::FloatBuffer > const
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(8),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::duplicate()
@@ -217,8 +223,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::duplicate()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(9),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject());
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject());
 }
 
 jboolean java::nio::FloatBuffer::equals(local_ref< java::lang::Object > const &a0)
@@ -227,8 +233,8 @@ jboolean java::nio::FloatBuffer::equals(local_ref< java::lang::Object > const &a
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(10),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jfloat java::nio::FloatBuffer::get()
@@ -237,8 +243,8 @@ jfloat java::nio::FloatBuffer::get()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(11),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(11), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::get(local_ref< array<jfloat,1> > const &a0)
@@ -247,8 +253,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::get(local_ref< array
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(12),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::get(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2)
@@ -257,8 +263,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::get(local_ref< array
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(13),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jfloat java::nio::FloatBuffer::get(jint a0)
@@ -267,8 +273,8 @@ jfloat java::nio::FloatBuffer::get(jint a0)
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(14),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(14), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::FloatBuffer::hasArray()
@@ -277,8 +283,8 @@ jboolean java::nio::FloatBuffer::hasArray()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(15),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::FloatBuffer::hashCode()
@@ -287,8 +293,8 @@ jint java::nio::FloatBuffer::hashCode()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(16),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::nio::FloatBuffer::isDirect()
@@ -297,8 +303,8 @@ jboolean java::nio::FloatBuffer::isDirect()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(17),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteOrder > java::nio::FloatBuffer::order()
@@ -307,8 +313,8 @@ local_ref< java::nio::ByteOrder > java::nio::FloatBuffer::order()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(18),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::nio::ByteOrder > >
-	(get_jobject());
+		local_ref< java::nio::ByteOrder >
+	>(get_jobject());
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(jfloat a0)
@@ -317,8 +323,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(jfloat a0)
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(19),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< array<jfloat,1> > const &a0)
@@ -327,8 +333,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< array
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(20),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< array<jfloat,1> > const &a0, jint a1, jint a2)
@@ -337,8 +343,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< array
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(21),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< java::nio::FloatBuffer > const &a0)
@@ -347,8 +353,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(local_ref< java:
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(22),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(jint a0, jfloat a1)
@@ -357,8 +363,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::put(jint a0, jfloat 
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(23),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::slice()
@@ -367,8 +373,8 @@ local_ref< java::nio::FloatBuffer > java::nio::FloatBuffer::slice()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(24),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject());
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::FloatBuffer::toString()
@@ -377,8 +383,8 @@ local_ref< java::lang::String > java::nio::FloatBuffer::toString()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(25),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(25), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::nio::FloatBuffer::array_1()
@@ -387,8 +393,8 @@ local_ref< java::lang::Object > java::nio::FloatBuffer::array_1()
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(26),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::nio::FloatBuffer::compareTo(local_ref< java::lang::Object > const &a0)
@@ -397,8 +403,8 @@ jint java::nio::FloatBuffer::compareTo(local_ref< java::lang::Object > const &a0
 		java::nio::FloatBuffer::J2CPP_CLASS_NAME,
 		java::nio::FloatBuffer::J2CPP_METHOD_NAME(27),
 		java::nio::FloatBuffer::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

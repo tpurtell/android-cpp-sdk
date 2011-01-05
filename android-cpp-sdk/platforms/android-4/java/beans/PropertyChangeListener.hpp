@@ -40,8 +40,8 @@ namespace java { namespace beans {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void propertyChange(local_ref< java::beans::PropertyChangeEvent >  const&);
@@ -63,14 +63,14 @@ namespace j2cpp {
 
 
 
-java::beans::PropertyChangeListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::beans::PropertyChangeListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+java::beans::PropertyChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::beans::PropertyChangeListener::propertyChange(local_ref< java::beans::PropertyChangeEvent > const &a0)
@@ -79,8 +79,8 @@ void java::beans::PropertyChangeListener::propertyChange(local_ref< java::beans:
 		java::beans::PropertyChangeListener::J2CPP_CLASS_NAME,
 		java::beans::PropertyChangeListener::J2CPP_METHOD_NAME(0),
 		java::beans::PropertyChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

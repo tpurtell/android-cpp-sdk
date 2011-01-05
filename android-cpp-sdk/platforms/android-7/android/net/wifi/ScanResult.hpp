@@ -104,8 +104,8 @@ local_ref< java::lang::String > android::net::wifi::ScanResult::toString()
 		android::net::wifi::ScanResult::J2CPP_CLASS_NAME,
 		android::net::wifi::ScanResult::J2CPP_METHOD_NAME(1),
 		android::net::wifi::ScanResult::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::wifi::ScanResult::describeContents()
@@ -114,8 +114,8 @@ jint android::net::wifi::ScanResult::describeContents()
 		android::net::wifi::ScanResult::J2CPP_CLASS_NAME,
 		android::net::wifi::ScanResult::J2CPP_METHOD_NAME(2),
 		android::net::wifi::ScanResult::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::wifi::ScanResult::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -124,8 +124,8 @@ void android::net::wifi::ScanResult::writeToParcel(local_ref< android::os::Parce
 		android::net::wifi::ScanResult::J2CPP_CLASS_NAME,
 		android::net::wifi::ScanResult::J2CPP_METHOD_NAME(3),
 		android::net::wifi::ScanResult::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

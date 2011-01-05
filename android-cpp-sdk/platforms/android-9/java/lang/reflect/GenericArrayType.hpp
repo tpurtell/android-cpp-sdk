@@ -38,8 +38,8 @@ namespace java { namespace lang { namespace reflect {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::reflect::Type>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::reflect::Type > getGenericComponentType();
@@ -62,14 +62,14 @@ namespace j2cpp {
 
 
 
-java::lang::reflect::GenericArrayType::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::lang::reflect::GenericArrayType::operator local_ref<java::lang::reflect::Type>() const
 {
 	return local_ref<java::lang::reflect::Type>(get_jobject());
+}
+
+java::lang::reflect::GenericArrayType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::reflect::Type > java::lang::reflect::GenericArrayType::getGenericComponentType()
@@ -78,8 +78,8 @@ local_ref< java::lang::reflect::Type > java::lang::reflect::GenericArrayType::ge
 		java::lang::reflect::GenericArrayType::J2CPP_CLASS_NAME,
 		java::lang::reflect::GenericArrayType::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::GenericArrayType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::reflect::Type > >
-	(get_jobject());
+		local_ref< java::lang::reflect::Type >
+	>(get_jobject());
 }
 
 

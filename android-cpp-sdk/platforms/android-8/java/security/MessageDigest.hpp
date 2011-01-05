@@ -61,6 +61,7 @@ namespace java { namespace security {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::MessageDigestSpi>() const;
 
 
@@ -99,6 +100,11 @@ namespace j2cpp {
 
 
 
+java::security::MessageDigest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::security::MessageDigest::operator local_ref<java::security::MessageDigestSpi>() const
 {
 	return local_ref<java::security::MessageDigestSpi>(get_jobject());
@@ -111,8 +117,8 @@ local_ref< java::security::MessageDigest > java::security::MessageDigest::getIns
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(1),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::MessageDigest > >
-	(a0);
+		local_ref< java::security::MessageDigest >
+	>(a0);
 }
 
 local_ref< java::security::MessageDigest > java::security::MessageDigest::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -121,8 +127,8 @@ local_ref< java::security::MessageDigest > java::security::MessageDigest::getIns
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(2),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::MessageDigest > >
-	(a0, a1);
+		local_ref< java::security::MessageDigest >
+	>(a0, a1);
 }
 
 local_ref< java::security::MessageDigest > java::security::MessageDigest::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -131,8 +137,8 @@ local_ref< java::security::MessageDigest > java::security::MessageDigest::getIns
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(3),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::MessageDigest > >
-	(a0, a1);
+		local_ref< java::security::MessageDigest >
+	>(a0, a1);
 }
 
 void java::security::MessageDigest::reset()
@@ -141,8 +147,8 @@ void java::security::MessageDigest::reset()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(4),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::security::MessageDigest::update(jbyte a0)
@@ -151,8 +157,8 @@ void java::security::MessageDigest::update(jbyte a0)
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(5),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::MessageDigest::update(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -161,8 +167,8 @@ void java::security::MessageDigest::update(local_ref< array<jbyte,1> > const &a0
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(6),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::security::MessageDigest::update(local_ref< array<jbyte,1> > const &a0)
@@ -171,8 +177,8 @@ void java::security::MessageDigest::update(local_ref< array<jbyte,1> > const &a0
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(7),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::MessageDigest::digest()
@@ -181,8 +187,8 @@ local_ref< array<jbyte,1> > java::security::MessageDigest::digest()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(8),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint java::security::MessageDigest::digest(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -191,8 +197,8 @@ jint java::security::MessageDigest::digest(local_ref< array<jbyte,1> > const &a0
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(9),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array<jbyte,1> > java::security::MessageDigest::digest(local_ref< array<jbyte,1> > const &a0)
@@ -201,8 +207,8 @@ local_ref< array<jbyte,1> > java::security::MessageDigest::digest(local_ref< arr
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(10),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::MessageDigest::toString()
@@ -211,8 +217,8 @@ local_ref< java::lang::String > java::security::MessageDigest::toString()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(11),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::security::MessageDigest::isEqual(local_ref< array<jbyte,1> > const &a0, local_ref< array<jbyte,1> > const &a1)
@@ -221,8 +227,8 @@ jboolean java::security::MessageDigest::isEqual(local_ref< array<jbyte,1> > cons
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(12),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(a0, a1);
+		jboolean
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > java::security::MessageDigest::getAlgorithm()
@@ -231,8 +237,8 @@ local_ref< java::lang::String > java::security::MessageDigest::getAlgorithm()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(13),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > java::security::MessageDigest::getProvider()
@@ -241,8 +247,8 @@ local_ref< java::security::Provider > java::security::MessageDigest::getProvider
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(14),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 jint java::security::MessageDigest::getDigestLength()
@@ -251,8 +257,8 @@ jint java::security::MessageDigest::getDigestLength()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(15),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::security::MessageDigest::clone()
@@ -261,8 +267,8 @@ local_ref< java::lang::Object > java::security::MessageDigest::clone()
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(16),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::security::MessageDigest::update(local_ref< java::nio::ByteBuffer > const &a0)
@@ -271,8 +277,8 @@ void java::security::MessageDigest::update(local_ref< java::nio::ByteBuffer > co
 		java::security::MessageDigest::J2CPP_CLASS_NAME,
 		java::security::MessageDigest::J2CPP_METHOD_NAME(17),
 		java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

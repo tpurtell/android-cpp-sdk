@@ -86,8 +86,8 @@ void javax::net::ssl::X509TrustManager::checkClientTrusted(local_ref< array< loc
 		javax::net::ssl::X509TrustManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::net::ssl::X509TrustManager::checkServerTrusted(local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > const &a0, local_ref< java::lang::String > const &a1)
@@ -96,8 +96,8 @@ void javax::net::ssl::X509TrustManager::checkServerTrusted(local_ref< array< loc
 		javax::net::ssl::X509TrustManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > javax::net::ssl::X509TrustManager::getAcceptedIssuers()
@@ -106,8 +106,8 @@ local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > javax
 		javax::net::ssl::X509TrustManager::J2CPP_CLASS_NAME,
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::X509TrustManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::X509Certificate >, 1> >
+	>(get_jobject());
 }
 
 

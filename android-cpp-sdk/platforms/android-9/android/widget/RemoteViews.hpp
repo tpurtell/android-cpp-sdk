@@ -11,13 +11,15 @@
 #define J2CPP_ANDROID_WIDGET_REMOTEVIEWS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
-namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
@@ -41,12 +43,14 @@ namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 #include <android/view/LayoutInflater.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/lang/annotation/Annotation.hpp>
 
 
@@ -71,8 +75,8 @@ namespace android { namespace widget {
 			{
 			}
 
-			operator local_ref<java::lang::Object>() const;
 			operator local_ref<java::lang::annotation::Annotation>() const;
+			operator local_ref<java::lang::Object>() const;
 
 		}; //class RemoteView
 
@@ -92,7 +96,11 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Exception>() const;
 			operator local_ref<java::lang::RuntimeException>() const;
+			operator local_ref<java::lang::Throwable>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			ActionException(local_ref< java::lang::Exception > const&);
@@ -155,8 +163,8 @@ namespace android { namespace widget {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::os::Parcelable>() const;
 		operator local_ref<android::view::LayoutInflater_::Filter>() const;
+		operator local_ref<android::os::Parcelable>() const;
 
 
 		RemoteViews(local_ref< java::lang::String > const&, jint);
@@ -215,22 +223,42 @@ namespace j2cpp {
 
 
 
-android::widget::RemoteViews_::RemoteView::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::widget::RemoteViews_::RemoteView::operator local_ref<java::lang::annotation::Annotation>() const
 {
 	return local_ref<java::lang::annotation::Annotation>(get_jobject());
 }
 
+android::widget::RemoteViews_::RemoteView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 J2CPP_DEFINE_CLASS(android::widget::RemoteViews_::RemoteView,"android/widget/RemoteViews$RemoteView")
 
+
+android::widget::RemoteViews_::ActionException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
 
 android::widget::RemoteViews_::ActionException::operator local_ref<java::lang::RuntimeException>() const
 {
 	return local_ref<java::lang::RuntimeException>(get_jobject());
+}
+
+android::widget::RemoteViews_::ActionException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::widget::RemoteViews_::ActionException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::RemoteViews_::ActionException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -239,8 +267,8 @@ android::widget::RemoteViews_::ActionException::ActionException(local_ref< java:
 	call_new_object<
 		android::widget::RemoteViews_::ActionException::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_NAME(0),
-		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -252,8 +280,8 @@ android::widget::RemoteViews_::ActionException::ActionException(local_ref< java:
 	call_new_object<
 		android::widget::RemoteViews_::ActionException::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_NAME(1),
-		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::widget::RemoteViews_::ActionException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -271,14 +299,14 @@ android::widget::RemoteViews::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::widget::RemoteViews::operator local_ref<android::os::Parcelable>() const
-{
-	return local_ref<android::os::Parcelable>(get_jobject());
-}
-
 android::widget::RemoteViews::operator local_ref<android::view::LayoutInflater_::Filter>() const
 {
 	return local_ref<android::view::LayoutInflater_::Filter>(get_jobject());
+}
+
+android::widget::RemoteViews::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -287,8 +315,8 @@ android::widget::RemoteViews::RemoteViews(local_ref< java::lang::String > const 
 	call_new_object<
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(0),
-		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -300,8 +328,8 @@ android::widget::RemoteViews::RemoteViews(local_ref< android::os::Parcel > const
 	call_new_object<
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(1),
-		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -313,8 +341,8 @@ local_ref< android::widget::RemoteViews > android::widget::RemoteViews::clone()
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(2),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::widget::RemoteViews > >
-	(get_jobject());
+		local_ref< android::widget::RemoteViews >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::widget::RemoteViews::getPackage()
@@ -323,8 +351,8 @@ local_ref< java::lang::String > android::widget::RemoteViews::getPackage()
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(3),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::widget::RemoteViews::getLayoutId()
@@ -333,8 +361,8 @@ jint android::widget::RemoteViews::getLayoutId()
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(4),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::RemoteViews::addView(jint a0, local_ref< android::widget::RemoteViews > const &a1)
@@ -343,8 +371,8 @@ void android::widget::RemoteViews::addView(jint a0, local_ref< android::widget::
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(5),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::removeAllViews(jint a0)
@@ -353,8 +381,8 @@ void android::widget::RemoteViews::removeAllViews(jint a0)
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(6),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::RemoteViews::setViewVisibility(jint a0, jint a1)
@@ -363,8 +391,8 @@ void android::widget::RemoteViews::setViewVisibility(jint a0, jint a1)
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(7),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setTextViewText(jint a0, local_ref< java::lang::CharSequence > const &a1)
@@ -373,8 +401,8 @@ void android::widget::RemoteViews::setTextViewText(jint a0, local_ref< java::lan
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(8),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setImageViewResource(jint a0, jint a1)
@@ -383,8 +411,8 @@ void android::widget::RemoteViews::setImageViewResource(jint a0, jint a1)
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(9),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setImageViewUri(jint a0, local_ref< android::net::Uri > const &a1)
@@ -393,8 +421,8 @@ void android::widget::RemoteViews::setImageViewUri(jint a0, local_ref< android::
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(10),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setImageViewBitmap(jint a0, local_ref< android::graphics::Bitmap > const &a1)
@@ -403,8 +431,8 @@ void android::widget::RemoteViews::setImageViewBitmap(jint a0, local_ref< androi
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(11),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setChronometer(jint a0, jlong a1, local_ref< java::lang::String > const &a2, jboolean a3)
@@ -413,8 +441,8 @@ void android::widget::RemoteViews::setChronometer(jint a0, jlong a1, local_ref< 
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(12),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::RemoteViews::setProgressBar(jint a0, jint a1, jint a2, jboolean a3)
@@ -423,8 +451,8 @@ void android::widget::RemoteViews::setProgressBar(jint a0, jint a1, jint a2, jbo
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(13),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::RemoteViews::setOnClickPendingIntent(jint a0, local_ref< android::app::PendingIntent > const &a1)
@@ -433,8 +461,8 @@ void android::widget::RemoteViews::setOnClickPendingIntent(jint a0, local_ref< a
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(14),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setTextColor(jint a0, jint a1)
@@ -443,8 +471,8 @@ void android::widget::RemoteViews::setTextColor(jint a0, jint a1)
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(15),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::setBoolean(jint a0, local_ref< java::lang::String > const &a1, jboolean a2)
@@ -453,8 +481,8 @@ void android::widget::RemoteViews::setBoolean(jint a0, local_ref< java::lang::St
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(16),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setByte(jint a0, local_ref< java::lang::String > const &a1, jbyte a2)
@@ -463,8 +491,8 @@ void android::widget::RemoteViews::setByte(jint a0, local_ref< java::lang::Strin
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(17),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setShort(jint a0, local_ref< java::lang::String > const &a1, jshort a2)
@@ -473,8 +501,8 @@ void android::widget::RemoteViews::setShort(jint a0, local_ref< java::lang::Stri
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(18),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setInt(jint a0, local_ref< java::lang::String > const &a1, jint a2)
@@ -483,8 +511,8 @@ void android::widget::RemoteViews::setInt(jint a0, local_ref< java::lang::String
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(19),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setLong(jint a0, local_ref< java::lang::String > const &a1, jlong a2)
@@ -493,8 +521,8 @@ void android::widget::RemoteViews::setLong(jint a0, local_ref< java::lang::Strin
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(20),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setFloat(jint a0, local_ref< java::lang::String > const &a1, jfloat a2)
@@ -503,8 +531,8 @@ void android::widget::RemoteViews::setFloat(jint a0, local_ref< java::lang::Stri
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(21),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setDouble(jint a0, local_ref< java::lang::String > const &a1, jdouble a2)
@@ -513,8 +541,8 @@ void android::widget::RemoteViews::setDouble(jint a0, local_ref< java::lang::Str
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(22),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setChar(jint a0, local_ref< java::lang::String > const &a1, jchar a2)
@@ -523,8 +551,8 @@ void android::widget::RemoteViews::setChar(jint a0, local_ref< java::lang::Strin
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(23),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setString(jint a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -533,8 +561,8 @@ void android::widget::RemoteViews::setString(jint a0, local_ref< java::lang::Str
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(24),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setCharSequence(jint a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::CharSequence > const &a2)
@@ -543,8 +571,8 @@ void android::widget::RemoteViews::setCharSequence(jint a0, local_ref< java::lan
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(25),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setUri(jint a0, local_ref< java::lang::String > const &a1, local_ref< android::net::Uri > const &a2)
@@ -553,8 +581,8 @@ void android::widget::RemoteViews::setUri(jint a0, local_ref< java::lang::String
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(26),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setBitmap(jint a0, local_ref< java::lang::String > const &a1, local_ref< android::graphics::Bitmap > const &a2)
@@ -563,8 +591,8 @@ void android::widget::RemoteViews::setBitmap(jint a0, local_ref< java::lang::Str
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(27),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::RemoteViews::setBundle(jint a0, local_ref< java::lang::String > const &a1, local_ref< android::os::Bundle > const &a2)
@@ -573,8 +601,8 @@ void android::widget::RemoteViews::setBundle(jint a0, local_ref< java::lang::Str
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(28),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::widget::RemoteViews::apply(local_ref< android::content::Context > const &a0, local_ref< android::view::ViewGroup > const &a1)
@@ -583,8 +611,8 @@ local_ref< android::view::View > android::widget::RemoteViews::apply(local_ref< 
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(29),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::RemoteViews::reapply(local_ref< android::content::Context > const &a0, local_ref< android::view::View > const &a1)
@@ -593,8 +621,8 @@ void android::widget::RemoteViews::reapply(local_ref< android::content::Context 
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(30),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::RemoteViews::onLoadClass(local_ref< java::lang::Class > const &a0)
@@ -603,8 +631,8 @@ jboolean android::widget::RemoteViews::onLoadClass(local_ref< java::lang::Class 
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(31),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(31), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::widget::RemoteViews::describeContents()
@@ -613,8 +641,8 @@ jint android::widget::RemoteViews::describeContents()
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(32),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::RemoteViews::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -623,8 +651,8 @@ void android::widget::RemoteViews::writeToParcel(local_ref< android::os::Parcel 
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(33),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > android::widget::RemoteViews::clone_1()
@@ -633,8 +661,8 @@ local_ref< java::lang::Object > android::widget::RemoteViews::clone_1()
 		android::widget::RemoteViews::J2CPP_CLASS_NAME,
 		android::widget::RemoteViews::J2CPP_METHOD_NAME(34),
 		android::widget::RemoteViews::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

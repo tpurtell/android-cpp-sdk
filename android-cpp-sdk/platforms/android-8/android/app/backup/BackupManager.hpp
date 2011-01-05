@@ -82,8 +82,8 @@ android::app::backup::BackupManager::BackupManager(local_ref< android::content::
 	call_new_object<
 		android::app::backup::BackupManager::J2CPP_CLASS_NAME,
 		android::app::backup::BackupManager::J2CPP_METHOD_NAME(0),
-		android::app::backup::BackupManager::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::backup::BackupManager::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ void android::app::backup::BackupManager::dataChanged()
 		android::app::backup::BackupManager::J2CPP_CLASS_NAME,
 		android::app::backup::BackupManager::J2CPP_METHOD_NAME(1),
 		android::app::backup::BackupManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::backup::BackupManager::dataChanged(local_ref< java::lang::String > const &a0)
@@ -105,8 +105,8 @@ void android::app::backup::BackupManager::dataChanged(local_ref< java::lang::Str
 		android::app::backup::BackupManager::J2CPP_CLASS_NAME,
 		android::app::backup::BackupManager::J2CPP_METHOD_NAME(2),
 		android::app::backup::BackupManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 jint android::app::backup::BackupManager::requestRestore(local_ref< android::app::backup::RestoreObserver > const &a0)
@@ -115,8 +115,8 @@ jint android::app::backup::BackupManager::requestRestore(local_ref< android::app
 		android::app::backup::BackupManager::J2CPP_CLASS_NAME,
 		android::app::backup::BackupManager::J2CPP_METHOD_NAME(3),
 		android::app::backup::BackupManager::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

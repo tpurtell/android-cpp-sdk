@@ -198,8 +198,8 @@ android::text::format::DateUtils::DateUtils()
 	call_new_object<
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(0),
-		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -211,8 +211,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::getDayOfWeekSt
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(1),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::getAMPMString(jint a0)
@@ -221,8 +221,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::getAMPMString(
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(2),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::getMonthString(jint a0, jint a1)
@@ -231,8 +231,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::getMonthString
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(3),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeTimeSpanString(jlong a0)
@@ -241,8 +241,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(4),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(a0);
+		local_ref< java::lang::CharSequence >
+	>(a0);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeTimeSpanString(jlong a0, jlong a1, jlong a2)
@@ -251,8 +251,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(5),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeTimeSpanString(jlong a0, jlong a1, jlong a2, jint a3)
@@ -261,8 +261,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(6),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeDateTimeString(local_ref< android::content::Context > const &a0, jlong a1, jlong a2, jlong a3, jint a4)
@@ -271,8 +271,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(7),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3, a4);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::formatElapsedTime(jlong a0)
@@ -281,8 +281,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::formatElapsedT
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(8),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::formatElapsedTime(local_ref< java::lang::StringBuilder > const &a0, jlong a1)
@@ -291,8 +291,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::formatElapsedT
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(9),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::formatSameDayTime(jlong a0, jlong a1, jint a2, jint a3)
@@ -301,8 +301,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::formatSa
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(10),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2, a3);
 }
 
 jboolean android::text::format::DateUtils::isToday(jlong a0)
@@ -311,8 +311,8 @@ jboolean android::text::format::DateUtils::isToday(jlong a0)
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(11),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::formatDateRange(local_ref< android::content::Context > const &a0, jlong a1, jlong a2, jint a3)
@@ -321,8 +321,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::formatDateRang
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(12),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2, a3);
+		local_ref< java::lang::String >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::text::format::DateUtils::formatDateTime(local_ref< android::content::Context > const &a0, jlong a1, jint a2)
@@ -331,8 +331,8 @@ local_ref< java::lang::String > android::text::format::DateUtils::formatDateTime
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(13),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeTimeSpanString(local_ref< android::content::Context > const &a0, jlong a1, jboolean a2)
@@ -341,8 +341,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(14),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1, a2);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelativeTimeSpanString(local_ref< android::content::Context > const &a0, jlong a1)
@@ -351,8 +351,8 @@ local_ref< java::lang::CharSequence > android::text::format::DateUtils::getRelat
 		android::text::format::DateUtils::J2CPP_CLASS_NAME,
 		android::text::format::DateUtils::J2CPP_METHOD_NAME(15),
 		android::text::format::DateUtils::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::CharSequence > >
-	(a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(a0, a1);
 }
 
 

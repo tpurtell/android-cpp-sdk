@@ -152,8 +152,8 @@ android::media::RingtoneManager::RingtoneManager(local_ref< android::app::Activi
 	call_new_object<
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(0),
-		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -165,8 +165,8 @@ android::media::RingtoneManager::RingtoneManager(local_ref< android::content::Co
 	call_new_object<
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(1),
-		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -178,8 +178,8 @@ void android::media::RingtoneManager::setType(jint a0)
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(2),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::media::RingtoneManager::inferStreamType()
@@ -188,8 +188,8 @@ jint android::media::RingtoneManager::inferStreamType()
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(3),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::media::RingtoneManager::setStopPreviousRingtone(jboolean a0)
@@ -198,8 +198,8 @@ void android::media::RingtoneManager::setStopPreviousRingtone(jboolean a0)
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(4),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::media::RingtoneManager::getStopPreviousRingtone()
@@ -208,8 +208,8 @@ jboolean android::media::RingtoneManager::getStopPreviousRingtone()
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(5),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::RingtoneManager::stopPreviousRingtone()
@@ -218,8 +218,8 @@ void android::media::RingtoneManager::stopPreviousRingtone()
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(6),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::media::RingtoneManager::getIncludeDrm()
@@ -228,8 +228,8 @@ jboolean android::media::RingtoneManager::getIncludeDrm()
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(7),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::RingtoneManager::setIncludeDrm(jboolean a0)
@@ -238,8 +238,8 @@ void android::media::RingtoneManager::setIncludeDrm(jboolean a0)
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(8),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::database::Cursor > android::media::RingtoneManager::getCursor()
@@ -248,8 +248,8 @@ local_ref< android::database::Cursor > android::media::RingtoneManager::getCurso
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(9),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::database::Cursor > >
-	(get_jobject());
+		local_ref< android::database::Cursor >
+	>(get_jobject());
 }
 
 local_ref< android::media::Ringtone > android::media::RingtoneManager::getRingtone(jint a0)
@@ -258,8 +258,8 @@ local_ref< android::media::Ringtone > android::media::RingtoneManager::getRingto
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(10),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::media::Ringtone > >
-	(get_jobject(), a0);
+		local_ref< android::media::Ringtone >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::media::RingtoneManager::getRingtoneUri(jint a0)
@@ -268,8 +268,8 @@ local_ref< android::net::Uri > android::media::RingtoneManager::getRingtoneUri(j
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(11),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::Uri > >
-	(get_jobject(), a0);
+		local_ref< android::net::Uri >
+	>(get_jobject(), a0);
 }
 
 jint android::media::RingtoneManager::getRingtonePosition(local_ref< android::net::Uri > const &a0)
@@ -278,8 +278,8 @@ jint android::media::RingtoneManager::getRingtonePosition(local_ref< android::ne
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(12),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::Uri > android::media::RingtoneManager::getValidRingtoneUri(local_ref< android::content::Context > const &a0)
@@ -288,8 +288,8 @@ local_ref< android::net::Uri > android::media::RingtoneManager::getValidRingtone
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(13),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 local_ref< android::media::Ringtone > android::media::RingtoneManager::getRingtone(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1)
@@ -298,8 +298,8 @@ local_ref< android::media::Ringtone > android::media::RingtoneManager::getRingto
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(14),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::media::Ringtone > >
-	(a0, a1);
+		local_ref< android::media::Ringtone >
+	>(a0, a1);
 }
 
 local_ref< android::net::Uri > android::media::RingtoneManager::getActualDefaultRingtoneUri(local_ref< android::content::Context > const &a0, jint a1)
@@ -308,8 +308,8 @@ local_ref< android::net::Uri > android::media::RingtoneManager::getActualDefault
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(15),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::net::Uri > >
-	(a0, a1);
+		local_ref< android::net::Uri >
+	>(a0, a1);
 }
 
 void android::media::RingtoneManager::setActualDefaultRingtoneUri(local_ref< android::content::Context > const &a0, jint a1, local_ref< android::net::Uri > const &a2)
@@ -318,8 +318,8 @@ void android::media::RingtoneManager::setActualDefaultRingtoneUri(local_ref< and
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(16),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 jboolean android::media::RingtoneManager::isDefault(local_ref< android::net::Uri > const &a0)
@@ -328,8 +328,8 @@ jboolean android::media::RingtoneManager::isDefault(local_ref< android::net::Uri
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(17),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jint android::media::RingtoneManager::getDefaultType(local_ref< android::net::Uri > const &a0)
@@ -338,8 +338,8 @@ jint android::media::RingtoneManager::getDefaultType(local_ref< android::net::Ur
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(18),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< android::net::Uri > android::media::RingtoneManager::getDefaultUri(jint a0)
@@ -348,8 +348,8 @@ local_ref< android::net::Uri > android::media::RingtoneManager::getDefaultUri(ji
 		android::media::RingtoneManager::J2CPP_CLASS_NAME,
 		android::media::RingtoneManager::J2CPP_METHOD_NAME(19),
 		android::media::RingtoneManager::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< android::net::Uri > >
-	(a0);
+		local_ref< android::net::Uri >
+	>(a0);
 }
 
 

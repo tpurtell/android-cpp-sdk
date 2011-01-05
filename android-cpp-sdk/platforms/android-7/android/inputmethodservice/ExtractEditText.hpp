@@ -11,16 +11,28 @@
 #define J2CPP_ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace widget { class EditText; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/inputmethod/ExtractedText.hpp>
 #include <android/widget/EditText.hpp>
+#include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -55,6 +67,12 @@ namespace android { namespace inputmethodservice {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::widget::TextView>() const;
 		operator local_ref<android::widget::EditText>() const;
 
 
@@ -89,6 +107,36 @@ namespace j2cpp {
 
 
 
+android::inputmethodservice::ExtractEditText::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::inputmethodservice::ExtractEditText::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::inputmethodservice::ExtractEditText::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::inputmethodservice::ExtractEditText::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
+}
+
+android::inputmethodservice::ExtractEditText::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::inputmethodservice::ExtractEditText::operator local_ref<android::widget::TextView>() const
+{
+	return local_ref<android::widget::TextView>(get_jobject());
+}
+
 android::inputmethodservice::ExtractEditText::operator local_ref<android::widget::EditText>() const
 {
 	return local_ref<android::widget::EditText>(get_jobject());
@@ -100,8 +148,8 @@ android::inputmethodservice::ExtractEditText::ExtractEditText(local_ref< android
 	call_new_object<
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -113,8 +161,8 @@ android::inputmethodservice::ExtractEditText::ExtractEditText(local_ref< android
 	call_new_object<
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(1),
-		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -126,8 +174,8 @@ android::inputmethodservice::ExtractEditText::ExtractEditText(local_ref< android
 	call_new_object<
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(2),
-		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -139,8 +187,8 @@ void android::inputmethodservice::ExtractEditText::startInternalChanges()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::ExtractEditText::finishInternalChanges()
@@ -149,8 +197,8 @@ void android::inputmethodservice::ExtractEditText::finishInternalChanges()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::ExtractEditText::setExtractedText(local_ref< android::view::inputmethod::ExtractedText > const &a0)
@@ -159,8 +207,8 @@ void android::inputmethodservice::ExtractEditText::setExtractedText(local_ref< a
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(5),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -170,8 +218,8 @@ jboolean android::inputmethodservice::ExtractEditText::performClick()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(7),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::ExtractEditText::onTextContextMenuItem(jint a0)
@@ -180,8 +228,8 @@ jboolean android::inputmethodservice::ExtractEditText::onTextContextMenuItem(jin
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(8),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::ExtractEditText::isInputMethodTarget()
@@ -190,8 +238,8 @@ jboolean android::inputmethodservice::ExtractEditText::isInputMethodTarget()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(9),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::ExtractEditText::hasVerticalScrollBar()
@@ -200,8 +248,8 @@ jboolean android::inputmethodservice::ExtractEditText::hasVerticalScrollBar()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(10),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::ExtractEditText::hasWindowFocus()
@@ -210,8 +258,8 @@ jboolean android::inputmethodservice::ExtractEditText::hasWindowFocus()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(11),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::ExtractEditText::isFocused()
@@ -220,8 +268,8 @@ jboolean android::inputmethodservice::ExtractEditText::isFocused()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(12),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::ExtractEditText::hasFocus()
@@ -230,8 +278,8 @@ jboolean android::inputmethodservice::ExtractEditText::hasFocus()
 		android::inputmethodservice::ExtractEditText::J2CPP_CLASS_NAME,
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_NAME(13),
 		android::inputmethodservice::ExtractEditText::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

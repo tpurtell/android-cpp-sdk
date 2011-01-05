@@ -75,8 +75,8 @@ void android::content::ServiceConnection::onServiceConnected(local_ref< android:
 		android::content::ServiceConnection::J2CPP_CLASS_NAME,
 		android::content::ServiceConnection::J2CPP_METHOD_NAME(0),
 		android::content::ServiceConnection::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::content::ServiceConnection::onServiceDisconnected(local_ref< android::content::ComponentName > const &a0)
@@ -85,8 +85,8 @@ void android::content::ServiceConnection::onServiceDisconnected(local_ref< andro
 		android::content::ServiceConnection::J2CPP_CLASS_NAME,
 		android::content::ServiceConnection::J2CPP_METHOD_NAME(1),
 		android::content::ServiceConnection::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

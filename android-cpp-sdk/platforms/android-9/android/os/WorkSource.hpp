@@ -100,8 +100,8 @@ android::os::WorkSource::WorkSource()
 	call_new_object<
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(0),
-		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -113,8 +113,8 @@ android::os::WorkSource::WorkSource(local_ref< android::os::WorkSource > const &
 	call_new_object<
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(1),
-		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -126,8 +126,8 @@ void android::os::WorkSource::clear()
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(2),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::os::WorkSource::diff(local_ref< android::os::WorkSource > const &a0)
@@ -136,8 +136,8 @@ jboolean android::os::WorkSource::diff(local_ref< android::os::WorkSource > cons
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(3),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::os::WorkSource::set(local_ref< android::os::WorkSource > const &a0)
@@ -146,8 +146,8 @@ void android::os::WorkSource::set(local_ref< android::os::WorkSource > const &a0
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(4),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::WorkSource::add(local_ref< android::os::WorkSource > const &a0)
@@ -156,8 +156,8 @@ jboolean android::os::WorkSource::add(local_ref< android::os::WorkSource > const
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(5),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::WorkSource::remove(local_ref< android::os::WorkSource > const &a0)
@@ -166,8 +166,8 @@ jboolean android::os::WorkSource::remove(local_ref< android::os::WorkSource > co
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(6),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint android::os::WorkSource::describeContents()
@@ -176,8 +176,8 @@ jint android::os::WorkSource::describeContents()
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(7),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::WorkSource::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -186,8 +186,8 @@ void android::os::WorkSource::writeToParcel(local_ref< android::os::Parcel > con
 		android::os::WorkSource::J2CPP_CLASS_NAME,
 		android::os::WorkSource::J2CPP_METHOD_NAME(8),
 		android::os::WorkSource::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

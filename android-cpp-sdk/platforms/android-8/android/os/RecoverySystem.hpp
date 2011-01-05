@@ -109,8 +109,8 @@ void android::os::RecoverySystem_::ProgressListener::onProgress(jint a0)
 		android::os::RecoverySystem_::ProgressListener::J2CPP_CLASS_NAME,
 		android::os::RecoverySystem_::ProgressListener::J2CPP_METHOD_NAME(0),
 		android::os::RecoverySystem_::ProgressListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -130,8 +130,8 @@ android::os::RecoverySystem::RecoverySystem()
 	call_new_object<
 		android::os::RecoverySystem::J2CPP_CLASS_NAME,
 		android::os::RecoverySystem::J2CPP_METHOD_NAME(0),
-		android::os::RecoverySystem::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::RecoverySystem::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -143,8 +143,8 @@ void android::os::RecoverySystem::verifyPackage(local_ref< java::io::File > cons
 		android::os::RecoverySystem::J2CPP_CLASS_NAME,
 		android::os::RecoverySystem::J2CPP_METHOD_NAME(1),
 		android::os::RecoverySystem::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0, a1, a2);
+		void
+	>(a0, a1, a2);
 }
 
 void android::os::RecoverySystem::installPackage(local_ref< android::content::Context > const &a0, local_ref< java::io::File > const &a1)
@@ -153,8 +153,8 @@ void android::os::RecoverySystem::installPackage(local_ref< android::content::Co
 		android::os::RecoverySystem::J2CPP_CLASS_NAME,
 		android::os::RecoverySystem::J2CPP_METHOD_NAME(2),
 		android::os::RecoverySystem::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void android::os::RecoverySystem::rebootWipeUserData(local_ref< android::content::Context > const &a0)
@@ -163,8 +163,8 @@ void android::os::RecoverySystem::rebootWipeUserData(local_ref< android::content
 		android::os::RecoverySystem::J2CPP_CLASS_NAME,
 		android::os::RecoverySystem::J2CPP_METHOD_NAME(3),
 		android::os::RecoverySystem::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

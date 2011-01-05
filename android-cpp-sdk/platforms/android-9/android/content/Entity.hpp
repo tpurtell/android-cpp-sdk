@@ -120,8 +120,8 @@ android::content::Entity_::NamedContentValues::NamedContentValues(local_ref< and
 	call_new_object<
 		android::content::Entity_::NamedContentValues::J2CPP_CLASS_NAME,
 		android::content::Entity_::NamedContentValues::J2CPP_METHOD_NAME(0),
-		android::content::Entity_::NamedContentValues::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::Entity_::NamedContentValues::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 , uri(get_jobject())
 , values(get_jobject())
@@ -149,8 +149,8 @@ android::content::Entity::Entity(local_ref< android::content::ContentValues > co
 	call_new_object<
 		android::content::Entity::J2CPP_CLASS_NAME,
 		android::content::Entity::J2CPP_METHOD_NAME(0),
-		android::content::Entity::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::Entity::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -162,8 +162,8 @@ local_ref< android::content::ContentValues > android::content::Entity::getEntity
 		android::content::Entity::J2CPP_CLASS_NAME,
 		android::content::Entity::J2CPP_METHOD_NAME(1),
 		android::content::Entity::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::ContentValues > >
-	(get_jobject());
+		local_ref< android::content::ContentValues >
+	>(get_jobject());
 }
 
 local_ref< java::util::ArrayList > android::content::Entity::getSubValues()
@@ -172,8 +172,8 @@ local_ref< java::util::ArrayList > android::content::Entity::getSubValues()
 		android::content::Entity::J2CPP_CLASS_NAME,
 		android::content::Entity::J2CPP_METHOD_NAME(2),
 		android::content::Entity::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::ArrayList > >
-	(get_jobject());
+		local_ref< java::util::ArrayList >
+	>(get_jobject());
 }
 
 void android::content::Entity::addSubValue(local_ref< android::net::Uri > const &a0, local_ref< android::content::ContentValues > const &a1)
@@ -182,8 +182,8 @@ void android::content::Entity::addSubValue(local_ref< android::net::Uri > const 
 		android::content::Entity::J2CPP_CLASS_NAME,
 		android::content::Entity::J2CPP_METHOD_NAME(3),
 		android::content::Entity::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::Entity::toString()
@@ -192,8 +192,8 @@ local_ref< java::lang::String > android::content::Entity::toString()
 		android::content::Entity::J2CPP_CLASS_NAME,
 		android::content::Entity::J2CPP_METHOD_NAME(4),
 		android::content::Entity::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

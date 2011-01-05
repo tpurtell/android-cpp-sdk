@@ -11,9 +11,23 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_BASICPOOLEDCONNADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractPooledConnAdapter; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractClientConnAdapter; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
+#include <org/apache/http/conn/ManagedClientConnection.hpp>
+#include <org/apache/http/impl/conn/AbstractClientConnAdapter.hpp>
 #include <org/apache/http/impl/conn/AbstractPooledConnAdapter.hpp>
 
 
@@ -39,7 +53,14 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<org::apache::http::HttpConnection>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>() const;
+		operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const;
+		operator local_ref<org::apache::http::conn::ManagedClientConnection>() const;
+		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
 
 
 	}; //class BasicPooledConnAdapter
@@ -64,9 +85,44 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>() const
 {
 	return local_ref<org::apache::http::impl::conn::AbstractPooledConnAdapter>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const
+{
+	return local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::conn::ManagedClientConnection>() const
+{
+	return local_ref<org::apache::http::conn::ManagedClientConnection>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jobject());
+}
+
+org::apache::http::impl::conn::tsccm::BasicPooledConnAdapter::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jobject());
 }
 
 

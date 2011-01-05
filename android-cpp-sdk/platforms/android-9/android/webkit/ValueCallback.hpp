@@ -69,8 +69,8 @@ void android::webkit::ValueCallback::onReceiveValue(local_ref< java::lang::Objec
 		android::webkit::ValueCallback::J2CPP_CLASS_NAME,
 		android::webkit::ValueCallback::J2CPP_METHOD_NAME(0),
 		android::webkit::ValueCallback::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNPERROUTE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -74,8 +74,8 @@ jint org::apache::http::conn::params::ConnPerRoute::getMaxForRoute(local_ref< or
 		org::apache::http::conn::params::ConnPerRoute::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnPerRoute::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::params::ConnPerRoute::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

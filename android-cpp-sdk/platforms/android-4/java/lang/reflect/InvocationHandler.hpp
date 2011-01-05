@@ -72,8 +72,8 @@ local_ref< java::lang::Object > java::lang::reflect::InvocationHandler::invoke(l
 		java::lang::reflect::InvocationHandler::J2CPP_CLASS_NAME,
 		java::lang::reflect::InvocationHandler::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::InvocationHandler::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

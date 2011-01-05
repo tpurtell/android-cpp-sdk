@@ -181,8 +181,8 @@ local_ref< java::lang::String > javax::xml::datatype::DatatypeConstants_::Field:
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_METHOD_NAME(1),
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint javax::xml::datatype::DatatypeConstants_::Field::getId()
@@ -191,8 +191,8 @@ jint javax::xml::datatype::DatatypeConstants_::Field::getId()
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_CLASS_NAME,
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_METHOD_NAME(2),
 		javax::xml::datatype::DatatypeConstants_::Field::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

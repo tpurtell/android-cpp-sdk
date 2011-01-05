@@ -72,8 +72,8 @@ java::security::AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi()
 	call_new_object<
 		java::security::AlgorithmParameterGeneratorSpi::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_NAME(0),
-		java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

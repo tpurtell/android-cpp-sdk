@@ -78,8 +78,8 @@ void java::lang::ref::Reference::clear()
 		java::lang::ref::Reference::J2CPP_CLASS_NAME,
 		java::lang::ref::Reference::J2CPP_METHOD_NAME(1),
 		java::lang::ref::Reference::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::lang::ref::Reference::enqueue()
@@ -88,8 +88,8 @@ jboolean java::lang::ref::Reference::enqueue()
 		java::lang::ref::Reference::J2CPP_CLASS_NAME,
 		java::lang::ref::Reference::J2CPP_METHOD_NAME(2),
 		java::lang::ref::Reference::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::lang::ref::Reference::get()
@@ -98,8 +98,8 @@ local_ref< java::lang::Object > java::lang::ref::Reference::get()
 		java::lang::ref::Reference::J2CPP_CLASS_NAME,
 		java::lang::ref::Reference::J2CPP_METHOD_NAME(3),
 		java::lang::ref::Reference::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::lang::ref::Reference::isEnqueued()
@@ -108,8 +108,8 @@ jboolean java::lang::ref::Reference::isEnqueued()
 		java::lang::ref::Reference::J2CPP_CLASS_NAME,
 		java::lang::ref::Reference::J2CPP_METHOD_NAME(4),
 		java::lang::ref::Reference::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

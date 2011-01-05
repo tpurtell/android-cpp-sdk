@@ -80,8 +80,8 @@ android::text::format::Formatter::Formatter()
 	call_new_object<
 		android::text::format::Formatter::J2CPP_CLASS_NAME,
 		android::text::format::Formatter::J2CPP_METHOD_NAME(0),
-		android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -93,8 +93,8 @@ local_ref< java::lang::String > android::text::format::Formatter::formatFileSize
 		android::text::format::Formatter::J2CPP_CLASS_NAME,
 		android::text::format::Formatter::J2CPP_METHOD_NAME(1),
 		android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::text::format::Formatter::formatShortFileSize(local_ref< android::content::Context > const &a0, jlong a1)
@@ -103,8 +103,8 @@ local_ref< java::lang::String > android::text::format::Formatter::formatShortFil
 		android::text::format::Formatter::J2CPP_CLASS_NAME,
 		android::text::format::Formatter::J2CPP_METHOD_NAME(2),
 		android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > android::text::format::Formatter::formatIpAddress(jint a0)
@@ -113,8 +113,8 @@ local_ref< java::lang::String > android::text::format::Formatter::formatIpAddres
 		android::text::format::Formatter::J2CPP_CLASS_NAME,
 		android::text::format::Formatter::J2CPP_METHOD_NAME(3),
 		android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

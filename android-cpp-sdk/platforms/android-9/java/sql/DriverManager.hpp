@@ -111,8 +111,8 @@ void java::sql::DriverManager::deregisterDriver(local_ref< java::sql::Driver > c
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(1),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local_ref< java::lang::String > const &a0)
@@ -121,8 +121,8 @@ local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(2),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::sql::Connection > >
-	(a0);
+		local_ref< java::sql::Connection >
+	>(a0);
 }
 
 local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local_ref< java::lang::String > const &a0, local_ref< java::util::Properties > const &a1)
@@ -131,8 +131,8 @@ local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(3),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::sql::Connection > >
-	(a0, a1);
+		local_ref< java::sql::Connection >
+	>(a0, a1);
 }
 
 local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -141,8 +141,8 @@ local_ref< java::sql::Connection > java::sql::DriverManager::getConnection(local
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(4),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::sql::Connection > >
-	(a0, a1, a2);
+		local_ref< java::sql::Connection >
+	>(a0, a1, a2);
 }
 
 local_ref< java::sql::Driver > java::sql::DriverManager::getDriver(local_ref< java::lang::String > const &a0)
@@ -151,8 +151,8 @@ local_ref< java::sql::Driver > java::sql::DriverManager::getDriver(local_ref< ja
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(5),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::sql::Driver > >
-	(a0);
+		local_ref< java::sql::Driver >
+	>(a0);
 }
 
 local_ref< java::util::Enumeration > java::sql::DriverManager::getDrivers()
@@ -161,8 +161,8 @@ local_ref< java::util::Enumeration > java::sql::DriverManager::getDrivers()
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(6),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Enumeration > >
-	();
+		local_ref< java::util::Enumeration >
+	>();
 }
 
 jint java::sql::DriverManager::getLoginTimeout()
@@ -171,8 +171,8 @@ jint java::sql::DriverManager::getLoginTimeout()
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(7),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	();
+		jint
+	>();
 }
 
 local_ref< java::io::PrintStream > java::sql::DriverManager::getLogStream()
@@ -181,8 +181,8 @@ local_ref< java::io::PrintStream > java::sql::DriverManager::getLogStream()
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(8),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::io::PrintStream > >
-	();
+		local_ref< java::io::PrintStream >
+	>();
 }
 
 local_ref< java::io::PrintWriter > java::sql::DriverManager::getLogWriter()
@@ -191,8 +191,8 @@ local_ref< java::io::PrintWriter > java::sql::DriverManager::getLogWriter()
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(9),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::io::PrintWriter > >
-	();
+		local_ref< java::io::PrintWriter >
+	>();
 }
 
 void java::sql::DriverManager::println(local_ref< java::lang::String > const &a0)
@@ -201,8 +201,8 @@ void java::sql::DriverManager::println(local_ref< java::lang::String > const &a0
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(10),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::sql::DriverManager::registerDriver(local_ref< java::sql::Driver > const &a0)
@@ -211,8 +211,8 @@ void java::sql::DriverManager::registerDriver(local_ref< java::sql::Driver > con
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(11),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::sql::DriverManager::setLoginTimeout(jint a0)
@@ -221,8 +221,8 @@ void java::sql::DriverManager::setLoginTimeout(jint a0)
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(12),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::sql::DriverManager::setLogStream(local_ref< java::io::PrintStream > const &a0)
@@ -231,8 +231,8 @@ void java::sql::DriverManager::setLogStream(local_ref< java::io::PrintStream > c
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(13),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void java::sql::DriverManager::setLogWriter(local_ref< java::io::PrintWriter > const &a0)
@@ -241,8 +241,8 @@ void java::sql::DriverManager::setLogWriter(local_ref< java::io::PrintWriter > c
 		java::sql::DriverManager::J2CPP_CLASS_NAME,
 		java::sql::DriverManager::J2CPP_METHOD_NAME(14),
 		java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

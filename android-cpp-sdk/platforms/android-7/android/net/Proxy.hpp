@@ -84,8 +84,8 @@ android::net::Proxy::Proxy()
 	call_new_object<
 		android::net::Proxy::J2CPP_CLASS_NAME,
 		android::net::Proxy::J2CPP_METHOD_NAME(0),
-		android::net::Proxy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::Proxy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -97,8 +97,8 @@ local_ref< java::lang::String > android::net::Proxy::getHost(local_ref< android:
 		android::net::Proxy::J2CPP_CLASS_NAME,
 		android::net::Proxy::J2CPP_METHOD_NAME(1),
 		android::net::Proxy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 jint android::net::Proxy::getPort(local_ref< android::content::Context > const &a0)
@@ -107,8 +107,8 @@ jint android::net::Proxy::getPort(local_ref< android::content::Context > const &
 		android::net::Proxy::J2CPP_CLASS_NAME,
 		android::net::Proxy::J2CPP_METHOD_NAME(2),
 		android::net::Proxy::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 local_ref< java::lang::String > android::net::Proxy::getDefaultHost()
@@ -117,8 +117,8 @@ local_ref< java::lang::String > android::net::Proxy::getDefaultHost()
 		android::net::Proxy::J2CPP_CLASS_NAME,
 		android::net::Proxy::J2CPP_METHOD_NAME(3),
 		android::net::Proxy::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 jint android::net::Proxy::getDefaultPort()
@@ -127,8 +127,8 @@ jint android::net::Proxy::getDefaultPort()
 		android::net::Proxy::J2CPP_CLASS_NAME,
 		android::net::Proxy::J2CPP_METHOD_NAME(4),
 		android::net::Proxy::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	();
+		jint
+	>();
 }
 
 

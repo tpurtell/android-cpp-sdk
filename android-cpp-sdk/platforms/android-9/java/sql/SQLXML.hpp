@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_SQL_SQLXML_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { class Result; } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
@@ -101,8 +101,8 @@ void java::sql::SQLXML::free()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(0),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::InputStream > java::sql::SQLXML::getBinaryStream()
@@ -111,8 +111,8 @@ local_ref< java::io::InputStream > java::sql::SQLXML::getBinaryStream()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(1),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > java::sql::SQLXML::setBinaryStream()
@@ -121,8 +121,8 @@ local_ref< java::io::OutputStream > java::sql::SQLXML::setBinaryStream()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(2),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::Reader > java::sql::SQLXML::getCharacterStream()
@@ -131,8 +131,8 @@ local_ref< java::io::Reader > java::sql::SQLXML::getCharacterStream()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(3),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 local_ref< java::io::Writer > java::sql::SQLXML::setCharacterStream()
@@ -141,8 +141,8 @@ local_ref< java::io::Writer > java::sql::SQLXML::setCharacterStream()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(4),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::Writer > >
-	(get_jobject());
+		local_ref< java::io::Writer >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::SQLXML::getString()
@@ -151,8 +151,8 @@ local_ref< java::lang::String > java::sql::SQLXML::getString()
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(5),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::sql::SQLXML::setString(local_ref< java::lang::String > const &a0)
@@ -161,8 +161,8 @@ void java::sql::SQLXML::setString(local_ref< java::lang::String > const &a0)
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(6),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::transform::Source > java::sql::SQLXML::getSource(local_ref< java::lang::Class > const &a0)
@@ -171,8 +171,8 @@ local_ref< javax::xml::transform::Source > java::sql::SQLXML::getSource(local_re
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(7),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< javax::xml::transform::Source > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::transform::Source >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::transform::Result > java::sql::SQLXML::setResult(local_ref< java::lang::Class > const &a0)
@@ -181,8 +181,8 @@ local_ref< javax::xml::transform::Result > java::sql::SQLXML::setResult(local_re
 		java::sql::SQLXML::J2CPP_CLASS_NAME,
 		java::sql::SQLXML::J2CPP_METHOD_NAME(8),
 		java::sql::SQLXML::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< javax::xml::transform::Result > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::transform::Result >
+	>(get_jobject(), a0);
 }
 
 

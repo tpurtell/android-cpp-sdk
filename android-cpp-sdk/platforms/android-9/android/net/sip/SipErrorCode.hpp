@@ -101,8 +101,8 @@ local_ref< java::lang::String > android::net::sip::SipErrorCode::toString(jint a
 		android::net::sip::SipErrorCode::J2CPP_CLASS_NAME,
 		android::net::sip::SipErrorCode::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipErrorCode::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 

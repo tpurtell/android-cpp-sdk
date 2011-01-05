@@ -49,8 +49,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RFC2965DiscardAttributeHandler();
@@ -78,14 +78,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const
 {
 	return local_ref<org::apache::http::cookie::CookieAttributeHandler>(get_jobject());
+}
+
+org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -94,8 +94,8 @@ org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::RFC2965DiscardA
 	call_new_object<
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +107,8 @@ void org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::parse(loca
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -117,8 +117,8 @@ void org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::validate(l
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::match(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
@@ -127,8 +127,8 @@ jboolean org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::match(
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::RFC2965DiscardAttributeHandler::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

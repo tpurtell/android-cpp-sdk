@@ -156,8 +156,8 @@ android::view::KeyCharacterMap_::KeyData::KeyData()
 	call_new_object<
 		android::view::KeyCharacterMap_::KeyData::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_NAME(0),
-		android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , displayLabel(get_jobject())
 , number(get_jobject())
@@ -196,8 +196,8 @@ local_ref< android::view::KeyCharacterMap > android::view::KeyCharacterMap::load
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(1),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::KeyCharacterMap > >
-	(a0);
+		local_ref< android::view::KeyCharacterMap >
+	>(a0);
 }
 
 jint android::view::KeyCharacterMap::get(jint a0, jint a1)
@@ -206,8 +206,8 @@ jint android::view::KeyCharacterMap::get(jint a0, jint a1)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(2),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jchar android::view::KeyCharacterMap::getNumber(jint a0)
@@ -216,8 +216,8 @@ jchar android::view::KeyCharacterMap::getNumber(jint a0)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(3),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(3), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jchar android::view::KeyCharacterMap::getMatch(jint a0, local_ref< array<jchar,1> > const &a1)
@@ -226,8 +226,8 @@ jchar android::view::KeyCharacterMap::getMatch(jint a0, local_ref< array<jchar,1
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(4),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(4), 
-		jchar >
-	(get_jobject(), a0, a1);
+		jchar
+	>(get_jobject(), a0, a1);
 }
 
 jchar android::view::KeyCharacterMap::getMatch(jint a0, local_ref< array<jchar,1> > const &a1, jint a2)
@@ -236,8 +236,8 @@ jchar android::view::KeyCharacterMap::getMatch(jint a0, local_ref< array<jchar,1
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(5),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(5), 
-		jchar >
-	(get_jobject(), a0, a1, a2);
+		jchar
+	>(get_jobject(), a0, a1, a2);
 }
 
 jchar android::view::KeyCharacterMap::getDisplayLabel(jint a0)
@@ -246,8 +246,8 @@ jchar android::view::KeyCharacterMap::getDisplayLabel(jint a0)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(6),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(6), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jint android::view::KeyCharacterMap::getDeadChar(jint a0, jint a1)
@@ -256,8 +256,8 @@ jint android::view::KeyCharacterMap::getDeadChar(jint a0, jint a1)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(7),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(a0, a1);
+		jint
+	>(a0, a1);
 }
 
 jboolean android::view::KeyCharacterMap::getKeyData(jint a0, local_ref< android::view::KeyCharacterMap_::KeyData > const &a1)
@@ -266,8 +266,8 @@ jboolean android::view::KeyCharacterMap::getKeyData(jint a0, local_ref< android:
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(8),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array< local_ref< android::view::KeyEvent >, 1> > android::view::KeyCharacterMap::getEvents(local_ref< array<jchar,1> > const &a0)
@@ -276,8 +276,8 @@ local_ref< array< local_ref< android::view::KeyEvent >, 1> > android::view::KeyC
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(9),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< android::view::KeyEvent >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< android::view::KeyEvent >, 1> >
+	>(get_jobject(), a0);
 }
 
 jboolean android::view::KeyCharacterMap::isPrintingKey(jint a0)
@@ -286,8 +286,8 @@ jboolean android::view::KeyCharacterMap::isPrintingKey(jint a0)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(10),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -297,8 +297,8 @@ jint android::view::KeyCharacterMap::getKeyboardType()
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(12),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::view::KeyCharacterMap::deviceHasKey(jint a0)
@@ -307,8 +307,8 @@ jboolean android::view::KeyCharacterMap::deviceHasKey(jint a0)
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(13),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< array<jboolean,1> > android::view::KeyCharacterMap::deviceHasKeys(local_ref< array<jint,1> > const &a0)
@@ -317,8 +317,8 @@ local_ref< array<jboolean,1> > android::view::KeyCharacterMap::deviceHasKeys(loc
 		android::view::KeyCharacterMap::J2CPP_CLASS_NAME,
 		android::view::KeyCharacterMap::J2CPP_METHOD_NAME(14),
 		android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< array<jboolean,1> > >
-	(a0);
+		local_ref< array<jboolean,1> >
+	>(a0);
 }
 
 

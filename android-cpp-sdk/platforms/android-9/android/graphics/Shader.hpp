@@ -12,14 +12,18 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 
 
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/Shader.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -54,7 +58,10 @@ namespace android { namespace graphics {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::graphics::Shader_::TileMode >, 1> > values();
@@ -111,9 +118,24 @@ namespace j2cpp {
 
 
 
+android::graphics::Shader_::TileMode::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::graphics::Shader_::TileMode::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::graphics::Shader_::TileMode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::graphics::Shader_::TileMode::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::graphics::Shader_::TileMode >, 1> > android::graphics::Shader_::TileMode::values()
@@ -122,8 +144,8 @@ local_ref< array< local_ref< android::graphics::Shader_::TileMode >, 1> > androi
 		android::graphics::Shader_::TileMode::J2CPP_CLASS_NAME,
 		android::graphics::Shader_::TileMode::J2CPP_METHOD_NAME(0),
 		android::graphics::Shader_::TileMode::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::graphics::Shader_::TileMode >, 1> > >
-	();
+		local_ref< array< local_ref< android::graphics::Shader_::TileMode >, 1> >
+	>();
 }
 
 local_ref< android::graphics::Shader_::TileMode > android::graphics::Shader_::TileMode::valueOf(local_ref< java::lang::String > const &a0)
@@ -132,8 +154,8 @@ local_ref< android::graphics::Shader_::TileMode > android::graphics::Shader_::Ti
 		android::graphics::Shader_::TileMode::J2CPP_CLASS_NAME,
 		android::graphics::Shader_::TileMode::J2CPP_METHOD_NAME(1),
 		android::graphics::Shader_::TileMode::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::graphics::Shader_::TileMode > >
-	(a0);
+		local_ref< android::graphics::Shader_::TileMode >
+	>(a0);
 }
 
 
@@ -184,8 +206,8 @@ android::graphics::Shader::Shader()
 	call_new_object<
 		android::graphics::Shader::J2CPP_CLASS_NAME,
 		android::graphics::Shader::J2CPP_METHOD_NAME(0),
-		android::graphics::Shader::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::Shader::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -197,8 +219,8 @@ jboolean android::graphics::Shader::getLocalMatrix(local_ref< android::graphics:
 		android::graphics::Shader::J2CPP_CLASS_NAME,
 		android::graphics::Shader::J2CPP_METHOD_NAME(1),
 		android::graphics::Shader::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::graphics::Shader::setLocalMatrix(local_ref< android::graphics::Matrix > const &a0)
@@ -207,8 +229,8 @@ void android::graphics::Shader::setLocalMatrix(local_ref< android::graphics::Mat
 		android::graphics::Shader::J2CPP_CLASS_NAME,
 		android::graphics::Shader::J2CPP_METHOD_NAME(2),
 		android::graphics::Shader::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

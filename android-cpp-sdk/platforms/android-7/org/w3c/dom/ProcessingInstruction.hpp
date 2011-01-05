@@ -84,8 +84,8 @@ local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getTarget(
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getData()
@@ -94,8 +94,8 @@ local_ref< java::lang::String > org::w3c::dom::ProcessingInstruction::getData()
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ProcessingInstruction::setData(local_ref< java::lang::String > const &a0)
@@ -104,8 +104,8 @@ void org::w3c::dom::ProcessingInstruction::setData(local_ref< java::lang::String
 		org::w3c::dom::ProcessingInstruction::J2CPP_CLASS_NAME,
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ProcessingInstruction::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

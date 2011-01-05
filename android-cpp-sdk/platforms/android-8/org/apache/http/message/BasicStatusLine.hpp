@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICSTATUSLINE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
@@ -49,8 +49,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::StatusLine>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
 
 
@@ -80,14 +80,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicStatusLine::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::BasicStatusLine::operator local_ref<org::apache::http::StatusLine>() const
 {
 	return local_ref<org::apache::http::StatusLine>(get_jobject());
+}
+
+org::apache::http::message::BasicStatusLine::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 org::apache::http::message::BasicStatusLine::operator local_ref<java::lang::Cloneable>() const
@@ -101,8 +101,8 @@ org::apache::http::message::BasicStatusLine::BasicStatusLine(local_ref< org::apa
 	call_new_object<
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -114,8 +114,8 @@ jint org::apache::http::message::BasicStatusLine::getStatusCode()
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::BasicStatusLine::getProtocolVersion()
@@ -124,8 +124,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::Basi
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject());
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicStatusLine::getReasonPhrase()
@@ -134,8 +134,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicStatusLine::get
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicStatusLine::toString()
@@ -144,8 +144,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicStatusLine::toS
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicStatusLine::clone()
@@ -154,8 +154,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicStatusLine::clo
 		org::apache::http::message::BasicStatusLine::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicStatusLine::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

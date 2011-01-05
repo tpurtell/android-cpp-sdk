@@ -82,8 +82,8 @@ jint android::view::SoundEffectConstants::getContantForFocusDirection(jint a0)
 		android::view::SoundEffectConstants::J2CPP_CLASS_NAME,
 		android::view::SoundEffectConstants::J2CPP_METHOD_NAME(1),
 		android::view::SoundEffectConstants::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

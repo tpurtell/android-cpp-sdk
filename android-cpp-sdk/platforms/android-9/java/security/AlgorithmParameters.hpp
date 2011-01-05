@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
@@ -101,8 +101,8 @@ local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParame
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(1),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::AlgorithmParameters > >
-	(a0);
+		local_ref< java::security::AlgorithmParameters >
+	>(a0);
 }
 
 local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParameters::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -111,8 +111,8 @@ local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParame
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(2),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::AlgorithmParameters > >
-	(a0, a1);
+		local_ref< java::security::AlgorithmParameters >
+	>(a0, a1);
 }
 
 local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParameters::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -121,8 +121,8 @@ local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParame
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(3),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::AlgorithmParameters > >
-	(a0, a1);
+		local_ref< java::security::AlgorithmParameters >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > java::security::AlgorithmParameters::getProvider()
@@ -131,8 +131,8 @@ local_ref< java::security::Provider > java::security::AlgorithmParameters::getPr
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(4),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::AlgorithmParameters::getAlgorithm()
@@ -141,8 +141,8 @@ local_ref< java::lang::String > java::security::AlgorithmParameters::getAlgorith
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(5),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::security::AlgorithmParameters::init(local_ref< java::security::spec::AlgorithmParameterSpec > const &a0)
@@ -151,8 +151,8 @@ void java::security::AlgorithmParameters::init(local_ref< java::security::spec::
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(6),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::AlgorithmParameters::init(local_ref< array<jbyte,1> > const &a0)
@@ -161,8 +161,8 @@ void java::security::AlgorithmParameters::init(local_ref< array<jbyte,1> > const
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(7),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::security::AlgorithmParameters::init(local_ref< array<jbyte,1> > const &a0, local_ref< java::lang::String > const &a1)
@@ -171,8 +171,8 @@ void java::security::AlgorithmParameters::init(local_ref< array<jbyte,1> > const
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(8),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::spec::AlgorithmParameterSpec > java::security::AlgorithmParameters::getParameterSpec(local_ref< java::lang::Class > const &a0)
@@ -181,8 +181,8 @@ local_ref< java::security::spec::AlgorithmParameterSpec > java::security::Algori
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(9),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::spec::AlgorithmParameterSpec > >
-	(get_jobject(), a0);
+		local_ref< java::security::spec::AlgorithmParameterSpec >
+	>(get_jobject(), a0);
 }
 
 local_ref< array<jbyte,1> > java::security::AlgorithmParameters::getEncoded()
@@ -191,8 +191,8 @@ local_ref< array<jbyte,1> > java::security::AlgorithmParameters::getEncoded()
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(10),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::AlgorithmParameters::getEncoded(local_ref< java::lang::String > const &a0)
@@ -201,8 +201,8 @@ local_ref< array<jbyte,1> > java::security::AlgorithmParameters::getEncoded(loca
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(11),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::security::AlgorithmParameters::toString()
@@ -211,8 +211,8 @@ local_ref< java::lang::String > java::security::AlgorithmParameters::toString()
 		java::security::AlgorithmParameters::J2CPP_CLASS_NAME,
 		java::security::AlgorithmParameters::J2CPP_METHOD_NAME(12),
 		java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

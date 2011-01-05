@@ -106,8 +106,8 @@ java::net::SocketImpl::SocketImpl()
 	call_new_object<
 		java::net::SocketImpl::J2CPP_CLASS_NAME,
 		java::net::SocketImpl::J2CPP_METHOD_NAME(0),
-		java::net::SocketImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::SocketImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -133,8 +133,8 @@ local_ref< java::lang::String > java::net::SocketImpl::toString()
 		java::net::SocketImpl::J2CPP_CLASS_NAME,
 		java::net::SocketImpl::J2CPP_METHOD_NAME(15),
 		java::net::SocketImpl::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

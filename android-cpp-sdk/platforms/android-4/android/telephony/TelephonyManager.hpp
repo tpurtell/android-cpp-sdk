@@ -195,8 +195,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getDeviceS
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(1),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getDeviceId()
@@ -205,8 +205,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getDeviceI
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(2),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< android::telephony::CellLocation > android::telephony::TelephonyManager::getCellLocation()
@@ -215,8 +215,8 @@ local_ref< android::telephony::CellLocation > android::telephony::TelephonyManag
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(3),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::telephony::CellLocation > >
-	(get_jobject());
+		local_ref< android::telephony::CellLocation >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::telephony::TelephonyManager::getNeighboringCellInfo()
@@ -225,8 +225,8 @@ local_ref< java::util::List > android::telephony::TelephonyManager::getNeighbori
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(4),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getPhoneType()
@@ -235,8 +235,8 @@ jint android::telephony::TelephonyManager::getPhoneType()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(5),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getNetworkOperatorName()
@@ -245,8 +245,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getNetwork
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(6),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getNetworkOperator()
@@ -255,8 +255,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getNetwork
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(7),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::telephony::TelephonyManager::isNetworkRoaming()
@@ -265,8 +265,8 @@ jboolean android::telephony::TelephonyManager::isNetworkRoaming()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(8),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getNetworkCountryIso()
@@ -275,8 +275,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getNetwork
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(9),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getNetworkType()
@@ -285,8 +285,8 @@ jint android::telephony::TelephonyManager::getNetworkType()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(10),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getSimState()
@@ -295,8 +295,8 @@ jint android::telephony::TelephonyManager::getSimState()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(11),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getSimOperator()
@@ -305,8 +305,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getSimOper
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(12),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getSimOperatorName()
@@ -315,8 +315,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getSimOper
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(13),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getSimCountryIso()
@@ -325,8 +325,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getSimCoun
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(14),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getSimSerialNumber()
@@ -335,8 +335,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getSimSeri
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(15),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getSubscriberId()
@@ -345,8 +345,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getSubscri
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(16),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getLine1Number()
@@ -355,8 +355,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getLine1Nu
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(17),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getVoiceMailNumber()
@@ -365,8 +365,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getVoiceMa
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(18),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getVoiceMailAlphaTag()
@@ -375,8 +375,8 @@ local_ref< java::lang::String > android::telephony::TelephonyManager::getVoiceMa
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(19),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getCallState()
@@ -385,8 +385,8 @@ jint android::telephony::TelephonyManager::getCallState()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(20),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getDataActivity()
@@ -395,8 +395,8 @@ jint android::telephony::TelephonyManager::getDataActivity()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(21),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::telephony::TelephonyManager::getDataState()
@@ -405,8 +405,8 @@ jint android::telephony::TelephonyManager::getDataState()
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(22),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::telephony::TelephonyManager::listen(local_ref< android::telephony::PhoneStateListener > const &a0, jint a1)
@@ -415,8 +415,8 @@ void android::telephony::TelephonyManager::listen(local_ref< android::telephony:
 		android::telephony::TelephonyManager::J2CPP_CLASS_NAME,
 		android::telephony::TelephonyManager::J2CPP_METHOD_NAME(23),
 		android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -39,8 +39,8 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::widget::Adapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean areAllItemsEnabled();
@@ -63,14 +63,14 @@ namespace j2cpp {
 
 
 
-android::widget::ListAdapter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::widget::ListAdapter::operator local_ref<android::widget::Adapter>() const
 {
 	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
+android::widget::ListAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jboolean android::widget::ListAdapter::areAllItemsEnabled()
@@ -79,8 +79,8 @@ jboolean android::widget::ListAdapter::areAllItemsEnabled()
 		android::widget::ListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ListAdapter::J2CPP_METHOD_NAME(0),
 		android::widget::ListAdapter::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::ListAdapter::isEnabled(jint a0)
@@ -89,8 +89,8 @@ jboolean android::widget::ListAdapter::isEnabled(jint a0)
 		android::widget::ListAdapter::J2CPP_CLASS_NAME,
 		android::widget::ListAdapter::J2CPP_METHOD_NAME(1),
 		android::widget::ListAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

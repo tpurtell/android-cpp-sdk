@@ -73,8 +73,8 @@ local_ref< java::lang::Object > org::apache::http::client::UserTokenHandler::get
 		org::apache::http::client::UserTokenHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::UserTokenHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::UserTokenHandler::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

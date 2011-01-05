@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGERFIELDUPDATER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
@@ -101,8 +101,8 @@ local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater > java::uti
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater > >
-	(a0, a1);
+		local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater >
+	>(a0, a1);
 }
 
 jboolean java::util::concurrent::atomic::AtomicIntegerFieldUpdater::compareAndSet(local_ref< java::lang::Object > const &a0, jint a1, jint a2)
@@ -111,8 +111,8 @@ jboolean java::util::concurrent::atomic::AtomicIntegerFieldUpdater::compareAndSe
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::util::concurrent::atomic::AtomicIntegerFieldUpdater::weakCompareAndSet(local_ref< java::lang::Object > const &a0, jint a1, jint a2)
@@ -121,8 +121,8 @@ jboolean java::util::concurrent::atomic::AtomicIntegerFieldUpdater::weakCompareA
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::concurrent::atomic::AtomicIntegerFieldUpdater::set(local_ref< java::lang::Object > const &a0, jint a1)
@@ -131,8 +131,8 @@ void java::util::concurrent::atomic::AtomicIntegerFieldUpdater::set(local_ref< j
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::atomic::AtomicIntegerFieldUpdater::lazySet(local_ref< java::lang::Object > const &a0, jint a1)
@@ -141,8 +141,8 @@ void java::util::concurrent::atomic::AtomicIntegerFieldUpdater::lazySet(local_re
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::get(local_ref< java::lang::Object > const &a0)
@@ -151,8 +151,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::get(local_ref< j
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndSet(local_ref< java::lang::Object > const &a0, jint a1)
@@ -161,8 +161,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndSet(local_
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndIncrement(local_ref< java::lang::Object > const &a0)
@@ -171,8 +171,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndIncrement(
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(8),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndDecrement(local_ref< java::lang::Object > const &a0)
@@ -181,8 +181,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndDecrement(
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(9),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndAdd(local_ref< java::lang::Object > const &a0, jint a1)
@@ -191,8 +191,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::getAndAdd(local_
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(10),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::incrementAndGet(local_ref< java::lang::Object > const &a0)
@@ -201,8 +201,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::incrementAndGet(
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(11),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::decrementAndGet(local_ref< java::lang::Object > const &a0)
@@ -211,8 +211,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::decrementAndGet(
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(12),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::addAndGet(local_ref< java::lang::Object > const &a0, jint a1)
@@ -221,8 +221,8 @@ jint java::util::concurrent::atomic::AtomicIntegerFieldUpdater::addAndGet(local_
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME,
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(13),
 		java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

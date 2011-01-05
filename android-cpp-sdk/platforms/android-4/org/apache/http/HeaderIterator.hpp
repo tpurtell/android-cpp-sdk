@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_HEADERITERATOR_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -41,8 +41,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Iterator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		jboolean hasNext();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HeaderIterator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HeaderIterator::operator local_ref<java::util::Iterator>() const
 {
 	return local_ref<java::util::Iterator>(get_jobject());
+}
+
+org::apache::http::HeaderIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 jboolean org::apache::http::HeaderIterator::hasNext()
@@ -82,8 +82,8 @@ jboolean org::apache::http::HeaderIterator::hasNext()
 		org::apache::http::HeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderIterator::J2CPP_METHOD_NAME(0),
 		org::apache::http::HeaderIterator::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::HeaderIterator::nextHeader()
@@ -92,8 +92,8 @@ local_ref< org::apache::http::Header > org::apache::http::HeaderIterator::nextHe
 		org::apache::http::HeaderIterator::J2CPP_CLASS_NAME,
 		org::apache::http::HeaderIterator::J2CPP_METHOD_NAME(1),
 		org::apache::http::HeaderIterator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 

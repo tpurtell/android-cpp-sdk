@@ -82,8 +82,8 @@ javax::crypto::spec::IvParameterSpec::IvParameterSpec(local_ref< array<jbyte,1> 
 	call_new_object<
 		javax::crypto::spec::IvParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ javax::crypto::spec::IvParameterSpec::IvParameterSpec(local_ref< array<jbyte,1> 
 	call_new_object<
 		javax::crypto::spec::IvParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -108,8 +108,8 @@ local_ref< array<jbyte,1> > javax::crypto::spec::IvParameterSpec::getIV()
 		javax::crypto::spec::IvParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::IvParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 

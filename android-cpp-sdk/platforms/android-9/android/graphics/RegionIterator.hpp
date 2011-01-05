@@ -76,8 +76,8 @@ android::graphics::RegionIterator::RegionIterator(local_ref< android::graphics::
 	call_new_object<
 		android::graphics::RegionIterator::J2CPP_CLASS_NAME,
 		android::graphics::RegionIterator::J2CPP_METHOD_NAME(0),
-		android::graphics::RegionIterator::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::graphics::RegionIterator::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +89,8 @@ jboolean android::graphics::RegionIterator::next(local_ref< android::graphics::R
 		android::graphics::RegionIterator::J2CPP_CLASS_NAME,
 		android::graphics::RegionIterator::J2CPP_METHOD_NAME(1),
 		android::graphics::RegionIterator::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

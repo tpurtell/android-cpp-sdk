@@ -15,8 +15,11 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
@@ -24,9 +27,12 @@ namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 #include <java/lang/Class.hpp>
 #include <java/lang/Cloneable.hpp>
 #include <java/lang/Enum.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/Set.hpp>
 
 
 namespace j2cpp {
@@ -62,8 +68,13 @@ namespace java { namespace util {
 		{
 		}
 
-		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Iterable>() const;
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Collection>() const;
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::Set>() const;
 		operator local_ref<java::io::Serializable>() const;
 
 
@@ -99,14 +110,39 @@ namespace j2cpp {
 
 
 
-java::util::EnumSet::operator local_ref<java::util::AbstractSet>() const
+java::util::EnumSet::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<java::util::AbstractSet>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::util::EnumSet::operator local_ref<java::lang::Cloneable>() const
 {
 	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+java::util::EnumSet::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
+java::util::EnumSet::operator local_ref<java::util::AbstractSet>() const
+{
+	return local_ref<java::util::AbstractSet>(get_jobject());
+}
+
+java::util::EnumSet::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
+java::util::EnumSet::operator local_ref<java::util::AbstractCollection>() const
+{
+	return local_ref<java::util::AbstractCollection>(get_jobject());
+}
+
+java::util::EnumSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jobject());
 }
 
 java::util::EnumSet::operator local_ref<java::io::Serializable>() const
@@ -121,8 +157,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::noneOf(local_ref< java::la
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(1),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::allOf(local_ref< java::lang::Class > const &a0)
@@ -131,8 +167,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::allOf(local_ref< java::lan
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(2),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::copyOf(local_ref< java::util::EnumSet > const &a0)
@@ -141,8 +177,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::copyOf(local_ref< java::ut
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(3),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::copyOf(local_ref< java::util::Collection > const &a0)
@@ -151,8 +187,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::copyOf(local_ref< java::ut
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(4),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::complementOf(local_ref< java::util::EnumSet > const &a0)
@@ -161,8 +197,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::complementOf(local_ref< ja
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(5),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0)
@@ -171,8 +207,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(6),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::EnumSet > >
-	(a0);
+		local_ref< java::util::EnumSet >
+	>(a0);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0, local_ref< java::lang::Enum > const &a1)
@@ -181,8 +217,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(7),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1);
+		local_ref< java::util::EnumSet >
+	>(a0, a1);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0, local_ref< java::lang::Enum > const &a1, local_ref< java::lang::Enum > const &a2)
@@ -191,8 +227,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(8),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1, a2);
+		local_ref< java::util::EnumSet >
+	>(a0, a1, a2);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0, local_ref< java::lang::Enum > const &a1, local_ref< java::lang::Enum > const &a2, local_ref< java::lang::Enum > const &a3)
@@ -201,8 +237,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(9),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1, a2, a3);
+		local_ref< java::util::EnumSet >
+	>(a0, a1, a2, a3);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0, local_ref< java::lang::Enum > const &a1, local_ref< java::lang::Enum > const &a2, local_ref< java::lang::Enum > const &a3, local_ref< java::lang::Enum > const &a4)
@@ -211,8 +247,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(10),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1, a2, a3, a4);
+		local_ref< java::util::EnumSet >
+	>(a0, a1, a2, a3, a4);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::Enum > const &a0, local_ref< array< local_ref< java::lang::Enum >, 1> > const &a1)
@@ -221,8 +257,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::of(local_ref< java::lang::
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(11),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1);
+		local_ref< java::util::EnumSet >
+	>(a0, a1);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::range(local_ref< java::lang::Enum > const &a0, local_ref< java::lang::Enum > const &a1)
@@ -231,8 +267,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::range(local_ref< java::lan
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(12),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::util::EnumSet > >
-	(a0, a1);
+		local_ref< java::util::EnumSet >
+	>(a0, a1);
 }
 
 local_ref< java::util::EnumSet > java::util::EnumSet::clone()
@@ -241,8 +277,8 @@ local_ref< java::util::EnumSet > java::util::EnumSet::clone()
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(13),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::util::EnumSet > >
-	(get_jobject());
+		local_ref< java::util::EnumSet >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::EnumSet::clone_1()
@@ -251,8 +287,8 @@ local_ref< java::lang::Object > java::util::EnumSet::clone_1()
 		java::util::EnumSet::J2CPP_CLASS_NAME,
 		java::util::EnumSet::J2CPP_METHOD_NAME(14),
 		java::util::EnumSet::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

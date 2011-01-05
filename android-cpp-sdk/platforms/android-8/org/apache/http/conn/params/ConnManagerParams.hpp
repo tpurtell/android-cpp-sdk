@@ -49,8 +49,8 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ConnManagerParams();
@@ -83,14 +83,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::conn::params::ConnManagerParams::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::conn::params::ConnManagerParams::operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const
 {
 	return local_ref<org::apache::http::conn::params::ConnManagerPNames>(get_jobject());
+}
+
+org::apache::http::conn::params::ConnManagerParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -99,8 +99,8 @@ org::apache::http::conn::params::ConnManagerParams::ConnManagerParams()
 	call_new_object<
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -112,8 +112,8 @@ jlong org::apache::http::conn::params::ConnManagerParams::getTimeout(local_ref< 
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(a0);
+		jlong
+	>(a0);
 }
 
 void org::apache::http::conn::params::ConnManagerParams::setTimeout(local_ref< org::apache::http::params::HttpParams > const &a0, jlong a1)
@@ -122,8 +122,8 @@ void org::apache::http::conn::params::ConnManagerParams::setTimeout(local_ref< o
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 void org::apache::http::conn::params::ConnManagerParams::setMaxConnectionsPerRoute(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::conn::params::ConnPerRoute > const &a1)
@@ -132,8 +132,8 @@ void org::apache::http::conn::params::ConnManagerParams::setMaxConnectionsPerRou
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::conn::params::ConnPerRoute > org::apache::http::conn::params::ConnManagerParams::getMaxConnectionsPerRoute(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -142,8 +142,8 @@ local_ref< org::apache::http::conn::params::ConnPerRoute > org::apache::http::co
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::conn::params::ConnPerRoute > >
-	(a0);
+		local_ref< org::apache::http::conn::params::ConnPerRoute >
+	>(a0);
 }
 
 void org::apache::http::conn::params::ConnManagerParams::setMaxTotalConnections(local_ref< org::apache::http::params::HttpParams > const &a0, jint a1)
@@ -152,8 +152,8 @@ void org::apache::http::conn::params::ConnManagerParams::setMaxTotalConnections(
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jint org::apache::http::conn::params::ConnManagerParams::getMaxTotalConnections(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -162,8 +162,8 @@ jint org::apache::http::conn::params::ConnManagerParams::getMaxTotalConnections(
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME,
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

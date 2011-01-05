@@ -11,9 +11,11 @@
 #define J2CPP_JAVAX_CRYPTO_NULLCIPHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace javax { namespace crypto { class Cipher; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <javax/crypto/Cipher.hpp>
 
 
@@ -36,6 +38,7 @@ namespace javax { namespace crypto {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<javax::crypto::Cipher>() const;
 
 
@@ -58,6 +61,11 @@ namespace j2cpp {
 
 
 
+javax::crypto::NullCipher::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 javax::crypto::NullCipher::operator local_ref<javax::crypto::Cipher>() const
 {
 	return local_ref<javax::crypto::Cipher>(get_jobject());
@@ -69,8 +77,8 @@ javax::crypto::NullCipher::NullCipher()
 	call_new_object<
 		javax::crypto::NullCipher::J2CPP_CLASS_NAME,
 		javax::crypto::NullCipher::J2CPP_METHOD_NAME(0),
-		javax::crypto::NullCipher::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::NullCipher::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

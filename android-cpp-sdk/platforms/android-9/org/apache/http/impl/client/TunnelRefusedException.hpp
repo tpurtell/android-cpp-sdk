@@ -11,12 +11,20 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_TUNNELREFUSEDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpException; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <org/apache/http/HttpException.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 
@@ -41,6 +49,10 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<org::apache::http::HttpException>() const;
 
 
@@ -67,6 +79,26 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::client::TunnelRefusedException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+org::apache::http::impl::client::TunnelRefusedException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+org::apache::http::impl::client::TunnelRefusedException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::client::TunnelRefusedException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 org::apache::http::impl::client::TunnelRefusedException::operator local_ref<org::apache::http::HttpException>() const
 {
 	return local_ref<org::apache::http::HttpException>(get_jobject());
@@ -78,8 +110,8 @@ org::apache::http::impl::client::TunnelRefusedException::TunnelRefusedException(
 	call_new_object<
 		org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -91,8 +123,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::Tu
 		org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject());
 }
 
 

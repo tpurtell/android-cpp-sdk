@@ -99,8 +99,8 @@ local_ref< android::text::AlteredCharSequence > android::text::AlteredCharSequen
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(1),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::AlteredCharSequence > >
-	(a0, a1, a2, a3);
+		local_ref< android::text::AlteredCharSequence >
+	>(a0, a1, a2, a3);
 }
 
 jchar android::text::AlteredCharSequence::charAt(jint a0)
@@ -109,8 +109,8 @@ jchar android::text::AlteredCharSequence::charAt(jint a0)
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(2),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(2), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jint android::text::AlteredCharSequence::length()
@@ -119,8 +119,8 @@ jint android::text::AlteredCharSequence::length()
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(3),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::CharSequence > android::text::AlteredCharSequence::subSequence(jint a0, jint a1)
@@ -129,8 +129,8 @@ local_ref< java::lang::CharSequence > android::text::AlteredCharSequence::subSeq
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(4),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 void android::text::AlteredCharSequence::getChars(jint a0, jint a1, local_ref< array<jchar,1> > const &a2, jint a3)
@@ -139,8 +139,8 @@ void android::text::AlteredCharSequence::getChars(jint a0, jint a1, local_ref< a
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(5),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< java::lang::String > android::text::AlteredCharSequence::toString()
@@ -149,8 +149,8 @@ local_ref< java::lang::String > android::text::AlteredCharSequence::toString()
 		android::text::AlteredCharSequence::J2CPP_CLASS_NAME,
 		android::text::AlteredCharSequence::J2CPP_METHOD_NAME(6),
 		android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

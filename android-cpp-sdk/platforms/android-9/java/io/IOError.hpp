@@ -13,9 +13,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/Throwable.hpp>
 
 
@@ -38,7 +42,10 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		IOError(local_ref< java::lang::Throwable > const&);
@@ -60,9 +67,24 @@ namespace j2cpp {
 
 
 
+java::io::IOError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 java::io::IOError::operator local_ref<java::lang::Error>() const
 {
 	return local_ref<java::lang::Error>(get_jobject());
+}
+
+java::io::IOError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::IOError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -71,8 +93,8 @@ java::io::IOError::IOError(local_ref< java::lang::Throwable > const &a0)
 	call_new_object<
 		java::io::IOError::J2CPP_CLASS_NAME,
 		java::io::IOError::J2CPP_METHOD_NAME(0),
-		java::io::IOError::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::IOError::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }

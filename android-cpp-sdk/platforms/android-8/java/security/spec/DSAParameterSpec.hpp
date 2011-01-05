@@ -94,8 +94,8 @@ java::security::spec::DSAParameterSpec::DSAParameterSpec(local_ref< java::math::
 	call_new_object<
 		java::security::spec::DSAParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::DSAParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		java::security::spec::DSAParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -107,8 +107,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAParameterSpec::getG
 		java::security::spec::DSAParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::DSAParameterSpec::getP()
@@ -117,8 +117,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAParameterSpec::getP
 		java::security::spec::DSAParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > java::security::spec::DSAParameterSpec::getQ()
@@ -127,8 +127,8 @@ local_ref< java::math::BigInteger > java::security::spec::DSAParameterSpec::getQ
 		java::security::spec::DSAParameterSpec::J2CPP_CLASS_NAME,
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_NAME(3),
 		java::security::spec::DSAParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 

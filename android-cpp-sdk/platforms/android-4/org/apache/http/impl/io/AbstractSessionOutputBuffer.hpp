@@ -13,9 +13,9 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpTransportMetrics; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -53,8 +53,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::io::SessionOutputBuffer>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AbstractSessionOutputBuffer();
@@ -86,14 +86,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::io::AbstractSessionOutputBuffer::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::io::AbstractSessionOutputBuffer::operator local_ref<org::apache::http::io::SessionOutputBuffer>() const
 {
 	return local_ref<org::apache::http::io::SessionOutputBuffer>(get_jobject());
+}
+
+org::apache::http::impl::io::AbstractSessionOutputBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -102,8 +102,8 @@ org::apache::http::impl::io::AbstractSessionOutputBuffer::AbstractSessionOutputB
 	call_new_object<
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -117,8 +117,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::flush()
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -127,8 +127,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(local_ref< 
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(local_ref< array<jbyte,1> > const &a0)
@@ -137,8 +137,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(local_ref< 
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(jint a0)
@@ -147,8 +147,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::write(jint a0)
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(6),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::AbstractSessionOutputBuffer::writeLine(local_ref< java::lang::String > const &a0)
@@ -157,8 +157,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::writeLine(local_r
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(7),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::AbstractSessionOutputBuffer::writeLine(local_ref< org::apache::http::util::CharArrayBuffer > const &a0)
@@ -167,8 +167,8 @@ void org::apache::http::impl::io::AbstractSessionOutputBuffer::writeLine(local_r
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::impl::io::AbstractSessionOutputBuffer::getMetrics()
@@ -177,8 +177,8 @@ local_ref< org::apache::http::io::HttpTransportMetrics > org::apache::http::impl
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::io::AbstractSessionOutputBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::io::HttpTransportMetrics > >
-	(get_jobject());
+		local_ref< org::apache::http::io::HttpTransportMetrics >
+	>(get_jobject());
 }
 
 

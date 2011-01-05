@@ -80,8 +80,8 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<org::xml::sax::Parser>() const;
 		operator local_ref<org::xml::sax::ContentHandler>() const;
+		operator local_ref<org::xml::sax::Parser>() const;
 
 
 		XMLReaderAdapter();
@@ -129,14 +129,14 @@ org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<java::lang::Object>
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<org::xml::sax::Parser>() const
-{
-	return local_ref<org::xml::sax::Parser>(get_jobject());
-}
-
 org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<org::xml::sax::ContentHandler>() const
 {
 	return local_ref<org::xml::sax::ContentHandler>(get_jobject());
+}
+
+org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<org::xml::sax::Parser>() const
+{
+	return local_ref<org::xml::sax::Parser>(get_jobject());
 }
 
 
@@ -145,8 +145,8 @@ org::xml::sax::helpers::XMLReaderAdapter::XMLReaderAdapter()
 	call_new_object<
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(0),
-		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -158,8 +158,8 @@ org::xml::sax::helpers::XMLReaderAdapter::XMLReaderAdapter(local_ref< org::xml::
 	call_new_object<
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(1),
-		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -171,8 +171,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setLocale(local_ref< java::util::
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -181,8 +181,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setEntityResolver(local_ref< org:
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(3),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -191,8 +191,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setDTDHandler(local_ref< org::xml
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(4),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::setDocumentHandler(local_ref< org::xml::sax::DocumentHandler > const &a0)
@@ -201,8 +201,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setDocumentHandler(local_ref< org
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(5),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -211,8 +211,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setErrorHandler(local_ref< org::x
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(6),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::parse(local_ref< java::lang::String > const &a0)
@@ -221,8 +221,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::parse(local_ref< java::lang::Stri
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(7),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -231,8 +231,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::parse(local_ref< org::xml::sax::I
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(8),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::setDocumentLocator(local_ref< org::xml::sax::Locator > const &a0)
@@ -241,8 +241,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::setDocumentLocator(local_ref< org
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(9),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::startDocument()
@@ -251,8 +251,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::startDocument()
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(10),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::endDocument()
@@ -261,8 +261,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::endDocument()
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(11),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::startPrefixMapping(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -271,8 +271,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::startPrefixMapping(local_ref< jav
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(12),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::endPrefixMapping(local_ref< java::lang::String > const &a0)
@@ -281,8 +281,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::endPrefixMapping(local_ref< java:
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(13),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::startElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< org::xml::sax::Attributes > const &a3)
@@ -291,8 +291,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::startElement(local_ref< java::lan
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(14),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::endElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -301,8 +301,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::endElement(local_ref< java::lang:
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(15),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::characters(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -311,8 +311,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::characters(local_ref< array<jchar
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(16),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::ignorableWhitespace(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -321,8 +321,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::ignorableWhitespace(local_ref< ar
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(17),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::processingInstruction(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -331,8 +331,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::processingInstruction(local_ref< 
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(18),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::XMLReaderAdapter::skippedEntity(local_ref< java::lang::String > const &a0)
@@ -341,8 +341,8 @@ void org::xml::sax::helpers::XMLReaderAdapter::skippedEntity(local_ref< java::la
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(19),
 		org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

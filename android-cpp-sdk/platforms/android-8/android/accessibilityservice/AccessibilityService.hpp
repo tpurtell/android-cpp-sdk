@@ -14,16 +14,24 @@
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace accessibilityservice { class AccessibilityServiceInfo; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/accessibilityservice/AccessibilityServiceInfo.hpp>
 #include <android/app/Service.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/IBinder.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,6 +61,10 @@ namespace android { namespace accessibilityservice {
 		}
 
 		operator local_ref<android::app::Service>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AccessibilityService();
@@ -85,14 +97,34 @@ android::accessibilityservice::AccessibilityService::operator local_ref<android:
 	return local_ref<android::app::Service>(get_jobject());
 }
 
+android::accessibilityservice::AccessibilityService::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::accessibilityservice::AccessibilityService::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::accessibilityservice::AccessibilityService::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::accessibilityservice::AccessibilityService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::accessibilityservice::AccessibilityService::AccessibilityService()
 : object<android::accessibilityservice::AccessibilityService>(
 	call_new_object<
 		android::accessibilityservice::AccessibilityService::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_NAME(0),
-		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -104,8 +136,8 @@ void android::accessibilityservice::AccessibilityService::onAccessibilityEvent(l
 		android::accessibilityservice::AccessibilityService::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_NAME(1),
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::accessibilityservice::AccessibilityService::onInterrupt()
@@ -114,8 +146,8 @@ void android::accessibilityservice::AccessibilityService::onInterrupt()
 		android::accessibilityservice::AccessibilityService::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_NAME(2),
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -125,8 +157,8 @@ void android::accessibilityservice::AccessibilityService::setServiceInfo(local_r
 		android::accessibilityservice::AccessibilityService::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_NAME(4),
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::IBinder > android::accessibilityservice::AccessibilityService::onBind(local_ref< android::content::Intent > const &a0)
@@ -135,8 +167,8 @@ local_ref< android::os::IBinder > android::accessibilityservice::AccessibilitySe
 		android::accessibilityservice::AccessibilityService::J2CPP_CLASS_NAME,
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_NAME(5),
 		android::accessibilityservice::AccessibilityService::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0);
 }
 
 

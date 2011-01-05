@@ -160,8 +160,8 @@ java::lang::SecurityManager::SecurityManager()
 	call_new_object<
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(0),
-		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -173,8 +173,8 @@ void java::lang::SecurityManager::checkAccept(local_ref< java::lang::String > co
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(1),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::SecurityManager::checkAccess(local_ref< java::lang::Thread > const &a0)
@@ -183,8 +183,8 @@ void java::lang::SecurityManager::checkAccess(local_ref< java::lang::Thread > co
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(2),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkAccess(local_ref< java::lang::ThreadGroup > const &a0)
@@ -193,8 +193,8 @@ void java::lang::SecurityManager::checkAccess(local_ref< java::lang::ThreadGroup
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(3),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkConnect(local_ref< java::lang::String > const &a0, jint a1)
@@ -203,8 +203,8 @@ void java::lang::SecurityManager::checkConnect(local_ref< java::lang::String > c
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(4),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::SecurityManager::checkConnect(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::Object > const &a2)
@@ -213,8 +213,8 @@ void java::lang::SecurityManager::checkConnect(local_ref< java::lang::String > c
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(5),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::lang::SecurityManager::checkCreateClassLoader()
@@ -223,8 +223,8 @@ void java::lang::SecurityManager::checkCreateClassLoader()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(6),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkDelete(local_ref< java::lang::String > const &a0)
@@ -233,8 +233,8 @@ void java::lang::SecurityManager::checkDelete(local_ref< java::lang::String > co
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(7),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkExec(local_ref< java::lang::String > const &a0)
@@ -243,8 +243,8 @@ void java::lang::SecurityManager::checkExec(local_ref< java::lang::String > cons
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(8),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkExit(jint a0)
@@ -253,8 +253,8 @@ void java::lang::SecurityManager::checkExit(jint a0)
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(9),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkLink(local_ref< java::lang::String > const &a0)
@@ -263,8 +263,8 @@ void java::lang::SecurityManager::checkLink(local_ref< java::lang::String > cons
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(10),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkListen(jint a0)
@@ -273,8 +273,8 @@ void java::lang::SecurityManager::checkListen(jint a0)
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(11),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkMemberAccess(local_ref< java::lang::Class > const &a0, jint a1)
@@ -283,8 +283,8 @@ void java::lang::SecurityManager::checkMemberAccess(local_ref< java::lang::Class
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(12),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::SecurityManager::checkMulticast(local_ref< java::net::InetAddress > const &a0)
@@ -293,8 +293,8 @@ void java::lang::SecurityManager::checkMulticast(local_ref< java::net::InetAddre
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(13),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkMulticast(local_ref< java::net::InetAddress > const &a0, jbyte a1)
@@ -303,8 +303,8 @@ void java::lang::SecurityManager::checkMulticast(local_ref< java::net::InetAddre
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(14),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::SecurityManager::checkPackageAccess(local_ref< java::lang::String > const &a0)
@@ -313,8 +313,8 @@ void java::lang::SecurityManager::checkPackageAccess(local_ref< java::lang::Stri
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(15),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkPackageDefinition(local_ref< java::lang::String > const &a0)
@@ -323,8 +323,8 @@ void java::lang::SecurityManager::checkPackageDefinition(local_ref< java::lang::
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(16),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkPropertiesAccess()
@@ -333,8 +333,8 @@ void java::lang::SecurityManager::checkPropertiesAccess()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(17),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkPropertyAccess(local_ref< java::lang::String > const &a0)
@@ -343,8 +343,8 @@ void java::lang::SecurityManager::checkPropertyAccess(local_ref< java::lang::Str
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(18),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkRead(local_ref< java::io::FileDescriptor > const &a0)
@@ -353,8 +353,8 @@ void java::lang::SecurityManager::checkRead(local_ref< java::io::FileDescriptor 
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(19),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkRead(local_ref< java::lang::String > const &a0)
@@ -363,8 +363,8 @@ void java::lang::SecurityManager::checkRead(local_ref< java::lang::String > cons
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(20),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkRead(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -373,8 +373,8 @@ void java::lang::SecurityManager::checkRead(local_ref< java::lang::String > cons
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(21),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void java::lang::SecurityManager::checkSecurityAccess(local_ref< java::lang::String > const &a0)
@@ -383,8 +383,8 @@ void java::lang::SecurityManager::checkSecurityAccess(local_ref< java::lang::Str
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(22),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkSetFactory()
@@ -393,8 +393,8 @@ void java::lang::SecurityManager::checkSetFactory()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(23),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::lang::SecurityManager::checkTopLevelWindow(local_ref< java::lang::Object > const &a0)
@@ -403,8 +403,8 @@ jboolean java::lang::SecurityManager::checkTopLevelWindow(local_ref< java::lang:
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(24),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkSystemClipboardAccess()
@@ -413,8 +413,8 @@ void java::lang::SecurityManager::checkSystemClipboardAccess()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(25),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkAwtEventQueueAccess()
@@ -423,8 +423,8 @@ void java::lang::SecurityManager::checkAwtEventQueueAccess()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(26),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkPrintJobAccess()
@@ -433,8 +433,8 @@ void java::lang::SecurityManager::checkPrintJobAccess()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(27),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkWrite(local_ref< java::io::FileDescriptor > const &a0)
@@ -443,8 +443,8 @@ void java::lang::SecurityManager::checkWrite(local_ref< java::io::FileDescriptor
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(28),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkWrite(local_ref< java::lang::String > const &a0)
@@ -453,8 +453,8 @@ void java::lang::SecurityManager::checkWrite(local_ref< java::lang::String > con
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(29),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::lang::SecurityManager::getInCheck()
@@ -463,8 +463,8 @@ jboolean java::lang::SecurityManager::getInCheck()
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(30),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -480,8 +480,8 @@ local_ref< java::lang::ThreadGroup > java::lang::SecurityManager::getThreadGroup
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(38),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::lang::ThreadGroup > >
-	(get_jobject());
+		local_ref< java::lang::ThreadGroup >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::lang::SecurityManager::getSecurityContext()
@@ -490,8 +490,8 @@ local_ref< java::lang::Object > java::lang::SecurityManager::getSecurityContext(
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(39),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 void java::lang::SecurityManager::checkPermission(local_ref< java::security::Permission > const &a0)
@@ -500,8 +500,8 @@ void java::lang::SecurityManager::checkPermission(local_ref< java::security::Per
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(40),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::lang::SecurityManager::checkPermission(local_ref< java::security::Permission > const &a0, local_ref< java::lang::Object > const &a1)
@@ -510,8 +510,8 @@ void java::lang::SecurityManager::checkPermission(local_ref< java::security::Per
 		java::lang::SecurityManager::J2CPP_CLASS_NAME,
 		java::lang::SecurityManager::J2CPP_METHOD_NAME(41),
 		java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

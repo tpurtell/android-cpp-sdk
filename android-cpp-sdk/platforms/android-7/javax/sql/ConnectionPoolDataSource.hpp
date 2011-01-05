@@ -85,8 +85,8 @@ jint javax::sql::ConnectionPoolDataSource::getLoginTimeout()
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(0),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::io::PrintWriter > javax::sql::ConnectionPoolDataSource::getLogWriter()
@@ -95,8 +95,8 @@ local_ref< java::io::PrintWriter > javax::sql::ConnectionPoolDataSource::getLogW
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(1),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::PrintWriter > >
-	(get_jobject());
+		local_ref< java::io::PrintWriter >
+	>(get_jobject());
 }
 
 local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::getPooledConnection()
@@ -105,8 +105,8 @@ local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(2),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::sql::PooledConnection > >
-	(get_jobject());
+		local_ref< javax::sql::PooledConnection >
+	>(get_jobject());
 }
 
 local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::getPooledConnection(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -115,8 +115,8 @@ local_ref< javax::sql::PooledConnection > javax::sql::ConnectionPoolDataSource::
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(3),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::sql::PooledConnection > >
-	(get_jobject(), a0, a1);
+		local_ref< javax::sql::PooledConnection >
+	>(get_jobject(), a0, a1);
 }
 
 void javax::sql::ConnectionPoolDataSource::setLoginTimeout(jint a0)
@@ -125,8 +125,8 @@ void javax::sql::ConnectionPoolDataSource::setLoginTimeout(jint a0)
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(4),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::sql::ConnectionPoolDataSource::setLogWriter(local_ref< java::io::PrintWriter > const &a0)
@@ -135,8 +135,8 @@ void javax::sql::ConnectionPoolDataSource::setLogWriter(local_ref< java::io::Pri
 		javax::sql::ConnectionPoolDataSource::J2CPP_CLASS_NAME,
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_NAME(5),
 		javax::sql::ConnectionPoolDataSource::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

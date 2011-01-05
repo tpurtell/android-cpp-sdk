@@ -11,10 +11,12 @@
 #define J2CPP_JAVA_UTIL_QUEUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/Collection.hpp>
 
@@ -42,6 +44,7 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Collection>() const;
 
@@ -69,6 +72,11 @@ namespace j2cpp {
 
 
 
+java::util::Queue::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::Queue::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -85,8 +93,8 @@ jboolean java::util::Queue::offer(local_ref< java::lang::Object > const &a0)
 		java::util::Queue::J2CPP_CLASS_NAME,
 		java::util::Queue::J2CPP_METHOD_NAME(0),
 		java::util::Queue::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Queue::poll()
@@ -95,8 +103,8 @@ local_ref< java::lang::Object > java::util::Queue::poll()
 		java::util::Queue::J2CPP_CLASS_NAME,
 		java::util::Queue::J2CPP_METHOD_NAME(1),
 		java::util::Queue::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Queue::remove()
@@ -105,8 +113,8 @@ local_ref< java::lang::Object > java::util::Queue::remove()
 		java::util::Queue::J2CPP_CLASS_NAME,
 		java::util::Queue::J2CPP_METHOD_NAME(2),
 		java::util::Queue::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Queue::peek()
@@ -115,8 +123,8 @@ local_ref< java::lang::Object > java::util::Queue::peek()
 		java::util::Queue::J2CPP_CLASS_NAME,
 		java::util::Queue::J2CPP_METHOD_NAME(3),
 		java::util::Queue::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Queue::element()
@@ -125,8 +133,8 @@ local_ref< java::lang::Object > java::util::Queue::element()
 		java::util::Queue::J2CPP_CLASS_NAME,
 		java::util::Queue::J2CPP_METHOD_NAME(4),
 		java::util::Queue::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

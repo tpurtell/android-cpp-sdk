@@ -12,9 +12,9 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class ResponseHandler; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class ResponseHandler; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -88,8 +88,8 @@ org::apache::http::impl::client::BasicResponseHandler::BasicResponseHandler()
 	call_new_object<
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ local_ref< java::lang::String > org::apache::http::impl::client::BasicResponseHa
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::apache::http::impl::client::BasicResponseHandler::handleResponse_1(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -111,8 +111,8 @@ local_ref< java::lang::Object > org::apache::http::impl::client::BasicResponseHa
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::BasicResponseHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 

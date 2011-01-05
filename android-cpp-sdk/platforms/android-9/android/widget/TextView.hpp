@@ -13,8 +13,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class TypedArray; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class ColorStateList; } } } }
@@ -32,9 +34,11 @@ namespace j2cpp { namespace android { namespace text { namespace method { class 
 namespace j2cpp { namespace android { namespace text { namespace method { class MovementMethod; } } } }
 namespace j2cpp { namespace android { namespace text { namespace style { class URLSpan; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class AbsSavedState; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class BaseSavedState; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class EditorInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedTextRequest; } } } }
@@ -48,6 +52,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Typeface; } } }
 namespace j2cpp { namespace android { namespace widget { namespace TextView_ { class OnEditorActionListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class Scroller; } } }
@@ -75,11 +80,13 @@ namespace j2cpp { namespace android { namespace widget { namespace TextView_ { c
 #include <android/text/method/TransformationMethod.hpp>
 #include <android/text/style/URLSpan.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/AbsSavedState.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewTreeObserver.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/view/inputmethod/EditorInfo.hpp>
 #include <android/view/inputmethod/ExtractedText.hpp>
@@ -87,7 +94,9 @@ namespace j2cpp { namespace android { namespace widget { namespace TextView_ { c
 #include <android/view/inputmethod/InputConnection.hpp>
 #include <android/widget/Scroller.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -119,7 +128,10 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::AbsSavedState>() const;
 			operator local_ref<android::view::View_::BaseSavedState>() const;
+			operator local_ref<android::os::Parcelable>() const;
 
 
 			void writeToParcel(local_ref< android::os::Parcel >  const&, jint);
@@ -171,7 +183,10 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::widget::TextView_::BufferType >, 1> > values();
@@ -392,8 +407,11 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::View>() const;
 		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 
 
 		TextView(local_ref< android::content::Context > const&);
@@ -582,9 +600,24 @@ namespace j2cpp {
 
 
 
+android::widget::TextView_::SavedState::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::TextView_::SavedState::operator local_ref<android::view::AbsSavedState>() const
+{
+	return local_ref<android::view::AbsSavedState>(get_jobject());
+}
+
 android::widget::TextView_::SavedState::operator local_ref<android::view::View_::BaseSavedState>() const
 {
 	return local_ref<android::view::View_::BaseSavedState>(get_jobject());
+}
+
+android::widget::TextView_::SavedState::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -594,8 +627,8 @@ void android::widget::TextView_::SavedState::writeToParcel(local_ref< android::o
 		android::widget::TextView_::SavedState::J2CPP_CLASS_NAME,
 		android::widget::TextView_::SavedState::J2CPP_METHOD_NAME(1),
 		android::widget::TextView_::SavedState::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::widget::TextView_::SavedState::toString()
@@ -604,8 +637,8 @@ local_ref< java::lang::String > android::widget::TextView_::SavedState::toString
 		android::widget::TextView_::SavedState::J2CPP_CLASS_NAME,
 		android::widget::TextView_::SavedState::J2CPP_METHOD_NAME(2),
 		android::widget::TextView_::SavedState::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -637,8 +670,8 @@ jboolean android::widget::TextView_::OnEditorActionListener::onEditorAction(loca
 		android::widget::TextView_::OnEditorActionListener::J2CPP_CLASS_NAME,
 		android::widget::TextView_::OnEditorActionListener::J2CPP_METHOD_NAME(0),
 		android::widget::TextView_::OnEditorActionListener::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -646,9 +679,24 @@ J2CPP_DEFINE_CLASS(android::widget::TextView_::OnEditorActionListener,"android/w
 J2CPP_DEFINE_METHOD(android::widget::TextView_::OnEditorActionListener,0,"onEditorAction","(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z")
 
 
+android::widget::TextView_::BufferType::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::widget::TextView_::BufferType::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::widget::TextView_::BufferType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::widget::TextView_::BufferType::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::widget::TextView_::BufferType >, 1> > android::widget::TextView_::BufferType::values()
@@ -657,8 +705,8 @@ local_ref< array< local_ref< android::widget::TextView_::BufferType >, 1> > andr
 		android::widget::TextView_::BufferType::J2CPP_CLASS_NAME,
 		android::widget::TextView_::BufferType::J2CPP_METHOD_NAME(0),
 		android::widget::TextView_::BufferType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::widget::TextView_::BufferType >, 1> > >
-	();
+		local_ref< array< local_ref< android::widget::TextView_::BufferType >, 1> >
+	>();
 }
 
 local_ref< android::widget::TextView_::BufferType > android::widget::TextView_::BufferType::valueOf(local_ref< java::lang::String > const &a0)
@@ -667,8 +715,8 @@ local_ref< android::widget::TextView_::BufferType > android::widget::TextView_::
 		android::widget::TextView_::BufferType::J2CPP_CLASS_NAME,
 		android::widget::TextView_::BufferType::J2CPP_METHOD_NAME(1),
 		android::widget::TextView_::BufferType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::widget::TextView_::BufferType > >
-	(a0);
+		local_ref< android::widget::TextView_::BufferType >
+	>(a0);
 }
 
 
@@ -708,6 +756,11 @@ J2CPP_DEFINE_FIELD(android::widget::TextView_::BufferType,3,"$VALUES","[android.
 
 
 
+android::widget::TextView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::widget::TextView::operator local_ref<android::view::View>() const
 {
 	return local_ref<android::view::View>(get_jobject());
@@ -718,14 +771,24 @@ android::widget::TextView::operator local_ref<android::view::ViewTreeObserver_::
 	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jobject());
 }
 
+android::widget::TextView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::TextView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
 
 android::widget::TextView::TextView(local_ref< android::content::Context > const &a0)
 : object<android::widget::TextView>(
 	call_new_object<
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(0),
-		android::widget::TextView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::TextView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -737,8 +800,8 @@ android::widget::TextView::TextView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(1),
-		android::widget::TextView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::TextView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -750,8 +813,8 @@ android::widget::TextView::TextView(local_ref< android::content::Context > const
 	call_new_object<
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(2),
-		android::widget::TextView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::TextView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -763,8 +826,8 @@ void android::widget::TextView::setTypeface(local_ref< android::graphics::Typefa
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(3),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -775,8 +838,8 @@ local_ref< java::lang::CharSequence > android::widget::TextView::getText()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(6),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 jint android::widget::TextView::length()
@@ -785,8 +848,8 @@ jint android::widget::TextView::length()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(7),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::text::Editable > android::widget::TextView::getEditableText()
@@ -795,8 +858,8 @@ local_ref< android::text::Editable > android::widget::TextView::getEditableText(
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(8),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::text::Editable > >
-	(get_jobject());
+		local_ref< android::text::Editable >
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getLineHeight()
@@ -805,8 +868,8 @@ jint android::widget::TextView::getLineHeight()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(9),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::text::Layout > android::widget::TextView::getLayout()
@@ -815,8 +878,8 @@ local_ref< android::text::Layout > android::widget::TextView::getLayout()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(10),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::text::Layout > >
-	(get_jobject());
+		local_ref< android::text::Layout >
+	>(get_jobject());
 }
 
 local_ref< android::text::method::KeyListener > android::widget::TextView::getKeyListener()
@@ -825,8 +888,8 @@ local_ref< android::text::method::KeyListener > android::widget::TextView::getKe
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(11),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::text::method::KeyListener > >
-	(get_jobject());
+		local_ref< android::text::method::KeyListener >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setKeyListener(local_ref< android::text::method::KeyListener > const &a0)
@@ -835,8 +898,8 @@ void android::widget::TextView::setKeyListener(local_ref< android::text::method:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(12),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::method::MovementMethod > android::widget::TextView::getMovementMethod()
@@ -845,8 +908,8 @@ local_ref< android::text::method::MovementMethod > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(13),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::text::method::MovementMethod > >
-	(get_jobject());
+		local_ref< android::text::method::MovementMethod >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setMovementMethod(local_ref< android::text::method::MovementMethod > const &a0)
@@ -855,8 +918,8 @@ void android::widget::TextView::setMovementMethod(local_ref< android::text::meth
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(14),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::method::TransformationMethod > android::widget::TextView::getTransformationMethod()
@@ -865,8 +928,8 @@ local_ref< android::text::method::TransformationMethod > android::widget::TextVi
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(15),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< android::text::method::TransformationMethod > >
-	(get_jobject());
+		local_ref< android::text::method::TransformationMethod >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setTransformationMethod(local_ref< android::text::method::TransformationMethod > const &a0)
@@ -875,8 +938,8 @@ void android::widget::TextView::setTransformationMethod(local_ref< android::text
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(16),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getCompoundPaddingTop()
@@ -885,8 +948,8 @@ jint android::widget::TextView::getCompoundPaddingTop()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(17),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getCompoundPaddingBottom()
@@ -895,8 +958,8 @@ jint android::widget::TextView::getCompoundPaddingBottom()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(18),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getCompoundPaddingLeft()
@@ -905,8 +968,8 @@ jint android::widget::TextView::getCompoundPaddingLeft()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(19),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getCompoundPaddingRight()
@@ -915,8 +978,8 @@ jint android::widget::TextView::getCompoundPaddingRight()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(20),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(20), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getExtendedPaddingTop()
@@ -925,8 +988,8 @@ jint android::widget::TextView::getExtendedPaddingTop()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(21),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getExtendedPaddingBottom()
@@ -935,8 +998,8 @@ jint android::widget::TextView::getExtendedPaddingBottom()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(22),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(22), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getTotalPaddingLeft()
@@ -945,8 +1008,8 @@ jint android::widget::TextView::getTotalPaddingLeft()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(23),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(23), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getTotalPaddingRight()
@@ -955,8 +1018,8 @@ jint android::widget::TextView::getTotalPaddingRight()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(24),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getTotalPaddingTop()
@@ -965,8 +1028,8 @@ jint android::widget::TextView::getTotalPaddingTop()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(25),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(25), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getTotalPaddingBottom()
@@ -975,8 +1038,8 @@ jint android::widget::TextView::getTotalPaddingBottom()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(26),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(26), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setCompoundDrawables(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< android::graphics::drawable::Drawable > const &a1, local_ref< android::graphics::drawable::Drawable > const &a2, local_ref< android::graphics::drawable::Drawable > const &a3)
@@ -985,8 +1048,8 @@ void android::widget::TextView::setCompoundDrawables(local_ref< android::graphic
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(27),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::TextView::setCompoundDrawablesWithIntrinsicBounds(jint a0, jint a1, jint a2, jint a3)
@@ -995,8 +1058,8 @@ void android::widget::TextView::setCompoundDrawablesWithIntrinsicBounds(jint a0,
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(28),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::TextView::setCompoundDrawablesWithIntrinsicBounds(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< android::graphics::drawable::Drawable > const &a1, local_ref< android::graphics::drawable::Drawable > const &a2, local_ref< android::graphics::drawable::Drawable > const &a3)
@@ -1005,8 +1068,8 @@ void android::widget::TextView::setCompoundDrawablesWithIntrinsicBounds(local_re
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(29),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> > android::widget::TextView::getCompoundDrawables()
@@ -1015,8 +1078,8 @@ local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> > andro
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(30),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::graphics::drawable::Drawable >, 1> >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setCompoundDrawablePadding(jint a0)
@@ -1025,8 +1088,8 @@ void android::widget::TextView::setCompoundDrawablePadding(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(31),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getCompoundDrawablePadding()
@@ -1035,8 +1098,8 @@ jint android::widget::TextView::getCompoundDrawablePadding()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(32),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setPadding(jint a0, jint a1, jint a2, jint a3)
@@ -1045,8 +1108,8 @@ void android::widget::TextView::setPadding(jint a0, jint a1, jint a2, jint a3)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(33),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jint android::widget::TextView::getAutoLinkMask()
@@ -1055,8 +1118,8 @@ jint android::widget::TextView::getAutoLinkMask()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(34),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setTextAppearance(local_ref< android::content::Context > const &a0, jint a1)
@@ -1065,8 +1128,8 @@ void android::widget::TextView::setTextAppearance(local_ref< android::content::C
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(35),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::widget::TextView::getTextSize()
@@ -1075,8 +1138,8 @@ jfloat android::widget::TextView::getTextSize()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(36),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(36), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::widget::TextView::setTextSize(jfloat a0)
@@ -1085,8 +1148,8 @@ void android::widget::TextView::setTextSize(jfloat a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(37),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setTextSize(jint a0, jfloat a1)
@@ -1095,8 +1158,8 @@ void android::widget::TextView::setTextSize(jint a0, jfloat a1)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(38),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jfloat android::widget::TextView::getTextScaleX()
@@ -1105,8 +1168,8 @@ jfloat android::widget::TextView::getTextScaleX()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(39),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(39), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::widget::TextView::setTextScaleX(jfloat a0)
@@ -1115,8 +1178,8 @@ void android::widget::TextView::setTextScaleX(jfloat a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(40),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setTypeface(local_ref< android::graphics::Typeface > const &a0)
@@ -1125,8 +1188,8 @@ void android::widget::TextView::setTypeface(local_ref< android::graphics::Typefa
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(41),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Typeface > android::widget::TextView::getTypeface()
@@ -1135,8 +1198,8 @@ local_ref< android::graphics::Typeface > android::widget::TextView::getTypeface(
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(42),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< android::graphics::Typeface > >
-	(get_jobject());
+		local_ref< android::graphics::Typeface >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setTextColor(jint a0)
@@ -1145,8 +1208,8 @@ void android::widget::TextView::setTextColor(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(43),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setTextColor(local_ref< android::content::res::ColorStateList > const &a0)
@@ -1155,8 +1218,8 @@ void android::widget::TextView::setTextColor(local_ref< android::content::res::C
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(44),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::ColorStateList > android::widget::TextView::getTextColors()
@@ -1165,8 +1228,8 @@ local_ref< android::content::res::ColorStateList > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(45),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject());
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getCurrentTextColor()
@@ -1175,8 +1238,8 @@ jint android::widget::TextView::getCurrentTextColor()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(46),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(46), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setHighlightColor(jint a0)
@@ -1185,8 +1248,8 @@ void android::widget::TextView::setHighlightColor(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(47),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setShadowLayer(jfloat a0, jfloat a1, jfloat a2, jint a3)
@@ -1195,8 +1258,8 @@ void android::widget::TextView::setShadowLayer(jfloat a0, jfloat a1, jfloat a2, 
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(48),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 local_ref< android::text::TextPaint > android::widget::TextView::getPaint()
@@ -1205,8 +1268,8 @@ local_ref< android::text::TextPaint > android::widget::TextView::getPaint()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(49),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< android::text::TextPaint > >
-	(get_jobject());
+		local_ref< android::text::TextPaint >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setAutoLinkMask(jint a0)
@@ -1215,8 +1278,8 @@ void android::widget::TextView::setAutoLinkMask(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(50),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setLinksClickable(jboolean a0)
@@ -1225,8 +1288,8 @@ void android::widget::TextView::setLinksClickable(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(51),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::getLinksClickable()
@@ -1235,8 +1298,8 @@ jboolean android::widget::TextView::getLinksClickable()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(52),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(52), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< android::text::style::URLSpan >, 1> > android::widget::TextView::getUrls()
@@ -1245,8 +1308,8 @@ local_ref< array< local_ref< android::text::style::URLSpan >, 1> > android::widg
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(53),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< array< local_ref< android::text::style::URLSpan >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::text::style::URLSpan >, 1> >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setHintTextColor(jint a0)
@@ -1255,8 +1318,8 @@ void android::widget::TextView::setHintTextColor(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(54),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setHintTextColor(local_ref< android::content::res::ColorStateList > const &a0)
@@ -1265,8 +1328,8 @@ void android::widget::TextView::setHintTextColor(local_ref< android::content::re
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(55),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::ColorStateList > android::widget::TextView::getHintTextColors()
@@ -1275,8 +1338,8 @@ local_ref< android::content::res::ColorStateList > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(56),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject());
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getCurrentHintTextColor()
@@ -1285,8 +1348,8 @@ jint android::widget::TextView::getCurrentHintTextColor()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(57),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(57), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setLinkTextColor(jint a0)
@@ -1295,8 +1358,8 @@ void android::widget::TextView::setLinkTextColor(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(58),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setLinkTextColor(local_ref< android::content::res::ColorStateList > const &a0)
@@ -1305,8 +1368,8 @@ void android::widget::TextView::setLinkTextColor(local_ref< android::content::re
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(59),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(59), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::res::ColorStateList > android::widget::TextView::getLinkTextColors()
@@ -1315,8 +1378,8 @@ local_ref< android::content::res::ColorStateList > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(60),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(60), 
-		local_ref< android::content::res::ColorStateList > >
-	(get_jobject());
+		local_ref< android::content::res::ColorStateList >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setGravity(jint a0)
@@ -1325,8 +1388,8 @@ void android::widget::TextView::setGravity(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(61),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getGravity()
@@ -1335,8 +1398,8 @@ jint android::widget::TextView::getGravity()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(62),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(62), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getPaintFlags()
@@ -1345,8 +1408,8 @@ jint android::widget::TextView::getPaintFlags()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(63),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(63), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setPaintFlags(jint a0)
@@ -1355,8 +1418,8 @@ void android::widget::TextView::setPaintFlags(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(64),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setHorizontallyScrolling(jboolean a0)
@@ -1365,8 +1428,8 @@ void android::widget::TextView::setHorizontallyScrolling(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(65),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMinLines(jint a0)
@@ -1375,8 +1438,8 @@ void android::widget::TextView::setMinLines(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(66),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMinHeight(jint a0)
@@ -1385,8 +1448,8 @@ void android::widget::TextView::setMinHeight(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(67),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(67), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMaxLines(jint a0)
@@ -1395,8 +1458,8 @@ void android::widget::TextView::setMaxLines(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(68),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(68), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMaxHeight(jint a0)
@@ -1405,8 +1468,8 @@ void android::widget::TextView::setMaxHeight(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(69),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setLines(jint a0)
@@ -1415,8 +1478,8 @@ void android::widget::TextView::setLines(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(70),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setHeight(jint a0)
@@ -1425,8 +1488,8 @@ void android::widget::TextView::setHeight(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(71),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMinEms(jint a0)
@@ -1435,8 +1498,8 @@ void android::widget::TextView::setMinEms(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(72),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMinWidth(jint a0)
@@ -1445,8 +1508,8 @@ void android::widget::TextView::setMinWidth(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(73),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(73), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMaxEms(jint a0)
@@ -1455,8 +1518,8 @@ void android::widget::TextView::setMaxEms(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(74),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMaxWidth(jint a0)
@@ -1465,8 +1528,8 @@ void android::widget::TextView::setMaxWidth(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(75),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(75), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setEms(jint a0)
@@ -1475,8 +1538,8 @@ void android::widget::TextView::setEms(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(76),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setWidth(jint a0)
@@ -1485,8 +1548,8 @@ void android::widget::TextView::setWidth(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(77),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(77), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setLineSpacing(jfloat a0, jfloat a1)
@@ -1495,8 +1558,8 @@ void android::widget::TextView::setLineSpacing(jfloat a0, jfloat a1)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(78),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(78), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::append(local_ref< java::lang::CharSequence > const &a0)
@@ -1505,8 +1568,8 @@ void android::widget::TextView::append(local_ref< java::lang::CharSequence > con
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(79),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(79), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::append(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2)
@@ -1515,8 +1578,8 @@ void android::widget::TextView::append(local_ref< java::lang::CharSequence > con
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(80),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -1526,8 +1589,8 @@ local_ref< android::os::Parcelable > android::widget::TextView::onSaveInstanceSt
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(82),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(82), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::TextView::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -1536,8 +1599,8 @@ void android::widget::TextView::onRestoreInstanceState(local_ref< android::os::P
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(83),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(83), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setFreezesText(jboolean a0)
@@ -1546,8 +1609,8 @@ void android::widget::TextView::setFreezesText(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(84),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(84), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::getFreezesText()
@@ -1556,8 +1619,8 @@ jboolean android::widget::TextView::getFreezesText()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(85),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(85), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::TextView::setEditableFactory(local_ref< android::text::Editable_::Factory > const &a0)
@@ -1566,8 +1629,8 @@ void android::widget::TextView::setEditableFactory(local_ref< android::text::Edi
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(86),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setSpannableFactory(local_ref< android::text::Spannable_::Factory > const &a0)
@@ -1576,8 +1639,8 @@ void android::widget::TextView::setSpannableFactory(local_ref< android::text::Sp
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(87),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(87), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setText(local_ref< java::lang::CharSequence > const &a0)
@@ -1586,8 +1649,8 @@ void android::widget::TextView::setText(local_ref< java::lang::CharSequence > co
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(88),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(88), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setTextKeepState(local_ref< java::lang::CharSequence > const &a0)
@@ -1596,8 +1659,8 @@ void android::widget::TextView::setTextKeepState(local_ref< java::lang::CharSequ
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(89),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(89), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setText(local_ref< java::lang::CharSequence > const &a0, local_ref< android::widget::TextView_::BufferType > const &a1)
@@ -1606,8 +1669,8 @@ void android::widget::TextView::setText(local_ref< java::lang::CharSequence > co
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(90),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(90), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::setText(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -1616,8 +1679,8 @@ void android::widget::TextView::setText(local_ref< array<jchar,1> > const &a0, j
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(91),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(91), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::widget::TextView::setTextKeepState(local_ref< java::lang::CharSequence > const &a0, local_ref< android::widget::TextView_::BufferType > const &a1)
@@ -1626,8 +1689,8 @@ void android::widget::TextView::setTextKeepState(local_ref< java::lang::CharSequ
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(92),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(92), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::setText(jint a0)
@@ -1636,8 +1699,8 @@ void android::widget::TextView::setText(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(93),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(93), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setText(jint a0, local_ref< android::widget::TextView_::BufferType > const &a1)
@@ -1646,8 +1709,8 @@ void android::widget::TextView::setText(jint a0, local_ref< android::widget::Tex
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(94),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(94), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::setHint(local_ref< java::lang::CharSequence > const &a0)
@@ -1656,8 +1719,8 @@ void android::widget::TextView::setHint(local_ref< java::lang::CharSequence > co
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(95),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(95), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setHint(jint a0)
@@ -1666,8 +1729,8 @@ void android::widget::TextView::setHint(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(96),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(96), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::TextView::getHint()
@@ -1676,8 +1739,8 @@ local_ref< java::lang::CharSequence > android::widget::TextView::getHint()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(97),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(97), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setInputType(jint a0)
@@ -1686,8 +1749,8 @@ void android::widget::TextView::setInputType(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(98),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(98), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setRawInputType(jint a0)
@@ -1696,8 +1759,8 @@ void android::widget::TextView::setRawInputType(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(99),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(99), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getInputType()
@@ -1706,8 +1769,8 @@ jint android::widget::TextView::getInputType()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(100),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(100), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setImeOptions(jint a0)
@@ -1716,8 +1779,8 @@ void android::widget::TextView::setImeOptions(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(101),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(101), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getImeOptions()
@@ -1726,8 +1789,8 @@ jint android::widget::TextView::getImeOptions()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(102),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(102), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setImeActionLabel(local_ref< java::lang::CharSequence > const &a0, jint a1)
@@ -1736,8 +1799,8 @@ void android::widget::TextView::setImeActionLabel(local_ref< java::lang::CharSeq
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(103),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(103), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::widget::TextView::getImeActionLabel()
@@ -1746,8 +1809,8 @@ local_ref< java::lang::CharSequence > android::widget::TextView::getImeActionLab
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(104),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(104), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getImeActionId()
@@ -1756,8 +1819,8 @@ jint android::widget::TextView::getImeActionId()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(105),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(105), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::TextView::setOnEditorActionListener(local_ref< android::widget::TextView_::OnEditorActionListener > const &a0)
@@ -1766,8 +1829,8 @@ void android::widget::TextView::setOnEditorActionListener(local_ref< android::wi
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(106),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(106), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::onEditorAction(jint a0)
@@ -1776,8 +1839,8 @@ void android::widget::TextView::onEditorAction(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(107),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(107), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setPrivateImeOptions(local_ref< java::lang::String > const &a0)
@@ -1786,8 +1849,8 @@ void android::widget::TextView::setPrivateImeOptions(local_ref< java::lang::Stri
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(108),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(108), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::widget::TextView::getPrivateImeOptions()
@@ -1796,8 +1859,8 @@ local_ref< java::lang::String > android::widget::TextView::getPrivateImeOptions(
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(109),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(109), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setInputExtras(jint a0)
@@ -1806,8 +1869,8 @@ void android::widget::TextView::setInputExtras(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(110),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(110), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Bundle > android::widget::TextView::getInputExtras(jboolean a0)
@@ -1816,8 +1879,8 @@ local_ref< android::os::Bundle > android::widget::TextView::getInputExtras(jbool
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(111),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(111), 
-		local_ref< android::os::Bundle > >
-	(get_jobject(), a0);
+		local_ref< android::os::Bundle >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::TextView::getError()
@@ -1826,8 +1889,8 @@ local_ref< java::lang::CharSequence > android::widget::TextView::getError()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(112),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(112), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setError(local_ref< java::lang::CharSequence > const &a0)
@@ -1836,8 +1899,8 @@ void android::widget::TextView::setError(local_ref< java::lang::CharSequence > c
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(113),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(113), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setError(local_ref< java::lang::CharSequence > const &a0, local_ref< android::graphics::drawable::Drawable > const &a1)
@@ -1846,8 +1909,8 @@ void android::widget::TextView::setError(local_ref< java::lang::CharSequence > c
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(114),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(114), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -1857,8 +1920,8 @@ void android::widget::TextView::setFilters(local_ref< array< local_ref< android:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(116),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(116), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< android::text::InputFilter >, 1> > android::widget::TextView::getFilters()
@@ -1867,8 +1930,8 @@ local_ref< array< local_ref< android::text::InputFilter >, 1> > android::widget:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(117),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(117), 
-		local_ref< array< local_ref< android::text::InputFilter >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::text::InputFilter >, 1> >
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::onPreDraw()
@@ -1877,8 +1940,8 @@ jboolean android::widget::TextView::onPreDraw()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(118),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(118), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -1895,8 +1958,8 @@ void android::widget::TextView::invalidateDrawable(local_ref< android::graphics:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(127),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(127), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1906,8 +1969,8 @@ void android::widget::TextView::getFocusedRect(local_ref< android::graphics::Rec
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(129),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(129), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getLineCount()
@@ -1916,8 +1979,8 @@ jint android::widget::TextView::getLineCount()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(130),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(130), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getLineBounds(jint a0, local_ref< android::graphics::Rect > const &a1)
@@ -1926,8 +1989,8 @@ jint android::widget::TextView::getLineBounds(jint a0, local_ref< android::graph
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(131),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(131), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::TextView::getBaseline()
@@ -1936,8 +1999,8 @@ jint android::widget::TextView::getBaseline()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(132),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(132), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1946,8 +2009,8 @@ jboolean android::widget::TextView::onKeyDown(jint a0, local_ref< android::view:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(133),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(133), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::TextView::onKeyMultiple(jint a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -1956,8 +2019,8 @@ jboolean android::widget::TextView::onKeyMultiple(jint a0, jint a1, local_ref< a
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(134),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(134), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::widget::TextView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1966,8 +2029,8 @@ jboolean android::widget::TextView::onKeyUp(jint a0, local_ref< android::view::K
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(135),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(135), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::TextView::onCheckIsTextEditor()
@@ -1976,8 +2039,8 @@ jboolean android::widget::TextView::onCheckIsTextEditor()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(136),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(136), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::inputmethod::InputConnection > android::widget::TextView::onCreateInputConnection(local_ref< android::view::inputmethod::EditorInfo > const &a0)
@@ -1986,8 +2049,8 @@ local_ref< android::view::inputmethod::InputConnection > android::widget::TextVi
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(137),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(137), 
-		local_ref< android::view::inputmethod::InputConnection > >
-	(get_jobject(), a0);
+		local_ref< android::view::inputmethod::InputConnection >
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::extractText(local_ref< android::view::inputmethod::ExtractedTextRequest > const &a0, local_ref< android::view::inputmethod::ExtractedText > const &a1)
@@ -1996,8 +2059,8 @@ jboolean android::widget::TextView::extractText(local_ref< android::view::inputm
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(138),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(138), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::setExtractedText(local_ref< android::view::inputmethod::ExtractedText > const &a0)
@@ -2006,8 +2069,8 @@ void android::widget::TextView::setExtractedText(local_ref< android::view::input
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(139),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(139), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::onCommitCompletion(local_ref< android::view::inputmethod::CompletionInfo > const &a0)
@@ -2016,8 +2079,8 @@ void android::widget::TextView::onCommitCompletion(local_ref< android::view::inp
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(140),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(140), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::beginBatchEdit()
@@ -2026,8 +2089,8 @@ void android::widget::TextView::beginBatchEdit()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(141),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(141), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::endBatchEdit()
@@ -2036,8 +2099,8 @@ void android::widget::TextView::endBatchEdit()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(142),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(142), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::onBeginBatchEdit()
@@ -2046,8 +2109,8 @@ void android::widget::TextView::onBeginBatchEdit()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(143),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(143), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::onEndBatchEdit()
@@ -2056,8 +2119,8 @@ void android::widget::TextView::onEndBatchEdit()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(144),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(144), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::onPrivateIMECommand(local_ref< java::lang::String > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -2066,8 +2129,8 @@ jboolean android::widget::TextView::onPrivateIMECommand(local_ref< java::lang::S
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(145),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(145), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::TextView::setIncludeFontPadding(jboolean a0)
@@ -2076,8 +2139,8 @@ void android::widget::TextView::setIncludeFontPadding(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(146),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(146), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -2087,8 +2150,8 @@ jboolean android::widget::TextView::bringPointIntoView(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(148),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(148), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::moveCursorToVisibleOffset()
@@ -2097,8 +2160,8 @@ jboolean android::widget::TextView::moveCursorToVisibleOffset()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(149),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(149), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::TextView::computeScroll()
@@ -2107,8 +2170,8 @@ void android::widget::TextView::computeScroll()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(150),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(150), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::debug(jint a0)
@@ -2117,8 +2180,8 @@ void android::widget::TextView::debug(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(151),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(151), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::TextView::getSelectionStart()
@@ -2127,8 +2190,8 @@ jint android::widget::TextView::getSelectionStart()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(152),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(152), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::TextView::getSelectionEnd()
@@ -2137,8 +2200,8 @@ jint android::widget::TextView::getSelectionEnd()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(153),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(153), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::hasSelection()
@@ -2147,8 +2210,8 @@ jboolean android::widget::TextView::hasSelection()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(154),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(154), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::TextView::setSingleLine()
@@ -2157,8 +2220,8 @@ void android::widget::TextView::setSingleLine()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(155),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(155), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::setSingleLine(jboolean a0)
@@ -2167,8 +2230,8 @@ void android::widget::TextView::setSingleLine(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(156),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(156), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setEllipsize(local_ref< android::text::TextUtils_::TruncateAt > const &a0)
@@ -2177,8 +2240,8 @@ void android::widget::TextView::setEllipsize(local_ref< android::text::TextUtils
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(157),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(157), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setMarqueeRepeatLimit(jint a0)
@@ -2187,8 +2250,8 @@ void android::widget::TextView::setMarqueeRepeatLimit(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(158),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(158), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::text::TextUtils_::TruncateAt > android::widget::TextView::getEllipsize()
@@ -2197,8 +2260,8 @@ local_ref< android::text::TextUtils_::TruncateAt > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(159),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(159), 
-		local_ref< android::text::TextUtils_::TruncateAt > >
-	(get_jobject());
+		local_ref< android::text::TextUtils_::TruncateAt >
+	>(get_jobject());
 }
 
 void android::widget::TextView::setSelectAllOnFocus(jboolean a0)
@@ -2207,8 +2270,8 @@ void android::widget::TextView::setSelectAllOnFocus(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(160),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(160), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setCursorVisible(jboolean a0)
@@ -2217,8 +2280,8 @@ void android::widget::TextView::setCursorVisible(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(161),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(161), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -2229,8 +2292,8 @@ void android::widget::TextView::addTextChangedListener(local_ref< android::text:
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(164),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(164), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::removeTextChangedListener(local_ref< android::text::TextWatcher > const &a0)
@@ -2239,8 +2302,8 @@ void android::widget::TextView::removeTextChangedListener(local_ref< android::te
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(165),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(165), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::onStartTemporaryDetach()
@@ -2249,8 +2312,8 @@ void android::widget::TextView::onStartTemporaryDetach()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(166),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(166), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::onFinishTemporaryDetach()
@@ -2259,8 +2322,8 @@ void android::widget::TextView::onFinishTemporaryDetach()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(167),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(167), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -2270,8 +2333,8 @@ void android::widget::TextView::onWindowFocusChanged(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(169),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(169), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -2281,8 +2344,8 @@ void android::widget::TextView::clearComposingText()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(171),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(171), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::TextView::setSelected(jboolean a0)
@@ -2291,8 +2354,8 @@ void android::widget::TextView::setSelected(jboolean a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(172),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(172), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -2301,8 +2364,8 @@ jboolean android::widget::TextView::onTouchEvent(local_ref< android::view::Motio
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(173),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(173), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::didTouchFocusSelect()
@@ -2311,8 +2374,8 @@ jboolean android::widget::TextView::didTouchFocusSelect()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(174),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(174), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::TextView::cancelLongPress()
@@ -2321,8 +2384,8 @@ void android::widget::TextView::cancelLongPress()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(175),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(175), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::onTrackballEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -2331,8 +2394,8 @@ jboolean android::widget::TextView::onTrackballEvent(local_ref< android::view::M
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(176),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(176), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::TextView::setScroller(local_ref< android::widget::Scroller > const &a0)
@@ -2341,8 +2404,8 @@ void android::widget::TextView::setScroller(local_ref< android::widget::Scroller
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(177),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(177), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -2356,8 +2419,8 @@ local_ref< android::content::res::ColorStateList > android::widget::TextView::ge
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(183),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(183), 
-		local_ref< android::content::res::ColorStateList > >
-	(a0, a1);
+		local_ref< android::content::res::ColorStateList >
+	>(a0, a1);
 }
 
 jint android::widget::TextView::getTextColor(local_ref< android::content::Context > const &a0, local_ref< android::content::res::TypedArray > const &a1, jint a2)
@@ -2366,8 +2429,8 @@ jint android::widget::TextView::getTextColor(local_ref< android::content::Contex
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(184),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(184), 
-		jint >
-	(a0, a1, a2);
+		jint
+	>(a0, a1, a2);
 }
 
 jboolean android::widget::TextView::onKeyShortcut(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -2376,8 +2439,8 @@ jboolean android::widget::TextView::onKeyShortcut(jint a0, local_ref< android::v
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(185),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(185), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::TextView::dispatchPopulateAccessibilityEvent(local_ref< android::view::accessibility::AccessibilityEvent > const &a0)
@@ -2386,8 +2449,8 @@ jboolean android::widget::TextView::dispatchPopulateAccessibilityEvent(local_ref
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(186),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(186), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -2397,8 +2460,8 @@ jboolean android::widget::TextView::isInputMethodTarget()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(188),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(188), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::TextView::onTextContextMenuItem(jint a0)
@@ -2407,8 +2470,8 @@ jboolean android::widget::TextView::onTextContextMenuItem(jint a0)
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(189),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(189), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::TextView::performLongClick()
@@ -2417,8 +2480,8 @@ jboolean android::widget::TextView::performLongClick()
 		android::widget::TextView::J2CPP_CLASS_NAME,
 		android::widget::TextView::J2CPP_METHOD_NAME(190),
 		android::widget::TextView::J2CPP_METHOD_SIGNATURE(190), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

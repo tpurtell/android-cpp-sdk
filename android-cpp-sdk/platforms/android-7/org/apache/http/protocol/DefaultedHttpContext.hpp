@@ -89,8 +89,8 @@ org::apache::http::protocol::DefaultedHttpContext::DefaultedHttpContext(local_re
 	call_new_object<
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(0),
-		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -102,8 +102,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::DefaultedHttpContex
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(1),
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > org::apache::http::protocol::DefaultedHttpContext::removeAttribute(local_ref< java::lang::String > const &a0)
@@ -112,8 +112,8 @@ local_ref< java::lang::Object > org::apache::http::protocol::DefaultedHttpContex
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(2),
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::protocol::DefaultedHttpContext::setAttribute(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -122,8 +122,8 @@ void org::apache::http::protocol::DefaultedHttpContext::setAttribute(local_ref< 
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(3),
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::protocol::HttpContext > org::apache::http::protocol::DefaultedHttpContext::getDefaults()
@@ -132,8 +132,8 @@ local_ref< org::apache::http::protocol::HttpContext > org::apache::http::protoco
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME,
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(4),
 		org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< org::apache::http::protocol::HttpContext > >
-	(get_jobject());
+		local_ref< org::apache::http::protocol::HttpContext >
+	>(get_jobject());
 }
 
 

@@ -61,8 +61,8 @@ namespace java { namespace lang {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		Boolean(local_ref< java::lang::String > const&);
@@ -105,14 +105,14 @@ java::lang::Boolean::operator local_ref<java::lang::Object>() const
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-java::lang::Boolean::operator local_ref<java::io::Serializable>() const
-{
-	return local_ref<java::io::Serializable>(get_jobject());
-}
-
 java::lang::Boolean::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::lang::Boolean::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -121,8 +121,8 @@ java::lang::Boolean::Boolean(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(0),
-		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -134,8 +134,8 @@ java::lang::Boolean::Boolean(jboolean a0)
 	call_new_object<
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(1),
-		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -147,8 +147,8 @@ jboolean java::lang::Boolean::booleanValue()
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(2),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::lang::Boolean::equals(local_ref< java::lang::Object > const &a0)
@@ -157,8 +157,8 @@ jboolean java::lang::Boolean::equals(local_ref< java::lang::Object > const &a0)
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(3),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Boolean::compareTo(local_ref< java::lang::Boolean > const &a0)
@@ -167,8 +167,8 @@ jint java::lang::Boolean::compareTo(local_ref< java::lang::Boolean > const &a0)
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(4),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::lang::Boolean::hashCode()
@@ -177,8 +177,8 @@ jint java::lang::Boolean::hashCode()
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(5),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::lang::Boolean::toString()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > java::lang::Boolean::toString()
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(6),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::lang::Boolean::getBoolean(local_ref< java::lang::String > const &a0)
@@ -197,8 +197,8 @@ jboolean java::lang::Boolean::getBoolean(local_ref< java::lang::String > const &
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(7),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean java::lang::Boolean::parseBoolean(local_ref< java::lang::String > const &a0)
@@ -207,8 +207,8 @@ jboolean java::lang::Boolean::parseBoolean(local_ref< java::lang::String > const
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(8),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< java::lang::String > java::lang::Boolean::toString(jboolean a0)
@@ -217,8 +217,8 @@ local_ref< java::lang::String > java::lang::Boolean::toString(jboolean a0)
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(9),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::Boolean > java::lang::Boolean::valueOf(local_ref< java::lang::String > const &a0)
@@ -227,8 +227,8 @@ local_ref< java::lang::Boolean > java::lang::Boolean::valueOf(local_ref< java::l
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(10),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Boolean > >
-	(a0);
+		local_ref< java::lang::Boolean >
+	>(a0);
 }
 
 local_ref< java::lang::Boolean > java::lang::Boolean::valueOf(jboolean a0)
@@ -237,8 +237,8 @@ local_ref< java::lang::Boolean > java::lang::Boolean::valueOf(jboolean a0)
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(11),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Boolean > >
-	(a0);
+		local_ref< java::lang::Boolean >
+	>(a0);
 }
 
 jint java::lang::Boolean::compareTo(local_ref< java::lang::Object > const &a0)
@@ -247,8 +247,8 @@ jint java::lang::Boolean::compareTo(local_ref< java::lang::Object > const &a0)
 		java::lang::Boolean::J2CPP_CLASS_NAME,
 		java::lang::Boolean::J2CPP_METHOD_NAME(12),
 		java::lang::Boolean::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

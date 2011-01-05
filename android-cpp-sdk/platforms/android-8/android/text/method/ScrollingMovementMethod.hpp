@@ -59,8 +59,8 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::method::MovementMethod>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ScrollingMovementMethod();
@@ -92,14 +92,14 @@ namespace j2cpp {
 
 
 
-android::text::method::ScrollingMovementMethod::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::text::method::ScrollingMovementMethod::operator local_ref<android::text::method::MovementMethod>() const
 {
 	return local_ref<android::text::method::MovementMethod>(get_jobject());
+}
+
+android::text::method::ScrollingMovementMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -108,8 +108,8 @@ android::text::method::ScrollingMovementMethod::ScrollingMovementMethod()
 	call_new_object<
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(0),
-		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -125,8 +125,8 @@ jboolean android::text::method::ScrollingMovementMethod::onKeyDown(local_ref< an
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(5),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::ScrollingMovementMethod::onKeyUp(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -135,8 +135,8 @@ jboolean android::text::method::ScrollingMovementMethod::onKeyUp(local_ref< andr
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(6),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::ScrollingMovementMethod::onKeyOther(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -145,8 +145,8 @@ jboolean android::text::method::ScrollingMovementMethod::onKeyOther(local_ref< a
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(7),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::ScrollingMovementMethod::onTrackballEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -155,8 +155,8 @@ jboolean android::text::method::ScrollingMovementMethod::onTrackballEvent(local_
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(8),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::ScrollingMovementMethod::onTouchEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -165,8 +165,8 @@ jboolean android::text::method::ScrollingMovementMethod::onTouchEvent(local_ref<
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(9),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::ScrollingMovementMethod::initialize(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
@@ -175,8 +175,8 @@ void android::text::method::ScrollingMovementMethod::initialize(local_ref< andro
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(10),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::text::method::ScrollingMovementMethod::canSelectArbitrarily()
@@ -185,8 +185,8 @@ jboolean android::text::method::ScrollingMovementMethod::canSelectArbitrarily()
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(11),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::text::method::ScrollingMovementMethod::onTakeFocus(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2)
@@ -195,8 +195,8 @@ void android::text::method::ScrollingMovementMethod::onTakeFocus(local_ref< andr
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(12),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::method::MovementMethod > android::text::method::ScrollingMovementMethod::getInstance()
@@ -205,8 +205,8 @@ local_ref< android::text::method::MovementMethod > android::text::method::Scroll
 		android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(13),
 		android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< android::text::method::MovementMethod > >
-	();
+		local_ref< android::text::method::MovementMethod >
+	>();
 }
 
 

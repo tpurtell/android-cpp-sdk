@@ -126,8 +126,8 @@ jboolean android::net::ConnectivityManager::isNetworkTypeValid(jint a0)
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(1),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void android::net::ConnectivityManager::setNetworkPreference(jint a0)
@@ -136,8 +136,8 @@ void android::net::ConnectivityManager::setNetworkPreference(jint a0)
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(2),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::net::ConnectivityManager::getNetworkPreference()
@@ -146,8 +146,8 @@ jint android::net::ConnectivityManager::getNetworkPreference()
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(3),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::net::NetworkInfo > android::net::ConnectivityManager::getActiveNetworkInfo()
@@ -156,8 +156,8 @@ local_ref< android::net::NetworkInfo > android::net::ConnectivityManager::getAct
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(4),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::NetworkInfo > >
-	(get_jobject());
+		local_ref< android::net::NetworkInfo >
+	>(get_jobject());
 }
 
 local_ref< android::net::NetworkInfo > android::net::ConnectivityManager::getNetworkInfo(jint a0)
@@ -166,8 +166,8 @@ local_ref< android::net::NetworkInfo > android::net::ConnectivityManager::getNet
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(5),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::NetworkInfo > >
-	(get_jobject(), a0);
+		local_ref< android::net::NetworkInfo >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< android::net::NetworkInfo >, 1> > android::net::ConnectivityManager::getAllNetworkInfo()
@@ -176,8 +176,8 @@ local_ref< array< local_ref< android::net::NetworkInfo >, 1> > android::net::Con
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(6),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< android::net::NetworkInfo >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< android::net::NetworkInfo >, 1> >
+	>(get_jobject());
 }
 
 jint android::net::ConnectivityManager::startUsingNetworkFeature(jint a0, local_ref< java::lang::String > const &a1)
@@ -186,8 +186,8 @@ jint android::net::ConnectivityManager::startUsingNetworkFeature(jint a0, local_
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(7),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::net::ConnectivityManager::stopUsingNetworkFeature(jint a0, local_ref< java::lang::String > const &a1)
@@ -196,8 +196,8 @@ jint android::net::ConnectivityManager::stopUsingNetworkFeature(jint a0, local_r
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(8),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::net::ConnectivityManager::requestRouteToHost(jint a0, jint a1)
@@ -206,8 +206,8 @@ jboolean android::net::ConnectivityManager::requestRouteToHost(jint a0, jint a1)
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(9),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::net::ConnectivityManager::getBackgroundDataSetting()
@@ -216,8 +216,8 @@ jboolean android::net::ConnectivityManager::getBackgroundDataSetting()
 		android::net::ConnectivityManager::J2CPP_CLASS_NAME,
 		android::net::ConnectivityManager::J2CPP_METHOD_NAME(10),
 		android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

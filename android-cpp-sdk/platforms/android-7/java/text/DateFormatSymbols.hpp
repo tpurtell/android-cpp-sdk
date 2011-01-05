@@ -64,8 +64,8 @@ namespace java { namespace text {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Cloneable>() const;
 
 
@@ -108,14 +108,14 @@ namespace j2cpp {
 
 
 
-java::text::DateFormatSymbols::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::text::DateFormatSymbols::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::text::DateFormatSymbols::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 java::text::DateFormatSymbols::operator local_ref<java::lang::Cloneable>() const
@@ -129,8 +129,8 @@ java::text::DateFormatSymbols::DateFormatSymbols()
 	call_new_object<
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(0),
-		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -142,8 +142,8 @@ java::text::DateFormatSymbols::DateFormatSymbols(local_ref< java::util::Locale >
 	call_new_object<
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(1),
-		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -155,8 +155,8 @@ local_ref< java::lang::Object > java::text::DateFormatSymbols::clone()
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(2),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::DateFormatSymbols::equals(local_ref< java::lang::Object > const &a0)
@@ -165,8 +165,8 @@ jboolean java::text::DateFormatSymbols::equals(local_ref< java::lang::Object > c
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(3),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getAmPmStrings()
@@ -175,8 +175,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(4),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getEras()
@@ -185,8 +185,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(5),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::text::DateFormatSymbols::getLocalPatternChars()
@@ -195,8 +195,8 @@ local_ref< java::lang::String > java::text::DateFormatSymbols::getLocalPatternCh
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(6),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getMonths()
@@ -205,8 +205,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(7),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getShortMonths()
@@ -215,8 +215,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(8),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getShortWeekdays()
@@ -225,8 +225,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(9),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSymbols::getWeekdays()
@@ -235,8 +235,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(10),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::String >, 2> > java::text::DateFormatSymbols::getZoneStrings()
@@ -245,8 +245,8 @@ local_ref< array< local_ref< java::lang::String >, 2> > java::text::DateFormatSy
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(11),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array< local_ref< java::lang::String >, 2> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 2> >
+	>(get_jobject());
 }
 
 jint java::text::DateFormatSymbols::hashCode()
@@ -255,8 +255,8 @@ jint java::text::DateFormatSymbols::hashCode()
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(12),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::text::DateFormatSymbols::setAmPmStrings(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -265,8 +265,8 @@ void java::text::DateFormatSymbols::setAmPmStrings(local_ref< array< local_ref< 
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(13),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setEras(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -275,8 +275,8 @@ void java::text::DateFormatSymbols::setEras(local_ref< array< local_ref< java::l
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(14),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setLocalPatternChars(local_ref< java::lang::String > const &a0)
@@ -285,8 +285,8 @@ void java::text::DateFormatSymbols::setLocalPatternChars(local_ref< java::lang::
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(15),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setMonths(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -295,8 +295,8 @@ void java::text::DateFormatSymbols::setMonths(local_ref< array< local_ref< java:
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(16),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setShortMonths(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -305,8 +305,8 @@ void java::text::DateFormatSymbols::setShortMonths(local_ref< array< local_ref< 
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(17),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setShortWeekdays(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -315,8 +315,8 @@ void java::text::DateFormatSymbols::setShortWeekdays(local_ref< array< local_ref
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(18),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setWeekdays(local_ref< array< local_ref< java::lang::String >, 1> > const &a0)
@@ -325,8 +325,8 @@ void java::text::DateFormatSymbols::setWeekdays(local_ref< array< local_ref< jav
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(19),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::DateFormatSymbols::setZoneStrings(local_ref< array< local_ref< java::lang::String >, 2> > const &a0)
@@ -335,8 +335,8 @@ void java::text::DateFormatSymbols::setZoneStrings(local_ref< array< local_ref< 
 		java::text::DateFormatSymbols::J2CPP_CLASS_NAME,
 		java::text::DateFormatSymbols::J2CPP_METHOD_NAME(20),
 		java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

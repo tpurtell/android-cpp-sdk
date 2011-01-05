@@ -149,8 +149,8 @@ android::provider::CallLog_::Calls::Calls()
 	call_new_object<
 		android::provider::CallLog_::Calls::J2CPP_CLASS_NAME,
 		android::provider::CallLog_::Calls::J2CPP_METHOD_NAME(0),
-		android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -304,8 +304,8 @@ android::provider::CallLog::CallLog()
 	call_new_object<
 		android::provider::CallLog::J2CPP_CLASS_NAME,
 		android::provider::CallLog::J2CPP_METHOD_NAME(0),
-		android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

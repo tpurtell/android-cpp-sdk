@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PackageItemInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PackageManager; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -58,6 +60,7 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::pm::PackageItemInfo>() const;
 		operator local_ref<android::os::Parcelable>() const;
 
@@ -91,6 +94,11 @@ namespace j2cpp {
 
 
 
+android::content::pm::PermissionGroupInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::content::pm::PermissionGroupInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
 	return local_ref<android::content::pm::PackageItemInfo>(get_jobject());
@@ -107,8 +115,8 @@ android::content::pm::PermissionGroupInfo::PermissionGroupInfo()
 	call_new_object<
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , descriptionRes(get_jobject())
 , nonLocalizedDescription(get_jobject())
@@ -122,8 +130,8 @@ android::content::pm::PermissionGroupInfo::PermissionGroupInfo(local_ref< androi
 	call_new_object<
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , descriptionRes(get_jobject())
 , nonLocalizedDescription(get_jobject())
@@ -137,8 +145,8 @@ local_ref< java::lang::CharSequence > android::content::pm::PermissionGroupInfo:
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::content::pm::PermissionGroupInfo::toString()
@@ -147,8 +155,8 @@ local_ref< java::lang::String > android::content::pm::PermissionGroupInfo::toStr
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::PermissionGroupInfo::describeContents()
@@ -157,8 +165,8 @@ jint android::content::pm::PermissionGroupInfo::describeContents()
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::PermissionGroupInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -167,8 +175,8 @@ void android::content::pm::PermissionGroupInfo::writeToParcel(local_ref< android
 		android::content::pm::PermissionGroupInfo::J2CPP_CLASS_NAME,
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::PermissionGroupInfo::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

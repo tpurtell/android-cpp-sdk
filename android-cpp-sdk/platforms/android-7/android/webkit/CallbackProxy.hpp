@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_WEBKIT_CALLBACKPROXY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -42,6 +43,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/webkit/WebStorage.hpp>
 #include <android/webkit/WebView.hpp>
 #include <android/webkit/WebViewClient.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -103,6 +105,7 @@ namespace android { namespace webkit {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::os::Handler>() const;
 
 
@@ -164,6 +167,11 @@ namespace j2cpp {
 
 
 
+android::webkit::CallbackProxy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::webkit::CallbackProxy::operator local_ref<android::os::Handler>() const
 {
 	return local_ref<android::os::Handler>(get_jobject());
@@ -175,8 +183,8 @@ android::webkit::CallbackProxy::CallbackProxy(local_ref< android::content::Conte
 	call_new_object<
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(0),
-		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -188,8 +196,8 @@ void android::webkit::CallbackProxy::setWebViewClient(local_ref< android::webkit
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(1),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::setWebChromeClient(local_ref< android::webkit::WebChromeClient > const &a0)
@@ -198,8 +206,8 @@ void android::webkit::CallbackProxy::setWebChromeClient(local_ref< android::webk
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(2),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebChromeClient > android::webkit::CallbackProxy::getWebChromeClient()
@@ -208,8 +216,8 @@ local_ref< android::webkit::WebChromeClient > android::webkit::CallbackProxy::ge
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(3),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::webkit::WebChromeClient > >
-	(get_jobject());
+		local_ref< android::webkit::WebChromeClient >
+	>(get_jobject());
 }
 
 void android::webkit::CallbackProxy::setDownloadListener(local_ref< android::webkit::DownloadListener > const &a0)
@@ -218,8 +226,8 @@ void android::webkit::CallbackProxy::setDownloadListener(local_ref< android::web
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(4),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebBackForwardList > android::webkit::CallbackProxy::getBackForwardList()
@@ -228,8 +236,8 @@ local_ref< android::webkit::WebBackForwardList > android::webkit::CallbackProxy:
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(5),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::webkit::WebBackForwardList > >
-	(get_jobject());
+		local_ref< android::webkit::WebBackForwardList >
+	>(get_jobject());
 }
 
 jboolean android::webkit::CallbackProxy::uiOverrideUrlLoading(local_ref< java::lang::String > const &a0)
@@ -238,8 +246,8 @@ jboolean android::webkit::CallbackProxy::uiOverrideUrlLoading(local_ref< java::l
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(6),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::webkit::CallbackProxy::uiOverrideKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -248,8 +256,8 @@ jboolean android::webkit::CallbackProxy::uiOverrideKeyEvent(local_ref< android::
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(7),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::handleMessage(local_ref< android::os::Message > const &a0)
@@ -258,8 +266,8 @@ void android::webkit::CallbackProxy::handleMessage(local_ref< android::os::Messa
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(8),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::webkit::CallbackProxy::getProgress()
@@ -268,8 +276,8 @@ jint android::webkit::CallbackProxy::getProgress()
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(9),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::webkit::CallbackProxy::onPageStarted(local_ref< java::lang::String > const &a0, local_ref< android::graphics::Bitmap > const &a1)
@@ -278,8 +286,8 @@ void android::webkit::CallbackProxy::onPageStarted(local_ref< java::lang::String
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(10),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onPageFinished(local_ref< java::lang::String > const &a0)
@@ -288,8 +296,8 @@ void android::webkit::CallbackProxy::onPageFinished(local_ref< java::lang::Strin
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(11),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onTooManyRedirects(local_ref< android::os::Message > const &a0, local_ref< android::os::Message > const &a1)
@@ -298,8 +306,8 @@ void android::webkit::CallbackProxy::onTooManyRedirects(local_ref< android::os::
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(12),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onReceivedError(jint a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -308,8 +316,8 @@ void android::webkit::CallbackProxy::onReceivedError(jint a0, local_ref< java::l
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(13),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::CallbackProxy::onFormResubmission(local_ref< android::os::Message > const &a0, local_ref< android::os::Message > const &a1)
@@ -318,8 +326,8 @@ void android::webkit::CallbackProxy::onFormResubmission(local_ref< android::os::
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(14),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::webkit::CallbackProxy::shouldOverrideUrlLoading(local_ref< java::lang::String > const &a0)
@@ -328,8 +336,8 @@ jboolean android::webkit::CallbackProxy::shouldOverrideUrlLoading(local_ref< jav
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(15),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onReceivedHttpAuthRequest(local_ref< android::webkit::HttpAuthHandler > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -338,8 +346,8 @@ void android::webkit::CallbackProxy::onReceivedHttpAuthRequest(local_ref< androi
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(16),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::CallbackProxy::doUpdateVisitedHistory(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -348,8 +356,8 @@ void android::webkit::CallbackProxy::doUpdateVisitedHistory(local_ref< java::lan
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(17),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onLoadResource(local_ref< java::lang::String > const &a0)
@@ -358,8 +366,8 @@ void android::webkit::CallbackProxy::onLoadResource(local_ref< java::lang::Strin
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(18),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onUnhandledKeyEvent(local_ref< android::view::KeyEvent > const &a0)
@@ -368,8 +376,8 @@ void android::webkit::CallbackProxy::onUnhandledKeyEvent(local_ref< android::vie
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(19),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onScaleChanged(jfloat a0, jfloat a1)
@@ -378,8 +386,8 @@ void android::webkit::CallbackProxy::onScaleChanged(jfloat a0, jfloat a1)
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(20),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::webkit::CallbackProxy::onDownloadStart(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, jlong a4)
@@ -388,8 +396,8 @@ jboolean android::webkit::CallbackProxy::onDownloadStart(local_ref< java::lang::
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(21),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 jboolean android::webkit::CallbackProxy::onSavePassword(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::os::Message > const &a3)
@@ -398,8 +406,8 @@ jboolean android::webkit::CallbackProxy::onSavePassword(local_ref< java::lang::S
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(22),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::webkit::CallbackProxy::onProgressChanged(jint a0)
@@ -408,8 +416,8 @@ void android::webkit::CallbackProxy::onProgressChanged(jint a0)
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(23),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::webkit::WebView > android::webkit::CallbackProxy::createWindow(jboolean a0, jboolean a1)
@@ -418,8 +426,8 @@ local_ref< android::webkit::WebView > android::webkit::CallbackProxy::createWind
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(24),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(24), 
-		local_ref< android::webkit::WebView > >
-	(get_jobject(), a0, a1);
+		local_ref< android::webkit::WebView >
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onRequestFocus()
@@ -428,8 +436,8 @@ void android::webkit::CallbackProxy::onRequestFocus()
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(25),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CallbackProxy::onCloseWindow(local_ref< android::webkit::WebView > const &a0)
@@ -438,8 +446,8 @@ void android::webkit::CallbackProxy::onCloseWindow(local_ref< android::webkit::W
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(26),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onReceivedIcon(local_ref< android::graphics::Bitmap > const &a0)
@@ -448,8 +456,8 @@ void android::webkit::CallbackProxy::onReceivedIcon(local_ref< android::graphics
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(27),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onReceivedTitle(local_ref< java::lang::String > const &a0)
@@ -458,8 +466,8 @@ void android::webkit::CallbackProxy::onReceivedTitle(local_ref< java::lang::Stri
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(28),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::webkit::CallbackProxy::onJsAlert(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -468,8 +476,8 @@ void android::webkit::CallbackProxy::onJsAlert(local_ref< java::lang::String > c
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(29),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::webkit::CallbackProxy::onJsConfirm(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -478,8 +486,8 @@ jboolean android::webkit::CallbackProxy::onJsConfirm(local_ref< java::lang::Stri
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(30),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(30), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::webkit::CallbackProxy::onJsPrompt(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -488,8 +496,8 @@ local_ref< java::lang::String > android::webkit::CallbackProxy::onJsPrompt(local
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(31),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::webkit::CallbackProxy::onJsBeforeUnload(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -498,8 +506,8 @@ jboolean android::webkit::CallbackProxy::onJsBeforeUnload(local_ref< java::lang:
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(32),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(32), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onExceededDatabaseQuota(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, jlong a2, jlong a3, jlong a4, local_ref< android::webkit::WebStorage_::QuotaUpdater > const &a5)
@@ -508,8 +516,8 @@ void android::webkit::CallbackProxy::onExceededDatabaseQuota(local_ref< java::la
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(33),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::webkit::CallbackProxy::onReachedMaxAppCacheSize(jlong a0, jlong a1, local_ref< android::webkit::WebStorage_::QuotaUpdater > const &a2)
@@ -518,8 +526,8 @@ void android::webkit::CallbackProxy::onReachedMaxAppCacheSize(jlong a0, jlong a1
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(34),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::webkit::CallbackProxy::onGeolocationPermissionsShowPrompt(local_ref< java::lang::String > const &a0, local_ref< android::webkit::GeolocationPermissions_::Callback > const &a1)
@@ -528,8 +536,8 @@ void android::webkit::CallbackProxy::onGeolocationPermissionsShowPrompt(local_re
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(35),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::webkit::CallbackProxy::onGeolocationPermissionsHidePrompt()
@@ -538,8 +546,8 @@ void android::webkit::CallbackProxy::onGeolocationPermissionsHidePrompt()
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(36),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::webkit::CallbackProxy::addMessageToConsole(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -548,8 +556,8 @@ void android::webkit::CallbackProxy::addMessageToConsole(local_ref< java::lang::
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(37),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::webkit::CallbackProxy::onJsTimeout()
@@ -558,8 +566,8 @@ jboolean android::webkit::CallbackProxy::onJsTimeout()
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(38),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(38), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::webkit::CallbackProxy::getVisitedHistory(local_ref< android::webkit::ValueCallback > const &a0)
@@ -568,8 +576,8 @@ void android::webkit::CallbackProxy::getVisitedHistory(local_ref< android::webki
 		android::webkit::CallbackProxy::J2CPP_CLASS_NAME,
 		android::webkit::CallbackProxy::J2CPP_METHOD_NAME(39),
 		android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

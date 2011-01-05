@@ -145,8 +145,8 @@ java::security::Policy::Policy()
 	call_new_object<
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(0),
-		java::security::Policy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::Policy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -158,8 +158,8 @@ local_ref< java::security::Policy > java::security::Policy::getInstance(local_re
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(1),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::security::Policy > >
-	(a0, a1);
+		local_ref< java::security::Policy >
+	>(a0, a1);
 }
 
 local_ref< java::security::Policy > java::security::Policy::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Policy_::Parameters > const &a1, local_ref< java::lang::String > const &a2)
@@ -168,8 +168,8 @@ local_ref< java::security::Policy > java::security::Policy::getInstance(local_re
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(2),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::security::Policy > >
-	(a0, a1, a2);
+		local_ref< java::security::Policy >
+	>(a0, a1, a2);
 }
 
 local_ref< java::security::Policy > java::security::Policy::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Policy_::Parameters > const &a1, local_ref< java::security::Provider > const &a2)
@@ -178,8 +178,8 @@ local_ref< java::security::Policy > java::security::Policy::getInstance(local_re
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(3),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::security::Policy > >
-	(a0, a1, a2);
+		local_ref< java::security::Policy >
+	>(a0, a1, a2);
 }
 
 local_ref< java::security::Policy_::Parameters > java::security::Policy::getParameters()
@@ -188,8 +188,8 @@ local_ref< java::security::Policy_::Parameters > java::security::Policy::getPara
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(4),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::Policy_::Parameters > >
-	(get_jobject());
+		local_ref< java::security::Policy_::Parameters >
+	>(get_jobject());
 }
 
 local_ref< java::security::Provider > java::security::Policy::getProvider()
@@ -198,8 +198,8 @@ local_ref< java::security::Provider > java::security::Policy::getProvider()
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(5),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Policy::getType()
@@ -208,8 +208,8 @@ local_ref< java::lang::String > java::security::Policy::getType()
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(6),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::security::PermissionCollection > java::security::Policy::getPermissions(local_ref< java::security::CodeSource > const &a0)
@@ -218,8 +218,8 @@ local_ref< java::security::PermissionCollection > java::security::Policy::getPer
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(7),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject(), a0);
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject(), a0);
 }
 
 void java::security::Policy::refresh()
@@ -228,8 +228,8 @@ void java::security::Policy::refresh()
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(8),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::security::PermissionCollection > java::security::Policy::getPermissions(local_ref< java::security::ProtectionDomain > const &a0)
@@ -238,8 +238,8 @@ local_ref< java::security::PermissionCollection > java::security::Policy::getPer
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(9),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject(), a0);
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::Policy::implies(local_ref< java::security::ProtectionDomain > const &a0, local_ref< java::security::Permission > const &a1)
@@ -248,8 +248,8 @@ jboolean java::security::Policy::implies(local_ref< java::security::ProtectionDo
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(10),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::security::Policy > java::security::Policy::getPolicy()
@@ -258,8 +258,8 @@ local_ref< java::security::Policy > java::security::Policy::getPolicy()
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(11),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::security::Policy > >
-	();
+		local_ref< java::security::Policy >
+	>();
 }
 
 void java::security::Policy::setPolicy(local_ref< java::security::Policy > const &a0)
@@ -268,8 +268,8 @@ void java::security::Policy::setPolicy(local_ref< java::security::Policy > const
 		java::security::Policy::J2CPP_CLASS_NAME,
 		java::security::Policy::J2CPP_METHOD_NAME(12),
 		java::security::Policy::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 

@@ -11,10 +11,10 @@
 #define J2CPP_JAVAX_XML_VALIDATION_SCHEMAFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace javax { namespace xml { namespace transform { class Source; } } } }
 namespace j2cpp { namespace javax { namespace xml { namespace validation { class Schema; } } } }
-namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
@@ -118,8 +118,8 @@ local_ref< javax::xml::validation::SchemaFactory > javax::xml::validation::Schem
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(1),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< javax::xml::validation::SchemaFactory > >
-	(a0);
+		local_ref< javax::xml::validation::SchemaFactory >
+	>(a0);
 }
 
 local_ref< javax::xml::validation::SchemaFactory > javax::xml::validation::SchemaFactory::newInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::ClassLoader > const &a2)
@@ -128,8 +128,8 @@ local_ref< javax::xml::validation::SchemaFactory > javax::xml::validation::Schem
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(2),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::xml::validation::SchemaFactory > >
-	(a0, a1, a2);
+		local_ref< javax::xml::validation::SchemaFactory >
+	>(a0, a1, a2);
 }
 
 jboolean javax::xml::validation::SchemaFactory::isSchemaLanguageSupported(local_ref< java::lang::String > const &a0)
@@ -138,8 +138,8 @@ jboolean javax::xml::validation::SchemaFactory::isSchemaLanguageSupported(local_
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(3),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::validation::SchemaFactory::getFeature(local_ref< java::lang::String > const &a0)
@@ -148,8 +148,8 @@ jboolean javax::xml::validation::SchemaFactory::getFeature(local_ref< java::lang
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(4),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void javax::xml::validation::SchemaFactory::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -158,8 +158,8 @@ void javax::xml::validation::SchemaFactory::setFeature(local_ref< java::lang::St
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(5),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::xml::validation::SchemaFactory::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -168,8 +168,8 @@ void javax::xml::validation::SchemaFactory::setProperty(local_ref< java::lang::S
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(6),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > javax::xml::validation::SchemaFactory::getProperty(local_ref< java::lang::String > const &a0)
@@ -178,8 +178,8 @@ local_ref< java::lang::Object > javax::xml::validation::SchemaFactory::getProper
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(7),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void javax::xml::validation::SchemaFactory::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -188,8 +188,8 @@ void javax::xml::validation::SchemaFactory::setErrorHandler(local_ref< org::xml:
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(8),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > javax::xml::validation::SchemaFactory::getErrorHandler()
@@ -198,8 +198,8 @@ local_ref< org::xml::sax::ErrorHandler > javax::xml::validation::SchemaFactory::
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(9),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void javax::xml::validation::SchemaFactory::setResourceResolver(local_ref< org::w3c::dom::ls::LSResourceResolver > const &a0)
@@ -208,8 +208,8 @@ void javax::xml::validation::SchemaFactory::setResourceResolver(local_ref< org::
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(10),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::w3c::dom::ls::LSResourceResolver > javax::xml::validation::SchemaFactory::getResourceResolver()
@@ -218,8 +218,8 @@ local_ref< org::w3c::dom::ls::LSResourceResolver > javax::xml::validation::Schem
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(11),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::w3c::dom::ls::LSResourceResolver > >
-	(get_jobject());
+		local_ref< org::w3c::dom::ls::LSResourceResolver >
+	>(get_jobject());
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactory::newSchema(local_ref< javax::xml::transform::Source > const &a0)
@@ -228,8 +228,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactor
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(12),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactory::newSchema(local_ref< java::io::File > const &a0)
@@ -238,8 +238,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactor
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(13),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactory::newSchema(local_ref< java::net::URL > const &a0)
@@ -248,8 +248,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactor
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(14),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactory::newSchema(local_ref< array< local_ref< javax::xml::transform::Source >, 1> > const &a0)
@@ -258,8 +258,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactor
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(15),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject(), a0);
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject(), a0);
 }
 
 local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactory::newSchema()
@@ -268,8 +268,8 @@ local_ref< javax::xml::validation::Schema > javax::xml::validation::SchemaFactor
 		javax::xml::validation::SchemaFactory::J2CPP_CLASS_NAME,
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_NAME(16),
 		javax::xml::validation::SchemaFactory::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< javax::xml::validation::Schema > >
-	(get_jobject());
+		local_ref< javax::xml::validation::Schema >
+	>(get_jobject());
 }
 
 

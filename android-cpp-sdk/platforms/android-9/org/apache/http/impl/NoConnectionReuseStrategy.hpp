@@ -85,8 +85,8 @@ org::apache::http::impl::NoConnectionReuseStrategy::NoConnectionReuseStrategy()
 	call_new_object<
 		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ jboolean org::apache::http::impl::NoConnectionReuseStrategy::keepAlive(local_ref
 		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::NoConnectionReuseStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 

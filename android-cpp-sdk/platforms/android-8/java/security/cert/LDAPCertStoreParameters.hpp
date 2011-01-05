@@ -13,9 +13,11 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertStoreParameters; } } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/CertStoreParameters.hpp>
@@ -47,6 +49,7 @@ namespace java { namespace security { namespace cert {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::security::cert::CertStoreParameters>() const;
 
 
@@ -81,6 +84,11 @@ java::security::cert::LDAPCertStoreParameters::operator local_ref<java::lang::Ob
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+java::security::cert::LDAPCertStoreParameters::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::security::cert::LDAPCertStoreParameters::operator local_ref<java::security::cert::CertStoreParameters>() const
 {
 	return local_ref<java::security::cert::CertStoreParameters>(get_jobject());
@@ -92,8 +100,8 @@ java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters(local_ref
 	call_new_object<
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(0),
-		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +113,8 @@ java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters()
 	call_new_object<
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(1),
-		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -118,8 +126,8 @@ java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters(local_ref
 	call_new_object<
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(2),
-		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -131,8 +139,8 @@ local_ref< java::lang::Object > java::security::cert::LDAPCertStoreParameters::c
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(3),
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::security::cert::LDAPCertStoreParameters::getPort()
@@ -141,8 +149,8 @@ jint java::security::cert::LDAPCertStoreParameters::getPort()
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(4),
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::LDAPCertStoreParameters::getServerName()
@@ -151,8 +159,8 @@ local_ref< java::lang::String > java::security::cert::LDAPCertStoreParameters::g
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(5),
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::cert::LDAPCertStoreParameters::toString()
@@ -161,8 +169,8 @@ local_ref< java::lang::String > java::security::cert::LDAPCertStoreParameters::t
 		java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME,
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(6),
 		java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

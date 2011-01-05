@@ -65,8 +65,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::message::HeaderValueFormatter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicHeaderValueFormatter();
@@ -102,14 +102,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicHeaderValueFormatter::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::BasicHeaderValueFormatter::operator local_ref<org::apache::http::message::HeaderValueFormatter>() const
 {
 	return local_ref<org::apache::http::message::HeaderValueFormatter>(get_jobject());
+}
+
+org::apache::http::message::BasicHeaderValueFormatter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -118,8 +118,8 @@ org::apache::http::message::BasicHeaderValueFormatter::BasicHeaderValueFormatter
 	call_new_object<
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -131,8 +131,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderValueForm
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(1),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::BasicHeaderValueFormatter::formatElements(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > const &a1, jboolean a2)
@@ -141,8 +141,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -152,8 +152,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderValueForm
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::BasicHeaderValueFormatter::formatHeaderElement(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::HeaderElement > const &a1, jboolean a2)
@@ -162,8 +162,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -173,8 +173,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderValueForm
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::BasicHeaderValueFormatter::formatParameters(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > const &a1, jboolean a2)
@@ -183,8 +183,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(8),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -194,8 +194,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderValueForm
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(a0, a1, a2);
+		local_ref< java::lang::String >
+	>(a0, a1, a2);
 }
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::BasicHeaderValueFormatter::formatNameValuePair(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::NameValuePair > const &a1, jboolean a2)
@@ -204,8 +204,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_NAME(11),
 		org::apache::http::message::BasicHeaderValueFormatter::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_UTIL_DEQUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class Queue; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/Queue.hpp>
 
@@ -56,8 +60,10 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Iterable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::util::Collection>() const;
 
 
 		void addFirst(local_ref< java::lang::Object >  const&);
@@ -95,6 +101,11 @@ namespace j2cpp {
 
 
 
+java::util::Deque::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jobject());
+}
+
 java::util::Deque::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -105,14 +116,19 @@ java::util::Deque::operator local_ref<java::util::Queue>() const
 	return local_ref<java::util::Queue>(get_jobject());
 }
 
+java::util::Deque::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jobject());
+}
+
 void java::util::Deque::addFirst(local_ref< java::lang::Object > const &a0)
 {
 	return call_method<
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(0),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::Deque::addLast(local_ref< java::lang::Object > const &a0)
@@ -121,8 +137,8 @@ void java::util::Deque::addLast(local_ref< java::lang::Object > const &a0)
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(1),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Deque::offerFirst(local_ref< java::lang::Object > const &a0)
@@ -131,8 +147,8 @@ jboolean java::util::Deque::offerFirst(local_ref< java::lang::Object > const &a0
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(2),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Deque::offerLast(local_ref< java::lang::Object > const &a0)
@@ -141,8 +157,8 @@ jboolean java::util::Deque::offerLast(local_ref< java::lang::Object > const &a0)
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(3),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Deque::removeFirst()
@@ -151,8 +167,8 @@ local_ref< java::lang::Object > java::util::Deque::removeFirst()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(4),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::removeLast()
@@ -161,8 +177,8 @@ local_ref< java::lang::Object > java::util::Deque::removeLast()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(5),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::pollFirst()
@@ -171,8 +187,8 @@ local_ref< java::lang::Object > java::util::Deque::pollFirst()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(6),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::pollLast()
@@ -181,8 +197,8 @@ local_ref< java::lang::Object > java::util::Deque::pollLast()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(7),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::getFirst()
@@ -191,8 +207,8 @@ local_ref< java::lang::Object > java::util::Deque::getFirst()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(8),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::getLast()
@@ -201,8 +217,8 @@ local_ref< java::lang::Object > java::util::Deque::getLast()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(9),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::peekFirst()
@@ -211,8 +227,8 @@ local_ref< java::lang::Object > java::util::Deque::peekFirst()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(10),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::Deque::peekLast()
@@ -221,8 +237,8 @@ local_ref< java::lang::Object > java::util::Deque::peekLast()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(11),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::util::Deque::removeFirstOccurrence(local_ref< java::lang::Object > const &a0)
@@ -231,8 +247,8 @@ jboolean java::util::Deque::removeFirstOccurrence(local_ref< java::lang::Object 
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(12),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::Deque::removeLastOccurrence(local_ref< java::lang::Object > const &a0)
@@ -241,8 +257,8 @@ jboolean java::util::Deque::removeLastOccurrence(local_ref< java::lang::Object >
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(13),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void java::util::Deque::push(local_ref< java::lang::Object > const &a0)
@@ -251,8 +267,8 @@ void java::util::Deque::push(local_ref< java::lang::Object > const &a0)
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(14),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::Deque::pop()
@@ -261,8 +277,8 @@ local_ref< java::lang::Object > java::util::Deque::pop()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(15),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 local_ref< java::util::Iterator > java::util::Deque::descendingIterator()
@@ -271,8 +287,8 @@ local_ref< java::util::Iterator > java::util::Deque::descendingIterator()
 		java::util::Deque::J2CPP_CLASS_NAME,
 		java::util::Deque::J2CPP_METHOD_NAME(16),
 		java::util::Deque::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 

@@ -16,6 +16,8 @@ namespace j2cpp { namespace android { namespace preference { namespace Preferenc
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
@@ -23,6 +25,8 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceManager.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -62,6 +66,8 @@ namespace android { namespace preference {
 
 		operator local_ref<android::preference::Preference>() const;
 		operator local_ref<android::preference::PreferenceManager_::OnActivityResultListener>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RingtonePreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, jint);
@@ -102,14 +108,24 @@ android::preference::RingtonePreference::operator local_ref<android::preference:
 	return local_ref<android::preference::PreferenceManager_::OnActivityResultListener>(get_jobject());
 }
 
+android::preference::RingtonePreference::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+android::preference::RingtonePreference::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::preference::RingtonePreference::RingtonePreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, jint a2)
 : object<android::preference::RingtonePreference>(
 	call_new_object<
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(0),
-		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -121,8 +137,8 @@ android::preference::RingtonePreference::RingtonePreference(local_ref< android::
 	call_new_object<
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(1),
-		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -134,8 +150,8 @@ android::preference::RingtonePreference::RingtonePreference(local_ref< android::
 	call_new_object<
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(2),
-		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -147,8 +163,8 @@ jint android::preference::RingtonePreference::getRingtoneType()
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(3),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::preference::RingtonePreference::setRingtoneType(jint a0)
@@ -157,8 +173,8 @@ void android::preference::RingtonePreference::setRingtoneType(jint a0)
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(4),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::RingtonePreference::getShowDefault()
@@ -167,8 +183,8 @@ jboolean android::preference::RingtonePreference::getShowDefault()
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(5),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::preference::RingtonePreference::setShowDefault(jboolean a0)
@@ -177,8 +193,8 @@ void android::preference::RingtonePreference::setShowDefault(jboolean a0)
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(6),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::preference::RingtonePreference::getShowSilent()
@@ -187,8 +203,8 @@ jboolean android::preference::RingtonePreference::getShowSilent()
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(7),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::preference::RingtonePreference::setShowSilent(jboolean a0)
@@ -197,8 +213,8 @@ void android::preference::RingtonePreference::setShowSilent(jboolean a0)
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(8),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -214,8 +230,8 @@ jboolean android::preference::RingtonePreference::onActivityResult(jint a0, jint
 		android::preference::RingtonePreference::J2CPP_CLASS_NAME,
 		android::preference::RingtonePreference::J2CPP_METHOD_NAME(16),
 		android::preference::RingtonePreference::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 

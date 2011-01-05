@@ -11,12 +11,14 @@
 #define J2CPP_JAVA_UTIL_PREFS_NODECHANGEEVENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace prefs { class Preferences; } } } }
 namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
 #include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/EventObject.hpp>
 #include <java/util/prefs/Preferences.hpp>
 
@@ -42,6 +44,7 @@ namespace java { namespace util { namespace prefs {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventObject>() const;
 		operator local_ref<java::io::Serializable>() const;
 
@@ -68,6 +71,11 @@ namespace j2cpp {
 
 
 
+java::util::prefs::NodeChangeEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::prefs::NodeChangeEvent::operator local_ref<java::util::EventObject>() const
 {
 	return local_ref<java::util::EventObject>(get_jobject());
@@ -84,8 +92,8 @@ java::util::prefs::NodeChangeEvent::NodeChangeEvent(local_ref< java::util::prefs
 	call_new_object<
 		java::util::prefs::NodeChangeEvent::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_NAME(0),
-		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -97,8 +105,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::NodeChangeEvent::
 		java::util::prefs::NodeChangeEvent::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_NAME(1),
 		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject());
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject());
 }
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::NodeChangeEvent::getChild()
@@ -107,8 +115,8 @@ local_ref< java::util::prefs::Preferences > java::util::prefs::NodeChangeEvent::
 		java::util::prefs::NodeChangeEvent::J2CPP_CLASS_NAME,
 		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_NAME(2),
 		java::util::prefs::NodeChangeEvent::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::prefs::Preferences > >
-	(get_jobject());
+		local_ref< java::util::prefs::Preferences >
+	>(get_jobject());
 }
 
 

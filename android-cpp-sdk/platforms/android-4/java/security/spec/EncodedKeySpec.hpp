@@ -42,8 +42,8 @@ namespace java { namespace security { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::KeySpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		EncodedKeySpec(local_ref< array<jbyte,1> > const&);
@@ -68,14 +68,14 @@ namespace j2cpp {
 
 
 
-java::security::spec::EncodedKeySpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::spec::EncodedKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
 	return local_ref<java::security::spec::KeySpec>(get_jobject());
+}
+
+java::security::spec::EncodedKeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -84,8 +84,8 @@ java::security::spec::EncodedKeySpec::EncodedKeySpec(local_ref< array<jbyte,1> >
 	call_new_object<
 		java::security::spec::EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::EncodedKeySpec::J2CPP_METHOD_NAME(0),
-		java::security::spec::EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::security::spec::EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -97,8 +97,8 @@ local_ref< array<jbyte,1> > java::security::spec::EncodedKeySpec::getEncoded()
 		java::security::spec::EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::EncodedKeySpec::J2CPP_METHOD_NAME(1),
 		java::security::spec::EncodedKeySpec::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::spec::EncodedKeySpec::getFormat()
@@ -107,8 +107,8 @@ local_ref< java::lang::String > java::security::spec::EncodedKeySpec::getFormat(
 		java::security::spec::EncodedKeySpec::J2CPP_CLASS_NAME,
 		java::security::spec::EncodedKeySpec::J2CPP_METHOD_NAME(2),
 		java::security::spec::EncodedKeySpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

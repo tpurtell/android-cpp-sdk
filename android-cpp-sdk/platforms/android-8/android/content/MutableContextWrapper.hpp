@@ -13,10 +13,12 @@
 
 namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/content/ContextWrapper.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,6 +42,8 @@ namespace android { namespace content {
 		}
 
 		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		MutableContextWrapper(local_ref< android::content::Context > const&);
@@ -67,14 +71,24 @@ android::content::MutableContextWrapper::operator local_ref<android::content::Co
 	return local_ref<android::content::ContextWrapper>(get_jobject());
 }
 
+android::content::MutableContextWrapper::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::content::MutableContextWrapper::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::content::MutableContextWrapper::MutableContextWrapper(local_ref< android::content::Context > const &a0)
 : object<android::content::MutableContextWrapper>(
 	call_new_object<
 		android::content::MutableContextWrapper::J2CPP_CLASS_NAME,
 		android::content::MutableContextWrapper::J2CPP_METHOD_NAME(0),
-		android::content::MutableContextWrapper::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::content::MutableContextWrapper::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -86,8 +100,8 @@ void android::content::MutableContextWrapper::setBaseContext(local_ref< android:
 		android::content::MutableContextWrapper::J2CPP_CLASS_NAME,
 		android::content::MutableContextWrapper::J2CPP_METHOD_NAME(1),
 		android::content::MutableContextWrapper::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -104,8 +104,8 @@ void android::app::AlarmManager::set(jint a0, jlong a1, local_ref< android::app:
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(1),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::app::AlarmManager::setRepeating(jint a0, jlong a1, jlong a2, local_ref< android::app::PendingIntent > const &a3)
@@ -114,8 +114,8 @@ void android::app::AlarmManager::setRepeating(jint a0, jlong a1, jlong a2, local
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(2),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::app::AlarmManager::setInexactRepeating(jint a0, jlong a1, jlong a2, local_ref< android::app::PendingIntent > const &a3)
@@ -124,8 +124,8 @@ void android::app::AlarmManager::setInexactRepeating(jint a0, jlong a1, jlong a2
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(3),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::app::AlarmManager::cancel(local_ref< android::app::PendingIntent > const &a0)
@@ -134,8 +134,8 @@ void android::app::AlarmManager::cancel(local_ref< android::app::PendingIntent >
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(4),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlarmManager::setTime(jlong a0)
@@ -144,8 +144,8 @@ void android::app::AlarmManager::setTime(jlong a0)
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(5),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::AlarmManager::setTimeZone(local_ref< java::lang::String > const &a0)
@@ -154,8 +154,8 @@ void android::app::AlarmManager::setTimeZone(local_ref< java::lang::String > con
 		android::app::AlarmManager::J2CPP_CLASS_NAME,
 		android::app::AlarmManager::J2CPP_METHOD_NAME(6),
 		android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,14 +11,18 @@
 #define J2CPP_JAVA_BEANS_INDEXEDPROPERTYCHANGEEVENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
 #include <java/beans/PropertyChangeEvent.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventObject.hpp>
 
 
 namespace j2cpp {
@@ -41,7 +45,10 @@ namespace java { namespace beans {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::beans::PropertyChangeEvent>() const;
+		operator local_ref<java::util::EventObject>() const;
 
 
 		IndexedPropertyChangeEvent(local_ref< java::lang::Object > const&, local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&, jint);
@@ -64,9 +71,24 @@ namespace j2cpp {
 
 
 
+java::beans::IndexedPropertyChangeEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::beans::IndexedPropertyChangeEvent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::beans::IndexedPropertyChangeEvent::operator local_ref<java::beans::PropertyChangeEvent>() const
 {
 	return local_ref<java::beans::PropertyChangeEvent>(get_jobject());
+}
+
+java::beans::IndexedPropertyChangeEvent::operator local_ref<java::util::EventObject>() const
+{
+	return local_ref<java::util::EventObject>(get_jobject());
 }
 
 
@@ -75,8 +97,8 @@ java::beans::IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(local_ref< j
 	call_new_object<
 		java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_NAME(0),
-		java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -88,8 +110,8 @@ jint java::beans::IndexedPropertyChangeEvent::getIndex()
 		java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME,
 		java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_NAME(1),
 		java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

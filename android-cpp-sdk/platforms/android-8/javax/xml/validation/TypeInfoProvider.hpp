@@ -80,8 +80,8 @@ local_ref< org::w3c::dom::TypeInfo > javax::xml::validation::TypeInfoProvider::g
 		javax::xml::validation::TypeInfoProvider::J2CPP_CLASS_NAME,
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_NAME(1),
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::w3c::dom::TypeInfo > >
-	(get_jobject());
+		local_ref< org::w3c::dom::TypeInfo >
+	>(get_jobject());
 }
 
 local_ref< org::w3c::dom::TypeInfo > javax::xml::validation::TypeInfoProvider::getAttributeTypeInfo(jint a0)
@@ -90,8 +90,8 @@ local_ref< org::w3c::dom::TypeInfo > javax::xml::validation::TypeInfoProvider::g
 		javax::xml::validation::TypeInfoProvider::J2CPP_CLASS_NAME,
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_NAME(2),
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::w3c::dom::TypeInfo > >
-	(get_jobject(), a0);
+		local_ref< org::w3c::dom::TypeInfo >
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::validation::TypeInfoProvider::isIdAttribute(jint a0)
@@ -100,8 +100,8 @@ jboolean javax::xml::validation::TypeInfoProvider::isIdAttribute(jint a0)
 		javax::xml::validation::TypeInfoProvider::J2CPP_CLASS_NAME,
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_NAME(3),
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean javax::xml::validation::TypeInfoProvider::isSpecified(jint a0)
@@ -110,8 +110,8 @@ jboolean javax::xml::validation::TypeInfoProvider::isSpecified(jint a0)
 		javax::xml::validation::TypeInfoProvider::J2CPP_CLASS_NAME,
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_NAME(4),
 		javax::xml::validation::TypeInfoProvider::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

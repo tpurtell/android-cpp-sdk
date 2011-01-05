@@ -11,6 +11,10 @@
 #define J2CPP_ANDROID_TEST_APPLICATIONTESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
+namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -21,6 +25,10 @@ namespace j2cpp { namespace android { namespace test { class AndroidTestCase; } 
 #include <android/content/Context.hpp>
 #include <android/test/AndroidTestCase.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
+#include <junit/framework/TestCase.hpp>
 
 
 namespace j2cpp {
@@ -49,6 +57,10 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<junit::framework::Test>() const;
+		operator local_ref<junit::framework::Assert>() const;
+		operator local_ref<junit::framework::TestCase>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::test::AndroidTestCase>() const;
 
 
@@ -74,6 +86,26 @@ namespace j2cpp {
 
 
 
+android::test::ApplicationTestCase::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
+android::test::ApplicationTestCase::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
+}
+
+android::test::ApplicationTestCase::operator local_ref<junit::framework::TestCase>() const
+{
+	return local_ref<junit::framework::TestCase>(get_jobject());
+}
+
+android::test::ApplicationTestCase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::test::ApplicationTestCase::operator local_ref<android::test::AndroidTestCase>() const
 {
 	return local_ref<android::test::AndroidTestCase>(get_jobject());
@@ -85,8 +117,8 @@ android::test::ApplicationTestCase::ApplicationTestCase(local_ref< java::lang::C
 	call_new_object<
 		android::test::ApplicationTestCase::J2CPP_CLASS_NAME,
 		android::test::ApplicationTestCase::J2CPP_METHOD_NAME(0),
-		android::test::ApplicationTestCase::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::test::ApplicationTestCase::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -98,8 +130,8 @@ local_ref< android::app::Application > android::test::ApplicationTestCase::getAp
 		android::test::ApplicationTestCase::J2CPP_CLASS_NAME,
 		android::test::ApplicationTestCase::J2CPP_METHOD_NAME(1),
 		android::test::ApplicationTestCase::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::Application > >
-	(get_jobject());
+		local_ref< android::app::Application >
+	>(get_jobject());
 }
 
 
@@ -112,8 +144,8 @@ local_ref< android::content::Context > android::test::ApplicationTestCase::getSy
 		android::test::ApplicationTestCase::J2CPP_CLASS_NAME,
 		android::test::ApplicationTestCase::J2CPP_METHOD_NAME(6),
 		android::test::ApplicationTestCase::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 void android::test::ApplicationTestCase::testApplicationTestCaseSetUpProperly()
@@ -122,8 +154,8 @@ void android::test::ApplicationTestCase::testApplicationTestCaseSetUpProperly()
 		android::test::ApplicationTestCase::J2CPP_CLASS_NAME,
 		android::test::ApplicationTestCase::J2CPP_METHOD_NAME(7),
 		android::test::ApplicationTestCase::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

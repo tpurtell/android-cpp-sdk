@@ -11,14 +11,24 @@
 #define J2CPP_JAVA_UTIL_JAR_JAROUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class DeflaterOutputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipOutputStream; } } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/FilterOutputStream.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/jar/Manifest.hpp>
+#include <java/util/zip/DeflaterOutputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
 #include <java/util/zip/ZipOutputStream.hpp>
 
@@ -44,7 +54,13 @@ namespace java { namespace util { namespace jar {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::zip::DeflaterOutputStream>() const;
 		operator local_ref<java::util::zip::ZipOutputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
+		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::io::OutputStream>() const;
 
 
 		JarOutputStream(local_ref< java::io::OutputStream > const&, local_ref< java::util::jar::Manifest > const&);
@@ -69,9 +85,39 @@ namespace j2cpp {
 
 
 
+java::util::jar::JarOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::util::jar::JarOutputStream::operator local_ref<java::util::zip::DeflaterOutputStream>() const
+{
+	return local_ref<java::util::zip::DeflaterOutputStream>(get_jobject());
+}
+
 java::util::jar::JarOutputStream::operator local_ref<java::util::zip::ZipOutputStream>() const
 {
 	return local_ref<java::util::zip::ZipOutputStream>(get_jobject());
+}
+
+java::util::jar::JarOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+java::util::jar::JarOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
+java::util::jar::JarOutputStream::operator local_ref<java::io::FilterOutputStream>() const
+{
+	return local_ref<java::io::FilterOutputStream>(get_jobject());
+}
+
+java::util::jar::JarOutputStream::operator local_ref<java::io::OutputStream>() const
+{
+	return local_ref<java::io::OutputStream>(get_jobject());
 }
 
 
@@ -80,8 +126,8 @@ java::util::jar::JarOutputStream::JarOutputStream(local_ref< java::io::OutputStr
 	call_new_object<
 		java::util::jar::JarOutputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(0),
-		java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -93,8 +139,8 @@ java::util::jar::JarOutputStream::JarOutputStream(local_ref< java::io::OutputStr
 	call_new_object<
 		java::util::jar::JarOutputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(1),
-		java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -106,8 +152,8 @@ void java::util::jar::JarOutputStream::putNextEntry(local_ref< java::util::zip::
 		java::util::jar::JarOutputStream::J2CPP_CLASS_NAME,
 		java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(2),
 		java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

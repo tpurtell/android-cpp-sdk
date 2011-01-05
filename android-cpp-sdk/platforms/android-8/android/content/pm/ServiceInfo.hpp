@@ -14,15 +14,19 @@
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class PackageItemInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ComponentInfo; } } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/pm/ComponentInfo.hpp>
+#include <android/content/pm/PackageItemInfo.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -54,8 +58,10 @@ namespace android { namespace content { namespace pm {
 		{
 		}
 
-		operator local_ref<android::content::pm::ComponentInfo>() const;
 		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<android::content::pm::PackageItemInfo>() const;
+		operator local_ref<android::content::pm::ComponentInfo>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ServiceInfo();
@@ -86,14 +92,24 @@ namespace j2cpp {
 
 
 
+android::content::pm::ServiceInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jobject());
+}
+
+android::content::pm::ServiceInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
+{
+	return local_ref<android::content::pm::PackageItemInfo>(get_jobject());
+}
+
 android::content::pm::ServiceInfo::operator local_ref<android::content::pm::ComponentInfo>() const
 {
 	return local_ref<android::content::pm::ComponentInfo>(get_jobject());
 }
 
-android::content::pm::ServiceInfo::operator local_ref<android::os::Parcelable>() const
+android::content::pm::ServiceInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::os::Parcelable>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -102,8 +118,8 @@ android::content::pm::ServiceInfo::ServiceInfo()
 	call_new_object<
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(0),
-		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , permission(get_jobject())
 {
@@ -116,8 +132,8 @@ android::content::pm::ServiceInfo::ServiceInfo(local_ref< android::content::pm::
 	call_new_object<
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(1),
-		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , permission(get_jobject())
 {
@@ -130,8 +146,8 @@ void android::content::pm::ServiceInfo::dump(local_ref< android::util::Printer >
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(2),
 		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::content::pm::ServiceInfo::toString()
@@ -140,8 +156,8 @@ local_ref< java::lang::String > android::content::pm::ServiceInfo::toString()
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(3),
 		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::content::pm::ServiceInfo::describeContents()
@@ -150,8 +166,8 @@ jint android::content::pm::ServiceInfo::describeContents()
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(4),
 		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::content::pm::ServiceInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -160,8 +176,8 @@ void android::content::pm::ServiceInfo::writeToParcel(local_ref< android::os::Pa
 		android::content::pm::ServiceInfo::J2CPP_CLASS_NAME,
 		android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(5),
 		android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

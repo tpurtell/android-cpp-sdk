@@ -88,8 +88,8 @@ javax::crypto::spec::DHParameterSpec::DHParameterSpec(local_ref< java::math::Big
 	call_new_object<
 		javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -101,8 +101,8 @@ javax::crypto::spec::DHParameterSpec::DHParameterSpec(local_ref< java::math::Big
 	call_new_object<
 		javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(1),
-		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }
@@ -114,8 +114,8 @@ local_ref< java::math::BigInteger > javax::crypto::spec::DHParameterSpec::getP()
 		javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 local_ref< java::math::BigInteger > javax::crypto::spec::DHParameterSpec::getG()
@@ -124,8 +124,8 @@ local_ref< java::math::BigInteger > javax::crypto::spec::DHParameterSpec::getG()
 		javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(3),
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::math::BigInteger > >
-	(get_jobject());
+		local_ref< java::math::BigInteger >
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::DHParameterSpec::getL()
@@ -134,8 +134,8 @@ jint javax::crypto::spec::DHParameterSpec::getL()
 		javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(4),
 		javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

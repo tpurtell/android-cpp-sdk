@@ -108,6 +108,7 @@ namespace android { namespace media { namespace audiofx {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::media::audiofx::AudioEffect>() const;
 
 
@@ -152,8 +153,8 @@ void android::media::audiofx::BassBoost_::OnParameterChangeListener::onParameter
 		android::media::audiofx::BassBoost_::OnParameterChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost_::OnParameterChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::BassBoost_::OnParameterChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -172,8 +173,8 @@ android::media::audiofx::BassBoost_::Settings::Settings()
 	call_new_object<
 		android::media::audiofx::BassBoost_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , strength(get_jobject())
 {
@@ -186,8 +187,8 @@ android::media::audiofx::BassBoost_::Settings::Settings(local_ref< java::lang::S
 	call_new_object<
 		android::media::audiofx::BassBoost_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , strength(get_jobject())
 {
@@ -200,8 +201,8 @@ local_ref< java::lang::String > android::media::audiofx::BassBoost_::Settings::t
 		android::media::audiofx::BassBoost_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::BassBoost_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -214,6 +215,11 @@ J2CPP_DEFINE_FIELD(android::media::audiofx::BassBoost_::Settings,0,"strength","S
 
 
 
+android::media::audiofx::BassBoost::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::media::audiofx::BassBoost::operator local_ref<android::media::audiofx::AudioEffect>() const
 {
 	return local_ref<android::media::audiofx::AudioEffect>(get_jobject());
@@ -225,8 +231,8 @@ android::media::audiofx::BassBoost::BassBoost(jint a0, jint a1)
 	call_new_object<
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -238,8 +244,8 @@ jboolean android::media::audiofx::BassBoost::getStrengthSupported()
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::media::audiofx::BassBoost::setStrength(jshort a0)
@@ -248,8 +254,8 @@ void android::media::audiofx::BassBoost::setStrength(jshort a0)
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::BassBoost::getRoundedStrength()
@@ -258,8 +264,8 @@ jshort android::media::audiofx::BassBoost::getRoundedStrength()
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(3), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::BassBoost::setParameterListener(local_ref< android::media::audiofx::BassBoost_::OnParameterChangeListener > const &a0)
@@ -268,8 +274,8 @@ void android::media::audiofx::BassBoost::setParameterListener(local_ref< android
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::audiofx::BassBoost_::Settings > android::media::audiofx::BassBoost::getProperties()
@@ -278,8 +284,8 @@ local_ref< android::media::audiofx::BassBoost_::Settings > android::media::audio
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::media::audiofx::BassBoost_::Settings > >
-	(get_jobject());
+		local_ref< android::media::audiofx::BassBoost_::Settings >
+	>(get_jobject());
 }
 
 void android::media::audiofx::BassBoost::setProperties(local_ref< android::media::audiofx::BassBoost_::Settings > const &a0)
@@ -288,8 +294,8 @@ void android::media::audiofx::BassBoost::setProperties(local_ref< android::media
 		android::media::audiofx::BassBoost::J2CPP_CLASS_NAME,
 		android::media::audiofx::BassBoost::J2CPP_METHOD_NAME(6),
 		android::media::audiofx::BassBoost::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

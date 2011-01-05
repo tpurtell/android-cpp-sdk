@@ -75,8 +75,8 @@ java::net::CacheRequest::CacheRequest()
 	call_new_object<
 		java::net::CacheRequest::J2CPP_CLASS_NAME,
 		java::net::CacheRequest::J2CPP_METHOD_NAME(0),
-		java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -88,8 +88,8 @@ void java::net::CacheRequest::abort()
 		java::net::CacheRequest::J2CPP_CLASS_NAME,
 		java::net::CacheRequest::J2CPP_METHOD_NAME(1),
 		java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::io::OutputStream > java::net::CacheRequest::getBody()
@@ -98,8 +98,8 @@ local_ref< java::io::OutputStream > java::net::CacheRequest::getBody()
 		java::net::CacheRequest::J2CPP_CLASS_NAME,
 		java::net::CacheRequest::J2CPP_METHOD_NAME(2),
 		java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 

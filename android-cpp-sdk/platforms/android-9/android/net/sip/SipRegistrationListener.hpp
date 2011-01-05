@@ -76,8 +76,8 @@ void android::net::sip::SipRegistrationListener::onRegistering(local_ref< java::
 		android::net::sip::SipRegistrationListener::J2CPP_CLASS_NAME,
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_NAME(0),
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::sip::SipRegistrationListener::onRegistrationDone(local_ref< java::lang::String > const &a0, jlong a1)
@@ -86,8 +86,8 @@ void android::net::sip::SipRegistrationListener::onRegistrationDone(local_ref< j
 		android::net::sip::SipRegistrationListener::J2CPP_CLASS_NAME,
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::sip::SipRegistrationListener::onRegistrationFailed(local_ref< java::lang::String > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -96,8 +96,8 @@ void android::net::sip::SipRegistrationListener::onRegistrationFailed(local_ref<
 		android::net::sip::SipRegistrationListener::J2CPP_CLASS_NAME,
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipRegistrationListener::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

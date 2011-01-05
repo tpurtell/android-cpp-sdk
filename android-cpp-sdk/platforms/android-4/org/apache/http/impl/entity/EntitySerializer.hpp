@@ -11,11 +11,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_ENTITY_ENTITYSERIALIZER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class ContentLengthStrategy; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -83,8 +83,8 @@ org::apache::http::impl::entity::EntitySerializer::EntitySerializer(local_ref< o
 	call_new_object<
 		org::apache::http::impl::entity::EntitySerializer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::EntitySerializer::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::entity::EntitySerializer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::entity::EntitySerializer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -97,8 +97,8 @@ void org::apache::http::impl::entity::EntitySerializer::serialize(local_ref< org
 		org::apache::http::impl::entity::EntitySerializer::J2CPP_CLASS_NAME,
 		org::apache::http::impl::entity::EntitySerializer::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::entity::EntitySerializer::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -77,8 +77,8 @@ jint java::lang::CharSequence::length()
 		java::lang::CharSequence::J2CPP_CLASS_NAME,
 		java::lang::CharSequence::J2CPP_METHOD_NAME(0),
 		java::lang::CharSequence::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jchar java::lang::CharSequence::charAt(jint a0)
@@ -87,8 +87,8 @@ jchar java::lang::CharSequence::charAt(jint a0)
 		java::lang::CharSequence::J2CPP_CLASS_NAME,
 		java::lang::CharSequence::J2CPP_METHOD_NAME(1),
 		java::lang::CharSequence::J2CPP_METHOD_SIGNATURE(1), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > java::lang::CharSequence::subSequence(jint a0, jint a1)
@@ -97,8 +97,8 @@ local_ref< java::lang::CharSequence > java::lang::CharSequence::subSequence(jint
 		java::lang::CharSequence::J2CPP_CLASS_NAME,
 		java::lang::CharSequence::J2CPP_METHOD_NAME(2),
 		java::lang::CharSequence::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > java::lang::CharSequence::toString()
@@ -107,8 +107,8 @@ local_ref< java::lang::String > java::lang::CharSequence::toString()
 		java::lang::CharSequence::J2CPP_CLASS_NAME,
 		java::lang::CharSequence::J2CPP_METHOD_NAME(3),
 		java::lang::CharSequence::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

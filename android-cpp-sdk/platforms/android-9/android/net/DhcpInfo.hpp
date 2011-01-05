@@ -109,8 +109,8 @@ android::net::DhcpInfo::DhcpInfo()
 	call_new_object<
 		android::net::DhcpInfo::J2CPP_CLASS_NAME,
 		android::net::DhcpInfo::J2CPP_METHOD_NAME(0),
-		android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , ipAddress(get_jobject())
 , gateway(get_jobject())
@@ -129,8 +129,8 @@ local_ref< java::lang::String > android::net::DhcpInfo::toString()
 		android::net::DhcpInfo::J2CPP_CLASS_NAME,
 		android::net::DhcpInfo::J2CPP_METHOD_NAME(1),
 		android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::DhcpInfo::describeContents()
@@ -139,8 +139,8 @@ jint android::net::DhcpInfo::describeContents()
 		android::net::DhcpInfo::J2CPP_CLASS_NAME,
 		android::net::DhcpInfo::J2CPP_METHOD_NAME(2),
 		android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::net::DhcpInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -149,8 +149,8 @@ void android::net::DhcpInfo::writeToParcel(local_ref< android::os::Parcel > cons
 		android::net::DhcpInfo::J2CPP_CLASS_NAME,
 		android::net::DhcpInfo::J2CPP_METHOD_NAME(3),
 		android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

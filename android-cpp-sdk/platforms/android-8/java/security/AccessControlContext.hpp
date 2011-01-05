@@ -85,8 +85,8 @@ java::security::AccessControlContext::AccessControlContext(local_ref< java::secu
 	call_new_object<
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(0),
-		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -98,8 +98,8 @@ java::security::AccessControlContext::AccessControlContext(local_ref< array< loc
 	call_new_object<
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(1),
-		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -111,8 +111,8 @@ void java::security::AccessControlContext::checkPermission(local_ref< java::secu
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(2),
 		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean java::security::AccessControlContext::equals(local_ref< java::lang::Object > const &a0)
@@ -121,8 +121,8 @@ jboolean java::security::AccessControlContext::equals(local_ref< java::lang::Obj
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(3),
 		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::DomainCombiner > java::security::AccessControlContext::getDomainCombiner()
@@ -131,8 +131,8 @@ local_ref< java::security::DomainCombiner > java::security::AccessControlContext
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(4),
 		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::security::DomainCombiner > >
-	(get_jobject());
+		local_ref< java::security::DomainCombiner >
+	>(get_jobject());
 }
 
 jint java::security::AccessControlContext::hashCode()
@@ -141,8 +141,8 @@ jint java::security::AccessControlContext::hashCode()
 		java::security::AccessControlContext::J2CPP_CLASS_NAME,
 		java::security::AccessControlContext::J2CPP_METHOD_NAME(5),
 		java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

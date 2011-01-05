@@ -75,8 +75,8 @@ local_ref< android::view::View > android::webkit::PluginStub::getEmbeddedView(ji
 		android::webkit::PluginStub::J2CPP_CLASS_NAME,
 		android::webkit::PluginStub::J2CPP_METHOD_NAME(0),
 		android::webkit::PluginStub::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::view::View > android::webkit::PluginStub::getFullScreenView(jint a0, local_ref< android::content::Context > const &a1)
@@ -85,8 +85,8 @@ local_ref< android::view::View > android::webkit::PluginStub::getFullScreenView(
 		android::webkit::PluginStub::J2CPP_CLASS_NAME,
 		android::webkit::PluginStub::J2CPP_METHOD_NAME(1),
 		android::webkit::PluginStub::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1);
 }
 
 

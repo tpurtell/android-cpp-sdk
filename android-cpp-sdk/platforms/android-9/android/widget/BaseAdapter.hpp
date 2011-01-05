@@ -16,12 +16,14 @@ namespace j2cpp { namespace android { namespace database { class DataSetObserver
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; } } }
 
 
 #include <android/database/DataSetObserver.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/Adapter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <android/widget/SpinnerAdapter.hpp>
 #include <java/lang/Object.hpp>
@@ -59,6 +61,7 @@ namespace android { namespace widget {
 
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::Adapter>() const;
 		operator local_ref<android::widget::SpinnerAdapter>() const;
 
 
@@ -102,6 +105,11 @@ android::widget::BaseAdapter::operator local_ref<android::widget::ListAdapter>()
 	return local_ref<android::widget::ListAdapter>(get_jobject());
 }
 
+android::widget::BaseAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
 android::widget::BaseAdapter::operator local_ref<android::widget::SpinnerAdapter>() const
 {
 	return local_ref<android::widget::SpinnerAdapter>(get_jobject());
@@ -113,8 +121,8 @@ android::widget::BaseAdapter::BaseAdapter()
 	call_new_object<
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +134,8 @@ jboolean android::widget::BaseAdapter::hasStableIds()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(1),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::BaseAdapter::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -136,8 +144,8 @@ void android::widget::BaseAdapter::registerDataSetObserver(local_ref< android::d
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(2),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::BaseAdapter::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -146,8 +154,8 @@ void android::widget::BaseAdapter::unregisterDataSetObserver(local_ref< android:
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::BaseAdapter::notifyDataSetChanged()
@@ -156,8 +164,8 @@ void android::widget::BaseAdapter::notifyDataSetChanged()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::BaseAdapter::notifyDataSetInvalidated()
@@ -166,8 +174,8 @@ void android::widget::BaseAdapter::notifyDataSetInvalidated()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::BaseAdapter::areAllItemsEnabled()
@@ -176,8 +184,8 @@ jboolean android::widget::BaseAdapter::areAllItemsEnabled()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(6),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::widget::BaseAdapter::isEnabled(jint a0)
@@ -186,8 +194,8 @@ jboolean android::widget::BaseAdapter::isEnabled(jint a0)
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(7),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::widget::BaseAdapter::getDropDownView(jint a0, local_ref< android::view::View > const &a1, local_ref< android::view::ViewGroup > const &a2)
@@ -196,8 +204,8 @@ local_ref< android::view::View > android::widget::BaseAdapter::getDropDownView(j
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(8),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::widget::BaseAdapter::getItemViewType(jint a0)
@@ -206,8 +214,8 @@ jint android::widget::BaseAdapter::getItemViewType(jint a0)
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(9),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::BaseAdapter::getViewTypeCount()
@@ -216,8 +224,8 @@ jint android::widget::BaseAdapter::getViewTypeCount()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(10),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::BaseAdapter::isEmpty()
@@ -226,8 +234,8 @@ jboolean android::widget::BaseAdapter::isEmpty()
 		android::widget::BaseAdapter::J2CPP_CLASS_NAME,
 		android::widget::BaseAdapter::J2CPP_METHOD_NAME(11),
 		android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

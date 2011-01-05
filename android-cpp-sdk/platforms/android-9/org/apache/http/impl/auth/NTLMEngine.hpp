@@ -76,8 +76,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::NTLMEngine::gener
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_METHOD_NAME(0),
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::auth::NTLMEngine::generateType3Msg(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
@@ -86,8 +86,8 @@ local_ref< java::lang::String > org::apache::http::impl::auth::NTLMEngine::gener
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_CLASS_NAME,
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::auth::NTLMEngine::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

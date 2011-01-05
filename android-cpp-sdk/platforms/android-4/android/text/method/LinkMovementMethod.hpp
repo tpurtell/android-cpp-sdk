@@ -17,6 +17,7 @@ namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class ScrollingMovementMethod; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class MovementMethod; } } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/text/Spannable.hpp>
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -57,6 +59,8 @@ namespace android { namespace text { namespace method {
 		}
 
 		operator local_ref<android::text::method::ScrollingMovementMethod>() const;
+		operator local_ref<android::text::method::MovementMethod>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		LinkMovementMethod();
@@ -90,14 +94,24 @@ android::text::method::LinkMovementMethod::operator local_ref<android::text::met
 	return local_ref<android::text::method::ScrollingMovementMethod>(get_jobject());
 }
 
+android::text::method::LinkMovementMethod::operator local_ref<android::text::method::MovementMethod>() const
+{
+	return local_ref<android::text::method::MovementMethod>(get_jobject());
+}
+
+android::text::method::LinkMovementMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::text::method::LinkMovementMethod::LinkMovementMethod()
 : object<android::text::method::LinkMovementMethod>(
 	call_new_object<
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(0),
-		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -109,8 +123,8 @@ jboolean android::text::method::LinkMovementMethod::onKeyDown(local_ref< android
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(1),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -123,8 +137,8 @@ jboolean android::text::method::LinkMovementMethod::onKeyUp(local_ref< android::
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(6),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::LinkMovementMethod::onTouchEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -133,8 +147,8 @@ jboolean android::text::method::LinkMovementMethod::onTouchEvent(local_ref< andr
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(7),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::LinkMovementMethod::initialize(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
@@ -143,8 +157,8 @@ void android::text::method::LinkMovementMethod::initialize(local_ref< android::w
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(8),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::text::method::LinkMovementMethod::onTakeFocus(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2)
@@ -153,8 +167,8 @@ void android::text::method::LinkMovementMethod::onTakeFocus(local_ref< android::
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(9),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::text::method::MovementMethod > android::text::method::LinkMovementMethod::getInstance()
@@ -163,8 +177,8 @@ local_ref< android::text::method::MovementMethod > android::text::method::LinkMo
 		android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(10),
 		android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::text::method::MovementMethod > >
-	();
+		local_ref< android::text::method::MovementMethod >
+	>();
 }
 
 

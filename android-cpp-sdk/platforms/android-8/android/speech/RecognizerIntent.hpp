@@ -130,8 +130,8 @@ local_ref< android::content::Intent > android::speech::RecognizerIntent::getVoic
 		android::speech::RecognizerIntent::J2CPP_CLASS_NAME,
 		android::speech::RecognizerIntent::J2CPP_METHOD_NAME(1),
 		android::speech::RecognizerIntent::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::Intent > >
-	(a0);
+		local_ref< android::content::Intent >
+	>(a0);
 }
 
 

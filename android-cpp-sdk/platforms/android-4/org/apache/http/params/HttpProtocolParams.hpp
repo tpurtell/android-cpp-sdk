@@ -12,10 +12,10 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreProtocolPNames; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreProtocolPNames; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -105,8 +105,8 @@ local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::g
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void org::apache::http::params::HttpProtocolParams::setHttpElementCharset(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< java::lang::String > const &a1)
@@ -115,8 +115,8 @@ void org::apache::http::params::HttpProtocolParams::setHttpElementCharset(local_
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::getContentCharset(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -125,8 +125,8 @@ local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::g
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void org::apache::http::params::HttpProtocolParams::setContentCharset(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< java::lang::String > const &a1)
@@ -135,8 +135,8 @@ void org::apache::http::params::HttpProtocolParams::setContentCharset(local_ref<
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::params::HttpProtocolParams::getVersion(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -145,8 +145,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::params::HttpP
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(a0);
+		local_ref< org::apache::http::ProtocolVersion >
+	>(a0);
 }
 
 void org::apache::http::params::HttpProtocolParams::setVersion(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::ProtocolVersion > const &a1)
@@ -155,8 +155,8 @@ void org::apache::http::params::HttpProtocolParams::setVersion(local_ref< org::a
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::getUserAgent(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -165,8 +165,8 @@ local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::g
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(7),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void org::apache::http::params::HttpProtocolParams::setUserAgent(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< java::lang::String > const &a1)
@@ -175,8 +175,8 @@ void org::apache::http::params::HttpProtocolParams::setUserAgent(local_ref< org:
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(8),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean org::apache::http::params::HttpProtocolParams::useExpectContinue(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -185,8 +185,8 @@ jboolean org::apache::http::params::HttpProtocolParams::useExpectContinue(local_
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(9),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::params::HttpProtocolParams::setUseExpectContinue(local_ref< org::apache::http::params::HttpParams > const &a0, jboolean a1)
@@ -195,8 +195,8 @@ void org::apache::http::params::HttpProtocolParams::setUseExpectContinue(local_r
 		org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME,
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(10),
 		org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

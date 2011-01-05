@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICLINEPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class LineParser; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class ParserCursor; } } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
@@ -69,8 +69,8 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::message::LineParser>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BasicLineParser(local_ref< org::apache::http::ProtocolVersion > const&);
@@ -106,14 +106,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::message::BasicLineParser::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::message::BasicLineParser::operator local_ref<org::apache::http::message::LineParser>() const
 {
 	return local_ref<org::apache::http::message::LineParser>(get_jobject());
+}
+
+org::apache::http::message::BasicLineParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -122,8 +122,8 @@ org::apache::http::message::BasicLineParser::BasicLineParser(local_ref< org::apa
 	call_new_object<
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -135,8 +135,8 @@ org::apache::http::message::BasicLineParser::BasicLineParser()
 	call_new_object<
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(1),
-		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(1)>
-	()
+		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(1)
+	>()
 )
 {
 }
@@ -148,8 +148,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::Basi
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(a0, a1);
+		local_ref< org::apache::http::ProtocolVersion >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::BasicLineParser::parseProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -158,8 +158,8 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::Basi
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< org::apache::http::ProtocolVersion > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::ProtocolVersion >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -169,8 +169,8 @@ jboolean org::apache::http::message::BasicLineParser::hasProtocolVersion(local_r
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::RequestLine > org::apache::http::message::BasicLineParser::parseRequestLine(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::message::LineParser > const &a1)
@@ -179,8 +179,8 @@ local_ref< org::apache::http::RequestLine > org::apache::http::message::BasicLin
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::RequestLine > >
-	(a0, a1);
+		local_ref< org::apache::http::RequestLine >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::RequestLine > org::apache::http::message::BasicLineParser::parseRequestLine(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -189,8 +189,8 @@ local_ref< org::apache::http::RequestLine > org::apache::http::message::BasicLin
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::RequestLine > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::RequestLine >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -200,8 +200,8 @@ local_ref< org::apache::http::StatusLine > org::apache::http::message::BasicLine
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(9),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::apache::http::StatusLine > >
-	(a0, a1);
+		local_ref< org::apache::http::StatusLine >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::StatusLine > org::apache::http::message::BasicLineParser::parseStatusLine(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
@@ -210,8 +210,8 @@ local_ref< org::apache::http::StatusLine > org::apache::http::message::BasicLine
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< org::apache::http::StatusLine > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::StatusLine >
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -221,8 +221,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::BasicLinePars
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(12),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< org::apache::http::Header > >
-	(a0, a1);
+		local_ref< org::apache::http::Header >
+	>(a0, a1);
 }
 
 local_ref< org::apache::http::Header > org::apache::http::message::BasicLineParser::parseHeader(local_ref< org::apache::http::util::CharArrayBuffer > const &a0)
@@ -231,8 +231,8 @@ local_ref< org::apache::http::Header > org::apache::http::message::BasicLinePars
 		org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(13),
 		org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::Header >
+	>(get_jobject(), a0);
 }
 
 

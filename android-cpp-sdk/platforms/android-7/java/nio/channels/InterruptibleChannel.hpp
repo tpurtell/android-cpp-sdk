@@ -11,10 +11,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_INTERRUPTIBLECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/nio/channels/Channel.hpp>
 
@@ -38,6 +40,7 @@ namespace java { namespace nio { namespace channels {
 		{
 		}
 
+		operator local_ref<java::io::Closeable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::nio::channels::Channel>() const;
 
@@ -62,6 +65,11 @@ namespace j2cpp {
 
 
 
+java::nio::channels::InterruptibleChannel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
 java::nio::channels::InterruptibleChannel::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -78,8 +86,8 @@ void java::nio::channels::InterruptibleChannel::close()
 		java::nio::channels::InterruptibleChannel::J2CPP_CLASS_NAME,
 		java::nio::channels::InterruptibleChannel::J2CPP_METHOD_NAME(0),
 		java::nio::channels::InterruptibleChannel::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -12,11 +12,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/BasicPermission.hpp>
+#include <java/security/Guard.hpp>
+#include <java/security/Permission.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +47,11 @@ namespace java { namespace io {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Permission>() const;
 		operator local_ref<java::security::BasicPermission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		SerializablePermission(local_ref< java::lang::String > const&);
@@ -62,9 +74,29 @@ namespace j2cpp {
 
 
 
+java::io::SerializablePermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::io::SerializablePermission::operator local_ref<java::security::Permission>() const
+{
+	return local_ref<java::security::Permission>(get_jobject());
+}
+
 java::io::SerializablePermission::operator local_ref<java::security::BasicPermission>() const
 {
 	return local_ref<java::security::BasicPermission>(get_jobject());
+}
+
+java::io::SerializablePermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jobject());
+}
+
+java::io::SerializablePermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -73,8 +105,8 @@ java::io::SerializablePermission::SerializablePermission(local_ref< java::lang::
 	call_new_object<
 		java::io::SerializablePermission::J2CPP_CLASS_NAME,
 		java::io::SerializablePermission::J2CPP_METHOD_NAME(0),
-		java::io::SerializablePermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::io::SerializablePermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -86,8 +118,8 @@ java::io::SerializablePermission::SerializablePermission(local_ref< java::lang::
 	call_new_object<
 		java::io::SerializablePermission::J2CPP_CLASS_NAME,
 		java::io::SerializablePermission::J2CPP_METHOD_NAME(1),
-		java::io::SerializablePermission::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::io::SerializablePermission::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }

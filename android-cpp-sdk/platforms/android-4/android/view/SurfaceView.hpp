@@ -11,20 +11,26 @@
 #define J2CPP_ANDROID_VIEW_SURFACEVIEW_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Region; } } }
-namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Region; } } }
+namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Region.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/SurfaceHolder.hpp>
 #include <android/view/View.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -58,7 +64,10 @@ namespace android { namespace view {
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
 		operator local_ref<android::view::View>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SurfaceView(local_ref< android::content::Context > const&);
@@ -85,9 +94,24 @@ namespace j2cpp {
 
 
 
+android::view::SurfaceView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::view::SurfaceView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
 android::view::SurfaceView::operator local_ref<android::view::View>() const
 {
 	return local_ref<android::view::View>(get_jobject());
+}
+
+android::view::SurfaceView::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -96,8 +120,8 @@ android::view::SurfaceView::SurfaceView(local_ref< android::content::Context > c
 	call_new_object<
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(0),
-		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -109,8 +133,8 @@ android::view::SurfaceView::SurfaceView(local_ref< android::content::Context > c
 	call_new_object<
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(1),
-		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -122,8 +146,8 @@ android::view::SurfaceView::SurfaceView(local_ref< android::content::Context > c
 	call_new_object<
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(2),
-		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -135,8 +159,8 @@ local_ref< android::view::SurfaceHolder > android::view::SurfaceView::getHolder(
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(3),
 		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::SurfaceHolder > >
-	(get_jobject());
+		local_ref< android::view::SurfaceHolder >
+	>(get_jobject());
 }
 
 
@@ -151,8 +175,8 @@ jboolean android::view::SurfaceView::gatherTransparentRegion(local_ref< android:
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(10),
 		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::view::SurfaceView::draw(local_ref< android::graphics::Canvas > const &a0)
@@ -161,8 +185,8 @@ void android::view::SurfaceView::draw(local_ref< android::graphics::Canvas > con
 		android::view::SurfaceView::J2CPP_CLASS_NAME,
 		android::view::SurfaceView::J2CPP_METHOD_NAME(11),
 		android::view::SurfaceView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -11,8 +11,8 @@
 #define J2CPP_ORG_APACHE_HTTP_IO_HTTPMESSAGEWRITER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -73,8 +73,8 @@ void org::apache::http::io::HttpMessageWriter::write(local_ref< org::apache::htt
 		org::apache::http::io::HttpMessageWriter::J2CPP_CLASS_NAME,
 		org::apache::http::io::HttpMessageWriter::J2CPP_METHOD_NAME(0),
 		org::apache::http::io::HttpMessageWriter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

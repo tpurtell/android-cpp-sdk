@@ -84,8 +84,8 @@ java::util::concurrent::CountDownLatch::CountDownLatch(jint a0)
 	call_new_object<
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -97,8 +97,8 @@ void java::util::concurrent::CountDownLatch::await()
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::concurrent::CountDownLatch::await(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -107,8 +107,8 @@ jboolean java::util::concurrent::CountDownLatch::await(jlong a0, local_ref< java
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::concurrent::CountDownLatch::countDown()
@@ -117,8 +117,8 @@ void java::util::concurrent::CountDownLatch::countDown()
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong java::util::concurrent::CountDownLatch::getCount()
@@ -127,8 +127,8 @@ jlong java::util::concurrent::CountDownLatch::getCount()
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::util::concurrent::CountDownLatch::toString()
@@ -137,8 +137,8 @@ local_ref< java::lang::String > java::util::concurrent::CountDownLatch::toString
 		java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME,
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

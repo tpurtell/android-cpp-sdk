@@ -14,6 +14,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 
 #include <java/lang/Object.hpp>
 #include <org/apache/http/HttpClientConnection.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpConnectionMetrics.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
 #include <org/apache/http/HttpRequest.hpp>
@@ -63,6 +65,7 @@ namespace org { namespace apache { namespace http { namespace impl {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
 		operator local_ref<org::apache::http::HttpClientConnection>() const;
 
 
@@ -100,6 +103,11 @@ org::apache::http::impl::AbstractHttpClientConnection::operator local_ref<java::
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+org::apache::http::impl::AbstractHttpClientConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jobject());
+}
+
 org::apache::http::impl::AbstractHttpClientConnection::operator local_ref<org::apache::http::HttpClientConnection>() const
 {
 	return local_ref<org::apache::http::HttpClientConnection>(get_jobject());
@@ -111,8 +119,8 @@ org::apache::http::impl::AbstractHttpClientConnection::AbstractHttpClientConnect
 	call_new_object<
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -131,8 +139,8 @@ jboolean org::apache::http::impl::AbstractHttpClientConnection::isResponseAvaila
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(8),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::AbstractHttpClientConnection::sendRequestHeader(local_ref< org::apache::http::HttpRequest > const &a0)
@@ -141,8 +149,8 @@ void org::apache::http::impl::AbstractHttpClientConnection::sendRequestHeader(lo
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(9),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::AbstractHttpClientConnection::sendRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const &a0)
@@ -151,8 +159,8 @@ void org::apache::http::impl::AbstractHttpClientConnection::sendRequestEntity(lo
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(10),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -162,8 +170,8 @@ void org::apache::http::impl::AbstractHttpClientConnection::flush()
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(12),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::AbstractHttpClientConnection::receiveResponseHeader()
@@ -172,8 +180,8 @@ local_ref< org::apache::http::HttpResponse > org::apache::http::impl::AbstractHt
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(13),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::apache::http::HttpResponse > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpResponse >
+	>(get_jobject());
 }
 
 void org::apache::http::impl::AbstractHttpClientConnection::receiveResponseEntity(local_ref< org::apache::http::HttpResponse > const &a0)
@@ -182,8 +190,8 @@ void org::apache::http::impl::AbstractHttpClientConnection::receiveResponseEntit
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(14),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::impl::AbstractHttpClientConnection::isStale()
@@ -192,8 +200,8 @@ jboolean org::apache::http::impl::AbstractHttpClientConnection::isStale()
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(15),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::HttpConnectionMetrics > org::apache::http::impl::AbstractHttpClientConnection::getMetrics()
@@ -202,8 +210,8 @@ local_ref< org::apache::http::HttpConnectionMetrics > org::apache::http::impl::A
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME,
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(16),
 		org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< org::apache::http::HttpConnectionMetrics > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpConnectionMetrics >
+	>(get_jobject());
 }
 
 

@@ -45,8 +45,8 @@ namespace android { namespace view { namespace animation {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::view::animation::Interpolator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AccelerateInterpolator();
@@ -72,14 +72,14 @@ namespace j2cpp {
 
 
 
-android::view::animation::AccelerateInterpolator::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 android::view::animation::AccelerateInterpolator::operator local_ref<android::view::animation::Interpolator>() const
 {
 	return local_ref<android::view::animation::Interpolator>(get_jobject());
+}
+
+android::view::animation::AccelerateInterpolator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -88,8 +88,8 @@ android::view::animation::AccelerateInterpolator::AccelerateInterpolator()
 	call_new_object<
 		android::view::animation::AccelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_NAME(0),
-		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -101,8 +101,8 @@ android::view::animation::AccelerateInterpolator::AccelerateInterpolator(jfloat 
 	call_new_object<
 		android::view::animation::AccelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_NAME(1),
-		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -114,8 +114,8 @@ android::view::animation::AccelerateInterpolator::AccelerateInterpolator(local_r
 	call_new_object<
 		android::view::animation::AccelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_NAME(2),
-		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -127,8 +127,8 @@ jfloat android::view::animation::AccelerateInterpolator::getInterpolation(jfloat
 		android::view::animation::AccelerateInterpolator::J2CPP_CLASS_NAME,
 		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_NAME(3),
 		android::view::animation::AccelerateInterpolator::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 

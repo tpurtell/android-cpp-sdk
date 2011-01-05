@@ -73,8 +73,8 @@ jint java::sql::Savepoint::getSavepointId()
 		java::sql::Savepoint::J2CPP_CLASS_NAME,
 		java::sql::Savepoint::J2CPP_METHOD_NAME(0),
 		java::sql::Savepoint::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::Savepoint::getSavepointName()
@@ -83,8 +83,8 @@ local_ref< java::lang::String > java::sql::Savepoint::getSavepointName()
 		java::sql::Savepoint::J2CPP_CLASS_NAME,
 		java::sql::Savepoint::J2CPP_METHOD_NAME(1),
 		java::sql::Savepoint::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

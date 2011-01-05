@@ -107,8 +107,8 @@ java::util::zip::Inflater::Inflater()
 	call_new_object<
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(0),
-		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -120,8 +120,8 @@ java::util::zip::Inflater::Inflater(jboolean a0)
 	call_new_object<
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(1),
-		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -133,8 +133,8 @@ void java::util::zip::Inflater::end()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(2),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -144,8 +144,8 @@ jboolean java::util::zip::Inflater::finished()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(4),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::util::zip::Inflater::getAdler()
@@ -154,8 +154,8 @@ jint java::util::zip::Inflater::getAdler()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(5),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong java::util::zip::Inflater::getBytesRead()
@@ -164,8 +164,8 @@ jlong java::util::zip::Inflater::getBytesRead()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(6),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::util::zip::Inflater::getBytesWritten()
@@ -174,8 +174,8 @@ jlong java::util::zip::Inflater::getBytesWritten()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(7),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jint java::util::zip::Inflater::getRemaining()
@@ -184,8 +184,8 @@ jint java::util::zip::Inflater::getRemaining()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(8),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::Inflater::getTotalIn()
@@ -194,8 +194,8 @@ jint java::util::zip::Inflater::getTotalIn()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(9),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::Inflater::getTotalOut()
@@ -204,8 +204,8 @@ jint java::util::zip::Inflater::getTotalOut()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(10),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::zip::Inflater::inflate(local_ref< array<jbyte,1> > const &a0)
@@ -214,8 +214,8 @@ jint java::util::zip::Inflater::inflate(local_ref< array<jbyte,1> > const &a0)
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(11),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::util::zip::Inflater::inflate(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -224,8 +224,8 @@ jint java::util::zip::Inflater::inflate(local_ref< array<jbyte,1> > const &a0, j
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(12),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean java::util::zip::Inflater::needsDictionary()
@@ -234,8 +234,8 @@ jboolean java::util::zip::Inflater::needsDictionary()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(13),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::util::zip::Inflater::needsInput()
@@ -244,8 +244,8 @@ jboolean java::util::zip::Inflater::needsInput()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(14),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::zip::Inflater::reset()
@@ -254,8 +254,8 @@ void java::util::zip::Inflater::reset()
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(15),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::zip::Inflater::setDictionary(local_ref< array<jbyte,1> > const &a0)
@@ -264,8 +264,8 @@ void java::util::zip::Inflater::setDictionary(local_ref< array<jbyte,1> > const 
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(16),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Inflater::setDictionary(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -274,8 +274,8 @@ void java::util::zip::Inflater::setDictionary(local_ref< array<jbyte,1> > const 
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(17),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void java::util::zip::Inflater::setInput(local_ref< array<jbyte,1> > const &a0)
@@ -284,8 +284,8 @@ void java::util::zip::Inflater::setInput(local_ref< array<jbyte,1> > const &a0)
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(18),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::util::zip::Inflater::setInput(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -294,8 +294,8 @@ void java::util::zip::Inflater::setInput(local_ref< array<jbyte,1> > const &a0, 
 		java::util::zip::Inflater::J2CPP_CLASS_NAME,
 		java::util::zip::Inflater::J2CPP_METHOD_NAME(19),
 		java::util::zip::Inflater::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -85,8 +85,8 @@ java::text::ParsePosition::ParsePosition(jint a0)
 	call_new_object<
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(0),
-		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -98,8 +98,8 @@ jboolean java::text::ParsePosition::equals(local_ref< java::lang::Object > const
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(1),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::text::ParsePosition::getErrorIndex()
@@ -108,8 +108,8 @@ jint java::text::ParsePosition::getErrorIndex()
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(2),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::ParsePosition::getIndex()
@@ -118,8 +118,8 @@ jint java::text::ParsePosition::getIndex()
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(3),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::ParsePosition::hashCode()
@@ -128,8 +128,8 @@ jint java::text::ParsePosition::hashCode()
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(4),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::text::ParsePosition::setErrorIndex(jint a0)
@@ -138,8 +138,8 @@ void java::text::ParsePosition::setErrorIndex(jint a0)
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(5),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::ParsePosition::setIndex(jint a0)
@@ -148,8 +148,8 @@ void java::text::ParsePosition::setIndex(jint a0)
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(6),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::ParsePosition::toString()
@@ -158,8 +158,8 @@ local_ref< java::lang::String > java::text::ParsePosition::toString()
 		java::text::ParsePosition::J2CPP_CLASS_NAME,
 		java::text::ParsePosition::J2CPP_METHOD_NAME(7),
 		java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

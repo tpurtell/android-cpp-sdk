@@ -82,8 +82,8 @@ jlong org::apache::http::HttpConnectionMetrics::getRequestCount()
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(0), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong org::apache::http::HttpConnectionMetrics::getResponseCount()
@@ -92,8 +92,8 @@ jlong org::apache::http::HttpConnectionMetrics::getResponseCount()
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong org::apache::http::HttpConnectionMetrics::getSentBytesCount()
@@ -102,8 +102,8 @@ jlong org::apache::http::HttpConnectionMetrics::getSentBytesCount()
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong org::apache::http::HttpConnectionMetrics::getReceivedBytesCount()
@@ -112,8 +112,8 @@ jlong org::apache::http::HttpConnectionMetrics::getReceivedBytesCount()
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::HttpConnectionMetrics::getMetric(local_ref< java::lang::String > const &a0)
@@ -122,8 +122,8 @@ local_ref< java::lang::Object > org::apache::http::HttpConnectionMetrics::getMet
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpConnectionMetrics::reset()
@@ -132,8 +132,8 @@ void org::apache::http::HttpConnectionMetrics::reset()
 		org::apache::http::HttpConnectionMetrics::J2CPP_CLASS_NAME,
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_NAME(5),
 		org::apache::http::HttpConnectionMetrics::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

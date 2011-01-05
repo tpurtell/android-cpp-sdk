@@ -11,11 +11,13 @@
 #define J2CPP_ANDROID_GRAPHICS_LINEARGRADIENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 
 
 #include <android/graphics/Shader.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,6 +40,7 @@ namespace android { namespace graphics {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::Shader>() const;
 
 
@@ -61,6 +64,11 @@ namespace j2cpp {
 
 
 
+android::graphics::LinearGradient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::LinearGradient::operator local_ref<android::graphics::Shader>() const
 {
 	return local_ref<android::graphics::Shader>(get_jobject());
@@ -72,8 +80,8 @@ android::graphics::LinearGradient::LinearGradient(jfloat a0, jfloat a1, jfloat a
 	call_new_object<
 		android::graphics::LinearGradient::J2CPP_CLASS_NAME,
 		android::graphics::LinearGradient::J2CPP_METHOD_NAME(0),
-		android::graphics::LinearGradient::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		android::graphics::LinearGradient::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }
@@ -85,8 +93,8 @@ android::graphics::LinearGradient::LinearGradient(jfloat a0, jfloat a1, jfloat a
 	call_new_object<
 		android::graphics::LinearGradient::J2CPP_CLASS_NAME,
 		android::graphics::LinearGradient::J2CPP_METHOD_NAME(1),
-		android::graphics::LinearGradient::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5, a6)
+		android::graphics::LinearGradient::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5, a6)
 )
 {
 }

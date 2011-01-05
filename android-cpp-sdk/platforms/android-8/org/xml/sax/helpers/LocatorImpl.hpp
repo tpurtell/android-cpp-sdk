@@ -49,8 +49,8 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::xml::sax::Locator>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		LocatorImpl();
@@ -83,14 +83,14 @@ namespace j2cpp {
 
 
 
-org::xml::sax::helpers::LocatorImpl::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::xml::sax::helpers::LocatorImpl::operator local_ref<org::xml::sax::Locator>() const
 {
 	return local_ref<org::xml::sax::Locator>(get_jobject());
+}
+
+org::xml::sax::helpers::LocatorImpl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -99,8 +99,8 @@ org::xml::sax::helpers::LocatorImpl::LocatorImpl()
 	call_new_object<
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(0),
-		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -112,8 +112,8 @@ org::xml::sax::helpers::LocatorImpl::LocatorImpl(local_ref< org::xml::sax::Locat
 	call_new_object<
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(1),
-		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -125,8 +125,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::LocatorImpl::getPublicId
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::helpers::LocatorImpl::getSystemId()
@@ -135,8 +135,8 @@ local_ref< java::lang::String > org::xml::sax::helpers::LocatorImpl::getSystemId
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(3),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::xml::sax::helpers::LocatorImpl::getLineNumber()
@@ -145,8 +145,8 @@ jint org::xml::sax::helpers::LocatorImpl::getLineNumber()
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(4),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xml::sax::helpers::LocatorImpl::getColumnNumber()
@@ -155,8 +155,8 @@ jint org::xml::sax::helpers::LocatorImpl::getColumnNumber()
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(5),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::LocatorImpl::setPublicId(local_ref< java::lang::String > const &a0)
@@ -165,8 +165,8 @@ void org::xml::sax::helpers::LocatorImpl::setPublicId(local_ref< java::lang::Str
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(6),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::LocatorImpl::setSystemId(local_ref< java::lang::String > const &a0)
@@ -175,8 +175,8 @@ void org::xml::sax::helpers::LocatorImpl::setSystemId(local_ref< java::lang::Str
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(7),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::LocatorImpl::setLineNumber(jint a0)
@@ -185,8 +185,8 @@ void org::xml::sax::helpers::LocatorImpl::setLineNumber(jint a0)
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(8),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::LocatorImpl::setColumnNumber(jint a0)
@@ -195,8 +195,8 @@ void org::xml::sax::helpers::LocatorImpl::setColumnNumber(jint a0)
 		org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(9),
 		org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -102,8 +102,8 @@ java::util::zip::ZipFile::ZipFile(local_ref< java::io::File > const &a0)
 	call_new_object<
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(0),
-		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -115,8 +115,8 @@ java::util::zip::ZipFile::ZipFile(local_ref< java::io::File > const &a0, jint a1
 	call_new_object<
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(1),
-		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -128,8 +128,8 @@ java::util::zip::ZipFile::ZipFile(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(2),
-		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -142,8 +142,8 @@ void java::util::zip::ZipFile::close()
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(4),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< java::util::Enumeration > java::util::zip::ZipFile::entries()
@@ -152,8 +152,8 @@ local_ref< java::util::Enumeration > java::util::zip::ZipFile::entries()
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(5),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::util::Enumeration > >
-	(get_jobject());
+		local_ref< java::util::Enumeration >
+	>(get_jobject());
 }
 
 local_ref< java::util::zip::ZipEntry > java::util::zip::ZipFile::getEntry(local_ref< java::lang::String > const &a0)
@@ -162,8 +162,8 @@ local_ref< java::util::zip::ZipEntry > java::util::zip::ZipFile::getEntry(local_
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(6),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::zip::ZipEntry > >
-	(get_jobject(), a0);
+		local_ref< java::util::zip::ZipEntry >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > java::util::zip::ZipFile::getInputStream(local_ref< java::util::zip::ZipEntry > const &a0)
@@ -172,8 +172,8 @@ local_ref< java::io::InputStream > java::util::zip::ZipFile::getInputStream(loca
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(7),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::io::InputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::InputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::zip::ZipFile::getName()
@@ -182,8 +182,8 @@ local_ref< java::lang::String > java::util::zip::ZipFile::getName()
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(8),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint java::util::zip::ZipFile::size()
@@ -192,8 +192,8 @@ jint java::util::zip::ZipFile::size()
 		java::util::zip::ZipFile::J2CPP_CLASS_NAME,
 		java::util::zip::ZipFile::J2CPP_METHOD_NAME(9),
 		java::util::zip::ZipFile::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

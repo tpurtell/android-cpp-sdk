@@ -99,8 +99,8 @@ local_ref< java::io::InputStream > java::sql::Clob::getAsciiStream()
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(0),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 local_ref< java::io::Reader > java::sql::Clob::getCharacterStream()
@@ -109,8 +109,8 @@ local_ref< java::io::Reader > java::sql::Clob::getCharacterStream()
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(1),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::sql::Clob::getSubString(jlong a0, jint a1)
@@ -119,8 +119,8 @@ local_ref< java::lang::String > java::sql::Clob::getSubString(jlong a0, jint a1)
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(2),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::sql::Clob::length()
@@ -129,8 +129,8 @@ jlong java::sql::Clob::length()
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(3),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::sql::Clob::position(local_ref< java::sql::Clob > const &a0, jlong a1)
@@ -139,8 +139,8 @@ jlong java::sql::Clob::position(local_ref< java::sql::Clob > const &a0, jlong a1
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(4),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 jlong java::sql::Clob::position(local_ref< java::lang::String > const &a0, jlong a1)
@@ -149,8 +149,8 @@ jlong java::sql::Clob::position(local_ref< java::lang::String > const &a0, jlong
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(5),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(5), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::io::OutputStream > java::sql::Clob::setAsciiStream(jlong a0)
@@ -159,8 +159,8 @@ local_ref< java::io::OutputStream > java::sql::Clob::setAsciiStream(jlong a0)
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(6),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject(), a0);
+		local_ref< java::io::OutputStream >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Writer > java::sql::Clob::setCharacterStream(jlong a0)
@@ -169,8 +169,8 @@ local_ref< java::io::Writer > java::sql::Clob::setCharacterStream(jlong a0)
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(7),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::io::Writer > >
-	(get_jobject(), a0);
+		local_ref< java::io::Writer >
+	>(get_jobject(), a0);
 }
 
 jint java::sql::Clob::setString(jlong a0, local_ref< java::lang::String > const &a1)
@@ -179,8 +179,8 @@ jint java::sql::Clob::setString(jlong a0, local_ref< java::lang::String > const 
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(8),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint java::sql::Clob::setString(jlong a0, local_ref< java::lang::String > const &a1, jint a2, jint a3)
@@ -189,8 +189,8 @@ jint java::sql::Clob::setString(jlong a0, local_ref< java::lang::String > const 
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(9),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0, a1, a2, a3);
+		jint
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void java::sql::Clob::truncate(jlong a0)
@@ -199,8 +199,8 @@ void java::sql::Clob::truncate(jlong a0)
 		java::sql::Clob::J2CPP_CLASS_NAME,
 		java::sql::Clob::J2CPP_METHOD_NAME(10),
 		java::sql::Clob::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

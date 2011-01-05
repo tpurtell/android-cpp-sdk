@@ -75,8 +75,8 @@ java::net::PasswordAuthentication::PasswordAuthentication(local_ref< java::lang:
 	call_new_object<
 		java::net::PasswordAuthentication::J2CPP_CLASS_NAME,
 		java::net::PasswordAuthentication::J2CPP_METHOD_NAME(0),
-		java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -88,8 +88,8 @@ local_ref< array<jchar,1> > java::net::PasswordAuthentication::getPassword()
 		java::net::PasswordAuthentication::J2CPP_CLASS_NAME,
 		java::net::PasswordAuthentication::J2CPP_METHOD_NAME(1),
 		java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::PasswordAuthentication::getUserName()
@@ -98,8 +98,8 @@ local_ref< java::lang::String > java::net::PasswordAuthentication::getUserName()
 		java::net::PasswordAuthentication::J2CPP_CLASS_NAME,
 		java::net::PasswordAuthentication::J2CPP_METHOD_NAME(2),
 		java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

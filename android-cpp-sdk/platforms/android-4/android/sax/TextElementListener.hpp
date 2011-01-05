@@ -39,9 +39,9 @@ namespace android { namespace sax {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::sax::StartElementListener>() const;
 		operator local_ref<android::sax::EndTextElementListener>() const;
+		operator local_ref<android::sax::StartElementListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 	}; //class TextElementListener
 
@@ -61,9 +61,9 @@ namespace j2cpp {
 
 
 
-android::sax::TextElementListener::operator local_ref<java::lang::Object>() const
+android::sax::TextElementListener::operator local_ref<android::sax::EndTextElementListener>() const
 {
-	return local_ref<java::lang::Object>(get_jobject());
+	return local_ref<android::sax::EndTextElementListener>(get_jobject());
 }
 
 android::sax::TextElementListener::operator local_ref<android::sax::StartElementListener>() const
@@ -71,9 +71,9 @@ android::sax::TextElementListener::operator local_ref<android::sax::StartElement
 	return local_ref<android::sax::StartElementListener>(get_jobject());
 }
 
-android::sax::TextElementListener::operator local_ref<android::sax::EndTextElementListener>() const
+android::sax::TextElementListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::sax::EndTextElementListener>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 J2CPP_DEFINE_CLASS(android::sax::TextElementListener,"android/sax/TextElementListener")

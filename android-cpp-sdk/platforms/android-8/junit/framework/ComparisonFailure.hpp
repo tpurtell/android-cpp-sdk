@@ -13,9 +13,17 @@
 
 namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Error.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <junit/framework/AssertionFailedError.hpp>
 
 
@@ -40,6 +48,10 @@ namespace junit { namespace framework {
 		}
 
 		operator local_ref<junit::framework::AssertionFailedError>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		ComparisonFailure(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -67,14 +79,34 @@ junit::framework::ComparisonFailure::operator local_ref<junit::framework::Assert
 	return local_ref<junit::framework::AssertionFailedError>(get_jobject());
 }
 
+junit::framework::ComparisonFailure::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+junit::framework::ComparisonFailure::operator local_ref<java::lang::Error>() const
+{
+	return local_ref<java::lang::Error>(get_jobject());
+}
+
+junit::framework::ComparisonFailure::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+junit::framework::ComparisonFailure::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 junit::framework::ComparisonFailure::ComparisonFailure(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
 : object<junit::framework::ComparisonFailure>(
 	call_new_object<
 		junit::framework::ComparisonFailure::J2CPP_CLASS_NAME,
 		junit::framework::ComparisonFailure::J2CPP_METHOD_NAME(0),
-		junit::framework::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		junit::framework::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -86,8 +118,8 @@ local_ref< java::lang::String > junit::framework::ComparisonFailure::getMessage(
 		junit::framework::ComparisonFailure::J2CPP_CLASS_NAME,
 		junit::framework::ComparisonFailure::J2CPP_METHOD_NAME(1),
 		junit::framework::ComparisonFailure::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

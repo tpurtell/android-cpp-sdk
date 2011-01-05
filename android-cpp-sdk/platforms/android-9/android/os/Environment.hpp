@@ -124,8 +124,8 @@ android::os::Environment::Environment()
 	call_new_object<
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(0),
-		android::os::Environment::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Environment::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -137,8 +137,8 @@ local_ref< java::io::File > android::os::Environment::getRootDirectory()
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(1),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::io::File > >
-	();
+		local_ref< java::io::File >
+	>();
 }
 
 local_ref< java::io::File > android::os::Environment::getDataDirectory()
@@ -147,8 +147,8 @@ local_ref< java::io::File > android::os::Environment::getDataDirectory()
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(2),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::File > >
-	();
+		local_ref< java::io::File >
+	>();
 }
 
 local_ref< java::io::File > android::os::Environment::getExternalStorageDirectory()
@@ -157,8 +157,8 @@ local_ref< java::io::File > android::os::Environment::getExternalStorageDirector
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(3),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::io::File > >
-	();
+		local_ref< java::io::File >
+	>();
 }
 
 local_ref< java::io::File > android::os::Environment::getExternalStoragePublicDirectory(local_ref< java::lang::String > const &a0)
@@ -167,8 +167,8 @@ local_ref< java::io::File > android::os::Environment::getExternalStoragePublicDi
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(4),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::io::File > >
-	(a0);
+		local_ref< java::io::File >
+	>(a0);
 }
 
 local_ref< java::io::File > android::os::Environment::getDownloadCacheDirectory()
@@ -177,8 +177,8 @@ local_ref< java::io::File > android::os::Environment::getDownloadCacheDirectory(
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(5),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::io::File > >
-	();
+		local_ref< java::io::File >
+	>();
 }
 
 local_ref< java::lang::String > android::os::Environment::getExternalStorageState()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > android::os::Environment::getExternalStorageStat
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(6),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	();
+		local_ref< java::lang::String >
+	>();
 }
 
 jboolean android::os::Environment::isExternalStorageRemovable()
@@ -197,8 +197,8 @@ jboolean android::os::Environment::isExternalStorageRemovable()
 		android::os::Environment::J2CPP_CLASS_NAME,
 		android::os::Environment::J2CPP_METHOD_NAME(7),
 		android::os::Environment::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	();
+		jboolean
+	>();
 }
 
 

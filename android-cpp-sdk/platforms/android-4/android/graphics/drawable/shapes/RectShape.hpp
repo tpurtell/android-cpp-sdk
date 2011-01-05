@@ -11,15 +11,17 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_SHAPES_RECTSHAPE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class Shape; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
-namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class Shape; } } } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <android/graphics/drawable/shapes/Shape.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -49,6 +51,8 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		}
 
 		operator local_ref<android::graphics::drawable::shapes::Shape>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		RectShape();
@@ -81,14 +85,24 @@ android::graphics::drawable::shapes::RectShape::operator local_ref<android::grap
 	return local_ref<android::graphics::drawable::shapes::Shape>(get_jobject());
 }
 
+android::graphics::drawable::shapes::RectShape::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
+android::graphics::drawable::shapes::RectShape::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::drawable::shapes::RectShape::RectShape()
 : object<android::graphics::drawable::shapes::RectShape>(
 	call_new_object<
 		android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -100,8 +114,8 @@ void android::graphics::drawable::shapes::RectShape::draw(local_ref< android::gr
 		android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -112,8 +126,8 @@ local_ref< android::graphics::drawable::shapes::RectShape > android::graphics::d
 		android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::graphics::drawable::shapes::RectShape > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::shapes::RectShape >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::shapes::Shape > android::graphics::drawable::shapes::RectShape::clone_1()
@@ -122,8 +136,8 @@ local_ref< android::graphics::drawable::shapes::Shape > android::graphics::drawa
 		android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::graphics::drawable::shapes::Shape > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::shapes::Shape >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::graphics::drawable::shapes::RectShape::clone_2()
@@ -132,8 +146,8 @@ local_ref< java::lang::Object > android::graphics::drawable::shapes::RectShape::
 		android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME,
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

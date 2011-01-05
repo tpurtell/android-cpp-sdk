@@ -113,6 +113,7 @@ namespace android { namespace media { namespace audiofx {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::media::audiofx::AudioEffect>() const;
 
 
@@ -162,8 +163,8 @@ android::media::audiofx::PresetReverb_::Settings::Settings()
 	call_new_object<
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , preset(get_jobject())
 {
@@ -176,8 +177,8 @@ android::media::audiofx::PresetReverb_::Settings::Settings(local_ref< java::lang
 	call_new_object<
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_NAME(1),
-		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 , preset(get_jobject())
 {
@@ -190,8 +191,8 @@ local_ref< java::lang::String > android::media::audiofx::PresetReverb_::Settings
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::PresetReverb_::Settings::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 
@@ -214,8 +215,8 @@ void android::media::audiofx::PresetReverb_::OnParameterChangeListener::onParame
 		android::media::audiofx::PresetReverb_::OnParameterChangeListener::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb_::OnParameterChangeListener::J2CPP_METHOD_NAME(0),
 		android::media::audiofx::PresetReverb_::OnParameterChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -223,6 +224,11 @@ J2CPP_DEFINE_CLASS(android::media::audiofx::PresetReverb_::OnParameterChangeList
 J2CPP_DEFINE_METHOD(android::media::audiofx::PresetReverb_::OnParameterChangeListener,0,"onParameterChange","(Landroid/media/audiofx/PresetReverb;IIS)V")
 
 
+
+android::media::audiofx::PresetReverb::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
 
 android::media::audiofx::PresetReverb::operator local_ref<android::media::audiofx::AudioEffect>() const
 {
@@ -235,8 +241,8 @@ android::media::audiofx::PresetReverb::PresetReverb(jint a0, jint a1)
 	call_new_object<
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(0),
-		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -248,8 +254,8 @@ void android::media::audiofx::PresetReverb::setPreset(jshort a0)
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(1),
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jshort android::media::audiofx::PresetReverb::getPreset()
@@ -258,8 +264,8 @@ jshort android::media::audiofx::PresetReverb::getPreset()
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(2),
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(2), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 void android::media::audiofx::PresetReverb::setParameterListener(local_ref< android::media::audiofx::PresetReverb_::OnParameterChangeListener > const &a0)
@@ -268,8 +274,8 @@ void android::media::audiofx::PresetReverb::setParameterListener(local_ref< andr
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(3),
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::media::audiofx::PresetReverb_::Settings > android::media::audiofx::PresetReverb::getProperties()
@@ -278,8 +284,8 @@ local_ref< android::media::audiofx::PresetReverb_::Settings > android::media::au
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(4),
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::media::audiofx::PresetReverb_::Settings > >
-	(get_jobject());
+		local_ref< android::media::audiofx::PresetReverb_::Settings >
+	>(get_jobject());
 }
 
 void android::media::audiofx::PresetReverb::setProperties(local_ref< android::media::audiofx::PresetReverb_::Settings > const &a0)
@@ -288,8 +294,8 @@ void android::media::audiofx::PresetReverb::setProperties(local_ref< android::me
 		android::media::audiofx::PresetReverb::J2CPP_CLASS_NAME,
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_NAME(5),
 		android::media::audiofx::PresetReverb::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

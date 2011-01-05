@@ -70,8 +70,8 @@ android::graphics::MaskFilter::MaskFilter()
 	call_new_object<
 		android::graphics::MaskFilter::J2CPP_CLASS_NAME,
 		android::graphics::MaskFilter::J2CPP_METHOD_NAME(0),
-		android::graphics::MaskFilter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::MaskFilter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

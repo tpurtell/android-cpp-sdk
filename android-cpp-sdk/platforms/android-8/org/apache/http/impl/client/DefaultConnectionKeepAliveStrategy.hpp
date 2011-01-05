@@ -43,8 +43,8 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::ConnectionKeepAliveStrategy>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DefaultConnectionKeepAliveStrategy();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::operator local_ref<org::apache::http::conn::ConnectionKeepAliveStrategy>() const
 {
 	return local_ref<org::apache::http::conn::ConnectionKeepAliveStrategy>(get_jobject());
+}
+
+org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -86,8 +86,8 @@ org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::DefaultConn
 	call_new_object<
 		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +99,8 @@ jlong org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::getKe
 		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::DefaultConnectionKeepAliveStrategy::J2CPP_METHOD_SIGNATURE(1), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 

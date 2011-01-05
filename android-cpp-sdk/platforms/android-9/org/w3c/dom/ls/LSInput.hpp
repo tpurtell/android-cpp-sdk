@@ -107,8 +107,8 @@ local_ref< java::io::Reader > org::w3c::dom::ls::LSInput::getCharacterStream()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::io::Reader > >
-	(get_jobject());
+		local_ref< java::io::Reader >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setCharacterStream(local_ref< java::io::Reader > const &a0)
@@ -117,8 +117,8 @@ void org::w3c::dom::ls::LSInput::setCharacterStream(local_ref< java::io::Reader 
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(1),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::InputStream > org::w3c::dom::ls::LSInput::getByteStream()
@@ -127,8 +127,8 @@ local_ref< java::io::InputStream > org::w3c::dom::ls::LSInput::getByteStream()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(2),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::io::InputStream > >
-	(get_jobject());
+		local_ref< java::io::InputStream >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setByteStream(local_ref< java::io::InputStream > const &a0)
@@ -137,8 +137,8 @@ void org::w3c::dom::ls::LSInput::setByteStream(local_ref< java::io::InputStream 
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(3),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getStringData()
@@ -147,8 +147,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getStringData()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(4),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setStringData(local_ref< java::lang::String > const &a0)
@@ -157,8 +157,8 @@ void org::w3c::dom::ls::LSInput::setStringData(local_ref< java::lang::String > c
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(5),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getSystemId()
@@ -167,8 +167,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getSystemId()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(6),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setSystemId(local_ref< java::lang::String > const &a0)
@@ -177,8 +177,8 @@ void org::w3c::dom::ls::LSInput::setSystemId(local_ref< java::lang::String > con
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(7),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getPublicId()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getPublicId()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(8),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setPublicId(local_ref< java::lang::String > const &a0)
@@ -197,8 +197,8 @@ void org::w3c::dom::ls::LSInput::setPublicId(local_ref< java::lang::String > con
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(9),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getBaseURI()
@@ -207,8 +207,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getBaseURI()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(10),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setBaseURI(local_ref< java::lang::String > const &a0)
@@ -217,8 +217,8 @@ void org::w3c::dom::ls::LSInput::setBaseURI(local_ref< java::lang::String > cons
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(11),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getEncoding()
@@ -227,8 +227,8 @@ local_ref< java::lang::String > org::w3c::dom::ls::LSInput::getEncoding()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(12),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setEncoding(local_ref< java::lang::String > const &a0)
@@ -237,8 +237,8 @@ void org::w3c::dom::ls::LSInput::setEncoding(local_ref< java::lang::String > con
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(13),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean org::w3c::dom::ls::LSInput::getCertifiedText()
@@ -247,8 +247,8 @@ jboolean org::w3c::dom::ls::LSInput::getCertifiedText()
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(14),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::w3c::dom::ls::LSInput::setCertifiedText(jboolean a0)
@@ -257,8 +257,8 @@ void org::w3c::dom::ls::LSInput::setCertifiedText(jboolean a0)
 		org::w3c::dom::ls::LSInput::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_NAME(15),
 		org::w3c::dom::ls::LSInput::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

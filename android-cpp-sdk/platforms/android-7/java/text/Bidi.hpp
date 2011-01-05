@@ -116,8 +116,8 @@ java::text::Bidi::Bidi(local_ref< java::text::AttributedCharacterIterator > cons
 	call_new_object<
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(0),
-		java::text::Bidi::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::text::Bidi::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -129,8 +129,8 @@ java::text::Bidi::Bidi(local_ref< array<jchar,1> > const &a0, jint a1, local_ref
 	call_new_object<
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(1),
-		java::text::Bidi::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2, a3, a4, a5)
+		java::text::Bidi::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2, a3, a4, a5)
 )
 {
 }
@@ -142,8 +142,8 @@ java::text::Bidi::Bidi(local_ref< java::lang::String > const &a0, jint a1)
 	call_new_object<
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(2),
-		java::text::Bidi::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::text::Bidi::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -155,8 +155,8 @@ jboolean java::text::Bidi::baseIsLeftToRight()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(3),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::text::Bidi > java::text::Bidi::createLineBidi(jint a0, jint a1)
@@ -165,8 +165,8 @@ local_ref< java::text::Bidi > java::text::Bidi::createLineBidi(jint a0, jint a1)
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(4),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::text::Bidi > >
-	(get_jobject(), a0, a1);
+		local_ref< java::text::Bidi >
+	>(get_jobject(), a0, a1);
 }
 
 jint java::text::Bidi::getBaseLevel()
@@ -175,8 +175,8 @@ jint java::text::Bidi::getBaseLevel()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(5),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::Bidi::getLength()
@@ -185,8 +185,8 @@ jint java::text::Bidi::getLength()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(6),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::Bidi::getLevelAt(jint a0)
@@ -195,8 +195,8 @@ jint java::text::Bidi::getLevelAt(jint a0)
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(7),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::Bidi::getRunCount()
@@ -205,8 +205,8 @@ jint java::text::Bidi::getRunCount()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(8),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::Bidi::getRunLevel(jint a0)
@@ -215,8 +215,8 @@ jint java::text::Bidi::getRunLevel(jint a0)
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(9),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::Bidi::getRunLimit(jint a0)
@@ -225,8 +225,8 @@ jint java::text::Bidi::getRunLimit(jint a0)
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(10),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint java::text::Bidi::getRunStart(jint a0)
@@ -235,8 +235,8 @@ jint java::text::Bidi::getRunStart(jint a0)
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(11),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jboolean java::text::Bidi::isLeftToRight()
@@ -245,8 +245,8 @@ jboolean java::text::Bidi::isLeftToRight()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(12),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::text::Bidi::isMixed()
@@ -255,8 +255,8 @@ jboolean java::text::Bidi::isMixed()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(13),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::text::Bidi::isRightToLeft()
@@ -265,8 +265,8 @@ jboolean java::text::Bidi::isRightToLeft()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(14),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::text::Bidi::reorderVisually(local_ref< array<jbyte,1> > const &a0, jint a1, local_ref< array< local_ref< java::lang::Object >, 1> > const &a2, jint a3, jint a4)
@@ -275,8 +275,8 @@ void java::text::Bidi::reorderVisually(local_ref< array<jbyte,1> > const &a0, ji
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(15),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(a0, a1, a2, a3, a4);
+		void
+	>(a0, a1, a2, a3, a4);
 }
 
 jboolean java::text::Bidi::requiresBidi(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -285,8 +285,8 @@ jboolean java::text::Bidi::requiresBidi(local_ref< array<jchar,1> > const &a0, j
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(16),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(16), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > java::text::Bidi::toString()
@@ -295,8 +295,8 @@ local_ref< java::lang::String > java::text::Bidi::toString()
 		java::text::Bidi::J2CPP_CLASS_NAME,
 		java::text::Bidi::J2CPP_METHOD_NAME(17),
 		java::text::Bidi::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

@@ -11,11 +11,17 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_IDENTITYOUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/io/SessionOutputBuffer.hpp>
 
 
@@ -43,6 +49,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
 		operator local_ref<java::io::OutputStream>() const;
 
 
@@ -73,6 +82,21 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::io::IdentityOutputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+org::apache::http::impl::io::IdentityOutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+org::apache::http::impl::io::IdentityOutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jobject());
+}
+
 org::apache::http::impl::io::IdentityOutputStream::operator local_ref<java::io::OutputStream>() const
 {
 	return local_ref<java::io::OutputStream>(get_jobject());
@@ -84,8 +108,8 @@ org::apache::http::impl::io::IdentityOutputStream::IdentityOutputStream(local_re
 	call_new_object<
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -97,8 +121,8 @@ void org::apache::http::impl::io::IdentityOutputStream::close()
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::IdentityOutputStream::flush()
@@ -107,8 +131,8 @@ void org::apache::http::impl::io::IdentityOutputStream::flush()
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::apache::http::impl::io::IdentityOutputStream::write(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -117,8 +141,8 @@ void org::apache::http::impl::io::IdentityOutputStream::write(local_ref< array<j
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::impl::io::IdentityOutputStream::write(local_ref< array<jbyte,1> > const &a0)
@@ -127,8 +151,8 @@ void org::apache::http::impl::io::IdentityOutputStream::write(local_ref< array<j
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::impl::io::IdentityOutputStream::write(jint a0)
@@ -137,8 +161,8 @@ void org::apache::http::impl::io::IdentityOutputStream::write(jint a0)
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_CLASS_NAME,
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::io::IdentityOutputStream::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -113,10 +113,10 @@ namespace android { namespace net { namespace sip {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::os::Parcelable>() const;
-		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<android::os::Parcelable>() const;
 
 
 		void writeToParcel(local_ref< android::os::Parcel >  const&, jint);
@@ -165,8 +165,8 @@ android::net::sip::SipProfile_::Builder::Builder(local_ref< android::net::sip::S
 	call_new_object<
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(0),
-		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -178,8 +178,8 @@ android::net::sip::SipProfile_::Builder::Builder(local_ref< java::lang::String >
 	call_new_object<
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(1),
-		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -191,8 +191,8 @@ android::net::sip::SipProfile_::Builder::Builder(local_ref< java::lang::String >
 	call_new_object<
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(2),
-		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -204,8 +204,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setPassword(local_ref< java::lang::String > const &a0)
@@ -214,8 +214,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setPort(jint a0)
@@ -224,8 +224,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setProtocol(local_ref< java::lang::String > const &a0)
@@ -234,8 +234,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setOutboundProxy(local_ref< java::lang::String > const &a0)
@@ -244,8 +244,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setDisplayName(local_ref< java::lang::String > const &a0)
@@ -254,8 +254,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setSendKeepAlive(jboolean a0)
@@ -264,8 +264,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfile_::Builder::setAutoRegistration(jboolean a0)
@@ -274,8 +274,8 @@ local_ref< android::net::sip::SipProfile_::Builder > android::net::sip::SipProfi
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::sip::SipProfile_::Builder > >
-	(get_jobject(), a0);
+		local_ref< android::net::sip::SipProfile_::Builder >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::sip::SipProfile > android::net::sip::SipProfile_::Builder::build()
@@ -284,8 +284,8 @@ local_ref< android::net::sip::SipProfile > android::net::sip::SipProfile_::Build
 		android::net::sip::SipProfile_::Builder::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipProfile_::Builder::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::sip::SipProfile > >
-	(get_jobject());
+		local_ref< android::net::sip::SipProfile >
+	>(get_jobject());
 }
 
 
@@ -305,14 +305,14 @@ J2CPP_DEFINE_METHOD(android::net::sip::SipProfile_::Builder,11,"build","()Landro
 
 
 
+android::net::sip::SipProfile::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 android::net::sip::SipProfile::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
-}
-
-android::net::sip::SipProfile::operator local_ref<android::os::Parcelable>() const
-{
-	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 android::net::sip::SipProfile::operator local_ref<java::io::Serializable>() const
@@ -320,9 +320,9 @@ android::net::sip::SipProfile::operator local_ref<java::io::Serializable>() cons
 	return local_ref<java::io::Serializable>(get_jobject());
 }
 
-android::net::sip::SipProfile::operator local_ref<java::lang::Cloneable>() const
+android::net::sip::SipProfile::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref<java::lang::Cloneable>(get_jobject());
+	return local_ref<android::os::Parcelable>(get_jobject());
 }
 
 
@@ -332,8 +332,8 @@ void android::net::sip::SipProfile::writeToParcel(local_ref< android::os::Parcel
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(1),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::net::sip::SipProfile::describeContents()
@@ -342,8 +342,8 @@ jint android::net::sip::SipProfile::describeContents()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(2),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getUriString()
@@ -352,8 +352,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getUriString()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(3),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getDisplayName()
@@ -362,8 +362,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getDisplayName()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(4),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getUserName()
@@ -372,8 +372,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getUserName()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(5),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getPassword()
@@ -382,8 +382,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getPassword()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(6),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getSipDomain()
@@ -392,8 +392,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getSipDomain()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(7),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint android::net::sip::SipProfile::getPort()
@@ -402,8 +402,8 @@ jint android::net::sip::SipProfile::getPort()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(8),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getProtocol()
@@ -412,8 +412,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getProtocol()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(9),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getProxyAddress()
@@ -422,8 +422,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getProxyAddress()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(10),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::net::sip::SipProfile::getProfileName()
@@ -432,8 +432,8 @@ local_ref< java::lang::String > android::net::sip::SipProfile::getProfileName()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(11),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::net::sip::SipProfile::getSendKeepAlive()
@@ -442,8 +442,8 @@ jboolean android::net::sip::SipProfile::getSendKeepAlive()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(12),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::net::sip::SipProfile::getAutoRegistration()
@@ -452,8 +452,8 @@ jboolean android::net::sip::SipProfile::getAutoRegistration()
 		android::net::sip::SipProfile::J2CPP_CLASS_NAME,
 		android::net::sip::SipProfile::J2CPP_METHOD_NAME(13),
 		android::net::sip::SipProfile::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

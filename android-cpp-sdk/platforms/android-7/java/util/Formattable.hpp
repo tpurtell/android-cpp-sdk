@@ -71,8 +71,8 @@ void java::util::Formattable::formatTo(local_ref< java::util::Formatter > const 
 		java::util::Formattable::J2CPP_CLASS_NAME,
 		java::util::Formattable::J2CPP_METHOD_NAME(0),
 		java::util::Formattable::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

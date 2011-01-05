@@ -13,9 +13,19 @@
 
 namespace j2cpp { namespace java { namespace nio { namespace charset { class CharacterCodingException; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/IOException.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 #include <java/nio/charset/CharacterCodingException.hpp>
 
 
@@ -41,6 +51,11 @@ namespace java { namespace nio { namespace charset {
 		}
 
 		operator local_ref<java::nio::charset::CharacterCodingException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::IOException>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		UnmappableCharacterException(jint);
@@ -70,14 +85,39 @@ java::nio::charset::UnmappableCharacterException::operator local_ref<java::nio::
 	return local_ref<java::nio::charset::CharacterCodingException>(get_jobject());
 }
 
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::io::IOException>() const
+{
+	return local_ref<java::io::IOException>(get_jobject());
+}
+
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 
 java::nio::charset::UnmappableCharacterException::UnmappableCharacterException(jint a0)
 : object<java::nio::charset::UnmappableCharacterException>(
 	call_new_object<
 		java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME,
 		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_NAME(0),
-		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -89,8 +129,8 @@ jint java::nio::charset::UnmappableCharacterException::getInputLength()
 		java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME,
 		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_NAME(1),
 		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::charset::UnmappableCharacterException::getMessage()
@@ -99,8 +139,8 @@ local_ref< java::lang::String > java::nio::charset::UnmappableCharacterException
 		java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME,
 		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_NAME(2),
 		java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

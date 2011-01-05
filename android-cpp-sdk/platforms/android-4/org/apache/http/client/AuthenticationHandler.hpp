@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_AUTHENTICATIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
@@ -83,8 +83,8 @@ jboolean org::apache::http::client::AuthenticationHandler::isAuthenticationReque
 		org::apache::http::client::AuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_NAME(0),
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Map > org::apache::http::client::AuthenticationHandler::getChallenges(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -93,8 +93,8 @@ local_ref< java::util::Map > org::apache::http::client::AuthenticationHandler::g
 		org::apache::http::client::AuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Map > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Map >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< org::apache::http::auth::AuthScheme > org::apache::http::client::AuthenticationHandler::selectScheme(local_ref< java::util::Map > const &a0, local_ref< org::apache::http::HttpResponse > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
@@ -103,8 +103,8 @@ local_ref< org::apache::http::auth::AuthScheme > org::apache::http::client::Auth
 		org::apache::http::client::AuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::AuthenticationHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::auth::AuthScheme > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< org::apache::http::auth::AuthScheme >
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -73,8 +73,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::widget::Section
 		android::widget::SectionIndexer::J2CPP_CLASS_NAME,
 		android::widget::SectionIndexer::J2CPP_METHOD_NAME(0),
 		android::widget::SectionIndexer::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 jint android::widget::SectionIndexer::getPositionForSection(jint a0)
@@ -83,8 +83,8 @@ jint android::widget::SectionIndexer::getPositionForSection(jint a0)
 		android::widget::SectionIndexer::J2CPP_CLASS_NAME,
 		android::widget::SectionIndexer::J2CPP_METHOD_NAME(1),
 		android::widget::SectionIndexer::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::SectionIndexer::getSectionForPosition(jint a0)
@@ -93,8 +93,8 @@ jint android::widget::SectionIndexer::getSectionForPosition(jint a0)
 		android::widget::SectionIndexer::J2CPP_CLASS_NAME,
 		android::widget::SectionIndexer::J2CPP_METHOD_NAME(2),
 		android::widget::SectionIndexer::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

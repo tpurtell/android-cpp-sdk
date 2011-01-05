@@ -84,8 +84,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentMap::putIfAbse
 		java::util::concurrent::ConcurrentMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_NAME(0),
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::ConcurrentMap::remove(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -94,8 +94,8 @@ jboolean java::util::concurrent::ConcurrentMap::remove(local_ref< java::lang::Ob
 		java::util::concurrent::ConcurrentMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_NAME(1),
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::ConcurrentMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
@@ -104,8 +104,8 @@ jboolean java::util::concurrent::ConcurrentMap::replace(local_ref< java::lang::O
 		java::util::concurrent::ConcurrentMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentMap::replace(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -114,8 +114,8 @@ local_ref< java::lang::Object > java::util::concurrent::ConcurrentMap::replace(l
 		java::util::concurrent::ConcurrentMap::J2CPP_CLASS_NAME,
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::ConcurrentMap::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 

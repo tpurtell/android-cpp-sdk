@@ -112,8 +112,8 @@ javax::xml::transform::stream::StreamResult::StreamResult()
 	call_new_object<
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -125,8 +125,8 @@ javax::xml::transform::stream::StreamResult::StreamResult(local_ref< java::io::O
 	call_new_object<
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -138,8 +138,8 @@ javax::xml::transform::stream::StreamResult::StreamResult(local_ref< java::io::W
 	call_new_object<
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -151,8 +151,8 @@ javax::xml::transform::stream::StreamResult::StreamResult(local_ref< java::lang:
 	call_new_object<
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(3),
-		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -164,8 +164,8 @@ javax::xml::transform::stream::StreamResult::StreamResult(local_ref< java::io::F
 	call_new_object<
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(4),
-		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -177,8 +177,8 @@ void javax::xml::transform::stream::StreamResult::setOutputStream(local_ref< jav
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(5),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::OutputStream > javax::xml::transform::stream::StreamResult::getOutputStream()
@@ -187,8 +187,8 @@ local_ref< java::io::OutputStream > javax::xml::transform::stream::StreamResult:
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(6),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::io::OutputStream > >
-	(get_jobject());
+		local_ref< java::io::OutputStream >
+	>(get_jobject());
 }
 
 void javax::xml::transform::stream::StreamResult::setWriter(local_ref< java::io::Writer > const &a0)
@@ -197,8 +197,8 @@ void javax::xml::transform::stream::StreamResult::setWriter(local_ref< java::io:
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(7),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::io::Writer > javax::xml::transform::stream::StreamResult::getWriter()
@@ -207,8 +207,8 @@ local_ref< java::io::Writer > javax::xml::transform::stream::StreamResult::getWr
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(8),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::io::Writer > >
-	(get_jobject());
+		local_ref< java::io::Writer >
+	>(get_jobject());
 }
 
 void javax::xml::transform::stream::StreamResult::setSystemId(local_ref< java::lang::String > const &a0)
@@ -217,8 +217,8 @@ void javax::xml::transform::stream::StreamResult::setSystemId(local_ref< java::l
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(9),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::xml::transform::stream::StreamResult::setSystemId(local_ref< java::io::File > const &a0)
@@ -227,8 +227,8 @@ void javax::xml::transform::stream::StreamResult::setSystemId(local_ref< java::i
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(10),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > javax::xml::transform::stream::StreamResult::getSystemId()
@@ -237,8 +237,8 @@ local_ref< java::lang::String > javax::xml::transform::stream::StreamResult::get
 		javax::xml::transform::stream::StreamResult::J2CPP_CLASS_NAME,
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_NAME(11),
 		javax::xml::transform::stream::StreamResult::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

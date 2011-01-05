@@ -92,8 +92,8 @@ void android::text::method::MovementMethod::initialize(local_ref< android::widge
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(0),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::text::method::MovementMethod::onKeyDown(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -102,8 +102,8 @@ jboolean android::text::method::MovementMethod::onKeyDown(local_ref< android::wi
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(1),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::MovementMethod::onKeyUp(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -112,8 +112,8 @@ jboolean android::text::method::MovementMethod::onKeyUp(local_ref< android::widg
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(2),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::MovementMethod::onKeyOther(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -122,8 +122,8 @@ jboolean android::text::method::MovementMethod::onKeyOther(local_ref< android::w
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(3),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::MovementMethod::onTakeFocus(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, jint a2)
@@ -132,8 +132,8 @@ void android::text::method::MovementMethod::onTakeFocus(local_ref< android::widg
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(4),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::MovementMethod::onTrackballEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -142,8 +142,8 @@ jboolean android::text::method::MovementMethod::onTrackballEvent(local_ref< andr
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(5),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::MovementMethod::onTouchEvent(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, local_ref< android::view::MotionEvent > const &a2)
@@ -152,8 +152,8 @@ jboolean android::text::method::MovementMethod::onTouchEvent(local_ref< android:
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(6),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::text::method::MovementMethod::canSelectArbitrarily()
@@ -162,8 +162,8 @@ jboolean android::text::method::MovementMethod::canSelectArbitrarily()
 		android::text::method::MovementMethod::J2CPP_CLASS_NAME,
 		android::text::method::MovementMethod::J2CPP_METHOD_NAME(7),
 		android::text::method::MovementMethod::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

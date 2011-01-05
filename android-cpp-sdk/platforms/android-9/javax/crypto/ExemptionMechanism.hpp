@@ -106,8 +106,8 @@ local_ref< java::lang::String > javax::crypto::ExemptionMechanism::getName()
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(1),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism::getInstance(local_ref< java::lang::String > const &a0)
@@ -116,8 +116,8 @@ local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(2),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< javax::crypto::ExemptionMechanism > >
-	(a0);
+		local_ref< javax::crypto::ExemptionMechanism >
+	>(a0);
 }
 
 local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -126,8 +126,8 @@ local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(3),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< javax::crypto::ExemptionMechanism > >
-	(a0, a1);
+		local_ref< javax::crypto::ExemptionMechanism >
+	>(a0, a1);
 }
 
 local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::Provider > const &a1)
@@ -136,8 +136,8 @@ local_ref< javax::crypto::ExemptionMechanism > javax::crypto::ExemptionMechanism
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(4),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< javax::crypto::ExemptionMechanism > >
-	(a0, a1);
+		local_ref< javax::crypto::ExemptionMechanism >
+	>(a0, a1);
 }
 
 local_ref< java::security::Provider > javax::crypto::ExemptionMechanism::getProvider()
@@ -146,8 +146,8 @@ local_ref< java::security::Provider > javax::crypto::ExemptionMechanism::getProv
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(5),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::Provider > >
-	(get_jobject());
+		local_ref< java::security::Provider >
+	>(get_jobject());
 }
 
 jboolean javax::crypto::ExemptionMechanism::isCryptoAllowed(local_ref< java::security::Key > const &a0)
@@ -156,8 +156,8 @@ jboolean javax::crypto::ExemptionMechanism::isCryptoAllowed(local_ref< java::sec
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(6),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::ExemptionMechanism::getOutputSize(jint a0)
@@ -166,8 +166,8 @@ jint javax::crypto::ExemptionMechanism::getOutputSize(jint a0)
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(7),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > const &a0)
@@ -176,8 +176,8 @@ void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > co
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(8),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > const &a0, local_ref< java::security::AlgorithmParameters > const &a1)
@@ -186,8 +186,8 @@ void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > co
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(9),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > const &a0, local_ref< java::security::spec::AlgorithmParameterSpec > const &a1)
@@ -196,8 +196,8 @@ void javax::crypto::ExemptionMechanism::init(local_ref< java::security::Key > co
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(10),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< array<jbyte,1> > javax::crypto::ExemptionMechanism::genExemptionBlob()
@@ -206,8 +206,8 @@ local_ref< array<jbyte,1> > javax::crypto::ExemptionMechanism::genExemptionBlob(
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(11),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint javax::crypto::ExemptionMechanism::genExemptionBlob(local_ref< array<jbyte,1> > const &a0)
@@ -216,8 +216,8 @@ jint javax::crypto::ExemptionMechanism::genExemptionBlob(local_ref< array<jbyte,
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(12),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(12), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint javax::crypto::ExemptionMechanism::genExemptionBlob(local_ref< array<jbyte,1> > const &a0, jint a1)
@@ -226,8 +226,8 @@ jint javax::crypto::ExemptionMechanism::genExemptionBlob(local_ref< array<jbyte,
 		javax::crypto::ExemptionMechanism::J2CPP_CLASS_NAME,
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_NAME(13),
 		javax::crypto::ExemptionMechanism::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

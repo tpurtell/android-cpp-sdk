@@ -50,7 +50,9 @@ namespace android { namespace text { namespace style {
 			}
 
 			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::style::WrapTogetherSpan>() const;
 			operator local_ref<android::text::style::LineHeightSpan>() const;
+			operator local_ref<android::text::style::ParagraphStyle>() const;
 
 
 			void chooseHeight(local_ref< java::lang::CharSequence >  const&, jint, jint, jint, jint, local_ref< android::graphics::Paint_::FontMetricsInt >  const&, local_ref< android::text::TextPaint >  const&);
@@ -75,8 +77,8 @@ namespace android { namespace text { namespace style {
 		}
 
 		operator local_ref<java::lang::Object>() const;
-		operator local_ref<android::text::style::ParagraphStyle>() const;
 		operator local_ref<android::text::style::WrapTogetherSpan>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
 
 
 		void chooseHeight(local_ref< java::lang::CharSequence >  const&, jint, jint, jint, jint, local_ref< android::graphics::Paint_::FontMetricsInt >  const&);
@@ -105,9 +107,19 @@ android::text::style::LineHeightSpan_::WithDensity::operator local_ref<java::lan
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+android::text::style::LineHeightSpan_::WithDensity::operator local_ref<android::text::style::WrapTogetherSpan>() const
+{
+	return local_ref<android::text::style::WrapTogetherSpan>(get_jobject());
+}
+
 android::text::style::LineHeightSpan_::WithDensity::operator local_ref<android::text::style::LineHeightSpan>() const
 {
 	return local_ref<android::text::style::LineHeightSpan>(get_jobject());
+}
+
+android::text::style::LineHeightSpan_::WithDensity::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
 }
 
 void android::text::style::LineHeightSpan_::WithDensity::chooseHeight(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::graphics::Paint_::FontMetricsInt > const &a5, local_ref< android::text::TextPaint > const &a6)
@@ -116,8 +128,8 @@ void android::text::style::LineHeightSpan_::WithDensity::chooseHeight(local_ref<
 		android::text::style::LineHeightSpan_::WithDensity::J2CPP_CLASS_NAME,
 		android::text::style::LineHeightSpan_::WithDensity::J2CPP_METHOD_NAME(0),
 		android::text::style::LineHeightSpan_::WithDensity::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5, a6);
 }
 
 
@@ -131,14 +143,14 @@ android::text::style::LineHeightSpan::operator local_ref<java::lang::Object>() c
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-android::text::style::LineHeightSpan::operator local_ref<android::text::style::ParagraphStyle>() const
-{
-	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
-}
-
 android::text::style::LineHeightSpan::operator local_ref<android::text::style::WrapTogetherSpan>() const
 {
 	return local_ref<android::text::style::WrapTogetherSpan>(get_jobject());
+}
+
+android::text::style::LineHeightSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jobject());
 }
 
 void android::text::style::LineHeightSpan::chooseHeight(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3, jint a4, local_ref< android::graphics::Paint_::FontMetricsInt > const &a5)
@@ -147,8 +159,8 @@ void android::text::style::LineHeightSpan::chooseHeight(local_ref< java::lang::C
 		android::text::style::LineHeightSpan::J2CPP_CLASS_NAME,
 		android::text::style::LineHeightSpan::J2CPP_METHOD_NAME(0),
 		android::text::style::LineHeightSpan::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 

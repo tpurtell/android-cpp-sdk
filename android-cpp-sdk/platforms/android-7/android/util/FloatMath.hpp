@@ -79,8 +79,8 @@ jfloat android::util::FloatMath::floor(jfloat a0)
 		android::util::FloatMath::J2CPP_CLASS_NAME,
 		android::util::FloatMath::J2CPP_METHOD_NAME(1),
 		android::util::FloatMath::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jfloat android::util::FloatMath::ceil(jfloat a0)
@@ -89,8 +89,8 @@ jfloat android::util::FloatMath::ceil(jfloat a0)
 		android::util::FloatMath::J2CPP_CLASS_NAME,
 		android::util::FloatMath::J2CPP_METHOD_NAME(2),
 		android::util::FloatMath::J2CPP_METHOD_SIGNATURE(2), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jfloat android::util::FloatMath::sin(jfloat a0)
@@ -99,8 +99,8 @@ jfloat android::util::FloatMath::sin(jfloat a0)
 		android::util::FloatMath::J2CPP_CLASS_NAME,
 		android::util::FloatMath::J2CPP_METHOD_NAME(3),
 		android::util::FloatMath::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jfloat android::util::FloatMath::cos(jfloat a0)
@@ -109,8 +109,8 @@ jfloat android::util::FloatMath::cos(jfloat a0)
 		android::util::FloatMath::J2CPP_CLASS_NAME,
 		android::util::FloatMath::J2CPP_METHOD_NAME(4),
 		android::util::FloatMath::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 jfloat android::util::FloatMath::sqrt(jfloat a0)
@@ -119,8 +119,8 @@ jfloat android::util::FloatMath::sqrt(jfloat a0)
 		android::util::FloatMath::J2CPP_CLASS_NAME,
 		android::util::FloatMath::J2CPP_METHOD_NAME(5),
 		android::util::FloatMath::J2CPP_METHOD_SIGNATURE(5), 
-		jfloat >
-	(a0);
+		jfloat
+	>(a0);
 }
 
 

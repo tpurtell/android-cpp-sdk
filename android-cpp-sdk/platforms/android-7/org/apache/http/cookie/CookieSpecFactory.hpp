@@ -75,8 +75,8 @@ local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::Co
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::cookie::CookieSpecFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::cookie::CookieSpec > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::cookie::CookieSpec >
+	>(get_jobject(), a0);
 }
 
 

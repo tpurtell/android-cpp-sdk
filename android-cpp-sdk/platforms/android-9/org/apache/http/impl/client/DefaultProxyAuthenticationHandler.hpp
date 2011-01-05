@@ -11,14 +11,18 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_DEFAULTPROXYAUTHENTICATIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace client { class AbstractAuthenticationHandler; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class AuthenticationHandler; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
 #include <org/apache/http/HttpResponse.hpp>
+#include <org/apache/http/client/AuthenticationHandler.hpp>
 #include <org/apache/http/impl/client/AbstractAuthenticationHandler.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
@@ -44,7 +48,9 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::impl::client::AbstractAuthenticationHandler>() const;
+		operator local_ref<org::apache::http::client::AuthenticationHandler>() const;
 
 
 		DefaultProxyAuthenticationHandler();
@@ -71,9 +77,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::impl::client::DefaultProxyAuthenticationHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 org::apache::http::impl::client::DefaultProxyAuthenticationHandler::operator local_ref<org::apache::http::impl::client::AbstractAuthenticationHandler>() const
 {
 	return local_ref<org::apache::http::impl::client::AbstractAuthenticationHandler>(get_jobject());
+}
+
+org::apache::http::impl::client::DefaultProxyAuthenticationHandler::operator local_ref<org::apache::http::client::AuthenticationHandler>() const
+{
+	return local_ref<org::apache::http::client::AuthenticationHandler>(get_jobject());
 }
 
 
@@ -82,8 +98,8 @@ org::apache::http::impl::client::DefaultProxyAuthenticationHandler::DefaultProxy
 	call_new_object<
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_NAME(0),
-		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -95,8 +111,8 @@ jboolean org::apache::http::impl::client::DefaultProxyAuthenticationHandler::isA
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::util::Map > org::apache::http::impl::client::DefaultProxyAuthenticationHandler::getChallenges(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
@@ -105,8 +121,8 @@ local_ref< java::util::Map > org::apache::http::impl::client::DefaultProxyAuthen
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_CLASS_NAME,
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::client::DefaultProxyAuthenticationHandler::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Map > >
-	(get_jobject(), a0, a1);
+		local_ref< java::util::Map >
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -85,8 +85,8 @@ void android::text::TextWatcher::beforeTextChanged(local_ref< java::lang::CharSe
 		android::text::TextWatcher::J2CPP_CLASS_NAME,
 		android::text::TextWatcher::J2CPP_METHOD_NAME(0),
 		android::text::TextWatcher::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::TextWatcher::onTextChanged(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3)
@@ -95,8 +95,8 @@ void android::text::TextWatcher::onTextChanged(local_ref< java::lang::CharSequen
 		android::text::TextWatcher::J2CPP_CLASS_NAME,
 		android::text::TextWatcher::J2CPP_METHOD_NAME(1),
 		android::text::TextWatcher::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::TextWatcher::afterTextChanged(local_ref< android::text::Editable > const &a0)
@@ -105,8 +105,8 @@ void android::text::TextWatcher::afterTextChanged(local_ref< android::text::Edit
 		android::text::TextWatcher::J2CPP_CLASS_NAME,
 		android::text::TextWatcher::J2CPP_METHOD_NAME(2),
 		android::text::TextWatcher::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

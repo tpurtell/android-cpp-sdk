@@ -87,8 +87,8 @@ java::security::SignatureSpi::SignatureSpi()
 	call_new_object<
 		java::security::SignatureSpi::J2CPP_CLASS_NAME,
 		java::security::SignatureSpi::J2CPP_METHOD_NAME(0),
-		java::security::SignatureSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::security::SignatureSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -114,8 +114,8 @@ local_ref< java::lang::Object > java::security::SignatureSpi::clone()
 		java::security::SignatureSpi::J2CPP_CLASS_NAME,
 		java::security::SignatureSpi::J2CPP_METHOD_NAME(15),
 		java::security::SignatureSpi::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

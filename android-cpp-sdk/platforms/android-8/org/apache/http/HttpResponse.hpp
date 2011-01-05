@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPRESPONSE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
-namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -57,8 +57,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HttpMessage>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::apache::http::StatusLine > getStatusLine();
@@ -90,14 +90,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::HttpResponse::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::HttpResponse::operator local_ref<org::apache::http::HttpMessage>() const
 {
 	return local_ref<org::apache::http::HttpMessage>(get_jobject());
+}
+
+org::apache::http::HttpResponse::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::apache::http::StatusLine > org::apache::http::HttpResponse::getStatusLine()
@@ -106,8 +106,8 @@ local_ref< org::apache::http::StatusLine > org::apache::http::HttpResponse::getS
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(0),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::StatusLine > >
-	(get_jobject());
+		local_ref< org::apache::http::StatusLine >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http::StatusLine > const &a0)
@@ -116,8 +116,8 @@ void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(1),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http::ProtocolVersion > const &a0, jint a1)
@@ -126,8 +126,8 @@ void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(2),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http::ProtocolVersion > const &a0, jint a1, local_ref< java::lang::String > const &a2)
@@ -136,8 +136,8 @@ void org::apache::http::HttpResponse::setStatusLine(local_ref< org::apache::http
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(3),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::apache::http::HttpResponse::setStatusCode(jint a0)
@@ -146,8 +146,8 @@ void org::apache::http::HttpResponse::setStatusCode(jint a0)
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(4),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::HttpResponse::setReasonPhrase(local_ref< java::lang::String > const &a0)
@@ -156,8 +156,8 @@ void org::apache::http::HttpResponse::setReasonPhrase(local_ref< java::lang::Str
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(5),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::HttpEntity > org::apache::http::HttpResponse::getEntity()
@@ -166,8 +166,8 @@ local_ref< org::apache::http::HttpEntity > org::apache::http::HttpResponse::getE
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(6),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::HttpEntity > >
-	(get_jobject());
+		local_ref< org::apache::http::HttpEntity >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpResponse::setEntity(local_ref< org::apache::http::HttpEntity > const &a0)
@@ -176,8 +176,8 @@ void org::apache::http::HttpResponse::setEntity(local_ref< org::apache::http::Ht
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(7),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Locale > org::apache::http::HttpResponse::getLocale()
@@ -186,8 +186,8 @@ local_ref< java::util::Locale > org::apache::http::HttpResponse::getLocale()
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(8),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Locale > >
-	(get_jobject());
+		local_ref< java::util::Locale >
+	>(get_jobject());
 }
 
 void org::apache::http::HttpResponse::setLocale(local_ref< java::util::Locale > const &a0)
@@ -196,8 +196,8 @@ void org::apache::http::HttpResponse::setLocale(local_ref< java::util::Locale > 
 		org::apache::http::HttpResponse::J2CPP_CLASS_NAME,
 		org::apache::http::HttpResponse::J2CPP_METHOD_NAME(9),
 		org::apache::http::HttpResponse::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

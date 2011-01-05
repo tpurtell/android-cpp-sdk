@@ -83,8 +83,8 @@ org::apache::http::cookie::CookieOrigin::CookieOrigin(local_ref< java::lang::Str
 	call_new_object<
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(0),
-		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }
@@ -96,8 +96,8 @@ local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::getHost
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(1),
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::getPath()
@@ -106,8 +106,8 @@ local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::getPath
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(2),
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::apache::http::cookie::CookieOrigin::getPort()
@@ -116,8 +116,8 @@ jint org::apache::http::cookie::CookieOrigin::getPort()
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(3),
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean org::apache::http::cookie::CookieOrigin::isSecure()
@@ -126,8 +126,8 @@ jboolean org::apache::http::cookie::CookieOrigin::isSecure()
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(4),
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::toString()
@@ -136,8 +136,8 @@ local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::toStrin
 		org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME,
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(5),
 		org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

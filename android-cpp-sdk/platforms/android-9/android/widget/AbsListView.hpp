@@ -20,18 +20,24 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class EditorInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalLayoutListener; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AbsListView_ { class RecyclerListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AbsListView_ { class OnScrollListener; } } } }
@@ -45,13 +51,17 @@ namespace j2cpp { namespace android { namespace widget { namespace Filter_ { cla
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/text/Editable.hpp>
+#include <android/text/NoCopySpan.hpp>
 #include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
 #include <android/view/ViewTreeObserver.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/inputmethod/EditorInfo.hpp>
 #include <android/view/inputmethod/InputConnection.hpp>
 #include <android/widget/AbsListView.hpp>
@@ -140,6 +150,7 @@ namespace android { namespace widget {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
 
 
@@ -259,11 +270,19 @@ namespace android { namespace widget {
 		{
 		}
 
-		operator local_ref<android::widget::AdapterView>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::TextWatcher>() const;
-		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
-		operator local_ref<android::widget::Filter_::FilterListener>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
 		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::widget::AdapterView>() const;
+		operator local_ref<android::widget::Filter_::FilterListener>() const;
 
 
 		AbsListView(local_ref< android::content::Context > const&);
@@ -365,8 +384,8 @@ void android::widget::AbsListView_::RecyclerListener::onMovedToScrapHeap(local_r
 		android::widget::AbsListView_::RecyclerListener::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::RecyclerListener::J2CPP_METHOD_NAME(0),
 		android::widget::AbsListView_::RecyclerListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -385,8 +404,8 @@ void android::widget::AbsListView_::OnScrollListener::onScrollStateChanged(local
 		android::widget::AbsListView_::OnScrollListener::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::OnScrollListener::J2CPP_METHOD_NAME(0),
 		android::widget::AbsListView_::OnScrollListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AbsListView_::OnScrollListener::onScroll(local_ref< android::widget::AbsListView > const &a0, jint a1, jint a2, jint a3)
@@ -395,8 +414,8 @@ void android::widget::AbsListView_::OnScrollListener::onScroll(local_ref< androi
 		android::widget::AbsListView_::OnScrollListener::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::OnScrollListener::J2CPP_METHOD_NAME(1),
 		android::widget::AbsListView_::OnScrollListener::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 
@@ -430,6 +449,11 @@ J2CPP_DEFINE_FIELD(android::widget::AbsListView_::OnScrollListener,1,"SCROLL_STA
 J2CPP_DEFINE_FIELD(android::widget::AbsListView_::OnScrollListener,2,"SCROLL_STATE_FLING","I")
 
 
+android::widget::AbsListView_::LayoutParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::widget::AbsListView_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
 	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jobject());
@@ -441,8 +465,8 @@ android::widget::AbsListView_::LayoutParams::LayoutParams(local_ref< android::co
 	call_new_object<
 		android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(0),
-		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -454,8 +478,8 @@ android::widget::AbsListView_::LayoutParams::LayoutParams(jint a0, jint a1)
 	call_new_object<
 		android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(1),
-		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -467,8 +491,8 @@ android::widget::AbsListView_::LayoutParams::LayoutParams(jint a0, jint a1, jint
 	call_new_object<
 		android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(2),
-		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -480,8 +504,8 @@ android::widget::AbsListView_::LayoutParams::LayoutParams(local_ref< android::vi
 	call_new_object<
 		android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME,
 		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(3),
-		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -496,9 +520,9 @@ J2CPP_DEFINE_METHOD(android::widget::AbsListView_::LayoutParams,3,"<init>","(Lan
 
 
 
-android::widget::AbsListView::operator local_ref<android::widget::AdapterView>() const
+android::widget::AbsListView::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::widget::AdapterView>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::widget::AbsListView::operator local_ref<android::text::TextWatcher>() const
@@ -506,19 +530,59 @@ android::widget::AbsListView::operator local_ref<android::text::TextWatcher>() c
 	return local_ref<android::text::TextWatcher>(get_jobject());
 }
 
-android::widget::AbsListView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
+android::widget::AbsListView::operator local_ref<android::text::NoCopySpan>() const
 {
-	return local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>(get_jobject());
+	return local_ref<android::text::NoCopySpan>(get_jobject());
 }
 
-android::widget::AbsListView::operator local_ref<android::widget::Filter_::FilterListener>() const
+android::widget::AbsListView::operator local_ref<android::view::ViewManager>() const
 {
-	return local_ref<android::widget::Filter_::FilterListener>(get_jobject());
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
 }
 
 android::widget::AbsListView::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
 {
 	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::widget::AdapterView>() const
+{
+	return local_ref<android::widget::AdapterView>(get_jobject());
+}
+
+android::widget::AbsListView::operator local_ref<android::widget::Filter_::FilterListener>() const
+{
+	return local_ref<android::widget::Filter_::FilterListener>(get_jobject());
 }
 
 
@@ -527,8 +591,8 @@ android::widget::AbsListView::AbsListView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(0),
-		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -540,8 +604,8 @@ android::widget::AbsListView::AbsListView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(1),
-		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -553,8 +617,8 @@ android::widget::AbsListView::AbsListView(local_ref< android::content::Context >
 	call_new_object<
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(2),
-		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1, a2)
+		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1, a2)
 )
 {
 }
@@ -566,8 +630,8 @@ void android::widget::AbsListView::setOverScrollMode(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(3),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setFastScrollEnabled(jboolean a0)
@@ -576,8 +640,8 @@ void android::widget::AbsListView::setFastScrollEnabled(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(4),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::isFastScrollEnabled()
@@ -586,8 +650,8 @@ jboolean android::widget::AbsListView::isFastScrollEnabled()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(5),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setSmoothScrollbarEnabled(jboolean a0)
@@ -596,8 +660,8 @@ void android::widget::AbsListView::setSmoothScrollbarEnabled(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(6),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::isSmoothScrollbarEnabled()
@@ -606,8 +670,8 @@ jboolean android::widget::AbsListView::isSmoothScrollbarEnabled()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(7),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setOnScrollListener(local_ref< android::widget::AbsListView_::OnScrollListener > const &a0)
@@ -616,8 +680,8 @@ void android::widget::AbsListView::setOnScrollListener(local_ref< android::widge
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(8),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::isScrollingCacheEnabled()
@@ -626,8 +690,8 @@ jboolean android::widget::AbsListView::isScrollingCacheEnabled()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(9),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setScrollingCacheEnabled(jboolean a0)
@@ -636,8 +700,8 @@ void android::widget::AbsListView::setScrollingCacheEnabled(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(10),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setTextFilterEnabled(jboolean a0)
@@ -646,8 +710,8 @@ void android::widget::AbsListView::setTextFilterEnabled(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(11),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::isTextFilterEnabled()
@@ -656,8 +720,8 @@ jboolean android::widget::AbsListView::isTextFilterEnabled()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(12),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::getFocusedRect(local_ref< android::graphics::Rect > const &a0)
@@ -666,8 +730,8 @@ void android::widget::AbsListView::getFocusedRect(local_ref< android::graphics::
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(13),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::isStackFromBottom()
@@ -676,8 +740,8 @@ jboolean android::widget::AbsListView::isStackFromBottom()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(14),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setStackFromBottom(jboolean a0)
@@ -686,8 +750,8 @@ void android::widget::AbsListView::setStackFromBottom(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(15),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Parcelable > android::widget::AbsListView::onSaveInstanceState()
@@ -696,8 +760,8 @@ local_ref< android::os::Parcelable > android::widget::AbsListView::onSaveInstanc
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(16),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::os::Parcelable > >
-	(get_jobject());
+		local_ref< android::os::Parcelable >
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::onRestoreInstanceState(local_ref< android::os::Parcelable > const &a0)
@@ -706,8 +770,8 @@ void android::widget::AbsListView::onRestoreInstanceState(local_ref< android::os
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(17),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setFilterText(local_ref< java::lang::String > const &a0)
@@ -716,8 +780,8 @@ void android::widget::AbsListView::setFilterText(local_ref< java::lang::String >
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(18),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::AbsListView::getTextFilter()
@@ -726,8 +790,8 @@ local_ref< java::lang::CharSequence > android::widget::AbsListView::getTextFilte
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(19),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject());
+		local_ref< java::lang::CharSequence >
+	>(get_jobject());
 }
 
 
@@ -737,8 +801,8 @@ void android::widget::AbsListView::requestLayout()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(21),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -755,8 +819,8 @@ local_ref< android::view::View > android::widget::AbsListView::getSelectedView()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(30),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 jint android::widget::AbsListView::getListPaddingTop()
@@ -765,8 +829,8 @@ jint android::widget::AbsListView::getListPaddingTop()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(31),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(31), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AbsListView::getListPaddingBottom()
@@ -775,8 +839,8 @@ jint android::widget::AbsListView::getListPaddingBottom()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(32),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(32), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AbsListView::getListPaddingLeft()
@@ -785,8 +849,8 @@ jint android::widget::AbsListView::getListPaddingLeft()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(33),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(33), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AbsListView::getListPaddingRight()
@@ -795,8 +859,8 @@ jint android::widget::AbsListView::getListPaddingRight()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(34),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(34), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -807,8 +871,8 @@ void android::widget::AbsListView::setDrawSelectorOnTop(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(37),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setSelector(jint a0)
@@ -817,8 +881,8 @@ void android::widget::AbsListView::setSelector(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(38),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setSelector(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -827,8 +891,8 @@ void android::widget::AbsListView::setSelector(local_ref< android::graphics::dra
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(39),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::widget::AbsListView::getSelector()
@@ -837,8 +901,8 @@ local_ref< android::graphics::drawable::Drawable > android::widget::AbsListView:
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(40),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setScrollIndicators(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
@@ -847,8 +911,8 @@ void android::widget::AbsListView::setScrollIndicators(local_ref< android::view:
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(41),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(41), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -859,8 +923,8 @@ jboolean android::widget::AbsListView::verifyDrawable(local_ref< android::graphi
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(44),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(44), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -871,8 +935,8 @@ void android::widget::AbsListView::onWindowFocusChanged(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(47),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -882,8 +946,8 @@ jboolean android::widget::AbsListView::showContextMenuForChild(local_ref< androi
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(49),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(49), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -892,8 +956,8 @@ jboolean android::widget::AbsListView::onKeyDown(jint a0, local_ref< android::vi
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(50),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(50), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::widget::AbsListView::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -902,8 +966,8 @@ jboolean android::widget::AbsListView::onKeyUp(jint a0, local_ref< android::view
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(51),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(51), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -913,8 +977,8 @@ jint android::widget::AbsListView::pointToPosition(jint a0, jint a1)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(53),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(53), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jlong android::widget::AbsListView::pointToRowId(jint a0, jint a1)
@@ -923,8 +987,8 @@ jlong android::widget::AbsListView::pointToRowId(jint a0, jint a1)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(54),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(54), 
-		jlong >
-	(get_jobject(), a0, a1);
+		jlong
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AbsListView::onTouchModeChanged(jboolean a0)
@@ -933,8 +997,8 @@ void android::widget::AbsListView::onTouchModeChanged(jboolean a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(55),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(55), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -943,8 +1007,8 @@ jboolean android::widget::AbsListView::onTouchEvent(local_ref< android::view::Mo
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(56),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(56), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -954,8 +1018,8 @@ void android::widget::AbsListView::draw(local_ref< android::graphics::Canvas > c
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(58),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(58), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::onInterceptTouchEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -964,8 +1028,8 @@ jboolean android::widget::AbsListView::onInterceptTouchEvent(local_ref< android:
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(59),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(59), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::addTouchables(local_ref< java::util::ArrayList > const &a0)
@@ -974,8 +1038,8 @@ void android::widget::AbsListView::addTouchables(local_ref< java::util::ArrayLis
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(60),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::smoothScrollToPosition(jint a0)
@@ -984,8 +1048,8 @@ void android::widget::AbsListView::smoothScrollToPosition(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(61),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::smoothScrollToPosition(jint a0, jint a1)
@@ -994,8 +1058,8 @@ void android::widget::AbsListView::smoothScrollToPosition(jint a0, jint a1)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(62),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(62), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AbsListView::smoothScrollBy(jint a0, jint a1)
@@ -1004,8 +1068,8 @@ void android::widget::AbsListView::smoothScrollBy(jint a0, jint a1)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(63),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::AbsListView::invalidateViews()
@@ -1014,8 +1078,8 @@ void android::widget::AbsListView::invalidateViews()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(64),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -1027,8 +1091,8 @@ local_ref< android::view::inputmethod::InputConnection > android::widget::AbsLis
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(68),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(68), 
-		local_ref< android::view::inputmethod::InputConnection > >
-	(get_jobject(), a0);
+		local_ref< android::view::inputmethod::InputConnection >
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::AbsListView::checkInputConnectionProxy(local_ref< android::view::View > const &a0)
@@ -1037,8 +1101,8 @@ jboolean android::widget::AbsListView::checkInputConnectionProxy(local_ref< andr
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(69),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(69), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::clearTextFilter()
@@ -1047,8 +1111,8 @@ void android::widget::AbsListView::clearTextFilter()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(70),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::widget::AbsListView::hasTextFilter()
@@ -1057,8 +1121,8 @@ jboolean android::widget::AbsListView::hasTextFilter()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(71),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(71), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::onGlobalLayout()
@@ -1067,8 +1131,8 @@ void android::widget::AbsListView::onGlobalLayout()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(72),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(72), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::beforeTextChanged(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3)
@@ -1077,8 +1141,8 @@ void android::widget::AbsListView::beforeTextChanged(local_ref< java::lang::Char
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(73),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(73), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::AbsListView::onTextChanged(local_ref< java::lang::CharSequence > const &a0, jint a1, jint a2, jint a3)
@@ -1087,8 +1151,8 @@ void android::widget::AbsListView::onTextChanged(local_ref< java::lang::CharSequ
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(74),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(74), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::widget::AbsListView::afterTextChanged(local_ref< android::text::Editable > const &a0)
@@ -1097,8 +1161,8 @@ void android::widget::AbsListView::afterTextChanged(local_ref< android::text::Ed
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(75),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(75), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::onFilterComplete(jint a0)
@@ -1107,8 +1171,8 @@ void android::widget::AbsListView::onFilterComplete(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(76),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(76), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -1118,8 +1182,8 @@ local_ref< android::widget::AbsListView_::LayoutParams > android::widget::AbsLis
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(78),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(78), 
-		local_ref< android::widget::AbsListView_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::widget::AbsListView_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 
@@ -1129,8 +1193,8 @@ void android::widget::AbsListView::setTranscriptMode(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(80),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(80), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AbsListView::getTranscriptMode()
@@ -1139,8 +1203,8 @@ jint android::widget::AbsListView::getTranscriptMode()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(81),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(81), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::AbsListView::getSolidColor()
@@ -1149,8 +1213,8 @@ jint android::widget::AbsListView::getSolidColor()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(82),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(82), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::setCacheColorHint(jint a0)
@@ -1159,8 +1223,8 @@ void android::widget::AbsListView::setCacheColorHint(jint a0)
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(83),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(83), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::AbsListView::getCacheColorHint()
@@ -1169,8 +1233,8 @@ jint android::widget::AbsListView::getCacheColorHint()
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(84),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(84), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::AbsListView::reclaimViews(local_ref< java::util::List > const &a0)
@@ -1179,8 +1243,8 @@ void android::widget::AbsListView::reclaimViews(local_ref< java::util::List > co
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(85),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(85), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::AbsListView::setRecyclerListener(local_ref< android::widget::AbsListView_::RecyclerListener > const &a0)
@@ -1189,8 +1253,8 @@ void android::widget::AbsListView::setRecyclerListener(local_ref< android::widge
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(86),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(86), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::ViewGroup_::LayoutParams > android::widget::AbsListView::generateLayoutParams_1(local_ref< android::util::AttributeSet > const &a0)
@@ -1199,8 +1263,8 @@ local_ref< android::view::ViewGroup_::LayoutParams > android::widget::AbsListVie
 		android::widget::AbsListView::J2CPP_CLASS_NAME,
 		android::widget::AbsListView::J2CPP_METHOD_NAME(87),
 		android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(87), 
-		local_ref< android::view::ViewGroup_::LayoutParams > >
-	(get_jobject(), a0);
+		local_ref< android::view::ViewGroup_::LayoutParams >
+	>(get_jobject(), a0);
 }
 
 

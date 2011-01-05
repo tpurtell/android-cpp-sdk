@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_VIEW_TOUCHDELEGATE_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 
 
 #include <android/graphics/Rect.hpp>
@@ -86,8 +86,8 @@ android::view::TouchDelegate::TouchDelegate(local_ref< android::graphics::Rect >
 	call_new_object<
 		android::view::TouchDelegate::J2CPP_CLASS_NAME,
 		android::view::TouchDelegate::J2CPP_METHOD_NAME(0),
-		android::view::TouchDelegate::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::view::TouchDelegate::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -99,8 +99,8 @@ jboolean android::view::TouchDelegate::onTouchEvent(local_ref< android::view::Mo
 		android::view::TouchDelegate::J2CPP_CLASS_NAME,
 		android::view::TouchDelegate::J2CPP_METHOD_NAME(1),
 		android::view::TouchDelegate::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

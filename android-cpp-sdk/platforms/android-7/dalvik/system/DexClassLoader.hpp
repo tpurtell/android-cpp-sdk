@@ -12,10 +12,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,6 +45,7 @@ namespace dalvik { namespace system {
 		}
 
 		operator local_ref<java::lang::ClassLoader>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DexClassLoader(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::ClassLoader > const&);
@@ -69,14 +72,19 @@ dalvik::system::DexClassLoader::operator local_ref<java::lang::ClassLoader>() co
 	return local_ref<java::lang::ClassLoader>(get_jobject());
 }
 
+dalvik::system::DexClassLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 dalvik::system::DexClassLoader::DexClassLoader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::ClassLoader > const &a3)
 : object<dalvik::system::DexClassLoader>(
 	call_new_object<
 		dalvik::system::DexClassLoader::J2CPP_CLASS_NAME,
 		dalvik::system::DexClassLoader::J2CPP_METHOD_NAME(0),
-		dalvik::system::DexClassLoader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3)
+		dalvik::system::DexClassLoader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3)
 )
 {
 }

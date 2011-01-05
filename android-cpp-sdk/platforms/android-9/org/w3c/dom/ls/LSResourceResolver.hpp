@@ -75,8 +75,8 @@ local_ref< org::w3c::dom::ls::LSInput > org::w3c::dom::ls::LSResourceResolver::r
 		org::w3c::dom::ls::LSResourceResolver::J2CPP_CLASS_NAME,
 		org::w3c::dom::ls::LSResourceResolver::J2CPP_METHOD_NAME(0),
 		org::w3c::dom::ls::LSResourceResolver::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::w3c::dom::ls::LSInput > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< org::w3c::dom::ls::LSInput >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

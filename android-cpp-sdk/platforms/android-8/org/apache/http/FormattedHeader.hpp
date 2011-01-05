@@ -41,8 +41,8 @@ namespace org { namespace apache { namespace http {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::Header>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< org::apache::http::util::CharArrayBuffer > getBuffer();
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::FormattedHeader::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::FormattedHeader::operator local_ref<org::apache::http::Header>() const
 {
 	return local_ref<org::apache::http::Header>(get_jobject());
+}
+
+org::apache::http::FormattedHeader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::FormattedHeader::getBuffer()
@@ -82,8 +82,8 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::Formatt
 		org::apache::http::FormattedHeader::J2CPP_CLASS_NAME,
 		org::apache::http::FormattedHeader::J2CPP_METHOD_NAME(0),
 		org::apache::http::FormattedHeader::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::util::CharArrayBuffer > >
-	(get_jobject());
+		local_ref< org::apache::http::util::CharArrayBuffer >
+	>(get_jobject());
 }
 
 jint org::apache::http::FormattedHeader::getValuePos()
@@ -92,8 +92,8 @@ jint org::apache::http::FormattedHeader::getValuePos()
 		org::apache::http::FormattedHeader::J2CPP_CLASS_NAME,
 		org::apache::http::FormattedHeader::J2CPP_METHOD_NAME(1),
 		org::apache::http::FormattedHeader::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

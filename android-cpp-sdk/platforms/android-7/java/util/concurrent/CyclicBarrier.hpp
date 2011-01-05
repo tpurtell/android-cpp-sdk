@@ -88,8 +88,8 @@ java::util::concurrent::CyclicBarrier::CyclicBarrier(jint a0, local_ref< java::l
 	call_new_object<
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(0),
-		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -101,8 +101,8 @@ java::util::concurrent::CyclicBarrier::CyclicBarrier(jint a0)
 	call_new_object<
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(1),
-		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -114,8 +114,8 @@ jint java::util::concurrent::CyclicBarrier::getParties()
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(2),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::CyclicBarrier::await()
@@ -124,8 +124,8 @@ jint java::util::concurrent::CyclicBarrier::await()
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(3),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::util::concurrent::CyclicBarrier::await(jlong a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
@@ -134,8 +134,8 @@ jint java::util::concurrent::CyclicBarrier::await(jlong a0, local_ref< java::uti
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(4),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::util::concurrent::CyclicBarrier::isBroken()
@@ -144,8 +144,8 @@ jboolean java::util::concurrent::CyclicBarrier::isBroken()
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(5),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void java::util::concurrent::CyclicBarrier::reset()
@@ -154,8 +154,8 @@ void java::util::concurrent::CyclicBarrier::reset()
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(6),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint java::util::concurrent::CyclicBarrier::getNumberWaiting()
@@ -164,8 +164,8 @@ jint java::util::concurrent::CyclicBarrier::getNumberWaiting()
 		java::util::concurrent::CyclicBarrier::J2CPP_CLASS_NAME,
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_NAME(7),
 		java::util::concurrent::CyclicBarrier::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

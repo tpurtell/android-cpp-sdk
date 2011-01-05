@@ -79,8 +79,8 @@ android::util::TimingLogger::TimingLogger(local_ref< java::lang::String > const 
 	call_new_object<
 		android::util::TimingLogger::J2CPP_CLASS_NAME,
 		android::util::TimingLogger::J2CPP_METHOD_NAME(0),
-		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -92,8 +92,8 @@ void android::util::TimingLogger::reset(local_ref< java::lang::String > const &a
 		android::util::TimingLogger::J2CPP_CLASS_NAME,
 		android::util::TimingLogger::J2CPP_METHOD_NAME(1),
 		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::util::TimingLogger::reset()
@@ -102,8 +102,8 @@ void android::util::TimingLogger::reset()
 		android::util::TimingLogger::J2CPP_CLASS_NAME,
 		android::util::TimingLogger::J2CPP_METHOD_NAME(2),
 		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::util::TimingLogger::addSplit(local_ref< java::lang::String > const &a0)
@@ -112,8 +112,8 @@ void android::util::TimingLogger::addSplit(local_ref< java::lang::String > const
 		android::util::TimingLogger::J2CPP_CLASS_NAME,
 		android::util::TimingLogger::J2CPP_METHOD_NAME(3),
 		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::TimingLogger::dumpToLog()
@@ -122,8 +122,8 @@ void android::util::TimingLogger::dumpToLog()
 		android::util::TimingLogger::J2CPP_CLASS_NAME,
 		android::util::TimingLogger::J2CPP_METHOD_NAME(4),
 		android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

@@ -78,8 +78,8 @@ javax::crypto::MacSpi::MacSpi()
 	call_new_object<
 		javax::crypto::MacSpi::J2CPP_CLASS_NAME,
 		javax::crypto::MacSpi::J2CPP_METHOD_NAME(0),
-		javax::crypto::MacSpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::crypto::MacSpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +98,8 @@ local_ref< java::lang::Object > javax::crypto::MacSpi::clone()
 		javax::crypto::MacSpi::J2CPP_CLASS_NAME,
 		javax::crypto::MacSpi::J2CPP_METHOD_NAME(8),
 		javax::crypto::MacSpi::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

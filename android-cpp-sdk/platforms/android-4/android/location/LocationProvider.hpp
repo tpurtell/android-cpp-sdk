@@ -11,9 +11,9 @@
 #define J2CPP_ANDROID_LOCATION_LOCATIONPROVIDER_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace location { class Criteria; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace location { class Criteria; } } }
 
 
 #include <android/location/Criteria.hpp>
@@ -102,8 +102,8 @@ local_ref< java::lang::String > android::location::LocationProvider::getName()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(1),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::meetsCriteria(local_ref< android::location::Criteria > const &a0)
@@ -112,8 +112,8 @@ jboolean android::location::LocationProvider::meetsCriteria(local_ref< android::
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(2),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::location::LocationProvider::requiresNetwork()
@@ -122,8 +122,8 @@ jboolean android::location::LocationProvider::requiresNetwork()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(3),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::requiresSatellite()
@@ -132,8 +132,8 @@ jboolean android::location::LocationProvider::requiresSatellite()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(4),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::requiresCell()
@@ -142,8 +142,8 @@ jboolean android::location::LocationProvider::requiresCell()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(5),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::hasMonetaryCost()
@@ -152,8 +152,8 @@ jboolean android::location::LocationProvider::hasMonetaryCost()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(6),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::supportsAltitude()
@@ -162,8 +162,8 @@ jboolean android::location::LocationProvider::supportsAltitude()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(7),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::supportsSpeed()
@@ -172,8 +172,8 @@ jboolean android::location::LocationProvider::supportsSpeed()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(8),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::location::LocationProvider::supportsBearing()
@@ -182,8 +182,8 @@ jboolean android::location::LocationProvider::supportsBearing()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(9),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint android::location::LocationProvider::getPowerRequirement()
@@ -192,8 +192,8 @@ jint android::location::LocationProvider::getPowerRequirement()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(10),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::location::LocationProvider::getAccuracy()
@@ -202,8 +202,8 @@ jint android::location::LocationProvider::getAccuracy()
 		android::location::LocationProvider::J2CPP_CLASS_NAME,
 		android::location::LocationProvider::J2CPP_METHOD_NAME(11),
 		android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

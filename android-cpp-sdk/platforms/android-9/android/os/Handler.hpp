@@ -173,8 +173,8 @@ jboolean android::os::Handler_::Callback::handleMessage(local_ref< android::os::
 		android::os::Handler_::Callback::J2CPP_CLASS_NAME,
 		android::os::Handler_::Callback::J2CPP_METHOD_NAME(0),
 		android::os::Handler_::Callback::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -194,8 +194,8 @@ android::os::Handler::Handler()
 	call_new_object<
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(0),
-		android::os::Handler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::os::Handler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -207,8 +207,8 @@ android::os::Handler::Handler(local_ref< android::os::Handler_::Callback > const
 	call_new_object<
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(1),
-		android::os::Handler::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::os::Handler::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -220,8 +220,8 @@ android::os::Handler::Handler(local_ref< android::os::Looper > const &a0)
 	call_new_object<
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(2),
-		android::os::Handler::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::os::Handler::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -233,8 +233,8 @@ android::os::Handler::Handler(local_ref< android::os::Looper > const &a0, local_
 	call_new_object<
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(3),
-		android::os::Handler::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		android::os::Handler::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -246,8 +246,8 @@ void android::os::Handler::handleMessage(local_ref< android::os::Message > const
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(4),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Handler::dispatchMessage(local_ref< android::os::Message > const &a0)
@@ -256,8 +256,8 @@ void android::os::Handler::dispatchMessage(local_ref< android::os::Message > con
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(5),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Message > android::os::Handler::obtainMessage()
@@ -266,8 +266,8 @@ local_ref< android::os::Message > android::os::Handler::obtainMessage()
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(6),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::os::Message > >
-	(get_jobject());
+		local_ref< android::os::Message >
+	>(get_jobject());
 }
 
 local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0)
@@ -276,8 +276,8 @@ local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(7),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::os::Message > >
-	(get_jobject(), a0);
+		local_ref< android::os::Message >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, local_ref< java::lang::Object > const &a1)
@@ -286,8 +286,8 @@ local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, l
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(8),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::os::Message > >
-	(get_jobject(), a0, a1);
+		local_ref< android::os::Message >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, jint a1, jint a2)
@@ -296,8 +296,8 @@ local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, j
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(9),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::os::Message > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::os::Message >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, jint a1, jint a2, local_ref< java::lang::Object > const &a3)
@@ -306,8 +306,8 @@ local_ref< android::os::Message > android::os::Handler::obtainMessage(jint a0, j
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(10),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::os::Message > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< android::os::Message >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::os::Handler::post(local_ref< java::lang::Runnable > const &a0)
@@ -316,8 +316,8 @@ jboolean android::os::Handler::post(local_ref< java::lang::Runnable > const &a0)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(11),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::Handler::postAtTime(local_ref< java::lang::Runnable > const &a0, jlong a1)
@@ -326,8 +326,8 @@ jboolean android::os::Handler::postAtTime(local_ref< java::lang::Runnable > cons
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(12),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::postAtTime(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1, jlong a2)
@@ -336,8 +336,8 @@ jboolean android::os::Handler::postAtTime(local_ref< java::lang::Runnable > cons
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(13),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::os::Handler::postDelayed(local_ref< java::lang::Runnable > const &a0, jlong a1)
@@ -346,8 +346,8 @@ jboolean android::os::Handler::postDelayed(local_ref< java::lang::Runnable > con
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(14),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::postAtFrontOfQueue(local_ref< java::lang::Runnable > const &a0)
@@ -356,8 +356,8 @@ jboolean android::os::Handler::postAtFrontOfQueue(local_ref< java::lang::Runnabl
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(15),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::os::Handler::removeCallbacks(local_ref< java::lang::Runnable > const &a0)
@@ -366,8 +366,8 @@ void android::os::Handler::removeCallbacks(local_ref< java::lang::Runnable > con
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(16),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Handler::removeCallbacks(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
@@ -376,8 +376,8 @@ void android::os::Handler::removeCallbacks(local_ref< java::lang::Runnable > con
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(17),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::sendMessage(local_ref< android::os::Message > const &a0)
@@ -386,8 +386,8 @@ jboolean android::os::Handler::sendMessage(local_ref< android::os::Message > con
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(18),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::Handler::sendEmptyMessage(jint a0)
@@ -396,8 +396,8 @@ jboolean android::os::Handler::sendEmptyMessage(jint a0)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(19),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(19), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::Handler::sendEmptyMessageDelayed(jint a0, jlong a1)
@@ -406,8 +406,8 @@ jboolean android::os::Handler::sendEmptyMessageDelayed(jint a0, jlong a1)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(20),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::sendEmptyMessageAtTime(jint a0, jlong a1)
@@ -416,8 +416,8 @@ jboolean android::os::Handler::sendEmptyMessageAtTime(jint a0, jlong a1)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(21),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(21), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::sendMessageDelayed(local_ref< android::os::Message > const &a0, jlong a1)
@@ -426,8 +426,8 @@ jboolean android::os::Handler::sendMessageDelayed(local_ref< android::os::Messag
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(22),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::sendMessageAtTime(local_ref< android::os::Message > const &a0, jlong a1)
@@ -436,8 +436,8 @@ jboolean android::os::Handler::sendMessageAtTime(local_ref< android::os::Message
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(23),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::os::Handler::sendMessageAtFrontOfQueue(local_ref< android::os::Message > const &a0)
@@ -446,8 +446,8 @@ jboolean android::os::Handler::sendMessageAtFrontOfQueue(local_ref< android::os:
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(24),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::os::Handler::removeMessages(jint a0)
@@ -456,8 +456,8 @@ void android::os::Handler::removeMessages(jint a0)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(25),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::Handler::removeMessages(jint a0, local_ref< java::lang::Object > const &a1)
@@ -466,8 +466,8 @@ void android::os::Handler::removeMessages(jint a0, local_ref< java::lang::Object
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(26),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::os::Handler::removeCallbacksAndMessages(local_ref< java::lang::Object > const &a0)
@@ -476,8 +476,8 @@ void android::os::Handler::removeCallbacksAndMessages(local_ref< java::lang::Obj
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(27),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::Handler::hasMessages(jint a0)
@@ -486,8 +486,8 @@ jboolean android::os::Handler::hasMessages(jint a0)
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(28),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(28), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::os::Handler::hasMessages(jint a0, local_ref< java::lang::Object > const &a1)
@@ -496,8 +496,8 @@ jboolean android::os::Handler::hasMessages(jint a0, local_ref< java::lang::Objec
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(29),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(29), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< android::os::Looper > android::os::Handler::getLooper()
@@ -506,8 +506,8 @@ local_ref< android::os::Looper > android::os::Handler::getLooper()
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(30),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(30), 
-		local_ref< android::os::Looper > >
-	(get_jobject());
+		local_ref< android::os::Looper >
+	>(get_jobject());
 }
 
 void android::os::Handler::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
@@ -516,8 +516,8 @@ void android::os::Handler::dump(local_ref< android::util::Printer > const &a0, l
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(31),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::String > android::os::Handler::toString()
@@ -526,8 +526,8 @@ local_ref< java::lang::String > android::os::Handler::toString()
 		android::os::Handler::J2CPP_CLASS_NAME,
 		android::os::Handler::J2CPP_METHOD_NAME(32),
 		android::os::Handler::J2CPP_METHOD_SIGNATURE(32), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

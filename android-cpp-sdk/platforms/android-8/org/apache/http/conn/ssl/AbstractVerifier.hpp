@@ -15,6 +15,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class HostnameVerifier; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocket; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 
@@ -22,6 +23,7 @@ namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSes
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/X509Certificate.hpp>
+#include <javax/net/ssl/HostnameVerifier.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 #include <javax/net/ssl/SSLSocket.hpp>
 #include <org/apache/http/conn/ssl/X509HostnameVerifier.hpp>
@@ -54,8 +56,9 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::HostnameVerifier>() const;
 
 
 		AbstractVerifier();
@@ -88,14 +91,19 @@ namespace j2cpp {
 
 
 
+org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const
+{
+	return local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>(get_jobject());
+}
+
 org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
-org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const
+org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<javax::net::ssl::HostnameVerifier>() const
 {
-	return local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>(get_jobject());
+	return local_ref<javax::net::ssl::HostnameVerifier>(get_jobject());
 }
 
 
@@ -104,8 +112,8 @@ org::apache::http::conn::ssl::AbstractVerifier::AbstractVerifier()
 	call_new_object<
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(0),
-		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -117,8 +125,8 @@ void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lan
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< javax::net::ssl::SSLSession > const &a1)
@@ -127,8 +135,8 @@ jboolean org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java:
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::X509Certificate > const &a1)
@@ -137,8 +145,8 @@ void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lan
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< array< local_ref< java::lang::String >, 1> > const &a2, jboolean a3)
@@ -147,8 +155,8 @@ void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lan
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean org::apache::http::conn::ssl::AbstractVerifier::acceptableCountryWildcard(local_ref< java::lang::String > const &a0)
@@ -157,8 +165,8 @@ jboolean org::apache::http::conn::ssl::AbstractVerifier::acceptableCountryWildca
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(5),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > org::apache::http::conn::ssl::AbstractVerifier::getCNs(local_ref< java::security::cert::X509Certificate > const &a0)
@@ -167,8 +175,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > org::apache::http::conn:
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(6),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > org::apache::http::conn::ssl::AbstractVerifier::getDNSSubjectAlts(local_ref< java::security::cert::X509Certificate > const &a0)
@@ -177,8 +185,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > org::apache::http::conn:
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(7),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(a0);
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(a0);
 }
 
 jint org::apache::http::conn::ssl::AbstractVerifier::countDots(local_ref< java::lang::String > const &a0)
@@ -187,8 +195,8 @@ jint org::apache::http::conn::ssl::AbstractVerifier::countDots(local_ref< java::
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME,
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(8),
 		org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(a0);
+		jint
+	>(a0);
 }
 
 

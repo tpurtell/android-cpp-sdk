@@ -11,12 +11,6 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_BITMAPDRAWABLE_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
-namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
-namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
-namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
-namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
-namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
 namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
@@ -24,6 +18,13 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
+namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
+namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 
 
 #include <android/content/res/Resources.hpp>
@@ -36,6 +37,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/util/DisplayMetrics.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -91,6 +93,7 @@ namespace android { namespace graphics { namespace drawable {
 		}
 
 		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		BitmapDrawable();
@@ -148,14 +151,19 @@ android::graphics::drawable::BitmapDrawable::operator local_ref<android::graphic
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
 }
 
+android::graphics::drawable::BitmapDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::drawable::BitmapDrawable::BitmapDrawable()
 : object<android::graphics::drawable::BitmapDrawable>(
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -167,8 +175,8 @@ android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(1),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -180,8 +188,8 @@ android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(2),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -193,8 +201,8 @@ android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(3),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -206,8 +214,8 @@ android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< java::lan
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(4),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -219,8 +227,8 @@ android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< java::io:
 	call_new_object<
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(5),
-		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -232,8 +240,8 @@ local_ref< android::graphics::Paint > android::graphics::drawable::BitmapDrawabl
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::graphics::Paint > >
-	(get_jobject());
+		local_ref< android::graphics::Paint >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Bitmap > android::graphics::drawable::BitmapDrawable::getBitmap()
@@ -242,8 +250,8 @@ local_ref< android::graphics::Bitmap > android::graphics::drawable::BitmapDrawab
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::graphics::Bitmap > >
-	(get_jobject());
+		local_ref< android::graphics::Bitmap >
+	>(get_jobject());
 }
 
 void android::graphics::drawable::BitmapDrawable::setTargetDensity(local_ref< android::graphics::Canvas > const &a0)
@@ -252,8 +260,8 @@ void android::graphics::drawable::BitmapDrawable::setTargetDensity(local_ref< an
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setTargetDensity(local_ref< android::util::DisplayMetrics > const &a0)
@@ -262,8 +270,8 @@ void android::graphics::drawable::BitmapDrawable::setTargetDensity(local_ref< an
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setTargetDensity(jint a0)
@@ -272,8 +280,8 @@ void android::graphics::drawable::BitmapDrawable::setTargetDensity(jint a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::BitmapDrawable::getGravity()
@@ -282,8 +290,8 @@ jint android::graphics::drawable::BitmapDrawable::getGravity()
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(11),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::graphics::drawable::BitmapDrawable::setGravity(jint a0)
@@ -292,8 +300,8 @@ void android::graphics::drawable::BitmapDrawable::setGravity(jint a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(12),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setAntiAlias(jboolean a0)
@@ -302,8 +310,8 @@ void android::graphics::drawable::BitmapDrawable::setAntiAlias(jboolean a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(13),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setFilterBitmap(jboolean a0)
@@ -312,8 +320,8 @@ void android::graphics::drawable::BitmapDrawable::setFilterBitmap(jboolean a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(14),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setDither(jboolean a0)
@@ -322,8 +330,8 @@ void android::graphics::drawable::BitmapDrawable::setDither(jboolean a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(15),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::Shader_::TileMode > android::graphics::drawable::BitmapDrawable::getTileModeX()
@@ -332,8 +340,8 @@ local_ref< android::graphics::Shader_::TileMode > android::graphics::drawable::B
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(16),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< android::graphics::Shader_::TileMode > >
-	(get_jobject());
+		local_ref< android::graphics::Shader_::TileMode >
+	>(get_jobject());
 }
 
 local_ref< android::graphics::Shader_::TileMode > android::graphics::drawable::BitmapDrawable::getTileModeY()
@@ -342,8 +350,8 @@ local_ref< android::graphics::Shader_::TileMode > android::graphics::drawable::B
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(17),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< android::graphics::Shader_::TileMode > >
-	(get_jobject());
+		local_ref< android::graphics::Shader_::TileMode >
+	>(get_jobject());
 }
 
 void android::graphics::drawable::BitmapDrawable::setTileModeX(local_ref< android::graphics::Shader_::TileMode > const &a0)
@@ -352,8 +360,8 @@ void android::graphics::drawable::BitmapDrawable::setTileModeX(local_ref< androi
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(18),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setTileModeY(local_ref< android::graphics::Shader_::TileMode > const &a0)
@@ -362,8 +370,8 @@ void android::graphics::drawable::BitmapDrawable::setTileModeY(local_ref< androi
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(19),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setTileModeXY(local_ref< android::graphics::Shader_::TileMode > const &a0, local_ref< android::graphics::Shader_::TileMode > const &a1)
@@ -372,8 +380,8 @@ void android::graphics::drawable::BitmapDrawable::setTileModeXY(local_ref< andro
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(20),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::graphics::drawable::BitmapDrawable::getChangingConfigurations()
@@ -382,8 +390,8 @@ jint android::graphics::drawable::BitmapDrawable::getChangingConfigurations()
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(21),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 
@@ -393,8 +401,8 @@ void android::graphics::drawable::BitmapDrawable::draw(local_ref< android::graph
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(23),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setAlpha(jint a0)
@@ -403,8 +411,8 @@ void android::graphics::drawable::BitmapDrawable::setAlpha(jint a0)
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(24),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::BitmapDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -413,8 +421,8 @@ void android::graphics::drawable::BitmapDrawable::setColorFilter(local_ref< andr
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(25),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(25), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::BitmapDrawable::mutate()
@@ -423,8 +431,8 @@ local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(26),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(26), 
-		local_ref< android::graphics::drawable::Drawable > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable >
+	>(get_jobject());
 }
 
 void android::graphics::drawable::BitmapDrawable::inflate(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< android::util::AttributeSet > const &a2)
@@ -433,8 +441,8 @@ void android::graphics::drawable::BitmapDrawable::inflate(local_ref< android::co
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(27),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(27), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::graphics::drawable::BitmapDrawable::getIntrinsicWidth()
@@ -443,8 +451,8 @@ jint android::graphics::drawable::BitmapDrawable::getIntrinsicWidth()
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(28),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::BitmapDrawable::getIntrinsicHeight()
@@ -453,8 +461,8 @@ jint android::graphics::drawable::BitmapDrawable::getIntrinsicHeight()
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(29),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::BitmapDrawable::getOpacity()
@@ -463,8 +471,8 @@ jint android::graphics::drawable::BitmapDrawable::getOpacity()
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(30),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(30), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::BitmapDrawable::getConstantState()
@@ -473,8 +481,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(31),
 		android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(31), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 

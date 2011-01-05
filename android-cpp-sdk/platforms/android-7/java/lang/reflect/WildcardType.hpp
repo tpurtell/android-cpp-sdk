@@ -80,8 +80,8 @@ local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::refle
 		java::lang::reflect::WildcardType::J2CPP_CLASS_NAME,
 		java::lang::reflect::WildcardType::J2CPP_METHOD_NAME(0),
 		java::lang::reflect::WildcardType::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Type >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::reflect::WildcardType::getLowerBounds()
@@ -90,8 +90,8 @@ local_ref< array< local_ref< java::lang::reflect::Type >, 1> > java::lang::refle
 		java::lang::reflect::WildcardType::J2CPP_CLASS_NAME,
 		java::lang::reflect::WildcardType::J2CPP_METHOD_NAME(1),
 		java::lang::reflect::WildcardType::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::reflect::Type >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::reflect::Type >, 1> >
+	>(get_jobject());
 }
 
 

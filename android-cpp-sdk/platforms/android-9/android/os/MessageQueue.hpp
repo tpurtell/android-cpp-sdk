@@ -103,8 +103,8 @@ jboolean android::os::MessageQueue_::IdleHandler::queueIdle()
 		android::os::MessageQueue_::IdleHandler::J2CPP_CLASS_NAME,
 		android::os::MessageQueue_::IdleHandler::J2CPP_METHOD_NAME(0),
 		android::os::MessageQueue_::IdleHandler::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -125,8 +125,8 @@ void android::os::MessageQueue::addIdleHandler(local_ref< android::os::MessageQu
 		android::os::MessageQueue::J2CPP_CLASS_NAME,
 		android::os::MessageQueue::J2CPP_METHOD_NAME(1),
 		android::os::MessageQueue::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::os::MessageQueue::removeIdleHandler(local_ref< android::os::MessageQueue_::IdleHandler > const &a0)
@@ -135,8 +135,8 @@ void android::os::MessageQueue::removeIdleHandler(local_ref< android::os::Messag
 		android::os::MessageQueue::J2CPP_CLASS_NAME,
 		android::os::MessageQueue::J2CPP_METHOD_NAME(2),
 		android::os::MessageQueue::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

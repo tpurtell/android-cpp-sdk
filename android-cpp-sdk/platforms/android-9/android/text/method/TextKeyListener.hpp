@@ -13,25 +13,35 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 namespace j2cpp { namespace android { namespace text { class SpanWatcher; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { namespace TextKeyListener_ { class Capitalize; } } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/NoCopySpan.hpp>
 #include <android/text/SpanWatcher.hpp>
 #include <android/text/Spannable.hpp>
 #include <android/text/method/BaseKeyListener.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/text/method/TextKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -67,7 +77,10 @@ namespace android { namespace text { namespace method {
 			{
 			}
 
+			operator local_ref<java::lang::Comparable>() const;
 			operator local_ref<java::lang::Enum>() const;
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 			static local_ref< array< local_ref< android::text::method::TextKeyListener_::Capitalize >, 1> > values();
@@ -109,8 +122,12 @@ namespace android { namespace text { namespace method {
 		{
 		}
 
-		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::text::SpanWatcher>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
 
 
 		TextKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const&, jboolean);
@@ -146,9 +163,24 @@ namespace j2cpp {
 
 
 
+android::text::method::TextKeyListener_::Capitalize::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
 android::text::method::TextKeyListener_::Capitalize::operator local_ref<java::lang::Enum>() const
 {
 	return local_ref<java::lang::Enum>(get_jobject());
+}
+
+android::text::method::TextKeyListener_::Capitalize::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::text::method::TextKeyListener_::Capitalize::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 local_ref< array< local_ref< android::text::method::TextKeyListener_::Capitalize >, 1> > android::text::method::TextKeyListener_::Capitalize::values()
@@ -157,8 +189,8 @@ local_ref< array< local_ref< android::text::method::TextKeyListener_::Capitalize
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_METHOD_NAME(0),
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< array< local_ref< android::text::method::TextKeyListener_::Capitalize >, 1> > >
-	();
+		local_ref< array< local_ref< android::text::method::TextKeyListener_::Capitalize >, 1> >
+	>();
 }
 
 local_ref< android::text::method::TextKeyListener_::Capitalize > android::text::method::TextKeyListener_::Capitalize::valueOf(local_ref< java::lang::String > const &a0)
@@ -167,8 +199,8 @@ local_ref< android::text::method::TextKeyListener_::Capitalize > android::text::
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_METHOD_NAME(1),
 		android::text::method::TextKeyListener_::Capitalize::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::method::TextKeyListener_::Capitalize > >
-	(a0);
+		local_ref< android::text::method::TextKeyListener_::Capitalize >
+	>(a0);
 }
 
 
@@ -216,14 +248,34 @@ J2CPP_DEFINE_FIELD(android::text::method::TextKeyListener_::Capitalize,4,"$VALUE
 
 
 
-android::text::method::TextKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
+android::text::method::TextKeyListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 android::text::method::TextKeyListener::operator local_ref<android::text::SpanWatcher>() const
 {
 	return local_ref<android::text::SpanWatcher>(get_jobject());
+}
+
+android::text::method::TextKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jobject());
+}
+
+android::text::method::TextKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
+{
+	return local_ref<android::text::method::BaseKeyListener>(get_jobject());
+}
+
+android::text::method::TextKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
+{
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jobject());
+}
+
+android::text::method::TextKeyListener::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jobject());
 }
 
 
@@ -232,8 +284,8 @@ android::text::method::TextKeyListener::TextKeyListener(local_ref< android::text
 	call_new_object<
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(0),
-		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -245,8 +297,8 @@ local_ref< android::text::method::TextKeyListener > android::text::method::TextK
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(1),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::text::method::TextKeyListener > >
-	(a0, a1);
+		local_ref< android::text::method::TextKeyListener >
+	>(a0, a1);
 }
 
 local_ref< android::text::method::TextKeyListener > android::text::method::TextKeyListener::getInstance()
@@ -255,8 +307,8 @@ local_ref< android::text::method::TextKeyListener > android::text::method::TextK
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(2),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::text::method::TextKeyListener > >
-	();
+		local_ref< android::text::method::TextKeyListener >
+	>();
 }
 
 jboolean android::text::method::TextKeyListener::shouldCap(local_ref< android::text::method::TextKeyListener_::Capitalize > const &a0, local_ref< java::lang::CharSequence > const &a1, jint a2)
@@ -265,8 +317,8 @@ jboolean android::text::method::TextKeyListener::shouldCap(local_ref< android::t
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(3),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0, a1, a2);
+		jboolean
+	>(a0, a1, a2);
 }
 
 jint android::text::method::TextKeyListener::getInputType()
@@ -275,8 +327,8 @@ jint android::text::method::TextKeyListener::getInputType()
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(4),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::text::method::TextKeyListener::onKeyDown(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -285,8 +337,8 @@ jboolean android::text::method::TextKeyListener::onKeyDown(local_ref< android::v
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(5),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::TextKeyListener::onKeyUp(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, jint a2, local_ref< android::view::KeyEvent > const &a3)
@@ -295,8 +347,8 @@ jboolean android::text::method::TextKeyListener::onKeyUp(local_ref< android::vie
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(6),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0, a1, a2, a3);
+		jboolean
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 jboolean android::text::method::TextKeyListener::onKeyOther(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, local_ref< android::view::KeyEvent > const &a2)
@@ -305,8 +357,8 @@ jboolean android::text::method::TextKeyListener::onKeyOther(local_ref< android::
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(7),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::text::method::TextKeyListener::clear(local_ref< android::text::Editable > const &a0)
@@ -315,8 +367,8 @@ void android::text::method::TextKeyListener::clear(local_ref< android::text::Edi
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(8),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(a0);
+		void
+	>(a0);
 }
 
 void android::text::method::TextKeyListener::onSpanAdded(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3)
@@ -325,8 +377,8 @@ void android::text::method::TextKeyListener::onSpanAdded(local_ref< android::tex
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(9),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::method::TextKeyListener::onSpanRemoved(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3)
@@ -335,8 +387,8 @@ void android::text::method::TextKeyListener::onSpanRemoved(local_ref< android::t
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(10),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0, a1, a2, a3);
+		void
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 void android::text::method::TextKeyListener::onSpanChanged(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, jint a2, jint a3, jint a4, jint a5)
@@ -345,8 +397,8 @@ void android::text::method::TextKeyListener::onSpanChanged(local_ref< android::t
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(11),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::text::method::TextKeyListener::release()
@@ -355,8 +407,8 @@ void android::text::method::TextKeyListener::release()
 		android::text::method::TextKeyListener::J2CPP_CLASS_NAME,
 		android::text::method::TextKeyListener::J2CPP_METHOD_NAME(12),
 		android::text::method::TextKeyListener::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

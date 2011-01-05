@@ -108,8 +108,8 @@ local_ref< java::lang::Object > android::os::Parcelable_::Creator::createFromPar
 		android::os::Parcelable_::Creator::J2CPP_CLASS_NAME,
 		android::os::Parcelable_::Creator::J2CPP_METHOD_NAME(0),
 		android::os::Parcelable_::Creator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcelable_::Creator::newArray(jint a0)
@@ -118,8 +118,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > android::os::Parcelable_
 		android::os::Parcelable_::Creator::J2CPP_CLASS_NAME,
 		android::os::Parcelable_::Creator::J2CPP_METHOD_NAME(1),
 		android::os::Parcelable_::Creator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject(), a0);
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject(), a0);
 }
 
 
@@ -140,8 +140,8 @@ jint android::os::Parcelable::describeContents()
 		android::os::Parcelable::J2CPP_CLASS_NAME,
 		android::os::Parcelable::J2CPP_METHOD_NAME(0),
 		android::os::Parcelable::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::os::Parcelable::writeToParcel(local_ref< android::os::Parcel > const &a0, jint a1)
@@ -150,8 +150,8 @@ void android::os::Parcelable::writeToParcel(local_ref< android::os::Parcel > con
 		android::os::Parcelable::J2CPP_CLASS_NAME,
 		android::os::Parcelable::J2CPP_METHOD_NAME(1),
 		android::os::Parcelable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

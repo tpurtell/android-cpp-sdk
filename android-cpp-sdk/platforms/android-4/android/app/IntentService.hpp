@@ -11,15 +11,23 @@
 #define J2CPP_ANDROID_APP_INTENTSERVICE_HPP_DECL
 
 
-namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class Service; } } }
 
 
 #include <android/app/Service.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,6 +55,10 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::Service>() const;
 
 
@@ -73,6 +85,26 @@ namespace j2cpp {
 
 
 
+android::app::IntentService::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::app::IntentService::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::IntentService::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::IntentService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::IntentService::operator local_ref<android::app::Service>() const
 {
 	return local_ref<android::app::Service>(get_jobject());
@@ -84,8 +116,8 @@ android::app::IntentService::IntentService(local_ref< java::lang::String > const
 	call_new_object<
 		android::app::IntentService::J2CPP_CLASS_NAME,
 		android::app::IntentService::J2CPP_METHOD_NAME(0),
-		android::app::IntentService::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::app::IntentService::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -97,8 +129,8 @@ void android::app::IntentService::onCreate()
 		android::app::IntentService::J2CPP_CLASS_NAME,
 		android::app::IntentService::J2CPP_METHOD_NAME(1),
 		android::app::IntentService::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::app::IntentService::onStart(local_ref< android::content::Intent > const &a0, jint a1)
@@ -107,8 +139,8 @@ void android::app::IntentService::onStart(local_ref< android::content::Intent > 
 		android::app::IntentService::J2CPP_CLASS_NAME,
 		android::app::IntentService::J2CPP_METHOD_NAME(2),
 		android::app::IntentService::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::IntentService::onDestroy()
@@ -117,8 +149,8 @@ void android::app::IntentService::onDestroy()
 		android::app::IntentService::J2CPP_CLASS_NAME,
 		android::app::IntentService::J2CPP_METHOD_NAME(3),
 		android::app::IntentService::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::app::IntentService::onBind(local_ref< android::content::Intent > const &a0)
@@ -127,8 +159,8 @@ local_ref< android::os::IBinder > android::app::IntentService::onBind(local_ref<
 		android::app::IntentService::J2CPP_CLASS_NAME,
 		android::app::IntentService::J2CPP_METHOD_NAME(4),
 		android::app::IntentService::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::os::IBinder > >
-	(get_jobject(), a0);
+		local_ref< android::os::IBinder >
+	>(get_jobject(), a0);
 }
 
 

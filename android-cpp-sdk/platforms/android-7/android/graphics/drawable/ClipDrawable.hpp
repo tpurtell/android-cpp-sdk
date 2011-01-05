@@ -11,6 +11,7 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_CLIPDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -72,6 +74,7 @@ namespace android { namespace graphics { namespace drawable {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::graphics::drawable::Drawable>() const;
 		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
 
@@ -114,6 +117,11 @@ namespace j2cpp {
 
 
 
+android::graphics::drawable::ClipDrawable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::graphics::drawable::ClipDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
 	return local_ref<android::graphics::drawable::Drawable>(get_jobject());
@@ -130,8 +138,8 @@ android::graphics::drawable::ClipDrawable::ClipDrawable(local_ref< android::grap
 	call_new_object<
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(0),
-		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -143,8 +151,8 @@ void android::graphics::drawable::ClipDrawable::inflate(local_ref< android::cont
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(1),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::drawable::ClipDrawable::invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
@@ -153,8 +161,8 @@ void android::graphics::drawable::ClipDrawable::invalidateDrawable(local_ref< an
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(2),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::ClipDrawable::scheduleDrawable(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::Runnable > const &a1, jlong a2)
@@ -163,8 +171,8 @@ void android::graphics::drawable::ClipDrawable::scheduleDrawable(local_ref< andr
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(3),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::graphics::drawable::ClipDrawable::unscheduleDrawable(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::Runnable > const &a1)
@@ -173,8 +181,8 @@ void android::graphics::drawable::ClipDrawable::unscheduleDrawable(local_ref< an
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(4),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::graphics::drawable::ClipDrawable::getChangingConfigurations()
@@ -183,8 +191,8 @@ jint android::graphics::drawable::ClipDrawable::getChangingConfigurations()
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(5),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::drawable::ClipDrawable::getPadding(local_ref< android::graphics::Rect > const &a0)
@@ -193,8 +201,8 @@ jboolean android::graphics::drawable::ClipDrawable::getPadding(local_ref< androi
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(6),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::graphics::drawable::ClipDrawable::setVisible(jboolean a0, jboolean a1)
@@ -203,8 +211,8 @@ jboolean android::graphics::drawable::ClipDrawable::setVisible(jboolean a0, jboo
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(7),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::graphics::drawable::ClipDrawable::setAlpha(jint a0)
@@ -213,8 +221,8 @@ void android::graphics::drawable::ClipDrawable::setAlpha(jint a0)
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(8),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::graphics::drawable::ClipDrawable::setColorFilter(local_ref< android::graphics::ColorFilter > const &a0)
@@ -223,8 +231,8 @@ void android::graphics::drawable::ClipDrawable::setColorFilter(local_ref< androi
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(9),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::ClipDrawable::getOpacity()
@@ -233,8 +241,8 @@ jint android::graphics::drawable::ClipDrawable::getOpacity()
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(10),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::graphics::drawable::ClipDrawable::isStateful()
@@ -243,8 +251,8 @@ jboolean android::graphics::drawable::ClipDrawable::isStateful()
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(11),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -256,8 +264,8 @@ void android::graphics::drawable::ClipDrawable::draw(local_ref< android::graphic
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(15),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::graphics::drawable::ClipDrawable::getIntrinsicWidth()
@@ -266,8 +274,8 @@ jint android::graphics::drawable::ClipDrawable::getIntrinsicWidth()
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(16),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::graphics::drawable::ClipDrawable::getIntrinsicHeight()
@@ -276,8 +284,8 @@ jint android::graphics::drawable::ClipDrawable::getIntrinsicHeight()
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(17),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::graphics::drawable::Drawable_::ConstantState > android::graphics::drawable::ClipDrawable::getConstantState()
@@ -286,8 +294,8 @@ local_ref< android::graphics::drawable::Drawable_::ConstantState > android::grap
 		android::graphics::drawable::ClipDrawable::J2CPP_CLASS_NAME,
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_NAME(18),
 		android::graphics::drawable::ClipDrawable::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< android::graphics::drawable::Drawable_::ConstantState > >
-	(get_jobject());
+		local_ref< android::graphics::drawable::Drawable_::ConstantState >
+	>(get_jobject());
 }
 
 

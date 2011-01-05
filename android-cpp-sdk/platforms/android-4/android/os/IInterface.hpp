@@ -71,8 +71,8 @@ local_ref< android::os::IBinder > android::os::IInterface::asBinder()
 		android::os::IInterface::J2CPP_CLASS_NAME,
 		android::os::IInterface::J2CPP_METHOD_NAME(0),
 		android::os::IInterface::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 

@@ -134,8 +134,8 @@ java::util::logging::LogRecord::LogRecord(local_ref< java::util::logging::Level 
 	call_new_object<
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(0),
-		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -147,8 +147,8 @@ local_ref< java::util::logging::Level > java::util::logging::LogRecord::getLevel
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(1),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::logging::Level > >
-	(get_jobject());
+		local_ref< java::util::logging::Level >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setLevel(local_ref< java::util::logging::Level > const &a0)
@@ -157,8 +157,8 @@ void java::util::logging::LogRecord::setLevel(local_ref< java::util::logging::Le
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(2),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::LogRecord::getLoggerName()
@@ -167,8 +167,8 @@ local_ref< java::lang::String > java::util::logging::LogRecord::getLoggerName()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(3),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setLoggerName(local_ref< java::lang::String > const &a0)
@@ -177,8 +177,8 @@ void java::util::logging::LogRecord::setLoggerName(local_ref< java::lang::String
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(4),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::LogRecord::getMessage()
@@ -187,8 +187,8 @@ local_ref< java::lang::String > java::util::logging::LogRecord::getMessage()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(5),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setMessage(local_ref< java::lang::String > const &a0)
@@ -197,8 +197,8 @@ void java::util::logging::LogRecord::setMessage(local_ref< java::lang::String > 
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(6),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::util::logging::LogRecord::getMillis()
@@ -207,8 +207,8 @@ jlong java::util::logging::LogRecord::getMillis()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(7),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(7), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setMillis(jlong a0)
@@ -217,8 +217,8 @@ void java::util::logging::LogRecord::setMillis(jlong a0)
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(8),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::Object >, 1> > java::util::logging::LogRecord::getParameters()
@@ -227,8 +227,8 @@ local_ref< array< local_ref< java::lang::Object >, 1> > java::util::logging::Log
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(9),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< java::lang::Object >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::Object >, 1> >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setParameters(local_ref< array< local_ref< java::lang::Object >, 1> > const &a0)
@@ -237,8 +237,8 @@ void java::util::logging::LogRecord::setParameters(local_ref< array< local_ref< 
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(10),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::ResourceBundle > java::util::logging::LogRecord::getResourceBundle()
@@ -247,8 +247,8 @@ local_ref< java::util::ResourceBundle > java::util::logging::LogRecord::getResou
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(11),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::util::ResourceBundle > >
-	(get_jobject());
+		local_ref< java::util::ResourceBundle >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setResourceBundle(local_ref< java::util::ResourceBundle > const &a0)
@@ -257,8 +257,8 @@ void java::util::logging::LogRecord::setResourceBundle(local_ref< java::util::Re
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(12),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::LogRecord::getResourceBundleName()
@@ -267,8 +267,8 @@ local_ref< java::lang::String > java::util::logging::LogRecord::getResourceBundl
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(13),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setResourceBundleName(local_ref< java::lang::String > const &a0)
@@ -277,8 +277,8 @@ void java::util::logging::LogRecord::setResourceBundleName(local_ref< java::lang
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(14),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jlong java::util::logging::LogRecord::getSequenceNumber()
@@ -287,8 +287,8 @@ jlong java::util::logging::LogRecord::getSequenceNumber()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(15),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(15), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setSequenceNumber(jlong a0)
@@ -297,8 +297,8 @@ void java::util::logging::LogRecord::setSequenceNumber(jlong a0)
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(16),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::LogRecord::getSourceClassName()
@@ -307,8 +307,8 @@ local_ref< java::lang::String > java::util::logging::LogRecord::getSourceClassNa
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(17),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(17), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setSourceClassName(local_ref< java::lang::String > const &a0)
@@ -317,8 +317,8 @@ void java::util::logging::LogRecord::setSourceClassName(local_ref< java::lang::S
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(18),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::util::logging::LogRecord::getSourceMethodName()
@@ -327,8 +327,8 @@ local_ref< java::lang::String > java::util::logging::LogRecord::getSourceMethodN
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(19),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setSourceMethodName(local_ref< java::lang::String > const &a0)
@@ -337,8 +337,8 @@ void java::util::logging::LogRecord::setSourceMethodName(local_ref< java::lang::
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(20),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint java::util::logging::LogRecord::getThreadID()
@@ -347,8 +347,8 @@ jint java::util::logging::LogRecord::getThreadID()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(21),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(21), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setThreadID(jint a0)
@@ -357,8 +357,8 @@ void java::util::logging::LogRecord::setThreadID(jint a0)
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(22),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Throwable > java::util::logging::LogRecord::getThrown()
@@ -367,8 +367,8 @@ local_ref< java::lang::Throwable > java::util::logging::LogRecord::getThrown()
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(23),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::lang::Throwable > >
-	(get_jobject());
+		local_ref< java::lang::Throwable >
+	>(get_jobject());
 }
 
 void java::util::logging::LogRecord::setThrown(local_ref< java::lang::Throwable > const &a0)
@@ -377,8 +377,8 @@ void java::util::logging::LogRecord::setThrown(local_ref< java::lang::Throwable 
 		java::util::logging::LogRecord::J2CPP_CLASS_NAME,
 		java::util::logging::LogRecord::J2CPP_METHOD_NAME(24),
 		java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(24), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

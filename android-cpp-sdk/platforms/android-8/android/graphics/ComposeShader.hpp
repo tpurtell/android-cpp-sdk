@@ -14,11 +14,13 @@
 namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/graphics/PorterDuff.hpp>
 #include <android/graphics/Shader.hpp>
 #include <android/graphics/Xfermode.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,6 +44,7 @@ namespace android { namespace graphics {
 		}
 
 		operator local_ref<android::graphics::Shader>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ComposeShader(local_ref< android::graphics::Shader > const&, local_ref< android::graphics::Shader > const&, local_ref< android::graphics::Xfermode > const&);
@@ -69,14 +72,19 @@ android::graphics::ComposeShader::operator local_ref<android::graphics::Shader>(
 	return local_ref<android::graphics::Shader>(get_jobject());
 }
 
+android::graphics::ComposeShader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 
 android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Shader > const &a0, local_ref< android::graphics::Shader > const &a1, local_ref< android::graphics::Xfermode > const &a2)
 : object<android::graphics::ComposeShader>(
 	call_new_object<
 		android::graphics::ComposeShader::J2CPP_CLASS_NAME,
 		android::graphics::ComposeShader::J2CPP_METHOD_NAME(0),
-		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -88,8 +96,8 @@ android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Sh
 	call_new_object<
 		android::graphics::ComposeShader::J2CPP_CLASS_NAME,
 		android::graphics::ComposeShader::J2CPP_METHOD_NAME(1),
-		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1, a2)
+		android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1, a2)
 )
 {
 }

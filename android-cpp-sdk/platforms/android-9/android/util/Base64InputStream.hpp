@@ -11,12 +11,16 @@
 #define J2CPP_ANDROID_UTIL_BASE64INPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,6 +50,9 @@ namespace android { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::InputStream>() const;
 		operator local_ref<java::io::FilterInputStream>() const;
 
 
@@ -76,6 +83,21 @@ namespace j2cpp {
 
 
 
+android::util::Base64InputStream::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::util::Base64InputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jobject());
+}
+
+android::util::Base64InputStream::operator local_ref<java::io::InputStream>() const
+{
+	return local_ref<java::io::InputStream>(get_jobject());
+}
+
 android::util::Base64InputStream::operator local_ref<java::io::FilterInputStream>() const
 {
 	return local_ref<java::io::FilterInputStream>(get_jobject());
@@ -87,8 +109,8 @@ android::util::Base64InputStream::Base64InputStream(local_ref< java::io::InputSt
 	call_new_object<
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(0),
-		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -100,8 +122,8 @@ jboolean android::util::Base64InputStream::markSupported()
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(1),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::util::Base64InputStream::mark(jint a0)
@@ -110,8 +132,8 @@ void android::util::Base64InputStream::mark(jint a0)
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(2),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::Base64InputStream::reset()
@@ -120,8 +142,8 @@ void android::util::Base64InputStream::reset()
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(3),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::util::Base64InputStream::close()
@@ -130,8 +152,8 @@ void android::util::Base64InputStream::close()
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(4),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jint android::util::Base64InputStream::available()
@@ -140,8 +162,8 @@ jint android::util::Base64InputStream::available()
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(5),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jlong android::util::Base64InputStream::skip(jlong a0)
@@ -150,8 +172,8 @@ jlong android::util::Base64InputStream::skip(jlong a0)
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(6),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jint android::util::Base64InputStream::read()
@@ -160,8 +182,8 @@ jint android::util::Base64InputStream::read()
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(7),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::Base64InputStream::read(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -170,8 +192,8 @@ jint android::util::Base64InputStream::read(local_ref< array<jbyte,1> > const &a
 		android::util::Base64InputStream::J2CPP_CLASS_NAME,
 		android::util::Base64InputStream::J2CPP_METHOD_NAME(8),
 		android::util::Base64InputStream::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0, a1, a2);
+		jint
+	>(get_jobject(), a0, a1, a2);
 }
 
 

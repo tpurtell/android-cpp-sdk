@@ -13,9 +13,15 @@
 
 namespace j2cpp { namespace android { namespace widget { class ImageView; } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
+namespace j2cpp { namespace android { namespace widget { class CursorAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SimpleCursorAdapter_ { class ViewBinder; } } } }
+namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace widget { class ResourceCursorAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SimpleCursorAdapter_ { class CursorToStringConverter; } } } }
+namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -27,9 +33,15 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/view/View.hpp>
+#include <android/widget/Adapter.hpp>
+#include <android/widget/BaseAdapter.hpp>
+#include <android/widget/CursorAdapter.hpp>
+#include <android/widget/Filterable.hpp>
 #include <android/widget/ImageView.hpp>
+#include <android/widget/ListAdapter.hpp>
 #include <android/widget/ResourceCursorAdapter.hpp>
 #include <android/widget/SimpleCursorAdapter.hpp>
+#include <android/widget/SpinnerAdapter.hpp>
 #include <android/widget/TextView.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
@@ -116,7 +128,14 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::widget::CursorAdapter>() const;
+		operator local_ref<android::widget::BaseAdapter>() const;
+		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+		operator local_ref<android::widget::Adapter>() const;
 		operator local_ref<android::widget::ResourceCursorAdapter>() const;
+		operator local_ref<android::widget::SpinnerAdapter>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SimpleCursorAdapter(local_ref< android::content::Context > const&, jint, local_ref< android::database::Cursor > const&, local_ref< array< local_ref< java::lang::String >, 1> > const&, local_ref< array<jint,1> > const&);
@@ -162,8 +181,8 @@ jboolean android::widget::SimpleCursorAdapter_::ViewBinder::setViewValue(local_r
 		android::widget::SimpleCursorAdapter_::ViewBinder::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter_::ViewBinder::J2CPP_METHOD_NAME(0),
 		android::widget::SimpleCursorAdapter_::ViewBinder::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 
@@ -182,8 +201,8 @@ local_ref< java::lang::CharSequence > android::widget::SimpleCursorAdapter_::Cur
 		android::widget::SimpleCursorAdapter_::CursorToStringConverter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter_::CursorToStringConverter::J2CPP_METHOD_NAME(0),
 		android::widget::SimpleCursorAdapter_::CursorToStringConverter::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 
@@ -192,9 +211,44 @@ J2CPP_DEFINE_METHOD(android::widget::SimpleCursorAdapter_::CursorToStringConvert
 
 
 
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::CursorAdapter>() const
+{
+	return local_ref<android::widget::CursorAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::BaseAdapter>() const
+{
+	return local_ref<android::widget::BaseAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::ListAdapter>() const
+{
+	return local_ref<android::widget::ListAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jobject());
+}
+
 android::widget::SimpleCursorAdapter::operator local_ref<android::widget::ResourceCursorAdapter>() const
 {
 	return local_ref<android::widget::ResourceCursorAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<android::widget::SpinnerAdapter>() const
+{
+	return local_ref<android::widget::SpinnerAdapter>(get_jobject());
+}
+
+android::widget::SimpleCursorAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -203,8 +257,8 @@ android::widget::SimpleCursorAdapter::SimpleCursorAdapter(local_ref< android::co
 	call_new_object<
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(0),
-		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2, a3, a4)
+		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2, a3, a4)
 )
 {
 }
@@ -216,8 +270,8 @@ void android::widget::SimpleCursorAdapter::bindView(local_ref< android::view::Vi
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(1),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::widget::SimpleCursorAdapter_::ViewBinder > android::widget::SimpleCursorAdapter::getViewBinder()
@@ -226,8 +280,8 @@ local_ref< android::widget::SimpleCursorAdapter_::ViewBinder > android::widget::
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(2),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::widget::SimpleCursorAdapter_::ViewBinder > >
-	(get_jobject());
+		local_ref< android::widget::SimpleCursorAdapter_::ViewBinder >
+	>(get_jobject());
 }
 
 void android::widget::SimpleCursorAdapter::setViewBinder(local_ref< android::widget::SimpleCursorAdapter_::ViewBinder > const &a0)
@@ -236,8 +290,8 @@ void android::widget::SimpleCursorAdapter::setViewBinder(local_ref< android::wid
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(3),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::SimpleCursorAdapter::setViewImage(local_ref< android::widget::ImageView > const &a0, local_ref< java::lang::String > const &a1)
@@ -246,8 +300,8 @@ void android::widget::SimpleCursorAdapter::setViewImage(local_ref< android::widg
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(4),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::widget::SimpleCursorAdapter::setViewText(local_ref< android::widget::TextView > const &a0, local_ref< java::lang::String > const &a1)
@@ -256,8 +310,8 @@ void android::widget::SimpleCursorAdapter::setViewText(local_ref< android::widge
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(5),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::SimpleCursorAdapter::getStringConversionColumn()
@@ -266,8 +320,8 @@ jint android::widget::SimpleCursorAdapter::getStringConversionColumn()
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(6),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::widget::SimpleCursorAdapter::setStringConversionColumn(jint a0)
@@ -276,8 +330,8 @@ void android::widget::SimpleCursorAdapter::setStringConversionColumn(jint a0)
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(7),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::widget::SimpleCursorAdapter_::CursorToStringConverter > android::widget::SimpleCursorAdapter::getCursorToStringConverter()
@@ -286,8 +340,8 @@ local_ref< android::widget::SimpleCursorAdapter_::CursorToStringConverter > andr
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(8),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::widget::SimpleCursorAdapter_::CursorToStringConverter > >
-	(get_jobject());
+		local_ref< android::widget::SimpleCursorAdapter_::CursorToStringConverter >
+	>(get_jobject());
 }
 
 void android::widget::SimpleCursorAdapter::setCursorToStringConverter(local_ref< android::widget::SimpleCursorAdapter_::CursorToStringConverter > const &a0)
@@ -296,8 +350,8 @@ void android::widget::SimpleCursorAdapter::setCursorToStringConverter(local_ref<
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(9),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::widget::SimpleCursorAdapter::convertToString(local_ref< android::database::Cursor > const &a0)
@@ -306,8 +360,8 @@ local_ref< java::lang::CharSequence > android::widget::SimpleCursorAdapter::conv
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(10),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 void android::widget::SimpleCursorAdapter::changeCursor(local_ref< android::database::Cursor > const &a0)
@@ -316,8 +370,8 @@ void android::widget::SimpleCursorAdapter::changeCursor(local_ref< android::data
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(11),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::SimpleCursorAdapter::changeCursorAndColumns(local_ref< android::database::Cursor > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< array<jint,1> > const &a2)
@@ -326,8 +380,8 @@ void android::widget::SimpleCursorAdapter::changeCursorAndColumns(local_ref< and
 		android::widget::SimpleCursorAdapter::J2CPP_CLASS_NAME,
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_NAME(12),
 		android::widget::SimpleCursorAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 

@@ -73,8 +73,8 @@ javax::net::ssl::TrustManagerFactorySpi::TrustManagerFactorySpi()
 	call_new_object<
 		javax::net::ssl::TrustManagerFactorySpi::J2CPP_CLASS_NAME,
 		javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_NAME(0),
-		javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }

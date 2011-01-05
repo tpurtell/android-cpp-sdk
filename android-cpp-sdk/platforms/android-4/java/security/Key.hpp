@@ -43,8 +43,8 @@ namespace java { namespace security {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getAlgorithm();
@@ -70,14 +70,14 @@ namespace j2cpp {
 
 
 
-java::security::Key::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::security::Key::operator local_ref<java::io::Serializable>() const
 {
 	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::security::Key::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Key::getAlgorithm()
@@ -86,8 +86,8 @@ local_ref< java::lang::String > java::security::Key::getAlgorithm()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(0),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::security::Key::getFormat()
@@ -96,8 +96,8 @@ local_ref< java::lang::String > java::security::Key::getFormat()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(1),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > java::security::Key::getEncoded()
@@ -106,8 +106,8 @@ local_ref< array<jbyte,1> > java::security::Key::getEncoded()
 		java::security::Key::J2CPP_CLASS_NAME,
 		java::security::Key::J2CPP_METHOD_NAME(2),
 		java::security::Key::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 

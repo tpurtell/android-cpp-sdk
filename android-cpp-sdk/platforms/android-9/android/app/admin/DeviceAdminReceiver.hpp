@@ -13,6 +13,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class BroadcastReceiver; } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace app { namespace admin { class De
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -65,6 +67,7 @@ namespace android { namespace app { namespace admin {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::content::BroadcastReceiver>() const;
 
 
@@ -106,6 +109,11 @@ namespace j2cpp {
 
 
 
+android::app::admin::DeviceAdminReceiver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::admin::DeviceAdminReceiver::operator local_ref<android::content::BroadcastReceiver>() const
 {
 	return local_ref<android::content::BroadcastReceiver>(get_jobject());
@@ -117,8 +125,8 @@ android::app::admin::DeviceAdminReceiver::DeviceAdminReceiver()
 	call_new_object<
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(0),
-		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -130,8 +138,8 @@ local_ref< android::app::admin::DevicePolicyManager > android::app::admin::Devic
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(1),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::app::admin::DevicePolicyManager > >
-	(get_jobject(), a0);
+		local_ref< android::app::admin::DevicePolicyManager >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::ComponentName > android::app::admin::DeviceAdminReceiver::getWho(local_ref< android::content::Context > const &a0)
@@ -140,8 +148,8 @@ local_ref< android::content::ComponentName > android::app::admin::DeviceAdminRec
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(2),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::content::ComponentName > >
-	(get_jobject(), a0);
+		local_ref< android::content::ComponentName >
+	>(get_jobject(), a0);
 }
 
 void android::app::admin::DeviceAdminReceiver::onEnabled(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -150,8 +158,8 @@ void android::app::admin::DeviceAdminReceiver::onEnabled(local_ref< android::con
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(3),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminReceiver::onDisableRequested(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -160,8 +168,8 @@ local_ref< java::lang::CharSequence > android::app::admin::DeviceAdminReceiver::
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(4),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DeviceAdminReceiver::onDisabled(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -170,8 +178,8 @@ void android::app::admin::DeviceAdminReceiver::onDisabled(local_ref< android::co
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(5),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DeviceAdminReceiver::onPasswordChanged(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -180,8 +188,8 @@ void android::app::admin::DeviceAdminReceiver::onPasswordChanged(local_ref< andr
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(6),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DeviceAdminReceiver::onPasswordFailed(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -190,8 +198,8 @@ void android::app::admin::DeviceAdminReceiver::onPasswordFailed(local_ref< andro
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(7),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DeviceAdminReceiver::onPasswordSucceeded(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -200,8 +208,8 @@ void android::app::admin::DeviceAdminReceiver::onPasswordSucceeded(local_ref< an
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(8),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::app::admin::DeviceAdminReceiver::onReceive(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
@@ -210,8 +218,8 @@ void android::app::admin::DeviceAdminReceiver::onReceive(local_ref< android::con
 		android::app::admin::DeviceAdminReceiver::J2CPP_CLASS_NAME,
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_NAME(9),
 		android::app::admin::DeviceAdminReceiver::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

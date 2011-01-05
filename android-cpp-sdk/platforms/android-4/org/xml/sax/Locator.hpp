@@ -78,8 +78,8 @@ local_ref< java::lang::String > org::xml::sax::Locator::getPublicId()
 		org::xml::sax::Locator::J2CPP_CLASS_NAME,
 		org::xml::sax::Locator::J2CPP_METHOD_NAME(0),
 		org::xml::sax::Locator::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::xml::sax::Locator::getSystemId()
@@ -88,8 +88,8 @@ local_ref< java::lang::String > org::xml::sax::Locator::getSystemId()
 		org::xml::sax::Locator::J2CPP_CLASS_NAME,
 		org::xml::sax::Locator::J2CPP_METHOD_NAME(1),
 		org::xml::sax::Locator::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint org::xml::sax::Locator::getLineNumber()
@@ -98,8 +98,8 @@ jint org::xml::sax::Locator::getLineNumber()
 		org::xml::sax::Locator::J2CPP_CLASS_NAME,
 		org::xml::sax::Locator::J2CPP_METHOD_NAME(2),
 		org::xml::sax::Locator::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint org::xml::sax::Locator::getColumnNumber()
@@ -108,8 +108,8 @@ jint org::xml::sax::Locator::getColumnNumber()
 		org::xml::sax::Locator::J2CPP_CLASS_NAME,
 		org::xml::sax::Locator::J2CPP_METHOD_NAME(3),
 		org::xml::sax::Locator::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

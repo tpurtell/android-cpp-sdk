@@ -120,8 +120,8 @@ jint javax::net::ssl::SSLSession::getApplicationBufferSize()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(0),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::net::ssl::SSLSession::getCipherSuite()
@@ -130,8 +130,8 @@ local_ref< java::lang::String > javax::net::ssl::SSLSession::getCipherSuite()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(1),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jlong javax::net::ssl::SSLSession::getCreationTime()
@@ -140,8 +140,8 @@ jlong javax::net::ssl::SSLSession::getCreationTime()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(2),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::net::ssl::SSLSession::getId()
@@ -150,8 +150,8 @@ local_ref< array<jbyte,1> > javax::net::ssl::SSLSession::getId()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(3),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jlong javax::net::ssl::SSLSession::getLastAccessedTime()
@@ -160,8 +160,8 @@ jlong javax::net::ssl::SSLSession::getLastAccessedTime()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(4),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::SSLSession::getLocalCertificates()
@@ -170,8 +170,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(5),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::SSLSession::getLocalPrincipal()
@@ -180,8 +180,8 @@ local_ref< java::security::Principal > javax::net::ssl::SSLSession::getLocalPrin
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(6),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 jint javax::net::ssl::SSLSession::getPacketBufferSize()
@@ -190,8 +190,8 @@ jint javax::net::ssl::SSLSession::getPacketBufferSize()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(7),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > javax::net::ssl::SSLSession::getPeerCertificateChain()
@@ -200,8 +200,8 @@ local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > java
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(8),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< javax::security::cert::X509Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::net::ssl::SSLSession::getPeerCertificates()
@@ -210,8 +210,8 @@ local_ref< array< local_ref< java::security::cert::Certificate >, 1> > javax::ne
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(9),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< array< local_ref< java::security::cert::Certificate >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::security::cert::Certificate >, 1> >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::net::ssl::SSLSession::getPeerHost()
@@ -220,8 +220,8 @@ local_ref< java::lang::String > javax::net::ssl::SSLSession::getPeerHost()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(10),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jint javax::net::ssl::SSLSession::getPeerPort()
@@ -230,8 +230,8 @@ jint javax::net::ssl::SSLSession::getPeerPort()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(11),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::security::Principal > javax::net::ssl::SSLSession::getPeerPrincipal()
@@ -240,8 +240,8 @@ local_ref< java::security::Principal > javax::net::ssl::SSLSession::getPeerPrinc
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(12),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::security::Principal > >
-	(get_jobject());
+		local_ref< java::security::Principal >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > javax::net::ssl::SSLSession::getProtocol()
@@ -250,8 +250,8 @@ local_ref< java::lang::String > javax::net::ssl::SSLSession::getProtocol()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(13),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLSession::getSessionContext()
@@ -260,8 +260,8 @@ local_ref< javax::net::ssl::SSLSessionContext > javax::net::ssl::SSLSession::get
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(14),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< javax::net::ssl::SSLSessionContext > >
-	(get_jobject());
+		local_ref< javax::net::ssl::SSLSessionContext >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > javax::net::ssl::SSLSession::getValue(local_ref< java::lang::String > const &a0)
@@ -270,8 +270,8 @@ local_ref< java::lang::Object > javax::net::ssl::SSLSession::getValue(local_ref<
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(15),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLSession::getValueNames()
@@ -280,8 +280,8 @@ local_ref< array< local_ref< java::lang::String >, 1> > javax::net::ssl::SSLSess
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(16),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< array< local_ref< java::lang::String >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< java::lang::String >, 1> >
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLSession::invalidate()
@@ -290,8 +290,8 @@ void javax::net::ssl::SSLSession::invalidate()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(17),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean javax::net::ssl::SSLSession::isValid()
@@ -300,8 +300,8 @@ jboolean javax::net::ssl::SSLSession::isValid()
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(18),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void javax::net::ssl::SSLSession::putValue(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -310,8 +310,8 @@ void javax::net::ssl::SSLSession::putValue(local_ref< java::lang::String > const
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(19),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void javax::net::ssl::SSLSession::removeValue(local_ref< java::lang::String > const &a0)
@@ -320,8 +320,8 @@ void javax::net::ssl::SSLSession::removeValue(local_ref< java::lang::String > co
 		javax::net::ssl::SSLSession::J2CPP_CLASS_NAME,
 		javax::net::ssl::SSLSession::J2CPP_METHOD_NAME(20),
 		javax::net::ssl::SSLSession::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

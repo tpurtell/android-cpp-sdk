@@ -12,14 +12,20 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
 #include <junit/framework/TestCase.hpp>
 
 
@@ -52,7 +58,10 @@ namespace android { namespace test {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<junit::framework::Test>() const;
 		operator local_ref<junit::framework::TestCase>() const;
+		operator local_ref<junit::framework::Assert>() const;
 
 
 		AndroidTestCase();
@@ -81,9 +90,24 @@ namespace j2cpp {
 
 
 
+android::test::AndroidTestCase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::test::AndroidTestCase::operator local_ref<junit::framework::Test>() const
+{
+	return local_ref<junit::framework::Test>(get_jobject());
+}
+
 android::test::AndroidTestCase::operator local_ref<junit::framework::TestCase>() const
 {
 	return local_ref<junit::framework::TestCase>(get_jobject());
+}
+
+android::test::AndroidTestCase::operator local_ref<junit::framework::Assert>() const
+{
+	return local_ref<junit::framework::Assert>(get_jobject());
 }
 
 
@@ -92,8 +116,8 @@ android::test::AndroidTestCase::AndroidTestCase()
 	call_new_object<
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(0),
-		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -107,8 +131,8 @@ void android::test::AndroidTestCase::testAndroidTestCaseSetupProperly()
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(3),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::test::AndroidTestCase::setContext(local_ref< android::content::Context > const &a0)
@@ -117,8 +141,8 @@ void android::test::AndroidTestCase::setContext(local_ref< android::content::Con
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(4),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::content::Context > android::test::AndroidTestCase::getContext()
@@ -127,8 +151,8 @@ local_ref< android::content::Context > android::test::AndroidTestCase::getContex
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(5),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 void android::test::AndroidTestCase::assertActivityRequiresPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
@@ -137,8 +161,8 @@ void android::test::AndroidTestCase::assertActivityRequiresPermission(local_ref<
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(6),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void android::test::AndroidTestCase::assertReadingContentUriRequiresPermission(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -147,8 +171,8 @@ void android::test::AndroidTestCase::assertReadingContentUriRequiresPermission(l
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(7),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::test::AndroidTestCase::assertWritingContentUriRequiresPermission(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -157,8 +181,8 @@ void android::test::AndroidTestCase::assertWritingContentUriRequiresPermission(l
 		android::test::AndroidTestCase::J2CPP_CLASS_NAME,
 		android::test::AndroidTestCase::J2CPP_METHOD_NAME(8),
 		android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

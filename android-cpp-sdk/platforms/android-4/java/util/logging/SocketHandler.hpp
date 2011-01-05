@@ -11,12 +11,16 @@
 #define J2CPP_JAVA_UTIL_LOGGING_SOCKETHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace util { namespace logging { class Handler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class StreamHandler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/logging/Handler.hpp>
 #include <java/util/logging/LogRecord.hpp>
 #include <java/util/logging/StreamHandler.hpp>
 
@@ -43,7 +47,9 @@ namespace java { namespace util { namespace logging {
 		{
 		}
 
+		operator local_ref<java::util::logging::Handler>() const;
 		operator local_ref<java::util::logging::StreamHandler>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		SocketHandler();
@@ -69,9 +75,19 @@ namespace j2cpp {
 
 
 
+java::util::logging::SocketHandler::operator local_ref<java::util::logging::Handler>() const
+{
+	return local_ref<java::util::logging::Handler>(get_jobject());
+}
+
 java::util::logging::SocketHandler::operator local_ref<java::util::logging::StreamHandler>() const
 {
 	return local_ref<java::util::logging::StreamHandler>(get_jobject());
+}
+
+java::util::logging::SocketHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -80,8 +96,8 @@ java::util::logging::SocketHandler::SocketHandler()
 	call_new_object<
 		java::util::logging::SocketHandler::J2CPP_CLASS_NAME,
 		java::util::logging::SocketHandler::J2CPP_METHOD_NAME(0),
-		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -93,8 +109,8 @@ java::util::logging::SocketHandler::SocketHandler(local_ref< java::lang::String 
 	call_new_object<
 		java::util::logging::SocketHandler::J2CPP_CLASS_NAME,
 		java::util::logging::SocketHandler::J2CPP_METHOD_NAME(1),
-		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +122,8 @@ void java::util::logging::SocketHandler::close()
 		java::util::logging::SocketHandler::J2CPP_CLASS_NAME,
 		java::util::logging::SocketHandler::J2CPP_METHOD_NAME(2),
 		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void java::util::logging::SocketHandler::publish(local_ref< java::util::logging::LogRecord > const &a0)
@@ -116,8 +132,8 @@ void java::util::logging::SocketHandler::publish(local_ref< java::util::logging:
 		java::util::logging::SocketHandler::J2CPP_CLASS_NAME,
 		java::util::logging::SocketHandler::J2CPP_METHOD_NAME(3),
 		java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -115,8 +115,9 @@ namespace java { namespace nio {
 		{
 		}
 
-		operator local_ref<java::nio::Buffer>() const;
 		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::Buffer>() const;
 
 
 		static local_ref< java::nio::ByteBuffer > allocate(jint);
@@ -196,14 +197,19 @@ namespace j2cpp {
 
 
 
-java::nio::ByteBuffer::operator local_ref<java::nio::Buffer>() const
-{
-	return local_ref<java::nio::Buffer>(get_jobject());
-}
-
 java::nio::ByteBuffer::operator local_ref<java::lang::Comparable>() const
 {
 	return local_ref<java::lang::Comparable>(get_jobject());
+}
+
+java::nio::ByteBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::nio::ByteBuffer::operator local_ref<java::nio::Buffer>() const
+{
+	return local_ref<java::nio::Buffer>(get_jobject());
 }
 
 
@@ -213,8 +219,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::allocate(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(1),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::nio::ByteBuffer > >
-	(a0);
+		local_ref< java::nio::ByteBuffer >
+	>(a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::allocateDirect(jint a0)
@@ -223,8 +229,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::allocateDirect(jint a0
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(2),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::ByteBuffer > >
-	(a0);
+		local_ref< java::nio::ByteBuffer >
+	>(a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::wrap(local_ref< array<jbyte,1> > const &a0)
@@ -233,8 +239,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::wrap(local_ref< array<
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(3),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::nio::ByteBuffer > >
-	(a0);
+		local_ref< java::nio::ByteBuffer >
+	>(a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::wrap(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -243,8 +249,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::wrap(local_ref< array<
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(4),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::nio::ByteBuffer > >
-	(a0, a1, a2);
+		local_ref< java::nio::ByteBuffer >
+	>(a0, a1, a2);
 }
 
 local_ref< array<jbyte,1> > java::nio::ByteBuffer::array_()
@@ -253,8 +259,8 @@ local_ref< array<jbyte,1> > java::nio::ByteBuffer::array_()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(5),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 jint java::nio::ByteBuffer::arrayOffset()
@@ -263,8 +269,8 @@ jint java::nio::ByteBuffer::arrayOffset()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(6),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::nio::CharBuffer > java::nio::ByteBuffer::asCharBuffer()
@@ -273,8 +279,8 @@ local_ref< java::nio::CharBuffer > java::nio::ByteBuffer::asCharBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(7),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::nio::CharBuffer > >
-	(get_jobject());
+		local_ref< java::nio::CharBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::DoubleBuffer > java::nio::ByteBuffer::asDoubleBuffer()
@@ -283,8 +289,8 @@ local_ref< java::nio::DoubleBuffer > java::nio::ByteBuffer::asDoubleBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(8),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::nio::DoubleBuffer > >
-	(get_jobject());
+		local_ref< java::nio::DoubleBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::FloatBuffer > java::nio::ByteBuffer::asFloatBuffer()
@@ -293,8 +299,8 @@ local_ref< java::nio::FloatBuffer > java::nio::ByteBuffer::asFloatBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(9),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::nio::FloatBuffer > >
-	(get_jobject());
+		local_ref< java::nio::FloatBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::IntBuffer > java::nio::ByteBuffer::asIntBuffer()
@@ -303,8 +309,8 @@ local_ref< java::nio::IntBuffer > java::nio::ByteBuffer::asIntBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(10),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::nio::IntBuffer > >
-	(get_jobject());
+		local_ref< java::nio::IntBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::LongBuffer > java::nio::ByteBuffer::asLongBuffer()
@@ -313,8 +319,8 @@ local_ref< java::nio::LongBuffer > java::nio::ByteBuffer::asLongBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(11),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::nio::LongBuffer > >
-	(get_jobject());
+		local_ref< java::nio::LongBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::asReadOnlyBuffer()
@@ -323,8 +329,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::asReadOnlyBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(12),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::ShortBuffer > java::nio::ByteBuffer::asShortBuffer()
@@ -333,8 +339,8 @@ local_ref< java::nio::ShortBuffer > java::nio::ByteBuffer::asShortBuffer()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(13),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::nio::ShortBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ShortBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::compact()
@@ -343,8 +349,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::compact()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(14),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject());
 }
 
 jint java::nio::ByteBuffer::compareTo(local_ref< java::nio::ByteBuffer > const &a0)
@@ -353,8 +359,8 @@ jint java::nio::ByteBuffer::compareTo(local_ref< java::nio::ByteBuffer > const &
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(15),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::duplicate()
@@ -363,8 +369,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::duplicate()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(16),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject());
 }
 
 jboolean java::nio::ByteBuffer::equals(local_ref< java::lang::Object > const &a0)
@@ -373,8 +379,8 @@ jboolean java::nio::ByteBuffer::equals(local_ref< java::lang::Object > const &a0
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(17),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jbyte java::nio::ByteBuffer::get()
@@ -383,8 +389,8 @@ jbyte java::nio::ByteBuffer::get()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(18),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(18), 
-		jbyte >
-	(get_jobject());
+		jbyte
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::get(local_ref< array<jbyte,1> > const &a0)
@@ -393,8 +399,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::get(local_ref< array<j
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(19),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(19), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::get(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -403,8 +409,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::get(local_ref< array<j
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(20),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jbyte java::nio::ByteBuffer::get(jint a0)
@@ -413,8 +419,8 @@ jbyte java::nio::ByteBuffer::get(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(21),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(21), 
-		jbyte >
-	(get_jobject(), a0);
+		jbyte
+	>(get_jobject(), a0);
 }
 
 jchar java::nio::ByteBuffer::getChar()
@@ -423,8 +429,8 @@ jchar java::nio::ByteBuffer::getChar()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(22),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(22), 
-		jchar >
-	(get_jobject());
+		jchar
+	>(get_jobject());
 }
 
 jchar java::nio::ByteBuffer::getChar(jint a0)
@@ -433,8 +439,8 @@ jchar java::nio::ByteBuffer::getChar(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(23),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(23), 
-		jchar >
-	(get_jobject(), a0);
+		jchar
+	>(get_jobject(), a0);
 }
 
 jdouble java::nio::ByteBuffer::getDouble()
@@ -443,8 +449,8 @@ jdouble java::nio::ByteBuffer::getDouble()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(24),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(24), 
-		jdouble >
-	(get_jobject());
+		jdouble
+	>(get_jobject());
 }
 
 jdouble java::nio::ByteBuffer::getDouble(jint a0)
@@ -453,8 +459,8 @@ jdouble java::nio::ByteBuffer::getDouble(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(25),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(25), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jfloat java::nio::ByteBuffer::getFloat()
@@ -463,8 +469,8 @@ jfloat java::nio::ByteBuffer::getFloat()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(26),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(26), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat java::nio::ByteBuffer::getFloat(jint a0)
@@ -473,8 +479,8 @@ jfloat java::nio::ByteBuffer::getFloat(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(27),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(27), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jint java::nio::ByteBuffer::getInt()
@@ -483,8 +489,8 @@ jint java::nio::ByteBuffer::getInt()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(28),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(28), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::nio::ByteBuffer::getInt(jint a0)
@@ -493,8 +499,8 @@ jint java::nio::ByteBuffer::getInt(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(29),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(29), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong java::nio::ByteBuffer::getLong()
@@ -503,8 +509,8 @@ jlong java::nio::ByteBuffer::getLong()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(30),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(30), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong java::nio::ByteBuffer::getLong(jint a0)
@@ -513,8 +519,8 @@ jlong java::nio::ByteBuffer::getLong(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(31),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(31), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jshort java::nio::ByteBuffer::getShort()
@@ -523,8 +529,8 @@ jshort java::nio::ByteBuffer::getShort()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(32),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(32), 
-		jshort >
-	(get_jobject());
+		jshort
+	>(get_jobject());
 }
 
 jshort java::nio::ByteBuffer::getShort(jint a0)
@@ -533,8 +539,8 @@ jshort java::nio::ByteBuffer::getShort(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(33),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(33), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jboolean java::nio::ByteBuffer::hasArray()
@@ -543,8 +549,8 @@ jboolean java::nio::ByteBuffer::hasArray()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(34),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(34), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::nio::ByteBuffer::hashCode()
@@ -553,8 +559,8 @@ jint java::nio::ByteBuffer::hashCode()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(35),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(35), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::nio::ByteBuffer::isDirect()
@@ -563,8 +569,8 @@ jboolean java::nio::ByteBuffer::isDirect()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(36),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(36), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteOrder > java::nio::ByteBuffer::order()
@@ -573,8 +579,8 @@ local_ref< java::nio::ByteOrder > java::nio::ByteBuffer::order()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(37),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(37), 
-		local_ref< java::nio::ByteOrder > >
-	(get_jobject());
+		local_ref< java::nio::ByteOrder >
+	>(get_jobject());
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::order(local_ref< java::nio::ByteOrder > const &a0)
@@ -583,8 +589,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::order(local_ref< java:
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(38),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(38), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(jbyte a0)
@@ -593,8 +599,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(jbyte a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(39),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(39), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< array<jbyte,1> > const &a0)
@@ -603,8 +609,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< array<j
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(40),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(40), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< array<jbyte,1> > const &a0, jint a1, jint a2)
@@ -613,8 +619,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< array<j
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(41),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(41), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< java::nio::ByteBuffer > const &a0)
@@ -623,8 +629,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(local_ref< java::n
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(42),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(42), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(jint a0, jbyte a1)
@@ -633,8 +639,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::put(jint a0, jbyte a1)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(43),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(43), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putChar(jchar a0)
@@ -643,8 +649,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putChar(jchar a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(44),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(44), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putChar(jint a0, jchar a1)
@@ -653,8 +659,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putChar(jint a0, jchar
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(45),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(45), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putDouble(jdouble a0)
@@ -663,8 +669,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putDouble(jdouble a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(46),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(46), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putDouble(jint a0, jdouble a1)
@@ -673,8 +679,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putDouble(jint a0, jdo
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(47),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(47), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putFloat(jfloat a0)
@@ -683,8 +689,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putFloat(jfloat a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(48),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(48), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putFloat(jint a0, jfloat a1)
@@ -693,8 +699,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putFloat(jint a0, jflo
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(49),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(49), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putInt(jint a0)
@@ -703,8 +709,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putInt(jint a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(50),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(50), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putInt(jint a0, jint a1)
@@ -713,8 +719,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putInt(jint a0, jint a
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(51),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(51), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putLong(jlong a0)
@@ -723,8 +729,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putLong(jlong a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(52),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(52), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putLong(jint a0, jlong a1)
@@ -733,8 +739,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putLong(jint a0, jlong
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(53),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(53), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putShort(jshort a0)
@@ -743,8 +749,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putShort(jshort a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(54),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(54), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putShort(jint a0, jshort a1)
@@ -753,8 +759,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::putShort(jint a0, jsho
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(55),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(55), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject(), a0, a1);
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::slice()
@@ -763,8 +769,8 @@ local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::slice()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(56),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(56), 
-		local_ref< java::nio::ByteBuffer > >
-	(get_jobject());
+		local_ref< java::nio::ByteBuffer >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::nio::ByteBuffer::toString()
@@ -773,8 +779,8 @@ local_ref< java::lang::String > java::nio::ByteBuffer::toString()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(57),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(57), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::nio::ByteBuffer::array_1()
@@ -783,8 +789,8 @@ local_ref< java::lang::Object > java::nio::ByteBuffer::array_1()
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(58),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(58), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jint java::nio::ByteBuffer::compareTo(local_ref< java::lang::Object > const &a0)
@@ -793,8 +799,8 @@ jint java::nio::ByteBuffer::compareTo(local_ref< java::lang::Object > const &a0)
 		java::nio::ByteBuffer::J2CPP_CLASS_NAME,
 		java::nio::ByteBuffer::J2CPP_METHOD_NAME(59),
 		java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(59), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 

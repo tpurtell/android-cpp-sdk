@@ -11,15 +11,21 @@
 #define J2CPP_ANDROID_DATABASE_ABSTRACTWINDOWEDCURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace database { class CrossProcessCursor; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
+namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/database/AbstractCursor.hpp>
 #include <android/database/CharArrayBuffer.hpp>
+#include <android/database/CrossProcessCursor.hpp>
+#include <android/database/Cursor.hpp>
 #include <android/database/CursorWindow.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -57,7 +63,10 @@ namespace android { namespace database {
 		{
 		}
 
+		operator local_ref<android::database::CrossProcessCursor>() const;
 		operator local_ref<android::database::AbstractCursor>() const;
+		operator local_ref<android::database::Cursor>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		AbstractWindowedCursor();
@@ -93,9 +102,24 @@ namespace j2cpp {
 
 
 
+android::database::AbstractWindowedCursor::operator local_ref<android::database::CrossProcessCursor>() const
+{
+	return local_ref<android::database::CrossProcessCursor>(get_jobject());
+}
+
 android::database::AbstractWindowedCursor::operator local_ref<android::database::AbstractCursor>() const
 {
 	return local_ref<android::database::AbstractCursor>(get_jobject());
+}
+
+android::database::AbstractWindowedCursor::operator local_ref<android::database::Cursor>() const
+{
+	return local_ref<android::database::Cursor>(get_jobject());
+}
+
+android::database::AbstractWindowedCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -104,8 +128,8 @@ android::database::AbstractWindowedCursor::AbstractWindowedCursor()
 	call_new_object<
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(0),
-		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -117,8 +141,8 @@ local_ref< array<jbyte,1> > android::database::AbstractWindowedCursor::getBlob(j
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(1),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject(), a0);
+		local_ref< array<jbyte,1> >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::database::AbstractWindowedCursor::getString(jint a0)
@@ -127,8 +151,8 @@ local_ref< java::lang::String > android::database::AbstractWindowedCursor::getSt
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(2),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::database::AbstractWindowedCursor::copyStringToBuffer(jint a0, local_ref< android::database::CharArrayBuffer > const &a1)
@@ -137,8 +161,8 @@ void android::database::AbstractWindowedCursor::copyStringToBuffer(jint a0, loca
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(3),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jshort android::database::AbstractWindowedCursor::getShort(jint a0)
@@ -147,8 +171,8 @@ jshort android::database::AbstractWindowedCursor::getShort(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(4),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(4), 
-		jshort >
-	(get_jobject(), a0);
+		jshort
+	>(get_jobject(), a0);
 }
 
 jint android::database::AbstractWindowedCursor::getInt(jint a0)
@@ -157,8 +181,8 @@ jint android::database::AbstractWindowedCursor::getInt(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(5),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jlong android::database::AbstractWindowedCursor::getLong(jint a0)
@@ -167,8 +191,8 @@ jlong android::database::AbstractWindowedCursor::getLong(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(6),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(6), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jfloat android::database::AbstractWindowedCursor::getFloat(jint a0)
@@ -177,8 +201,8 @@ jfloat android::database::AbstractWindowedCursor::getFloat(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(7),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(7), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 jdouble android::database::AbstractWindowedCursor::getDouble(jint a0)
@@ -187,8 +211,8 @@ jdouble android::database::AbstractWindowedCursor::getDouble(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(8),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(8), 
-		jdouble >
-	(get_jobject(), a0);
+		jdouble
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::AbstractWindowedCursor::isNull(jint a0)
@@ -197,8 +221,8 @@ jboolean android::database::AbstractWindowedCursor::isNull(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(9),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::AbstractWindowedCursor::isBlob(jint a0)
@@ -207,8 +231,8 @@ jboolean android::database::AbstractWindowedCursor::isBlob(jint a0)
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(10),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 
@@ -218,8 +242,8 @@ local_ref< android::database::CursorWindow > android::database::AbstractWindowed
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(12),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::database::CursorWindow > >
-	(get_jobject());
+		local_ref< android::database::CursorWindow >
+	>(get_jobject());
 }
 
 void android::database::AbstractWindowedCursor::setWindow(local_ref< android::database::CursorWindow > const &a0)
@@ -228,8 +252,8 @@ void android::database::AbstractWindowedCursor::setWindow(local_ref< android::da
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(13),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::database::AbstractWindowedCursor::hasWindow()
@@ -238,8 +262,8 @@ jboolean android::database::AbstractWindowedCursor::hasWindow()
 		android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME,
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(14),
 		android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(14), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

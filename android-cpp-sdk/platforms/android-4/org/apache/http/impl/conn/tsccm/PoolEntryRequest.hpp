@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_POOLENTRYREQUEST_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -79,8 +79,8 @@ local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::h
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_METHOD_NAME(0),
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > >
-	(get_jobject(), a0, a1);
+		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry >
+	>(get_jobject(), a0, a1);
 }
 
 void org::apache::http::impl::conn::tsccm::PoolEntryRequest::abortRequest()
@@ -89,8 +89,8 @@ void org::apache::http::impl::conn::tsccm::PoolEntryRequest::abortRequest()
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_CLASS_NAME,
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::conn::tsccm::PoolEntryRequest::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

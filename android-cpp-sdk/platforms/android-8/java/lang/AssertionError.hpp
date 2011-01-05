@@ -13,10 +13,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Error; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Error.hpp>
 #include <java/lang/Object.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -45,7 +49,10 @@ namespace java { namespace lang {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::Error>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		AssertionError();
@@ -74,9 +81,24 @@ namespace j2cpp {
 
 
 
+java::lang::AssertionError::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::lang::AssertionError::operator local_ref<java::lang::Error>() const
 {
 	return local_ref<java::lang::Error>(get_jobject());
+}
+
+java::lang::AssertionError::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+java::lang::AssertionError::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -85,8 +107,8 @@ java::lang::AssertionError::AssertionError()
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(0),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -98,8 +120,8 @@ java::lang::AssertionError::AssertionError(local_ref< java::lang::Object > const
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(1),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -111,8 +133,8 @@ java::lang::AssertionError::AssertionError(jboolean a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(2),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -124,8 +146,8 @@ java::lang::AssertionError::AssertionError(jchar a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(3),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -137,8 +159,8 @@ java::lang::AssertionError::AssertionError(jint a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(4),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(4)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(4)
+	>(a0)
 )
 {
 }
@@ -150,8 +172,8 @@ java::lang::AssertionError::AssertionError(jlong a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(5),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(5)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(5)
+	>(a0)
 )
 {
 }
@@ -163,8 +185,8 @@ java::lang::AssertionError::AssertionError(jfloat a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(6),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(6)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(6)
+	>(a0)
 )
 {
 }
@@ -176,8 +198,8 @@ java::lang::AssertionError::AssertionError(jdouble a0)
 	call_new_object<
 		java::lang::AssertionError::J2CPP_CLASS_NAME,
 		java::lang::AssertionError::J2CPP_METHOD_NAME(7),
-		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(7)>
-	(a0)
+		java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(7)
+	>(a0)
 )
 {
 }

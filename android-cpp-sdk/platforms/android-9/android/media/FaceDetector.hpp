@@ -124,8 +124,8 @@ jfloat android::media::FaceDetector_::Face::confidence()
 		android::media::FaceDetector_::Face::J2CPP_CLASS_NAME,
 		android::media::FaceDetector_::Face::J2CPP_METHOD_NAME(1),
 		android::media::FaceDetector_::Face::J2CPP_METHOD_SIGNATURE(1), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 void android::media::FaceDetector_::Face::getMidPoint(local_ref< android::graphics::PointF > const &a0)
@@ -134,8 +134,8 @@ void android::media::FaceDetector_::Face::getMidPoint(local_ref< android::graphi
 		android::media::FaceDetector_::Face::J2CPP_CLASS_NAME,
 		android::media::FaceDetector_::Face::J2CPP_METHOD_NAME(2),
 		android::media::FaceDetector_::Face::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jfloat android::media::FaceDetector_::Face::eyesDistance()
@@ -144,8 +144,8 @@ jfloat android::media::FaceDetector_::Face::eyesDistance()
 		android::media::FaceDetector_::Face::J2CPP_CLASS_NAME,
 		android::media::FaceDetector_::Face::J2CPP_METHOD_NAME(3),
 		android::media::FaceDetector_::Face::J2CPP_METHOD_SIGNATURE(3), 
-		jfloat >
-	(get_jobject());
+		jfloat
+	>(get_jobject());
 }
 
 jfloat android::media::FaceDetector_::Face::pose(jint a0)
@@ -154,8 +154,8 @@ jfloat android::media::FaceDetector_::Face::pose(jint a0)
 		android::media::FaceDetector_::Face::J2CPP_CLASS_NAME,
 		android::media::FaceDetector_::Face::J2CPP_METHOD_NAME(4),
 		android::media::FaceDetector_::Face::J2CPP_METHOD_SIGNATURE(4), 
-		jfloat >
-	(get_jobject(), a0);
+		jfloat
+	>(get_jobject(), a0);
 }
 
 
@@ -213,8 +213,8 @@ android::media::FaceDetector::FaceDetector(jint a0, jint a1, jint a2)
 	call_new_object<
 		android::media::FaceDetector::J2CPP_CLASS_NAME,
 		android::media::FaceDetector::J2CPP_METHOD_NAME(0),
-		android::media::FaceDetector::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::media::FaceDetector::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -226,8 +226,8 @@ jint android::media::FaceDetector::findFaces(local_ref< android::graphics::Bitma
 		android::media::FaceDetector::J2CPP_CLASS_NAME,
 		android::media::FaceDetector::J2CPP_METHOD_NAME(1),
 		android::media::FaceDetector::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_HEADER_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -78,8 +78,8 @@ local_ref< java::lang::String > org::apache::http::Header::getName()
 		org::apache::http::Header::J2CPP_CLASS_NAME,
 		org::apache::http::Header::J2CPP_METHOD_NAME(0),
 		org::apache::http::Header::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::Header::getValue()
@@ -88,8 +88,8 @@ local_ref< java::lang::String > org::apache::http::Header::getValue()
 		org::apache::http::Header::J2CPP_CLASS_NAME,
 		org::apache::http::Header::J2CPP_METHOD_NAME(1),
 		org::apache::http::Header::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apache::http::Header::getElements()
@@ -98,8 +98,8 @@ local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > org::apach
 		org::apache::http::Header::J2CPP_CLASS_NAME,
 		org::apache::http::Header::J2CPP_METHOD_NAME(2),
 		org::apache::http::Header::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::HeaderElement >, 1> >
+	>(get_jobject());
 }
 
 

@@ -83,8 +83,8 @@ local_ref< android::view::FocusFinder > android::view::FocusFinder::getInstance(
 		android::view::FocusFinder::J2CPP_CLASS_NAME,
 		android::view::FocusFinder::J2CPP_METHOD_NAME(1),
 		android::view::FocusFinder::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::view::FocusFinder > >
-	();
+		local_ref< android::view::FocusFinder >
+	>();
 }
 
 local_ref< android::view::View > android::view::FocusFinder::findNextFocus(local_ref< android::view::ViewGroup > const &a0, local_ref< android::view::View > const &a1, jint a2)
@@ -93,8 +93,8 @@ local_ref< android::view::View > android::view::FocusFinder::findNextFocus(local
 		android::view::FocusFinder::J2CPP_CLASS_NAME,
 		android::view::FocusFinder::J2CPP_METHOD_NAME(2),
 		android::view::FocusFinder::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::view::FocusFinder::findNextFocusFromRect(local_ref< android::view::ViewGroup > const &a0, local_ref< android::graphics::Rect > const &a1, jint a2)
@@ -103,8 +103,8 @@ local_ref< android::view::View > android::view::FocusFinder::findNextFocusFromRe
 		android::view::FocusFinder::J2CPP_CLASS_NAME,
 		android::view::FocusFinder::J2CPP_METHOD_NAME(3),
 		android::view::FocusFinder::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::view::FocusFinder::findNearestTouchable(local_ref< android::view::ViewGroup > const &a0, jint a1, jint a2, jint a3, local_ref< array<jint,1> > const &a4)
@@ -113,8 +113,8 @@ local_ref< android::view::View > android::view::FocusFinder::findNearestTouchabl
 		android::view::FocusFinder::J2CPP_CLASS_NAME,
 		android::view::FocusFinder::J2CPP_METHOD_NAME(4),
 		android::view::FocusFinder::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

@@ -11,11 +11,15 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITESTATEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteClosable; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteProgram; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <android/database/sqlite/SQLiteClosable.hpp>
 #include <android/database/sqlite/SQLiteProgram.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,7 +46,9 @@ namespace android { namespace database { namespace sqlite {
 		{
 		}
 
+		operator local_ref<android::database::sqlite::SQLiteClosable>() const;
 		operator local_ref<android::database::sqlite::SQLiteProgram>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void execute();
@@ -68,9 +74,19 @@ namespace j2cpp {
 
 
 
+android::database::sqlite::SQLiteStatement::operator local_ref<android::database::sqlite::SQLiteClosable>() const
+{
+	return local_ref<android::database::sqlite::SQLiteClosable>(get_jobject());
+}
+
 android::database::sqlite::SQLiteStatement::operator local_ref<android::database::sqlite::SQLiteProgram>() const
 {
 	return local_ref<android::database::sqlite::SQLiteProgram>(get_jobject());
+}
+
+android::database::sqlite::SQLiteStatement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -80,8 +96,8 @@ void android::database::sqlite::SQLiteStatement::execute()
 		android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_NAME(1),
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jlong android::database::sqlite::SQLiteStatement::executeInsert()
@@ -90,8 +106,8 @@ jlong android::database::sqlite::SQLiteStatement::executeInsert()
 		android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_NAME(2),
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 jlong android::database::sqlite::SQLiteStatement::simpleQueryForLong()
@@ -100,8 +116,8 @@ jlong android::database::sqlite::SQLiteStatement::simpleQueryForLong()
 		android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_NAME(3),
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > android::database::sqlite::SQLiteStatement::simpleQueryForString()
@@ -110,8 +126,8 @@ local_ref< java::lang::String > android::database::sqlite::SQLiteStatement::simp
 		android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME,
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_NAME(4),
 		android::database::sqlite::SQLiteStatement::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

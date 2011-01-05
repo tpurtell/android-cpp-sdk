@@ -82,8 +82,8 @@ android::webkit::DateSorter::DateSorter(local_ref< android::content::Context > c
 	call_new_object<
 		android::webkit::DateSorter::J2CPP_CLASS_NAME,
 		android::webkit::DateSorter::J2CPP_METHOD_NAME(0),
-		android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ jint android::webkit::DateSorter::getIndex(jlong a0)
 		android::webkit::DateSorter::J2CPP_CLASS_NAME,
 		android::webkit::DateSorter::J2CPP_METHOD_NAME(1),
 		android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::webkit::DateSorter::getLabel(jint a0)
@@ -105,8 +105,8 @@ local_ref< java::lang::String > android::webkit::DateSorter::getLabel(jint a0)
 		android::webkit::DateSorter::J2CPP_CLASS_NAME,
 		android::webkit::DateSorter::J2CPP_METHOD_NAME(2),
 		android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 jlong android::webkit::DateSorter::getBoundary(jint a0)
@@ -115,8 +115,8 @@ jlong android::webkit::DateSorter::getBoundary(jint a0)
 		android::webkit::DateSorter::J2CPP_CLASS_NAME,
 		android::webkit::DateSorter::J2CPP_METHOD_NAME(3),
 		android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(3), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 

@@ -11,10 +11,10 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_SCHEME_LAYEREDSOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SocketFactory; } } } } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SocketFactory; } } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -84,8 +84,8 @@ local_ref< java::net::Socket > org::apache::http::conn::scheme::LayeredSocketFac
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_CLASS_NAME,
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_METHOD_NAME(0),
 		org::apache::http::conn::scheme::LayeredSocketFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::net::Socket > >
-	(get_jobject(), a0, a1, a2, a3);
+		local_ref< java::net::Socket >
+	>(get_jobject(), a0, a1, a2, a3);
 }
 
 

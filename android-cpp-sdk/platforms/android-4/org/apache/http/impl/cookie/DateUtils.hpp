@@ -98,8 +98,8 @@ local_ref< java::util::Date > org::apache::http::impl::cookie::DateUtils::parseD
 		org::apache::http::impl::cookie::DateUtils::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Date > >
-	(a0);
+		local_ref< java::util::Date >
+	>(a0);
 }
 
 local_ref< java::util::Date > org::apache::http::impl::cookie::DateUtils::parseDate(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1)
@@ -108,8 +108,8 @@ local_ref< java::util::Date > org::apache::http::impl::cookie::DateUtils::parseD
 		org::apache::http::impl::cookie::DateUtils::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::util::Date > >
-	(a0, a1);
+		local_ref< java::util::Date >
+	>(a0, a1);
 }
 
 local_ref< java::util::Date > org::apache::http::impl::cookie::DateUtils::parseDate(local_ref< java::lang::String > const &a0, local_ref< array< local_ref< java::lang::String >, 1> > const &a1, local_ref< java::util::Date > const &a2)
@@ -118,8 +118,8 @@ local_ref< java::util::Date > org::apache::http::impl::cookie::DateUtils::parseD
 		org::apache::http::impl::cookie::DateUtils::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::util::Date > >
-	(a0, a1, a2);
+		local_ref< java::util::Date >
+	>(a0, a1, a2);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::DateUtils::formatDate(local_ref< java::util::Date > const &a0)
@@ -128,8 +128,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::DateUtils::form
 		org::apache::http::impl::cookie::DateUtils::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 local_ref< java::lang::String > org::apache::http::impl::cookie::DateUtils::formatDate(local_ref< java::util::Date > const &a0, local_ref< java::lang::String > const &a1)
@@ -138,8 +138,8 @@ local_ref< java::lang::String > org::apache::http::impl::cookie::DateUtils::form
 		org::apache::http::impl::cookie::DateUtils::J2CPP_CLASS_NAME,
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_NAME(5),
 		org::apache::http::impl::cookie::DateUtils::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0, a1);
+		local_ref< java::lang::String >
+	>(a0, a1);
 }
 
 

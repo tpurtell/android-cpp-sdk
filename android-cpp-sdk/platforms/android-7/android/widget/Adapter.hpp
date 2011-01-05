@@ -98,8 +98,8 @@ void android::widget::Adapter::registerDataSetObserver(local_ref< android::datab
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(0),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::Adapter::unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
@@ -108,8 +108,8 @@ void android::widget::Adapter::unregisterDataSetObserver(local_ref< android::dat
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(1),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::widget::Adapter::getCount()
@@ -118,8 +118,8 @@ jint android::widget::Adapter::getCount()
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(2),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > android::widget::Adapter::getItem(jint a0)
@@ -128,8 +128,8 @@ local_ref< java::lang::Object > android::widget::Adapter::getItem(jint a0)
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(3),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jlong android::widget::Adapter::getItemId(jint a0)
@@ -138,8 +138,8 @@ jlong android::widget::Adapter::getItemId(jint a0)
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(4),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(4), 
-		jlong >
-	(get_jobject(), a0);
+		jlong
+	>(get_jobject(), a0);
 }
 
 jboolean android::widget::Adapter::hasStableIds()
@@ -148,8 +148,8 @@ jboolean android::widget::Adapter::hasStableIds()
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(5),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::widget::Adapter::getView(jint a0, local_ref< android::view::View > const &a1, local_ref< android::view::ViewGroup > const &a2)
@@ -158,8 +158,8 @@ local_ref< android::view::View > android::widget::Adapter::getView(jint a0, loca
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(6),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::view::View > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< android::view::View >
+	>(get_jobject(), a0, a1, a2);
 }
 
 jint android::widget::Adapter::getItemViewType(jint a0)
@@ -168,8 +168,8 @@ jint android::widget::Adapter::getItemViewType(jint a0)
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(7),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::Adapter::getViewTypeCount()
@@ -178,8 +178,8 @@ jint android::widget::Adapter::getViewTypeCount()
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(8),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean android::widget::Adapter::isEmpty()
@@ -188,8 +188,8 @@ jboolean android::widget::Adapter::isEmpty()
 		android::widget::Adapter::J2CPP_CLASS_NAME,
 		android::widget::Adapter::J2CPP_METHOD_NAME(9),
 		android::widget::Adapter::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 

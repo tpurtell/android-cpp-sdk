@@ -11,12 +11,18 @@
 #define J2CPP_JAVAX_XML_TRANSFORM_TRANSFORMERCONFIGURATIONEXCEPTION_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class SourceLocator; } } } }
-namespace j2cpp { namespace javax { namespace xml { namespace transform { class TransformerException; } } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class TransformerException; } } } }
+namespace j2cpp { namespace javax { namespace xml { namespace transform { class SourceLocator; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <javax/xml/transform/SourceLocator.hpp>
@@ -47,7 +53,11 @@ namespace javax { namespace xml { namespace transform {
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::lang::Throwable>() const;
 		operator local_ref<javax::xml::transform::TransformerException>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		TransformerConfigurationException();
@@ -75,9 +85,29 @@ namespace j2cpp {
 
 
 
+javax::xml::transform::TransformerConfigurationException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
+}
+
+javax::xml::transform::TransformerConfigurationException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
 javax::xml::transform::TransformerConfigurationException::operator local_ref<javax::xml::transform::TransformerException>() const
 {
 	return local_ref<javax::xml::transform::TransformerException>(get_jobject());
+}
+
+javax::xml::transform::TransformerConfigurationException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+javax::xml::transform::TransformerConfigurationException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -86,8 +116,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(0),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -99,8 +129,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(1),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -112,8 +142,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(2),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(2)>
-	(a0)
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(2)
+	>(a0)
 )
 {
 }
@@ -125,8 +155,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(3),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(3)>
-	(a0, a1)
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(3)
+	>(a0, a1)
 )
 {
 }
@@ -138,8 +168,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(4),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(4)>
-	(a0, a1)
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(4)
+	>(a0, a1)
 )
 {
 }
@@ -151,8 +181,8 @@ javax::xml::transform::TransformerConfigurationException::TransformerConfigurati
 	call_new_object<
 		javax::xml::transform::TransformerConfigurationException::J2CPP_CLASS_NAME,
 		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_NAME(5),
-		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(5)>
-	(a0, a1, a2)
+		javax::xml::transform::TransformerConfigurationException::J2CPP_METHOD_SIGNATURE(5)
+	>(a0, a1, a2)
 )
 {
 }

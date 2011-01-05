@@ -12,10 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/security/Key.hpp>
 #include <javax/crypto/SecretKey.hpp>
 
 
@@ -42,6 +46,8 @@ namespace javax { namespace crypto { namespace interfaces {
 		}
 
 		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
+		operator local_ref<java::io::Serializable>() const;
 		operator local_ref<javax::crypto::SecretKey>() const;
 
 
@@ -74,6 +80,16 @@ javax::crypto::interfaces::PBEKey::operator local_ref<java::lang::Object>() cons
 	return local_ref<java::lang::Object>(get_jobject());
 }
 
+javax::crypto::interfaces::PBEKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jobject());
+}
+
+javax::crypto::interfaces::PBEKey::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
 javax::crypto::interfaces::PBEKey::operator local_ref<javax::crypto::SecretKey>() const
 {
 	return local_ref<javax::crypto::SecretKey>(get_jobject());
@@ -85,8 +101,8 @@ jint javax::crypto::interfaces::PBEKey::getIterationCount()
 		javax::crypto::interfaces::PBEKey::J2CPP_CLASS_NAME,
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_NAME(0),
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< array<jbyte,1> > javax::crypto::interfaces::PBEKey::getSalt()
@@ -95,8 +111,8 @@ local_ref< array<jbyte,1> > javax::crypto::interfaces::PBEKey::getSalt()
 		javax::crypto::interfaces::PBEKey::J2CPP_CLASS_NAME,
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_NAME(1),
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< array<jbyte,1> > >
-	(get_jobject());
+		local_ref< array<jbyte,1> >
+	>(get_jobject());
 }
 
 local_ref< array<jchar,1> > javax::crypto::interfaces::PBEKey::getPassword()
@@ -105,8 +121,8 @@ local_ref< array<jchar,1> > javax::crypto::interfaces::PBEKey::getPassword()
 		javax::crypto::interfaces::PBEKey::J2CPP_CLASS_NAME,
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_NAME(2),
 		javax::crypto::interfaces::PBEKey::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< array<jchar,1> > >
-	(get_jobject());
+		local_ref< array<jchar,1> >
+	>(get_jobject());
 }
 
 

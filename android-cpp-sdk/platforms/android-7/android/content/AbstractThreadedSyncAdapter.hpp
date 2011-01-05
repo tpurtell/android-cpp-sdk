@@ -92,8 +92,8 @@ android::content::AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(local
 	call_new_object<
 		android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME,
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(0),
-		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -105,8 +105,8 @@ local_ref< android::content::Context > android::content::AbstractThreadedSyncAda
 		android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME,
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(1),
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< android::content::Context > >
-	(get_jobject());
+		local_ref< android::content::Context >
+	>(get_jobject());
 }
 
 local_ref< android::os::IBinder > android::content::AbstractThreadedSyncAdapter::getSyncAdapterBinder()
@@ -115,8 +115,8 @@ local_ref< android::os::IBinder > android::content::AbstractThreadedSyncAdapter:
 		android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME,
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(2),
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::os::IBinder > >
-	(get_jobject());
+		local_ref< android::os::IBinder >
+	>(get_jobject());
 }
 
 void android::content::AbstractThreadedSyncAdapter::onPerformSync(local_ref< android::accounts::Account > const &a0, local_ref< android::os::Bundle > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::content::ContentProviderClient > const &a3, local_ref< android::content::SyncResult > const &a4)
@@ -125,8 +125,8 @@ void android::content::AbstractThreadedSyncAdapter::onPerformSync(local_ref< and
 		android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME,
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(3),
 		android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4);
 }
 
 

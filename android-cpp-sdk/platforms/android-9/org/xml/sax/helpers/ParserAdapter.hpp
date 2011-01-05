@@ -151,8 +151,8 @@ org::xml::sax::helpers::ParserAdapter::ParserAdapter()
 	call_new_object<
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(0),
-		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -164,8 +164,8 @@ org::xml::sax::helpers::ParserAdapter::ParserAdapter(local_ref< org::xml::sax::P
 	call_new_object<
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(1),
-		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -177,8 +177,8 @@ void org::xml::sax::helpers::ParserAdapter::setFeature(local_ref< java::lang::St
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(2),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean org::xml::sax::helpers::ParserAdapter::getFeature(local_ref< java::lang::String > const &a0)
@@ -187,8 +187,8 @@ jboolean org::xml::sax::helpers::ParserAdapter::getFeature(local_ref< java::lang
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(3),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -197,8 +197,8 @@ void org::xml::sax::helpers::ParserAdapter::setProperty(local_ref< java::lang::S
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(4),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xml::sax::helpers::ParserAdapter::getProperty(local_ref< java::lang::String > const &a0)
@@ -207,8 +207,8 @@ local_ref< java::lang::Object > org::xml::sax::helpers::ParserAdapter::getProper
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(5),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -217,8 +217,8 @@ void org::xml::sax::helpers::ParserAdapter::setEntityResolver(local_ref< org::xm
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(6),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::EntityResolver > org::xml::sax::helpers::ParserAdapter::getEntityResolver()
@@ -227,8 +227,8 @@ local_ref< org::xml::sax::EntityResolver > org::xml::sax::helpers::ParserAdapter
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(7),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::xml::sax::EntityResolver > >
-	(get_jobject());
+		local_ref< org::xml::sax::EntityResolver >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -237,8 +237,8 @@ void org::xml::sax::helpers::ParserAdapter::setDTDHandler(local_ref< org::xml::s
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(8),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::DTDHandler > org::xml::sax::helpers::ParserAdapter::getDTDHandler()
@@ -247,8 +247,8 @@ local_ref< org::xml::sax::DTDHandler > org::xml::sax::helpers::ParserAdapter::ge
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(9),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xml::sax::DTDHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::DTDHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::setContentHandler(local_ref< org::xml::sax::ContentHandler > const &a0)
@@ -257,8 +257,8 @@ void org::xml::sax::helpers::ParserAdapter::setContentHandler(local_ref< org::xm
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(10),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ContentHandler > org::xml::sax::helpers::ParserAdapter::getContentHandler()
@@ -267,8 +267,8 @@ local_ref< org::xml::sax::ContentHandler > org::xml::sax::helpers::ParserAdapter
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(11),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -277,8 +277,8 @@ void org::xml::sax::helpers::ParserAdapter::setErrorHandler(local_ref< org::xml:
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(12),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > org::xml::sax::helpers::ParserAdapter::getErrorHandler()
@@ -287,8 +287,8 @@ local_ref< org::xml::sax::ErrorHandler > org::xml::sax::helpers::ParserAdapter::
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(13),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::parse(local_ref< java::lang::String > const &a0)
@@ -297,8 +297,8 @@ void org::xml::sax::helpers::ParserAdapter::parse(local_ref< java::lang::String 
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(14),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -307,8 +307,8 @@ void org::xml::sax::helpers::ParserAdapter::parse(local_ref< org::xml::sax::Inpu
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(15),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::setDocumentLocator(local_ref< org::xml::sax::Locator > const &a0)
@@ -317,8 +317,8 @@ void org::xml::sax::helpers::ParserAdapter::setDocumentLocator(local_ref< org::x
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(16),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::startDocument()
@@ -327,8 +327,8 @@ void org::xml::sax::helpers::ParserAdapter::startDocument()
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(17),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(17), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::endDocument()
@@ -337,8 +337,8 @@ void org::xml::sax::helpers::ParserAdapter::endDocument()
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(18),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(18), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void org::xml::sax::helpers::ParserAdapter::startElement(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::AttributeList > const &a1)
@@ -347,8 +347,8 @@ void org::xml::sax::helpers::ParserAdapter::startElement(local_ref< java::lang::
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(19),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::helpers::ParserAdapter::endElement(local_ref< java::lang::String > const &a0)
@@ -357,8 +357,8 @@ void org::xml::sax::helpers::ParserAdapter::endElement(local_ref< java::lang::St
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(20),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::helpers::ParserAdapter::characters(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -367,8 +367,8 @@ void org::xml::sax::helpers::ParserAdapter::characters(local_ref< array<jchar,1>
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(21),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::ParserAdapter::ignorableWhitespace(local_ref< array<jchar,1> > const &a0, jint a1, jint a2)
@@ -377,8 +377,8 @@ void org::xml::sax::helpers::ParserAdapter::ignorableWhitespace(local_ref< array
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(22),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 void org::xml::sax::helpers::ParserAdapter::processingInstruction(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
@@ -387,8 +387,8 @@ void org::xml::sax::helpers::ParserAdapter::processingInstruction(local_ref< jav
 		org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME,
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(23),
 		org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

@@ -40,8 +40,8 @@ namespace java { namespace util { namespace prefs {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::EventListener>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		void preferenceChange(local_ref< java::util::prefs::PreferenceChangeEvent >  const&);
@@ -64,14 +64,14 @@ namespace j2cpp {
 
 
 
-java::util::prefs::PreferenceChangeListener::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 java::util::prefs::PreferenceChangeListener::operator local_ref<java::util::EventListener>() const
 {
 	return local_ref<java::util::EventListener>(get_jobject());
+}
+
+java::util::prefs::PreferenceChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 void java::util::prefs::PreferenceChangeListener::preferenceChange(local_ref< java::util::prefs::PreferenceChangeEvent > const &a0)
@@ -80,8 +80,8 @@ void java::util::prefs::PreferenceChangeListener::preferenceChange(local_ref< ja
 		java::util::prefs::PreferenceChangeListener::J2CPP_CLASS_NAME,
 		java::util::prefs::PreferenceChangeListener::J2CPP_METHOD_NAME(0),
 		java::util::prefs::PreferenceChangeListener::J2CPP_METHOD_SIGNATURE(0), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

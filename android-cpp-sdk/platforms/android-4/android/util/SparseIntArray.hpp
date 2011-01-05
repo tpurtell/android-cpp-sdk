@@ -95,8 +95,8 @@ android::util::SparseIntArray::SparseIntArray()
 	call_new_object<
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(0),
-		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -108,8 +108,8 @@ android::util::SparseIntArray::SparseIntArray(jint a0)
 	call_new_object<
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(1),
-		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -121,8 +121,8 @@ jint android::util::SparseIntArray::get(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(2),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseIntArray::get(jint a0, jint a1)
@@ -131,8 +131,8 @@ jint android::util::SparseIntArray::get(jint a0, jint a1)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(3),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 void android::util::SparseIntArray::delete_(jint a0)
@@ -141,8 +141,8 @@ void android::util::SparseIntArray::delete_(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(4),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::SparseIntArray::removeAt(jint a0)
@@ -151,8 +151,8 @@ void android::util::SparseIntArray::removeAt(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(5),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::util::SparseIntArray::put(jint a0, jint a1)
@@ -161,8 +161,8 @@ void android::util::SparseIntArray::put(jint a0, jint a1)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(6),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jint android::util::SparseIntArray::size()
@@ -171,8 +171,8 @@ jint android::util::SparseIntArray::size()
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(7),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(7), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::util::SparseIntArray::keyAt(jint a0)
@@ -181,8 +181,8 @@ jint android::util::SparseIntArray::keyAt(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(8),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(8), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseIntArray::valueAt(jint a0)
@@ -191,8 +191,8 @@ jint android::util::SparseIntArray::valueAt(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(9),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseIntArray::indexOfKey(jint a0)
@@ -201,8 +201,8 @@ jint android::util::SparseIntArray::indexOfKey(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(10),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::util::SparseIntArray::indexOfValue(jint a0)
@@ -211,8 +211,8 @@ jint android::util::SparseIntArray::indexOfValue(jint a0)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(11),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(11), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 void android::util::SparseIntArray::clear()
@@ -221,8 +221,8 @@ void android::util::SparseIntArray::clear()
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(12),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::util::SparseIntArray::append(jint a0, jint a1)
@@ -231,8 +231,8 @@ void android::util::SparseIntArray::append(jint a0, jint a1)
 		android::util::SparseIntArray::J2CPP_CLASS_NAME,
 		android::util::SparseIntArray::J2CPP_METHOD_NAME(13),
 		android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 

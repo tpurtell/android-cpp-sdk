@@ -14,6 +14,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { class AbstractInputMethodService; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodSessionImpl; } } } }
@@ -21,15 +22,21 @@ namespace j2cpp { namespace android { namespace inputmethodservice { namespace I
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodImpl; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class Window; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
+namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputMethodSession; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class CompletionInfo; } } } }
+namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputMethod; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputBinding; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class EditorInfo; } } } }
 namespace j2cpp { namespace android { namespace view { class LayoutInflater; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
@@ -37,6 +44,10 @@ namespace j2cpp { namespace android { namespace os { class ResultReceiver; } } }
 
 
 #include <android/app/Dialog.hpp>
+#include <android/app/Service.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/res/Configuration.hpp>
 #include <android/graphics/Rect.hpp>
 #include <android/inputmethodservice/AbstractInputMethodService.hpp>
@@ -54,6 +65,8 @@ namespace j2cpp { namespace android { namespace os { class ResultReceiver; } } }
 #include <android/view/inputmethod/ExtractedText.hpp>
 #include <android/view/inputmethod/InputBinding.hpp>
 #include <android/view/inputmethod/InputConnection.hpp>
+#include <android/view/inputmethod/InputMethod.hpp>
+#include <android/view/inputmethod/InputMethodSession.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -126,7 +139,9 @@ namespace android { namespace inputmethodservice {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>() const;
+			operator local_ref<android::view::inputmethod::InputMethodSession>() const;
 
 
 			InputMethodSessionImpl(local_ref< android::inputmethodservice::InputMethodService > const&);
@@ -163,7 +178,9 @@ namespace android { namespace inputmethodservice {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
 			operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>() const;
+			operator local_ref<android::view::inputmethod::InputMethod>() const;
 
 
 			InputMethodImpl(local_ref< android::inputmethodservice::InputMethodService > const&);
@@ -269,7 +286,13 @@ namespace android { namespace inputmethodservice {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::app::Service>() const;
 		operator local_ref<android::inputmethodservice::AbstractInputMethodService>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::view::KeyEvent_::Callback>() const;
 
 
 		InputMethodService();
@@ -374,8 +397,8 @@ android::inputmethodservice::InputMethodService_::Insets::Insets()
 	call_new_object<
 		android::inputmethodservice::InputMethodService_::Insets::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 , contentTopInsets(get_jobject())
 , visibleTopInsets(get_jobject())
@@ -417,9 +440,19 @@ J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::Insets,4,"T
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::Insets,5,"touchableInsets","I")
 
 
+android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>() const
 {
 	return local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::operator local_ref<android::view::inputmethod::InputMethodSession>() const
+{
+	return local_ref<android::view::inputmethod::InputMethodSession>(get_jobject());
 }
 
 
@@ -428,8 +461,8 @@ android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::InputM
 	call_new_object<
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -441,8 +474,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::f
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(1),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::displayCompletions(local_ref< array< local_ref< android::view::inputmethod::CompletionInfo >, 1> > const &a0)
@@ -451,8 +484,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::d
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(2),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::updateExtractedText(jint a0, local_ref< android::view::inputmethod::ExtractedText > const &a1)
@@ -461,8 +494,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::u
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::updateSelection(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -471,8 +504,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::u
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::updateCursor(local_ref< android::graphics::Rect > const &a0)
@@ -481,8 +514,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::u
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(5),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::appPrivateCommand(local_ref< java::lang::String > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -491,8 +524,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::a
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(6),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::toggleSoftInput(jint a0, jint a1)
@@ -501,8 +534,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::t
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(7),
 		android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -519,9 +552,19 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::InputMethodService_::InputMetho
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::InputMethodSessionImpl,0,"this$0","Landroid/inputmethodservice/InputMethodService;")
 
 
+android::inputmethodservice::InputMethodService_::InputMethodImpl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::inputmethodservice::InputMethodService_::InputMethodImpl::operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>() const
 {
 	return local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService_::InputMethodImpl::operator local_ref<android::view::inputmethod::InputMethod>() const
+{
+	return local_ref<android::view::inputmethod::InputMethod>(get_jobject());
 }
 
 
@@ -530,8 +573,8 @@ android::inputmethodservice::InputMethodService_::InputMethodImpl::InputMethodIm
 	call_new_object<
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -543,8 +586,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::attachTo
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(1),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::bindInput(local_ref< android::view::inputmethod::InputBinding > const &a0)
@@ -553,8 +596,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::bindInpu
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(2),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::unbindInput()
@@ -563,8 +606,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::unbindIn
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::startInput(local_ref< android::view::inputmethod::InputConnection > const &a0, local_ref< android::view::inputmethod::EditorInfo > const &a1)
@@ -573,8 +616,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::startInp
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::restartInput(local_ref< android::view::inputmethod::InputConnection > const &a0, local_ref< android::view::inputmethod::EditorInfo > const &a1)
@@ -583,8 +626,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::restartI
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(5),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::hideSoftInput(jint a0, local_ref< android::os::ResultReceiver > const &a1)
@@ -593,8 +636,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::hideSoft
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(6),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::showSoftInput(jint a0, local_ref< android::os::ResultReceiver > const &a1)
@@ -603,8 +646,8 @@ void android::inputmethodservice::InputMethodService_::InputMethodImpl::showSoft
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(7),
 		android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 
@@ -622,9 +665,39 @@ J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::InputMethod
 
 
 
+android::inputmethodservice::InputMethodService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::app::Service>() const
+{
+	return local_ref<android::app::Service>(get_jobject());
+}
+
 android::inputmethodservice::InputMethodService::operator local_ref<android::inputmethodservice::AbstractInputMethodService>() const
 {
 	return local_ref<android::inputmethodservice::AbstractInputMethodService>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::view::KeyEvent_::Callback>() const
+{
+	return local_ref<android::view::KeyEvent_::Callback>(get_jobject());
 }
 
 
@@ -633,8 +706,8 @@ android::inputmethodservice::InputMethodService::InputMethodService()
 	call_new_object<
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(0),
-		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -646,8 +719,8 @@ void android::inputmethodservice::InputMethodService::setTheme(jint a0)
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(1),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onCreate()
@@ -656,8 +729,8 @@ void android::inputmethodservice::InputMethodService::onCreate()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(2),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onInitializeInterface()
@@ -666,8 +739,8 @@ void android::inputmethodservice::InputMethodService::onInitializeInterface()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(3),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onDestroy()
@@ -676,8 +749,8 @@ void android::inputmethodservice::InputMethodService::onDestroy()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(4),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onConfigurationChanged(local_ref< android::content::res::Configuration > const &a0)
@@ -686,8 +759,8 @@ void android::inputmethodservice::InputMethodService::onConfigurationChanged(loc
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(5),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl > android::inputmethodservice::InputMethodService::onCreateInputMethodInterface()
@@ -696,8 +769,8 @@ local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInp
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(6),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl > >
-	(get_jobject());
+		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl >
+	>(get_jobject());
 }
 
 local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl > android::inputmethodservice::InputMethodService::onCreateInputMethodSessionInterface()
@@ -706,8 +779,8 @@ local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInp
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(7),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl > >
-	(get_jobject());
+		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl >
+	>(get_jobject());
 }
 
 local_ref< android::view::LayoutInflater > android::inputmethodservice::InputMethodService::getLayoutInflater()
@@ -716,8 +789,8 @@ local_ref< android::view::LayoutInflater > android::inputmethodservice::InputMet
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(8),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::view::LayoutInflater > >
-	(get_jobject());
+		local_ref< android::view::LayoutInflater >
+	>(get_jobject());
 }
 
 local_ref< android::app::Dialog > android::inputmethodservice::InputMethodService::getWindow()
@@ -726,8 +799,8 @@ local_ref< android::app::Dialog > android::inputmethodservice::InputMethodServic
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(9),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::app::Dialog > >
-	(get_jobject());
+		local_ref< android::app::Dialog >
+	>(get_jobject());
 }
 
 jint android::inputmethodservice::InputMethodService::getMaxWidth()
@@ -736,8 +809,8 @@ jint android::inputmethodservice::InputMethodService::getMaxWidth()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(10),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(10), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< android::view::inputmethod::InputBinding > android::inputmethodservice::InputMethodService::getCurrentInputBinding()
@@ -746,8 +819,8 @@ local_ref< android::view::inputmethod::InputBinding > android::inputmethodservic
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(11),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::view::inputmethod::InputBinding > >
-	(get_jobject());
+		local_ref< android::view::inputmethod::InputBinding >
+	>(get_jobject());
 }
 
 local_ref< android::view::inputmethod::InputConnection > android::inputmethodservice::InputMethodService::getCurrentInputConnection()
@@ -756,8 +829,8 @@ local_ref< android::view::inputmethod::InputConnection > android::inputmethodser
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(12),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::view::inputmethod::InputConnection > >
-	(get_jobject());
+		local_ref< android::view::inputmethod::InputConnection >
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::InputMethodService::getCurrentInputStarted()
@@ -766,8 +839,8 @@ jboolean android::inputmethodservice::InputMethodService::getCurrentInputStarted
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(13),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(13), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< android::view::inputmethod::EditorInfo > android::inputmethodservice::InputMethodService::getCurrentInputEditorInfo()
@@ -776,8 +849,8 @@ local_ref< android::view::inputmethod::EditorInfo > android::inputmethodservice:
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(14),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< android::view::inputmethod::EditorInfo > >
-	(get_jobject());
+		local_ref< android::view::inputmethod::EditorInfo >
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::updateFullscreenMode()
@@ -786,8 +859,8 @@ void android::inputmethodservice::InputMethodService::updateFullscreenMode()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(15),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(15), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onConfigureWindow(local_ref< android::view::Window > const &a0, jboolean a1, jboolean a2)
@@ -796,8 +869,8 @@ void android::inputmethodservice::InputMethodService::onConfigureWindow(local_re
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(16),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(16), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::inputmethodservice::InputMethodService::isFullscreenMode()
@@ -806,8 +879,8 @@ jboolean android::inputmethodservice::InputMethodService::isFullscreenMode()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(17),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::InputMethodService::onEvaluateFullscreenMode()
@@ -816,8 +889,8 @@ jboolean android::inputmethodservice::InputMethodService::onEvaluateFullscreenMo
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(18),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(18), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::setExtractViewShown(jboolean a0)
@@ -826,8 +899,8 @@ void android::inputmethodservice::InputMethodService::setExtractViewShown(jboole
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(19),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::InputMethodService::isExtractViewShown()
@@ -836,8 +909,8 @@ jboolean android::inputmethodservice::InputMethodService::isExtractViewShown()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(20),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(20), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onComputeInsets(local_ref< android::inputmethodservice::InputMethodService_::Insets > const &a0)
@@ -846,8 +919,8 @@ void android::inputmethodservice::InputMethodService::onComputeInsets(local_ref<
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(21),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::updateInputViewShown()
@@ -856,8 +929,8 @@ void android::inputmethodservice::InputMethodService::updateInputViewShown()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(22),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(22), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::InputMethodService::isShowInputRequested()
@@ -866,8 +939,8 @@ jboolean android::inputmethodservice::InputMethodService::isShowInputRequested()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(23),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(23), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::InputMethodService::isInputViewShown()
@@ -876,8 +949,8 @@ jboolean android::inputmethodservice::InputMethodService::isInputViewShown()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(24),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean android::inputmethodservice::InputMethodService::onEvaluateInputViewShown()
@@ -886,8 +959,8 @@ jboolean android::inputmethodservice::InputMethodService::onEvaluateInputViewSho
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(25),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::setCandidatesViewShown(jboolean a0)
@@ -896,8 +969,8 @@ void android::inputmethodservice::InputMethodService::setCandidatesViewShown(jbo
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(26),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(26), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jint android::inputmethodservice::InputMethodService::getCandidatesHiddenVisibility()
@@ -906,8 +979,8 @@ jint android::inputmethodservice::InputMethodService::getCandidatesHiddenVisibil
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(27),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(27), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::showStatusIcon(jint a0)
@@ -916,8 +989,8 @@ void android::inputmethodservice::InputMethodService::showStatusIcon(jint a0)
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(28),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(28), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::hideStatusIcon()
@@ -926,8 +999,8 @@ void android::inputmethodservice::InputMethodService::hideStatusIcon()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(29),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(29), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::switchInputMethod(local_ref< java::lang::String > const &a0)
@@ -936,8 +1009,8 @@ void android::inputmethodservice::InputMethodService::switchInputMethod(local_re
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(30),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::setExtractView(local_ref< android::view::View > const &a0)
@@ -946,8 +1019,8 @@ void android::inputmethodservice::InputMethodService::setExtractView(local_ref< 
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(31),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::setCandidatesView(local_ref< android::view::View > const &a0)
@@ -956,8 +1029,8 @@ void android::inputmethodservice::InputMethodService::setCandidatesView(local_re
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(32),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::setInputView(local_ref< android::view::View > const &a0)
@@ -966,8 +1039,8 @@ void android::inputmethodservice::InputMethodService::setInputView(local_ref< an
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(33),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::view::View > android::inputmethodservice::InputMethodService::onCreateExtractTextView()
@@ -976,8 +1049,8 @@ local_ref< android::view::View > android::inputmethodservice::InputMethodService
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(34),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(34), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::inputmethodservice::InputMethodService::onCreateCandidatesView()
@@ -986,8 +1059,8 @@ local_ref< android::view::View > android::inputmethodservice::InputMethodService
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(35),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(35), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 local_ref< android::view::View > android::inputmethodservice::InputMethodService::onCreateInputView()
@@ -996,8 +1069,8 @@ local_ref< android::view::View > android::inputmethodservice::InputMethodService
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(36),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(36), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onStartInputView(local_ref< android::view::inputmethod::EditorInfo > const &a0, jboolean a1)
@@ -1006,8 +1079,8 @@ void android::inputmethodservice::InputMethodService::onStartInputView(local_ref
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(37),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(37), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::onFinishInputView(jboolean a0)
@@ -1016,8 +1089,8 @@ void android::inputmethodservice::InputMethodService::onFinishInputView(jboolean
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(38),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(38), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onStartCandidatesView(local_ref< android::view::inputmethod::EditorInfo > const &a0, jboolean a1)
@@ -1026,8 +1099,8 @@ void android::inputmethodservice::InputMethodService::onStartCandidatesView(loca
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(39),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(39), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::onFinishCandidatesView(jboolean a0)
@@ -1036,8 +1109,8 @@ void android::inputmethodservice::InputMethodService::onFinishCandidatesView(jbo
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(40),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(40), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onShowInputRequested(jint a0, jboolean a1)
@@ -1046,8 +1119,8 @@ jboolean android::inputmethodservice::InputMethodService::onShowInputRequested(j
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(41),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(41), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::showWindow(jboolean a0)
@@ -1056,8 +1129,8 @@ void android::inputmethodservice::InputMethodService::showWindow(jboolean a0)
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(42),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(42), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::hideWindow()
@@ -1066,8 +1139,8 @@ void android::inputmethodservice::InputMethodService::hideWindow()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(43),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(43), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onWindowShown()
@@ -1076,8 +1149,8 @@ void android::inputmethodservice::InputMethodService::onWindowShown()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(44),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(44), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onWindowHidden()
@@ -1086,8 +1159,8 @@ void android::inputmethodservice::InputMethodService::onWindowHidden()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(45),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(45), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onBindInput()
@@ -1096,8 +1169,8 @@ void android::inputmethodservice::InputMethodService::onBindInput()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(46),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(46), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onUnbindInput()
@@ -1106,8 +1179,8 @@ void android::inputmethodservice::InputMethodService::onUnbindInput()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(47),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(47), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onStartInput(local_ref< android::view::inputmethod::EditorInfo > const &a0, jboolean a1)
@@ -1116,8 +1189,8 @@ void android::inputmethodservice::InputMethodService::onStartInput(local_ref< an
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(48),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(48), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::onFinishInput()
@@ -1126,8 +1199,8 @@ void android::inputmethodservice::InputMethodService::onFinishInput()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(49),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(49), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onDisplayCompletions(local_ref< array< local_ref< android::view::inputmethod::CompletionInfo >, 1> > const &a0)
@@ -1136,8 +1209,8 @@ void android::inputmethodservice::InputMethodService::onDisplayCompletions(local
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(50),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(50), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onUpdateExtractedText(jint a0, local_ref< android::view::inputmethod::ExtractedText > const &a1)
@@ -1146,8 +1219,8 @@ void android::inputmethodservice::InputMethodService::onUpdateExtractedText(jint
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(51),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(51), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::onUpdateSelection(jint a0, jint a1, jint a2, jint a3, jint a4, jint a5)
@@ -1156,8 +1229,8 @@ void android::inputmethodservice::InputMethodService::onUpdateSelection(jint a0,
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(52),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(52), 
-		void >
-	(get_jobject(), a0, a1, a2, a3, a4, a5);
+		void
+	>(get_jobject(), a0, a1, a2, a3, a4, a5);
 }
 
 void android::inputmethodservice::InputMethodService::onUpdateCursor(local_ref< android::graphics::Rect > const &a0)
@@ -1166,8 +1239,8 @@ void android::inputmethodservice::InputMethodService::onUpdateCursor(local_ref< 
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(53),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(53), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::requestHideSelf(jint a0)
@@ -1176,8 +1249,8 @@ void android::inputmethodservice::InputMethodService::requestHideSelf(jint a0)
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(54),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(54), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onKeyDown(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1186,8 +1259,8 @@ jboolean android::inputmethodservice::InputMethodService::onKeyDown(jint a0, loc
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(55),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(55), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onKeyLongPress(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1196,8 +1269,8 @@ jboolean android::inputmethodservice::InputMethodService::onKeyLongPress(jint a0
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(56),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(56), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onKeyMultiple(jint a0, jint a1, local_ref< android::view::KeyEvent > const &a2)
@@ -1206,8 +1279,8 @@ jboolean android::inputmethodservice::InputMethodService::onKeyMultiple(jint a0,
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(57),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(57), 
-		jboolean >
-	(get_jobject(), a0, a1, a2);
+		jboolean
+	>(get_jobject(), a0, a1, a2);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onKeyUp(jint a0, local_ref< android::view::KeyEvent > const &a1)
@@ -1216,8 +1289,8 @@ jboolean android::inputmethodservice::InputMethodService::onKeyUp(jint a0, local
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(58),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(58), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onTrackballEvent(local_ref< android::view::MotionEvent > const &a0)
@@ -1226,8 +1299,8 @@ jboolean android::inputmethodservice::InputMethodService::onTrackballEvent(local
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(59),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(59), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onAppPrivateCommand(local_ref< java::lang::String > const &a0, local_ref< android::os::Bundle > const &a1)
@@ -1236,8 +1309,8 @@ void android::inputmethodservice::InputMethodService::onAppPrivateCommand(local_
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(60),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(60), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::sendDownUpKeyEvents(jint a0)
@@ -1246,8 +1319,8 @@ void android::inputmethodservice::InputMethodService::sendDownUpKeyEvents(jint a
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(61),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(61), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::inputmethodservice::InputMethodService::sendDefaultEditorAction(jboolean a0)
@@ -1256,8 +1329,8 @@ jboolean android::inputmethodservice::InputMethodService::sendDefaultEditorActio
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(62),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(62), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::sendKeyChar(jchar a0)
@@ -1266,8 +1339,8 @@ void android::inputmethodservice::InputMethodService::sendKeyChar(jchar a0)
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(63),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(63), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onExtractedSelectionChanged(jint a0, jint a1)
@@ -1276,8 +1349,8 @@ void android::inputmethodservice::InputMethodService::onExtractedSelectionChange
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(64),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(64), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::inputmethodservice::InputMethodService::onExtractedTextClicked()
@@ -1286,8 +1359,8 @@ void android::inputmethodservice::InputMethodService::onExtractedTextClicked()
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(65),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(65), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 void android::inputmethodservice::InputMethodService::onExtractedCursorMovement(jint a0, jint a1)
@@ -1296,8 +1369,8 @@ void android::inputmethodservice::InputMethodService::onExtractedCursorMovement(
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(66),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(66), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 jboolean android::inputmethodservice::InputMethodService::onExtractTextContextMenuItem(jint a0)
@@ -1306,8 +1379,8 @@ jboolean android::inputmethodservice::InputMethodService::onExtractTextContextMe
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(67),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(67), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::CharSequence > android::inputmethodservice::InputMethodService::getTextForImeAction(jint a0)
@@ -1316,8 +1389,8 @@ local_ref< java::lang::CharSequence > android::inputmethodservice::InputMethodSe
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(68),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(68), 
-		local_ref< java::lang::CharSequence > >
-	(get_jobject(), a0);
+		local_ref< java::lang::CharSequence >
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onUpdateExtractingVisibility(local_ref< android::view::inputmethod::EditorInfo > const &a0)
@@ -1326,8 +1399,8 @@ void android::inputmethodservice::InputMethodService::onUpdateExtractingVisibili
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(69),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(69), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onUpdateExtractingViews(local_ref< android::view::inputmethod::EditorInfo > const &a0)
@@ -1336,8 +1409,8 @@ void android::inputmethodservice::InputMethodService::onUpdateExtractingViews(lo
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(70),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(70), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::inputmethodservice::InputMethodService::onExtractingInputChanged(local_ref< android::view::inputmethod::EditorInfo > const &a0)
@@ -1346,8 +1419,8 @@ void android::inputmethodservice::InputMethodService::onExtractingInputChanged(l
 		android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME,
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(71),
 		android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(71), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

@@ -264,8 +264,8 @@ local_ref< java::lang::String > android::net::UrlQuerySanitizer_::ValueSanitizer
 		android::net::UrlQuerySanitizer_::ValueSanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer_::ValueSanitizer::J2CPP_METHOD_NAME(0),
 		android::net::UrlQuerySanitizer_::ValueSanitizer::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 
@@ -289,8 +289,8 @@ android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::IllegalCharact
 	call_new_object<
 		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_NAME(0),
-		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -302,8 +302,8 @@ local_ref< java::lang::String > android::net::UrlQuerySanitizer_::IllegalCharact
 		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_NAME(1),
 		android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 
@@ -500,8 +500,8 @@ android::net::UrlQuerySanitizer_::ParameterValuePair::ParameterValuePair(local_r
 	call_new_object<
 		android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_NAME(0),
-		android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 , mParameter(get_jobject())
 , mValue(get_jobject())
@@ -530,8 +530,8 @@ android::net::UrlQuerySanitizer::UrlQuerySanitizer()
 	call_new_object<
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(0),
-		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -543,8 +543,8 @@ android::net::UrlQuerySanitizer::UrlQuerySanitizer(local_ref< java::lang::String
 	call_new_object<
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(1),
-		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -556,8 +556,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(2),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	(get_jobject());
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>(get_jobject());
 }
 
 void android::net::UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > const &a0)
@@ -566,8 +566,8 @@ void android::net::UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(loc
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(3),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAllIllegal()
@@ -576,8 +576,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(4),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAllButNulLegal()
@@ -586,8 +586,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(5),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAllButWhitespaceLegal()
@@ -596,8 +596,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(6),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getUrlLegal()
@@ -606,8 +606,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(7),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getUrlAndSpaceLegal()
@@ -616,8 +616,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(8),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAmpLegal()
@@ -626,8 +626,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(9),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAmpAndSpaceLegal()
@@ -636,8 +636,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(10),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getSpaceLegal()
@@ -646,8 +646,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(11),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
@@ -656,8 +656,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(12),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	();
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>();
 }
 
 void android::net::UrlQuerySanitizer::parseUrl(local_ref< java::lang::String > const &a0)
@@ -666,8 +666,8 @@ void android::net::UrlQuerySanitizer::parseUrl(local_ref< java::lang::String > c
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(13),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::net::UrlQuerySanitizer::parseQuery(local_ref< java::lang::String > const &a0)
@@ -676,8 +676,8 @@ void android::net::UrlQuerySanitizer::parseQuery(local_ref< java::lang::String >
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(14),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(14), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > android::net::UrlQuerySanitizer::getParameterSet()
@@ -686,8 +686,8 @@ local_ref< java::util::Set > android::net::UrlQuerySanitizer::getParameterSet()
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(15),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::List > android::net::UrlQuerySanitizer::getParameterList()
@@ -696,8 +696,8 @@ local_ref< java::util::List > android::net::UrlQuerySanitizer::getParameterList(
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(16),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::util::List > >
-	(get_jobject());
+		local_ref< java::util::List >
+	>(get_jobject());
 }
 
 jboolean android::net::UrlQuerySanitizer::hasParameter(local_ref< java::lang::String > const &a0)
@@ -706,8 +706,8 @@ jboolean android::net::UrlQuerySanitizer::hasParameter(local_ref< java::lang::St
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(17),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(17), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::net::UrlQuerySanitizer::getValue(local_ref< java::lang::String > const &a0)
@@ -716,8 +716,8 @@ local_ref< java::lang::String > android::net::UrlQuerySanitizer::getValue(local_
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(18),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(18), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 void android::net::UrlQuerySanitizer::registerParameter(local_ref< java::lang::String > const &a0, local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > const &a1)
@@ -726,8 +726,8 @@ void android::net::UrlQuerySanitizer::registerParameter(local_ref< java::lang::S
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(19),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(19), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::UrlQuerySanitizer::registerParameters(local_ref< array< local_ref< java::lang::String >, 1> > const &a0, local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > const &a1)
@@ -736,8 +736,8 @@ void android::net::UrlQuerySanitizer::registerParameters(local_ref< array< local
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(20),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(20), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void android::net::UrlQuerySanitizer::setAllowUnregisteredParamaters(jboolean a0)
@@ -746,8 +746,8 @@ void android::net::UrlQuerySanitizer::setAllowUnregisteredParamaters(jboolean a0
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(21),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(21), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::UrlQuerySanitizer::getAllowUnregisteredParamaters()
@@ -756,8 +756,8 @@ jboolean android::net::UrlQuerySanitizer::getAllowUnregisteredParamaters()
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(22),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(22), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void android::net::UrlQuerySanitizer::setPreferFirstRepeatedParameter(jboolean a0)
@@ -766,8 +766,8 @@ void android::net::UrlQuerySanitizer::setPreferFirstRepeatedParameter(jboolean a
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(23),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(23), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 jboolean android::net::UrlQuerySanitizer::getPreferFirstRepeatedParameter()
@@ -776,8 +776,8 @@ jboolean android::net::UrlQuerySanitizer::getPreferFirstRepeatedParameter()
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(24),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(24), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 
@@ -788,8 +788,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(27),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	(get_jobject(), a0);
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>(get_jobject(), a0);
 }
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getEffectiveValueSanitizer(local_ref< java::lang::String > const &a0)
@@ -798,8 +798,8 @@ local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQ
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(28),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > >
-	(get_jobject(), a0);
+		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > android::net::UrlQuerySanitizer::unescape(local_ref< java::lang::String > const &a0)
@@ -808,8 +808,8 @@ local_ref< java::lang::String > android::net::UrlQuerySanitizer::unescape(local_
 		android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME,
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(29),
 		android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 

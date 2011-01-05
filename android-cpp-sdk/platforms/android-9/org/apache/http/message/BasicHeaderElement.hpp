@@ -55,9 +55,9 @@ namespace org { namespace apache { namespace http { namespace message {
 		{
 		}
 
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::HeaderElement>() const;
-		operator local_ref<java::lang::Cloneable>() const;
 
 
 		BasicHeaderElement(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > const&);
@@ -92,6 +92,11 @@ namespace j2cpp {
 
 
 
+org::apache::http::message::BasicHeaderElement::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 org::apache::http::message::BasicHeaderElement::operator local_ref<java::lang::Object>() const
 {
 	return local_ref<java::lang::Object>(get_jobject());
@@ -102,19 +107,14 @@ org::apache::http::message::BasicHeaderElement::operator local_ref<org::apache::
 	return local_ref<org::apache::http::HeaderElement>(get_jobject());
 }
 
-org::apache::http::message::BasicHeaderElement::operator local_ref<java::lang::Cloneable>() const
-{
-	return local_ref<java::lang::Cloneable>(get_jobject());
-}
-
 
 org::apache::http::message::BasicHeaderElement::BasicHeaderElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > const &a2)
 : object<org::apache::http::message::BasicHeaderElement>(
 	call_new_object<
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(0),
-		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1, a2)
+		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1, a2)
 )
 {
 }
@@ -126,8 +126,8 @@ org::apache::http::message::BasicHeaderElement::BasicHeaderElement(local_ref< ja
 	call_new_object<
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(1),
-		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -139,8 +139,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderElement::
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(2),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicHeaderElement::getValue()
@@ -149,8 +149,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderElement::
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(3),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apache::http::message::BasicHeaderElement::getParameters()
@@ -159,8 +159,8 @@ local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > org::apach
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(4),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> > >
-	(get_jobject());
+		local_ref< array< local_ref< org::apache::http::NameValuePair >, 1> >
+	>(get_jobject());
 }
 
 jint org::apache::http::message::BasicHeaderElement::getParameterCount()
@@ -169,8 +169,8 @@ jint org::apache::http::message::BasicHeaderElement::getParameterCount()
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(5),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicHeaderElement::getParameter(jint a0)
@@ -179,8 +179,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(6),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0);
 }
 
 local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicHeaderElement::getParameterByName(local_ref< java::lang::String > const &a0)
@@ -189,8 +189,8 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(7),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::apache::http::NameValuePair > >
-	(get_jobject(), a0);
+		local_ref< org::apache::http::NameValuePair >
+	>(get_jobject(), a0);
 }
 
 jboolean org::apache::http::message::BasicHeaderElement::equals(local_ref< java::lang::Object > const &a0)
@@ -199,8 +199,8 @@ jboolean org::apache::http::message::BasicHeaderElement::equals(local_ref< java:
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(8),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint org::apache::http::message::BasicHeaderElement::hashCode()
@@ -209,8 +209,8 @@ jint org::apache::http::message::BasicHeaderElement::hashCode()
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(9),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(9), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > org::apache::http::message::BasicHeaderElement::toString()
@@ -219,8 +219,8 @@ local_ref< java::lang::String > org::apache::http::message::BasicHeaderElement::
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(10),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > org::apache::http::message::BasicHeaderElement::clone()
@@ -229,8 +229,8 @@ local_ref< java::lang::Object > org::apache::http::message::BasicHeaderElement::
 		org::apache::http::message::BasicHeaderElement::J2CPP_CLASS_NAME,
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_NAME(11),
 		org::apache::http::message::BasicHeaderElement::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 

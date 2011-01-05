@@ -11,12 +11,20 @@
 #define J2CPP_ANDROID_DATABASE_SQLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/Throwable.hpp>
 
 
 namespace j2cpp {
@@ -39,7 +47,11 @@ namespace android { namespace database {
 		{
 		}
 
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::lang::RuntimeException>() const;
+		operator local_ref<java::lang::Throwable>() const;
+		operator local_ref<java::lang::Exception>() const;
 
 
 		SQLException();
@@ -62,9 +74,29 @@ namespace j2cpp {
 
 
 
+android::database::SQLException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+android::database::SQLException::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::database::SQLException::operator local_ref<java::lang::RuntimeException>() const
 {
 	return local_ref<java::lang::RuntimeException>(get_jobject());
+}
+
+android::database::SQLException::operator local_ref<java::lang::Throwable>() const
+{
+	return local_ref<java::lang::Throwable>(get_jobject());
+}
+
+android::database::SQLException::operator local_ref<java::lang::Exception>() const
+{
+	return local_ref<java::lang::Exception>(get_jobject());
 }
 
 
@@ -73,8 +105,8 @@ android::database::SQLException::SQLException()
 	call_new_object<
 		android::database::SQLException::J2CPP_CLASS_NAME,
 		android::database::SQLException::J2CPP_METHOD_NAME(0),
-		android::database::SQLException::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::database::SQLException::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -86,8 +118,8 @@ android::database::SQLException::SQLException(local_ref< java::lang::String > co
 	call_new_object<
 		android::database::SQLException::J2CPP_CLASS_NAME,
 		android::database::SQLException::J2CPP_METHOD_NAME(1),
-		android::database::SQLException::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		android::database::SQLException::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }

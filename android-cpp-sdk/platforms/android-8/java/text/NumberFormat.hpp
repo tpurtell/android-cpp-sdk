@@ -15,6 +15,8 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace text { namespace AttributedCharacterIterator_ { class Attribute; } } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 namespace j2cpp { namespace java { namespace text { class Format; } } }
 namespace j2cpp { namespace java { namespace text { namespace Format_ { class Field; } } } }
@@ -22,12 +24,16 @@ namespace j2cpp { namespace java { namespace text { namespace NumberFormat_ { cl
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace util { class Currency; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
+#include <java/text/AttributedCharacterIterator.hpp>
 #include <java/text/FieldPosition.hpp>
 #include <java/text/Format.hpp>
 #include <java/text/NumberFormat.hpp>
@@ -71,7 +77,10 @@ namespace java { namespace text {
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const;
 			operator local_ref<java::text::Format_::Field>() const;
+			operator local_ref<java::io::Serializable>() const;
 
 
 
@@ -144,7 +153,10 @@ namespace java { namespace text {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
 		operator local_ref<java::text::Format>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		NumberFormat();
@@ -206,9 +218,24 @@ namespace j2cpp {
 
 
 
+java::text::NumberFormat_::Field::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::NumberFormat_::Field::operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const
+{
+	return local_ref<java::text::AttributedCharacterIterator_::Attribute>(get_jobject());
+}
+
 java::text::NumberFormat_::Field::operator local_ref<java::text::Format_::Field>() const
 {
 	return local_ref<java::text::Format_::Field>(get_jobject());
+}
+
+java::text::NumberFormat_::Field::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -311,9 +338,24 @@ J2CPP_DEFINE_FIELD(java::text::NumberFormat_::Field,10,"CURRENCY","Ljava/text/Nu
 
 
 
+java::text::NumberFormat::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
+java::text::NumberFormat::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jobject());
+}
+
 java::text::NumberFormat::operator local_ref<java::text::Format>() const
 {
 	return local_ref<java::text::Format>(get_jobject());
+}
+
+java::text::NumberFormat::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -322,8 +364,8 @@ java::text::NumberFormat::NumberFormat()
 	call_new_object<
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(0),
-		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -335,8 +377,8 @@ local_ref< java::lang::Object > java::text::NumberFormat::clone()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(1),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::Object > >
-	(get_jobject());
+		local_ref< java::lang::Object >
+	>(get_jobject());
 }
 
 jboolean java::text::NumberFormat::equals(local_ref< java::lang::Object > const &a0)
@@ -345,8 +387,8 @@ jboolean java::text::NumberFormat::equals(local_ref< java::lang::Object > const 
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(2),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::String > java::text::NumberFormat::format(jdouble a0)
@@ -355,8 +397,8 @@ local_ref< java::lang::String > java::text::NumberFormat::format(jdouble a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(3),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(jdouble a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -365,8 +407,8 @@ local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(jdouble a
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(4),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(4), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::String > java::text::NumberFormat::format(jlong a0)
@@ -375,8 +417,8 @@ local_ref< java::lang::String > java::text::NumberFormat::format(jlong a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(5),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(jlong a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -385,8 +427,8 @@ local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(jlong a0,
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(6),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(local_ref< java::lang::Object > const &a0, local_ref< java::lang::StringBuffer > const &a1, local_ref< java::text::FieldPosition > const &a2)
@@ -395,8 +437,8 @@ local_ref< java::lang::StringBuffer > java::text::NumberFormat::format(local_ref
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(7),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::lang::StringBuffer > >
-	(get_jobject(), a0, a1, a2);
+		local_ref< java::lang::StringBuffer >
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< array< local_ref< java::util::Locale >, 1> > java::text::NumberFormat::getAvailableLocales()
@@ -405,8 +447,8 @@ local_ref< array< local_ref< java::util::Locale >, 1> > java::text::NumberFormat
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(8),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< array< local_ref< java::util::Locale >, 1> > >
-	();
+		local_ref< array< local_ref< java::util::Locale >, 1> >
+	>();
 }
 
 local_ref< java::util::Currency > java::text::NumberFormat::getCurrency()
@@ -415,8 +457,8 @@ local_ref< java::util::Currency > java::text::NumberFormat::getCurrency()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(9),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::util::Currency > >
-	(get_jobject());
+		local_ref< java::util::Currency >
+	>(get_jobject());
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getCurrencyInstance()
@@ -425,8 +467,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getCurrencyInsta
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(10),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(10), 
-		local_ref< java::text::NumberFormat > >
-	();
+		local_ref< java::text::NumberFormat >
+	>();
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getCurrencyInstance(local_ref< java::util::Locale > const &a0)
@@ -435,8 +477,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getCurrencyInsta
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(11),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< java::text::NumberFormat > >
-	(a0);
+		local_ref< java::text::NumberFormat >
+	>(a0);
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getIntegerInstance()
@@ -445,8 +487,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getIntegerInstan
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(12),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::text::NumberFormat > >
-	();
+		local_ref< java::text::NumberFormat >
+	>();
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getIntegerInstance(local_ref< java::util::Locale > const &a0)
@@ -455,8 +497,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getIntegerInstan
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(13),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(13), 
-		local_ref< java::text::NumberFormat > >
-	(a0);
+		local_ref< java::text::NumberFormat >
+	>(a0);
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getInstance()
@@ -465,8 +507,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getInstance()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(14),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::text::NumberFormat > >
-	();
+		local_ref< java::text::NumberFormat >
+	>();
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getInstance(local_ref< java::util::Locale > const &a0)
@@ -475,8 +517,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getInstance(loca
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(15),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(15), 
-		local_ref< java::text::NumberFormat > >
-	(a0);
+		local_ref< java::text::NumberFormat >
+	>(a0);
 }
 
 jint java::text::NumberFormat::getMaximumFractionDigits()
@@ -485,8 +527,8 @@ jint java::text::NumberFormat::getMaximumFractionDigits()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(16),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(16), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::NumberFormat::getMaximumIntegerDigits()
@@ -495,8 +537,8 @@ jint java::text::NumberFormat::getMaximumIntegerDigits()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(17),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(17), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::NumberFormat::getMinimumFractionDigits()
@@ -505,8 +547,8 @@ jint java::text::NumberFormat::getMinimumFractionDigits()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(18),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(18), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint java::text::NumberFormat::getMinimumIntegerDigits()
@@ -515,8 +557,8 @@ jint java::text::NumberFormat::getMinimumIntegerDigits()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(19),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(19), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getNumberInstance()
@@ -525,8 +567,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getNumberInstanc
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(20),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(20), 
-		local_ref< java::text::NumberFormat > >
-	();
+		local_ref< java::text::NumberFormat >
+	>();
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getNumberInstance(local_ref< java::util::Locale > const &a0)
@@ -535,8 +577,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getNumberInstanc
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(21),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(21), 
-		local_ref< java::text::NumberFormat > >
-	(a0);
+		local_ref< java::text::NumberFormat >
+	>(a0);
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getPercentInstance()
@@ -545,8 +587,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getPercentInstan
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(22),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(22), 
-		local_ref< java::text::NumberFormat > >
-	();
+		local_ref< java::text::NumberFormat >
+	>();
 }
 
 local_ref< java::text::NumberFormat > java::text::NumberFormat::getPercentInstance(local_ref< java::util::Locale > const &a0)
@@ -555,8 +597,8 @@ local_ref< java::text::NumberFormat > java::text::NumberFormat::getPercentInstan
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(23),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(23), 
-		local_ref< java::text::NumberFormat > >
-	(a0);
+		local_ref< java::text::NumberFormat >
+	>(a0);
 }
 
 jint java::text::NumberFormat::hashCode()
@@ -565,8 +607,8 @@ jint java::text::NumberFormat::hashCode()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(24),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(24), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jboolean java::text::NumberFormat::isGroupingUsed()
@@ -575,8 +617,8 @@ jboolean java::text::NumberFormat::isGroupingUsed()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(25),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(25), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::text::NumberFormat::isParseIntegerOnly()
@@ -585,8 +627,8 @@ jboolean java::text::NumberFormat::isParseIntegerOnly()
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(26),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(26), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Number > java::text::NumberFormat::parse(local_ref< java::lang::String > const &a0)
@@ -595,8 +637,8 @@ local_ref< java::lang::Number > java::text::NumberFormat::parse(local_ref< java:
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(27),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(27), 
-		local_ref< java::lang::Number > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Number >
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Number > java::text::NumberFormat::parse(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -605,8 +647,8 @@ local_ref< java::lang::Number > java::text::NumberFormat::parse(local_ref< java:
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(28),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(28), 
-		local_ref< java::lang::Number > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Number >
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > java::text::NumberFormat::parseObject(local_ref< java::lang::String > const &a0, local_ref< java::text::ParsePosition > const &a1)
@@ -615,8 +657,8 @@ local_ref< java::lang::Object > java::text::NumberFormat::parseObject(local_ref<
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(29),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(29), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::text::NumberFormat::setCurrency(local_ref< java::util::Currency > const &a0)
@@ -625,8 +667,8 @@ void java::text::NumberFormat::setCurrency(local_ref< java::util::Currency > con
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(30),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(30), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setGroupingUsed(jboolean a0)
@@ -635,8 +677,8 @@ void java::text::NumberFormat::setGroupingUsed(jboolean a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(31),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(31), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setMaximumFractionDigits(jint a0)
@@ -645,8 +687,8 @@ void java::text::NumberFormat::setMaximumFractionDigits(jint a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(32),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(32), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setMaximumIntegerDigits(jint a0)
@@ -655,8 +697,8 @@ void java::text::NumberFormat::setMaximumIntegerDigits(jint a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(33),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(33), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setMinimumFractionDigits(jint a0)
@@ -665,8 +707,8 @@ void java::text::NumberFormat::setMinimumFractionDigits(jint a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(34),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(34), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setMinimumIntegerDigits(jint a0)
@@ -675,8 +717,8 @@ void java::text::NumberFormat::setMinimumIntegerDigits(jint a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(35),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(35), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void java::text::NumberFormat::setParseIntegerOnly(jboolean a0)
@@ -685,8 +727,8 @@ void java::text::NumberFormat::setParseIntegerOnly(jboolean a0)
 		java::text::NumberFormat::J2CPP_CLASS_NAME,
 		java::text::NumberFormat::J2CPP_METHOD_NAME(36),
 		java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(36), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 

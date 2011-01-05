@@ -45,8 +45,8 @@ namespace org { namespace apache { namespace http { namespace impl {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<org::apache::http::ReasonPhraseCatalog>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		local_ref< java::lang::String > getReason(jint, local_ref< java::util::Locale >  const&);
@@ -72,14 +72,14 @@ namespace j2cpp {
 
 
 
-org::apache::http::impl::EnglishReasonPhraseCatalog::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 org::apache::http::impl::EnglishReasonPhraseCatalog::operator local_ref<org::apache::http::ReasonPhraseCatalog>() const
 {
 	return local_ref<org::apache::http::ReasonPhraseCatalog>(get_jobject());
+}
+
+org::apache::http::impl::EnglishReasonPhraseCatalog::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -89,8 +89,8 @@ local_ref< java::lang::String > org::apache::http::impl::EnglishReasonPhraseCata
 		org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_CLASS_NAME,
 		org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_METHOD_NAME(1),
 		org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::lang::String > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::String >
+	>(get_jobject(), a0, a1);
 }
 
 

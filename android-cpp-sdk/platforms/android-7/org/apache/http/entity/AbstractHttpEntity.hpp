@@ -105,8 +105,8 @@ local_ref< org::apache::http::Header > org::apache::http::entity::AbstractHttpEn
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(1),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 local_ref< org::apache::http::Header > org::apache::http::entity::AbstractHttpEntity::getContentEncoding()
@@ -115,8 +115,8 @@ local_ref< org::apache::http::Header > org::apache::http::entity::AbstractHttpEn
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(2),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< org::apache::http::Header > >
-	(get_jobject());
+		local_ref< org::apache::http::Header >
+	>(get_jobject());
 }
 
 jboolean org::apache::http::entity::AbstractHttpEntity::isChunked()
@@ -125,8 +125,8 @@ jboolean org::apache::http::entity::AbstractHttpEntity::isChunked()
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(3),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 void org::apache::http::entity::AbstractHttpEntity::setContentType(local_ref< org::apache::http::Header > const &a0)
@@ -135,8 +135,8 @@ void org::apache::http::entity::AbstractHttpEntity::setContentType(local_ref< or
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(4),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::AbstractHttpEntity::setContentType(local_ref< java::lang::String > const &a0)
@@ -145,8 +145,8 @@ void org::apache::http::entity::AbstractHttpEntity::setContentType(local_ref< ja
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(5),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::AbstractHttpEntity::setContentEncoding(local_ref< org::apache::http::Header > const &a0)
@@ -155,8 +155,8 @@ void org::apache::http::entity::AbstractHttpEntity::setContentEncoding(local_ref
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(6),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::AbstractHttpEntity::setContentEncoding(local_ref< java::lang::String > const &a0)
@@ -165,8 +165,8 @@ void org::apache::http::entity::AbstractHttpEntity::setContentEncoding(local_ref
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(7),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(7), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::AbstractHttpEntity::setChunked(jboolean a0)
@@ -175,8 +175,8 @@ void org::apache::http::entity::AbstractHttpEntity::setChunked(jboolean a0)
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(8),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::apache::http::entity::AbstractHttpEntity::consumeContent()
@@ -185,8 +185,8 @@ void org::apache::http::entity::AbstractHttpEntity::consumeContent()
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME,
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(9),
 		org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(9), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

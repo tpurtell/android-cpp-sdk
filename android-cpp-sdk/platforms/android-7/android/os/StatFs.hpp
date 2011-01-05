@@ -82,8 +82,8 @@ android::os::StatFs::StatFs(local_ref< java::lang::String > const &a0)
 	call_new_object<
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(0),
-		android::os::StatFs::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::os::StatFs::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -95,8 +95,8 @@ void android::os::StatFs::restat(local_ref< java::lang::String > const &a0)
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(1),
 		android::os::StatFs::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -106,8 +106,8 @@ jint android::os::StatFs::getBlockSize()
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(3),
 		android::os::StatFs::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::StatFs::getBlockCount()
@@ -116,8 +116,8 @@ jint android::os::StatFs::getBlockCount()
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(4),
 		android::os::StatFs::J2CPP_METHOD_SIGNATURE(4), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::StatFs::getFreeBlocks()
@@ -126,8 +126,8 @@ jint android::os::StatFs::getFreeBlocks()
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(5),
 		android::os::StatFs::J2CPP_METHOD_SIGNATURE(5), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::os::StatFs::getAvailableBlocks()
@@ -136,8 +136,8 @@ jint android::os::StatFs::getAvailableBlocks()
 		android::os::StatFs::J2CPP_CLASS_NAME,
 		android::os::StatFs::J2CPP_METHOD_NAME(6),
 		android::os::StatFs::J2CPP_METHOD_SIGNATURE(6), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

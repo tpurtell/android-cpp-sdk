@@ -83,8 +83,8 @@ jboolean java::util::TimerTask::cancel()
 		java::util::TimerTask::J2CPP_CLASS_NAME,
 		java::util::TimerTask::J2CPP_METHOD_NAME(1),
 		java::util::TimerTask::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jlong java::util::TimerTask::scheduledExecutionTime()
@@ -93,8 +93,8 @@ jlong java::util::TimerTask::scheduledExecutionTime()
 		java::util::TimerTask::J2CPP_CLASS_NAME,
 		java::util::TimerTask::J2CPP_METHOD_NAME(2),
 		java::util::TimerTask::J2CPP_METHOD_SIGNATURE(2), 
-		jlong >
-	(get_jobject());
+		jlong
+	>(get_jobject());
 }
 
 void java::util::TimerTask::run()
@@ -103,8 +103,8 @@ void java::util::TimerTask::run()
 		java::util::TimerTask::J2CPP_CLASS_NAME,
 		java::util::TimerTask::J2CPP_METHOD_NAME(3),
 		java::util::TimerTask::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

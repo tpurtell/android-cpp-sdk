@@ -11,9 +11,9 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_PARAMS_HTTPCLIENTPARAMS_HPP_DECL
 
 
-namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -88,8 +88,8 @@ jboolean org::apache::http::client::params::HttpClientParams::isRedirecting(loca
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(1),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::client::params::HttpClientParams::setRedirecting(local_ref< org::apache::http::params::HttpParams > const &a0, jboolean a1)
@@ -98,8 +98,8 @@ void org::apache::http::client::params::HttpClientParams::setRedirecting(local_r
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(2),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 jboolean org::apache::http::client::params::HttpClientParams::isAuthenticating(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -108,8 +108,8 @@ jboolean org::apache::http::client::params::HttpClientParams::isAuthenticating(l
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(3),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 void org::apache::http::client::params::HttpClientParams::setAuthenticating(local_ref< org::apache::http::params::HttpParams > const &a0, jboolean a1)
@@ -118,8 +118,8 @@ void org::apache::http::client::params::HttpClientParams::setAuthenticating(loca
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(4),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 local_ref< java::lang::String > org::apache::http::client::params::HttpClientParams::getCookiePolicy(local_ref< org::apache::http::params::HttpParams > const &a0)
@@ -128,8 +128,8 @@ local_ref< java::lang::String > org::apache::http::client::params::HttpClientPar
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(5),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::lang::String > >
-	(a0);
+		local_ref< java::lang::String >
+	>(a0);
 }
 
 void org::apache::http::client::params::HttpClientParams::setCookiePolicy(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< java::lang::String > const &a1)
@@ -138,8 +138,8 @@ void org::apache::http::client::params::HttpClientParams::setCookiePolicy(local_
 		org::apache::http::client::params::HttpClientParams::J2CPP_CLASS_NAME,
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_NAME(6),
 		org::apache::http::client::params::HttpClientParams::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(a0, a1);
+		void
+	>(a0, a1);
 }
 
 

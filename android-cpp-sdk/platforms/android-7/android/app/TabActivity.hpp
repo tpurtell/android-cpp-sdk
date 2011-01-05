@@ -11,15 +11,33 @@
 #define J2CPP_ANDROID_APP_TABACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class ActivityGroup; } } }
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class TabHost; } } }
 namespace j2cpp { namespace android { namespace widget { class TabWidget; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/app/ActivityGroup.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
+#include <android/view/LayoutInflater.hpp>
+#include <android/view/View.hpp>
+#include <android/view/Window.hpp>
 #include <android/widget/TabHost.hpp>
 #include <android/widget/TabWidget.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,7 +69,16 @@ namespace android { namespace app {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<android::app::ActivityGroup>() const;
+		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+		operator local_ref<android::content::Context>() const;
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
 
 
 		TabActivity();
@@ -78,9 +105,54 @@ namespace j2cpp {
 
 
 
+android::app::TabActivity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 android::app::TabActivity::operator local_ref<android::app::ActivityGroup>() const
 {
 	return local_ref<android::app::ActivityGroup>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::app::Activity>() const
+{
+	return local_ref<android::app::Activity>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::content::Context>() const
+{
+	return local_ref<android::content::Context>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::content::ContextWrapper>() const
+{
+	return local_ref<android::content::ContextWrapper>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::view::ContextThemeWrapper>() const
+{
+	return local_ref<android::view::ContextThemeWrapper>(get_jobject());
+}
+
+android::app::TabActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jobject());
 }
 
 
@@ -89,8 +161,8 @@ android::app::TabActivity::TabActivity()
 	call_new_object<
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(0),
-		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -102,8 +174,8 @@ void android::app::TabActivity::setDefaultTab(local_ref< java::lang::String > co
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(1),
 		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::app::TabActivity::setDefaultTab(jint a0)
@@ -112,8 +184,8 @@ void android::app::TabActivity::setDefaultTab(jint a0)
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(2),
 		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
@@ -125,8 +197,8 @@ void android::app::TabActivity::onContentChanged()
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(6),
 		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 
@@ -136,8 +208,8 @@ local_ref< android::widget::TabHost > android::app::TabActivity::getTabHost()
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(8),
 		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< android::widget::TabHost > >
-	(get_jobject());
+		local_ref< android::widget::TabHost >
+	>(get_jobject());
 }
 
 local_ref< android::widget::TabWidget > android::app::TabActivity::getTabWidget()
@@ -146,8 +218,8 @@ local_ref< android::widget::TabWidget > android::app::TabActivity::getTabWidget(
 		android::app::TabActivity::J2CPP_CLASS_NAME,
 		android::app::TabActivity::J2CPP_METHOD_NAME(9),
 		android::app::TabActivity::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< android::widget::TabWidget > >
-	(get_jobject());
+		local_ref< android::widget::TabWidget >
+	>(get_jobject());
 }
 
 

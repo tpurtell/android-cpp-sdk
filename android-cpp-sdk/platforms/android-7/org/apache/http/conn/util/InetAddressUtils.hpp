@@ -82,8 +82,8 @@ jboolean org::apache::http::conn::util::InetAddressUtils::isIPv4Address(local_re
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_CLASS_NAME,
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_NAME(1),
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6StdAddress(local_ref< java::lang::String > const &a0)
@@ -92,8 +92,8 @@ jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6StdAddress(local
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_CLASS_NAME,
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_NAME(2),
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6HexCompressedAddress(local_ref< java::lang::String > const &a0)
@@ -102,8 +102,8 @@ jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6HexCompressedAdd
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_CLASS_NAME,
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_NAME(3),
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6Address(local_ref< java::lang::String > const &a0)
@@ -112,8 +112,8 @@ jboolean org::apache::http::conn::util::InetAddressUtils::isIPv6Address(local_re
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_CLASS_NAME,
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_NAME(4),
 		org::apache::http::conn::util::InetAddressUtils::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(a0);
+		jboolean
+	>(a0);
 }
 
 

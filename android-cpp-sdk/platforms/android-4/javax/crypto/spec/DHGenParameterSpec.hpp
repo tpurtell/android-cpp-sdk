@@ -40,8 +40,8 @@ namespace javax { namespace crypto { namespace spec {
 		{
 		}
 
-		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		DHGenParameterSpec(jint, jint);
@@ -66,14 +66,14 @@ namespace j2cpp {
 
 
 
-javax::crypto::spec::DHGenParameterSpec::operator local_ref<java::lang::Object>() const
-{
-	return local_ref<java::lang::Object>(get_jobject());
-}
-
 javax::crypto::spec::DHGenParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
 {
 	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jobject());
+}
+
+javax::crypto::spec::DHGenParameterSpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -82,8 +82,8 @@ javax::crypto::spec::DHGenParameterSpec::DHGenParameterSpec(jint a0, jint a1)
 	call_new_object<
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(0),
-		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -95,8 +95,8 @@ jint javax::crypto::spec::DHGenParameterSpec::getPrimeSize()
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(1),
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint javax::crypto::spec::DHGenParameterSpec::getExponentSize()
@@ -105,8 +105,8 @@ jint javax::crypto::spec::DHGenParameterSpec::getExponentSize()
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME,
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(2),
 		javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

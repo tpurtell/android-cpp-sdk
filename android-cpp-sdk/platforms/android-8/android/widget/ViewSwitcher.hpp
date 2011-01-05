@@ -11,19 +11,30 @@
 #define J2CPP_ANDROID_WIDGET_VIEWSWITCHER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace widget { namespace ViewSwitcher_ { class ViewFactory; } } } }
 namespace j2cpp { namespace android { namespace widget { class ViewAnimator; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
+#include <android/view/ViewParent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
+#include <android/widget/FrameLayout.hpp>
 #include <android/widget/ViewAnimator.hpp>
 #include <android/widget/ViewSwitcher.hpp>
 #include <java/lang/Object.hpp>
@@ -80,7 +91,15 @@ namespace android { namespace widget {
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
 		operator local_ref<android::widget::ViewAnimator>() const;
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewGroup>() const;
+		operator local_ref<android::view::ViewManager>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<java::lang::Object>() const;
 
 
 		ViewSwitcher(local_ref< android::content::Context > const&);
@@ -119,8 +138,8 @@ local_ref< android::view::View > android::widget::ViewSwitcher_::ViewFactory::ma
 		android::widget::ViewSwitcher_::ViewFactory::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher_::ViewFactory::J2CPP_METHOD_NAME(0),
 		android::widget::ViewSwitcher_::ViewFactory::J2CPP_METHOD_SIGNATURE(0), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 
@@ -129,9 +148,49 @@ J2CPP_DEFINE_METHOD(android::widget::ViewSwitcher_::ViewFactory,0,"makeView","()
 
 
 
+android::widget::ViewSwitcher::operator local_ref<android::widget::FrameLayout>() const
+{
+	return local_ref<android::widget::FrameLayout>(get_jobject());
+}
+
 android::widget::ViewSwitcher::operator local_ref<android::widget::ViewAnimator>() const
 {
 	return local_ref<android::widget::ViewAnimator>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::view::View>() const
+{
+	return local_ref<android::view::View>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::view::ViewGroup>() const
+{
+	return local_ref<android::view::ViewGroup>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
+{
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::view::ViewParent>() const
+{
+	return local_ref<android::view::ViewParent>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jobject());
+}
+
+android::widget::ViewSwitcher::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
 }
 
 
@@ -140,8 +199,8 @@ android::widget::ViewSwitcher::ViewSwitcher(local_ref< android::content::Context
 	call_new_object<
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(0),
-		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(0)>
-	(a0)
+		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(0)
+	>(a0)
 )
 {
 }
@@ -153,8 +212,8 @@ android::widget::ViewSwitcher::ViewSwitcher(local_ref< android::content::Context
 	call_new_object<
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(1),
-		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(1)>
-	(a0, a1)
+		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(1)
+	>(a0, a1)
 )
 {
 }
@@ -166,8 +225,8 @@ void android::widget::ViewSwitcher::addView(local_ref< android::view::View > con
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(2),
 		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(2), 
-		void >
-	(get_jobject(), a0, a1, a2);
+		void
+	>(get_jobject(), a0, a1, a2);
 }
 
 local_ref< android::view::View > android::widget::ViewSwitcher::getNextView()
@@ -176,8 +235,8 @@ local_ref< android::view::View > android::widget::ViewSwitcher::getNextView()
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(3),
 		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< android::view::View > >
-	(get_jobject());
+		local_ref< android::view::View >
+	>(get_jobject());
 }
 
 void android::widget::ViewSwitcher::setFactory(local_ref< android::widget::ViewSwitcher_::ViewFactory > const &a0)
@@ -186,8 +245,8 @@ void android::widget::ViewSwitcher::setFactory(local_ref< android::widget::ViewS
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(4),
 		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void android::widget::ViewSwitcher::reset()
@@ -196,8 +255,8 @@ void android::widget::ViewSwitcher::reset()
 		android::widget::ViewSwitcher::J2CPP_CLASS_NAME,
 		android::widget::ViewSwitcher::J2CPP_METHOD_NAME(5),
 		android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(5), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 

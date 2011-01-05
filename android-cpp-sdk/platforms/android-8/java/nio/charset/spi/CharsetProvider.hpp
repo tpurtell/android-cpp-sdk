@@ -81,8 +81,8 @@ local_ref< java::util::Iterator > java::nio::charset::spi::CharsetProvider::char
 		java::nio::charset::spi::CharsetProvider::J2CPP_CLASS_NAME,
 		java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_NAME(1),
 		java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::util::Iterator > >
-	(get_jobject());
+		local_ref< java::util::Iterator >
+	>(get_jobject());
 }
 
 local_ref< java::nio::charset::Charset > java::nio::charset::spi::CharsetProvider::charsetForName(local_ref< java::lang::String > const &a0)
@@ -91,8 +91,8 @@ local_ref< java::nio::charset::Charset > java::nio::charset::spi::CharsetProvide
 		java::nio::charset::spi::CharsetProvider::J2CPP_CLASS_NAME,
 		java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_NAME(2),
 		java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::nio::charset::Charset > >
-	(get_jobject(), a0);
+		local_ref< java::nio::charset::Charset >
+	>(get_jobject(), a0);
 }
 
 

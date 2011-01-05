@@ -16,11 +16,13 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
 #include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 
@@ -49,8 +51,10 @@ namespace java { namespace net {
 		{
 		}
 
-		operator local_ref<java::security::Permission>() const;
 		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::security::Guard>() const;
 
 
 		SocketPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -77,14 +81,24 @@ namespace j2cpp {
 
 
 
+java::net::SocketPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
+}
+
+java::net::SocketPermission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::SocketPermission::operator local_ref<java::security::Permission>() const
 {
 	return local_ref<java::security::Permission>(get_jobject());
 }
 
-java::net::SocketPermission::operator local_ref<java::io::Serializable>() const
+java::net::SocketPermission::operator local_ref<java::security::Guard>() const
 {
-	return local_ref<java::io::Serializable>(get_jobject());
+	return local_ref<java::security::Guard>(get_jobject());
 }
 
 
@@ -93,8 +107,8 @@ java::net::SocketPermission::SocketPermission(local_ref< java::lang::String > co
 	call_new_object<
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(0),
-		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(0)>
-	(a0, a1)
+		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(0)
+	>(a0, a1)
 )
 {
 }
@@ -106,8 +120,8 @@ jboolean java::net::SocketPermission::equals(local_ref< java::lang::Object > con
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(1),
 		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jint java::net::SocketPermission::hashCode()
@@ -116,8 +130,8 @@ jint java::net::SocketPermission::hashCode()
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(2),
 		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::SocketPermission::getActions()
@@ -126,8 +140,8 @@ local_ref< java::lang::String > java::net::SocketPermission::getActions()
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(3),
 		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(3), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 jboolean java::net::SocketPermission::implies(local_ref< java::security::Permission > const &a0)
@@ -136,8 +150,8 @@ jboolean java::net::SocketPermission::implies(local_ref< java::security::Permiss
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(4),
 		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::security::PermissionCollection > java::net::SocketPermission::newPermissionCollection()
@@ -146,8 +160,8 @@ local_ref< java::security::PermissionCollection > java::net::SocketPermission::n
 		java::net::SocketPermission::J2CPP_CLASS_NAME,
 		java::net::SocketPermission::J2CPP_METHOD_NAME(5),
 		java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< java::security::PermissionCollection > >
-	(get_jobject());
+		local_ref< java::security::PermissionCollection >
+	>(get_jobject());
 }
 
 

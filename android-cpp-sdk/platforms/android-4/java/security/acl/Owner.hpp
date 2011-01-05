@@ -76,8 +76,8 @@ jboolean java::security::acl::Owner::addOwner(local_ref< java::security::Princip
 		java::security::acl::Owner::J2CPP_CLASS_NAME,
 		java::security::acl::Owner::J2CPP_METHOD_NAME(0),
 		java::security::acl::Owner::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::security::acl::Owner::deleteOwner(local_ref< java::security::Principal > const &a0, local_ref< java::security::Principal > const &a1)
@@ -86,8 +86,8 @@ jboolean java::security::acl::Owner::deleteOwner(local_ref< java::security::Prin
 		java::security::acl::Owner::J2CPP_CLASS_NAME,
 		java::security::acl::Owner::J2CPP_METHOD_NAME(1),
 		java::security::acl::Owner::J2CPP_METHOD_SIGNATURE(1), 
-		jboolean >
-	(get_jobject(), a0, a1);
+		jboolean
+	>(get_jobject(), a0, a1);
 }
 
 jboolean java::security::acl::Owner::isOwner(local_ref< java::security::Principal > const &a0)
@@ -96,8 +96,8 @@ jboolean java::security::acl::Owner::isOwner(local_ref< java::security::Principa
 		java::security::acl::Owner::J2CPP_CLASS_NAME,
 		java::security::acl::Owner::J2CPP_METHOD_NAME(2),
 		java::security::acl::Owner::J2CPP_METHOD_SIGNATURE(2), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 

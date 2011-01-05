@@ -12,10 +12,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/NetworkInterface.hpp>
@@ -56,7 +60,9 @@ namespace java { namespace net {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::net::InetAddress>() const;
+		operator local_ref<java::io::Serializable>() const;
 
 
 		static local_ref< java::net::Inet6Address > getByAddress(local_ref< java::lang::String >  const&, local_ref< array<jbyte,1> >  const&, jint);
@@ -93,9 +99,19 @@ namespace j2cpp {
 
 
 
+java::net::Inet6Address::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::net::Inet6Address::operator local_ref<java::net::InetAddress>() const
 {
 	return local_ref<java::net::InetAddress>(get_jobject());
+}
+
+java::net::Inet6Address::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jobject());
 }
 
 
@@ -105,8 +121,8 @@ local_ref< java::net::Inet6Address > java::net::Inet6Address::getByAddress(local
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(1),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(1), 
-		local_ref< java::net::Inet6Address > >
-	(a0, a1, a2);
+		local_ref< java::net::Inet6Address >
+	>(a0, a1, a2);
 }
 
 local_ref< java::net::Inet6Address > java::net::Inet6Address::getByAddress(local_ref< java::lang::String > const &a0, local_ref< array<jbyte,1> > const &a1, local_ref< java::net::NetworkInterface > const &a2)
@@ -115,8 +131,8 @@ local_ref< java::net::Inet6Address > java::net::Inet6Address::getByAddress(local
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(2),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::net::Inet6Address > >
-	(a0, a1, a2);
+		local_ref< java::net::Inet6Address >
+	>(a0, a1, a2);
 }
 
 jboolean java::net::Inet6Address::isMulticastAddress()
@@ -125,8 +141,8 @@ jboolean java::net::Inet6Address::isMulticastAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(3),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(3), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isAnyLocalAddress()
@@ -135,8 +151,8 @@ jboolean java::net::Inet6Address::isAnyLocalAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(4),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(4), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isLoopbackAddress()
@@ -145,8 +161,8 @@ jboolean java::net::Inet6Address::isLoopbackAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(5),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isLinkLocalAddress()
@@ -155,8 +171,8 @@ jboolean java::net::Inet6Address::isLinkLocalAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(6),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(6), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isSiteLocalAddress()
@@ -165,8 +181,8 @@ jboolean java::net::Inet6Address::isSiteLocalAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(7),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(7), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isMCGlobal()
@@ -175,8 +191,8 @@ jboolean java::net::Inet6Address::isMCGlobal()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(8),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(8), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isMCNodeLocal()
@@ -185,8 +201,8 @@ jboolean java::net::Inet6Address::isMCNodeLocal()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(9),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(9), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isMCLinkLocal()
@@ -195,8 +211,8 @@ jboolean java::net::Inet6Address::isMCLinkLocal()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(10),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isMCSiteLocal()
@@ -205,8 +221,8 @@ jboolean java::net::Inet6Address::isMCSiteLocal()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(11),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isMCOrgLocal()
@@ -215,8 +231,8 @@ jboolean java::net::Inet6Address::isMCOrgLocal()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(12),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(12), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 jint java::net::Inet6Address::getScopeId()
@@ -225,8 +241,8 @@ jint java::net::Inet6Address::getScopeId()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(13),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(13), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 local_ref< java::net::NetworkInterface > java::net::Inet6Address::getScopedInterface()
@@ -235,8 +251,8 @@ local_ref< java::net::NetworkInterface > java::net::Inet6Address::getScopedInter
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(14),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::net::NetworkInterface > >
-	(get_jobject());
+		local_ref< java::net::NetworkInterface >
+	>(get_jobject());
 }
 
 jboolean java::net::Inet6Address::isIPv4CompatibleAddress()
@@ -245,8 +261,8 @@ jboolean java::net::Inet6Address::isIPv4CompatibleAddress()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(15),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(15), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::String > java::net::Inet6Address::toString()
@@ -255,8 +271,8 @@ local_ref< java::lang::String > java::net::Inet6Address::toString()
 		java::net::Inet6Address::J2CPP_CLASS_NAME,
 		java::net::Inet6Address::J2CPP_METHOD_NAME(16),
 		java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(16), 
-		local_ref< java::lang::String > >
-	(get_jobject());
+		local_ref< java::lang::String >
+	>(get_jobject());
 }
 
 

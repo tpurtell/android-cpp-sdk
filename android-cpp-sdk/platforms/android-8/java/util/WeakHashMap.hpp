@@ -59,6 +59,7 @@ namespace java { namespace util {
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
 		operator local_ref<java::util::AbstractMap>() const;
 		operator local_ref<java::util::Map>() const;
 
@@ -97,6 +98,11 @@ namespace j2cpp {
 
 
 
+java::util::WeakHashMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jobject());
+}
+
 java::util::WeakHashMap::operator local_ref<java::util::AbstractMap>() const
 {
 	return local_ref<java::util::AbstractMap>(get_jobject());
@@ -113,8 +119,8 @@ java::util::WeakHashMap::WeakHashMap()
 	call_new_object<
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(0),
-		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(0)>
-	()
+		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(0)
+	>()
 )
 {
 }
@@ -126,8 +132,8 @@ java::util::WeakHashMap::WeakHashMap(jint a0)
 	call_new_object<
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(1),
-		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(1)>
-	(a0)
+		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(1)
+	>(a0)
 )
 {
 }
@@ -139,8 +145,8 @@ java::util::WeakHashMap::WeakHashMap(jint a0, jfloat a1)
 	call_new_object<
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(2),
-		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(2)>
-	(a0, a1)
+		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(2)
+	>(a0, a1)
 )
 {
 }
@@ -152,8 +158,8 @@ java::util::WeakHashMap::WeakHashMap(local_ref< java::util::Map > const &a0)
 	call_new_object<
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(3),
-		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(3)>
-	(a0)
+		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(3)
+	>(a0)
 )
 {
 }
@@ -165,8 +171,8 @@ void java::util::WeakHashMap::clear()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(4),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject());
+		void
+	>(get_jobject());
 }
 
 jboolean java::util::WeakHashMap::containsKey(local_ref< java::lang::Object > const &a0)
@@ -175,8 +181,8 @@ jboolean java::util::WeakHashMap::containsKey(local_ref< java::lang::Object > co
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(5),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(5), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 local_ref< java::util::Set > java::util::WeakHashMap::entrySet()
@@ -185,8 +191,8 @@ local_ref< java::util::Set > java::util::WeakHashMap::entrySet()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(6),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(6), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Set > java::util::WeakHashMap::keySet()
@@ -195,8 +201,8 @@ local_ref< java::util::Set > java::util::WeakHashMap::keySet()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(7),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< java::util::Set > >
-	(get_jobject());
+		local_ref< java::util::Set >
+	>(get_jobject());
 }
 
 local_ref< java::util::Collection > java::util::WeakHashMap::values()
@@ -205,8 +211,8 @@ local_ref< java::util::Collection > java::util::WeakHashMap::values()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(8),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(8), 
-		local_ref< java::util::Collection > >
-	(get_jobject());
+		local_ref< java::util::Collection >
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::WeakHashMap::get(local_ref< java::lang::Object > const &a0)
@@ -215,8 +221,8 @@ local_ref< java::lang::Object > java::util::WeakHashMap::get(local_ref< java::la
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(9),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::WeakHashMap::containsValue(local_ref< java::lang::Object > const &a0)
@@ -225,8 +231,8 @@ jboolean java::util::WeakHashMap::containsValue(local_ref< java::lang::Object > 
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(10),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(10), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 jboolean java::util::WeakHashMap::isEmpty()
@@ -235,8 +241,8 @@ jboolean java::util::WeakHashMap::isEmpty()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(11),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(11), 
-		jboolean >
-	(get_jobject());
+		jboolean
+	>(get_jobject());
 }
 
 local_ref< java::lang::Object > java::util::WeakHashMap::put(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
@@ -245,8 +251,8 @@ local_ref< java::lang::Object > java::util::WeakHashMap::put(local_ref< java::la
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(12),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(12), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0, a1);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0, a1);
 }
 
 void java::util::WeakHashMap::putAll(local_ref< java::util::Map > const &a0)
@@ -255,8 +261,8 @@ void java::util::WeakHashMap::putAll(local_ref< java::util::Map > const &a0)
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(13),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< java::lang::Object > java::util::WeakHashMap::remove(local_ref< java::lang::Object > const &a0)
@@ -265,8 +271,8 @@ local_ref< java::lang::Object > java::util::WeakHashMap::remove(local_ref< java:
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(14),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(14), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 jint java::util::WeakHashMap::size()
@@ -275,8 +281,8 @@ jint java::util::WeakHashMap::size()
 		java::util::WeakHashMap::J2CPP_CLASS_NAME,
 		java::util::WeakHashMap::J2CPP_METHOD_NAME(15),
 		java::util::WeakHashMap::J2CPP_METHOD_SIGNATURE(15), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

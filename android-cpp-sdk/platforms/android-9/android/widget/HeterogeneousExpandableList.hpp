@@ -75,8 +75,8 @@ jint android::widget::HeterogeneousExpandableList::getGroupType(jint a0)
 		android::widget::HeterogeneousExpandableList::J2CPP_CLASS_NAME,
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_NAME(0),
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_SIGNATURE(0), 
-		jint >
-	(get_jobject(), a0);
+		jint
+	>(get_jobject(), a0);
 }
 
 jint android::widget::HeterogeneousExpandableList::getChildType(jint a0, jint a1)
@@ -85,8 +85,8 @@ jint android::widget::HeterogeneousExpandableList::getChildType(jint a0, jint a1
 		android::widget::HeterogeneousExpandableList::J2CPP_CLASS_NAME,
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_NAME(1),
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_SIGNATURE(1), 
-		jint >
-	(get_jobject(), a0, a1);
+		jint
+	>(get_jobject(), a0, a1);
 }
 
 jint android::widget::HeterogeneousExpandableList::getGroupTypeCount()
@@ -95,8 +95,8 @@ jint android::widget::HeterogeneousExpandableList::getGroupTypeCount()
 		android::widget::HeterogeneousExpandableList::J2CPP_CLASS_NAME,
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_NAME(2),
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_SIGNATURE(2), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 jint android::widget::HeterogeneousExpandableList::getChildTypeCount()
@@ -105,8 +105,8 @@ jint android::widget::HeterogeneousExpandableList::getChildTypeCount()
 		android::widget::HeterogeneousExpandableList::J2CPP_CLASS_NAME,
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_NAME(3),
 		android::widget::HeterogeneousExpandableList::J2CPP_METHOD_SIGNATURE(3), 
-		jint >
-	(get_jobject());
+		jint
+	>(get_jobject());
 }
 
 

@@ -11,13 +11,13 @@
 #define J2CPP_ORG_XML_SAX_XMLREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
-namespace j2cpp { namespace java { namespace lang { class String; } } }
-namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
@@ -108,8 +108,8 @@ jboolean org::xml::sax::XMLReader::getFeature(local_ref< java::lang::String > co
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(0),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(0), 
-		jboolean >
-	(get_jobject(), a0);
+		jboolean
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::XMLReader::setFeature(local_ref< java::lang::String > const &a0, jboolean a1)
@@ -118,8 +118,8 @@ void org::xml::sax::XMLReader::setFeature(local_ref< java::lang::String > const 
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(1),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(1), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 local_ref< java::lang::Object > org::xml::sax::XMLReader::getProperty(local_ref< java::lang::String > const &a0)
@@ -128,8 +128,8 @@ local_ref< java::lang::Object > org::xml::sax::XMLReader::getProperty(local_ref<
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(2),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(2), 
-		local_ref< java::lang::Object > >
-	(get_jobject(), a0);
+		local_ref< java::lang::Object >
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::XMLReader::setProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
@@ -138,8 +138,8 @@ void org::xml::sax::XMLReader::setProperty(local_ref< java::lang::String > const
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(3),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(3), 
-		void >
-	(get_jobject(), a0, a1);
+		void
+	>(get_jobject(), a0, a1);
 }
 
 void org::xml::sax::XMLReader::setEntityResolver(local_ref< org::xml::sax::EntityResolver > const &a0)
@@ -148,8 +148,8 @@ void org::xml::sax::XMLReader::setEntityResolver(local_ref< org::xml::sax::Entit
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(4),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(4), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::EntityResolver > org::xml::sax::XMLReader::getEntityResolver()
@@ -158,8 +158,8 @@ local_ref< org::xml::sax::EntityResolver > org::xml::sax::XMLReader::getEntityRe
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(5),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(5), 
-		local_ref< org::xml::sax::EntityResolver > >
-	(get_jobject());
+		local_ref< org::xml::sax::EntityResolver >
+	>(get_jobject());
 }
 
 void org::xml::sax::XMLReader::setDTDHandler(local_ref< org::xml::sax::DTDHandler > const &a0)
@@ -168,8 +168,8 @@ void org::xml::sax::XMLReader::setDTDHandler(local_ref< org::xml::sax::DTDHandle
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(6),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(6), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::DTDHandler > org::xml::sax::XMLReader::getDTDHandler()
@@ -178,8 +178,8 @@ local_ref< org::xml::sax::DTDHandler > org::xml::sax::XMLReader::getDTDHandler()
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(7),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(7), 
-		local_ref< org::xml::sax::DTDHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::DTDHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::XMLReader::setContentHandler(local_ref< org::xml::sax::ContentHandler > const &a0)
@@ -188,8 +188,8 @@ void org::xml::sax::XMLReader::setContentHandler(local_ref< org::xml::sax::Conte
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(8),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(8), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ContentHandler > org::xml::sax::XMLReader::getContentHandler()
@@ -198,8 +198,8 @@ local_ref< org::xml::sax::ContentHandler > org::xml::sax::XMLReader::getContentH
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(9),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(9), 
-		local_ref< org::xml::sax::ContentHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ContentHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::XMLReader::setErrorHandler(local_ref< org::xml::sax::ErrorHandler > const &a0)
@@ -208,8 +208,8 @@ void org::xml::sax::XMLReader::setErrorHandler(local_ref< org::xml::sax::ErrorHa
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(10),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(10), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 local_ref< org::xml::sax::ErrorHandler > org::xml::sax::XMLReader::getErrorHandler()
@@ -218,8 +218,8 @@ local_ref< org::xml::sax::ErrorHandler > org::xml::sax::XMLReader::getErrorHandl
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(11),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(11), 
-		local_ref< org::xml::sax::ErrorHandler > >
-	(get_jobject());
+		local_ref< org::xml::sax::ErrorHandler >
+	>(get_jobject());
 }
 
 void org::xml::sax::XMLReader::parse(local_ref< org::xml::sax::InputSource > const &a0)
@@ -228,8 +228,8 @@ void org::xml::sax::XMLReader::parse(local_ref< org::xml::sax::InputSource > con
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(12),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(12), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 void org::xml::sax::XMLReader::parse(local_ref< java::lang::String > const &a0)
@@ -238,8 +238,8 @@ void org::xml::sax::XMLReader::parse(local_ref< java::lang::String > const &a0)
 		org::xml::sax::XMLReader::J2CPP_CLASS_NAME,
 		org::xml::sax::XMLReader::J2CPP_METHOD_NAME(13),
 		org::xml::sax::XMLReader::J2CPP_METHOD_SIGNATURE(13), 
-		void >
-	(get_jobject(), a0);
+		void
+	>(get_jobject(), a0);
 }
 
 
