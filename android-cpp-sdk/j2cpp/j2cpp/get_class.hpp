@@ -14,6 +14,12 @@ namespace j2cpp {
 		return clazz.get_jtype();
 	}
 
+	template < typename ObjectType >
+	static jclass get_object_class()
+	{
+		return get_class< ObjectType::J2CPP_CLASS_NAME >();
+	}
+
 } //namespace j2cpp
 
 #endif //J2CPP_GET_CLASS_HPP

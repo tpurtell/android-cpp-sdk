@@ -5,6 +5,7 @@
 #include <j2cpp/environment.hpp>
 #include <j2cpp/object.hpp>
 #include <j2cpp/local_ref.hpp>
+#include <j2cpp/get_class.hpp>
 
 namespace j2cpp {
 
@@ -66,6 +67,16 @@ namespace j2cpp {
 			);
 		}
 		
+		value_type& operator [](unsigned long idx)
+		{
+			return m_data[idx];
+		}
+
+		value_type const& operator [](unsigned long idx) const
+		{
+			return m_data[idx];
+		}
+
 		value_type* data()
 		{
 			return m_data;
@@ -91,17 +102,89 @@ namespace j2cpp {
 	};
 	
 	
-	template < typename ValueType > 
-	class array< local_ref<ValueType>, 1>
-	: public object< array< local_ref<ValueType>, 1> >
+	template < typename ObjectType >
+	class array< local_ref<ObjectType>, 1>
+	: public object< array< local_ref<ObjectType>, 1> >
 	{
 	public:
-		typedef local_ref<ValueType> 						value_type;
-		typedef object< array< local_ref<ValueType>, 1> >	base_type;
+		typedef local_ref<ObjectType> 						value_type;
+		typedef array< local_ref<ObjectType>, 1 >			array_type;
+		typedef object< array< local_ref<ObjectType>, 1> >	base_type;
 		
+
+		class element_holder
+		{
+		public:
+			explicit element_holder(array_type const &arr, unsigned long idx)
+			: m_array(arr)
+			, m_idx(idx)
+			{
+			}
+
+			operator value_type () const
+			{
+				return m_array.get_at(m_idx);
+			}
+
+			element_holder& operator =(value_type const &v)
+			{
+				m_array.set_at(m_idx, v);
+				return *this;
+			}
+
+		private:
+			array_type		m_array;
+			unsigned long	m_idx;
+		};
+
 		explicit array(jobject obj)
 		: base_type(obj)
 		{
+		}
+
+		array(jsize s, jobject initObj = 0)
+		: base_type(array_access<value_type>::new_array(s, initObj))
+		{
+		}
+
+		~array()
+		{
+		}
+
+		element_holder operator [](unsigned long idx)
+		{
+			return element_holder(*this, idx);
+		}
+
+		element_holder const operator [](unsigned long idx) const
+		{
+			return element_holder(*this, idx);
+		}
+
+		jsize length() const
+		{
+			return array_access<value_type>::get_array_length(
+				base_type::get_jobject()
+			);
+		}
+
+		value_type get_at(unsigned long idx) const
+		{
+			return value_type(
+				array_access< value_type >::get_object_array_element(
+					base_type::get_jobject(),
+					idx
+				)
+			);
+		}
+
+		void set_at(unsigned long idx, value_type const &v)
+		{
+			array_access< value_type >::set_object_array_element(
+				base_type::get_jobject(),
+				idx,
+				v.get_jobject()
+			);
 		}
 	};
 	
@@ -385,6 +468,38 @@ namespace j2cpp {
 			environment::get().get_jenv()->ReleaseDoubleArrayElements(
 				reinterpret_cast<jdoubleArray>(jobj), data, mode
 			);
+		}
+	};
+
+
+	template <typename ObjectType>
+	struct array_access< local_ref<ObjectType> >
+	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jobject get_object_array_element(jobject jobj, jsize idx)
+		{
+			return environment::get().get_jenv()->GetObjectArrayElement(
+				reinterpret_cast<jobjectArray>(jobj), idx
+			);
+		}
+
+		static inline void set_object_array_element(jobject jobj, jsize idx, jobject value)
+		{
+			environment::get().get_jenv()->SetObjectArrayElement(
+				reinterpret_cast<jobjectArray>(jobj), idx, value
+			);
+		}
+
+		static inline jobject new_array(jsize s, jobject initObj = 0)
+		{
+			return environment::get().get_jenv()->NewObjectArray(
+					s, get_object_class<ObjectType>(), initObj);
 		}
 	};
 
