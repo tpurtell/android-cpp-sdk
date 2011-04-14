@@ -37,6 +37,23 @@ namespace j2cpp {
 			return jenv;
 		}
 
+		bool attach()
+		{
+			if(!m_jvm)
+				return false;
+			JNIEnv *jenv(0);
+			if(JNI_OK!=m_jvm->AttachCurrentThread(&jenv,0))
+				return false;
+			return (jenv!=0);
+		}
+
+		bool detach()
+		{
+			if(!m_jvm)
+				return false;
+			return (JNI_OK==m_jvm->DetachCurrentThread());
+		}
+
 	private:
 		JavaVM	*m_jvm;
 	};
