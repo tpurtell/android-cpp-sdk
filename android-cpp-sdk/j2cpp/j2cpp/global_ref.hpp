@@ -18,6 +18,12 @@ namespace j2cpp {
 		typedef ObjType					object_type;
 		typedef detail::atomic_count	count_type;
 
+		global_ref()
+		: m_px(0)
+		{
+			m_pn=new count_type(1);
+		}
+
 		explicit global_ref(jobject jobj)
 		: m_px(0)
 		, m_pn(0)
@@ -52,8 +58,8 @@ namespace j2cpp {
 			)
 			{
 				m_px=new object_type(gref);
-				m_pn=new count_type(1);
 			}
+			m_pn=new count_type(1);
 		}
 
 		global_ref(global_ref const &that)
@@ -72,8 +78,20 @@ namespace j2cpp {
 			)
 			{
 				m_px=new object_type(gref);
-				m_pn=new count_type(1);
 			}
+			m_pn=new count_type(1);
+		}
+
+		template < typename OtherObject >
+		operator global_ref<OtherObject> () const
+		{
+			return global_ref<OtherObject>(*m_px);
+		}
+
+		global_ref& operator=(global_ref const &rhs)
+		{
+			global_ref(rhs).swap(*this);
+			return *this;
 		}
 
 		object_type* operator->() const
@@ -81,9 +99,30 @@ namespace j2cpp {
 			return m_px;
 		}
 
+		object_type& operator *() const
+		{
+			return *m_px;
+		}
+
 		jobject get_jobject() const
 		{
 			return (m_px?m_px->get_jobject():0);
+		}
+
+		bool operator !() const
+		{
+			return m_px==0;
+		}
+
+		operator bool() const
+		{
+			return m_px!=0;
+		}
+
+		void swap(global_ref &rhs)
+		{
+			detail::swap(m_px, rhs.m_px);
+			detail::swap(m_pn, rhs.m_pn);
 		}
 
 	private:

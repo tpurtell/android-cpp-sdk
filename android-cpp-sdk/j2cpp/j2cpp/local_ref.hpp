@@ -96,8 +96,6 @@ namespace j2cpp {
 			return *this;
 		}
 
-
-
 		object_type* operator->() const
 		{
 			return m_px;
