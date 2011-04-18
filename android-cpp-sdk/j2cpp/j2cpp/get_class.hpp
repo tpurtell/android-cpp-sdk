@@ -10,7 +10,7 @@ namespace j2cpp {
 	template < const char *ClassName >
 	static jclass get_class()
 	{
-		static jobject_global_ref<jclass> clazz(environment::get().get_jenv()->FindClass(ClassName));
+		static jobject_global_ref<jclass> clazz(environment::get()->find_class(ClassName));
 		return clazz.get_jtype();
 	}
 

@@ -32,7 +32,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject lref=(jobj?
-				environment::get().get_jenv()->NewLocalRef(jobj):0)
+				environment::get()->jenv()->NewLocalRef(jobj):0)
 			)
 			{
 				m_px=new object_type(lref);
@@ -45,7 +45,7 @@ namespace j2cpp {
 			if(--*m_pn==0)
 			{
 				if(m_px && m_px->get_jobject())
-					environment::get().get_jenv()->DeleteLocalRef(m_px->get_jobject());
+					environment::get()->jenv()->DeleteLocalRef(m_px->get_jobject());
 				delete m_px;
 				delete m_pn;
 			}
@@ -56,7 +56,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject lref=(obj.get_jobject()?
-				environment::get().get_jenv()->NewLocalRef(obj.get_jobject()):0)
+				environment::get()->jenv()->NewLocalRef(obj.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(lref);
@@ -76,7 +76,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject lref=(gref.get_jobject()?
-				environment::get().get_jenv()->NewLocalRef(gref.get_jobject()):0)
+				environment::get()->jenv()->NewLocalRef(gref.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(lref);

@@ -193,7 +193,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -205,19 +205,19 @@ namespace j2cpp {
 
 		static inline jboolean* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetBooleanArrayElements(
+			return environment::get()->jenv()->GetBooleanArrayElements(
 				reinterpret_cast<jbooleanArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewBooleanArray(s);
+			return environment::get()->jenv()->NewBooleanArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jboolean *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseBooleanArrayElements(
+			environment::get().get()->jenv()->ReleaseBooleanArrayElements(
 				reinterpret_cast<jbooleanArray>(jobj), data, mode
 			);
 		}
@@ -229,7 +229,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -241,19 +241,19 @@ namespace j2cpp {
 
 		static inline jbyte* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetByteArrayElements(
+			return environment::get()->jenv()->GetByteArrayElements(
 				reinterpret_cast<jbyteArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewByteArray(s);
+			return environment::get()->jenv()->NewByteArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jbyte *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseByteArrayElements(
+			environment::get()->jenv()->ReleaseByteArrayElements(
 				reinterpret_cast<jbyteArray>(jobj), data, mode
 			);
 		}
@@ -264,7 +264,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -276,19 +276,19 @@ namespace j2cpp {
 
 		static inline jchar* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetCharArrayElements(
+			return environment::get()->jenv()->GetCharArrayElements(
 				reinterpret_cast<jcharArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewCharArray(s);
+			return environment::get()->jenv()->NewCharArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jchar *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseCharArrayElements(
+			environment::get()->jenv()->ReleaseCharArrayElements(
 				reinterpret_cast<jcharArray>(jobj), data, mode
 			);
 		}
@@ -299,7 +299,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -311,19 +311,19 @@ namespace j2cpp {
 
 		static inline jshort* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetShortArrayElements(
+			return environment::get()->jenv()->GetShortArrayElements(
 				reinterpret_cast<jshortArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewShortArray(s);
+			return environment::get()->jenv()->NewShortArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jshort *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseShortArrayElements(
+			environment::get()->jenv()->ReleaseShortArrayElements(
 				reinterpret_cast<jshortArray>(jobj), data, mode
 			);
 		}
@@ -335,7 +335,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -347,19 +347,19 @@ namespace j2cpp {
 
 		static inline jint* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetIntArrayElements(
+			return environment::get()->jenv()->GetIntArrayElements(
 				reinterpret_cast<jintArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewIntArray(s);
+			return environment::get()->jenv()->NewIntArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jint *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseIntArrayElements(
+			environment::get()->jenv()->ReleaseIntArrayElements(
 				reinterpret_cast<jintArray>(jobj), data, mode
 			);
 		}
@@ -371,7 +371,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -383,19 +383,19 @@ namespace j2cpp {
 
 		static inline jlong* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetLongArrayElements(
+			return environment::get()->jenv()->GetLongArrayElements(
 				reinterpret_cast<jlongArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewLongArray(s);
+			return environment::get()->jenv()->NewLongArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jlong *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseLongArrayElements(
+			environment::get()->jenv()->ReleaseLongArrayElements(
 				reinterpret_cast<jlongArray>(jobj), data, mode
 			);
 		}
@@ -406,7 +406,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -418,19 +418,19 @@ namespace j2cpp {
 
 		static inline jfloat* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetFloatArrayElements(
+			return environment::get()->jenv()->GetFloatArrayElements(
 				reinterpret_cast<jfloatArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewFloatArray(s);
+			return environment::get()->jenv()->NewFloatArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jfloat *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseFloatArrayElements(
+			environment::get()->jenv()->ReleaseFloatArrayElements(
 				reinterpret_cast<jfloatArray>(jobj), data, mode
 			);
 		}
@@ -441,7 +441,7 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
@@ -453,19 +453,19 @@ namespace j2cpp {
 
 		static inline jdouble* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
-			return environment::get().get_jenv()->GetDoubleArrayElements(
+			return environment::get()->jenv()->GetDoubleArrayElements(
 				reinterpret_cast<jdoubleArray>(jobj), &is_copy
 			);
 		}
 		
 		static inline jobject new_array(jsize s)
 		{
-			return environment::get().get_jenv()->NewDoubleArray(s);
+			return environment::get()->jenv()->NewDoubleArray(s);
 		}
 		
 		static inline void release_array_elements(jobject jobj, jdouble *data, jint mode)
 		{
-			environment::get().get_jenv()->ReleaseDoubleArrayElements(
+			environment::get()->jenv()->ReleaseDoubleArrayElements(
 				reinterpret_cast<jdoubleArray>(jobj), data, mode
 			);
 		}
@@ -477,28 +477,28 @@ namespace j2cpp {
 	{
 		static inline jsize get_array_length(jobject jobj)
 		{
-			return environment::get().get_jenv()->GetArrayLength(
+			return environment::get()->jenv()->GetArrayLength(
 				reinterpret_cast<jarray>(jobj)
 			);
 		}
 
 		static inline jobject get_object_array_element(jobject jobj, jsize idx)
 		{
-			return environment::get().get_jenv()->GetObjectArrayElement(
+			return environment::get()->jenv()->GetObjectArrayElement(
 				reinterpret_cast<jobjectArray>(jobj), idx
 			);
 		}
 
 		static inline void set_object_array_element(jobject jobj, jsize idx, jobject value)
 		{
-			environment::get().get_jenv()->SetObjectArrayElement(
+			environment::get()->jenv()->SetObjectArrayElement(
 				reinterpret_cast<jobjectArray>(jobj), idx, value
 			);
 		}
 
 		static inline jobject new_array(jsize s, jobject initObj = 0)
 		{
-			return environment::get().get_jenv()->NewObjectArray(
+			return environment::get()->jenv()->NewObjectArray(
 					s, get_object_class<ObjectType>(), initObj);
 		}
 	};

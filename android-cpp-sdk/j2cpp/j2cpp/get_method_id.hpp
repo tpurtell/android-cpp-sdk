@@ -13,13 +13,13 @@ namespace j2cpp {
 	template <>
 	jmethodID get_method_id<true>(jclass c, const char *n, const char *s)
 	{
-		return environment::get().get_jenv()->GetStaticMethodID(c,n,s);
+		return environment::get()->get_static_method_id(c,n,s);
 	}
 
 	template <>
 	jmethodID get_method_id<false>(jclass c, const char *n, const char *s)
 	{
-		return environment::get().get_jenv()->GetMethodID(c,n,s);
+		return environment::get()->get_method_id(c,n,s);
 	}
 
 	template < const char *Class, const char *Name, const char *Signature, bool is_static >

@@ -90,13 +90,13 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, local_ref<Type> const &v)
 		{
-			environment::get().get_jenv()->SetStaticObjectField(c, f, v.get_jobject());
+			environment::get()->jenv()->SetStaticObjectField(c, f, v.get_jobject());
 		}
 
 		static local_ref<Type> get(jclass c, jfieldID f)
 		{
 			return local_ref<Type>(
-				environment::get().get_jenv()->GetStaticObjectField(c, f)
+				environment::get()->jenv()->GetStaticObjectField(c, f)
 			);
 		}
 	};
@@ -106,13 +106,13 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, local_ref<Type> const &v)
 		{
-			environment::get().get_jenv()->SetObjectField(o, f, v.get_jobject());
+			environment::get()->jenv()->SetObjectField(o, f, v.get_jobject());
 		}
 
 		static local_ref<Type> get(jobject o, jfieldID f)
 		{
 			return local_ref<Type>(
-				environment::get().get_jenv()->GetObjectField(o, f)
+				environment::get()->jenv()->GetObjectField(o, f)
 			);
 		}
 	};
@@ -122,12 +122,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jboolean v)
 		{
-			environment::get().get_jenv()->SetStaticBooleanField(c,f,v);
+			environment::get()->jenv()->SetStaticBooleanField(c,f,v);
 		}
 
 		static jboolean get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticBooleanField(c,f);
+			return environment::get()->jenv()->GetStaticBooleanField(c,f);
 		}
 	};
 
@@ -136,12 +136,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jbyte v)
 		{
-			environment::get().get_jenv()->SetStaticByteField(c,f,v);
+			environment::get()->jenv()->SetStaticByteField(c,f,v);
 		}
 
 		static jbyte get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticByteField(c,f);
+			return environment::get()->jenv()->GetStaticByteField(c,f);
 		}
 	};
 
@@ -150,12 +150,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jchar v)
 		{
-			environment::get().get_jenv()->SetStaticCharField(c,f,v);
+			environment::get()->jenv()->SetStaticCharField(c,f,v);
 		}
 
 		static jchar get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticCharField(c,f);
+			return environment::get()->jenv()->GetStaticCharField(c,f);
 		}
 	};
 
@@ -164,12 +164,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jdouble v)
 		{
-			environment::get().get_jenv()->SetStaticDoubleField(c,f,v);
+			environment::get()->jenv()->SetStaticDoubleField(c,f,v);
 		}
 
 		static jdouble get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticDoubleField(c,f);
+			return environment::get()->jenv()->GetStaticDoubleField(c,f);
 		}
 	};
 
@@ -179,12 +179,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jfloat v)
 		{
-			environment::get().get_jenv()->SetStaticFloatField(c,f,v);
+			environment::get()->jenv()->SetStaticFloatField(c,f,v);
 		}
 
 		static jfloat get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticFloatField(c,f);
+			return environment::get()->jenv()->GetStaticFloatField(c,f);
 		}
 	};
 
@@ -193,12 +193,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jint v)
 		{
-			environment::get().get_jenv()->SetStaticIntField(c,f,v);
+			environment::get()->jenv()->SetStaticIntField(c,f,v);
 		}
 
 		static jint get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticIntField(c,f);
+			return environment::get()->jenv()->GetStaticIntField(c,f);
 		}
 	};
 
@@ -207,12 +207,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jlong v)
 		{
-			environment::get().get_jenv()->SetStaticLongField(c,f,v);
+			environment::get()->jenv()->SetStaticLongField(c,f,v);
 		}
 
 		static jlong get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticLongField(c,f);
+			return environment::get()->jenv()->GetStaticLongField(c,f);
 		}
 	};
 
@@ -221,12 +221,12 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, jshort v)
 		{
-			environment::get().get_jenv()->SetStaticShortField(c,f,v);
+			environment::get()->jenv()->SetStaticShortField(c,f,v);
 		}
 
 		jshort get(jclass c, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetStaticShortField(c,f);
+			return environment::get()->jenv()->GetStaticShortField(c,f);
 		}
 	};
 
@@ -236,12 +236,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jboolean v)
 		{
-			environment::get().get_jenv()->SetBooleanField(o,f,v);
+			environment::get()->jenv()->SetBooleanField(o,f,v);
 		}
 
 		static jboolean get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetBooleanField(o,f);
+			return environment::get()->jenv()->GetBooleanField(o,f);
 		}
 	};
 
@@ -250,12 +250,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jbyte v)
 		{
-			environment::get().get_jenv()->SetByteField(o,f,v);
+			environment::get()->jenv()->SetByteField(o,f,v);
 		}
 
 		static jbyte get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetByteField(o,f);
+			return environment::get()->jenv()->GetByteField(o,f);
 		}
 	};
 
@@ -264,12 +264,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jchar v)
 		{
-			environment::get().get_jenv()->SetCharField(o,f,v);
+			environment::get()->jenv()->SetCharField(o,f,v);
 		}
 
 		static jchar get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetCharField(o,f);
+			return environment::get()->jenv()->GetCharField(o,f);
 		}
 	};
 
@@ -278,12 +278,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jdouble v)
 		{
-			environment::get().get_jenv()->SetDoubleField(o,f,v);
+			environment::get()->jenv()->SetDoubleField(o,f,v);
 		}
 
 		static jdouble get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetDoubleField(o,f);
+			return environment::get()->jenv()->GetDoubleField(o,f);
 		}
 	};
 
@@ -293,12 +293,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jfloat v)
 		{
-			environment::get().get_jenv()->SetFloatField(o,f,v);
+			environment::get()->jenv()->SetFloatField(o,f,v);
 		}
 
 		static jfloat get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetFloatField(o,f);
+			return environment::get()->jenv()->GetFloatField(o,f);
 		}
 	};
 
@@ -307,12 +307,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jint const &v)
 		{
-			environment::get().get_jenv()->SetIntField(o,f,v);
+			environment::get()->jenv()->SetIntField(o,f,v);
 		}
 
 		static jint get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetIntField(o,f);
+			return environment::get()->jenv()->GetIntField(o,f);
 		}
 	};
 
@@ -321,12 +321,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jlong const &v)
 		{
-			environment::get().get_jenv()->SetLongField(o,f,v);
+			environment::get()->jenv()->SetLongField(o,f,v);
 		}
 
 		static jlong get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetLongField(o,f);
+			return environment::get()->jenv()->GetLongField(o,f);
 		}
 	};
 
@@ -335,12 +335,12 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, jshort v)
 		{
-			environment::get().get_jenv()->SetShortField(o,f,v);
+			environment::get()->jenv()->SetShortField(o,f,v);
 		}
 
 		jshort get(jobject o, jfieldID f)
 		{
-			return environment::get().get_jenv()->GetShortField(o,f);
+			return environment::get()->jenv()->GetShortField(o,f);
 		}
 	};
 

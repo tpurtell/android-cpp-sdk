@@ -5,6 +5,7 @@
 #include <j2cpp/object.hpp>
 #include <j2cpp/array.hpp>
 #include <j2cpp/environment.hpp>
+#include <j2cpp/raw_environment.hpp>
 #include <j2cpp/local_ref.hpp>
 #include <j2cpp/global_ref.hpp>
 #include <j2cpp/get_class.hpp>

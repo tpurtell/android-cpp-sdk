@@ -14,6 +14,8 @@ namespace j2cpp {
 	    typedef detail::atomic_count count_type;
 
 	public:
+	    template < typename U > friend class shared_ptr;
+
 	    typedef T element_type;
 	    typedef T value_type;
 
@@ -35,9 +37,17 @@ namespace j2cpp {
 
 	    shared_ptr(shared_ptr const &r)
 	    : m_px(r.m_px)
+	    , m_pn(r.m_pn)
 	    {
-	    	m_pn=r.m_pn;
 	        ++*m_pn;
+	    }
+
+	    template < typename U >
+	    shared_ptr(shared_ptr<U> const &r)
+	    : m_px(static_cast<element_type*>(r.m_px))
+	    , m_pn(r.m_pn)
+	    {
+	    	++*m_pn;
 	    }
 
 	    shared_ptr& operator=(shared_ptr const &r)
@@ -80,6 +90,16 @@ namespace j2cpp {
 	    {
 	        detail::swap(m_px, other.m_px);
 	        detail::swap(m_pn, other.m_pn);
+	    }
+
+	    operator bool() const
+		{
+	    	return m_px?true:false;
+	    }
+
+	    bool operator !() const
+	    {
+	    	return m_px?false:true;
 	    }
 
 	private:

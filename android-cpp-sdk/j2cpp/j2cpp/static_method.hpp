@@ -290,7 +290,7 @@ namespace j2cpp {
 		call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
 			return typename jni_call_traits< local_ref<ObjectType> >::return_type(
-				environment::get().get_jenv()->CallStaticObjectMethodA(jclazz,sm,args)
+				environment::get()->jenv()->CallStaticObjectMethodA(jclazz,sm,args)
 			);
 		}
 	};
@@ -301,7 +301,7 @@ namespace j2cpp {
 		static inline
 		jboolean call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticBooleanMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticBooleanMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -311,7 +311,7 @@ namespace j2cpp {
 		static inline
 		jbyte call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticByteMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticByteMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -321,7 +321,7 @@ namespace j2cpp {
 		static inline
 		jchar call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticCharMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticCharMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -331,7 +331,7 @@ namespace j2cpp {
 		static inline
 		jshort call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticShortMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticShortMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -341,7 +341,7 @@ namespace j2cpp {
 		static inline
 		jint call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticIntMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticIntMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -351,7 +351,7 @@ namespace j2cpp {
 		static inline
 		jlong call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticLongMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticLongMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -361,7 +361,7 @@ namespace j2cpp {
 		static inline
 		jfloat call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticFloatMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticFloatMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -371,7 +371,7 @@ namespace j2cpp {
 		static inline
 		jdouble call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			return environment::get().get_jenv()->CallStaticDoubleMethodA(jclazz,sm,args);
+			return environment::get()->jenv()->CallStaticDoubleMethodA(jclazz,sm,args);
 		}
 	};
 
@@ -381,7 +381,7 @@ namespace j2cpp {
 		static inline
 		void call(jclass jclazz, jmethodID sm, jvalue *args)
 		{
-			environment::get().get_jenv()->CallStaticVoidMethodA(jclazz,sm,args);
+			environment::get()->jenv()->CallStaticVoidMethodA(jclazz,sm,args);
 		}
 	};
 

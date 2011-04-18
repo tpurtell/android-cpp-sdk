@@ -18,7 +18,7 @@ namespace j2cpp {
 
 		jobject_global_ref(jobject_type jobj)
 		: m_object(jobj?
-			reinterpret_cast<jobject_type>(environment::get().get_jenv()->NewGlobalRef(jobj)):
+			reinterpret_cast<jobject_type>(environment::get()->jenv()->NewGlobalRef(jobj)):
 			0
 		)
 		{
@@ -26,7 +26,7 @@ namespace j2cpp {
 
 		jobject_global_ref(jobject_global_ref const &that)
 		: m_object(that.m_object?
-			reinterpret_cast<jobject_type>(environment::get().get_jenv()->NewGlobalRef(that.m_object)):
+			reinterpret_cast<jobject_type>(environment::get()->jenv()->NewGlobalRef(that.m_object)):
 			0
 		)
 		{
@@ -34,7 +34,7 @@ namespace j2cpp {
 
 		jobject_global_ref(jobject_local_ref<jobject_type> const &that)
 		: m_object(that.m_object?
-			reinterpret_cast<jobject_type>(environment::get().get_jenv()->NewGlobalRef(that.m_object)):
+			reinterpret_cast<jobject_type>(environment::get()->jenv()->NewGlobalRef(that.m_object)):
 			0
 		)
 		{
@@ -43,7 +43,7 @@ namespace j2cpp {
 		~jobject_global_ref()
 		{
 			if(m_object)
-				environment::get().get_jenv()->DeleteGlobalRef(m_object);
+				environment::get()->jenv()->DeleteGlobalRef(m_object);
 		}
 
 		operator bool () const { return m_object?true:false; }

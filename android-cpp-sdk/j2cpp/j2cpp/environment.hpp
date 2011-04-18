@@ -2,72 +2,53 @@
 #define J2CPP_ENVIRONMENT_HPP
 
 #include <j2cpp/config.hpp>
+#include <j2cpp/shared_ptr.hpp>
 
 namespace j2cpp {
 
 	class environment
 	{
-		environment()
-		: m_jvm(0)
-		, m_ctscler(0)
+	protected:
+		environment& operator =(environment const &);
+
+	private:
+		static shared_ptr<environment>& g_env()
 		{
+			static shared_ptr<environment> _g_env;
+			return _g_env;
 		}
 
 	public:
-		typedef bool (*curr_thread_set_cler)();
 		
-		static environment& get()
+		virtual ~environment()
 		{
-			static environment _instance;
-			return _instance;
 		}
 
-		bool init(JavaVM *jvm, curr_thread_set_cler ctscler=0)
+		static inline shared_ptr<environment> const& get()
 		{
-			if(m_jvm) return true;
-			m_jvm=jvm;
-			m_ctscler=ctscler;
-			return m_jvm?true:false;
+			return g_env();
 		}
 
-		JNIEnv*	get_jenv()
+		static bool init(shared_ptr<environment> const &env)
 		{
-			if(!m_jvm)
-				return 0;
-			JNIEnv *jenv(0);
-			if(JNI_OK!=m_jvm->GetEnv((void **)&jenv, JNI_VERSION_1_6))
-				return 0;
-			return jenv;
-		}
-
-		bool attach_current_thread()
-		{
-			if(!m_jvm)
+			if(!env || g_env())
 				return false;
 
-			JNIEnv *jenv(0);
-			if(JNI_OK!=m_jvm->AttachCurrentThread(&jenv,0))
-				return false;
-
-			if(!jenv)
-				return false;
-			
-			if(m_ctscler && !m_ctscler())
-				return false;
-
+			g_env()=env;
 			return true;
 		}
 
-		bool detach_current_thread()
-		{
-			if(!m_jvm)
-				return false;
-			return (JNI_OK==m_jvm->DetachCurrentThread());
-		}
-
-	private:
-		JavaVM *m_jvm;
-		curr_thread_set_cler m_ctscler;
+		virtual JNIEnv*	jenv()=0;
+		virtual jclass find_class(char const *cn)=0;
+		virtual jmethodID get_method_id(jclass c, char const *n, char const *s)=0;
+		virtual jmethodID get_static_method_id(jclass c, char const *n, char const *s)=0;
+		virtual jfieldID get_field_id(jclass c, char const *n, char const *s)=0;
+		virtual jfieldID get_static_field_id(jclass c, char const *n, char const *s)=0;
+		virtual bool exception_check()=0;
+		virtual void exception_clear()=0;
+		virtual void exception_describe()=0;
+		virtual bool attach_current_thread()=0;
+		virtual bool detach_current_thread()=0;
 	};
 
 } //namespace j2cpp

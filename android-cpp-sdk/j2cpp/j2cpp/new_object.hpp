@@ -15,7 +15,7 @@ namespace j2cpp {
 	>
 	jobject call_new_object()
 	{
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), 0
 		);
 	}
@@ -31,7 +31,7 @@ namespace j2cpp {
 		{
 			jni_value(jni_argument_cast(a0))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), args
 		);
 	}
@@ -48,7 +48,7 @@ namespace j2cpp {
 			jni_value(jni_argument_cast(a0)),
 			jni_value(jni_argument_cast(a1))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), args
 		);
 	}
@@ -66,7 +66,7 @@ namespace j2cpp {
 			jni_value(jni_argument_cast(a1)),
 			jni_value(jni_argument_cast(a2))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), args
 		);
 	}
@@ -85,7 +85,7 @@ namespace j2cpp {
 			jni_value(jni_argument_cast(a2)),
 			jni_value(jni_argument_cast(a3))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), args
 		);
 	}
@@ -105,7 +105,7 @@ namespace j2cpp {
 			jni_value(jni_argument_cast(a3)),
 			jni_value(jni_argument_cast(a4))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature,false>(), args
 		);
 	}
@@ -126,7 +126,7 @@ namespace j2cpp {
 			jni_value(jni_argument_cast(a4)),
 			jni_value(jni_argument_cast(a5))
 		};
-		return environment::get().get_jenv()->NewObjectA(
+		return environment::get()->jenv()->NewObjectA(
 			get_class<Class>(), get_method_id<Class,Name,Signature, false>(), args
 		);
 	}

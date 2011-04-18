@@ -29,7 +29,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject gref=(jobj?
-				environment::get().get_jenv()->NewGlobalRef(jobj):0)
+				environment::get()->jenv()->NewGlobalRef(jobj):0)
 			)
 			{
 				m_px=new object_type(gref);
@@ -42,7 +42,7 @@ namespace j2cpp {
 			if(--*m_pn==0)
 			{
 				if(m_px && m_px->get_jobject())
-					environment::get().get_jenv()->DeleteGlobalRef(m_px->get_jobject());
+					environment::get()->jenv()->DeleteGlobalRef(m_px->get_jobject());
 
 				delete m_px;
 				delete m_pn;
@@ -54,7 +54,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject gref=(obj.get_jobject()?
-				environment::get().get_jenv()->NewGlobalRef(obj.get_jobject()):0)
+				environment::get()->jenv()->NewGlobalRef(obj.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(gref);
@@ -74,7 +74,7 @@ namespace j2cpp {
 		, m_pn(0)
 		{
 			if(jobject gref=(lref.get_jobject()?
-				environment::get().get_jenv()->NewGlobalRef(lref.get_jobject()):0)
+				environment::get()->jenv()->NewGlobalRef(lref.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(gref);
@@ -89,6 +89,12 @@ namespace j2cpp {
 		}
 
 		global_ref& operator=(global_ref const &rhs)
+		{
+			global_ref(rhs).swap(*this);
+			return *this;
+		}
+
+		global_ref& operator=(local_ref<object_type> const &rhs)
 		{
 			global_ref(rhs).swap(*this);
 			return *this;

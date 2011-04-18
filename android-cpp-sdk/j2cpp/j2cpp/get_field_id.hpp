@@ -13,13 +13,13 @@ namespace j2cpp {
 	template <>
 	jfieldID get_field_id<true>(jclass c, const char *n, const char *s)
 	{
-		return environment::get().get_jenv()->GetStaticFieldID(c,n,s);
+		return environment::get()->get_static_field_id(c,n,s);
 	}
 
 	template <>
 	jfieldID get_field_id<false>(jclass c, const char *n, const char *s)
 	{
-		return environment::get().get_jenv()->GetFieldID(c,n,s);
+		return environment::get()->get_field_id(c,n,s);
 	}
 
 	template < const char *Class, const char *Name, const char *Signature, bool is_static>

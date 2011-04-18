@@ -26,7 +26,7 @@ namespace j2cpp {
 
 		jobject_local_ref(jobject_local_ref const &that)
 		: m_object(that.m_object?
-			environment::get().get_jenv()->NewLocalRef(that.m_object):
+			environment::get()->jenv()->NewLocalRef(that.m_object):
 			0
 		)
 		{
@@ -34,7 +34,7 @@ namespace j2cpp {
 
 		jobject_local_ref(jobject_global_ref<jobject_type> const &that)
 		: m_object(that.m_object?
-			environment::get().get_jenv()->NewLocalRef(that.m_object):
+			environment::get()->jenv()->NewLocalRef(that.m_object):
 			0
 		)
 		{
@@ -43,7 +43,7 @@ namespace j2cpp {
 		~jobject_local_ref()
 		{
 			if(m_object)
-				environment::get().get_jenv()->DeleteLocalRef(m_object);
+				environment::get()->jenv()->DeleteLocalRef(m_object);
 			m_object=0;
 		}
 
