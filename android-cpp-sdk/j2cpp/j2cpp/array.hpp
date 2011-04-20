@@ -48,16 +48,28 @@ namespace j2cpp {
 			);
 		}
 		
-		template < typename SomeValueType, jsize S >
-		array(SomeValueType(&arr)[S])
-		: base_type(array_access<value_type>::new_array(S*sizeof(SomeValueType)))
+		template < typename SomeValueType >
+		array(SomeValueType const *d, jsize s)
+		: base_type(array_access<value_type>::new_array(s))
 		, m_is_copy(JNI_FALSE)
 		, m_data(0)
 		{
 			m_data=array_access<value_type>::get_array_elements(
 				base_type::get_jobject(), m_is_copy
 			);
-			memcpy(m_data,arr,S*sizeof(SomeValueType));
+			if(d) for(unsigned long i=0;i<s;++i) m_data[i]=value_type(d[i]);
+		}
+
+		template < typename SomeValueType, jsize S >
+		array(SomeValueType(&arr)[S])
+		: base_type(array_access<value_type>::new_array(S))
+		, m_is_copy(JNI_FALSE)
+		, m_data(0)
+		{
+			m_data=array_access<value_type>::get_array_elements(
+				base_type::get_jobject(), m_is_copy
+			);
+			for(unsigned long i=0;i<S;++i) m_data[i]=value_type(arr[i]);
 		}
 		
 		~array()
