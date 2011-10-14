@@ -57,20 +57,20 @@ namespace java { namespace net {
 		local_ref< java::lang::Object > getOption(jint);
 		void setOption(jint, local_ref< java::lang::Object >  const&);
 
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), jint > SO_LINGER;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), jint > SO_TIMEOUT;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), jint > TCP_NODELAY;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), jint > IP_MULTICAST_IF;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(4), J2CPP_FIELD_SIGNATURE(4), jint > SO_BINDADDR;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(5), J2CPP_FIELD_SIGNATURE(5), jint > SO_REUSEADDR;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(6), J2CPP_FIELD_SIGNATURE(6), jint > SO_SNDBUF;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(7), J2CPP_FIELD_SIGNATURE(7), jint > SO_RCVBUF;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(8), J2CPP_FIELD_SIGNATURE(8), jint > SO_KEEPALIVE;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(9), J2CPP_FIELD_SIGNATURE(9), jint > IP_TOS;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(10), J2CPP_FIELD_SIGNATURE(10), jint > IP_MULTICAST_LOOP;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(11), J2CPP_FIELD_SIGNATURE(11), jint > SO_BROADCAST;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(12), J2CPP_FIELD_SIGNATURE(12), jint > SO_OOBINLINE;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(13), J2CPP_FIELD_SIGNATURE(13), jint > IP_MULTICAST_IF2;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), jint > SO_LINGER_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), jint > SO_TIMEOUT_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), jint > TCP_NODELAY_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), jint > IP_MULTICAST_IF_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(4), J2CPP_FIELD_SIGNATURE(4), jint > SO_BINDADDR_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(5), J2CPP_FIELD_SIGNATURE(5), jint > SO_REUSEADDR_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(6), J2CPP_FIELD_SIGNATURE(6), jint > SO_SNDBUF_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(7), J2CPP_FIELD_SIGNATURE(7), jint > SO_RCVBUF_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(8), J2CPP_FIELD_SIGNATURE(8), jint > SO_KEEPALIVE_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(9), J2CPP_FIELD_SIGNATURE(9), jint > IP_TOS_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(10), J2CPP_FIELD_SIGNATURE(10), jint > IP_MULTICAST_LOOP_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(11), J2CPP_FIELD_SIGNATURE(11), jint > SO_BROADCAST_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(12), J2CPP_FIELD_SIGNATURE(12), jint > SO_OOBINLINE_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(13), J2CPP_FIELD_SIGNATURE(13), jint > IP_MULTICAST_IF2_j2cpp;
 	}; //class SocketOptions
 
 } //namespace net
@@ -120,98 +120,98 @@ static_field<
 	java::net::SocketOptions::J2CPP_FIELD_NAME(0),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(0),
 	jint
-> java::net::SocketOptions::SO_LINGER;
+> java::net::SocketOptions::SO_LINGER_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(1),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(1),
 	jint
-> java::net::SocketOptions::SO_TIMEOUT;
+> java::net::SocketOptions::SO_TIMEOUT_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(2),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(2),
 	jint
-> java::net::SocketOptions::TCP_NODELAY;
+> java::net::SocketOptions::TCP_NODELAY_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(3),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(3),
 	jint
-> java::net::SocketOptions::IP_MULTICAST_IF;
+> java::net::SocketOptions::IP_MULTICAST_IF_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(4),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(4),
 	jint
-> java::net::SocketOptions::SO_BINDADDR;
+> java::net::SocketOptions::SO_BINDADDR_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(5),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(5),
 	jint
-> java::net::SocketOptions::SO_REUSEADDR;
+> java::net::SocketOptions::SO_REUSEADDR_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(6),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(6),
 	jint
-> java::net::SocketOptions::SO_SNDBUF;
+> java::net::SocketOptions::SO_SNDBUF_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(7),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(7),
 	jint
-> java::net::SocketOptions::SO_RCVBUF;
+> java::net::SocketOptions::SO_RCVBUF_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(8),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(8),
 	jint
-> java::net::SocketOptions::SO_KEEPALIVE;
+> java::net::SocketOptions::SO_KEEPALIVE_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(9),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(9),
 	jint
-> java::net::SocketOptions::IP_TOS;
+> java::net::SocketOptions::IP_TOS_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(10),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(10),
 	jint
-> java::net::SocketOptions::IP_MULTICAST_LOOP;
+> java::net::SocketOptions::IP_MULTICAST_LOOP_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(11),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(11),
 	jint
-> java::net::SocketOptions::SO_BROADCAST;
+> java::net::SocketOptions::SO_BROADCAST_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(12),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(12),
 	jint
-> java::net::SocketOptions::SO_OOBINLINE;
+> java::net::SocketOptions::SO_OOBINLINE_j2cpp;
 
 static_field<
 	java::net::SocketOptions::J2CPP_CLASS_NAME,
 	java::net::SocketOptions::J2CPP_FIELD_NAME(13),
 	java::net::SocketOptions::J2CPP_FIELD_SIGNATURE(13),
 	jint
-> java::net::SocketOptions::IP_MULTICAST_IF2;
+> java::net::SocketOptions::IP_MULTICAST_IF2_j2cpp;
 
 
 J2CPP_DEFINE_CLASS(java::net::SocketOptions,"java/net/SocketOptions")

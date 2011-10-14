@@ -49,8 +49,8 @@ namespace java { namespace nio {
 		static local_ref< java::nio::ByteOrder > nativeOrder();
 		local_ref< java::lang::String > toString();
 
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::nio::ByteOrder > > BIG_ENDIAN;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::nio::ByteOrder > > LITTLE_ENDIAN;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::nio::ByteOrder > > BIG_ENDIAN_j2cpp;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::nio::ByteOrder > > LITTLE_ENDIAN_j2cpp;
 	}; //class ByteOrder
 
 } //namespace nio
@@ -102,14 +102,14 @@ static_field<
 	java::nio::ByteOrder::J2CPP_FIELD_NAME(0),
 	java::nio::ByteOrder::J2CPP_FIELD_SIGNATURE(0),
 	local_ref< java::nio::ByteOrder >
-> java::nio::ByteOrder::BIG_ENDIAN;
+> java::nio::ByteOrder::BIG_ENDIAN_j2cpp;
 
 static_field<
 	java::nio::ByteOrder::J2CPP_CLASS_NAME,
 	java::nio::ByteOrder::J2CPP_FIELD_NAME(1),
 	java::nio::ByteOrder::J2CPP_FIELD_SIGNATURE(1),
 	local_ref< java::nio::ByteOrder >
-> java::nio::ByteOrder::LITTLE_ENDIAN;
+> java::nio::ByteOrder::LITTLE_ENDIAN_j2cpp;
 
 
 J2CPP_DEFINE_CLASS(java::nio::ByteOrder,"java/nio/ByteOrder")

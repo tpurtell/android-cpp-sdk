@@ -36,9 +36,11 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
+		J2CPP_DECLARE_FIELD(3)
 
 		explicit FileDescriptor(jobject jobj)
 		: object<FileDescriptor>(jobj)
+		, descriptor(jobj)
 		{
 		}
 
@@ -49,9 +51,11 @@ namespace java { namespace io {
 		void sync();
 		jboolean valid();
 
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::io::FileDescriptor > > in;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::io::FileDescriptor > > out;
-		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), local_ref< java::io::FileDescriptor > > err;
+		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), jint > descriptor;
+
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::io::FileDescriptor > > in;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), local_ref< java::io::FileDescriptor > > out;
+		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), local_ref< java::io::FileDescriptor > > err;
 	}; //class FileDescriptor
 
 } //namespace io
@@ -83,7 +87,8 @@ java::io::FileDescriptor::FileDescriptor()
 		java::io::FileDescriptor::J2CPP_METHOD_NAME(0),
 		java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(0)
 	>()
-)
+ )
+, descriptor(get_jobject())
 {
 }
 
@@ -112,22 +117,22 @@ jboolean java::io::FileDescriptor::valid()
 
 static_field<
 	java::io::FileDescriptor::J2CPP_CLASS_NAME,
-	java::io::FileDescriptor::J2CPP_FIELD_NAME(0),
-	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(0),
+	java::io::FileDescriptor::J2CPP_FIELD_NAME(1),
+	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(1),
 	local_ref< java::io::FileDescriptor >
 > java::io::FileDescriptor::in;
 
 static_field<
 	java::io::FileDescriptor::J2CPP_CLASS_NAME,
-	java::io::FileDescriptor::J2CPP_FIELD_NAME(1),
-	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(1),
+	java::io::FileDescriptor::J2CPP_FIELD_NAME(2),
+	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(2),
 	local_ref< java::io::FileDescriptor >
 > java::io::FileDescriptor::out;
 
 static_field<
 	java::io::FileDescriptor::J2CPP_CLASS_NAME,
-	java::io::FileDescriptor::J2CPP_FIELD_NAME(2),
-	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(2),
+	java::io::FileDescriptor::J2CPP_FIELD_NAME(3),
+	java::io::FileDescriptor::J2CPP_FIELD_SIGNATURE(3),
 	local_ref< java::io::FileDescriptor >
 > java::io::FileDescriptor::err;
 
@@ -137,9 +142,10 @@ J2CPP_DEFINE_METHOD(java::io::FileDescriptor,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(java::io::FileDescriptor,1,"sync","()V")
 J2CPP_DEFINE_METHOD(java::io::FileDescriptor,2,"valid","()Z")
 J2CPP_DEFINE_METHOD(java::io::FileDescriptor,3,"<clinit>","()V")
-J2CPP_DEFINE_FIELD(java::io::FileDescriptor,0,"in","Ljava/io/FileDescriptor;")
-J2CPP_DEFINE_FIELD(java::io::FileDescriptor,1,"out","Ljava/io/FileDescriptor;")
-J2CPP_DEFINE_FIELD(java::io::FileDescriptor,2,"err","Ljava/io/FileDescriptor;")
+J2CPP_DEFINE_FIELD(java::io::FileDescriptor,0,"descriptor","I")
+J2CPP_DEFINE_FIELD(java::io::FileDescriptor,1,"in","Ljava/io/FileDescriptor;")
+J2CPP_DEFINE_FIELD(java::io::FileDescriptor,2,"out","Ljava/io/FileDescriptor;")
+J2CPP_DEFINE_FIELD(java::io::FileDescriptor,3,"err","Ljava/io/FileDescriptor;")
 
 } //namespace j2cpp
 
