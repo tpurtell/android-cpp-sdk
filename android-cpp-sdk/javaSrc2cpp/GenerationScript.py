@@ -95,7 +95,11 @@ def TranslateFile(inputFilePath, outputFilePath):
     #proceed with namespaces
     nameSpaces = GetNamespaces(fileContent)
     wrapper = NameSpaceWrapper(nameSpaces, outputFile)
+
+    #writing classes into a file
     classTree = BuildClassTree(fileContent)
+    for classItem in classTree:
+        classItem.WriteClassSubtreeInFile(outputFile)
 
 def TranslateFolder(dirToTranslateFrom, dirToTranslateTo):
     
@@ -152,6 +156,12 @@ class JavaClass:
     
     def __repr__(self):
         return JavaClass.__str__(self)
+    
+    def WriteClassSubtreeInFile(self, fileToWrite):
+        fileToWrite.write("class " + self.name + " {" )
+        for nestedClass in self.nestedClasses:
+            nestedClass.WriteClassSubtreeInFile(fileToWrite)
+        fileToWrite.write("};")
     
     def SetNestedClasses(self, nestedClasses):
         self.nestedClasses += nestedClasses
