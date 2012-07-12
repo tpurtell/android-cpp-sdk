@@ -117,13 +117,48 @@ def Help():
     print "1. Path to directory with android sources"
     print "2. Path to output directory"
 
+def GetClassNameFromLine(line):
+    words = line.split(' ')
+    for word in words:
+        if word == "class":
+            index = words.index(word) + 1
+            while index < len(words) and words[index] == ' ':
+                index += 1
+            return words[index]
+                
+def GetClassLines(fileContent, startIndex):
+    index = startIndex
+    bracketBalance = fileContent[startIndex].count('{') - fileContent[startIndex].count('}')
+    fileContentSize = len(fileContent)
+    index += 1
+    while (index < fileContentSize) and (bracketBalance > 0):
+        bracketBalance += fileContent[index].count('{') - fileContent[index].count('}')
+        index += 1
+    return fileContent[startIndex:index]
+    
+def BuildClassTree(fileContent):
+    fileContentLineCount = len(fileContent)
+    tree = []
+    index = 0
+    while index < fileContentLineCount:
+        if "class " in fileContent[index]:
+            className = GetClassNameFromLine(fileContent[index])
+            classLines = GetClassLines(fileContent, index)
+            subTree = BuildClassTree(classLines[1:-1])
+            tree.append((className, subTree))
+            index += len(classLines) - 1
+        index += 1
+    return tree
+
 def main():
     args = sys.argv
+    
 #    if len(args) < 3:
 #        Help()
 #        return
 #    TranslateFolder(args[1], args[2])
-     TranslateFolder("D:\\2commit\\New folder", "D:/test")
+#    TranslateFolder("D:\\2commit\\New folder", "D:/test")
+#
 
 if __name__ == "__main__":
     main()
