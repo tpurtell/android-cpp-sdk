@@ -77,8 +77,6 @@ class NameSpaceWrapper:
             self.fileObject.write("}")
         self.fileObject.close()
         
-    
-
 def GetNamespaces(fileContent):
     for line in fileContent:
         if line.startswith("package "):
@@ -97,6 +95,7 @@ def TranslateFile(inputFilePath, outputFilePath):
     #proceed with namespaces
     nameSpaces = GetNamespaces(fileContent)
     wrapper = NameSpaceWrapper(nameSpaces, outputFile)
+    classTree = BuildClassTree(fileContent)
 
 def TranslateFolder(dirToTranslateFrom, dirToTranslateTo):
     
@@ -135,6 +134,27 @@ def GetClassLines(fileContent, startIndex):
         bracketBalance += fileContent[index].count('{') - fileContent[index].count('}')
         index += 1
     return fileContent[startIndex:index]
+
+class JavaClass:
+    def __init__(self, name):
+        self.name = name
+        self.nestedClasses = []
+        self.methods = []
+        self.constructors = []
+        self.inheritedFrom = []
+
+    def __str__(self):
+        return str((self.name,
+                self.nestedClasses,
+                self.methods,
+                self.constructors,
+                self.inheritedFrom))
+    
+    def __repr__(self):
+        return JavaClass.__str__(self)
+    
+    def SetNestedClasses(self, nestedClasses):
+        self.nestedClasses += nestedClasses
     
 def BuildClassTree(fileContent):
     fileContentLineCount = len(fileContent)
@@ -143,22 +163,24 @@ def BuildClassTree(fileContent):
     while index < fileContentLineCount:
         if "class " in fileContent[index]:
             className = GetClassNameFromLine(fileContent[index])
+            javaClass = JavaClass(className)
             classLines = GetClassLines(fileContent, index)
             subTree = BuildClassTree(classLines[1:-1])
-            tree.append((className, subTree))
+            javaClass.SetNestedClasses(subTree)
+            tree.append(javaClass)
             index += len(classLines) - 1
         index += 1
     return tree
 
 def main():
     args = sys.argv
-    
+#    print BuildClassTree(ReadEntireFile("D:\\2commit\\New folder\\android\\app\\ActivityGroup.java"))
 #    if len(args) < 3:
 #        Help()
 #        return
 #    TranslateFolder(args[1], args[2])
-#    TranslateFolder("D:\\2commit\\New folder", "D:/test")
-#
+    TranslateFolder("D:\\2commit\\New folder", "D:/test")
+
 
 if __name__ == "__main__":
     main()
