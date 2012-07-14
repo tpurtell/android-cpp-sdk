@@ -76,8 +76,12 @@ class NameSpaceWrapper:
         for x in xrange(0, self.bracketsCount):
             self.fileObject.write("}")
         self.fileObject.close()
+
+def PrintFile(fileContent):
+    for line in fileContent:
+        print line
         
-def GetNamespaces(fileContent):
+def GetNamespaces(fileContent, filePath):
     for line in fileContent:
         if line.startswith("package "):
             namespaces = line.split(' ')[1][:-2]
@@ -88,12 +92,16 @@ def TranslateFile(inputFilePath, outputFilePath):
     fileContent = ReadEntireFile(inputFilePath)
     outputFile = open(outputFilePath, "w+")
 
+    #remove comments
+    fileContent = RemoveMultilineComments(fileContent)
+    fileContent = RemoveOneLineComments(fileContent)
+
     #proceed with includes
     includes = GetIncludes(fileContent)
     PutIncludes(outputFile, TranslateIncludes(includes))
     
     #proceed with namespaces
-    nameSpaces = GetNamespaces(fileContent)
+    nameSpaces = GetNamespaces(fileContent, inputFilePath)
     wrapper = NameSpaceWrapper(nameSpaces, outputFile)
 
     #writing classes into a file
@@ -165,7 +173,37 @@ class JavaClass:
     
     def SetNestedClasses(self, nestedClasses):
         self.nestedClasses += nestedClasses
-    
+
+def RemoveMultilineComments(fileContent):
+    currentIndex = 0
+    result = []
+    maxIndex = len(fileContent)
+    while currentIndex < maxIndex:
+        if "/*" in fileContent[currentIndex]:
+            index = fileContent[currentIndex].index('/*')
+            result.append(fileContent[currentIndex][:index])
+            while (currentIndex < maxIndex) and (not '*/' in fileContent[currentIndex]):
+                currentIndex += 1
+            if currentIndex < maxIndex:
+                index = fileContent[currentIndex].index('*/')
+                result.append(fileContent[currentIndex][index + 2:])
+        else:
+            result.append(fileContent[currentIndex])
+        currentIndex += 1
+    return result
+        
+
+def RemoveOneLineComments(fileContent):
+    result = []
+    for line in fileContent:
+        if '//' in line:
+            index = line.index('//')
+            result.append(line[:index])
+        else:
+            result.append(line)
+    return result
+            
+
 def BuildClassTree(fileContent):
     fileContentLineCount = len(fileContent)
     tree = []
